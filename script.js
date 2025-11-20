@@ -1,16 +1,26 @@
-// --- Toggle Modo Oscuro ---
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
 });
 
-// --- Selector de Idioma ---
-const languageSelector = document.getElementById('language-selector');
-languageSelector.addEventListener('change', (e) => {
+// Language Toggle
+const langSelect = document.getElementById('langSelect');
+langSelect.addEventListener('change', (e) => {
   const lang = e.target.value;
-  document.querySelectorAll('[data-es]').forEach(el => {
-    el.textContent = el.dataset[lang];
-  });
+  alert(`Función de cambio de idioma a ${lang} (implementa traducción de contenido aquí)`);
 });
 
-// --- Animaciones scroll o microinteracciones pueden añadirse aquí ---
+// Scroll Animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.project-card, .service-card, .about-section').forEach(el => {
+  el.classList.add('hidden');
+  observer.observe(el);
+});
