@@ -1,249 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MARTA MORALES GARCIA DE LOS RÍOS | Product Designer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio UX/UI de Marta - Diseño de experiencias digitales modernas y funcionales.">
+  <title>Portafolio Marta | UX/UI Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Inter', sans-serif; background:#F8F9FA; color:#212529; scroll-behavior: smooth; }
 
-<!-- Fuentes -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Pacifico&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    a { text-decoration: none; color: inherit; }
 
-<style>
-/* --- Reset y tipografía --- */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Roboto', sans-serif; line-height:1.6; color:#4E4E50; background:#FFF5E6; transition: background 0.5s, color 0.5s;}
-a {text-decoration:none; color:inherit;}
-img, video {max-width:100%; border-radius:12px;}
+    header { position: fixed; top:0; left:0; width:100%; background:#fff; z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+    nav { max-width:1200px; margin:0 auto; display:flex; justify-content: space-between; align-items:center; padding:1rem; }
+    .logo { font-weight:700; color:#4C6EF5; font-size:1.5rem; }
+    .nav-links { display:flex; gap:1.5rem; }
+    .nav-links a { font-weight:600; transition: color 0.3s; }
+    .nav-links a:hover { color:#4C6EF5; }
 
-/* --- Header --- */
-header {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:2rem 4%;
-  background:#E63946; color:#FFF5E6;
-  position:sticky; top:0; z-index:1000;
-  border-bottom:3px solid #F1C40F;
-}
-header h1 {font-family:'Playfair Display', serif; font-size:1.8rem; letter-spacing:1px;}
-nav a {margin-left:2rem; font-weight:500; transition:0.3s;}
-nav a:hover {color:#F1C40F;}
+    .hero { position: relative; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; height:100vh; padding:2rem; overflow: hidden; }
+    .hero video { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; z-index: -1; opacity: 0.5; }
+    .hero-content { z-index: 1; }
+    .hero h1 { font-size:2.5rem; color:#4C6EF5; margin-bottom:1rem; }
+    .hero p { font-size:1.2rem; max-width:600px; margin-bottom:2rem; }
+    .cta { background:#FFD43B; color:#212529; padding:0.75rem 1.5rem; border-radius:8px; font-weight:600; transition: transform 0.2s; }
+    .cta:hover { transform: scale(1.05); }
 
-/* --- Controles --- */
-#controls {position:fixed; top:1rem; right:1rem; z-index:1001; display:flex; gap:1rem;}
-button {padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer; font-weight:500; transition:0.3s; background:#F1C40F; color:#4E4E50;}
-button:hover {opacity:0.85;}
+    section { max-width:1200px; margin:6rem auto; padding:2rem; }
 
-/* --- Hero / Presentación --- */
-.hero {
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  height:90vh; text-align:center; position:relative; overflow:hidden;
-  background:linear-gradient(135deg, #FFF5E6, #FDEBD0);
-}
-.hero h2 {font-family:'Pacifico', cursive; font-size:3rem; margin-bottom:1rem; opacity:0; animation:fadeInUp 1.2s ease forwards 0.5s;}
-.hero p {font-size:1.2rem; max-width:600px; color:#4E4E50; opacity:0; animation:fadeInUp 1.2s ease forwards 1s;}
-@keyframes fadeInUp {0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);}}
+    .about { display:flex; flex-wrap:wrap; align-items:center; gap:2rem; }
+    .about img { width:300px; border-radius:16px; object-fit: cover; }
+    .about-text { flex:1; }
+    .about-text h2 { font-size:2rem; color:#4C6EF5; margin-bottom:1rem; }
+    .about-text p { font-size:1rem; line-height:1.6; margin-bottom:1rem; }
 
-/* --- Proyectos --- */
-.projects {padding:5rem 4%; background:#FFF5E6;}
-.projects h2 {text-align:center; font-family:'Playfair Display', serif; font-size:2.5rem; margin-bottom:3rem; color:#E63946;}
-.project-list {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;}
-.project {background:#FDEBD0; border-radius:12px; overflow:hidden; position:relative; box-shadow:0 8px 15px rgba(0,0,0,0.1); transition:transform 0.3s ease;}
-.project:hover {transform:translateY(-6px);}
-.project img, .project video {width:100%; display:block;}
-.project-content {padding:1.5rem;}
-.project-content h3 {font-family:'Playfair Display', serif; font-size:1.5rem; margin-bottom:0.5rem; color:#E63946;}
-.project-content p {font-size:0.95rem; color:#4E4E50; line-height:1.4;}
+    .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; }
+    .project-card { background:#fff; border-radius:16px; box-shadow:0 4px 16px rgba(0,0,0,0.1); overflow:hidden; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+    .project-card:hover { transform: translateY(-8px); box-shadow:0 8px 24px rgba(0,0,0,0.15); }
+    .project-card img { width:100%; height:200px; object-fit:cover; }
+    .project-card .content { padding:1rem; }
+    .project-card h3 { color:#4C6EF5; margin-bottom:0.5rem; }
+    .project-card p { font-size:0.95rem; line-height:1.4; margin-bottom:1rem; }
+    .project-card .btn { background:#4C6EF5; color:#fff; padding:0.5rem 1rem; border-radius:8px; font-weight:600; transition: background 0.3s; }
+    .project-card .btn:hover { background:#3b54c4; }
 
-/* --- Experiencia --- */
-.experience {padding:5rem 4%; background:#FDF2E9;}
-.experience h2 {text-align:center; font-family:'Playfair Display', serif; font-size:2.5rem; margin-bottom:3rem; color:#E63946;}
-.experience-list {display:grid; grid-template-columns:1fr; gap:1.5rem; max-width:900px; margin:0 auto;}
-.experience-item {background:#FFF5E6; padding:1.5rem; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.05);}
-.experience-item h3 {font-family:'Playfair Display', serif; font-size:1.3rem; margin-bottom:0.5rem; color:#E63946;}
-.experience-item p {color:#4E4E50;}
+    .methodology { text-align:center; }
+    .timeline { display:flex; flex-direction:column; gap:2rem; margin-top:2rem; }
+    .step { display:flex; flex-direction:column; align-items:center; }
+    .step-circle { width:50px; height:50px; border-radius:50%; background:#4C6EF5; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; margin-bottom:1rem; }
+    .step p { max-width:400px; }
 
-/* --- Contacto --- */
-.contact {padding:4rem 4%; background:#E63946; color:#FFF5E6; text-align:center;}
-.contact h2 {font-family:'Playfair Display', serif; font-size:2.2rem; margin-bottom:2rem;}
-.contact a {display:inline-block; margin:0.5rem 1rem; background:#F1C40F; color:#4E4E50; padding:0.8rem 1.5rem; border-radius:6px; font-weight:500; transition:0.3s;}
-.contact a:hover {background:#e6b800;}
+    .contact form { display:flex; flex-direction:column; gap:1rem; max-width:500px; margin:0 auto; }
+    .contact input, .contact textarea { padding:0.75rem; border-radius:8px; border:1px solid #ccc; font-size:1rem; }
+    .contact button { background:#FFD43B; border:none; padding:0.75rem; font-weight:600; border-radius:8px; transition: transform 0.2s; cursor:pointer; }
+    .contact button:hover { transform: scale(1.05); }
 
-/* --- Footer --- */
-footer {padding:2rem 4%; text-align:center; background:#4E4E50; color:#FFF5E6; font-size:0.9rem;}
+    footer { text-align:center; padding:2rem; background:#fff; margin-top:4rem; font-size:0.9rem; color:#6c757d; }
 
-/* --- Animaciones Scroll --- */
-.fade-in {opacity:1; transform:translateY(0); transition:opacity 1s ease, transform 1s ease;}
-.project, .experience-item {opacity:0; transform:translateY(50px);}
+    .fade-in { opacity:0; transform:translateY(20px); transition: all 0.8s ease-out; }
+    .fade-in.show { opacity:1; transform:translateY(0); }
 
-/* --- Modo Oscuro cálido --- */
-body.dark {background:#3E2C2A; color:#FDEBD0;}
-body.dark .hero {background:#3E2C2A;}
-body.dark .projects {background:#4B3632;}
-body.dark .project {background:#5C4540;}
-body.dark .experience {background:#4B3632;}
-body.dark .contact {background:#3E2C2A; color:#FDEBD0;}
-body.dark .contact a {background:#F1C40F; color:#3E2C2A;}
-body.dark footer {background:#2A1F1D; color:#FDEBD0;}
-body.dark header {background:#5C4540; color:#FDEBD0; border-bottom-color:#F1C40F;}
-</style>
+    @media(max-width:768px){
+      .about { flex-direction:column; align-items:center; text-align:center; }
+      .about img { width:80%; }
+    }
+  </style>
 </head>
-
 <body>
-<!-- Controles -->
-<div id="controls">
-  <button id="toggleDark">Modo Oscuro / Claro</button>
-  <button id="toggleLang">EN / ES</button>
-</div>
+  <header>
+    <nav>
+      <div class="logo">Marta</div>
+      <div class="nav-links">
+        <a href="#about">Sobre mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#methodology">Metodología</a>
+        <a href="#contact">Contacto</a>
+      </div>
+    </nav>
+  </header>
 
-<!-- Header -->
-<header>
-  <h1 id="headerName">MARTA MORALES GARCIA DE LOS RÍOS</h1>
-  <nav>
-    <a href="#projects" class="navLink" data-es="Proyectos" data-en="Projects">Proyectos</a>
-    <a href="#experience" class="navLink" data-es="Experiencia" data-en="Experience">Experiencia</a>
-    <a href="#contact" class="navLink" data-es="Contacto" data-en="Contact">Contacto</a>
-  </nav>
-</header>
+  <!-- HERO con vídeo de fondo -->
+  <section class="hero fade-in">
+    <video autoplay muted loop playsinline>
+      <source src="https://player.vimeo.com/external/449742842.sd.mp4?s=d4efa7ee0e5b61896f8aeecc65c1dcafee2f1b9f" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+    <div class="hero-content">
+      <h1>Hola, soy Marta</h1>
+      <p>Diseñadora UX/UI especializada en crear experiencias digitales que conectan a las personas con la tecnología. Explora mis proyectos y descubre mi proceso.</p>
+      <a href="#projects" class="cta">Ver proyectos</a>
+    </div>
+  </section>
 
-<!-- Hero / Presentación -->
-<section class="hero">
-  <h2 id="heroTitle" data-es="Hola, soy Marta" data-en="Hi, I'm Marta">Hola, soy Marta</h2>
-  <p id="heroDesc" data-es="Product Designer + Digital Business con experiencia en ILUNION Hotels. Ascendiendo a senior este mes. Creo experiencias digitales humanas, atractivas y estratégicas para el sector hotelero." 
-     data-en="Product Designer + Digital Business with experience at ILUNION Hotels. Promoted to senior this month. I create human, engaging, and strategic digital experiences for the hotel sector.">
-     Product Designer + Digital Business con experiencia en ILUNION Hotels. Ascendiendo a senior este mes. Creo experiencias digitales humanas, atractivas y estratégicas para el sector hotelero.
-  </p>
-</section>
+  <!-- SOBRE MÍ con varias imágenes -->
+  <section id="about" class="about fade-in">
+    <div>
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Diseño UX">
+    </div>
+    <div>
+      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Trabajo en interfaz">
+    </div>
+    <div class="about-text">
+      <h2>Sobre mí</h2>
+      <p>Soy Marta, apasionada por el diseño digital y la experiencia de usuario. Me especializo en crear interfaces intuitivas y funcionales que generan impacto real.</p>
+      <p>Mi filosofía de diseño se basa en que cada interacción tenga un propósito y cada pixel cuente una historia.</p>
+      <a href="#contact" class="cta">Contáctame</a>
+    </div>
+  </section>
 
-<!-- Proyectos -->
-<section class="projects" id="projects">
-  <h2 data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</h2>
-  <div class="project-list">
-    <!-- Proyecto 1 -->
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?crop=entropy&cs=tinysrgb&h=500&w=800" alt="UX Hotel Connect">
-      <div class="project-content">
-        <h3 data-es="UX Hotel Connect" data-en="UX Hotel Connect">UX Hotel Connect</h3>
-        <p data-es="Rediseño de la app de reservas de ILUNION Hotels, aumentando la conversión y mejorando la satisfacción del usuario mediante flujos intuitivos y microinteracciones."
-           data-en="Redesign of ILUNION Hotels booking app, increasing conversion and improving user satisfaction through intuitive flows and microinteractions.">
-           Rediseño de la app de reservas de ILUNION Hotels, aumentando la conversión y mejorando la satisfacción del usuario mediante flujos intuitivos y microinteracciones.
-        </p>
+  <!-- PROYECTOS con varias imágenes -->
+  <section id="projects" class="projects fade-in">
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Proyecto ILUNION">
+      <div class="content">
+        <h3>ILUNION Hotels</h3>
+        <p>Rediseño web con enfoque en UX para mejorar la experiencia del usuario y aumentar reservas.</p>
+        <a href="#" class="btn">Ver proyecto</a>
       </div>
     </div>
-
-    <!-- Proyecto 2 -->
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1551836022-4b5a0c3f66c0?crop=entropy&cs=tinysrgb&h=500&w=800" alt="Dashboard Inteligente">
-      <div class="project-content">
-        <h3 data-es="Dashboard Inteligente" data-en="Smart Dashboard">Dashboard Inteligente</h3>
-        <p data-es="Creación de un dashboard de gestión hotelera con KPIs en tiempo real, optimizando decisiones estratégicas y reduciendo tiempos de operación."
-           data-en="Created a hotel management dashboard with real-time KPIs, optimizing strategic decisions and reducing operation times.">
-           Creación de un dashboard de gestión hotelera con KPIs en tiempo real, optimizando decisiones estratégicas y reduciendo tiempos de operación.
-        </p>
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/3183178/pexels-photo-3183178.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Proyecto educativo">
+      <div class="content">
+        <h3>CEF</h3>
+        <p>Plataforma educativa digital con experiencia de usuario mejorada y flujo de navegación optimizado.</p>
+        <a href="#" class="btn">Ver proyecto</a>
       </div>
     </div>
-
-    <!-- Proyecto 3 -->
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&h=500&w=800" alt="Check-in Digital">
-      <div class="project-content">
-        <h3 data-es="Check-in Digital" data-en="Digital Check-in">Check-in Digital</h3>
-        <p data-es="Implementación de check-in interactivo, con tutoriales visuales y feedback en tiempo real, aumentando la eficiencia del personal y la satisfacción del cliente."
-           data-en="Implemented interactive check-in with visual tutorials and real-time feedback, increasing staff efficiency and guest satisfaction.">
-           Implementación de check-in interactivo, con tutoriales visuales y feedback en tiempo real, aumentando la eficiencia del personal y la satisfacción del cliente.
-        </p>
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/3184462/pexels-photo-3184462.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Proyecto WeAreActions">
+      <div class="content">
+        <h3>WeAreActions</h3>
+        <p>Campaña digital y diseño de interfaces interactivas para engagement de usuarios y conversión.</p>
+        <a href="#" class="btn">Ver proyecto</a>
       </div>
     </div>
-
-    <!-- Proyecto 4 -->
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?crop=entropy&cs=tinysrgb&h=500&w=800" alt="App de Servicios Personalizados">
-      <div class="project-content">
-        <h3 data-es="App de Servicios Personalizados" data-en="Personalized Services App">App de Servicios Personalizados</h3>
-        <p data-es="Diseño de app que sugiere experiencias y actividades a los huéspedes según sus preferencias, incrementando ingresos por upselling."
-           data-en="Designed an app suggesting experiences and activities to guests based on preferences, increasing upselling revenue.">
-           Diseño de app que sugiere experiencias y actividades a los huéspedes según sus preferencias, incrementando ingresos por upselling.
-        </p>
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Interfaz diseño">
+      <div class="content">
+        <h3>Proyecto Extra</h3>
+        <p>Otro ejemplo de diseño digital con enfoque en UX y UI modernos.</p>
+        <a href="#" class="btn">Ver proyecto</a>
       </div>
     </div>
+  </section>
 
-    <!-- Proyecto 5 -->
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1581091215360-57c9f88895a3?crop=entropy&cs=tinysrgb&h=500&w=800" alt="Gestión de Eventos">
-      <div class="project-content">
-        <h3 data-es="Gestión de Eventos" data-en="Event Management">Gestión de Eventos</h3>
-        <p data-es="Plataforma digital para planificación de eventos en hoteles, integrando reservas, servicios y comunicación con clientes."
-           data-en="Digital platform for hotel event planning, integrating bookings, services, and client communication.">
-           Plataforma digital para planificación de eventos en hoteles, integrando reservas, servicios y comunicación con clientes.
-        </p>
+  <!-- METODOLOGÍA -->
+  <section id="methodology" class="methodology fade-in">
+    <h2>Mi proceso de diseño</h2>
+    <div class="timeline">
+      <div class="step">
+        <div class="step-circle">1</div>
+        <p>Investigación: entendimiento del usuario y análisis de necesidades.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <p>Ideación: creación de wireframes, flujos y prototipos iniciales.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <p>Diseño visual: interfaces limpias, modernas y coherentes con la marca.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">4</div>
+        <p>Testing: pruebas con usuarios y optimización iterativa.</p>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- CONTACTO -->
+  <section id="contact" class="contact fade-in">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea rows="5" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
-<!-- Experiencia -->
-<section class="experience" id="experience">
-  <h2 data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</h2>
-  <div class="experience-list">
-    <div class="experience-item">
-      <h3 data-es="ILUNION Hotels | Diseñadora de Negocio Digital" data-en="ILUNION Hotels | Digital Business Designer">ILUNION Hotels | Diseñadora de Negocio Digital</h3>
-      <p data-es="Más de 1 año y medio en el puesto. Experiencia en UX/UI, Product Design y Digital Business. Este mes ascenderé a Senior, liderando proyectos de innovación digital y experiencia del huésped."
-         data-en="Over 1.5 years in the role. Experience in UX/UI, Product Design, and Digital Business. Promoted to Senior this month, leading digital innovation projects and guest experience.">
-         Más de 1 año y medio en el puesto. Experiencia en UX/UI, Product Design y Digital Business. Este mes ascenderé a Senior, liderando proyectos de innovación digital y experiencia del huésped.
-      </p>
-    </div>
-    <div class="experience-item">
-      <h3 data-es="Proyectos Freelance" data-en="Freelance Projects">Proyectos Freelance</h3>
-      <p data-es="Diseño de apps y plataformas digitales para hoteles y startups, aplicando UX research, prototipado y diseño visual centrado en el usuario."
-         data-en="Designed apps and digital platforms for hotels and startups, applying UX research, prototyping, and user-centered visual design.">
-         Diseño de apps y plataformas digitales para hoteles y startups, aplicando UX research, prototipado y diseño visual centrado en el usuario.
-      </p>
-    </div>
-  </div>
-</section>
+  <footer>
+    © 2025 Marta | Diseñadora UX/UI | Imágenes de <a href="https://www.pexels.com">Pexels</a> | Vídeo de <a href="https://pixabay.com">Pixabay</a>
+  </footer>
 
-<!-- Contacto -->
-<section class="contact" id="contact">
-  <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
-  <p data-es="Estoy abierta a nuevas oportunidades en Product Design y Digital Business." data-en="I am open to new opportunities in Product Design and Digital Business.">
-    Estoy abierta a nuevas oportunidades en Product Design y Digital Business.
-  </p>
-  <a href="mailto:marta@example.com">Email</a>
-  <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-</section>
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
 
-<!-- Footer -->
-<footer>
-  &copy; 2025 Marta Morales Garcia de los Ríos | Product Designer | ILUNION Hotels
-</footer>
-
-<!-- Scripts -->
-<script>
-// --- Scroll fade-in ---
-const faders = document.querySelectorAll('.project, .experience-item');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-  entries.forEach(entry => {
-    if(!entry.isIntersecting) return;
-    entry.target.classList.add('fade-in');
-    appearOnScroll.unobserve(entry.target);
-  });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
-
-// --- Modo oscuro / claro ---
-const toggleDark = document.getElementById('toggleDark');
-toggleDark.addEventListener('click', ()=>{document.body.classList.toggle('dark');});
-
-// --- Traducción Inglés / Español ---
-const toggleLang = document.getElementById('toggleLang');
-let lang = 'es';
-toggleLang.addEventListener('click', ()=>{
-  lang = lang === 'es' ? 'en' : 'es';
-  document.querySelectorAll('[data-es]').forEach(el=>{
-    el.textContent = el.getAttribute(`data-${lang}`);
-  });
-});
-</script>
-
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 </body>
 </html>

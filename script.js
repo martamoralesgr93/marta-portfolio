@@ -1,18 +1,16 @@
-// Modo oscuro / claro
-const toggleDark = document.getElementById('toggle-dark');
-toggleDark.addEventListener('click', () => {
+// --- Toggle Modo Oscuro ---
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
 });
 
-// Traducción ES / EN
-const toggleLang = document.getElementById('toggle-lang');
-toggleLang.addEventListener('click', () => {
-  const elements = document.querySelectorAll('[data-es]');
-  elements.forEach(el => {
-    if(el.innerText === el.dataset.es){
-      el.innerText = el.dataset.en;
-    } else {
-      el.innerText = el.dataset.es;
-    }
+// --- Selector de Idioma ---
+const languageSelector = document.getElementById('language-selector');
+languageSelector.addEventListener('change', (e) => {
+  const lang = e.target.value;
+  document.querySelectorAll('[data-es]').forEach(el => {
+    el.textContent = el.dataset[lang];
   });
 });
+
+// --- Animaciones scroll o microinteracciones pueden añadirse aquí ---
