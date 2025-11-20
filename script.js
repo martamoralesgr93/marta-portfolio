@@ -1,16 +1,16 @@
-// --- Toggle Modo Oscuro ---
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
+// Dark Mode toggle
+const toggleDark = document.querySelector('.toggle-dark');
+toggleDark.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
 });
 
-// --- Selector de Idioma ---
-const languageSelector = document.getElementById('language-selector');
-languageSelector.addEventListener('change', (e) => {
-  const lang = e.target.value;
-  document.querySelectorAll('[data-es]').forEach(el => {
-    el.textContent = el.dataset[lang];
+// Animación de entrada de secciones
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add('visible');
+    }
   });
 });
-
-// --- Animaciones scroll o microinteracciones pueden añadirse aquí ---

@@ -3,74 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Marta Morales, UX/UI & Product Designer. Explora mi trayectoria, proyectos y servicios en diseño digital de alto nivel.">
   <title>Marta Morales - UX/UI & Product Designer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
-<body class="light">
-  <!-- HEADER / MENU -->
-  <header class="header">
-    <div class="logo">Marta Morales</div>
-    <nav class="nav">
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <nav class="navbar">
+      <a href="#inicio" class="logo">Marta Morales</a>
       <ul class="nav-links">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contacto" class="cta">Contacto</a></li>
       </ul>
-      <div class="controls">
-        <button id="theme-toggle" aria-label="Cambiar modo oscuro">🌙</button>
-        <select id="language-selector" aria-label="Cambiar idioma">
-          <option value="es" selected>ES</option>
-          <option value="en">EN</option>
-        </select>
-      </div>
+      <button class="toggle-dark">🌙</button>
     </nav>
   </header>
 
-  <!-- HERO / INTRO -->
-  <section id="about" class="hero">
-    <h1 class="hero-title">Hola, soy Marta Morales</h1>
-    <p class="hero-subtitle">Diseñadora UX/UI & Product Designer | Transformando experiencias digitales en soluciones humanas y memorables</p>
+  <!-- HERO / INICIO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Hola, soy <span>Marta Morales</span></h1>
+      <p>UX/UI & Product Designer con pasión por crear experiencias digitales memorables y centradas en el usuario.</p>
+      <a href="#proyectos" class="btn-primary">Ver mis proyectos</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/500x400.png?text=Marta+Morales" alt="Marta Morales">
+    </div>
   </section>
 
-  <!-- PROYECTOS -->
-  <section id="projects" class="projects">
-    <h2 class="section-title" data-es="Proyectos" data-en="Projects">Proyectos</h2>
-    <div class="projects-grid">
-      <!-- Proyecto ejemplo -->
+  <!-- SOBRE MÍ / TRAYECTORIA -->
+  <section id="sobre-mi" class="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy Marta, diseñadora especializada en UX/UI y Product Design. Mi trayectoria combina creatividad, análisis y pasión por mejorar la experiencia de usuario.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>2024 - Presente</h3>
+        <p>Product Designer en ILUNION Hotels, diseñando experiencias digitales y estrategias UX para 29 hoteles en España.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2023 - 2024</h3>
+        <p>Junior Frontend Developer y especialista UX/UI, apoyando al departamento de Digital Business en estrategias y contenidos digitales.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2020 - 2023</h3>
+        <p>Experiencia en Paid Media y maquetación CSS/SASS, gestionando campañas digitales y optimizando la presencia online de marcas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS DESTACADOS -->
+  <section id="proyectos" class="proyectos">
+    <h2>Proyectos destacados</h2>
+    <div class="project-grid">
       <div class="project-card">
-        <div class="project-media">
-          <video src="videos/proyecto1.mp4" muted autoplay loop playsinline></video>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title" data-es="Rediseño App Hotel" data-en="Hotel App Redesign">Rediseño App Hotel</h3>
-          <p class="project-role" data-es="Rol: UX/UI Designer" data-en="Role: UX/UI Designer">Rol: UX/UI Designer</p>
-          <p class="project-desc" data-es="Transformé la app del hotel para mejorar la reserva y la experiencia del usuario, incluyendo check-in digital y personalización." data-en="I redesigned the hotel app to enhance booking and user experience, including digital check-in and personalization.">Transformé la app del hotel para mejorar la reserva y la experiencia del usuario, incluyendo check-in digital y personalización.</p>
-          <ul class="project-tools">
-            <li>Figma</li>
-            <li>Adobe XD</li>
-            <li>Illustrator</li>
-          </ul>
+        <img src="https://via.placeholder.com/400x250.png?text=ILUNION+UX" alt="Proyecto ILUNION">
+        <div class="project-info">
+          <h3>Rediseño UX ILUNION Hotels</h3>
+          <p><strong>Reto:</strong> Mejorar la experiencia de reservas online.</p>
+          <p><strong>Solución:</strong> Nuevo flujo UX, diseño minimalista y accesible.</p>
+          <p><strong>Resultado:</strong> +25% conversión y satisfacción de usuario.</p>
+          <a href="#" class="btn-secondary">Ver proyecto</a>
         </div>
       </div>
 
-      <!-- Repite bloques de proyectos según tus proyectos existentes -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x250.png?text=Campaña+Digital" alt="Campaña digital">
+        <div class="project-info">
+          <h3>Campaña Digital Hoteles Urbanos</h3>
+          <p><strong>Reto:</strong> Aumentar visibilidad y reservas en temporada baja.</p>
+          <p><strong>Solución:</strong> Estrategia Paid Media y creatividades impactantes.</p>
+          <p><strong>Resultado:</strong> +18% reservas y engagement online.</p>
+          <a href="#" class="btn-secondary">Ver proyecto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS / SKILLS -->
+  <section id="servicios" class="servicios">
+    <h2>Servicios & Skills</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>UX/UI Design</h3>
+        <p>Diseño centrado en el usuario, prototipos y visual design minimalista.</p>
+      </div>
+      <div class="service-card">
+        <h3>Product Design</h3>
+        <p>Transformo ideas en productos digitales funcionales y atractivos.</p>
+      </div>
+      <div class="service-card">
+        <h3>UX Writing</h3>
+        <p>Textos claros y persuasivos que guían al usuario a interactuar.</p>
+      </div>
+      <div class="service-card">
+        <h3>Front-end básico</h3>
+        <p>HTML, CSS y JS para prototipos interactivos y funcionales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG / INSIGHTS -->
+  <section id="blog" class="blog">
+    <h2>Blog & Insights</h2>
+    <div class="blog-grid">
+      <article class="blog-post">
+        <h3>Últimas tendencias UX Writing 2025</h3>
+        <p>Cómo microtextos y narrativa persuasiva mejoran la experiencia de usuario.</p>
+        <a href="#" class="btn-secondary">Leer más</a>
+      </article>
+      <article class="blog-post">
+        <h3>Diseño de experiencias digitales premium</h3>
+        <p>Claves para elevar tu producto digital a nivel top de mercado.</p>
+        <a href="#" class="btn-secondary">Leer más</a>
+      </article>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <footer id="contact" class="footer">
-    <div class="footer-left">
-      <p>&copy; 2025 Marta Morales</p>
-      <p>Email: <a href="mailto:contact@marta.com">contact@marta.com</a></p>
-    </div>
-    <div class="footer-right">
-      <a href="https://linkedin.com/in/martamorales" target="_blank">LinkedIn</a>
-      <a href="https://github.com/martamoralesgr93" target="_blank">GitHub</a>
-      <a href="https://dribbble.com/martamorales" target="_blank">Dribbble</a>
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>¿Quieres colaborar o conocer más sobre mis proyectos? ¡Hablemos!</p>
+    <form action="#" class="contact-form">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu email" required>
+      <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+      <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Marta Morales. Todos los derechos reservados.</p>
+    <div class="social">
+      <a href="#">LinkedIn</a>
+      <a href="#">Behance</a>
+      <a href="#">GitHub</a>
     </div>
   </footer>
-
-  <script src="scripts.js"></script>
 </body>
 </html>
