@@ -7,123 +7,244 @@
 <title>Marta Morales | UX/UI & Product Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg-color: #f9f9f9;
-    --text-color: #1a1a1a;
-    --primary-color: #6C63FF;
-    --card-bg: #fff;
-    --overlay: rgba(0,0,0,0.5);
-  }
-  [data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #f0f0f0;
-    --card-bg: #1e1e1e;
-    --overlay: rgba(0,0,0,0.7);
-  }
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #1a1a1a;
+  --primary-color: #6C63FF;
+  --card-bg: #fff;
+  --overlay: rgba(0,0,0,0.4);
+  --transition: 0.3s ease;
+}
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --card-bg: #1e1e1e;
+  --overlay: rgba(0,0,0,0.7);
+}
+body {
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background var(--transition), color var(--transition);
+  scroll-behavior: smooth;
+}
 
-  body {
-    margin:0;
-    font-family: 'Roboto', sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: background 0.3s, color 0.3s;
-  }
+/* ===== Header y navegación ===== */
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding: 1rem 4rem;
+  background: var(--card-bg);
+  position: sticky; top:0; z-index:1000;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+  transition: background var(--transition), box-shadow var(--transition);
+}
+header h1 {
+  font-family:'Playfair Display', serif; 
+  font-size:1.8rem;
+  letter-spacing:1px;
+}
+nav {
+  display:flex; align-items:center; gap:1rem;
+  position: relative;
+}
+nav ul {
+  display:flex; list-style:none; gap:2rem; margin:0; padding:0;
+  transition: all 0.4s ease;
+}
+nav a {
+  text-decoration:none;
+  color:var(--text-color);
+  font-weight:500;
+  position: relative;
+}
+nav a::after {
+  content:'';
+  position:absolute; bottom:-3px; left:0; width:0; height:2px;
+  background: var(--primary-color); transition: width 0.3s;
+}
+nav a:hover::after { width:100%; }
+.theme-toggle, #hamburger {
+  cursor:pointer;
+  background:none; border:none;
+  color: var(--text-color);
+  font-size:1.4rem;
+  margin-left:1rem;
+}
+#hamburger {
+  display:none;
+  font-size:1.8rem;
+}
 
-  /* Header */
-  header {
-    display:flex; justify-content:space-between; align-items:center;
-    padding: 1rem 2rem;
-    background: var(--card-bg);
-    position: sticky;
-    top:0;
-    z-index:100;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  }
-  header h1 { font-family:'Playfair Display', serif; font-size:1.8rem; }
-  nav ul { display:flex; list-style:none; gap:1.5rem; margin:0; padding:0; }
-  nav a { text-decoration:none; color:var(--text-color); transition: color 0.3s; }
-  nav a:hover { color: var(--primary-color); }
-  .theme-toggle {
-    cursor:pointer;
-    font-weight:bold;
-    background:none;
-    border:none;
-    color: var(--text-color);
-    font-size:1rem;
-  }
+/* Hero */
+.hero {
+  padding:6rem 2rem 4rem 2rem;
+  text-align:center;
+}
+.hero h2 {
+  font-family:'Playfair Display', serif;
+  font-size:3rem;
+  margin-bottom:1rem;
+  line-height:1.2;
+}
+.hero p {
+  font-size:1.2rem;
+  max-width:700px;
+  margin:0 auto;
+  line-height:1.6;
+}
 
-  /* Hero o sección de introducción */
-  .hero {
-    padding:6rem 2rem 4rem 2rem;
-    text-align:center;
-  }
-  .hero h2 { font-family:'Playfair Display', serif; font-size:2.5rem; margin-bottom:1rem; }
-  .hero p { font-size:1.1rem; max-width:700px; margin:0 auto; }
+/* ===== Timeline/Línea de vida ===== */
+.timeline {
+  position: relative;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--primary-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  padding: 2rem;
+  position: relative;
+  width: 50%;
+  display:flex;
+  justify-content: flex-start;
+}
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; justify-content: flex-end; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  top: 2rem;
+  right: -10px;
+}
+.timeline-item.right::before { left: -10px; right:auto; }
+.timeline-content {
+  padding: 1rem 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  max-width:400px;
+  position: relative;
+}
+.timeline-content h4 { margin:0 0 0.5rem 0; font-family:'Playfair Display', serif; }
+.timeline-content p { margin:0; font-size:0.95rem; line-height:1.5; }
 
-  /* Sección de proyectos */
-  .projects-section {
-    padding: 4rem 2rem;
-  }
-  .projects-section h2 {
-    text-align:center; font-size:2rem; margin-bottom:3rem; font-family:'Playfair Display', serif;
-  }
-  .projects-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
-    gap:2rem;
-  }
-  .project-card {
-    position:relative;
-    overflow:hidden;
-    border-radius:12px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s;
-    opacity:0;
-    transform: translateY(30px);
-    background: var(--card-bg);
-  }
-  .project-card.in-view { opacity:1; transform:translateY(0); transition: transform 0.6s ease, opacity 0.6s ease; }
-  .project-card img { width:100%; display:block; transition: transform 0.5s ease; }
-  .project-card:hover img { transform:scale(1.05); }
-  .project-info {
-    position:absolute;
-    bottom:0;
-    width:100%;
-    padding:1.5rem;
-    background: linear-gradient(to top, var(--overlay), transparent);
-    color:#fff;
-  }
-  .project-info h3 { font-family:'Playfair Display', serif; margin-bottom:0.5rem; font-size:1.25rem; }
-  .project-info p { font-size:0.9rem; margin:0.3rem 0; }
-  .cta-btn {
-    display:inline-block;
-    margin-top:1rem;
-    padding:0.6rem 1.2rem;
-    background: var(--primary-color);
-    color:#fff;
-    border-radius:6px;
-    transition: background 0.3s ease;
-  }
-  .cta-btn:hover { background:#5952cc; }
-  .parallax { background-attachment: fixed; background-size: cover; background-position: center; }
+/* ===== Projects ===== */
+.projects-section {
+  padding: 4rem 2rem;
+}
+.projects-section h2 {
+  text-align:center; font-size:2rem; margin-bottom:3rem; font-family:'Playfair Display', serif;
+}
+.projects-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+  gap:2.5rem;
+}
+.project-card {
+  position: relative;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+}
+.project-card img {
+  width:100%;
+  display:block;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-card:hover img { transform: scale(1.05); }
+.project-info {
+  position: absolute;
+  bottom:0; left:0; right:0;
+  padding:1.5rem;
+  background: linear-gradient(to top, var(--overlay), transparent 60%);
+  color: #fff;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateY(100%);
+  opacity:0;
+}
+.project-card:hover .project-info { transform: translateY(0); opacity:1; }
+.project-info h3 { font-family:'Playfair Display', serif; margin-bottom:0.5rem; font-size:1.3rem; }
+.project-info p { font-size:0.95rem; margin:0.3rem 0; line-height:1.4; }
+.cta-btn {
+  display:inline-block;
+  margin-top:0.5rem;
+  padding:0.6rem 1.2rem;
+  background: var(--primary-color);
+  color:#fff;
+  border-radius:6px;
+  transition: background 0.3s ease;
+  text-decoration:none;
+}
+.cta-btn:hover { background:#5952cc; }
 
-  /* Footer */
-  footer {
-    padding:2rem;
-    text-align:center;
-    font-size:0.8rem;
-    background: var(--card-bg);
-    margin-top:4rem;
-  }
-  footer a { color: var(--primary-color); text-decoration:none; margin:0 0.5rem; }
-  footer a:hover { color:#5952cc; }
+/* ===== Brainstorm ===== */
+.brainstorm {
+  position: relative;
+  height: 300px;
+  margin:4rem 0;
+  display:flex; align-items:center; justify-content:center;
+  flex-wrap: wrap;
+  gap:2rem;
+}
+.brainstorm span {
+  font-family:'Playfair Display', serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color: var(--primary-color);
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
 
-  /* Responsive */
-  @media(max-width:768px){
-    .project-info { padding:1rem; }
-    .projects-section h2 { font-size:1.75rem; }
-    .hero h2 { font-size:2rem; }
-  }
+/* ===== Footer ===== */
+footer {
+  padding:2rem;
+  text-align:center;
+  font-size:0.8rem;
+  background: var(--card-bg);
+  margin-top:4rem;
+}
+footer a { color: var(--primary-color); text-decoration:none; margin:0 0.5rem; }
+footer a:hover { color:#5952cc; }
+
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  header { padding:1rem 2rem; }
+}
+@media(max-width:768px){
+  #hamburger { display:block; }
+  nav ul { flex-direction: column; position: absolute; top:60px; right:2rem; width:200px; background: var(--card-bg); display:none; padding:1rem; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.15); }
+  nav ul.show { display:flex; }
+  nav li { margin-bottom:1rem; }
+  .timeline::after { left: 20px; }
+  .timeline-item.right, .timeline-item.left { left:0; width:100%; margin-bottom:2rem; justify-content:flex-start; }
+  .timeline-item::before { left:10px; right:auto; }
+  .timeline-content { max-width:100%; }
+}
+
+/* ===== Scroll Animations ===== */
+.project-card, .timeline-item { opacity:0; transform: translateY(30px); transition: transform 0.6s ease, opacity 0.6s ease; }
+.project-card.in-view, .timeline-item.in-view { opacity:1; transform: translateY(0); }
 </style>
 </head>
 <body data-theme="light">
@@ -131,55 +252,97 @@
 <header>
   <h1>Marta Morales</h1>
   <nav>
-    <ul>
+    <ul id="menu">
       <li><a href="#hero">Inicio</a></li>
+      <li><a href="#timeline">Mi CV</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://www.canva.com/design/DUMMY_CV_LINK" target="_blank">CV</a></li>
     </ul>
+    <button id="hamburger">☰</button>
   </nav>
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark/Light</button>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 </header>
 
 <section id="hero" class="hero">
   <h2>Diseñadora de Negocio Digital y UX/UI</h2>
-  <p>Transformo ideas en experiencias digitales elegantes y funcionales, combinando diseño, estrategia y tecnología para crear soluciones de alto impacto.</p>
+  <p>Transformo ideas en experiencias digitales elegantes y funcionales, combinando diseño, estrategia y tecnología para crear soluciones premium y memorables.</p>
+</section>
+
+<section id="timeline" class="timeline">
+  <div class="timeline-item left">
+    <div class="timeline-content">
+      <h4>2025 - Actual</h4>
+      <p>Product Designer en ILUNION Hotels: Experiencia digital y UX/UI en proyectos tech de alto impacto.</p>
+    </div>
+  </div>
+  <div class="timeline-item right">
+    <div class="timeline-content">
+      <h4>2023 - 2025</h4>
+      <p>Junior UX/UI Designer: Creación de interfaces, prototipos y estrategia digital para clientes corporativos.</p>
+    </div>
+  </div>
+  <div class="timeline-item left">
+    <div class="timeline-content">
+      <h4>2021 - 2023</h4>
+      <p>Proyectos freelance y consultoría en UX, UI y marketing digital para PYMEs y startups.</p>
+    </div>
+  </div>
 </section>
 
 <section id="proyectos" class="projects-section">
   <h2>Proyectos Destacados</h2>
   <div class="projects-grid">
 
-    <div class="project-card parallax" 
-         style="background-image:url('https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill,q_auto:good/ilunion_redesign.jpg');">
+    <div class="project-card">
+      <img src="https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill,q_auto:good/ilunion_redesign.jpg" alt="ILUNION Rediseño UX">
       <div class="project-info">
-        <h3>Transformando la experiencia de reservas hoteleras en ILUNION Hotels</h3>
-        <p><strong>Reto:</strong> Simplificar el flujo de reservas en 29 hoteles y aumentar la satisfacción del usuario.</p>
-        <p><strong>Proceso:</strong> Investigación, wireframes estratégicos y prototipado iterativo en Figma.</p>
-        <p><strong>Resultado:</strong> +25% en conversión y feedback positivo de clientes.</p>
-        <a href="#" class="cta-btn">Explora la transformación UX</a>
+        <h3>ILUNION Hotels: Rediseño UX</h3>
+        <p><strong>Reto:</strong> Simplificar reservas en 29 hoteles, mejorando la experiencia de usuario y conversión.</p>
+        <p><strong>Proceso:</strong> Investigación, prototipado avanzado, testing A/B y optimización con IA.</p>
+        <p><strong>Resultado:</strong> +45% en conversión y feedback altamente positivo.</p>
+        <a href="#" class="cta-btn">Explora el caso ILUNION</a>
       </div>
     </div>
 
-    <div class="project-card parallax" 
-         style="background-image:url('https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=800');">
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Campaña Digital Hoteles">
       <div class="project-info">
-        <h3>Campaña Digital para Hoteles Urbanos</h3>
-        <p><strong>Reto:</strong> Incrementar reservas en temporada baja, mejorando la visibilidad de la marca.</p>
-        <p><strong>Proceso:</strong> Diseño de ads, testing A/B y optimización de campañas digitales.</p>
-        <p><strong>Resultado:</strong> +18% de reservas en 3 meses y engagement destacado en redes.</p>
+        <h3>Campaña Digital Hoteles Urbanos</h3>
+        <p><strong>Reto:</strong> Incrementar reservas en temporada baja y mejorar visibilidad de marca.</p>
+        <p><strong>Proceso:</strong> Ads creativos, optimización y experimentación CRO.</p>
+        <p><strong>Resultado:</strong> +18% reservas en 3 meses, engagement top.</p>
         <a href="#" class="cta-btn">Descubre el caso completo</a>
       </div>
     </div>
 
-    <!-- Agregar más proyectos siguiendo la misma estructura -->
+    <div class="project-card">
+      <img src="https://images.pexels.com/photos/3184652/pexels-photo-3184652.jpeg?auto=compress&cs=tinysrgb&w=800" alt="We Are Actions SaaS">
+      <div class="project-info">
+        <h3>We Are Actions: SaaS & Paid Media</h3>
+        <p><strong>Reto:</strong> Crear identidad digital para PYMEs y optimizar campañas online.</p>
+        <p><strong>Proceso:</strong> Landing pages, prototipos Figma, HTML/CSS y métricas GA4.</p>
+        <p><strong>Resultado:</strong> Mejora del flujo de trabajo y +18% engagement.</p>
+        <a href="#" class="cta-btn">Ver proyecto We Are Actions</a>
+      </div>
+    </div>
 
   </div>
+</section>
+
+<section class="brainstorm">
+  <span>Creatividad</span>
+  <span>Estrategia</span>
+  <span>UX</span>
+  <span>UI</span>
+  <span>Innovación</span>
+  <span>Impacto</span>
 </section>
 
 <section id="contacto" style="padding:4rem 2rem; text-align:center;">
   <h2>Contacto</h2>
   <p>¿Quieres colaborar o conocer más sobre mi trabajo? Escríbeme y conversemos sobre tu proyecto.</p>
-  <a href="mailto:marta@example.com" class="cta-btn">Enviar mensaje</a>
+  <a href="mailto:mmoralesgr93@gmail.com" class="cta-btn">Enviar mensaje</a>
 </section>
 
 <footer>
@@ -197,16 +360,21 @@ function toggleTheme() {
   body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
 }
 
-// Animación de entrada al hacer scroll (fade-in + slide-up)
-const cards = document.querySelectorAll('.project-card');
+// Scroll animation
+const cards = document.querySelectorAll('.project-card, .timeline-item');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    }
+    if(entry.isIntersecting) entry.target.classList.add('in-view');
   });
 }, { threshold:0.1 });
 cards.forEach(card => observer.observe(card));
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
 </script>
 
 </body>
