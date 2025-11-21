@@ -12,68 +12,66 @@
   --text-color: #1a1a1a;
   --primary-color: #6C63FF;
   --card-bg: #fff;
-  --overlay: rgba(0,0,0,0.4);
+  --overlay: rgba(0,0,0,0.5);
   --transition: 0.3s ease;
 }
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --card-bg: #1e1e1e;
-  --overlay: rgba(0,0,0,0.7);
-}
+
 body {
   margin:0;
   font-family: 'Roboto', sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  transition: background var(--transition), color var(--transition);
   scroll-behavior: smooth;
 }
 
-/* ===== Header y navegación ===== */
+/* Header */
 header {
-  display:flex; justify-content:space-between; align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   padding: 1rem 4rem;
   background: var(--card-bg);
-  position: sticky; top:0; z-index:1000;
-  box-shadow:0 4px 20px rgba(0,0,0,0.08);
-  transition: background var(--transition), box-shadow var(--transition);
+  position: sticky; top:0; z-index:100;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 header h1 {
-  font-family:'Playfair Display', serif; 
-  font-size:1.8rem;
-  letter-spacing:1px;
+  font-family:'Playfair Display', serif; font-size:1.8rem; margin:0;
 }
-nav {
-  display:flex; align-items:center; gap:1rem;
-  position: relative;
-}
+nav { position: relative; }
 nav ul {
-  display:flex; list-style:none; gap:2rem; margin:0; padding:0;
-  transition: all 0.4s ease;
+  display:flex;
+  list-style:none;
+  gap:2rem;
+  margin:0;
+  padding:0;
 }
 nav a {
   text-decoration:none;
   color:var(--text-color);
   font-weight:500;
   position: relative;
+  transition: color var(--transition);
 }
 nav a::after {
   content:'';
-  position:absolute; bottom:-3px; left:0; width:0; height:2px;
-  background: var(--primary-color); transition: width 0.3s;
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-3px;
+  left:0;
+  background: var(--primary-color);
+  transition: width var(--transition);
 }
 nav a:hover::after { width:100%; }
-.theme-toggle, #hamburger {
-  cursor:pointer;
-  background:none; border:none;
-  color: var(--text-color);
-  font-size:1.4rem;
-  margin-left:1rem;
-}
+
+/* Hamburger */
 #hamburger {
   display:none;
   font-size:1.8rem;
+  cursor:pointer;
+  background:none;
+  border:none;
+  color: var(--text-color);
 }
 
 /* Hero */
@@ -85,16 +83,16 @@ nav a:hover::after { width:100%; }
   font-family:'Playfair Display', serif;
   font-size:3rem;
   margin-bottom:1rem;
-  line-height:1.2;
+  color: var(--primary-color);
 }
 .hero p {
-  font-size:1.2rem;
+  font-size:1.15rem;
   max-width:700px;
   margin:0 auto;
   line-height:1.6;
 }
 
-/* ===== Timeline/Línea de vida ===== */
+/* Timeline */
 .timeline {
   position: relative;
   padding: 4rem 2rem;
@@ -115,11 +113,9 @@ nav a:hover::after { width:100%; }
   padding: 2rem;
   position: relative;
   width: 50%;
-  display:flex;
-  justify-content: flex-start;
 }
 .timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; justify-content: flex-end; }
+.timeline-item.right { left: 50%; }
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -130,22 +126,19 @@ nav a:hover::after { width:100%; }
   top: 2rem;
   right: -10px;
 }
-.timeline-item.right::before { left: -10px; right:auto; }
+.timeline-item.right::before { left: -10px; }
 .timeline-content {
   padding: 1rem 2rem;
   background: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  max-width:400px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   position: relative;
 }
 .timeline-content h4 { margin:0 0 0.5rem 0; font-family:'Playfair Display', serif; }
 .timeline-content p { margin:0; font-size:0.95rem; line-height:1.5; }
 
-/* ===== Projects ===== */
-.projects-section {
-  padding: 4rem 2rem;
-}
+/* Projects */
+.projects-section { padding: 4rem 2rem; }
 .projects-section h2 {
   text-align:center; font-size:2rem; margin-bottom:3rem; font-family:'Playfair Display', serif;
 }
@@ -178,9 +171,9 @@ nav a:hover::after { width:100%; }
   color: #fff;
   transition: transform 0.5s ease, opacity 0.5s ease;
   transform: translateY(100%);
-  opacity:0;
+  opacity: 0;
 }
-.project-card:hover .project-info { transform: translateY(0); opacity:1; }
+.project-card:hover .project-info { transform: translateY(0); opacity: 1; }
 .project-info h3 { font-family:'Playfair Display', serif; margin-bottom:0.5rem; font-size:1.3rem; }
 .project-info p { font-size:0.95rem; margin:0.3rem 0; line-height:1.4; }
 .cta-btn {
@@ -195,7 +188,7 @@ nav a:hover::after { width:100%; }
 }
 .cta-btn:hover { background:#5952cc; }
 
-/* ===== Brainstorm ===== */
+/* Brainstorm */
 .brainstorm {
   position: relative;
   height: 300px;
@@ -216,7 +209,7 @@ nav a:hover::after { width:100%; }
   50% { transform: translateY(-20px); }
 }
 
-/* ===== Footer ===== */
+/* Footer */
 footer {
   padding:2rem;
   text-align:center;
@@ -227,27 +220,34 @@ footer {
 footer a { color: var(--primary-color); text-decoration:none; margin:0 0.5rem; }
 footer a:hover { color:#5952cc; }
 
-/* ===== Responsive ===== */
-@media(max-width:1024px){
-  header { padding:1rem 2rem; }
-}
+/* Responsive */
 @media(max-width:768px){
+  header { padding:1rem 2rem; }
   #hamburger { display:block; }
-  nav ul { flex-direction: column; position: absolute; top:60px; right:2rem; width:200px; background: var(--card-bg); display:none; padding:1rem; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.15); }
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top:60px; right:2rem;
+    width:220px;
+    background: var(--card-bg);
+    display:none;
+    padding:1rem;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+  }
   nav ul.show { display:flex; }
   nav li { margin-bottom:1rem; }
   .timeline::after { left: 20px; }
-  .timeline-item.right, .timeline-item.left { left:0; width:100%; margin-bottom:2rem; justify-content:flex-start; }
+  .timeline-item.right, .timeline-item.left { left:0; width:100%; margin-bottom:2rem; }
   .timeline-item::before { left:10px; right:auto; }
-  .timeline-content { max-width:100%; }
 }
 
-/* ===== Scroll Animations ===== */
+/* Scroll Animations */
 .project-card, .timeline-item { opacity:0; transform: translateY(30px); transition: transform 0.6s ease, opacity 0.6s ease; }
 .project-card.in-view, .timeline-item.in-view { opacity:1; transform: translateY(0); }
 </style>
 </head>
-<body data-theme="light">
+<body>
 
 <header>
   <h1>Marta Morales</h1>
@@ -261,7 +261,6 @@ footer a:hover { color:#5952cc; }
     </ul>
     <button id="hamburger">☰</button>
   </nav>
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 </header>
 
 <section id="hero" class="hero">
@@ -354,13 +353,7 @@ footer a:hover { color:#5952cc; }
 </footer>
 
 <script>
-// Dark/Light Mode Toggle
-function toggleTheme() {
-  const body = document.body;
-  body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
-}
-
-// Scroll animation
+// Scroll animations
 const cards = document.querySelectorAll('.project-card, .timeline-item');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -369,13 +362,10 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold:0.1 });
 cards.forEach(card => observer.observe(card));
 
-// Hamburger menu
+// Hamburger
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
-hamburger.addEventListener('click', () => {
-  menu.classList.toggle('show');
-});
+hamburger.addEventListener('click', () => menu.classList.toggle('show'));
 </script>
-
 </body>
 </html>
