@@ -11,24 +11,41 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; scroll-behavior:smooth; }
 body { background:#fefefe; color:#111; line-height:1.6; overflow-x:hidden; }
 
-/* HEADER */
+/* HEADER - Menú moderno */
 header {
-  position:fixed; top:0; width:100%; background:#fff; display:flex; justify-content:space-between;
-  align-items:center; padding:1rem 2rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); z-index:1000;
+  position:fixed; top:0; width:100%; z-index:1000;
+  background:rgba(255,255,255,0.95); backdrop-filter:blur(10px);
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+nav {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem 3rem; transition:0.3s;
+  position: relative; /* importante para menú móvil */
+}
+.logo { font-size:1.8rem; font-weight:700; background:linear-gradient(90deg,#0072ff,#00c6ff); -webkit-background-clip:text; color:transparent; }
+nav ul { display:flex; list-style:none; gap:2.5rem; transition:0.3s; }
+nav ul li a {
+  font-weight:500;
+  padding:0.3rem 0;
+  position:relative;
   transition:0.3s;
 }
-header .logo { font-size:1.8rem; font-weight:700; background:linear-gradient(90deg,#0072ff,#00c6ff); -webkit-background-clip:text; color:transparent; }
-nav ul { display:flex; list-style:none; gap:2rem; transition:0.3s; }
-nav ul li a { font-weight:500; transition:0.3s; }
-nav ul li a:hover { color:#0072ff; }
-.menu-toggle { display:none; font-size:2rem; background:none; cursor:pointer; }
+nav ul li a::after {
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:0;
+  left:0;
+  background:#0072ff;
+  transition:0.3s;
+}
+nav ul li a:hover::after { width:100%; }
+.menu-toggle { display:none; font-size:2rem; background:none; border:none; cursor:pointer; color:#0072ff; transition:0.3s; }
+.menu-toggle:hover { transform:scale(1.1); }
 
 /* HERO */
-.hero {
-  min-height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
-  padding:2rem 1rem; background:linear-gradient(135deg, #e0f7ff, #f0faff);
-  opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards;
-}
+.hero { min-height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem 1rem; background:linear-gradient(135deg, #e0f7ff, #f0faff); opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; }
 .hero h1 { font-size:3rem; margin-bottom:0.5rem; background:linear-gradient(90deg,#0072ff,#00c6ff); -webkit-background-clip:text; color:transparent; }
 .hero h2 { font-size:1.5rem; margin-bottom:1rem; color:#333; }
 .hero p { max-width:600px; margin-bottom:2rem; color:#555; font-size:1.1rem; }
@@ -38,17 +55,13 @@ nav ul li a:hover { color:#0072ff; }
 /* SECTIONS */
 section { padding:6rem 2rem; max-width:1000px; margin:0 auto; opacity:0; transform:translateY(30px); }
 section h2 { font-size:2.2rem; margin-bottom:2rem; text-align:center; color:#0072ff; position:relative; }
-section h2::after {
-  content:""; position:absolute; width:60px; height:4px; background:#00c6ff; left:50%; transform:translateX(-50%); bottom:-10px; border-radius:2px;
-}
+section h2::after { content:""; position:absolute; width:60px; height:4px; background:#00c6ff; left:50%; transform:translateX(-50%); bottom:-10px; border-radius:2px; }
 
 /* TIMELINE */
 .timeline { display:flex; flex-direction:column; gap:2rem; position:relative; padding-left:20px; }
 .timeline::before { content:""; position:absolute; left:9px; top:0; height:100%; width:2px; background:#00c6ff; }
 .timeline-item { position:relative; background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.05); transition:0.5s; }
-.timeline-item::before {
-  content:""; position:absolute; left:-11px; top:20px; width:20px; height:20px; background:#0072ff; border-radius:50%; border:3px solid #fff;
-}
+.timeline-item::before { content:""; position:absolute; left:-11px; top:20px; width:20px; height:20px; background:#0072ff; border-radius:50%; border:3px solid #fff; }
 .timeline-item:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
 .timeline-item h3 { color:#0072ff; font-size:1.3rem; margin-bottom:0.3rem; }
 .timeline-item h4 { font-size:1rem; margin-bottom:0.5rem; color:#555; }
@@ -57,12 +70,9 @@ section h2::after {
 /* PERFIL */
 .profile { background:linear-gradient(135deg,#e0f7ff,#f0faff); padding:2rem; border-radius:12px; text-align:center; max-width:700px; margin:0 auto; font-size:1.1rem; box-shadow:0 10px 25px rgba(0,0,0,0.05); }
 
-/* PROYECTOS AL ESTILO APPLE */
+/* PROYECTOS */
 .projects { display:flex; flex-direction:column; gap:3rem; margin-top:3rem; }
-.project-card {
-  display:flex; flex-direction:row; gap:2rem; border-radius:15px; overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08); background:#fff; transition:0.5s;
-}
+.project-card { display:flex; flex-direction:row; gap:2rem; border-radius:15px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.08); background:#fff; transition:0.5s; }
 .project-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.12); }
 .project-card img { width:50%; object-fit:cover; }
 .project-content { padding:2rem; display:flex; flex-direction:column; justify-content:center; }
@@ -79,16 +89,32 @@ section h2::after {
 /* FOOTER */
 footer { text-align:center; padding:2rem; color:#555; background:#f1f1f1; margin-top:4rem; }
 
-/* RESPONSIVE */
+/* RESPONSIVE MENU */
 @media(max-width:1024px){
   section { padding:5rem 1.5rem; }
   .hero h1 { font-size:2.5rem; }
   .hero h2 { font-size:1.4rem; }
 }
 @media(max-width:768px){
-  nav ul { display:none; flex-direction:column; background:#fff; position:absolute; top:100%; right:0; width:220px; box-shadow:-2px 5px 15px rgba(0,0,0,0.1); padding:1rem 0; }
-  nav ul.show { display:flex; }
-  .menu-toggle { display:block; }
+  nav ul {
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 220px;
+    max-width: 80vw;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -2px 5px 15px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  nav ul.show {
+    transform: translateX(0);
+  }
+  .menu-toggle { display: block; }
+  nav ul li a { font-size:1.1rem; text-align:center; display:block; }
   .hero h1 { font-size:2.2rem; }
   .hero h2 { font-size:1.3rem; }
   .timeline { padding-left:15px; }
@@ -104,21 +130,18 @@ footer { text-align:center; padding:2rem; color:#555; background:#f1f1f1; margin
 }
 
 /* ANIMACIONES */
-@keyframes fadeUp {
-  to { opacity:1; transform:translateY(0); }
-}
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 .fade-in { opacity:0; transform:translateY(30px); transition:1s ease-out; }
 .fade-in.visible { opacity:1; transform:translateY(0); }
 
-/* BOTONES */
-button { outline:none; border:none; }
-
+button { outline:none; border:none; cursor:pointer; }
 </style>
 </head>
 <body>
 
 <header>
   <nav>
+    <div class="logo">Marta Morales</div>
     <ul>
       <li><a href="#formacion">Formación</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
@@ -131,7 +154,6 @@ button { outline:none; border:none; }
 </header>
 
 <section class="hero fade-in">
-  <h1>Marta Morales</h1>
   <h2>UX/UI & Product Designer</h2>
   <p>Transformo tus ideas en productos digitales que se pueden vender. Apasionada por el diseño, la innovación tecnológica y el trabajo en equipo.</p>
   <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Contactar</button>
@@ -246,7 +268,17 @@ button { outline:none; border:none; }
 // Menu hamburguesa responsive
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('nav ul');
-toggle.addEventListener('click', () => { menu.classList.toggle('show'); });
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+
+// Cerrar menú al hacer clic en enlace
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('show');
+  });
+});
 
 // Animaciones scroll
 const faders = document.querySelectorAll('.fade-in');
@@ -256,5 +288,6 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer){
 }, appearOptions);
 faders.forEach(fader => { appearOnScroll.observe(fader); });
 </script>
+
 </body>
 </html>
