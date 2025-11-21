@@ -1,16 +1,17 @@
-// Dark Mode toggle
-const toggleDark = document.querySelector('.toggle-dark');
-toggleDark.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
+// Scroll suave al contacto
+document.getElementById('contactBtn').addEventListener('click', () => {
+  document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});
 });
 
-// Animación de entrada de secciones
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      sec.classList.add('visible');
-    }
-  });
+// Botón enviar email
+document.getElementById('emailBtn').addEventListener('click', () => {
+  window.location.href = "mailto:marta.morales@email.com";
+});
+
+// Menú hamburguesa responsive
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navUl.classList.toggle('active');
 });

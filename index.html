@@ -3,369 +3,259 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portafolio de Marta Morales, UX/UI & Product Designer. Experiencia digital y proyectos tech de alto impacto.">
+<meta name="description" content="Marta Morales | UX/UI & Product Designer. CV interactivo y portfolio digital.">
 <title>Marta Morales | UX/UI & Product Designer</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg-color: #f9f9f9;
-  --text-color: #1a1a1a;
-  --primary-color: #6C63FF;
-  --card-bg: #fff;
-  --overlay: rgba(0,0,0,0.5);
-  --transition: 0.3s ease;
-}
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; scroll-behavior:smooth; }
+body { background:#fefefe; color:#111; line-height:1.6; overflow-x:hidden; }
 
-body {
-  margin:0;
-  font-family: 'Roboto', sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  scroll-behavior: smooth;
-}
-
-/* Header */
+/* HEADER */
 header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding: 1rem 4rem;
-  background: var(--card-bg);
-  position: sticky; top:0; z-index:100;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  position:fixed; top:0; width:100%; background:#fff; display:flex; justify-content:space-between;
+  align-items:center; padding:1rem 2rem; box-shadow:0 2px 10px rgba(0,0,0,0.08); z-index:1000;
+  transition:0.3s;
 }
-header h1 {
-  font-family:'Playfair Display', serif; font-size:1.8rem; margin:0;
-}
-nav { position: relative; }
-nav ul {
-  display:flex;
-  list-style:none;
-  gap:2rem;
-  margin:0;
-  padding:0;
-}
-nav a {
-  text-decoration:none;
-  color:var(--text-color);
-  font-weight:500;
-  position: relative;
-  transition: color var(--transition);
-}
-nav a::after {
-  content:'';
-  position:absolute;
-  width:0;
-  height:2px;
-  bottom:-3px;
-  left:0;
-  background: var(--primary-color);
-  transition: width var(--transition);
-}
-nav a:hover::after { width:100%; }
+header .logo { font-size:1.8rem; font-weight:700; background:linear-gradient(90deg,#0072ff,#00c6ff); -webkit-background-clip:text; color:transparent; }
+nav ul { display:flex; list-style:none; gap:2rem; transition:0.3s; }
+nav ul li a { font-weight:500; transition:0.3s; }
+nav ul li a:hover { color:#0072ff; }
+.menu-toggle { display:none; font-size:2rem; background:none; cursor:pointer; }
 
-/* Hamburger */
-#hamburger {
-  display:none;
-  font-size:1.8rem;
-  cursor:pointer;
-  background:none;
-  border:none;
-  color: var(--text-color);
-}
-
-/* Hero */
+/* HERO */
 .hero {
-  padding:6rem 2rem 4rem 2rem;
-  text-align:center;
+  min-height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+  padding:2rem 1rem; background:linear-gradient(135deg, #e0f7ff, #f0faff);
+  opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards;
 }
-.hero h2 {
-  font-family:'Playfair Display', serif;
-  font-size:3rem;
-  margin-bottom:1rem;
-  color: var(--primary-color);
-}
-.hero p {
-  font-size:1.15rem;
-  max-width:700px;
-  margin:0 auto;
-  line-height:1.6;
+.hero h1 { font-size:3rem; margin-bottom:0.5rem; background:linear-gradient(90deg,#0072ff,#00c6ff); -webkit-background-clip:text; color:transparent; }
+.hero h2 { font-size:1.5rem; margin-bottom:1rem; color:#333; }
+.hero p { max-width:600px; margin-bottom:2rem; color:#555; font-size:1.1rem; }
+.hero button { padding:1rem 2.5rem; background:#0072ff; color:#fff; border-radius:50px; font-weight:600; box-shadow:0 8px 20px rgba(0,114,255,0.3); transition:0.3s; cursor:pointer; }
+.hero button:hover { transform:translateY(-3px); box-shadow:0 12px 25px rgba(0,114,255,0.4); }
+
+/* SECTIONS */
+section { padding:6rem 2rem; max-width:1000px; margin:0 auto; opacity:0; transform:translateY(30px); }
+section h2 { font-size:2.2rem; margin-bottom:2rem; text-align:center; color:#0072ff; position:relative; }
+section h2::after {
+  content:""; position:absolute; width:60px; height:4px; background:#00c6ff; left:50%; transform:translateX(-50%); bottom:-10px; border-radius:2px;
 }
 
-/* Timeline */
-.timeline {
-  position: relative;
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background-color: var(--primary-color);
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.timeline-item {
-  padding: 2rem;
-  position: relative;
-  width: 50%;
-}
-.timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; }
+/* TIMELINE */
+.timeline { display:flex; flex-direction:column; gap:2rem; position:relative; padding-left:20px; }
+.timeline::before { content:""; position:absolute; left:9px; top:0; height:100%; width:2px; background:#00c6ff; }
+.timeline-item { position:relative; background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.05); transition:0.5s; }
 .timeline-item::before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  top: 2rem;
-  right: -10px;
+  content:""; position:absolute; left:-11px; top:20px; width:20px; height:20px; background:#0072ff; border-radius:50%; border:3px solid #fff;
 }
-.timeline-item.right::before { left: -10px; }
-.timeline-content {
-  padding: 1rem 2rem;
-  background: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  position: relative;
-}
-.timeline-content h4 { margin:0 0 0.5rem 0; font-family:'Playfair Display', serif; }
-.timeline-content p { margin:0; font-size:0.95rem; line-height:1.5; }
+.timeline-item:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
+.timeline-item h3 { color:#0072ff; font-size:1.3rem; margin-bottom:0.3rem; }
+.timeline-item h4 { font-size:1rem; margin-bottom:0.5rem; color:#555; }
+.timeline-item p { font-size:1rem; color:#333; margin-bottom:0.3rem; }
 
-/* Projects */
-.projects-section { padding: 4rem 2rem; }
-.projects-section h2 {
-  text-align:center; font-size:2rem; margin-bottom:3rem; font-family:'Playfair Display', serif;
-}
-.projects-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
-  gap:2.5rem;
-}
+/* PERFIL */
+.profile { background:linear-gradient(135deg,#e0f7ff,#f0faff); padding:2rem; border-radius:12px; text-align:center; max-width:700px; margin:0 auto; font-size:1.1rem; box-shadow:0 10px 25px rgba(0,0,0,0.05); }
+
+/* PROYECTOS AL ESTILO APPLE */
+.projects { display:flex; flex-direction:column; gap:3rem; margin-top:3rem; }
 .project-card {
-  position: relative;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  cursor: pointer;
+  display:flex; flex-direction:row; gap:2rem; border-radius:15px; overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08); background:#fff; transition:0.5s;
 }
-.project-card img {
-  width:100%;
-  display:block;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.project-card:hover img { transform: scale(1.05); }
-.project-info {
-  position: absolute;
-  bottom:0; left:0; right:0;
-  padding:1.5rem;
-  background: linear-gradient(to top, var(--overlay), transparent 60%);
-  color: #fff;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  transform: translateY(100%);
-  opacity: 0;
-}
-.project-card:hover .project-info { transform: translateY(0); opacity: 1; }
-.project-info h3 { font-family:'Playfair Display', serif; margin-bottom:0.5rem; font-size:1.3rem; }
-.project-info p { font-size:0.95rem; margin:0.3rem 0; line-height:1.4; }
-.cta-btn {
-  display:inline-block;
-  margin-top:0.5rem;
-  padding:0.6rem 1.2rem;
-  background: var(--primary-color);
-  color:#fff;
-  border-radius:6px;
-  transition: background 0.3s ease;
-  text-decoration:none;
-}
-.cta-btn:hover { background:#5952cc; }
+.project-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.12); }
+.project-card img { width:50%; object-fit:cover; }
+.project-content { padding:2rem; display:flex; flex-direction:column; justify-content:center; }
+.project-content h3 { font-size:1.5rem; color:#0072ff; margin-bottom:0.5rem; }
+.project-content h4 { font-size:1.1rem; margin-bottom:1rem; color:#555; font-weight:500; }
+.project-content p { font-size:1rem; color:#333; line-height:1.5; }
 
-/* Brainstorm */
-.brainstorm {
-  position: relative;
-  height: 300px;
-  margin:4rem 0;
-  display:flex; align-items:center; justify-content:center;
-  flex-wrap: wrap;
-  gap:2rem;
-}
-.brainstorm span {
-  font-family:'Playfair Display', serif;
-  font-size:1.5rem;
-  font-weight:700;
-  color: var(--primary-color);
-  animation: float 4s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
+/* CONTACTO */
+.contact { text-align:center; display:flex; flex-direction:column; gap:1rem; max-width:400px; margin:0 auto; }
+.contact a { color:#0072ff; font-weight:500; }
+.contact button { padding:1rem 2rem; background:#00c6ff; color:#fff; border-radius:50px; font-weight:600; box-shadow:0 8px 20px rgba(0,198,255,0.3); transition:0.3s; cursor:pointer; }
+.contact button:hover { transform:translateY(-3px); box-shadow:0 12px 25px rgba(0,198,255,0.4); }
 
-/* Footer */
-footer {
-  padding:2rem;
-  text-align:center;
-  font-size:0.8rem;
-  background: var(--card-bg);
-  margin-top:4rem;
-}
-footer a { color: var(--primary-color); text-decoration:none; margin:0 0.5rem; }
-footer a:hover { color:#5952cc; }
+/* FOOTER */
+footer { text-align:center; padding:2rem; color:#555; background:#f1f1f1; margin-top:4rem; }
 
-/* Responsive */
+/* RESPONSIVE */
+@media(max-width:1024px){
+  section { padding:5rem 1.5rem; }
+  .hero h1 { font-size:2.5rem; }
+  .hero h2 { font-size:1.4rem; }
+}
 @media(max-width:768px){
-  header { padding:1rem 2rem; }
-  #hamburger { display:block; }
-  nav ul {
-    flex-direction: column;
-    position: absolute;
-    top:60px; right:2rem;
-    width:220px;
-    background: var(--card-bg);
-    display:none;
-    padding:1rem;
-    border-radius:10px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.15);
-  }
+  nav ul { display:none; flex-direction:column; background:#fff; position:absolute; top:100%; right:0; width:220px; box-shadow:-2px 5px 15px rgba(0,0,0,0.1); padding:1rem 0; }
   nav ul.show { display:flex; }
-  nav li { margin-bottom:1rem; }
-  .timeline::after { left: 20px; }
-  .timeline-item.right, .timeline-item.left { left:0; width:100%; margin-bottom:2rem; }
-  .timeline-item::before { left:10px; right:auto; }
+  .menu-toggle { display:block; }
+  .hero h1 { font-size:2.2rem; }
+  .hero h2 { font-size:1.3rem; }
+  .timeline { padding-left:15px; }
+  .project-card { flex-direction:column; }
+  .project-card img { width:100%; height:200px; }
+  .project-content { padding:1.5rem; }
+}
+@media(max-width:480px){
+  .hero h1 { font-size:1.8rem; }
+  .hero h2 { font-size:1.1rem; }
+  .timeline-item { padding:1rem; }
+  .project-card img { height:180px; }
 }
 
-/* Scroll Animations */
-.project-card, .timeline-item { opacity:0; transform: translateY(30px); transition: transform 0.6s ease, opacity 0.6s ease; }
-.project-card.in-view, .timeline-item.in-view { opacity:1; transform: translateY(0); }
+/* ANIMACIONES */
+@keyframes fadeUp {
+  to { opacity:1; transform:translateY(0); }
+}
+.fade-in { opacity:0; transform:translateY(30px); transition:1s ease-out; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* BOTONES */
+button { outline:none; border:none; }
+
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Marta Morales</h1>
+  <div class="logo">Marta Morales</div>
   <nav>
-    <ul id="menu">
-      <li><a href="#hero">Inicio</a></li>
-      <li><a href="#timeline">Mi CV</a></li>
+    <ul>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#perfil">Perfil</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li><a href="https://www.canva.com/design/DUMMY_CV_LINK" target="_blank">CV</a></li>
     </ul>
-    <button id="hamburger">☰</button>
+    <button class="menu-toggle">☰</button>
   </nav>
 </header>
 
-<section id="hero" class="hero">
-  <h2>Diseñadora de Negocio Digital y UX/UI</h2>
-  <p>Transformo ideas en experiencias digitales elegantes y funcionales, combinando diseño, estrategia y tecnología para crear soluciones premium y memorables.</p>
+<section class="hero fade-in">
+  <h1>Marta Morales</h1>
+  <h2>UX/UI & Product Designer</h2>
+  <p>Transformo tus ideas en productos digitales que se pueden vender. Apasionada por el diseño, la innovación tecnológica y el trabajo en equipo.</p>
+  <button onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Contactar</button>
 </section>
 
-<section id="timeline" class="timeline">
-  <div class="timeline-item left">
-    <div class="timeline-content">
-      <h4>2025 - Actual</h4>
-      <p>Product Designer en ILUNION Hotels: Experiencia digital y UX/UI en proyectos tech de alto impacto.</p>
+<section id="formacion" class="fade-in">
+  <h2>Formación Académica</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Grado Universitario en Bellas Artes</h3>
+      <h4>2020</h4>
     </div>
-  </div>
-  <div class="timeline-item right">
-    <div class="timeline-content">
-      <h4>2023 - 2025</h4>
-      <p>Junior UX/UI Designer: Creación de interfaces, prototipos y estrategia digital para clientes corporativos.</p>
+    <div class="timeline-item">
+      <h3>Grado Superior en Fotografía y Diseño de Imagen</h3>
+      <h4>2016</h4>
     </div>
-  </div>
-  <div class="timeline-item left">
-    <div class="timeline-content">
-      <h4>2021 - 2023</h4>
-      <p>Proyectos freelance y consultoría en UX, UI y marketing digital para PYMEs y startups.</p>
+    <div class="timeline-item">
+      <h3>Formación adicional</h3>
+      <p>Bootcamp de Desarrollo Web (2023)</p>
+      <p>Máster en Formación del Profesorado (2024)</p>
     </div>
   </div>
 </section>
 
-<section id="proyectos" class="projects-section">
+<section id="experiencia" class="fade-in">
+  <h2>Experiencia Profesional</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>ILUNION Hotels</h3>
+      <h4>Sep 2024 - Actualmente | Diseñadora de Negocio Digital</h4>
+      <p><strong>Responsabilidades:</strong> Desarrollo de imagen visual y comercial en turismo sostenible, integración de comunicación y marketing con el área de negocio.</p>
+      <p><strong>Logros:</strong> Duplicación de objetivos de venta y desarrollo de web comercial 100% accesible.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Centro de Estudios Financieros</h3>
+      <h4>2024 | Web Developer y UX/UI Designer</h4>
+      <p><strong>Objetivo:</strong> Mejorar la interactividad y accesibilidad de portales web para aumentar la satisfacción del usuario.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>We are Actions</h3>
+      <h4>2020-2024 | Graphic Designer y Community Manager</h4>
+      <p><strong>Funciones:</strong> Digitalización de pequeñas empresas, gestión de proyectos UX/UI para medianas y grandes empresas.</p>
+      <p><strong>Resultados:</strong> Incremento de proyectos y beneficios para las cuentas gestionadas.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>AIMPLAS</h3>
+      <h4>2019</h4>
+      <p><strong>Actividades:</strong> Branding, diseño gráfico y comunicación para proyectos de investigación científica en sostenibilidad y reciclaje.</p>
+      <p><strong>Aprendizaje:</strong> Comunicación efectiva para captar inversores y mejorar la comunicación interna.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Freelance Creative</h3>
+      <h4>2016-2019</h4>
+      <p>Trabajo independiente creando material visual, contenido y liderando campañas para empresas emergentes.</p>
+      <p>Desarrollo de habilidades comerciales y posicionamiento en el mercado creativo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="perfil" class="fade-in">
+  <h2>Perfil Profesional</h2>
+  <div class="profile">
+    <p>Apasionada del diseño y las nuevas tecnologías, con gusto por los retos y el trabajo en equipo. Comparto conocimiento y transformo ideas en productos digitales que sean funcionales y comercialmente viables.</p>
+    <p><strong>Lema:</strong> "Transformo tus ideas en productos digitales que se pueden vender".</p>
+  </div>
+</section>
+
+<section id="proyectos" class="fade-in">
   <h2>Proyectos Destacados</h2>
-  <div class="projects-grid">
-
+  <div class="projects">
     <div class="project-card">
-      <img src="https://res.cloudinary.com/demo/image/upload/w_800,h_600,c_fill,q_auto:good/ilunion_redesign.jpg" alt="ILUNION Rediseño UX">
-      <div class="project-info">
-        <h3>ILUNION Hotels: Rediseño UX</h3>
-        <p><strong>Reto:</strong> Simplificar reservas en 29 hoteles, mejorando la experiencia de usuario y conversión.</p>
-        <p><strong>Proceso:</strong> Investigación, prototipado avanzado, testing A/B y optimización con IA.</p>
-        <p><strong>Resultado:</strong> +45% en conversión y feedback altamente positivo.</p>
-        <a href="#" class="cta-btn">Explora el caso ILUNION</a>
+      <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Proyecto Hotel Urbano">
+      <div class="project-content">
+        <h3>Proyecto Hotel Urbano</h3>
+        <h4>UX/UI Design</h4>
+        <p>Rediseño de experiencia digital y mejoras en la accesibilidad, aumentando la conversión y satisfacción del cliente en plataformas web de reservas.</p>
       </div>
     </div>
-
     <div class="project-card">
-      <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Campaña Digital Hoteles">
-      <div class="project-info">
-        <h3>Campaña Digital Hoteles Urbanos</h3>
-        <p><strong>Reto:</strong> Incrementar reservas en temporada baja y mejorar visibilidad de marca.</p>
-        <p><strong>Proceso:</strong> Ads creativos, optimización y experimentación CRO.</p>
-        <p><strong>Resultado:</strong> +18% reservas en 3 meses, engagement top.</p>
-        <a href="#" class="cta-btn">Descubre el caso completo</a>
+      <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg" alt="App de Reservas">
+      <div class="project-content">
+        <h3>App de Reservas</h3>
+        <h4>Product Design</h4>
+        <p>Optimización de interfaz y flujo de usuario, logrando un incremento de engagement en más del 35% y mejoras significativas en la usabilidad.</p>
       </div>
     </div>
-
     <div class="project-card">
-      <img src="https://images.pexels.com/photos/3184652/pexels-photo-3184652.jpeg?auto=compress&cs=tinysrgb&w=800" alt="We Are Actions SaaS">
-      <div class="project-info">
-        <h3>We Are Actions: SaaS & Paid Media</h3>
-        <p><strong>Reto:</strong> Crear identidad digital para PYMEs y optimizar campañas online.</p>
-        <p><strong>Proceso:</strong> Landing pages, prototipos Figma, HTML/CSS y métricas GA4.</p>
-        <p><strong>Resultado:</strong> Mejora del flujo de trabajo y +18% engagement.</p>
-        <a href="#" class="cta-btn">Ver proyecto We Are Actions</a>
+      <img src="https://images.pexels.com/photos/3184319/pexels-photo-3184319.jpeg" alt="Campaña Branding">
+      <div class="project-content">
+        <h3>Campaña Branding</h3>
+        <h4>UX & Graphic Design</h4>
+        <p>Diseño integral de identidad visual y digitalización de la marca, logrando mayor notoriedad y consistencia en la comunicación digital.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<section class="brainstorm">
-  <span>Creatividad</span>
-  <span>Estrategia</span>
-  <span>UX</span>
-  <span>UI</span>
-  <span>Innovación</span>
-  <span>Impacto</span>
-</section>
-
-<section id="contacto" style="padding:4rem 2rem; text-align:center;">
+<section id="contacto" class="fade-in">
   <h2>Contacto</h2>
-  <p>¿Quieres colaborar o conocer más sobre mi trabajo? Escríbeme y conversemos sobre tu proyecto.</p>
-  <a href="mailto:mmoralesgr93@gmail.com" class="cta-btn">Enviar mensaje</a>
+  <div class="contact">
+    <p>Teléfono: <a href="tel:+34600111222">+34 600 111 222</a></p>
+    <p>Email: <a href="mailto:marta.morales@email.com">marta.morales@email.com</a></p>
+    <button onclick="window.location='mailto:marta.morales@email.com'">Enviar Email</button>
+  </div>
 </section>
 
 <footer>
-  © 2025 Marta Morales. Todos los derechos reservados.
-  <br>
-  <a href="https://linkedin.com/in/martamoralesgr93" target="_blank">LinkedIn</a> | 
-  <a href="https://www.behance.net/martamoralesgr93" target="_blank">Behance</a> | 
-  <a href="https://github.com/martamoralesgr93" target="_blank">GitHub</a>
+  &copy; 2025 Marta Morales | UX/UI & Product Designer
 </footer>
 
 <script>
-// Scroll animations
-const cards = document.querySelectorAll('.project-card, .timeline-item');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('in-view');
-  });
-}, { threshold:0.1 });
-cards.forEach(card => observer.observe(card));
+// Menu hamburguesa responsive
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('nav ul');
+toggle.addEventListener('click', () => { menu.classList.toggle('show'); });
 
-// Hamburger
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
-hamburger.addEventListener('click', () => menu.classList.toggle('show'));
+// Animaciones scroll
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2, rootMargin:"0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, appearOptions);
+faders.forEach(fader => { appearOnScroll.observe(fader); });
 </script>
 </body>
 </html>
