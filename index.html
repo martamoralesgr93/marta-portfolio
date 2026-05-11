@@ -255,34 +255,153 @@
 
       <article id="project-academic" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
         <div class="work-summary">
-          <h2 class="title" data-i18n="p2-title">CEF — Herramienta de gestión académica</h2>
-          <p class="professional-context" data-i18n="p2-context-line">Proyecto desarrollado durante mi experiencia en CEF como UX/UI &amp; Front-end</p>
-          <p class="subtitle" data-i18n="p2-subtitle">Centralización de la gestión académica</p>
-          <p data-i18n="p2-summary">Rediseño de la gestión logística para centralizar procesos y reducir errores administrativos.</p>
+          <h2 class="title">CEF — Herramienta de Gestión Académica</h2>
+          <p class="professional-context">Product Design · UX Strategy · Accesibilidad · Herramientas internas · Educación digital</p>
+          <p class="subtitle">Herramienta de gestión académica</p>
+          <p>Rediseño UX de una herramienta de gestión académica para mejorar claridad operativa, accesibilidad y eficiencia de uso en entornos educativos digitales con alta carga de información.</p>
           <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
         </div>
 
         <div class="detail" style="display: none;">
           <div class="detail-block">
-            <h4 class="detail-label" data-i18n="label-context">Contexto</h4>
-            <p data-i18n="p2-context">Plataforma B2B/B2E de una institución educativa cuyo fin era modernizar la operativa diaria y la toma de decisiones compartida.</p>
+            <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
+            <p>CEF — Centro de Estudios Financieros gestionaba distintos entornos digitales utilizados por alumnos y equipos internos para acceder a información académica, documentación y procesos relacionados con la gestión educativa.</p>
+            <p>La herramienta presentaba varios problemas de experiencia:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">exceso de carga visual,</li>
+              <li style="margin-bottom: 0.25rem;">jerarquía poco clara,</li>
+              <li style="margin-bottom: 0.25rem;">navegación compleja,</li>
+              <li style="margin-bottom: 0.25rem;">y dificultades de accesibilidad.</li>
+            </ul>
+            <p>La plataforma debía dar respuesta a usuarios con distintos niveles de familiaridad digital, dentro de un entorno donde la claridad cognitiva y la eficiencia eran especialmente importantes.</p>
+            <p>Además, el sistema había evolucionado de forma progresiva durante años, generando inconsistencias visuales y funcionales entre módulos, patrones de navegación y componentes.</p>
+            <p>El proyecto requería equilibrar:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">claridad de uso,</li>
+              <li style="margin-bottom: 0.25rem;">viabilidad técnica,</li>
+              <li style="margin-bottom: 0.25rem;">accesibilidad,</li>
+              <li style="margin-bottom: 0.25rem;">y continuidad operativa dentro de un entorno académico activo.</li>
+            </ul>
+            <p>Mi rol dentro del proyecto combinaba:</p>
+            <ul style="margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">UX/UI,</li>
+              <li style="margin-bottom: 0.25rem;">análisis de usabilidad,</li>
+              <li style="margin-bottom: 0.25rem;">accesibilidad,</li>
+              <li style="margin-bottom: 0.25rem;">diseño de interfaces,</li>
+              <li style="margin-bottom: 0.25rem;">y colaboración con desarrollo frontend.</li>
+            </ul>
 
-            <h4 class="detail-label" data-i18n="label-problem">Problema</h4>
-            <p data-i18n="p2-problem">Silos funcionales: la matriculación, el control de asistencia y la reserva de aulas vivían en sistemas separados, causando bloqueos administrativos y pérdida de información.</p>
+            <h4 class="detail-label">T — TASK · El reto</h4>
+            <p>El objetivo era mejorar la experiencia de uso de la herramienta académica reduciendo complejidad y facilitando la interacción en tareas frecuentes dentro del entorno educativo.</p>
+            <p>La solución debía:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">mejorar legibilidad y navegación,</li>
+              <li style="margin-bottom: 0.25rem;">facilitar el acceso a información clave,</li>
+              <li style="margin-bottom: 0.25rem;">reducir fricción cognitiva,</li>
+              <li style="margin-bottom: 0.25rem;">cumplir criterios de accesibilidad WCAG,</li>
+              <li style="margin-bottom: 0.25rem;">y mantener coherencia dentro del ecosistema existente.</li>
+            </ul>
+            <p>El reto no consistía únicamente en modernizar la interfaz visual, sino en reorganizar la experiencia para que usuarios con distintos perfiles pudieran completar tareas de forma más intuitiva y eficiente.</p>
 
-            <h4 class="detail-label" data-i18n="label-hypothesis">Hipótesis e Insight</h4>
-            <p data-i18n="p2-hypothesis">La fricción nace de arquitecturas no unificadas. Centralizar la interacción a través de un modelo de 'calendario inteligente' como única fuente de verdad simplificará los procesos críticos.</p>
-          
-            <h4 class="detail-label" data-i18n="label-solution">Solución y Decisiones</h4>
-            <p data-i18n="p2-solution">Se conceptualizó una arquitectura basada en eventos temporales donde cada interacción asume permisos dinámicos (docente u alumno). Esto desplazó el diseño basado en listas complejas hacia un formato hiper-contextual ligado al tiempo.</p>
-            <div class="project-block center no-bg full-width desktop-img-grid">
+            <h4 class="detail-label">A — ACTION · Lo que hice y por qué</h4>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">1. Research & Usability Analysis</h5>
+            <p>Comencé analizando los principales puntos de fricción dentro de la herramienta mediante observación de flujos, revisión heurística y análisis funcional de los módulos más utilizados.</p>
+            <p>El análisis mostró varios problemas recurrentes:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">exceso de densidad visual,</li>
+              <li style="margin-bottom: 0.25rem;">jerarquías inconsistentes,</li>
+              <li style="margin-bottom: 0.25rem;">dificultad para localizar acciones frecuentes,</li>
+              <li style="margin-bottom: 0.25rem;">patrones de navegación poco claros,</li>
+              <li style="margin-bottom: 0.25rem;">y problemas de accesibilidad en contraste, estructura semántica y lectura.</li>
+            </ul>
+            <p>También revisé cómo otras plataformas educativas y herramientas SaaS organizaban:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">navegación,</li>
+              <li style="margin-bottom: 0.25rem;">dashboards,</li>
+              <li style="margin-bottom: 0.25rem;">estructuras de información,</li>
+              <li style="margin-bottom: 0.25rem;">y componentes operativos.</li>
+            </ul>
+            <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--text); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);">
+              "El problema no era la cantidad de información, sino cómo estaba organizada y priorizada."
+            </blockquote>
+
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">2. Problem Framing</h5>
+            <p>La herramienta había crecido de forma funcional, pero no desde una lógica de experiencia unificada.</p>
+            <p>Muchos módulos respondían a necesidades concretas del negocio o de gestión académica, pero la experiencia global carecía de consistencia y claridad para el usuario final.</p>
+            <p>Existía una desconexión entre:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">estructura técnica,</li>
+              <li style="margin-bottom: 0.25rem;">necesidades operativas,</li>
+              <li style="margin-bottom: 0.25rem;">y comprensión real del usuario.</li>
+            </ul>
+            <p>La interfaz obligaba al usuario a interpretar demasiadas decisiones visuales antes de completar tareas simples.</p>
+
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">3. UX Strategy & Information Architecture</h5>
+            <p>A partir del análisis, trabajé una reorganización de la experiencia priorizando:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">claridad cognitiva,</li>
+              <li style="margin-bottom: 0.25rem;">jerarquía visual,</li>
+              <li style="margin-bottom: 0.25rem;">consistencia,</li>
+              <li style="margin-bottom: 0.25rem;">y facilidad de uso.</li>
+            </ul>
+            <p>La estrategia se centró en:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">simplificar navegación,</li>
+              <li style="margin-bottom: 0.25rem;">reorganizar módulos según prioridad de uso,</li>
+              <li style="margin-bottom: 0.25rem;">mejorar escaneabilidad,</li>
+              <li style="margin-bottom: 0.25rem;">y reducir carga visual innecesaria.</li>
+            </ul>
+            <p>También redefiní estructuras de contenido, patrones de interacción, y comportamientos de componentes para generar una experiencia más coherente dentro del sistema.</p>
+
+            <div class="project-block center desktop-img-grid" style="margin: 2rem 0;">
               <div class="media">
-                <img src="academic-1.png" alt="Dashboard Calendario Educativo" class="zoom-target">
+                <img src="academic-1.png" alt="Dashboard Calendario Educativo" class="zoom-target" style="border: 1px solid var(--divider); border-radius: var(--radius-md);">
               </div>
             </div>
-          
-            <h4 class="detail-label" data-i18n="label-impact">Impacto Esperado</h4>
-            <p data-i18n="p2-impact">Rediseño de la gestión logística para centralizar la información y reducir errores administrativos.</p>
+
+            <h5 style="margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">4. Accessibility & Inclusive Design</h5>
+            <p>La accesibilidad fue una parte clave del proyecto. Trabajé mejoras relacionadas con:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">contraste y legibilidad,</li>
+              <li style="margin-bottom: 0.25rem;">jerarquía semántica,</li>
+              <li style="margin-bottom: 0.25rem;">navegación por teclado,</li>
+              <li style="margin-bottom: 0.25rem;">estados interactivos,</li>
+              <li style="margin-bottom: 0.25rem;">y consistencia visual.</li>
+            </ul>
+            <p>El objetivo no era únicamente cumplir criterios WCAG, sino construir una experiencia más usable y comprensible para todos los perfiles de usuario. Muchas decisiones visuales y estructurales se tomaron desde una lógica de accesibilidad y reducción de esfuerzo cognitivo.</p>
+
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">5. Collaboration with Development</h5>
+            <p>Trabajé junto al equipo de desarrollo para asegurar que las propuestas UX fueran viables técnicamente y coherentes con las limitaciones del sistema existente.</p>
+            <p>El proyecto requería equilibrio constante entre:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">mejora de experiencia,</li>
+              <li style="margin-bottom: 0.25rem;">constraints técnicos,</li>
+              <li style="margin-bottom: 0.25rem;">continuidad operativa,</li>
+              <li style="margin-bottom: 0.25rem;">y tiempos de implementación.</li>
+            </ul>
+            <p>La colaboración con frontend fue especialmente importante para mantener consistencia entre diseño y comportamiento real de la plataforma.</p>
+
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">6. Design System Thinking</h5>
+            <p>Parte del trabajo consistió en reducir inconsistencias entre módulos y establecer una lógica más sistemática dentro de la interfaz.</p>
+            <p>Se trabajaron:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">patrones reutilizables,</li>
+              <li style="margin-bottom: 0.25rem;">jerarquías comunes,</li>
+              <li style="margin-bottom: 0.25rem;">comportamientos consistentes,</li>
+              <li style="margin-bottom: 0.25rem;">y reglas visuales compartidas.</li>
+            </ul>
+            <p>El objetivo era construir una experiencia más escalable y mantenible dentro de un entorno digital complejo y en evolución constante.</p>
+
+            <h4 class="detail-label" style="margin-top: 2.5rem;">R — RESULT · Impacto</h4>
+            <p>La reorganización UX permitió mejorar claridad de navegación, reducir fricción en tareas frecuentes, aumentar coherencia entre módulos, y facilitar la comprensión de la interfaz.</p>
+            <p>Además:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">se mejoró la accesibilidad general de la plataforma,</li>
+              <li style="margin-bottom: 0.25rem;">se redujo la carga visual y cognitiva,</li>
+              <li style="margin-bottom: 0.25rem;">y se estableció una estructura más consistente para futuras evoluciones del sistema.</li>
+            </ul>
+            <p>El proyecto también ayudó a reforzar la colaboración entre diseño y desarrollo dentro del entorno digital educativo.</p>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--text);"><em>📌 Algunos datos específicos internos y métricas de uso son confidenciales. Los resultados reflejan validaciones funcionales, observación de comportamiento y mejoras implementadas dentro del entorno académico digital.</em></p>
           </div>
         </div>
       </article>
@@ -557,7 +676,7 @@
 
   <div class="fab-menu" id="fabMenu" role="menu" aria-hidden="true">
     <button role="menuitem" onclick="openAndScrollProject(&#39;project-ilunion&#39;)" data-i18n="p1-title">ILUNION Hotels — Acceso al Motor de Reservas</button>
-    <button role="menuitem" onclick="openAndScrollProject(&#39;project-academic&#39;)" data-i18n="p2-title">CEF — Herramienta de gestión académica</button>
+    <button role="menuitem" onclick="openAndScrollProject(&#39;project-academic&#39;)" data-i18n="p2-title">CEF — Herramienta de Gestión Académica</button>
     <button role="menuitem" onclick="openAndScrollProject('project-offers')" data-i18n="p3-title">ILUNION Hotels — Componente de Ofertas y Conversión</button>
   </div>
 
