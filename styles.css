@@ -788,20 +788,22 @@ button {
 .fab {
   display: none !important;
   position: fixed;
-  bottom: 24px;
+  bottom: 32px;
   right: 24px;
-  background: #ffffff; /* White background */
-  color: var(--text); /* Black text */
-  border: 1px solid var(--divider); /* Minimal border */
-  border-radius: 12px;
-  padding: 10px 16px;
+  background: #ffffff;
+  color: var(--text);
+  border: 1.5px solid var(--divider); /* More pronounced border/bevel */
+  border-radius: 999px; /* Pronounced pill shape */
+  padding: 12px 32px; /* Double the visual presence */
+  min-width: 160px; /* Force the pill width */
   display: flex;
   align-items: center;
-  gap: 8px; /* Tighter gap for better alignment */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); /* Very subtle shadow */
+  justify-content: center; /* Center content in the wider pill */
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   z-index: 10001;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 768px) {
@@ -828,16 +830,17 @@ button {
 }
 
 .fab-logo {
-  height: 20px; /* Increased size per user request */
+  height: 28px; /* Significantly larger logo */
   width: auto;
   object-fit: contain;
   filter: none !important;
 }
 
 .fab-text {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .fab-menu {
