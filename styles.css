@@ -1353,6 +1353,62 @@ button {
     letter-spacing: 0.1em;
   }
 
+  /* STAR Layout for Experience */
+  .star-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .star-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .star-label {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    border: 1px solid var(--divider);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: #fcfcfc;
+    margin-top: 2px;
+  }
+
+  .star-item p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .timeline-header {
+    margin-bottom: 8px;
+  }
+
+  .timeline-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .timeline-company {
+    font-weight: 600;
+    color: var(--text);
+  }
+
   /* Specific Carousel to Vertical Stack for ILUNION on Desktop */
   #carousel-ilunion,
   #carousel-offers {
