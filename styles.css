@@ -788,20 +788,20 @@ button {
 .fab {
   display: none !important; /* Hidden by default (Desktop) */
   position: fixed;
-  bottom: 32px;
+  bottom: 24px;
   right: 24px;
   background: var(--text);
   color: #fff;
   border: none;
-  border-radius: 999px;
-  padding: 14px 24px;
+  border-radius: 12px; /* Geometric corners matching design system */
+  padding: 12px 20px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  gap: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   z-index: 10001;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 768px) {
@@ -828,15 +828,15 @@ button {
 }
 
 .fab-logo {
-  height: 18px;
-  filter: invert(1);
+  height: 20px;
+  width: auto;
+  object-fit: contain;
 }
 
 .fab-text {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .fab-menu {
@@ -1865,23 +1865,22 @@ img.zoom-target {
 
   .hero {
     grid-template-columns: 1fr;
-    text-align: left; /* Shift to left alignment for tech look */
-    justify-items: flex-start;
+    text-align: center; /* Restore centered balance for mobile */
+    justify-items: center;
     min-height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 100px 24px 64px; /* More top padding for header breathing room */
+    justify-content: center;
+    align-items: center;
+    padding: 80px 24px 56px; /* Optimized spacing */
     margin: 0;
     box-sizing: border-box;
   }
 
   .avatar-frame {
-    width: 160px; /* Stronger logo presence */
-    height: 160px;
-    margin-bottom: 24px;
-    margin-left: -4px; /* Slight optical correction */
+    width: 120px; /* More compact for better screen fit */
+    height: 120px;
+    margin-bottom: 20px;
   }
   
   .hero-eyebrow {
@@ -1893,8 +1892,8 @@ img.zoom-target {
   .hero-description {
     max-width: 100%;
     gap: 12px;
-    text-align: left;
-    align-items: flex-start;
+    text-align: center;
+    align-items: center;
   }
 
   .hero-description p {
@@ -1909,10 +1908,9 @@ img.zoom-target {
   }
 
   .profile-name {
-    font-size: 42px !important; /* Impactful title */
+    font-size: 38px !important;
     line-height: 1.1 !important;
     margin-bottom: 16px !important;
-    letter-spacing: -0.05em !important;
   }
 
   .section:not(.hero) {
