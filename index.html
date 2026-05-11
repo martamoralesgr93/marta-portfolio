@@ -42,7 +42,7 @@
   </header>
 
   <div class="container-shift">
-    <main class="container">
+    <main class="container" id="mainContent">
       <section class="hero">
         <div class="avatar-frame">
           <img src="logo.png" class="avatar" alt="Marta Morales">
@@ -85,26 +85,24 @@
       </section>
 
       <section id="work" class="section">
-        <!-- (Rest of content remains the same...) -->
-        <!-- ... I will use a larger replacement to ensure correct wrapping ... -->
-      </section>
-    </main>
-  </div>
-      <p class="eyebrow" data-i18n="work-eyebrow">Proyectos seleccionados</p>
+        <p class="eyebrow" data-i18n="work-eyebrow">Proyectos seleccionados</p>
+        
+        <article id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+          <div class="work-summary">
+            <h2 class="title">ILUNION Hotels — Acceso al Motor de Reservas</h2>
+            <p class="professional-context">Product Design · CRO · UX Strategy · Customer Journey · Ecommerce hotelero</p>
+            <p class="subtitle">Rediseño estratégico del acceso al motor de reservas</p>
+            <p>Rediseño estratégico del acceso al motor de reservas para reducir fricción, mejorar la claridad del customer journey y optimizar la conversión directa dentro del ecosistema digital de ILUNION Hotels.</p>
+            <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
+          </div>
 
-      <article id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
-        <div class="work-summary">
-          <h2 class="title">ILUNION Hotels — Acceso al Motor de Reservas</h2>
-          <p class="professional-context">Product Design · CRO · UX Strategy · Customer Journey · Ecommerce hotelero</p>
-          <p class="subtitle">Rediseño estratégico del acceso al motor de reservas</p>
-          <p>Rediseño estratégico del acceso al motor de reservas para reducir fricción, mejorar la claridad del customer journey y optimizar la conversión directa dentro del ecosistema digital de ILUNION Hotels.</p>
-          <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
-        </div>
+          <div class="detail" style="display: none;">
+            <div class="detail-block">
+              <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
+              <p>En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra, pero el acceso al motor presentaba fricción dentro del customer journey digital.</p>
+              <!-- (Full detail content continues...) -->
+              <!-- I'll keep the rest of the file content in my memory and only replace the broken parts -->
 
-        <div class="detail" style="display: none;">
-          <div class="detail-block">
-            <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
-            <p>En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra, pero el acceso al motor presentaba fricción dentro del customer journey digital.</p>
             <p>El componente convivía con múltiples objetivos de negocio:</p>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
               <li style="margin-bottom: 0.25rem;">promociones,</li>
@@ -687,12 +685,8 @@
         </div>
       </div>
     </section>
-  <div class="container-shift">
-    <main class="container" id="mainContent">
-      <!-- (Previous Hero and Work sections are here...) -->
-      <!-- ... Restoring the rest of the main content ... -->
     </main>
-    
+
     <footer class="footer">
       <div class="container">
         <p class="disclaimer" data-i18n="disclaimer">Los proyectos mostrados han sido desarrollados en el contexto de mi experiencia profesional. Todas las marcas y logotipos pertenecen a sus respectivos propietarios.</p>
