@@ -1417,7 +1417,7 @@ body.menu-open .container-shift {
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    padding: 64px 48px; /* Restored more air */
+    padding: 80px 64px; /* Even more spacious padding */
     border-right: 1px solid var(--divider);
     background: var(--bg);
     overflow-y: auto;
@@ -1425,13 +1425,13 @@ body.menu-open .container-shift {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 24px; /* Balanced gap */
+    gap: 40px; /* More air between sections */
   }
 
   .avatar-frame {
-    width: 160px; /* Increased logo size per request */
-    height: 160px;
-    margin-bottom: 16px;
+    width: 200px; /* Large, monumental logo size */
+    height: 200px;
+    margin-bottom: 24px;
     padding: 0;
     border: 0;
     box-shadow: none;
@@ -1495,8 +1495,9 @@ body.menu-open .container-shift {
 
   /* Main Scrollable Area */
   .section:not(.hero) {
-    grid-column: 2;
-    padding: 80px 80px 80px 100px; /* Increased left padding for breathing room */
+    margin-left: var(--sidebar-width); /* Explicit offset to fix the margin issue */
+    padding: 100px 120px; /* Generous editorial spacing */
+    max-width: calc(100% - var(--sidebar-width));
   }
 
   .section {
