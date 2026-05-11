@@ -813,12 +813,13 @@ button {
 .fab:active { transform: scale(0.96); }
 
 .fab.active {
-  transform: translateY(-10px) rotate(90deg);
-  background: #ff3b30;
+  transform: translateY(-8px);
+  background: var(--text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .fab.active .fab-content { opacity: 0; }
-.fab.active .fab-close { display: block; transform: rotate(-90deg); }
+.fab.active .fab-close { display: block; }
 
 .fab-close {
   display: none;
