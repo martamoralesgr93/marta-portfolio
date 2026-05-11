@@ -24,7 +24,7 @@
 
   --container-mobile: 390px;
   --container-desktop: 1440px;
-  --sidebar-width: 400px;
+  --sidebar-width: 420px;
   --content-max: 800px;
   --bg-soft: #f9f9f9;
   --accent: #111111;
@@ -1415,9 +1415,9 @@ body.menu-open .container-shift {
     position: fixed;
     top: 0;
     left: 0;
-    width: 400px;
+    width: var(--sidebar-width);
     height: 100vh;
-    padding: 48px 40px; /* Reduced padding for more vertical space */
+    padding: 64px 48px; /* Restored more air */
     border-right: 1px solid var(--divider);
     background: var(--bg);
     overflow-y: auto;
@@ -1425,13 +1425,13 @@ body.menu-open .container-shift {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 16px; /* Tightened gap between sections */
+    gap: 24px; /* Balanced gap */
   }
 
   .avatar-frame {
-    width: 130px; /* Scaled down logo */
-    height: 130px;
-    margin-bottom: 8px; /* Closer to text */
+    width: 160px; /* Increased logo size per request */
+    height: 160px;
+    margin-bottom: 16px;
     padding: 0;
     border: 0;
     box-shadow: none;
@@ -1496,7 +1496,7 @@ body.menu-open .container-shift {
   /* Main Scrollable Area */
   .section:not(.hero) {
     grid-column: 2;
-    padding: 64px 80px; /* Reduced top padding from 100px to 64px */
+    padding: 80px 80px 80px 100px; /* Increased left padding for breathing room */
   }
 
   .section {
@@ -2043,7 +2043,7 @@ img.zoom-target {
 /* Fix desktop layout: offset footer by sidebar width */
 @media (min-width: 1024px) {
   .footer {
-    margin-left: 360px;
+    margin-left: var(--sidebar-width);
     border-top: 1px solid var(--divider);
     padding: 100px 80px;
     background: rgba(0,0,0,0.02);
