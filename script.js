@@ -45,6 +45,21 @@ function toggleFab() {
   }
 }
 
+function toggleNavProjects() {
+  const list = document.getElementById('navProjectsList');
+  const trigger = document.getElementById('proyectosTrigger');
+  
+  const isActive = list.classList.contains('active');
+  
+  if (isActive) {
+    list.classList.remove('active');
+    trigger.classList.remove('active');
+  } else {
+    list.classList.add('active');
+    trigger.classList.add('active');
+  }
+}
+
 function scrollCarousel(id, direction) {
   const container = document.getElementById(id);
   if (!container) return;

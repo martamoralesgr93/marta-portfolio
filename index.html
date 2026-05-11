@@ -63,7 +63,16 @@
         <p class="hero-subtitle" data-i18n="hero-subtitle">Transformo problemas complejos en soluciones digitales que conectan las necesidades del usuario con los objetivos de crecimiento.</p>
 
         <div class="side-nav">
-          <a href="#work" data-i18n="nav-work">Proyectos</a>
+          <div class="nav-projects-container">
+            <button class="nav-main-link" onclick="toggleNavProjects()" id="proyectosTrigger">
+              <span data-i18n="nav-work">Proyectos</span>
+            </button>
+            <ul class="nav-projects-list" id="navProjectsList">
+              <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">ILUNION Hotels — Motor</a></li>
+              <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-academic')" class="nav-project-link">CEF — Gestión Académica</a></li>
+              <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-offers')" class="nav-project-link">ILUNION Hotels — Ofertas</a></li>
+            </ul>
+          </div>
           <a href="#experience" data-i18n="nav-experience-short">CV</a>
           <a href="#about" data-i18n="nav-about">Sobre mí</a>
           <a href="#contact" data-i18n="nav-contact">Contacto</a>
