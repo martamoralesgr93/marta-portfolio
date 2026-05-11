@@ -1417,7 +1417,7 @@ body.menu-open .container-shift {
     left: 0;
     width: 400px;
     height: 100vh;
-    padding: 64px;
+    padding: 48px 40px; /* Reduced padding for more vertical space */
     border-right: 1px solid var(--divider);
     background: var(--bg);
     overflow-y: auto;
@@ -1425,13 +1425,13 @@ body.menu-open .container-shift {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 32px;
+    gap: 16px; /* Tightened gap between sections */
   }
 
   .avatar-frame {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 24px;
+    width: 130px; /* Scaled down logo */
+    height: 130px;
+    margin-bottom: 8px; /* Closer to text */
     padding: 0;
     border: 0;
     box-shadow: none;
@@ -1446,9 +1446,9 @@ body.menu-open .container-shift {
   }
 
   .profile-name {
-    font-size: 48px;
-    line-height: 1;
-    margin-bottom: 16px;
+    font-size: 32px; /* More elegant, compact title */
+    line-height: 1.1;
+    margin-bottom: 8px;
     font-weight: 700;
     letter-spacing: -0.04em;
   }
@@ -1462,11 +1462,11 @@ body.menu-open .container-shift {
   }
 
   .hero-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.2em;
+    font-size: 9px;
+    letter-spacing: 0.15em;
     font-weight: 700;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 4px;
     text-transform: uppercase;
     opacity: 0.8;
   }
@@ -1474,23 +1474,22 @@ body.menu-open .container-shift {
   .hero-description {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-width: 36ch;
+    gap: 8px; /* Compact paragraphs */
+    max-width: 32ch;
   }
 
   .hero-description p {
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--text-secondary);
     margin: 0;
-    letter-spacing: -0.01em;
   }
 
   .hero-description p:first-of-type {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--text);
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.4;
     margin-bottom: 4px;
   }
 
@@ -1679,10 +1678,10 @@ body.menu-open .container-shift {
 
   /* In-sidebar Navigation */
   .side-nav {
-    margin-top: 32px;
+    margin-top: 24px; /* Reduced margin */
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px; /* Tighter navigation */
   }
 
   .nav-projects-container {
@@ -1693,10 +1692,10 @@ body.menu-open .container-shift {
   .nav-projects-list {
     list-style: none;
     padding: 0;
-    margin: 8px 0 12px 16px;
+    margin: 4px 0 8px 12px; /* Compact list margins */
     display: none;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px; /* Tighter links */
     border-left: 1px solid var(--divider);
     animation: sideNavEnter 0.3s ease-out;
   }
@@ -1737,7 +1736,7 @@ body.menu-open .container-shift {
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px; /* Slightly smaller for elegance */
     transition: all 0.3s ease;
     padding-left: 0;
     letter-spacing: 0.01em;
@@ -1747,7 +1746,7 @@ body.menu-open .container-shift {
     text-align: left;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .side-nav a:hover,
