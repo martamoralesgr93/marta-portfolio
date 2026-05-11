@@ -33,11 +33,11 @@
           <button class="nav-btn-text nav-home-btn" onclick="scrollToId(&#39;top&#39;)" data-i18n="nav-home">Inicio</button>
         </div>
         
-        <div class="nav-section center">
-          <a href="#work" class="nav-btn-text" data-i18n="nav-work">Proyectos</a>
-          <a href="#experience" class="nav-btn-text" data-i18n="nav-experience-short">CV</a>
-          <a href="#about" class="nav-btn-text" data-i18n="nav-about">Sobre mí</a>
-          <a href="#contact" class="nav-btn-text" data-i18n="nav-contact">Contacto</a>
+        <div class="nav-links">
+          <a href="#work" class="active">Proyectos</a>
+          <a href="#experience">CV</a>
+          <a href="#about">Sobre mí</a>
+          <a href="#contact">Contacto</a>
         </div>
 
         <div class="nav-section right">
@@ -53,19 +53,19 @@
         <img src="logo.png" class="avatar" alt="Marta Morales">
       </div>
       <div class="hero-text">
-        <h1 class="profile-name" data-i18n="profile-name">Marta Morales García de los Ríos</h1>
-        <p class="profile-role" data-i18n="profile-role">Product Designer</p>
-        <div class="status-chip">
-          <span class="status-dot"></span>
-          <span data-i18n="status-text">Disponible para proyectos</span>
+        <p class="hero-eyebrow">PRODUCT DESIGN · UX STRATEGY · CRO</p>
+        <h1 class="profile-name">Marta Morales</h1>
+        
+        <div class="hero-description">
+          <p>Product Designer especializada en UX/UI, CRO y customer journey optimization.</p>
+          <p>Actualmente trabajo en ILUNION Hotels diseñando experiencias digitales orientadas a conversión mediante UX estratégico, análisis de comportamiento y decisiones basadas en datos.</p>
+          <p>Experiencia en funnels digitales, accesibilidad, research y optimización de producto en entornos multidisciplinares junto a negocio, marketing y desarrollo.</p>
         </div>
-        <p class="hero-tagline" data-i18n="hero-tagline">Diseño estratégico para impactar en producto y negocio</p>
-        <p class="hero-subtitle" data-i18n="hero-subtitle">Transformo problemas complejos en soluciones digitales que conectan las necesidades del usuario con los objetivos de crecimiento.</p>
 
         <div class="side-nav">
           <div class="nav-projects-container">
             <button class="nav-main-link" onclick="toggleNavProjects()" id="proyectosTrigger">
-              <span data-i18n="nav-work">Proyectos</span>
+              <span>Proyectos</span>
             </button>
             <ul class="nav-projects-list" id="navProjectsList">
               <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">ILUNION Hotels — Motor</a></li>
@@ -73,9 +73,17 @@
               <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-offers')" class="nav-project-link">ILUNION Hotels — Ofertas</a></li>
             </ul>
           </div>
-          <a href="#experience" data-i18n="nav-experience-short">CV</a>
-          <a href="#about" data-i18n="nav-about">Sobre mí</a>
-          <a href="#contact" data-i18n="nav-contact">Contacto</a>
+          
+          <div class="nav-projects-container">
+            <button class="nav-main-link" onclick="toggleAboutMenu()" id="aboutTrigger">
+              <span>Sobre mí</span>
+            </button>
+            <ul class="nav-projects-list" id="aboutMenuList">
+              <li><a href="#experience" class="nav-project-link">CV / Experiencia</a></li>
+              <li><a href="#contact" class="nav-project-link">Contacto</a></li>
+            </ul>
+          </div>
+          
           <button class="lang-toggle" onclick="toggleLanguage()" id="langToggle">EN</button>
         </div>
       </div>

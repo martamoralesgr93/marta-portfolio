@@ -1304,19 +1304,34 @@ button {
     letter-spacing: 0.1em;
   }
 
-  .hero-tagline {
-    font-size: 20px;
-    line-height: 1.4;
-    margin-bottom: 12px;
-    font-weight: 600;
-    color: var(--text);
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
   }
 
-  .hero-subtitle {
-    font-size: 14px;
+  .hero-description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 42ch;
+  }
+
+  .hero-description p {
+    font-size: 15px;
     line-height: 1.6;
-    max-width: 34ch;
     color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .hero-description p:first-of-type {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.4;
   }
 
   /* Main Scrollable Area */
@@ -1808,22 +1823,30 @@ img.zoom-target {
     box-sizing: border-box;
   }
   
-  .hero-tagline {
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0 auto 8px; /* Force centering with auto margins */
-    max-width: 46ch;
+  .hero-eyebrow {
+    font-size: 10px;
+    margin-bottom: 12px;
+    letter-spacing: 0.12em;
+  }
+  
+  .hero-description {
+    max-width: 100%;
+    gap: 12px;
+    text-align: center;
+    align-items: center;
   }
 
-  .hero-subtitle {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-    max-width: 40ch !important;
-    margin: 0 auto 24px !important; /* Force centering with auto margins */
+  .hero-description p {
+    font-size: 14px;
+    max-width: 38ch;
+  }
+
+  .hero-description p:first-of-type {
+    font-size: 16px;
   }
 
   .profile-name {
-    margin-bottom: 8px !important; /* Ensure separation from role */
+    margin-bottom: 16px !important;
   }
 
   .section:not(.hero) {

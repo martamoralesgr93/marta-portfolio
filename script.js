@@ -48,6 +48,8 @@ function toggleFab() {
 function toggleNavProjects() {
   const list = document.getElementById('navProjectsList');
   const trigger = document.getElementById('proyectosTrigger');
+  const aboutList = document.getElementById('aboutMenuList');
+  const aboutTrigger = document.getElementById('aboutTrigger');
   
   const isActive = list.classList.contains('active');
   
@@ -55,6 +57,31 @@ function toggleNavProjects() {
     list.classList.remove('active');
     trigger.classList.remove('active');
   } else {
+    // Close other menu
+    if (aboutList) aboutList.classList.remove('active');
+    if (aboutTrigger) aboutTrigger.classList.remove('active');
+    
+    list.classList.add('active');
+    trigger.classList.add('active');
+  }
+}
+
+function toggleAboutMenu() {
+  const list = document.getElementById('aboutMenuList');
+  const trigger = document.getElementById('aboutTrigger');
+  const projectsList = document.getElementById('navProjectsList');
+  const projectsTrigger = document.getElementById('proyectosTrigger');
+  
+  const isActive = list.classList.contains('active');
+  
+  if (isActive) {
+    list.classList.remove('active');
+    trigger.classList.remove('active');
+  } else {
+    // Close other menu
+    if (projectsList) projectsList.classList.remove('active');
+    if (projectsTrigger) projectsTrigger.classList.remove('active');
+    
     list.classList.add('active');
     trigger.classList.add('active');
   }
