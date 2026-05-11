@@ -163,8 +163,8 @@
 
       <article id="project-offers" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
         <div class="work-summary">
-          <h2 class="title" data-i18n="p3-title">ILUNION Hotels — Programa de fidelización</h2>
-          <p class="professional-context" data-i18n="p3-context-line">Actualmente en ILUNION Hotels, en Producto Digital (Growth &amp; CRO)</p>
+          <h2 class="title" data-i18n="p3-title">ILUNION Hotels — Componente de Ofertas y Conversión</h2>
+          <p class="professional-context">Product Design · UX Strategy · Ecommerce hotelero · AEM</p>
           <p class="subtitle" data-i18n="p3-subtitle">Optimización del flujo de captación en mobile</p>
           <p data-i18n="p3-summary">Eliminación de pasos intermedios en el flujo de captación para simplificar el registro de socios.</p>
           <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
@@ -172,17 +172,29 @@
 
         <div class="detail" style="display: none;">
           <div class="detail-block">
-            <h4 class="detail-label" data-i18n="label-context">Contexto</h4>
-            <p data-i18n="p3-context">Landing page transaccional de incentivos estratégicos. El KPI principal era acelerar el número de registros en el programa de lealtad.</p>
+            <h4 class="detail-label">S — Situation</h4>
+            <p>ILUNION Hotels opera en un mercado donde la venta directa es estratégica: cada reserva que entra por el canal propio es más rentable que la que entra por un intermediario. Las campañas de Paid Media traían tráfico de alta intención — usuarios que ya habían decidido que querían reservar.</p>
+            <p>Cuando la web migró a Adobe Experience Manager (AEM), el tráfico siguió llegando. Pero la efectividad comercial cayó sin causa técnica aparente. El sistema funcionaba. La conversión, no.</p>
+            <p>Yo era la responsable de producto digital: diseño UX/UI, CRO y coordinación con el equipo de desarrollo.</p>
 
-            <h4 class="detail-label" data-i18n="label-problem">Problema</h4>
-            <p data-i18n="p3-problem">Alto porcentaje de rebote. La propuesta de valor y el CTA primario quedaban ocultos bajo múltiples niveles de scroll, debilitando la atracción.</p>
-            
-            <h4 class="detail-label" data-i18n="label-hypothesis">Hypótesis e Insight</h4>
-            <p data-i18n="p3-hypothesis">Un bloque difuso destruye el interés. Consolidar el beneficio principal, el incentivo y el registro en el primer viewport ('above the fold') detendrá la pérdida de usuarios.</p>
-          
-            <h4 class="detail-label" data-i18n="label-solution">Solución y Decisiones</h4>
-            <p data-i18n="p3-solution">Se reestructuró la jerarquía de información hacia un módulo visualmente contundente y unificado. Integramos todos los desencadenantes de comportamiento en una sola vista para provocar la acción sin requerir exploración previa.</p>
+            <h4 class="detail-label">T — Task</h4>
+            <p>Identificar qué generaba el abandono, priorizarlo por impacto comercial real, y diseñar una solución dentro de los constraints de AEM — sin comprometer la identidad de marca.</p>
+            <p>Complejidad añadida: los managers directos estaban de baja. La propuesta tenía que llegar directamente a dirección comercial con suficiente solidez para aprobarse en comité.</p>
+
+            <h4 class="detail-label">A — Action</h4>
+            <p><strong>Research</strong><br>Analicé con Microsoft Clarity scroll maps, heatmaps y grabaciones reales. El diagnóstico fue contundente:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.5rem;">Solo el 15% de los usuarios superaba el bloque de ofertas</li>
+              <li style="margin-bottom: 0.5rem;">El componente necesitaba el doble de scroll que Barceló para mostrar el mismo contenido</li>
+              <li style="margin-bottom: 0.5rem;">Hasta el 50% del recorrido de la página no aparecía ningún hotel, precio ni descuento</li>
+              <li style="margin-bottom: 0.5rem;">UNICOS ocupaba una pantalla completa antes de que el usuario viera producto</li>
+            </ul>
+            <p>Completé el análisis con Adobe Analytics y benchmarking funcional contra Barceló y Booking/Genius.</p>
+            <p><strong>Diagnóstico</strong><br>El problema no era estético. El site priorizaba inspiración de marca sobre el comportamiento real del usuario. Alguien que llega desde un anuncio quiere encontrar, no explorar. Y el site le pedía que explorara.</p>
+            <p><strong>Propuesta</strong><br>Elaboré un documento con 12 mejoras priorizadas en 4 niveles de impacto. Lo presenté directamente a dirección comercial. Fue aprobado en comité.</p>
+            <p><strong>La decisión difícil</strong><br>Trade-off real: branding aspiracional vs. ecommerce eficiente. Elegí sacrificar protagonismo visual para ganar claridad comercial — justificado con datos de comportamiento, no con preferencias estéticas.</p>
+            <p><strong>Diseño</strong><br>Arquitectura diferenciada por dispositivo. Desktop: carrusel de ofertas visible desde el primer scroll, precio y CTA expuestos. UNICOS reposicionado como bloque secundario. Mobile: estructura adaptada al comportamiento táctil, con los constraints reales de AEM — la plataforma no permitía reducir texto solo en mobile.</p>
+
             <div class="carousel-container" id="carousel-offers">
               <div class="carousel-track desktop-img-grid">
                 <div class="carousel-item media">
@@ -193,17 +205,27 @@
                 </div>
               </div>
               <div class="carousel-actions">
-                <button class="carousel-btn prev" onclick="event.stopPropagation(); scrollCarousel(&#39;carousel-offers&#39;, -1)" aria-label="Ver anterior">
+                <button class="carousel-btn prev" onclick="event.stopPropagation(); scrollCarousel('carousel-offers', -1)" aria-label="Ver anterior">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 </button>
-                <button class="carousel-btn next" onclick="event.stopPropagation(); scrollCarousel(&#39;carousel-offers&#39;, 1)" aria-label="Ver siguiente">
+                <button class="carousel-btn next" onclick="event.stopPropagation(); scrollCarousel('carousel-offers', 1)" aria-label="Ver siguiente">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
               </div>
             </div>
-          
-            <h4 class="detail-label" data-i18n="label-impact">Impacto Esperado</h4>
-            <p data-i18n="p3-impact">Eliminación de pasos intermedios en el flujo de captación para simplificar el proceso de registro.</p>
+
+            <p><strong>Lanzamiento</strong><br>Entorno staging → comité interno → producción.</p>
+            <p><strong>Iteración post-lanzamiento</strong><br>Tras publicar, detecté en Clarity que en mobile los usuarios deslizaban sobre el selector de fechas en lugar de hacer clic. Coordiné el desarrollo del swipe a posteriori. La diferencia entre entregar y hacer producto es exactamente esta: seguir mirando después de publicar.</p>
+
+            <h4 class="detail-label">R — Result</h4>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.5rem;">+13% de conversión en reservas directas</li>
+              <li style="margin-bottom: 0.5rem;">Usuarios que antes solo navegaban empezaron a iniciar búsquedas en el motor directamente</li>
+              <li style="margin-bottom: 0.5rem;">Mejora del rendimiento de campañas de Paid Media — el mismo presupuesto, mejor resultado</li>
+              <li style="margin-bottom: 0.5rem;">UNICOS integrado como palanca de conversión, no como obstáculo</li>
+              <li style="margin-bottom: 0.5rem;">El componente se extendió a páginas de hotel y travel — cuando una solución se replica, es porque funciona</li>
+            </ul>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem;"><em>Los datos detallados son confidenciales. Los resultados reflejan seguimiento con Adobe Analytics y observaciones del equipo.</em></p>
           </div>
         </div>
       </article>
@@ -403,7 +425,7 @@
   <div class="fab-menu" id="fabMenu" role="menu" aria-hidden="true">
     <button role="menuitem" onclick="openAndScrollProject(&#39;project-ilunion&#39;)" data-i18n="p1-title">ILUNION Hotels — Acceso al motor</button>
     <button role="menuitem" onclick="openAndScrollProject(&#39;project-academic&#39;)" data-i18n="p2-title">CEF — Herramienta de gestión académica</button>
-    <button role="menuitem" onclick="openAndScrollProject(&#39;project-offers&#39;)" data-i18n="p3-title">ILUNION Hotels — Programa de fidelización</button>
+    <button role="menuitem" onclick="openAndScrollProject('project-offers')" data-i18n="p3-title">ILUNION Hotels — Componente de Ofertas y Conversión</button>
   </div>
 
   <!-- Zoom Modal -->
