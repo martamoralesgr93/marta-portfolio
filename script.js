@@ -30,18 +30,20 @@ function toggleProject(el) {
 function toggleFab() {
   const fab = document.getElementById('fabButton');
   const menu = document.getElementById('fabMenu');
+  const body = document.body;
   
   const isOpening = !fab.classList.contains('active');
   fab.classList.toggle('active');
   menu.classList.toggle('active');
+  body.classList.toggle('menu-open');
   
   fab.setAttribute('aria-expanded', isOpening);
   menu.setAttribute('aria-hidden', !isOpening);
   
   if (isOpening) {
-    fab.setAttribute('aria-label', currentLang === 'es' ? 'Cerrar menú rápido' : 'Close quick menu');
+    fab.setAttribute('aria-label', currentLang === 'es' ? 'Cerrar menú' : 'Close menu');
   } else {
-    fab.setAttribute('aria-label', currentLang === 'es' ? 'Abrir menú rápido' : 'Open quick menu');
+    fab.setAttribute('aria-label', currentLang === 'es' ? 'Ver proyectos' : 'View projects');
   }
 }
 
@@ -474,6 +476,17 @@ function scrollToId(id) {
 }
 
 function openAndScrollProject(id) {
+  // Close FAB menu if open
+  const fab = document.getElementById('fabButton');
+  const menu = document.getElementById('fabMenu');
+  const body = document.body;
+  
+  if (fab && fab.classList.contains('active')) {
+    fab.classList.remove('active');
+    menu.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
+
   const el = document.getElementById(id);
   if (!el) return;
   
