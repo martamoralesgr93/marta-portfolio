@@ -1901,14 +1901,14 @@ img.zoom-target {
   }
 
   .avatar-frame {
-    width: 120px; /* More compact for better screen fit */
+    width: 120px;
     height: 120px;
-    margin-bottom: 20px;
+    margin-bottom: 8px; /* Tighter gap to text */
   }
   
   .hero-eyebrow {
     font-size: 9px;
-    margin-bottom: 16px;
+    margin-bottom: 8px; /* Tighter vertical rhythm */
     letter-spacing: 0.15em;
   }
   
