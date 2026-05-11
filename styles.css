@@ -828,10 +828,10 @@ button {
 }
 
 .fab-logo {
-  height: 16px; /* Scaled for perfect alignment with 13px text */
+  height: 20px; /* Increased size per user request */
   width: auto;
   object-fit: contain;
-  filter: none !important; /* Ensure black logo on white background */
+  filter: none !important;
 }
 
 .fab-text {
