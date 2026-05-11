@@ -786,22 +786,22 @@ button {
 
 /* Bottom Sheet FAB Menu */
 .fab {
-  display: none !important; /* Hidden by default (Desktop) */
+  display: none !important;
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: var(--text);
-  color: #fff;
-  border: none;
-  border-radius: 12px; /* Geometric corners matching design system */
-  padding: 12px 20px;
+  background: #ffffff; /* White background */
+  color: var(--text); /* Black text */
+  border: 1px solid var(--divider); /* Minimal border */
+  border-radius: 12px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  gap: 8px; /* Tighter gap for better alignment */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); /* Very subtle shadow */
   z-index: 10001;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
 }
 
 @media (max-width: 768px) {
@@ -813,9 +813,9 @@ button {
 .fab:active { transform: scale(0.96); }
 
 .fab.active {
-  transform: translateY(-8px);
-  background: var(--text);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  background: #fcfcfc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .fab.active .fab-content { opacity: 0; }
@@ -828,9 +828,10 @@ button {
 }
 
 .fab-logo {
-  height: 20px;
+  height: 16px; /* Scaled for perfect alignment with 13px text */
   width: auto;
   object-fit: contain;
+  filter: none !important; /* Ensure black logo on white background */
 }
 
 .fab-text {
