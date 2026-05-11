@@ -164,7 +164,7 @@
       <article id="project-offers" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
         <div class="work-summary">
           <h2 class="title" data-i18n="p3-title">ILUNION Hotels — Componente de Ofertas y Conversión</h2>
-          <p class="professional-context">Product Design · UX Strategy · Ecommerce hotelero · AEM</p>
+          <p class="professional-context">Product Design · CRO · UX Strategy · Ecommerce hotelero · AEM</p>
           <p class="subtitle" data-i18n="p3-subtitle">Optimización del flujo de captación en mobile</p>
           <p data-i18n="p3-summary">Eliminación de pasos intermedios en el flujo de captación para simplificar el registro de socios.</p>
           <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
@@ -172,28 +172,33 @@
 
         <div class="detail" style="display: none;">
           <div class="detail-block">
-            <h4 class="detail-label">S — Situation</h4>
-            <p>ILUNION Hotels opera en un mercado donde la venta directa es estratégica: cada reserva que entra por el canal propio es más rentable que la que entra por un intermediario. Las campañas de Paid Media traían tráfico de alta intención — usuarios que ya habían decidido que querían reservar.</p>
-            <p>Cuando la web migró a Adobe Experience Manager (AEM), el tráfico siguió llegando. Pero la efectividad comercial cayó sin causa técnica aparente. El sistema funcionaba. La conversión, no.</p>
-            <p>Yo era la responsable de producto digital: diseño UX/UI, CRO y coordinación con el equipo de desarrollo.</p>
+            <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
+            <p>ILUNION Hotels opera en un mercado donde la venta directa es estratégica: cada reserva que entra por el canal propio es más rentable que la que entra por un intermediario. Las campañas de Paid Media eran la principal palanca para traer tráfico con intención de compra alta — usuarios que ya habían decidido que querían reservar, y que buscaban el mejor precio directo.</p>
+            <p>Cuando la web migró a Adobe Experience Manager (AEM), el tráfico siguió llegando. Pero algo había cambiado. La efectividad comercial cayó sin causa técnica aparente. El sistema funcionaba. La conversión, no.</p>
+            <p>Yo era la responsable de producto digital: diseño UX/UI, CRO, y la coordinación directa con el equipo de desarrollo. El momento pedía diagnóstico, no suposiciones.</p>
 
-            <h4 class="detail-label">T — Task</h4>
-            <p>Identificar qué generaba el abandono, priorizarlo por impacto comercial real, y diseñar una solución dentro de los constraints de AEM — sin comprometer la identidad de marca.</p>
-            <p>Complejidad añadida: los managers directos estaban de baja. La propuesta tenía que llegar directamente a dirección comercial con suficiente solidez para aprobarse en comité.</p>
+            <h4 class="detail-label">T — TASK · El reto</h4>
+            <p>Identificar qué estaba generando el abandono, priorizarlo por impacto comercial real, y diseñar una solución que funcionara dentro de los constraints reales de AEM — sin comprometer la identidad de marca y sin inventar métricas para justificar decisiones.</p>
+            <p>El reto tenía una complejidad añadida: los managers directos estaban de baja. Cualquier propuesta tenía que llegar directamente a dirección comercial con suficiente solidez para aprobarse en comité.</p>
 
-            <h4 class="detail-label">A — Action</h4>
-            <p><strong>Research</strong><br>Analicé con Microsoft Clarity scroll maps, heatmaps y grabaciones reales. El diagnóstico fue contundente:</p>
+            <h4 class="detail-label">A — ACTION · Lo que hice, y por qué</h4>
+            <p><strong>1. Research: entender el comportamiento real</strong><br>Empecé donde estaban los datos. Con Microsoft Clarity analicé scroll maps, heatmaps y grabaciones de sesión reales. El diagnóstico fue inmediato y contundente:</p>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.5rem;">Solo el 15% de los usuarios superaba el bloque de ofertas</li>
-              <li style="margin-bottom: 0.5rem;">El componente necesitaba el doble de scroll que Barceló para mostrar el mismo contenido</li>
-              <li style="margin-bottom: 0.5rem;">Hasta el 50% del recorrido de la página no aparecía ningún hotel, precio ni descuento</li>
-              <li style="margin-bottom: 0.5rem;">UNICOS ocupaba una pantalla completa antes de que el usuario viera producto</li>
+              <li style="margin-bottom: 0.5rem;">Solo el <strong>15% de los usuarios superaba el bloque de ofertas</strong> en la home</li>
+              <li style="margin-bottom: 0.5rem;">El componente necesitaba el <strong>doble de scroll que Barceló</strong> para mostrar el mismo contenido</li>
+              <li style="margin-bottom: 0.5rem;">Hasta el <strong>50% del recorrido de la página</strong> no aparecía ningún hotel, ningún precio, ningún descuento</li>
+              <li style="margin-bottom: 0.5rem;">El programa de fidelización <strong>UNICOS ocupaba una pantalla completa</strong> antes de que el usuario viera producto</li>
             </ul>
-            <p>Completé el análisis con Adobe Analytics y benchmarking funcional contra Barceló y Booking/Genius.</p>
-            <p><strong>Diagnóstico</strong><br>El problema no era estético. El site priorizaba inspiración de marca sobre el comportamiento real del usuario. Alguien que llega desde un anuncio quiere encontrar, no explorar. Y el site le pedía que explorara.</p>
-            <p><strong>Propuesta</strong><br>Elaboré un documento con 12 mejoras priorizadas en 4 niveles de impacto. Lo presenté directamente a dirección comercial. Fue aprobado en comité.</p>
-            <p><strong>La decisión difícil</strong><br>Trade-off real: branding aspiracional vs. ecommerce eficiente. Elegí sacrificar protagonismo visual para ganar claridad comercial — justificado con datos de comportamiento, no con preferencias estéticas.</p>
-            <p><strong>Diseño</strong><br>Arquitectura diferenciada por dispositivo. Desktop: carrusel de ofertas visible desde el primer scroll, precio y CTA expuestos. UNICOS reposicionado como bloque secundario. Mobile: estructura adaptada al comportamiento táctil, con los constraints reales de AEM — la plataforma no permitía reducir texto solo en mobile.</p>
+            <p>Completé el análisis con Adobe Analytics para entender los patrones de navegación y el punto exacto de abandono. Y añadí benchmarking funcional — no estético — contra Barceló y Booking/Genius: cómo presentan precio, disponibilidad y valor en cada paso del journey para activar intención de compra.</p>
+            <p><strong>2. Diagnóstico: el problema real no era visual</strong><br>El insight clave cambió el enfoque de todo el proyecto. El problema no era que el diseño fuera feo o antiguo. <strong>El site priorizaba inspiración de marca sobre el comportamiento real del usuario.</strong></p>
+            <p>Había una desalineación entre el modelo mental del site — "explora, inspírate, descubre ILUNION" — y el modelo mental del usuario que llegaba desde un anuncio — "quiero reservar, quiero ver precio, quiero encontrar mi hotel". El site le pedía que explorara cuando él quería encontrar.</p>
+            <p><strong>3. Propuesta estructurada: 12 mejoras, 4 niveles de impacto</strong><br>Traduje el diagnóstico en un documento interno con 12 mejoras priorizadas según su impacto directo en conversión. No era una lista de deseos de diseño — era una propuesta de negocio con criterio. Lo escribí, lo argumenté con datos y lo presenté directamente a dirección comercial.</p>
+            <p>Fue aprobado en comité.</p>
+            <p><strong>4. La decisión estratégica más difícil</strong><br>El trade-off real del proyecto: <strong>branding aspiracional vs. ecommerce eficiente</strong>. Dos valores legítimos en conflicto.</p>
+            <p>Elegí sacrificar protagonismo visual para ganar claridad comercial. No porque me gustara más estéticamente — sino porque los datos de comportamiento real respaldaban esa decisión. Un usuario que abandona antes de ver el producto no puede convertir, independientemente de lo bonita que sea la marca.</p>
+            <p><strong>5. Diseño: arquitectura diferenciada por dispositivo</strong><br>Diseñé una arquitectura distinta para desktop y mobile, porque el comportamiento en cada uno es diferente.</p>
+            <p><strong>Desktop:</strong> carrusel de ofertas visible desde el primer scroll, con precio, descuento y CTA directamente expuestos. UNICOS reposicionado como bloque secundario con propuesta de valor concreta — presente, pero sin bloquear la venta rápida.</p>
+            <p><strong>Mobile:</strong> estructura simplificada adaptada al comportamiento táctil. Aquí AEM impuso una limitación real: la plataforma no permitía reducir texto solo en mobile, lo que condicionó varias decisiones de diseño. Los constraints técnicos no son excusas — son parte del problema que hay que resolver.</p>
 
             <div class="carousel-container" id="carousel-offers">
               <div class="carousel-track desktop-img-grid">
@@ -214,18 +219,20 @@
               </div>
             </div>
 
-            <p><strong>Lanzamiento</strong><br>Entorno staging → comité interno → producción.</p>
-            <p><strong>Iteración post-lanzamiento</strong><br>Tras publicar, detecté en Clarity que en mobile los usuarios deslizaban sobre el selector de fechas en lugar de hacer clic. Coordiné el desarrollo del swipe a posteriori. La diferencia entre entregar y hacer producto es exactamente esta: seguir mirando después de publicar.</p>
+            <p><strong>6. Implementación y lanzamiento</strong><br>Trabajé directamente con el equipo de desarrollo en entorno staging. Presentación en comité interno. Lanzamiento a producción.</p>
+            <p><strong>7. Iteración post-lanzamiento: observar, no solo entregar</strong><br>Tras el lanzamiento, los datos de Clarity mostraron algo inesperado: en mobile, los usuarios <strong>deslizaban sobre el selector de fechas en lugar de hacer clic</strong>. El patrón de interacción táctil no era el que habíamos diseñado.</p>
+            <p>Lo detecté, lo documenté y coordiné el desarrollo de la interacción de swipe a posteriori. No fue un fallo de diseño — fue el proceso funcionando como debe. La diferencia entre hacer una entrega y hacer producto es exactamente esta: seguir mirando después de publicar.</p>
 
-            <h4 class="detail-label">R — Result</h4>
+            <h4 class="detail-label">R — RESULT · El impacto</h4>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.5rem;">+13% de conversión en reservas directas</li>
-              <li style="margin-bottom: 0.5rem;">Usuarios que antes solo navegaban empezaron a iniciar búsquedas en el motor directamente</li>
-              <li style="margin-bottom: 0.5rem;">Mejora del rendimiento de campañas de Paid Media — el mismo presupuesto, mejor resultado</li>
-              <li style="margin-bottom: 0.5rem;">UNICOS integrado como palanca de conversión, no como obstáculo</li>
-              <li style="margin-bottom: 0.5rem;">El componente se extendió a páginas de hotel y travel — cuando una solución se replica, es porque funciona</li>
+              <li style="margin-bottom: 0.5rem;"><strong>+13% de conversión en reservas directas</strong></li>
+              <li style="margin-bottom: 0.5rem;">Usuarios que antes solo navegaban empezaron a iniciar búsquedas directamente en el motor de reservas</li>
+              <li style="margin-bottom: 0.5rem;">Mejora del rendimiento de las campañas de Paid Media — el mismo presupuesto, mejor resultado</li>
+              <li style="margin-bottom: 0.5rem;">UNICOS integrado como palanca de conversión, no como obstáculo al funnel</li>
+              <li style="margin-bottom: 0.5rem;"><strong>El componente se extendió a páginas de hotel y travel</strong> — la validación interna más potente: cuando una solución se replica, es porque funciona</li>
+              <li style="margin-bottom: 0.5rem;">Iteración post-lanzamiento que corrigió el patrón de interacción en mobile, demostrando un proceso de producto maduro</li>
             </ul>
-            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem;"><em>Los datos detallados son confidenciales. Los resultados reflejan seguimiento con Adobe Analytics y observaciones del equipo.</em></p>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);"><em>📌 Los datos detallados de conversión son confidenciales. Los resultados reflejan seguimiento post-implementación con Adobe Analytics y observaciones directas del equipo comercial y de producto.</em></p>
           </div>
         </div>
       </article>
