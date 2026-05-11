@@ -50,7 +50,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, .title, .eyebrow, .nav-btn-text, .detail-label, .profile-name, .hero-tagline {
   font-family: 'Satoshi', sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 img {
@@ -265,7 +265,7 @@ button {
   padding: 8px 16px;
   border-radius: var(--radius-md);
   font-size: 13px;
-  transition: all 0.2s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   margin-top: 16px;
   cursor: pointer;
   border: 1px solid var(--divider);
@@ -276,6 +276,11 @@ button {
 .read-more-btn:hover {
   background: var(--hover);
   border-color: #d0d0d0;
+  transform: translateY(-1px);
+}
+
+.read-more-btn:active {
+  transform: scale(0.96);
 }
 
 .btn-primary {
@@ -289,7 +294,7 @@ button {
   border-radius: var(--radius-md);
   font-weight: 500;
   font-size: 13px;
-  transition: all 0.2s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   border: 1px solid var(--text);
   box-shadow: var(--shadow-sm);
@@ -298,6 +303,11 @@ button {
 .btn-primary:hover {
   background: #333;
   color: var(--bg) !important;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
 }
 
 .eyebrow {
@@ -479,17 +489,21 @@ button {
 .project-block.center {
   display: flex;
   justify-content: center;
-  margin: 24px auto;
+  margin: 40px auto;
 }
 
 .project-block.center img {
   width: 100%;
-  max-width: 580px;
-  transition: transform 0.4s ease;
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-block.center img:hover {
-  transform: translateY(-8px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
 .project-block.center.no-bg {
@@ -645,9 +659,10 @@ button {
 
 .carousel-container {
   position: relative;
-  margin: 24px auto;
+  margin: 40px auto;
   overflow: hidden;
-  max-width: 680px;
+  max-width: 100%;
+  border-radius: var(--radius-md);
 }
 
 .carousel-track {
@@ -669,6 +684,14 @@ button {
   flex: 0 0 100%;
   scroll-snap-align: center;
   width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carousel-track img:hover,
+.carousel-item:hover {
+  transform: scale(1.01);
 }
 
 .carousel-actions {
@@ -695,7 +718,7 @@ button {
   justify-content: center;
   cursor: pointer;
   pointer-events: auto;
-  transition: all 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--text);
   z-index: 10;
 }
