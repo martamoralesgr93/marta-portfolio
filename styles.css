@@ -24,7 +24,7 @@
 
   --container-mobile: 390px;
   --container-desktop: 1440px;
-  --sidebar-width: 420px;
+  --sidebar-width: 400px;
   --content-max: 800px;
   --bg-soft: #f9f9f9;
   --accent: #111111;
@@ -1415,9 +1415,9 @@ body.menu-open .container-shift {
     position: fixed;
     top: 0;
     left: 0;
-    width: var(--sidebar-width);
+    width: 400px;
     height: 100vh;
-    padding: 80px 64px; /* Even more spacious padding */
+    padding: 48px 40px;
     border-right: 1px solid var(--divider);
     background: var(--bg);
     overflow-y: auto;
@@ -1425,13 +1425,13 @@ body.menu-open .container-shift {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px; /* More air between sections */
+    gap: 16px;
   }
 
   .avatar-frame {
-    width: 200px; /* Large, monumental logo size */
-    height: 200px;
-    margin-bottom: 24px;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 8px;
     padding: 0;
     border: 0;
     box-shadow: none;
@@ -1495,9 +1495,8 @@ body.menu-open .container-shift {
 
   /* Main Scrollable Area */
   .section:not(.hero) {
-    margin-left: var(--sidebar-width); /* Explicit offset to fix the margin issue */
-    padding: 100px 120px; /* Generous editorial spacing */
-    max-width: calc(100% - var(--sidebar-width));
+    grid-column: 2;
+    padding: 64px 80px;
   }
 
   .section {
@@ -2044,7 +2043,7 @@ img.zoom-target {
 /* Fix desktop layout: offset footer by sidebar width */
 @media (min-width: 1024px) {
   .footer {
-    margin-left: var(--sidebar-width);
+    margin-left: 360px;
     border-top: 1px solid var(--divider);
     padding: 100px 80px;
     background: rgba(0,0,0,0.02);
