@@ -485,19 +485,14 @@ function openAndScrollProject(id) {
     fab.classList.remove('active');
     menu.classList.remove('active');
     body.classList.remove('menu-open');
+    fab.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    fab.setAttribute('aria-label', currentLang === 'es' ? 'Ver proyectos' : 'View projects');
   }
 
   const el = document.getElementById(id);
   if (!el) return;
   
-  const menu = document.getElementById("fabMenu");
-  const fab = document.getElementById("fabButton");
-  menu.classList.remove("active");
-  fab.classList.remove("active");
-  fab.setAttribute('aria-expanded', 'false');
-  menu.setAttribute('aria-hidden', 'true');
-  fab.setAttribute('aria-label', currentLang === 'es' ? 'Abrir menú rápido' : 'Open quick menu');
-
   const isOpen = el.classList.contains("active");
   if (!isOpen) {
     toggleProject(el);

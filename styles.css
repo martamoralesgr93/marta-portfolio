@@ -786,6 +786,7 @@ button {
 
 /* Bottom Sheet FAB Menu */
 .fab {
+  display: none; /* Hidden by default (Desktop) */
   position: fixed;
   bottom: 32px;
   right: 24px;
@@ -798,9 +799,15 @@ button {
   align-items: center;
   gap: 12px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-  z-index: 10001; /* Higher than everything */
+  z-index: 10001;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 1023px) {
+  .fab {
+    display: flex;
+  }
 }
 
 .fab:active { transform: scale(0.96); }
@@ -843,14 +850,16 @@ button {
   box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.1);
   transform: translateY(100%);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  pointer-events: none; /* Prevents blocking when hidden */
 }
 
 .fab-menu.active {
   transform: translateY(0);
+  pointer-events: auto; /* Allows interaction when shown */
 }
 
 .fab-menu button {
