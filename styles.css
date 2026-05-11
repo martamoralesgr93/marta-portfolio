@@ -160,17 +160,27 @@ button {
 .avatar {
   width: 100%;
   height: 100%;
-  border-radius: var(--radius-md);
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
 }
 
 .avatar-frame {
   width: 100px;
   height: 100px;
   position: relative;
-  border-radius: var(--radius-md);
   background: transparent;
 }
+
+.nav-logo, .signature-logo, .fab-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-logo { height: 24px; }
+.fab-logo { height: 28px; }
+.signature-logo { height: 48px; }
 
 .status-chip {
   display: inline-flex;
@@ -542,11 +552,7 @@ button {
   z-index: 2;
 }
 
-.avatar-frame {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 24px;
-}
+/* Redundant avatar-frame removed to avoid conflicts */
 
 .phone-screen img.avatar {
   width: 100%;
@@ -1277,8 +1283,9 @@ button {
   }
 
   .avatar {
-    border-radius: var(--radius-md);
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .profile-name {
