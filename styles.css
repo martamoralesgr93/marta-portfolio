@@ -1272,13 +1272,13 @@ button {
   }
 
   .avatar-frame {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 16px;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 24px;
     padding: 0;
     border: 0;
     box-shadow: none;
-    overflow: hidden;
+    overflow: visible;
     border-radius: var(--radius-md);
   }
 
@@ -1289,9 +1289,9 @@ button {
   }
 
   .profile-name {
-    font-size: 56px;
-    line-height: 1.05;
-    margin-bottom: 12px;
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 16px;
     font-weight: 700;
     letter-spacing: -0.04em;
   }
@@ -1305,33 +1305,36 @@ button {
   }
 
   .hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.15em;
+    font-size: 10px;
+    letter-spacing: 0.2em;
     font-weight: 700;
     color: var(--text-secondary);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     text-transform: uppercase;
+    opacity: 0.8;
   }
 
   .hero-description {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    max-width: 42ch;
+    gap: 12px;
+    max-width: 36ch;
   }
 
   .hero-description p {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.6;
     color: var(--text-secondary);
     margin: 0;
+    letter-spacing: -0.01em;
   }
 
   .hero-description p:first-of-type {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text);
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.5;
+    margin-bottom: 4px;
   }
 
   /* Main Scrollable Area */
@@ -1822,11 +1825,17 @@ img.zoom-target {
     margin: 0;
     box-sizing: border-box;
   }
+
+  .avatar-frame {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 24px;
+  }
   
   .hero-eyebrow {
-    font-size: 10px;
-    margin-bottom: 12px;
-    letter-spacing: 0.12em;
+    font-size: 9px;
+    margin-bottom: 16px;
+    letter-spacing: 0.15em;
   }
   
   .hero-description {
@@ -1837,16 +1846,19 @@ img.zoom-target {
   }
 
   .hero-description p {
-    font-size: 14px;
-    max-width: 38ch;
+    font-size: 13px;
+    max-width: 34ch;
+    line-height: 1.5;
   }
 
   .hero-description p:first-of-type {
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: 4px;
   }
 
   .profile-name {
-    margin-bottom: 16px !important;
+    font-size: 36px !important;
+    margin-bottom: 20px !important;
   }
 
   .section:not(.hero) {
