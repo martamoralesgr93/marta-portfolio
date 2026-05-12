@@ -25,7 +25,7 @@
   --container-mobile: 390px;
   --container-desktop: 1440px;
   --sidebar-width: 400px;
-  --content-max: 800px;
+  --content-max: 1100px; /* Increased for better balance */
   --bg-soft: #f9f9f9;
   --accent: #111111;
 }
@@ -1444,7 +1444,7 @@ body.menu-open .container-shift {
     grid-column: 2;
     padding: 100px 80px 100px 60px;
     margin: 0; /* Remove centering */
-    max-width: 1200px; /* Keep a reasonable width for readability but aligned to left */
+    max-width: 1400px; /* Expanded for more presence */
   }
 
   .section {
@@ -1576,7 +1576,7 @@ body.menu-open .container-shift {
   .work-summary p {
     font-size: 20px;
     line-height: 1.6;
-    max-width: 65ch;
+    max-width: 85ch; /* More horizontal presence */
     color: var(--text);
   }
 
