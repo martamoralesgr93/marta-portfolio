@@ -1996,26 +1996,26 @@ img.zoom-target {
   .title {
     font-size: 24px;
     line-height: 1.2;
-    margin-bottom: 12px;
+    margin-bottom: 8px; /* Tighter */
     display: flex;
     flex-direction: column; 
-    gap: 2px;
+    gap: 4px;
     padding-left: 0; 
   }
 
   .title-company {
-    font-size: 11px;
+    font-size: 10px; /* More subtle */
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 800;
-    opacity: 0.6;
+    letter-spacing: 0.15em;
+    font-weight: 900; /* High contrast weight */
+    opacity: 0.45; /* Less visual weight */
   }
 
   .title-project {
-    font-size: 19px; /* Reduced to avoid wrapping */
-    font-weight: 500;
+    font-size: 20px; 
+    font-weight: 600; /* More punch */
     color: var(--text-primary);
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   .title-separator {
@@ -2027,9 +2027,11 @@ img.zoom-target {
   }
 
   .professional-context {
-    margin-bottom: 20px;
+    font-size: 10px; /* Smaller */
+    margin-bottom: 16px;
     line-height: 1.4;
-    padding-left: 8px;
+    padding-left: 0; /* Unified alignment */
+    opacity: 0.5;
   }
 
   .subtitle {
