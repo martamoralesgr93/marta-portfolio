@@ -1960,6 +1960,32 @@ img.zoom-target {
   .section:not(.hero) {
     padding-top: 80px;
   }
+
+  /* Breathe for project titles in mobile */
+  .work-item {
+    padding: 60px 0; /* More air per project */
+  }
+
+  .title {
+    font-size: 24px; /* More sutil */
+    line-height: 1.3; /* More air between lines */
+    margin-bottom: 12px;
+  }
+
+  .professional-context {
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .project-visuals {
+    margin: 24px 0 32px;
+  }
 }
 
 /* Footer & Disclaimer */
