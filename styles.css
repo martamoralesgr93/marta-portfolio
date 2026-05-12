@@ -26,12 +26,13 @@
   --container-desktop: 1440px;
   --sidebar-width: 420px;
   --content-max: 1100px;
+  /* Spacing - Extreme Air for Premium Feel */
   --space-xs: 8px;
   --space-sm: 16px;
-  --space-md: 32px;
-  --space-lg: 64px;
-  --space-xl: 120px;
-  --space-xxl: 160px;
+  --space-md: 40px;
+  --space-lg: 80px;
+  --space-xl: 180px;
+  --space-xxl: 240px;
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
@@ -412,18 +413,18 @@ button {
 }
 
 .title-company {
-  font-weight: 800; /* Stronger weight */
+  font-weight: 800;
   color: var(--text-primary);
+  opacity: 0.6; /* Softer context */
 }
 
 .title-separator {
-  opacity: 0.2;
-  font-weight: 300;
-  margin: 0 4px;
+  opacity: 0.1; /* Almost invisible but rhythmic */
+  margin: 0 8px;
 }
 
 .title-project {
-  font-weight: 400; /* Lighter weight */
+  font-weight: 400;
   color: var(--text-secondary);
 }
 
@@ -434,13 +435,43 @@ button {
 }
 
 .professional-context {
-  font-size: 11px;
-  color: var(--text-secondary);
+  font-size: 10px;
+  color: var(--text-muted);
   font-weight: 600;
-  margin: 0 0 14px;
-  letter-spacing: 0.05em;
+  margin: 0 0 24px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.4; /* Ultra subtle */
+}
+
+/* Executive Career Summary */
+.executive-summary {
+  margin-top: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.executive-summary p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.executive-summary strong {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 16px;
+  display: inline-block;
+  width: 90px;
+  flex-shrink: 0;
+  padding-top: 4px;
 }
 
 .subtitle {
@@ -1461,7 +1492,7 @@ body.menu-open .container-shift {
   /* Main Scrollable Area */
   .section:not(.hero) {
     grid-column: 2;
-    padding: 120px 80px; /* Maximum air */
+    padding: 140px 100px; /* Even more air */
     margin: 0; 
     max-width: 1400px; 
   }
