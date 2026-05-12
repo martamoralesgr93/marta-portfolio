@@ -1527,26 +1527,33 @@ body.menu-open .container-shift {
     display: none;
   }
 
-  /* Grid de 2 columnas para imágenes en desktop */
-  .desktop-img-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 24px !important;
+  /* Standardized Project Visuals */
+  .project-visuals {
+    margin: 32px 0 48px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--divider);
+    background: var(--surface);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
   }
 
   .media {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9; /* Standardized wide aspect ratio */
     overflow: hidden;
     width: 100%;
+    background: var(--bg);
   }
 
   .media img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
+    object-fit: cover !important; /* Ensures the frame is always filled nicely */
     display: block;
-    max-height: none !important;
-    margin: 0 !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .media:hover img {
+    transform: scale(1.02);
   }
 
 
