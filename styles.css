@@ -1982,27 +1982,44 @@ img.zoom-target {
     padding: 60px 0; /* More air per project */
   }
 
+  .work-header {
+    flex-direction: column; /* Stack to give title full width */
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .impact-badge {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .title {
     font-size: 24px;
     line-height: 1.2;
     margin-bottom: 12px;
     display: flex;
-    flex-direction: column; /* Stack to avoid 4-line pile up */
-    gap: 4px;
-    padding-left: 8px; /* Move away from the extreme left edge */
+    flex-direction: column; 
+    gap: 2px;
+    padding-left: 0; 
   }
 
   .title-company {
-    font-size: 13px; /* Subtle but bold context */
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+    opacity: 0.6;
   }
 
   .title-project {
-    font-size: 22px; /* Main focus */
+    font-size: 19px; /* Reduced to avoid wrapping */
     font-weight: 500;
     color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .title-separator {
+    display: none; 
   }
 
   .title-separator {
