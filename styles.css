@@ -1555,7 +1555,7 @@ body.menu-open .container-shift {
   }
 
   .media {
-    aspect-ratio: 21 / 9; /* Cinematic, less vertical 'giant' feel */
+    aspect-ratio: 16 / 9; /* Balanced ratio for UI scannability */
     overflow: hidden;
     width: 100%;
     background: var(--bg-soft);
