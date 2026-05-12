@@ -1543,33 +1543,34 @@ body.menu-open .container-shift {
     display: none;
   }
 
-  /* Standardized Project Visuals */
+  /* Standardized Project Visuals - Elegant & Constrained */
   .project-visuals {
     margin: 32px 0 48px;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--divider);
-    background: var(--surface);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    background: var(--bg-soft);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    max-width: 900px; /* Constrained for elegance */
   }
 
   .media {
-    aspect-ratio: 16 / 9; /* Standardized wide aspect ratio */
+    aspect-ratio: 21 / 9; /* Cinematic, less vertical 'giant' feel */
     overflow: hidden;
     width: 100%;
-    background: var(--bg);
+    background: var(--bg-soft);
   }
 
   .media img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Ensures the frame is always filled nicely */
+    object-fit: cover !important; 
     display: block;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .media:hover img {
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
 
 
