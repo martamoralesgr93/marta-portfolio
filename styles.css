@@ -385,11 +385,27 @@ button {
 
 .title {
   font-size: 26px;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: -0.04em;
   margin: 0;
-  font-weight: 700;
   color: var(--text);
+  display: block;
+}
+
+.title-company {
+  font-weight: 800; /* Stronger weight */
+  color: var(--text-primary);
+}
+
+.title-separator {
+  opacity: 0.2;
+  font-weight: 300;
+  margin: 0 4px;
+}
+
+.title-project {
+  font-weight: 400; /* Lighter weight */
+  color: var(--text-secondary);
 }
 
 .meta {
@@ -1967,14 +1983,36 @@ img.zoom-target {
   }
 
   .title {
-    font-size: 24px; /* More sutil */
-    line-height: 1.3; /* More air between lines */
+    font-size: 24px;
+    line-height: 1.2;
     margin-bottom: 12px;
+    display: flex;
+    flex-direction: column; /* Stack to avoid 4-line pile up */
+    gap: 4px;
+    padding-left: 8px; /* Move away from the extreme left edge */
+  }
+
+  .title-company {
+    font-size: 13px; /* Subtle but bold context */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+
+  .title-project {
+    font-size: 22px; /* Main focus */
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .title-separator {
+    display: none; /* Cleaner in stacked mobile view */
   }
 
   .professional-context {
     margin-bottom: 20px;
     line-height: 1.4;
+    padding-left: 8px;
   }
 
   .subtitle {
