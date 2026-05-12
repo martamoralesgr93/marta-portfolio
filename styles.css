@@ -1426,18 +1426,19 @@ body.menu-open .container-shift {
   /* Main Scrollable Area */
   .section:not(.hero) {
     grid-column: 2;
-    padding: 80px 10%;
-    max-width: 1200px;
+    padding: 100px 8% 100px 6%;
+    max-width: 1600px;
+    margin: 0;
   }
 
   .section {
-    margin-bottom: 120px;
+    margin-bottom: 140px;
   }
 
   .work-item {
     border-top: 0;
     border-bottom: 1px solid var(--divider);
-    padding: 64px 0;
+    padding: 100px 0;
   }
 
   .work-item:first-of-type {
