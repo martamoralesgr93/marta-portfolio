@@ -1,4 +1,4 @@
-:root {
+:root { /* Test */
   --bg: #ffffff;
   --text: #111111;
   --text-secondary: #666666;
@@ -24,10 +24,21 @@
 
   --container-mobile: 390px;
   --container-desktop: 1440px;
-  --sidebar-width: 400px;
-  --content-max: 1100px; /* Increased for better balance */
-  --bg-soft: #f9f9f9;
-  --accent: #111111;
+  --sidebar-width: 420px;
+  --content-max: 1100px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 120px;
+  --space-xxl: 160px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-subtle: 0 4px 24px rgba(0, 0, 0, 0.04);
+  --shadow-active: 0 12px 40px rgba(0, 0, 0, 0.06);
+  --text-muted: #8a8a8a;
+  --bg-soft: #fcfcfc;
 }
 
 * {
@@ -39,11 +50,11 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.8; /* More air in text */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -265,18 +276,26 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--bg);
-  color: var(--text) !important;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: var(--radius-md);
   font-size: 13px;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-top: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: var(--space-md);
   cursor: pointer;
-  border: 1px solid var(--divider);
-  text-decoration: none;
-  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+  padding: 8px 0;
+}
+
+.read-more-btn:after {
+  content: '→';
+  transition: transform 0.2s;
+}
+
+.read-more-btn:hover {
+  color: var(--text-secondary);
+}
+
+.read-more-btn:hover:after {
+  transform: translateX(4px);
 }
 
 .read-more-btn:hover {
@@ -350,8 +369,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 32px;
-  margin-bottom: 12px;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md); /* More air */
 }
 
 .impact-badge {
@@ -363,12 +382,12 @@ button {
 }
 
 .impact-label {
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--text-secondary);
-  letter-spacing: 0.1em;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   text-transform: uppercase;
 }
 
@@ -1442,19 +1461,16 @@ body.menu-open .container-shift {
   /* Main Scrollable Area */
   .section:not(.hero) {
     grid-column: 2;
-    padding: 100px 80px 100px 60px;
-    margin: 0; /* Remove centering */
-    max-width: 1400px; /* Expanded for more presence */
-  }
-
-  .section {
-    margin-bottom: 120px;
+    padding: 120px 80px; /* Maximum air */
+    margin: 0; 
+    max-width: 1400px; 
   }
 
   .work-item {
     border-top: 0;
     border-bottom: 1px solid var(--divider);
-    padding: 80px 0;
+    padding: var(--space-xl) 0; /* Huge vertical air */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .work-item:first-of-type {
@@ -1462,17 +1478,18 @@ body.menu-open .container-shift {
   }
 
   .title {
-    font-size: 32px;
-    letter-spacing: -0.04em;
-    margin-bottom: 12px;
-    font-weight: 700;
+    font-size: 42px; /* Stronger hierarchy */
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+    line-height: 1.1;
   }
 
   .meta {
-    font-size: 16px;
-    margin-bottom: 32px;
+    font-size: 14px;
+    margin-bottom: 48px; /* More air */
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
   }
 
   /* STAR Layout for Experience */
@@ -1545,13 +1562,13 @@ body.menu-open .container-shift {
 
   /* Standardized Project Visuals - Elegant & Constrained */
   .project-visuals {
-    margin: 32px 0 48px;
-    border-radius: 12px;
+    margin: var(--space-lg) 0 var(--space-lg); /* More air */
+    border-radius: var(--radius-md);
     overflow: hidden;
     border: 1px solid var(--divider);
     background: var(--bg-soft);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    max-width: 900px; /* Constrained for elegance */
+    box-shadow: var(--shadow-subtle);
+    max-width: 900px; 
   }
 
   .media {
@@ -1575,10 +1592,11 @@ body.menu-open .container-shift {
 
 
   .work-summary p {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 85ch; /* More horizontal presence */
-    color: var(--text);
+    font-size: 18px; /* Slightly more subtle */
+    line-height: 1.8;
+    max-width: 80ch; 
+    color: var(--text-secondary); /* Less contrast for non-titles */
+    margin-top: var(--space-md);
   }
 
   .detail {
