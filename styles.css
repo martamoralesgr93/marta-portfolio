@@ -1283,53 +1283,47 @@ body.menu-open .container-shift {
 }
 
 .timeline {
-  position: relative;
   max-width: var(--content-max);
-  margin-top: 32px;
+  margin-top: var(--space-lg);
 }
 
 .timeline-item {
   position: relative;
-  padding-left: 32px;
-  margin-bottom: 48px;
-  border-left: 1px solid var(--divider);
+  margin-bottom: var(--space-xl); /* Maximum air between roles */
+  max-width: 900px;
 }
 
 .timeline-item:last-child {
   margin-bottom: 0;
 }
 
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -4px;
-  top: 6px;
-  width: 7px;
-  height: 7px;
-  background: var(--text);
-  border-radius: 50%;
-}
-
 .timeline-role {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 2px;
+  font-size: 22px; /* Editorial size */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
 }
 
 .timeline-company {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .timeline-date {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #999;
-  margin-bottom: 16px;
-  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: 12px;
+}
+
+.timeline-summary {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-top: 16px;
+  max-width: 75ch;
 }
 
 .timeline-bullets {
