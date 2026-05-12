@@ -160,9 +160,9 @@ button {
 .hero {
   display: flex;
   flex-direction: column;
-  gap: var(--s-24);
+  gap: var(--s-32);
   align-items: flex-start;
-  margin-top: var(--s-64);
+  margin-top: var(--s-128); /* More air */
   margin-bottom: var(--s-96);
 }
 
@@ -171,8 +171,8 @@ button {
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 0.9;
-  margin-bottom: var(--s-16);
   color: var(--text);
+  margin-bottom: var(--s-16);
 }
 
 .hero-tagline {
@@ -205,74 +205,8 @@ button {
   display: block;
 }
 
-.nav-logo { height: 32px; margin-right: var(--s-16); }
-.fab-logo { height: 28px; }
-.signature-logo { height: var(--s-64); }
-
-.profile-name {
-  font-size: var(--f-hero);
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 0.9;
-  margin-bottom: var(--s-24);
-  color: var(--text);
-}
-
-.status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  background: #f0f7f0;
-  color: #2a5d2a;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  background: #4caf50;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
-}
-
 .hero-text {
   padding-top: 0;
-}
-
-.profile-name {
-  font-size: 36px;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  margin: 0 0 8px;
-  font-weight: 700;
-}
-
-.profile-role {
-  font-size: 16px;
-  color: var(--text-secondary);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 24px;
-}
-
-.hero-tagline {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  max-width: 46ch;
-}
-
-.hero-subtitle {
-  font-size: 14px;
-  margin: 0 0 24px;
-  max-width: 44ch;
-  color: var(--text-secondary);
-  line-height: 1.6;
 }
 
 .link {
@@ -367,13 +301,14 @@ button {
 }
 
 .eyebrow {
-  font-size: var(--f-small);
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--text-muted);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: var(--s-16);
   display: block;
+  opacity: 0.6;
 }
 
 .section-title {
@@ -454,18 +389,14 @@ button {
 }
 
 .title {
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: -0.04em;
-  margin: 0;
-  color: var(--text);
   display: block;
+  margin: 0;
 }
 
 .title-company {
   font-weight: 800;
   color: var(--text-primary);
-  opacity: 0.6; /* Softer context */
+  opacity: 0.3; /* Ultra subtle context */
 }
 
 .title-separator {
@@ -491,43 +422,29 @@ button {
 }
 
 .professional-context {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-muted);
   font-weight: 600;
-  margin: 0 0 24px;
-  letter-spacing: 0.12em;
+  margin: 0 0 var(--s-24);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.4; /* Ultra subtle */
+  opacity: 0.3; /* Ultra silent */
 }
 
 /* Executive Career Summary */
 .executive-summary {
-  margin-top: var(--space-sm);
+  margin-top: var(--s-16);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--s-16);
 }
 
 .executive-summary p {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.8;
   color: var(--text-secondary);
   margin: 0;
-  display: flex;
-  align-items: flex-start;
-}
-
-.executive-summary strong {
-  color: var(--text);
-  font-weight: 700;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-right: 16px;
-  display: inline-block;
-  width: 90px;
-  flex-shrink: 0;
-  padding-top: 4px;
+  max-width: var(--editorial-max);
 }
 
 .subtitle {
