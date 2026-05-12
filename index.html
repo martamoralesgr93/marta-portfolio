@@ -29,11 +29,11 @@
   <header class="nav mobile-header">
     <div class="nav-inner-horizontal">
       <div class="nav-zone left">
-        <button class="nav-btn-text" onclick="scrollToId('top')">Inicio</button>
+        <button class="nav-btn-text" onclick="scrollToId('top')" data-i18n="nav-home">Inicio</button>
       </div>
-      <div class="nav-zone center" onclick="scrollToId('top')">
+      <div class="nav-zone center" onclick="scrollToId('about')">
         <img src="logo.png" class="nav-logo-small" alt="">
-        <span class="nav-label">Sobre mí</span>
+        <span class="nav-label" data-i18n="nav-about">Sobre mí</span>
       </div>
       <div class="nav-zone right">
         <button class="lang-toggle" onclick="toggleLanguage()" id="langToggleMobile">EN</button>
@@ -48,19 +48,25 @@
           <img src="logo.png" class="avatar" alt="Marta Morales">
         </div>
         <div class="hero-text">
-          <p class="hero-eyebrow">PRODUCT DESIGN · UX STRATEGY · CRO</p>
-          <h1 class="profile-name">Marta Morales</h1>
+          <p class="hero-eyebrow" data-i18n="hero-eyebrow">PRODUCT DESIGN · UX STRATEGY · GROWTH</p>
+          <h1 class="profile-name" data-i18n="profile-name">Marta Morales</h1>
           
           <div class="hero-description">
-            <p>Product Designer especializada en UX/UI, CRO y customer journey optimization.</p>
-            <p>Actualmente trabajo en ILUNION Hotels diseñando experiencias digitales orientadas a conversión mediante UX estratégico, análisis de comportamiento y decisiones basadas en datos.</p>
-            <p>Experiencia en funnels digitales, accesibilidad, research y optimización de producto en entornos multidisciplinares junto a negocio, marketing y desarrollo.</p>
+            <p data-i18n="hero-description-1">Formo parte del equipo de Negocio Digital en ILUNION Hotels, optimizando el canal directo mediante diseño estratégico, CRO y decisiones basadas en datos.</p>
+            <p data-i18n="hero-description-2">Mi trabajo conecta la experiencia de usuario con objetivos reales de negocio: conversión, revenue y captación.</p>
+            <p data-i18n="hero-description-3">Diseño soluciones que no solo son visuales, sino que resuelven problemas operativos y de rentabilidad en entornos de alta complejidad.</p>
           </div>
 
           <div class="side-nav">
             <div class="nav-projects-container">
-              <button class="nav-main-link" onclick="toggleNavProjects()" id="proyectosTrigger">
-                <span>Proyectos</span>
+              <button class="nav-main-link" onclick="scrollToId('top')">
+                <span data-i18n="nav-home">Inicio</span>
+              </button>
+            </div>
+
+            <div class="nav-projects-container">
+              <button class="nav-main-link" onclick="toggleNavProjects(); scrollToId('work')" id="proyectosTrigger">
+                <span data-i18n="nav-work">Proyectos</span>
               </button>
               <ul class="nav-projects-list" id="navProjectsList">
                 <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">ILUNION Hotels — Motor</a></li>
@@ -70,8 +76,8 @@
             </div>
             
             <div class="nav-projects-container">
-              <button class="nav-main-link" onclick="toggleAboutMenu()" id="aboutTrigger">
-                <span>Sobre mí</span>
+              <button class="nav-main-link" onclick="toggleAboutMenu(); scrollToId('about')" id="aboutTrigger">
+                <span data-i18n="nav-about">Sobre mí</span>
               </button>
               <ul class="nav-projects-list" id="aboutMenuList">
                 <li><a href="#experience" class="nav-project-link">CV / Experiencia</a></li>
@@ -89,10 +95,16 @@
         
         <article id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
           <div class="work-summary">
-            <h2 class="title">ILUNION Hotels — Acceso al Motor de Reservas</h2>
+            <div class="work-header">
+              <h2 class="title" data-i18n="p1-title">ILUNION Hotels — Booking Engine</h2>
+              <div class="impact-badge">
+                <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
+                <span class="impact-value" data-i18n="p1-impact-tag">Optimización del Funnel</span>
+              </div>
+            </div>
             <p class="professional-context">Product Design · CRO · UX Strategy · Customer Journey · Ecommerce hotelero</p>
-            <p class="subtitle">Rediseño estratégico del acceso al motor de reservas</p>
-            <p>Rediseño estratégico del acceso al motor de reservas para reducir fricción, mejorar la claridad del customer journey y optimizar la conversión directa dentro del ecosistema digital de ILUNION Hotels.</p>
+            <p class="subtitle" data-i18n="p1-subtitle">Rediseño estratégico del acceso al motor de reservas</p>
+            <p data-i18n="p1-summary">Rediseño estratégico del acceso al motor de reservas para reducir fricción, mejorar la claridad del customer journey y optimizar la conversión directa dentro del ecosistema digital de ILUNION Hotels.</p>
             <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
           </div>
 
@@ -270,10 +282,16 @@
 
       <article id="project-academic" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
         <div class="work-summary">
-          <h2 class="title">CEF — Herramienta de Gestión Académica</h2>
+          <div class="work-header">
+            <h2 class="title" data-i18n="p2-title">CEF — Herramienta de Gestión Académica</h2>
+            <div class="impact-badge">
+              <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
+              <span class="impact-value" data-i18n="p2-impact-tag">Eficiencia Operativa</span>
+            </div>
+          </div>
           <p class="professional-context">Product Design · UX Strategy · Accesibilidad · Herramientas internas · Educación digital</p>
-          <p class="subtitle">Herramienta de gestión académica</p>
-          <p>Rediseño UX de una herramienta de gestión académica para mejorar claridad operativa, accesibilidad y eficiencia de uso en entornos educativos digitales con alta carga de información.</p>
+          <p class="subtitle" data-i18n="p2-subtitle">Herramienta de gestión académica</p>
+          <p data-i18n="p2-summary">Rediseño UX de una herramienta de gestión académica para mejorar claridad operativa, accesibilidad y eficiencia de uso en entornos educativos digitales con alta carga de información.</p>
           <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
         </div>
 
@@ -423,7 +441,13 @@
 
       <article id="project-offers" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
         <div class="work-summary">
-          <h2 class="title" data-i18n="p3-title">ILUNION Hotels — Componente de Ofertas y Conversión</h2>
+          <div class="work-header">
+            <h2 class="title" data-i18n="p3-title">ILUNION Hotels — Componente de Ofertas y Conversión</h2>
+            <div class="impact-badge">
+              <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
+              <span class="impact-value" data-i18n="p3-impact-tag">+13% Conversión Directa</span>
+            </div>
+          </div>
           <p class="professional-context">Product Design · CRO · UX Strategy · Ecommerce hotelero · AEM</p>
           <p class="subtitle" data-i18n="p3-subtitle">Optimización del flujo de captación en mobile</p>
           <p data-i18n="p3-summary">Eliminación de pasos intermedios en el flujo de captación para simplificar el registro de socios.</p>
@@ -503,11 +527,11 @@
 
       <div class="about-grid">
         <div class="about-copy">
-          <p class="about-intro" data-i18n="about-intro">Product Designer con enfoque estratégico y mentalidad de producto.</p>
+          <p class="about-intro" data-i18n="about-intro">Product Designer con mentalidad de negocio y enfoque en resultados.</p>
 
-          <div class="about-text" data-i18n="about-text">
-            <p>Me apasiona encontrar el equilibrio entre las necesidades del usuario y el esfuerzo técnico para maximizar el impacto.</p>
-            <p>Utilizo mi experiencia en UX y CRO para transformar insights en decisiones de diseño que optimizan procesos y resuelven problemas reales.</p>
+          <div class="about-text">
+            <p data-i18n="about-text-1">Entiendo el diseño como una herramienta para resolver problemas y alcanzar objetivos estratégicos. Actualmente, dentro del equipo de Negocio Digital de ILUNION Hotels, trabajo directamente sobre el canal directo de la compañía, donde cada decisión UX tiene un impacto medible en la rentabilidad.</p>
+            <p data-i18n="about-text-2">Mi enfoque combina el análisis de datos, el customer journey y la experimentación continua para crear productos digitales que escalan y generan valor real.</p>
           </div>
 
           <div class="about-signature">
