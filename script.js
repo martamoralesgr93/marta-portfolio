@@ -345,3 +345,42 @@ function closeZoomModal(e) {
     document.body.style.overflow = "";
   }
 }
+
+
+// ─── Scroll-driven entrance animations ──────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -32px 0px' });
+
+  // Key content blocks
+  var selectors = [
+    '.eyebrow', '.section-title', '.about-grid', '.about-signature',
+    '.contact-title', '.contact-text', '.hiring-status', '.contact-actions',
+    '.skills-grid', '.edu-list', '.footer'
+  ].join(', ');
+
+  document.querySelectorAll(selectors).forEach(function (el) {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+
+  // Work items with subtle stagger
+  document.querySelectorAll('.work-item').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i * 0.06) + 's';
+    revealObserver.observe(el);
+  });
+
+  // Skill tags with stagger
+  document.querySelectorAll('.tag').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (Math.min(i, 5) * 0.05) + 's';
+    revealObserver.observe(el);
+  });
+});

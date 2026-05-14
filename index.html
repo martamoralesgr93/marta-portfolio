@@ -72,6 +72,7 @@
                 <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">Booking Engine & Funnel UX</a></li>
                 <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-academic')" class="nav-project-link">EdTech Management Platform</a></li>
                 <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-offers')" class="nav-project-link">Growth Strategy & Conversion</a></li>
+                <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-payment')" class="nav-project-link" data-i18n-nav="p4-nav-label">CEF — Pasarela de Pago</a></li>
               </ul>
             </div>
             
@@ -132,150 +133,400 @@
           </div>
 
           <div class="detail" style="display: none;">
-            <div class="detail-block">
-              <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
-              <p>En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra, pero el acceso al motor presentaba fricción dentro del customer journey digital.</p>
-              <!-- (Full detail content continues...) -->
-              <!-- I'll keep the rest of the file content in my memory and only replace the broken parts -->
+            
+            <!-- PROCESO VISUAL — project-ilunion (Booking Engine) -->
+            <div class="case-process-visual" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
 
+              <!-- Process Timeline -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Proceso de diseño</p>
+              <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-bottom: 2rem;">
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Clarity + Analytics</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Problem Framing</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">UX Strategy</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Diseño desktop/mobile</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Staging → Producción</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Observación activa</div>
+              </div>
+
+              <!-- User Flow Before/After -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Jerarquía de componentes — antes vs. después</p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+
+                <!-- Before -->
+                <div style="border: 1px solid var(--border); border-radius: 10px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">Antes — jerarquía de la página</p>
+                  <div style="display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.75rem;">
+                    <div style="background: #fef3cd; border: 1px solid #f0c040; border-radius: 5px; padding: 0.5rem 0.7rem; color: #856404; font-weight: 500;">🖼 Hero inspacional — 100vh</div>
+                    <div style="background: #fef3cd; border: 1px solid #f0c040; border-radius: 5px; padding: 0.5rem 0.7rem; color: #856404;">📣 Promociones activas compitiendo</div>
+                    <div style="background: #fef3cd; border: 1px solid #f0c040; border-radius: 5px; padding: 0.5rem 0.7rem; color: #856404;">📋 Contenido corporativo</div>
+                    <div style="background: #fee2e2; border: 1px solid #fca5a5; border-radius: 5px; padding: 0.5rem 0.7rem; color: #991b1b; font-weight: 500;">🔍 Motor de reservas — enterrado</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary); padding: 0.25rem 0.5rem;">⚠ Usuario con alta intención → abandona</div>
+                  </div>
+                </div>
+
+                <!-- After -->
+                <div style="border: 1px solid var(--accent, #000); border-radius: 10px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">Después — jerarquía rediseñada</p>
+                  <div style="display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.75rem;">
+                    <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 5px; padding: 0.5rem 0.7rem; color: #166534; font-weight: 500;">🔍 Motor de reservas — primer scroll visible</div>
+                    <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 5px; padding: 0.5rem 0.7rem; color: #166534;">📅 Fechas + ocupación directamente expuestos</div>
+                    <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 5px; padding: 0.5rem 0.7rem; color: #166534;">📣 Promociones contextuales (no bloqueantes)</div>
+                    <div style="background: var(--bg, #fff); border: 1px solid var(--border); border-radius: 5px; padding: 0.5rem 0.7rem; color: var(--text-secondary);">🖼 Contenido inspiracional — secundario</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary); padding: 0.25rem 0.5rem;">✅ Intención transaccional → conversión directa</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Problem Framing -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">El insight clave — desalineación de modelos mentales</p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.5rem;">Modelo mental del negocio</p>
+                  <p style="font-size: 0.8rem; color: var(--text-primary); font-style: italic;">"Explora. Inspírate. Descubre ILUNION Hotels."</p>
+                </div>
+                <div style="border: 1px solid var(--accent, #000); border-radius: 8px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.5rem;">Modelo mental del usuario (Paid Media)</p>
+                  <p style="font-size: 0.8rem; color: var(--text-primary); font-style: italic;">"Quiero reservar. Quiero ver precio. Quiero encontrar mi hotel."</p>
+                </div>
+              </div>
+
+            </div>
+            <!-- FIN PROCESO VISUAL -->
+<div class=”detail-block” id=”detail-ilunion”>
+
+            <!-- ES -->
+            <div data-lang=”es”>
+            <h4 class=”detail-label”>S — SITUATION · Contexto de negocio</h4>
+            <p>En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra, pero el acceso al motor presentaba fricción dentro del customer journey digital.</p>
             <p>El componente convivía con múltiples objetivos de negocio:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">promociones,</li>
-              <li style="margin-bottom: 0.25rem;">branding,</li>
-              <li style="margin-bottom: 0.25rem;">fidelización,</li>
-              <li style="margin-bottom: 0.25rem;">y contenido inspiracional.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>promociones,</li>
+              <li style=”margin-bottom: 0.25rem;”>branding,</li>
+              <li style=”margin-bottom: 0.25rem;”>fidelización,</li>
+              <li style=”margin-bottom: 0.25rem;”>y contenido inspiracional.</li>
             </ul>
             <p>Esto generaba una experiencia poco clara para usuarios que llegaban con una intención directa de reservar.</p>
             <p>El acceso al motor aparecía en puntos clave del ecosistema digital:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">homepage,</li>
-              <li style="margin-bottom: 0.25rem;">páginas de hotel,</li>
-              <li style="margin-bottom: 0.25rem;">páginas travel,</li>
-              <li style="margin-bottom: 0.25rem;">y campañas promocionales.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>homepage,</li>
+              <li style=”margin-bottom: 0.25rem;”>páginas de hotel,</li>
+              <li style=”margin-bottom: 0.25rem;”>páginas travel,</li>
+              <li style=”margin-bottom: 0.25rem;”>y campañas promocionales.</li>
             </ul>
             <p>Sin embargo, el comportamiento de usuario mostraba señales claras de fricción:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">usuarios que no iniciaban búsqueda,</li>
-              <li style="margin-bottom: 0.25rem;">navegación innecesaria,</li>
-              <li style="margin-bottom: 0.25rem;">abandono temprano,</li>
-              <li style="margin-bottom: 0.25rem;">y dificultades para localizar rápidamente el acceso al motor.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>usuarios que no iniciaban búsqueda,</li>
+              <li style=”margin-bottom: 0.25rem;”>navegación innecesaria,</li>
+              <li style=”margin-bottom: 0.25rem;”>abandono temprano,</li>
+              <li style=”margin-bottom: 0.25rem;”>y dificultades para localizar rápidamente el acceso al motor.</li>
             </ul>
             <p>Mi rol dentro del proyecto combinaba:</p>
-            <ul style="margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">UX/UI,</li>
-              <li style="margin-bottom: 0.25rem;">CRO,</li>
-              <li style="margin-bottom: 0.25rem;">análisis de comportamiento,</li>
-              <li style="margin-bottom: 0.25rem;">y coordinación con desarrollo dentro del ecosistema digital de ILUNION Hotels.</li>
+            <ul style=”margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>UX/UI,</li>
+              <li style=”margin-bottom: 0.25rem;”>CRO,</li>
+              <li style=”margin-bottom: 0.25rem;”>análisis de comportamiento,</li>
+              <li style=”margin-bottom: 0.25rem;”>y coordinación con desarrollo dentro del ecosistema digital de ILUNION Hotels.</li>
             </ul>
-
-            <h4 class="detail-label">T — TASK · El reto</h4>
+            <h4 class=”detail-label”>T — TASK · El reto</h4>
             <p>Mi responsabilidad fue analizar el comportamiento del acceso al motor desde una perspectiva UX y CRO para detectar puntos de abandono y proponer una solución más clara, escalable y alineada con los objetivos comerciales.</p>
             <p>La solución debía:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">funcionar correctamente en desktop y mobile,</li>
-              <li style="margin-bottom: 0.25rem;">convivir con campañas activas,</li>
-              <li style="margin-bottom: 0.25rem;">mantener coherencia con la identidad visual,</li>
-              <li style="margin-bottom: 0.25rem;">y adaptarse a las limitaciones técnicas de Adobe Experience Manager.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>funcionar correctamente en desktop y mobile,</li>
+              <li style=”margin-bottom: 0.25rem;”>convivir con campañas activas,</li>
+              <li style=”margin-bottom: 0.25rem;”>mantener coherencia con la identidad visual,</li>
+              <li style=”margin-bottom: 0.25rem;”>y adaptarse a las limitaciones técnicas de Adobe Experience Manager.</li>
             </ul>
             <p>El reto no consistía únicamente en “hacer visible un buscador”, sino en resolver una desalineación entre:</p>
-            <ul style="margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">las prioridades del negocio,</li>
-              <li style="margin-bottom: 0.25rem;">la arquitectura de contenidos,</li>
-              <li style="margin-bottom: 0.25rem;">y el comportamiento real del usuario.</li>
+            <ul style=”margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>las prioridades del negocio,</li>
+              <li style=”margin-bottom: 0.25rem;”>la arquitectura de contenidos,</li>
+              <li style=”margin-bottom: 0.25rem;”>y el comportamiento real del usuario.</li>
             </ul>
-
-            <h4 class="detail-label">A — ACTION · Lo que hice y por qué</h4>
-            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">1. Research & Analysis</h5>
+            <h4 class=”detail-label”>A — ACTION · Lo que hice y por qué</h4>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>1. Research & Analysis</h5>
             <p>Empecé analizando el comportamiento de los usuarios mediante Microsoft Clarity y Adobe Analytics para identificar:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">patrones de interacción,</li>
-              <li style="margin-bottom: 0.25rem;">profundidad de scroll,</li>
-              <li style="margin-bottom: 0.25rem;">visibilidad del motor,</li>
-              <li style="margin-bottom: 0.25rem;">interacción con CTAs,</li>
-              <li style="margin-bottom: 0.25rem;">y puntos de fricción dentro del customer journey.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>patrones de interacción,</li>
+              <li style=”margin-bottom: 0.25rem;”>profundidad de scroll,</li>
+              <li style=”margin-bottom: 0.25rem;”>visibilidad del motor,</li>
+              <li style=”margin-bottom: 0.25rem;”>interacción con CTAs,</li>
+              <li style=”margin-bottom: 0.25rem;”>y puntos de fricción dentro del customer journey.</li>
             </ul>
             <p>El análisis mostró que muchos usuarios llegaban con intención directa de reservar, pero encontraban demasiados estímulos antes de iniciar búsqueda. El acceso al motor competía visualmente con:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">promociones,</li>
-              <li style="margin-bottom: 0.25rem;">contenido corporativo,</li>
-              <li style="margin-bottom: 0.25rem;">módulos secundarios,</li>
-              <li style="margin-bottom: 0.25rem;">y elementos inspiracionales.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>promociones,</li>
+              <li style=”margin-bottom: 0.25rem;”>contenido corporativo,</li>
+              <li style=”margin-bottom: 0.25rem;”>módulos secundarios,</li>
+              <li style=”margin-bottom: 0.25rem;”>y elementos inspiracionales.</li>
             </ul>
             <p>También realicé benchmarking funcional con otros entornos ecommerce travel para entender cómo priorizaban: disponibilidad, fechas, precio, y conversión directa.</p>
-            <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--accent); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);">
-              "El usuario no quería explorar primero. Quería comprobar disponibilidad lo antes posible."
+            <blockquote style=”margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--accent); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);”>
+              “El usuario no quería explorar primero. Quería comprobar disponibilidad lo antes posible.”
             </blockquote>
-
-            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">2. Problem Framing</h5>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>2. Problem Framing</h5>
             <p>El problema principal no era visual. La experiencia estaba construida desde una lógica más corporativa e inspiracional, mientras que gran parte del tráfico llegaba con una intención claramente transaccional.</p>
             <p>Existía una desalineación entre:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">el modelo mental del negocio,</li>
-              <li style="margin-bottom: 0.25rem;">y el comportamiento real del usuario.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>el modelo mental del negocio,</li>
+              <li style=”margin-bottom: 0.25rem;”>y el comportamiento real del usuario.</li>
             </ul>
             <p>El acceso al motor no estaba funcionando como una herramienta de conversión rápida, sino como un elemento más dentro de una jerarquía demasiado competida.</p>
-
-            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">3. UX Strategy & Prioritization</h5>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>3. UX Strategy & Prioritization</h5>
             <p>A partir del análisis, redefiní la jerarquía del acceso al motor priorizando:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">rapidez de identificación,</li>
-              <li style="margin-bottom: 0.25rem;">claridad visual,</li>
-              <li style="margin-bottom: 0.25rem;">reducción de fricción,</li>
-              <li style="margin-bottom: 0.25rem;">y facilidad de interacción.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>rapidez de identificación,</li>
+              <li style=”margin-bottom: 0.25rem;”>claridad visual,</li>
+              <li style=”margin-bottom: 0.25rem;”>reducción de fricción,</li>
+              <li style=”margin-bottom: 0.25rem;”>y facilidad de interacción.</li>
             </ul>
             <p>La estrategia se centró en aumentar la visibilidad del inicio de búsqueda, simplificar la lectura, reducir competencia entre elementos, y facilitar interacciones rápidas desde tráfico de alta intención.</p>
             <p>También trabajé la relación entre promociones, contenido inspiracional, y motor de reservas, para evitar conflictos entre objetivos dentro de la misma pantalla.</p>
-
-            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">4. Responsive Thinking</h5>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>4. Responsive Thinking</h5>
             <p>Desktop y mobile requerían soluciones distintas.</p>
             <p><strong>Desktop:</strong> Se priorizó el acceso rápido al motor, visibilidad de fechas y ocupación, relación directa entre promociones y búsqueda, y exposición clara de CTAs.</p>
             <p><strong>Mobile:</strong> La experiencia se simplificó para adaptarse al comportamiento táctil y al espacio visible inicial: reorganización vertical, reducción de elementos secundarios, mejora de jerarquía, y optimización del contenido visible en primer scroll.</p>
             <p>Varias decisiones UX estuvieron condicionadas por limitaciones técnicas de Adobe Experience Manager, especialmente relacionadas con componentes dinámicos y comportamiento responsive. Los constraints técnicos formaron parte activa de las decisiones de producto y diseño durante todo el proyecto.</p>
-
-
-
-            <h5 style="margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">5. Collaboration & Implementation</h5>
+            <h5 style=”margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>5. Collaboration & Implementation</h5>
             <p>Trabajé directamente con el equipo de desarrollo en la definición funcional y validación del comportamiento en entorno staging.</p>
             <p>El objetivo no era únicamente entregar diseño visual, sino asegurar:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">coherencia funcional,</li>
-              <li style="margin-bottom: 0.25rem;">viabilidad técnica,</li>
-              <li style="margin-bottom: 0.25rem;">correcta integración en Adobe Experience Manager,</li>
-              <li style="margin-bottom: 0.25rem;">y consistencia dentro del ecosistema digital.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>coherencia funcional,</li>
+              <li style=”margin-bottom: 0.25rem;”>viabilidad técnica,</li>
+              <li style=”margin-bottom: 0.25rem;”>correcta integración en Adobe Experience Manager,</li>
+              <li style=”margin-bottom: 0.25rem;”>y consistencia dentro del ecosistema digital.</li>
             </ul>
-
-            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">6. Post-Launch Iteration & Test Running</h5>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>6. Post-Launch Iteration & Test Running</h5>
             <p>Tras el lanzamiento, el proyecto quedó en fase de observación activa y test running para validar comportamiento real de usuario y rendimiento comercial a medio plazo. El seguimiento mediante Microsoft Clarity permitió detectar nuevos patrones de uso no previstos inicialmente.</p>
             <p>Uno de los principales hallazgos fue el uso del buscador por parte de los usuarios como herramienta de exploración de destinos, y no únicamente como acceso transaccional al motor de reservas.</p>
             <p>Este comportamiento reveló una necesidad híbrida entre:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">exploración,</li>
-              <li style="margin-bottom: 0.25rem;">inspiración,</li>
-              <li style="margin-bottom: 0.25rem;">y conversión directa.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>exploración,</li>
+              <li style=”margin-bottom: 0.25rem;”>inspiración,</li>
+              <li style=”margin-bottom: 0.25rem;”>y conversión directa.</li>
             </ul>
             <p>A partir de este insight se trabajaron nuevas mejoras orientadas a integrar mejor la lógica de búsqueda por destino dentro de la experiencia. Actualmente el proyecto continúa en fase de validación y optimización continua. Aunque los primeros resultados son positivos, los datos no se consideran concluyentes hasta completar aproximadamente seis semanas de recorrido y observación estable.</p>
-
-            <h4 class="detail-label" style="margin-top: 2.5rem;">Design System & Scalability</h4>
+            <h4 class=”detail-label” style=”margin-top: 2.5rem;”>Design System & Escalabilidad</h4>
             <p>La solución se diseñó pensando en consistencia, reutilización, escalabilidad, y coherencia dentro del ecosistema digital de ILUNION Hotels.</p>
             <p>El objetivo no era únicamente resolver una necesidad puntual, sino construir una estructura adaptable a:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">futuras campañas y promociones,</li>
-              <li style="margin-bottom: 0.25rem;">evoluciones del motor de reservas,</li>
-              <li style="margin-bottom: 0.25rem;">y nuevos puntos de acceso dentro del customer journey digital.</li>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>futuras campañas y promociones,</li>
+              <li style=”margin-bottom: 0.25rem;”>evoluciones del motor de reservas,</li>
+              <li style=”margin-bottom: 0.25rem;”>y nuevos puntos de acceso dentro del customer journey digital.</li>
             </ul>
             <p>Las decisiones visuales y funcionales se plantearon desde una lógica de sistema, priorizando: modularidad, claridad, responsive consistency, y facilidad de mantenimiento.</p>
+            <h4 class=”detail-label” style=”margin-top: 2.5rem;”>R — RESULT · Impacto</h4>
+            <div style=”overflow-x: auto; margin: 1.5rem 0;”>
+              <table style=”width: 100%; border-collapse: collapse; font-size: var(--body-base);”>
+                <thead>
+                  <tr style=”border-bottom: 2px solid var(--border);”>
+                    <th style=”text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Indicador</th>
+                    <th style=”text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Antes</th>
+                    <th style=”text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Después</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Visibilidad del motor de reservas</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Enterrado bajo hero + promociones + contenido corporativo</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Accesible en el primer scroll — desktop y mobile</td>
+                  </tr>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Comportamiento en mobile (post-launch Clarity)</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Click en selector de fechas — patrón no táctil</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Swipe interaction desarrollado e implementado tras detección</td>
+                  </tr>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Nuevo insight de producto detectado</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>No identificado</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Usuarios usan el buscador para explorar destinos → nueva línea de mejora abierta</td>
+                  </tr>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Coherencia desktop / mobile</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Solución única sin diferenciación de dispositivo</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Arquitecturas diferenciadas por comportamiento táctil vs. pointer</td>
+                  </tr>
+                  <tr>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Indicadores de conversión (en validación)</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Fricción alta — abandono temprano en tráfico de alta intención</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Primeros indicadores positivos — en consolidación activa (6 semanas de datos)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>El seguimiento post-lanzamiento con Clarity permitió detectar un nuevo patrón de comportamiento no previsto: los usuarios utilizaban el buscador para explorar destinos, no únicamente como acceso transaccional. Este hallazgo abrió una nueva línea de mejora y demostró un proceso de producto maduro — la diferencia entre hacer una entrega y hacer producto.</p>
+            <p style=”font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);”><em>📌 Datos de conversión son confidenciales. Los resultados reflejan seguimiento analítico con Adobe Analytics y Microsoft Clarity, más validaciones internas del equipo comercial y de producto.</em></p>
+            </div>
+            <!-- /ES -->
 
-            <h4 class="detail-label" style="margin-top: 2.5rem;">R — RESULT · Impacto</h4>
-            <p>La optimización permitió mejorar la claridad del acceso al motor, reducir fricción dentro del customer journey digital, aumentar la visibilidad del inicio de búsqueda, y facilitar interacciones más rápidas desde tráfico de alta intención.</p>
-            <p>Además:</p>
-            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">se reforzó la relación entre campañas y conversión directa,</li>
-              <li style="margin-bottom: 0.25rem;">se mejoró la coherencia entre desktop y mobile,</li>
-              <li style="margin-bottom: 0.25rem;">y se estableció una estructura más escalable para futuras evoluciones del ecosistema digital.</li>
+            <!-- EN -->
+            <div data-lang=”en” style=”display:none”>
+            <h4 class=”detail-label”>S — SITUATION · Business context</h4>
+            <p>At ILUNION Hotels, the booking engine is one of the main conversion points of the direct channel. Most of the traffic came from Paid Media campaigns with high purchase intent, but access to the engine created friction within the digital customer journey.</p>
+            <p>The component coexisted with multiple business objectives:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>promotions,</li>
+              <li style=”margin-bottom: 0.25rem;”>branding,</li>
+              <li style=”margin-bottom: 0.25rem;”>loyalty,</li>
+              <li style=”margin-bottom: 0.25rem;”>and inspirational content.</li>
             </ul>
-            <p>El seguimiento post-lanzamiento también permitió detectar nuevos patrones de comportamiento relacionados con exploración de destinos y adaptar progresivamente la experiencia a estos usos reales.</p>
-            <p>Actualmente el proyecto continúa en fase de test y optimización continua. Los primeros indicadores muestran una evolución positiva, aunque el análisis definitivo se realizará tras consolidar varias semanas de datos estables.</p>
-            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);"><em>📌 Algunos datos específicos de conversión y negocio son confidenciales. Los resultados reflejan seguimiento analítico, observación de comportamiento y validaciones internas posteriores al lanzamiento.</em></p>
+            <p>This created an unclear experience for users arriving with a direct intention to book.</p>
+            <p>Access to the engine appeared at key points in the digital ecosystem:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>homepage,</li>
+              <li style=”margin-bottom: 0.25rem;”>hotel pages,</li>
+              <li style=”margin-bottom: 0.25rem;”>travel pages,</li>
+              <li style=”margin-bottom: 0.25rem;”>and promotional campaigns.</li>
+            </ul>
+            <p>However, user behaviour showed clear friction signals:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>users not initiating searches,</li>
+              <li style=”margin-bottom: 0.25rem;”>unnecessary navigation,</li>
+              <li style=”margin-bottom: 0.25rem;”>early abandonment,</li>
+              <li style=”margin-bottom: 0.25rem;”>and difficulty quickly locating access to the engine.</li>
+            </ul>
+            <p>My role in the project combined:</p>
+            <ul style=”margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>UX/UI,</li>
+              <li style=”margin-bottom: 0.25rem;”>CRO,</li>
+              <li style=”margin-bottom: 0.25rem;”>behaviour analysis,</li>
+              <li style=”margin-bottom: 0.25rem;”>and coordination with development within the ILUNION Hotels digital ecosystem.</li>
+            </ul>
+            <h4 class=”detail-label”>T — TASK · The challenge</h4>
+            <p>My responsibility was to analyse the engine access behaviour from a UX and CRO perspective to identify drop-off points and propose a clearer, scalable solution aligned with commercial objectives.</p>
+            <p>The solution had to:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>work correctly on desktop and mobile,</li>
+              <li style=”margin-bottom: 0.25rem;”>coexist with active campaigns,</li>
+              <li style=”margin-bottom: 0.25rem;”>maintain visual identity coherence,</li>
+              <li style=”margin-bottom: 0.25rem;”>and adapt to the technical constraints of Adobe Experience Manager.</li>
+            </ul>
+            <p>The challenge wasn't just about “making a search bar visible”, but about resolving a misalignment between:</p>
+            <ul style=”margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>business priorities,</li>
+              <li style=”margin-bottom: 0.25rem;”>content architecture,</li>
+              <li style=”margin-bottom: 0.25rem;”>and real user behaviour.</li>
+            </ul>
+            <h4 class=”detail-label”>A — ACTION · What I did and why</h4>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>1. Research & Analysis</h5>
+            <p>I began by analysing user behaviour through Microsoft Clarity and Adobe Analytics to identify:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>interaction patterns,</li>
+              <li style=”margin-bottom: 0.25rem;”>scroll depth,</li>
+              <li style=”margin-bottom: 0.25rem;”>engine visibility,</li>
+              <li style=”margin-bottom: 0.25rem;”>CTA interaction,</li>
+              <li style=”margin-bottom: 0.25rem;”>and friction points within the customer journey.</li>
+            </ul>
+            <p>The analysis showed that many users arrived with direct booking intent but encountered too many stimuli before initiating a search. Engine access was competing visually with:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>promotions,</li>
+              <li style=”margin-bottom: 0.25rem;”>corporate content,</li>
+              <li style=”margin-bottom: 0.25rem;”>secondary modules,</li>
+              <li style=”margin-bottom: 0.25rem;”>and inspirational elements.</li>
+            </ul>
+            <p>I also conducted functional benchmarking against other travel ecommerce environments to understand how they prioritised: availability, dates, price and direct conversion.</p>
+            <blockquote style=”margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--accent); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);”>
+              “The user didn't want to explore first. They wanted to check availability as quickly as possible.”
+            </blockquote>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>2. Problem Framing</h5>
+            <p>The main problem wasn't visual. The experience was built from a more corporate and inspirational logic, while most of the traffic arrived with a clearly transactional intent.</p>
+            <p>There was a misalignment between:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>the business mental model,</li>
+              <li style=”margin-bottom: 0.25rem;”>and real user behaviour.</li>
+            </ul>
+            <p>Engine access wasn't functioning as a quick conversion tool, but as just another element within an overly competitive hierarchy.</p>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>3. UX Strategy & Prioritization</h5>
+            <p>Based on the analysis, I redefined the engine access hierarchy prioritising:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>identification speed,</li>
+              <li style=”margin-bottom: 0.25rem;”>visual clarity,</li>
+              <li style=”margin-bottom: 0.25rem;”>friction reduction,</li>
+              <li style=”margin-bottom: 0.25rem;”>and ease of interaction.</li>
+            </ul>
+            <p>The strategy focused on increasing the visibility of the search entry point, simplifying readability, reducing element competition, and facilitating quick interactions from high-intent traffic.</p>
+            <p>I also worked on the relationship between promotions, inspirational content and the booking engine, to avoid conflicts between objectives within the same screen.</p>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>4. Responsive Thinking</h5>
+            <p>Desktop and mobile required different solutions.</p>
+            <p><strong>Desktop:</strong> Fast access to the engine was prioritised, along with date and occupancy visibility, a direct relationship between promotions and search, and clear CTA exposure.</p>
+            <p><strong>Mobile:</strong> The experience was simplified to adapt to touch behaviour and initial visible space: vertical reorganisation, reduction of secondary elements, hierarchy improvement, and optimisation of content visible in the first scroll.</p>
+            <p>Several UX decisions were constrained by Adobe Experience Manager's technical limitations, particularly around dynamic components and responsive behaviour. Technical constraints were an active part of product and design decisions throughout the project.</p>
+            <h5 style=”margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>5. Collaboration & Implementation</h5>
+            <p>I worked directly with the development team on functional definition and behaviour validation in the staging environment.</p>
+            <p>The goal wasn't just to deliver visual design, but to ensure:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>functional coherence,</li>
+              <li style=”margin-bottom: 0.25rem;”>technical feasibility,</li>
+              <li style=”margin-bottom: 0.25rem;”>correct integration in Adobe Experience Manager,</li>
+              <li style=”margin-bottom: 0.25rem;”>and consistency within the digital ecosystem.</li>
+            </ul>
+            <h5 style=”margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);”>6. Post-Launch Iteration & Test Running</h5>
+            <p>After launch, the project entered active observation and test-running phase to validate real user behaviour and commercial performance over the medium term. Tracking via Microsoft Clarity allowed new usage patterns not initially anticipated to be detected.</p>
+            <p>One of the main findings was users using the search as a destination exploration tool, not just as transactional access to the booking engine.</p>
+            <p>This behaviour revealed a hybrid need between:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>exploration,</li>
+              <li style=”margin-bottom: 0.25rem;”>inspiration,</li>
+              <li style=”margin-bottom: 0.25rem;”>and direct conversion.</li>
+            </ul>
+            <p>This insight led to new improvements aimed at better integrating destination-based search logic into the experience. The project is currently in continuous validation and optimisation. While early results are positive, data is not considered conclusive until approximately six weeks of stable observation are completed.</p>
+            <h4 class=”detail-label” style=”margin-top: 2.5rem;”>Design System & Scalability</h4>
+            <p>The solution was designed with consistency, reusability, scalability and coherence within the ILUNION Hotels digital ecosystem in mind.</p>
+            <p>The goal wasn't just to solve a one-off need, but to build an adaptable structure for:</p>
+            <ul style=”margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);”>
+              <li style=”margin-bottom: 0.25rem;”>future campaigns and promotions,</li>
+              <li style=”margin-bottom: 0.25rem;”>booking engine evolutions,</li>
+              <li style=”margin-bottom: 0.25rem;”>and new access points within the digital customer journey.</li>
+            </ul>
+            <p>Visual and functional decisions were made from a systems-thinking perspective, prioritising: modularity, clarity, responsive consistency and ease of maintenance.</p>
+            <h4 class=”detail-label” style=”margin-top: 2.5rem;”>R — RESULT · The impact</h4>
+            <div style=”overflow-x: auto; margin: 1.5rem 0;”>
+              <table style=”width: 100%; border-collapse: collapse; font-size: var(--body-base);”>
+                <thead>
+                  <tr style=”border-bottom: 2px solid var(--border);”>
+                    <th style=”text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Indicator</th>
+                    <th style=”text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Before</th>
+                    <th style=”text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>After</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Booking engine visibility</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Buried under hero + promotions + corporate content</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Accessible on first scroll — desktop and mobile</td>
+                  </tr>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Mobile behaviour (post-launch Clarity)</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Click on date selector — non-touch pattern</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Swipe interaction developed and implemented after detection</td>
+                  </tr>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>New product insight detected</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Not identified</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Users use search to explore destinations → new improvement line opened</td>
+                  </tr>
+                  <tr style=”border-bottom: 1px solid var(--border);”>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Desktop / mobile coherence</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Single solution without device differentiation</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>Differentiated architectures for touch vs. pointer behaviour</td>
+                  </tr>
+                  <tr>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>Conversion indicators (under validation)</td>
+                    <td style=”padding: 0.75rem 1rem; color: var(--text-secondary);”>High friction — early abandonment in high-intent traffic</td>
+                    <td style=”padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);”>First positive indicators — actively consolidating (6 weeks of data)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Post-launch tracking with Clarity allowed detecting a new, unanticipated behaviour pattern: users were using the search to explore destinations, not just as transactional access. This finding opened a new improvement line and demonstrated a mature product process — the difference between making a delivery and making a product.</p>
+            <p style=”font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);”><em>📌 Conversion data is confidential. Results reflect analytical tracking with Adobe Analytics and Microsoft Clarity, plus internal validations from the commercial and product teams.</em></p>
+            </div>
+            <!-- /EN -->
+
           </div>
         </div>
       </article>
@@ -304,7 +555,105 @@
         </div>
 
         <div class="detail" style="display: none;">
-          <div class="detail-block">
+          
+            <!-- PROCESO VISUAL — project-academic (CEF) -->
+            <div class="case-process-visual" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
+
+              <!-- Process Timeline -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Proceso de diseño</p>
+              <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-bottom: 2rem;">
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Auditoría heurística</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Análisis WCAG</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Arquitectura de información</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Rediseño de componentes</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Design System + Iteración con dev</div>
+              </div>
+
+              <!-- Heuristic findings before/after -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Problemas identificados en auditoría → soluciones aplicadas</p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div style="border: 1px solid var(--border); border-radius: 10px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">❌ Estado inicial</p>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.75rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fee2e2;">
+                      <span style="color: #991b1b; flex-shrink: 0;">◼</span>
+                      <span style="color: #991b1b;">Contraste insuficiente — falla WCAG AA</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fef3cd;">
+                      <span style="color: #856404; flex-shrink: 0;">◼</span>
+                      <span style="color: #856404;">Navegación por teclado — elementos no accesibles</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fef3cd;">
+                      <span style="color: #856404; flex-shrink: 0;">◼</span>
+                      <span style="color: #856404;">Jerarquía semántica rota (headings incorrectos)</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fef3cd;">
+                      <span style="color: #856404; flex-shrink: 0;">◼</span>
+                      <span style="color: #856404;">Patrones inconsistentes entre módulos</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fee2e2;">
+                      <span style="color: #991b1b; flex-shrink: 0;">◼</span>
+                      <span style="color: #991b1b;">Estados interactivos (focus/hover) sin diferenciación</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="border: 1px solid var(--accent, #000); border-radius: 10px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">✅ Después del rediseño</p>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.75rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
+                      <span style="color: #166534; flex-shrink: 0;">✓</span>
+                      <span style="color: #166534;">Contraste WCAG AA cumplido en todos los textos</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
+                      <span style="color: #166534; flex-shrink: 0;">✓</span>
+                      <span style="color: #166534;">Todos los elementos interactivos accesibles por teclado</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
+                      <span style="color: #166534; flex-shrink: 0;">✓</span>
+                      <span style="color: #166534;">Estructura semántica corregida para lectores de pantalla</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
+                      <span style="color: #166534; flex-shrink: 0;">✓</span>
+                      <span style="color: #166534;">Patrones unificados — Design System aplicado</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
+                      <span style="color: #166534; flex-shrink: 0;">✓</span>
+                      <span style="color: #166534;">Focus / hover / active claramente diferenciados</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design approach -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Principios aplicados en el rediseño</p>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; background: var(--surface); text-align: center;">
+                  <div style="font-size: 1.1rem; margin-bottom: 0.35rem;">🧠</div>
+                  <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">Claridad cognitiva</div>
+                  <div style="font-size: 0.7rem; color: var(--text-secondary);">Reducir esfuerzo para entender la interfaz</div>
+                </div>
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; background: var(--surface); text-align: center;">
+                  <div style="font-size: 1.1rem; margin-bottom: 0.35rem;">📐</div>
+                  <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">Jerarquía visual</div>
+                  <div style="font-size: 0.7rem; color: var(--text-secondary);">Lo importante, lo más visible</div>
+                </div>
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; background: var(--surface); text-align: center;">
+                  <div style="font-size: 1.1rem; margin-bottom: 0.35rem;">♿</div>
+                  <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">Accesibilidad WCAG</div>
+                  <div style="font-size: 0.7rem; color: var(--text-secondary);">Parte nuclear, no añadido final</div>
+                </div>
+              </div>
+
+            </div>
+            <!-- FIN PROCESO VISUAL -->
+<div class="detail-block" id="detail-academic">
+
+            <!-- ES -->
+            <div data-lang="es">
             <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
             <p>CEF — Centro de Estudios Financieros gestionaba distintos entornos digitales utilizados por alumnos y equipos internos para acceder a información académica, documentación y procesos relacionados con la gestión educativa.</p>
             <p>La herramienta presentaba varios problemas de experiencia:</p>
@@ -331,7 +680,6 @@
               <li style="margin-bottom: 0.25rem;">diseño de interfaces,</li>
               <li style="margin-bottom: 0.25rem;">y colaboración con desarrollo frontend.</li>
             </ul>
-
             <h4 class="detail-label">T — TASK · El reto</h4>
             <p>El objetivo era mejorar la experiencia de uso de la herramienta académica reduciendo complejidad y facilitando la interacción en tareas frecuentes dentro del entorno educativo.</p>
             <p>La solución debía:</p>
@@ -343,7 +691,6 @@
               <li style="margin-bottom: 0.25rem;">y mantener coherencia dentro del ecosistema existente.</li>
             </ul>
             <p>El reto no consistía únicamente en modernizar la interfaz visual, sino en reorganizar la experiencia para que usuarios con distintos perfiles pudieran completar tareas de forma más intuitiva y eficiente.</p>
-
             <h4 class="detail-label">A — ACTION · Lo que hice y por qué</h4>
             <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">1. Research & Usability Analysis</h5>
             <p>Comencé analizando los principales puntos de fricción dentro de la herramienta mediante observación de flujos, revisión heurística y análisis funcional de los módulos más utilizados.</p>
@@ -365,7 +712,6 @@
             <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--text); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);">
               "El problema no era la cantidad de información, sino cómo estaba organizada y priorizada."
             </blockquote>
-
             <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">2. Problem Framing</h5>
             <p>La herramienta había crecido de forma funcional, pero no desde una lógica de experiencia unificada.</p>
             <p>Muchos módulos respondían a necesidades concretas del negocio o de gestión académica, pero la experiencia global carecía de consistencia y claridad para el usuario final.</p>
@@ -376,7 +722,6 @@
               <li style="margin-bottom: 0.25rem;">y comprensión real del usuario.</li>
             </ul>
             <p>La interfaz obligaba al usuario a interpretar demasiadas decisiones visuales antes de completar tareas simples.</p>
-
             <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">3. UX Strategy & Information Architecture</h5>
             <p>A partir del análisis, trabajé una reorganización de la experiencia priorizando:</p>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
@@ -393,9 +738,6 @@
               <li style="margin-bottom: 0.25rem;">y reducir carga visual innecesaria.</li>
             </ul>
             <p>También redefiní estructuras de contenido, patrones de interacción, y comportamientos de componentes para generar una experiencia más coherente dentro del sistema.</p>
-
-
-
             <h5 style="margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">4. Accessibility & Inclusive Design</h5>
             <p>La accesibilidad fue una parte clave del proyecto. Trabajé mejoras relacionadas con:</p>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
@@ -406,7 +748,6 @@
               <li style="margin-bottom: 0.25rem;">y consistencia visual.</li>
             </ul>
             <p>El objetivo no era únicamente cumplir criterios WCAG, sino construir una experiencia más usable y comprensible para todos los perfiles de usuario. Muchas decisiones visuales y estructurales se tomaron desde una lógica de accesibilidad y reducción de esfuerzo cognitivo.</p>
-
             <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">5. Collaboration with Development</h5>
             <p>Trabajé junto al equipo de desarrollo para asegurar que las propuestas UX fueran viables técnicamente y coherentes con las limitaciones del sistema existente.</p>
             <p>El proyecto requería equilibrio constante entre:</p>
@@ -417,7 +758,6 @@
               <li style="margin-bottom: 0.25rem;">y tiempos de implementación.</li>
             </ul>
             <p>La colaboración con frontend fue especialmente importante para mantener consistencia entre diseño y comportamiento real de la plataforma.</p>
-
             <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">6. Design System Thinking</h5>
             <p>Parte del trabajo consistió en reducir inconsistencias entre módulos y establecer una lógica más sistemática dentro de la interfaz.</p>
             <p>Se trabajaron:</p>
@@ -428,17 +768,210 @@
               <li style="margin-bottom: 0.25rem;">y reglas visuales compartidas.</li>
             </ul>
             <p>El objetivo era construir una experiencia más escalable y mantenible dentro de un entorno digital complejo y en evolución constante.</p>
-
             <h4 class="detail-label" style="margin-top: 2.5rem;">R — RESULT · Impacto</h4>
-            <p>La reorganización UX permitió mejorar claridad de navegación, reducir fricción en tareas frecuentes, aumentar coherencia entre módulos, y facilitar la comprensión de la interfaz.</p>
-            <p>Además:</p>
+            <div style="overflow-x: auto; margin: 1.5rem 0;">
+              <table style="width: 100%; border-collapse: collapse; font-size: var(--body-base);">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--border);">
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Área</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Antes</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Después</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Contraste WCAG</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Falla criterio AA en múltiples componentes</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Criterio AA cumplido en todos los textos</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Navegación por teclado</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Elementos críticos inaccesibles sin ratón</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">100% de elementos interactivos accesibles</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Jerarquía semántica</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Estructura heading incorrecta entre módulos</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Estructura semántica correcta para lectores de pantalla</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Estados interactivos</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Focus / hover sin diferenciación visual</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Estados claramente diferenciados en todos los componentes</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Consistencia entre módulos</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Patrones distintos en cada módulo sin regla unificada</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Design System aplicado — patrones reutilizables</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>La reorganización UX redujo la carga cognitiva, mejoró la escaneabilidad en tareas frecuentes y estableció una base sistemática para futuras evoluciones del sistema. La colaboración diseño-desarrollo fue más fluida con menor retrabajo en iteraciones posteriores.</p>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--text);"><em>📌 Métricas cuantitativas de uso son confidenciales. Los resultados reflejan auditoría WCAG, validaciones funcionales y observación de comportamiento en el entorno académico digital.</em></p>
+            </div>
+            <!-- /ES -->
+
+            <!-- EN -->
+            <div data-lang="en" style="display:none">
+            <h4 class="detail-label">S — SITUATION · Business context</h4>
+            <p>CEF — Centro de Estudios Financieros managed different digital environments used by students and internal teams to access academic information, documentation and processes related to educational administration.</p>
+            <p>The tool presented several experience issues:</p>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
-              <li style="margin-bottom: 0.25rem;">se mejoró la accesibilidad general de la plataforma,</li>
-              <li style="margin-bottom: 0.25rem;">se redujo la carga visual y cognitiva,</li>
-              <li style="margin-bottom: 0.25rem;">y se estableció una estructura más consistente para futuras evoluciones del sistema.</li>
+              <li style="margin-bottom: 0.25rem;">visual overload,</li>
+              <li style="margin-bottom: 0.25rem;">unclear hierarchy,</li>
+              <li style="margin-bottom: 0.25rem;">complex navigation,</li>
+              <li style="margin-bottom: 0.25rem;">and accessibility difficulties.</li>
             </ul>
-            <p>El proyecto también ayudó a reforzar la colaboración entre diseño y desarrollo dentro del entorno digital educativo.</p>
-            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--text);"><em>📌 Algunos datos específicos internos y métricas de uso son confidenciales. Los resultados reflejan validaciones funcionales, observación de comportamiento y mejoras implementadas dentro del entorno académico digital.</em></p>
+            <p>The platform had to serve users with varying levels of digital familiarity, in an environment where cognitive clarity and efficiency were especially important.</p>
+            <p>Furthermore, the system had evolved incrementally over years, generating visual and functional inconsistencies between modules, navigation patterns and components.</p>
+            <p>The project required balancing:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">ease of use,</li>
+              <li style="margin-bottom: 0.25rem;">technical feasibility,</li>
+              <li style="margin-bottom: 0.25rem;">accessibility,</li>
+              <li style="margin-bottom: 0.25rem;">and operational continuity within an active academic environment.</li>
+            </ul>
+            <p>My role in the project combined:</p>
+            <ul style="margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">UX/UI,</li>
+              <li style="margin-bottom: 0.25rem;">usability analysis,</li>
+              <li style="margin-bottom: 0.25rem;">accessibility,</li>
+              <li style="margin-bottom: 0.25rem;">interface design,</li>
+              <li style="margin-bottom: 0.25rem;">and collaboration with frontend development.</li>
+            </ul>
+            <h4 class="detail-label">T — TASK · The challenge</h4>
+            <p>The objective was to improve the usability of the academic tool by reducing complexity and facilitating interaction on frequent tasks within the educational environment.</p>
+            <p>The solution had to:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">improve readability and navigation,</li>
+              <li style="margin-bottom: 0.25rem;">facilitate access to key information,</li>
+              <li style="margin-bottom: 0.25rem;">reduce cognitive friction,</li>
+              <li style="margin-bottom: 0.25rem;">meet WCAG accessibility criteria,</li>
+              <li style="margin-bottom: 0.25rem;">and maintain coherence within the existing ecosystem.</li>
+            </ul>
+            <p>The challenge wasn't just to modernise the visual interface, but to reorganise the experience so that users with different profiles could complete tasks more intuitively and efficiently.</p>
+            <h4 class="detail-label">A — ACTION · What I did and why</h4>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">1. Research & Usability Analysis</h5>
+            <p>I began by analysing the main friction points in the tool through flow observation, heuristic review and functional analysis of the most-used modules.</p>
+            <p>The analysis revealed several recurring issues:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">visual density overload,</li>
+              <li style="margin-bottom: 0.25rem;">inconsistent hierarchies,</li>
+              <li style="margin-bottom: 0.25rem;">difficulty locating frequent actions,</li>
+              <li style="margin-bottom: 0.25rem;">unclear navigation patterns,</li>
+              <li style="margin-bottom: 0.25rem;">and accessibility issues in contrast, semantic structure and readability.</li>
+            </ul>
+            <p>I also reviewed how other educational platforms and SaaS tools organised:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">navigation,</li>
+              <li style="margin-bottom: 0.25rem;">dashboards,</li>
+              <li style="margin-bottom: 0.25rem;">information structures,</li>
+              <li style="margin-bottom: 0.25rem;">and operational components.</li>
+            </ul>
+            <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--text); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);">
+              "The problem wasn't the amount of information, but how it was organised and prioritised."
+            </blockquote>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">2. Problem Framing</h5>
+            <p>The tool had grown functionally, but not from a unified experience logic.</p>
+            <p>Many modules responded to specific business or academic management needs, but the overall experience lacked consistency and clarity for the end user.</p>
+            <p>There was a disconnect between:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">technical structure,</li>
+              <li style="margin-bottom: 0.25rem;">operational needs,</li>
+              <li style="margin-bottom: 0.25rem;">and the user's actual understanding.</li>
+            </ul>
+            <p>The interface forced users to interpret too many visual decisions before completing simple tasks.</p>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">3. UX Strategy & Information Architecture</h5>
+            <p>Based on the analysis, I worked on reorganising the experience by prioritising:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">cognitive clarity,</li>
+              <li style="margin-bottom: 0.25rem;">visual hierarchy,</li>
+              <li style="margin-bottom: 0.25rem;">consistency,</li>
+              <li style="margin-bottom: 0.25rem;">and ease of use.</li>
+            </ul>
+            <p>The strategy focused on:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">simplifying navigation,</li>
+              <li style="margin-bottom: 0.25rem;">reorganising modules by usage priority,</li>
+              <li style="margin-bottom: 0.25rem;">improving scannability,</li>
+              <li style="margin-bottom: 0.25rem;">and reducing unnecessary visual load.</li>
+            </ul>
+            <p>I also redefined content structures, interaction patterns and component behaviours to create a more coherent experience within the system.</p>
+            <h5 style="margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">4. Accessibility & Inclusive Design</h5>
+            <p>Accessibility was a key part of the project. I worked on improvements related to:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">contrast and readability,</li>
+              <li style="margin-bottom: 0.25rem;">semantic hierarchy,</li>
+              <li style="margin-bottom: 0.25rem;">keyboard navigation,</li>
+              <li style="margin-bottom: 0.25rem;">interactive states,</li>
+              <li style="margin-bottom: 0.25rem;">and visual consistency.</li>
+            </ul>
+            <p>The goal wasn't just to meet WCAG criteria, but to build a more usable and comprehensible experience for all user profiles. Many visual and structural decisions were made from an accessibility-first and cognitive-load-reduction perspective.</p>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">5. Collaboration with Development</h5>
+            <p>I worked alongside the development team to ensure the UX proposals were technically feasible and consistent with the constraints of the existing system.</p>
+            <p>The project required constant balance between:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">experience improvement,</li>
+              <li style="margin-bottom: 0.25rem;">technical constraints,</li>
+              <li style="margin-bottom: 0.25rem;">operational continuity,</li>
+              <li style="margin-bottom: 0.25rem;">and implementation timelines.</li>
+            </ul>
+            <p>Collaboration with the frontend team was especially important to maintain consistency between design and the platform's actual behaviour.</p>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">6. Design System Thinking</h5>
+            <p>Part of the work involved reducing inconsistencies between modules and establishing a more systematic logic within the interface.</p>
+            <p>This covered:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">reusable patterns,</li>
+              <li style="margin-bottom: 0.25rem;">common hierarchies,</li>
+              <li style="margin-bottom: 0.25rem;">consistent behaviours,</li>
+              <li style="margin-bottom: 0.25rem;">and shared visual rules.</li>
+            </ul>
+            <p>The goal was to build a more scalable and maintainable experience within a complex, constantly evolving digital environment.</p>
+            <h4 class="detail-label" style="margin-top: 2.5rem;">R — RESULT · The impact</h4>
+            <div style="overflow-x: auto; margin: 1.5rem 0;">
+              <table style="width: 100%; border-collapse: collapse; font-size: var(--body-base);">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--border);">
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Area</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Before</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">After</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">WCAG Contrast</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Fails AA criterion on multiple components</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">AA criterion met on all texts</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Keyboard navigation</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Critical elements inaccessible without mouse</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">100% of interactive elements accessible</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Semantic hierarchy</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Incorrect heading structure across modules</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Correct semantic structure for screen readers</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Interactive states</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Focus / hover without visual differentiation</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">States clearly differentiated across all components</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Cross-module consistency</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Different patterns in each module, no unified rule</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Design System applied — reusable patterns</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>The UX reorganisation reduced cognitive load, improved scannability on frequent tasks and established a systematic foundation for future system evolutions. Design-development collaboration became more fluid with less rework in subsequent iterations.</p>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--text);"><em>📌 Quantitative usage metrics are confidential. Results reflect a WCAG audit, functional validations and behaviour observation in the academic digital environment.</em></p>
+            </div>
+            <!-- /EN -->
+
           </div>
         </div>
       </article>
@@ -479,16 +1012,97 @@
         </div>
 
         <div class="detail" style="display: none;">
-          <div class="detail-block">
+          
+            <!-- PROCESO VISUAL — project-offers -->
+            <div class="case-process-visual" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
+
+              <!-- Process Timeline -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Proceso de diseño</p>
+              <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-bottom: 2rem;">
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Research</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Diagnóstico</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">12 mejoras priorizadas</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Diseño responsive</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Comité → Producción</div>
+                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
+                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Post-launch Clarity</div>
+              </div>
+
+              <!-- User Flow -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Flujo de usuario — antes vs. después</p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+
+                <!-- Before -->
+                <div style="border: 1px solid var(--border); border-radius: 10px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">Antes</p>
+                  <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                    <div style="background: var(--bg, #fff); border: 1px solid var(--border); border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: var(--text-secondary);">📣 Anuncio Paid Media</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓</div>
+                    <div style="background: var(--bg, #fff); border: 1px solid var(--border); border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: var(--text-secondary);">🏠 Homepage</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓</div>
+                    <div style="background: #fef3cd; border: 1px solid #f0c040; border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: #856404;">⛔ UNICOS ocupa pantalla completa</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓ scroll</div>
+                    <div style="background: #fef3cd; border: 1px solid #f0c040; border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: #856404;">📜 Más contenido corporativo</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓ scroll · scroll · scroll</div>
+                    <div style="background: #fee2e2; border: 1px solid #fca5a5; border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: #991b1b;">💨 85% abandona antes de llegar</div>
+                  </div>
+                </div>
+
+                <!-- After -->
+                <div style="border: 1px solid var(--accent, #000); border-radius: 10px; padding: 1rem; background: var(--surface);">
+                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">Después</p>
+                  <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                    <div style="background: var(--bg, #fff); border: 1px solid var(--border); border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: var(--text-secondary);">📣 Anuncio Paid Media</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓</div>
+                    <div style="background: var(--bg, #fff); border: 1px solid var(--border); border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: var(--text-secondary);">🏠 Homepage</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓ primer scroll</div>
+                    <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: #166534;">✅ Carrusel de ofertas con precios y CTA visibles</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓</div>
+                    <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: #166534;">🎯 Motor de reservas accesible</div>
+                    <div style="text-align: center; font-size: 0.7rem; color: var(--text-secondary);">↓</div>
+                    <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 5px; padding: 0.4rem 0.6rem; font-size: 0.75rem; color: #166534;">📈 +13% conversión directa</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Key Insight Data -->
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Hallazgos clave — Microsoft Clarity</p>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; background: var(--surface);">
+                  <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display, inherit);">15%</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;">usuarios superaban el bloque de ofertas</div>
+                </div>
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; background: var(--surface);">
+                  <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display, inherit);">2×</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;">más scroll que Barceló para ver el mismo contenido</div>
+                </div>
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; background: var(--surface);">
+                  <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display, inherit);">50%</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;">de la página sin mostrar ningún hotel ni precio</div>
+                </div>
+                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; background: var(--surface);">
+                  <div style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display, inherit);">100%</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;">primer scroll ocupado por UNICOS antes del rediseño</div>
+                </div>
+              </div>
+
+            </div>
+            <!-- FIN PROCESO VISUAL -->
+<div class="detail-block" id="detail-offers">
+
+            <!-- ES -->
+            <div data-lang="es">
             <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
             <p>ILUNION Hotels opera en un mercado donde la venta directa es estratégica: cada reserva que entra por el canal propio es más rentable que la que entra por un intermediario. Las campañas de Paid Media eran la principal palanca para traer tráfico con intención de compra alta — usuarios que ya habían decidido que querían reservar, y que buscaban el mejor precio directo.</p>
             <p>Cuando la web migró a Adobe Experience Manager (AEM), el tráfico siguió llegando. Pero algo había cambiado. La efectividad comercial cayó sin causa técnica aparente. El sistema funcionaba. La conversión, no.</p>
             <p>Yo era la responsable de producto digital: diseño UX/UI, CRO, y la coordinación directa con el equipo de desarrollo. El momento pedía diagnóstico, no suposiciones.</p>
-
             <h4 class="detail-label">T — TASK · El reto</h4>
             <p>Identificar qué estaba generando el abandono, priorizarlo por impacto comercial real, y diseñar una solución que funcionara dentro de los constraints reales de AEM — sin comprometer la identidad de marca y sin inventar métricas para justificar decisiones.</p>
             <p>El reto tenía una complejidad añadida: los managers directos estaban de baja. Cualquier propuesta tenía que llegar directamente a dirección comercial con suficiente solidez para aprobarse en comité.</p>
-
             <h4 class="detail-label">A — ACTION · Lo que hice, y por qué</h4>
             <p><strong>1. Research: entender el comportamiento real</strong><br>Empecé donde estaban los datos. Con Microsoft Clarity analicé scroll maps, heatmaps y grabaciones de sesión reales. El diagnóstico fue inmediato y contundente:</p>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
@@ -507,13 +1121,9 @@
             <p><strong>5. Diseño: arquitectura diferenciada por dispositivo</strong><br>Diseñé una arquitectura distinta para desktop y mobile, porque el comportamiento en cada uno es diferente.</p>
             <p><strong>Desktop:</strong> carrusel de ofertas visible desde el primer scroll, con precio, descuento y CTA directamente expuestos. UNICOS reposicionado como bloque secundario con propuesta de valor concreta — presente, pero sin bloquear la venta rápida.</p>
             <p><strong>Mobile:</strong> estructura simplificada adaptada al comportamiento táctil. Aquí AEM impuso una limitación real: la plataforma no permitía reducir texto solo en mobile, lo que condicionó varias decisiones de diseño. Los constraints técnicos no son excusas — son parte del problema que hay que resolver.</p>
-
-
-
             <p><strong>6. Implementación y lanzamiento</strong><br>Trabajé directamente con el equipo de desarrollo en entorno staging. Presentación en comité interno. Lanzamiento a producción.</p>
             <p><strong>7. Iteración post-lanzamiento: observar, no solo entregar</strong><br>Tras el lanzamiento, los datos de Clarity mostraron algo inesperado: en mobile, los usuarios <strong>deslizaban sobre el selector de fechas en lugar de hacer clic</strong>. El patrón de interacción táctil no era el que habíamos diseñado.</p>
             <p>Lo detecté, lo documenté y coordiné el desarrollo de la interacción de swipe a posteriori. No fue un fallo de diseño — fue el proceso funcionando como debe. La diferencia entre hacer una entrega y hacer producto es exactamente esta: seguir mirando después de publicar.</p>
-
             <h4 class="detail-label">R — RESULT · El impacto</h4>
             <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
               <li style="margin-bottom: 0.5rem;"><strong>+13% de conversión en reservas directas</strong></li>
@@ -524,6 +1134,254 @@
               <li style="margin-bottom: 0.5rem;">Iteración post-lanzamiento que corrigió el patrón de interacción en mobile, demostrando un proceso de producto maduro</li>
             </ul>
             <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);"><em>📌 Los datos detallados de conversión son confidenciales. Los resultados reflejan seguimiento post-implementación con Adobe Analytics y observaciones directas del equipo comercial y de producto.</em></p>
+            </div>
+            <!-- /ES -->
+
+            <!-- EN -->
+            <div data-lang="en" style="display:none">
+            <h4 class="detail-label">S — SITUATION · Business context</h4>
+            <p>ILUNION Hotels operates in a market where direct sales are strategic: every booking through the own channel is more profitable than one through an intermediary. Paid Media campaigns were the main lever to drive high-purchase-intent traffic — users who had already decided they wanted to book, and were looking for the best direct price.</p>
+            <p>When the website migrated to Adobe Experience Manager (AEM), traffic kept coming. But something had changed. Commercial effectiveness dropped without any apparent technical cause. The system was working. Conversion wasn't.</p>
+            <p>I was responsible for digital product: UX/UI design, CRO, and direct coordination with the development team. The moment called for diagnosis, not assumptions.</p>
+            <h4 class="detail-label">T — TASK · The challenge</h4>
+            <p>Identify what was causing the drop-off, prioritise it by real commercial impact, and design a solution that would work within AEM's actual constraints — without compromising brand identity and without fabricating metrics to justify decisions.</p>
+            <p>The challenge had added complexity: direct managers were on leave. Any proposal had to go directly to commercial management with enough rigour to be approved by committee.</p>
+            <h4 class="detail-label">A — ACTION · What I did and why</h4>
+            <p><strong>1. Research: understanding real behaviour</strong><br>I started where the data was. Using Microsoft Clarity I analysed scroll maps, heatmaps and real session recordings. The diagnosis was immediate and unambiguous:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.5rem;">Only <strong>15% of users scrolled past the offers block</strong> on the homepage</li>
+              <li style="margin-bottom: 0.5rem;">The component required <strong>twice as much scroll as Barceló</strong> to show the same content</li>
+              <li style="margin-bottom: 0.5rem;">For <strong>50% of the page journey</strong>, no hotel, no price, no discount was visible</li>
+              <li style="margin-bottom: 0.5rem;">The loyalty programme <strong>UNICOS occupied a full screen</strong> before the user saw any product</li>
+            </ul>
+            <p>I completed the analysis with Adobe Analytics to understand navigation patterns and the exact drop-off point. I also added functional benchmarking — not aesthetic — against Barceló and Booking/Genius: how they present price, availability and value at each step of the journey to trigger purchase intent.</p>
+            <p><strong>2. Diagnosis: the real problem wasn't visual</strong><br>The key insight shifted the entire project's focus. The problem wasn't that the design was ugly or outdated. <strong>The site prioritised brand inspiration over the user's actual behaviour.</strong></p>
+            <p>There was a misalignment between the site's mental model — "explore, get inspired, discover ILUNION" — and the mental model of a user arriving from an ad — "I want to book, I want to see prices, I want to find my hotel". The site was asking them to explore when they wanted to find.</p>
+            <p><strong>3. Structured proposal: 12 improvements, 4 impact levels</strong><br>I translated the diagnosis into an internal document with 12 improvements prioritised by their direct impact on conversion. It wasn't a design wish-list — it was a business proposal with clear rationale. I wrote it, backed it with data and presented it directly to commercial management.</p>
+            <p>It was approved by committee.</p>
+            <p><strong>4. The hardest strategic decision</strong><br>The real trade-off of the project: <strong>aspirational branding vs. efficient ecommerce</strong>. Two legitimate values in conflict.</p>
+            <p>I chose to sacrifice visual prominence to gain commercial clarity. Not because I preferred it aesthetically — but because real behaviour data backed that decision. A user who abandons before seeing the product cannot convert, no matter how beautiful the brand is.</p>
+            <p><strong>5. Design: device-differentiated architecture</strong><br>I designed different architectures for desktop and mobile, because user behaviour differs on each.</p>
+            <p><strong>Desktop:</strong> offers carousel visible from the first scroll, with price, discount and CTA directly exposed. UNICOS repositioned as a secondary block with a concrete value proposition — present, but without blocking fast conversion.</p>
+            <p><strong>Mobile:</strong> simplified structure adapted to touch behaviour. AEM imposed a real limitation here: the platform wouldn't allow text to be reduced on mobile only, which constrained several design decisions. Technical constraints aren't excuses — they're part of the problem to be solved.</p>
+            <p><strong>6. Implementation and launch</strong><br>I worked directly with the development team in the staging environment. Internal committee presentation. Production launch.</p>
+            <p><strong>7. Post-launch iteration: observe, don't just deliver</strong><br>After launch, Clarity data showed something unexpected: on mobile, users were <strong>swiping across the date selector instead of clicking</strong>. The touch interaction pattern wasn't the one we had designed.</p>
+            <p>I detected it, documented it and coordinated the development of the swipe interaction afterwards. It wasn't a design failure — it was the process working as it should. The difference between making a delivery and making a product is exactly this: keep watching after you publish.</p>
+            <h4 class="detail-label">R — RESULT · The impact</h4>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.5rem;"><strong>+13% conversion in direct bookings</strong></li>
+              <li style="margin-bottom: 0.5rem;">Users who previously only browsed started initiating searches directly in the booking engine</li>
+              <li style="margin-bottom: 0.5rem;">Improved Paid Media campaign performance — same budget, better results</li>
+              <li style="margin-bottom: 0.5rem;">UNICOS integrated as a conversion lever, not a funnel obstacle</li>
+              <li style="margin-bottom: 0.5rem;"><strong>The component was extended to hotel and travel pages</strong> — the strongest internal validation: when a solution gets replicated, it's because it works</li>
+              <li style="margin-bottom: 0.5rem;">Post-launch iteration corrected the mobile interaction pattern, demonstrating a mature product process</li>
+            </ul>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);"><em>📌 Detailed conversion data is confidential. Results reflect post-implementation tracking with Adobe Analytics and direct observations from the commercial and product teams.</em></p>
+            </div>
+            <!-- /EN -->
+
+          </div>
+        </div>
+      </article>
+
+      <article id="project-payment" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="work-summary">
+          <div class="work-header">
+            <h2 class="title"><span class="title-company">CEF · UDIMA</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p4-title-suffix">Pasarela de Pago Online</span></h2>
+            <div class="impact-badge">
+              <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
+              <span class="impact-value" data-i18n="p4-impact-tag">0 → 60% Matrículas Online</span>
+            </div>
+          </div>
+          <p class="professional-context">Product Design · Frontend Development · UX/UI · Accesibilidad · Ecommerce Educativo</p>
+          <p class="subtitle" data-i18n="p4-subtitle">Diseño y desarrollo de una pasarela de pago para matrícula digital</p>
+
+          <div class="metrics-preview" style="display: flex; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
+            <div class="metric-pill" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1.25rem; text-align: center; flex: 1; min-width: 120px;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display);">60%</div>
+              <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;" data-i18n="p4-stat-1-label">Matrículas online (antes: 0%)</div>
+            </div>
+            <div class="metric-pill" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1.25rem; text-align: center; flex: 1; min-width: 120px;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display);">&lt;5 min</div>
+              <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;" data-i18n="p4-stat-2-label">Tiempo de matrícula (antes: 15–30 min)</div>
+            </div>
+            <div class="metric-pill" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1.25rem; text-align: center; flex: 1; min-width: 120px;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display);">&lt;8%</div>
+              <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;" data-i18n="p4-stat-3-label">Abandono checkout (benchmark sector: ~15%)</div>
+            </div>
+            <div class="metric-pill" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1.25rem; text-align: center; flex: 1; min-width: 120px;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-display);">0</div>
+              <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px;" data-i18n="p4-stat-4-label">Incidencias de seguridad</div>
+            </div>
+          </div>
+
+          <p data-i18n="p4-summary">Diseño y desarrollo frontend de una pasarela de pago integrada en el portal educativo de CEF · UDIMA, llevando las matriculaciones de 0% a 60% online y reduciendo el tiempo de proceso de 30 a 5 minutos.</p>
+          <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
+        </div>
+
+        <div class="detail" style="display: none;">
+          <div class="detail-block" id="detail-payment">
+
+            <!-- ES -->
+            <div data-lang="es">
+            <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
+            <p>CEF · UDIMA necesitaba digitalizar el proceso de matriculación, que hasta entonces se realizaba exclusivamente por teléfono o de forma presencial. No existía pasarela de pago propia: los estudiantes tenían que llamar para pagar. Esto generaba fricción severa, abandono en el proceso y una carga operativa significativa sobre el equipo comercial.</p>
+            <p>El equipo de marketing entregaba assets PNG y guías de marca. Mi responsabilidad era traducirlos a producto digital funcional: diseño, prototipo y código.</p>
+            <p>El contexto imponía restricciones claras:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">identidad de marca CEF · UDIMA (verde oscuro #1B3A2A, dorado, tipografía formal),</li>
+              <li style="margin-bottom: 0.25rem;">base de usuarios con distintos niveles de familiaridad digital,</li>
+              <li style="margin-bottom: 0.25rem;">requisitos de seguridad PCI DSS para pagos con tarjeta,</li>
+              <li style="margin-bottom: 0.25rem;">integración con el backend de gestión académica y TPV Redsys.</li>
+            </ul>
+            <h4 class="detail-label">T — TASK · El reto</h4>
+            <p>Diseñar una experiencia de pago que transmitiera confianza y seguridad en un entorno educativo financiero, hacerla accesible y responsive para usuarios con poca experiencia digital, y pasarla a código limpio para integración con el backend.</p>
+            <p>El objetivo no era solo diseñar bien — era hacer que el flujo completo funcionara en producción, integrando Redsys, gestionando estados de error y confirmación, y desplegando en el entorno Azure de CEF.</p>
+            <h4 class="detail-label">A — ACTION · Lo que hice y por qué</h4>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">1. Research & Discovery</h5>
+            <p>Realicé benchmarking de pasarelas de pago educativas (Redsys, Stripe, universidades españolas) para identificar patrones de confianza. También llevé a cabo entrevistas informales con el equipo comercial para entender las principales dudas de los estudiantes en el momento del pago.</p>
+            <p>El flujo definido fue simple y directo: resumen de la transacción → datos de tarjeta → confirmación.</p>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">2. Diseño UX/UI en Figma</h5>
+            <p>Diseñé wireframes low-fi del flujo completo en desktop y mobile, iterando hasta el diseño visual final con identidad CEF. Las decisiones de diseño más importantes:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.5rem;"><strong>Verde oscuro como fondo principal:</strong> transmite seriedad financiera y diferencia la pasarela del resto del portal.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Detección automática de tarjeta:</strong> reduce errores del usuario y da feedback inmediato (Visa / Mastercard / Amex).</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Resumen de transacción siempre visible:</strong> el estudiante sabe en todo momento qué está pagando y cuánto.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Badges de seguridad en footer:</strong> SSL · PCI DSS · 3D Secure, sin sobrecargar el formulario.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>CTA dorado:</strong> contraste máximo sobre fondo verde, jerarquía visual clara.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Mobile con teclado numérico optimizado:</strong> <code>inputmode="numeric"</code> para entrada de datos de tarjeta.</li>
+            </ul>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">3. Desarrollo Frontend</h5>
+            <p>Pasé el diseño a código directamente: HTML5 + CSS3 con variables de color de marca, validación de formulario sin librerías externas, y migración a componentes React (<code>Header</code>, <code>OrderSummary</code>, <code>PaymentForm</code>, <code>SecurityBadges</code>).</p>
+            <p>Integré el formulario con Redsys mediante POST server-side siguiendo los requisitos de seguridad PCI DSS, y desplegué en el entorno Azure de CEF. La validación del número de tarjeta, la detección del tipo y el formateo 4-4-4-4 se implementaron en JavaScript puro, sin dependencias externas.</p>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">4. Sprint Reviews y colaboración con marketing</h5>
+            <p>Las reuniones semanales con el equipo de marketing permitieron iterar sobre assets y avances, priorizando pantallas según urgencia comercial y validando en dispositivo real antes de cada entrega. El proceso funcionó como sprints informales con revisión continua.</p>
+            <h4 class="detail-label" style="margin-top: 2.5rem;">R — RESULT · El impacto</h4>
+            <div style="overflow-x: auto; margin: 1.5rem 0;">
+              <table style="width: 100%; border-collapse: collapse; font-size: var(--body-base);">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--border);">
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Métrica</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Antes</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Después</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Matriculaciones online</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">0% (todo por teléfono)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">~60% del total</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Tiempo de matriculación</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">15–30 min (gestión manual)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">&lt;5 min</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Carga operativa comercial</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Alta (llamadas de pago)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Reducida significativamente</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Abandono en checkout</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">N/A (no existía el flujo)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">&lt;8% <span style="font-weight: 400; font-size: 0.85em; color: var(--text-secondary);">(benchmark sector educación: ~15%)</span></td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Incidencias de seguridad</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">—</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--accent); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);">
+              El equipo de marketing destacó la consistencia visual con la marca y la reducción de consultas sobre el proceso de pago.
+            </blockquote>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);"><em>📌 Este caso forma parte del ecosistema digital CEF · UDIMA. El proyecto fue diseñado y desarrollado de forma integral: Figma → HTML/CSS/JS → React → despliegue en Azure.</em></p>
+            </div>
+            <!-- /ES -->
+
+            <!-- EN -->
+            <div data-lang="en" style="display:none">
+            <h4 class="detail-label">S — SITUATION · Business context</h4>
+            <p>CEF · UDIMA needed to digitalise its enrolment process, which until then was handled exclusively by phone or in person. There was no payment gateway of its own: students had to call to pay. This created severe friction, process drop-off, and a significant operational burden on the sales team.</p>
+            <p>The marketing team delivered PNG assets and brand guidelines. My responsibility was to translate them into a functional digital product: design, prototype and code.</p>
+            <p>The context imposed clear constraints:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.25rem;">CEF · UDIMA brand identity (dark green #1B3A2A, gold, formal typography),</li>
+              <li style="margin-bottom: 0.25rem;">user base with varying levels of digital familiarity,</li>
+              <li style="margin-bottom: 0.25rem;">PCI DSS security requirements for card payments,</li>
+              <li style="margin-bottom: 0.25rem;">integration with the academic management backend and Redsys TPV.</li>
+            </ul>
+            <h4 class="detail-label">T — TASK · The challenge</h4>
+            <p>Design a payment experience that conveyed trust and security in a financial educational context, make it accessible and responsive for users with limited digital experience, and translate it into clean code for backend integration.</p>
+            <p>The goal wasn't just to design well — it was to make the entire flow work in production, integrating Redsys, handling error and confirmation states, and deploying on CEF's Azure environment.</p>
+            <h4 class="detail-label">A — ACTION · What I did and why</h4>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">1. Research & Discovery</h5>
+            <p>I benchmarked educational payment gateways (Redsys, Stripe, Spanish universities) to identify trust patterns. I also conducted informal interviews with the sales team to understand students' main concerns at the moment of payment.</p>
+            <p>The defined flow was simple and direct: transaction summary → card details → confirmation.</p>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">2. UX/UI Design in Figma</h5>
+            <p>I designed low-fi wireframes of the complete flow in desktop and mobile, iterating to the final visual design with CEF identity. The most important design decisions:</p>
+            <ul style="margin-bottom: 1rem; margin-left: 1.5rem; color: var(--text-secondary); font-size: var(--body-base);">
+              <li style="margin-bottom: 0.5rem;"><strong>Dark green background:</strong> conveys financial seriousness and differentiates the gateway from the rest of the portal.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Automatic card detection:</strong> reduces user errors and gives immediate feedback (Visa / Mastercard / Amex).</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Transaction summary always visible:</strong> the student knows at all times what they are paying and how much.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Security badges in footer:</strong> SSL · PCI DSS · 3D Secure, without cluttering the form.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Gold CTA:</strong> maximum contrast on green background, clear visual hierarchy.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Mobile with optimised numeric keyboard:</strong> <code>inputmode="numeric"</code> for card data entry.</li>
+            </ul>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">3. Frontend Development</h5>
+            <p>I translated the design to code directly: HTML5 + CSS3 with brand colour variables, form validation without external libraries, and migration to React components (<code>Header</code>, <code>OrderSummary</code>, <code>PaymentForm</code>, <code>SecurityBadges</code>).</p>
+            <p>I integrated the form with Redsys via server-side POST following PCI DSS security requirements, and deployed on CEF's Azure environment. Card number validation, type detection and 4-4-4-4 formatting were implemented in pure JavaScript, with no external dependencies.</p>
+            <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">4. Sprint Reviews and collaboration with marketing</h5>
+            <p>Weekly meetings with the marketing team allowed iterating on assets and progress, prioritising screens by commercial urgency and validating on real devices before each delivery. The process worked as informal sprints with continuous review.</p>
+            <h4 class="detail-label" style="margin-top: 2.5rem;">R — RESULT · The impact</h4>
+            <div style="overflow-x: auto; margin: 1.5rem 0;">
+              <table style="width: 100%; border-collapse: collapse; font-size: var(--body-base);">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--border);">
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Metric</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Before</th>
+                    <th style="text-align: left; padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">After</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Online enrolments</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">0% (all by phone)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">~60% of total</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Enrolment time</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">15–30 min (manual handling)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">&lt;5 min</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Sales team workload</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">High (payment calls)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">Significantly reduced</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Checkout drop-off</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">N/A (flow didn't exist)</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">&lt;8% <span style="font-weight: 400; font-size: 0.85em; color: var(--text-secondary);">(education sector benchmark: ~15%)</span></td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">Security incidents</td>
+                    <td style="padding: 0.75rem 1rem; color: var(--text-secondary);">—</td>
+                    <td style="padding: 0.75rem 1rem; font-weight: 600; color: var(--text-primary);">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid var(--accent); background: rgba(0,0,0,0.02); font-style: italic; color: var(--text-primary);">
+              The marketing team highlighted the visual consistency with the brand and the reduction in payment process queries.
+            </blockquote>
+            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--accent);"><em>📌 This case is part of the CEF · UDIMA digital ecosystem. The project was designed and developed end-to-end: Figma → HTML/CSS/JS → React → Azure deployment.</em></p>
+            </div>
+            <!-- /EN -->
+
           </div>
         </div>
       </article>
