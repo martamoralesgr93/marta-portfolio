@@ -1,4 +1,4 @@
-:root {
+ï»¿:root {
   --bg: #ffffff;
   --text: #0a0a0a;            /* MÃ¡s negro que negro â€” Linear */
   --text-secondary: #6b6b6b; /* Gris medio, no apagado */
@@ -2199,7 +2199,7 @@ img.zoom-target {
 blockquote {
   margin: 2rem 0;
   padding: 1.1rem 1.5rem;
-  border-left: 2px solid var(--text);
+  border-left: 1px solid var(--divider);
   background: var(--surface);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
@@ -2346,7 +2346,7 @@ blockquote {
 blockquote {
   margin: 2rem 0;
   padding: 1.1rem 1.5rem;
-  border-left: 2px solid var(--text);
+  border-left: 1px solid var(--divider);
   background: var(--surface);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   font-size: 16px;
@@ -2728,7 +2728,7 @@ blockquote p {
 
 
 /* ---------------------------------------------------------------
-   PASO 2 — ICONOGRAFÍA & MICROINTERACCIONES
+   PASO 2 ï¿½ ICONOGRAFï¿½A & MICROINTERACCIONES
    Sistema premium. Tool-like. Physical feedback.
    --------------------------------------------------------------- */
 
@@ -2911,7 +2911,7 @@ blockquote p {
   padding-left: 4px !important;
 }
 
-/* -- 9. IMÁGENES DE PROYECTO ----------------------------------*/
+/* -- 9. IMï¿½GENES DE PROYECTO ----------------------------------*/
 .project-visuals {
   transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1) !important;
 }
@@ -2974,12 +2974,12 @@ blockquote p {
 }
 
 /* ---------------------------------------------------------------
-   PASO 3 — TABLAS & BLOQUES DE PROCESO
+   PASO 3 ï¿½ TABLAS & BLOQUES DE PROCESO
    Dashboard feel. Research tool. Systems thinking.
    Notion / Linear data table aesthetic.
    --------------------------------------------------------------- */
 
-/* -- 1. RESULTS CARD — panel tipo Linear ----------------------*/
+/* -- 1. RESULTS CARD ï¿½ panel tipo Linear ----------------------*/
 .results-card {
   background: transparent !important;
   border: none !important;
@@ -3003,7 +3003,7 @@ blockquote p {
   font-family: 'Inter', sans-serif;
 }
 
-/* -- 2. TABLA — sistema data grid premium ---------------------*/
+/* -- 2. TABLA ï¿½ sistema data grid premium ---------------------*/
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -3021,7 +3021,7 @@ blockquote p {
   background: var(--bg);
 }
 
-/* -- 2a. THEAD — sticky header tipo dashboard -----------------*/
+/* -- 2a. THEAD ï¿½ sticky header tipo dashboard -----------------*/
 .metrics-table thead {
   position: sticky;
   top: 0;
@@ -3052,7 +3052,7 @@ blockquote p {
   border-right: none;
 }
 
-/* -- 2b. TBODY ROWS — hover premium --------------------------*/
+/* -- 2b. TBODY ROWS ï¿½ hover premium --------------------------*/
 .metrics-table tbody tr {
   border-bottom: 1px solid var(--divider);
   transition: background 0.15s ease;
@@ -3067,7 +3067,7 @@ blockquote p {
   background: var(--hover);
 }
 
-/* -- 2c. TD — celdas con aire y jerarquía --------------------*/
+/* -- 2c. TD ï¿½ celdas con aire y jerarquï¿½a --------------------*/
 .metrics-table td {
   padding: 14px 16px !important;
   vertical-align: top;
@@ -3082,7 +3082,7 @@ blockquote p {
   border-right: none;
 }
 
-/* Primera columna — label fuerte */
+/* Primera columna ï¿½ label fuerte */
 .metrics-table td:first-child {
   font-weight: 600 !important;
   color: var(--text) !important;
@@ -3095,18 +3095,18 @@ blockquote p {
   background: var(--bg) !important;
 }
 
-/* Columna "Antes" — tono apagado */
+/* Columna "Antes" ï¿½ tono apagado */
 .metrics-table td:nth-child(2) {
   color: var(--text-muted) !important;
 }
 
-/* Columna "Después" — más legible, indica mejora */
+/* Columna "Despuï¿½s" ï¿½ mï¿½s legible, indica mejora */
 .metrics-table td:last-child {
   color: var(--text) !important;
   font-weight: 400 !important;
 }
 
-/* -- 3. STEPPER — track de proceso tipo Jira/Linear ----------*/
+/* -- 3. STEPPER ï¿½ track de proceso tipo Jira/Linear ----------*/
 .star-stepper {
   display: flex;
   flex-direction: column;
@@ -3139,7 +3139,7 @@ blockquote p {
   z-index: 0;
 }
 
-/* Badge — dot preciso */
+/* Badge ï¿½ dot preciso */
 .stepper-badge {
   width: 24px;
   height: 24px;
@@ -3212,7 +3212,7 @@ blockquote p {
   background: transparent !important;
 }
 
-/* -- 4. DETAIL LABEL — sección header tipo Linear ------------*/
+/* -- 4. DETAIL LABEL ï¿½ secciï¿½n header tipo Linear ------------*/
 .detail-label {
   font-size: 9px !important;
   font-weight: 700 !important;
@@ -3225,7 +3225,7 @@ blockquote p {
   display: block;
 }
 
-/* -- 5. DETAIL SUBTITLE — h5 sub-secciones -------------------*/
+/* -- 5. DETAIL SUBTITLE ï¿½ h5 sub-secciones -------------------*/
 .detail-subtitle {
   font-size: 13px !important;
   font-weight: 600 !important;
@@ -3235,7 +3235,7 @@ blockquote p {
   letter-spacing: -0.01em !important;
 }
 
-/* -- 6. LISTA DE DETALLE — precisión editorial ---------------*/
+/* -- 6. LISTA DE DETALLE ï¿½ precisiï¿½n editorial ---------------*/
 .detail-list {
   list-style: none;
   padding: 0;
@@ -3263,7 +3263,7 @@ blockquote p {
   opacity: 0.6;
 }
 
-/* -- 7. BLOCKQUOTE GLOBAL — editorial pull quote ------------*/
+/* -- 7. BLOCKQUOTE GLOBAL ï¿½ editorial pull quote ------------*/
 .detail-quote,
 .detail blockquote {
   border-left: 2px solid var(--text) !important;
@@ -3277,7 +3277,7 @@ blockquote p {
   border-radius: 0 !important;
 }
 
-/* -- 8. PROCESO VISUAL CARDS — panel data --------------------*/
+/* -- 8. PROCESO VISUAL CARDS ï¿½ panel data --------------------*/
 .case-process-visual {
   border: 1px solid var(--divider) !important;
   border-radius: 6px !important;
@@ -3287,7 +3287,7 @@ blockquote p {
   border-bottom: 1px solid var(--divider) !important;
 }
 
-/* -- 9. ROW HOVER PULSE — feedback tabla fila ----------------*/
+/* -- 9. ROW HOVER PULSE ï¿½ feedback tabla fila ----------------*/
 @keyframes rowFocus {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -3298,7 +3298,7 @@ blockquote p {
   animation: rowFocus 0.15s ease;
 }
 
-/* -- 10. CONFIDENTIALITY NOTE — nota de pie elegante ---------*/
+/* -- 10. CONFIDENTIALITY NOTE ï¿½ nota de pie elegante ---------*/
 p[style*="border-left: 3px solid var(--accent)"] {
   font-size: 12px !important;
   opacity: 0.55 !important;
@@ -3363,7 +3363,7 @@ p[style*="border-left: 3px solid var(--accent)"] {
   grid-template-columns: 140px 1fr;
   gap: 28px;
   align-items: center;
-  border-left: 2px solid var(--text);
+  border-left: 1px solid var(--divider);
   margin-top: 4px;
   margin-bottom: 4px;
 }
@@ -3433,30 +3433,30 @@ p[style*="border-left: 3px solid var(--accent)"] {
 }
 
 /* ---------------------------------------------------------------
-   PASO 4 — REFINAMIENTO SENIOR / PRODUCT-TECH
+   PASO 4 ï¿½ REFINAMIENTO SENIOR / PRODUCT-TECH
    Final Polish & Absolute Visual Cohesion.
-   Alineación geométrica y suavizado de físicas.
+   Alineaciï¿½n geomï¿½trica y suavizado de fï¿½sicas.
    --------------------------------------------------------------- */
 
-/* -- 1. GLOBAL CURVA DE ACELERACIÓN VERCEL/LINEAR --------------*/
+/* -- 1. GLOBAL CURVA DE ACELERACIï¿½N VERCEL/LINEAR --------------*/
 :root {
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* Aplicar la física de transición premium a todos los elementos del sistema */
+/* Aplicar la fï¿½sica de transiciï¿½n premium a todos los elementos del sistema */
 a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
 .contact-icon-link, .read-more-arrow, .stepper-badge, .zoom-modal-close, .lang-toggle {
   transition-timing-function: var(--ease-out) !important;
 }
 
-/* -- 2. UNIFICACIÓN DE BORDES Y RADIOS GEOMÉTRICOS --------------*/
+/* -- 2. UNIFICACIï¿½N DE BORDES Y RADIOS GEOMï¿½TRICOS --------------*/
 .btn-primary, .lang-toggle, .read-more-btn {
-  border-radius: var(--radius-sm) !important; /* 3px — look técnico de herramienta */
+  border-radius: var(--radius-sm) !important; /* 3px ï¿½ look tï¿½cnico de herramienta */
 }
 
 .carousel-container, .carousel-item, .table-responsive, .case-process-visual, .metrics-table {
-  border-radius: var(--radius-md) !important; /* 6px — coherencia de caja */
+  border-radius: var(--radius-md) !important; /* 6px ï¿½ coherencia de caja */
 }
 
 /* Unificar los bordes de todo el sitio a 1px gris ultra tenuo */
@@ -3465,8 +3465,8 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
   border-color: var(--divider) !important;
 }
 
-/* -- 3. SOMBRAS FÍSICAS DE MÚLTIPLES CAPAS ---------------------*/
-/* Evitar sombras planas. Usar difusión multicapa. */
+/* -- 3. SOMBRAS Fï¿½SICAS DE Mï¿½LTIPLES CAPAS ---------------------*/
+/* Evitar sombras planas. Usar difusiï¿½n multicapa. */
 .fab {
   box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.06) !important;
 }
@@ -3480,7 +3480,7 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
   border-radius: var(--radius-md) !important;
 }
 
-/* -- 4. EQUILIBRIO DE RITMOS Y SPACING (Alineación vertical) ----*/
+/* -- 4. EQUILIBRIO DE RITMOS Y SPACING (Alineaciï¿½n vertical) ----*/
 .section {
   padding-top: var(--s-64) !important;
   padding-bottom: var(--s-64) !important;
@@ -3505,7 +3505,7 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
   margin-top: 4px !important;
 }
 
-/* -- 5. POLISH DE CABECERA MOBILE & NAVEGACIÓN ------------------*/
+/* -- 5. POLISH DE CABECERA MOBILE & NAVEGACIï¿½N ------------------*/
 @media (max-width: 1023px) {
   .hero-header {
     padding-top: var(--s-32) !important;
@@ -3542,7 +3542,7 @@ a:hover {
   opacity: 0.7;
 }
 
-/* -- 8. CORRECCIÓN EN TRÁNSITO DE IMÁGENES (No-jitter zoom) ---*/
+/* -- 8. CORRECCIï¿½N EN TRï¿½NSITO DE IMï¿½GENES (No-jitter zoom) ---*/
 .zoom-target {
   transition: transform 0.4s var(--ease-out), filter 0.4s var(--ease-out) !important;
   backface-visibility: hidden;
@@ -3553,7 +3553,7 @@ a:hover {
   transform: scale(1.015) !important;
 }
 
-/* -- 9. FAB BUTTON — micro feedback visual -------------------*/
+/* -- 9. FAB BUTTON ï¿½ micro feedback visual -------------------*/
 .fab {
   border-radius: 999px !important; /* Mantener circular */
   transition: transform 0.25s var(--ease-out), background 0.2s ease, box-shadow 0.2s ease !important;
