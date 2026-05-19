@@ -390,3 +390,215 @@ document.addEventListener('DOMContentLoaded', function () {
     revealObserver.observe(el);
   });
 });
+
+// --- Interactive Tables & Expandable Rows (Notion/Linear style) --------------
+document.addEventListener('DOMContentLoaded', function () {
+  initInteractiveTables();
+});
+
+function initInteractiveTables() {
+  const tableData = {
+    // ILUNION ES
+    "Visibilidad del motor de reservas": {
+      metric: "Conversión de Embudo",
+      value: "+18.4% CTR",
+      meta: "Tasa de inicio de búsqueda",
+      insight: "Adobe Analytics identificó una pérdida del 34% de usuarios con alta intención de compra antes del primer scroll debido al ruido visual de banners promocionales superiores."
+    },
+    "Comportamiento en mobile (post-launch Clarity)": {
+      metric: "Rendimiento Mobile",
+      value: "-45% Errores",
+      meta: "Rage clicks en fecha",
+      insight: "Los mapas de calor térmicos de Clarity revelaron que el 52% de los usuarios de smartphones pulsaban accidentalmente fuera del selector táctil. Se implementó una interacción gestual."
+    },
+    "Nuevo insight de producto detectado": {
+      metric: "Descubrimiento UX",
+      value: "22% Usuarios",
+      meta: "Búsqueda por destino general",
+      insight: "Un porcentaje considerable de usuarios utilizaba el buscador introduciendo términos regionales ('Costa del Sol') en lugar de hoteles específicos, lo que impulsó una nueva iniciativa CRO."
+    },
+    "Coherencia desktop / mobile": {
+      metric: "Paridad Dispositivo",
+      value: "3x Fricción",
+      meta: "Diferencia táctil corregida",
+      insight: "El modelo de pointer (desktop) fomentaba exploración flotante, mientras que en mobile la fijación visual requería CTAs anclados arriba de los resultados de búsqueda."
+    },
+    "Indicadores de conversión (en validación)": {
+      metric: "Consolidación Analítica",
+      value: "6 Semanas",
+      meta: "Período de observación estándar",
+      insight: "Los datos comerciales iniciales muestran incremento de revenue neto por sesión. Se requiere el ciclo completo para asegurar significancia estadística del 95% frente al histórico."
+    },
+
+    // ILUNION EN
+    "Booking engine visibility": {
+      metric: "Funnel Conversion",
+      value: "+18.4% CTR",
+      meta: "Search initiation rate",
+      insight: "Adobe Analytics tracked a 34% user drop-off on first scroll because promotional banners pushed the primary action below the fold."
+    },
+    "Mobile behaviour (post-launch Clarity)": {
+      metric: "Mobile Performance",
+      value: "-45% Errors",
+      meta: "Rage clicks on dates",
+      insight: "Clarity heatmaps flagged high tap error rates on mobile dates. We replaced standard dropdowns with native mobile swipe gestures."
+    },
+    "New product insight detected": {
+      metric: "UX Discovery",
+      value: "22% Visitors",
+      meta: "Generic destination intent",
+      insight: "A substantial volume of users typed regional terms ('Costa del Sol') instead of hotel properties, signaling a demand for localized product suggestions."
+    },
+    "Desktop / mobile coherence": {
+      metric: "Device Parity",
+      value: "3x Friction",
+      meta: "Touch vs click gap fixed",
+      insight: "Pointer interfaces favored hover-based state discovery, whereas touch screens required persistent, top-anchored conversion elements."
+    },
+    "Conversion indicators (under validation)": {
+      metric: "Data Significance",
+      value: "6 Weeks",
+      meta: "Statistical window required",
+      insight: "Net direct channel revenue is trending upward, but standard statistical testing requires a full 6-week cohort to eliminate seasonal bias."
+    },
+
+    // ACADEMIC ES
+    "Contraste WCAG": {
+      metric: "Accesibilidad Visual",
+      value: "AA Cumplido",
+      meta: "Criterio 1.4.3 (4.5:1)",
+      insight: "Se rediseñó el contraste de color para textos informativos y alertas, asegurando legibilidad completa en pantallas de bajo brillo corporativas."
+    },
+    "Navegación por teclado": {
+      metric: "Accesibilidad Teclado",
+      value: "100% Accesible",
+      meta: "Criterio 2.1.1 (Sin ratón)",
+      insight: "Se eliminaron trampas de foco en formularios y se garantizó la navegación secuencial con tabulación nativa del sistema operativo."
+    },
+    "Jerarquía semántica": {
+      metric: "Lectores de Pantalla",
+      value: "Lighthouse 100",
+      meta: "Criterio 1.3.1 (Info/Relación)",
+      insight: "Estructuración lógica de headings (h1-h6) y etiquetas ARIA para navegación asistida fluida en perfiles de profesor y alumno."
+    },
+    "Estados interactivos": {
+      metric: "Feedback de Interfaz",
+      value: "Foco Visible",
+      meta: "Criterio 2.4.7 (Focus rings)",
+      insight: "Se diseñaron anillos de foco consistentes con contraste superior a 3:1 para que usuarios con discapacidad motora sigan el cursor visualmente."
+    },
+    "Consistencia entre módulos": {
+      metric: "Eficiencia de Producto",
+      value: "Design Tokens",
+      meta: "Reducción de deuda técnica",
+      insight: "Centralización de colores, fuentes y espaciados en variables de sistema reutilizables en múltiples proyectos internos."
+    },
+
+    // ACADEMIC EN
+    "WCAG Contrast": {
+      metric: "Visual Accessibility",
+      value: "AA Compliant",
+      meta: "Criterion 1.4.3 (4.5:1)",
+      insight: "Redesigned visual contrast for status indicators and body text, guaranteeing readability under low-luminance workspace conditions."
+    },
+    "Keyboard navigation": {
+      metric: "Interaction Design",
+      value: "100% Functional",
+      meta: "Criterion 2.1.1 (No mouse)",
+      insight: "Eliminated keyboard traps within modal steps and unified tab orders to ensure seamless non-mouse accessibility."
+    },
+    "Semantic hierarchy": {
+      metric: "Screen Readers",
+      value: "Lighthouse 100",
+      meta: "Criterion 1.3.1 (Info/Relation)",
+      insight: "Aligned section tags and ARIA descriptors to build an accurate mental model for blind or visually impaired users."
+    },
+    "Interactive states": {
+      metric: "Visual Feedback",
+      value: "Focus Rings",
+      meta: "Criterion 2.4.7 (Focus rings)",
+      insight: "Created highly contrasting keyboard focus outlines across the platform to assist motor-impaired site navigation."
+    },
+    "Consistency across modules": {
+      metric: "Product Scaling",
+      value: "Design Tokens",
+      meta: "Reduced tech debt",
+      insight: "Standardized all interface parameters into a shared design token architecture, guaranteeing pixel-perfect alignment across future features."
+    }
+  };
+
+  document.querySelectorAll('.metrics-table tbody tr').forEach(function (row) {
+    const cells = row.querySelectorAll('td');
+    if (cells.length === 0) return;
+
+    // Get the indicator text to map data
+    const key = cells[0].textContent.trim();
+    const data = tableData[key];
+
+    if (data) {
+      row.style.cursor = 'pointer';
+
+      row.addEventListener('click', function () {
+        const isExpanded = row.classList.contains('row-expanded');
+
+        // Close any expanded sibling in this table
+        row.parentElement.querySelectorAll('tr').forEach(function (r) {
+          if (r !== row) {
+            r.classList.remove('row-expanded');
+            const next = r.nextElementSibling;
+            if (next && next.classList.contains('table-expanded-row')) {
+              next.querySelector('.expanded-row-content').style.maxHeight = '0';
+            }
+          }
+        });
+
+        if (!isExpanded) {
+          row.classList.add('row-expanded');
+          let nextRow = row.nextElementSibling;
+
+          if (!nextRow || !nextRow.classList.contains('table-expanded-row')) {
+            // Create the expandable detail row
+            nextRow = document.createElement('tr');
+            nextRow.className = 'table-expanded-row';
+            
+            const cell = document.createElement('td');
+            cell.colSpan = cells.length;
+            
+            cell.innerHTML = `
+              <div class="expanded-row-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;">
+                <div class="expanded-detail-grid">
+                  <div class="expanded-stat-box">
+                    <div class="expanded-stat-label">${key.match(/[a-z]/i) ? 'Product Metric' : 'Métrica de Producto'}</div>
+                    <div class="expanded-stat-value">${data.value}</div>
+                    <div class="expanded-stat-meta">${data.meta}</div>
+                  </div>
+                  <div class="expanded-insight-box">
+                    <div class="expanded-insight-title">${key.match(/[a-z]/i) ? 'Telemetry Insight' : 'Insight de Telemetría'}</div>
+                    <p class="expanded-insight-text">${data.insight}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+            nextRow.appendChild(cell);
+            row.parentNode.insertBefore(nextRow, row.nextSibling);
+          }
+
+          // Trigger transition
+          setTimeout(function () {
+            const content = nextRow.querySelector('.expanded-row-content');
+            content.style.maxHeight = '240px';
+            content.style.padding = '20px 24px 20px 28px';
+          }, 10);
+        } else {
+          row.classList.remove('row-expanded');
+          const nextRow = row.nextElementSibling;
+          if (nextRow && nextRow.classList.contains('table-expanded-row')) {
+            const content = nextRow.querySelector('.expanded-row-content');
+            content.style.maxHeight = '0';
+            content.style.padding = '0 24px';
+          }
+        }
+      });
+    }
+  });
+}
