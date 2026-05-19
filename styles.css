@@ -3585,3 +3585,18 @@ a:hover {
   background: transparent !important;
   background-color: transparent !important;
 }
+/* Refinement for high-resolution contact brand favicons */
+.contact-favicon {
+  width: 16px !important;
+  height: 16px !important;
+  object-fit: contain !important;
+  border-radius: 3px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  flex-shrink: 0;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.contact-icon-link:hover .contact-favicon {
+  transform: scale(1.12);
+}
