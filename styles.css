@@ -203,17 +203,26 @@ button {
 }
 
 .avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 82% !important;
+  height: 82% !important;
+  object-fit: contain !important;
   display: block;
+  border-radius: 50% !important;
 }
 
 .avatar-frame {
-  width: 100px;
-  height: 100px;
+  width: 88px;
+  height: 88px;
   position: relative;
-  background: transparent;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04), inset 0 -1.5px 2px rgba(0,0,0,0.05) !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
 }
 
 .nav-logo, .signature-logo, .fab-logo {
@@ -1447,8 +1456,7 @@ body.menu-open .container-shift {
   }
 
   .avatar-frame {
-    width: 52px;
-    height: 52px;
+    width: 68px; height: 68px;
     margin-bottom: 20px;
   }
 
@@ -1886,10 +1894,14 @@ img.zoom-target {
     background: var(--hover);
   }
 
-  .work-item:not(.active):hover .title {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 0.5px;
+    .work-item:not(.active):hover .title {
+    text-decoration: none;
+  }
+  .work-item:not(.active):hover .title-project {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+    text-decoration-thickness: 1.5px !important;
+    text-decoration-color: var(--text) !important;
   }
 }
 
@@ -1898,9 +1910,9 @@ img.zoom-target {
   background: var(--hover);
 }
 
-.work-item:not(.active):active .title {
-  text-decoration: underline;
-  text-decoration-thickness: 0.5px;
+.work-item:not(.active):active .title-project {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px !important;
 }
 
 /* 3. Estado activo → limpio (sin gris ni subrayado) */
