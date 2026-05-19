@@ -2266,28 +2266,11 @@ blockquote p {
 }
 
 @media (min-width: 1024px) {
-  .work-item::before {
-    content: "";
-    position: absolute;
-    left: -1px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--text);
-    transform: scaleY(0);
-    transform-origin: bottom center;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+  
 
-  .work-item:not(.active):hover::before {
-    transform: scaleY(1);
-    transform-origin: top center;
-  }
+  
 
-  .work-item.active::before {
-    transform: scaleY(1);
-    transform-origin: top center;
-  }
+  
 
   .work-item:not(.active):hover {
     background: transparent !important;
@@ -2308,9 +2291,7 @@ blockquote p {
 }
 
 /* --- Images: subtle load background --- */
-img {
-  background: var(--surface);
-}
+
 .metrics-table td:last-child {
   font-weight: 600;
   color: var(--text-primary);
@@ -3577,4 +3558,10 @@ a:hover {
 .reveal.is-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+/* Explicit logo and avatar transparency overrides */
+.avatar, .fab-logo, .nav-logo, .signature-logo, .avatar-frame, .fab-content img, img.avatar {
+  background: transparent !important;
+  background-color: transparent !important;
 }
