@@ -2294,3 +2294,418 @@ blockquote p {
 img {
   background: var(--surface);
 }
+.metrics-table td:last-child {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.detail-label {
+  font-size: 12px;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+
+.detail-subtitle {
+  font-size: 24px;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.detail p,
+.detail li,
+.detail-quote,
+blockquote {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 75ch;
+}
+
+@keyframes sideNavEnter {
+  from { opacity: 0; transform: translateY(-4px) translateX(-4px); }
+  to { opacity: 1; transform: translateY(0) translateX(0); }
+}
+
+.detail-quote,
+blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.5rem;
+  border-left: 2px solid var(--text);
+  background: var(--surface);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 16px;
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.detail-quote p,
+blockquote p {
+  margin: 0;
+}
+
+.detail-list {
+  margin-bottom: 24px;
+  margin-left: 24px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.detail-list li {
+  margin-bottom: 8px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* --- STAR Methodology Editorial Layout --- */
+.star-stepper {
+  position: relative;
+  margin: 48px 0;
+  padding-left: 0;
+}
+
+.star-stepper::before {
+  content: "";
+  position: absolute;
+  left: 15px; 
+  top: 16px;
+  bottom: 0;
+  width: 2px;
+  background: var(--divider);
+  z-index: 0;
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+  z-index: 1;
+}
+
+.stepper-badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 0 0 6px var(--bg-body, #fff); 
+}
+
+.stepper-content {
+  flex-grow: 1;
+  padding-top: 6px;
+}
+
+.stepper-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.stepper-content p,
+.stepper-content li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  max-width: 65ch;
+}
+
+.stepper-content ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.stepper-content blockquote {
+  border-left: 3px solid var(--divider);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.results-card {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+
+
+
+.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* =============================================================
+   LINEAR LUXURY SYSTEM — Process Visuals & Tables
+   Override de inline styles para coherencia editorial total.
+   Monocroma. Sin color. Líneas. Jerarquía tipográfica.
+   ============================================================= */
+
+/* 1. Contenedor del proceso visual */
+.case-process-visual {
+  margin-bottom: 2.5rem !important;
+  padding-bottom: 2rem !important;
+  border-bottom: 1px solid var(--divider) !important;
+  background: none !important;
+}
+
+/* 2. Eyebrow label (etiquetas de sección) */
+.case-process-visual p:not([style*="italic"]) {
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  color: var(--text-secondary) !important;
+  opacity: 0.55 !important;
+  margin-bottom: 1rem !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* 3. Process Timeline — eliminar pills coloreadas, pasar a texto lineal */
+.case-process-visual div[style*="display: flex"][style*="align-items: center"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+.case-process-visual div[style*="display: flex"][style*="align-items: center"] > div {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: var(--text) !important;
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: 0.01em !important;
+}
+
+.case-process-visual div[style*="display: flex"][style*="align-items: center"] > span {
+  color: var(--text) !important;
+  opacity: 0.25 !important;
+  padding: 0 0.5rem !important;
+  font-size: 10px !important;
+}
+
+/* 4. Cards de Antes / Después — monochrome, sin radios, solo líneas */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div {
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 1.25rem 0 1.25rem 1.25rem !important;
+  border: none !important;
+  border-left: 1px solid var(--divider) !important;
+}
+
+/* Primer card (Antes): borde izquierdo sutil */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div:first-child {
+  border-left: 1px solid var(--divider) !important;
+}
+
+/* Segundo card (Después): borde izquierdo marcado */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div:last-child {
+  border-left: 2px solid var(--text) !important;
+}
+
+/* Header de cada card */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div > p:first-child {
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  color: var(--text-secondary) !important;
+  opacity: 0.55 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* 5. Items dentro de las cards — eliminar colores de fondo y emojis visuales */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--divider) !important;
+  padding: 0.45rem 0 !important;
+  color: var(--text-secondary) !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div:last-child {
+  border-bottom: none !important;
+}
+
+/* 6. Ocultar spans de emoji/icono */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div > span:first-child {
+  display: none !important;
+}
+
+/* 7. Texto del item — span visible */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div > span:last-child {
+  color: var(--text-secondary) !important;
+  font-size: 12px !important;
+}
+
+/* 8. Nota al pie (⚠, ✅) dentro de cards */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div > div > div[style*="font-size: 0.7rem"] {
+  background: transparent !important;
+  border: none !important;
+  color: var(--text-secondary) !important;
+  opacity: 0.6 !important;
+  font-size: 11px !important;
+  padding: 0.5rem 0 0 !important;
+  font-style: italic !important;
+}
+
+/* 9. Cards de 3 columnas (principios de diseño) */
+.case-process-visual div[style*="grid-template-columns: repeat(3, 1fr)"] > div {
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid var(--divider) !important;
+  padding: 1rem 0 !important;
+  text-align: left !important;
+}
+
+/* Ocultar emojis grandes de las tarjetas de principios */
+.case-process-visual div[style*="grid-template-columns: repeat(3, 1fr)"] > div > div:first-child {
+  display: none !important;
+}
+
+.case-process-visual div[style*="grid-template-columns: repeat(3, 1fr)"] > div > div:nth-child(2) {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--text) !important;
+  margin-bottom: 4px !important;
+}
+
+.case-process-visual div[style*="grid-template-columns: repeat(3, 1fr)"] > div > div:last-child {
+  font-size: 12px !important;
+  color: var(--text-secondary) !important;
+}
+
+/* 10. Insight cards / 2 cols comparativas (modelo mental) */
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*="margin-bottom"]) > div {
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-left: 1px solid var(--divider) !important;
+  padding: 1rem 0 1rem 1.25rem !important;
+}
+
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*="margin-bottom"]) > div:last-child {
+  border-left: 2px solid var(--text) !important;
+}
+
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*="margin-bottom"]) > div p[style*="italic"] {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: var(--text) !important;
+  font-style: italic !important;
+}
+
+/* 11. Metrics Table — ultra-minimal ruled lines */
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0;
+}
+
+.metrics-table thead tr {
+  border-bottom: 1.5px solid var(--text);
+}
+
+.metrics-table th {
+  font-size: 9px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  padding: 0 0 10px;
+  text-align: left;
+  opacity: 0.55;
+  background: transparent !important;
+}
+
+.metrics-table th:not(:first-child) {
+  padding-left: 16px;
+}
+
+.metrics-table tbody tr {
+  border-bottom: 1px solid var(--divider);
+}
+
+.metrics-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.metrics-table td {
+  padding: 12px 0;
+  vertical-align: top;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+  background: transparent !important;
+}
+
+.metrics-table td:not(:first-child) {
+  padding-left: 16px;
+}
+
+.metrics-table td:first-child {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-right: 16px;
+  min-width: 140px;
+}
+
+.metrics-table td:last-child {
+  font-weight: 500 !important;
+  color: var(--text) !important;
+}
+
+/* results-card sin fondo coloreado */
+.results-card {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid var(--divider) !important;
+  border-radius: 0 !important;
+  padding: 32px 0 0 !important;
+  margin-top: 40px !important;
+}
+
+
+

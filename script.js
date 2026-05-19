@@ -23,7 +23,10 @@ function toggleProject(el) {
     el.classList.add("active");
     if (detail) detail.style.display = "block";
     el.setAttribute("aria-expanded", "true");
-    setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    setTimeout(() => {
+      const y = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 80);
   }
 }
 
@@ -138,12 +141,12 @@ const translations = {
     "about-text-1": "Entiendo el diseño como una herramienta para resolver problemas y alcanzar objetivos estratégicos. Actualmente, dentro del equipo de Negocio Digital de ILUNION Hotels, trabajo directamente sobre el canal directo de la compañía —el cual representó un 13% de la venta total en 2025—, donde cada decisión UX tiene un impacto medible en la rentabilidad.",
     "about-text-2": "Mi enfoque combina el análisis de datos, el customer journey y la experimentación continua para crear productos digitales que escalan y generan valor real.",
     "expertise-eyebrow": "Especialidades",
-    "tag-ux-research": "UX Research & Discovery",
-    "tag-ui-design": "UI Design & Design Systems",
-    "tag-cro": "CRO & Experimentación",
-    "tag-product-thinking": "Product Thinking & Business Strategy",
-    "tag-data-analysis": "Product Analytics (Adobe / Clarity)",
-    "tag-accessibility": "Accesibilidad (WCAG)",
+    "tag-ux-research": "UX/UI & CRO",
+    "tag-ui-design": "Figma & A/B Testing",
+    "tag-cro": "Microsoft Clarity",
+    "tag-user-testing": "eCommerce & Turismo",
+    "tag-product-thinking": "Producto Digital",
+    "tag-data-analysis": "Accesibilidad (WCAG)",
     "label-experience": "Experiencia",
     "label-skills": "Capacidades",
     "label-education": "Formación",
@@ -188,12 +191,12 @@ const translations = {
     "about-text-1": "I understand design as a tool to solve problems and achieve strategic goals. Currently, within the Digital Business team at ILUNION Hotels, I work directly on the company's direct channel —which accounted for 13% of total sales in 2025—, where every UX decision has a measurable impact on profitability.",
     "about-text-2": "My approach combines data analysis, customer journey mapping, and continuous experimentation to create digital products that scale and generate real value.",
     "expertise-eyebrow": "Core Specialties",
-    "tag-ux-research": "UX Research & Discovery",
-    "tag-ui-design": "UI Design & Design Systems",
-    "tag-cro": "CRO & Experimentation",
-    "tag-product-thinking": "Product Thinking & Business Strategy",
-    "tag-data-analysis": "Product Analytics (Adobe / Clarity)",
-    "tag-accessibility": "Accessibility (WCAG)",
+    "tag-ux-research": "UX/UI & CRO",
+    "tag-ui-design": "Figma & A/B Testing",
+    "tag-cro": "Microsoft Clarity",
+    "tag-user-testing": "eCommerce & Tourism",
+    "tag-product-thinking": "Digital Product",
+    "tag-data-analysis": "Accessibility (WCAG)",
     "label-experience": "Experience",
     "label-skills": "Capabilities",
     "label-education": "Education",
@@ -237,7 +240,8 @@ function scrollToId(id) {
   const el = document.getElementById(id);
   if (!el) return;
 
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  const y = el.getBoundingClientRect().top + window.scrollY - 80;
+  window.scrollTo({ top: y, behavior: "smooth" });
   
   const fabMenu = document.getElementById("fabMenu");
   const fab = document.getElementById("fabButton");
@@ -267,7 +271,10 @@ function openAndScrollProject(id) {
   if (!isOpen) {
     toggleProject(el);
   } else {
-    setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    setTimeout(() => {
+      const y = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 80);
   }
 }
 
