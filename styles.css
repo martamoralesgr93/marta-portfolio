@@ -1168,30 +1168,7 @@ body.menu-open .container-shift {
   margin-top: 12px;
 }
 
-.contact-actions a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #000;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
-.contact-actions a:hover {
-  transform: translateY(-3px);
-  background: var(--text);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.contact-actions a img {
-  width: 18px;
-  height: 18px;
-  filter: brightness(0) invert(1);
-  object-fit: contain;
-}
 
 .hiring-status {
   display: flex;
