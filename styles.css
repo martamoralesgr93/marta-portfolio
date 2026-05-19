@@ -2726,3 +2726,249 @@ blockquote p {
 
 
 
+
+/* ---------------------------------------------------------------
+   PASO 2 — ICONOGRAFÍA & MICROINTERACCIONES
+   Sistema premium. Tool-like. Physical feedback.
+   --------------------------------------------------------------- */
+
+/* -- 1. REDUCIR MOVIMIENTO --------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* -- 2. READ-MORE BUTTON --------------------------------------*/
+.read-more-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--text) !important;
+  padding: 0 !important;
+  margin-top: 20px !important;
+  cursor: pointer !important;
+  border: none !important;
+  background: none !important;
+}
+
+.read-more-arrow {
+  display: inline-block;
+  opacity: 0.35;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.work-item:not(.active):hover .read-more-arrow {
+  transform: translateX(5px);
+  opacity: 0.9;
+}
+
+/* -- 3. CAROUSEL BUTTONS --------------------------------------*/
+.carousel-btn {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  border: 1px solid var(--divider) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  color: var(--text) !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.carousel-btn:hover {
+  border-color: var(--text) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  transform: scale(1.1) !important;
+  background: #fff !important;
+}
+
+.carousel-btn:active {
+  transform: scale(0.93) !important;
+}
+
+.carousel-btn.prev:hover svg { transform: translateX(-1px); }
+.carousel-btn.next:hover svg { transform: translateX(1px); }
+
+/* -- 4. CONTACT ICONS -----------------------------------------*/
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.contact-icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border: 1px solid var(--divider);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-icon-link svg {
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-icon-link:hover {
+  color: var(--text);
+  border-color: var(--text);
+  background: var(--hover);
+  transform: translateY(-1px);
+}
+
+.contact-icon-link:hover svg { transform: scale(1.1); }
+.contact-icon-link:active { transform: scale(0.97); }
+
+/* -- 5. STATUS DOT --------------------------------------------*/
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.status-dot::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.25);
+  animation: statusPulse 2.4s ease-out infinite;
+}
+
+@keyframes statusPulse {
+  0%   { transform: scale(0.8); opacity: 0.8; }
+  60%  { transform: scale(1.8); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* -- 6. ZOOM MODAL CLOSE --------------------------------------*/
+.zoom-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1);
+}
+
+.zoom-modal-close:hover {
+  background: rgba(255,255,255,0.16);
+  transform: scale(1.1);
+}
+
+.zoom-modal-close:active { transform: scale(0.92); }
+
+/* -- 7. LANG TOGGLE -------------------------------------------*/
+.lang-toggle {
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.lang-toggle:hover {
+  color: var(--text) !important;
+  border-color: var(--text) !important;
+  background: var(--hover) !important;
+  transform: translateY(-1px) !important;
+}
+.lang-toggle:active { transform: scale(0.95) !important; }
+
+/* -- 8. SIDEBAR NAV LINKS -------------------------------------*/
+.nav-project-link {
+  transition: opacity 0.2s ease, padding-left 0.25s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.nav-project-link:hover {
+  opacity: 0.5 !important;
+  padding-left: 4px !important;
+}
+
+/* -- 9. IMÁGENES DE PROYECTO ----------------------------------*/
+.project-visuals {
+  transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.project-visuals:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* -- 10. SCROLL ENTRANCE --------------------------------------*/
+.work-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.work-item.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* -- 11. STEPPER HOVER ----------------------------------------*/
+.stepper-badge {
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+.stepper-item:hover .stepper-badge {
+  transform: scale(1.12);
+}
+
+/* -- 12. EMAIL LINK -------------------------------------------*/
+.email-display {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+.email-display::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.email-display:hover::after { width: 100%; }
+.email-display:hover { opacity: 0.6; }
+
+/* -- 13. BTN PRIMARY ------------------------------------------*/
+.btn-primary {
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease !important;
+}
+.btn-primary:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important;
+}
+.btn-primary:active {
+  transform: scale(0.97) !important;
+  transition-duration: 0.08s !important;
+}

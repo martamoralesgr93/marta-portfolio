@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.07, rootMargin: '0px 0px -32px 0px' });
+  }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
 
   // Key content blocks
   var selectors = [
@@ -377,17 +377,16 @@ document.addEventListener('DOMContentLoaded', function () {
     revealObserver.observe(el);
   });
 
-  // Work items with subtle stagger
+  // Work items — staggered entrance (0, 60ms, 120ms ...)
   document.querySelectorAll('.work-item').forEach(function (el, i) {
-    el.classList.add('reveal');
-    el.style.transitionDelay = (i * 0.06) + 's';
+    el.style.transitionDelay = (i * 0.07) + 's';
     revealObserver.observe(el);
   });
 
   // Skill tags with stagger
   document.querySelectorAll('.tag').forEach(function (el, i) {
     el.classList.add('reveal');
-    el.style.transitionDelay = (Math.min(i, 5) * 0.05) + 's';
+    el.style.transitionDelay = (Math.min(i, 6) * 0.05) + 's';
     revealObserver.observe(el);
   });
 });
