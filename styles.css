@@ -3431,3 +3431,150 @@ p[style*="border-left: 3px solid var(--accent)"] {
   margin: 0 !important;
   max-width: 58ch;
 }
+
+/* ---------------------------------------------------------------
+   PASO 4 — REFINAMIENTO SENIOR / PRODUCT-TECH
+   Final Polish & Absolute Visual Cohesion.
+   Alineación geométrica y suavizado de físicas.
+   --------------------------------------------------------------- */
+
+/* -- 1. GLOBAL CURVA DE ACELERACIÓN VERCEL/LINEAR --------------*/
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Aplicar la física de transición premium a todos los elementos del sistema */
+a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
+.contact-icon-link, .read-more-arrow, .stepper-badge, .zoom-modal-close, .lang-toggle {
+  transition-timing-function: var(--ease-out) !important;
+}
+
+/* -- 2. UNIFICACIÓN DE BORDES Y RADIOS GEOMÉTRICOS --------------*/
+.btn-primary, .lang-toggle, .read-more-btn {
+  border-radius: var(--radius-sm) !important; /* 3px — look técnico de herramienta */
+}
+
+.carousel-container, .carousel-item, .table-responsive, .case-process-visual, .metrics-table {
+  border-radius: var(--radius-md) !important; /* 6px — coherencia de caja */
+}
+
+/* Unificar los bordes de todo el sitio a 1px gris ultra tenuo */
+.divider, hr, .stepper-item, .work-item, .carousel-container, .table-responsive, 
+.case-process-visual, .contact-icon-link, .metrics-table th, .metrics-table td, .metrics-table {
+  border-color: var(--divider) !important;
+}
+
+/* -- 3. SOMBRAS FÍSICAS DE MÚLTIPLES CAPAS ---------------------*/
+/* Evitar sombras planas. Usar difusión multicapa. */
+.fab {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.06) !important;
+}
+.fab-menu {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 16px 40px rgba(0,0,0,0.08) !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--divider) !important;
+}
+.zoom-modal img {
+  box-shadow: 0 24px 64px rgba(0,0,0,0.2) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+/* -- 4. EQUILIBRIO DE RITMOS Y SPACING (Alineación vertical) ----*/
+.section {
+  padding-top: var(--s-64) !important;
+  padding-bottom: var(--s-64) !important;
+  border-bottom: 1px solid var(--divider);
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding-top: var(--s-48) !important;
+    padding-bottom: var(--s-48) !important;
+  }
+}
+
+/* Spacing uniforme de textos en la lectura profunda */
+.detail p, .detail-list, .detail blockquote {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+
+/* Evitar saltos de espaciado en cabeceras internas */
+.detail-subtitle + p {
+  margin-top: 4px !important;
+}
+
+/* -- 5. POLISH DE CABECERA MOBILE & NAVEGACIÓN ------------------*/
+@media (max-width: 1023px) {
+  .hero-header {
+    padding-top: var(--s-32) !important;
+    padding-bottom: var(--s-24) !important;
+  }
+  .profile-name {
+    letter-spacing: -0.04em !important;
+  }
+}
+
+/* -- 6. DENSIDAD EN FOOTER -------------------------------------*/
+.footer {
+  border-top: 1px solid var(--divider) !important;
+  background: var(--bg) !important; /* Mantener blanco puro para look monocromo */
+  padding: var(--s-48) 0 !important;
+}
+
+.footer .disclaimer {
+  color: var(--text-muted) !important;
+  font-size: 11px !important;
+  line-height: 1.6 !important;
+  max-width: 72ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* -- 7. DETALLE PREMIUM DE ENLACES (Email, Web) ---------------*/
+a {
+  color: var(--text);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* -- 8. CORRECCIÓN EN TRÁNSITO DE IMÁGENES (No-jitter zoom) ---*/
+.zoom-target {
+  transition: transform 0.4s var(--ease-out), filter 0.4s var(--ease-out) !important;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.zoom-target:hover {
+  transform: scale(1.015) !important;
+}
+
+/* -- 9. FAB BUTTON — micro feedback visual -------------------*/
+.fab {
+  border-radius: 999px !important; /* Mantener circular */
+  transition: transform 0.25s var(--ease-out), background 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.fab:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.fab:active {
+  transform: translateY(0) scale(0.96) !important;
+}
+
+/* -- 10. SCROLL ENTRANCES DELICADOS ---------------------------*/
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out) !important;
+}
+
+.reveal.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
