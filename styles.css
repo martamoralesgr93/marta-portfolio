@@ -1114,8 +1114,16 @@ body.menu-open .container-shift {
 }
 
 .signature-logo {
-  height: 48px;
-  width: auto;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03), inset 0 -1px 1px rgba(0,0,0,0.04) !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  padding: 5px !important;
+  box-sizing: border-box !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 .signature-details {
