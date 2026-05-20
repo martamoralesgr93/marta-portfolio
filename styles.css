@@ -3577,3 +3577,230 @@ a:hover {
 .contact-icon-link:hover .contact-favicon {
   transform: scale(1.12);
 }
+
+/* ==========================================================================
+   PORTFOLIO PREMIUM DASHBOARD & PROJECT GRID LAYOUT
+   Editorial, high-performance minimal data-viz system.
+   ========================================================================== */
+
+/* 1. Responsiveness & Grid Structure */
+@media (min-width: 1024px) {
+  .project-showcase-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 40px;
+    align-items: start;
+    margin: 32px 0;
+  }
+  
+  /* Reset margin on carousel when side-by-side */
+  .project-showcase-grid .project-visuals {
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .project-showcase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px 0;
+  }
+}
+
+/* 2. Dashboard Panel Container */
+.project-dashboard {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  user-select: none;
+}
+
+.project-dashboard:hover {
+  border-color: var(--text);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.db-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+/* 3. Metrics Cards Row */
+.db-metrics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.db-card {
+  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: 6px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 110px;
+  transition: border-color 0.25s ease;
+}
+
+.db-card:hover {
+  border-color: var(--text-muted);
+}
+
+/* 4. SVG Data Visualization (Dash style) */
+.db-chart-container {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.db-chart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* 5. Typography inside Cards */
+.db-value {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.db-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 4px 0 2px;
+}
+
+.db-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  color: var(--text-muted);
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* 6. List of Achieved Objectives */
+.db-objectives {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--divider);
+}
+
+.db-obj-header {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.db-obj-item {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.db-obj-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.db-obj-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* 7. Bar Chart progress indicator for Accessibility */
+.db-bar-track {
+  width: 100%;
+  height: 4px;
+  background: var(--divider);
+  border-radius: 2px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  overflow: hidden;
+}
+
+.db-bar-fill {
+  height: 100%;
+  background: var(--text);
+  width: 0;
+  border-radius: 2px;
+  transition: width 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-item.is-visible .db-bar-fill {
+  width: 100%;
+}
+
+/* 8. Dash keyframe animations for SVG paths */
+.svg-dash-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.svg-dash-ring {
+  stroke-dasharray: 125.6; /* 2 * PI * r (r=20) */
+  stroke-dashoffset: 125.6;
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Triggered on scroll by revealObserver (.is-visible class) */
+.work-item.is-visible .svg-dash-line {
+  stroke-dashoffset: 0;
+}
+
+/* Specific ring offsets */
+.work-item.is-visible .ring-pct-18 {
+  stroke-dashoffset: 102.5; /* 18.4% fill (125.6 * (1 - 0.184) = 102.5) */
+}
+
+.work-item.is-visible .ring-pct-13 {
+  stroke-dashoffset: 109.3; /* 13% fill (125.6 * (1 - 0.13) = 109.3) */
+}
+
+.work-item.is-visible .ring-pct-100 {
+  stroke-dashoffset: 0; /* 100% fill */
+}

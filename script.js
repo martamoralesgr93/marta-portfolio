@@ -154,7 +154,34 @@ const translations = {
     "contact-home-title": "Â¿Hablamos sobre estrategia y producto?",
     "contact-home-desc": "Disponible para colaborar en proyectos donde el diseÃ±o y el negocio se encuentren para crear impacto real.",
     "status-label": "Disponible para nuevos retos estratÃ©gicos",
-    "disclaimer": "Los proyectos mostrados han sido desarrollados en el contexto de mi experiencia profesional. Todas las marcas y logotipos pertenecen a sus respectivos propietarios."
+    "disclaimer": "Los proyectos mostrados han sido desarrollados en el contexto de mi experiencia profesional. Todas las marcas y logotipos pertenecen a sus respectivos propietarios.",
+    "db-p1-title": "MÃ‰TRICAS DE RENDIMIENTO",
+    "db-p1-stat1-label": "Inicio de bÃºsqueda",
+    "db-p1-stat1-meta": "CTR de primer scroll",
+    "db-p1-stat2-label": "OptimizaciÃ³n Embudo",
+    "db-p1-stat2-meta": "Tendencia de conversiÃ³n",
+    "db-p1-obj-title": "Objetivos conseguidos:",
+    "db-p1-obj1": "Acceso al motor visible en el primer scroll",
+    "db-p1-obj2": "ReducciÃ³n del 45% en errores de fecha en mobile",
+    "db-p1-obj3": "IdentificaciÃ³n de bÃºsqueda por destino general",
+    "db-p2-title": "AUDITORÃA DE ACCESIBILIDAD",
+    "db-p2-stat1-label": "Accesibilidad WCAG",
+    "db-p2-stat1-meta": "Conformidad Nivel AA",
+    "db-p2-stat2-label": "JerarquÃ­a y NavegaciÃ³n",
+    "db-p2-stat2-meta": "Cumplimiento de estÃ¡ndares",
+    "db-p2-obj-title": "Objetivos conseguidos:",
+    "db-p2-obj1": "100% accesible por teclado (sin trampas de foco)",
+    "db-p2-obj2": "RelaciÃ³n de contraste AA superior a 4.5:1",
+    "db-p2-obj3": "Estructura semÃ¡ntica para lectores de pantalla",
+    "db-p3-title": "MÃ‰TRICAS CRO & paid media",
+    "db-p3-stat1-label": "ConversiÃ³n Directa",
+    "db-p3-stat1-meta": "Reservas incrementales",
+    "db-p3-stat2-label": "Scroll al Producto",
+    "db-p3-stat2-meta": "Antes 15% vs DespuÃ©s 70%",
+    "db-p3-obj-title": "Objetivos conseguidos:",
+    "db-p3-obj1": "Incremento neto del +13% en venta directa",
+    "db-p3-obj2": "RediseÃ±o tÃ¡ctico del bloque de ofertas superior",
+    "db-p3-obj3": "OptimizaciÃ³n del ROI en campaÃ±as de Paid Media"
   },
   en: {
     "label-context": "Business Context",
@@ -204,7 +231,34 @@ const translations = {
     "contact-home-title": "Let's talk about strategy and product",
     "contact-home-desc": "Available to collaborate on projects where design and business meet to create real impact.",
     "status-label": "Available for new strategic challenges",
-    "disclaimer": "The projects shown have been developed in the context of my professional experience. All trademarks and logos belong to their respective owners."
+    "disclaimer": "The projects shown have been developed in the context of my professional experience. All trademarks and logos belong to their respective owners.",
+    "db-p1-title": "PERFORMANCE METRICS",
+    "db-p1-stat1-label": "Search Initiation",
+    "db-p1-stat1-meta": "Above-the-fold CTR",
+    "db-p1-stat2-label": "Funnel Optimization",
+    "db-p1-stat2-meta": "Conversion trend",
+    "db-p1-obj-title": "Achieved objectives:",
+    "db-p1-obj1": "Booking engine accessible on first scroll",
+    "db-p1-obj2": "45% reduction in mobile date entry errors",
+    "db-p1-obj3": "Detection of generic destination intent",
+    "db-p2-title": "ACCESSIBILITY AUDIT",
+    "db-p2-stat1-label": "WCAG Accessibility",
+    "db-p2-stat1-meta": "Level AA Compliance",
+    "db-p2-stat2-label": "Hierarchy & Navigation",
+    "db-p2-stat2-meta": "Standard alignment",
+    "db-p2-obj-title": "Achieved objectives:",
+    "db-p2-obj1": "100% keyboard navigable (no focus traps)",
+    "db-p2-obj2": "Contrast ratios exceeding WCAG AA 4.5:1",
+    "db-p2-obj3": "Semantic document outline for screen readers",
+    "db-p3-title": "CRO & paid media METRICS",
+    "db-p3-stat1-label": "Direct Conversion",
+    "db-p3-stat1-meta": "Incremental bookings",
+    "db-p3-stat2-label": "Scroll-through Rate",
+    "db-p3-stat2-meta": "Before 15% vs After 70%",
+    "db-p3-obj-title": "Achieved objectives:",
+    "db-p3-obj1": "+13% net increase in direct channel sales",
+    "db-p3-obj2": "Tactical redesign of top-funnel offers layout",
+    "db-p3-obj3": "Optimized campaign ROI on Paid Media channels"
   }
 };
 
@@ -400,34 +454,34 @@ function initInteractiveTables() {
   const tableData = {
     // ILUNION ES
     "Visibilidad del motor de reservas": {
-      metric: "Conversión de Embudo",
+      metric: "Conversiï¿½n de Embudo",
       value: "+18.4% CTR",
-      meta: "Tasa de inicio de búsqueda",
-      insight: "Adobe Analytics identificó una pérdida del 34% de usuarios con alta intención de compra antes del primer scroll debido al ruido visual de banners promocionales superiores."
+      meta: "Tasa de inicio de bï¿½squeda",
+      insight: "Adobe Analytics identificï¿½ una pï¿½rdida del 34% de usuarios con alta intenciï¿½n de compra antes del primer scroll debido al ruido visual de banners promocionales superiores."
     },
     "Comportamiento en mobile (post-launch Clarity)": {
       metric: "Rendimiento Mobile",
       value: "-45% Errores",
       meta: "Rage clicks en fecha",
-      insight: "Los mapas de calor térmicos de Clarity revelaron que el 52% de los usuarios de smartphones pulsaban accidentalmente fuera del selector táctil. Se implementó una interacción gestual."
+      insight: "Los mapas de calor tï¿½rmicos de Clarity revelaron que el 52% de los usuarios de smartphones pulsaban accidentalmente fuera del selector tï¿½ctil. Se implementï¿½ una interacciï¿½n gestual."
     },
     "Nuevo insight de producto detectado": {
       metric: "Descubrimiento UX",
       value: "22% Usuarios",
-      meta: "Búsqueda por destino general",
-      insight: "Un porcentaje considerable de usuarios utilizaba el buscador introduciendo términos regionales ('Costa del Sol') en lugar de hoteles específicos, lo que impulsó una nueva iniciativa CRO."
+      meta: "Bï¿½squeda por destino general",
+      insight: "Un porcentaje considerable de usuarios utilizaba el buscador introduciendo tï¿½rminos regionales ('Costa del Sol') en lugar de hoteles especï¿½ficos, lo que impulsï¿½ una nueva iniciativa CRO."
     },
     "Coherencia desktop / mobile": {
       metric: "Paridad Dispositivo",
-      value: "3x Fricción",
-      meta: "Diferencia táctil corregida",
-      insight: "El modelo de pointer (desktop) fomentaba exploración flotante, mientras que en mobile la fijación visual requería CTAs anclados arriba de los resultados de búsqueda."
+      value: "3x Fricciï¿½n",
+      meta: "Diferencia tï¿½ctil corregida",
+      insight: "El modelo de pointer (desktop) fomentaba exploraciï¿½n flotante, mientras que en mobile la fijaciï¿½n visual requerï¿½a CTAs anclados arriba de los resultados de bï¿½squeda."
     },
-    "Indicadores de conversión (en validación)": {
-      metric: "Consolidación Analítica",
+    "Indicadores de conversiï¿½n (en validaciï¿½n)": {
+      metric: "Consolidaciï¿½n Analï¿½tica",
       value: "6 Semanas",
-      meta: "Período de observación estándar",
-      insight: "Los datos comerciales iniciales muestran incremento de revenue neto por sesión. Se requiere el ciclo completo para asegurar significancia estadística del 95% frente al histórico."
+      meta: "Perï¿½odo de observaciï¿½n estï¿½ndar",
+      insight: "Los datos comerciales iniciales muestran incremento de revenue neto por sesiï¿½n. Se requiere el ciclo completo para asegurar significancia estadï¿½stica del 95% frente al histï¿½rico."
     },
 
     // ILUNION EN
@@ -467,31 +521,31 @@ function initInteractiveTables() {
       metric: "Accesibilidad Visual",
       value: "AA Cumplido",
       meta: "Criterio 1.4.3 (4.5:1)",
-      insight: "Se rediseñó el contraste de color para textos informativos y alertas, asegurando legibilidad completa en pantallas de bajo brillo corporativas."
+      insight: "Se rediseï¿½ï¿½ el contraste de color para textos informativos y alertas, asegurando legibilidad completa en pantallas de bajo brillo corporativas."
     },
-    "Navegación por teclado": {
+    "Navegaciï¿½n por teclado": {
       metric: "Accesibilidad Teclado",
       value: "100% Accesible",
-      meta: "Criterio 2.1.1 (Sin ratón)",
-      insight: "Se eliminaron trampas de foco en formularios y se garantizó la navegación secuencial con tabulación nativa del sistema operativo."
+      meta: "Criterio 2.1.1 (Sin ratï¿½n)",
+      insight: "Se eliminaron trampas de foco en formularios y se garantizï¿½ la navegaciï¿½n secuencial con tabulaciï¿½n nativa del sistema operativo."
     },
-    "Jerarquía semántica": {
+    "Jerarquï¿½a semï¿½ntica": {
       metric: "Lectores de Pantalla",
       value: "Lighthouse 100",
-      meta: "Criterio 1.3.1 (Info/Relación)",
-      insight: "Estructuración lógica de headings (h1-h6) y etiquetas ARIA para navegación asistida fluida en perfiles de profesor y alumno."
+      meta: "Criterio 1.3.1 (Info/Relaciï¿½n)",
+      insight: "Estructuraciï¿½n lï¿½gica de headings (h1-h6) y etiquetas ARIA para navegaciï¿½n asistida fluida en perfiles de profesor y alumno."
     },
     "Estados interactivos": {
       metric: "Feedback de Interfaz",
       value: "Foco Visible",
       meta: "Criterio 2.4.7 (Focus rings)",
-      insight: "Se diseñaron anillos de foco consistentes con contraste superior a 3:1 para que usuarios con discapacidad motora sigan el cursor visualmente."
+      insight: "Se diseï¿½aron anillos de foco consistentes con contraste superior a 3:1 para que usuarios con discapacidad motora sigan el cursor visualmente."
     },
-    "Consistencia entre módulos": {
+    "Consistencia entre mï¿½dulos": {
       metric: "Eficiencia de Producto",
       value: "Design Tokens",
-      meta: "Reducción de deuda técnica",
-      insight: "Centralización de colores, fuentes y espaciados en variables de sistema reutilizables en múltiples proyectos internos."
+      meta: "Reducciï¿½n de deuda tï¿½cnica",
+      insight: "Centralizaciï¿½n de colores, fuentes y espaciados en variables de sistema reutilizables en mï¿½ltiples proyectos internos."
     },
 
     // ACADEMIC EN
@@ -568,12 +622,12 @@ function initInteractiveTables() {
               <div class="expanded-row-content" style="max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;">
                 <div class="expanded-detail-grid">
                   <div class="expanded-stat-box">
-                    <div class="expanded-stat-label">${key.match(/[a-z]/i) ? 'Product Metric' : 'Métrica de Producto'}</div>
+                    <div class="expanded-stat-label">${key.match(/[a-z]/i) ? 'Product Metric' : 'Mï¿½trica de Producto'}</div>
                     <div class="expanded-stat-value">${data.value}</div>
                     <div class="expanded-stat-meta">${data.meta}</div>
                   </div>
                   <div class="expanded-insight-box">
-                    <div class="expanded-insight-title">${key.match(/[a-z]/i) ? 'Telemetry Insight' : 'Insight de Telemetría'}</div>
+                    <div class="expanded-insight-title">${key.match(/[a-z]/i) ? 'Telemetry Insight' : 'Insight de Telemetrï¿½a'}</div>
                     <p class="expanded-insight-text">${data.insight}</p>
                   </div>
                 </div>
