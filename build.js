@@ -54,6 +54,28 @@ function findProjects(dir) {
   return results;
 }
 
+function processImagePaths(rawMd, relPath, f) {
+  // Replace markdown images: ![alt](src)
+  let processed = rawMd.replace(/!\[(.*?)\]\((.*?)\)/g, (match, alt, src) => {
+    let newSrc = src;
+    if (src.startsWith('./') || !src.startsWith('/')) {
+       newSrc = src.replace('./', `${relPath}/${f}/`);
+    }
+    return `<figure class="cs-figure"><img src="${newSrc}" alt="${alt}"></figure>`;
+  });
+
+  // Replace HTML images: <img src="src" alt="alt">
+  processed = processed.replace(/<img([^>]*)src=["']([^"']*)["']([^>]*)>/g, (match, p1, src, p2) => {
+    let newSrc = src;
+    if (src.startsWith('./') || !src.startsWith('/')) {
+       newSrc = src.replace('./', `${relPath}/${f}/`);
+    }
+    return `<img${p1}src="${newSrc}"${p2}>`;
+  });
+  
+  return processed;
+}
+
 const projectFolders = findProjects(projectsDir);
 
 let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
@@ -77,35 +99,43 @@ for (const pFolder of projectFolders) {
     continue;
   }
   
-  const sections = [];
+  const sectionsEs = [];
+  const sectionsEn = [];
   const items = fs.readdirSync(pFolder);
   const folders = items.filter(i => /^\d{2}-/.test(i)).sort();
   
   for (const f of folders) {
-    const contentPath = path.join(pFolder, f, 'content.md');
-    if (fs.existsSync(contentPath)) {
-      let rawMd = fs.readFileSync(contentPath, 'utf-8');
-      
-      // Replace markdown images: ![alt](src)
-      rawMd = rawMd.replace(/!\[(.*?)\]\((.*?)\)/g, (match, alt, src) => {
-        let newSrc = src;
-        if (src.startsWith('./') || !src.startsWith('/')) {
-           newSrc = src.replace('./', `${relPath}/${f}/`);
-        }
-        return `<figure class="cs-figure"><img src="${newSrc}" alt="${alt}"></figure>`;
-      });
-
-      // Replace HTML images: <img src="src" alt="alt">
-      rawMd = rawMd.replace(/<img([^>]*)src=["']([^"']*)["']([^>]*)>/g, (match, p1, src, p2) => {
-        let newSrc = src;
-        if (src.startsWith('./') || !src.startsWith('/')) {
-           newSrc = src.replace('./', `${relPath}/${f}/`);
-        }
-        return `<img${p1}src="${newSrc}"${p2}>`;
-      });
-
+    const contentPathEs = path.join(pFolder, f, 'content.md');
+    const contentPathEn = path.join(pFolder, f, 'content-en.md');
+    
+    // Process Spanish (ES)
+    if (fs.existsSync(contentPathEs)) {
+      let rawMd = fs.readFileSync(contentPathEs, 'utf-8');
+      rawMd = processImagePaths(rawMd, relPath, f);
       const htmlContent = marked.parse(rawMd);
-      sections.push(`
+      sectionsEs.push(`
+        <section class="cs-section" id="${f}">
+          ${htmlContent}
+        </section>
+      `);
+    }
+    
+    // Process English (EN)
+    if (fs.existsSync(contentPathEn)) {
+      let rawMd = fs.readFileSync(contentPathEn, 'utf-8');
+      rawMd = processImagePaths(rawMd, relPath, f);
+      const htmlContent = marked.parse(rawMd);
+      sectionsEn.push(`
+        <section class="cs-section" id="${f}">
+          ${htmlContent}
+        </section>
+      `);
+    } else if (fs.existsSync(contentPathEs)) {
+      // Fallback: use Spanish content if English translation is not found
+      let rawMd = fs.readFileSync(contentPathEs, 'utf-8');
+      rawMd = processImagePaths(rawMd, relPath, f);
+      const htmlContent = marked.parse(rawMd);
+      sectionsEn.push(`
         <section class="cs-section" id="${f}">
           ${htmlContent}
         </section>
@@ -113,7 +143,16 @@ for (const pFolder of projectFolders) {
     }
   }
   
-  const fullContent = `<article class="cs-content" style="padding-top: 1rem;">${sections.join('\n')}</article>`;
+  const fullContent = `
+<article class="cs-content" style="padding-top: 1rem;">
+  <div data-lang="es">
+    ${sectionsEs.join('\n')}
+  </div>
+  <div data-lang="en" style="display: none;">
+    ${sectionsEn.join('\n')}
+  </div>
+</article>
+`;
   
   // Inject into the correct article's .detail div
   const detailDiv = $(`#${metadata.articleId} .detail`);

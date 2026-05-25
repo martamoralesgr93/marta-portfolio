@@ -8,7 +8,7 @@
 
   <meta property="og:title" content="Marta Morales | Product Designer · UX/UI &amp; CRO">
   <meta property="og:description" content="Marta Morales: Product Designer especializada en UX/UI, CRO y Producto Digital. Experta en eCommerce y Turismo, mejorando la conversión con Figma, A/B Testing y Microsoft Clarity.">
-  <meta property="og:image" content="https://martamorales-portafolio2026.vercel.app/logo.png">
+  <meta property="og:image" content="https://martamorales-portafolio2026.vercel.app/assets/logo.png">
   <meta property="og:url" content="https://martamorales-portafolio2026.vercel.app/">
   <meta property="og:type" content="website">
 
@@ -17,7 +17,7 @@
   <meta name="twitter:description" content="Marta Morales: Product Designer especializada en UX/UI, CRO y Producto Digital. Experta en eCommerce y Turismo, mejorando la conversión con Figma, A/B Testing y Microsoft Clarity.">
   <meta name="twitter:image" content="https://martamorales-portafolio2026.vercel.app/assets/logo.png">
 
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -34,7 +34,7 @@
         <button class="nav-btn-text" onclick="scrollToId('top')" data-i18n="nav-home">Inicio</button>
       </div>
       <div class="nav-zone center" onclick="scrollToId('about')">
-        <img src="logo.png" class="nav-logo-small" alt="">
+        <img src="assets/logo.png" class="nav-logo-small" alt="">
         <span class="nav-label" data-i18n="nav-about">Sobre mí</span>
       </div>
       <div class="nav-zone right">
@@ -47,7 +47,7 @@
     <main class="container" id="mainContent">
       <section class="hero">
         <div class="avatar-frame">
-          <img src="logo.png" class="avatar" alt="Marta Morales">
+          <img src="assets/logo.png" class="avatar" alt="Marta Morales">
         </div>
         <div class="hero-text">
           <p class="hero-eyebrow" data-i18n="hero-eyebrow">PRODUCT DESIGNER · UX STRATEGY · GROWTH</p>
@@ -83,8 +83,8 @@
                 <span data-i18n="nav-about">Sobre mí</span>
               </button>
               <ul class="nav-projects-list" id="aboutMenuList">
-                <li><a href="#experience" class="nav-project-link">CV / Experiencia</a></li>
-                <li><a href="#contact" class="nav-project-link">Contacto</a></li>
+                <li><a href="#experience" class="nav-project-link" data-i18n="label-experience">Experiencia</a></li>
+                <li><a href="#contact" class="nav-project-link" data-i18n="nav-contact">Contacto</a></li>
               </ul>
             </div>
             
@@ -101,7 +101,7 @@
       
 
       
-    <article id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+    <div id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
           <div class="work-summary">
             <div class="work-header">
               <h2 class="title"><span class="title-company">ILUNION Hotels</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p1-title-suffix">Booking Engine &amp; Funnel UX</span></h2>
@@ -113,33 +113,41 @@
             <p class="professional-context">Product Design · CRO · UX Strategy · Customer Journey · Ecommerce hotelero</p>
             <p class="subtitle" data-i18n="p1-subtitle">Rediseño estratégico del acceso al motor de reservas</p>
             
-            <div class="carousel-container project-visuals" id="carousel-ilunion">
-              <div class="carousel-track">
-                <div class="carousel-item media">
-                  <img src="exp-motor-desk.png" alt="Rediseño motor de reserva 1" class="zoom-target">
-                </div>
-                <div class="carousel-item media">
-                  <img src="compo-result-mobile.png" alt="Rediseño motor de reserva 2" class="zoom-target">
-                </div>
-                <div class="carousel-item media">
-                   <img src="wire-home-desk-compo.svg" alt="Detalle funcional" class="zoom-target">
-                </div>
-              </div>
-              <div class="carousel-actions">
-                <button class="carousel-btn prev" onclick="event.stopPropagation(); scrollCarousel('carousel-ilunion', -1)" aria-label="Ver anterior">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </button>
-                <button class="carousel-btn next" onclick="event.stopPropagation(); scrollCarousel('carousel-ilunion', 1)" aria-label="Ver siguiente">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
-              </div>
-            </div>
+            <div class="project-gallery" id="gallery-ilunion">
+  <figure class="project-figure">
+    <img src="assets/exp-motor-desk.png" alt="Exploración desktop del motor de reservas" class="zoom-target project-img" />
+    <h3>Exploración Desktop del motor de reservas</h3>
+    <figcaption>Exploración desktop del motor de reservas, enfocada en la usabilidad y el flujo de reserva.</figcaption>
+  </figure>
+  <figure class="project-figure">
+    <img src="assets/compo-result-mobile.png" alt="Resultado mobile del motor de reservas" class="zoom-target project-img" />
+    <h3>Resultado Mobile del motor de reservas</h3>
+    <figcaption>Versión mobile final del motor de reservas, mostrando la solución optimizada.</figcaption>
+  </figure>
+  <figure class="project-figure">
+    <img src="assets/wire-home-desk-compo.svg" alt="Wireframe desktop del motor de reservas" class="zoom-target" />
+    <h3>Wireframe Desktop del motor de reservas</h3>
+    <figcaption>Wireframe desktop del motor de reservas, representando la arquitectura y el flujo.</figcaption>
+  </figure>
+</div>
+              
+              <!-- Carousel markup removed, using static gallery layout -->
+            
 
             <p data-i18n="p1-summary">Rediseño estratégico del motor de reservas para optimizar el funnel de conversión directa en ILUNION Hotels.</p>
             <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
-          </div>
 
-          <div class="detail" style="display: none;"><article class="cs-content" style="padding-top: 1rem;">
+<div class="project-stats">
+  <p><strong>Duración:</strong> 3 meses</p>
+  <p><strong>Herramientas:</strong> Figma, Adobe XD</p>
+  <p><strong>KPI:</strong> +30 % conversión</p>
+</div>
+</div>
+
+          <div class="detail" style="display: none;">
+<article class="cs-content" style="padding-top: 1rem;">
+  <div data-lang="es">
+    
         <section class="cs-section" id="01-context">
           <h1>Contexto de negocio (SITUATION)</h1>
 <p>En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra, pero el acceso al motor presentaba fricción dentro del customer journey digital.</p>
@@ -173,14 +181,14 @@
 </ul>
 <p>El problema principal no era visual. La experiencia estaba construida desde una lógica más corporativa e inspiracional, mientras que gran parte del tráfico llegaba con una intención claramente transaccional. Existía una desalineación entre el modelo mental del negocio y el comportamiento real del usuario.</p>
 <h3>Antes del rediseño</h3>
-<div class="comparative">
+<div class="comparative desk-mob">
   <div class="col">
     <p><strong>Desktop</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/cro-optimization/motor-destino/02-problem/images/antes-desk-motor.webp" alt="Antes Desktop"></figure>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/02-problem/images/antes-desk-motor.webp" alt="Antes Desktop"></figure>
   </div>
   <div class="col">
     <p><strong>Mobile</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/cro-optimization/motor-destino/02-problem/images/antes-exp-motor-movil.webp" alt="Antes Mobile"></figure>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/02-problem/images/antes-exp-motor-movil.webp" alt="Antes Mobile"></figure>
   </div>
 </div>
 
@@ -223,14 +231,14 @@
 </ul>
 <p>La estrategia se centró en aumentar la visibilidad del inicio de búsqueda, simplificar la lectura, reducir competencia entre elementos, y facilitar interacciones rápidas desde tráfico de alta intención. Trabajé la relación entre promociones, contenido inspiracional, y motor de reservas, para evitar conflictos entre objetivos dentro de la misma pantalla.</p>
 <h3>Resultado del diseño</h3>
-<div class="comparative">
+<div class="comparative desk-mob">
   <div class="col">
     <p><strong>Desktop Rediseñado</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/cro-optimization/motor-destino/05-design/images/compo-result-desk.webp" alt="Diseño Desktop"></figure>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/05-design/images/compo-result-desk.webp" alt="Diseño Desktop"></figure>
   </div>
   <div class="col">
     <p><strong>Mobile Rediseñado</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/cro-optimization/motor-destino/05-design/images/compo-result-mobile.webp" alt="Diseño Mobile"></figure>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/05-design/images/compo-result-mobile.webp" alt="Diseño Mobile"></figure>
   </div>
 </div>
 
@@ -282,8 +290,159 @@
           <h1>Business-impact</h1>
 
         </section>
-      </article></div>
-      </article><article id="project-offers" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+      
+  </div>
+  <div data-lang="en" style="display: none;">
+    
+        <section class="cs-section" id="01-context">
+          <h1>Contexto de negocio (SITUATION)</h1>
+<p>En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra, pero el acceso al motor presentaba fricción dentro del customer journey digital.</p>
+<p>El componente convivía con múltiples objetivos de negocio:</p>
+<ul>
+<li>promociones</li>
+<li>branding</li>
+<li>fidelización</li>
+<li>y contenido inspiracional.</li>
+</ul>
+<p>Esto generaba una experiencia poco clara para usuarios que llegaban con una intención directa de reservar. El acceso al motor aparecía en puntos clave del ecosistema digital, pero el comportamiento del usuario mostraba señales claras de fricción:</p>
+<ul>
+<li>usuarios que no iniciaban búsqueda</li>
+<li>navegación innecesaria</li>
+<li>abandono temprano</li>
+<li>y dificultades para localizar rápidamente el acceso al motor.</li>
+</ul>
+
+        </section>
+      
+
+        <section class="cs-section" id="02-problem">
+          <h1>El reto y el problema (TASK)</h1>
+<p>El reto consistía en analizar el comportamiento del acceso al motor desde una perspectiva UX y CRO para detectar puntos de abandono y proponer una solución más clara, escalable y alineada con los objetivos comerciales.</p>
+<p>La solución debía:</p>
+<ul>
+<li>funcionar correctamente en desktop y mobile</li>
+<li>convivir con campañas activas</li>
+<li>mantener coherencia con la identidad visual</li>
+<li>y adaptarse a las limitaciones técnicas de Adobe Experience Manager.</li>
+</ul>
+<p>El problema principal no era visual. La experiencia estaba construida desde una lógica más corporativa e inspiracional, mientras que gran parte del tráfico llegaba con una intención claramente transaccional. Existía una desalineación entre el modelo mental del negocio y el comportamiento real del usuario.</p>
+<h3>Antes del rediseño</h3>
+<div class="comparative desk-mob">
+  <div class="col">
+    <p><strong>Desktop</strong></p>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/02-problem/images/antes-desk-motor.webp" alt="Antes Desktop"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Mobile</strong></p>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/02-problem/images/antes-exp-motor-movil.webp" alt="Antes Mobile"></figure>
+  </div>
+</div>
+
+        </section>
+      
+
+        <section class="cs-section" id="03-research">
+          <h1>Research y Análisis</h1>
+<p>Empecé analizando el comportamiento de los usuarios mediante Microsoft Clarity y Adobe Analytics para identificar:</p>
+<ul>
+<li>patrones de interacción</li>
+<li>profundidad de scroll</li>
+<li>visibilidad del motor</li>
+<li>interacción con CTAs</li>
+<li>y puntos de fricción dentro del customer journey.</li>
+</ul>
+<p>El análisis mostró que muchos usuarios llegaban con intención directa de reservar, pero encontraban demasiados estímulos antes de iniciar búsqueda. El acceso al motor competía visualmente con promociones, contenido corporativo y módulos secundarios.</p>
+<p>También realicé benchmarking funcional con otros entornos ecommerce travel para entender cómo priorizaban: disponibilidad, fechas, precio, y conversión directa.</p>
+<blockquote>
+<p>El usuario no quería explorar primero. Quería comprobar disponibilidad lo antes posible.</p>
+</blockquote>
+
+        </section>
+      
+
+        <section class="cs-section" id="04-hypothesis">
+          <h1>Hypothesis</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="05-design">
+          <h1>Diseño (ACTION)</h1>
+<p>A partir del análisis, redefiní la jerarquía del acceso al motor priorizando:</p>
+<ul>
+<li>rapidez de identificación</li>
+<li>claridad visual</li>
+<li>reducción de fricción</li>
+<li>y facilidad de interacción.</li>
+</ul>
+<p>La estrategia se centró en aumentar la visibilidad del inicio de búsqueda, simplificar la lectura, reducir competencia entre elementos, y facilitar interacciones rápidas desde tráfico de alta intención. Trabajé la relación entre promociones, contenido inspiracional, y motor de reservas, para evitar conflictos entre objetivos dentro de la misma pantalla.</p>
+<h3>Resultado del diseño</h3>
+<div class="comparative desk-mob">
+  <div class="col">
+    <p><strong>Desktop Rediseñado</strong></p>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/05-design/images/compo-result-desk.webp" alt="Diseño Desktop"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Mobile Rediseñado</strong></p>
+    <figure class="cs-figure"><img src="projects/01-cro/ilunion-motor/05-design/images/compo-result-mobile.webp" alt="Diseño Mobile"></figure>
+  </div>
+</div>
+
+        </section>
+      
+
+        <section class="cs-section" id="06-responsive">
+          <h1>Responsive</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="07-results">
+          <h1>Resultados y Aprendizajes (RESULT)</h1>
+<p>El seguimiento post-lanzamiento con Clarity permitió detectar un nuevo patrón de comportamiento no previsto: los usuarios utilizaban el buscador para explorar destinos, no únicamente como acceso transaccional. Este hallazgo abrió una nueva línea de mejora y demostró un proceso de producto maduro — la diferencia entre hacer una entrega y hacer producto.</p>
+<h3>Impacto en métricas</h3>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Antes</th>
+<th>Después</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Visibilidad del motor</strong></td>
+<td>Enterrado bajo hero + promociones</td>
+<td>Accesible en el primer scroll (desktop y mobile)</td>
+</tr>
+<tr>
+<td><strong>Comportamiento en mobile</strong></td>
+<td>Errores en selector de fechas</td>
+<td>Interacción táctil de swipe desarrollada</td>
+</tr>
+<tr>
+<td><strong>Coherencia desktop/mobile</strong></td>
+<td>Solución única sin diferenciación</td>
+<td>Arquitecturas diferenciadas por dispositivo</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><em>Los datos de conversión son confidenciales. Los resultados reflejan seguimiento analítico con Adobe Analytics y Microsoft Clarity, más validaciones internas.</em></p>
+</blockquote>
+
+        </section>
+      
+
+        <section class="cs-section" id="08-business-impact">
+          <h1>Business-impact</h1>
+
+        </section>
+      
+  </div>
+</article>
+</div>
+      </article>
+      
+      <article id="project-offers" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
         <div class="work-summary">
           <div class="work-header">
             <h2 class="title"><span class="title-company">ILUNION Hotels</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p3-title-suffix">Growth Strategy &amp; Conversion</span></h2>
@@ -295,13 +454,24 @@
           <p class="professional-context">Product Design · CRO · UX Strategy · Ecommerce hotelero · AEM</p>
           <p class="subtitle" data-i18n="p3-subtitle">Optimización del flujo de captación en mobile</p>
 
-          <div class="carousel-container project-visuals" id="carousel-offers">
+          <div class="project-gallery" id="gallery-offers">
+  <figure class="project-figure">
+    <img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-desk.webp" alt="Componente de ofertas Desktop" class="zoom-target" />
+    <h3>Componente de ofertas Desktop</h3>
+    <figcaption>Diseño desktop del bloque de ofertas, optimizado para la conversión directa.</figcaption>
+  </figure>
+  <figure class="project-figure">
+    <img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-mobile.webp" alt="Componente de ofertas Mobile" class="zoom-target" />
+    <h3>Componente de ofertas Mobile</h3>
+    <figcaption>Versión mobile del bloque de ofertas, adaptada a pantallas táctiles.</figcaption>
+  </figure>
+</div>
             <div class="carousel-track">
     <div class="carousel-item media">
-      <img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-desk.webp" alt="Offer Component Desk" class="zoom-target">
+      <img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-desk.webp" alt="Offer Component Desk" class="zoom-target">
     </div>
     <div class="carousel-item media">
-      <img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-mobile.webp" alt="Offer Component Mobile" class="zoom-target">
+      <img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-mobile.webp" alt="Offer Component Mobile" class="zoom-target">
     </div>
   </div>
             <div class="carousel-actions">
@@ -318,7 +488,10 @@
           <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
         </div>
 
-        <div class="detail" style="display: none;"><article class="cs-content" style="padding-top: 1rem;">
+        <div class="detail" style="display: none;">
+<article class="cs-content" style="padding-top: 1rem;">
+  <div data-lang="es">
+    
         <section class="cs-section" id="01-context">
           <h1>Context</h1>
 
@@ -338,11 +511,11 @@
 <div class="comparative">
   <div class="col">
     <p><strong>Auditoría — Fricciones UX (1)</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/02-problem/images/auditoria-compo-ilunion-1.webp" alt="Auditoría 1"></figure>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/02-problem/images/auditoria-compo-ilunion-1.webp" alt="Auditoría 1"></figure>
   </div>
   <div class="col">
     <p><strong>Auditoría — Fricciones UX (2)</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/02-problem/images/auditoria-compo-ilunion-2.webp" alt="Auditoría 2"></figure>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/02-problem/images/auditoria-compo-ilunion-2.webp" alt="Auditoría 2"></figure>
   </div>
 </div>
 
@@ -381,27 +554,27 @@
 <p>El rediseño del componente de ofertas se basó en los principios del Systems Thinking. El objetivo era crear un componente modular, altamente escalable y que redujera drásticamente la fricción cognitiva.</p>
 <h3>Proceso: Wireframing y Arquitectura de Información</h3>
 <p>Antes de pasar a UI de alta fidelidad, estructuramos la jerarquía del componente mediante wireframes, priorizando el precio, el título de la oferta y el call to action (CTA).</p>
-<div class="comparative">
+<div class="comparative desk-mob">
   <div class="col">
     <p><strong>Wireframe Desktop</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/wire-home-desk.webp" alt="Wireframe Desktop"></figure>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/wire-home-desk.webp" alt="Wireframe Desktop"></figure>
   </div>
   <div class="col">
     <p><strong>Wireframe Mobile</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/wire-home-mobile.webp" alt="Wireframe Mobile"></figure>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/wire-home-mobile.webp" alt="Wireframe Mobile"></figure>
   </div>
 </div>
 
 <h3>Resultado Final: UI Premium y Responsive</h3>
 <p>El diseño final establece un nuevo estándar visual (clean layout, sombras sutiles, microinteracciones) y resuelve el problema del scroll en mobile mediante el uso estratégico del espacio horizontal y tarjetas compactas.</p>
-<div class="comparative">
+<div class="comparative desk-mob">
   <div class="col">
     <p><strong>Diseño Final Desktop</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-desk.webp" alt="Diseño Desktop"></figure>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-desk.webp" alt="Diseño Desktop"></figure>
   </div>
   <div class="col">
     <p><strong>Diseño Final Mobile</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-mobile.webp" alt="Diseño Mobile"></figure>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-mobile.webp" alt="Diseño Mobile"></figure>
   </div>
 </div>
 
@@ -424,456 +597,135 @@
           <h1>Business-impact</h1>
 
         </section>
-      </article></div>
-      </article><article id="project-academic" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
-        <div class="work-summary">
-          <div class="work-header">
-            <h2 class="title"><span class="title-company">CEF</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p2-title-suffix">EdTech Management Platform</span></h2>
-            <div class="impact-badge">
-              <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
-              <span class="impact-value" data-i18n="p2-impact-tag">Eficiencia Operativa</span>
-            </div>
-          </div>
-          <p class="professional-context">Product Design · UX Strategy · Accesibilidad · Herramientas internas · Educación digital</p>
-          <p class="subtitle" data-i18n="p2-subtitle">Herramienta de gestión académica</p>
+      
+  </div>
+  <div data-lang="en" style="display: none;">
+    
+        <section class="cs-section" id="01-context">
+          <h1>Context</h1>
 
-          <div class="carousel-container project-visuals" id="carousel-academic">
-            <div class="carousel-track">
-              <div class="carousel-item media">
-                <img src="academic-1.png" alt="Dashboard Calendario Educativo" class="zoom-target">
-              </div>
-            </div>
-          </div>
-          <p data-i18n="p2-summary">Evolución de la plataforma académica CEF para mejorar la eficiencia operativa y accesibilidad del sistema.</p>
-          <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
-        </div>
+        </section>
+      
 
-        <div class="detail" style="display: none;">
-          
-            <!-- PROCESO VISUAL — project-academic (CEF) -->
-            <div class="case-process-visual" style="margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
+        <section class="cs-section" id="02-problem">
+          <h1>02 Problema detectado</h1>
+<p>El componente de ofertas original presentaba graves problemas de jerarquía visual y usabilidad que impactaban negativamente en el Customer Journey y en la conversión final. Las métricas indicaban una alta tasa de abandono en este paso del embudo.</p>
+<h3>Auditoría Visual y Heurística</h3>
+<p>Identificamos los siguientes problemas críticos:</p>
+<ol>
+<li><strong>Sobrecarga cognitiva:</strong> Demasiada información condensada sin un orden claro de lectura.</li>
+<li><strong>Jerarquía confusa:</strong> El precio y el CTA principal no destacaban lo suficiente frente a elementos secundarios.</li>
+<li><strong>Mala adaptación responsive:</strong> El componente simplemente se apilaba en mobile, creando un scroll interminable (scroll fatigue).</li>
+</ol>
+<div class="comparative">
+  <div class="col">
+    <p><strong>Auditoría — Fricciones UX (1)</strong></p>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/02-problem/images/auditoria-compo-ilunion-1.webp" alt="Auditoría 1"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Auditoría — Fricciones UX (2)</strong></p>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/02-problem/images/auditoria-compo-ilunion-2.webp" alt="Auditoría 2"></figure>
+  </div>
+</div>
 
-              <!-- Process Timeline -->
-              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Proceso de diseño</p>
-              <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-bottom: 2rem;">
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Auditoría heurística</div>
-                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Análisis WCAG</div>
-                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Arquitectura de información</div>
-                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Rediseño de componentes</div>
-                <span style="color: var(--accent); padding: 0 0.35rem; font-size: 0.85rem;">→</span>
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.75rem; font-size: 0.75rem; font-weight: 500; color: var(--text-primary);">Design System + Iteración con dev</div>
-              </div>
+<div class="metrics-grid">
+  <div class="metric">
+    <span class="metric-value">Alto</span>
+    <span class="metric-label">Abandono en funnel</span>
+  </div>
+  <div class="metric">
+    <span class="metric-value">Bajo</span>
+    <span class="metric-label">Engagement con ofertas</span>
+  </div>
+  <div class="metric">
+    <span class="metric-value">Crítico</span>
+    <span class="metric-label">Scroll fatigue (Mobile)</span>
+  </div>
+</div>
 
-              <!-- Heuristic findings before/after -->
-              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Problemas identificados en auditoría → soluciones aplicadas</p>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
-                <div style="border: 1px solid var(--border); border-radius: 10px; padding: 1rem; background: var(--surface);">
-                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">❌ Estado inicial</p>
-                  <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.75rem;">
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fee2e2;">
-                      <span style="color: #991b1b; flex-shrink: 0;">◼</span>
-                      <span style="color: #991b1b;">Contraste insuficiente — falla WCAG AA</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fef3cd;">
-                      <span style="color: #856404; flex-shrink: 0;">◼</span>
-                      <span style="color: #856404;">Navegación por teclado — elementos no accesibles</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fef3cd;">
-                      <span style="color: #856404; flex-shrink: 0;">◼</span>
-                      <span style="color: #856404;">Jerarquía semántica rota (headings incorrectos)</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fef3cd;">
-                      <span style="color: #856404; flex-shrink: 0;">◼</span>
-                      <span style="color: #856404;">Patrones inconsistentes entre módulos</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #fee2e2;">
-                      <span style="color: #991b1b; flex-shrink: 0;">◼</span>
-                      <span style="color: #991b1b;">Estados interactivos (focus/hover) sin diferenciación</span>
-                    </div>
-                  </div>
-                </div>
-                <div style="border: 1px solid var(--accent, #000); border-radius: 10px; padding: 1rem; background: var(--surface);">
-                  <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 0.75rem;">✅ Después del rediseño</p>
-                  <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.75rem;">
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
-                      <span style="color: #166534; flex-shrink: 0;">✓</span>
-                      <span style="color: #166534;">Contraste WCAG AA cumplido en todos los textos</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
-                      <span style="color: #166534; flex-shrink: 0;">✓</span>
-                      <span style="color: #166534;">Todos los elementos interactivos accesibles por teclado</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
-                      <span style="color: #166534; flex-shrink: 0;">✓</span>
-                      <span style="color: #166534;">Estructura semántica corregida para lectores de pantalla</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
-                      <span style="color: #166534; flex-shrink: 0;">✓</span>
-                      <span style="color: #166534;">Patrones unificados — Design System aplicado</span>
-                    </div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem; border-radius: 4px; background: #dcfce7;">
-                      <span style="color: #166534; flex-shrink: 0;">✓</span>
-                      <span style="color: #166534;">Focus / hover / active claramente diferenciados</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </section>
+      
 
-              <!-- Design approach -->
-              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, var(--text-secondary)); font-weight: 600; margin-bottom: 0.75rem;">Principios aplicados en el rediseño</p>
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
-                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; background: var(--surface); text-align: center;">
-                  <div style="font-size: 1.1rem; margin-bottom: 0.35rem;">🧠</div>
-                  <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">Claridad cognitiva</div>
-                  <div style="font-size: 0.7rem; color: var(--text-secondary);">Reducir esfuerzo para entender la interfaz</div>
-                </div>
-                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; background: var(--surface); text-align: center;">
-                  <div style="font-size: 1.1rem; margin-bottom: 0.35rem;">📐</div>
-                  <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">Jerarquía visual</div>
-                  <div style="font-size: 0.7rem; color: var(--text-secondary);">Lo importante, lo más visible</div>
-                </div>
-                <div style="border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem; background: var(--surface); text-align: center;">
-                  <div style="font-size: 1.1rem; margin-bottom: 0.35rem;">♿</div>
-                  <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">Accesibilidad WCAG</div>
-                  <div style="font-size: 0.7rem; color: var(--text-secondary);">Parte nuclear, no añadido final</div>
-                </div>
-              </div>
+        <section class="cs-section" id="03-research">
+          <h1>Research</h1>
 
-            </div>
-            <!-- FIN PROCESO VISUAL -->
-<div class="detail-block" id="detail-academic">
+        </section>
+      
 
-            <!-- ES -->
-            <div data-lang="es">
-            <h4 class="detail-label">S — SITUATION · Contexto de negocio</h4>
-            <p>CEF — Centro de Estudios Financieros gestionaba distintos entornos digitales utilizados por alumnos y equipos internos para acceder a información académica, documentación y procesos relacionados con la gestión educativa.</p>
-            <p>La herramienta presentaba varios problemas de experiencia:</p>
-            <ul class="detail-list">
-              <li>exceso de carga visual,</li>
-              <li>jerarquía poco clara,</li>
-              <li>navegación compleja,</li>
-              <li>y dificultades de accesibilidad.</li>
-            </ul>
-            <p>La plataforma debía dar respuesta a usuarios con distintos niveles de familiaridad digital, dentro de un entorno donde la claridad cognitiva y la eficiencia eran especialmente importantes.</p>
-            <p>Además, el sistema había evolucionado de forma progresiva durante años, generando inconsistencias visuales y funcionales entre módulos, patrones de navegación y componentes.</p>
-            <p>El proyecto requería equilibrar:</p>
-            <ul class="detail-list">
-              <li>claridad de uso,</li>
-              <li>viabilidad técnica,</li>
-              <li>accesibilidad,</li>
-              <li>y continuidad operativa dentro de un entorno académico activo.</li>
-            </ul>
-            <p>Mi rol dentro del proyecto combinaba:</p>
-            <ul class="detail-list">
-              <li>UX/UI,</li>
-              <li>análisis de usabilidad,</li>
-              <li>accesibilidad,</li>
-              <li>diseño de interfaces,</li>
-              <li>y colaboración con desarrollo frontend.</li>
-            </ul>
-            <h4 class="detail-label">T — TASK · El reto</h4>
-            <p>El objetivo era mejorar la experiencia de uso de la herramienta académica reduciendo complejidad y facilitando la interacción en tareas frecuentes dentro del entorno educativo.</p>
-            <p>La solución debía:</p>
-            <ul class="detail-list">
-              <li>mejorar legibilidad y navegación,</li>
-              <li>facilitar el acceso a información clave,</li>
-              <li>reducir fricción cognitiva,</li>
-              <li>cumplir criterios de accesibilidad WCAG,</li>
-              <li>y mantener coherencia dentro del ecosistema existente.</li>
-            </ul>
-            <p>El reto no consistía únicamente en modernizar la interfaz visual, sino en reorganizar la experiencia para que usuarios con distintos perfiles pudieran completar tareas de forma más intuitiva y eficiente.</p>
-            <h4 class="detail-label">A — ACTION · Lo que hice y por qué</h4>
-            <h5 class="detail-subtitle">1. Research &amp; Usability Analysis</h5>
-            <p>Comencé analizando los principales puntos de fricción dentro de la herramienta mediante observación de flujos, revisión heurística y análisis funcional de los módulos más utilizados.</p>
-            <p>El análisis mostró varios problemas recurrentes:</p>
-            <ul class="detail-list">
-              <li>exceso de densidad visual,</li>
-              <li>jerarquías inconsistentes,</li>
-              <li>dificultad para localizar acciones frecuentes,</li>
-              <li>patrones de navegación poco claros,</li>
-              <li>y problemas de accesibilidad en contraste, estructura semántica y lectura.</li>
-            </ul>
-            <p>También revisé cómo otras plataformas educativas y herramientas SaaS organizaban:</p>
-            <ul class="detail-list">
-              <li>navegación,</li>
-              <li>dashboards,</li>
-              <li>estructuras de información,</li>
-              <li>y componentes operativos.</li>
-            </ul>
-            <blockquote class="detail-quote">
-              "El problema no era la cantidad de información, sino cómo estaba organizada y priorizada."
-            </blockquote>
-            <h5 class="detail-subtitle">2. Problem Framing</h5>
-            <p>La herramienta había crecido de forma funcional, pero no desde una lógica de experiencia unificada.</p>
-            <p>Muchos módulos respondían a necesidades concretas del negocio o de gestión académica, pero la experiencia global carecía de consistencia y claridad para el usuario final.</p>
-            <p>Existía una desconexión entre:</p>
-            <ul class="detail-list">
-              <li>estructura técnica,</li>
-              <li>necesidades operativas,</li>
-              <li>y comprensión real del usuario.</li>
-            </ul>
-            <p>La interfaz obligaba al usuario a interpretar demasiadas decisiones visuales antes de completar tareas simples.</p>
-            <h5 class="detail-subtitle">3. UX Strategy &amp; Information Architecture</h5>
-            <p>A partir del análisis, trabajé una reorganización de la experiencia priorizando:</p>
-            <ul class="detail-list">
-              <li>claridad cognitiva,</li>
-              <li>jerarquía visual,</li>
-              <li>consistencia,</li>
-              <li>y facilidad de uso.</li>
-            </ul>
-            <p>La estrategia se centró en:</p>
-            <ul class="detail-list">
-              <li>simplificar navegación,</li>
-              <li>reorganizar módulos según prioridad de uso,</li>
-              <li>mejorar escaneabilidad,</li>
-              <li>y reducir carga visual innecesaria.</li>
-            </ul>
-            <p>También redefiní estructuras de contenido, patrones de interacción, y comportamientos de componentes para generar una experiencia más coherente dentro del sistema.</p>
-            <h5 class="detail-subtitle">4. Accessibility &amp; Inclusive Design</h5>
-            <p>La accesibilidad fue una parte clave del proyecto. Trabajé mejoras relacionadas con:</p>
-            <ul class="detail-list">
-              <li>contraste y legibilidad,</li>
-              <li>jerarquía semántica,</li>
-              <li>navegación por teclado,</li>
-              <li>estados interactivos,</li>
-              <li>y consistencia visual.</li>
-            </ul>
-            <p>El objetivo no era únicamente cumplir criterios WCAG, sino construir una experiencia más usable y comprensible para todos los perfiles de usuario. Muchas decisiones visuales y estructurales se tomaron desde una lógica de accesibilidad y reducción de esfuerzo cognitivo.</p>
-            <h5 class="detail-subtitle">5. Collaboration with Development</h5>
-            <p>Trabajé junto al equipo de desarrollo para asegurar que las propuestas UX fueran viables técnicamente y coherentes con las limitaciones del sistema existente.</p>
-            <p>El proyecto requería equilibrio constante entre:</p>
-            <ul class="detail-list">
-              <li>mejora de experiencia,</li>
-              <li>constraints técnicos,</li>
-              <li>continuidad operativa,</li>
-              <li>y tiempos de implementación.</li>
-            </ul>
-            <p>La colaboración con frontend fue especialmente importante para mantener consistencia entre diseño y comportamiento real de la plataforma.</p>
-            <h5 class="detail-subtitle">6. Design System Thinking</h5>
-            <p>Parte del trabajo consistió en reducir inconsistencias entre módulos y establecer una lógica más sistemática dentro de la interfaz.</p>
-            <p>Se trabajaron:</p>
-            <ul class="detail-list">
-              <li>patrones reutilizables,</li>
-              <li>jerarquías comunes,</li>
-              <li>comportamientos consistentes,</li>
-              <li>y reglas visuales compartidas.</li>
-            </ul>
-            <p>El objetivo era construir una experiencia más escalable y mantenible dentro de un entorno digital complejo y en evolución constante.</p>
-            <h4 class="detail-label">R — RESULT · Impacto</h4>
-            <div class="table-responsive">
-              <table class="metrics-table">
-                <thead>
-                  <tr>
-                    <th>Área</th>
-                    <th>Antes</th>
-                    <th>Después</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Contraste WCAG</td>
-                    <td>Falla criterio AA en múltiples componentes</td>
-                    <td>Criterio AA cumplido en todos los textos</td>
-                  </tr>
-                  <tr>
-                    <td>Navegación por teclado</td>
-                    <td>Elementos críticos inaccesibles sin ratón</td>
-                    <td>100% de elementos interactivos accesibles</td>
-                  </tr>
-                  <tr>
-                    <td>Jerarquía semántica</td>
-                    <td>Estructura heading incorrecta entre módulos</td>
-                    <td>Estructura semántica correcta para lectores de pantalla</td>
-                  </tr>
-                  <tr>
-                    <td>Estados interactivos</td>
-                    <td>Focus / hover sin diferenciación visual</td>
-                    <td>Estados claramente diferenciados en todos los componentes</td>
-                  </tr>
-                  <tr>
-                    <td>Consistencia entre módulos</td>
-                    <td>Patrones distintos en cada módulo sin regla unificada</td>
-                    <td>Design System aplicado — patrones reutilizables</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p>La reorganización UX redujo la carga cognitiva, mejoró la escaneabilidad en tareas frecuentes y estableció una base sistemática para futuras evoluciones del sistema. La colaboración diseño-desarrollo fue más fluida con menor retrabajo en iteraciones posteriores.</p>
-            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--text);"><em>📌 Métricas cuantitativas de uso son confidenciales. Los resultados reflejan auditoría WCAG, validaciones funcionales y observación de comportamiento en el entorno académico digital.</em></p>
-            </div>
-            <!-- /ES -->
+        <section class="cs-section" id="04-hypothesis">
+          <h1>Hypothesis</h1>
 
-            <!-- EN -->
-            <div data-lang="en" style="display:none">
-            <h4 class="detail-label">S — SITUATION · Business context</h4>
-            <p>CEF — Centro de Estudios Financieros managed different digital environments used by students and internal teams to access academic information, documentation and processes related to educational administration.</p>
-            <p>The tool presented several experience issues:</p>
-            <ul class="detail-list">
-              <li>visual overload,</li>
-              <li>unclear hierarchy,</li>
-              <li>complex navigation,</li>
-              <li>and accessibility difficulties.</li>
-            </ul>
-            <p>The platform had to serve users with varying levels of digital familiarity, in an environment where cognitive clarity and efficiency were especially important.</p>
-            <p>Furthermore, the system had evolved incrementally over years, generating visual and functional inconsistencies between modules, navigation patterns and components.</p>
-            <p>The project required balancing:</p>
-            <ul class="detail-list">
-              <li>ease of use,</li>
-              <li>technical feasibility,</li>
-              <li>accessibility,</li>
-              <li>and operational continuity within an active academic environment.</li>
-            </ul>
-            <p>My role in the project combined:</p>
-            <ul class="detail-list">
-              <li>UX/UI,</li>
-              <li>usability analysis,</li>
-              <li>accessibility,</li>
-              <li>interface design,</li>
-              <li>and collaboration with frontend development.</li>
-            </ul>
-            <h4 class="detail-label">T — TASK · The challenge</h4>
-            <p>The objective was to improve the usability of the academic tool by reducing complexity and facilitating interaction on frequent tasks within the educational environment.</p>
-            <p>The solution had to:</p>
-            <ul class="detail-list">
-              <li>improve readability and navigation,</li>
-              <li>facilitate access to key information,</li>
-              <li>reduce cognitive friction,</li>
-              <li>meet WCAG accessibility criteria,</li>
-              <li>and maintain coherence within the existing ecosystem.</li>
-            </ul>
-            <p>The challenge wasn't just to modernise the visual interface, but to reorganise the experience so that users with different profiles could complete tasks more intuitively and efficiently.</p>
-            <h4 class="detail-label">A — ACTION · What I did and why</h4>
-            <h5 class="detail-subtitle">1. Research &amp; Usability Analysis</h5>
-            <p>I began by analysing the main friction points in the tool through flow observation, heuristic review and functional analysis of the most-used modules.</p>
-            <p>The analysis revealed several recurring issues:</p>
-            <ul class="detail-list">
-              <li>visual density overload,</li>
-              <li>inconsistent hierarchies,</li>
-              <li>difficulty locating frequent actions,</li>
-              <li>unclear navigation patterns,</li>
-              <li>and accessibility issues in contrast, semantic structure and readability.</li>
-            </ul>
-            <p>I also reviewed how other educational platforms and SaaS tools organised:</p>
-            <ul class="detail-list">
-              <li>navigation,</li>
-              <li>dashboards,</li>
-              <li>information structures,</li>
-              <li>and operational components.</li>
-            </ul>
-            <blockquote class="detail-quote">
-              "The problem wasn't the amount of information, but how it was organised and prioritised."
-            </blockquote>
-            <h5 class="detail-subtitle">2. Problem Framing</h5>
-            <p>The tool had grown functionally, but not from a unified experience logic.</p>
-            <p>Many modules responded to specific business or academic management needs, but the overall experience lacked consistency and clarity for the end user.</p>
-            <p>There was a disconnect between:</p>
-            <ul class="detail-list">
-              <li>technical structure,</li>
-              <li>operational needs,</li>
-              <li>and the user's actual understanding.</li>
-            </ul>
-            <p>The interface forced users to interpret too many visual decisions before completing simple tasks.</p>
-            <h5 class="detail-subtitle">3. UX Strategy &amp; Information Architecture</h5>
-            <p>Based on the analysis, I worked on reorganising the experience by prioritising:</p>
-            <ul class="detail-list">
-              <li>cognitive clarity,</li>
-              <li>visual hierarchy,</li>
-              <li>consistency,</li>
-              <li>and ease of use.</li>
-            </ul>
-            <p>The strategy focused on:</p>
-            <ul class="detail-list">
-              <li>simplifying navigation,</li>
-              <li>reorganising modules by usage priority,</li>
-              <li>improving scannability,</li>
-              <li>and reducing unnecessary visual load.</li>
-            </ul>
-            <p>I also redefined content structures, interaction patterns and component behaviours to create a more coherent experience within the system.</p>
-            <h5 class="detail-subtitle">4. Accessibility &amp; Inclusive Design</h5>
-            <p>Accessibility was a key part of the project. I worked on improvements related to:</p>
-            <ul class="detail-list">
-              <li>contrast and readability,</li>
-              <li>semantic hierarchy,</li>
-              <li>keyboard navigation,</li>
-              <li>interactive states,</li>
-              <li>and visual consistency.</li>
-            </ul>
-            <p>The goal wasn't just to meet WCAG criteria, but to build a more usable and comprehensible experience for all user profiles. Many visual and structural decisions were made from an accessibility-first and cognitive-load-reduction perspective.</p>
-            <h5 class="detail-subtitle">5. Collaboration with Development</h5>
-            <p>I worked alongside the development team to ensure the UX proposals were technically feasible and consistent with the constraints of the existing system.</p>
-            <p>The project required constant balance between:</p>
-            <ul class="detail-list">
-              <li>experience improvement,</li>
-              <li>technical constraints,</li>
-              <li>operational continuity,</li>
-              <li>and implementation timelines.</li>
-            </ul>
-            <p>Collaboration with the frontend team was especially important to maintain consistency between design and the platform's actual behaviour.</p>
-            <h5 class="detail-subtitle">6. Design System Thinking</h5>
-            <p>Part of the work involved reducing inconsistencies between modules and establishing a more systematic logic within the interface.</p>
-            <p>This covered:</p>
-            <ul class="detail-list">
-              <li>reusable patterns,</li>
-              <li>common hierarchies,</li>
-              <li>consistent behaviours,</li>
-              <li>and shared visual rules.</li>
-            </ul>
-            <p>The goal was to build a more scalable and maintainable experience within a complex, constantly evolving digital environment.</p>
-            <h4 class="detail-label">R — RESULT · The impact</h4>
-            <div class="table-responsive">
-              <table class="metrics-table">
-                <thead>
-                  <tr>
-                    <th>Area</th>
-                    <th>Before</th>
-                    <th>After</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>WCAG Contrast</td>
-                    <td>Fails AA criterion on multiple components</td>
-                    <td>AA criterion met on all texts</td>
-                  </tr>
-                  <tr>
-                    <td>Keyboard navigation</td>
-                    <td>Critical elements inaccessible without mouse</td>
-                    <td>100% of interactive elements accessible</td>
-                  </tr>
-                  <tr>
-                    <td>Semantic hierarchy</td>
-                    <td>Incorrect heading structure across modules</td>
-                    <td>Correct semantic structure for screen readers</td>
-                  </tr>
-                  <tr>
-                    <td>Interactive states</td>
-                    <td>Focus / hover without visual differentiation</td>
-                    <td>States clearly differentiated across all components</td>
-                  </tr>
-                  <tr>
-                    <td>Cross-module consistency</td>
-                    <td>Different patterns in each module, no unified rule</td>
-                    <td>Design System applied — reusable patterns</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p>The UX reorganisation reduced cognitive load, improved scannability on frequent tasks and established a systematic foundation for future system evolutions. Design-development collaboration became more fluid with less rework in subsequent iterations.</p>
-            <p style="font-size: 0.9em; opacity: 0.8; margin-top: 1rem; padding-left: 1rem; border-left: 3px solid var(--text);"><em>📌 Quantitative usage metrics are confidential. Results reflect a WCAG audit, functional validations and behaviour observation in the academic digital environment.</em></p>
-            </div>
-            <!-- /EN -->
+        </section>
+      
 
-          </div>
-        </div>
-      </article></section>
+        <section class="cs-section" id="05-design">
+          <h1>05 Diseño (UI / UX Strategy)</h1>
+<p>El rediseño del componente de ofertas se basó en los principios del Systems Thinking. El objetivo era crear un componente modular, altamente escalable y que redujera drásticamente la fricción cognitiva.</p>
+<h3>Proceso: Wireframing y Arquitectura de Información</h3>
+<p>Antes de pasar a UI de alta fidelidad, estructuramos la jerarquía del componente mediante wireframes, priorizando el precio, el título de la oferta y el call to action (CTA).</p>
+<div class="comparative desk-mob">
+  <div class="col">
+    <p><strong>Wireframe Desktop</strong></p>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/wire-home-desk.webp" alt="Wireframe Desktop"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Wireframe Mobile</strong></p>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/wire-home-mobile.webp" alt="Wireframe Mobile"></figure>
+  </div>
+</div>
+
+<h3>Resultado Final: UI Premium y Responsive</h3>
+<p>El diseño final establece un nuevo estándar visual (clean layout, sombras sutiles, microinteracciones) y resuelve el problema del scroll en mobile mediante el uso estratégico del espacio horizontal y tarjetas compactas.</p>
+<div class="comparative desk-mob">
+  <div class="col">
+    <p><strong>Diseño Final Desktop</strong></p>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-desk.webp" alt="Diseño Desktop"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Diseño Final Mobile</strong></p>
+    <figure class="cs-figure"><img src="projects/02-recomponentizacion/ilunion-offers/05-design/images/Compo-mobile.webp" alt="Diseño Mobile"></figure>
+  </div>
+</div>
+
+        </section>
+      
+
+        <section class="cs-section" id="06-responsive">
+          <h1>Responsive</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="07-results">
+          <h1>Results</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="08-business-impact">
+          <h1>Business-impact</h1>
+
+        </section>
+      
+  </div>
+</article>
+</div>
+      </article>
 
     <section id="about" class="section about">
       <p class="eyebrow" data-i18n="about-eyebrow">Sobre mí</p>
 
       <div class="about-grid">
+        <div class="about-profile-card">
+          <div class="profile-frame">
+            <img src="assets/profile.jpg" alt="Marta Morales Rios" class="profile-img">
+            <div class="profile-badge-overlay">
+              <span class="pulse-dot"></span>
+              <span data-i18n="profile-status">Activa en Madrid</span>
+            </div>
+          </div>
+        </div>
+
         <div class="about-copy">
           <p class="about-intro" data-i18n="about-intro">Product Designer con mentalidad de negocio y enfoque en resultados.</p>
 
@@ -883,12 +735,16 @@
           </div>
 
           <div class="about-signature">
-            <img src="logo.png" alt="Marta Morales Logo" class="signature-logo">
+            <img src="assets/logo.png" alt="Marta Morales Logo" class="signature-logo">
             <div class="signature-details">
               <span class="signature-name">Marta Morales</span>
               <span class="signature-role">Product Design &amp; Strategy</span>
             </div>
           </div>
+          <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV_2026.pdf" class="about-cv-download-link" aria-label="Descargar CV completo">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="download-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span data-i18n="download-cv-cta">Descargar CV →</span>
+          </a>
         </div>
 
         <div class="about-expertise">
@@ -951,9 +807,7 @@
               <p class="timeline-summary">Desarrollo de identidades visuales y comunicación estratégica para proyectos de I+D en entornos de innovación tecnológica internacional.</p>
             </div>
           </div>
-          <div style="margin-top: 32px;">
-            <a href="Marta_Morales_CV_2026.pdf" class="btn-primary" target="_blank" download="Marta_Morales_CV_2026.pdf" data-i18n="exp-cv-cta">Descargar CV</a>
-          </div>
+
         </div>
 
         <div class="about-sub-section">
@@ -1013,22 +867,80 @@
     </section>
 
     <section id="contact" class="section contact">
-      <p class="eyebrow" data-i18n="nav-contact">Contacto</p>
-      <h2 class="contact-title" data-i18n="contact-home-title">¿Hablamos sobre tu próximo reto?</h2>
-      <p class="contact-text" data-i18n="contact-home-desc">
-        Disponible para colaborar en productos digitales que busquen equilibrar la experiencia de usuario con el impacto estratégico y la rentabilidad.
-      </p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="eyebrow" data-i18n="nav-contact">Contacto</p>
+          <h2 class="contact-title" data-i18n="contact-home-title">¿Hablamos sobre tu próximo reto?</h2>
+          <p class="contact-text" data-i18n="contact-home-desc">
+            Disponible para colaborar en productos digitales que busquen equilibrar la experiencia de usuario con el impacto estratégico y la rentabilidad.
+          </p>
 
-      <div class="hiring-status">
-        <span class="status-dot"></span>
-        <span class="status-label" data-i18n="status-label">Disponible para nuevas oportunidades</span>
-      </div>
+          <div class="hiring-status">
+            <span class="status-dot"></span>
+            <span class="status-label" data-i18n="status-label">Disponible para nuevas oportunidades</span>
+          </div>
+        </div>
 
-      <div class="contact-methods">
-        <a href="mailto:mmoralesgr93@gmail.com" class="email-display">mmoralesgr93@gmail.com</a>
-        <div class="contact-actions" aria-label="Redes profesionales">
-          <a href="https://www.linkedin.com/in/marta-morales-g-r%C3%ADos-146540137/?skipRedirect=true" target="_blank" aria-label="LinkedIn"><img src="linkedin.png" alt=""></a>
-          <a href="mailto:mmoralesgr93@gmail.com" aria-label="Email"><img src="mail.png" alt=""></a>
+        <div class="contact-directory" aria-label="Directorio de contacto y recursos">
+          <!-- LinkedIn Row -->
+          <a href="https://www.linkedin.com/in/marta-morales-g-r%C3%ADos-146540137/?skipRedirect=true" target="_blank" class="directory-row" aria-label="Conectar en LinkedIn">
+            <div class="row-platform">
+              <div class="row-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+              </div>
+              <span class="row-name">LinkedIn</span>
+            </div>
+            <span class="row-context">marta-morales</span>
+            <span class="row-action" data-i18n="connect-linkedin-cta">Conectar →</span>
+          </a>
+
+          <!-- GitHub Row -->
+          <a href="https://github.com/martamoralesgr93" target="_blank" class="directory-row" aria-label="Explorar GitHub">
+            <div class="row-platform">
+              <div class="row-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+              </div>
+              <span class="row-name">GitHub</span>
+            </div>
+            <span class="row-context">@martamoralesgr93</span>
+            <span class="row-action" data-i18n="github-cta">Ver código →</span>
+          </a>
+
+          <!-- Vercel Row -->
+          <a href="https://vercel.com/martamoralesgr93" target="_blank" class="directory-row" aria-label="Explorar Vercel">
+            <div class="row-platform">
+              <div class="row-icon">
+                <svg width="14" height="14" viewBox="0 0 76 65" fill="currentColor"><path d="M37.527 0L75.054 65H0L37.527 0Z"></path></svg>
+              </div>
+              <span class="row-name">Vercel</span>
+            </div>
+            <span class="row-context">martamoralesgr93</span>
+            <span class="row-action" data-i18n="vercel-cta">Ver despliegues →</span>
+          </a>
+
+          <!-- Linear Row -->
+          <a href="https://linear.app" target="_blank" class="directory-row" aria-label="Ver Linear">
+            <div class="row-platform">
+              <div class="row-icon">
+                <svg width="16" height="16" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="9"></circle><line x1="11" y1="2" x2="11" y2="20"></line><line x1="2" y1="11" x2="20" y2="11"></line></svg>
+              </div>
+              <span class="row-name">Linear</span>
+            </div>
+            <span class="row-context">Agile Collaboration</span>
+            <span class="row-action" data-i18n="linear-cta">Integración ágil →</span>
+          </a>
+
+          <!-- Email Row -->
+          <a href="mailto:mmoralesgr93@gmail.com" class="directory-row" aria-label="Enviar Correo Electrónico">
+            <div class="row-platform">
+              <div class="row-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <span class="row-name">Email</span>
+            </div>
+            <span class="row-context">mmoralesgr93@gmail.com</span>
+            <span class="row-action" data-i18n="send-email-cta">Escribir email →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1043,7 +955,7 @@
 
   <button class="fab" onclick="toggleFab()" id="fabButton" aria-label="Abrir menú rápido" aria-expanded="false" aria-controls="fabMenu" aria-haspopup="menu">
     <div class="fab-content">
-      <img src="logo.png" class="fab-logo" alt="" aria-hidden="true">
+      <img src="assets/logo.png" class="fab-logo" alt="" aria-hidden="true">
       <span class="fab-text">Proyectos</span>
     </div>
     <span class="fab-close" aria-hidden="true">×</span>
@@ -1058,7 +970,7 @@
   <!-- Zoom Modal -->
   <div id="zoomModal" class="zoom-modal" onclick="closeZoomModal(event)">
     <div class="zoom-modal-close" onclick="closeZoomModal(event)" aria-label="Cerrar" role="button">×</div>
-    <img id="zoomModalImg" class="zoom-modal-img" src="logo.png" alt="Vista ampliada">
+    <img id="zoomModalImg" class="zoom-modal-img" src="assets/logo.png" alt="Vista ampliada">
   </div>
 
   <script src="script.js"></script>

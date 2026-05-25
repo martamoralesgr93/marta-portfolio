@@ -279,6 +279,15 @@ function setLanguage(lang) {
       el.innerText = translations[lang][key];
     }
   });
+
+  // Toggle visibility of elements with data-lang attribute
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    if (el.getAttribute('data-lang') === lang) {
+      el.style.display = '';
+    } else {
+      el.style.display = 'none';
+    }
+  });
 }
 
 function toggleLanguage() {
@@ -287,7 +296,7 @@ function toggleLanguage() {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
-  if (currentLang === 'en') setLanguage('en');
+  setLanguage(currentLang);
 });
 
 function scrollToId(id) {
