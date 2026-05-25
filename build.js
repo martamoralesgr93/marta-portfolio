@@ -58,7 +58,6 @@ const projectFolders = findProjects(projectsDir);
 for (const pFolder of projectFolders) {
   console.log(`Processing project: ${pFolder}`);
   
-  // Calculate relative path to root
   const relPath = path.relative(pFolder, rootDir);
   const baseUrl = relPath ? relPath.replace(/\\/g, '/') + '/' : '';
   
@@ -80,12 +79,23 @@ for (const pFolder of projectFolders) {
     if (fs.existsSync(contentPath)) {
       let rawMd = fs.readFileSync(contentPath, 'utf-8');
       
+      // Replace markdown images: ![alt](src)
       rawMd = rawMd.replace(/!\[(.*?)\]\((.*?)\)/g, (match, alt, src) => {
         let newSrc = src;
         if (src.startsWith('./') || !src.startsWith('/')) {
            newSrc = src.replace('./', `${f}/`);
         }
-        return `![${alt}](${newSrc})`;
+        // Force outputting HTML directly to bypass marked limitations inside divs
+        return `<figure class="cs-figure"><img src="${newSrc}" alt="${alt}"></figure>`;
+      });
+
+      // Replace HTML images: <img src="src" alt="alt">
+      rawMd = rawMd.replace(/<img([^>]*)src=["']([^"']*)["']([^>]*)>/g, (match, p1, src, p2) => {
+        let newSrc = src;
+        if (src.startsWith('./') || !src.startsWith('/')) {
+           newSrc = src.replace('./', `${f}/`);
+        }
+        return `<img${p1}src="${newSrc}"${p2}>`;
       });
 
       const htmlContent = marked.parse(rawMd);
