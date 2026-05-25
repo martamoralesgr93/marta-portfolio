@@ -4,43 +4,49 @@ const cheerio = require('cheerio');
 const htmlPath = 'index.html';
 let html = fs.readFileSync(htmlPath, 'utf8');
 
-const $ = cheerio.load(html);
+const $ = cheerio.load(html, { decodeEntities: false });
 
 // Update Hero text
-$('.hero-eyebrow').text('PRODUCT DESIGNER · UX STRATEGIST');
+$('.hero-eyebrow').text('PRODUCT DESIGNER · UX STRATEGY · GROWTH');
 $('.profile-name').text('Marta Morales');
 $('.hero-description').html(`
-  <p data-i18n="hero-description-1">Product Designer orientada a UX estratégico, CRO, customer journey y negocio digital.</p>
-  <p data-i18n="hero-description-2">Conecto la experiencia de usuario con objetivos reales de negocio: conversión, retención y eficiencia operativa.</p>
-  <p data-i18n="hero-description-3">Diseño ecosistemas escalables basados en análisis de datos, systems thinking y experimentación constante.</p>
+  <p data-i18n="hero-description-1">Formo parte del equipo de Negocio Digital en ILUNION Hotels, optimizando el canal directo mediante diseño estratégico, CRO y decisiones basadas en datos.</p>
+  <p data-i18n="hero-description-2">Mi trabajo conecta la experiencia de usuario con objetivos reales de negocio: conversión, revenue y captación.</p>
+  <p data-i18n="hero-description-3">Diseño soluciones que no solo son visuales, sino que resuelven problemas operativos y de rentabilidad en entornos de alta complejidad.</p>
 `);
 
 // Reorder nav list
 const navProjectsList = $('#navProjectsList');
 if(navProjectsList.length) {
   navProjectsList.html(`
-    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">ILUNION — CRO Optimization</a></li>
-    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-offers')" class="nav-project-link">ILUNION — Offer Component</a></li>
-    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-academic')" class="nav-project-link">CEF — UX/UI Foundations</a></li>
+    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">Booking Engine & Funnel UX</a></li>
+    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-offers')" class="nav-project-link">Growth Strategy & Conversion</a></li>
+    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-academic')" class="nav-project-link">EdTech Management Platform</a></li>
   `);
 }
 
-// Reorder articles by using DOM operations (detach and append)
+// Reorder articles by using DOM operations
 const workSection = $('#work');
 if (workSection.length) {
-  const p1 = $('#project-ilunion').detach();
-  const p2 = $('#project-offers').detach();
-  const p3 = $('#project-academic').detach();
+  const p1 = $('#project-ilunion');
+  const p2 = $('#project-offers');
+  const p3 = $('#project-academic');
   
+  // Remove them first
+  p1.remove();
+  p2.remove();
+  p3.remove();
+  
+  // Append them in new order
   workSection.append(p1);
   workSection.append(p2);
   workSection.append(p3);
 }
 
 // Ensure the titles are correct
-$('#project-ilunion .title-project').text('CRO Optimization');
-$('#project-offers .title-project').text('Offer Component Redesign');
-$('#project-academic .title-project').text('UX/UI Foundations');
+$('#project-ilunion .title-project').text('Booking Engine & Funnel UX');
+$('#project-offers .title-project').text('Growth Strategy & Conversion');
+$('#project-academic .title-project').text('EdTech Management Platform');
 
 // Add or update carousel images for project-offers
 const carouselOffers = $('#carousel-offers');
