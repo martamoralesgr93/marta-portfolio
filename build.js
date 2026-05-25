@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { marked } = require('marked');
 const sass = require('sass');
+const cheerio = require('cheerio');
 
 const rootDir = __dirname;
 const projectsDir = path.join(rootDir, 'projects');
-const templateHtml = fs.readFileSync(path.join(rootDir, 'template.html'), 'utf-8');
+const indexHtmlPath = path.join(rootDir, 'index.html');
 
 // Compile Sass
 try {
@@ -36,8 +37,6 @@ renderer.image = function (href, title, text) {
   `;
 };
 
-// Removed custom blockquote to fix [object Object] bug with marked v5+
-
 marked.setOptions({ renderer });
 
 function findProjects(dir) {
@@ -57,19 +56,25 @@ function findProjects(dir) {
 
 const projectFolders = findProjects(projectsDir);
 
+let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
+const $ = cheerio.load(indexHtml);
+
 for (const pFolder of projectFolders) {
   console.log(`Processing project: ${pFolder}`);
   
-  const relPath = path.relative(pFolder, rootDir);
-  const baseUrl = relPath ? relPath.replace(/\\/g, '/') + '/' : '';
+  const relPath = path.relative(rootDir, pFolder).replace(/\\/g, '/');
   
-  let metadata = { title: "Project", description: "", category: "Case Study" };
+  let metadata = {};
   const metaPath = path.join(pFolder, 'metadata.json');
   if (fs.existsSync(metaPath)) {
     try {
-      const data = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
-      metadata = { ...metadata, ...data };
+      metadata = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
     } catch (e) {}
+  }
+  
+  if (!metadata.articleId) {
+    console.log(`Skipping ${pFolder} because no articleId in metadata.json`);
+    continue;
   }
   
   const sections = [];
@@ -85,7 +90,7 @@ for (const pFolder of projectFolders) {
       rawMd = rawMd.replace(/!\[(.*?)\]\((.*?)\)/g, (match, alt, src) => {
         let newSrc = src;
         if (src.startsWith('./') || !src.startsWith('/')) {
-           newSrc = src.replace('./', `${f}/`);
+           newSrc = src.replace('./', `${relPath}/${f}/`);
         }
         return `<figure class="cs-figure"><img src="${newSrc}" alt="${alt}"></figure>`;
       });
@@ -94,7 +99,7 @@ for (const pFolder of projectFolders) {
       rawMd = rawMd.replace(/<img([^>]*)src=["']([^"']*)["']([^>]*)>/g, (match, p1, src, p2) => {
         let newSrc = src;
         if (src.startsWith('./') || !src.startsWith('/')) {
-           newSrc = src.replace('./', `${f}/`);
+           newSrc = src.replace('./', `${relPath}/${f}/`);
         }
         return `<img${p1}src="${newSrc}"${p2}>`;
       });
@@ -108,17 +113,18 @@ for (const pFolder of projectFolders) {
     }
   }
   
-  const fullContent = sections.join('\n');
+  const fullContent = `<article class="cs-content" style="padding-top: 1rem;">${sections.join('\n')}</article>`;
   
-  const finalHtml = templateHtml
-    .replace(/\{\{BASE_URL\}\}/g, baseUrl)
-    .replace(/\{\{TITLE\}\}/g, metadata.title)
-    .replace(/\{\{CATEGORY\}\}/g, metadata.category)
-    .replace(/\{\{DESCRIPTION\}\}/g, metadata.description)
-    .replace(/\{\{CONTENT\}\}/g, fullContent);
-    
-  fs.writeFileSync(path.join(pFolder, 'index.html'), finalHtml, 'utf-8');
-  console.log(`Generated: ${path.join(pFolder, 'index.html')}`);
+  // Inject into the correct article's .detail div
+  const detailDiv = $(`#${metadata.articleId} .detail`);
+  if (detailDiv.length > 0) {
+    detailDiv.html(fullContent);
+    console.log(`Injected content into #${metadata.articleId}`);
+  } else {
+    console.log(`Could not find #${metadata.articleId} .detail in index.html`);
+  }
 }
 
+// Write the modified index.html back
+fs.writeFileSync(indexHtmlPath, $.html(), 'utf-8');
 console.log("Build complete.");
