@@ -1,0 +1,263 @@
+.metrics-table td:last-child {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.detail-label {
+  font-size: 12px;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+
+.detail-subtitle {
+  font-size: 24px;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.detail p,
+.detail li,
+.detail-quote,
+blockquote {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 75ch;
+}
+
+@keyframes sideNavEnter {
+  from { opacity: 0; transform: translateY(-4px) translateX(-4px); }
+  to { opacity: 1; transform: translateY(0) translateX(0); }
+}
+
+.detail-quote,
+blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.5rem;
+  border-left: 2px solid var(--text);
+  background: var(--surface);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 16px;
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.detail-quote p,
+blockquote p {
+  margin: 0;
+}
+
+.detail-list {
+  margin-bottom: 24px;
+  margin-left: 24px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.detail-list li {
+  margin-bottom: 8px;
+}
+
+.work-item:not(.active):hover {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- STAR Methodology Editorial Layout --- */
+.star-stepper {
+  position: relative;
+  margin: 48px 0;
+  padding-left: 0;
+}
+
+.star-stepper::before {
+  content: "";
+  position: absolute;
+  left: 15px; 
+  top: 16px;
+  bottom: 0;
+  width: 2px;
+  background: var(--divider);
+  z-index: 0;
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+  z-index: 1;
+}
+
+.stepper-badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a90e2, #b088f9); /* Liquid Tech Accent */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 0 0 6px var(--bg-body, #fff); 
+}
+
+.stepper-content {
+  flex-grow: 1;
+  padding-top: 6px;
+}
+
+.stepper-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.stepper-content p,
+.stepper-content li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  max-width: 65ch;
+}
+
+.stepper-content ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.stepper-content blockquote {
+  border-left: 3px solid var(--divider);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.results-card {
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+/* === LIQUID-TECH AESTHETICS === */
+.mesh-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--bg) 100%);
+}
+
+.mesh-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15; 
+  animation: liquidFloat 20s infinite ease-in-out alternate;
+}
+
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: #4a90e2; 
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  background: #b088f9; 
+  top: 100px;
+  right: -50px;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 400px;
+  height: 400px;
+  background: #00f2fe; 
+  bottom: -100px;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+@keyframes liquidFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.nav {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.nav-main {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.work-item {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.avatar-frame {
+  border-radius: 50% !important;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.6s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+  animation: floatingAvatar 3s ease-in-out infinite;
+}
+
+@keyframes floatingAvatar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.avatar-frame:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  animation-play-state: paused;
+}
+
+.avatar-frame:active {
+  transform: scale(0.9) rotate(-3deg);
+  transition: transform 0.2s ease;
+}

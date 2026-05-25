@@ -1,0 +1,137 @@
+Created At: 2026-05-25T12:34:06Z
+Completed At: 2026-05-25T12:34:07Z
+
+				The command completed successfully.
+				Output:
+				<truncated 324 lines>
++}
++
++.svg-dash-ring {
++  stroke-dasharray: 125.6; /* 2 * PI * r (r=20) */
++  stroke-dashoffset: 125.6;
++  transition: stroke-dashoffset 2.2s cubic-bezier(0.16, 1, 0.3, 1);
++}
++
++/* Triggered on scroll by revealObserver (.is-visible class) */
++.work-item.is-visible .svg-dash-line {
++  stroke-dashoffset: 0;
++}
++
++/* Specific ring offsets */
++.work-item.is-visible .ring-pct-18 {
++  stroke-dashoffset: 102.5; /* 18.4% fill (125.6 * (1 - 0.184) = 102.5) */
++}
++
++.work-item.is-visible .ring-pct-13 {
++  stroke-dashoffset: 109.3; /* 13% fill (125.6 * (1 - 0.13) = 109.3) */
++}
++
++.work-item.is-visible .ring-pct-60 {
++  stroke-dashoffset: 50.2; /* 60% fill (125.6 * (1 - 0.60) = 50.2) */
++}
++
++.work-item.is-visible .ring-pct-100 {
++  stroke-dashoffset: 0; /* 100% fill */
++}
++
++/* ==========================================================================
++   NUEVOS ESTILOS PARA CASOS DE ESTUDIO (ANTES/DESPUÉS Y WIREFRAMES)
++   ========================================================================== */
++
++.before-after-container {
++  margin: 2.5rem 0;
++  display: flex;
++  flex-direction: column;
++  gap: 0.75rem;
++}
++
++.before-after-grid {
++  display: grid;
++  grid-template-columns: 1fr 1fr;
++  gap: 1.5rem;
++  margin-bottom: 1.5rem;
++}
++
++@media (min-width: 900px) {
++  .before-after-grid.three-cols {
++    grid-template-columns: 1fr 1fr 1fr !important;
++  }
++}
++
++@media (max-width: 899px) {
++  .before-after-grid.three-cols {
++    grid-template-columns: 1fr !important;
++  }
++}
++
++@media (max-width: 768px) {
++  .before-after-grid {
++    grid-template-columns: 1fr;
++    gap: 1.25rem;
++  }
++}
++
++.visual-card {
++  position: relative;
++  background: var(--surface, #ffffff);
++  border: 1px solid var(--border, rgba(0,0,0,0.08));
++  border-radius: 12px;
++  overflow: hidden;
++  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
++  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0
+<truncated 4182 bytes>
+* Extra padding for mobile screenshots */
++}
++
++/* Force all screenshots/wireframes inside visual cards to fit perfectly and remain 100% legible */
++.visual-card img {
++  object-fit: contain !important;
++  width: 100% !important;
++  height: 100% !important;
++  background: transparent !important;
++}
++
++/* Remove gray background, borders, and extra padding from wireframe container for a clean unified canvas */
++.wireframe-container {
++  background: transparent !important;
++  border: none !important;
++  padding: 0 !important;
++}
++
++/* Ensure transparent/light wireframes stand out beautifully on a soft premium blue-slate background */
++.visual-card-img-container.wireframe-bg {
++  background: #f1f5f9 !important; /* Soft, premium slate-white background */
++  padding: 20px !important; /* Elegant spacing */
++  border-bottom: 1px solid var(--border, rgba(0,0,0,0.06)) !important;
++}
++
++.visual-card-img-container.wireframe-bg img {
++  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.04)) !important; /* Elegant subtle shadow for the wireframe canvas */
++  object-fit: contain !important;
++}
++
++
++/* Specific showcase styles for Growth Strategy & Conversion:
++   Only the FIRST slide (cover/inicio image, i.e., the loyalty card) fills the container flush (no padding, cover fit).
++   This prevents it from looking floating on top of the card container ("que no se vea sobre la caja").
++   The subsequent slides (technical mockups) inherit standard contains and white padded cards. */
++#carousel-offers .carousel-item.media:first-child {
++  padding: 0 !important;
++  background: transparent !important;
++}
++
++#carousel-offers .carousel-item.media:first-child img {
++  object-fit: cover !important;
++  width: 100% !important;
++  height: 100% !important;
++}
++
++/* Remove redundant inner borders and border-radii from items inside standardized project visual boxes
++   to prevent double-border/double-box artifacts and ensure clean flush edges. */
++.project-visuals .carousel-item {
++  border: none !important;
++  border-radius: 0 !important;
++}
++
++
+
