@@ -4,13 +4,13 @@
   "description": "Portfolio case studies",
   "main": "build.js",
   "scripts": {
-    "build": "node build.js"
+    "build-local": "node build.js"
   },
   "keywords": [],
   "author": "Marta Morales",
   "license": "ISC",
   "dependencies": {
-    "marked": "^18.0.4",
-    "sass": "^1.100.0"
+    "marked": "^15.0.0",
+    "sass": "^1.83.4"
   }
 }
