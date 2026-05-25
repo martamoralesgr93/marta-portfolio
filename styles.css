@@ -1,6 +1,7 @@
-﻿:root {
+@charset "UTF-8";
+ï»¿:root {
   --bg: #ffffff;
-  --text: #0a0a0a;            /* Más negro que negro — Linear */
+  --text: #0a0a0a; /* MÃ¡s negro que negro â Linear */
   --text-secondary: #6b6b6b; /* Gris medio, no apagado */
   --text-muted: #a0a0a0;
   --text-tertiary: #c8c8c8;
@@ -12,17 +13,15 @@
   --accent: #0a0a0a;
   --bg-soft: #f7f7f7;
   --border: #e8e8e8;
-
   --shadow: 0 1px 2px rgba(0,0,0,0.04);
   --shadow-subtle: 0 1px 4px rgba(0,0,0,0.03);
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.03);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.04);
-
   --space-md: 24px;
   --space-lg: 48px;
   --space-xl: 80px;
-  --s-8:   8px;
+  --s-8: 8px;
   --s-16: 16px;
   --s-24: 24px;
   --s-32: 32px;
@@ -37,26 +36,22 @@
   --space-4: 32px;
   --space-5: 64px;
   --space-6: 88px;
-
   --radius-sm: 3px;
   --radius-md: 6px;
   --radius-lg: 10px;
   --radius: 6px;
-
   --container-mobile: 390px;
   --container-desktop: 1440px;
   --sidebar-width: 420px;
   --content-max: 1100px;
   --text-max: 680px;
   --editorial-max: 580px;
-
-  --f-hero:    clamp(44px, 7.5vw, 68px);
+  --f-hero: clamp(44px, 7.5vw, 68px);
   --f-section: 38px;
   --f-project: 26px;
-  --f-body:    17px;
-  --f-small:   12px;
-
-  /* Easing curves — Vercel/Linear */
+  --f-body: 17px;
+  --f-small: 12px;
+  /* Easing curves â Vercel/Linear */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -70,7 +65,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -78,11 +73,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: 'kern' 1, 'liga' 1;
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
 h1, h2, h3, h4, h5, h6, .title, .eyebrow, .nav-btn-text, .detail-label, .profile-name, .hero-tagline {
-  font-family: 'Satoshi', sans-serif;
+  font-family: "Satoshi", sans-serif;
   letter-spacing: -0.03em;
 }
 
@@ -102,7 +97,7 @@ button {
 }
 
 .container {
-  width: min(var(--container-desktop), calc(100% - 40px));
+  width: min(var(--container-desktop), 100% - 40px);
   margin: 0 auto;
   padding: 64px 0 56px;
 }
@@ -120,7 +115,7 @@ button {
 }
 
 .nav-inner-horizontal {
-  width: min(var(--container-desktop), calc(100% - 20px));
+  width: min(var(--container-desktop), 100% - 20px);
   margin: 0 auto;
   min-height: 54px;
   display: flex;
@@ -156,7 +151,7 @@ button {
 .nav-home-btn {
   font-weight: 700 !important;
   color: #000 !important;
-  background: rgba(0,0,0,0.03);
+  background: rgba(0, 0, 0, 0.03);
   padding: 4px 10px !important;
   border-radius: 4px;
 }
@@ -174,7 +169,6 @@ button {
     gap: 32px;
   }
 }
-
 .hero {
   display: flex;
   flex-direction: column;
@@ -219,8 +213,8 @@ button {
   justify-content: center !important;
   border-radius: 50% !important;
   background: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04), inset 0 -1.5px 2px rgba(0,0,0,0.05) !important;
-  border: 1px solid rgba(0,0,0,0.06) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04), inset 0 -1.5px 2px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
   padding: 8px !important;
   box-sizing: border-box !important;
 }
@@ -278,7 +272,7 @@ button {
 }
 
 .read-more-btn:after {
-  content: '→';
+  content: "â";
   transition: transform 0.2s;
 }
 
@@ -428,7 +422,7 @@ button {
 }
 
 .title-separator {
-  opacity: 0.1; 
+  opacity: 0.1;
   margin: 0 var(--s-8);
 }
 
@@ -549,7 +543,7 @@ button {
 }
 
 .check-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 8px;
@@ -590,7 +584,6 @@ button {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
-
   .nav-inner-horizontal {
     display: flex;
     justify-content: space-between;
@@ -598,31 +591,30 @@ button {
     width: 100%;
     max-width: none;
   }
-
   .nav-links {
     display: none; /* Removed from mobile header per request */
   }
-
   .nav-zone {
     display: flex;
     align-items: center;
     flex: 1;
   }
-
-  .nav-zone.left { justify-content: flex-start; }
-  .nav-zone.center { 
-    justify-content: center; 
+  .nav-zone.left {
+    justify-content: flex-start;
+  }
+  .nav-zone.center {
+    justify-content: center;
     gap: 8px;
     cursor: pointer;
   }
-  .nav-zone.right { justify-content: flex-end; }
-
+  .nav-zone.right {
+    justify-content: flex-end;
+  }
   .nav-logo-small {
     height: 20px;
     width: auto;
     object-fit: contain;
   }
-
   .nav-label {
     font-size: 11px;
     font-weight: 700;
@@ -630,7 +622,6 @@ button {
     letter-spacing: 0.05em;
     color: var(--text);
   }
-
   .nav-btn-text {
     font-size: 11px;
     font-weight: 700;
@@ -641,7 +632,6 @@ button {
     padding: 0;
   }
 }
-
 .side-nav {
   display: none;
 }
@@ -722,7 +712,6 @@ button {
 }
 
 /* Redundant avatar-frame removed to avoid conflicts */
-
 .phone-screen img.avatar {
   width: 100%;
   height: 100%;
@@ -927,8 +916,9 @@ button {
     display: flex !important;
   }
 }
-
-.fab:active { transform: scale(0.96); }
+.fab:active {
+  transform: scale(0.96);
+}
 
 .fab.active {
   width: 56px;
@@ -941,9 +931,12 @@ button {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.fab.active .fab-content { display: none; }
-.fab.active .fab-close { 
-  display: flex; 
+.fab.active .fab-content {
+  display: none;
+}
+
+.fab.active .fab-close {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -1002,7 +995,6 @@ button {
     display: flex;
   }
 }
-
 .fab-menu.active {
   transform: translateY(0);
   pointer-events: auto; /* Allows interaction when shown */
@@ -1118,8 +1110,8 @@ body.menu-open .container-shift {
   height: 48px !important;
   border-radius: 50% !important;
   background: #ffffff !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03), inset 0 -1px 1px rgba(0,0,0,0.04) !important;
-  border: 1px solid rgba(0,0,0,0.05) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03), inset 0 -1px 1px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
   padding: 5px !important;
   box-sizing: border-box !important;
   object-fit: contain !important;
@@ -1168,8 +1160,6 @@ body.menu-open .container-shift {
   margin-top: 12px;
 }
 
-
-
 .hiring-status {
   display: flex;
   align-items: center;
@@ -1205,18 +1195,15 @@ body.menu-open .container-shift {
     transform: scale(1);
     opacity: 0.4;
   }
-
   70% {
     transform: scale(2.2);
     opacity: 0;
   }
-
   100% {
     transform: scale(1);
     opacity: 0;
   }
 }
-
 .status-label {
   font-size: 11px;
   font-weight: 600;
@@ -1249,11 +1236,7 @@ body.menu-open .container-shift {
   color: var(--text);
 }
 
-
-
-
 /* --- EXPERIENCE PAGE COMPONENTS --- */
-
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -1342,7 +1325,7 @@ body.menu-open .container-shift {
 }
 
 .timeline-bullets li::before {
-  content: "—";
+  content: "â";
   position: absolute;
   left: 0;
   color: var(--divider);
@@ -1361,7 +1344,6 @@ body.menu-open .container-shift {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 .skill-category h4 {
   font-size: 11px;
   text-transform: uppercase;
@@ -1408,11 +1390,9 @@ body.menu-open .container-shift {
   body {
     overflow-x: hidden;
   }
-
   .nav {
     display: none;
   }
-
   .container {
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr;
@@ -1421,7 +1401,6 @@ body.menu-open .container-shift {
     padding: 0;
     margin: 0;
   }
-
   /* Sticky Sidebar */
   .hero {
     position: fixed;
@@ -1439,12 +1418,11 @@ body.menu-open .container-shift {
     justify-content: center;
     gap: 12px;
   }
-
   .avatar-frame {
-    width: 68px; height: 68px;
+    width: 68px;
+    height: 68px;
     margin-bottom: 20px;
   }
-
   .profile-name {
     font-size: clamp(24px, 2vw, 30px);
     line-height: 1.05;
@@ -1452,7 +1430,6 @@ body.menu-open .container-shift {
     font-weight: 700;
     letter-spacing: -0.04em;
   }
-
   .hero-eyebrow {
     font-size: 9px;
     letter-spacing: 0.1em;
@@ -1462,53 +1439,45 @@ body.menu-open .container-shift {
     text-transform: uppercase;
     opacity: 0.5;
   }
-
   .hero-description {
     display: flex;
     flex-direction: column;
     gap: 8px;
     max-width: 30ch;
   }
-
   .hero-description p {
     font-size: 13px;
     line-height: 1.65;
     color: var(--text-secondary);
     margin: 0;
   }
-
   .hero-description p:first-of-type {
     font-size: 14px;
     color: var(--text);
     font-weight: 500;
     line-height: 1.4;
   }
-
   /* Main Scrollable Area */
   .section:not(.hero) {
     grid-column: 2;
     padding: 120px 80px;
-    margin: 0; 
-    max-width: 1400px; 
+    margin: 0;
+    max-width: 1400px;
   }
-
   .work-item {
     border-top: 0;
     border-bottom: 1px solid var(--divider);
     padding: 44px 0;
   }
-
   .work-item:first-of-type {
     border-top: 1px solid var(--divider);
   }
-
   .title {
     font-size: 32px;
     letter-spacing: -0.04em;
     margin-bottom: 12px;
     line-height: 1.1;
   }
-
   .meta {
     font-size: var(--f-small);
     margin-bottom: var(--s-48);
@@ -1517,7 +1486,6 @@ body.menu-open .container-shift {
     color: var(--text-muted);
     font-weight: 700;
   }
-
   /* STAR Layout for Experience */
   .star-container {
     display: flex;
@@ -1525,16 +1493,14 @@ body.menu-open .container-shift {
     gap: 12px;
     margin-top: 16px;
   }
-
   .star-item {
     display: grid;
     grid-template-columns: 24px 1fr;
     gap: 12px;
     align-items: start;
   }
-
   .star-label {
-    font-family: 'Satoshi', sans-serif;
+    font-family: "Satoshi", sans-serif;
     font-size: 11px;
     font-weight: 700;
     color: var(--text-secondary);
@@ -1548,18 +1514,15 @@ body.menu-open .container-shift {
     background: #fcfcfc;
     margin-top: 2px;
   }
-
   .star-item p {
     font-size: 14px;
     line-height: 1.5;
     margin: 0;
     color: var(--text);
   }
-
   .timeline-header {
     margin-bottom: 8px;
   }
-
   .timeline-meta {
     display: flex;
     justify-content: space-between;
@@ -1568,24 +1531,20 @@ body.menu-open .container-shift {
     color: var(--text-secondary);
     margin-bottom: 4px;
   }
-
   .timeline-company {
     font-weight: 600;
     color: var(--text);
   }
-
   /* Specific Carousel to Vertical Stack for ILUNION on Desktop */
   #carousel-ilunion,
   #carousel-offers {
     overflow: visible;
     max-width: 100%;
   }
-
   #carousel-ilunion .carousel-actions,
   #carousel-offers .carousel-actions {
     display: none;
   }
-
   /* Standardized Project Visuals - Elegant & Constrained */
   .project-visuals {
     margin: var(--space-lg) 0 var(--space-lg); /* More air */
@@ -1594,29 +1553,24 @@ body.menu-open .container-shift {
     border: 1px solid var(--divider);
     background: var(--bg-soft);
     box-shadow: var(--shadow-subtle);
-    max-width: 900px; 
+    max-width: 900px;
   }
-
   .media {
-    aspect-ratio: 16 / 9; /* Balanced ratio for UI scannability */
+    aspect-ratio: 16/9; /* Balanced ratio for UI scannability */
     overflow: hidden;
     width: 100%;
     background: var(--bg-soft);
   }
-
   .media img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; 
+    object-fit: cover !important;
     display: block;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
-
   .media:hover img {
     transform: scale(1.03);
   }
-
-
   .work-summary p {
     font-size: 15px;
     line-height: 1.75;
@@ -1624,20 +1578,17 @@ body.menu-open .container-shift {
     color: var(--text-secondary);
     margin-top: var(--s-24);
   }
-
   .detail {
     display: none;
     padding-top: 56px;
     max-width: 900px;
   }
-
   .detail p,
   .detail li {
     font-size: 16px;
     line-height: 1.75;
     max-width: 70ch;
   }
-
   .project-side-by-side {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -1645,37 +1596,31 @@ body.menu-open .container-shift {
     align-items: start;
     margin: 80px 0;
   }
-
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 240px;
     gap: 60px;
     align-items: start;
   }
-
   .about-copy p {
     font-size: 22px;
     line-height: 1.5;
   }
-
   .contact-title {
     font-size: 80px;
     text-align: left;
     margin: 0;
   }
-
   .contact-text {
     text-align: left;
     font-size: 24px;
     margin: 32px 0 0 0;
     max-width: 30ch;
   }
-
   .contact-actions {
     justify-content: flex-start;
     margin-top: 48px;
   }
-
   /* In-sidebar Navigation */
   .side-nav {
     margin-top: 24px; /* Reduced margin */
@@ -1683,12 +1628,10 @@ body.menu-open .container-shift {
     flex-direction: column;
     gap: 10px; /* Tighter navigation */
   }
-
   .nav-projects-container {
     display: flex;
     flex-direction: column;
   }
-
   .nav-projects-list {
     list-style: none;
     padding: 0;
@@ -1699,11 +1642,9 @@ body.menu-open .container-shift {
     border-left: 1px solid var(--divider);
     animation: sideNavEnter 0.3s ease-out;
   }
-
   .nav-projects-list.active {
     display: flex;
   }
-
   .nav-project-link {
     font-size: 13px;
     color: var(--text-secondary);
@@ -1715,12 +1656,10 @@ body.menu-open .container-shift {
     line-height: 1.3;
     max-width: 200px;
   }
-
   .nav-project-link:hover {
     color: var(--text);
     transform: translateX(4px);
   }
-
   .nav-project-link::before {
     content: "";
     position: absolute;
@@ -1730,7 +1669,6 @@ body.menu-open .container-shift {
     height: 1px;
     background: var(--divider);
   }
-
   .side-nav a, .nav-main-link {
     position: relative;
     text-decoration: none;
@@ -1748,7 +1686,6 @@ body.menu-open .container-shift {
     align-items: center;
     gap: 6px;
   }
-
   .side-nav a:hover,
   .side-nav a.active,
   .nav-main-link:hover,
@@ -1757,7 +1694,6 @@ body.menu-open .container-shift {
     padding-left: 16px;
     font-weight: 700;
   }
-
   .side-nav a:hover::before,
   .side-nav a.active::before,
   .nav-main-link:hover::before,
@@ -1773,7 +1709,6 @@ body.menu-open .container-shift {
     border-radius: 4px;
     animation: sideNavEnter 0.2s ease-out;
   }
-
   .side-nav a:hover::before,
   .side-nav a.active::before {
     content: "";
@@ -1787,18 +1722,21 @@ body.menu-open .container-shift {
     border-radius: 4px;
     animation: sideNavEnter 0.2s ease-out;
   }
-
   @keyframes sideNavEnter {
-    from { opacity: 0; transform: translateY(-50%) translateX(-4px); }
-    to { opacity: 1; transform: translateY(-50%) translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-50%) translateX(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
   }
-
   #contact {
     margin-top: 140px;
     padding-bottom: 120px;
     max-width: var(--content-max);
   }
-
   .contact-title {
     font-size: 32px;
     letter-spacing: -0.04em;
@@ -1806,7 +1744,6 @@ body.menu-open .container-shift {
     line-height: 1.1;
     font-weight: 700;
   }
-
   .contact-text {
     font-size: 18px;
     line-height: 1.5;
@@ -1814,7 +1751,6 @@ body.menu-open .container-shift {
     color: var(--text-secondary);
   }
 }
-
 /* --- ZOOM MODAL INTERACTION --- */
 img.zoom-target {
   cursor: zoom-in;
@@ -1826,7 +1762,6 @@ img.zoom-target {
     transform: translateY(-4px);
   }
 }
-
 .zoom-modal {
   position: fixed;
   top: 0;
@@ -1871,15 +1806,14 @@ img.zoom-target {
   line-height: 1;
   padding: 8px;
 }
-/* === UX FIX HOVER + UNDERLINE (FINE) === */
 
-/* 1. Hover SOLO si NO está activo */
+/* === UX FIX HOVER + UNDERLINE (FINE) === */
+/* 1. Hover SOLO si NO estÃ¡ activo */
 @media (hover: hover) {
   .work-item:not(.active):hover {
     background: var(--hover);
   }
-
-    .work-item:not(.active):hover .title {
+  .work-item:not(.active):hover .title {
     text-decoration: none;
   }
   .work-item:not(.active):hover .title-project {
@@ -1889,7 +1823,6 @@ img.zoom-target {
     text-decoration-color: var(--text) !important;
   }
 }
-
 /* 2. En mobile (tap feedback visual ligero) */
 .work-item:not(.active):active {
   background: var(--hover);
@@ -1900,7 +1833,7 @@ img.zoom-target {
   text-decoration-thickness: 1.5px !important;
 }
 
-/* 3. Estado activo → limpio (sin gris ni subrayado) */
+/* 3. Estado activo â limpio (sin gris ni subrayado) */
 .work-item.active {
   background: transparent !important;
 }
@@ -1908,11 +1841,12 @@ img.zoom-target {
 .work-item.active .title {
   text-decoration: none;
 }
+
 /* Blur effect for sensible data */
 .blurred {
   filter: blur(4px);
   /* slight scale to hide blurred edges */
-  transform: scale(1.03); 
+  transform: scale(1.03);
   display: block;
 }
 
@@ -1971,7 +1905,6 @@ img.zoom-target {
     padding-top: 54px; /* Matches header height */
     padding-bottom: 80px;
   }
-
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1985,73 +1918,61 @@ img.zoom-target {
     margin: 0;
     box-sizing: border-box;
   }
-
   .avatar-frame {
     width: 120px;
     height: 120px;
     margin-bottom: 8px; /* Tighter gap to text */
   }
-  
   .hero-eyebrow {
     font-size: 9px;
     margin-bottom: 8px; /* Tighter vertical rhythm */
     letter-spacing: 0.15em;
   }
-  
   .hero-description {
     max-width: 100%;
     gap: 12px;
     text-align: center;
     align-items: center;
   }
-
   .hero-description p {
     font-size: 13px;
     max-width: 34ch;
     line-height: 1.5;
   }
-
   .hero-description p:first-of-type {
     font-size: 15px;
     margin-bottom: 4px;
   }
-
   .profile-name {
     font-size: 38px !important;
     line-height: 1.1 !important;
     margin-bottom: 16px !important;
   }
-
   .section:not(.hero) {
     padding-top: 80px;
   }
-
   /* Breathe for project titles in mobile */
   .work-item {
     padding: 60px 0; /* More air per project */
   }
-
   .work-header {
     flex-direction: column; /* Stack to give title full width */
     align-items: flex-start;
     gap: 16px;
   }
-
   .impact-badge {
     align-items: flex-start;
     text-align: left;
   }
-
   .title {
     font-size: 24px;
     line-height: 1.2;
     margin-bottom: 8px; /* Tighter */
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 4px;
-    padding-left: 0; 
+    padding-left: 0;
   }
-
   .title-company {
     font-size: 10px; /* More subtle */
     text-transform: uppercase;
@@ -2059,22 +1980,18 @@ img.zoom-target {
     font-weight: 900; /* High contrast weight */
     opacity: 0.45; /* Less visual weight */
   }
-
   .title-project {
-    font-size: 20px; 
+    font-size: 20px;
     font-weight: 600; /* More punch */
     color: var(--text-primary);
     line-height: 1.25;
   }
-
   .title-separator {
-    display: none; 
+    display: none;
   }
-
   .title-separator {
     display: none; /* Cleaner in stacked mobile view */
   }
-
   .professional-context {
     font-size: 10px; /* Smaller */
     margin-bottom: 16px;
@@ -2082,18 +1999,15 @@ img.zoom-target {
     padding-left: 0; /* Unified alignment */
     opacity: 0.5;
   }
-
   .subtitle {
     font-size: 18px;
     margin-bottom: 24px;
     line-height: 1.5;
   }
-
   .project-visuals {
     margin: 24px 0 32px;
   }
 }
-
 /* Footer & Disclaimer */
 .footer {
   padding: 80px 0 40px;
@@ -2118,45 +2032,37 @@ img.zoom-target {
     margin-left: 360px;
     border-top: 1px solid var(--divider);
     padding: 100px 80px;
-    background: rgba(0,0,0,0.02);
+    background: rgba(0, 0, 0, 0.02);
   }
-  
   .disclaimer {
     text-align: left;
     margin-left: 0;
     font-size: 12px;
   }
 }
-
 /* Modern mobile carousel layout */
 @media (max-width: 768px) {
   .carousel-actions {
     display: none !important;
   }
-  
   .carousel-track {
     gap: 12px;
     padding-right: 15%; /* Allow peeking space */
   }
-  
   .carousel-track img,
   .carousel-item {
     flex: 0 0 88% !important; /* Peek effect */
     scroll-snap-align: start !important;
   }
 }
-
-
 /* ============================================
-   VISUAL POLISH — Scroll animations & refinements
+   VISUAL POLISH â Scroll animations & refinements
    ============================================ */
-
 /* --- Scroll-driven entrance animations --- */
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -2164,10 +2070,21 @@ img.zoom-target {
   transform: translateY(0);
 }
 
-.reveal-d1 { transition-delay: 0.08s; }
-.reveal-d2 { transition-delay: 0.16s; }
-.reveal-d3 { transition-delay: 0.24s; }
-.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-d2 {
+  transition-delay: 0.16s;
+}
+
+.reveal-d3 {
+  transition-delay: 0.24s;
+}
+
+.reveal-d4 {
+  transition-delay: 0.32s;
+}
 
 /* --- Refined eyebrow labels --- */
 .eyebrow {
@@ -2220,7 +2137,7 @@ blockquote p {
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* --- Tag hover — fill on hover --- */
+/* --- Tag hover â fill on hover --- */
 .tag {
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
@@ -2263,19 +2180,11 @@ blockquote p {
 }
 
 @media (min-width: 1024px) {
-  
-
-  
-
-  
-
   .work-item:not(.active):hover {
     background: transparent !important;
   }
-
-  /* Sidebar profile name — remove duplicate, already set above */
+  /* Sidebar profile name â remove duplicate, already set above */
 }
-
 /* --- Stronger image hover lift --- */
 .project-block.center img:hover {
   transform: translateY(-3px) scale(1.01);
@@ -2288,7 +2197,6 @@ blockquote p {
 }
 
 /* --- Images: subtle load background --- */
-
 .metrics-table td:last-child {
   font-weight: 600;
   color: var(--text-primary);
@@ -2316,10 +2224,15 @@ blockquote {
 }
 
 @keyframes sideNavEnter {
-  from { opacity: 0; transform: translateY(-4px) translateX(-4px); }
-  to { opacity: 1; transform: translateY(0) translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px) translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
 }
-
 .detail-quote,
 blockquote {
   margin: 2rem 0;
@@ -2371,7 +2284,7 @@ blockquote p {
 .star-stepper::before {
   content: "";
   position: absolute;
-  left: 15px; 
+  left: 15px;
   top: 16px;
   bottom: 0;
   width: 2px;
@@ -2397,10 +2310,10 @@ blockquote p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 14px;
-  box-shadow: 0 0 0 6px var(--bg-body, #fff); 
+  box-shadow: 0 0 0 6px var(--bg-body, #fff);
 }
 
 .stepper-content {
@@ -2409,7 +2322,7 @@ blockquote p {
 }
 
 .stepper-title {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
@@ -2450,17 +2363,17 @@ blockquote p {
   margin-top: 32px;
 }
 
-
-
-
-.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
 /* =============================================================
-   LINEAR LUXURY SYSTEM — Process Visuals & Tables
+   LINEAR LUXURY SYSTEM â Process Visuals & Tables
    Override de inline styles para coherencia editorial total.
-   Monocroma. Sin color. Líneas. Jerarquía tipográfica.
+   Monocroma. Sin color. LÃ­neas. JerarquÃ­a tipogrÃ¡fica.
    ============================================================= */
-
 /* 1. Contenedor del proceso visual */
 .case-process-visual {
   margin-bottom: 2.5rem !important;
@@ -2469,8 +2382,8 @@ blockquote p {
   background: none !important;
 }
 
-/* 2. Eyebrow label (etiquetas de sección) */
-.case-process-visual p:not([style*="italic"]) {
+/* 2. Eyebrow label (etiquetas de secciÃ³n) */
+.case-process-visual p:not([style*=italic]) {
   font-size: 9px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -2478,10 +2391,10 @@ blockquote p {
   color: var(--text-secondary) !important;
   opacity: 0.55 !important;
   margin-bottom: 1rem !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
 }
 
-/* 3. Process Timeline — eliminar pills coloreadas, pasar a texto lineal */
+/* 3. Process Timeline â eliminar pills coloreadas, pasar a texto lineal */
 .case-process-visual div[style*="display: flex"][style*="align-items: center"] {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -2498,7 +2411,7 @@ blockquote p {
   font-size: 11px !important;
   font-weight: 500 !important;
   color: var(--text) !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   letter-spacing: 0.01em !important;
 }
 
@@ -2509,7 +2422,7 @@ blockquote p {
   font-size: 10px !important;
 }
 
-/* 4. Cards de Antes / Después — monochrome, sin radios, solo líneas */
+/* 4. Cards de Antes / DespuÃ©s â monochrome, sin radios, solo lÃ­neas */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div {
   border-radius: 0 !important;
   background: transparent !important;
@@ -2523,7 +2436,7 @@ blockquote p {
   border-left: 1px solid var(--divider) !important;
 }
 
-/* Segundo card (Después): borde izquierdo marcado */
+/* Segundo card (DespuÃ©s): borde izquierdo marcado */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div:last-child {
   border-left: 2px solid var(--text) !important;
 }
@@ -2539,7 +2452,7 @@ blockquote p {
   margin-bottom: 1rem !important;
 }
 
-/* 5. Items dentro de las cards — eliminar colores de fondo y emojis visuales */
+/* 5. Items dentro de las cards â eliminar colores de fondo y emojis visuales */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div {
   background: transparent !important;
   border: none !important;
@@ -2560,13 +2473,13 @@ blockquote p {
   display: none !important;
 }
 
-/* 7. Texto del item — span visible */
+/* 7. Texto del item â span visible */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div > span:last-child {
   color: var(--text-secondary) !important;
   font-size: 12px !important;
 }
 
-/* 8. Nota al pie (⚠, ✅) dentro de cards */
+/* 8. Nota al pie (â , â) dentro de cards */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div > div > div[style*="font-size: 0.7rem"] {
   background: transparent !important;
   border: none !important;
@@ -2577,7 +2490,7 @@ blockquote p {
   font-style: italic !important;
 }
 
-/* 9. Cards de 3 columnas (principios de diseño) */
+/* 9. Cards de 3 columnas (principios de diseÃ±o) */
 .case-process-visual div[style*="grid-template-columns: repeat(3, 1fr)"] > div {
   border-radius: 0 !important;
   background: transparent !important;
@@ -2607,7 +2520,7 @@ blockquote p {
 }
 
 /* 10. Insight cards / 2 cols comparativas (modelo mental) */
-.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*="margin-bottom"]) > div {
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*=margin-bottom]) > div {
   border-radius: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -2615,23 +2528,23 @@ blockquote p {
   padding: 1rem 0 1rem 1.25rem !important;
 }
 
-.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*="margin-bottom"]) > div:last-child {
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*=margin-bottom]) > div:last-child {
   border-left: 2px solid var(--text) !important;
 }
 
-.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*="margin-bottom"]) > div p[style*="italic"] {
+.case-process-visual div[style*="grid-template-columns: 1fr 1fr"]:not([style*=margin-bottom]) > div p[style*=italic] {
   font-size: 13px !important;
   line-height: 1.6 !important;
   color: var(--text) !important;
   font-style: italic !important;
 }
 
-/* 11. Metrics Table — ultra-minimal ruled lines */
+/* 11. Metrics Table â ultra-minimal ruled lines */
 .metrics-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0;
 }
 
@@ -2702,14 +2615,10 @@ blockquote p {
   margin-top: 40px !important;
 }
 
-
-
-
 /* ---------------------------------------------------------------
-   PASO 2 � ICONOGRAF�A & MICROINTERACCIONES
+   PASO 2 ï¿½ ICONOGRAFï¿½A & MICROINTERACCIONES
    Sistema premium. Tool-like. Physical feedback.
    --------------------------------------------------------------- */
-
 /* -- 1. REDUCIR MOVIMIENTO --------------------------------------*/
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2717,7 +2626,6 @@ blockquote p {
     transition-duration: 0.01ms !important;
   }
 }
-
 /* -- 2. READ-MORE BUTTON --------------------------------------*/
 .read-more-btn {
   display: inline-flex !important;
@@ -2760,13 +2668,13 @@ blockquote p {
   cursor: pointer !important;
   pointer-events: auto !important;
   color: var(--text) !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .carousel-btn:hover {
   border-color: var(--text) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   transform: scale(1.1) !important;
   background: #fff !important;
 }
@@ -2775,8 +2683,13 @@ blockquote p {
   transform: scale(0.93) !important;
 }
 
-.carousel-btn.prev:hover svg { transform: translateX(-1px); }
-.carousel-btn.next:hover svg { transform: translateX(1px); }
+.carousel-btn.prev:hover svg {
+  transform: translateX(-1px);
+}
+
+.carousel-btn.next:hover svg {
+  transform: translateX(1px);
+}
 
 /* -- 4. CONTACT ICONS -----------------------------------------*/
 .contact-actions {
@@ -2812,8 +2725,13 @@ blockquote p {
   transform: translateY(-1px);
 }
 
-.contact-icon-link:hover svg { transform: scale(1.1); }
-.contact-icon-link:active { transform: scale(0.97); }
+.contact-icon-link:hover svg {
+  transform: scale(1.1);
+}
+
+.contact-icon-link:active {
+  transform: scale(0.97);
+}
 
 /* -- 5. STATUS DOT --------------------------------------------*/
 .status-dot {
@@ -2827,7 +2745,7 @@ blockquote p {
 }
 
 .status-dot::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -3px;
   border-radius: 50%;
@@ -2836,11 +2754,19 @@ blockquote p {
 }
 
 @keyframes statusPulse {
-  0%   { transform: scale(0.8); opacity: 0.8; }
-  60%  { transform: scale(1.8); opacity: 0; }
-  100% { transform: scale(0.8); opacity: 0; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  60% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
 }
-
 /* -- 6. ZOOM MODAL CLOSE --------------------------------------*/
 .zoom-modal-close {
   position: absolute;
@@ -2849,8 +2775,8 @@ blockquote p {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
   color: #fff;
   display: flex;
   align-items: center;
@@ -2858,43 +2784,51 @@ blockquote p {
   cursor: pointer;
   z-index: 10000;
   backdrop-filter: blur(8px);
-  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1);
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .zoom-modal-close:hover {
-  background: rgba(255,255,255,0.16);
+  background: rgba(255, 255, 255, 0.16);
   transform: scale(1.1);
 }
 
-.zoom-modal-close:active { transform: scale(0.92); }
+.zoom-modal-close:active {
+  transform: scale(0.92);
+}
 
 /* -- 7. LANG TOGGLE -------------------------------------------*/
 .lang-toggle {
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1) !important;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
 .lang-toggle:hover {
   color: var(--text) !important;
   border-color: var(--text) !important;
   background: var(--hover) !important;
   transform: translateY(-1px) !important;
 }
-.lang-toggle:active { transform: scale(0.95) !important; }
+
+.lang-toggle:active {
+  transform: scale(0.95) !important;
+}
 
 /* -- 8. SIDEBAR NAV LINKS -------------------------------------*/
 .nav-project-link {
-  transition: opacity 0.2s ease, padding-left 0.25s cubic-bezier(0.16,1,0.3,1) !important;
+  transition: opacity 0.2s ease, padding-left 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
 .nav-project-link:hover {
   opacity: 0.5 !important;
   padding-left: 4px !important;
 }
 
-/* -- 9. IM�GENES DE PROYECTO ----------------------------------*/
+/* -- 9. IMï¿½GENES DE PROYECTO ----------------------------------*/
 .project-visuals {
-  transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1) !important;
+  transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
 .project-visuals:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -2902,8 +2836,9 @@ blockquote p {
 .work-item {
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1) !important;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+
 .work-item.is-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -2911,8 +2846,9 @@ blockquote p {
 
 /* -- 11. STEPPER HOVER ----------------------------------------*/
 .stepper-badge {
-  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .stepper-item:hover .stepper-badge {
   transform: scale(1.12);
 }
@@ -2925,39 +2861,47 @@ blockquote p {
   color: inherit;
   transition: opacity 0.2s ease;
 }
+
 .email-display::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
   width: 0;
   height: 1px;
   background: currentColor;
-  transition: width 0.3s cubic-bezier(0.16,1,0.3,1);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.email-display:hover::after { width: 100%; }
-.email-display:hover { opacity: 0.6; }
+
+.email-display:hover::after {
+  width: 100%;
+}
+
+.email-display:hover {
+  opacity: 0.6;
+}
 
 /* -- 13. BTN PRIMARY ------------------------------------------*/
 .btn-primary {
-  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease !important;
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease !important;
 }
+
 .btn-primary:hover {
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
 }
+
 .btn-primary:active {
   transform: scale(0.97) !important;
   transition-duration: 0.08s !important;
 }
 
 /* ---------------------------------------------------------------
-   PASO 3 � TABLAS & BLOQUES DE PROCESO
+   PASO 3 ï¿½ TABLAS & BLOQUES DE PROCESO
    Dashboard feel. Research tool. Systems thinking.
    Notion / Linear data table aesthetic.
    --------------------------------------------------------------- */
-
-/* -- 1. RESULTS CARD � panel tipo Linear ----------------------*/
+/* -- 1. RESULTS CARD ï¿½ panel tipo Linear ----------------------*/
 .results-card {
   background: transparent !important;
   border: none !important;
@@ -2970,7 +2914,7 @@ blockquote p {
 
 /* Eyebrow del panel de resultados */
 .results-card::before {
-  content: 'RESULTADOS';
+  content: "RESULTADOS";
   display: block;
   font-size: 9px;
   font-weight: 700;
@@ -2978,10 +2922,10 @@ blockquote p {
   color: var(--text-muted);
   opacity: 0.5;
   margin-bottom: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* -- 2. TABLA � sistema data grid premium ---------------------*/
+/* -- 2. TABLA ï¿½ sistema data grid premium ---------------------*/
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -2994,12 +2938,12 @@ blockquote p {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0;
   background: var(--bg);
 }
 
-/* -- 2a. THEAD � sticky header tipo dashboard -----------------*/
+/* -- 2a. THEAD ï¿½ sticky header tipo dashboard -----------------*/
 .metrics-table thead {
   position: sticky;
   top: 0;
@@ -3030,7 +2974,7 @@ blockquote p {
   border-right: none;
 }
 
-/* -- 2b. TBODY ROWS � hover premium --------------------------*/
+/* -- 2b. TBODY ROWS ï¿½ hover premium --------------------------*/
 .metrics-table tbody tr {
   border-bottom: 1px solid var(--divider);
   transition: background 0.15s ease;
@@ -3045,7 +2989,7 @@ blockquote p {
   background: var(--hover);
 }
 
-/* -- 2c. TD � celdas con aire y jerarqu�a --------------------*/
+/* -- 2c. TD ï¿½ celdas con aire y jerarquï¿½a --------------------*/
 .metrics-table td {
   padding: 14px 16px !important;
   vertical-align: top;
@@ -3060,7 +3004,7 @@ blockquote p {
   border-right: none;
 }
 
-/* Primera columna � label fuerte */
+/* Primera columna ï¿½ label fuerte */
 .metrics-table td:first-child {
   font-weight: 600 !important;
   color: var(--text) !important;
@@ -3073,18 +3017,18 @@ blockquote p {
   background: var(--bg) !important;
 }
 
-/* Columna "Antes" � tono apagado */
+/* Columna "Antes" ï¿½ tono apagado */
 .metrics-table td:nth-child(2) {
   color: var(--text-muted) !important;
 }
 
-/* Columna "Despu�s" � m�s legible, indica mejora */
+/* Columna "Despuï¿½s" ï¿½ mï¿½s legible, indica mejora */
 .metrics-table td:last-child {
   color: var(--text) !important;
   font-weight: 400 !important;
 }
 
-/* -- 3. STEPPER � track de proceso tipo Jira/Linear ----------*/
+/* -- 3. STEPPER ï¿½ track de proceso tipo Jira/Linear ----------*/
 .star-stepper {
   display: flex;
   flex-direction: column;
@@ -3107,7 +3051,7 @@ blockquote p {
 
 /* Line connector */
 .stepper-item:not(:last-child)::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 11px;
   top: 52px;
@@ -3117,7 +3061,7 @@ blockquote p {
   z-index: 0;
 }
 
-/* Badge � dot preciso */
+/* Badge ï¿½ dot preciso */
 .stepper-badge {
   width: 24px;
   height: 24px;
@@ -3128,7 +3072,7 @@ blockquote p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 9px;
   letter-spacing: 0.05em;
@@ -3136,7 +3080,7 @@ blockquote p {
   margin-top: 2px;
   z-index: 1;
   position: relative;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stepper-item:hover .stepper-badge {
@@ -3153,7 +3097,7 @@ blockquote p {
 
 /* Stepper title */
 .stepper-title {
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   font-size: 9px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -3190,7 +3134,7 @@ blockquote p {
   background: transparent !important;
 }
 
-/* -- 4. DETAIL LABEL � secci�n header tipo Linear ------------*/
+/* -- 4. DETAIL LABEL ï¿½ secciï¿½n header tipo Linear ------------*/
 .detail-label {
   font-size: 9px !important;
   font-weight: 700 !important;
@@ -3203,7 +3147,7 @@ blockquote p {
   display: block;
 }
 
-/* -- 5. DETAIL SUBTITLE � h5 sub-secciones -------------------*/
+/* -- 5. DETAIL SUBTITLE ï¿½ h5 sub-secciones -------------------*/
 .detail-subtitle {
   font-size: 13px !important;
   font-weight: 600 !important;
@@ -3213,7 +3157,7 @@ blockquote p {
   letter-spacing: -0.01em !important;
 }
 
-/* -- 6. LISTA DE DETALLE � precisi�n editorial ---------------*/
+/* -- 6. LISTA DE DETALLE ï¿½ precisiï¿½n editorial ---------------*/
 .detail-list {
   list-style: none;
   padding: 0;
@@ -3230,7 +3174,7 @@ blockquote p {
 }
 
 .detail-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 9px;
@@ -3241,7 +3185,7 @@ blockquote p {
   opacity: 0.6;
 }
 
-/* -- 7. BLOCKQUOTE GLOBAL � editorial pull quote ------------*/
+/* -- 7. BLOCKQUOTE GLOBAL ï¿½ editorial pull quote ------------*/
 .detail-quote,
 .detail blockquote {
   border-left: 2px solid var(--text) !important;
@@ -3255,7 +3199,7 @@ blockquote p {
   border-radius: 0 !important;
 }
 
-/* -- 8. PROCESO VISUAL CARDS � panel data --------------------*/
+/* -- 8. PROCESO VISUAL CARDS ï¿½ panel data --------------------*/
 .case-process-visual {
   border: 1px solid var(--divider) !important;
   border-radius: 6px !important;
@@ -3265,18 +3209,21 @@ blockquote p {
   border-bottom: 1px solid var(--divider) !important;
 }
 
-/* -- 9. ROW HOVER PULSE � feedback tabla fila ----------------*/
+/* -- 9. ROW HOVER PULSE ï¿½ feedback tabla fila ----------------*/
 @keyframes rowFocus {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
 .metrics-table tbody tr.row-focused {
   background: var(--hover) !important;
   animation: rowFocus 0.15s ease;
 }
 
-/* -- 10. CONFIDENTIALITY NOTE � nota de pie elegante ---------*/
+/* -- 10. CONFIDENTIALITY NOTE ï¿½ nota de pie elegante ---------*/
 p[style*="border-left: 3px solid var(--accent)"] {
   font-size: 12px !important;
   opacity: 0.55 !important;
@@ -3302,7 +3249,7 @@ p[style*="border-left: 3px solid var(--accent)"] {
 
 /* Elegant custom indicator chevron */
 .metrics-table tbody tr td:first-child::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 14px;
   top: 50%;
@@ -3357,7 +3304,6 @@ p[style*="border-left: 3px solid var(--accent)"] {
     padding-bottom: 12px;
   }
 }
-
 .expanded-stat-box {
   border-right: 1px solid var(--divider);
   padding-right: 16px;
@@ -3373,7 +3319,7 @@ p[style*="border-left: 3px solid var(--accent)"] {
 }
 
 .expanded-stat-value {
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
   font-size: 15px !important;
   font-weight: 700 !important;
   color: var(--text);
@@ -3411,54 +3357,55 @@ p[style*="border-left: 3px solid var(--accent)"] {
 }
 
 /* ---------------------------------------------------------------
-   PASO 4 � REFINAMIENTO SENIOR / PRODUCT-TECH
+   PASO 4 ï¿½ REFINAMIENTO SENIOR / PRODUCT-TECH
    Final Polish & Absolute Visual Cohesion.
-   Alineaci�n geom�trica y suavizado de f�sicas.
+   Alineaciï¿½n geomï¿½trica y suavizado de fï¿½sicas.
    --------------------------------------------------------------- */
-
-/* -- 1. GLOBAL CURVA DE ACELERACI�N VERCEL/LINEAR --------------*/
+/* -- 1. GLOBAL CURVA DE ACELERACIï¿½N VERCEL/LINEAR --------------*/
 :root {
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* Aplicar la f�sica de transici�n premium a todos los elementos del sistema */
+/* Aplicar la fï¿½sica de transiciï¿½n premium a todos los elementos del sistema */
 a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
 .contact-icon-link, .read-more-arrow, .stepper-badge, .zoom-modal-close, .lang-toggle {
   transition-timing-function: var(--ease-out) !important;
 }
 
-/* -- 2. UNIFICACI�N DE BORDES Y RADIOS GEOM�TRICOS --------------*/
+/* -- 2. UNIFICACIï¿½N DE BORDES Y RADIOS GEOMï¿½TRICOS --------------*/
 .btn-primary, .lang-toggle, .read-more-btn {
-  border-radius: var(--radius-sm) !important; /* 3px � look t�cnico de herramienta */
+  border-radius: var(--radius-sm) !important; /* 3px ï¿½ look tï¿½cnico de herramienta */
 }
 
 .carousel-container, .carousel-item, .table-responsive, .case-process-visual, .metrics-table {
-  border-radius: var(--radius-md) !important; /* 6px � coherencia de caja */
+  border-radius: var(--radius-md) !important; /* 6px ï¿½ coherencia de caja */
 }
 
 /* Unificar los bordes de todo el sitio a 1px gris ultra tenuo */
-.divider, hr, .stepper-item, .work-item, .carousel-container, .table-responsive, 
+.divider, hr, .stepper-item, .work-item, .carousel-container, .table-responsive,
 .case-process-visual, .contact-icon-link, .metrics-table th, .metrics-table td, .metrics-table {
   border-color: var(--divider) !important;
 }
 
-/* -- 3. SOMBRAS F�SICAS DE M�LTIPLES CAPAS ---------------------*/
-/* Evitar sombras planas. Usar difusi�n multicapa. */
+/* -- 3. SOMBRAS Fï¿½SICAS DE Mï¿½LTIPLES CAPAS ---------------------*/
+/* Evitar sombras planas. Usar difusiï¿½n multicapa. */
 .fab {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.06) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.06) !important;
 }
+
 .fab-menu {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 16px 40px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 16px 40px rgba(0, 0, 0, 0.08) !important;
   border-radius: var(--radius-md) !important;
   border: 1px solid var(--divider) !important;
 }
+
 .zoom-modal img {
-  box-shadow: 0 24px 64px rgba(0,0,0,0.2) !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2) !important;
   border-radius: var(--radius-md) !important;
 }
 
-/* -- 4. EQUILIBRIO DE RITMOS Y SPACING (Alineaci�n vertical) ----*/
+/* -- 4. EQUILIBRIO DE RITMOS Y SPACING (Alineaciï¿½n vertical) ----*/
 .section {
   padding-top: var(--s-64) !important;
   padding-bottom: var(--s-64) !important;
@@ -3471,7 +3418,6 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
     padding-bottom: var(--s-48) !important;
   }
 }
-
 /* Spacing uniforme de textos en la lectura profunda */
 .detail p, .detail-list, .detail blockquote {
   margin-top: 0 !important;
@@ -3483,7 +3429,7 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
   margin-top: 4px !important;
 }
 
-/* -- 5. POLISH DE CABECERA MOBILE & NAVEGACI�N ------------------*/
+/* -- 5. POLISH DE CABECERA MOBILE & NAVEGACIï¿½N ------------------*/
 @media (max-width: 1023px) {
   .hero-header {
     padding-top: var(--s-32) !important;
@@ -3493,7 +3439,6 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
     letter-spacing: -0.04em !important;
   }
 }
-
 /* -- 6. DENSIDAD EN FOOTER -------------------------------------*/
 .footer {
   border-top: 1px solid var(--divider) !important;
@@ -3520,7 +3465,7 @@ a:hover {
   opacity: 0.7;
 }
 
-/* -- 8. CORRECCI�N EN TR�NSITO DE IM�GENES (No-jitter zoom) ---*/
+/* -- 8. CORRECCIï¿½N EN TRï¿½NSITO DE IMï¿½GENES (No-jitter zoom) ---*/
 .zoom-target {
   transition: transform 0.4s var(--ease-out), filter 0.4s var(--ease-out) !important;
   backface-visibility: hidden;
@@ -3531,7 +3476,7 @@ a:hover {
   transform: scale(1.015) !important;
 }
 
-/* -- 9. FAB BUTTON � micro feedback visual -------------------*/
+/* -- 9. FAB BUTTON ï¿½ micro feedback visual -------------------*/
 .fab {
   border-radius: 999px !important; /* Mantener circular */
   transition: transform 0.25s var(--ease-out), background 0.2s ease, box-shadow 0.2s ease !important;
@@ -3562,6 +3507,7 @@ a:hover {
   background: transparent !important;
   background-color: transparent !important;
 }
+
 /* Refinement for high-resolution contact brand favicons */
 .contact-favicon {
   width: 16px !important;
@@ -3582,7 +3528,6 @@ a:hover {
    PORTFOLIO PREMIUM DASHBOARD & PROJECT GRID LAYOUT
    Editorial, high-performance minimal data-viz system.
    ========================================================================== */
-
 /* 1. Responsiveness & Grid Structure */
 @media (min-width: 1024px) {
   .project-showcase-grid {
@@ -3592,13 +3537,11 @@ a:hover {
     align-items: start;
     margin: 32px 0;
   }
-  
   /* Reset margin on carousel when side-by-side */
   .project-showcase-grid .project-visuals {
     margin: 0 !important;
   }
 }
-
 @media (max-width: 1023px) {
   .project-showcase-grid {
     display: flex;
@@ -3607,7 +3550,6 @@ a:hover {
     margin: 24px 0;
   }
 }
-
 /* 2. Dashboard Panel Container */
 .project-dashboard {
   background: var(--surface);
@@ -3628,7 +3570,7 @@ a:hover {
 }
 
 .db-title {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -3685,7 +3627,7 @@ a:hover {
 
 /* 5. Typography inside Cards */
 .db-value {
-  font-family: 'Satoshi', sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--text);
@@ -3694,7 +3636,7 @@ a:hover {
 }
 
 .db-label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 600;
   color: var(--text);
@@ -3702,7 +3644,7 @@ a:hover {
 }
 
 .db-meta {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 9px;
   color: var(--text-muted);
   font-weight: 500;
@@ -3719,7 +3661,7 @@ a:hover {
 }
 
 .db-obj-header {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
@@ -3745,7 +3687,7 @@ a:hover {
 }
 
 .db-obj-text {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   line-height: 1.5;
   color: var(--text-secondary);
@@ -3812,4 +3754,69 @@ a:hover {
 
 .work-item.is-visible .ring-pct-8 {
   stroke-dashoffset: 115.55; /* 8% fill */
+}
+
+.case-study-page {
+  background: var(--bg);
+  color: var(--text);
+  padding-top: 60px;
+}
+
+.cs-header {
+  text-align: center;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-content {
+  max-width: 800px;
+  margin: 3rem auto;
+  line-height: 1.6;
+}
+
+.cs-content h1 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cs-content p {
+  margin-bottom: 1rem;
+}
+
+.cs-content ul {
+  padding-left: 20px;
+  margin-bottom: 1rem;
+}
+
+.cs-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.cs-figure img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.cs-quote {
+  font-style: italic;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  margin: 2rem 0;
+}
+
+.comparative {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.cs-footer {
+  text-align: center;
+  padding: 4rem 0;
 }
