@@ -1,23 +1,26 @@
 ﻿:root {
-  --bg: #ffffff;
-  --text: #0a0a0a;            /* Más negro que negro — Linear */
-  --text-secondary: #6b6b6b; /* Gris medio, no apagado */
-  --text-muted: #a0a0a0;
-  --text-tertiary: #c8c8c8;
-  --text-primary: #0a0a0a;
-  --divider: #e8e8e8;
-  --divider-strong: #d0d0d0;
-  --hover: #f5f5f5;
-  --surface: #fafafa;
-  --accent: #0a0a0a;
-  --bg-soft: #f7f7f7;
-  --border: #e8e8e8;
+  --bg: #0a0e27;
+  --text: #ffffff;
+  --text-secondary: #b8bcc8;
+  --text-muted: #8a8f99;
+  --text-tertiary: #6b7280;
+  --text-primary: #ffffff;
+  --divider: #252d45;
+  --divider-strong: #3a4560;
+  --hover: #242d45;
+  --surface: #141829;
+  --accent: #7c3aed;
+  --accent-cyan: #06b6d4;
+  --accent-blue: #3b82f6;
+  --bg-soft: #1a1f3a;
+  --border: #252d45;
 
-  --shadow: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-subtle: 0 1px 4px rgba(0,0,0,0.03);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.03);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow: 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-subtle: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.1);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.4), 0 8px 20px rgba(0,0,0,0.25);
+  --glow: 0 0 20px rgba(124, 58, 237, 0.3);
 
   --space-md: 24px;
   --space-lg: 48px;
@@ -50,11 +53,11 @@
   --text-max: 680px;
   --editorial-max: 580px;
 
-  --f-hero:    clamp(44px, 7.5vw, 68px);
-  --f-section: 38px;
-  --f-project: 26px;
-  --f-body:    17px;
-  --f-small:   12px;
+  --f-hero:    clamp(52px, 9vw, 92px);
+  --f-section: 48px;
+  --f-project: 32px;
+  --f-body:    18px;
+  --f-small:   13px;
 
   /* Easing curves — Vercel/Linear */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -112,7 +115,7 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(10, 14, 39, 0.85);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--divider);
@@ -586,7 +589,7 @@ button {
 @media (max-width: 1023px) {
   .nav {
     padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(10, 14, 39, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -3804,3 +3807,86 @@ a:hover {
 .work-item.is-visible .ring-pct-100 {
   stroke-dashoffset: 0; /* 100% fill */
 }
+
+/* =====================================================
+   DARK AESTHETIC REDESIGN — Editorial Cinematic
+   ===================================================== */
+
+.hero {
+  background: linear-gradient(135deg, rgba(10,14,39,1) 0%, rgba(20,24,41,0.8) 100%);
+  margin-bottom: var(--s-128);
+}
+
+.profile-name {
+  font-size: clamp(48px, 8vw, 80px);
+  background: linear-gradient(135deg, #ffffff 0%, #b8bcc8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description, .hero p {
+  line-height: 1.8;
+}
+
+.work-item {
+  border: 1px solid var(--divider);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-lg);
+  padding: 32px;
+}
+
+.carousel-item {
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.15);
+  border-radius: 12px;
+  border: 1px solid var(--divider-strong);
+}
+
+.project-dashboard {
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+#about, .section.about {
+  background: linear-gradient(135deg, rgba(20,24,41,1) 0%, rgba(30,34,55,0.9) 100%);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+footer {
+  background: #0a0e27;
+  border-top: 1px solid var(--divider);
+}
+
+/* Utility / effect classes */
+.glow-purple {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.25),
+              0 0 60px rgba(124, 58, 237, 0.1);
+}
+
+.glow-cyan { box-shadow: 0 0 30px rgba(6, 182, 212, 0.25); }
+
+.backdrop-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.fade-gradient {
+  background: linear-gradient(180deg, rgba(10,14,39,0) 0%, rgba(10,14,39,1) 50%);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* SVG percent rings (radius 20 → circumference ≈ 125.66) */
+.ring-pct-60 { stroke-dasharray: 75.4 125.66; }
+.ring-pct-8  { stroke-dasharray: 10.05 125.66; }

@@ -1488,6 +1488,105 @@
       </article>
     </section>
 
+    <section id="project-cef-section" class="section">
+      <article id="project-cef" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="work-summary">
+          <div class="work-header">
+            <h2 class="title"><span class="title-company">CEF · UDIMA</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p4-title-suffix">Payment Gateway & Digital Enrollment</span></h2>
+            <div class="impact-badge">
+              <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
+              <span class="impact-value" data-i18n="p4-impact-tag">Digital Onboarding Transformation</span>
+            </div>
+          </div>
+          <p class="professional-context">UX/UI Design · Frontend Development · Payment Integration · Trust Design</p>
+          <p class="subtitle" data-i18n="p4-subtitle">Diseño e implementación de pasarela de pago para educación online</p>
+
+          <div class="project-showcase-grid">
+            <div class="carousel-container project-visuals" id="carousel-cef">
+              <div class="carousel-track">
+                <div class="carousel-item media">
+                  <img src="pasarela-1.png" alt="Payment Gateway Desktop" class="zoom-target">
+                </div>
+                <div class="carousel-item media">
+                  <img src="pasarela-2.png" alt="Payment Gateway Mobile" class="zoom-target">
+                </div>
+                <div class="carousel-item media">
+                  <img src="pasarela-3.png" alt="Confirmation & Security" class="zoom-target">
+                </div>
+              </div>
+              <div class="carousel-actions">
+                <button class="carousel-btn prev" onclick="event.stopPropagation(); scrollCarousel('carousel-cef', -1)" aria-label="Ver anterior">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="carousel-btn next" onclick="event.stopPropagation(); scrollCarousel('carousel-cef', 1)" aria-label="Ver siguiente">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-dashboard">
+              <h3 class="db-title" data-i18n="db-p4-title">RESULTADOS CLAVE</h3>
+
+              <div class="db-metrics-row">
+                <div class="db-card">
+                  <div class="db-chart-container">
+                    <svg class="db-chart-svg" viewBox="0 0 54 54">
+                      <circle cx="27" cy="27" r="20" fill="none" stroke="var(--divider)" stroke-width="3" />
+                      <circle class="svg-dash-ring ring-pct-60" cx="27" cy="27" r="20" fill="none" stroke="var(--text)" stroke-width="3" stroke-linecap="round" transform="rotate(-90 27 27)" />
+                    </svg>
+                  </div>
+                  <div class="db-value">60%</div>
+                  <div class="db-label" data-i18n="db-p4-stat1-label">Matriculaciones Online</div>
+                  <div class="db-meta" data-i18n="db-p4-stat1-meta">vs 0% antes</div>
+                </div>
+
+                <div class="db-card">
+                  <div class="db-chart-container">
+                    <svg class="db-chart-svg" viewBox="0 0 54 54">
+                      <circle cx="27" cy="27" r="20" fill="none" stroke="var(--divider)" stroke-width="3" />
+                      <circle class="svg-dash-ring ring-pct-8" cx="27" cy="27" r="20" fill="none" stroke="var(--text)" stroke-width="3" stroke-linecap="round" transform="rotate(-90 27 27)" />
+                    </svg>
+                  </div>
+                  <div class="db-value">&lt;8%</div>
+                  <div class="db-label" data-i18n="db-p4-stat2-label">Tasa Abandono</div>
+                  <div class="db-meta" data-i18n="db-p4-stat2-meta">bajo benchmark 15%</div>
+                </div>
+              </div>
+
+              <p class="db-description" data-i18n="db-p4-description">
+                Digitalización completa del proceso de matriculación: de 15-30 min manuales a &lt;5 min automatizados. Reducción significativa de carga operativa en equipo comercial.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-details" style="display: none;">
+          <div class="details-wrapper">
+            <h3 data-i18n="p4-challenge-title">El reto</h3>
+            <p data-i18n="p4-challenge-desc">
+              CEF · UDIMA necesitaba digitalizar el proceso de matriculación para másteres y grados.
+              Diseñé y desarrollé una pasarela de pago responsive que transmitiera confianza y seguridad,
+              respetando la identidad de marca y cumpliendo con requisitos PCI DSS.
+            </p>
+
+            <h3 data-i18n="p4-approach-title">El proceso</h3>
+            <p data-i18n="p4-approach-desc">
+              Research de pasarelas educativas → Diseño en Figma (Desktop + Móvil) →
+              Validación con equipo marketing → Desarrollo HTML5/CSS3 + JavaScript →
+              Migración a componentes React → Integración con Redsys → Despliegue en Azure.
+            </p>
+
+            <p data-i18n="p4-approach-impact">
+              Resultado: 60% de matriculaciones online, menos de 8% abandono en checkout,
+              reducción de carga operativa, cero incidencias de seguridad.
+            </p>
+
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); scrollToId('contact')" class="see-case-btn" data-i18n="see-case-btn">Ver caso completo</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <section id="about" class="section about">
       <p class="eyebrow" data-i18n="about-eyebrow">Sobre mí</p>
 
