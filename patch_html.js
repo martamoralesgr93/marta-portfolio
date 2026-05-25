@@ -28,19 +28,41 @@ if(navProjectsList.length) {
 // Reorder the actual articles in section#work
 const workSection = $('#work');
 if (workSection.length) {
-  const p1 = $('#project-ilunion').detach();
-  const p2 = $('#project-offers').detach();
-  const p3 = $('#project-academic').detach();
+  const p1 = $.html('#project-ilunion');
+  const p2 = $.html('#project-offers');
+  const p3 = $.html('#project-academic');
+  
+  $('#project-ilunion').remove();
+  $('#project-offers').remove();
+  $('#project-academic').remove();
 
-  // Update headers if needed
-  p1.find('.title-project').text('CRO Optimization');
-  p2.find('.title-project').text('Offer Component Redesign');
-  p3.find('.title-project').text('UX/UI Foundations');
-
-  // Append in new order
   workSection.append(p1);
   workSection.append(p2);
   workSection.append(p3);
+}
+
+// Ensure the titles are correct
+$('#project-ilunion .title-project').text('CRO Optimization');
+$('#project-offers .title-project').text('Offer Component Redesign');
+$('#project-academic .title-project').text('UX/UI Foundations');
+
+// Also update the carousel images for 'project-offers' since it didn't have one before
+const carouselOffers = $('#carousel-offers');
+if (!carouselOffers.length) {
+  // Try to find where to put the carousel in project-offers
+  const summaryOffers = $('#project-offers .work-summary');
+  const pSummaryOffers = summaryOffers.find('p[data-i18n="p3-summary"]');
+  if (pSummaryOffers.length) {
+    pSummaryOffers.before(`
+      <div class="carousel-container project-visuals" id="carousel-offers">
+        <div class="carousel-track">
+          <div class="carousel-item media">
+            <img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-desk.webp" alt="Offer Component Desk" class="zoom-target">
+          </div>
+        </div>
+      </div>
+    `);
+  }
 }
 
 fs.writeFileSync(htmlPath, $.html());

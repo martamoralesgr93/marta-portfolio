@@ -50,15 +50,15 @@
           <img src="logo.png" class="avatar" alt="Marta Morales">
         </div>
         <div class="hero-text">
-          <p class="hero-eyebrow" data-i18n="hero-eyebrow">PRODUCT DESIGN · UX STRATEGY · GROWTH</p>
+          <p class="hero-eyebrow" data-i18n="hero-eyebrow">PRODUCT DESIGNER · UX STRATEGIST</p>
           <h1 class="profile-name" data-i18n="profile-name">Marta Morales</h1>
           <h2 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">Product Designer · UX/UI &amp; CRO | Figma · A/B Testing · Microsoft Clarity | eCommerce · Turismo · Producto Digital</h2>
           
           <div class="hero-description">
-            <p data-i18n="hero-description-1">Formo parte del equipo de Negocio Digital en ILUNION Hotels, optimizando el canal directo mediante diseño estratégico, CRO y decisiones basadas en datos.</p>
-            <p data-i18n="hero-description-2">Mi trabajo conecta la experiencia de usuario con objetivos reales de negocio: conversión, revenue y captación.</p>
-            <p data-i18n="hero-description-3">Diseño soluciones que no solo son visuales, sino que resuelven problemas operativos y de rentabilidad en entornos de alta complejidad.</p>
-          </div>
+  <p data-i18n="hero-description-1">Product Designer orientada a UX estratégico, CRO, customer journey y negocio digital.</p>
+  <p data-i18n="hero-description-2">Conecto la experiencia de usuario con objetivos reales de negocio: conversión, retención y eficiencia operativa.</p>
+  <p data-i18n="hero-description-3">Diseño ecosistemas escalables basados en análisis de datos, systems thinking y experimentación constante.</p>
+</div>
 
           <div class="side-nav">
             <div class="nav-projects-container">
@@ -72,10 +72,10 @@
                 <span data-i18n="nav-work">Proyectos</span>
               </button>
               <ul class="nav-projects-list" id="navProjectsList">
-                <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">Booking Engine &amp; Funnel UX</a></li>
-                <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-academic')" class="nav-project-link">EdTech Management Platform</a></li>
-                <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-offers')" class="nav-project-link">Growth Strategy &amp; Conversion</a></li>
-              </ul>
+    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-ilunion')" class="nav-project-link">ILUNION — CRO Optimization</a></li>
+    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-offers')" class="nav-project-link">ILUNION — Offer Component</a></li>
+    <li><a href="javascript:void(0)" onclick="openAndScrollProject('project-academic')" class="nav-project-link">CEF — UX/UI Foundations</a></li>
+  </ul>
             </div>
             
             <div class="nav-projects-container">
@@ -96,10 +96,15 @@
       <section id="work" class="section">
         <p class="eyebrow" data-i18n="work-eyebrow">Proyectos seleccionados</p>
         
-        <article id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+        
+
+      
+
+      
+    <article id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
           <div class="work-summary">
             <div class="work-header">
-              <h2 class="title"><span class="title-company">ILUNION Hotels</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p1-title-suffix">Booking Engine &amp; Funnel UX</span></h2>
+              <h2 class="title"><span class="title-company">ILUNION Hotels</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p1-title-suffix">CRO Optimization</span></h2>
               <div class="impact-badge">
                 <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
                 <span class="impact-value" data-i18n="p1-impact-tag">Optimización del Funnel</span>
@@ -278,12 +283,152 @@
 
         </section>
       </article></div>
-      </article>
-
-      <article id="project-academic" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+      </article><article id="project-offers" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
         <div class="work-summary">
           <div class="work-header">
-            <h2 class="title"><span class="title-company">CEF</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p2-title-suffix">EdTech Management Platform</span></h2>
+            <h2 class="title"><span class="title-company">ILUNION Hotels</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p3-title-suffix">Offer Component Redesign</span></h2>
+            <div class="impact-badge">
+              <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
+              <span class="impact-value" data-i18n="p3-impact-tag">+13% Conversión Directa</span>
+            </div>
+          </div>
+          <p class="professional-context">Product Design · CRO · UX Strategy · Ecommerce hotelero · AEM</p>
+          <p class="subtitle" data-i18n="p3-subtitle">Optimización del flujo de captación en mobile</p>
+
+          <div class="carousel-container project-visuals" id="carousel-offers">
+            <div class="carousel-track">
+              <div class="carousel-item media">
+                <img src="offers-1.png" alt="Bloque captación desktop" class="zoom-target">
+              </div>
+              <div class="carousel-item media">
+                <img src="offers-2.png" alt="Bloque captación mobile" class="zoom-target">
+              </div>
+            </div>
+            <div class="carousel-actions">
+              <button class="carousel-btn prev" onclick="event.stopPropagation(); scrollCarousel('carousel-offers', -1)" aria-label="Ver anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="carousel-btn next" onclick="event.stopPropagation(); scrollCarousel('carousel-offers', 1)" aria-label="Ver siguiente">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+
+          <p data-i18n="p3-summary">Optimización del flujo de captación mobile para maximizar el registro de socios y el valor del canal directo.</p>
+          <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
+        </div>
+
+        <div class="detail" style="display: none;"><article class="cs-content" style="padding-top: 1rem;">
+        <section class="cs-section" id="01-context">
+          <h1>Context</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="02-problem">
+          <h1>02 Problema detectado</h1>
+<p>El componente de ofertas original presentaba graves problemas de jerarquía visual y usabilidad que impactaban negativamente en el Customer Journey y en la conversión final. Las métricas indicaban una alta tasa de abandono en este paso del embudo.</p>
+<h3>Auditoría Visual y Heurística</h3>
+<p>Identificamos los siguientes problemas críticos:</p>
+<ol>
+<li><strong>Sobrecarga cognitiva:</strong> Demasiada información condensada sin un orden claro de lectura.</li>
+<li><strong>Jerarquía confusa:</strong> El precio y el CTA principal no destacaban lo suficiente frente a elementos secundarios.</li>
+<li><strong>Mala adaptación responsive:</strong> El componente simplemente se apilaba en mobile, creando un scroll interminable (scroll fatigue).</li>
+</ol>
+<div class="comparative">
+  <div class="col">
+    <p><strong>Auditoría — Fricciones UX (1)</strong></p>
+    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/02-problem/images/auditoria-compo-ilunion-1.webp" alt="Auditoría 1"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Auditoría — Fricciones UX (2)</strong></p>
+    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/02-problem/images/auditoria-compo-ilunion-2.webp" alt="Auditoría 2"></figure>
+  </div>
+</div>
+
+<div class="metrics-grid">
+  <div class="metric">
+    <span class="metric-value">Alto</span>
+    <span class="metric-label">Abandono en funnel</span>
+  </div>
+  <div class="metric">
+    <span class="metric-value">Bajo</span>
+    <span class="metric-label">Engagement con ofertas</span>
+  </div>
+  <div class="metric">
+    <span class="metric-value">Crítico</span>
+    <span class="metric-label">Scroll fatigue (Mobile)</span>
+  </div>
+</div>
+
+        </section>
+      
+
+        <section class="cs-section" id="03-research">
+          <h1>Research</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="04-hypothesis">
+          <h1>Hypothesis</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="05-design">
+          <h1>05 Diseño (UI / UX Strategy)</h1>
+<p>El rediseño del componente de ofertas se basó en los principios del Systems Thinking. El objetivo era crear un componente modular, altamente escalable y que redujera drásticamente la fricción cognitiva.</p>
+<h3>Proceso: Wireframing y Arquitectura de Información</h3>
+<p>Antes de pasar a UI de alta fidelidad, estructuramos la jerarquía del componente mediante wireframes, priorizando el precio, el título de la oferta y el call to action (CTA).</p>
+<div class="comparative">
+  <div class="col">
+    <p><strong>Wireframe Desktop</strong></p>
+    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/wire-home-desk.webp" alt="Wireframe Desktop"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Wireframe Mobile</strong></p>
+    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/wire-home-mobile.webp" alt="Wireframe Mobile"></figure>
+  </div>
+</div>
+
+<h3>Resultado Final: UI Premium y Responsive</h3>
+<p>El diseño final establece un nuevo estándar visual (clean layout, sombras sutiles, microinteracciones) y resuelve el problema del scroll en mobile mediante el uso estratégico del espacio horizontal y tarjetas compactas.</p>
+<div class="comparative">
+  <div class="col">
+    <p><strong>Diseño Final Desktop</strong></p>
+    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-desk.webp" alt="Diseño Desktop"></figure>
+  </div>
+  <div class="col">
+    <p><strong>Diseño Final Mobile</strong></p>
+    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-mobile.webp" alt="Diseño Mobile"></figure>
+  </div>
+</div>
+
+        </section>
+      
+
+        <section class="cs-section" id="06-responsive">
+          <h1>Responsive</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="07-results">
+          <h1>Results</h1>
+
+        </section>
+      
+
+        <section class="cs-section" id="08-business-impact">
+          <h1>Business-impact</h1>
+
+        </section>
+      </article></div>
+      </article><article id="project-academic" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="work-summary">
+          <div class="work-header">
+            <h2 class="title"><span class="title-company">CEF</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p2-title-suffix">UX/UI Foundations</span></h2>
             <div class="impact-badge">
               <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
               <span class="impact-value" data-i18n="p2-impact-tag">Eficiencia Operativa</span>
@@ -723,152 +868,7 @@
 
           </div>
         </div>
-      </article>
-
-      <article id="project-offers" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
-        <div class="work-summary">
-          <div class="work-header">
-            <h2 class="title"><span class="title-company">ILUNION Hotels</span> <span class="title-separator">—</span> <span class="title-project" data-i18n="p3-title-suffix">Growth Strategy &amp; Conversion</span></h2>
-            <div class="impact-badge">
-              <span class="impact-label" data-i18n="label-impact-badge">IMPACTO</span>
-              <span class="impact-value" data-i18n="p3-impact-tag">+13% Conversión Directa</span>
-            </div>
-          </div>
-          <p class="professional-context">Product Design · CRO · UX Strategy · Ecommerce hotelero · AEM</p>
-          <p class="subtitle" data-i18n="p3-subtitle">Optimización del flujo de captación en mobile</p>
-
-          <div class="carousel-container project-visuals" id="carousel-offers">
-            <div class="carousel-track">
-              <div class="carousel-item media">
-                <img src="offers-1.png" alt="Bloque captación desktop" class="zoom-target">
-              </div>
-              <div class="carousel-item media">
-                <img src="offers-2.png" alt="Bloque captación mobile" class="zoom-target">
-              </div>
-            </div>
-            <div class="carousel-actions">
-              <button class="carousel-btn prev" onclick="event.stopPropagation(); scrollCarousel('carousel-offers', -1)" aria-label="Ver anterior">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-              </button>
-              <button class="carousel-btn next" onclick="event.stopPropagation(); scrollCarousel('carousel-offers', 1)" aria-label="Ver siguiente">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-            </div>
-          </div>
-
-          <p data-i18n="p3-summary">Optimización del flujo de captación mobile para maximizar el registro de socios y el valor del canal directo.</p>
-          <div class="read-more-btn" data-i18n="label-read-more">Ver proyecto</div>
-        </div>
-
-        <div class="detail" style="display: none;"><article class="cs-content" style="padding-top: 1rem;">
-        <section class="cs-section" id="01-context">
-          <h1>Context</h1>
-
-        </section>
-      
-
-        <section class="cs-section" id="02-problem">
-          <h1>02 Problema detectado</h1>
-<p>El componente de ofertas original presentaba graves problemas de jerarquía visual y usabilidad que impactaban negativamente en el Customer Journey y en la conversión final. Las métricas indicaban una alta tasa de abandono en este paso del embudo.</p>
-<h3>Auditoría Visual y Heurística</h3>
-<p>Identificamos los siguientes problemas críticos:</p>
-<ol>
-<li><strong>Sobrecarga cognitiva:</strong> Demasiada información condensada sin un orden claro de lectura.</li>
-<li><strong>Jerarquía confusa:</strong> El precio y el CTA principal no destacaban lo suficiente frente a elementos secundarios.</li>
-<li><strong>Mala adaptación responsive:</strong> El componente simplemente se apilaba en mobile, creando un scroll interminable (scroll fatigue).</li>
-</ol>
-<div class="comparative">
-  <div class="col">
-    <p><strong>Auditoría — Fricciones UX (1)</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/02-problem/images/auditoria-compo-ilunion-1.webp" alt="Auditoría 1"></figure>
-  </div>
-  <div class="col">
-    <p><strong>Auditoría — Fricciones UX (2)</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/02-problem/images/auditoria-compo-ilunion-2.webp" alt="Auditoría 2"></figure>
-  </div>
-</div>
-
-<div class="metrics-grid">
-  <div class="metric">
-    <span class="metric-value">Alto</span>
-    <span class="metric-label">Abandono en funnel</span>
-  </div>
-  <div class="metric">
-    <span class="metric-value">Bajo</span>
-    <span class="metric-label">Engagement con ofertas</span>
-  </div>
-  <div class="metric">
-    <span class="metric-value">Crítico</span>
-    <span class="metric-label">Scroll fatigue (Mobile)</span>
-  </div>
-</div>
-
-        </section>
-      
-
-        <section class="cs-section" id="03-research">
-          <h1>Research</h1>
-
-        </section>
-      
-
-        <section class="cs-section" id="04-hypothesis">
-          <h1>Hypothesis</h1>
-
-        </section>
-      
-
-        <section class="cs-section" id="05-design">
-          <h1>05 Diseño (UI / UX Strategy)</h1>
-<p>El rediseño del componente de ofertas se basó en los principios del Systems Thinking. El objetivo era crear un componente modular, altamente escalable y que redujera drásticamente la fricción cognitiva.</p>
-<h3>Proceso: Wireframing y Arquitectura de Información</h3>
-<p>Antes de pasar a UI de alta fidelidad, estructuramos la jerarquía del componente mediante wireframes, priorizando el precio, el título de la oferta y el call to action (CTA).</p>
-<div class="comparative">
-  <div class="col">
-    <p><strong>Wireframe Desktop</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/wire-home-desk.webp" alt="Wireframe Desktop"></figure>
-  </div>
-  <div class="col">
-    <p><strong>Wireframe Mobile</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/wire-home-mobile.webp" alt="Wireframe Mobile"></figure>
-  </div>
-</div>
-
-<h3>Resultado Final: UI Premium y Responsive</h3>
-<p>El diseño final establece un nuevo estándar visual (clean layout, sombras sutiles, microinteracciones) y resuelve el problema del scroll en mobile mediante el uso estratégico del espacio horizontal y tarjetas compactas.</p>
-<div class="comparative">
-  <div class="col">
-    <p><strong>Diseño Final Desktop</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-desk.webp" alt="Diseño Desktop"></figure>
-  </div>
-  <div class="col">
-    <p><strong>Diseño Final Mobile</strong></p>
-    <figure class="cs-figure"><img src="projects/ilunion/offer-component-redesign/05-design/images/Compo-mobile.webp" alt="Diseño Mobile"></figure>
-  </div>
-</div>
-
-        </section>
-      
-
-        <section class="cs-section" id="06-responsive">
-          <h1>Responsive</h1>
-
-        </section>
-      
-
-        <section class="cs-section" id="07-results">
-          <h1>Results</h1>
-
-        </section>
-      
-
-        <section class="cs-section" id="08-business-impact">
-          <h1>Business-impact</h1>
-
-        </section>
-      </article></div>
-      </article>
-    </section>
+      </article></section>
 
     <section id="about" class="section about">
       <p class="eyebrow" data-i18n="about-eyebrow">Sobre mí</p>
