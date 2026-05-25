@@ -1,26 +1,23 @@
 ﻿:root {
-  --bg: #0a0e27;
-  --text: #ffffff;
-  --text-secondary: #b8bcc8;
-  --text-muted: #8a8f99;
-  --text-tertiary: #6b7280;
-  --text-primary: #ffffff;
-  --divider: #252d45;
-  --divider-strong: #3a4560;
-  --hover: #242d45;
-  --surface: #141829;
-  --accent: #7c3aed;
-  --accent-cyan: #06b6d4;
-  --accent-blue: #3b82f6;
-  --bg-soft: #1a1f3a;
-  --border: #252d45;
+  --bg: #ffffff;
+  --text: #0a0a0a;            /* Más negro que negro — Linear */
+  --text-secondary: #6b6b6b; /* Gris medio, no apagado */
+  --text-muted: #a0a0a0;
+  --text-tertiary: #c8c8c8;
+  --text-primary: #0a0a0a;
+  --divider: #e8e8e8;
+  --divider-strong: #d0d0d0;
+  --hover: #f5f5f5;
+  --surface: #fafafa;
+  --accent: #0a0a0a;
+  --bg-soft: #f7f7f7;
+  --border: #e8e8e8;
 
-  --shadow: 0 2px 4px rgba(0,0,0,0.3);
-  --shadow-subtle: 0 1px 2px rgba(0,0,0,0.2);
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.1);
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.4), 0 8px 20px rgba(0,0,0,0.25);
-  --glow: 0 0 20px rgba(124, 58, 237, 0.3);
+  --shadow: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-subtle: 0 1px 4px rgba(0,0,0,0.03);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.03);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.04);
 
   --space-md: 24px;
   --space-lg: 48px;
@@ -53,11 +50,11 @@
   --text-max: 680px;
   --editorial-max: 580px;
 
-  --f-hero:    clamp(52px, 9vw, 92px);
-  --f-section: 48px;
-  --f-project: 32px;
-  --f-body:    18px;
-  --f-small:   13px;
+  --f-hero:    clamp(44px, 7.5vw, 68px);
+  --f-section: 38px;
+  --f-project: 26px;
+  --f-body:    17px;
+  --f-small:   12px;
 
   /* Easing curves — Vercel/Linear */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -115,7 +112,7 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(10, 14, 39, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--divider);
@@ -184,23 +181,16 @@ button {
   gap: var(--s-24);
   align-items: flex-start;
   margin-top: var(--s-64);
-  margin-bottom: var(--s-128);
-  background: linear-gradient(135deg, rgba(10, 14, 39, 1) 0%, rgba(20, 24, 41, 0.8) 100%);
-  padding: var(--s-32);
-  border-radius: var(--radius-lg);
+  margin-bottom: var(--s-80);
 }
 
 .profile-name {
-  font-size: clamp(48px, 8vw, 80px);
+  font-size: clamp(40px, 6vw, 60px);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.02;
   color: var(--text);
   margin-bottom: var(--s-8);
-  background: linear-gradient(135deg, #ffffff 0%, #b8bcc8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .hero-tagline {
@@ -365,21 +355,19 @@ button {
 }
 
 .work-item {
-  background: var(--surface);
-  border: 1px solid var(--divider);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border-top: 1px solid var(--divider);
+  padding: 32px 0;
   scroll-margin-top: 80px;
   cursor: pointer;
-  transition: all 0.3s var(--ease-out);
+  transition: background 0.2s var(--ease-out);
+}
+
+.work-item:last-of-type {
+  border-bottom: 1px solid var(--divider);
 }
 
 .work-item:hover {
-  box-shadow: 0 25px 70px rgba(0,0,0,0.5),
-              0 0 40px rgba(124,58,237,0.2);
+  background: transparent;
 }
 
 .work-item.active {
@@ -598,7 +586,7 @@ button {
 @media (max-width: 1023px) {
   .nav {
     padding: 12px 16px;
-    background: rgba(10, 14, 39, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -873,17 +861,14 @@ button {
   flex: 0 0 100%;
   scroll-snap-align: center;
   width: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--divider-strong);
-  box-shadow: 0 0 40px rgba(124,58,237,0.15);
-  overflow: hidden;
-  transition: all 0.3s var(--ease-out);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .carousel-track img:hover,
 .carousel-item:hover {
   transform: scale(1.01);
-  box-shadow: 0 0 60px rgba(124,58,237,0.25);
 }
 
 .carousel-actions {
@@ -3625,15 +3610,14 @@ a:hover {
 
 /* 2. Dashboard Panel Container */
 .project-dashboard {
-  background: rgba(124, 58, 237, 0.05);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  border-radius: var(--radius-lg);
-  padding: var(--s-32);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  padding: 20px 24px 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
   user-select: none;
 }
@@ -3821,52 +3805,11 @@ a:hover {
   stroke-dashoffset: 0; /* 100% fill */
 }
 
-/* ══════════════════════════════════════════════════════════════════ */
-/* NUEVOS ESTILOS PARA AESTHETIC OSCURO + EDITORIAL                  */
-/* ══════════════════════════════════════════════════════════════════ */
-
-/* Hero description tuning */
-.hero-description {
-  font-size: 19px;
-  line-height: 1.8;
-  color: var(--text-secondary);
+/* CEF project ring offsets */
+.work-item.is-visible .ring-pct-60 {
+  stroke-dashoffset: 50.24; /* 60% fill */
 }
 
-.hero-description p {
-  margin-bottom: var(--s-16);
-}
-
-/* Glow effect */
-.glow-purple {
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.25),
-              0 0 60px rgba(124, 58, 237, 0.1);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 30px rgba(6, 182, 212, 0.25);
-}
-
-/* Backdrop blur */
-.backdrop-blur {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* Hover lift effect */
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* SVG dash rings para métricas (radius 20 → circumference ≈ 125.66) */
-.ring-pct-60 {
-  stroke-dasharray: 75.4 125.66;
-}
-
-.ring-pct-18 {
-  stroke-dasharray: 22.62 125.66;
-}
-
-.ring-pct-8 {
-  stroke-dasharray: 10.05 125.66;
+.work-item.is-visible .ring-pct-8 {
+  stroke-dashoffset: 115.55; /* 8% fill */
 }
