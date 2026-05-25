@@ -1,5 +1,5 @@
 @charset "UTF-8";
-ï»¿:root {
+:root {
   --bg: #ffffff;
   --text: #0a0a0a; /* MÃ¡s negro que negro â Linear */
   --text-secondary: #6b6b6b; /* Gris medio, no apagado */
@@ -3819,4 +3819,12 @@ a:hover {
 .cs-footer {
   text-align: center;
   padding: 4rem 0;
+}
+
+.cs-content blockquote {
+  font-style: italic;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  margin: 2rem 0;
 }

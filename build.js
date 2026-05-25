@@ -21,6 +21,10 @@ const renderer = new marked.Renderer();
 renderer.image = function (href, title, text) {
   if (href === null) return text;
   let cleanHref = href;
+  if (typeof href === 'object') {
+     cleanHref = href.href;
+     text = href.text;
+  }
   if (!cleanHref.startsWith('http') && !cleanHref.startsWith('/')) {
     cleanHref = cleanHref.replace(/\\/g, '/');
   }
@@ -32,9 +36,7 @@ renderer.image = function (href, title, text) {
   `;
 };
 
-renderer.blockquote = function (quote) {
-  return `<blockquote class="cs-quote">\n${quote}</blockquote>\n`;
-};
+// Removed custom blockquote to fix [object Object] bug with marked v5+
 
 marked.setOptions({ renderer });
 
@@ -85,7 +87,6 @@ for (const pFolder of projectFolders) {
         if (src.startsWith('./') || !src.startsWith('/')) {
            newSrc = src.replace('./', `${f}/`);
         }
-        // Force outputting HTML directly to bypass marked limitations inside divs
         return `<figure class="cs-figure"><img src="${newSrc}" alt="${alt}"></figure>`;
       });
 
