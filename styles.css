@@ -184,16 +184,23 @@ button {
   gap: var(--s-24);
   align-items: flex-start;
   margin-top: var(--s-64);
-  margin-bottom: var(--s-80);
+  margin-bottom: var(--s-128);
+  background: linear-gradient(135deg, rgba(10, 14, 39, 1) 0%, rgba(20, 24, 41, 0.8) 100%);
+  padding: var(--s-32);
+  border-radius: var(--radius-lg);
 }
 
 .profile-name {
-  font-size: clamp(40px, 6vw, 60px);
+  font-size: clamp(48px, 8vw, 80px);
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.02;
   color: var(--text);
   margin-bottom: var(--s-8);
+  background: linear-gradient(135deg, #ffffff 0%, #b8bcc8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-tagline {
@@ -358,19 +365,21 @@ button {
 }
 
 .work-item {
-  border-top: 1px solid var(--divider);
-  padding: 32px 0;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   scroll-margin-top: 80px;
   cursor: pointer;
-  transition: background 0.2s var(--ease-out);
-}
-
-.work-item:last-of-type {
-  border-bottom: 1px solid var(--divider);
+  transition: all 0.3s var(--ease-out);
 }
 
 .work-item:hover {
-  background: transparent;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5),
+              0 0 40px rgba(124,58,237,0.2);
 }
 
 .work-item.active {
@@ -864,14 +873,17 @@ button {
   flex: 0 0 100%;
   scroll-snap-align: center;
   width: 100%;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 12px;
+  border: 1px solid var(--divider-strong);
+  box-shadow: 0 0 40px rgba(124,58,237,0.15);
+  overflow: hidden;
+  transition: all 0.3s var(--ease-out);
 }
 
 .carousel-track img:hover,
 .carousel-item:hover {
   transform: scale(1.01);
+  box-shadow: 0 0 60px rgba(124,58,237,0.25);
 }
 
 .carousel-actions {
@@ -3613,14 +3625,15 @@ a:hover {
 
 /* 2. Dashboard Panel Container */
 .project-dashboard {
-  background: var(--surface);
-  border: 1px solid var(--divider);
-  border-radius: 8px;
-  padding: 20px 24px 24px;
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--s-32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
   user-select: none;
 }
@@ -3808,85 +3821,52 @@ a:hover {
   stroke-dashoffset: 0; /* 100% fill */
 }
 
-/* =====================================================
-   DARK AESTHETIC REDESIGN — Editorial Cinematic
-   ===================================================== */
+/* ══════════════════════════════════════════════════════════════════ */
+/* NUEVOS ESTILOS PARA AESTHETIC OSCURO + EDITORIAL                  */
+/* ══════════════════════════════════════════════════════════════════ */
 
-.hero {
-  background: linear-gradient(135deg, rgba(10,14,39,1) 0%, rgba(20,24,41,0.8) 100%);
-  margin-bottom: var(--s-128);
-}
-
-.profile-name {
-  font-size: clamp(48px, 8vw, 80px);
-  background: linear-gradient(135deg, #ffffff 0%, #b8bcc8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-description, .hero p {
+/* Hero description tuning */
+.hero-description {
+  font-size: 19px;
   line-height: 1.8;
-}
-
-.work-item {
-  border: 1px solid var(--divider);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-lg);
-  padding: 32px;
-}
-
-.carousel-item {
-  box-shadow: 0 0 40px rgba(124, 58, 237, 0.15);
-  border-radius: 12px;
-  border: 1px solid var(--divider-strong);
-}
-
-.project-dashboard {
-  background: rgba(124, 58, 237, 0.05);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-}
-
-.eyebrow {
-  font-size: 14px;
-  letter-spacing: 0.05em;
   color: var(--text-secondary);
 }
 
-#about, .section.about {
-  background: linear-gradient(135deg, rgba(20,24,41,1) 0%, rgba(30,34,55,0.9) 100%);
-  padding-top: 80px;
-  padding-bottom: 80px;
+.hero-description p {
+  margin-bottom: var(--s-16);
 }
 
-footer {
-  background: #0a0e27;
-  border-top: 1px solid var(--divider);
-}
-
-/* Utility / effect classes */
+/* Glow effect */
 .glow-purple {
   box-shadow: 0 0 30px rgba(124, 58, 237, 0.25),
               0 0 60px rgba(124, 58, 237, 0.1);
 }
 
-.glow-cyan { box-shadow: 0 0 30px rgba(6, 182, 212, 0.25); }
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.25);
+}
 
+/* Backdrop blur */
 .backdrop-blur {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-.fade-gradient {
-  background: linear-gradient(180deg, rgba(10,14,39,0) 0%, rgba(10,14,39,1) 50%);
-}
-
+/* Hover lift effect */
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
 
-/* SVG percent rings (radius 20 → circumference ≈ 125.66) */
-.ring-pct-60 { stroke-dasharray: 75.4 125.66; }
-.ring-pct-8  { stroke-dasharray: 10.05 125.66; }
+/* SVG dash rings para métricas (radius 20 → circumference ≈ 125.66) */
+.ring-pct-60 {
+  stroke-dasharray: 75.4 125.66;
+}
+
+.ring-pct-18 {
+  stroke-dasharray: 22.62 125.66;
+}
+
+.ring-pct-8 {
+  stroke-dasharray: 10.05 125.66;
+}
