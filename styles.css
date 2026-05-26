@@ -226,10 +226,6 @@ button {
   display: block;
 }
 
-.sidebar-status {
-  display: none !important;
-}
-
 .hero-text {
   padding-top: 0;
 }
@@ -1461,7 +1457,7 @@ body.menu-open .container-shift {
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    padding: var(--s-80) var(--s-48) var(--s-64) var(--s-64); /* Premium asymmetric layout */
+    padding: var(--s-80) var(--s-32) var(--s-64) var(--s-56); /* Enhanced width allocation */
     border-right: 1px solid var(--divider);
     background: var(--bg);
     overflow-y: auto;
@@ -1472,8 +1468,9 @@ body.menu-open .container-shift {
     gap: var(--s-24); /* Breathe between blocks */
   }
   .avatar-frame {
-    width: 270px; /* Highly prominent and grand logo */
-    height: 80px; /* Elegant proportional height for a signature */
+    width: 100%;
+    max-width: 320px; /* Highly prominent and grand logo */
+    height: 96px; /* Expanded proportional height for a gorgeous signature */
     margin-bottom: var(--s-24); /* Breathe between brand logo and content */
     border-radius: 0 !important;
     display: flex !important;
@@ -1481,6 +1478,16 @@ body.menu-open .container-shift {
     justify-content: flex-start !important;
     border: none !important;
     box-shadow: none !important;
+    background: transparent !important;
+    cursor: pointer;
+    /* Premium Motion: Subtle fade-in reveal and continuous breathing float */
+    animation: logoReveal 1.2s var(--ease-out) forwards, logoFloat 6s ease-in-out infinite 1.2s;
+    transition: transform 0.5s var(--ease-out), filter 0.4s var(--ease-out);
+  }
+  .avatar-frame:hover {
+    transform: translateY(-3px) scale(1.03) !important;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
+    animation-play-state: paused; /* Stop floating on hover for precise control */
   }
   .avatar {
     width: 100%;
@@ -1488,23 +1495,6 @@ body.menu-open .container-shift {
     object-fit: contain !important;
     object-position: left center;
     border-radius: 0 !important;
-  }
-  /* Live status pill in the desktop sidebar */
-  .sidebar-status {
-    display: flex !important;
-    margin-top: -12px; /* Tighter layout relative to logo */
-    margin-bottom: var(--s-16);
-    background: var(--bg-soft) !important;
-    border: 1px solid var(--border) !important;
-    padding: 6px 14px !important;
-    border-radius: 100px !important;
-    font-size: 11px !important;
-    font-weight: 500 !important;
-    color: var(--text-secondary) !important;
-    align-items: center !important;
-    gap: 8px !important;
-    width: fit-content !important;
-    box-shadow: none !important;
   }
   .profile-name {
     font-size: 28px; /* Highly refined premium scale */
@@ -1707,12 +1697,10 @@ body.menu-open .container-shift {
   }
   /* In-sidebar Navigation */
   .side-nav {
-    margin-top: var(--s-32);
-    padding-top: var(--s-24);
-    border-top: 1px solid var(--divider);
+    margin-top: 24px; /* Reduced margin */
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px; /* Tighter navigation */
   }
   .nav-projects-container {
     display: flex;
@@ -4828,4 +4816,26 @@ a:hover {
 #carousel-ilunion,
 #carousel-offers {
   display: none !important;
+}
+
+/* ==========================================================================
+   PREMIUM MOTION SIGNATURE LOGO KEYFRAMES
+   ========================================================================== */
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
