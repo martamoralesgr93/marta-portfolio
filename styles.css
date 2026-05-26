@@ -1899,26 +1899,231 @@ img.zoom-target {
   display: block;
 }
 
+.nav-project-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 1px;
+  background: var(--divider);
+}
+
+.side-nav a, .nav-main-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 13px; /* Slightly smaller for elegance */
+  transition: all 0.3s ease;
+  padding-left: 0;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.side-nav a:hover,
+.side-nav a.active,
+.nav-main-link:hover,
+.nav-main-link.active {
+  color: #000;
+  padding-left: 16px;
+  font-weight: 700;
+}
+
+.side-nav a:hover::before,
+.side-nav a.active::before,
+.nav-main-link:hover::before,
+.nav-main-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 12px;
+  background: #000;
+  border-radius: 4px;
+  animation: sideNavEnter 0.2s ease-out;
+}
+
+.side-nav a:hover::before,
+.side-nav a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 12px;
+  background: #000;
+  border-radius: 4px;
+  animation: sideNavEnter 0.2s ease-out;
+}
+
+@keyframes sideNavEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+#contact {
+  margin-top: 140px;
+  padding-bottom: 120px;
+  max-width: var(--content-max);
+}
+
+.contact-title {
+  font-size: 32px;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.contact-text {
+  font-size: 18px;
+}
+
+/* --- ZOOM MODAL INTERACTION --- */
+img.zoom-target {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  img.zoom-target:hover {
+    transform: translateY(-4px);
+  }
+}
+.zoom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.zoom-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.zoom-modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.zoom-modal.active .zoom-modal-img {
+  transform: scale(1);
+}
+
+.zoom-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 10000;
+  line-height: 1;
+  padding: 8px;
+}
+
+/* === UX FIX HOVER + UNDERLINE (FINE) === */
+/* 1. Hover SOLO si NO estÃ¡ activo */
+@media (hover: hover) {
+  .work-item:not(.active):hover {
+    background: var(--hover);
+  }
+  .work-item:not(.active):hover .title {
+    text-decoration: none;
+  }
+  .work-item:not(.active):hover .title-project {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+    text-decoration-thickness: 1.5px !important;
+    text-decoration-color: var(--text) !important;
+  }
+}
+/* 2. En mobile (tap feedback visual ligero) */
+.work-item:not(.active):active {
+  background: var(--hover);
+}
+
+.work-item:not(.active):active .title-project {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px !important;
+}
+
+/* 3. Estado activo â†’ limpio (sin gris ni subrayado) */
+.work-item.active {
+  background: transparent !important;
+}
+
+.work-item.active .title {
+  text-decoration: none;
+}
+
+/* Blur effect for sensible data */
+.blurred {
+  filter: blur(4px);
+  /* slight scale to hide blurred edges */
+  transform: scale(1.03);
+  display: block;
+}
+
 .zoom-modal-img.blurred {
   filter: blur(6px);
 }
 
 /* Read more button */
 .read-more-btn {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text);
-  margin-top: 16px;
+  font-family: "Satoshi", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--text-primary);
+  margin-top: 24px;
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  border: 1px solid var(--divider);
-  border-radius: 999px;
-  background-color: var(--hover);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.2s ease;
-  pointer-events: none; /* Let the parent click handler catch it */
+  justify-content: center;
+  padding: 10px 22px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.read-more-btn::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: 600;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Primary style for special CTAs like CV download */
@@ -1945,6 +2150,13 @@ img.zoom-target {
 }
 
 .work-item:hover .read-more-btn {
+  background-color: #2a2a2a;
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.work-item:hover .read-more-btn::after {
   transform: translateX(4px);
 }
 
@@ -2105,7 +2317,7 @@ img.zoom-target {
   }
 }
 /* ============================================
-   VISUAL POLISH â Scroll animations & refinements
+   VISUAL POLISH â€” Scroll animations & refinements
    ============================================ */
 /* --- Scroll-driven entrance animations --- */
 .reveal {
@@ -2186,7 +2398,7 @@ blockquote p {
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* --- Tag hover â fill on hover --- */
+/* --- Tag hover â€” fill on hover --- */
 .tag {
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
@@ -2232,7 +2444,7 @@ blockquote p {
   .work-item:not(.active):hover {
     background: transparent !important;
   }
-  /* Sidebar profile name â remove duplicate, already set above */
+  /* Sidebar profile name â€” remove duplicate, already set above */
 }
 /* --- Stronger image hover lift --- */
 .project-block.center img:hover {
@@ -2419,7 +2631,7 @@ blockquote p {
 }
 
 /* =============================================================
-   LINEAR LUXURY SYSTEM â Process Visuals & Tables
+   LINEAR LUXURY SYSTEM â€” Process Visuals & Tables
    Override de inline styles para coherencia editorial total.
    Monocroma. Sin color. LÃ­neas. JerarquÃ­a tipogrÃ¡fica.
    ============================================================= */
@@ -2443,7 +2655,7 @@ blockquote p {
   font-family: "Inter", sans-serif !important;
 }
 
-/* 3. Process Timeline â eliminar pills coloreadas, pasar a texto lineal */
+/* 3. Process Timeline â€” eliminar pills coloreadas, pasar a texto lineal */
 .case-process-visual div[style*="display: flex"][style*="align-items: center"] {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -2471,7 +2683,7 @@ blockquote p {
   font-size: 10px !important;
 }
 
-/* 4. Cards de Antes / DespuÃ©s â monochrome, sin radios, solo lÃ­neas */
+/* 4. Cards de Antes / DespuÃ©s â€” monochrome, sin radios, solo lÃ­neas */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div {
   border-radius: 0 !important;
   background: transparent !important;
@@ -2501,7 +2713,7 @@ blockquote p {
   margin-bottom: 1rem !important;
 }
 
-/* 5. Items dentro de las cards â eliminar colores de fondo y emojis visuales */
+/* 5. Items dentro de las cards â€” eliminar colores de fondo y emojis visuales */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div {
   background: transparent !important;
   border: none !important;
@@ -2522,13 +2734,13 @@ blockquote p {
   display: none !important;
 }
 
-/* 7. Texto del item â span visible */
+/* 7. Texto del item â€” span visible */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div div > div > span:last-child {
   color: var(--text-secondary) !important;
   font-size: 12px !important;
 }
 
-/* 8. Nota al pie (â , â) dentro de cards */
+/* 8. Nota al pie (âš , âœ…) dentro de cards */
 .case-process-visual div[style*="grid-template-columns: 1fr 1fr"] > div > div > div[style*="font-size: 0.7rem"] {
   background: transparent !important;
   border: none !important;
@@ -2588,7 +2800,7 @@ blockquote p {
   font-style: italic !important;
 }
 
-/* 11. Metrics Table â ultra-minimal ruled lines */
+/* 11. Metrics Table â€” ultra-minimal ruled lines */
 .metrics-table {
   width: 100%;
   border-collapse: collapse;
@@ -2676,34 +2888,6 @@ blockquote p {
   }
 }
 /* -- 2. READ-MORE BUTTON --------------------------------------*/
-.read-more-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.06em !important;
-  text-transform: uppercase !important;
-  color: var(--text) !important;
-  padding: 0 !important;
-  margin-top: 20px !important;
-  cursor: pointer !important;
-  border: none !important;
-  background: none !important;
-}
-
-.read-more-arrow {
-  display: inline-block;
-  opacity: 0.35;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-  flex-shrink: 0;
-}
-
-.work-item:not(.active):hover .read-more-arrow {
-  transform: translateX(5px);
-  opacity: 0.9;
-}
-
 /* -- 3. CAROUSEL BUTTONS --------------------------------------*/
 .carousel-btn {
   width: 32px !important;
