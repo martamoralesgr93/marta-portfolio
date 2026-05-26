@@ -4630,14 +4630,14 @@ a:hover {
 /* Uniform Case Study Card Layout System for Projects */
 .work-summary {
   width: 100%;
-  max-width: 800px !important; /* Uniform strict width for all cards */
-  margin: 0 auto 48px auto !important; /* Fixed vertical spacing */
+  max-width: var(--content-max) !important; /* Uniform strict width for all cards, back to premium wide container */
+  margin: 0 auto 56px auto !important; /* Fixed vertical spacing between cards */
   padding: 40px !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important; /* Flat sequential alignment */
+  align-items: stretch !important; /* Stretches to fill container */
   text-align: left !important;
-  gap: 20px !important; /* Consistent vertical spacing inside cards */
+  gap: 20px !important; /* Consistent vertical spacing inside cards on mobile */
   /* High-Contrast Frosted Glass Base */
   background: rgba(255, 255, 255, 0.84) !important; /* Highly solid white to guarantee pristine legibility */
   backdrop-filter: blur(24px) saturate(180%) !important;
@@ -4679,7 +4679,13 @@ a:hover {
 @media (min-width: 1024px) {
   .work-summary {
     padding: 48px !important;
-    gap: 24px !important;
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    grid-template-rows: auto auto auto auto !important;
+    grid-template-areas: "eyebrow visual" "heading visual" "kpi visual" "cta visual" !important;
+    column-gap: 48px !important;
+    row-gap: 16px !important;
+    align-items: center !important;
   }
 }
 
@@ -4722,6 +4728,23 @@ a:hover {
   font-weight: 700 !important;
   color: #1a1a1a !important; /* Solid high-contrast text color */
   margin: 0 0 4px 0 !important;
+  grid-area: eyebrow;
+}
+
+.project-heading-block {
+  grid-area: heading;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.project-heading-block .title {
+  margin: 0 !important;
+}
+.project-heading-block .subtitle {
+  margin: 0 !important;
+}
+.project-heading-block .project-summary-text {
+  margin: 0 !important;
 }
 
 .project-impact-kpi {
@@ -4730,6 +4753,12 @@ a:hover {
   gap: 16px;
   width: 100%;
   margin-top: 8px;
+  grid-area: kpi;
+}
+@media (min-width: 1024px) {
+  .project-impact-kpi {
+    margin-top: 0 !important;
+  }
 }
 
 .project-cta-wrapper {
@@ -4737,6 +4766,12 @@ a:hover {
   display: flex;
   justify-content: flex-start;
   margin-top: 12px;
+  grid-area: cta;
+}
+@media (min-width: 1024px) {
+  .project-cta-wrapper {
+    margin-top: 0 !important;
+  }
 }
 
 /* Internal Card Components */
@@ -4842,6 +4877,12 @@ a:hover {
   overflow: hidden;
   margin: 12px 0 16px 0;
   box-sizing: border-box;
+  grid-area: visual;
+}
+@media (min-width: 1024px) {
+  .project-card-visual {
+    margin: 0 !important;
+  }
 }
 
 .project-card-img {
