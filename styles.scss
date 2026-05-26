@@ -1,9 +1,9 @@
 :root {
   --bg: #ffffff;
   --text: #0a0a0a;            /* MÃ¡s negro que negro â Linear */
-  --text-secondary: #6b6b6b; /* Gris medio, no apagado */
-  --text-muted: #a0a0a0;
-  --text-tertiary: #c8c8c8;
+  --text-secondary: #1a1a1a; /* Solid high-readability grey */
+  --text-muted: #555555; /* Dark high-contrast label color */
+  --text-tertiary: #888888; /* High-contrast supporting color */
   --text-primary: #0a0a0a;
   --divider: #e8e8e8;
   --divider-strong: #d0d0d0;
@@ -2212,24 +2212,24 @@ img.zoom-target {
 /* Read more button */
 .read-more-btn {
   font-family: 'Satoshi', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: #ffffff;
-  background-color: var(--text-primary);
-  margin-top: 24px;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important; /* White text strictly on dark surface */
+  background-color: #0a0a0a !important; /* Solid high-contrast background */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 22px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  text-transform: none;
-  letter-spacing: -0.01em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  height: 48px !important; /* Consistent height */
+  padding: 0 32px !important; /* Wide horizontal padding */
+  border: 1px solid #0a0a0a !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
   transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   pointer-events: none;
 }
 
@@ -2265,10 +2265,10 @@ img.zoom-target {
 }
 
 .work-item:hover .read-more-btn {
-  background-color: #2a2a2a;
-  border-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-  transform: translateY(-2px);
+  background-color: #222222 !important;
+  border-color: #222222 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-2px) !important;
 }
 
 .work-item:hover .read-more-btn::after {
@@ -4683,33 +4683,34 @@ a:hover {
 
 /* -- 11. ESTILOS PROYECTO – BENTO LAYOUT Y IMÁGENES -- */
 
-/* Bento Card Layout System for Projects */
+/* Uniform Case Study Card Layout System for Projects */
 .work-summary {
   width: 100%;
-  max-width: var(--content-max);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--s-32);
+  max-width: 800px !important; /* Uniform strict width for all cards */
+  margin: 0 auto 48px auto !important; /* Fixed vertical spacing */
+  padding: 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* Flat sequential alignment */
+  text-align: left !important;
+  gap: 20px !important; /* Consistent vertical spacing inside cards */
   
-  /* Aurora Glassmorphism UI - Frosted Glass Base */
-  background: rgba(255, 255, 255, 0.48) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.45) !important;
-  border-radius: 20px;
-  padding: var(--s-24);
+  /* High-Contrast Frosted Glass Base */
+  background: rgba(255, 255, 255, 0.84) !important; /* Highly solid white to guarantee pristine legibility */
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 24px !important;
   
   /* Multi-layered soft shadow */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
   
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.4s ease;
   overflow: hidden;
   box-sizing: border-box;
-  text-align: left;
-  margin: 0 auto;
   position: relative; /* Essential for pseudo aurora blobs */
 
   /* Internal Ambient Glow blobs inside the card */
@@ -4718,8 +4719,8 @@ a:hover {
     position: absolute;
     top: -150px;
     right: -150px;
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
     z-index: -1;
     pointer-events: none;
@@ -4731,8 +4732,8 @@ a:hover {
     position: absolute;
     bottom: -150px;
     left: -150px;
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
     z-index: -1;
     pointer-events: none;
@@ -4740,9 +4741,8 @@ a:hover {
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: 1.15fr 0.85fr;
-    padding: var(--s-48);
-    gap: var(--s-48);
+    padding: 48px !important;
+    gap: 24px !important;
   }
 }
 
@@ -4790,6 +4790,32 @@ a:hover {
       transform: none;
     }
   }
+}
+
+
+/* Standardized internal visual hierarchy elements */
+.project-eyebrow {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important; /* Solid high-contrast text color */
+  margin: 0 0 4px 0 !important;
+}
+
+.project-impact-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.project-cta-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
 }
 
 /* Internal Card Components */
@@ -4853,24 +4879,35 @@ a:hover {
   flex-direction: column;
   gap: 4px;
   text-align: left;
+  background: rgba(0, 0, 0, 0.03); /* Translucent solid container base */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
 
   .metric-pill-label {
     font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--text-muted);
+    color: #555555; /* High contrast label color */
   }
 
   .metric-pill-value {
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 600;
-    color: var(--text-secondary);
+    color: #111111; /* Solid black value */
   }
 
   &.highlighted {
+    background: #0a0a0a !important; /* Solid high-contrast active container */
+    border-color: #0a0a0a !important;
+    
+    .metric-pill-label {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
     .metric-pill-value {
-      color: var(--text-primary);
+      color: #ffffff !important; /* White text strictly on dark surface */
       font-weight: 700;
     }
   }
@@ -4881,24 +4918,20 @@ a:hover {
   align-items: center;
   justify-content: center;
   width: 100%;
+  aspect-ratio: 16 / 10; /* Fixed widescreen aspect-ratio for product preview consistency */
+  border-radius: 12px;
+  border: 1px solid var(--divider);
+  background: var(--bg-soft);
+  overflow: hidden;
+  margin: 12px 0 16px 0;
+  box-sizing: border-box;
 }
 
 .project-card-img {
   width: 100%;
-  max-width: 420px;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  background-color: var(--bg-soft);
-  padding: var(--s-24);
-  box-sizing: border-box;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
-  @media (min-width: 1024px) {
-    padding: var(--s-32);
-  }
+  height: 100%;
+  object-fit: cover; /* Structured cover visual fit for premium dashboard look */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Gallery and detail styles (retained for detailed case study sections) */
@@ -5000,11 +5033,9 @@ a:hover {
 .video-bg-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.4) 0%, transparent 60%),
-              radial-gradient(circle at 90% 90%, rgba(255,255,255,0.45) 0%, transparent 60%),
-              linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.92) 100%);
-  backdrop-filter: blur(12px); /* Turns sharp video details into a fluid aurora mesh */
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 10, 0.45); /* Fixed dark translucent layer to stabilize contrast */
+  backdrop-filter: blur(16px); /* Strong frosted blur to completely soften background shapes */
+  -webkit-backdrop-filter: blur(16px);
   z-index: -1;
 }
 
