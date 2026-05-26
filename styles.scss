@@ -1481,22 +1481,22 @@ body.menu-open .container-shift {
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    padding: var(--s-80) var(--s-32) var(--s-64) var(--s-56); /* Enhanced width allocation */
+    padding: 56px 52px;
     border-right: 1px solid var(--divider);
     background: var(--bg);
     overflow-y: auto;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Start from top for clean alignment */
-    gap: var(--s-24); /* Breathe between blocks */
+    justify-content: center;
+    gap: 12px;
   }
 
   .avatar-frame {
     width: 100%;
-    max-width: 320px; /* Highly prominent and grand logo */
-    height: 96px; /* Expanded proportional height for a gorgeous signature */
-    margin-bottom: var(--s-24); /* Breathe between brand logo and content */
+    max-width: 300px; /* Highly prominent and grand logo designed to fit original padding */
+    height: 90px; /* Proportional signature height */
+    margin-bottom: 20px; /* Reverted to original margin-bottom */
     border-radius: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -1526,43 +1526,42 @@ body.menu-open .container-shift {
   }
 
   .profile-name {
-    font-size: 28px; /* Highly refined premium scale */
-    line-height: 1.1;
-    margin-bottom: 16px;
-    font-weight: 750;
-    letter-spacing: -0.03em;
-    color: var(--text-primary);
+    font-size: clamp(24px, 2vw, 30px);
+    line-height: 1.05;
+    margin-bottom: 4px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
   }
 
   .hero-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    font-weight: 700;
-    color: var(--text-secondary);
-    margin-bottom: 6px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 4px;
     text-transform: uppercase;
-    opacity: 0.85; /* Slightly more visible for a high-end designer label */
+    opacity: 0.5;
   }
 
   .hero-description {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Generous vertical breathing room */
-    max-width: 100%; /* Spans full content area of the sidebar */
+    gap: 8px;
+    max-width: 30ch;
   }
 
   .hero-description p {
-    font-size: 13.5px;
-    line-height: 1.7;
+    font-size: 13px;
+    line-height: 1.65;
     color: var(--text-secondary);
     margin: 0;
   }
 
   .hero-description p:first-of-type {
-    font-size: 15px; /* Standout introduction lead-in */
+    font-size: 14px;
     color: var(--text);
     font-weight: 500;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   /* Main Scrollable Area */
@@ -2274,7 +2273,7 @@ img.zoom-target {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 24px 48px;
+    padding: 32px 24px 48px;
     margin: 0;
     box-sizing: border-box;
   }
