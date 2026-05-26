@@ -257,43 +257,6 @@ button {
   margin-top: 0;
 }
 
-/* Enhanced CTAs */
-.read-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  margin-top: var(--space-md);
-  cursor: pointer;
-  transition: all 0.2s;
-  padding: 8px 0;
-}
-
-.read-more-btn:after {
-  content: "â";
-  transition: transform 0.2s;
-}
-
-.read-more-btn:hover {
-  color: var(--text-secondary);
-}
-
-.read-more-btn:hover:after {
-  transform: translateX(4px);
-}
-
-.read-more-btn:hover {
-  background: var(--hover);
-  border-color: #d0d0d0;
-  transform: translateY(-1px);
-}
-
-.read-more-btn:active {
-  transform: scale(0.96);
-}
-
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -2139,27 +2102,34 @@ img.zoom-target {
   filter: blur(6px);
 }
 
-/* Read more button */
+/* Read more button — Built on Liquid Glass Material System */
 .read-more-btn {
   font-family: "Satoshi", sans-serif;
   font-size: 13.5px !important;
   font-weight: 700 !important;
   color: #ffffff !important; /* White text strictly on dark surface */
-  background: linear-gradient(135deg, #121212 0%, #050505 100%) !important; /* Obsidian black gloss gradient */
+  /* Inner stabilized plate: high contrast, 95% obsidian gradient + blur creates the refraction glass look */
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(5, 5, 5, 0.98) 100%) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 48px !important; /* Consistent height */
+  margin-top: var(--space-md) !important; /* Proper vertical spacing */
   padding: 0 32px !important; /* Wide horizontal padding */
-  border: 1px solid rgba(255, 255, 255, 0.12) !important; /* Elegant hairline glass border */
+  border: 1px solid rgba(255, 255, 255, 0.12) !important; /* Elegant hairline glass border (micro-border) */
   border-radius: 12px !important; /* Liquid glass pebble look */
   text-transform: none !important;
   letter-spacing: normal !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(255, 255, 255, 0.05), inset 0 10px 18px rgba(255, 255, 255, 0.06) !important;
-  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   pointer-events: none;
   position: relative;
   overflow: hidden;
+  /* Material stack box shadow (Default state)
+     Includes top highlight band and left highlight band reflecting light coming from top-left.
+     Uses quiet drop shadows to provide depth. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 1px 0 0 rgba(255, 255, 255, 0.08), inset 0 -1px 0 rgba(255, 255, 255, 0.05), inset 0 10px 18px rgba(255, 255, 255, 0.06) !important;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   /* Gloss sheen swipe overlay */
 }
 .read-more-btn::before {
@@ -2204,10 +2174,12 @@ img.zoom-target {
   display: none;
 }
 
+/* Interactive state deltas unifications as specified by the Liquid Glass playbook */
+/* Hover state: Higher edge sparkle, deeper shadow, translate up, swipe sheen overlay */
 .work-item:hover .read-more-btn {
-  background: linear-gradient(135deg, #222222 0%, #151515 100%) !important;
-  border-color: rgba(255, 255, 255, 0.22) !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -1px 0 rgba(255, 255, 255, 0.05), inset 0 10px 18px rgba(255, 255, 255, 0.1) !important;
+  background: linear-gradient(135deg, rgba(34, 34, 34, 0.95) 0%, rgba(21, 21, 21, 0.97) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), 0 3px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 1px 0 0 rgba(255, 255, 255, 0.12), inset 0 -1px 0 rgba(255, 255, 255, 0.05), inset 0 10px 18px rgba(255, 255, 255, 0.1) !important;
   transform: translateY(-3px) !important;
 }
 .work-item:hover .read-more-btn::before {
@@ -2217,6 +2189,52 @@ img.zoom-target {
 
 .work-item:hover .read-more-btn::after {
   transform: translateX(4px);
+}
+
+/* Pressed (Active) state: physical compression, compressed shadow, shifted highlights */
+.work-item:active .read-more-btn {
+  background: linear-gradient(135deg, rgba(14, 14, 14, 0.96) 0%, rgba(3, 3, 3, 0.98) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.6), inset 0 3px 6px rgba(0, 0, 0, 0.4) !important; /* Pressed inner depth shadow */
+  transform: translateY(1px) scale(0.98) !important; /* Physical compression downwards */
+  transition: all 0.08s cubic-bezier(0.16, 1, 0.3, 1) !important; /* Fast tactile response */
+}
+
+.work-item:active .read-more-btn::after {
+  transform: translateX(1px) scale(0.9) !important;
+}
+
+/* Focused state: crisp double-layer ring sitting above the stack */
+.work-item:focus-visible {
+  outline: none !important;
+}
+
+.work-item:focus-visible .read-more-btn {
+  outline: none !important;
+  /* Dual-layer focus ring: 2px background spacer + 2px high contrast dark ring */
+  box-shadow: 0 0 0 2px var(--bg, #ffffff), 0 0 0 4px #121212, inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Disabled state: loses edge sparkle, border highlights, and contrast */
+.read-more-btn.disabled,
+.read-more-btn[disabled] {
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.read-more-btn.disabled::before,
+.read-more-btn[disabled]::before {
+  display: none !important;
+}
+.read-more-btn.disabled::after,
+.read-more-btn[disabled]::after {
+  opacity: 0.4 !important;
 }
 
 /* Modern Mobile Adjustments */
@@ -3678,9 +3696,9 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
   transition-timing-function: var(--ease-out) !important;
 }
 
-/* -- 2. UNIFICACIï¿½N DE BORDES Y RADIOS GEOMï¿½TRICOS --------------*/
-.btn-primary, .lang-toggle, .read-more-btn {
-  border-radius: var(--radius-sm) !important; /* 3px ï¿½ look tï¿½cnico de herramienta */
+/* -- 2. UNIFICACIÓ DE BORDES Y RADIOS GEOMÉTRICOS --------------*/
+.btn-primary, .lang-toggle {
+  border-radius: var(--radius-sm) !important; /* 3px — look técnico de herramienta */
 }
 
 .carousel-container, .carousel-item, .table-responsive, .case-process-visual, .metrics-table {
