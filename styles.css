@@ -226,6 +226,10 @@ button {
   display: block;
 }
 
+.sidebar-status {
+  display: none !important;
+}
+
 .hero-text {
   padding-top: 0;
 }
@@ -1468,9 +1472,9 @@ body.menu-open .container-shift {
     gap: var(--s-24); /* Breathe between blocks */
   }
   .avatar-frame {
-    width: 140px;
-    height: 60px; /* Rectangular landscape format for a premium signature logo */
-    margin-bottom: var(--s-16);
+    width: 270px; /* Highly prominent and grand logo */
+    height: 80px; /* Elegant proportional height for a signature */
+    margin-bottom: var(--s-24); /* Breathe between brand logo and content */
     border-radius: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -1485,40 +1489,57 @@ body.menu-open .container-shift {
     object-position: left center;
     border-radius: 0 !important;
   }
+  /* Live status pill in the desktop sidebar */
+  .sidebar-status {
+    display: flex !important;
+    margin-top: -12px; /* Tighter layout relative to logo */
+    margin-bottom: var(--s-16);
+    background: var(--bg-soft) !important;
+    border: 1px solid var(--border) !important;
+    padding: 6px 14px !important;
+    border-radius: 100px !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: var(--text-secondary) !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: fit-content !important;
+    box-shadow: none !important;
+  }
   .profile-name {
-    font-size: 34px;
-    line-height: 1.05;
-    margin-bottom: 8px;
-    font-weight: 800;
-    letter-spacing: -0.04em;
+    font-size: 28px; /* Highly refined premium scale */
+    line-height: 1.1;
+    margin-bottom: 16px;
+    font-weight: 750;
+    letter-spacing: -0.03em;
     color: var(--text-primary);
   }
   .hero-eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 4px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
     text-transform: uppercase;
-    opacity: 0.5;
+    opacity: 0.85; /* Slightly more visible for a high-end designer label */
   }
   .hero-description {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    max-width: 30ch;
+    gap: 12px; /* Generous vertical breathing room */
+    max-width: 100%; /* Spans full content area of the sidebar */
   }
   .hero-description p {
-    font-size: 13px;
-    line-height: 1.65;
+    font-size: 13.5px;
+    line-height: 1.7;
     color: var(--text-secondary);
     margin: 0;
   }
   .hero-description p:first-of-type {
-    font-size: 14px;
+    font-size: 15px; /* Standout introduction lead-in */
     color: var(--text);
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.45;
   }
   /* Main Scrollable Area */
   .section:not(.hero) {
@@ -1686,10 +1707,12 @@ body.menu-open .container-shift {
   }
   /* In-sidebar Navigation */
   .side-nav {
-    margin-top: 24px; /* Reduced margin */
+    margin-top: var(--s-32);
+    padding-top: var(--s-24);
+    border-top: 1px solid var(--divider);
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Tighter navigation */
+    gap: 12px;
   }
   .nav-projects-container {
     display: flex;
