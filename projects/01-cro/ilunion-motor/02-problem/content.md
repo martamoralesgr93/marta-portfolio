@@ -11,7 +11,7 @@ La solución debía:
 El problema principal no era visual. La experiencia estaba construida desde una lógica más corporativa e inspiracional, mientras que gran parte del tráfico llegaba con una intención claramente transaccional. Existía una desalineación entre el modelo mental del negocio y el comportamiento real del usuario.
 
 ### Antes del rediseño
-<div class="comparative">
+<div class="comparative desk-mob">
   <div class="col">
     <p><strong>Desktop</strong></p>
     ![Antes Desktop](./images/antes-desk-motor.webp)

@@ -6,7 +6,7 @@ El rediseño del componente de ofertas se basó en los principios del Systems Th
 
 Antes de pasar a UI de alta fidelidad, estructuramos la jerarquía del componente mediante wireframes, priorizando el precio, el título de la oferta y el call to action (CTA).
 
-<div class="comparative">
+<div class="comparative desk-mob">
   <div class="col">
     <p><strong>Wireframe Desktop</strong></p>
     ![Wireframe Desktop](./images/wire-home-desk.webp)
@@ -21,7 +21,7 @@ Antes de pasar a UI de alta fidelidad, estructuramos la jerarquía del component
 
 El diseño final establece un nuevo estándar visual (clean layout, sombras sutiles, microinteracciones) y resuelve el problema del scroll en mobile mediante el uso estratégico del espacio horizontal y tarjetas compactas.
 
-<div class="comparative">
+<div class="comparative desk-mob">
   <div class="col">
     <p><strong>Diseño Final Desktop</strong></p>
     ![Diseño Desktop](./images/Compo-desk.webp)
