@@ -1457,27 +1457,41 @@ body.menu-open .container-shift {
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    padding: 56px 52px;
+    padding: var(--s-80) var(--s-48) var(--s-64) var(--s-64); /* Premium asymmetric layout */
     border-right: 1px solid var(--divider);
     background: var(--bg);
     overflow-y: auto;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 12px;
+    justify-content: flex-start; /* Start from top for clean alignment */
+    gap: var(--s-24); /* Breathe between blocks */
   }
   .avatar-frame {
-    width: 68px;
-    height: 68px;
-    margin-bottom: 20px;
+    width: 140px;
+    height: 60px; /* Rectangular landscape format for a premium signature logo */
+    margin-bottom: var(--s-16);
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: left center;
+    border-radius: 0 !important;
   }
   .profile-name {
-    font-size: clamp(24px, 2vw, 30px);
+    font-size: 34px;
     line-height: 1.05;
-    margin-bottom: 4px;
-    font-weight: 700;
+    margin-bottom: 8px;
+    font-weight: 800;
     letter-spacing: -0.04em;
+    color: var(--text-primary);
   }
   .hero-eyebrow {
     font-size: 9px;
@@ -2175,14 +2189,27 @@ img.zoom-target {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 32px 24px 48px; /* Reduced top margin to raise content */
+    padding: 40px 24px 48px;
     margin: 0;
     box-sizing: border-box;
   }
   .avatar-frame {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 8px; /* Tighter gap to text */
+    width: 150px;
+    height: 60px;
+    margin-bottom: 16px;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center center;
+    border-radius: 0 !important;
   }
   .hero-eyebrow {
     font-size: 9px;
