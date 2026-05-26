@@ -3792,18 +3792,39 @@ a, button, input, select, textarea, .work-item, .carousel-btn, img, svg,
 
 /* -- 6. DENSIDAD EN FOOTER -------------------------------------*/
 .footer {
-  border-top: 1px solid var(--divider) !important;
-  background: var(--bg) !important; /* Mantener blanco puro para look monocromo */
-  padding: var(--s-48) 0 !important;
+  margin-left: 360px !important; /* Offset by desktop sidebar width */
+  background: transparent !important; /* Fully integrated transparent background */
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important; /* Translucent hairline border */
+  padding: 48px 0 !important;
+  box-sizing: border-box;
+
+  @media (max-width: 1023px) {
+    margin-left: 0 !important;
+    padding: 40px 24px !important;
+  }
+}
+
+.footer .container {
+  max-width: var(--content-max) !important;
+  margin: 0 auto !important;
+  padding: 0 48px !important;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 0 !important;
+  }
 }
 
 .footer .disclaimer {
-  color: var(--text-muted) !important;
-  font-size: 11px !important;
-  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.55) !important; /* Premium translucent light text for dark background contrast */
+  font-size: 11.5px !important;
+  line-height: 1.65 !important;
   max-width: 72ch;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Satoshi', sans-serif;
+  letter-spacing: 0.015em;
+  opacity: 0.85;
 }
 
 /* -- 7. DETALLE PREMIUM DE ENLACES (Email, Web) ---------------*/
