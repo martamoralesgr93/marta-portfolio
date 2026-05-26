@@ -67,7 +67,7 @@ html {
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   margin: 0;
-  background: var(--bg);
+  background: transparent; /* Transparent base to reveal moving aurora background */
   color: var(--text);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -493,8 +493,20 @@ button {
 
 .detail {
   display: none;
-  padding-top: 24px;
+  margin-top: 24px;
+  padding: var(--s-24) !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
   max-width: var(--content-max);
+}
+@media (min-width: 1024px) {
+  .detail {
+    padding: var(--s-48) !important;
+  }
 }
 
 .detail-block {
@@ -1450,16 +1462,21 @@ body.menu-open .container-shift {
     padding: 0;
     margin: 0;
   }
-  /* Sticky Sidebar */
+  /* Floating Glassmorphism Sticky Sidebar */
   .hero {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--sidebar-width);
-    height: 100vh;
-    padding: 56px 52px;
-    border-right: 1px solid var(--divider);
-    background: var(--bg);
+    top: 24px;
+    left: 24px;
+    bottom: 24px;
+    height: calc(100vh - 48px);
+    width: calc(var(--sidebar-width) - 48px);
+    padding: 48px var(--s-32);
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(24px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
     overflow-y: auto;
     z-index: 10;
     display: flex;
@@ -4617,16 +4634,46 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--s-32);
-  background: var(--bg);
-  border: 1px solid var(--border);
+  /* Aurora Glassmorphism UI - Frosted Glass Base */
+  background: rgba(255, 255, 255, 0.48) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
   border-radius: 20px;
   padding: var(--s-24);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  /* Multi-layered soft shadow */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
   overflow: hidden;
   box-sizing: border-box;
   text-align: left;
   margin: 0 auto;
+  position: relative; /* Essential for pseudo aurora blobs */
+  /* Internal Ambient Glow blobs inside the card */
+}
+.work-summary::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.work-summary::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (min-width: 1024px) {
   .work-summary {
@@ -4639,8 +4686,15 @@ a:hover {
 /* Card hover animation inside work-item */
 .work-item:hover .work-summary {
   transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.06);
-  border-color: rgba(0, 0, 0, 0.12);
+  /* Multi-layered soft aurora glow drop-shadow on hover */
+  box-shadow: 0 30px 60px rgba(168, 85, 247, 0.06), 0 15px 30px rgba(59, 130, 246, 0.06), 0 4px 12px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+.work-item:hover .work-summary::before {
+  transform: translate(-30px, 30px) scale(1.2);
+}
+.work-item:hover .work-summary::after {
+  transform: translate(30px, -30px) scale(1.2);
 }
 .work-item:hover .project-card-img {
   transform: scale(1.02);
@@ -4650,8 +4704,11 @@ a:hover {
 }
 .work-item.active:hover .work-summary {
   transform: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-  border-color: var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+.work-item.active:hover .work-summary::before, .work-item.active:hover .work-summary::after {
+  transform: none;
 }
 .work-item.active:hover .project-card-img {
   transform: none;
@@ -4838,4 +4895,59 @@ a:hover {
   50% {
     transform: translateY(-1.5px); /* Ultra-gentle, barely perceptible breathe */
   }
+}
+/* ==========================================================================
+   DYNAMIC AURORA VIDEO BACKGROUND & OVERRIDES
+   ========================================================================== */
+.video-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65; /* Elegant translucent view */
+  filter: saturate(1.2) contrast(1.02);
+}
+
+.video-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.4) 0%, transparent 60%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.45) 0%, transparent 60%), linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.92) 100%);
+  backdrop-filter: blur(12px); /* Turns sharp video details into a fluid aurora mesh */
+  -webkit-backdrop-filter: blur(12px);
+  z-index: -1;
+}
+
+/* Mobile Header Glassmorphism Overrides */
+.nav.mobile-header {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* FAB Button & Menu Glassmorphism Overrides */
+.fab {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+.fab-menu {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
 }
