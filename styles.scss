@@ -1494,9 +1494,9 @@ body.menu-open .container-shift {
 
   .avatar-frame {
     width: 100%;
-    max-width: 300px; /* Highly prominent and grand logo designed to fit original padding */
-    height: 90px; /* Proportional signature height */
-    margin-bottom: 20px; /* Reverted to original margin-bottom */
+    max-width: 316px; /* Absolute maximum width to fill 52px padding perfectly */
+    height: 110px; /* Significantly larger visual height */
+    margin-bottom: 24px; /* Generous visual separation */
     border-radius: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -1504,16 +1504,17 @@ body.menu-open .container-shift {
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
+    padding: 0 !important; /* Explicitly remove inner padding to maximize visual scale */
     cursor: pointer;
     
-    /* Premium Motion: Subtle fade-in reveal and continuous breathing float */
-    animation: logoReveal 1.2s var(--ease-out) forwards, logoFloat 6s ease-in-out infinite 1.2s;
-    transition: transform 0.5s var(--ease-out), filter 0.4s var(--ease-out);
+    /* Premium Motion: Soft 1.8s entrance and ultra-slow, soothing 8s float */
+    animation: logoReveal 1.8s var(--ease-out) forwards, logoFloat 8s ease-in-out infinite 1.8s;
+    transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
   }
 
   .avatar-frame:hover {
-    transform: translateY(-3px) scale(1.03) !important;
-    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
+    transform: translateY(-2px) scale(1.015) !important; /* Ultra-subtle, elegant lift */
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.04));
     animation-play-state: paused; /* Stop floating on hover for precise control */
   }
 
@@ -4884,7 +4885,7 @@ a:hover {
 @keyframes logoReveal {
   0% {
     opacity: 0;
-    transform: translateY(12px) scale(0.98);
+    transform: translateY(6px) scale(0.99); /* Soft, graceful rise */
   }
   100% {
     opacity: 1;
@@ -4897,6 +4898,6 @@ a:hover {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-3px);
+    transform: translateY(-1.5px); /* Ultra-gentle, barely perceptible breathe */
   }
 }
