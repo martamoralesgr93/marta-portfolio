@@ -4687,24 +4687,24 @@ a:hover {
 .work-summary {
   width: 100%;
   max-width: var(--content-max) !important; /* Uniform strict width for all cards, back to premium wide container */
-  margin: 0 auto 56px auto !important; /* Fixed vertical spacing between cards */
+  margin: 0 auto 64px auto !important; /* Fixed vertical spacing between cards, generous for editorial pacing */
   padding: 40px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important; /* Stretches to fill container */
   text-align: left !important;
-  gap: 20px !important; /* Consistent vertical spacing inside cards on mobile */
+  gap: 24px !important; /* Consistent vertical spacing inside cards on mobile */
   
   /* High-Contrast Frosted Glass Base */
-  background: rgba(255, 255, 255, 0.84) !important; /* Highly solid white to guarantee pristine legibility */
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.86) !important; /* Highly solid white to guarantee pristine legibility */
+  backdrop-filter: blur(32px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 28px !important; /* Elegant rounded look for high-end editorial bento cards */
   
   /* Multi-layered soft shadow */
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.025), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
   
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -4741,7 +4741,7 @@ a:hover {
   }
 
   @media (min-width: 1024px) {
-    padding: 48px !important;
+    padding: 56px !important; /* Generous breathing room */
     display: grid !important;
     grid-template-columns: 1.15fr 0.85fr !important;
     grid-template-rows: auto auto auto auto !important;
@@ -4750,8 +4750,8 @@ a:hover {
       "heading visual"
       "kpi visual"
       "cta visual" !important;
-    column-gap: 48px !important;
-    row-gap: 16px !important;
+    column-gap: 56px !important; /* Wide editorial gap */
+    row-gap: 20px !important;
     align-items: center !important;
   }
 }
@@ -4777,8 +4777,13 @@ a:hover {
       transform: translate(30px, -30px) scale(1.2);
     }
 
+    .project-card-visual {
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.06), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    }
+
     .project-card-img {
-      transform: scale(1.02);
+      transform: scale(1.03) !important; /* Elegant storytelling image zoom on hover */
     }
   }
 
@@ -4821,13 +4826,42 @@ a:hover {
   gap: 8px;
   
   .title {
+    font-size: clamp(24px, 2.8vw, 34px) !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1.15 !important;
+    color: #0a0a0a !important;
     margin: 0 !important;
+    
+    .title-company {
+      opacity: 0.45 !important;
+      font-weight: 700 !important;
+    }
+    
+    .title-separator {
+      opacity: 0.25 !important;
+    }
+    
+    .title-project {
+      font-weight: 800 !important;
+    }
   }
+  
   .subtitle {
-    margin: 0 !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    color: #333333 !important;
+    line-height: 1.4 !important;
+    margin: 4px 0 0 0 !important;
+    letter-spacing: -0.01em !important;
   }
+  
   .project-summary-text {
-    margin: 0 !important;
+    font-size: 15px !important;
+    color: #444444 !important;
+    line-height: 1.65 !important;
+    margin: 12px 0 0 0 !important;
+    max-width: 54ch !important;
   }
 }
 
@@ -4874,17 +4908,19 @@ a:hover {
 }
 
 .project-impact-badge {
-  background: var(--text-primary);
-  color: var(--bg);
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 4px 10px;
-  border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #1a1a1a !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  box-shadow: none !important;
+  width: fit-content !important;
+  margin-bottom: 8px !important;
 }
 
 .project-summary-text {
@@ -4896,19 +4932,23 @@ a:hover {
 }
 
 .project-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--s-16);
-  margin: var(--s-24) 0;
-  border-top: 1px solid var(--divider);
-  border-bottom: 1px solid var(--divider);
-  padding: var(--s-16) 0;
-  width: 100%;
-  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  margin: 24px 0 !important;
+  padding: 24px 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    gap: var(--s-12);
+  @media (min-width: 768px) {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 32px !important;
+    align-items: center !important;
   }
 }
 
@@ -4917,36 +4957,68 @@ a:hover {
   flex-direction: column;
   gap: 4px;
   text-align: left;
-  background: rgba(0, 0, 0, 0.03); /* Translucent solid container base */
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 10px 14px;
-  border-radius: 8px;
+  box-sizing: border-box;
 
-  .metric-pill-label {
-    font-size: 9px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #555555; /* High contrast label color */
-  }
-
-  .metric-pill-value {
-    font-size: 13.5px;
-    font-weight: 600;
-    color: #111111; /* Solid black value */
-  }
-
+  /* Hero Metric (Highlighted KPI) */
   &.highlighted {
-    background: #0a0a0a !important; /* Solid high-contrast active container */
-    border-color: #0a0a0a !important;
-    
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column-reverse !important; /* Label on top of massive number */
+    gap: 4px !important;
+    align-items: flex-start !important;
+
     .metric-pill-label {
-      color: rgba(255, 255, 255, 0.7) !important;
+      font-size: 10px !important;
+      color: #555555 !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em !important;
     }
 
     .metric-pill-value {
-      color: #ffffff !important; /* White text strictly on dark surface */
-      font-weight: 700;
+      font-size: clamp(32px, 3.5vw, 44px) !important; /* Massive typographic stat */
+      color: #0a0a0a !important; /* Solid dark color */
+      font-weight: 800 !important;
+      letter-spacing: -0.04em !important;
+      line-height: 1 !important;
+    }
+  }
+
+  /* Supporting Metadata (Duration and Tools) */
+  &:not(.highlighted) {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: row !important; /* Horizontal inline key-value */
+    align-items: baseline !important;
+    gap: 12px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding-bottom: 8px !important;
+    width: 100% !important;
+
+    &:last-child {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+
+    .metric-pill-label {
+      font-size: 10px !important;
+      color: #777777 !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      min-width: 90px !important; /* Aligns values perfectly */
+    }
+
+    .metric-pill-value {
+      font-size: 13.5px !important;
+      color: #1a1a1a !important;
+      font-weight: 600 !important;
     }
   }
 }
@@ -4957,13 +5029,16 @@ a:hover {
   justify-content: center;
   width: 100%;
   aspect-ratio: 16 / 10; /* Fixed widescreen aspect-ratio for product preview consistency */
-  border-radius: 12px;
-  border: 1px solid var(--divider);
-  background: var(--bg-soft);
+  border-radius: 16px !important; /* Slightly more rounded for premium bento card feeling */
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  background: #f5f5f7 !important; /* Apple-style light gray background */
   overflow: hidden;
   margin: 12px 0 16px 0;
   box-sizing: border-box;
   grid-area: visual;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  transition: box-shadow 0.5s ease, transform 0.5s ease !important;
   
   @media (min-width: 1024px) {
     margin: 0 !important;
@@ -4974,7 +5049,7 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Structured cover visual fit for premium dashboard look */
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Gallery and detail styles (retained for detailed case study sections) */
