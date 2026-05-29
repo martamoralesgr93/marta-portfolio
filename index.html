@@ -888,6 +888,9 @@ nav {
   /* Sobre mí — díptico mobile */
   .sobre-diptych { grid-template-columns: 1fr; min-height: auto; align-items: start; }
   .sobre-img-panel { min-height: 55svh; }
+  .sobre-img-panel::after {
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7) 75%, #000 100%);
+  }
   .sobre-portrait { object-position: center 12%; }
   .sobre-text-panel { padding: 44px 24px 52px; border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
   .sobre-heading { font-size: clamp(72px, 17vw, 96px); margin-bottom: 32px; }
