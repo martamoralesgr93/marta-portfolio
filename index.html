@@ -28,13 +28,18 @@
   --card-h: rgba(255,255,255,0.048);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
 
 body {
   background: var(--black);
   color: var(--white);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -798,6 +803,8 @@ nav {
   flex-direction: column; align-items: center; justify-content: center;
   opacity: 0;
   transition: opacity 0.28s ease;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
 }
 .mobile-menu.open { opacity: 1; }
 .mobile-menu-close {
@@ -2131,9 +2138,9 @@ function updateMenuLangBtn() {
 function openMenu() {
   const m = document.getElementById('mobileMenu');
   m.style.display = 'flex';
-  // Double rAF ensures display:flex is painted before opacity transition starts
   requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
   document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
 }
 function closeMenu() {
   const m = document.getElementById('mobileMenu');
@@ -2141,6 +2148,7 @@ function closeMenu() {
   setTimeout(() => {
     m.style.display = 'none';
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   }, 300);
 }
 
