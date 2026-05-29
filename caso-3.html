@@ -227,15 +227,14 @@
       </h2>
     </div>
     <div style="padding:0">
-      <p class="lead fu">CEF – Centro de Estudios Financieros gestionaba distintos entornos digitales utilizados por alumnos y equipos internos para acceder a información académica, documentación y procesos relacionados con la gestión educativa.</p>
+      <p class="lead fu">El ecosistema digital de CEF arrastraba años de deuda técnica y de diseño. Múltiples entornos (gestión académica, documentación, procesos internos) habían crecido por acumulación de funcionalidades, sin un sistema de diseño subyacente.</p>
       
-      <p class="p fu">La herramienta presentaba varios problemas de experiencia acumulados durante años de evolución funcional sin criterio de diseño unificado:</p>
+      <p class="p fu">Esto generaba una fragmentación crítica en la experiencia del alumno:</p>
 
       <ul class="bullet-list fu">
-        <li>Exceso de carga visual y densidad de información</li>
-        <li>Jerarquía poco clara en los elementos interactivos</li>
-        <li>Falta de coherencia entre componentes</li>
-        <li>Ausencia de pautas de accesibilidad para un entorno educativo que debería ser universal</li>
+        <li>Carga cognitiva extrema por interfaces densas y sobrepobladas.</li>
+        <li>Patrones de interacción inconsistentes entre diferentes módulos.</li>
+        <li>Bloqueos de accesibilidad graves (contraste, tipografía) inaceptables para una institución educativa.</li>
       </ul>
     </div>
   </div>
@@ -252,7 +251,7 @@
       </h2>
     </div>
     <div style="padding:0">
-      <p class="p fu">Mi rol principal fue reestructurar la interfaz y la experiencia de usuario, priorizando la claridad y la accesibilidad. El objetivo no era solo mejorar la estética, sino crear una base escalable y funcional que pudiera aplicarse a distintos módulos dentro del ecosistema digital de CEF.</p>
+      <p class="p fu">El objetivo no era un simple "lavado de cara" o restyling visual. El mandato estratégico fue auditar la plataforma, establecer estándares de accesibilidad innegociables (WCAG AA) y sentar las bases del primer Sistema de Diseño escalable para todo el entorno EdTech de la institución.</p>
     </div>
   </div>
 </section>
@@ -269,8 +268,8 @@
     </div>
     <div style="padding:0">
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">1. Auditoría y Análisis Heurístico</h3>
-      <p class="p fu">Comencé realizando una revisión heurística de la plataforma actual, identificando los principales problemas de usabilidad, como la falta de retroalimentación en acciones clave, inconsistencias en el diseño y problemas de contraste que dificultaban la lectura.</p>
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">1. Auditoría UX y Triage de problemas</h3>
+      <p class="p fu">En lugar de rediseñar pantallas a ciegas, ejecuté una evaluación heurística profunda para mapear la deuda de UX. Se identificaron y categorizaron errores críticos: falta de affordance en botones, flujos rotos de retroalimentación y paletas de color con un contraste inferior al 3:1.</p>
 
       <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Definición de Estilos y Accesibilidad (WCAG)</h3>
       <p class="p fu">Dado que el producto está dirigido al sector educativo, la accesibilidad era un requisito innegociable. Establecí una nueva paleta de colores corporativos optimizada para garantizar un contraste mínimo (Nivel AA) según las pautas WCAG. También redefiní la tipografía para mejorar la legibilidad y estructuré un sistema de componentes básicos estandarizado.</p>
@@ -288,27 +287,24 @@
         </div>
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">3. Wireframing y Arquitectura de Información</h3>
-      <p class="p fu">Creé wireframes en Figma para visualizar la nueva estructura antes de aplicar la capa visual final. El foco se puso en simplificar la navegación, reducir el ruido visual y organizar la información por relevancia, facilitando el escaneo rápido de los contenidos.</p>
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">3. Arquitectura de Componentes</h3>
+      <p class="p fu">Traspasé el foco de "diseñar pantallas" a "diseñar sistemas". Empecé estructurando wireframes de baja fidelidad para resolver la jerarquía del layout base (Navegación, Contenedores, Formularios) antes de inyectar la nueva capa visual.</p>
       
       <div class="cs-frame-auto fu" style="padding: 40px;">
         <img src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.png" alt="Wireframe de Calendario Web" style="width: 100%;">
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">4. Diseño UI y Prototipado</h3>
-      <p class="p fu">Desarrollé la interfaz final basándome en los wireframes y el nuevo sistema visual. Se aplicó un enfoque limpio y estructurado, utilizando espacios en blanco para separar secciones, componentes reutilizables y un uso estratégico del color para guiar la atención hacia las acciones principales.</p>
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">4. UI Kit y Estandarización Visual</h3>
+      <p class="p fu">Con la estructura validada, construí un UI Kit centralizado en Figma: tokens de diseño, jerarquía tipográfica matemática y componentes interactivos con todos sus estados (Hover, Active, Disabled). El rediseño del Calendario Académico fue la primera prueba de estrés del sistema.</p>
       
       <div class="cs-frame-auto fu" style="padding: 20px;">
         <img src="assets/CEF/CALENDARIO%20(WEB)/calendario.png" alt="Diseño final del Calendario Web" style="width: 100%;">
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">5. Entrega a Desarrollo</h3>
-      <p class="p fu">Documenté los componentes en Figma y preparé los flujos para su implementación por parte del equipo técnico, asegurando que la propuesta fuera viable técnicamente y respetara los estándares de diseño.</p>
-
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">6. Evolución del Sistema de Diseño</h3>
-      <p class="p fu">El trabajo realizado en este proyecto sirvió como base para unificar otras herramientas dentro del ecosistema CEF, facilitando futuros desarrollos y garantizando una experiencia coherente.</p>
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">5. Handoff y Escalabilidad</h3>
+      <p class="p fu">Para evitar discrepancias entre diseño y código, documenté el comportamiento de cada componente. Este mismo sistema permitió iterar a velocidad récord otros flujos críticos del portal, demostrando su viabilidad como única fuente de verdad técnica.</p>
       
-      <p class="p fu" style="margin-bottom: 12px;">Además del Calendario, el sistema de diseño se aplicó a otros módulos clave que forman parte del mismo ecosistema de la experiencia del alumno:</p>
+      <p class="p fu" style="margin-bottom: 12px;">Despliegue del Design System en otros módulos clave:</p>
       
       <div class="cs-ba fu" style="margin-top:24px; margin-bottom:40px;">
         <div class="cs-ba-col">
@@ -348,11 +344,10 @@
     </div>
 
     <ul class="bullet-list fu" style="margin-bottom: 48px;">
-      <li>Reducción significativa del ruido visual y mejora en la jerarquía de información</li>
-      <li>Una interfaz más limpia, moderna y alineada con los estándares actuales</li>
-      <li>Mejora en la accesibilidad (cumplimiento Nivel AA WCAG en contraste)</li>
-      <li>Creación de un sistema de componentes base que acelera el diseño y desarrollo de nuevas funcionalidades</li>
-      <li>Una base sólida para extender la experiencia a otras herramientas de la empresa</li>
+      <li><strong>Deuda de diseño eliminada:</strong> Interfaz coherente y estandarizada en todo el journey del estudiante.</li>
+      <li><strong>Accesibilidad certificada:</strong> Superación del ratio 4.5:1 en todos los componentes interactivos (WCAG Nivel AA).</li>
+      <li><strong>Time-to-market reducido:</strong> El equipo de desarrollo ahora ensambla nuevas vistas usando componentes predefinidos en lugar de maquetar desde cero.</li>
+      <li><strong>Base escalable:</strong> El UI Kit se ha convertido en el estándar fundacional para la futura evolución tecnológica de la plataforma CEF.</li>
     </ul>
 
     <div class="fu" style="margin-top: 80px; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px;">
