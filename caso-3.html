@@ -156,8 +156,8 @@
     .pm-left-card:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.4); }
     
     .pm-left-text { flex: 1; }
-    .pm-title { font-size: 16px; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 4px; }
-    .pm-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .pm-title { font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 12px; text-align: center; } .pm-card-title { font-size: 16px; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 4px; }
+    .pm-desc { font-size: 16px; color: rgba(255,255,255,0.6); text-align: center; max-width: 600px; margin: 0 auto; } .pm-card-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
     
     .pm-icon-wrap { width: 56px; height: 56px; flex-shrink: 0; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: var(--accent); box-shadow: inset 0 0 20px rgba(255,255,255,0.02); }
 
@@ -389,118 +389,139 @@
       <li><strong>Base escalable:</strong> El UI Kit se ha convertido en el estÃ¡ndar fundacional para la futura evoluciÃ³n tecnolÃ³gica de la plataforma CEF.</li>
     </ul>
 
-    <div class="fu pm-widget">
-      <div class="pm-header">
-        <div class="pm-header-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-        </div>
-        <h3 class="pm-title">TraducciÃ³n a metodologÃ­a de producto</h3>
+    <div class="fu pm-widget-premium">
+      <div class="pm-header" style="margin-bottom: 60px;">
+        <h3 class="pm-title">Traducción a metodología de producto</h3>
         <p class="pm-desc">Conecto el trabajo real con el lenguaje que usan los equipos de producto.</p>
       </div>
-      
-      <div class="pm-cols">
-        <div class="pm-col-title">LO QUE HICE</div>
-        <div class="pm-col-title">CÃ“MO SE LLAMA FORMALMENTE</div>
+
+      <div class="pm-kpi">
+        <div class="pm-kpi-num">6</div>
+        <div class="pm-kpi-label">Metodologías de producto aplicadas</div>
       </div>
 
-      <div class="pm-list">
+      <div class="pm-cols" style="max-width: 1000px; margin: 0 auto 32px; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 600;">
+        <div style="padding-left: 24px;">Lo que hice</div>
+        <div style="padding-left: 0;">Cómo se llama formalmente</div>
+      </div>
+      
+      <div class="pm-container">
         <!-- ROW 1 -->
         <div class="pm-row">
-          <div class="pm-left">
-            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
-            <div class="pm-text">
-              <div class="pm-text-title">RevisiÃ³n de problemas de la interfaz actual</div>
-              <div class="pm-text-num">01</div>
+          <div class="pm-left-card">
+            <div class="pm-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            <div class="pm-left-text">
+              <div class="pm-card-title">Revisión de problemas de la interfaz actual</div>
+              <div class="pm-card-desc">Auditoría completa de usabilidad del legacy</div>
             </div>
           </div>
-          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">â†’</div></div>
-          <div class="pm-right">
-            <div class="pm-pill">Heuristic Evaluation / UX Audit</div>
-            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="pm-connector">
+            <div class="pm-dot-center"></div>
+            <div class="pm-arrow-line"><div class="pm-arrow-head">?</div></div>
+          </div>
+          <div class="pm-right-content">
+            <div class="pm-pill">Heuristic Evaluation</div>
+            <div class="pm-pill-secondary">UX Audit</div>
           </div>
         </div>
 
         <!-- ROW 2 -->
         <div class="pm-row">
-          <div class="pm-left">
-            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
-            <div class="pm-text">
-              <div class="pm-text-title">Mejora de colores para legibilidad</div>
-              <div class="pm-text-num">02</div>
+          <div class="pm-left-card">
+            <div class="pm-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+            <div class="pm-left-text">
+              <div class="pm-card-title">Mejora de colores para legibilidad</div>
+              <div class="pm-card-desc">Ajuste de contrastes para normativa AA y AAA</div>
             </div>
           </div>
-          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">â†’</div></div>
-          <div class="pm-right">
-            <div class="pm-pill">WCAG Compliance / Accessibility Design</div>
-            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="pm-connector">
+            <div class="pm-dot-center"></div>
+            <div class="pm-arrow-line"><div class="pm-arrow-head">?</div></div>
+          </div>
+          <div class="pm-right-content">
+            <div class="pm-pill">WCAG Compliance</div>
+            <div class="pm-pill-secondary">Accessibility Design</div>
           </div>
         </div>
 
         <!-- ROW 3 -->
         <div class="pm-row">
-          <div class="pm-left">
-            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
-            <div class="pm-text">
-              <div class="pm-text-title">CreaciÃ³n de estructura base</div>
-              <div class="pm-text-num">03</div>
+          <div class="pm-left-card">
+            <div class="pm-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
+            <div class="pm-left-text">
+              <div class="pm-card-title">Creación de estructura base</div>
+              <div class="pm-card-desc">Definición de layouts y navegación troncal</div>
             </div>
           </div>
-          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">â†’</div></div>
-          <div class="pm-right">
-            <div class="pm-pill">Wireframing / Information Architecture</div>
-            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="pm-connector">
+            <div class="pm-dot-center"></div>
+            <div class="pm-arrow-line"><div class="pm-arrow-head">?</div></div>
+          </div>
+          <div class="pm-right-content">
+            <div class="pm-pill">Information Architecture</div>
+            <div class="pm-pill-secondary">Wireframing</div>
           </div>
         </div>
 
         <!-- ROW 4 -->
         <div class="pm-row">
-          <div class="pm-left">
-            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4z"></path><path d="M14 4h6v6h-6z"></path><path d="M4 14h6v6H4z"></path><path d="M14 14h6v6h-6z"></path></svg></div>
-            <div class="pm-text">
-              <div class="pm-text-title">EstandarizaciÃ³n de botones y estilos</div>
-              <div class="pm-text-num">04</div>
+          <div class="pm-left-card">
+            <div class="pm-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4z"></path><path d="M14 4h6v6h-6z"></path><path d="M4 14h6v6H4z"></path><path d="M14 14h6v6h-6z"></path></svg></div>
+            <div class="pm-left-text">
+              <div class="pm-card-title">Estandarización de botones y estilos</div>
+              <div class="pm-card-desc">Creación de tokens y componentes atómicos</div>
             </div>
           </div>
-          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">â†’</div></div>
-          <div class="pm-right">
-            <div class="pm-pill">UI Kit / Component Library creation</div>
-            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="pm-connector">
+            <div class="pm-dot-center"></div>
+            <div class="pm-arrow-line"><div class="pm-arrow-head">?</div></div>
+          </div>
+          <div class="pm-right-content">
+            <div class="pm-pill">UI Kit</div>
+            <div class="pm-pill-secondary">Component Library creation</div>
           </div>
         </div>
 
         <!-- ROW 5 -->
         <div class="pm-row">
-          <div class="pm-left">
-            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
-            <div class="pm-text">
-              <div class="pm-text-title">Pase a desarrollo con documentaciÃ³n</div>
-              <div class="pm-text-num">05</div>
+          <div class="pm-left-card">
+            <div class="pm-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+            <div class="pm-left-text">
+              <div class="pm-card-title">Pase a desarrollo con documentación</div>
+              <div class="pm-card-desc">Especificaciones técnicas para Frontend</div>
             </div>
           </div>
-          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">â†’</div></div>
-          <div class="pm-right">
-            <div class="pm-pill">Design Handoff / Specs definition</div>
-            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="pm-connector">
+            <div class="pm-dot-center"></div>
+            <div class="pm-arrow-line"><div class="pm-arrow-head">?</div></div>
+          </div>
+          <div class="pm-right-content">
+            <div class="pm-pill">Design Handoff</div>
+            <div class="pm-pill-secondary">Specs definition</div>
           </div>
         </div>
 
         <!-- ROW 6 -->
         <div class="pm-row">
-          <div class="pm-left">
-            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
-            <div class="pm-text">
-              <div class="pm-text-title">DiseÃ±o aplicable a otros mÃ³dulos</div>
-              <div class="pm-text-num">06</div>
+          <div class="pm-left-card">
+            <div class="pm-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <div class="pm-left-text">
+              <div class="pm-card-title">Diseño aplicable a otros módulos</div>
+              <div class="pm-card-desc">Preparación para portabilidad a otros productos CEF</div>
             </div>
           </div>
-          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">â†’</div></div>
-          <div class="pm-right">
-            <div class="pm-pill">Scalable Design / Design System foundation</div>
-            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="pm-connector">
+            <div class="pm-dot-center"></div>
+            <div class="pm-arrow-line"><div class="pm-arrow-head">?</div></div>
+          </div>
+          <div class="pm-right-content">
+            <div class="pm-pill">Scalable Design</div>
+            <div class="pm-pill-secondary">Design System foundation</div>
           </div>
         </div>
 
       </div>
+    </div>
     </div>
 
   </div>
@@ -527,4 +548,6 @@
 </script>
 </body>
 </html>
+
+
 
