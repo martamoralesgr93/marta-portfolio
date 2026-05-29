@@ -381,7 +381,7 @@
     </h1>
     <div class="cs-tags">
       <span class="cs-tag">Product Design</span>
-      <span class="cs-tag">UX Strategy</span>
+      <span class="cs-tag">Design Systems</span>
       <span class="cs-tag">Accesibilidad WCAG</span>
       <span class="cs-tag">Herramientas Internas</span>
       <span class="cs-tag">Educación Digital</span>
@@ -393,7 +393,7 @@
       </div>
       <div>
         <div class="cs-meta-label">Rol</div>
-        <div class="cs-meta-val">UX/UI Designer · Accesibilidad</div>
+        <div class="cs-meta-val">Product Designer · Design Systems</div>
       </div>
       <div>
         <div class="cs-meta-label">Año</div>
@@ -407,6 +407,38 @@
   </div>
 </header>
 
+<!-- [M] MI ROL -->
+<section class="cs-block">
+  <div class="cs-behance-letter" style="opacity:0.35">M</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">MI ROL · Responsabilidades</span>
+      <h2 class="block-h">Primer design system<br><em>de la institución</em></h2>
+    </div>
+    <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
+        <ul class="bullet-list">
+          <li>Auditoría heurística completa del ecosistema digital de CEF: identificación y triage de deuda de UX y accesibilidad</li>
+          <li>Definición de estándares de accesibilidad WCAG AA: paleta, tipografía y componentes interactivos</li>
+          <li>Diseño de arquitectura de componentes: desde wireframes de baja fidelidad hasta UI Kit en Figma con tokens, variantes y estados</li>
+          <li>Documentación de comportamiento de componentes para handoff y adopción por parte del equipo de desarrollo</li>
+          <li>Aplicación y validación del sistema en módulos críticos: calendario académico, pasarela de pago, login y bolsa de empleo</li>
+        </ul>
+      </div>
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Con quién colaboré</p>
+        <ul class="bullet-list">
+          <li><strong>Equipo de desarrollo frontend</strong> — implementación de componentes, validación de tokens en código y adopción del sistema como referencia única</li>
+          <li><strong>Stakeholders internos de CEF</strong> — validación de flujos críticos y priorización de módulos por impacto en el journey del estudiante</li>
+          <li><strong>Dirección</strong> — aprobación del enfoque sistemático frente a un rediseño visual tradicional</li>
+        </ul>
+        <p class="p" style="margin-top:20px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0; font-size:13px; color:rgba(255,255,255,0.55);">No existía un design system previo en la institución. Tampoco había tokens, nomenclatura compartida ni guía de accesibilidad. Este proyecto definió la infraestructura de diseño desde cero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- [S] SITUATION -->
 <section class="cs-block">
   <div class="cs-behance-letter">S</div>
@@ -418,7 +450,7 @@
       </h2>
     </div>
     <div style="padding:0">
-      <p class="lead fu">El ecosistema digital de CEF arrastraba años de deuda técnica y de diseño. Múltiples entornos (gestión académica, documentación, procesos internos) habían crecido por acumulación de funcionalidades, sin un sistema de diseño subyacente.</p>
+      <p class="lead fu">El ecosistema digital de CEF arrastraba años de deuda técnica y de diseño. Cada módulo — gestión académica, documentación, procesos internos — había crecido de forma independiente, sin un sistema de diseño subyacente. El resultado era un ecosistema donde cada equipo de desarrollo resolvía los mismos problemas de forma diferente, con patrones incompatibles entre sí. Para la institución, esto tenía un coste directo: tiempo de desarrollo duplicado en cada nuevo módulo, discrepancias constantes entre diseño y código, y una experiencia del estudiante fragmentada que generaba soporte innecesario.</p>
       
       <p class="p fu">Esto generaba una fragmentación crítica en la experiencia del alumno:</p>
 
@@ -443,6 +475,9 @@
     </div>
     <div style="padding:0">
       <p class="p fu">El objetivo no era un simple "lavado de cara" o restyling visual. El mandato estratégico fue auditar la plataforma, establecer estándares de accesibilidad innegociables (WCAG AA) y sentar las bases del primer Sistema de Diseño escalable para todo el entorno EdTech de la institución.</p>
+      <p class="p fu" style="margin-top:16px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0;">
+        <strong>Restricciones reales del proyecto:</strong> Algunos colores corporativos de CEF no superaban el ratio de contraste WCAG 4.5:1 — lo que obligaba a redefinir la paleta de marca, una decisión con implicaciones más allá del diseño. El equipo de desarrollo necesitaba resultados visibles a corto plazo, mientras que construir el sistema bien requeria tiempo previo de definición. Gestioné esa tensión priorizando los módulos de mayor impacto en el journey del estudiante (calendario y login) como primera prueba de estrés del sistema.
+      </p>
     </div>
   </div>
 </section>
@@ -460,7 +495,7 @@
     <div style="padding:0">
 
       <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">1. Auditoría UX y Triage de problemas</h3>
-      <p class="p fu">En lugar de rediseñar pantallas a ciegas, ejecuté una evaluación heurística profunda para mapear la deuda de UX. Se identificaron y categorizaron errores críticos: falta de affordance en botones, flujos rotos de retroalimentación y paletas de color con un contraste inferior al 3:1.</p>
+      <p class="p fu"><strong>Insight:</strong> La auditoría heurística reveló que los problemas no eran estéticos — eran sistémicos. Contraste inferior a 3:1, affordance rota en botones primarios, flujos inconsistentes entre módulos. Ningún problema era aislado: todos venían de la ausencia de un sistema compartido. <strong>Hipótesis:</strong> Si establecemos primero los estándares (tokens, tipografía, accesibilidad) antes que la UI, los componentes resultantes serán correctos por construcción, no por revisión manual. <strong>Decisión:</strong> Invertir las primeras semanas en auditar y definir el sistema, antes de diseñar ninguna pantalla. Un enfoque que requirió argumentar a dirección por qué no entregaríamos UI visible de forma inmediata.</p>
 
       <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Definición de Estilos y Accesibilidad (WCAG)</h3>
       <p class="p fu">Dado que el producto está dirigido al sector educativo, la accesibilidad era un requisito innegociable. Establecí una nueva paleta de colores corporativos optimizada para garantizar un contraste mínimo (Nivel AA) según las pautas WCAG. También redefiní la tipografía para mejorar la legibilidad y estructuré un sistema de componentes básicos estandarizado.</p>
@@ -649,6 +684,41 @@
   </div>
 </section>
 
+
+<!-- [L] LEARNINGS -->
+<section class="cs-block">
+  <div class="cs-behance-letter">L</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">LEARNINGS · Aprendizajes</span>
+      <h2 class="block-h">Lo que construir un sistema<br><em>desde cero enseña</em></h2>
+    </div>
+
+    <div class="fu" style="display:flex; flex-direction:column; gap:32px; margin-top:48px; max-width:760px;">
+
+      <div>
+        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">El design system no es el entregable. La adopción sí.</h3>
+        <p class="p">El entregable real no era un archivo de Figma con componentes bien organizados — era que el equipo de desarrollo lo usara como referencia única. Eso implicó documentar no solo el aspecto de cada componente, sino su comportamiento: estados, variantes, casos límite y guía de uso. Un UI Kit que no se adopta es una librería abandonada. La diferencia entre uno y otro es la documentación y la confianza del equipo en el sistema.</p>
+      </div>
+
+      <div>
+        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">Empezar por estructura antes que por estética cambia el resultado.</h3>
+        <p class="p">Trabajar con wireframes de baja fidelidad antes de inyectar UI evitó un error habitual: resolver problemas de jerarquía y layout con recursos visuales. Al separar ambas capas, las decisiones de estructura fueron más claras y la UI resultante más consistente. Los componentes no nacieron de preferencias estéticas — nacieron de decisiones funcionales ya validadas.</p>
+      </div>
+
+      <div>
+        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">La accesibilidad como restricción es una palanca, no un bloqueo.</h3>
+        <p class="p">Redefinir la paleta corporativa para cumplir WCAG AA fue una decisión que afectaba a la identidad de marca, no solo al diseño. En lugar de presentarla como una imposición técnica, la argumenté como una mejora del sistema: colores más versátiles, mayor legibilidad en todos los contextos y cumplimiento de normativa para una institución educativa. La restricción regulatoria, bien comunicada, se convirtió en argumento a favor del cambio.</p>
+      </div>
+
+      <div>
+        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">Diseñar sistemas es diseñar para otros diseñadores y desarrolladores, no para usuarios finales.</h3>
+        <p class="p">En este proyecto, mis usuarios directos eran el equipo de desarrollo. Eso implicó pensar en nomenclatura coherente, documentación clara y componentes con variantes que redujeran la ambigüedad. Es una lógica diferente a la del diseño de producto para usuarios finales — y más cercana a la de construir infraestructura. Esa perspectiva me sirve directamente para proyectos de escala donde el impacto se mide en velocidad de iteración del equipo, no solo en métricas de usuario.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <footer class="cs-footer">
   <div class="cs-wrap">

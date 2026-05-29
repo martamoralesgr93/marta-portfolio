@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marta Morales | Product Designer · UX/UI & CRO | España (Spain)</title>
-<meta name="description" content="Portfolio de Marta Morales. Product Designer, UX/UI Designer & CRO Specialist. Experiencias digitales, diseño estratégico y orientado a datos (Data-Driven). Basada en España (Remote / Spain).">
-<meta name="keywords" content="Product Designer, UX Designer, UI Designer, UX/UI, CRO, Conversion Rate Optimization, Design Systems, Data-Driven Design, Figma, España, Spain, Remote">
+<title>Marta Morales | Product Designer · Producto & Negocio | España</title>
+<meta name="description" content="Portfolio de Marta Morales. Product Designer con foco en impacto de negocio, CRO y experimentación. Decisiones basadas en datos reales de comportamiento y objetivos comerciales. Basada en España.">
+<meta name="keywords" content="Product Designer, Product Strategy, CRO, Conversion Rate Optimization, Customer Journey, Experimentación, Design Systems, Data-Driven, Discovery, Figma, Adobe Analytics, España, Spain, Remote, Mercadona Tech, TravelPerk, Factorial, Cabify">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
@@ -19,13 +19,13 @@
   --orange: #f97316;
   --blue: #60a5fa;
   --green: #34d399;
-  --muted: rgba(255,255,255,0.42);
-  --dim: rgba(255,255,255,0.22);
-  --faint: rgba(255,255,255,0.10);
-  --border: rgba(255,255,255,0.08);
-  --border-mid: rgba(255,255,255,0.13);
-  --card: rgba(255,255,255,0.027);
-  --card-h: rgba(255,255,255,0.048);
+  --muted: rgba(255,255,255,0.62);
+  --dim: rgba(255,255,255,0.38);
+  --faint: rgba(255,255,255,0.14);
+  --border: rgba(255,255,255,0.10);
+  --border-mid: rgba(255,255,255,0.16);
+  --card: rgba(255,255,255,0.035);
+  --card-h: rgba(255,255,255,0.06);
 }
 
 html {
@@ -54,12 +54,12 @@ html.lang-en .es { display: none !important; }
   pointer-events: none; z-index: 0; overflow: hidden;
 }
 .glow { position: absolute; border-radius: 50%; filter: blur(120px); }
-.g1 { background: rgba(124,58,237,0.28); width: 760px; height: 760px; top: -240px; right: -220px; }
-.g2 { background: rgba(249,115,22,0.17); width: 520px; height: 520px; top: 80px; right: -80px; }
-.g3 { background: rgba(59,130,246,0.13); width: 600px; height: 600px; top: 1100px; left: -250px; }
-.g4 { background: rgba(167,139,250,0.10); width: 440px; height: 440px; top: 2100px; right: 60px; }
-.g5 { background: rgba(249,115,22,0.08); width: 480px; height: 480px; top: 3200px; left: 80px; }
-.g6 { background: rgba(124,58,237,0.12); width: 600px; height: 260px; top: 4400px; left: 50%; transform: translateX(-50%); }
+.g1 { background: rgba(124,58,237,0.34); width: 760px; height: 760px; top: -240px; right: -220px; }
+.g2 { background: rgba(249,115,22,0.22); width: 520px; height: 520px; top: 80px; right: -80px; }
+.g3 { background: rgba(59,130,246,0.18); width: 600px; height: 600px; top: 1100px; left: -250px; }
+.g4 { background: rgba(167,139,250,0.14); width: 440px; height: 440px; top: 2100px; right: 60px; }
+.g5 { background: rgba(249,115,22,0.12); width: 480px; height: 480px; top: 3200px; left: 80px; }
+.g6 { background: rgba(124,58,237,0.16); width: 600px; height: 260px; top: 4400px; left: 50%; transform: translateX(-50%); }
 
 /* ===================== LAYOUT ===================== */
 .wrap { max-width: 1160px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
@@ -178,13 +178,13 @@ nav {
 .impact-header {
   display: flex; align-items: center; gap: 7px; margin-bottom: 22px;
   font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.45);
 }
-.m-row { padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.m-row { padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,0.09); }
 .m-row:last-child { border-bottom: none; padding-bottom: 0; }
 .m-row:first-of-type { padding-top: 0; }
 .m-val { font-size: 32px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; color: var(--white); margin-bottom: 5px; }
-.m-label { font-size: 11px; color: rgba(255,255,255,0.28); }
+.m-label { font-size: 11px; color: rgba(255,255,255,0.46); }
 
 /* ===================== SCROLL DIVIDER ===================== */
 
@@ -401,10 +401,12 @@ nav {
   margin-bottom: 16px;
 }
 .block-label-text {
+  display: inline-flex; align-items: center; gap: 7px;
   font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(255,255,255,0.40);
+  color: rgba(255,255,255,0.70);
 }
-.block-label-line { flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+.block-label-text svg { flex-shrink: 0; opacity: 0.8; }
+.block-label-line { flex: 1; height: 1px; background: rgba(255,255,255,0.10); }
 
 /* ---- Section divider ---- */
 .block-divider { margin: 32px 0 18px; }
@@ -879,6 +881,16 @@ nav {
 
   /* Hero */
   .hero { min-height: calc(100vh - 60px); }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 0;
+    background-image: url('assets/logo-background-fija.png');
+    background-size: cover; background-position: center top;
+    opacity: 0.07;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  }
   .hero .wrap { padding-top: 40px; padding-bottom: 52px; }
   .hero-grid { grid-template-columns: 1fr; gap: 0; }
   .hero-title { font-size: 50px; letter-spacing: -2.2px; line-height: 0.96; margin-bottom: 22px; }
@@ -1303,10 +1315,10 @@ nav {
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#sobre"><span class="es">Estrategia UX</span><span class="en">UX Strategy</span></a></li>
-    <li><a href="#work"><span class="es">Case Studies</span><span class="en">Case Studies</span></a></li>
-    <li><a href="#process"><span class="es">Metodología</span><span class="en">Methodology</span></a></li>
-    <li><a href="#stack"><span class="es">Stack Tecnológico</span><span class="en">Tech Stack</span></a></li>
+    <li><a href="#sobre"><span class="es">Estrategia de Producto</span><span class="en">Product Strategy</span></a></li>
+    <li><a href="#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+    <li><a href="#process"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
+    <li><a href="#stack"><span class="es">Stack</span><span class="en">Stack</span></a></li>
     <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <div class="nav-right">
@@ -1330,10 +1342,10 @@ nav {
     </svg>
   </button>
   <ul class="mobile-menu-links">
-    <li><a href="#sobre" onclick="closeMenu()"><span class="es">Estrategia UX</span><span class="en">UX Strategy</span></a></li>
-    <li><a href="#work" onclick="closeMenu()"><span class="es">Case Studies</span><span class="en">Case Studies</span></a></li>
-    <li><a href="#process" onclick="closeMenu()"><span class="es">Metodología</span><span class="en">Methodology</span></a></li>
-    <li><a href="#stack" onclick="closeMenu()"><span class="es">Stack Tecnológico</span><span class="en">Tech Stack</span></a></li>
+    <li><a href="#sobre" onclick="closeMenu()"><span class="es">Estrategia de Producto</span><span class="en">Product Strategy</span></a></li>
+    <li><a href="#work" onclick="closeMenu()"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+    <li><a href="#process" onclick="closeMenu()"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
+    <li><a href="#stack" onclick="closeMenu()"><span class="es">Stack</span><span class="en">Stack</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="mobile-menu-cta" target="_blank"><span class="es">Descargar CV</span><span class="en">Download CV</span> &thinsp;↗</a>
@@ -1353,22 +1365,22 @@ nav {
       <div>
         <div class="eyebrow">
           <div class="eyebrow-dot"></div>
-          <span class="eyebrow-text es">Product Designer · UX/UI & CRO · Orientada a datos</span>
-          <span class="eyebrow-text en">Product Designer · UX/UI & CRO · Data-driven</span>
+          <span class="eyebrow-text es">Product Designer · Producto · CRO · Impacto de negocio</span>
+          <span class="eyebrow-text en">Product Designer · Product Strategy · CRO · Business Impact</span>
         </div>
         <h1 class="hero-title">
           <span class="es">Diseño<br>experiencias<br>digitales<br>que generan<br>impacto <span class="c-purple">real</span><span class="c-orange">.</span></span>
           <span class="en">I design<br>digital<br>experiences<br>that drive real<br>business <span class="c-purple">impact</span><span class="c-orange">.</span></span>
         </h1>
         <p class="hero-body es">
-          Estrategia de producto, diseño UX y CRO<br>
-          para crear mejores experiencias<br>
-          y conseguir resultados medibles.
+          Identifico fricciones en el customer journey,<br>
+          tomo decisiones respaldadas por datos<br>
+          y diseño soluciones que mueven métricas de negocio.
         </p>
         <p class="hero-body en">
-          Product strategy, UX design and CRO<br>
-          to build better experiences<br>
-          and grow measurable results.
+          I identify friction in the customer journey,<br>
+          make data-backed decisions<br>
+          and ship solutions that move business metrics.
         </p>
         <div class="hero-actions">
           <a href="#work" class="btn-primary"><span class="es">Ver mi trabajo</span><span class="en">View my work</span> &thinsp;↓</a>
@@ -1386,7 +1398,7 @@ nav {
         </div>
         <div class="m-row">
           <div class="m-val">+13%</div>
-          <div class="m-label"><span class="es">Aumento de conversión en ofertas</span><span class="en">Offers conversion uplift</span></div>
+          <div class="m-label"><span class="es">Conversión en reservas directas · ILUNION Hotels (Adobe Analytics, Q4)</span><span class="en">Direct booking conversion uplift · ILUNION Hotels (Adobe Analytics, Q4)</span></div>
         </div>
         <div class="m-row">
           <div class="m-val">100%</div>
@@ -1451,16 +1463,14 @@ nav {
       <h2 class="sobre-heading es">sobre<br><em>mí<span class="c-purple">.</span></em></h2>
       <h2 class="sobre-heading en">about<br><em>me<span class="c-purple">.</span></em></h2>
 
-      <p class="sobre-tagline es">ESTRATEGA. DISEÑADORA. ENFOCADA EN <span class="c-purple">IMPACTO.</span></p>
-      <p class="sobre-tagline en">STRATEGIST. DESIGNER. FOCUSED ON <span class="c-purple">IMPACT.</span></p>
+      <p class="sobre-tagline es">PRODUCT DESIGNER · +4 AÑOS · <span class="c-purple">DIAGNÓSTICO · DECISIÓN · IMPACTO.</span></p>
+      <p class="sobre-tagline en">PRODUCT DESIGNER · 4+ YEARS · <span class="c-purple">DIAGNOSIS · DECISION · IMPACT.</span></p>
 
       <div class="sobre-body">
-        <p class="es">Diseño experiencias digitales que convierten y reducen la fricción — donde negocio, usuario y datos convergen. Cada decisión <strong>parte del comportamiento real</strong>, no de suposiciones.</p>
-        <p class="en">I design digital experiences that convert and reduce friction — where business, user and data converge. Every decision <strong>starts from real behaviour</strong>, not assumptions.</p>
-        <p class="es">Combino investigación de usuario, estrategia CRO y sistemas de diseño para resolver problemas complejos con claridad e impacto medible.</p>
-        <p class="en">I combine user research, CRO strategy and design systems to solve complex problems with clarity and measurable impact.</p>
-        <p class="es">Este portfolio es el resultado de ese proceso: del diagnóstico al resultado.</p>
-        <p class="en">This portfolio is the result of that process: from diagnosis to outcome.</p>
+        <p class="es">Llevo más de 4 años convirtiendo problemas de negocio en decisiones de producto con impacto medible. He trabajado como <strong>product designer con ownership real</strong> — no ejecutando briefs, sino construyendo el diagnóstico desde cero, priorizando por impacto y defendiendo la propuesta ante dirección comercial.</p>
+        <p class="en">Over 4 years turning business problems into product decisions with measurable impact. I've worked as a <strong>product designer with real ownership</strong> — not executing briefs, but building the diagnosis from scratch, prioritising by impact, and defending proposals to commercial leadership.</p>
+        <p class="es">Mi forma de trabajar conecta analítica de comportamiento, razonamiento de negocio y diseño de sistemas escalables. No diseño pantallas — resuelvo problemas en la intersección entre usuario, negocio y dato.</p>
+        <p class="en">My approach connects behaviour analytics, business reasoning and scalable system design. I don't design screens — I solve problems at the intersection of user, business, and data.</p>
       </div>
 
       <a href="#work" class="sobre-cta">
@@ -1495,10 +1505,10 @@ nav {
           <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <div class="feature-title es">ENFOQUE EN<br>EL USUARIO.</div>
-      <div class="feature-title en">USER-CENTRED<br>FOCUS.</div>
-      <p class="feature-desc es">Cada decisión parte del comportamiento real del usuario y de los datos de negocio, no de suposiciones.</p>
-      <p class="feature-desc en">Every decision starts from real user behaviour and business data — not assumptions.</p>
+      <div class="feature-title es">DIAGNÓSTICO<br>PRIMERO.</div>
+      <div class="feature-title en">DIAGNOSIS<br>FIRST.</div>
+      <p class="feature-desc es">Antes de cualquier wireframe, entiendo qué está fallando y por qué: datos de comportamiento, señales de negocio, hipótesis validada.</p>
+      <p class="feature-desc en">Before any wireframe, I understand what's failing and why: behaviour data, business signals, validated hypothesis.</p>
       <div class="feature-line"></div>
     </div>
 
@@ -1513,10 +1523,10 @@ nav {
           <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </div>
-      <div class="feature-title es">CLARIDAD QUE<br>GUÍA DECISIONES.</div>
-      <div class="feature-title en">CLARITY THAT<br>GUIDES DECISIONS.</div>
-      <p class="feature-desc es">Estrategia y análisis para tomar decisiones con criterio, no por intuición.</p>
-      <p class="feature-desc en">Strategy and analysis to make decisions with clear rationale, not guesswork.</p>
+      <div class="feature-title es">PROPUESTA,<br>NO OPCIONES.</div>
+      <div class="feature-title en">PROPOSAL,<br>NOT OPTIONS.</div>
+      <p class="feature-desc es">Presento una decisión argumentada con datos — no tres variantes para que el stakeholder elija. Criterio de negocio, no preferencia visual.</p>
+      <p class="feature-desc en">I bring a data-backed decision to leadership — not three variants for them to choose. Business rationale, not visual preference.</p>
       <div class="feature-line"></div>
     </div>
 
@@ -1528,10 +1538,10 @@ nav {
           <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"/>
         </svg>
       </div>
-      <div class="feature-title es">DISEÑO QUE<br>CONVIERTE.</div>
-      <div class="feature-title en">DESIGN THAT<br>CONVERTS.</div>
-      <p class="feature-desc es">Cada elemento visual tiene un propósito: reducir fricción, guiar la acción y mover métricas reales.</p>
-      <p class="feature-desc en">Every visual element has a purpose: reduce friction, guide action, and move real metrics.</p>
+      <div class="feature-title es">CONVERSIÓN<br>MEDIBLE.</div>
+      <div class="feature-title en">MEASURABLE<br>CONVERSION.</div>
+      <p class="feature-desc es">Diseño con hipótesis, mido el comportamiento post-lanzamiento y ajusto. Lanzar es cuando empieza el aprendizaje real.</p>
+      <p class="feature-desc en">I design with hypotheses, measure post-launch behaviour and iterate. Shipping is when the real learning starts.</p>
       <div class="feature-line"></div>
     </div>
 
@@ -1543,8 +1553,8 @@ nav {
       </div>
       <div class="feature-title es">SISTEMAS QUE<br>ESCALAN.</div>
       <div class="feature-title en">SYSTEMS THAT<br>SCALE.</div>
-      <p class="feature-desc es">Design systems y procesos modulares que escalan sin generar deuda de diseño.</p>
-      <p class="feature-desc en">Design systems and modular processes that scale without accumulating design debt.</p>
+      <p class="feature-desc es">Design systems y componentes modulares que permiten al equipo iterar más rápido, con menos retrabajo y mayor coherencia entre producto y código.</p>
+      <p class="feature-desc en">Design systems and modular components that let the team iterate faster, with less rework and stronger consistency between product and code.</p>
       <div class="feature-line"></div>
     </div>
 
@@ -1558,18 +1568,21 @@ nav {
     <div class="work-header">
       <div>
         <div class="sec-num"><span>02</span><div class="sec-num-line"></div></div>
-        <div class="sec-title es">Trabajos seleccionados<span class="c-purple">.</span></div>
-        <div class="sec-title en">Selected Work<span class="c-purple">.</span></div>
+        <div class="sec-title es">Casos de producto<span class="c-purple">.</span></div>
+        <div class="sec-title en">Product Cases<span class="c-purple">.</span></div>
       </div>
       <div class="work-meta">
-        <span class="es">3 casos de estudio · 2 marcas<br>Hostelería ecommerce + EdTech</span>
-        <span class="en">3 case studies · 2 brands<br>Hospitality ecommerce + EdTech</span>
+        <span class="es">3 proyectos de impacto · 2 sectores<br>Canal directo + Plataforma EdTech</span>
+        <span class="en">3 impact projects · 2 industries<br>Direct booking channel + EdTech platform</span>
       </div>
     </div>
 
     <!-- BLOCK: TURISMO & ECOMMERCE -->
     <div class="block-label">
-      <span class="block-label-text">🏨 &nbsp;Turismo &amp; Ecommerce</span>
+      <span class="block-label-text">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Turismo &amp; Ecommerce
+      </span>
       <div class="block-label-line"></div>
     </div>
 
@@ -1580,15 +1593,15 @@ nav {
           <div class="sc-num">01</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
         </div>
-        <h3 class="sc-title es">Rediseño del componente de <em>Ofertas</em></h3>
-        <h3 class="sc-title en">Offers Component <em>Redesign</em></h3>
-        <p class="sc-desc es">Jerarquía de precios rota, sobrecarga visual y fatiga de scroll. El usuario llegaba con intención de compra y se encontraba un muro de información.</p>
-        <p class="sc-desc en">Broken price hierarchy, visual overload and scroll fatigue. Users arrived ready to buy and hit a wall of information instead.</p>
+        <h3 class="sc-title es">CRO del componente de <em>Ofertas</em></h3>
+        <h3 class="sc-title en">Offers Component <em>CRO</em></h3>
+        <p class="sc-desc es">Sobrecarga cognitiva que bloqueaba la conversión en el canal directo. Diagnóstico analítico, decisión estratégica y rediseño que desbloqueó el funnel. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Rol: product designer responsable · Sin PM directo</em></p>
+        <p class="sc-desc en">Cognitive overload blocking conversion in the direct channel. Analytics diagnosis, strategic decision, and redesign that unblocked the funnel. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Role: responsible product designer · No direct PM</em></p>
         <div class="sc-cta-row">
           <a href="caso-1.html" class="sc-cta es">Ver Case Study </a>
           <a href="caso-1.html" class="sc-cta en">View Case Study </a>
-          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Abrir en Notion</a>
-          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Open in Notion</a>
+          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso completo en Notion</a>
+          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Full process in Notion</a>
         </div>
       </div>
       <div class="sc-visual">
@@ -1696,10 +1709,10 @@ nav {
           <div class="sc-num" style="color: var(--purple);">02</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
         </div>
-        <h3 class="sc-title sc-title-purple es">Rediseño del motor de <em>reservas</em></h3>
-        <h3 class="sc-title sc-title-purple en">Booking Engine <em>Redesign</em></h3>
-        <p class="sc-desc es">El motor de reservas competía en pantalla con branding e inspiración. El tráfico llegaba con intención transaccional y la arquitectura no estaba preparada para eso.</p>
-        <p class="sc-desc en">The booking engine competed on screen with branding and editorial content. Traffic arrived with transactional intent — but the architecture wasn't built for it.</p>
+        <h3 class="sc-title sc-title-purple es">Motor de reservas: de <em>escaparate a conversión</em></h3>
+        <h3 class="sc-title sc-title-purple en">Booking Engine: from <em>showcase to conversion</em></h3>
+        <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Rol: product designer lead · Ingeniería + marketing</em></p>
+        <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Role: lead product designer · Engineering + marketing</em></p>
         <div class="sc-cta-row">
           <a href="caso-2.html" class="sc-cta es">Ver Case Study </a>
           <a href="caso-2.html" class="sc-cta en">View Case Study </a>
@@ -1804,7 +1817,10 @@ nav {
     <!-- BLOCK: TOOLS & B2B -->
     <div class="block-divider">
       <div class="block-label">
-        <span class="block-label-text">🛠 &nbsp;Tools &amp; B2B</span>
+        <span class="block-label-text">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          Tools &amp; B2B
+        </span>
         <div class="block-label-line"></div>
       </div>
     </div>
@@ -1816,10 +1832,10 @@ nav {
           <div class="sc-num" style="color: var(--blue);">03</div>
           <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
         </div>
-        <h3 class="sc-title sc-title-blue es">Plataforma académica <em>EdTech</em></h3>
-        <h3 class="sc-title sc-title-blue en">Academic <em>EdTech</em> Platform</h3>
-        <p class="sc-desc es">Una plataforma académica construida por capas, sin criterio unificado. Inconsistente, inaccesible y difícil de usar — no por exceso de información, sino por ausencia de jerarquía.</p>
-        <p class="sc-desc en">An academic platform built layer by layer, without unified criteria. Inconsistent, inaccessible, hard to use — not from too much information, but from a total absence of hierarchy.</p>
+        <h3 class="sc-title sc-title-blue es">Design System & <em>Accesibilidad EdTech</em></h3>
+        <h3 class="sc-title sc-title-blue en">Design System & <em>EdTech Accessibility</em></h3>
+        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
+        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Role: sole designer · DS + WCAG from scratch</em></p>
         <div class="sc-cta-row">
           <a href="caso-3.html" class="sc-cta es">Ver Case Study </a>
           <a href="caso-3.html" class="sc-cta en">View Case Study </a>
@@ -1932,52 +1948,52 @@ nav {
 
       <!-- Left: process steps -->
       <div>
-        <div class="sec-title es">Cómo<br>trabajo<span class="c-purple">.</span></div>
-        <div class="sec-title en">How I<br>work<span class="c-purple">.</span></div>
+        <div class="sec-title es">Cómo<br>decido<span class="c-purple">.</span></div>
+        <div class="sec-title en">How I<br>decide<span class="c-purple">.</span></div>
         <ul class="process-steps">
           <li class="process-step">
             <span class="step-num">01</span>
             <div class="step-content">
-              <div class="step-name es">Investigación UX Cuantitativa</div>
-              <div class="step-name en">Quantitative UX Research</div>
-              <div class="step-desc es">Análisis de comportamiento con Adobe Analytics y Microsoft Clarity — profundidad de scroll, interacción con CTAs, abandonos del funnel. Entender lo que los usuarios realmente hacen, no lo que dicen.</div>
-              <div class="step-desc en">Behaviour analysis with Adobe Analytics and Microsoft Clarity — scroll depth, CTA interaction, funnel drop-offs. Understanding what users actually do, not what they say.</div>
+              <div class="step-name es">Diagnóstico antes que solución</div>
+              <div class="step-name en">Diagnosis before solution</div>
+              <div class="step-desc es">Antes de abrir Figma, entiendo qué está fallando y por qué. Adobe Analytics, Clarity y datos de negocio me dan la señal; las entrevistas o tests me confirman el por qué. El brief que recibo nunca es el problema real — es el punto de partida.</div>
+              <div class="step-desc en">Before opening Figma, I understand what's failing and why. Adobe Analytics, Clarity and business data give me the signal; interviews or tests confirm the reason. The brief I receive is never the real problem — it's the starting point.</div>
             </div>
           </li>
           <li class="process-step">
             <span class="step-num">02</span>
             <div class="step-content">
-              <div class="step-name es">Definición del problema y mapeo de impacto</div>
-              <div class="step-name en">Problem Framing & Impact Mapping</div>
-              <div class="step-desc es">Transformar señales de datos en una definición de problema priorizada. Conectar la fricción UX con los KPIs de negocio — conversión, engagement, rebote, ingresos.</div>
-              <div class="step-desc en">Translating data signals into a prioritised problem definition. Connecting UX friction to business KPIs — conversion, engagement, bounce, revenue.</div>
+              <div class="step-name es">Propuesta argumentada, no opciones decorativas</div>
+              <div class="step-name en">Argued proposal, not decorative options</div>
+              <div class="step-desc es">Cuando presento a stakeholders, presento una decisión con datos detrás — no tres variantes para que elijan. He defendido propuestas ante dirección comercial sin PM de por medio, conectando fricción UX con impacto en conversión e ingresos.</div>
+              <div class="step-desc en">When I present to stakeholders, I present a decision backed by data — not three variants for them to choose from. I've defended proposals to commercial leadership without a PM in between, connecting UX friction to conversion and revenue impact.</div>
             </div>
           </li>
           <li class="process-step">
             <span class="step-num">03</span>
             <div class="step-content">
-              <div class="step-name es">Diseño y Systems Thinking</div>
-              <div class="step-name en">Design & Systems Thinking</div>
-              <div class="step-desc es">Wireframes, arquitectura de información, UI de alta fidelidad. Construir soluciones modulares y escalables que funcionen dentro de las restricciones técnicas reales — AEM, Figma, handoff con desarrollo.</div>
-              <div class="step-desc en">Wireframes, information architecture, high-fidelity UI. Building modular, scalable solutions that work within real technical constraints — AEM, Figma, dev handoff.</div>
+              <div class="step-name es">Diseño con restricciones reales</div>
+              <div class="step-name en">Design within real constraints</div>
+              <div class="step-desc es">Las mejores soluciones nacen de entender qué no se puede cambiar. Diseño sabiendo las restricciones técnicas del stack (AEM, APIs, timelines de dev) y priorizando lo que más mueve la aguja con el menor coste de implementación.</div>
+              <div class="step-desc en">The best solutions come from understanding what cannot be changed. I design knowing the technical constraints of the stack (AEM, APIs, dev timelines) and prioritising what moves the needle most at the lowest implementation cost.</div>
             </div>
           </li>
           <li class="process-step">
             <span class="step-num">04</span>
             <div class="step-content">
-              <div class="step-name es">Descubrimiento continuo</div>
-              <div class="step-name en">Continuous Discovery</div>
-              <div class="step-desc es">Seguimiento e iteración post-lanzamiento. Analizar el comportamiento tras el lanzamiento — porque lanzar es cuando empieza el aprendizaje real.</div>
-              <div class="step-desc en">Post-launch tracking and iteration. Following behaviour post-release — because launching is when the real learning starts.</div>
+              <div class="step-name es">El lanzamiento no es el final</div>
+              <div class="step-name en">Launch is not the end</div>
+              <div class="step-desc es">Post-launch es cuando aprendo si acerté. Mido comportamiento, detecto lo que el diseño no anticipó (como el swipe en mobile de ILUNION, detectado y corregido post-lanzamiento) e itero con criterio, no por intuición.</div>
+              <div class="step-desc en">Post-launch is when I learn if I was right. I measure behaviour, detect what the design didn't anticipate (like the ILUNION mobile swipe, detected and fixed post-launch) and iterate with criteria, not intuition.</div>
             </div>
           </li>
           <li class="process-step">
             <span class="step-num">05</span>
             <div class="step-content">
-              <div class="step-name es">Colaboración transversal</div>
-              <div class="step-name en">Cross-functional Collaboration</div>
-              <div class="step-desc es">Trabajo con equipos de ingeniería, marketing, BI y comercial. Sprint reviews, daily standups, alineación con stakeholders — el ritmo real de un equipo de producto.</div>
-              <div class="step-desc en">Working with engineering, marketing, BI and commercial teams. Sprint reviews, daily standups, stakeholder alignment — real product team rhythm.</div>
+              <div class="step-name es">Trabajo en equipo de producto real</div>
+              <div class="step-name en">Real product team collaboration</div>
+              <div class="step-desc es">He coordinado directamente con ingeniería, BI, marketing y dirección sin intermediarios. Entiendo cómo hablan los developers, cómo priorizan los comerciales y cómo se toman las decisiones cuando hay restricciones de tiempo y presupuesto.</div>
+              <div class="step-desc en">I've coordinated directly with engineering, BI, marketing and leadership without intermediaries. I understand how developers talk, how commercial teams prioritise and how decisions are made under time and budget constraints.</div>
             </div>
           </li>
         </ul>
@@ -1996,25 +2012,25 @@ nav {
           </div>
         </div>
 
+        <div class="about-quote es" style="margin-bottom: 20px;">
+          "El brief que recibes nunca es el problema real. Es el punto de partida para encontrarlo."
+        </div>
+        <div class="about-quote en" style="margin-bottom: 20px;">
+          "The brief you receive is never the real problem. It's the starting point for finding it."
+        </div>
+
         <p class="about-narrative es">
-          No solo diseño pantallas. Entiendo la lógica de negocio detrás de cada interacción, la señal analítica detrás de cada fricción, y el pensamiento sistémico que hace que las soluciones escalen más allá del primer lanzamiento.
+          En cada proyecto he sido la responsable de <strong>definir el problema de negocio</strong>, no solo de resolverlo. Diagnóstico con analítica real, hipótesis priorizadas por impacto, propuesta argumentada a dirección y seguimiento post-lanzamiento con datos reales.
         </p>
         <p class="about-narrative en">
-          I don't just design screens. I understand the business logic behind every interaction, the analytical signal behind every friction point, and the systems thinking that makes solutions scale beyond the first release.
+          In every project I've been responsible for <strong>defining the business problem</strong>, not just solving it. Real analytics diagnosis, impact-prioritised hypotheses, argued proposals to leadership, and post-launch tracking with real data.
         </p>
         <p class="about-narrative es" style="margin-top: -12px;">
-          Mi experiencia incluye colaboración directa con ingeniería y marketing, entornos de producción AEM, auditorías WCAG y ciclos de hipótesis CRO — todo en productos reales, con restricciones reales.
+          He trabajado con restricciones reales: stacks de producción (AEM), limitaciones técnicas, timelines de dev y decisiones de negocio que no dependen solo de diseño. Eso me hace mejor diseñadora de producto, no peor.
         </p>
         <p class="about-narrative en" style="margin-top: -12px;">
-          My background includes direct collaboration with engineering and marketing, AEM production environments, WCAG auditing, and CRO hypothesis cycles — all in real products, with real constraints.
+          I've worked with real constraints: production stacks (AEM), technical limitations, dev timelines, and business decisions that don't depend on design alone. That makes me a better product designer, not a worse one.
         </p>
-
-        <div class="about-quote es">
-          "El problema no era visual. La experiencia estaba construida desde una lógica corporativa e inspiracional — mientras la mayor parte del tráfico llegaba con una clara intención transaccional."
-        </div>
-        <div class="about-quote en">
-          "The problem wasn't visual. The experience was built from a corporate, inspirational logic — while most traffic arrived with a clear transactional intent."
-        </div>
 
         <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="btn-primary" target="_blank" style="display: inline-flex;">
           <span class="es">Descargar CV</span><span class="en">Download CV</span> &thinsp;↗
@@ -2033,16 +2049,16 @@ nav {
     
     <div class="stack-content">
       <div class="stack-eyebrow">
-        <span class="es">• STACK TECNOLÓGICO</span>
-        <span class="en">• TECH STACK</span>
+        <span class="es">• STACK DE PRODUCTO</span>
+        <span class="en">• PRODUCT STACK</span>
       </div>
       <h2 class="stack-title">
-        <span class="es">Diseño, datos e inteligencia artificial trabajando en <span class="stack-text-gradient">el mismo sistema.</span></span>
-        <span class="en">Design, data, and AI working within <span class="stack-text-gradient">the same system.</span></span>
+        <span class="es">Producto, datos e IA como <span class="stack-text-gradient">una sola capa de decisión.</span></span>
+        <span class="en">Product, data, and AI as <span class="stack-text-gradient">a single decision layer.</span></span>
       </h2>
       <p class="stack-desc">
-        <span class="es">Utilizo herramientas de diseño, producto, analítica y colaboración para transformar problemas complejos en experiencias digitales más claras, eficientes y orientadas a negocio. Mi trabajo conecta investigación, UX, CRO, desarrollo y estrategia en un único flujo de trabajo.</span>
-        <span class="en">I use design, product, analytics, and collaboration tools to transform complex problems into clearer, more efficient, and business-oriented digital experiences. My work connects research, UX, CRO, development, and strategy in a single workflow.</span>
+        <span class="es">El stack no define el trabajo — el problema de negocio sí. Estas herramientas me permiten ir desde el diagnóstico de comportamiento hasta el diseño final y la medición de resultados en un único flujo de trabajo integrado.</span>
+        <span class="en">The stack doesn't define the work — the business problem does. These tools let me move from behaviour diagnosis to final design and results measurement in a single integrated workflow.</span>
       </p>
     </div>
 
@@ -2051,7 +2067,7 @@ nav {
     </div>
 
     <div class="stack-pills">
-      <span class="stack-pill">UX/UI Design</span>
+      <span class="stack-pill"><span class="es">Product Discovery</span><span class="en">Product Discovery</span></span>
       <span class="stack-pill">CRO & A/B Testing</span>
       <span class="stack-pill">Design Systems</span>
       <span class="stack-pill">Figma</span>
@@ -2059,10 +2075,10 @@ nav {
       <span class="stack-pill">Microsoft Clarity</span>
       <span class="stack-pill">WCAG 2.1</span>
       <span class="stack-pill">AEM</span>
-      <span class="stack-pill"><span class="es">Análisis Heurístico</span><span class="en">Heuristic Analysis</span></span>
+      <span class="stack-pill"><span class="es">Customer Journey Mapping</span><span class="en">Customer Journey Mapping</span></span>
       <span class="stack-pill">Impact Mapping</span>
+      <span class="stack-pill"><span class="es">Experimentación</span><span class="en">Experimentation</span></span>
       <span class="stack-pill">Claude / IA</span>
-      <span class="stack-pill">Framer</span>
       <span class="stack-pill">GitHub</span>
     </div>
   </div>
@@ -2081,10 +2097,10 @@ nav {
       <span class="en">Ready to build<br>something <span class="c-purple">real</span><span class="c-orange">.</span></span>
     </div>
     <p class="contact-sub es">
-      Abierta a roles de diseño de producto, colaboraciones estratégicas UX y consultoría CRO. Basada en España. Hablemos sobre lo que estás construyendo y el impacto que necesita generar.
+      Abierta a roles de Product Designer en equipos donde el diseño forma parte de las decisiones de negocio. Basada en España, disponible en remoto. Hablemos del problema que estás intentando resolver.
     </p>
     <p class="contact-sub en">
-      Open to product design roles, strategic UX collaborations and CRO consulting. Based in Spain. Let's talk about what you're building and the impact it needs to drive.
+      Open to Product Designer roles in teams where design is part of business decisions. Based in Spain, available remotely. Let's talk about the problem you're trying to solve.
     </p>
     <div class="contact-actions">
       <a href="mailto:mmoralesgr93@gmail.com" class="btn-primary">Email &thinsp;→</a>
@@ -2100,7 +2116,7 @@ nav {
       <span class="cf-dot">·</span>
       <a href="mailto:mmoralesgr93@gmail.com" class="cf-link">Email</a>
       <span class="cf-dot">·</span>
-      <a href="https://linkedin.com/" target="_blank" rel="noopener" class="cf-link">LinkedIn</a>
+      <a href="https://linkedin.com/in/marta-morales-gr" target="_blank" rel="noopener" class="cf-link">LinkedIn</a>
     </div>
 
   </div>
@@ -2241,4 +2257,3 @@ function closeMenu() {
 
 </body>
 </html>
-                                                                                                                                                                                                                                                                    
