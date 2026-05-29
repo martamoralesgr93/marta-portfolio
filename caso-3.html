@@ -135,11 +135,32 @@
     .fu { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(0.2, 0.8, 0.2, 1), transform .8s cubic-bezier(0.2, 0.8, 0.2, 1); }
     .fu.in { opacity: 1; transform: none; }
 
-    .pm-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
-    .pm-table th, .pm-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
-    .pm-table th { color: var(--text-dim); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); }
-    .pm-table td:first-child { color: var(--text); }
-    .pm-table td:last-child { color: var(--white); font-weight: 600; }
+    /* PRODUCT METHODOLOGY WIDGET */
+    .pm-widget { background: #080808; border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px; margin-top: 80px; }
+    .pm-header { margin-bottom: 40px; }
+    .pm-header-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.03); border-radius: 10px; color: var(--accent); margin-bottom: 16px; }
+    .pm-title { font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .pm-desc { font-size: 15px; color: var(--text-dim); }
+    .pm-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .pm-col-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); font-weight: 600; padding-left: 20px; }
+    .pm-list { display: flex; flex-direction: column; gap: 12px; }
+    .pm-row { background: #0c0c0c; border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; padding: 16px 24px; position: relative; }
+    
+    .pm-left { display: flex; align-items: center; gap: 20px; }
+    .pm-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.03); }
+    .pm-text { flex: 1; }
+    .pm-text-title { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 4px; }
+    .pm-text-num { font-size: 11px; color: var(--accent); letter-spacing: 0.05em; font-weight: 600; }
+    
+    .pm-right { display: flex; align-items: center; justify-content: space-between; }
+    .pm-pill { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .pm-dots { display: grid; grid-template-columns: repeat(3, 4px); gap: 4px; opacity: 0.2; }
+    .pm-dots span { width: 4px; height: 4px; border-radius: 50%; background: #fff; }
+    
+    .pm-connector { position: absolute; left: 50%; top: 50%; transform: translateY(-50%); width: 0; display: flex; align-items: center; }
+    .pm-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 16px var(--accent), 0 0 32px var(--accent); position: relative; z-index: 2; transform: translateX(-4px); }
+    .pm-line { position: absolute; left: 0; top: 3px; height: 1px; width: 60px; border-top: 1px dashed rgba(255,255,255,0.2); }
+    .pm-arrow { position: absolute; left: 60px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.3); font-size: 12px; }
 
     @media (max-width: 768px) {
       .cs-nav { padding: 0 24px; height: 56px; }
@@ -149,7 +170,12 @@
       .cs-block { padding: 80px 0; }
       .cs-ba { grid-template-columns: 1fr; gap: 40px; }
       .score-row { flex-direction: column; text-align: center; gap: 24px; }
-      .pm-table th, .pm-table td { padding: 12px; font-size: 13px; }
+      .pm-widget { padding: 24px; border-radius: 16px; }
+      .pm-cols { display: none; }
+      .pm-row { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
+      .pm-connector { display: none; }
+      .pm-right { justify-content: flex-start; }
+      .pm-dots { display: none; }
       /* Premium Mobile Fixes */
       .cs-frame, .cs-frame-auto { 
         aspect-ratio: auto; 
@@ -353,46 +379,118 @@
       <li><strong>Base escalable:</strong> El UI Kit se ha convertido en el estándar fundacional para la futura evolución tecnológica de la plataforma CEF.</li>
     </ul>
 
-    <div class="fu" style="margin-top: 80px; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px;">
-      <h3 style="font-size:16px; font-weight:700; color:var(--white); margin-bottom:16px; display:flex; align-items:center; gap:8px;">
-        <span style="font-size:18px">🔗</span> Traducción a metodología de producto
-      </h3>
-      <p class="p" style="font-size: 14px; color: var(--text-dim); margin-bottom: 24px;"><em>Esta sección conecta el trabajo real con el lenguaje que usan los equipos de producto.</em></p>
+    <div class="fu pm-widget">
+      <div class="pm-header">
+        <div class="pm-header-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <h3 class="pm-title">Traducción a metodología de producto</h3>
+        <p class="pm-desc">Conecto el trabajo real con el lenguaje que usan los equipos de producto.</p>
+      </div>
       
-      <table class="pm-table">
-        <thead>
-          <tr>
-            <th>Lo que hice</th>
-            <th>Cómo se llama formalmente</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Revisión de problemas de la interfaz actual</td>
-            <td>Heuristic Evaluation / UX Audit</td>
-          </tr>
-          <tr>
-            <td>Mejora de colores para legibilidad</td>
-            <td>WCAG Compliance / Accessibility Design</td>
-          </tr>
-          <tr>
-            <td>Creación de estructura base</td>
-            <td>Wireframing / Information Architecture</td>
-          </tr>
-          <tr>
-            <td>Estandarización de botones y estilos</td>
-            <td>UI Kit / Component Library creation</td>
-          </tr>
-          <tr>
-            <td>Pase a desarrollo con documentación</td>
-            <td>Design Handoff / Specs definition</td>
-          </tr>
-          <tr>
-            <td>Diseño aplicable a otros módulos</td>
-            <td>Scalable Design / Design System foundation</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="pm-cols">
+        <div class="pm-col-title">LO QUE HICE</div>
+        <div class="pm-col-title">CÓMO SE LLAMA FORMALMENTE</div>
+      </div>
+
+      <div class="pm-list">
+        <!-- ROW 1 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Revisión de problemas de la interfaz actual</div>
+              <div class="pm-text-num">01</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Heuristic Evaluation / UX Audit</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Mejora de colores para legibilidad</div>
+              <div class="pm-text-num">02</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">WCAG Compliance / Accessibility Design</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Creación de estructura base</div>
+              <div class="pm-text-num">03</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Wireframing / Information Architecture</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4z"></path><path d="M14 4h6v6h-6z"></path><path d="M4 14h6v6H4z"></path><path d="M14 14h6v6h-6z"></path></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Estandarización de botones y estilos</div>
+              <div class="pm-text-num">04</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">UI Kit / Component Library creation</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 5 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Pase a desarrollo con documentación</div>
+              <div class="pm-text-num">05</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Design Handoff / Specs definition</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 6 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Diseño aplicable a otros módulos</div>
+              <div class="pm-text-num">06</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Scalable Design / Design System foundation</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
   </div>

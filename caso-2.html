@@ -123,11 +123,32 @@
     .fu { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(0.2, 0.8, 0.2, 1), transform .8s cubic-bezier(0.2, 0.8, 0.2, 1); }
     .fu.in { opacity: 1; transform: none; }
 
-    .pm-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
-    .pm-table th, .pm-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
-    .pm-table th { color: var(--text-dim); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); }
-    .pm-table td:first-child { color: var(--text); }
-    .pm-table td:last-child { color: var(--white); font-weight: 600; }
+    /* PRODUCT METHODOLOGY WIDGET */
+    .pm-widget { background: #080808; border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 40px; margin-top: 80px; }
+    .pm-header { margin-bottom: 40px; }
+    .pm-header-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.03); border-radius: 10px; color: var(--accent); margin-bottom: 16px; }
+    .pm-title { font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .pm-desc { font-size: 15px; color: var(--text-dim); }
+    .pm-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .pm-col-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); font-weight: 600; padding-left: 20px; }
+    .pm-list { display: flex; flex-direction: column; gap: 12px; }
+    .pm-row { background: #0c0c0c; border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; padding: 16px 24px; position: relative; }
+    
+    .pm-left { display: flex; align-items: center; gap: 20px; }
+    .pm-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.03); }
+    .pm-text { flex: 1; }
+    .pm-text-title { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 4px; }
+    .pm-text-num { font-size: 11px; color: var(--accent); letter-spacing: 0.05em; font-weight: 600; }
+    
+    .pm-right { display: flex; align-items: center; justify-content: space-between; }
+    .pm-pill { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .pm-dots { display: grid; grid-template-columns: repeat(3, 4px); gap: 4px; opacity: 0.2; }
+    .pm-dots span { width: 4px; height: 4px; border-radius: 50%; background: #fff; }
+    
+    .pm-connector { position: absolute; left: 50%; top: 50%; transform: translateY(-50%); width: 0; display: flex; align-items: center; }
+    .pm-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 16px var(--accent), 0 0 32px var(--accent); position: relative; z-index: 2; transform: translateX(-4px); }
+    .pm-line { position: absolute; left: 0; top: 3px; height: 1px; width: 60px; border-top: 1px dashed rgba(255,255,255,0.2); }
+    .pm-arrow { position: absolute; left: 60px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.3); font-size: 12px; }
 
     @media (max-width: 768px) {
       .cs-nav { padding: 0 24px; height: 56px; }
@@ -137,7 +158,12 @@
       .cs-block { padding: 80px 0; }
       .cs-ba { grid-template-columns: 1fr; gap: 40px; }
       .metric-cards { grid-template-columns: 1fr; gap: 16px; }
-      .pm-table th, .pm-table td { padding: 12px; font-size: 13px; }
+      .pm-widget { padding: 24px; border-radius: 16px; }
+      .pm-cols { display: none; }
+      .pm-row { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
+      .pm-connector { display: none; }
+      .pm-right { justify-content: flex-start; }
+      .pm-dots { display: none; }
       /* Premium Mobile Fixes */
       .cs-frame, .cs-frame-auto { 
         aspect-ratio: auto; 
@@ -389,50 +415,134 @@
       <p class="p fu" style="font-size: 14px; color: var(--text-dim); margin: 0;">📌 Algunos datos específicos de conversión y negocio son confidenciales. Los resultados reflejan seguimiento analítico, observación de comportamiento y validaciones internas posteriores al lanzamiento.</p>
     </div>
 
-    <div class="fu" style="margin-top: 80px; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px;">
-      <h3 style="font-size:16px; font-weight:700; color:var(--white); margin-bottom:16px; display:flex; align-items:center; gap:8px;">
-        <span style="font-size:18px">🔗</span> Traducción a metodología de producto
-      </h3>
-      <p class="p" style="font-size: 14px; color: var(--text-dim); margin-bottom: 24px;"><em>Esta sección conecta el trabajo real con el lenguaje que usan los equipos de producto.</em></p>
+    <div class="fu pm-widget">
+      <div class="pm-header">
+        <div class="pm-header-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <h3 class="pm-title">Traducción a metodología de producto</h3>
+        <p class="pm-desc">Conecto el trabajo real con el lenguaje que usan los equipos de producto.</p>
+      </div>
       
-      <table class="pm-table">
-        <thead>
-          <tr>
-            <th>Lo que hice</th>
-            <th>Cómo se llama formalmente</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Análisis con Clarity + Analytics</td>
-            <td>Quantitative UX Research / Behavioral Analytics</td>
-          </tr>
-          <tr>
-            <td>Benchmarking funcional</td>
-            <td>Competitive Analysis</td>
-          </tr>
-          <tr>
-            <td>Propuesta jerarquizada por impacto</td>
-            <td>Opportunity Solution Tree / Impact Mapping</td>
-          </tr>
-          <tr>
-            <td>Trabajo con desarrollo en staging</td>
-            <td>Design QA / Handoff colaborativo</td>
-          </tr>
-          <tr>
-            <td>Observación post-lanzamiento</td>
-            <td>Continuous Discovery / Post-launch monitoring</td>
-          </tr>
-          <tr>
-            <td>Detección de nuevo patrón de uso</td>
-            <td>Insight de producto → nueva oportunidad</td>
-          </tr>
-          <tr>
-            <td>Coordinación con Marketing, BI y Comercial</td>
-            <td>Cross-functional collaboration / Stakeholder alignment</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="pm-cols">
+        <div class="pm-col-title">LO QUE HICE</div>
+        <div class="pm-col-title">CÓMO SE LLAMA FORMALMENTE</div>
+      </div>
+
+      <div class="pm-list">
+        <!-- ROW 1 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Análisis con Clarity + Analytics</div>
+              <div class="pm-text-num">01</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Quantitative UX Research / Behavioral Analytics</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Benchmarking funcional</div>
+              <div class="pm-text-num">02</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Competitive Analysis</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Propuesta jerarquizada por impacto</div>
+              <div class="pm-text-num">03</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Opportunity Solution Tree / Impact Mapping</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Trabajo con desarrollo en staging</div>
+              <div class="pm-text-num">04</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Design QA / Handoff colaborativo</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 5 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Observación post-lanzamiento</div>
+              <div class="pm-text-num">05</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Continuous Discovery / Post-launch monitoring</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <!-- ROW 6 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Detección de nuevo patrón de uso</div>
+              <div class="pm-text-num">06</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Insight de producto → nueva oportunidad</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        
+        <!-- ROW 7 -->
+        <div class="pm-row">
+          <div class="pm-left">
+            <div class="pm-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+            <div class="pm-text">
+              <div class="pm-text-title">Coordinación con Marketing, BI y Comercial</div>
+              <div class="pm-text-num">07</div>
+            </div>
+          </div>
+          <div class="pm-connector"><div class="pm-dot"></div><div class="pm-line"></div><div class="pm-arrow">→</div></div>
+          <div class="pm-right">
+            <div class="pm-pill">Cross-functional collaboration / Stakeholder alignment</div>
+            <div class="pm-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
   </div>
