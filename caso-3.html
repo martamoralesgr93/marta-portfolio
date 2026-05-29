@@ -656,6 +656,7 @@
     <h2>¿Volver al inicio?</h2>
     <div class="footer-actions">
       <a href="index.html" class="btn-p">Volver al portfolio</a>
+      <a href="https://github.com/martamoralesgr93/marta-portfolio/blob/main/caso-3.html" target="_blank" rel="noopener" class="btn-s">Ver en GitHub ↗</a>
       <a href="caso-1.html" class="btn-s">Caso 01: ILUNION Ofertas →</a>
     </div>
   </div>
@@ -664,11 +665,4 @@
 <script>
   const io = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(el => io.observe(el));
-</script>
-</body>
-</html>
-
+      if (isIntersecting) { target.classList.add('in'); i
