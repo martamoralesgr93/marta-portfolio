@@ -1208,30 +1208,31 @@ nav {
 .stack-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 32px;
 }
 .stack-pill {
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  padding: 10px 18px;
-  border-radius: 40px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  padding: 14px 28px;
+  border-radius: 100px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.12);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.02em;
   cursor: default;
 }
 .stack-pill:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.2);
-  transform: translateY(-3px);
+  background: linear-gradient(145deg, rgba(167,139,250,0.15), rgba(249,115,22,0.08));
+  border-color: rgba(167,139,250,0.4);
+  transform: translateY(-4px);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 15px rgba(124,58,237,0.15);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px rgba(124,58,237,0.25);
 }
 </style>
 </head>
@@ -1962,18 +1963,6 @@ nav {
           <span class="es">Descargar CV</span><span class="en">Download CV</span> &thinsp;↗
         </a>
 
-        <div class="tools-row">
-          <span class="tag">Figma</span>
-          <span class="tag">Adobe Analytics</span>
-          <span class="tag">Microsoft Clarity</span>
-          <span class="tag">AEM</span>
-          <span class="tag">WCAG 2.1</span>
-          <span class="tag">A/B Testing</span>
-          <span class="tag"><span class="es">Análisis Heurístico</span><span class="en">Heuristic Analysis</span></span>
-          <span class="tag">Design Systems</span>
-          <span class="tag"><span class="es">Análisis Competitivo</span><span class="en">Competitive Analysis</span></span>
-          <span class="tag">Impact Mapping</span>
-        </div>
       </div>
 
     </div>
@@ -2005,18 +1994,19 @@ nav {
     </div>
 
     <div class="stack-pills">
+      <span class="stack-pill">UX/UI Design</span>
+      <span class="stack-pill">CRO & A/B Testing</span>
+      <span class="stack-pill">Design Systems</span>
       <span class="stack-pill">Figma</span>
-      <span class="stack-pill">Framer</span>
-      <span class="stack-pill">Claude</span>
-      <span class="stack-pill">ChatGPT</span>
       <span class="stack-pill">Adobe Analytics</span>
       <span class="stack-pill">Microsoft Clarity</span>
-      <span class="stack-pill">Google Analytics</span>
+      <span class="stack-pill">WCAG 2.1</span>
+      <span class="stack-pill">AEM</span>
+      <span class="stack-pill"><span class="es">Análisis Heurístico</span><span class="en">Heuristic Analysis</span></span>
+      <span class="stack-pill">Impact Mapping</span>
+      <span class="stack-pill">Claude / IA</span>
+      <span class="stack-pill">Framer</span>
       <span class="stack-pill">GitHub</span>
-      <span class="stack-pill">Linear</span>
-      <span class="stack-pill">Vercel</span>
-      <span class="stack-pill">Notion</span>
-      <span class="stack-pill">VS Code</span>
     </div>
   </div>
 </section>
