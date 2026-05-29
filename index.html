@@ -444,6 +444,17 @@ nav {
   color: var(--orange); opacity: 0.7; text-transform: uppercase;
   margin-bottom: 22px;
 }
+.sc-num-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+.sc-num-row .sc-num { margin-bottom: 0; }
+.sc-client-link {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); text-decoration: none; transition: all 0.2s;
+  padding: 5px 12px; border: 1px solid rgba(255,255,255,0.1); border-radius: 100px;
+  background: rgba(255,255,255,0.02);
+}
+.sc-client-link:hover {
+  color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.06);
+}
 .sc-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 36px; font-weight: 700; line-height: 1.12;
@@ -1558,7 +1569,10 @@ nav {
     <!-- CASO 1: ILUNION — Rediseño del componente de Ofertas -->
     <div class="sc-card reveal">
       <div class="sc-content">
-        <div class="sc-num">01</div>
+        <div class="sc-num-row">
+          <div class="sc-num">01</div>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
+        </div>
         <h3 class="sc-title es">Rediseño del componente de <em>Ofertas</em></h3>
         <h3 class="sc-title en">Offers Component <em>Redesign</em></h3>
         <p class="sc-desc es">La sobrecarga cognitiva, la jerarquía de precios rota y la fatiga de scroll provocaban abandono del funnel. Los usuarios se enfrentaban a un muro de información antes de decidir.</p>
@@ -1671,7 +1685,10 @@ nav {
     <!-- CASO 2: ILUNION — Rediseño del motor de reservas -->
     <div class="sc-card reveal">
       <div class="sc-content">
-        <div class="sc-num" style="color: var(--purple);">02</div>
+        <div class="sc-num-row">
+          <div class="sc-num" style="color: var(--purple);">02</div>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
+        </div>
         <h3 class="sc-title sc-title-purple es">Rediseño del motor de <em>reservas</em></h3>
         <h3 class="sc-title sc-title-purple en">Booking Engine <em>Redesign</em></h3>
         <p class="sc-desc es">El tráfico de alta intención llegaba donde el motor competía con branding y contenido editorial. El problema no era el diseño — era la desalineación entre lógica de negocio e intención del usuario.</p>
@@ -1788,7 +1805,10 @@ nav {
     <!-- CASO 3: CEF — Plataforma académica EdTech -->
     <div class="sc-card reveal">
       <div class="sc-content">
-        <div class="sc-num" style="color: var(--blue);">03</div>
+        <div class="sc-num-row">
+          <div class="sc-num" style="color: var(--blue);">03</div>
+          <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
+        </div>
         <h3 class="sc-title sc-title-blue es">Plataforma académica <em>EdTech</em></h3>
         <h3 class="sc-title sc-title-blue en">Academic <em>EdTech</em> Platform</h3>
         <p class="sc-desc es">Una herramienta de gestión académica que había crecido por adiciones incrementales — inconsistente, inaccesible y cognitivamente abrumadora. El problema no era la información, sino la ausencia total de jerarquía.</p>
