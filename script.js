@@ -7,6 +7,9 @@ function closeAllProjects(exceptEl = null) {
       item.setAttribute("aria-expanded", "false");
     }
   });
+  if (!exceptEl) {
+    document.documentElement.classList.remove("project-expanded");
+  }
 }
 
 function toggleProject(el) {
@@ -19,10 +22,12 @@ function toggleProject(el) {
     el.classList.remove("active");
     if (detail) detail.style.display = "none";
     el.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("project-expanded");
   } else {
     el.classList.add("active");
     if (detail) detail.style.display = "block";
     el.setAttribute("aria-expanded", "true");
+    document.documentElement.classList.add("project-expanded");
     setTimeout(() => {
       const y = el.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: y, behavior: "smooth" });
@@ -115,6 +120,16 @@ const translations = {
     "label-solution": "Estrategia y Solución",
     "label-impact": "Impacto y Métricas",
     "label-read-more": "Ver caso de estudio",
+    "star-eyebrow": "Metodología de Trabajo",
+    "star-title": "Estructura Estratégica STAR",
+    "star-s-title": "S — Situation",
+    "star-s-desc": "Contexto de negocio, análisis del funnel de conversión y detección empírica de fricciones.",
+    "star-t-title": "T — Task",
+    "star-t-desc": "Establecimiento de objetivos UX/ROI, hipótesis de conversión y definición de limitaciones técnicas.",
+    "star-a-title": "A — Action",
+    "star-a-desc": "Investigación cualitativa, wireframing interactivo, diseño de sistemas en Figma e implementación frontend.",
+    "star-r-title": "R — Result",
+    "star-r-desc": "Validación mediante A/B Testing, métricas reales de conversión, retorno de inversión y aprendizajes.",
     "nav-home": "Inicio",
     "nav-work": "Proyectos",
     "nav-about": "Sobre mí",
@@ -218,6 +233,16 @@ const translations = {
     "label-solution": "Strategy & Solution",
     "label-impact": "Impact & Metrics",
     "label-read-more": "Read case study",
+    "star-eyebrow": "Design Methodology",
+    "star-title": "STAR Strategic Structure",
+    "star-s-title": "S — Situation",
+    "star-s-desc": "Business context, conversion funnel analysis, and empirical detection of friction.",
+    "star-t-title": "T — Task",
+    "star-t-desc": "Establishing UX/ROI objectives, conversion hypotheses, and defining technical constraints.",
+    "star-a-title": "A — Action",
+    "star-a-desc": "Qualitative research, interactive wireframing, Figma systems design, and frontend implementation.",
+    "star-r-title": "R — Result",
+    "star-r-desc": "Validation via A/B Testing, real conversion metrics, return on investment, and learnings.",
     "nav-home": "Home",
     "nav-work": "Projects",
     "nav-about": "About",
@@ -717,4 +742,36 @@ function initInteractiveTables() {
       });
     }
   });
+}
+
+// Apple-style Viewport Snap Reveal Observer
+function initSnapReveal() {
+  const revealTargets = document.querySelectorAll('.hero, .star-infographic-section, .section');
+  
+  const revealObserverOptions = {
+    root: null,
+    threshold: 0.15, // Triggers when 15% of the section is visible
+    rootMargin: "0px"
+  };
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active-view');
+      } else {
+        entry.target.classList.remove('active-view');
+      }
+    });
+  }, revealObserverOptions);
+  
+  revealTargets.forEach(target => {
+    target.classList.add('snap-section');
+    revealObserver.observe(target);
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSnapReveal);
+} else {
+  initSnapReveal();
 }

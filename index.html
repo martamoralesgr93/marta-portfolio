@@ -26,12 +26,14 @@
 </head>
 
 <body id="top">
-  <!-- Dynamic Aurora Video Background -->
-  <div class="video-bg-container">
-    <video autoplay="" muted="" loop="" playsinline="" class="video-bg">
-      <source src="assets/12802144_3840_2160_30fps.mp4" type="video/mp4">
-    </video>
-    <div class="video-bg-overlay"></div>
+  <!-- Dynamic Mesh Gradient Background (Stripe / Linear / Raycast style) -->
+  <div class="mesh-gradient-container">
+    <div class="mesh-blob blob-magenta"></div>
+    <div class="mesh-blob blob-cyan"></div>
+    <div class="mesh-blob blob-violet"></div>
+    <div class="mesh-blob blob-orange"></div>
+    <div class="mesh-blob blob-blue"></div>
+    <div class="mesh-glow"></div>
   </div>
 
   <header class="nav mobile-header">
@@ -53,7 +55,7 @@
     <main class="container" id="mainContent">
       <section class="hero">
         <div class="avatar-frame" onclick="scrollToId('top')">
-          <img src="assets/logo.png" class="avatar" alt="Marta Morales">
+          <img src="assets/logo-sinfondo.png" class="avatar" alt="Marta Morales">
         </div>
         <div class="hero-text">
           <p class="hero-eyebrow" data-i18n="hero-eyebrow">PRODUCT DESIGNER · UX STRATEGY · GROWTH</p>
@@ -99,15 +101,44 @@
         </div>
       </section>
 
+      <!-- STAR Infographic Section (UI Trend) -->
+      <section class="star-infographic-section">
+        <div class="star-infographic-container">
+          <p class="eyebrow" data-i18n="star-eyebrow" style="text-align: center; margin-bottom: 0.5rem; text-transform: uppercase;">Metodología de Trabajo</p>
+          <h2 class="star-section-title" data-i18n="star-title" style="text-align: center; margin-bottom: 2.5rem; font-family: 'Vanity', serif; font-size: 2.25rem; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">Estructura Estratégica STAR</h2>
+          
+          <div class="star-infographic-grid">
+            <div class="star-step-card situation">
+              <div class="star-badge-glow">S</div>
+              <h3 class="star-step-title" data-i18n="star-s-title">S — Situation</h3>
+              <p class="star-step-desc" data-i18n="star-s-desc">Contexto de negocio, análisis del funnel de conversión y detección empírica de fricciones.</p>
+            </div>
+            
+            <div class="star-step-card task">
+              <div class="star-badge-glow">T</div>
+              <h3 class="star-step-title" data-i18n="star-t-title">T — Task</h3>
+              <p class="star-step-desc" data-i18n="star-t-desc">Establecimiento de objetivos UX/ROI, hipótesis de conversión y definición de limitaciones técnicas.</p>
+            </div>
+            
+            <div class="star-step-card action">
+              <div class="star-badge-glow">A</div>
+              <h3 class="star-step-title" data-i18n="star-a-title">A — Action</h3>
+              <p class="star-step-desc" data-i18n="star-a-desc">Investigación cualitativa, wireframing interactivo, diseño de sistemas en Figma e implementación frontend.</p>
+            </div>
+            
+            <div class="star-step-card result">
+              <div class="star-badge-glow">R</div>
+              <h3 class="star-step-title" data-i18n="star-r-title">R — Result</h3>
+              <p class="star-step-desc" data-i18n="star-r-desc">Validación mediante A/B Testing, métricas reales de conversión, retorno de inversión y aprendizajes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="work" class="section">
         <p class="eyebrow" data-i18n="work-eyebrow">Proyectos seleccionados</p>
-        
-        
-
-      
-
-      
-    <div id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
+        <div class="projects-list">
+        <div id="project-ilunion" class="work-item" onclick="toggleProject(this)" tabindex="0" role="button" aria-expanded="false">
           <div class="work-summary">
             <!-- 1. Eyebrow -->
             <p class="project-eyebrow">Product Design · CRO · UX Strategy</p>
@@ -1057,16 +1088,12 @@
 
         </section>
       
-
         <section class="cs-section" id="08-business-impact">
           
         </section>
       
-  </div>
-</article>
-</div>
-      </article>
-      
+  </div> <!-- End of projects container -->
+</section> <!-- End of projects-list -->
 
     <section id="about" class="section about">
       <p class="eyebrow" data-i18n="about-eyebrow">Sobre mí</p>
@@ -1086,12 +1113,34 @@
           <p class="about-intro" data-i18n="about-intro">Product Designer con mentalidad de negocio y enfoque en resultados.</p>
 
           <div class="about-text">
-            <p data-i18n="about-text-1">Entiendo el diseño como una herramienta para resolver problemas y alcanzar objetivos estratégicos. Actualmente, dentro del equipo de Negocio Digital de ILUNION Hotels, trabajo directamente sobre el canal directo de la compañía, donde cada decisión UX tiene un impacto medible en la rentabilidad.</p>
-            <p data-i18n="about-text-2">Mi enfoque combina el análisis de datos, el customer journey y la experimentación continua para crear productos digitales que escalan y generan valor real.</p>
+            <p data-i18n="about-text-1">Entiendo el diseño de producto como una disciplina estratégica para resolver problemas reales y alcanzar objetivos comerciales medibles. En mi rol actual dentro del equipo de Negocio Digital de ILUNION Hotels, optimizo el embudo transaccional del canal directo mediante un ciclo cerrado de investigación, experimentación y escalabilidad técnica.</p>
+            <p data-i18n="about-text-2">Mi trabajo conecta la experiencia del usuario con indicadores de rendimiento del negocio: conversión, ingresos y eficiencia operativa, basando cada decisión en datos empíricos.</p>
+          </div>
+
+          <!-- Thought Leadership & Methodology Dashboard (UI Trend) -->
+          <div class="methodology-dashboard">
+            <h4 class="dashboard-title">Método de Trabajo y Pensamiento Crítico</h4>
+            <div class="dashboard-grid">
+              <div class="dashboard-card">
+                <span class="card-icon">⚡</span>
+                <span class="card-title">CRO &amp; Experimentación Continua</span>
+                <span class="card-desc">Validación empírica mediante A/B Testing, análisis cuantitativo en Microsoft Clarity y Adobe Analytics, y optimización de flujos críticos de conversión.</span>
+              </div>
+              <div class="dashboard-card">
+                <span class="card-icon">🎯</span>
+                <span class="card-title">Diseño Basado en Objetivos (ROI)</span>
+                <span class="card-desc">Alineación del modelo mental del usuario con los objetivos comerciales estratégicos (revenue, conversión directa y captación de leads).</span>
+              </div>
+              <div class="dashboard-card">
+                <span class="card-icon">📐</span>
+                <span class="card-title">Diseño de Sistemas Escalables</span>
+                <span class="card-desc">Sistemas de diseño modulares e implementables en Figma que garantizan la consistencia visual y la agilidad de desarrollo frontend.</span>
+              </div>
+            </div>
           </div>
 
           <div class="about-signature">
-            <img src="assets/logo.png" alt="Marta Morales Logo" class="signature-logo">
+            <img src="assets/logo-sinfondo.png" alt="Marta Morales Logo" class="signature-logo" style="filter: invert(1) brightness(1.2);">
             <div class="signature-details">
               <span class="signature-name">Marta Morales</span>
               <span class="signature-role">Product Design &amp; Strategy</span>
@@ -1104,13 +1153,33 @@
         </div>
 
         <div class="about-expertise">
-          <p class="eyebrow" data-i18n="expertise-eyebrow">Especialidades</p>
-          <div class="expertise-tags" aria-label="Especialidades técnicas">
-            <span class="tag" data-i18n="tag-ux-research">UX/UI &amp; CRO</span>
-            <span class="tag" data-i18n="tag-ui-design">Figma &amp; A/B Testing</span>
-            <span class="tag" data-i18n="tag-cro">Microsoft Clarity</span>
-            <span class="tag" data-i18n="tag-user-testing">eCommerce &amp; Turismo</span>
-            <span class="tag" data-i18n="tag-product-thinking">Producto Digital</span>
+          <p class="eyebrow" data-i18n="expertise-eyebrow">Stack Tecnológico</p>
+          <div class="stack-group">
+            <span class="stack-category">Diseño y Prototipado</span>
+            <div class="stack-tags">
+              <span class="stack-tag">Figma</span>
+              <span class="stack-tag">Design Systems</span>
+              <span class="stack-tag">Adobe XD</span>
+              <span class="stack-tag">Prototyping</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <span class="stack-category">Análisis y CRO</span>
+            <div class="stack-tags">
+              <span class="stack-tag">Clarity</span>
+              <span class="stack-tag">Adobe Analytics</span>
+              <span class="stack-tag">Hotjar</span>
+              <span class="stack-tag">User Mapping</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <span class="stack-category">Experimentación</span>
+            <div class="stack-tags">
+              <span class="stack-tag">A/B Testing</span>
+              <span class="stack-tag">Experimentation</span>
+              <span class="stack-tag">eCommerce</span>
+              <span class="stack-tag">Turismo UX</span>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="lang-es" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ILUNION Hotels — Motor de Reservas · Marta Morales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #8b5cf6;
+      --accent-glow: rgba(139,92,246,0.12);
+      --accent-border: rgba(139,92,246,0.20);
+      --white: #fff;
+      --black: #000;
+      --surface: #0a0a0a;
+      --border: rgba(255,255,255,0.07);
+      --text: rgba(255,255,255,0.62);
+      --text-dim: rgba(255,255,255,0.35);
+      --text-bright: rgba(255,255,255,0.88);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--surface); color: var(--text); font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.75; overflow-x: hidden; }
+    
+    html:not(.lang-en) .en { display: none !important; }
+    html.lang-en .en { display: revert; }
+    html.lang-en .es { display: none !important; }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+    .cs-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 68px; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.82); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-back { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-dim); font-size: 13px; font-weight: 400; transition: color .2s; }
+    .nav-back:hover { color: var(--white); }
+
+    .cs-hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+    .cs-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 55%, #000 100%); }
+    .cs-hero-glow { position: absolute; bottom: -80px; right: -80px; width: 500px; height: 500px; background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%); pointer-events: none; }
+    .cs-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 48px 88px; width: 100%; }
+    .cs-eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; display: block; }
+    .cs-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(44px, 5.5vw, 78px); font-weight: 700; line-height: 1.06; color: var(--white); margin-bottom: 30px; max-width: 820px; }
+    .cs-title em { font-style: italic; color: rgba(255,255,255,0.72); display: block; }
+    .cs-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 44px; }
+    .cs-tag { padding: 5px 13px; border-radius: 100px; font-size: 11px; letter-spacing: 0.04em; border: 1px solid rgba(255,255,255,0.10); color: rgba(255,255,255,0.32); }
+    .cs-meta { display: flex; gap: 48px; flex-wrap: wrap; }
+    .cs-meta-label { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.22); margin-bottom: 5px; }
+    .cs-meta-val { font-size: 14px; color: rgba(255,255,255,0.68); font-weight: 500; }
+
+    .cs-wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px; width: 100%; position: relative; z-index: 1; }
+    
+    /* BEHANCE STYLE S-T-A-R */
+    .cs-block { padding: 120px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+    .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
+    
+    .block-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: inline-flex; align-items: center; gap: 12px; }
+    .block-label::before { content: ""; width: 24px; height: 1px; background: var(--accent); }
+    
+    .block-h { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 3.5vw, 52px); font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 40px; }
+    .block-h em { font-style: italic; color: rgba(255,255,255,.62); }
+    
+    .lead { font-size: 21px; line-height: 1.6; color: var(--text-bright); max-width: 760px; margin-bottom: 32px; font-weight: 300; }
+    .p { font-size: 17px; line-height: 1.78; color: var(--text); margin-bottom: 24px; max-width: 720px; }
+    .p strong { color: var(--white); font-weight: 600; }
+
+    ul.bullet-list { list-style: none; padding-left: 0; margin-bottom: 40px; }
+    ul.bullet-list li { font-size: 17px; line-height: 1.78; color: var(--text); margin-bottom: 16px; position: relative; padding-left: 28px; max-width: 720px; }
+    ul.bullet-list li::before { content: "—"; color: var(--accent); position: absolute; left: 0; top: 0; font-weight: bold; }
+
+    /* DASHBOARD WIDGETS */
+    .dash-widget { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
+    .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
+    
+    /* Premium Metric Cards */
+    .metric-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px; margin-bottom: 24px; }
+    .metric-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 40px 24px; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s ease; }
+    .metric-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
+    .metric-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.1); }
+    .metric-card.alert::before { background: #ef4444; box-shadow: 0 0 24px rgba(239,68,68,0.6); }
+    .metric-card.success::before { background: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
+    .metric-val { font-size: 52px; font-weight: 800; color: var(--white); font-family: 'Playfair Display', serif; line-height: 1; margin-bottom: 16px; }
+    .metric-card.alert .metric-val { color: #ef4444; }
+    .metric-card.success .metric-val { color: var(--accent); }
+    .metric-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5; }
+
+    .dash-stat { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .dash-stat-label { font-size: 14px; color: var(--text-dim); }
+    .dash-stat-val { font-size: 24px; font-weight: 700; color: var(--accent); }
+
+    /* IMAGE FRAMES */
+    .cs-frame {
+      aspect-ratio: 4 / 3;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      margin: 48px 0;
+    }
+    .cs-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .cs-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 60px 0; }
+    .cs-ba-col { display: flex; flex-direction: column; gap: 16px; }
+    .cs-ba-badge { display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 100px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; width: fit-content; }
+    .cs-ba-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+    .cs-ba-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+
+    .cs-footer { padding: 120px 0; border-top: 1px solid var(--border); text-align: center; }
+    .footer-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px; }
+    .cs-footer h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 4vw, 56px); font-weight: 700; color: var(--white); margin-bottom: 48px; }
+    .footer-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-p { padding: 14px 36px; border-radius: 100px; background: var(--white); color: var(--black); font-size: 15px; font-weight: 600; text-decoration: none; transition: opacity .2s; }
+    .btn-p:hover { opacity: .88; }
+    .btn-s { padding: 14px 36px; border-radius: 100px; border: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.55); font-size: 15px; text-decoration: none; transition: all .2s; }
+    .btn-s:hover { border-color: rgba(255,255,255,.38); color: var(--white); }
+
+    .fu { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(0.2, 0.8, 0.2, 1), transform .8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .fu.in { opacity: 1; transform: none; }
+
+    .pm-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+    .pm-table th, .pm-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .pm-table th { color: var(--text-dim); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); }
+    .pm-table td:first-child { color: var(--text); }
+    .pm-table td:last-child { color: var(--white); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .cs-nav { padding: 0 24px; height: 56px; }
+      .nav-label { display: none; }
+      .cs-hero-content { padding: 0 24px 72px; }
+      .cs-wrap, .cs-wrap-wide { padding: 0 24px; }
+      .cs-block { padding: 80px 0; }
+      .cs-ba { grid-template-columns: 1fr; gap: 40px; }
+      .metric-cards { grid-template-columns: 1fr; }
+      .pm-table th, .pm-table td { padding: 12px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="portfolio.html" class="nav-back">
+    <span>←</span><span class="nav-label">Volver al portfolio</span>
+  </a>
+</nav>
+
+<header class="cs-hero">
+  <div class="cs-hero-overlay"></div>
+  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-content">
+    <span class="cs-eyebrow">
+      02 — ILUNION Hotels · CRO · Product Design
+    </span>
+    <h1 class="cs-title">
+      Rediseño del motor<br><em>de reservas</em>
+    </h1>
+    <div class="cs-tags">
+      <span class="cs-tag">Product Design</span>
+      <span class="cs-tag">CRO</span>
+      <span class="cs-tag">UX Strategy</span>
+      <span class="cs-tag">Customer Journey</span>
+      <span class="cs-tag">Ecommerce Hotelero</span>
+    </div>
+    <div class="cs-meta">
+      <div>
+        <div class="cs-meta-label">Empresa</div>
+        <div class="cs-meta-val">ILUNION Hotels</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Rol</div>
+        <div class="cs-meta-val">Product Designer UX/UI & CRO</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Año</div>
+        <div class="cs-meta-val">Sep 2024 – Actualidad</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Metodología</div>
+        <div class="cs-meta-val">CRO · Data-driven design</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- [S] SITUATION -->
+<section class="cs-block">
+  <div class="cs-behance-letter">S</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">SITUATION · Contexto de negocio</span>
+      <h2 class="block-h">
+        Alta intención de compra,<br><em>fricción en el funnel</em>
+      </h2>
+    </div>
+    <div style="padding:0">
+      <p class="lead fu">En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra — usuarios que ya habían decidido reservar y buscaban el mejor precio directo.</p>
+      
+      <p class="p fu">El componente convivía con múltiples objetivos de negocio simultáneos: promociones, branding, fidelización y contenido inspiracional. Esta acumulación generaba una experiencia poco clara para usuarios con intención transaccional directa.</p>
+
+      <p class="p fu">El acceso al motor aparecía en puntos clave del ecosistema: homepage, páginas de hotel, páginas travel y campañas promocionales. Sin embargo, el comportamiento de usuario mostraba señales claras de fricción:</p>
+
+      <ul class="bullet-list fu">
+        <li>Usuarios que no iniciaban búsqueda</li>
+        <li>Navegación innecesaria antes de encontrar el motor</li>
+        <li>Abandono temprano</li>
+        <li>Dificultades para localizar rápidamente el acceso a reservas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- [T] TASK -->
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+  <div class="cs-behance-letter">T</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">TASK · El reto</span>
+      <h2 class="block-h">
+        Re-alinear las prioridades<br><em>con el comportamiento real</em>
+      </h2>
+    </div>
+    <div style="padding:0">
+      <p class="p fu">Analizar el comportamiento del acceso al motor desde una perspectiva UX y CRO para detectar puntos de abandono y proponer una solución más clara, escalable y alineada con los objetivos comerciales.</p>
+      
+      <p class="p fu">La solución debía:</p>
+      <ul class="bullet-list fu">
+        <li>Funcionar correctamente en desktop y mobile</li>
+        <li>Convivir con campañas activas</li>
+        <li>Mantener coherencia con la identidad visual</li>
+        <li>Adaptarse a las limitaciones técnicas de Adobe Experience Manager</li>
+      </ul>
+
+      <p class="p fu">El reto no era simplemente "hacer visible un buscador" — era resolver una <strong>desalineación entre las prioridades del negocio, la arquitectura de contenidos y el comportamiento real del usuario</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- [A] ACTION -->
+<section class="cs-block">
+  <div class="cs-behance-letter">A</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">ACTION · Lo que hice, y por qué</span>
+      <h2 class="block-h">
+        Investigación, estrategia y<br><em>rediseño del motor</em>
+      </h2>
+    </div>
+    <div style="padding:0">
+
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">1. Research & Análisis de comportamiento</h3>
+      <p class="p fu">Empecé analizando el comportamiento mediante <strong>Microsoft Clarity</strong> y <strong>Adobe Analytics</strong> para identificar:</p>
+      <ul class="bullet-list fu">
+        <li>Profundidad de scroll y visibilidad del motor</li>
+        <li>Patrones de interacción con CTAs</li>
+        <li>Puntos de abandono dentro del customer journey</li>
+        <li>Comportamiento diferenciado entre desktop y mobile</li>
+      </ul>
+
+      <p class="p fu">El análisis mostró que muchos usuarios llegaban con intención directa de reservar, pero encontraban demasiados estímulos antes de iniciar búsqueda. El acceso al motor competía visualmente con promociones, contenido corporativo y elementos inspiracionales.</p>
+      
+      <!-- DASHBOARD WIDGET: METRIC CARDS -->
+      <div class="dash-widget fu">
+        <div class="dash-title">Interacción vs Ruido Visual · Entorno Legacy</div>
+        <div class="metric-cards">
+          <div class="metric-card">
+            <div class="metric-val">75%</div>
+            <div class="metric-label">Scroll sin<br>Búsqueda</div>
+          </div>
+          <div class="metric-card alert">
+            <div class="metric-val">60%</div>
+            <div class="metric-label">Fricción Crítica<br>Mobile</div>
+          </div>
+          <div class="metric-card success">
+            <div class="metric-val">20%</div>
+            <div class="metric-label">Inicio de Búsqueda<br>Rápido</div>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: var(--text-dim); text-align: center; margin-top: 16px;">El ruido visual y el contenido inspiracional aplastaban la interacción directa de reserva.</p>
+      </div>
+
+      <div style="border-left:2px solid var(--accent); padding:14px 0 14px 28px; margin:40px 0;" class="fu">
+        <p style="font-family:'Playfair Display',serif; font-size:21px; line-height:1.55; color:rgba(255,255,255,.78); font-style:italic;">"El usuario no quería explorar primero. Quería comprobar disponibilidad lo antes posible."</p>
+      </div>
+
+      <div class="cs-ba fu" style="margin-top:40px; margin-bottom:60px;">
+        <div class="cs-ba-col">
+          <div class="cs-frame" style="margin:0"><img src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-desk.png" alt="Análisis de abandono Desktop"></div>
+          <p class="p" style="font-size:13px; margin-top: 12px;">Experimento previo: Análisis de abandonos · Desktop</p>
+        </div>
+        <div class="cs-ba-col">
+          <div class="cs-frame" style="margin:0"><img src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-abandonado-mobile.png" alt="Análisis de abandono Mobile"></div>
+          <p class="p" style="font-size:13px; margin-top: 12px;">Experimento previo: Puntos de fuga en Mobile</p>
+        </div>
+      </div>
+
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Problem Framing</h3>
+      <p class="p fu">El problema principal no era visual. La experiencia estaba construida desde una lógica corporativa e inspiracional, mientras que el tráfico llegaba con intención claramente transaccional.</p>
+      <p class="p fu">Existía una desalineación entre el <strong>modelo mental del negocio</strong> ("explora, inspírate, descubre ILUNION") y el <strong>modelo mental del usuario</strong> que llegaba desde un anuncio ("quiero reservar, quiero ver precio, quiero encontrar mi hotel").</p>
+
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">3. UX Strategy & Priorización</h3>
+      <p class="p fu">A partir del análisis, redefiní la jerarquía del acceso al motor priorizando:</p>
+      <ul class="bullet-list fu">
+        <li>Rapidez de identificación del buscador</li>
+        <li>Claridad visual y reducción de competencia entre elementos</li>
+        <li>Reducción de fricción en el inicio de búsqueda</li>
+        <li>Facilidad de interacción desde tráfico de alta intención</li>
+      </ul>
+
+      <div class="cs-ba fu" style="margin-top:40px; margin-bottom:60px;">
+        <div class="cs-ba-col">
+          <div class="cs-frame" style="margin:0"><img src="assets/ILUNION/CRO/POP-UP-DESTINO/exp-cro-destinos-desk.png" alt="Test Selección Destino Desktop"></div>
+          <p class="p" style="font-size:13px; margin-top: 12px;">Experimento previo: Test de selección de destino</p>
+        </div>
+        <div class="cs-ba-col">
+          <div class="cs-frame" style="margin:0"><img src="assets/ILUNION/CRO/POP-UP-DESTINO/EXP-CRO-DESTINOS-POPUP.png" alt="Test Selección Destino Mobile"></div>
+          <p class="p" style="font-size:13px; margin-top: 12px;">Simplificación y validación de hipótesis (100% fiabilidad)</p>
+        </div>
+      </div>
+
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">4. Diseño Responsive diferenciado</h3>
+      <p class="p fu">Desktop y mobile requerían soluciones distintas porque el comportamiento en cada dispositivo es diferente.</p>
+      <p class="p fu"><strong>Desktop:</strong> Acceso rápido al motor, visibilidad de fechas y ocupación, relación directa entre promociones y búsqueda, CTAs claramente expuestos.</p>
+      <p class="p fu"><strong>Mobile:</strong> Estructura simplificada para comportamiento táctil — reorganización vertical, reducción de elementos secundarios, mejora de jerarquía, optimización del primer scroll.</p>
+
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">5. Colaboración e Implementación</h3>
+      <p class="p fu">Trabajé directamente con el equipo de desarrollo en la definición funcional y validación en entorno staging. El objetivo no era entregar diseño visual, sino asegurar coherencia funcional, viabilidad técnica y correcta integración en AEM.</p>
+
+      <div class="cs-ba fu" style="margin-top:60px;">
+        <div class="cs-ba-col">
+          <div class="cs-ba-badge cs-ba-before">Antes / Problema</div>
+          <div class="cs-frame" style="margin:0"><img src="assets/ILUNION/CRO/MOTOR-DESTINOS/antes-recompo.png" alt="Antes Motor"></div>
+        </div>
+        <div class="cs-ba-col">
+          <div class="cs-ba-badge cs-ba-after">Después / Solución Implementada</div>
+          <div class="cs-frame" style="margin:0"><img src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.png" alt="Después Motor"></div>
+        </div>
+      </div>
+
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:80px; margin-bottom:20px; font-family:'Playfair Display', serif;">6. Iteración post-lanzamiento</h3>
+      <p class="p fu">Tras el lanzamiento, el proyecto quedó en <strong>fase de observación activa y test running</strong>. El seguimiento con Clarity reveló un hallazgo inesperado: los usuarios usaban el buscador como herramienta de exploración de destinos, no únicamente como acceso transaccional.</p>
+      <p class="p fu">Este insight reveló una necesidad híbrida entre exploración, inspiración y conversión directa. Se trabajaron nuevas mejoras para integrar mejor la lógica de búsqueda por destino. El proyecto continúa en fase de validación y optimización continua.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- [R] RESULTADO -->
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+  <div class="cs-behance-letter">R</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">RESULT · El impacto</span>
+      <h2 class="block-h">
+        Validación e impacto<br><em>en la conversión</em>
+      </h2>
+    </div>
+
+    <ul class="bullet-list fu" style="margin-bottom: 48px;">
+      <li><strong>Mejora de la claridad</strong> del acceso al motor de reservas</li>
+      <li><strong>Reducción de fricción</strong> dentro del customer journey digital</li>
+      <li>Mayor visibilidad del inicio de búsqueda</li>
+      <li>Interacciones más rápidas desde tráfico de alta intención</li>
+      <li>Mejor relación entre campañas y conversión directa</li>
+      <li>Mayor coherencia entre desktop y mobile</li>
+      <li>Detección de nuevos patrones de comportamiento (exploración de destinos) que abrieron nuevas líneas de mejora</li>
+      <li>El proyecto continúa en optimización activa con primeros indicadores positivos</li>
+    </ul>
+
+    <div style="padding:0; border-left: 2px solid var(--accent); padding-left: 24px;">
+      <p class="p fu" style="font-size: 14px; color: var(--text-dim); margin: 0;">📌 Algunos datos específicos de conversión y negocio son confidenciales. Los resultados reflejan seguimiento analítico, observación de comportamiento y validaciones internas posteriores al lanzamiento.</p>
+    </div>
+
+    <div class="fu" style="margin-top: 80px; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px;">
+      <h3 style="font-size:16px; font-weight:700; color:var(--white); margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:18px">🔗</span> Traducción a metodología de producto
+      </h3>
+      <p class="p" style="font-size: 14px; color: var(--text-dim); margin-bottom: 24px;"><em>Esta sección conecta el trabajo real con el lenguaje que usan los equipos de producto.</em></p>
+      
+      <table class="pm-table">
+        <thead>
+          <tr>
+            <th>Lo que hice</th>
+            <th>Cómo se llama formalmente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Análisis con Clarity + Analytics</td>
+            <td>Quantitative UX Research / Behavioral Analytics</td>
+          </tr>
+          <tr>
+            <td>Benchmarking funcional</td>
+            <td>Competitive Analysis</td>
+          </tr>
+          <tr>
+            <td>Propuesta jerarquizada por impacto</td>
+            <td>Opportunity Solution Tree / Impact Mapping</td>
+          </tr>
+          <tr>
+            <td>Trabajo con desarrollo en staging</td>
+            <td>Design QA / Handoff colaborativo</td>
+          </tr>
+          <tr>
+            <td>Observación post-lanzamiento</td>
+            <td>Continuous Discovery / Post-launch monitoring</td>
+          </tr>
+          <tr>
+            <td>Detección de nuevo patrón de uso</td>
+            <td>Insight de producto → nueva oportunidad</td>
+          </tr>
+          <tr>
+            <td>Coordinación con Marketing, BI y Comercial</td>
+            <td>Cross-functional collaboration / Stakeholder alignment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<footer class="cs-footer">
+  <div class="cs-wrap">
+    <div class="footer-label">Continúa explorando</div>
+    <h2>¿Siguiente proyecto?</h2>
+    <div class="footer-actions">
+      <a href="caso-3.html" class="btn-s">← Caso 03: CEF EdTech</a>
+      <a href="portfolio.html" class="btn-p">Volver al portfolio</a>
+      <a href="caso-1.html" class="btn-s">Caso 01: ILUNION Ofertas →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
