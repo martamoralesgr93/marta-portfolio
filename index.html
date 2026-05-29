@@ -936,24 +936,50 @@ nav {
   .sc-card {
     grid-template-columns: 1fr !important;
     min-height: auto !important;
-    border-radius: 14px;
+    border-radius: 16px;
+    margin-bottom: 40px !important;
   }
-  .sc-visual { height: 240px; order: -1; }
-  .sc-img { max-width: 85%; max-height: 85%; transform: none !important; }
+  .sc-visual { height: auto !important; min-height: 280px; padding: 40px 0; order: -1; }
+  .sc-img { max-width: 90%; max-height: 220px; object-fit: contain; transform: none !important; }
   .sc-content { padding: 32px 24px 24px !important; }
-  .sc-title { font-size: 26px !important; }
+  .sc-title { font-size: 28px !important; }
   .sc-desc { max-width: 100% !important; margin-bottom: 24px !important; }
+  
+  /* Make CTAs big and clickable on mobile */
+  .sc-cta-row { flex-direction: column !important; gap: 12px !important; margin-top: 24px !important; width: 100%; }
+  .sc-cta, .sc-cta-notion {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 20px !important;
+    border-radius: 12px !important;
+    font-size: 13px !important;
+    letter-spacing: 0.05em !important;
+    width: 100%;
+    margin: 0 !important;
+  }
+  .sc-cta-notion {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: rgba(255,255,255,0.85) !important;
+  }
+  .sc-cta {
+    background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.15)) !important;
+    border: 1px solid rgba(167,139,250,0.3) !important;
+    color: #fff !important;
+  }
+  
   .sc-metrics {
     border-left: none !important;
     border-top: 1px solid rgba(255,255,255,0.05);
-    padding: 20px 24px 28px !important;
+    padding: 24px 20px 28px !important;
     flex-direction: row !important; flex-wrap: wrap; gap: 0;
   }
   .sc-metric {
-    width: 33%; border-bottom: none !important;
-    padding: 12px 0 !important;
+    width: 33.33%; border-bottom: none !important;
+    padding: 8px 0 !important;
   }
-  .sc-mval { font-size: 22px !important; }
+  .sc-mval { font-size: 20px !important; }
   .sc-corner { display: none; }
 
   /* Process section */
