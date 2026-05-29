@@ -138,7 +138,22 @@
       .metric-cards { grid-template-columns: 1fr; gap: 16px; }
       .pm-table th, .pm-table td { padding: 12px; font-size: 13px; }
       /* Premium Mobile Fixes */
-      .cs-frame { aspect-ratio: auto; min-height: 240px; border-radius: 12px; }
+      .cs-frame, .cs-frame-auto { 
+        aspect-ratio: auto; 
+        min-height: 240px; 
+        border-radius: 12px; 
+        overflow: hidden; 
+        padding: 0 !important; 
+      }
+      .cs-frame img, .cs-frame-auto img { 
+        width: 100% !important; 
+        height: auto !important; 
+        max-width: 100% !important; 
+        max-height: none !important; 
+        object-fit: cover; 
+        border-radius: 0; 
+        display: block; 
+      }
       .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
     }
   </style>
