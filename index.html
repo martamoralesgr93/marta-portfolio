@@ -416,7 +416,7 @@ nav {
 /* ===================== SHOWCASE CASE STUDY CARDS ===================== */
 .sc-card {
   display: grid;
-  grid-template-columns: 270px 1fr 128px;
+  grid-template-columns: 380px 1fr 140px;
   min-height: 360px;
   background: linear-gradient(155deg, #07060e 0%, #050409 55%, #060510 100%);
   border: 1px solid rgba(255,255,255,0.055);
@@ -424,13 +424,15 @@ nav {
   overflow: hidden;
   margin-bottom: 14px;
   position: relative;
-  cursor: pointer;
   transition: border-color 0.38s, box-shadow 0.38s;
 }
 .sc-card:hover {
   border-color: rgba(167,139,250,0.18);
   box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 60px rgba(124,58,237,0.07);
 }
+.sc-card:nth-of-type(1) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
+.sc-card:nth-of-type(2) { --c-theme: #a78bfa; --c-theme-rgb: 167, 139, 250; }
+.sc-card:nth-of-type(3) { --c-theme: #3b82f6; --c-theme-rgb: 59, 130, 246; }
 
 /* Top shimmer line — purple gradient */
 .sc-card::before {
@@ -475,31 +477,58 @@ nav {
 .sc-title-purple em { color: var(--purple); }
 .sc-title-blue em   { color: var(--blue);   }
 .sc-desc {
-  font-size: 12.5px; color: rgba(255,255,255,0.50); line-height: 1.82;
-  margin-bottom: 36px; max-width: 210px;
+  font-size: 13px; color: rgba(255,255,255,0.92); line-height: 1.82;
+  margin-bottom: 28px; max-width: 320px;
 }
 /* Two-button CTA row */
-.sc-cta-row { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
-.sc-cta-notion {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.28);
-  text-decoration: none;
-  transition: color 0.22s;
-  padding: 0;
+.sc-cta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
 }
-.sc-cta-notion:hover { color: rgba(255,255,255,0.55); }
-.sc-cta-notion .notion-arrow { font-size: 10px; }
+.sc-cta-notion {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.01);
+  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+.sc-cta-notion:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+.sc-cta-notion .notion-arrow { font-size: 11px; }
 
 .sc-cta {
-  display: inline-flex; align-items: center; gap: 9px;
-  font-size: 9.5px; font-weight: 600; letter-spacing: 0.18em;
-  color: rgba(255,255,255,0.28); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--white); text-decoration: none;
   text-transform: uppercase; width: fit-content;
-  transition: color 0.24s, gap 0.24s;
+  padding: 10px 22px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.03);
+  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
 }
-.sc-cta::after { content: '→'; }
-.sc-cta:hover { color: rgba(255,255,255,0.75); gap: 13px; }
+.sc-cta::after { content: ' →'; transition: transform 0.28s; }
+.sc-cta:hover {
+  color: #050409;
+  background: var(--c-theme, var(--white));
+  border-color: var(--c-theme, var(--white));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(var(--c-theme-rgb), 0.35);
+}
+.sc-cta:hover::after { transform: translateX(3px); }
 
 /* ── Visual column ── */
 .sc-visual {
@@ -565,7 +594,7 @@ nav {
   color: var(--white); line-height: 1; margin-bottom: 6px;
 }
 .sc-mname {
-  font-size: 9px; color: rgba(255,255,255,0.22);
+  font-size: 9px; color: rgba(255,255,255,0.58);
   line-height: 1.55; letter-spacing: 0.01em;
 }
 
@@ -861,6 +890,75 @@ nav {
 
 /* ===================== MOBILE IMPACT ROW (hidden desktop) ===================== */
 .mobile-impact { display: none; }
+
+/* ===================== TABLET ===================== */
+@media (min-width: 769px) and (max-width: 1100px) {
+
+  /* Wrap */
+  .wrap { padding: 0 32px; }
+
+  /* ── Nav ── */
+  nav { padding: 0 24px; height: 64px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 12px; }
+  .lang-toggle { font-size: 10px; padding: 4px 10px; }
+
+  /* ── Hero ── */
+  .hero-grid { grid-template-columns: 1fr 240px; gap: 32px; }
+  .hero-title { font-size: clamp(44px, 6vw, 60px); letter-spacing: -2.5px; margin-bottom: 20px; }
+  .hero-body { font-size: 13px; max-width: 100%; margin-bottom: 36px; }
+  .impact-card { margin-top: 32px; padding: 20px 18px; }
+  .m-val { font-size: 26px; }
+
+  /* ── Sobre section ── */
+  .sobre-diptych { grid-template-columns: 1fr 1fr; min-height: 560px; }
+  .sobre-img-panel { min-height: 560px; }
+  .sobre-text-panel { padding: 52px 40px 52px 40px; }
+  .sobre-heading { font-size: clamp(64px, 7vw, 96px); margin-bottom: 32px; }
+  .sobre-body p { max-width: 100%; }
+
+  /* ── Features grid ── */
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-card:nth-child(2) { border-right: none; }
+  .feature-card:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.06); }
+  .feature-card:nth-child(4) { border-right: none; border-top: 1px solid rgba(255,255,255,0.06); }
+  .feature-card { padding: 36px 28px 32px; }
+
+  /* ── About strip ── */
+  .about-strip-grid { gap: 48px; }
+  .sec-title { font-size: 40px; letter-spacing: -2px; }
+
+  /* ── Work header ── */
+  .work-header { flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 28px; margin-bottom: 40px; }
+  .work-meta { text-align: left; }
+
+  /* ── Showcase cards — tablet ── */
+  .sc-card {
+    grid-template-columns: 1fr 1fr !important;
+    min-height: 320px !important;
+  }
+  /* Hide the metrics sidebar column at tablet */
+  .sc-metrics {
+    display: none !important;
+  }
+  .sc-content { padding: 40px 32px 40px 40px !important; }
+  .sc-title { font-size: 28px !important; }
+  .sc-desc { max-width: 100% !important; }
+
+  /* ── Process grid ── */
+  .process-grid { grid-template-columns: 1fr; gap: 40px; }
+  .process-steps { margin-top: 28px; }
+  .about-stats { gap: 36px; }
+  .stat-value { font-size: 44px; }
+
+  /* ── Contact ── */
+  .contact-section { padding: 100px 0 120px; }
+  .contact-title { font-size: 52px; letter-spacing: -2.5px; }
+  .contact-sub { font-size: 13px; }
+
+  /* ── Stack pills ── */
+  .stack-pills { flex-wrap: wrap; }
+}
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
@@ -1205,6 +1303,9 @@ nav {
   border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.28);
 }
 
+@media (min-width: 769px) and (max-width: 1100px) {
+  .dash-widget { min-height: 240px; padding: 18px 16px; }
+}
 @media (max-width: 768px) {
   .dash-widget { min-height: 200px; padding: 14px; }
 }
@@ -1580,7 +1681,7 @@ nav {
     <!-- BLOCK: TURISMO & ECOMMERCE -->
     <div class="block-label">
       <span class="block-label-text">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
         Turismo &amp; Ecommerce
       </span>
       <div class="block-label-line"></div>
@@ -1595,16 +1696,16 @@ nav {
         </div>
         <h3 class="sc-title es">CRO del componente de <em>Ofertas</em></h3>
         <h3 class="sc-title en">Offers Component <em>CRO</em></h3>
-        <p class="sc-desc es">Sobrecarga cognitiva que bloqueaba la conversión en el canal directo. Diagnóstico analítico, decisión estratégica y rediseño que desbloqueó el funnel. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Rol: product designer responsable · Sin PM directo</em></p>
-        <p class="sc-desc en">Cognitive overload blocking conversion in the direct channel. Analytics diagnosis, strategic decision, and redesign that unblocked the funnel. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Role: responsible product designer · No direct PM</em></p>
+        <p class="sc-desc es">Sobrecarga cognitiva que bloqueaba la conversión en el canal directo. Diagnóstico analítico, decisión estratégica y rediseño que desbloqueó el funnel. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em></p>
+        <p class="sc-desc en">Cognitive overload blocking conversion in the direct channel. Analytics diagnosis, strategic decision, and redesign that unblocked the funnel. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em></p>
         <div class="sc-cta-row">
-          <a href="caso-1.html" class="sc-cta es">Ver Case Study </a>
-          <a href="caso-1.html" class="sc-cta en">View Case Study </a>
+          <a href="caso-1.html" class="sc-cta es">Ver Case Study</a>
+          <a href="caso-1.html" class="sc-cta en">View Case Study</a>
           <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso completo en Notion</a>
           <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Full process in Notion</a>
         </div>
       </div>
-      <div class="sc-visual">
+      <div class="sc-visual" aria-hidden="true">
         <!-- Dashboard: Conversion uplift analytics -->
         <div class="dash-widget">
           <div class="dash-grid"></div>
@@ -1711,16 +1812,16 @@ nav {
         </div>
         <h3 class="sc-title sc-title-purple es">Motor de reservas: de <em>escaparate a conversión</em></h3>
         <h3 class="sc-title sc-title-purple en">Booking Engine: from <em>showcase to conversion</em></h3>
-        <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Rol: product designer lead · Ingeniería + marketing</em></p>
-        <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Role: lead product designer · Engineering + marketing</em></p>
+        <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer lead · Ingeniería + marketing</em></p>
+        <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: lead product designer · Engineering + marketing</em></p>
         <div class="sc-cta-row">
-          <a href="caso-2.html" class="sc-cta es">Ver Case Study </a>
-          <a href="caso-2.html" class="sc-cta en">View Case Study </a>
+          <a href="caso-2.html" class="sc-cta es">Ver Case Study</a>
+          <a href="caso-2.html" class="sc-cta en">View Case Study</a>
           <a href="https://www.notion.so/35ed112a771e8133b0cfdfca47a8cca2" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Abrir en Notion</a>
           <a href="https://www.notion.so/35ed112a771e8133b0cfdfca47a8cca2" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Open in Notion</a>
         </div>
       </div>
-      <div class="sc-visual">
+      <div class="sc-visual" aria-hidden="true">
         <!-- Dashboard: Booking Engine funnel -->
         <div class="dash-widget">
           <div class="dash-grid"></div>
@@ -1818,7 +1919,7 @@ nav {
     <div class="block-divider">
       <div class="block-label">
         <span class="block-label-text">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
           Tools &amp; B2B
         </span>
         <div class="block-label-line"></div>
@@ -1834,16 +1935,16 @@ nav {
         </div>
         <h3 class="sc-title sc-title-blue es">Design System & <em>Accesibilidad EdTech</em></h3>
         <h3 class="sc-title sc-title-blue en">Design System & <em>EdTech Accessibility</em></h3>
-        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
-        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.35);font-style:normal;">Role: sole designer · DS + WCAG from scratch</em></p>
+        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
+        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em></p>
         <div class="sc-cta-row">
-          <a href="caso-3.html" class="sc-cta es">Ver Case Study </a>
-          <a href="caso-3.html" class="sc-cta en">View Case Study </a>
+          <a href="caso-3.html" class="sc-cta es">Ver Case Study</a>
+          <a href="caso-3.html" class="sc-cta en">View Case Study</a>
           <a href="https://www.notion.so/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Abrir en Notion</a>
           <a href="https://www.notion.so/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Open in Notion</a>
         </div>
       </div>
-      <div class="sc-visual">
+      <div class="sc-visual" aria-hidden="true">
         <!-- Dashboard: Accessibility & Design System audit -->
         <div class="dash-widget">
           <div class="dash-grid"></div>
@@ -1965,8 +2066,8 @@ nav {
             <div class="step-content">
               <div class="step-name es">Propuesta argumentada, no opciones decorativas</div>
               <div class="step-name en">Argued proposal, not decorative options</div>
-              <div class="step-desc es">Cuando presento a stakeholders, presento una decisión con datos detrás — no tres variantes para que elijan. He defendido propuestas ante dirección comercial sin PM de por medio, conectando fricción UX con impacto en conversión e ingresos.</div>
-              <div class="step-desc en">When I present to stakeholders, I present a decision backed by data — not three variants for them to choose from. I've defended proposals to commercial leadership without a PM in between, connecting UX friction to conversion and revenue impact.</div>
+              <div class="step-desc es">Cuando presento a stakeholders, presento una decisión con datos detrás — no tres variantes para que elijan. He defendido propuestas ante dirección de forma directa y autónoma, conectando fricción UX con impacto en conversión e ingresos.</div>
+              <div class="step-desc en">When I present to stakeholders, I present a decision backed by data — not three variants for them to choose from. I've defended proposals directly to leadership, connecting UX friction to conversion and revenue impact.</div>
             </div>
           </li>
           <li class="process-step">
@@ -2240,10 +2341,13 @@ function closeMenu() {
   })();
 
   const fadeTargets = document.querySelectorAll(
-    '.sobre-content-col, .mobile-impact, .sc-card, ' +
+    '.sobre-content-col, .mobile-impact, ' +
     '.process-step, .about-right, .contact-section, .work-header'
   );
   fadeTargets.forEach(el => el.classList.add('fade-up'));
+
+  // sc-cards: only trigger the dashboard animations (revealed class), no fade-up movement
+  const scCards = document.querySelectorAll('.sc-card');
 
   const io = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
@@ -2252,6 +2356,7 @@ function closeMenu() {
   }, { threshold: 0.10 });
 
   fadeTargets.forEach(el => io.observe(el));
+  scCards.forEach(el => io.observe(el));
 })();
 </script>
 

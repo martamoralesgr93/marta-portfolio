@@ -321,6 +321,28 @@
       --row-glow: rgba(6,182,212,0.2);
     }
 
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .cs-nav { padding: 0 32px; }
+      .cs-hero-content { padding: 0 32px 72px; }
+      .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
+      .cs-block { padding: 80px 0; }
+      .cs-title { font-size: clamp(38px, 5vw, 60px); }
+      .block-h { font-size: clamp(28px, 3vw, 42px); }
+      .lead { font-size: 18px; }
+      .cs-ba { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .metric-cards { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .metric-card { padding: 28px 16px; }
+      .metric-val { font-size: 40px; }
+      /* Role grid: stack to 1 col */
+      .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .dash-widget { padding: 32px 28px; }
+      /* pm-widget mapping rows: keep desktop layout but tighter */
+      .pm-map-row { gap: 10px; }
+      .pm-bridge { width: 60px; }
+      .pm-work-label { font-size: 12px; }
+      .pm-method-badge { font-size: 11px; padding: 8px 12px; }
+    }
+
     /* RESPONSIVE MOBILE */
     @media (max-width: 768px) {
       .cs-nav { padding: 0 24px; height: 56px; }
@@ -439,10 +461,10 @@
         <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Con quién colaboré</p>
         <ul class="bullet-list">
           <li><strong>Equipo de desarrollo frontend</strong> — implementación en AEM, validación funcional en staging, gestión de constraints técnicos de la plataforma</li>
-          <li><strong>Marketing y Paid Media</strong> — contexto de campaña activas que coexistían con el rediseño; restricción de no poder interrumpir tráfico durante el proceso</li>
+          <li><strong>Marketing y canal digital</strong> — contexto de objetivos de captación y restricciones operativas del entorno en producción</li>
           <li><strong>BI y analítica</strong> — fuente de datos de comportamiento y validación de hipótesis</li>
           <li><strong>Dirección comercial</strong> — validación de objetivos y aprobación de propuestas</li>
-          <li><strong>Equipo de contenidos</strong> — coordinación para que las campañas activas convivieran con los cambios estructurales sin romper comunicación de marca</li>
+          <li><strong>Equipo de contenidos</strong> — coordinación para mantener coherencia de comunicación durante los cambios estructurales</li>
         </ul>
       </div>
     </div>
@@ -460,7 +482,7 @@
       </h2>
     </div>
     <div style="padding:0">
-      <p class="lead fu">En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra — usuarios que ya habían decidido reservar y buscaban el mejor precio directo.</p>
+      <p class="lead fu">En ILUNION Hotels, el motor de reservas es la pieza clave para la captación digital. La mayor parte de los usuarios que acceden al site muestran una alta intención de reserva — personas motivadas por conocer la disponibilidad y precios reales del hotel para confirmar su estancia en el menor número de clics posible.</p>
       
       <p class="p fu">El componente convivía con múltiples objetivos de negocio simultáneos: promociones, branding, fidelización y contenido inspiracional. Esta acumulación generaba una experiencia poco clara para usuarios con intención transaccional directa.</p>
 
@@ -523,7 +545,7 @@
         <li>Comportamiento diferenciado entre desktop y mobile</li>
       </ul>
 
-      <p class="p fu"><strong>Insight:</strong> El 75% de los usuarios realizaba scroll sin iniciar ningún búsqueda. El motor competía visualmente con promociones, branding e inspiracional en el mismo espacio. Un usuario con alta intención de compra — que llega desde un anuncio ya decidido — no quiere explorar primero: quiere verificar disponibilidad y precio lo antes posible. El site no lo permitía sin esfuerzo. <strong>Hipótesis:</strong> Si eliminamos la competencia visual alrededor del motor y lo elevamos a primer nivel jerárquico, el porcentaje de usuarios que inicia búsqueda aumentará significativamente, con impacto directo en el ROAS del canal de paid media.</p>
+      <p class="p fu"><strong>Insight:</strong> El 75% de los usuarios realizaba scroll sin iniciar ninguna búsqueda debido a la saturación visual. El motor de reservas competía visualmente con banners inspiracionales, menús extensos y promociones en un mismo espacio de primer nivel. Un usuario con alta motivación de reserva no necesita explorar contenido general: busca contrastar disponibilidad y precio inmediato. El diseño inicial obstaculizaba este flujo natural. <strong>Hipótesis:</strong> Al priorizar jerárquicamente el motor de reservas y reducir la contaminación visual a su alrededor, se incrementará la tasa de inicio de búsqueda en el funnel de reserva, mejorando el rendimiento global de la inversión en captación digital.</p>
       
       <!-- DASHBOARD WIDGET: METRIC CARDS -->
       <div class="dash-widget fu">
@@ -563,7 +585,7 @@
       <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Problem Framing</h3>
       <p class="p fu">Existía un conflicto directo entre el <strong>modelo mental corporativo</strong> ("explora, descubre nuestra marca") y el <strong>modelo mental del usuario</strong> ("quiero ver disponibilidad y precios"). El rediseño debía transformar un escaparate en una herramienta de conversión eficiente.</p>
       <p class="p fu" style="margin-top:16px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0;">
-        <strong>Trade-offs gestionados:</strong> El rediseño no podía hacer tabla rasa. Las campañas de marketing venían corriendo en paralelo y el contenido promocional no podía eliminarse. AEM imponía limitaciones en la personalización de componentes según dispositivo. La solución tuvo que funcionar dentro de estos constraints reales — no en condiciones de laboratorio.
+        <strong>Trade-offs gestionados:</strong> El rediseño operaba sobre un entorno en producción activo, con contenido existente que no podía eliminarse. AEM imponía limitaciones en la personalización de componentes según dispositivo. La solución tuvo que funcionar dentro de estos constraints reales — no en condiciones de laboratorio.
       </p>
 
       <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">3. UX Strategy & Priorización</h3>
@@ -624,7 +646,7 @@
     </div>
 
     <ul class="bullet-list fu" style="margin-bottom: 48px;">
-      <li><strong>Aceleración del funnel:</strong> Interacciones más rápidas y directas desde tráfico de campañas (Paid Media).</li>
+      <li><strong>Aceleración del funnel:</strong> Interacciones más rápidas y fluidas para el tráfico con alta motivación de conversión.</li>
       <li><strong>Jerarquía resuelta:</strong> El buscador asume el rol principal sin eliminar el contenido corporativo, que pasa a un segundo nivel.</li>
       <li><strong>Descubrimiento de insights:</strong> La analítica posterior reveló que los usuarios utilizaban el buscador para explorar destinos geográficos, validando la creación de nuevas landings específicas.</li>
       <li>Implementación exitosa en el ecosistema AEM (Adobe Experience Manager) y despliegue progresivo.</li>

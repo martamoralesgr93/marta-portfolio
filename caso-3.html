@@ -315,6 +315,28 @@
       --row-glow: rgba(6,182,212,0.2);
     }
 
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .cs-nav { padding: 0 32px; }
+      .cs-hero-content { padding: 0 32px 72px; }
+      .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
+      .cs-block { padding: 80px 0; }
+      .cs-title { font-size: clamp(38px, 5vw, 60px); }
+      .block-h { font-size: clamp(28px, 3vw, 42px); }
+      .lead { font-size: 18px; }
+      .cs-ba { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .cs-frame-auto { padding: 40px 24px; }
+      .score-row { gap: 20px; }
+      .score-circle { width: 110px; height: 110px; font-size: 28px; }
+      /* Role grid: stack to 1 col */
+      .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .dash-widget { padding: 32px 28px; }
+      /* pm-widget mapping rows: keep desktop layout but tighter */
+      .pm-map-row { gap: 10px; }
+      .pm-bridge { width: 60px; }
+      .pm-work-label { font-size: 12px; }
+      .pm-method-badge { font-size: 11px; padding: 8px 12px; }
+    }
+
     @media (max-width: 768px) {
       .cs-nav { padding: 0 24px; height: 56px; }
       .nav-label { display: none; }

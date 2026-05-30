@@ -141,6 +141,25 @@
     .fu { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(0.2, 0.8, 0.2, 1), transform .8s cubic-bezier(0.2, 0.8, 0.2, 1); }
     .fu.in { opacity: 1; transform: none; }
 
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .cs-nav { padding: 0 32px; }
+      .cs-hero-content { padding: 0 32px 72px; }
+      .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
+      .cs-block { padding: 80px 0; }
+      .cs-title { font-size: clamp(38px, 5vw, 60px); }
+      .block-h { font-size: clamp(28px, 3vw, 42px); }
+      .lead { font-size: 18px; }
+      .data-band { grid-template-columns: repeat(3, 1fr); padding: 0; }
+      .data-cell { padding: 28px 20px; }
+      .data-v { font-size: 44px; }
+      .cs-ba { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .cs-frame-auto { padding: 40px 24px; }
+      /* Role grid: stack to 1 col */
+      .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .dash-widget { padding: 32px 28px; }
+      .funnel-label { width: 110px; }
+    }
+
     @media (max-width: 768px) {
       .cs-nav { padding: 0 24px; height: 56px; }
       .nav-back { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 100px; color: #fff; }
@@ -245,11 +264,11 @@
         <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Con quién colaboré</p>
         <ul class="bullet-list">
           <li><strong>Equipo de desarrollo frontend</strong> — implementación en AEM, validación en staging, traducción de constraints técnicos en decisiones de diseño</li>
-          <li><strong>Dirección comercial</strong> — aprobación de propuesta en comité (sin PM ni diseño manager disponibles)</li>
-          <li><strong>Equipo de marketing / Paid Media</strong> — contexto de campaña y objetivos de ROAS del canal directo</li>
-          <li><strong>Datos y analtíca</strong> — Adobe Analytics + Microsoft Clarity como única fuente de verdad compartida</li>
+          <li><strong>Dirección comercial</strong> — aprobación de propuesta en comité con ownership autónomo del ciclo completo</li>
+          <li><strong>Equipo de marketing y canal digital</strong> — contexto de campaña y objetivos de conversión del canal directo</li>
+          <li><strong>Datos y analítica</strong> — Adobe Analytics + Microsoft Clarity como única fuente de verdad compartida</li>
         </ul>
-        <p class="p" style="margin-top:20px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0; font-size:13px; color:rgba(255,255,255,0.55);">Los managers directos estaban de baja durante el proyecto. Gestioné el ciclo completo de manera autónoma, desde el diagnóstico hasta la presentación en comité de dirección.</p>
+        <p class="p" style="margin-top:20px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0; font-size:13px; color:rgba(255,255,255,0.55);">Gestioné el ciclo completo de manera autónoma — diagnóstico, propuesta y presentación directa a comité — sin intermediarios de producto entre el análisis y la toma de decisión.</p>
       </div>
     </div>
   </div>
@@ -266,7 +285,7 @@
       </h2>
     </div>
     <div style="padding:0">
-      <p class="lead fu">ILUNION Hotels opera en un mercado donde la venta directa es estratégica: cada reserva que entra por el canal propio es más rentable que la que entra por un intermediario. Las campañas de Paid Media eran la principal palanca para traer tráfico con intención de compra alta — usuarios que ya habían decidido que querían reservar, y que buscaban el mejor precio directo.</p>
+      <p class="lead fu">ILUNION Hotels opera en un entorno digital competitivo donde el canal directo es clave para la relación y fidelización de los clientes. El sitio web representa el punto central de contacto para usuarios con alta intención de reserva — personas interesadas en la marca que buscan formalizar su estancia directamente con la cadena hotelera.</p>
       
       <p class="p fu">Cuando la web migró a Adobe Experience Manager (AEM), el tráfico siguió llegando. Pero algo había cambiado. La efectividad comercial cayó sin causa técnica aparente. El sistema funcionaba. La conversión, no.</p>
 
@@ -287,7 +306,7 @@
     </div>
     <div style="padding:0">
       <p class="p fu">Identificar qué estaba generando el abandono, priorizarlo por impacto comercial real, y diseñar una solución que funcionara dentro de los constraints reales de AEM — sin comprometer la identidad de marca y sin inventar métricas para justificar decisiones.</p>
-      <p class="p fu">El reto tenía una complejidad añadida: los managers directos estaban de baja. Cualquier propuesta tenía que llegar directamente a dirección comercial con suficiente solidez para aprobarse en comité.</p>
+      <p class="p fu">El reto requería ownership end-to-end: cualquier propuesta tenía que llegar directamente a dirección comercial con suficiente solidez argumentativa para aprobarse en comité sin pasos intermedios.</p>
     </div>
   </div>
 </section>
@@ -414,13 +433,13 @@
         <span style="font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif;">+13%</span>
         <span style="font-size: 18px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">Conversión directa</span>
       </div>
-      <p style="margin-top: 16px; font-size: 14px; color: var(--text-bright); max-width: 400px;">Mejora directa de ROAS en campañas Paid Media gracias al desbloqueo visual del embudo.</p>
+      <p style="margin-top: 16px; font-size: 14px; color: var(--text-bright); max-width: 400px;">Incremento en conversión del canal directo tras el desbloqueo visual del embudo — medido con Adobe Analytics en seguimiento post-implementación.</p>
     </div>
 
     <ul class="bullet-list fu" style="margin-bottom: 48px;">
       <li><strong>+13% de conversión en reservas directas</strong></li>
       <li>Usuarios que antes solo navegaban empezaron a iniciar búsquedas directamente en el motor de reservas</li>
-      <li>Mejora del rendimiento de las campañas de Paid Media — el mismo presupuesto, mejor resultado</li>
+      <li>El canal directo recuperó eficiencia: el rediseño desbloqueó el funnel que la arquitectura anterior estaba tapando</li>
       <li>UNICOS integrado como palanca de conversión, no como obstáculo al funnel</li>
       <li><strong>El componente se extendió a páginas de hotel y travel</strong> — la validación interna más potente: cuando una solución se replica, es porque funciona</li>
       <li>Iteración post-lanzamiento que corrigió el patrón de interacción en mobile, demostrando un proceso de producto maduro</li>
