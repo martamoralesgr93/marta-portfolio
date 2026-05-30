@@ -329,18 +329,29 @@
       .cs-title { font-size: clamp(38px, 5vw, 60px); }
       .block-h { font-size: clamp(28px, 3vw, 42px); }
       .lead { font-size: 18px; }
-      .cs-ba { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .cs-ba { grid-template-columns: 1fr; gap: 24px; }
       .metric-cards { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .metric-card { padding: 28px 16px; }
       .metric-val { font-size: 40px; }
       /* Role grid: stack to 1 col */
       .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
       .dash-widget { padding: 32px 28px; }
-      /* pm-widget mapping rows: keep desktop layout but tighter */
-      .pm-map-row { gap: 10px; }
-      .pm-bridge { width: 60px; }
-      .pm-work-label { font-size: 12px; }
-      .pm-method-badge { font-size: 11px; padding: 8px 12px; }
+      /* pm-widget mapping rows: stack vertical like mobile to prevent tablet overflows */
+      .pm-map-row {
+        grid-template-columns: 24px 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: 8px 12px !important;
+        padding: 0 0 16px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+      }
+      .pm-bridge { display: none !important; }
+      .pm-method-badge {
+        grid-column: 2 !important;
+        font-size: 11px !important;
+        padding: 7px 14px !important;
+        white-space: normal !important;
+      }
+      .pm-num { padding-top: 14px !important; }
     }
 
     /* RESPONSIVE MOBILE */
