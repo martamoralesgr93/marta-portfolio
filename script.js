@@ -555,20 +555,20 @@ function initInteractiveTables() {
     "Nuevo insight de producto detectado": {
       metric: "Descubrimiento UX",
       value: "22% Usuarios",
-      meta: "B�squeda por destino general",
-      insight: "Un porcentaje considerable de usuarios utilizaba el buscador introduciendo t�rminos regionales ('Costa del Sol') en lugar de hoteles espec�ficos, lo que impuls� una nueva iniciativa CRO."
+      meta: "Búsqueda por destino general",
+      insight: "Un porcentaje considerable de usuarios utilizaba el buscador introduciendo términos regionales ('Costa del Sol') en lugar de hoteles específicos, lo que impulsó una nueva iniciativa CRO."
     },
     "Coherencia desktop / mobile": {
       metric: "Paridad Dispositivo",
-      value: "3x Fricci�n",
-      meta: "Diferencia t�ctil corregida",
-      insight: "El modelo de pointer (desktop) fomentaba exploraci�n flotante, mientras que en mobile la fijaci�n visual requer�a CTAs anclados arriba de los resultados de b�squeda."
+      value: "3x Fricción",
+      meta: "Diferencia táctil corregida",
+      insight: "El modelo de pointer (desktop) fomentaba exploración flotante, mientras que en mobile la fijación visual requería CTAs anclados arriba de los resultados de búsqueda."
     },
-    "Indicadores de conversi�n (en validaci�n)": {
-      metric: "Consolidaci�n Anal�tica",
+    "Indicadores de conversión (en validación)": {
+      metric: "Consolidación Analítica",
       value: "6 Semanas",
-      meta: "Per�odo de observaci�n est�ndar",
-      insight: "Los datos comerciales iniciales muestran incremento de revenue neto por sesi�n. Se requiere el ciclo completo para asegurar significancia estad�stica del 95% frente al hist�rico."
+      meta: "Período de observación estándar",
+      insight: "Los datos de conversión iniciales muestran incremento de revenue neto por sesión. Se requiere el ciclo completo para asegurar significancia estadística del 95% frente al histórico."
     },
 
     // ILUNION EN
