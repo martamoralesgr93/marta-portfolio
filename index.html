@@ -27,9 +27,13 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
   overscroll-behavior-x: none;
+}
+@media (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -39,6 +43,7 @@ body {
   overflow-x: hidden;
   overscroll-behavior-x: none;
   -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ===================== BILINGUAL ===================== */

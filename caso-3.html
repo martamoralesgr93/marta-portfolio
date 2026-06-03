@@ -21,8 +21,11 @@
       --text-bright: rgba(255,255,255,0.88);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--surface); color: var(--text); font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.75; overflow-x: hidden; }
+    html { }
+    @media (min-width: 1024px) {
+      html { scroll-behavior: smooth; }
+    }
+    body { background: var(--surface); color: var(--text); font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.75; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
     
     html:not(.lang-en) .en { display: none !important; }
     html.lang-en .en { display: revert; }
