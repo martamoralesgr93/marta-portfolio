@@ -1624,6 +1624,37 @@ nav {
   box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 15px rgba(var(--c-theme-rgb), 0.25);
 }
 
+.qp-disciplines-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.qp-discipline-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid rgba(var(--c-theme-rgb), 0.85);
+  padding: 9px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.qp-discipline-item:hover {
+  background: rgba(var(--c-theme-rgb), 0.08);
+  border-color: rgba(var(--c-theme-rgb), 0.25);
+  border-left-color: #ffffff;
+  color: #ffffff;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(var(--c-theme-rgb), 0.15);
+}
+
 @media (max-width: 900px) {
   .quick-profile-section {
     padding: 60px 0;
@@ -1854,13 +1885,13 @@ nav {
           <span class="es">Especialización</span>
           <span class="en">Specialization</span>
         </h3>
-        <div class="qp-pills">
-          <span class="qp-pill">CRO &amp; Experimentación</span>
-          <span class="qp-pill">UX Research</span>
-          <span class="qp-pill">Customer Journey</span>
-          <span class="qp-pill">Conversión Digital</span>
-          <span class="qp-pill">Diseño de Producto</span>
-          <span class="qp-pill">Analítica Web</span>
+        <div class="qp-disciplines-grid">
+          <div class="qp-discipline-item">CRO &amp; Experimentación</div>
+          <div class="qp-discipline-item">UX Research</div>
+          <div class="qp-discipline-item">Customer Journey</div>
+          <div class="qp-discipline-item">Conversión Digital</div>
+          <div class="qp-discipline-item">Diseño de Producto</div>
+          <div class="qp-discipline-item">Analítica Web</div>
         </div>
       </div>
 
