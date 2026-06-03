@@ -4274,9 +4274,10 @@ a:hover {
 /* --- PREMIUM PROJECT CARD GRID & STATS --- */
 .project-card-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  justify-items: center;
   width: 100%;
 }
 
@@ -5595,14 +5596,14 @@ a:hover {
    PROJECT TRIPTYCH GRID & ADAPTIVE EXPANSION LAYOUT
    ========================================================================== */
 @media (min-width: 1024px) {
-  .projects-triptych-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 2rem !important;
-    align-items: stretch !important;
-    width: 100% !important;
-    max-width: var(--content-max) !important;
-    margin: 0 auto 3rem auto !important;
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: var(--content-max);
+    margin: 0 auto 3rem auto;
+    align-items: center;
   }
   /* INACTIVE STATE: Triptych column layout */
   .work-item:not(.active) {
@@ -5659,20 +5660,24 @@ a:hover {
     text-align: center !important;
     justify-content: center !important;
   }
-  /* ACTIVE STATE: Expands dynamically to 100% width grid row */
+  /* ACTIVE STATE: Expands dynamically to full width */
   .work-item.active {
+    width: 100% !important;
+    grid-column: auto !important;
     grid-column: span 3 !important;
   }
   .work-item.active .work-summary {
-    display: grid !important;
-    grid-template-columns: 1.2fr 1fr !important;
-    grid-template-areas: "eyebrow visual" "heading visual" "kpi visual" "cta visual" !important;
-    padding: 40px !important;
-    border-radius: 32px !important;
-    margin: 0 0 32px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 24px !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    margin: 0 0 24px 0 !important;
   }
   .work-item.active .project-card-visual {
     width: 100% !important;
+    margin-top: 1rem !important;
     height: auto !important;
   }
   .work-item.active .project-card-img {
@@ -5725,8 +5730,8 @@ a:hover {
     transform-style: preserve-3d !important;
     perspective: 1200px !important;
     /* 3D Entry Animation properties */
-    opacity: 0 !important;
-    transform: translate3d(0, 60px, -120px) scale(0.95) rotateX(6deg) !important;
+    opacity: 1 !important;
+    transform: none !important;
     transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) !important;
     /* Centered layout */
     display: flex !important;

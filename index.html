@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html><html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marta Morales | Product Designer · Producto & Negocio | España</title>
+<title>Marta Morales | Product Designer · Producto &amp; Negocio | España</title>
 <meta name="description" content="Portfolio de Marta Morales. Product Designer con foco en impacto de negocio, CRO y experimentación. Decisiones basadas en datos reales de comportamiento y objetivos comerciales. Basada en España.">
 <meta name="keywords" content="Product Designer, Product Strategy, CRO, Conversion Rate Optimization, Customer Journey, Experimentación, Design Systems, Data-Driven, Discovery, Figma, Adobe Analytics, España, Spain, Remote, Mercadona Tech, TravelPerk, Factorial, Cabify">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -145,7 +143,7 @@ nav {
 .c-purple { color: var(--purple); }
 .c-orange { color: var(--orange); }
 
-.hero-body { font-size: 14px; color: var(--muted); line-height: 1.78; max-width: 272px; margin-bottom: 44px; }
+.hero-body { font-size: 14px; color: var(--muted); line-height: 1.78; max-width: 540px; margin-bottom: 44px; }
 
 .hero-actions { display: flex; align-items: center; gap: 20px; }
 .btn-primary {
@@ -1396,6 +1394,216 @@ nav {
   color: #fff;
   box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px rgba(124,58,237,0.25);
 }
+
+/* ===================== QUICK PROFILE SECTION ===================== */
+.quick-profile-section {
+  padding: 80px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, #050409 0%, #080711 100%);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Ambient glow in background */
+.quick-profile-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.quick-profile-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.quick-profile-card {
+  --c-theme-rgb: 167, 139, 250; /* Fallback to purple */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  padding: 32px 28px;
+  backdrop-filter: blur(48px) saturate(220%);
+  -webkit-backdrop-filter: blur(48px) saturate(220%);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: inset 0 1.5px 0px rgba(255, 255, 255, 0.15), 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom radial glows inside each card based on its variable */
+.quick-profile-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 150px; height: 150px;
+  background: radial-gradient(circle at 100% 0%, rgba(var(--c-theme-rgb), 0.12) 0%, transparent 70%);
+  opacity: 0.6;
+  transition: opacity 0.4s ease, width 0.4s ease, height 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top glare line */
+.quick-profile-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(var(--c-theme-rgb), 0.5) 30%, rgba(255, 255, 255, 0.6) 50%, rgba(var(--c-theme-rgb), 0.5) 70%, transparent);
+  opacity: 0.25;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+}
+
+.quick-profile-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(var(--c-theme-rgb), 0.25);
+  box-shadow: inset 0 1.5px 0px rgba(255, 255, 255, 0.25), 
+              0 30px 60px rgba(0, 0, 0, 0.65), 
+              0 0 40px rgba(var(--c-theme-rgb), 0.12);
+}
+
+.quick-profile-card:hover::after {
+  opacity: 1;
+  width: 200px;
+  height: 200px;
+}
+
+.quick-profile-card:hover::before {
+  opacity: 0.85;
+}
+
+.qp-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+/* White Icon wrapper with blur and reflection */
+.qp-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 15px rgba(var(--c-theme-rgb), 0.15);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.qp-icon-wrapper svg {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
+  transition: transform 0.4s ease;
+}
+
+.quick-profile-card:hover .qp-icon-wrapper {
+  transform: rotate(5deg) scale(1.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 25px rgba(var(--c-theme-rgb), 0.35);
+}
+
+.quick-profile-card:hover .qp-icon-wrapper svg {
+  transform: scale(1.1);
+}
+
+.qp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.qp-list li {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  padding-left: 22px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.qp-list li:last-child {
+  margin-bottom: 0;
+}
+
+.qp-list li::before {
+  content: "—";
+  color: rgb(var(--c-theme-rgb));
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.quick-profile-card:hover .qp-list li {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.quick-profile-card:hover .qp-list li::before {
+  transform: scaleX(1.3) translateX(2px);
+}
+
+.qp-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.qp-pill {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 7px 14px;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.qp-pill:hover {
+  background: rgba(var(--c-theme-rgb), 0.15);
+  border-color: rgba(var(--c-theme-rgb), 0.45);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 15px rgba(var(--c-theme-rgb), 0.25);
+}
+
+@media (max-width: 900px) {
+  .quick-profile-section {
+    padding: 60px 0;
+  }
+  .quick-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .quick-profile-card {
+    padding: 24px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1425,12 +1633,12 @@ nav {
   </ul>
   <div class="nav-right">
     <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
-    <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="nav-cta" target="_blank"><span class="es">Descargar CV</span><span class="en">Download CV</span> &thinsp;↗</a>
+    <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="nav-cta" target="_blank"><span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗</a>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-        <rect y="0" width="16" height="1.5" rx="1" fill="white"/>
-        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"/>
-        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"/>
+        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
       </svg>
     </button>
   </div>
@@ -1440,7 +1648,7 @@ nav {
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-close" onclick="closeMenu()" aria-label="Cerrar menú">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path>
     </svg>
   </button>
   <ul class="mobile-menu-links">
@@ -1450,14 +1658,14 @@ nav {
     <li><a href="#stack" onclick="closeMenu()"><span class="es">Stack</span><span class="en">Stack</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
-  <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="mobile-menu-cta" target="_blank"><span class="es">Descargar CV</span><span class="en">Download CV</span> &thinsp;↗</a>
+  <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="mobile-menu-cta" target="_blank"><span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗</a>
   <button class="mobile-menu-lang" onclick="toggleLang(); updateMenuLangBtn();" id="menuLangBtn">EN</button>
 </div>
 
 <!-- ==================== HERO ==================== -->
 <section class="hero">
   <div class="hero-video-bg">
-    <video autoplay muted loop playsinline preload="auto">
+    <video autoplay="" muted="" loop="" playsinline="" preload="auto">
       <source src="assets/logo-background-video.mp4" type="video/mp4">
     </video>
   </div>
@@ -1471,29 +1679,25 @@ nav {
           <span class="eyebrow-text en">Product Designer · Product Strategy · CRO · Business Impact</span>
         </div>
         <h1 class="hero-title">
-          <span class="es">Diseño<br>experiencias<br>digitales<br>que generan<br>impacto <span class="c-purple">real</span><span class="c-orange">.</span></span>
-          <span class="en">I design<br>digital<br>experiences<br>that drive real<br>business <span class="c-purple">impact</span><span class="c-orange">.</span></span>
+          <span class="es">Marta Morales<br><span class="c-purple" style="font-size: 0.8em;">Product Designer</span><br><span style="font-size: 0.55em; font-weight: 500; display: block; margin-top: 12px; line-height: 1.25; letter-spacing: -1.2px; color: var(--white);">Especializada en CRO, customer journey y conversión digital.</span></span>
+          <span class="en">Marta Morales<br><span class="c-purple" style="font-size: 0.8em;">Product Designer</span><br><span style="font-size: 0.55em; font-weight: 500; display: block; margin-top: 12px; line-height: 1.25; letter-spacing: -1.2px; color: var(--white);">Specializing in CRO, customer journey &amp; digital conversion.</span></span>
         </h1>
         <p class="hero-body es">
-          Identifico fricciones en el customer journey,<br>
-          tomo decisiones respaldadas por datos<br>
-          y diseño soluciones que mueven métricas de negocio.
+          Actualmente optimizo experiencias digitales para ILUNION Hotels (32 hoteles), identificando oportunidades de negocio mediante research, analítica digital y experimentación UX para aumentar reservas, captación y engagement.
         </p>
         <p class="hero-body en">
-          I identify friction in the customer journey,<br>
-          make data-backed decisions<br>
-          and ship solutions that move business metrics.
+          Currently optimizing digital experiences for ILUNION Hotels (32 hotels), identifying business opportunities through research, web analytics, and UX experimentation to increase bookings, acquisition, and engagement.
         </p>
         <div class="hero-actions">
-          <a href="#work" class="btn-primary"><span class="es">Ver mi trabajo</span><span class="en">View my work</span> &thinsp;↓</a>
-          <a href="https://wa.me/34659879887" class="btn-ghost" target="_blank">WhatsApp &thinsp;↗</a>
+          <a href="#work" class="btn-primary"><span class="es">Ver mi trabajo</span><span class="en">View my work</span>  ↓</a>
+          <a href="https://wa.me/34659879887" class="btn-ghost" target="_blank">WhatsApp  ↗</a>
         </div>
       </div>
 
       <div class="impact-card">
         <div class="impact-header">
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-            <path d="M6.5 0.5L7.8 4.5H12L8.8 6.9L10.1 10.9L6.5 8.3L2.9 10.9L4.2 6.9L1 4.5H5.2L6.5 0.5Z" fill="#a78bfa"/>
+            <path d="M6.5 0.5L7.8 4.5H12L8.8 6.9L10.1 10.9L6.5 8.3L2.9 10.9L4.2 6.9L1 4.5H5.2L6.5 0.5Z" fill="#a78bfa"></path>
           </svg>
           <span class="es">Resumen de impacto</span>
           <span class="en">Impact Overview</span>
@@ -1524,25 +1728,99 @@ nav {
         <div class="mobile-metric-val">+13%</div>
         <div class="mobile-metric-lbl"><span class="es">Conversión en ofertas</span><span class="en">Offers conversion</span></div>
         <svg class="mobile-sparkline" viewBox="0 0 80 28" fill="none">
-          <polyline points="0,20 13,16 26,22 40,10 53,14 66,8 80,12" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="80" cy="12" r="2.5" fill="#a78bfa"/>
+          <polyline points="0,20 13,16 26,22 40,10 53,14 66,8 80,12" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <circle cx="80" cy="12" r="2.5" fill="#a78bfa"></circle>
         </svg>
       </div>
       <div class="mobile-metric-card">
         <div class="mobile-metric-val">100%</div>
         <div class="mobile-metric-lbl">WCAG AA</div>
         <svg class="mobile-sparkline" viewBox="0 0 80 28" fill="none">
-          <polyline points="0,18 13,20 26,14 40,16 53,10 66,12 80,8" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="80" cy="8" r="2.5" fill="#a78bfa"/>
+          <polyline points="0,18 13,20 26,14 40,16 53,10 66,12 80,8" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <circle cx="80" cy="8" r="2.5" fill="#a78bfa"></circle>
         </svg>
       </div>
       <div class="mobile-metric-card">
         <div class="mobile-metric-val">3</div>
         <div class="mobile-metric-lbl"><span class="es">Casos de estudio</span><span class="en">Case studies</span></div>
         <svg class="mobile-sparkline" viewBox="0 0 80 28" fill="none">
-          <polyline points="0,22 13,18 26,20 40,14 53,16 66,10 80,9" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="80" cy="9" r="2.5" fill="#a78bfa"/>
+          <polyline points="0,22 13,18 26,20 40,14 53,16 66,10 80,9" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <circle cx="80" cy="9" r="2.5" fill="#a78bfa"></circle>
         </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUICK PROFILE ==================== -->
+<section class="quick-profile-section">
+  <div class="wrap">
+    <div class="quick-profile-grid">
+      <!-- Card 1: Impacto Reciente -->
+      <div class="quick-profile-card" style="--c-theme-rgb: 249, 115, 22;">
+        <h3 class="qp-card-title">
+          <div class="qp-icon-wrapper">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <span class="es">Impacto Reciente</span>
+          <span class="en">Recent Impact</span>
+        </h3>
+        <ul class="qp-list">
+          <li>
+            <span class="es">Optimización de la home y páginas de hotel tras migración a AEM.</span>
+            <span class="en">Home and hotel page optimization after migration to AEM.</span>
+          </li>
+          <li>
+            <span class="es">Investigación UX mediante Adobe Analytics y Microsoft Clarity.</span>
+            <span class="en">UX research using Adobe Analytics and Microsoft Clarity.</span>
+          </li>
+          <li>
+            <span class="es">Rediseño de journeys orientados a conversión y fidelización.</span>
+            <span class="en">Redesign of conversion and loyalty-focused journeys.</span>
+          </li>
+          <li>
+            <span class="es">Coordinación con negocio, marketing y desarrollo para implementación.</span>
+            <span class="en">Coordination with Business, Marketing, and Development for execution.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Especialización -->
+      <div class="quick-profile-card" style="--c-theme-rgb: 167, 139, 250;">
+        <h3 class="qp-card-title">
+          <div class="qp-icon-wrapper">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          </div>
+          <span class="es">Especialización</span>
+          <span class="en">Specialization</span>
+        </h3>
+        <div class="qp-pills">
+          <span class="qp-pill">CRO &amp; Experimentación</span>
+          <span class="qp-pill">UX Research</span>
+          <span class="qp-pill">Customer Journey</span>
+          <span class="qp-pill">Conversión Digital</span>
+          <span class="qp-pill">Diseño de Producto</span>
+          <span class="qp-pill">Analítica Web</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Herramientas -->
+      <div class="quick-profile-card" style="--c-theme-rgb: 59, 130, 246;">
+        <h3 class="qp-card-title">
+          <div class="qp-icon-wrapper">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          </div>
+          <span class="es">Herramientas</span>
+          <span class="en">Tools</span>
+        </h3>
+        <div class="qp-pills">
+          <span class="qp-pill">Figma</span>
+          <span class="qp-pill">Adobe Analytics</span>
+          <span class="qp-pill">Microsoft Clarity</span>
+          <span class="qp-pill">Adobe AEM</span>
+          <span class="qp-pill">GA4</span>
+          <span class="qp-pill">HTML / CSS</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1554,9 +1832,7 @@ nav {
 
     <!-- Panel izquierdo: foto sin fondo, grande -->
     <div class="sobre-img-panel">
-      <img fetchpriority="high" decoding="async" src="assets/marta-entera-2.png"
-           alt="Marta Morales García de los Ríos — Product Designer"
-           class="sobre-portrait">
+      <img fetchpriority="high" decoding="async" src="assets/marta-entera-2.png" alt="Marta Morales García de los Ríos — Product Designer" class="sobre-portrait">
     </div>
 
     <!-- Panel derecho: texto -->
@@ -1603,8 +1879,8 @@ nav {
     <div class="feature-card">
       <div class="feature-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="4,26 12,18 18,22 26,12 32,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="4,26 12,18 18,22 26,12 32,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
         </svg>
       </div>
       <div class="feature-title es">DIAGNÓSTICO<br>PRIMERO.</div>
@@ -1617,12 +1893,12 @@ nav {
     <div class="feature-card">
       <div class="feature-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="18" y1="4" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="4" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"></circle>
+          <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.5"></circle>
+          <line x1="18" y1="4" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+          <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+          <line x1="4" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+          <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
         </svg>
       </div>
       <div class="feature-title es">PROPUESTA,<br>NO OPCIONES.</div>
@@ -1635,9 +1911,9 @@ nav {
     <div class="feature-card">
       <div class="feature-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="6" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="6" y1="14" x2="30" y2="14" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="6" y="6" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
+          <line x1="6" y1="14" x2="30" y2="14" stroke="currentColor" stroke-width="1.5"></line>
+          <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"></line>
         </svg>
       </div>
       <div class="feature-title es">CONVERSIÓN<br>MEDIBLE.</div>
@@ -1650,7 +1926,7 @@ nav {
     <div class="feature-card">
       <div class="feature-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 4 L19.8 13.2 L28 12 L21.6 18 L28 24 L19.8 22.8 L18 32 L16.2 22.8 L8 24 L14.4 18 L8 12 L16.2 13.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M18 4 L19.8 13.2 L28 12 L21.6 18 L28 24 L19.8 22.8 L18 32 L16.2 22.8 L8 24 L14.4 18 L8 12 L16.2 13.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
         </svg>
       </div>
       <div class="feature-title es">SISTEMAS QUE<br>ESCALAN.</div>
@@ -1722,23 +1998,23 @@ nav {
             <svg viewBox="0 0 220 60" preserveAspectRatio="none" style="height:60px">
               <defs>
                 <linearGradient id="og1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.3"/>
-                  <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.3"></stop>
+                  <stop offset="100%" stop-color="#f97316" stop-opacity="0"></stop>
                 </linearGradient>
                 <linearGradient id="og2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#34d399" stop-opacity="0.25"/>
-                  <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="#34d399" stop-opacity="0.25"></stop>
+                  <stop offset="100%" stop-color="#34d399" stop-opacity="0"></stop>
                 </linearGradient>
               </defs>
               <!-- Before line (flat/low) -->
-              <polyline class="dash-spark-area" points="0,50 40,52 80,48 120,50 160,51 220,49" fill="url(#og1)" stroke="none"/>
-              <polyline class="dash-spark-line" points="0,50 40,52 80,48 120,50 160,51 220,49" stroke="#f97316" style="opacity:0.5"/>
+              <polyline class="dash-spark-area" points="0,50 40,52 80,48 120,50 160,51 220,49" fill="url(#og1)" stroke="none"></polyline>
+              <polyline class="dash-spark-line" points="0,50 40,52 80,48 120,50 160,51 220,49" stroke="#f97316" style="opacity:0.5"></polyline>
               <!-- After line (rising) -->
-              <polyline class="dash-spark-area" points="0,48 40,44 80,38 120,30 160,20 220,10" fill="url(#og2)" stroke="none"/>
-              <polyline class="dash-spark-line" points="0,48 40,44 80,38 120,30 160,20 220,10" stroke="#34d399"/>
+              <polyline class="dash-spark-area" points="0,48 40,44 80,38 120,30 160,20 220,10" fill="url(#og2)" stroke="none"></polyline>
+              <polyline class="dash-spark-line" points="0,48 40,44 80,38 120,30 160,20 220,10" stroke="#34d399"></polyline>
               <!-- End dot -->
-              <circle class="dash-spark-dot" cx="220" cy="10" r="3" fill="#34d399"/>
-              <circle class="dash-spark-dot" cx="220" cy="10" r="6" fill="#34d399" style="opacity:0.2"/>
+              <circle class="dash-spark-dot" cx="220" cy="10" r="3" fill="#34d399"></circle>
+              <circle class="dash-spark-dot" cx="220" cy="10" r="6" fill="#34d399" style="opacity:0.2"></circle>
             </svg>
           </div>
 
@@ -1934,8 +2210,8 @@ nav {
           <div class="sc-num" style="color: var(--blue);">03</div>
           <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
         </div>
-        <h3 class="sc-title sc-title-blue es">Design System & <em>Accesibilidad EdTech</em></h3>
-        <h3 class="sc-title sc-title-blue en">Design System & <em>EdTech Accessibility</em></h3>
+        <h3 class="sc-title sc-title-blue es">Design System &amp; <em>Accesibilidad EdTech</em></h3>
+        <h3 class="sc-title sc-title-blue en">Design System &amp; <em>EdTech Accessibility</em></h3>
         <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
         <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em></p>
         <div class="sc-cta-row">
@@ -1960,8 +2236,8 @@ nav {
           <div class="dash-ring-row">
             <div class="dash-ring">
               <svg viewBox="0 0 68 68">
-                <circle class="dash-ring-track" cx="34" cy="34" r="29"/>
-                <circle class="dash-ring-fill" cx="34" cy="34" r="29" stroke="var(--blue)"/>
+                <circle class="dash-ring-track" cx="34" cy="34" r="29"></circle>
+                <circle class="dash-ring-fill" cx="34" cy="34" r="29" stroke="var(--blue)"></circle>
               </svg>
               <div class="dash-ring-inner">
                 <span class="dash-ring-pct" style="color:var(--blue)">AA</span>
@@ -2135,7 +2411,7 @@ nav {
         </p>
 
         <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="btn-primary" target="_blank" style="display: inline-flex;">
-          <span class="es">Descargar CV</span><span class="en">Download CV</span> &thinsp;↗
+          <span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗
         </a>
 
       </div>
@@ -2165,12 +2441,12 @@ nav {
     </div>
 
     <div class="stack-video-container">
-      <video src="assets/video-stack.mp4" autoplay loop muted playsinline class="stack-video"></video>
+      <video src="assets/video-stack.mp4" autoplay="" loop="" muted="" playsinline="" class="stack-video"></video>
     </div>
 
     <div class="stack-pills">
       <span class="stack-pill"><span class="es">Product Discovery</span><span class="en">Product Discovery</span></span>
-      <span class="stack-pill">CRO & A/B Testing</span>
+      <span class="stack-pill">CRO &amp; A/B Testing</span>
       <span class="stack-pill">Design Systems</span>
       <span class="stack-pill">Figma</span>
       <span class="stack-pill">Adobe Analytics</span>
@@ -2205,8 +2481,8 @@ nav {
       Open to Product Designer roles in teams where design is part of business decisions. Based in Spain, available remotely. Let's talk about the problem you're trying to solve.
     </p>
     <div class="contact-actions">
-      <a href="mailto:mmoralesgr93@gmail.com" class="btn-primary">Email &thinsp;→</a>
-      <a href="https://wa.me/34659879887" class="btn-primary" style="background: linear-gradient(135deg, rgba(37,211,102,0.85), rgba(18,140,126,0.85)); box-shadow: 0 4px 15px rgba(37,211,102,0.2); border: 1px solid rgba(255,255,255,0.1);">WhatsApp &thinsp;↗</a>
+      <a href="mailto:mmoralesgr93@gmail.com" class="btn-primary">Email  →</a>
+      <a href="https://wa.me/34659879887" class="btn-primary" style="background: linear-gradient(135deg, rgba(37,211,102,0.85), rgba(18,140,126,0.85)); box-shadow: 0 4px 15px rgba(37,211,102,0.2); border: 1px solid rgba(255,255,255,0.1);">WhatsApp  ↗</a>
       <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV.pdf" class="btn-ghost" target="_blank"><span class="es">Descargar CV</span><span class="en">Download CV</span></a>
     </div>
     
@@ -2361,5 +2637,6 @@ function closeMenu() {
 })();
 </script>
 
-</body>
-</html>
+
+
+</body></html>
