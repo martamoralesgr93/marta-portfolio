@@ -2751,6 +2751,17 @@ function closeMenu() {
 
   fadeTargets.forEach(el => io.observe(el));
   scCards.forEach(el => io.observe(el));
+
+  /* Mobile CV link redirect to direct PDF */
+  document.querySelectorAll('a[href*="CV_Marta_Morales_2026.html"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+      if (isMobile) {
+        e.preventDefault();
+        window.location.href = 'assets/Marta_Morales_CV_2026.pdf';
+      }
+    });
+  });
 })();
 </script>
 
