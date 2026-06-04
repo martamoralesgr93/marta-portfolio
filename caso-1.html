@@ -359,7 +359,7 @@
           El Problema
         </span>
         <div class="qs-val">
-          La migración a AEM redujo la conversión del canal directo debido a una sobrecarga cognitiva masiva. La web priorizaba branding e inspiración (UNICOS ocupaba una pantalla completa) por encima de la venta rápida, bloqueando a los usuarios con alta intención de reserva.
+          La jerarquía inicial tras la migración a AEM priorizaba el posicionamiento aspiracional de marca. Esto requería scroll adicional para transaccionar, lo que generaba una fricción no intencionada en los flujos de alta intención de compra al inicio del funnel.
         </div>
       </div>
 
@@ -383,7 +383,7 @@
         <ul class="qs-bullets">
           <li>Auditoría cuantitativa de comportamiento con Adobe Analytics y Clarity.</li>
           <li>Redefinición de jerarquía de contenidos en primer scroll (above the fold).</li>
-          <li>Trade-off de negocio: priorizar producto y precio sobre branding.</li>
+          <li>Trade-off de negocio: balancear posicionamiento de marca con la eficiencia transaccional.</li>
           <li>Validación en staging de constraints técnicos de AEM.</li>
           <li>Observación post-lanzamiento y corrección de la interacción de swipe en móvil.</li>
         </ul>
@@ -493,9 +493,8 @@
       
       <ul class="bullet-list fu">
         <li>Solo el <strong>15% de los usuarios superaba el bloque de ofertas</strong> en la home</li>
-        <li>El componente necesitaba el <strong>doble de scroll que otras cadenas hoteleras referentes</strong> para mostrar el mismo contenido</li>
-        <li>Hasta el <strong>50% del recorrido de la página</strong> no aparecía ningún hotel, ningún precio, ningún descuento</li>
-        <li>El programa de fidelización <strong>UNICOS ocupaba una pantalla completa</strong> antes de que el usuario viera producto</li>
+        <li>El componente requería **mayor interacción vertical** que otros modelos referentes para visualizar las opciones de reserva</li>
+        <li>El programa de fidelización **UNICOS presentaba una gran relevancia visual** antes de mostrar las opciones directas de reserva</li>
       </ul>
 
       <!-- DASHBOARD WIDGET: FUNNEL -->
@@ -529,23 +528,22 @@
         </div>
       </div>
 
-      <p class="p fu">Completé el análisis con Adobe Analytics para entender los patrones de navegación y el punto exacto de abandono. Y añadí benchmarking funcional — no estético — contra otras cadenas hoteleras y OTAs referentes: cómo presentan precio, disponibilidad y valor en cada paso del journey para activar intención de compra.</p>
+      <p class="p fu">Completé el análisis con Adobe Analytics para entender los patrones de navegación y el punto exacto de abandono. Y añadí benchmarking analítico contra cadenas hoteleras y portales de distribución de referencia, identificando cómo presentan precio, disponibilidad y valor en cada paso del journey para activar la intención de compra.</p>
 
       <div class="cs-frame-auto fu">
         <img loading="lazy" decoding="async" src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.png" alt="Auditoría Inicial" style="max-width: 500px; width: 100%;">
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Diagnóstico: el problema real no era visual</h3>
-      <p class="p fu">El insight clave cambió el enfoque de todo el proyecto. El problema no era que el diseño fuera feo o antiguo: <strong>el site priorizaba inspiración de marca sobre el comportamiento real del usuario.</strong></p>
-      <p class="p fu"><strong>Insight:</strong> Un usuario que llega desde paid media con intención de compra alta no quiere explorar la marca — quiere comprobar disponibilidad y precio lo antes posible. El site le exigía explorar cuando él venía a encontrar. <strong>Hipótesis:</strong> Si reducimos el peso del contenido de branding en el primer scroll y priorizamos el producto visible (oferta, precio, CTA), el usuario iniciará búsqueda antes y la tasa de conversión mejorará. Esta hipótesis era validable con datos: teníamos benchmarking de cadenas referentes y scroll maps que mostraban exactamente dónde se producía el abandono.</p>
-
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Diagnóstico: alineación de objetivos de negocio</h3>
+      <p class="p fu">El diagnóstico demostró que la experiencia ponía un énfasis inicial muy fuerte en la narrativa corporativa de marca, la cual requería adaptarse al comportamiento de compra rápida del tráfico proveniente de campañas.</p>
+      <p class="p fu"><strong>Insight:</strong> Un usuario que llega desde paid media con intención de compra alta requiere comprobar disponibilidad y precio de forma directa. La optimización radicaba en reducir la fricción inicial de marca y priorizar el producto visible (oferta, precio, CTA) para acelerar el inicio de la búsqueda y mejorar la conversión del embudo. Esta hipótesis fue sustentada analíticamente mediante scroll maps y benchmarking sectorial.</p>
+ 
       <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">3. Propuesta estructurada: 12 mejoras, 4 niveles de impacto</h3>
-      <p class="p fu">Traduje el diagnóstico en un documento interno con 12 mejoras priorizadas según su impacto directo en conversión. No era una lista de deseos de diseño — era una propuesta de negocio con criterio. Lo escribí, lo argumenté con datos y lo presenté directamente a la dirección.</p>
-      <p class="p fu">Fue aprobado en comité.</p>
+      <p class="p fu">Traduje el diagnóstico en un documento estratégico con 12 mejoras priorizadas por impacto directo en conversión y viabilidad técnica. La propuesta fue aprobada en comité.</p>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">4. La decisión estratégica más difícil</h3>
-      <p class="p fu">El trade-off real del proyecto: <strong>branding aspiracional vs. ecommerce eficiente</strong>. Dos objetivos legítimos en conflicto dentro del mismo componente.</p>
-      <p class="p fu"><strong>Decisión:</strong> Priorizar la conversión sobre el protagonismo visual de marca en los puntos de entrada desde paid media. No porque el branding no importe — sino porque un usuario que abandona antes de ver el producto no puede convertir, independientemente de lo cuidada que sea la experiencia visual. UNICOS no desapareció: se reposicionó como bloque secundario con propuesta de valor concreta, presente pero sin bloquear el funnel. La restricción técnica de AEM (no permitía reducir texto solo en mobile) condicionó decisiones de jerarquía que en retrospectiva mejoraron el resultado: al no poder resolver con tipografía, resolvimos con estructura.</p>
+      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">4. La decisión estratégica: balancear marca y transaccionalidad</h3>
+      <p class="p fu">El reto real consistió en balancear la narrativa corporativa con la eficiencia ecommerces en los puntos de contacto transaccionales del usuario.</p>
+      <p class="p fu"><strong>Decisión:</strong> Buscar una sinergia y balance óptimo entre la narrativa de fidelización y la eficiencia transaccional del funnel en los puntos de contacto directos. UNICOS no se eliminó: se integró como un componente de valor secundario que asiste al usuario sin interferir en la búsqueda principal. La restricción técnica de AEM (que no permitía variar textos únicamente para mobile) impulsó una resolución estructural de la jerarquía visual de los componentes, optimizando la legibilidad sin depender de variaciones de estilos CSS.</p>
 
       <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">5. Diseño: arquitectura diferenciada por dispositivo</h3>
       <p class="p fu">Diseñé una arquitectura distinta para desktop y mobile, porque el comportamiento en cada uno es diferente.</p>
@@ -626,10 +624,10 @@
       </h2>
     </div>
     <div style="padding:0">
-      <p class="p fu"><strong>El brief no es el problema.</strong> La dirección pedía "mejorar el componente de ofertas". El problema real era una desalineación estructural entre la lógica editorial del site y la intención transaccional del tráfico. Aprendí a cuestionar el brief antes de abrir Figma.</p>
-      <p class="p fu"><strong>Lanzar no es terminar.</strong> El comportamiento de swipe en mobile que detecté post-lanzamiento no estaba en el diseño original. Si hubiera cerrado el proyecto en el deploy, ese problema habría quedado sin resolver. El seguimiento post-lanzamiento no es un extra — es parte del proceso.</p>
-      <p class="p fu"><strong>Los constraints técnicos son datos de diseño.</strong> AEM no permitía reducir texto solo en mobile. En lugar de ignorarlo o bloquearse, esa limitación condicionó decisiones de jerarquía y priorización de contenido que mejoraron el resultado final.</p>
-      <p class="p fu"><strong>Una propuesta argumentada vale más que tres opciones.</strong> Liderar y defender el diseño directamente ante comités de decisión me obligó a conectar cada decisión con su impacto en conversión e ingresos. Esa habilidad de comunicar en lenguaje de negocio es lo que hace que las propuestas se aprueben.</p>
+      <p class="p fu"><strong>El brief es el inicio de la investigación.</strong> La dirección identificó la necesidad de optimizar el bloque promocional. El análisis profundo nos permitió comprender que debíamos alinear con mayor precisión la lógica editorial con la intención de compra del usuario. Aprendí a profundizar en los datos analíticos antes de iniciar la conceptualización visual.</p>
+      <p class="p fu"><strong>El lanzamiento es el inicio del ciclo.</strong> El comportamiento de swipe en mobile detectado post-lanzamiento reforzó que la observación analítica activa y el mantenimiento de producto son fases esenciales para asegurar la madurez de cualquier desarrollo digital.</p>
+      <p class="p fu"><strong>Las restricciones técnicas son parámetros de diseño.</strong> Las limitaciones del gestor de contenidos AEM fueron tomadas como variables creativas, guiándonos a resolver el orden visual estructuralmente y fortaleciendo la adaptabilidad del diseño final.</p>
+      <p class="p fu"><strong>Comunicar en lenguaje de negocio es clave.</strong> Colaborar directamente con comités directivos, tecnología y marketing exige fundamentar el diseño en impacto transaccional y objetivos del negocio. Lograr esa alineación es lo que impulsa el éxito de los productos digitales.</p>
     </div>
   </div>
 </section>
