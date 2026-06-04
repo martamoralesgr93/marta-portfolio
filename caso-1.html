@@ -110,6 +110,9 @@
     .dash-stat { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.05); }
     .dash-stat-label { font-size: 14px; color: var(--text-dim); }
     .dash-stat-val { font-size: 24px; font-weight: 700; color: var(--accent); }
+    .dash-impact-row { display: flex; align-items: baseline; gap: 16px; }
+    .dash-impact-num { font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif; }
+    .dash-impact-text { font-size: 18px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
 
     /* IMAGE FRAMES */
     .cs-frame {
@@ -214,6 +217,9 @@
       .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
       .dash-stat { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 24px; padding-top: 20px; }
       .dash-stat-val { font-size: 32px; }
+      .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .dash-impact-num { font-size: 64px; }
+      .dash-impact-text { font-size: 14px; }
       .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
     }
 
@@ -588,9 +594,9 @@
     <!-- DASHBOARD WIDGET: CONVERSION IMPACT -->
     <div class="dash-widget fu">
       <div class="dash-title">Conversión de Canal Directo · Post-Implementación</div>
-      <div style="display: flex; align-items: baseline; gap: 16px;">
-        <span style="font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif;">+13%</span>
-        <span style="font-size: 18px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">Conversión directa</span>
+      <div class="dash-impact-row">
+        <span class="dash-impact-num">+13%</span>
+        <span class="dash-impact-text">Conversión directa</span>
       </div>
       <p style="margin-top: 16px; font-size: 14px; color: var(--text-bright); max-width: 400px;">Incremento en conversión del canal directo tras el desbloqueo visual del embudo — medido con Adobe Analytics en seguimiento post-implementación.</p>
     </div>
