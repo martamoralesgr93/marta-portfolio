@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marta Morales García de los Ríos — Product Designer</title>
+<title>Marta Morales García de los Ríos — CV</title>
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
@@ -12,381 +12,46 @@
 <style>
 
 /* ─────────────────────────────────────────────
-   DESIGN TOKENS — extraídos de martamorales.vercel.app
+   DESIGN TOKENS — exactos del portfolio
    ───────────────────────────────────────────── */
 :root {
-  /* Colors */
   --bg:          #000000;
   --text:        #ffffff;
   --muted:       rgba(255,255,255,0.62);
   --dim:         rgba(255,255,255,0.38);
-  --faint:       rgba(255,255,255,0.14);
   --border:      rgba(255,255,255,0.09);
   --border-mid:  rgba(255,255,255,0.16);
-  --card:        rgba(255,255,255,0.035);
   --blue:        #60a5fa;
   --blue-bg:     rgba(96,165,250,0.15);
-  --green:       #34d399;
-  --green-bg:    rgba(52,211,153,0.12);
-  --orange:      #f97316;
-
-  /* Typography — exacto del portfolio */
   --font: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Spacing */
-  --page-pad: 36px;
-  --col-gap:  28px;
-  --section-gap: 28px;
-  --item-gap: 20px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-body {
-  font-family: var(--font);
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   background: var(--bg);
   color: var(--text);
-  width: 210mm;
-  min-height: 297mm;
-  margin: 0 auto;
-  font-size: 13px;
-  line-height: 1.6;
+  font-family: var(--font);
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 0;
-}
-
-/* ─────────────────────────────────────────────
-   HEADER
-   ───────────────────────────────────────────── */
-.cv-header {
-  padding: var(--page-pad) var(--page-pad) 24px;
-  border-bottom: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 16px;
-}
-
-/* Eyebrow — igual que .eyebrow-text del portfolio */
-.eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--dim);
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.eyebrow-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--blue);
-  flex-shrink: 0;
-}
-
-/* Name — Inter 800, tight tracking, escala del portfolio */
-.cv-name {
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -2.4px;
-  color: var(--text);
-  margin-bottom: 12px;
-}
-
-/* Tags de posicionamiento — badge del portfolio */
-.tag-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 0;
-}
-
-.badge {
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--blue);
-  background: var(--blue-bg);
-  border-radius: 4px;
-  padding: 3px 8px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.badge-green {
-  color: var(--green);
-  background: var(--green-bg);
-}
-
-/* Contact block — alineado a la derecha */
-.cv-contact {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  justify-content: flex-end;
-  padding-bottom: 2px;
-}
-
-.cv-contact a,
-.cv-contact span {
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--muted);
-  text-decoration: none;
-  line-height: 1.5;
-  display: block;
-}
-
-.cv-contact a:hover { color: var(--text); }
-
-/* ─────────────────────────────────────────────
-   BODY — two columns
-   ───────────────────────────────────────────── */
-.cv-body {
-  display: grid;
-  grid-template-columns: 1fr 188px;
-  gap: 0;
-  min-height: calc(297mm - 130px);
-}
-
-/* ─────────────────────────────────────────────
-   MAIN COLUMN — Experiencia
-   ───────────────────────────────────────────── */
-.col-main {
-  padding: var(--section-gap) var(--page-pad) var(--page-pad);
-  border-right: 1px solid var(--border);
-}
-
-/* Section label — .sec-num del portfolio */
-.sec-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--dim);
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.sec-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-/* Experience item — .feature-card style */
-.exp-item {
-  padding-bottom: var(--item-gap);
-  margin-bottom: var(--item-gap);
-  border-bottom: 1px solid var(--border);
-}
-
-.exp-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* Role title — .feature-title del portfolio */
-.exp-role {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: 0.96px;
-  text-transform: uppercase;
-  line-height: 1.4;
-  margin-bottom: 3px;
-}
-
-/* Company · Period */
-.exp-meta {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--muted);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.exp-meta-sep {
-  color: var(--dim);
-  font-size: 10px;
-}
-
-/* Context */
-.exp-context-label {
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--dim);
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 3px;
-}
-
-.exp-context {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-/* Impact */
-.exp-impact-label {
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--green);
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.exp-impact {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-bottom: 10px;
-}
-
-.exp-impact-item {
-  font-size: 12px;
-  color: var(--text);
-  line-height: 1.5;
-  display: flex;
-  align-items: flex-start;
-  gap: 7px;
-}
-
-.exp-impact-item::before {
-  content: '→';
-  color: var(--green);
-  font-size: 10px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* Responsabilidades — tags */
-.exp-tags-label {
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--dim);
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.exp-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-/* ─────────────────────────────────────────────
-   SIDE COLUMN — Stack + Educación
-   ───────────────────────────────────────────── */
-.col-side {
-  padding: var(--section-gap) 20px var(--page-pad) 20px;
-}
-
-/* Stack group */
-.side-section {
-  margin-bottom: var(--section-gap);
-}
-
-.side-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.side-tag {
-  font-size: 9px;
-  font-weight: 500;
-  color: var(--muted);
-  border: 1px solid var(--border-mid);
-  padding: 3px 7px;
-  border-radius: 3px;
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-}
-
-/* Education item */
-.edu-item {
-  margin-bottom: 14px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
-}
-
-.edu-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.edu-degree {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.4;
-  margin-bottom: 2px;
-}
-
-.edu-school {
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.4;
-}
-
-.edu-year {
-  font-size: 10px;
-  color: var(--dim);
-  margin-top: 2px;
-}
-
-/* Languages */
-.lang-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.lang-name {
-  font-size: 11px;
-  color: var(--text);
-  font-weight: 500;
-}
-
-.lang-level {
-  font-size: 10px;
-  color: var(--muted);
 }
 
 /* ─────────────────────────────────────────────
    PORTFOLIO NAVIGATION BAR (Screen only)
    ───────────────────────────────────────────── */
-body {
-  padding-top: 100px;
-}
-
 .portfolio-nav-bar {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 40px);
-  max-width: 760px;
+  max-width: 960px;
   height: 60px;
   background: rgba(10, 10, 10, 0.75);
   backdrop-filter: blur(20px) saturate(220%);
@@ -448,7 +113,7 @@ body {
   box-shadow: 0 0 15px rgba(255, 75, 145, 0.3);
 }
 
-/* Download button: Premium Glass Blue/Violet */
+/* Download button: Premium Glass Blue */
 .nav-download-btn {
   color: #ffffff;
   background: rgba(96, 165, 250, 0.15);
@@ -525,220 +190,33 @@ body.lang-en .en-text {
 }
 
 /* ─────────────────────────────────────────────
-   DOWNLOAD MODAL OVERLAY (Screen only)
+   PDF CONTAINER
    ───────────────────────────────────────────── */
-.download-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  opacity: 0;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 24px;
-}
-
-.download-modal-overlay.show {
-  display: flex;
-  opacity: 1;
-}
-
-.download-modal-card {
-  background: rgba(15, 15, 15, 0.85);
-  backdrop-filter: blur(24px) saturate(220%);
-  -webkit-backdrop-filter: blur(24px) saturate(220%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 36px 28px;
-  max-width: 440px;
+.pdf-viewer-container {
   width: 100%;
-  text-align: center;
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.2), 
-    0 24px 60px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(0, 0, 0, 0.6);
-  transform: scale(0.92);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  padding-top: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.download-modal-overlay.show .download-modal-card {
-  transform: scale(1);
-}
-
-.download-modal-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(96, 165, 250, 0.15);
-  border: 1px solid rgba(96, 165, 250, 0.35);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: var(--blue);
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.25);
-  animation: modal-icon-pulse 2s infinite ease-in-out;
-}
-
-@keyframes modal-icon-pulse {
-  0% { transform: scale(1); box-shadow: 0 0 15px rgba(96, 165, 250, 0.2); }
-  50% { transform: scale(1.08); box-shadow: 0 0 30px rgba(96, 165, 250, 0.45); }
-  100% { transform: scale(1); box-shadow: 0 0 15px rgba(96, 165, 250, 0.2); }
-}
-
-.download-modal-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 12px;
-  font-family: var(--font);
-  letter-spacing: -0.5px;
-}
-
-.download-modal-card p {
-  font-size: 13.5px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 28px;
-  font-family: var(--font);
-}
-
-.download-modal-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.modal-btn {
-  text-decoration: none;
-  font-family: var(--font);
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 13.5px;
-  font-weight: 600;
-  height: 44px;
-  border-radius: 10px;
+  background: #080808;
+}
+
+iframe {
   width: 100%;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.modal-download-btn {
-  color: #ffffff;
-  background: rgba(96, 165, 250, 0.15);
-  border: 1px solid rgba(96, 165, 250, 0.35);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.modal-download-btn:hover {
-  background: rgba(96, 165, 250, 0.28);
-  border-color: rgba(96, 165, 250, 0.85);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.25), 0 0 12px rgba(96, 165, 250, 0.15);
-}
-
-.modal-download-btn:active {
-  transform: scale(0.97) translateY(0px);
-  color: #ff4b91;
-  border-color: #ff4b91;
-  background: rgba(255, 75, 145, 0.08);
-  box-shadow: 0 0 20px rgba(255, 75, 145, 0.4);
-}
-
-.modal-back-btn {
-  color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.modal-back-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 12px rgba(255, 255, 255, 0.15);
-}
-
-.modal-back-btn:active {
-  transform: scale(0.97) translateY(0px);
-  color: #ff4b91;
-  border-color: #ff4b91;
-  background: rgba(255, 75, 145, 0.06);
-  box-shadow: 0 0 15px rgba(255, 75, 145, 0.3);
-}
-
-.modal-close-btn {
-  background: transparent;
+  max-width: 960px;
+  height: 100%;
   border: none;
-  color: var(--dim);
-  font-size: 11.5px;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  font-family: var(--font);
-}
-
-.modal-close-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-/* ─────────────────────────────────────────────
-   PRINT
-   ───────────────────────────────────────────── */
-@media print {
-  body { width: 210mm; padding-top: 0 !important; }
-  @page { size: A4; margin: 0; }
-  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .portfolio-nav-bar { display: none !important; }
-  .download-modal-overlay { display: none !important; }
+  border-radius: 16px 16px 0 0;
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: #121212;
 }
 
 </style>
 </head>
 <body>
-
-<!-- Download Modal Overlay -->
-<div class="download-modal-overlay" id="downloadModal">
-  <div class="download-modal-card">
-    <div class="download-modal-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-    </div>
-    <h3 class="es-text">Preparando tu descarga...</h3>
-    <h3 class="en-text">Preparing your download...</h3>
-    <p class="es-text">La descarga del PDF debería comenzar automáticamente. Si no es así, usa el botón de abajo:</p>
-    <p class="en-text">The PDF download should start automatically. If not, use the button below:</p>
-    
-    <div class="download-modal-actions">
-      <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV_2026.pdf" class="modal-btn modal-download-btn" onclick="closeDownloadModal()">
-        <span class="es-text">Descargar PDF</span>
-        <span class="en-text">Download PDF</span>
-      </a>
-      <a href="index.html" class="modal-btn modal-back-btn">
-        <span class="es-text">Volver al Portfolio</span>
-        <span class="en-text">Back to Portfolio</span>
-      </a>
-    </div>
-    
-    <button class="modal-close-btn" onclick="closeDownloadModal()">
-      <span class="es-text">Cerrar y ver CV web</span>
-      <span class="en-text">Close and view web CV</span>
-    </button>
-  </div>
-</div>
 
 <!-- Floating Navigation Bar -->
 <div class="portfolio-nav-bar">
@@ -753,7 +231,7 @@ body.lang-en .en-text {
       <span class="es-text">Descarga iniciada</span>
       <span class="en-text">Download started</span>
     </span>
-    <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV_2026.pdf" class="nav-bar-btn nav-download-btn">
+    <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV_2026.pdf" class="nav-bar-btn nav-download-btn" id="downloadBtn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
       <span class="es-text">Descargar PDF</span>
       <span class="en-text">Download PDF</span>
@@ -761,309 +239,40 @@ body.lang-en .en-text {
   </div>
 </div>
 
-<!-- ── HEADER ── -->
-<header class="cv-header">
-  <div>
-    <div class="eyebrow">
-      <span class="eyebrow-dot"></span>
-      Product Designer · UX/UI &amp; CRO · Customer Journey · Data-informed Design
-    </div>
-
-    <h1 class="cv-name">Marta Morales<br>García de los Ríos</h1>
-
-    <div class="tag-row">
-      <span class="badge">Product Design</span>
-      <span class="badge">UX Research</span>
-      <span class="badge">Customer Journey</span>
-      <span class="badge">CRO &amp; Experimentación</span>
-      <span class="badge">Design Systems</span>
-      <span class="badge">Data-informed</span>
-      <span class="badge">Stakeholder Management</span>
-      <span class="badge-green badge">WCAG 2.1 AA</span>
-    </div>
-  </div>
-
-  <div class="cv-contact">
-    <span>Valencia / Madrid · España · Remote</span>
-    <a href="mailto:mmoralesgr93@gmail.com">mmoralesgr93@gmail.com</a>
-    <a href="tel:+34659879887">+34 659 87 98 87</a>
-    <a href="https://linkedin.com/in/martamorales">linkedin.com/in/martamorales</a>
-    <a href="https://martamorales.vercel.app">martamorales.vercel.app</a>
-  </div>
-</header>
-
-<!-- ── BODY ── -->
-<div class="cv-body">
-
-  <!-- ── EXPERIENCIA (main) ── -->
-  <main class="col-main">
-    <div class="sec-label">Experiencia Profesional</div>
-
-    <!-- ILUNION Hotels -->
-    <article class="exp-item">
-      <div class="exp-role">Product Designer · UX/UI &amp; CRO</div>
-      <div class="exp-meta">
-        ILUNION Hotels
-        <span class="exp-meta-sep">·</span>
-        Sep 2024 – Actualidad
-        <span class="exp-meta-sep">·</span>
-        Turismo &amp; Ecommerce · Canal directo hotelero
-      </div>
-
-      <div class="exp-context-label">Contexto</div>
-      <div class="exp-context">
-        Diseño y optimización del canal directo de reserva para una cadena de 29 hoteles adaptados. Único diseñador con autonomía estratégica, liderando end-to-end el canal digital de mayor rentabilidad para el negocio.
-      </div>
-
-      <div class="exp-impact-label">Impacto</div>
-      <div class="exp-impact">
-        <div class="exp-impact-item">+13% de conversión en el canal directo de reservas (Adobe Analytics, Q4 2024) — con impacto directo en ROAS de campañas Paid Media</div>
-        <div class="exp-impact-item">Reducción de fricciones en el funnel de compra mediante reestructuración del componente de ofertas y del motor de reservas</div>
-        <div class="exp-impact-item">Componente rediseñado extendido a páginas de hotel y travel — validación interna de la solución</div>
-        <div class="exp-impact-item">Iteración post-lanzamiento que detectó y corrigió patrón de interacción táctil en mobile, demostrando proceso de producto maduro</div>
-        <div class="exp-impact-item">Propuesta aprobada en comité de dirección, conectando cada decisión de diseño con impacto en negocio</div>
-      </div>
-
-      <div class="exp-tags-label">Responsabilidades</div>
-      <div class="exp-tags">
-        <span class="badge">UX Research</span>
-        <span class="badge">CRO</span>
-        <span class="badge">Customer Journey</span>
-        <span class="badge">Adobe Analytics</span>
-        <span class="badge">Microsoft Clarity</span>
-        <span class="badge">Figma</span>
-        <span class="badge">Wireframing</span>
-        <span class="badge">Prototyping</span>
-        <span class="badge">AEM</span>
-        <span class="badge">Stakeholder Management</span>
-        <span class="badge">Cross-functional Collaboration</span>
-      </div>
-    </article>
-
-    <!-- CEF -->
-    <article class="exp-item">
-      <div class="exp-role">UX/UI Designer · Accesibilidad &amp; Design System</div>
-      <div class="exp-meta">
-        CEF – Centro de Estudios Financieros
-        <span class="exp-meta-sep">·</span>
-        2024
-        <span class="exp-meta-sep">·</span>
-        EdTech · Plataforma académica B2B
-      </div>
-
-      <div class="exp-context-label">Contexto</div>
-      <div class="exp-context">
-        Rediseño de plataforma de gestión académica EdTech crecida por adiciones incrementales, sin jerarquía visual ni sistema de diseño consistente. Proyecto orientado a accesibilidad, escalabilidad y cohesión del producto.
-      </div>
-
-      <div class="exp-impact-label">Impacto</div>
-      <div class="exp-impact">
-        <div class="exp-impact-item">Plataforma completamente conforme WCAG 2.1 AA — 47 componentes auditados y corregidos</div>
-        <div class="exp-impact-item">Design System unificado que elimina inconsistencias visuales y reduce tiempo de diseño en futuros desarrollos</div>
-        <div class="exp-impact-item">Cero elementos solo-ratón: navegación 100% accesible por teclado implementada en producción</div>
-      </div>
-
-      <div class="exp-tags-label">Responsabilidades</div>
-      <div class="exp-tags">
-        <span class="badge">UX Research</span>
-        <span class="badge">Accessibility</span>
-        <span class="badge">WCAG 2.1</span>
-        <span class="badge">Design System</span>
-        <span class="badge">Figma</span>
-        <span class="badge">Heuristic Analysis</span>
-        <span class="badge">User-centered Design</span>
-        <span class="badge">Cross-functional Collaboration</span>
-      </div>
-    </article>
-
-    <!-- We Are Actions -->
-    <article class="exp-item">
-      <div class="exp-role">Product Designer · CRM &amp; Identidad Digital</div>
-      <div class="exp-meta">
-        We Are Actions
-        <span class="exp-meta-sep">·</span>
-        2020 – 2024
-        <span class="exp-meta-sep">·</span>
-        Agencia digital · CRM · B2B &amp; Pyme
-      </div>
-
-      <div class="exp-context-label">Contexto</div>
-      <div class="exp-context">
-        Evolución de diseñadora gráfica a Product Designer a lo largo de 4 años. Diseño de interfaces para herramientas CRM e internas, desarrollo frontend y construcción de identidades digitales para clientes.
-      </div>
-
-      <div class="exp-impact-label">Impacto</div>
-      <div class="exp-impact">
-        <div class="exp-impact-item">Más de 10 identidades digitales end-to-end para clientes pyme con resultados de negocio medibles</div>
-        <div class="exp-impact-item">Transición progresiva hacia UX estratégico: de outputs visuales a soluciones orientadas a usuario y conversión</div>
-        <div class="exp-impact-item">Colaboración directa con IT en proyectos de alta complejidad técnica</div>
-      </div>
-
-      <div class="exp-tags-label">Responsabilidades</div>
-      <div class="exp-tags">
-        <span class="badge">UX/UI Design</span>
-        <span class="badge">Product Design</span>
-        <span class="badge">Wireframing</span>
-        <span class="badge">Figma</span>
-        <span class="badge">HTML5 / CSS3</span>
-        <span class="badge">JavaScript</span>
-        <span class="badge">Conversion Optimization</span>
-        <span class="badge">Brand Identity</span>
-      </div>
-    </article>
-
-    <!-- AIMPLAS -->
-    <article class="exp-item">
-      <div class="exp-role">Diseñadora Gráfica · Prácticas</div>
-      <div class="exp-meta">
-        AIMPLAS – Instituto Tecnológico del Plástico
-        <span class="exp-meta-sep">·</span>
-        2019
-        <span class="exp-meta-sep">·</span>
-        I+D · Comunicación institucional
-      </div>
-
-      <div class="exp-context-label">Contexto</div>
-      <div class="exp-context">
-        Diseño de identidades visuales para proyectos de I+D y materiales de comunicación para audiencias diversas: investigadores, inversores y público general.
-      </div>
-
-      <div class="exp-tags-label">Responsabilidades</div>
-      <div class="exp-tags">
-        <span class="badge">Brand Identity</span>
-        <span class="badge">Visual Communication</span>
-        <span class="badge">Presentation Design</span>
-      </div>
-    </article>
-
-  </main>
-
-  <!-- ── SIDE COLUMN ── -->
-  <aside class="col-side">
-
-    <!-- Stack -->
-    <div class="side-section">
-      <div class="sec-label">UX &amp; Design</div>
-      <div class="side-tags">
-        <span class="side-tag">Figma</span>
-        <span class="side-tag">Wireframing</span>
-        <span class="side-tag">Prototyping</span>
-        <span class="side-tag">Design Systems</span>
-        <span class="side-tag">Information Architecture</span>
-        <span class="side-tag">User Research</span>
-        <span class="side-tag">Heuristic Analysis</span>
-        <span class="side-tag">WCAG 2.1</span>
-        <span class="side-tag">Framer</span>
-      </div>
-    </div>
-
-    <div class="side-section">
-      <div class="sec-label">CRO &amp; Analytics</div>
-      <div class="side-tags">
-        <span class="side-tag">A/B Testing</span>
-        <span class="side-tag">Adobe Analytics</span>
-        <span class="side-tag">Microsoft Clarity</span>
-        <span class="side-tag">Experimentation</span>
-        <span class="side-tag">Impact Mapping</span>
-        <span class="side-tag">Power BI</span>
-        <span class="side-tag">AEM</span>
-      </div>
-    </div>
-
-    <div class="side-section">
-      <div class="sec-label">Frontend &amp; IA</div>
-      <div class="side-tags">
-        <span class="side-tag">HTML5</span>
-        <span class="side-tag">CSS3</span>
-        <span class="side-tag">JavaScript</span>
-        <span class="side-tag">Claude / IA</span>
-        <span class="side-tag">GitHub</span>
-      </div>
-    </div>
-
-    <div class="side-section">
-      <div class="sec-label">Formación</div>
-      <div class="edu-item">
-        <div class="edu-degree">Bootcamp Full Stack Dev</div>
-        <div class="edu-school">Neoland</div>
-        <div class="edu-year">2024 · HTML · CSS · JS · Agile</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-degree">Grado en Bellas Artes</div>
-        <div class="edu-school">Universitat Politècnica de València</div>
-        <div class="edu-year">2016 – 2020</div>
-      </div>
-    </div>
-
-    <div class="side-section">
-      <div class="sec-label">Idiomas</div>
-      <div class="lang-item">
-        <span class="lang-name">Español</span>
-        <span class="lang-level">Nativo</span>
-      </div>
-      <div class="lang-item">
-        <span class="lang-name">Inglés</span>
-        <span class="lang-level">Profesional</span>
-      </div>
-
-    </div>
-
-    <div class="side-section">
-      <div class="sec-label">Portfolio</div>
-      <div style="font-size:11px; color: var(--muted); line-height:1.6;">
-        3 case studies estratégicos.<br>
-        ILUNION Hotels · CEF EdTech.<br>
-        Hostelería ecommerce + EdTech.<br>
-        <br>
-        <a href="https://martamorales.vercel.app" style="color: var(--blue); text-decoration:none; font-weight:500;">martamorales.vercel.app →</a>
-      </div>
-    </div>
-
-  </aside>
+<!-- PDF Embed Container -->
+<div class="pdf-viewer-container">
+  <iframe id="pdfFrame" src="assets/Marta_Morales_CV_2026.pdf"></iframe>
 </div>
 
 <script>
-// Close download modal function (defined globally so inline onclick can see it)
-function closeDownloadModal() {
-  const modal = document.getElementById('downloadModal');
-  if (modal) {
-    modal.classList.remove('show');
-    // Hide after transition ends
-    setTimeout(() => {
-      modal.style.display = 'none';
-    }, 400);
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply language from localStorage
+  // 1. Detect language from localStorage
   const savedLang = localStorage.getItem('portfolio-lang') || 'es';
   if (savedLang === 'en') {
     document.body.classList.add('lang-en');
   }
 
-  // Check URL parameters for auto-download
+  // 2. Responsive Check - Mobile redirection to native PDF viewer
+  const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (isMobile) {
+    // Redirect mobile users immediately to raw PDF to open native full-screen visualizer
+    window.location.replace('assets/Marta_Morales_CV_2026.pdf');
+    return;
+  }
+
+  // 3. Auto-download logic for desktop users if parameter ?download=true is active
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('download') === 'true') {
-    // Show the modal
-    const modal = document.getElementById('downloadModal');
-    if (modal) {
-      modal.style.display = 'flex';
-      // Force reflow
-      modal.offsetHeight;
-      modal.classList.add('show');
-    }
-
-    // Show download started status in the background nav bar
+    // Show download confirmation label
     const status = document.getElementById('downloadStatus');
     if (status) {
       status.classList.add('show');
       setTimeout(() => {
         status.classList.remove('show');
-      }, 6000);
+      }, 5000);
     }
 
-    // Trigger PDF download after a short delay to let the page render
+    // Trigger PDF download after a tiny delay
     setTimeout(() => {
       const link = document.createElement('a');
       link.href = 'assets/Marta_Morales_CV_2026.pdf';
@@ -1071,7 +280,21 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }, 800);
+    }, 600);
+  }
+
+  // Bind click event on Download PDF button to show download status
+  const downloadBtn = document.getElementById('downloadBtn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      const status = document.getElementById('downloadStatus');
+      if (status) {
+        status.classList.add('show');
+        setTimeout(() => {
+          status.classList.remove('show');
+        }, 5000);
+      }
+    });
   }
 });
 </script>
