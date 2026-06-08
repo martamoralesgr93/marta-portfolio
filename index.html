@@ -165,6 +165,8 @@ nav {
 .c-orange { color: var(--orange); }
 
 .hero-body { font-size: 14px; color: var(--muted); line-height: 1.78; max-width: 540px; margin-bottom: 44px; }
+.hero-positioning { display: none; }
+.hero-mobile-metric { display: none; }
 
 .hero-actions { display: flex; align-items: center; gap: 20px; }
 .btn-primary {
@@ -1012,11 +1014,47 @@ nav {
   .hero .wrap { padding-top: 40px; padding-bottom: 52px; }
   .hero-grid { grid-template-columns: 1fr; gap: 0; }
   .hero-title { font-size: 50px; letter-spacing: -2.2px; line-height: 0.96; margin-bottom: 22px; }
-  .hero-body { font-size: 14px; max-width: 100%; margin-bottom: 36px; }
+  .hero-subtitle-sub { display: none !important; }
+  .hero .hero-body { display: none !important; }
   .hero-actions { flex-direction: row; gap: 16px; flex-wrap: wrap; }
+  .hero-actions .btn-ghost { display: none !important; }
   .impact-card { display: none; }
   .hero-blob { display: block; }
   .hero-video-bg { display: none; } /* blob replaces video on mobile */
+
+  html:not(.lang-en) .hero-positioning.es { display: block; }
+  html.lang-en .hero-positioning.en { display: block; }
+  .hero-positioning {
+    font-size: 17px;
+    color: var(--white);
+    line-height: 1.45;
+    margin-bottom: 28px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
+
+  html:not(.lang-en) .hero-mobile-metric.es { display: flex; }
+  html.lang-en .hero-mobile-metric.en { display: flex; }
+  .hero-mobile-metric {
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .hmm-val {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--purple);
+    letter-spacing: -1.5px;
+    line-height: 1;
+  }
+  .hmm-lbl {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
 
   /* Mobile impact row */
   .mobile-impact { display: block; padding: 0 0 60px; position: relative; z-index: 1; }
@@ -1763,15 +1801,25 @@ nav {
           <span class="eyebrow-text en">Product Designer · Product Strategy · CRO · Business Impact</span>
         </div>
         <h1 class="hero-title">
-          <span class="es">Marta Morales<br><span class="c-purple" style="font-size: 0.8em;">Product Designer</span><br><span style="font-size: 0.55em; font-weight: 500; display: block; margin-top: 12px; line-height: 1.25; letter-spacing: -1.2px; color: var(--white);">Especializada en CRO, customer journey y conversión digital.</span></span>
-          <span class="en">Marta Morales<br><span class="c-purple" style="font-size: 0.8em;">Product Designer</span><br><span style="font-size: 0.55em; font-weight: 500; display: block; margin-top: 12px; line-height: 1.25; letter-spacing: -1.2px; color: var(--white);">Specializing in CRO, customer journey &amp; digital conversion.</span></span>
+          <span class="es">Marta Morales<br><span class="c-purple" style="font-size: 0.8em;">Product Designer</span><br><span class="hero-subtitle-sub" style="font-size: 0.55em; font-weight: 500; display: block; margin-top: 12px; line-height: 1.25; letter-spacing: -1.2px; color: var(--white);">Especializada en CRO, customer journey y conversión digital.</span></span>
+          <span class="en">Marta Morales<br><span class="c-purple" style="font-size: 0.8em;">Product Designer</span><br><span class="hero-subtitle-sub" style="font-size: 0.55em; font-weight: 500; display: block; margin-top: 12px; line-height: 1.25; letter-spacing: -1.2px; color: var(--white);">Specializing in CRO, customer journey &amp; digital conversion.</span></span>
         </h1>
+        <p class="hero-positioning es">No diseño pantallas — resuelvo problemas en la intersección entre usuario, negocio y dato.</p>
+        <p class="hero-positioning en">I don't design screens — I solve problems at the intersection of user, business, and data.</p>
         <p class="hero-body es">
           Actualmente optimizo experiencias digitales para ILUNION Hotels (32 hoteles), identificando oportunidades de negocio mediante research, analítica digital y experimentación UX para aumentar reservas, captación y engagement.
         </p>
         <p class="hero-body en">
           Currently optimizing digital experiences for ILUNION Hotels (32 hotels), identifying business opportunities through research, web analytics, and UX experimentation to increase bookings, acquisition, and engagement.
         </p>
+        <div class="hero-mobile-metric es">
+          <div class="hmm-val">+13%</div>
+          <div class="hmm-lbl">conversión canal directo</div>
+        </div>
+        <div class="hero-mobile-metric en">
+          <div class="hmm-val">+13%</div>
+          <div class="hmm-lbl">direct channel conversion</div>
+        </div>
         <div class="hero-actions">
           <a href="#work" class="btn-primary"><span class="es">Ver mi trabajo</span><span class="en">View my work</span>  ↓</a>
           <a href="https://wa.me/34659879887" class="btn-ghost" target="_blank">WhatsApp  ↗</a>
@@ -2450,8 +2498,8 @@ nav {
             <div class="step-content">
               <div class="step-name es">Diagnóstico antes que solución</div>
               <div class="step-name en">Diagnosis before solution</div>
-              <div class="step-desc es">Antes de abrir Figma, entiendo qué está fallando y por qué. Adobe Analytics, Clarity y datos de negocio me dan la señal; las entrevistas o tests me confirman el por qué. El brief que recibo nunca es el problema real — es el punto de partida.</div>
-              <div class="step-desc en">Before opening Figma, I understand what's failing and why. Adobe Analytics, Clarity and business data give me the signal; interviews or tests confirm the reason. The brief I receive is never the real problem — it's the starting point.</div>
+              <div class="step-desc es">Adobe Analytics y Clarity primero. El brief que recibo nunca es el problema real — es el punto de partida para encontrarlo.</div>
+              <div class="step-desc en">Adobe Analytics and Clarity first. The brief I receive is never the real problem — it's the starting point to find it.</div>
             </div>
           </li>
           <li class="process-step">
@@ -2459,8 +2507,8 @@ nav {
             <div class="step-content">
               <div class="step-name es">Propuesta argumentada, no opciones decorativas</div>
               <div class="step-name en">Argued proposal, not decorative options</div>
-              <div class="step-desc es">Cuando presento a stakeholders, presento una decisión con datos detrás — no tres variantes para que elijan. He defendido propuestas ante dirección de forma directa y autónoma, conectando fricción UX con impacto en conversión e ingresos.</div>
-              <div class="step-desc en">When I present to stakeholders, I present a decision backed by data — not three variants for them to choose from. I've defended proposals directly to leadership, connecting UX friction to conversion and revenue impact.</div>
+              <div class="step-desc es">Una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio sobre preferencia visual.</div>
+              <div class="step-desc en">A data-backed decision, not three variants to choose from. Business criteria over visual preference.</div>
             </div>
           </li>
           <li class="process-step">
@@ -2468,8 +2516,8 @@ nav {
             <div class="step-content">
               <div class="step-name es">Diseño con restricciones reales</div>
               <div class="step-name en">Design within real constraints</div>
-              <div class="step-desc es">Las mejores soluciones nacen de entender qué no se puede cambiar. Diseño sabiendo las restricciones técnicas del stack (AEM, APIs, timelines de dev) y priorizando lo que más mueve la aguja con el menor coste de implementación.</div>
-              <div class="step-desc en">The best solutions come from understanding what cannot be changed. I design knowing the technical constraints of the stack (AEM, APIs, dev timelines) and prioritising what moves the needle most at the lowest implementation cost.</div>
+              <div class="step-desc es">Diseño conociendo las restricciones del stack (AEM, APIs, timelines). Priorizo lo que mueve la aguja con el menor coste.</div>
+              <div class="step-desc en">Designing within stack constraints (AEM, APIs, timelines). Prioritizing what moves the needle at the lowest cost.</div>
             </div>
           </li>
           <li class="process-step">
@@ -2477,8 +2525,8 @@ nav {
             <div class="step-content">
               <div class="step-name es">El lanzamiento no es el final</div>
               <div class="step-name en">Launch is not the end</div>
-              <div class="step-desc es">Post-launch es cuando aprendo si acerté. Mido comportamiento, detecto lo que el diseño no anticipó (como el swipe en mobile de ILUNION, detectado y corregido post-lanzamiento) e itero con criterio, no por intuición.</div>
-              <div class="step-desc en">Post-launch is when I learn if I was right. I measure behaviour, detect what the design didn't anticipate (like the ILUNION mobile swipe, detected and fixed post-launch) and iterate with criteria, not intuition.</div>
+              <div class="step-desc es">Mido comportamiento real e itero con datos post-lanzamiento. Ahí es donde empieza el aprendizaje y la optimización real.</div>
+              <div class="step-desc en">Measuring real behavior and iterating with post-launch data. That's where real learning and optimization begin.</div>
             </div>
           </li>
           <li class="process-step">
@@ -2486,8 +2534,8 @@ nav {
             <div class="step-content">
               <div class="step-name es">Trabajo en equipo de producto real</div>
               <div class="step-name en">Real product team collaboration</div>
-              <div class="step-desc es">He coordinado directamente con ingeniería, BI, marketing y dirección sin intermediarios. Entiendo cómo hablan los developers, cómo priorizan los equipos de negocio y cómo se toman las decisiones cuando hay restricciones de tiempo y presupuesto.</div>
-              <div class="step-desc en">I've coordinated directly with engineering, BI, marketing and leadership without intermediaries. I understand how developers talk, how business teams prioritise and how decisions are made under time and budget constraints.</div>
+              <div class="step-desc es">Coordinación directa con ingeniería, BI, marketing y dirección. Hablo el idioma de dev y de negocio para alinear prioridades.</div>
+              <div class="step-desc en">Direct alignment with engineering, BI, marketing, and leadership. Speaking both technical and business languages.</div>
             </div>
           </li>
         </ul>
