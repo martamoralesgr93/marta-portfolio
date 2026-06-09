@@ -995,10 +995,20 @@ nav {
 .liquid-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(60px);
   opacity: 0.55;
   mix-blend-mode: screen;
   will-change: transform, border-radius;
+}
+.hero-glass-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,1) 100%);
+  backdrop-filter: blur(50px) saturate(180%);
+  -webkit-backdrop-filter: blur(50px) saturate(180%);
 }
 .liquid-blob-1 {
   width: 80vw;
@@ -1232,6 +1242,7 @@ nav {
   .hero-actions .btn-ghost { display: none !important; }
   .impact-card { display: none; }
   .hero-blob { display: block; }
+  .hero-glass-overlay { display: block; }
   .hero-video-bg { display: none; } /* blob replaces video on mobile */
 
   html:not(.lang-en) .hero-positioning.es { display: block; }
@@ -2116,6 +2127,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <div class="liquid-blob liquid-blob-3"></div>
     <div class="liquid-blob liquid-blob-4"></div>
   </div>
+  <div class="hero-glass-overlay"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
