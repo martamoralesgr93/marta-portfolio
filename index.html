@@ -679,7 +679,19 @@ nav {
 }
 .contact-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--dim); margin-bottom: 24px; }
 .contact-title { font-size: 64px; font-weight: 800; letter-spacing: -3px; line-height: 0.96; color: var(--white); margin-bottom: 24px; }
-.contact-sub { font-size: 14px; color: var(--muted); line-height: 1.76; margin-bottom: 48px; max-width: 380px; margin-left: auto; margin-right: auto; }
+.contact-sub { font-size: 14px; color: var(--muted); line-height: 1.76; margin-bottom: 36px; max-width: 380px; margin-left: auto; margin-right: auto; }
+.contact-badge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 36px;
+  min-height: 120px;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+.contact-badge-container:hover {
+  transform: translateY(-2px);
+}
 .contact-actions { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
 
 /* ===================== CONTACT FOOTER ===================== */
@@ -2636,6 +2648,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <p class="contact-sub en">
       Open to Product Designer roles in teams where design is part of business decisions. Based in Spain, available remotely. Let's talk about the problem you're trying to solve.
     </p>
+    
+    <!-- LinkedIn Profile Badge -->
+    <div class="contact-badge-container">
+      <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="marta-morales-g-ríos-146540137" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://es.linkedin.com/in/marta-morales-g-r%C3%ADos-146540137?trk=profile-badge">Marta Morales</a></div>
+    </div>
+
     <div class="contact-actions">
       <a href="mailto:mmoralesgr93@gmail.com" class="btn-primary">Email  →</a>
       <a href="https://wa.me/34659879887" class="btn-primary" style="background: linear-gradient(135deg, rgba(37,211,102,0.85), rgba(18,140,126,0.85)); box-shadow: 0 4px 15px rgba(37,211,102,0.2); border: 1px solid rgba(255,255,255,0.1);">WhatsApp  ↗</a>
@@ -2793,6 +2811,7 @@ function closeMenu() {
 })();
 </script>
 
-
+<!-- LinkedIn Profile Badge Script -->
+<script src="https://platform.linkedin.com/badges/js/profile.js" async="" defer="" type="text/javascript"></script>
 
 </body></html>
