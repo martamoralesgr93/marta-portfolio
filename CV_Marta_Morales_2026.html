@@ -231,7 +231,7 @@ iframe {
       <span class="es-text">Descarga iniciada</span>
       <span class="en-text">Download started</span>
     </span>
-    <a href="assets/Marta_Morales_CV_2026.pdf" download="Marta_Morales_CV_2026.pdf" class="nav-bar-btn nav-download-btn" id="downloadBtn">
+    <a href="assets/CV_Marta_Morales_ES_2026.pdf" download="CV_Marta_Morales_ES_2026.pdf" class="nav-bar-btn nav-download-btn" id="downloadBtn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
       <span class="es-text">Descargar PDF</span>
       <span class="en-text">Download PDF</span>
@@ -241,7 +241,7 @@ iframe {
 
 <!-- PDF Embed Container -->
 <div class="pdf-viewer-container">
-  <iframe id="pdfFrame" src="assets/Marta_Morales_CV_2026.pdf"></iframe>
+  <iframe id="pdfFrame" src="assets/CV_Marta_Morales_ES_2026.pdf"></iframe>
 </div>
 
 <script>
@@ -252,11 +252,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('lang-en');
   }
 
+  // Define files and download names based on language
+  const pdfFilename = savedLang === 'en' ? 'CV_Marta_Morales_EN_2026.pdf' : 'CV_Marta_Morales_ES_2026.pdf';
+  const pdfPath = `assets/${pdfFilename}`;
+
+  // Update download button properties dynamically
+  const downloadBtn = document.getElementById('downloadBtn');
+  if (downloadBtn) {
+    downloadBtn.href = pdfPath;
+    downloadBtn.download = pdfFilename;
+  }
+
+  // Update iframe source dynamically
+  const pdfFrame = document.getElementById('pdfFrame');
+  if (pdfFrame) {
+    pdfFrame.src = pdfPath;
+  }
+
   // 2. Responsive Check - Mobile redirection to native PDF viewer
   const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
   if (isMobile) {
     // Redirect mobile users immediately to raw PDF to open native full-screen visualizer
-    window.location.replace('assets/Marta_Morales_CV_2026.pdf');
+    window.location.replace(pdfPath);
     return;
   }
 
@@ -275,8 +292,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trigger PDF download after a tiny delay
     setTimeout(() => {
       const link = document.createElement('a');
-      link.href = 'assets/Marta_Morales_CV_2026.pdf';
-      link.download = 'Marta_Morales_CV_2026.pdf';
+      link.href = pdfPath;
+      link.download = pdfFilename;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -284,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Bind click event on Download PDF button to show download status
-  const downloadBtn = document.getElementById('downloadBtn');
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
       const status = document.getElementById('downloadStatus');
