@@ -103,7 +103,7 @@ nav {
   font-size: 10px; font-weight: 400; letter-spacing: 0.02em;
   color: rgba(255,255,255,0.34); line-height: 1;
 }
-.nav-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 36px; list-style: none; }
+.nav-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 36px; list-style: none; z-index: 10; }
 .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: rgba(255,255,255,0.88); }
 .nav-right { display: flex; align-items: center; gap: 14px; }
@@ -1743,7 +1743,7 @@ nav {
 
 /* Nav CV - hidden in desktop (> 768px) */
 @media (min-width: 769px) {
-  .nav-cv { display: none; }
+  .nav-cv { display: none !important; }
 }
 
 /* Hero Role text: discrete Product Designer line */
