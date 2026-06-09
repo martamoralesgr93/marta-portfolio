@@ -1741,23 +1741,22 @@ nav {
   line-height: 1;
 }
 
-/* Nav CTA - discrete pill with border */
-.nav-cta {
-  background: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  color: var(--white) !important;
-  padding: 8px 18px !important;
-  border-radius: 100px !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
+/* Nav CTA - hidden in desktop (> 768px) */
+@media (min-width: 769px) {
+  .nav-cta {
+    display: none !important;
+  }
 }
-.nav-cta:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  opacity: 1 !important;
-  transform: translateY(-1px) !important;
+
+/* Hero Role text: discrete Product Designer line */
+.hero-role {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-top: -8px;
+  margin-bottom: 20px;
 }
 
 /* Mobile Drawer Download Button - Large button at the end */
@@ -1910,6 +1909,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="es">Marta Morales</span>
           <span class="en">Marta Morales</span>
         </h1>
+        <div class="hero-role">Product Designer</div>
         <p class="hero-positioning es"><em>No diseño pantallas. Resuelvo problemas en la intersección entre usuario, negocio y dato.</em></p>
         <p class="hero-positioning en"><em>I don't design screens. I solve problems at the intersection of user, business, and data.</em></p>
         <p class="hero-body es">
