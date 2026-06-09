@@ -978,158 +978,7 @@ nav {
   padding: 6px 16px; border-radius: 100px; cursor: pointer; font-family: inherit;
 }
 
-/* ===================== HERO BLOB (mobile only) ===================== */
-.hero-blob {
-  display: none;
-  position: absolute;
-  top: -50px; left: -50px;
-  right: -50px; bottom: -50px;
-  width: calc(100% + 100px);
-  height: calc(100% + 100px);
-  opacity: 0.65;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  will-change: transform;
-}
-.liquid-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.55;
-  mix-blend-mode: screen;
-  will-change: transform, border-radius;
-}
-.hero-glass-overlay {
-  display: none;
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,1) 100%);
-  backdrop-filter: blur(50px) saturate(180%);
-  -webkit-backdrop-filter: blur(50px) saturate(180%);
-}
-.liquid-blob-1 {
-  width: 80vw;
-  height: 80vw;
-  min-width: 280px;
-  min-height: 280px;
-  max-width: 460px;
-  max-height: 460px;
-  background: radial-gradient(circle, var(--magenta-color) 0%, rgba(255, 75, 145, 0) 75%);
-  top: 15%;
-  left: -10%;
-  animation: liquidMorph1 22s ease-in-out infinite alternate;
-}
-.liquid-blob-2 {
-  width: 90vw;
-  height: 90vw;
-  min-width: 320px;
-  min-height: 320px;
-  max-width: 520px;
-  max-height: 520px;
-  background: radial-gradient(circle, var(--purple-deep) 0%, rgba(124, 58, 237, 0) 75%);
-  bottom: 15%;
-  right: -15%;
-  animation: liquidMorph2 26s ease-in-out infinite alternate-reverse;
-}
-.liquid-blob-3 {
-  width: 75vw;
-  height: 75vw;
-  min-width: 260px;
-  min-height: 260px;
-  max-width: 420px;
-  max-height: 420px;
-  background: radial-gradient(circle, var(--orange) 0%, rgba(249, 115, 22, 0) 75%);
-  top: -10%;
-  right: -5%;
-  animation: liquidMorph3 18s ease-in-out infinite alternate;
-}
-.liquid-blob-4 {
-  width: 70vw;
-  height: 70vw;
-  min-width: 240px;
-  min-height: 240px;
-  max-width: 400px;
-  max-height: 400px;
-  background: radial-gradient(circle, var(--blue) 0%, rgba(96, 165, 250, 0) 75%);
-  bottom: -5%;
-  left: 10%;
-  animation: liquidMorph4 28s ease-in-out infinite alternate-reverse;
-}
-@keyframes liquidMorph1 {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-  }
-  33% {
-    transform: translate(30px, -40px) scale(1.12) rotate(120deg);
-    border-radius: 40% 60% 50% 50% / 40% 50% 50% 60%;
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
-    border-radius: 30% 70% 70% 30% / 50% 30% 70% 50%;
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(360deg);
-    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-  }
-}
-@keyframes liquidMorph2 {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(360deg);
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-  }
-  33% {
-    transform: translate(-40px, 30px) scale(0.9) rotate(240deg);
-    border-radius: 70% 30% 50% 50% / 50% 70% 30% 50%;
-  }
-  66% {
-    transform: translate(25px, -25px) scale(1.15) rotate(120deg);
-    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-  }
-}
-@keyframes liquidMorph3 {
-  0% {
-    transform: translate(0, 0) scale(0.95) rotate(0deg);
-    border-radius: 40% 60% 50% 50% / 40% 50% 50% 60%;
-  }
-  33% {
-    transform: translate(20px, 40px) scale(1.1) rotate(100deg);
-    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-  }
-  66% {
-    transform: translate(-30px, -30px) scale(0.95) rotate(220deg);
-    border-radius: 30% 70% 60% 40% / 60% 30% 40% 70%;
-  }
-  100% {
-    transform: translate(0, 0) scale(0.95) rotate(360deg);
-    border-radius: 40% 60% 50% 50% / 40% 50% 50% 60%;
-  }
-}
-@keyframes liquidMorph4 {
-  0% {
-    transform: translate(0, 0) scale(1.1) rotate(180deg);
-    border-radius: 70% 30% 60% 40% / 60% 30% 40% 70%;
-  }
-  33% {
-    transform: translate(-25px, -40px) scale(0.9) rotate(60deg);
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-  }
-  66% {
-    transform: translate(35px, 25px) scale(1.05) rotate(-60deg);
-    border-radius: 40% 60% 50% 50% / 40% 50% 50% 60%;
-  }
-  100% {
-    transform: translate(0, 0) scale(1.1) rotate(-180deg);
-    border-radius: 70% 30% 60% 40% / 60% 30% 40% 70%;
-  }
-}
+
 
 /* ===================== MOBILE IMPACT ROW (hidden desktop) ===================== */
 .mobile-impact { display: none; }
@@ -1241,9 +1090,7 @@ nav {
   .hero-actions { flex-direction: row; gap: 16px; flex-wrap: wrap; }
   .hero-actions .btn-ghost { display: none !important; }
   .impact-card { display: none; }
-  .hero-blob { display: block; }
-  .hero-glass-overlay { display: block; }
-  .hero-video-bg { display: none; } /* blob replaces video on mobile */
+  .hero-video-bg { display: none; }
 
   html:not(.lang-en) .hero-positioning.es { display: block; }
   html.lang-en .hero-positioning.en { display: block; }
@@ -2121,13 +1968,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <source src="assets/logo-background-video.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="hero-blob">
-    <div class="liquid-blob liquid-blob-1"></div>
-    <div class="liquid-blob liquid-blob-2"></div>
-    <div class="liquid-blob liquid-blob-3"></div>
-    <div class="liquid-blob liquid-blob-4"></div>
-  </div>
-  <div class="hero-glass-overlay"></div>
+
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -2993,21 +2834,7 @@ function closeMenu() {
   }
   tick();
 
-  /* Mobile blob — gyroscope + touch */
-  const blob = document.querySelector('.hero-blob');
-  if (blob) {
-    window.addEventListener('deviceorientation', e => {
-      const bx = Math.max(-44, Math.min(44, (e.gamma || 0) * 0.9));
-      const by = Math.max(-32, Math.min(32, ((e.beta  || 0) - 45) * 0.55));
-      blob.style.transform = `translate(${bx}px, ${by}px)`;
-    });
-    document.addEventListener('touchmove', e => {
-      const t  = e.touches[0];
-      const bx = (t.clientX / innerWidth  - 0.5) * 64;
-      const by = (t.clientY / innerHeight - 0.5) * 44;
-      blob.style.transform = `translate(${bx}px, ${by}px)`;
-    }, { passive: true });
-  }
+
 
   /* Scroll reveal — fade-up sections as they enter viewport */
   /* Live clock for sobre section */
