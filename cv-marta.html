@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marta Morales García de los Ríos — CV</title>
+<style>
+
+@page {
+    size: A4;
+    margin: 18mm;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+body {
+    width: 174mm;
+    min-height: 261mm;
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    background: #FFFFFF;
+    line-height: 1.25;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+table,
+ul,
+h1,
+h2,
+h3 {
+    page-break-inside: avoid;
+}
+
+h1,
+h2,
+h3 {
+    page-break-after: avoid;
+}
+
+@media print {
+    html,
+    body {
+        width: 174mm;
+        height: auto;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+.cv-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: start;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid #000;
+    margin-bottom: 14px;
+}
+
+h1.cv-name {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #000;
+    margin: 0 0 3px 0;
+    line-height: 1.05;
+}
+
+.cv-role {
+    font-size: 8.5px;
+    font-weight: 400;
+    color: #555;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.1px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+.chip {
+    font-size: 6.5px;
+    font-weight: 700;
+    color: #1a56db;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 3px;
+    padding: 2px 6px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.cv-contact {
+    text-align: right;
+    font-size: 7.5px;
+    color: #444;
+    line-height: 1.7;
+    padding-top: 2px;
+}
+
+.cv-contact a {
+    color: #444;
+    text-decoration: none;
+}
+
+/* ── BODY ────────────────────────────────────────── */
+.cv-body {
+    display: grid;
+    grid-template-columns: 1fr 52mm;
+    gap: 0;
+}
+
+/* ── MAIN COLUMN ─────────────────────────────────── */
+.col-main {
+    padding-right: 14px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.sec-label {
+    font-size: 6.5px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: #999;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 3px;
+    margin-bottom: 9px;
+    margin-top: 0;
+}
+
+/* ── EXPERIENCE ITEMS ────────────────────────────── */
+.exp-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.exp-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.exp-role {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1px;
+}
+
+.exp-meta {
+    font-size: 7.5px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.sub-label {
+    font-size: 6px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    margin-top: 0;
+}
+
+.sub-label-ctx  { color: #999; }
+.sub-label-imp  { color: #059669; }
+.sub-label-tags { color: #999; }
+
+.exp-ctx {
+    font-size: 7.5px;
+    color: #555;
+    line-height: 1.45;
+    margin-bottom: 5px;
+}
+
+ul {
+    margin: 0 0 5px 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    font-size: 7.5px;
+    color: #111;
+    line-height: 1.45;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 3px;
+}
+
+li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #059669;
+    font-size: 7px;
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 4px;
+}
+
+.exp-tag {
+    font-size: 6.5px;
+    color: #1a56db;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 2px;
+    padding: 1px 5px;
+    white-space: nowrap;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────── */
+.col-side {
+    padding-left: 14px;
+}
+
+.sidebar-block {
+    margin-bottom: 14px;
+}
+
+.stack-line {
+    font-size: 7.5px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.stack-cat {
+    font-size: 6.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #888;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.side-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.side-tag {
+    font-size: 6.5px;
+    color: #333;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 2px;
+    padding: 1px 5px;
+    white-space: nowrap;
+}
+
+.edu-item {
+    margin-bottom: 7px;
+}
+
+.edu-degree {
+    font-size: 8px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.3;
+}
+
+.edu-school {
+    font-size: 7px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.lang-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.5px;
+    margin-bottom: 3px;
+}
+
+.lang-name  { color: #000; font-weight: 600; }
+.lang-level { color: #666; }
+
+.portfolio-box {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.portfolio-box p {
+    font-size: 7px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 5px 0;
+}
+
+.portfolio-url {
+    font-size: 7.5px;
+    font-weight: 700;
+    color: #1a56db;
+    text-decoration: none;
+}
+
+table {
+    margin-bottom: 18px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="cv-header">
+  <div>
+    <h1 class="cv-name">Marta Morales García de los Ríos</h1>
+    <p class="cv-role">UX/UI Designer &nbsp;·&nbsp; Product Design &nbsp;·&nbsp; CRO &amp; Accesibilidad &nbsp;·&nbsp; HTML/CSS &nbsp;·&nbsp; Design Systems</p>
+    <div class="chips">
+      <span class="chip">UX/UI Design</span>
+      <span class="chip">UX Research</span>
+      <span class="chip">CRO &amp; Experimentación</span>
+      <span class="chip">Design Systems</span>
+      <span class="chip">HTML/CSS/Bootstrap</span>
+      <span class="chip">Accesibilidad WCAG 2.1</span>
+      <span class="chip">Stakeholder Management</span>
+      <span class="chip">Multi-sector</span>
+    </div>
+  </div>
+  <div class="cv-contact">
+    <div>Madrid &nbsp;·&nbsp; España &nbsp;·&nbsp; Remote</div>
+    <div><a href="mailto:mmoralesgr93@gmail.com">mmoralesgr93@gmail.com</a></div>
+    <div><a href="tel:+34659879887">+34 659 87 98 87</a></div>
+    <div><a href="https://linkedin.com/in/martamorales-designer">linkedin.com/in/martamorales-designer</a></div>
+    <div><a href="https://martamorales.vercel.app">martamorales.vercel.app</a></div>
+  </div>
+</header>
+
+<!-- ── BODY ── -->
+<div class="cv-body">
+
+  <!-- ── MAIN: EXPERIENCIA ── -->
+  <main class="col-main">
+    <div class="sec-label">Experiencia Profesional</div>
+
+    <!-- ILUNION -->
+    <div class="exp-item">
+      <div class="exp-role">Product Designer · UX/UI &amp; CRO</div>
+      <div class="exp-meta">ILUNION Hotels &nbsp;·&nbsp; Sep 2024 – Actualidad &nbsp;·&nbsp; Turismo &amp; Ecommerce · Canal directo hotelero</div>
+      <p class="sub-label sub-label-ctx">Contexto</p>
+      <div class="exp-ctx">Diseño y optimización del canal directo de reserva para una cadena de 32 hoteles adaptados. Único diseñador con autonomía estratégica, liderando end-to-end el canal digital de mayor rentabilidad para el negocio.</div>
+      <p class="sub-label sub-label-imp">Impacto</p>
+      <ul>
+        <li>+13% de conversión en el canal directo de reservas (Adobe Analytics, Q4 2024) — con impacto directo en ROAS de campañas Paid Media</li>
+        <li>Reducción de fricciones en el funnel mediante reestructuración del componente de ofertas y del motor de reservas</li>
+        <li>Componente rediseñado extendido a páginas de hotel y travel — validación interna de la solución</li>
+        <li>Propuesta aprobada en comité de dirección, conectando cada decisión de diseño con impacto en negocio</li>
+      </ul>
+      <p class="sub-label sub-label-tags">Responsabilidades</p>
+      <div class="exp-tags">
+        <span class="exp-tag">UX Research</span><span class="exp-tag">CRO</span><span class="exp-tag">Customer Journey</span><span class="exp-tag">Adobe Analytics</span><span class="exp-tag">Microsoft Clarity</span><span class="exp-tag">Figma</span><span class="exp-tag">Wireframing</span><span class="exp-tag">AEM</span><span class="exp-tag">Stakeholder Management</span>
+      </div>
+    </div>
+
+    <!-- CEF -->
+    <div class="exp-item">
+      <div class="exp-role">UX/UI Designer · Accesibilidad &amp; Design System</div>
+      <div class="exp-meta">CEF – Centro de Estudios Financieros &nbsp;·&nbsp; Jun – Sep 2024 &nbsp;·&nbsp; EdTech · Plataforma académica B2B</div>
+      <p class="sub-label sub-label-ctx">Contexto</p>
+      <div class="exp-ctx">Rediseño de plataforma EdTech crecida por adiciones incrementales, sin jerarquía visual ni sistema de diseño consistente. Proyecto orientado a accesibilidad, escalabilidad y cohesión del producto.</div>
+      <p class="sub-label sub-label-imp">Impacto</p>
+      <ul>
+        <li>Plataforma completamente conforme WCAG 2.1 AA — 47 componentes auditados y corregidos</li>
+        <li>Design System unificado que elimina inconsistencias visuales y reduce tiempo de diseño</li>
+        <li>Cero elementos solo-ratón: navegación 100% accesible por teclado implementada en producción</li>
+      </ul>
+      <p class="sub-label sub-label-tags">Responsabilidades</p>
+      <div class="exp-tags">
+        <span class="exp-tag">UX Research</span><span class="exp-tag">Accessibility</span><span class="exp-tag">WCAG 2.1</span><span class="exp-tag">Design System</span><span class="exp-tag">Figma</span><span class="exp-tag">Heuristic Analysis</span><span class="exp-tag">User-centered Design</span><span class="exp-tag">Cross-functional</span>
+      </div>
+    </div>
+
+    <!-- WE ARE ACTIONS -->
+    <div class="exp-item">
+      <div class="exp-role">UX/UI Designer · Producto &amp; Frontend</div>
+      <div class="exp-meta">We Are Actions &nbsp;·&nbsp; Jul 2020 – May 2024 &nbsp;·&nbsp; Consultoría digital · B2B &amp; Pyme · Multi-sector</div>
+      <p class="sub-label sub-label-ctx">Contexto</p>
+      <div class="exp-ctx">Diseñadora única en un equipo de 7 desarrolladores backend. Responsable end-to-end del diseño de productos digitales en entornos de consultoría y desarrollo de producto: UX, UI, frontend y stakeholder management.</div>
+      <p class="sub-label sub-label-imp">Impacto</p>
+      <ul>
+        <li>Diseño e implementación de interfaces para herramientas CRM, plataformas internas y productos web en múltiples sectores (hostelería, automoción, servicios B2B)</li>
+        <li>Construcción de design systems desde cero en Figma; prototipado HTML5, CSS3 y Bootstrap integrado con equipo de desarrollo</li>
+        <li>Aplicación de Design Thinking para definición de problemas y Agile Scrum en ciclos de entrega</li>
+      </ul>
+      <p class="sub-label sub-label-tags">Responsabilidades</p>
+      <div class="exp-tags">
+        <span class="exp-tag">UX/UI Design</span><span class="exp-tag">Design Systems</span><span class="exp-tag">Wireframing</span><span class="exp-tag">Figma</span><span class="exp-tag">HTML5 / CSS3</span><span class="exp-tag">Bootstrap</span><span class="exp-tag">Design Thinking</span><span class="exp-tag">Agile Scrum</span>
+      </div>
+    </div>
+
+    <!-- AIMPLAS -->
+    <div class="exp-item">
+      <div class="exp-role">Diseñadora Gráfica · Prácticas</div>
+      <div class="exp-meta">AIMPLAS – Instituto Tecnológico del Plástico &nbsp;·&nbsp; 2019 &nbsp;·&nbsp; I+D · Comunicación institucional</div>
+      <p class="sub-label sub-label-ctx">Contexto</p>
+      <div class="exp-ctx">Diseño de identidades visuales para proyectos de I+D y materiales de comunicación para audiencias diversas: investigadores, inversores y público general.</div>
+      <p class="sub-label sub-label-tags">Responsabilidades</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Brand Identity</span><span class="exp-tag">Visual Communication</span><span class="exp-tag">Presentation Design</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="col-side">
+
+    <div class="sidebar-block">
+      <div class="sec-label">Stack de Producto</div>
+      <div class="stack-line">
+        <span class="stack-cat">UX / Research</span>
+        Figma · Wireframing · Prototyping · Design Systems · Information Architecture · User Research · Heuristic Analysis · WCAG 2.1 · Framer
+      </div>
+      <div class="stack-line">
+        <span class="stack-cat">CRO / Analytics</span>
+        A/B Testing · Adobe Analytics · Microsoft Clarity · Experimentation · Impact Mapping · Power BI · AEM
+      </div>
+      <div class="stack-line">
+        <span class="stack-cat">Frontend / IA</span>
+        HTML5 · CSS3 · Bootstrap · JavaScript · Claude / IA · GitHub
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sec-label">Formación</div>
+      <div class="edu-item">
+        <div class="edu-degree">Bootcamp Digital Product Design &amp; Frontend</div>
+        <div class="edu-school">Neoland · 2024<br>UX/UI · HTML · CSS · Bootstrap · JS · Metodologías ágiles</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Máster en Formación del Profesorado</div>
+        <div class="edu-school">Universidad CEU San Pablo · 2022–2023<br>Compatible con trabajo a 25h/semana en Actions</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Grado en Bellas Artes</div>
+        <div class="edu-school">Universitat Politècnica de València<br>2016 – 2020</div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sec-label">Idiomas</div>
+      <div class="lang-row"><span class="lang-name">Español</span><span class="lang-level">Nativo</span></div>
+      <div class="lang-row"><span class="lang-name">Inglés</span><span class="lang-level">Profesional</span></div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sec-label">Portfolio</div>
+      <div class="portfolio-box">
+        <p>3 case studies estratégicos<br>ILUNION Hotels · CEF · Fitness App<br>Turismo · EdTech · B2C digital</p>
+        <a class="portfolio-url" href="https://martamorales.vercel.app">martamorales.vercel.app →</a>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+</body>
+</html>

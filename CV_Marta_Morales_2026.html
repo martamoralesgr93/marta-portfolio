@@ -3,317 +3,714 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marta Morales García de los Ríos — CV</title>
-<!-- Favicon -->
+<title>CV — Marta Morales García de los Ríos</title>
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
-/* ─────────────────────────────────────────────
-   DESIGN TOKENS — exactos del portfolio
-   ───────────────────────────────────────────── */
+/* ─── TOKENS ──────────────────────────────── */
 :root {
-  --bg:          #000000;
-  --text:        #ffffff;
-  --muted:       rgba(255,255,255,0.62);
-  --dim:         rgba(255,255,255,0.38);
-  --border:      rgba(255,255,255,0.09);
-  --border-mid:  rgba(255,255,255,0.16);
-  --blue:        #60a5fa;
-  --blue-bg:     rgba(96,165,250,0.15);
+  --bg:         #060608;
+  --text:       #ffffff;
+  --muted:      rgba(255,255,255,0.62);
+  --dim:        rgba(255,255,255,0.36);
+  --border:     rgba(255,255,255,0.09);
+  --blue:       #3b82f6;
+  --blue-light: #60a5fa;
+  --green:      #059669;
   --font: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+html {
   background: var(--bg);
-  color: var(--text);
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
-/* ─────────────────────────────────────────────
-   PORTFOLIO NAVIGATION BAR (Screen only)
-   ───────────────────────────────────────────── */
-.portfolio-nav-bar {
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  padding-top: 88px;
+  padding-bottom: 60px;
+}
+
+/* ─── NAV BAR ─────────────────────────────── */
+.nav-bar {
   position: fixed;
-  top: 20px;
+  top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 40px);
+  width: calc(100% - 32px);
   max-width: 960px;
-  height: 60px;
-  background: rgba(10, 10, 10, 0.75);
-  backdrop-filter: blur(20px) saturate(220%);
-  -webkit-backdrop-filter: blur(20px) saturate(220%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
+  height: 56px;
+  background: rgba(10,10,12,0.82);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 14px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
-  z-index: 9999;
-  box-shadow: 
-    inset 0 1px 1px rgba(255, 255, 255, 0.15), 
-    0 12px 40px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 100;
+  gap: 12px;
 }
 
-.portfolio-nav-bar a {
-  text-decoration: none;
-  font-family: var(--font);
+.nav-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-}
-
-.nav-bar-btn {
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 9px 18px;
-  border-radius: 10px;
-  letter-spacing: 0.2px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  height: 38px;
-  box-sizing: border-box;
-}
-
-/* Back button: Elegant Ghost Glass */
-.nav-back-btn {
-  color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.nav-back-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 12px rgba(255, 255, 255, 0.15);
-}
-
-.nav-back-btn:active {
-  transform: scale(0.97) translateY(0px);
-  color: #ff4b91;
-  border-color: #ff4b91;
-  background: rgba(255, 75, 145, 0.06);
-  box-shadow: 0 0 15px rgba(255, 75, 145, 0.3);
-}
-
-/* Download button: Premium Glass Blue */
-.nav-download-btn {
-  color: #ffffff;
-  background: rgba(96, 165, 250, 0.15);
-  border: 1px solid rgba(96, 165, 250, 0.35);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.nav-download-btn:hover {
-  background: rgba(96, 165, 250, 0.28);
-  border-color: rgba(96, 165, 250, 0.85);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.25), 0 0 12px rgba(96, 165, 250, 0.15);
-}
-
-.nav-download-btn:active {
-  transform: scale(0.97) translateY(0px);
-  color: #ff4b91;
-  border-color: #ff4b91;
-  background: rgba(255, 75, 145, 0.08);
-  box-shadow: 0 0 20px rgba(255, 75, 145, 0.4);
-}
-
-/* Right side alignment */
-.nav-bar-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Status text: Glow Green with a Pulse Dot */
-.download-status {
-  font-size: 11.5px;
-  color: #34d399;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  transform: translateX(12px);
-  pointer-events: none;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  text-shadow: 0 0 8px rgba(52, 211, 153, 0.3);
-}
-
-.download-status.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.download-status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 8px #34d399;
-  animation: pulse-dot 1.5s infinite ease-in-out;
-}
-
-@keyframes pulse-dot {
-  0% { transform: scale(0.85); opacity: 0.6; }
-  50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 12px #34d399; }
-  100% { transform: scale(0.85); opacity: 0.6; }
-}
-
-/* Language Visibility */
-.en-text {
-  display: none;
-}
-body.lang-en .es-text {
-  display: none;
-}
-body.lang-en .en-text {
-  display: inline;
-}
-
-/* ─────────────────────────────────────────────
-   PDF CONTAINER
-   ───────────────────────────────────────────── */
-.pdf-viewer-container {
-  width: 100%;
-  height: 100%;
-  padding-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #080808;
-}
-
-iframe {
-  width: 100%;
-  max-width: 960px;
-  height: 100%;
+  text-decoration: none;
   border: none;
-  border-radius: 16px 16px 0 0;
-  box-shadow: 
-    0 24px 60px rgba(0, 0, 0, 0.8),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  background: #121212;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  font-family: var(--font);
+}
+
+.nav-back {
+  color: var(--muted);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.nav-back:hover { color: var(--text); background: rgba(255,255,255,0.1); }
+
+.nav-right { display: flex; align-items: center; gap: 10px; }
+
+.nav-lang {
+  color: var(--dim);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+.nav-lang:hover { color: var(--muted); background: rgba(255,255,255,0.06); }
+.nav-lang.active { color: var(--text); background: rgba(255,255,255,0.1); }
+
+.nav-download {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(59,130,246,0.9), rgba(37,99,235,0.9));
+  border: 1px solid rgba(96,165,250,0.3);
+  box-shadow: 0 4px 14px rgba(59,130,246,0.25);
+}
+.nav-download:hover {
+  background: linear-gradient(135deg, rgba(96,165,250,0.95), rgba(59,130,246,0.95));
+  box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+  transform: translateY(-1px);
+}
+.nav-download:active { transform: translateY(0); }
+
+.dl-status {
+  font-size: 12px;
+  color: var(--green);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.dl-status.show { opacity: 1; }
+.dl-dot {
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 1.2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+}
+
+/* ─── WRAPPER ─────────────────────────────── */
+.cv-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ─── CV CARD ─────────────────────────────── */
+.cv-card {
+  background: #ffffff;
+  color: #111;
+  border-radius: 16px;
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.7),
+    0 4px 16px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  overflow: hidden;
+}
+
+/* ─── CV HEADER ───────────────────────────── */
+.cv-header {
+  padding: 32px 36px 28px;
+  border-bottom: 1.5px solid #e5e7eb;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+}
+
+.cv-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: -0.6px;
+  line-height: 1.05;
+  margin-bottom: 4px;
+}
+
+.cv-role {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 14px;
+  letter-spacing: 0.1px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.chip {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 4px;
+  padding: 3px 8px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cv-contact {
+  text-align: right;
+  font-size: 11px;
+  color: #555;
+  line-height: 1.75;
+  flex-shrink: 0;
+}
+.cv-contact a { color: #555; text-decoration: none; }
+.cv-contact a:hover { color: #1d4ed8; }
+
+/* ─── CV BODY ─────────────────────────────── */
+.cv-body {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+}
+
+.col-main {
+  padding: 28px 28px 32px 36px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.col-side {
+  padding: 28px 24px 32px 24px;
+}
+
+/* ─── SECTION LABEL ───────────────────────── */
+.sec-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 4px;
+  margin-bottom: 14px;
+}
+
+/* ─── EXPERIENCE ──────────────────────────── */
+.exp-item {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.exp-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.exp-role {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.exp-meta {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.sub-label {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.sub-ctx  { color: #9ca3af; }
+.sub-imp  { color: #059669; }
+.sub-tags { color: #9ca3af; }
+
+.exp-ctx {
+  font-size: 11.5px;
+  color: #555;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.exp-list {
+  list-style: none;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+.exp-list li {
+  font-size: 11.5px;
+  color: #222;
+  line-height: 1.55;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.exp-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #059669;
+  font-size: 10px;
+  top: 1px;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.exp-tag {
+  font-size: 9.5px;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 3px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+/* ─── SIDEBAR ─────────────────────────────── */
+.sidebar-block { margin-bottom: 20px; }
+.sidebar-block:last-child { margin-bottom: 0; }
+
+.stack-cat {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  display: block;
+  margin-bottom: 3px;
+}
+.stack-line {
+  font-size: 11px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.stack-line:last-child { margin-bottom: 0; }
+
+.edu-item { margin-bottom: 10px; }
+.edu-item:last-child { margin-bottom: 0; }
+.edu-degree {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.3;
+}
+.edu-school {
+  font-size: 10.5px;
+  color: #777;
+  line-height: 1.5;
+}
+
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  margin-bottom: 4px;
+}
+.lang-name { color: #000; font-weight: 600; }
+.lang-level { color: #777; }
+
+.portfolio-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 14px;
+}
+.portfolio-box p {
+  font-size: 10.5px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.portfolio-url {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+.portfolio-url:hover { text-decoration: underline; }
+
+/* ─── LANGUAGE DISPLAY ────────────────────── */
+body:not(.lang-en) .en { display: none; }
+body.lang-en .es { display: none; }
+
+/* ─── RESPONSIVE ──────────────────────────── */
+@media (max-width: 760px) {
+  body { padding-top: 80px; padding-bottom: 40px; }
+
+  .cv-wrap { padding: 0 12px; }
+
+  .cv-card { border-radius: 12px; }
+
+  .cv-header {
+    grid-template-columns: 1fr;
+    padding: 24px 20px 20px;
+    gap: 16px;
+  }
+  .cv-contact { text-align: left; }
+
+  .cv-body {
+    grid-template-columns: 1fr;
+  }
+  .col-main {
+    padding: 20px 20px 24px;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .col-side {
+    padding: 20px 20px 24px;
+  }
+
+  .cv-name { font-size: 22px; }
+  .nav-bar { top: 10px; width: calc(100% - 20px); height: 52px; padding: 0 12px; }
+  .nav-btn { padding: 7px 11px; font-size: 12px; }
+
+  /* Hide language labels on nav, show just icons */
+  .nav-lang-label { display: none; }
+}
+
+@media (max-width: 480px) {
+  .cv-header { padding: 20px 16px 16px; }
+  .col-main { padding: 16px 16px 20px; }
+  .col-side { padding: 16px 16px 20px; }
+  .chip { font-size: 8.5px; padding: 2px 6px; }
+  .exp-role { font-size: 12.5px; }
+  .exp-ctx, .exp-list li { font-size: 11px; }
 }
 
 </style>
 </head>
 <body>
 
-<!-- Floating Navigation Bar -->
-<div class="portfolio-nav-bar">
-  <a href="index.html" class="nav-bar-btn nav-back-btn">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-    <span class="es-text">Volver al Portfolio</span>
-    <span class="en-text">Back to Portfolio</span>
+<!-- ── NAV BAR ── -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-btn nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    <span class="es">Portfolio</span>
+    <span class="en">Portfolio</span>
   </a>
-  <div class="nav-bar-right">
-    <span class="download-status" id="downloadStatus">
-      <span class="download-status-dot"></span>
-      <span class="es-text">Descarga iniciada</span>
-      <span class="en-text">Download started</span>
+
+  <div class="nav-right">
+    <span class="dl-status" id="dlStatus">
+      <span class="dl-dot"></span>
+      <span class="es">Descarga iniciada</span>
+      <span class="en">Download started</span>
     </span>
-    <a href="assets/CV_Marta_Morales_ES_2026.pdf" download="CV_Marta_Morales_ES_2026.pdf" class="nav-bar-btn nav-download-btn" id="downloadBtn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-      <span class="es-text">Descargar PDF</span>
-      <span class="en-text">Download PDF</span>
+    <button class="nav-btn nav-lang" id="langBtn" onclick="toggleLang()">
+      <span class="es">EN</span>
+      <span class="en">ES</span>
+    </button>
+    <a class="nav-btn nav-download" id="dlBtn" href="assets/cv-marta-ats-es.pdf" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span class="es">Descargar CV</span>
+      <span class="en">Download CV</span>
     </a>
   </div>
-</div>
+</nav>
 
-<!-- PDF Embed Container -->
-<div class="pdf-viewer-container">
-  <iframe id="pdfFrame" src="assets/CV_Marta_Morales_ES_2026.pdf"></iframe>
-</div>
+<!-- ── CV CARD ── -->
+<div class="cv-wrap">
+  <div class="cv-card">
+
+    <!-- HEADER -->
+    <header class="cv-header">
+      <div>
+        <h1 class="cv-name">Marta Morales García de los Ríos</h1>
+        <p class="cv-role es">UX/UI Designer &nbsp;·&nbsp; Product Design &nbsp;·&nbsp; CRO &amp; Accesibilidad &nbsp;·&nbsp; HTML/CSS &nbsp;·&nbsp; Design Systems</p>
+        <p class="cv-role en">UX/UI Designer &nbsp;·&nbsp; Product Design &nbsp;·&nbsp; CRO &amp; Accessibility &nbsp;·&nbsp; HTML/CSS &nbsp;·&nbsp; Design Systems</p>
+        <div class="chips">
+          <span class="chip es">UX/UI Design</span>
+          <span class="chip en">UX/UI Design</span>
+          <span class="chip es">UX Research</span>
+          <span class="chip en">UX Research</span>
+          <span class="chip es">CRO &amp; Experimentación</span>
+          <span class="chip en">CRO &amp; Experimentation</span>
+          <span class="chip">Design Systems</span>
+          <span class="chip">HTML/CSS/Bootstrap</span>
+          <span class="chip es">Accesibilidad WCAG 2.1</span>
+          <span class="chip en">Accessibility WCAG 2.1</span>
+          <span class="chip es">Stakeholder Management</span>
+          <span class="chip en">Stakeholder Management</span>
+          <span class="chip es">Multi-sector</span>
+          <span class="chip en">Multi-sector</span>
+        </div>
+      </div>
+      <div class="cv-contact">
+        <div class="es">Madrid · España · Remote</div>
+        <div class="en">Madrid · Spain · Remote</div>
+        <div><a href="mailto:mmoralesgr93@gmail.com">mmoralesgr93@gmail.com</a></div>
+        <div><a href="tel:+34659879887">+34 659 87 98 87</a></div>
+        <div><a href="https://linkedin.com/in/martamorales-designer" target="_blank">linkedin.com/in/martamorales-designer</a></div>
+        <div><a href="https://martamorales.vercel.app" target="_blank">martamorales.vercel.app</a></div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <div class="cv-body">
+
+      <!-- MAIN COL -->
+      <main class="col-main">
+        <div class="sec-label es">Experiencia Profesional</div>
+        <div class="sec-label en">Professional Experience</div>
+
+        <!-- ILUNION -->
+        <div class="exp-item">
+          <div class="exp-role es">UX/UI Designer &amp; CRO</div>
+          <div class="exp-role en">UX/UI Designer &amp; CRO</div>
+          <div class="exp-meta es">ILUNION Hotels &nbsp;·&nbsp; Sep 2024 – Actualidad &nbsp;·&nbsp; Turismo &amp; eCommerce · Canal directo · 32 propiedades</div>
+          <div class="exp-meta en">ILUNION Hotels &nbsp;·&nbsp; Sep 2024 – Present &nbsp;·&nbsp; Tourism &amp; eCommerce · Direct booking channel · 32 properties</div>
+
+          <p class="sub-label sub-ctx es">Contexto</p>
+          <p class="sub-label sub-ctx en">Context</p>
+          <div class="exp-ctx es">Diseñadora única con responsabilidad end-to-end sobre el canal digital directo de una cadena hotelera de 32 propiedades. Autonomía estratégica liderando el canal de mayor volumen de ingresos del negocio.</div>
+          <div class="exp-ctx en">Sole designer with end-to-end ownership of the direct digital channel for a 32-property hotel chain. Strategic autonomy leading the highest-revenue digital channel for the business.</div>
+
+          <p class="sub-label sub-imp es">Impacto</p>
+          <p class="sub-label sub-imp en">Impact</p>
+          <ul class="exp-list">
+            <li class="es">Optimización de conversión (CRO): investigación de comportamiento, heatmaps (Microsoft Clarity), hipótesis A/B y diseño iterativo</li>
+            <li class="en">Conversion rate optimisation (CRO): behavioural research, heatmaps (Microsoft Clarity), A/B testing and iterative design</li>
+            <li class="es">Auditorías UX y usability testing para identificar fricciones en el funnel de reservas</li>
+            <li class="en">UX audits and usability testing to identify friction across the booking funnel</li>
+            <li class="es">Cumplimiento WCAG 2.1 AA en todos los touchpoints digitales</li>
+            <li class="en">WCAG 2.1 AA accessibility compliance across all digital touchpoints</li>
+            <li class="es">Evolución y documentación del design system en Figma</li>
+            <li class="en">Design system evolution and documentation in Figma</li>
+            <li class="es">Colaboración cross-funcional con Marketing, Comercial, BI y Web — alineando KPIs y roadmap</li>
+            <li class="en">Cross-functional collaboration with Marketing, Commercial, BI and Web — aligning KPIs and roadmap</li>
+            <li class="es">Adobe Analytics y datos de comportamiento para decisiones de producto y negocio</li>
+            <li class="en">Adobe Analytics and behavioural data to support product, UX and business decisions</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">UX Research</span><span class="exp-tag">CRO</span><span class="exp-tag">Adobe Analytics</span><span class="exp-tag">Microsoft Clarity</span><span class="exp-tag">Figma</span><span class="exp-tag">WCAG 2.1</span><span class="exp-tag">Design Systems</span><span class="exp-tag">AEM</span><span class="exp-tag es">Stakeholder Management</span><span class="exp-tag en">Stakeholder Management</span>
+          </div>
+        </div>
+
+        <!-- CEF -->
+        <div class="exp-item">
+          <div class="exp-role es">UX/UI Designer — Accesibilidad &amp; Design System</div>
+          <div class="exp-role en">UX/UI Designer — Accessibility &amp; Design System</div>
+          <div class="exp-meta es">CEF – Centro de Estudios Financieros &nbsp;·&nbsp; Jun – Sep 2024 &nbsp;·&nbsp; EdTech · Plataforma académica B2B</div>
+          <div class="exp-meta en">CEF – Centro de Estudios Financieros &nbsp;·&nbsp; Jun – Sep 2024 &nbsp;·&nbsp; EdTech · B2B Academic Platform</div>
+
+          <p class="sub-label sub-ctx es">Contexto</p>
+          <p class="sub-label sub-ctx en">Context</p>
+          <div class="exp-ctx es">Rediseño de alcance definido de una plataforma EdTech con deuda técnica acumulada y sin sistema de diseño previo. Proyecto con foco en accesibilidad, escalabilidad y coherencia de producto.</div>
+          <div class="exp-ctx en">Defined-scope redesign of an EdTech platform built through incremental additions, lacking visual hierarchy and a consistent design system. Focus on accessibility, scalability and product coherence.</div>
+
+          <p class="sub-label sub-imp es">Impacto</p>
+          <p class="sub-label sub-imp en">Impact</p>
+          <ul class="exp-list">
+            <li class="es">Plataforma 100% conforme WCAG 2.1 AA — 47 componentes auditados y corregidos</li>
+            <li class="en">Platform fully WCAG 2.1 AA compliant — 47 components audited and corrected</li>
+            <li class="es">Design system unificado construido desde cero en Figma</li>
+            <li class="en">Unified design system built from scratch in Figma</li>
+            <li class="es">Cero elementos solo-ratón: navegación 100% accesible por teclado implementada en producción</li>
+            <li class="en">Zero mouse-only elements: 100% keyboard-accessible navigation in production</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">UX Research</span><span class="exp-tag es">Accesibilidad</span><span class="exp-tag en">Accessibility</span><span class="exp-tag">WCAG 2.1</span><span class="exp-tag">Design System</span><span class="exp-tag">Figma</span><span class="exp-tag es">Análisis Heurístico</span><span class="exp-tag en">Heuristic Analysis</span>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="exp-item">
+          <div class="exp-role es">UX/UI Designer — Producto &amp; Frontend</div>
+          <div class="exp-role en">UX/UI Designer — Product &amp; Frontend</div>
+          <div class="exp-meta es">We Are Actions &nbsp;·&nbsp; Jul 2020 – May 2024 &nbsp;·&nbsp; Consultoría digital · B2B &amp; Pyme · Multi-sector</div>
+          <div class="exp-meta en">We Are Actions &nbsp;·&nbsp; Jul 2020 – May 2024 &nbsp;·&nbsp; Digital consultancy · B2B &amp; SME · Multi-sector</div>
+
+          <p class="sub-label sub-ctx es">Contexto</p>
+          <p class="sub-label sub-ctx en">Context</p>
+          <div class="exp-ctx es">Diseñadora única en un equipo de 7 desarrolladores backend. Responsabilidad end-to-end del diseño de producto digital en entornos de consultoría y desarrollo propio.</div>
+          <div class="exp-ctx en">Sole designer within a team of 7 backend engineers. End-to-end responsibility for digital product design across consulting and in-house development environments.</div>
+
+          <p class="sub-label sub-imp es">Impacto</p>
+          <p class="sub-label sub-imp en">Impact</p>
+          <ul class="exp-list">
+            <li class="es">Diseño UX/UI para plataformas web, CRM e internos en múltiples sectores: hostelería, automoción, B2B</li>
+            <li class="en">UX/UI design for web platforms, CRM tools and internal products across multiple sectors: hospitality, automotive, B2B services</li>
+            <li class="es">Design systems desde cero en Figma; prototipos HTML5, CSS3 y Bootstrap integrados con el equipo de desarrollo</li>
+            <li class="en">Design systems built from scratch in Figma; HTML5, CSS3 and Bootstrap prototypes developed alongside the dev team</li>
+            <li class="es">Design Thinking para definición de problemas; metodología Agile Scrum en ciclos de entrega</li>
+            <li class="en">Design Thinking applied for problem framing; Agile Scrum methodology in delivery cycles</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">UX/UI Design</span><span class="exp-tag">Design Systems</span><span class="exp-tag">Figma</span><span class="exp-tag">HTML5 / CSS3</span><span class="exp-tag">Bootstrap</span><span class="exp-tag">Design Thinking</span><span class="exp-tag">Agile Scrum</span>
+          </div>
+        </div>
+
+        <!-- AIMPLAS -->
+        <div class="exp-item">
+          <div class="exp-role es">Diseñadora Gráfica — Prácticas</div>
+          <div class="exp-role en">Graphic Designer — Internship</div>
+          <div class="exp-meta es">AIMPLAS – Instituto Tecnológico del Plástico &nbsp;·&nbsp; 2019 &nbsp;·&nbsp; I+D · Comunicación institucional</div>
+          <div class="exp-meta en">AIMPLAS – Plastics Technology Centre &nbsp;·&nbsp; 2019 &nbsp;·&nbsp; R&amp;D · Institutional Communication</div>
+          <div class="exp-ctx es">Diseño de identidades visuales para proyectos de I+D y materiales de comunicación institucional para investigadores, inversores y público general.</div>
+          <div class="exp-ctx en">Visual identity design for R&amp;D projects and communication materials for researchers, investors and the general public.</div>
+          <div class="exp-tags">
+            <span class="exp-tag es">Identidad de Marca</span><span class="exp-tag en">Brand Identity</span><span class="exp-tag es">Comunicación Visual</span><span class="exp-tag en">Visual Communication</span>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- SIDE COL -->
+      <aside class="col-side">
+
+        <div class="sidebar-block">
+          <div class="sec-label es">Stack de Producto</div>
+          <div class="sec-label en">Product Stack</div>
+          <div class="stack-line">
+            <span class="stack-cat es">UX / Research</span>
+            <span class="stack-cat en">UX / Research</span>
+            Figma · Wireframing · Prototyping · Design Systems · Information Architecture · User Research · Heuristic Analysis · WCAG 2.1 · Framer
+          </div>
+          <div class="stack-line">
+            <span class="stack-cat es">CRO / Analítica</span>
+            <span class="stack-cat en">CRO / Analytics</span>
+            A/B Testing · Adobe Analytics · Microsoft Clarity · AEM · Power BI
+          </div>
+          <div class="stack-line">
+            <span class="stack-cat">Frontend / AI</span>
+            HTML5 · CSS3 · Bootstrap · JavaScript · Claude / AI · GitHub
+          </div>
+        </div>
+
+        <div class="sidebar-block">
+          <div class="sec-label es">Formación</div>
+          <div class="sec-label en">Education</div>
+
+          <div class="edu-item">
+            <div class="edu-degree es">Bootcamp Digital Product Design &amp; Frontend</div>
+            <div class="edu-degree en">Bootcamp Digital Product Design &amp; Frontend</div>
+            <div class="edu-school">Neoland · 2024<br>UX/UI · HTML · CSS · Bootstrap · JS</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree es">Máster en Formación del Profesorado</div>
+            <div class="edu-degree en">Master's in Secondary Education</div>
+            <div class="edu-school es">Universidad CEU San Pablo · 2022–2023<br>Compatible con 25h/sem en Actions</div>
+            <div class="edu-school en">Universidad CEU San Pablo · 2022–2023<br>Alongside 25h/week role at Actions</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree es">Grado en Bellas Artes</div>
+            <div class="edu-degree en">Bachelor's Degree in Fine Arts</div>
+            <div class="edu-school">Universitat Politècnica de València<br>2016 – 2020</div>
+          </div>
+        </div>
+
+        <div class="sidebar-block">
+          <div class="sec-label es">Idiomas</div>
+          <div class="sec-label en">Languages</div>
+          <div class="lang-row">
+            <span class="lang-name es">Español</span>
+            <span class="lang-name en">Spanish</span>
+            <span class="lang-level es">Nativo</span>
+            <span class="lang-level en">Native</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">English</span>
+            <span class="lang-level es">Profesional (B2–C1)</span>
+            <span class="lang-level en">Professional (B2–C1)</span>
+          </div>
+        </div>
+
+        <div class="sidebar-block">
+          <div class="sec-label">Portfolio</div>
+          <div class="portfolio-box">
+            <p class="es">3 casos estratégicos<br>ILUNION Hotels · CEF · Fitness App<br>Turismo · EdTech · B2C digital</p>
+            <p class="en">3 strategic case studies<br>ILUNION Hotels · CEF · Fitness App<br>Tourism · EdTech · B2C digital</p>
+            <a class="portfolio-url" href="https://martamorales.vercel.app" target="_blank">martamorales.vercel.app →</a>
+          </div>
+        </div>
+
+      </aside>
+    </div><!-- /cv-body -->
+  </div><!-- /cv-card -->
+</div><!-- /cv-wrap -->
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Detect language from localStorage
-  const savedLang = localStorage.getItem('portfolio-lang') || 'es';
-  if (savedLang === 'en') {
-    document.body.classList.add('lang-en');
+(function() {
+  // Detect saved language
+  var lang = localStorage.getItem('portfolio-lang') || 'es';
+  if (lang === 'en') document.body.classList.add('lang-en');
+
+  // Sync download button to correct ATS PDF
+  function syncDownload() {
+    var l = document.body.classList.contains('lang-en') ? 'en' : 'es';
+    var btn = document.getElementById('dlBtn');
+    if (!btn) return;
+    var file = l === 'en' ? 'cv-marta-ats-en.pdf' : 'cv-marta-ats-es.pdf';
+    btn.href = 'assets/' + file;
+    btn.download = file;
   }
+  syncDownload();
 
-  // Define files and download names based on language
-  const pdfFilename = savedLang === 'en' ? 'CV_Marta_Morales_EN_2026.pdf' : 'CV_Marta_Morales_ES_2026.pdf';
-  const pdfPath = `assets/${pdfFilename}`;
+  // Language toggle
+  window.toggleLang = function() {
+    var isEn = document.body.classList.toggle('lang-en');
+    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+    syncDownload();
+  };
 
-  // Update download button properties dynamically
-  const downloadBtn = document.getElementById('downloadBtn');
-  if (downloadBtn) {
-    downloadBtn.href = pdfPath;
-    downloadBtn.download = pdfFilename;
-  }
-
-  // Update iframe source dynamically
-  const pdfFrame = document.getElementById('pdfFrame');
-  if (pdfFrame) {
-    pdfFrame.src = pdfPath;
-  }
-
-  // 2. Responsive Check - Mobile redirection to native PDF viewer
-  const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-  if (isMobile) {
-    // Redirect mobile users immediately to raw PDF to open native full-screen visualizer
-    window.location.replace(pdfPath);
-    return;
-  }
-
-  // 3. Auto-download logic for desktop users if parameter ?download=true is active
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('download') === 'true') {
-    // Show download confirmation label
-    const status = document.getElementById('downloadStatus');
-    if (status) {
-      status.classList.add('show');
-      setTimeout(() => {
-        status.classList.remove('show');
-      }, 5000);
-    }
-
-    // Trigger PDF download after a tiny delay
-    setTimeout(() => {
-      const link = document.createElement('a');
-      link.href = pdfPath;
-      link.download = pdfFilename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }, 600);
-  }
-
-  // Bind click event on Download PDF button to show download status
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', () => {
-      const status = document.getElementById('downloadStatus');
-      if (status) {
-        status.classList.add('show');
-        setTimeout(() => {
-          status.classList.remove('show');
-        }, 5000);
-      }
+  // Download feedback
+  var dlBtn = document.getElementById('dlBtn');
+  var dlStatus = document.getElementById('dlStatus');
+  if (dlBtn && dlStatus) {
+    dlBtn.addEventListener('click', function() {
+      dlStatus.classList.add('show');
+      setTimeout(function() { dlStatus.classList.remove('show'); }, 4000);
     });
   }
-});
+})();
 </script>
-
 </body>
 </html>
