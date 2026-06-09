@@ -1741,22 +1741,19 @@ nav {
   line-height: 1;
 }
 
-/* Nav CTA - hidden in desktop (> 768px) */
+/* Nav CV - hidden in desktop (> 768px) */
 @media (min-width: 769px) {
-  .nav-cta {
-    display: none !important;
-  }
+  .nav-cv { display: none; }
 }
 
 /* Hero Role text: discrete Product Designer line */
 .hero-role {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--purple);
-  margin-top: -8px;
-  margin-bottom: 20px;
+  opacity: 0.5;
+  margin: 0.25rem 0 1rem;
 }
 
 /* Mobile Drawer Download Button - Large button at the end */
@@ -1865,7 +1862,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </ul>
   <div class="nav-right">
     <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
-    <a href="CV_Marta_Morales_2026.html" class="nav-cta"><span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗</a>
+    <a href="CV_Marta_Morales_2026.html" class="nav-cta nav-cv"><span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗</a>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
         <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
@@ -1909,7 +1906,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="es">Marta Morales</span>
           <span class="en">Marta Morales</span>
         </h1>
-        <div class="hero-role">Product Designer</div>
+        <p class="hero-role">Product Designer</p>
         <p class="hero-positioning es"><em>No diseño pantallas. Resuelvo problemas en la intersección entre usuario, negocio y dato.</em></p>
         <p class="hero-positioning en"><em>I don't design screens. I solve problems at the intersection of user, business, and data.</em></p>
         <p class="hero-body es">
