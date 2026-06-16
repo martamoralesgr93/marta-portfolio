@@ -85,8 +85,25 @@
       .scenario-col + .scenario-col { border-left: none; border-top: 1px solid var(--border); }
     }
     @media (max-width: 768px) {
-      .quick-summary-grid { grid-template-columns: 1fr; }
+      .quick-summary-grid { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
       .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
+      .insight-box { padding-left: 18px; margin: 28px 0; }
+      .insight-box p { font-size: 16px; }
+      .affinity-grid { gap: 12px; margin: 32px 0; }
+      .affinity-cluster { padding: 18px; }
+      .honest-note { padding: 22px 24px; margin: 32px 0; }
+      .ia-tree-wrap { margin: 28px 0 40px; }
+      .ia-root-node { padding: 14px 24px; min-width: 160px; }
+      .ia-root-label { font-size: 14px; }
+      .ia-branch-head { padding: 14px 16px; }
+      .ia-branch-title { font-size: 13px; }
+      .ia-item { font-size: 12px; padding: 7px 12px; }
+    }
+    @media (max-width: 480px) {
+      .insight-box p { font-size: 15px; }
+      .affinity-cluster-label { font-size: 9px; }
+      .affinity-card { font-size: 12px; padding: 8px 12px; }
+      .ia-branches-row { gap: 14px; }
     }
   </style>
 </head>

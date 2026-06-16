@@ -73,15 +73,30 @@
     @media (max-width: 900px) {
       .tool-grid { grid-template-columns: 1fr 1fr; }
       .touchpoint-grid { grid-template-columns: 1fr; }
+      .quick-summary-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
     }
     @media (max-width: 768px) {
+      .quick-summary-grid { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
       .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
       .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
       .dash-impact-num { font-size: 64px; }
       .dash-impact-text { font-size: 14px; }
       .color-palette { gap: 8px; }
       .color-chip { width: 100px; }
+      .typo-row { flex-direction: column; gap: 8px; padding: 16px 0; }
+      .typo-layer { min-width: auto; }
       .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
+      .ds-section { margin: 40px 0; }
+      .touchpoint-grid { margin: 28px 0; }
+      .tp-card { padding: 18px; }
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 480px) {
+      .dash-impact-num { font-size: 48px; }
+      .color-chip { width: 80px; }
+      .color-swatch { height: 48px; }
+      .color-info { padding: 8px 10px; }
+      .color-name { font-size: 10px; }
     }
   </style>
 </head>
