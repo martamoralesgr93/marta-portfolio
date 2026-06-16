@@ -406,15 +406,15 @@
       html.classList.remove('lang-es');
       html.classList.add('lang-en');
       btn.textContent = 'ES';
-      localStorage.setItem('lang', 'en');
+      localStorage.setItem('portfolio-lang', 'en');
     } else {
       html.classList.remove('lang-en');
       html.classList.add('lang-es');
       btn.textContent = 'EN';
-      localStorage.setItem('lang', 'es');
+      localStorage.setItem('portfolio-lang', 'es');
     }
   }
-  if (localStorage.getItem('lang') === 'en') {
+  if (localStorage.getItem('portfolio-lang') === 'en') {
     document.documentElement.classList.remove('lang-es');
     document.documentElement.classList.add('lang-en');
     document.getElementById('langBtn').textContent = 'ES';

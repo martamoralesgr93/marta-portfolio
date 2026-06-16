@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html class="lang-es" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build vs. Buy · Diagnóstico de fricción operativa IT · Marta Morales</title>
+  <meta name="description" content="Cómo un Excel del responsable de sistemas desencadenó un diagnóstico de producto: investigación de fricción operativa y propuesta de plataforma interna para reducir la carga de tickets IT.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://martamorales.vercel.app/caso-5.html">
+  <meta property="og:title" content="Build vs. Buy · Diagnóstico de fricción operativa IT · Marta Morales">
+  <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+
+  <style>
+    .cs-hero-glow {
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%);
+    }
+
+    /* Specific Component Styles */
+    .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
+
+    /* QUICK SUMMARY */
+    .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .qs-col { display: flex; flex-direction: column; }
+    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .qs-bullets { list-style: none; padding: 0; margin: 0; }
+    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
+    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
+
+    /* INSIGHT BOX */
+    .insight-box { border-left: 2px solid var(--accent); padding-left: 24px; margin: 40px 0; max-width: 680px; }
+    .insight-box p { font-size: 19px; color: var(--text-bright); font-weight: 300; line-height: 1.6; font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
+
+    /* AFFINITY MAP */
+    .affinity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 48px 0; }
+    .affinity-cluster { border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: rgba(255,255,255,0.015); }
+    .affinity-cluster-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .affinity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .affinity-cards { display: flex; flex-direction: column; gap: 8px; }
+    .affinity-card { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.5; border-left: 2px solid transparent; }
+
+    /* HONEST NOTE */
+    .honest-note { background: rgba(6,182,212,0.04); border: 1px solid rgba(6,182,212,0.16); border-radius: 14px; padding: 28px 32px; margin: 48px 0; max-width: 720px; }
+    .honest-note-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .honest-note p { font-size: 14px; color: var(--text); line-height: 1.75; }
+
+    /* IA TREE */
+    .ia-tree-wrap { margin: 40px 0 60px; }
+    .ia-root-row { display: flex; justify-content: center; }
+    .ia-root-node { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 32px; border: 1px solid var(--accent-border); border-radius: 14px; background: var(--accent-glow); min-width: 200px; }
+    .ia-root-icon { font-size: 20px; color: var(--accent); }
+    .ia-root-label { font-size: 16px; font-weight: 700; color: var(--white); }
+    .ia-root-sub { font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+    .ia-trunk { width: 1px; height: 28px; background: var(--accent-border); margin: 0 auto; }
+    .ia-branches-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .ia-branch { display: flex; flex-direction: column; align-items: center; }
+    .ia-branch-connector { width: 1px; height: 28px; background: var(--border); }
+    .ia-branch-head { width: 100%; border: 1px solid; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 16px; }
+    .ia-branch-icon { font-size: 18px; }
+    .ia-branch-title { font-size: 14px; font-weight: 700; }
+    .ia-branch-desc { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; }
+    .ia-branch-items { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .ia-item { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,0.02); font-size: 13px; color: var(--text-bright); }
+    .ia-item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .ia-surface-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; border: 1px solid; }
+
+    /* hide lang children */
+    html:not(.lang-en) [lang="en"]:not(.en) { display: none; }
+    html.lang-en [lang="es"]:not(.es) { display: none; }
+
+    /* RESPONSIVE OVERRIDES */
+    @media (max-width: 900px) {
+      .quick-summary-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
+      .affinity-grid, .user-groups, .modules-grid, .learning-grid, .ia-branches-row { grid-template-columns: 1fr; }
+      .scenario-cols { grid-template-columns: 1fr; }
+      .scenario-col + .scenario-col { border-left: none; border-top: 1px solid var(--border); }
+    }
+    @media (max-width: 768px) {
+      .quick-summary-grid { grid-template-columns: 1fr; }
+      .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="index.html" class="nav-back">
+    <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
+  </a>
+  
+  <div class="cs-nav-right">
+    <div class="cs-nav-dropdown">
+      <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <span class="es">Casos de Producto ▾</span>
+        <span class="en">Case Studies ▾</span>
+      </button>
+      <div class="cs-dropdown-menu">
+        <a href="caso-1.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 01</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
+        </a>
+        <a href="caso-2.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">Booking Engine</div>
+          <div class="cs-item-skill es">Design Ops & Componentes</div>
+          <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="caso-3.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 03</div>
+          <div class="cs-item-title">CEF EdTech</div>
+          <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
+          <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
+        </a>
+        <a href="caso-4.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 04</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca & Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity & 360° Digital Ecosystem</div>
+        </a>
+        <a href="caso-5.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 05</div>
+          <div class="cs-item-title">IT Ops & Oracle ERP</div>
+          <div class="cs-item-skill es">Investigación de Producto & Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research & Internal Tooling</div>
+        </a>
+      </div>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="cs-hero">
+  <div class="cs-hero-logo"></div>
+  <div class="cs-hero-overlay"></div>
+  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-content">
+    <span class="cs-eyebrow es">05 — We Are Actions · IT Operations · Investigación de producto</span>
+    <span class="cs-eyebrow en">05 — We Are Actions · IT Operations · Product Research</span>
+    <h1 class="cs-title">
+      <span class="es">Cuando comprar<br><em>no resuelve el problema</em></span>
+      <span class="en">When buying<br><em>doesn't solve the problem</em></span>
+    </h1>
+    <div class="cs-tags">
+      <span class="cs-tag">Product Strategy</span>
+      <span class="cs-tag">Build vs. Buy</span>
+      <span class="cs-tag">Discovery contextual</span>
+      <span class="cs-tag">ITSM · Oracle</span>
+      <span class="cs-tag">Gestión de incidencias</span>
+      <span class="cs-tag">Propuesta conceptual</span>
+      <span class="cs-tag">Fricción operativa</span>
+      <span class="cs-tag">Herramienta interna</span>
+    </div>
+    <div class="cs-meta">
+      <div>
+        <div class="cs-meta-label es">Empresa</div>
+        <div class="cs-meta-label en">Company</div>
+        <div class="cs-meta-val">We Are Actions</div>
+      </div>
+      <div>
+        <div class="cs-meta-label es">Rol</div>
+        <div class="cs-meta-label en">Role</div>
+        <div class="cs-meta-val es">Diseñadora · Research & Propuesta conceptual</div>
+        <div class="cs-meta-val en">Designer · Research & Conceptual proposal</div>
+      </div>
+      <div>
+        <div class="cs-meta-label es">Periodo</div>
+        <div class="cs-meta-label en">Period</div>
+        <div class="cs-meta-val">2022 – 2024 · Dept. IT</div>
+      </div>
+      <div>
+        <div class="cs-meta-label es">Escala</div>
+        <div class="cs-meta-label en">Scale</div>
+        <div class="cs-meta-val es">+50 usuarios · &lt;15 gestores</div>
+        <div class="cs-meta-val en">+50 users · &lt;15 managers</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- QUICK SUMMARY -->
+<section class="quick-summary-section">
+  <div class="cs-wrap">
+    <div class="quick-summary-grid fu">
+      <div class="qs-col">
+        <div class="qs-label">⚠ <span class="es">El problema</span><span class="en">The problem</span></div>
+        <div class="qs-val es">Una herramienta estándar de mercado usada durante años para necesidades cada vez más custom. La fricción acumulada empezaba a costar horas reales de equipo.</div>
+        <div class="qs-val en">A standard market tool used for years to meet increasingly custom needs. The accumulated friction was starting to cost real team hours.</div>
+      </div>
+      <div class="qs-col">
+        <div class="qs-label">🔍 <span class="es">Mi rol</span><span class="en">My role</span></div>
+        <ul class="qs-bullets">
+          <li class="es">Discovery contextual con el equipo IT</li>
+          <li class="en">Contextual discovery with IT team</li>
+          <li class="es">Síntesis de hallazgos y patrones</li>
+          <li class="en">Findings synthesis and pattern mapping</li>
+          <li class="es">Propuesta estratégica Build vs. Buy</li>
+          <li class="en">Build vs. Buy strategic proposal</li>
+          <li class="es">Diseño conceptual de solución interna</li>
+          <li class="en">Conceptual design of internal solution</li>
+        </ul>
+      </div>
+      <div class="qs-col">
+        <div class="qs-label">📐 <span class="es">Decisión clave</span><span class="en">Key decision</span></div>
+        <div class="qs-val es">No parchear Oracle. Proponer una herramienta interna diseñada alrededor de los flujos reales del equipo — no adaptada a los flujos que una plataforma genérica asume.</div>
+        <div class="qs-val en">Don't patch Oracle. Propose an internal tool designed around the team's real workflows — not adapted to those a generic platform assumes.</div>
+      </div>
+      <div class="qs-col">
+        <div class="qs-label">🎯 <span class="es">Objetivo de negocio</span><span class="en">Business goal</span></div>
+        <div class="qs-result-box">
+          <div class="qs-result-highlight es">Liberar la bolsa de horas dedicada a gestión de tickets para reorientarla a trabajo técnico de mayor valor.</div>
+          <div class="qs-result-highlight en">Free up the hours dedicated to ticket management to redirect them to higher-value technical work.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [S] SITUACIÓN -->
+<section class="cs-block">
+  <div class="cs-behance-letter">S</div>
+  <div class="cs-wrap">
+
+    <div class="fu">
+      <span class="block-label es">Situación</span>
+      <span class="block-label en">Situation</span>
+      <h2 class="block-h es">El Excel que lo<br><em>cambió todo</em></h2>
+      <h2 class="block-h en">The spreadsheet that<br><em>changed everything</em></h2>
+    </div>
+
+    <p class="p fu es"><strong>We Are Actions es una consultora digital de más de 30 años.</strong> Durante ese tiempo, la gestión de incidencias, solicitudes internas, permisos y accesos se realizaba a través de Oracle — una plataforma corporativa de mercado, robusta y consolidada, pero diseñada para organizaciones con procesos estandarizados y homogéneos.</p>
+    <p class="p fu en"><strong>We Are Actions is a digital consultancy with over 30 years of history.</strong> During that time, incident management, internal requests, permissions and access were handled through Oracle — a robust, established market platform, but one designed for organizations with standardized, homogeneous processes.</p>
+
+    <p class="p fu es">La empresa creció. Los procesos se complejizaron. Y Oracle siguió siendo el mismo.</p>
+    <p class="p fu en">The company grew. Processes became more complex. And Oracle stayed the same.</p>
+
+    <div class="insight-box fu">
+      <p class="es">El Senior de Sistemas — máximo responsable técnico de la empresa — llevó a dirección un Excel. No era un informe elaborado. Era una hoja de cálculo con datos reales que demostraba que la plataforma generaba más carga de trabajo de la que resolvía.</p>
+      <p class="en">The Senior Systems Manager — the company's top technical authority — brought a spreadsheet to management. Not an elaborate report. A spreadsheet with real data showing that the platform was generating more workload than it was resolving.</p>
+    </div>
+
+    <p class="p fu es">Ese Excel fue la señal. El problema tenía validación al más alto nivel técnico de la organización antes de que yo entrara. Mi trabajo fue convertir esa señal en una propuesta de producto.</p>
+    <p class="p fu en">That spreadsheet was the signal. The problem had validation at the highest technical level of the organisation before I got involved. My job was to turn that signal into a product proposal.</p>
+
+    <div class="data-band fu">
+      <div class="data-cell">
+        <div class="data-v">+50</div>
+        <div class="data-l es">usuarios generando solicitudes en la plataforma</div>
+        <div class="data-l en">users generating requests in the platform</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-v">&lt;15</div>
+        <div class="data-l es">personas del equipo IT gestionando toda la operativa</div>
+        <div class="data-l en">IT team members managing all operations</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-v">30+</div>
+        <div class="data-l es">años de Oracle en la organización — herramienta heredada, nunca cuestionada</div>
+        <div class="data-l en">years of Oracle in the organisation — inherited tool, never questioned</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- [T] TAREA -->
+<section class="cs-block">
+  <div class="cs-behance-letter">T</div>
+  <div class="cs-wrap">
+
+    <div class="fu">
+      <span class="block-label es">Tarea · El problema real</span>
+      <span class="block-label en">Task · The real problem</span>
+      <h2 class="block-h es">No era un problema<br><em>de usabilidad</em></h2>
+      <h2 class="block-h en">It wasn't a<br><em>usability problem</em></h2>
+    </div>
+
+    <p class="p fu es">La primera tentación era mejorar la interfaz de Oracle. Hacerla más clara, reorganizar los menús, añadir algunas instrucciones. Ese habría sido un proyecto de UX. Y habría sido el proyecto equivocado.</p>
+    <p class="p fu en">The first temptation was to improve Oracle's interface. Make it clearer, reorganise the menus, add some instructions. That would have been a UX project. And it would have been the wrong project.</p>
+
+    <p class="p fu es">Al observar cómo el equipo trabajaba realmente con la herramienta, el diagnóstico fue otro: <strong>Oracle no estaba mal diseñado para lo que fue creado. Estaba mal elegido para lo que esta organización necesitaba.</strong> Es una distinción que importa porque cambia completamente la respuesta.</p>
+    <p class="p fu en">Looking at how the team actually worked with the tool, the diagnosis was different: <strong>Oracle wasn't poorly designed for what it was built for. It was poorly chosen for what this organisation needed.</strong> That's a distinction that matters because it completely changes the answer.</p>
+
+    <div class="user-groups fu">
+      <div class="user-group">
+        <div class="user-group-badge" style="background:var(--accent-glow); color:var(--accent); border:1px solid var(--accent-border);">
+          <span>⚙</span> <span class="es">Grupo A · Gestores IT</span><span class="en">Group A · IT Managers</span>
+        </div>
+        <div class="user-group-name es">Equipo de soporte y sistemas</div>
+        <div class="user-group-name en">Support and systems team</div>
+        <div class="user-group-count es">Menos de 15 personas · perfil técnico</div>
+        <div class="user-group-count en">Fewer than 15 people · technical profile</div>
+        <ul class="user-group-needs">
+          <li class="es">Triaje eficiente de incidencias por urgencia</li>
+          <li class="en">Efficient incident triage by urgency</li>
+          <li class="es">Visibilidad del estado de cada solicitud</li>
+          <li class="en">Visibility of each request's status</li>
+          <li class="es">Flujos para tareas repetitivas sin rehacer</li>
+          <li class="en">Flows for repetitive tasks without redoing</li>
+          <li class="es">Prevención de errores en producción</li>
+          <li class="en">Error prevention in production</li>
+        </ul>
+      </div>
+      <div class="user-group">
+        <div class="user-group-badge" style="background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.5); border:1px solid var(--border);">
+          <span>👤</span> <span class="es">Grupo B · Usuarios internos</span><span class="en">Group B · Internal users</span>
+        </div>
+        <div class="user-group-name es">Resto de la empresa</div>
+        <div class="user-group-name en">Rest of the company</div>
+        <div class="user-group-count es">Más de 50 personas · perfil no técnico</div>
+        <div class="user-group-count en">More than 50 people · non-technical profile</div>
+        <ul class="user-group-needs">
+          <li class="es">Saber cómo reportar sin cometer errores</li>
+          <li class="en">Know how to report without making mistakes</li>
+          <li class="es">Seguimiento del estado de su solicitud</li>
+          <li class="en">Track the status of their request</li>
+          <li class="es">Interfaz comprensible sin formación técnica</li>
+          <li class="en">Understandable interface without technical training</li>
+          <li class="es">Menos fricción en tareas simples y repetidas</li>
+          <li class="en">Less friction on simple, repeated tasks</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="p fu es">Oracle trataba a ambos grupos de la misma manera. Una cola única, un formato único, una experiencia única. El resultado: el equipo IT dedicaba una parte significativa de su tiempo a gestionar la confusión generada por la propia herramienta, en lugar de resolver los problemas que había venido a solucionar.</p>
+    <p class="p fu en">Oracle treated both groups the same way. One queue, one format, one experience. The result: the IT team spent a significant portion of their time managing the confusion generated by the tool itself, rather than solving the problems it was supposed to address.</p>
+
+    <div class="insight-box fu">
+      <p class="es">El objetivo no era rediseñar Oracle. Era responder una pregunta de producto: ¿tiene más sentido adaptar indefinidamente una herramienta genérica, o construir algo que encaje con los flujos reales de este equipo?</p>
+      <p class="en">The goal wasn't to redesign Oracle. It was to answer a product question: does it make more sense to indefinitely adapt a generic tool, or to build something that fits this team's real workflows?</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- [A] INVESTIGACIÓN & HALLAZGOS -->
+<section class="cs-block">
+  <div class="cs-behance-letter">A</div>
+  <div class="cs-wrap">
+
+    <div class="fu">
+      <span class="block-label es">Acción · Discovery</span>
+      <span class="block-label en">Action · Discovery</span>
+      <h2 class="block-h es">Lo que el equipo<br><em>decía sin decir</em></h2>
+      <h2 class="block-h en">What the team was<br><em>saying without saying it</em></h2>
+    </div>
+
+    <p class="p fu es">La investigación se hizo desde dentro. Al estar integrada en el equipo de IT, tuve acceso a los momentos de fricción tal como ocurrían — no en una sesión de entrevista, sino en el flujo de trabajo real. Las conversaciones con el equipo de soporte y sistemas revelaron patrones que se repetían de forma consistente.</p>
+    <p class="p fu en">The research was done from the inside. Being embedded in the IT team gave me access to friction moments as they happened — not in an interview session, but in the real workflow. Conversations with the support and systems team revealed patterns that repeated consistently.</p>
+
+    <p class="p fu es">Para este case study he sintetizado esos patrones en un mapa de afinidad retrospectivo que refleja lo identificado durante el proceso de observación.</p>
+    <p class="p fu en">For this case study I've synthesised those patterns into a retrospective affinity map reflecting what was identified during the observation process.</p>
+
+    <!-- AFFINITY MAP -->
+    <div class="affinity-grid fu">
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#f59e0b;">
+          <div class="affinity-dot" style="background:#f59e0b;"></div>
+          <span class="es">Patrón 1 · Trabajo manual sin automatizar</span>
+          <span class="en">Pattern 1 · Manual work without automation</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">Renovación de certificados web: proceso manual repetido cada vez</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">Asignación de permisos: mismas acciones para cada nuevo usuario</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">El sistema no recuerda procesos previos similares</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">Web certificate renewal: manual process repeated each time</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">Permission assignment: same actions for each new user</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">The system has no memory of similar previous processes</div>
+        </div>
+      </div>
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#ef4444;">
+          <div class="affinity-dot" style="background:#ef4444;"></div>
+          <span class="es">Patrón 2 · Sistema sin guardianes de error</span>
+          <span class="en">Pattern 2 · System without error guards</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Archivos eliminados por accidente — sin confirmación previa</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Procesos ejecutados en entorno incorrecto (prod vs staging)</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Consultas pesadas lanzadas sin validar su impacto</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Files accidentally deleted — no prior confirmation</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Processes run in the wrong environment (prod vs staging)</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Heavy queries launched without validating their impact</div>
+        </div>
+      </div>
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#8b5cf6;">
+          <div class="affinity-dot" style="background:#8b5cf6;"></div>
+          <span class="es">Patrón 3 · Arquitectura de información plana</span>
+          <span class="en">Pattern 3 · Flat information architecture</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Incidencias críticas y consultas menores en la misma cola</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Priorización dependía del criterio individual de cada gestor</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Tiempo de triaje elevado en momentos de alta carga</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Critical incidents and minor queries in the same queue</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Prioritisation depended on each manager's individual judgement</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">High triage time during peak load moments</div>
+        </div>
+      </div>
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#06b6d4;">
+          <div class="affinity-dot" style="background:#06b6d4;"></div>
+          <span class="es">Patrón 4 · Visibilidad nula del estado</span>
+          <span class="en">Pattern 4 · Zero status visibility</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">Quien solicita no sabe en qué punto está sin preguntar</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">Cada ticket empezaba de cero, sin contexto previo</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">El equipo IT recibía preguntas de estado que consumían tiempo</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">Requesters don't know the status without asking directly</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">Each ticket started from scratch, with no prior context</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">IT team received status queries that consumed their time</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fu">
+      <div class="insight-box">
+        <p class="es">El insight que une los cuatro patrones: el sistema descarga en el usuario la carga cognitiva que debería asumir el propio producto. Los errores no eran aleatorios — eran predecibles y prevenibles.</p>
+        <p class="en">The insight connecting all four patterns: the system offloads onto the user the cognitive burden the product itself should handle. The errors weren't random — they were predictable and preventable.</p>
+      </div>
+    </div>
+
+    <!-- HMW -->
+    <div class="fu" style="margin-top:60px; padding:36px; background:rgba(6,182,212,0.04); border:1px solid rgba(6,182,212,0.18); border-radius:16px; max-width:780px;">
+      <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">How Might We</div>
+      <p style="font-size:20px; color:var(--white); font-family:'Playfair Display', serif; font-style:italic; line-height:1.55;" class="es">¿Cómo podríamos diseñar un sistema de operaciones interno que reduzca la carga cognitiva del equipo IT, prevenga errores antes de que ocurran y haga visible el estado de cada proceso sin esfuerzo adicional?</p>
+      <p style="font-size:20px; color:var(--white); font-family:'Playfair Display', serif; font-style:italic; line-height:1.55;" class="en">How might we design an internal operations system that reduces the IT team's cognitive load, prevents errors before they occur, and makes each process's status visible without additional effort?</p>
+    </div>
+
+    <!-- ESTRATEGIA: BUILD VS BUY -->
+    <div class="fu" style="margin-top:80px;">
+      <span class="block-label es">Decisión estratégica · Build vs. Buy</span>
+      <span class="block-label en">Strategic decision · Build vs. Buy</span>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="es">Por qué no parchear Oracle</h3>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="en">Why not patch Oracle</h3>
+    </div>
+
+    <p class="p fu es">Antes de proponer nada, la primera decisión era estratégica. Parchear Oracle significaba trabajar dentro de sus restricciones — configuraciones limitadas, flujos genéricos, sin capacidad de adaptarse a la tipología específica de solicitudes de este equipo.</p>
+    <p class="p fu en">Before proposing anything, the first decision was strategic. Patching Oracle meant working within its constraints — limited configurations, generic flows, no ability to adapt to this team's specific request types.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:40px 0;" class="fu">
+      <div style="padding:28px; border:1px solid rgba(239,68,68,0.2); border-radius:14px; background:rgba(239,68,68,0.03);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239,68,68,0.7); margin-bottom:16px;">❌ <span class="es">Parchear Oracle</span><span class="en">Patch Oracle</span></div>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Configuraciones limitadas por la plataforma</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>No resuelve la arquitectura de información plana</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>No permite flujos guiados por tipo de solicitud</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Costes de mantenimiento crecientes</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Configurations limited by the platform</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Doesn't solve the flat information architecture</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Doesn't allow guided flows by request type</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Growing maintenance costs</li>
+        </ul>
+      </div>
+      <div style="padding:28px; border:1px solid var(--accent-border); border-radius:14px; background:var(--accent-glow);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">✓ <span class="es">Herramienta interna</span><span class="en">Internal tool</span></div>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Diseñada para los flujos reales del equipo</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Clasificación tipificada desde el primer clic</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Validaciones específicas para cada tipo de error</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Evoluciona con las necesidades del equipo</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Designed for the team's real workflows</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Typed classification from the first click</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Specific validations for each error type</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Evolves with the team's needs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 MÓDULOS -->
+    <div class="fu" style="margin-top:72px;">
+      <span class="block-label es">Propuesta conceptual · 4 módulos</span>
+      <span class="block-label en">Conceptual proposal · 4 modules</span>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">La herramienta que el equipo merecía</h3>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The tool the team deserved</h3>
+      <p class="p es">Una plataforma interna de operaciones con dos superficies distintas — una para quien gestiona, otra para quien solicita — y cuatro módulos que responden directamente a los patrones identificados.</p>
+      <p class="p en">An internal operations platform with two distinct surfaces — one for managers, one for requesters — and four modules that directly address the identified patterns.</p>
+    </div>
+
+    <div class="modules-grid fu">
+      <div class="module-card">
+        <div class="module-num">Módulo 01</div>
+        <div class="module-title es">Centro de solicitudes con clasificación inteligente</div>
+        <div class="module-title en">Request centre with smart classification</div>
+        <div class="module-desc es">Punto único de entrada con tipología predefinida: incidencia crítica / solicitud de acceso / tarea recurrente / consulta. La categoría determina automáticamente la urgencia y el flujo de resolución.</div>
+        <div class="module-desc en">Single entry point with predefined typology: critical incident / access request / recurring task / query. The category automatically determines urgency and resolution flow.</div>
+        <div class="module-solves es">Resuelve: patrón 3 (arquitectura plana) y tiempo de triaje manual</div>
+        <div class="module-solves en">Solves: pattern 3 (flat architecture) and manual triage time</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 02</div>
+        <div class="module-title es">Flujos guiados para tareas repetitivas</div>
+        <div class="module-title en">Guided flows for repetitive tasks</div>
+        <div class="module-desc es">Para procesos recurrentes conocidos — renovación de certificados, alta de usuario, asignación de permisos — el sistema propone un flujo paso a paso que reduce decisiones innecesarias y elimina errores por omisión.</div>
+        <div class="module-desc en">For known recurring processes — certificate renewal, user onboarding, permission assignment — the system offers a step-by-step flow that reduces unnecessary decisions and eliminates errors by omission.</div>
+        <div class="module-solves es">Resuelve: patrón 1 (trabajo manual repetitivo)</div>
+        <div class="module-solves en">Solves: pattern 1 (repetitive manual work)</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 03</div>
+        <div class="module-title es">Validaciones y confirmaciones contextuales</div>
+        <div class="module-title en">Contextual validations and confirmations</div>
+        <div class="module-desc es">Antes de ejecutar acciones de alto impacto — eliminar, mover a producción, lanzar una consulta sobre base de datos — el sistema solicita confirmación específica con contexto real: qué vas a hacer, en qué entorno, qué puede pasar.</div>
+        <div class="module-desc en">Before executing high-impact actions — deleting, moving to production, running a database query — the system requests specific confirmation with real context: what you're about to do, in which environment, what could happen.</div>
+        <div class="module-solves es">Resuelve: patrón 2 (errores sin guardianes)</div>
+        <div class="module-solves en">Solves: pattern 2 (errors without guards)</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 04</div>
+        <div class="module-title es">Panel de estado en tiempo real</div>
+        <div class="module-title en">Real-time status dashboard</div>
+        <div class="module-desc es">Cada solicitud tiene un ciclo de vida visible para quien la hizo y para quien la gestiona: recibida, en revisión, en curso, bloqueada, resuelta. Sin necesidad de preguntar. Sin interrupciones al equipo IT.</div>
+        <div class="module-desc en">Each request has a visible lifecycle for both the requester and the manager: received, under review, in progress, blocked, resolved. No need to ask. No interruptions to the IT team.</div>
+        <div class="module-solves es">Resuelve: patrón 4 (visibilidad nula del estado)</div>
+        <div class="module-solves en">Solves: pattern 4 (zero status visibility)</div>
+      </div>
+    </div>
+
+    <!-- ARQUITECTURA DE INFORMACIÓN -->
+    <div class="fu" style="margin-top:72px;">
+      <span class="block-label es">Arquitectura de información · Propuesta conceptual</span>
+      <span class="block-label en">Information architecture · Conceptual proposal</span>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Dos superficies, una lógica común</h3>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Two surfaces, one shared logic</h3>
+      <p class="p es">La plataforma separa las necesidades de quienes gestionan (IT) y quienes solicitan (resto de la empresa), con un portal de entrada común que clasifica desde el primer paso.</p>
+      <p class="p en">The platform separates the needs of those who manage (IT) and those who request (rest of the company), with a shared entry portal that classifies from the first step.</p>
+    </div>
+
+    <div class="fu ia-tree-wrap">
+      <!-- Raíz -->
+      <div class="ia-root-row">
+        <div class="ia-root-node">
+          <div class="ia-root-icon">⊞</div>
+          <div class="ia-root-label es">Portal IT</div>
+          <div class="ia-root-label en">IT Portal</div>
+          <div class="ia-root-sub es">Punto de entrada único</div>
+          <div class="ia-root-sub en">Single entry point</div>
+        </div>
+      </div>
+
+      <!-- Conector central -->
+      <div class="ia-trunk"></div>
+
+      <!-- Tres ramas -->
+      <div class="ia-branches-row">
+
+        <!-- Rama 1: Portal de entrada -->
+        <div class="ia-branch">
+          <div class="ia-branch-connector"></div>
+          <div class="ia-branch-head" style="border-color:var(--accent-border); background:var(--accent-glow);">
+            <div class="ia-branch-icon" style="color:var(--accent);">⊕</div>
+            <div class="ia-branch-title" style="color:var(--accent);" lang="es">Solicitudes</div>
+            <div class="ia-branch-title" style="color:var(--accent);" lang="en">Requests</div>
+            <div class="ia-branch-desc" lang="es">4 tipos</div>
+            <div class="ia-branch-desc" lang="en">4 types</div>
+          </div>
+          <div class="ia-branch-items">
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Incidencias</span><span lang="en">Incidents</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Accesos y permisos</span><span lang="en">Access & permissions</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Tareas recurrentes</span><span lang="en">Recurring tasks</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Consultas</span><span lang="en">Queries</span>
+            </div>
+          </div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="es">Superficie compartida</div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="en">Shared surface</div>
+        </div>
+
+        <!-- Rama 2: Dashboard gestor -->
+        <div class="ia-branch">
+          <div class="ia-branch-connector"></div>
+          <div class="ia-branch-head" style="border-color:rgba(245,158,11,0.3); background:rgba(245,158,11,0.06);">
+            <div class="ia-branch-icon" style="color:#f59e0b;">⊞</div>
+            <div class="ia-branch-title" style="color:#f59e0b;" lang="es">Dashboard IT</div>
+            <div class="ia-branch-title" style="color:#f59e0b;" lang="en">IT Dashboard</div>
+            <div class="ia-branch-desc" lang="es">Vista de gestores</div>
+            <div class="ia-branch-desc" lang="en">Manager view</div>
+          </div>
+          <div class="ia-branch-items">
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:#f59e0b;"></div>
+              <span lang="es">Cola priorizada</span><span lang="en">Priority queue</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:#ef4444;"></div>
+              <span lang="es">Tickets críticos</span><span lang="en">Critical tickets</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:rgba(255,255,255,0.3);"></div>
+              <span lang="es">Pendientes</span><span lang="en">Pending</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:#34d399;"></div>
+              <span lang="es">Resueltos</span><span lang="en">Resolved</span>
+            </div>
+          </div>
+          <div class="ia-surface-badge" style="color:#f59e0b; border-color:rgba(245,158,11,0.3);" lang="es">Perfil: gestor IT (&lt;15)</div>
+          <div class="ia-surface-badge" style="color:#f59e0b; border-color:rgba(245,158,11,0.3);" lang="en">Profile: IT manager (&lt;15)</div>
+        </div>
+
+        <!-- Rama 3: Dashboard usuario -->
+        <div class="ia-branch">
+          <div class="ia-branch-connector"></div>
+          <div class="ia-branch-head" style="border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.03);">
+            <div class="ia-branch-icon" style="color:rgba(255,255,255,0.5);">◱</div>
+            <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="es">Mi portal</div>
+            <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="en">My portal</div>
+            <div class="ia-branch-desc" lang="es">Vista del solicitante</div>
+            <div class="ia-branch-desc" lang="en">Requester view</div>
+          </div>
+          <div class="ia-branch-items">
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:rgba(255,255,255,0.4);"></div>
+              <span lang="es">Mis solicitudes</span><span lang="en">My requests</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Estado en tiempo real</span><span lang="en">Real-time status</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:rgba(255,255,255,0.25);"></div>
+              <span lang="es">Historial</span><span lang="en">History</span>
+            </div>
+          </div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="es">Perfil: usuario interno (+50)</div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="en">Profile: internal user (+50)</div>
+        </div>
+
+      </div><!-- /ia-branches-row -->
+    </div><!-- /ia-tree-wrap -->
+
+    <!-- PRIORIZACIÓN -->
+    <div class="fu" style="margin-top:60px;">
+      <span class="block-label es">Priorización del MVP</span>
+      <span class="block-label en">MVP Prioritisation</span>
+    </div>
+    <table class="priority-table fu">
+      <thead>
+        <tr>
+          <th class="es">Funcionalidad</th>
+          <th class="en">Feature</th>
+          <th class="es">Prioridad</th>
+          <th class="en">Priority</th>
+          <th class="es">Criterio</th>
+          <th class="en">Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="es">Clasificación tipificada de solicitudes</td>
+          <td class="en">Typed request classification</td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td class="es">Impacto máximo, mínima complejidad técnica. Reduce triaje sin cambiar ningún flujo existente.</td>
+          <td class="en">Maximum impact, minimal technical complexity. Reduces triage without changing any existing flow.</td>
+        </tr>
+        <tr>
+          <td class="es">Confirmaciones ante acciones de alto riesgo</td>
+          <td class="en">Confirmations on high-risk actions</td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td class="es">Los errores más costosos en tiempo de resolución son los evitables. Una capa de validación reduce los incidentes más frecuentes.</td>
+          <td class="en">The most costly errors in resolution time are the preventable ones. A validation layer reduces the most frequent incidents.</td>
+        </tr>
+        <tr>
+          <td class="es">Panel de visibilidad de estado</td>
+          <td class="en">Status visibility panel</td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td class="es">Elimina las consultas de estado que interrumpen al equipo IT sin añadir valor al flujo de resolución.</td>
+          <td class="en">Eliminates status queries that interrupt the IT team without adding value to the resolution flow.</td>
+        </tr>
+        <tr>
+          <td class="es">Flujos guiados para tareas recurrentes</td>
+          <td class="en">Guided flows for recurring tasks</td>
+          <td><span class="p-badge p2">P2</span></td>
+          <td><span class="p-badge p2">P2</span></td>
+          <td class="es">Alto valor, mayor esfuerzo de mapeo de procesos. Requiere documentar flujos existentes antes de automatizarlos.</td>
+          <td class="en">High value, greater process mapping effort. Requires documenting existing flows before automating them.</td>
+        </tr>
+        <tr>
+          <td class="es">Automatización completa de procesos</td>
+          <td class="en">Full process automation</td>
+          <td><span class="p-badge p3">Fase 2</span></td>
+          <td><span class="p-badge p3">Phase 2</span></td>
+          <td class="es">Requiere integración con sistemas externos. Fuera del alcance del MVP.</td>
+          <td class="en">Requires integration with external systems. Out of scope for MVP.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<!-- [R] RESULTADO ESPERADO -->
+<section class="cs-block">
+  <div class="cs-behance-letter">R</div>
+  <div class="cs-wrap">
+
+    <div class="fu">
+      <span class="block-label es">Resultado · Impacto esperado</span>
+      <span class="block-label en">Result · Expected impact</span>
+      <h2 class="block-h es">Escenarios antes / después<br><em>e hipótesis de impacto</em></h2>
+      <h2 class="block-h en">Before / after scenarios<br><em>and impact hypotheses</em></h2>
+    </div>
+
+    <div class="honest-note fu">
+      <div class="honest-note-label es">Nota sobre este proyecto</div>
+      <div class="honest-note-label en">Note on this project</div>
+      <p class="es">Este proyecto no llegó a implementación mientras estuve en la empresa. Los estudios y la propuesta se presentaron a dirección, pero la ejecución requería una profundidad técnica que en ese momento no tenía. Las hipótesis de impacto que siguen se basan en los patrones identificados, no en métricas medidas.</p>
+      <p class="en">This project didn't reach implementation during my time at the company. The studies and proposal were presented to management, but execution required a technical depth I didn't have at that point. The impact hypotheses below are based on identified patterns, not measured metrics.</p>
+    </div>
+
+    <!-- ESCENARIO 1 -->
+    <div class="scenario fu">
+      <div class="scenario-header es">Escenario · Error de entorno (prod vs staging)</div>
+      <div class="scenario-header en">Scenario · Environment error (prod vs staging)</div>
+      <div class="scenario-cols">
+        <div class="scenario-col">
+          <div class="scenario-badge badge-before">Antes</div>
+          <div class="scenario-text es">Un desarrollador ejecuta una consulta pesada creyendo estar en staging. El sistema no muestra en qué entorno está activo. La acción se ejecuta en producción. <strong>Resultado: incidencia que requiere horas de resolución.</strong></div>
+          <div class="scenario-text en">A developer runs a heavy query believing they're in staging. The system doesn't show which environment is active. The action executes in production. <strong>Result: incident requiring hours to resolve.</strong></div>
+        </div>
+        <div class="scenario-col">
+          <div class="scenario-badge badge-after">Con la propuesta</div>
+          <div class="scenario-text es">Antes de ejecutar, el sistema muestra el entorno activo con alerta visual de alto contraste y solicita confirmación explícita: "Estás en PRODUCCIÓN. Esta acción afectará a datos reales. ¿Confirmar?" <strong>La acción incorrecta se detiene antes de ocurrir.</strong></div>
+          <div class="scenario-text en">Before executing, the system shows the active environment with high-contrast visual alert and requests explicit confirmation: "You're in PRODUCTION. This action will affect real data. Confirm?" <strong>The incorrect action is stopped before it happens.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESCENARIO 2 -->
+    <div class="scenario fu">
+      <div class="scenario-header es">Escenario · Solicitud de permiso sin seguimiento</div>
+      <div class="scenario-header en">Scenario · Permission request with no tracking</div>
+      <div class="scenario-cols">
+        <div class="scenario-col">
+          <div class="scenario-badge badge-before">Antes</div>
+          <div class="scenario-text es">Un empleado reporta una solicitud de acceso a través de Oracle. No sabe si ha llegado, quién la tiene, ni cuándo esperar respuesta. <strong>Llama o escribe al equipo IT para preguntar por el estado — interrumpiendo el flujo de trabajo de los gestores.</strong></div>
+          <div class="scenario-text en">An employee submits an access request through Oracle. They don't know if it arrived, who has it, or when to expect a response. <strong>They call or message the IT team to ask about status — interrupting the managers' workflow.</strong></div>
+        </div>
+        <div class="scenario-col">
+          <div class="scenario-badge badge-after">Con la propuesta</div>
+          <div class="scenario-text es">La solicitud entra clasificada como "acceso". El empleado ve en su panel: Recibida → En revisión → Asignada a [gestor] → Completada. <strong>Sin necesidad de preguntar. Sin interrupciones al equipo IT.</strong></div>
+          <div class="scenario-text en">The request enters classified as "access". The employee sees in their panel: Received → Under review → Assigned to [manager] → Completed. <strong>No need to ask. No interruptions to the IT team.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIPÓTESIS DE IMPACTO -->
+    <div class="fu" style="margin-top:60px;">
+      <span class="block-label es">Hipótesis de impacto</span>
+      <span class="block-label en">Impact hypotheses</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0;" class="fu">
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Triaje de incidencias</div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Incident triage</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La clasificación tipificada eliminaría la decisión manual de prioridad. Hipótesis: reducción significativa del tiempo de gestión inicial en cada ticket.</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Typed classification would eliminate manual priority decisions. Hypothesis: significant reduction in initial management time per ticket.</div>
+      </div>
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Errores evitables</div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Preventable errors</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">Los incidentes más frecuentes compartían causa raíz: ausencia de confirmación previa. Una capa de validación contextual los interceptaría antes de producirse.</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">The most frequent incidents shared a root cause: absence of prior confirmation. A contextual validation layer would intercept them before they occur.</div>
+      </div>
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Interrupciones al equipo IT</div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">IT team interruptions</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La visibilidad de estado eliminaría el principal motivo de contacto reactivo — "¿en qué punto está mi solicitud?" — liberando tiempo para trabajo técnico real.</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Status visibility would eliminate the main reason for reactive contact — "where is my request?" — freeing up time for actual technical work.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- APRENDIZAJES -->
+<section class="cs-block">
+  <div class="cs-wrap">
+
+    <div class="fu">
+      <span class="block-label es">Aprendizajes</span>
+      <span class="block-label en">Learnings</span>
+      <h2 class="block-h es">Lo que este proyecto<br><em>me enseñó</em></h2>
+      <h2 class="block-h en">What this project<br><em>taught me</em></h2>
+    </div>
+
+    <div class="learning-grid fu">
+      <div class="learning-card">
+        <div class="learning-num">01</div>
+        <div class="learning-text es"><strong>El problema real no siempre es el problema declarado.</strong> El equipo pedía "mejorar Oracle". El problema real era que Oracle era la herramienta equivocada. Aprendí a distinguir entre lo que el equipo pedía y lo que el sistema necesitaba.</div>
+        <div class="learning-text en"><strong>The real problem isn't always the declared problem.</strong> The team asked to "improve Oracle". The real problem was that Oracle was the wrong tool. I learnt to distinguish between what the team was asking for and what the system needed.</div>
+      </div>
+      <div class="learning-card">
+        <div class="learning-num">02</div>
+        <div class="learning-text es"><strong>La investigación desde dentro tiene ventajas que la investigación formal no da.</strong> Estar integrada en el equipo me dio acceso a los momentos de fricción tal como ocurrían. La limitación fue aprender a separar observación de interpretación prematura.</div>
+        <div class="learning-text en"><strong>Research from within has advantages formal research doesn't.</strong> Being embedded in the team gave me access to friction moments as they happened. The challenge was learning to separate observation from premature interpretation.</div>
+      </div>
+      <div class="learning-card">
+        <div class="learning-num">03</div>
+        <div class="learning-text es"><strong>Este proyecto no se implementó porque no tenía los conocimientos técnicos para conectar diseño con desarrollo.</strong> Esa limitación fue directamente la motivación para cursar el bootcamp de Product Design. El proyecto no acabó en producción — pero cambió el rumbo de mi carrera.</div>
+        <div class="learning-text en"><strong>This project wasn't implemented because I lacked the technical knowledge to connect design with development.</strong> That limitation was directly what motivated me to take the Product Design bootcamp. The project didn't reach production — but it changed the direction of my career.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="cs-footer">
+  <div class="cs-wrap">
+    <div class="footer-label es">Siguiente caso</div>
+    <div class="footer-label en">Next case</div>
+    <h2 class="es">¿Vemos otro proyecto?</h2>
+    <h2 class="en">Want to see another project?</h2>
+    <div class="footer-actions">
+      <a href="caso-4.html" class="btn btn-secondary es">← Caso 04</a>
+      <a href="caso-4.html" class="btn btn-secondary en">← Case 04</a>
+      <a href="index.html" class="btn btn-secondary es">Volver</a>
+      <a href="index.html" class="btn btn-secondary en">Back</a>
+      <a href="caso-1.html" class="btn btn-primary es">Caso 01 →</a>
+      <a href="caso-1.html" class="btn btn-primary en">Case 01 →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const fus = document.querySelectorAll('.fu');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  fus.forEach(el => io.observe(el));
+
+  // Lang toggle
+  const html = document.documentElement;
+  const stored = localStorage.getItem('portfolio-lang');
+  if (stored === 'en') {
+    html.classList.add('lang-en');
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = 'ES';
+  }
+
+  function toggleLang() {
+    const btn = document.getElementById('langToggle');
+    const isEn = html.classList.toggle('lang-en');
+    btn.textContent = isEn ? 'ES' : 'EN';
+    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+    applyLang();
+  }
+
+  // Affinity cards: show only current lang
+  function applyLang() {
+    const isEn = html.classList.contains('lang-en');
+    document.querySelectorAll('.affinity-card[lang]').forEach(el => {
+      el.style.display = (isEn ? el.lang === 'en' : el.lang === 'es') ? '' : 'none';
+    });
+  }
+  applyLang();
+</script>
+</body>
+</html>

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html class="lang-es" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales</title>
+  <meta name="description" content="Cómo construí desde cero la identidad visual completa, el design system y el ecosistema digital de una cadena de pizzerías artesanas — de 1 a 6 locales en 2 años.">
+  <meta name="keywords" content="Brand Design System, Visual Identity, Digital Strategy, WordPress, Adobe XD, Metricool, Product Designer, UX, Spain, Pizzeria">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://martamorales.vercel.app/caso-4.html">
+  <meta property="og:title" content="Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales">
+  <meta property="og:description" content="De 0 a 6 locales. Identidad visual, design system y ecosistema digital completo construido desde cero para una cadena de pizzerías artesanas en Madrid.">
+  <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+
+  <style>
+    .cs-hero-glow {
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%);
+    }
+
+    /* Specific Component Styles */
+    .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
+
+    .dash-widget { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
+    .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
+    .dash-impact-row { display: flex; align-items: baseline; gap: 16px; }
+    .dash-impact-num { font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif; }
+    .dash-impact-text { font-size: 18px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* DESIGN SYSTEM DISPLAY */
+    .ds-section { margin: 60px 0; }
+    .ds-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; font-weight: 600; }
+    .color-palette { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .color-chip { border-radius: 10px; overflow: hidden; width: 120px; }
+    .color-swatch { height: 64px; }
+    .color-info { padding: 10px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; }
+    .color-name { font-size: 11px; font-weight: 600; color: var(--white); }
+    .color-hex { font-size: 10px; color: var(--text-dim); font-family: monospace; }
+
+    .typo-row { border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; align-items: baseline; gap: 24px; }
+    .typo-layer { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); min-width: 80px; }
+    .typo-sample { color: var(--white); }
+
+    /* TOUCHPOINT MAP */
+    .touchpoint-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; max-width: 720px; }
+    .tp-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .tp-cat { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+    .tp-items { font-size: 13px; color: var(--text); line-height: 1.9; }
+
+    .cs-ba-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+    .cs-ba-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+
+    /* QUICK SUMMARY */
+    .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .qs-col { display: flex; flex-direction: column; }
+    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .qs-bullets { list-style: none; padding: 0; margin: 0; }
+    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
+    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
+
+    /* RESPONSIVE OVERRIDES */
+    @media (max-width: 900px) {
+      .tool-grid { grid-template-columns: 1fr 1fr; }
+      .touchpoint-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
+      .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .dash-impact-num { font-size: 64px; }
+      .dash-impact-text { font-size: 14px; }
+      .color-palette { gap: 8px; }
+      .color-chip { width: 100px; }
+      .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="index.html" class="nav-back">
+    <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
+  </a>
+  
+  <div class="cs-nav-right">
+    <div class="cs-nav-dropdown">
+      <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <span class="es">Casos de Producto ▾</span>
+        <span class="en">Case Studies ▾</span>
+      </button>
+      <div class="cs-dropdown-menu">
+        <a href="caso-1.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 01</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
+        </a>
+        <a href="caso-2.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">Booking Engine</div>
+          <div class="cs-item-skill es">Design Ops & Componentes</div>
+          <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="caso-3.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 03</div>
+          <div class="cs-item-title">CEF EdTech</div>
+          <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
+          <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
+        </a>
+        <a href="caso-4.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 04</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca & Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity & 360° Digital Ecosystem</div>
+        </a>
+        <a href="caso-5.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 05</div>
+          <div class="cs-item-title">IT Ops & Oracle ERP</div>
+          <div class="cs-item-skill es">Investigación de Producto & Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research & Internal Tooling</div>
+        </a>
+      </div>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="cs-hero">
+  <div class="cs-hero-logo"></div>
+  <div class="cs-hero-overlay"></div>
+  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-content">
+    <span class="cs-eyebrow">
+      04 — Paolo by Danny's Jazz · Brand System · Digital 360°
+    </span>
+    <h1 class="cs-title">
+      De la identidad<br><em>al ecosistema digital</em>
+    </h1>
+    <div class="cs-tags">
+      <span class="cs-tag">Brand Design System</span>
+      <span class="cs-tag">Visual Identity</span>
+      <span class="cs-tag">Adobe XD</span>
+      <span class="cs-tag">WordPress · Elementor</span>
+      <span class="cs-tag">Metricool</span>
+      <span class="cs-tag">Microsoft Clarity</span>
+      <span class="cs-tag">Delivery Strategy</span>
+      <span class="cs-tag">Google My Business</span>
+      <span class="cs-tag">Social Media</span>
+    </div>
+    <div class="cs-meta">
+      <div>
+        <div class="cs-meta-label">Cliente</div>
+        <div class="cs-meta-val">Paolo by Danny's Jazz</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Rol</div>
+        <div class="cs-meta-val">Brand Designer · Digital Strategist · Frontend</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Periodo</div>
+        <div class="cs-meta-val">Jun 2020 – Ago 2022</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Escala</div>
+        <div class="cs-meta-val">1 → 6 locales</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- QUICK SUMMARY -->
+<section class="quick-summary-section">
+  <div class="cs-wrap">
+    <div class="quick-summary-grid">
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          El Problema
+        </span>
+        <div class="qs-val">
+          Una pizzería artesana con identidad visual potente pero sin sistema. Cada pieza nueva se creaba desde cero, sin referencia. Cero presencia digital, cero canal de delivery activo.
+        </div>
+      </div>
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Mi Rol
+        </span>
+        <div class="qs-val">
+          <strong>Ownership 360° autónomo:</strong> auditoría visual, design system, aplicaciones físicas y digitales, desarrollo web y gestión de canales. Primer cliente profesional.
+        </div>
+      </div>
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Qué Hice
+        </span>
+        <ul class="qs-bullets">
+          <li>Auditoría de 16 activos visuales existentes.</li>
+          <li>Brand design system en 5 capas: logo, color, tipografía, fotografía, aplicaciones.</li>
+          <li>Web completa Adobe XD → WordPress + Elementor.</li>
+          <li>Gestión delivery (Glovo, Uber Eats, JustEat) + RRSS + GMB + Clarity + GA4.</li>
+        </ul>
+      </div>
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Resultado
+        </span>
+        <div class="qs-result-box">
+          <div class="qs-result-highlight">
+            El sistema escaló de 1 a 6 locales en 2 años. Cuando el proyecto terminó, el ecosistema seguía funcionando solo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MI ROL -->
+<section class="cs-block">
+  <div class="cs-behance-letter" style="opacity:0.35">M</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">MI ROL · Responsabilidades</span>
+      <h2 class="block-h">Primer proyecto.<br><em>Ownership total desde el día uno</em></h2>
+    </div>
+    <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
+        <ul class="bullet-list">
+          <li>Auditoría visual completa de activos existentes — análisis de inconsistencias, patrones y decisiones de diseño conscientes vs. accidentales</li>
+          <li>Diseño y documentación del Brand Design System — logo system, paleta, tipografía, fotografía, ilustración y componentes</li>
+          <li>Diseño físico — señalética exterior e interior, uniformes, menú físico, brochure, sombrillas, cartelería</li>
+          <li>Diseño y desarrollo web — prototipo en Adobe XD, maquetación en WordPress con Elementor</li>
+          <li>Estrategia y gestión RRSS — contenido, calendario editorial, métricas con Metricool</li>
+          <li>Activación y optimización de canales de delivery — Glovo, Uber Eats, JustEat</li>
+          <li>Gestión de Google My Business y reputación online</li>
+          <li>Análisis de comportamiento web — Microsoft Clarity + Google Analytics 4</li>
+        </ul>
+      </div>
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Herramientas</p>
+        <div class="tool-grid" style="grid-template-columns:1fr 1fr; gap:12px; margin:0 0 24px;">
+          <div class="tool-card">
+            <div class="tool-icon">✏️</div>
+            <div class="tool-name">Adobe XD</div>
+            <div class="tool-role">Diseño UI / prototipos web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🌐</div>
+            <div class="tool-name">WordPress · Elementor</div>
+            <div class="tool-role">Desarrollo web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📊</div>
+            <div class="tool-name">Metricool</div>
+            <div class="tool-role">RRSS analytics</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">👁️</div>
+            <div class="tool-name">Microsoft Clarity</div>
+            <div class="tool-role">Comportamiento web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📈</div>
+            <div class="tool-name">Google Analytics 4</div>
+            <div class="tool-role">Tráfico y conversión</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🍕</div>
+            <div class="tool-name">Glovo · Uber · JustEat</div>
+            <div class="tool-role">Canales de delivery</div>
+          </div>
+        </div>
+        <p class="p" style="margin-top:0; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0; font-size:13px; color:rgba(255,255,255,0.55);">Este fue mi primer cliente profesional. Entré sin red y con ownership total — desde la auditoría estratégica hasta el pixel en producción. El proyecto duró 2 años y escaló a 6 locales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [S] SITUATION -->
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+  <div class="cs-behance-letter">S</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">SITUATION · Contexto</span>
+      <h2 class="block-h">
+        Una marca con alma.<br><em>Sin sistema, sin presencia digital</em>
+      </h2>
+    </div>
+    <p class="lead fu">Paolo es una pizzería artesana en el barrio de Conde Duque (Madrid), nacida bajo el paraguas de Danny's Jazz, un local de música en vivo con identidad cultural propia. El logo era bueno. El claim era memorable. La pizza, excelente. Pero en 2020, digitalmente, Paolo no existía.</p>
+    <p class="p fu">Lo que había: un logo (en varias versiones sin criterio de uso), un menú impreso, señalética exterior y un equipo con polos rojos que no conectaban con ningún otro elemento de la marca. No había web, no había presencia en plataformas de delivery, no había canal social sistematizado.</p>
+    <p class="p fu">Lo que faltaba: un sistema que permitiera crear cualquier pieza nueva con coherencia, sin depender del diseñador original. Y toda la capa digital — web, delivery, RRSS — que en el contexto de 2020, post-pandemia, había pasado de ser una ventaja a ser una necesidad de supervivencia.</p>
+
+    <div class="data-band fu">
+      <div class="data-cell">
+        <div class="data-v">16</div>
+        <div class="data-l">Activos visuales existentes auditados — logos, señalética, mural, uniformes, brochure, cartelería, digital</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-v">0</div>
+        <div class="data-l">Presencia digital al inicio — sin web propia, sin delivery activo, sin RRSS sistematizadas</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-v">1→6</div>
+        <div class="data-l">Locales escalados durante el proyecto — el sistema tuvo que sobrevivir esa multiplicación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [T] TASK -->
+<section class="cs-block">
+  <div class="cs-behance-letter">T</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">TASK · El reto</span>
+      <h2 class="block-h">
+        No rediseñar.<br><em>Sistematizar y digitalizar</em>
+      </h2>
+    </div>
+    <div class="insight-box fu">
+      <p>"Paolo no tiene un problema de identidad. Tiene un problema de sistema."</p>
+    </div>
+    <p class="p fu">La tentación en un proyecto de branding para pequeña empresa es siempre la misma: proponer algo nuevo, diferente, propio. Aquí tomé la decisión contraria. El símbolo de infinito era un activo real, diferencial y memorable. El claim "Las pizzas del barrio" estaba arraigado. El posicionamiento era claro. No había nada que cambiar — había que documentar, organizar y completar.</p>
+    <p class="p fu">El reto real era doble: construir un sistema visual que cualquier proveedor o miembro del equipo pudiera usar sin romper la marca, y al mismo tiempo construir desde cero todo el ecosistema digital — web, canales de venta, RRSS, analytics — en un momento en que la digitalización no era una opción sino una condición de supervivencia para la hostelería.</p>
+
+    <div class="touchpoint-grid fu">
+      <div class="tp-card">
+        <div class="tp-cat">Brand System</div>
+        <div class="tp-items">Sistema de logos · Paleta cromática · Jerarquía tipográfica · Estilo fotográfico · Estilo ilustrativo · Componentes</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-cat">Aplicaciones Físicas</div>
+        <div class="tp-items">Señalética exterior · Luminosos · Uniformes · Menú físico · Brochure · Cartelería interior · Sombrillas</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-cat">Ecosistema Digital</div>
+        <div class="tp-items">Web WordPress · Canales delivery · Redes sociales · WhatsApp Marketing · Google My Business</div>
+      </div>
+      <div class="tp-card">
+        <div class="tp-cat">Análisis y Métricas</div>
+        <div class="tp-items">Microsoft Clarity · Google Analytics 4 · Metricool · Revisión de rendimiento delivery · Propuestas de oferta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [A] ACTION -->
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+  <div class="cs-behance-letter">A</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">ACTION · Lo que hice, y por qué</span>
+      <h2 class="block-h">
+        Del caos visual<br><em>al sistema documentado</em>
+      </h2>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline fu">
+      <div class="tl-item">
+        <div class="tl-dot">1</div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 1 · Auditoría Visual</div>
+          <div class="tl-title">Inventariar antes de proponer</div>
+          <div class="tl-desc">Antes de tocar nada, analicé los 16 activos existentes: logos en sus distintas versiones, señalética, mural, uniformes, brochure, cartelería y el único post digital disponible. Identifiqué qué era intencional, qué era accidental y qué era verdaderamente valioso.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 2 · Brand Design System</div>
+          <div class="tl-title">Construir el sistema en 5 capas</div>
+          <div class="tl-desc">Logo system con criterios de uso por versión, paleta formalizada con roles de aplicación, jerarquía tipográfica de 4 capas, dos estilos fotográficos codificados y estilo ilustrativo documentado.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 3 · Aplicaciones Físicas</div>
+          <div class="tl-title">Diseño a escala real</div>
+          <div class="tl-desc">Señalética exterior (luminosos horizontales y vertical, señal circular de calle), uniformes co-branded, carta física, brochure/tríptico, cartelería interior y brief de exteriores con especificaciones de producción.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">4</div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 4 · Ecosistema Digital</div>
+          <div class="tl-title">De Adobe XD a WordPress en producción</div>
+          <div class="tl-desc">Diseñé la web en Adobe XD y la desarrollé con WordPress + Elementor. Activé y configuré todos los canales de delivery. Construí el sistema de contenido para RRSS. Configuré Google My Business. Arranqué Metricool para gestión y análisis.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">5</div>
+        <div class="tl-content">
+          <div class="tl-phase">Fase 5 · Análisis y Optimización Continua</div>
+          <div class="tl-title">Iterar sobre datos, no intuición</div>
+          <div class="tl-desc">Microsoft Clarity para comportamiento en web, GA4 para tráfico y conversión, métricas de delivery para proponer cambios de oferta, análisis de reseñas GMB, Metricool para rendimiento de contenido. Ciclo mensual de revisión y propuesta.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAGE IMAGE -->
+    <div class="cs-frame-auto fu">
+      <img loading="lazy" decoding="async" src="projects/04-paolo/assets/01-signage.jpg" alt="Señal circular de fachada Paolo — identidad en espacio real">
+      <div class="cs-frame-caption">Señal circular de fachada · Logo master en versión reducida · Identidad en espacio público</div>
+    </div>
+
+    <!-- DESIGN SYSTEM SECTION -->
+    <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin:60px 0 16px; font-family:'Playfair Display', serif;">El Design System: de activos a lenguaje</h3>
+    <p class="p fu">El hallazgo más importante de la auditoría fue el símbolo de infinito. Aparecía en absolutamente todos los touchpoints sin excepción — era el elemento de mayor valor patrimonial de la marca. A partir de ahí, construí el sistema.</p>
+
+    <!-- COLOR PALETTE -->
+    <div class="ds-section fu">
+      <div class="ds-label">Paleta cromática · Roles formalizados</div>
+      <div class="color-palette">
+        <div class="color-chip">
+          <div class="color-swatch" style="background:#F2A222;"></div>
+          <div class="color-info">
+            <div class="color-name">Paolo Naranja</div>
+            <div class="color-hex">#F2A222</div>
+          </div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background:#1A1918;"></div>
+          <div class="color-info">
+            <div class="color-name">Paolo Negro</div>
+            <div class="color-hex">#1A1918</div>
+          </div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background:#FFFFFF; border:1px solid rgba(255,255,255,0.1);"></div>
+          <div class="color-info">
+            <div class="color-name">Paolo Blanco</div>
+            <div class="color-hex">#FFFFFF</div>
+          </div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background:#F5EDD8;"></div>
+          <div class="color-info">
+            <div class="color-name">Paolo Crema</div>
+            <div class="color-hex">#F5EDD8</div>
+          </div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background:#0D0C0B;"></div>
+          <div class="color-info">
+            <div class="color-name">Paolo Carbón</div>
+            <div class="color-hex">#0D0C0B</div>
+          </div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background:#C0272D;"></div>
+          <div class="color-info">
+            <div class="color-name">Rojo Equipo</div>
+            <div class="color-hex">#C0272D · Solo uniformes</div>
+          </div>
+        </div>
+      </div>
+      <p class="p" style="font-size:13px; margin-top:16px;">Una de las inconsistencias clave que documenté: el rojo de los uniformes no aparecía en ningún otro touchpoint. Lo clasifiqué como "color de equipo humano" — presente en el sistema pero claramente acotado, sin permitir que contaminara la comunicación gráfica.</p>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <div class="ds-section fu">
+      <div class="ds-label">Jerarquía tipográfica · 4 capas</div>
+      <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:32px; max-width:720px;">
+        <div class="typo-row">
+          <div class="typo-layer">Capa 1</div>
+          <div class="typo-sample" style="font-family:'Playfair Display', serif; font-size:32px; font-style:italic; color:var(--accent);">PAOLO</div>
+          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Custom wordmark · Intransferible</div>
+        </div>
+        <div class="typo-row">
+          <div class="typo-layer">Capa 2</div>
+          <div class="typo-sample" style="font-family:'Playfair Display', serif; font-size:22px; font-style:italic;">Las pizzas del barrio</div>
+          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Script · Claims y titulares</div>
+        </div>
+        <div class="typo-row">
+          <div class="typo-layer">Capa 3</div>
+          <div class="typo-sample" style="font-size:16px; font-style:italic; color:rgba(255,255,255,0.7);">· pizzeria artesana ·</div>
+          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Serif italic · Descriptores</div>
+        </div>
+        <div class="typo-row" style="border-bottom:none;">
+          <div class="typo-layer">Capa 4</div>
+          <div class="typo-sample" style="font-size:15px; font-weight:400;">Carbonara — Tomate, huevo, beicon y nata · <strong>12,80€</strong></div>
+          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Sans-serif · Cuerpo</div>
+        </div>
+      </div>
+      <p class="p" style="font-size:13px; margin-top:16px;">Regla de jerarquía: nunca más de 3 niveles activos en una sola pieza. Si se necesita más información, se reduce la densidad de contenido — no se añaden niveles.</p>
+    </div>
+
+    <!-- PHYSICAL APPLICATIONS -->
+    <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin:60px 0 16px; font-family:'Playfair Display', serif;">Aplicaciones físicas: el sistema en el espacio</h3>
+    <p class="p fu">El diseño del espacio físico es donde el sistema tiene que sobrevivir a las condiciones reales: distancia de lectura, luz del sol, impresión de terceros, proveedores que no son diseñadores. Cada especificación tenía que ser lo suficientemente precisa para que cualquiera la ejecutara correctamente.</p>
+
+    <!-- SEÑALÉTICA: imagen izquierda, texto derecha -->
+    <div class="row align-items-center g-4 fu" style="margin:48px 0;">
+      <div class="col-md-7">
+        <div style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/03-exterior.jpg" alt="Brief de diseño de exteriores" style="width:100%; display:block;">
+        </div>
+      </div>
+      <div class="col-md-5">
+        <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:14px;">Señalética y diseño de exteriores</p>
+        <h4 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3;">Brief técnico completo para producción</h4>
+        <p style="font-size:14px; color:var(--text); line-height:1.8; margin-bottom:20px;">Cada pieza exterior se documentó con especificaciones de producción reales: dimensiones, tipo de iluminación, materiales y forma de anclaje — para que cualquier proveedor pudiera ejecutarlo sin ambigüedad.</p>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>2 luminosos horizontales con iluminación trasera</li>
+          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>1 luminoso vertical en negativo (logo blanco)</li>
+          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Sombrillas de terraza: specs de forma y tamaño (300×265cm)</li>
+          <li style="font-size:13px; color:var(--text); padding:8px 0; display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Boceto general de fachada con jerarquía visual completa</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- UNIFORMES: texto izquierda, imagen derecha -->
+    <div class="row align-items-center g-4 fu" style="margin:48px 0;">
+      <div class="col-md-5 order-md-1 order-2">
+        <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:14px;">Uniformes · Co-branding</p>
+        <h4 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3;">La marca que lleva puesta el equipo</h4>
+        <p style="font-size:14px; color:var(--text); line-height:1.8; margin-bottom:20px;">El uniforme es el touchpoint más cercano al cliente en sala. Diseñé una pieza que comunicara la marca Paolo sin sacrificar la relación con Danny's Jazz.</p>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Pecho izquierdo: co-branding "Danny's Jazz & Paolo"</li>
+          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Trasera: "Las pizzas del barrio" en script caligráfico blanco</li>
+          <li style="font-size:13px; color:var(--text); padding:8px 0; display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>El rojo, documentado como color de equipo — presente en el sistema pero acotado</li>
+        </ul>
+      </div>
+      <div class="col-md-7 order-md-2 order-1">
+        <div style="background:#f5f5f5; border-radius:16px; overflow:hidden; padding:32px; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.jpg" alt="Diseño de uniformes — polo co-branded Danny's Jazz & Paolo" style="width:100%; display:block;">
+        </div>
+      </div>
+    </div>
+
+    <!-- MENÚ: imagen a ancho completo con franja de texto encima -->
+    <div class="fu" style="margin:48px 0;">
+      <div style="border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+        <div style="background:rgba(26,25,24,0.95); padding:24px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border-bottom:1px solid rgba(242,162,34,0.2);">
+          <div>
+            <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:4px;">Menú físico · Tríptico interior</p>
+            <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin:0;">Nuestras Pizzas — jerarquía tipográfica de 3 niveles</h4>
+          </div>
+          <div style="display:flex; gap:24px; flex-wrap:wrap;">
+            <div style="text-align:center;">
+              <div style="font-size:22px; font-weight:800; color:var(--accent);">+25</div>
+              <div style="font-size:11px; color:var(--text-dim);">variedades</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:22px; font-weight:800; color:var(--accent);">3</div>
+              <div style="font-size:11px; color:var(--text-dim);">capas tipográficas</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:22px; font-weight:800; color:var(--accent);">12,80€</div>
+              <div style="font-size:11px; color:var(--text-dim);">precio unificado</div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/05-menu.jpg" alt="Menú interior del tríptico — Nuestras Pizzas" style="width:100%; display:block;">
+        </div>
+      </div>
+    </div>
+
+    <!-- DIGITAL ECOSYSTEM -->
+    <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin:60px 0 16px; font-family:'Playfair Display', serif;">Ecosistema digital: de cero a sistema activo</h3>
+    <p class="p fu">La web la diseñé primero en Adobe XD — arquitectura de información, flujos de usuario, componentes UI — y luego la desarrollé directamente en WordPress con Elementor. Este proceso me enseñó algo que muy pocos libros de diseño enseñan: las restricciones del builder son parámetros de diseño, no obstáculos.</p>
+
+    <div class="cs-ba fu">
+      <div class="cs-ba-col">
+        <div class="cs-ba-badge cs-ba-before">Antes</div>
+        <div style="padding:24px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; flex:1;">
+          <p style="font-size:14px; color:var(--text); line-height:1.8; margin:0;">
+            Sin web propia · Sin presencia en Google Maps · Sin canal de delivery activo · RRSS sin sistema · Sin métricas · Visibilidad: únicamente boca a boca y clientela de Danny's Jazz
+          </p>
+        </div>
+      </div>
+      <div class="cs-ba-col">
+        <div class="cs-ba-badge cs-ba-after">Después</div>
+        <div style="padding:24px; background:var(--accent-glow); border:1px solid var(--accent-border); border-radius:12px; flex:1;">
+          <p style="font-size:14px; color:var(--text-bright); line-height:1.8; margin:0;">
+            Web en WordPress (Adobe XD → Elementor) · Glovo + Uber Eats + JustEat activos · RRSS con calendario editorial · GMB optimizado · Metricool + Clarity + GA4 operativos · Análisis mensual de rendimiento y propuestas de cambio
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL POST -->
+    <div class="cs-frame-auto fu">
+      <img loading="lazy" decoding="async" src="projects/04-paolo/assets/04-social.png" alt="Post RRSS — diseño nativo de WhatsApp como táctica de engagement">
+      <div class="cs-frame-caption">Post RRSS · Estilo notificación de mensaje nativo · Tono conversacional, primera persona · "¿Cómo llevas el día? Seguro que mejor con pizza."</div>
+    </div>
+
+    <p class="p fu">Este post es una de mis piezas favoritas del proyecto. Imita el formato de una notificación real de WhatsApp — una táctica de <em>native content</em> consciente de su medio. No estaba haciendo publicidad: estaba hablando. Esa distinción es la que define la voz de Paolo.</p>
+    <p class="p fu">Con Metricool llevaba el calendario editorial, analizaba qué contenido tenía mejor rendimiento y cuáles eran los mejores momentos de publicación para la audiencia de Conde Duque. Con Clarity veía cómo los usuarios interactuaban con la web — dónde hacían clic, qué secciones ignoraban, qué formularios abandonaban. Esos datos informaban propuestas concretas de mejora al cliente.</p>
+  </div>
+</section>
+
+<!-- [R] RESULTADO -->
+<section class="cs-block">
+  <div class="cs-behance-letter">R</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">RESULT · El impacto</span>
+      <h2 class="block-h">
+        Un sistema que sobrevivió<br><em>sin el diseñador</em>
+      </h2>
+    </div>
+
+    <div class="dash-widget fu">
+      <div class="dash-title">Escala del proyecto · Jun 2020 – Ago 2022</div>
+      <div class="dash-impact-row">
+        <span class="dash-impact-num">6</span>
+        <span class="dash-impact-text">Locales con el mismo sistema visual activo</span>
+      </div>
+      <p style="margin-top:16px; font-size:14px; color:var(--text-bright); max-width:480px;">El sistema se replicó a cada nueva apertura sin necesidad de rediseño — solo aplicación. Eso es lo que hace que un sistema sea real.</p>
+    </div>
+
+    <ul class="bullet-list fu">
+      <li><strong>De 0 a presencia digital completa:</strong> Web propia, 3 canales de delivery activos, RRSS sistematizadas, Google My Business optimizado y métricas funcionando en paralelo.</li>
+      <li><strong>El sistema escaló 6 veces:</strong> Cada nueva apertura usó el mismo brand system — colores, logo versions, tipografías, plantillas de comunicación — sin necesidad de empezar de cero ni de volver a mí.</li>
+      <li><strong>Coherencia visible en el espacio físico:</strong> Señalética, uniformes, menú, cartelería y comunicación digital usando el mismo lenguaje visual en todos los puntos de contacto.</li>
+      <li><strong>Iteración basada en datos:</strong> Propuestas de oferta y cambios visuales sustentados en análisis de rendimiento — delivery, RRSS y comportamiento web — no en intuición.</li>
+      <li><strong>El proyecto terminó cuando la digitalización estaba hecha:</strong> La mejor prueba de que el sistema funcionaba es que cuando cerré la etapa, el ecosistema siguió corriendo solo.</li>
+    </ul>
+
+    <div class="insight-box fu">
+      <p>"La identidad no documentada es identidad en riesgo. Cada vez que alguien crea una pieza sin referencia, el sistema se debilita un poco. La documentación es la vacuna."</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUDITORÍA ESTRATÉGICA 2026 -->
+<section class="cs-block" style="background: linear-gradient(135deg, rgba(242,162,34,0.04) 0%, rgba(0,0,0,0) 60%), rgba(255,255,255,0.01); border-top: 1px solid rgba(242,162,34,0.2);">
+  <div class="cs-behance-letter" style="opacity:0.025">★</div>
+  <div class="cs-wrap">
+
+    <!-- FRAMING -->
+    <div class="fu" style="margin-bottom:64px;">
+      <span class="block-label">REVISIÓN ESTRATÉGICA · 2026</span>
+      <h2 class="block-h">Esto es lo que hice.<br><em>Esto es lo que veo ahora.</em></h2>
+      <div style="max-width:760px; padding:28px 32px; background:rgba(242,162,34,0.06); border:1px solid rgba(242,162,34,0.18); border-radius:16px; margin-top:32px;">
+        <p style="font-size:16px; color:rgba(255,255,255,0.82); line-height:1.75; margin:0;">Durante el proyecto (2020–2022) trabajé con lo que el cliente tenía, en el ritmo que el negocio permitía. Las decisiones estuvieron condicionadas por presupuesto, proveedores, urgencias operativas y la propia velocidad de escalar de 1 a 6 locales. <strong style="color:#fff;">Ahora, con perspectiva y con formación en diseño de producto</strong>, hago el ejercicio que no pude hacer entonces: una auditoría estratégica que separa la identidad real de los ruidos acumulados.</p>
+      </div>
+    </div>
+
+    <!-- ADN VS RUIDO -->
+    <div class="fu" style="margin-bottom:60px;">
+      <h3 style="font-family:'Playfair Display', serif; font-size:26px; font-weight:700; color:var(--white); margin-bottom:8px;">¿Qué es identidad y qué es ruido?</h3>
+      <p class="p" style="margin-bottom:32px;">La primera pregunta de cualquier auditoría no es qué cambiar. Es entender qué pertenece realmente a la marca y qué llegó por inercia, por un proveedor, por un cliente con prisa o por una convención de sector.</p>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div style="border:1px solid rgba(242,162,34,0.3); border-radius:14px; padding:28px; height:100%;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+              <div style="width:10px; height:10px; border-radius:50%; background:#F2A222; box-shadow:0 0 10px #F2A222; flex-shrink:0;"></div>
+              <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#F2A222; font-weight:700;">ADN de marca · Inviolable</span>
+            </div>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">∞</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">El símbolo de infinito</div>
+                  <div style="font-size:12px; color:var(--text-dim);">Aparece en el 100% de los touchpoints. Original, no genérico, polisémico — evoca pizza, música, permanencia.</div>
+                </div>
+              </li>
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">"</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">"Las pizzas del barrio"</div>
+                  <div style="font-size:12px; color:var(--text-dim);">Claim ganado por uso repetido. Une posicionamiento, categoría y diferenciación en cuatro palabras.</div>
+                </div>
+              </li>
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">◉</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">Ámbar + negro cálido + blanco</div>
+                  <div style="font-size:12px; color:var(--text-dim);">Paleta de 3 colores con roles claros. El naranja exclusivo para el símbolo lo convierte en color de firma.</div>
+                </div>
+              </li>
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">✦</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">Tensión artesanía/accesibilidad</div>
+                  <div style="font-size:12px; color:var(--text-dim)">"Finísimo gusto" conviviendo con "7,90€ take-away". No es incoherencia — es la propuesta de valor.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div style="border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:28px; height:100%;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+              <div style="width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.25); flex-shrink:0;"></div>
+              <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); font-weight:700;">Ruido acumulado · Revisable</span>
+            </div>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">El rojo de los uniformes</div>
+                  <div style="font-size:12px; color:var(--text-dim);">No existe en ningún otro touchpoint. Convención genérica de hostelería italiana asumida sin cuestionarse.</div>
+                </div>
+              </li>
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">Las sombrillas ERDINGER</div>
+                  <div style="font-size:12px; color:var(--text-dim);">Dominan el exterior. En el boceto de fachada, el ojo va primero a ERDINGER — Paolo desaparece en su propio espacio.</div>
+                </div>
+              </li>
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">La jerarquía Danny's Jazz sin decidir</div>
+                  <div style="font-size:12px; color:var(--text-dim);">Tres lockups distintos, tres lecturas distintas de quién es la marca principal. El cliente nunca tomó esa decisión.</div>
+                </div>
+              </li>
+              <li style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
+                <div>
+                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">"paulopizza.es" vs "PAOLO"</div>
+                  <div style="font-size:12px; color:var(--text-dim);">Fractura de identidad digital. Dos referencias distintas para la misma entidad. El cliente que busca no siempre encuentra.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 PREGUNTAS DE AUDITORÍA -->
+    <div class="fu">
+      <h3 style="font-family:'Playfair Display', serif; font-size:26px; font-weight:700; color:var(--white); margin-bottom:8px;">Auditoría estratégica: las 10 preguntas</h3>
+      <p class="p" style="margin-bottom:40px;">Este es el ejercicio que haría antes de tocar un solo píxel en cualquier proyecto de identidad. Analizar antes de proponer. Entender antes de cambiar.</p>
+
+      <div class="row g-3">
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">01 · Consistencia visual</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo, el claim y la paleta ámbar-negro-blanco. Tres elementos que sobreviven a todos los contextos, todos los proveedores y todos los años. El resto varía.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">02 · Elementos circunstanciales</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El rojo en uniformes, las sombrillas de proveedor, el verde en el brochure, "Tigelle Burger" en la señalética de take-away. Decisiones tomadas por otros, en otros momentos, sin visión de sistema.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">03 · Qué transmite realmente</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">Alguien con criterio y sin pretensión que quiere que sus vecinos coman bien. Artesanía accesible. Calidad sin ceremonia. El WhatsApp "¿Cómo llevas el día?" es el resumen más honesto de la voz de marca.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">04 · Valores percibidos</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">Calidad de ingredientes creíble, arraigo local genuino, precio honesto. Y un diferencial cultural — Danny's Jazz — que ninguna pizzería de barrio puede fabricar: o lo tienes o no.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">05 · Diferenciación real</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo de infinito frente a los iconos de chef, llamas o rodillos de la competencia. La conexión con Danny's Jazz como dimensión cultural. "Del barrio" como reivindicación de permanencia que las aperturas nuevas no pueden copiar.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">06 · El papel de Danny's Jazz</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">Activo estratégico, no lastre. Aporta contexto cultural y legitimidad de barrio. Pero la relación jerárquica entre las dos marcas nunca se decidió — y eso se nota en cada pieza de co-branding.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">07 · Principios con fuerza real</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo polisémico como icono de marca. "Las pizzas del barrio" como declaración de posicionamiento. Y la tensión artesanía/precio como propuesta de valor — no es inconsistencia, es el diferencial.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">08 · Fuentes de ruido</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El rojo en uniformes. Las sombrillas de proveedor que desplazan la marca. Tres versiones de co-branding sin criterio. El dominio digital que no coincide con el nombre. Cada nueva pieza creada sin referencia.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">09 · Conservar a largo plazo</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo intacto. El claim intacto. La paleta ámbar-negro-blanco. El tono conversacional y cercano. La conexión con Danny's Jazz. La caligráfica como tipografía de campaña.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">10 · Redefinición futura</div>
+            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">La estrategia de color en uniformes. La jerarquía Paolo/Danny's Jazz. El naming digital. La presencia exterior frente a marcas de proveedor. El packaging de take-away como touchpoint prioritario sin desarrollar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INSIGHT CLAVE -->
+    <div class="fu" style="margin-top:60px;">
+      <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(242,162,34,0.25); border-radius:16px; padding:40px 48px; display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap;">
+        <div style="flex-shrink:0;">
+          <div style="width:56px; height:56px; border-radius:50%; background:rgba(242,162,34,0.12); border:1px solid rgba(242,162,34,0.3); display:flex; align-items:center; justify-content:center; font-size:22px;">💡</div>
+        </div>
+        <div style="flex:1; min-width:260px;">
+          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:12px;">El insight de producto</div>
+          <p style="font-size:18px; font-family:'Playfair Display', serif; font-style:italic; color:#fff; line-height:1.65; margin-bottom:16px;">"Paolo no tiene un problema de identidad. Tiene un problema de sistema."</p>
+          <p style="font-size:14px; color:var(--text); line-height:1.75; margin:0;">Cuando un sistema visual tiene que sobrevivir a 6 locales, múltiples proveedores y 2 años sin referencia centralizada, la inconsistencia no es un fallo de diseño — es una consecuencia arquitectónica. Este es exactamente el tipo de problema que resuelve el diseño de producto: no inventar identidades nuevas, sino construir sistemas que escalen sin romperse.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- APRENDIZAJES -->
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+  <div class="cs-behance-letter">L</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">LEARNINGS · Aprendizajes</span>
+      <h2 class="block-h">
+        Lo que este primer proyecto<br><em>cambió en mi forma de diseñar</em>
+      </h2>
+    </div>
+    <p class="p fu"><strong>La auditoría antes que el diseño.</strong> El impulso natural es ir directo a proponer. Este proyecto me enseñó que la auditoría rigurosa revela que muchas de las mejores soluciones ya existen — solo necesitan ser reconocidas y documentadas. El diseñador que sabe cuándo no rediseñar es más valioso que el que siempre propone algo nuevo.</p>
+    <p class="p fu"><strong>Un sistema debe sobrevivir sin su autor.</strong> El test real de un design system no es si funciona el día que lo entregas — es si funciona seis meses después, ejecutado por alguien que no estaba en la sala cuando se creó. Diseñé pensando en ese momento desde el principio.</p>
+    <p class="p fu"><strong>El símbolo polisémico como activo estratégico.</strong> El infinito de Paolo funciona porque puede significar pizza, música, permanencia y artesanía al mismo tiempo. Un logo que se puede explicar desde múltiples ángulos es un logo con longevidad. Aprendí a identificar y proteger ese tipo de activo.</p>
+    <p class="p fu"><strong>Diseñar y desarrollar te hace mejor diseñadora.</strong> Haber construido la web — no solo diseñado los mockups — cambió cómo pienso los componentes, los estados, los márgenes y las restricciones. Entender lo que viene después del handoff es ventaja competitiva.</p>
+    <p class="p fu"><strong>Los datos de negocio son parte del brief.</strong> Analizar el rendimiento de los platos en delivery, ver qué contenido tenía mayor engagement en Metricool y proponer cambios concretos al cliente basándome en esos datos fue la parte más valiosa del proyecto. El diseño sin contexto de negocio es decoración.</p>
+  </div>
+</section>
+
+<footer class="cs-footer">
+  <div class="cs-wrap">
+    <div class="footer-label es">Siguiente caso</div>
+    <div class="footer-label en">Next case</div>
+    <h2 class="es">¿Vemos otro proyecto?</h2>
+    <h2 class="en">Want to see another project?</h2>
+    <div class="footer-actions">
+      <a href="caso-3.html" class="btn btn-secondary es">← Caso 03</a>
+      <a href="caso-3.html" class="btn btn-secondary en">← Case 03</a>
+      <a href="index.html" class="btn btn-secondary es">Volver</a>
+      <a href="index.html" class="btn btn-secondary en">Back</a>
+      <a href="caso-5.html" class="btn btn-primary es">Caso 05 →</a>
+      <a href="caso-5.html" class="btn btn-primary en">Case 05 →</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  // Lang toggle (bilingual support)
+  const stored = localStorage.getItem('portfolio-lang');
+  if (stored === 'en') {
+    document.documentElement.classList.add('lang-en');
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = 'ES';
+  }
+
+  function toggleLang() {
+    const html = document.documentElement;
+    const btn = document.getElementById('langToggle');
+    const isEn = html.classList.toggle('lang-en');
+    btn.textContent = isEn ? 'ES' : 'EN';
+    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+  }
+</script>
+</body>
+</html>

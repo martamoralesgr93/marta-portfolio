@@ -340,11 +340,11 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('lang') || 'es';
+let currentLang = localStorage.getItem('portfolio-lang') || 'es';
 
 function setLanguage(lang) {
   currentLang = lang;
-  localStorage.setItem('lang', lang);
+  localStorage.setItem('portfolio-lang', lang);
   document.documentElement.lang = lang;
   
   document.querySelectorAll('.lang-toggle').forEach(btn => {

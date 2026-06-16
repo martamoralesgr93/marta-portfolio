@@ -448,17 +448,19 @@ nav {
   transition: border-color 0.38s, box-shadow 0.38s;
 }
 .sc-card:hover {
-  border-color: rgba(167,139,250,0.18);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 60px rgba(124,58,237,0.07);
+  border-color: rgba(var(--c-theme-rgb), 0.18);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 60px rgba(var(--c-theme-rgb), 0.07);
 }
 .sc-card:nth-of-type(1) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
-.sc-card:nth-of-type(2) { --c-theme: #a78bfa; --c-theme-rgb: 167, 139, 250; }
-.sc-card:nth-of-type(3) { --c-theme: #3b82f6; --c-theme-rgb: 59, 130, 246; }
+.sc-card:nth-of-type(2) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
+.sc-card:nth-of-type(3) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
+.sc-card:nth-of-type(4) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
+.sc-card:nth-of-type(5) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
 
-/* Top shimmer line — purple gradient */
+/* Top shimmer line — dynamic gradient */
 .sc-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent 5%, rgba(167,139,250,0.40) 45%, rgba(249,115,22,0.18) 72%, transparent 95%);
+  background: linear-gradient(90deg, transparent 5%, rgba(var(--c-theme-rgb), 0.40) 45%, rgba(var(--c-theme-rgb), 0.18) 72%, transparent 95%);
   opacity: 0; transition: opacity 0.42s; z-index: 10;
 }
 .sc-card:hover::before { opacity: 1; }
@@ -936,7 +938,6 @@ nav {
   transition: background 0.2s, border-color 0.2s;
 }
 .hamburger:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.36); }
-
 .mobile-menu {
   display: none; position: fixed; inset: 0; z-index: 500;
   background: rgba(0,0,0,0.97); backdrop-filter: blur(28px);
@@ -2074,6 +2075,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <p class="en">Over 4 years turning business problems into product decisions with measurable impact. I've worked as a <strong>product designer with real ownership</strong> — not executing briefs, but building the diagnosis from scratch, prioritising by impact, and defending proposals directly to leadership.</p>
         <p class="es">Mi forma de trabajar conecta analítica de comportamiento, razonamiento de negocio y diseño de sistemas escalables. No diseño pantallas — resuelvo problemas en la intersección entre usuario, negocio y dato.</p>
         <p class="en">My approach connects behaviour analytics, business reasoning and scalable system design. I don't design screens — I solve problems at the intersection of user, business, and data.</p>
+        <p class="es">Mi trayectoria combina la investigación profunda de fricción operativa en sistemas complejos B2B (como la estrategia <em>Build vs. Buy</em> para operaciones de IT en We Are Actions) con la creación y escalado de sistemas de diseño 360° desde la base (llevando a Paolo de 1 a 6 locales). Esta base híbrida entre diseño de marca y análisis operativo me permite hoy abordar problemas complejos de conversión web y diseño de sistemas con un fuerte enfoque técnico y de negocio.</p>
+        <p class="en">My trajectory combines deep operational friction research in complex B2B systems (like the <em>Build vs. Buy</em> strategy for IT Operations at We Are Actions) with building and scaling 360° brand design systems from scratch (scaling Paolo from 1 to 6 locations). This hybrid background between brand identity and operational analysis allows me today to tackle complex web conversion and design system challenges with a strong business and technical focus.</p>
       </div>
 
       <a href="#work" class="sobre-cta">
@@ -2175,8 +2178,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <div class="sec-title en">Product Cases<span class="c-purple">.</span></div>
       </div>
       <div class="work-meta">
-        <span class="es">3 proyectos de impacto · 2 sectores<br>Canal directo + Plataforma EdTech</span>
-        <span class="en">3 impact projects · 2 industries<br>Direct booking channel + EdTech platform</span>
+        <span class="es">5 proyectos · 4 sectores · Turismo, EdTech, Branding &amp; IT Ops<br>Canal directo · Plataforma académica · Ecosistema 360° · Herramienta interna</span>
+        <span class="en">5 projects · 4 industries · Tourism, EdTech, Branding &amp; IT Ops<br>Direct booking · Academic platform · 360° ecosystem · Internal tooling</span>
       </div>
     </div>
 
@@ -2208,82 +2211,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <!-- Dashboard: Conversion uplift analytics -->
-        <div class="dash-widget">
-          <div class="dash-grid"></div>
-          <div class="dash-topbar">
-            <span class="dash-dot" style="background:var(--orange)"></span>
-            <span class="dash-dot" style="background:rgba(255,255,255,0.12)"></span>
-            <span class="dash-label">Conversion Analytics · ILUNION Ofertas</span>
-            <span class="dash-live"><span class="dash-live-dot"></span>LIVE</span>
-          </div>
-
-          <!-- Sparkline chart -->
-          <div class="dash-spark">
-            <svg viewBox="0 0 220 60" preserveAspectRatio="none" style="height:60px">
-              <defs>
-                <linearGradient id="og1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.3"></stop>
-                  <stop offset="100%" stop-color="#f97316" stop-opacity="0"></stop>
-                </linearGradient>
-                <linearGradient id="og2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#34d399" stop-opacity="0.25"></stop>
-                  <stop offset="100%" stop-color="#34d399" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-              <!-- Before line (flat/low) -->
-              <polyline class="dash-spark-area" points="0,50 40,52 80,48 120,50 160,51 220,49" fill="url(#og1)" stroke="none"></polyline>
-              <polyline class="dash-spark-line" points="0,50 40,52 80,48 120,50 160,51 220,49" stroke="#f97316" style="opacity:0.5"></polyline>
-              <!-- After line (rising) -->
-              <polyline class="dash-spark-area" points="0,48 40,44 80,38 120,30 160,20 220,10" fill="url(#og2)" stroke="none"></polyline>
-              <polyline class="dash-spark-line" points="0,48 40,44 80,38 120,30 160,20 220,10" stroke="#34d399"></polyline>
-              <!-- End dot -->
-              <circle class="dash-spark-dot" cx="220" cy="10" r="3" fill="#34d399"></circle>
-              <circle class="dash-spark-dot" cx="220" cy="10" r="6" fill="#34d399" style="opacity:0.2"></circle>
-            </svg>
-          </div>
-
-          <!-- Metric bars -->
-          <div class="dash-bars" style="margin-bottom:14px">
-            <div class="dash-bar-row">
-              <span class="dash-bar-lbl" style="color:rgba(255,255,255,0.20)">Antes</span>
-              <div class="dash-bar-track">
-                <div class="dash-bar-fill" style="width:34%; background:rgba(255,255,255,0.12)"></div>
-              </div>
-              <span class="dash-bar-val" style="color:rgba(255,255,255,0.22)">3.36%</span>
-            </div>
-            <div class="dash-bar-row">
-              <span class="dash-bar-lbl" style="color:#f97316">Después</span>
-              <div class="dash-bar-track">
-                <div class="dash-bar-fill" style="width:100%; background: linear-gradient(90deg, #f97316, #fb923c)"></div>
-              </div>
-              <span class="dash-bar-val" style="color:#f97316; font-weight:700">6.5%</span>
-            </div>
-            <div class="dash-bar-row">
-              <span class="dash-bar-lbl">Loyalty</span>
-              <div class="dash-bar-track">
-                <div class="dash-bar-fill" style="width:55%; background:rgba(249,115,22,0.22)"></div>
-              </div>
-              <span class="dash-bar-val">&gt;50%</span>
-            </div>
-          </div>
-
-          <!-- KPIs -->
-          <div class="dash-kpis">
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:#f97316">6.5%</div>
-              <div class="dash-kpi-lbl">Conversión funnel</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:#34d399">13%</div>
-              <div class="dash-kpi-lbl">Venta directa</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:rgba(255,255,255,0.7)">&gt;50%</div>
-              <div class="dash-kpi-lbl">Club ÚNICOS</div>
-            </div>
-          </div>
-        </div>
+        <img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.png" class="sc-img" alt="ILUNION Hotels Ofertas">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2324,78 +2252,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <!-- Dashboard: Booking Engine funnel -->
-        <div class="dash-widget">
-          <div class="dash-grid"></div>
-          <div class="dash-topbar">
-            <span class="dash-dot" style="background:var(--purple)"></span>
-            <span class="dash-dot" style="background:rgba(255,255,255,0.12)"></span>
-            <span class="dash-label">Session Funnel · Motor de Reservas</span>
-            <span class="dash-live"><span class="dash-live-dot"></span>LIVE</span>
-          </div>
-
-          <!-- Funnel -->
-          <div class="dash-funnel" style="margin-bottom:12px">
-            <div class="dash-funnel-row">
-              <span class="dash-funnel-lbl">Landing</span>
-              <div class="dash-funnel-track">
-                <div class="dash-funnel-fill" style="width:100%; background:linear-gradient(90deg,rgba(167,139,250,0.6),rgba(167,139,250,0.3))">
-                  <span class="dash-funnel-pct">100%</span>
-                </div>
-              </div>
-            </div>
-            <div class="dash-funnel-row">
-              <span class="dash-funnel-lbl" style="color:var(--purple)">Motor ↑</span>
-              <div class="dash-funnel-track">
-                <div class="dash-funnel-fill" style="width:84%; background:linear-gradient(90deg,rgba(167,139,250,0.75),rgba(167,139,250,0.4))">
-                  <span class="dash-funnel-pct">84%</span>
-                </div>
-              </div>
-            </div>
-            <div class="dash-funnel-row">
-              <span class="dash-funnel-lbl">Búsqueda</span>
-              <div class="dash-funnel-track">
-                <div class="dash-funnel-fill" style="width:67%; background:linear-gradient(90deg,rgba(167,139,250,0.55),rgba(167,139,250,0.25))">
-                  <span class="dash-funnel-pct">67%</span>
-                </div>
-              </div>
-            </div>
-            <div class="dash-funnel-row">
-              <span class="dash-funnel-lbl">Reserva</span>
-              <div class="dash-funnel-track">
-                <div class="dash-funnel-fill" style="width:45%; background:linear-gradient(90deg,rgba(167,139,250,0.45),rgba(167,139,250,0.18))">
-                  <span class="dash-funnel-pct">45%</span>
-                </div>
-              </div>
-            </div>
-            <div class="dash-funnel-row">
-              <span class="dash-funnel-lbl">Confirma</span>
-              <div class="dash-funnel-track">
-                <div class="dash-funnel-fill" style="width:32%; background:linear-gradient(90deg,rgba(167,139,250,0.35),rgba(167,139,250,0.12))">
-                  <span class="dash-funnel-pct">32%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="dash-divider"></div>
-
-          <!-- KPIs -->
-          <div class="dash-kpis">
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:var(--purple)">↑ ATF</div>
-              <div class="dash-kpi-lbl">Motor above fold</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:#34d399">0</div>
-              <div class="dash-kpi-lbl">Fallos móvil</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:rgba(255,255,255,0.7)">2</div>
-              <div class="dash-kpi-lbl">Canales validados</div>
-            </div>
-          </div>
-        </div>
+        <img src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.png" class="sc-img" alt="ILUNION Hotels Motor de Reservas">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2447,79 +2304,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <!-- Dashboard: Accessibility & Design System audit -->
-        <div class="dash-widget">
-          <div class="dash-grid"></div>
-          <div class="dash-topbar">
-            <span class="dash-dot" style="background:var(--blue)"></span>
-            <span class="dash-dot" style="background:rgba(255,255,255,0.12)"></span>
-            <span class="dash-label">Accessibility Audit · CEF EdTech</span>
-            <span class="dash-live"><span class="dash-live-dot"></span>LIVE</span>
-          </div>
-
-          <!-- Ring + info -->
-          <div class="dash-ring-row">
-            <div class="dash-ring">
-              <svg viewBox="0 0 68 68">
-                <circle class="dash-ring-track" cx="34" cy="34" r="29"></circle>
-                <circle class="dash-ring-fill" cx="34" cy="34" r="29" stroke="var(--blue)"></circle>
-              </svg>
-              <div class="dash-ring-inner">
-                <span class="dash-ring-pct" style="color:var(--blue)">AA</span>
-                <span class="dash-ring-sub">100%</span>
-              </div>
-            </div>
-            <div class="dash-ring-info">
-              <div class="dash-ring-title" style="color:var(--blue)">WCAG 2.1 Pass</div>
-              <div class="dash-ring-desc">Plataforma académica auditada y conforme. 47 componentes revisados.</div>
-            </div>
-          </div>
-
-          <!-- Audit rows -->
-          <div class="dash-audit">
-            <div class="dash-audit-row">
-              <div class="dash-audit-badge" style="background:rgba(96,165,250,0.15); color:var(--blue)">◈</div>
-              <span class="dash-audit-name">Contraste de color</span>
-              <div class="dash-audit-track"><div class="dash-audit-fill" style="width:100%; background:var(--blue)"></div></div>
-              <span class="dash-audit-ok">PASS</span>
-            </div>
-            <div class="dash-audit-row">
-              <div class="dash-audit-badge" style="background:rgba(96,165,250,0.15); color:var(--blue)">⌨</div>
-              <span class="dash-audit-name">Navegación teclado</span>
-              <div class="dash-audit-track"><div class="dash-audit-fill" style="width:100%; background:var(--blue)"></div></div>
-              <span class="dash-audit-ok">PASS</span>
-            </div>
-            <div class="dash-audit-row">
-              <div class="dash-audit-badge" style="background:rgba(96,165,250,0.15); color:var(--blue)">◎</div>
-              <span class="dash-audit-name">Focus visible</span>
-              <div class="dash-audit-track"><div class="dash-audit-fill" style="width:100%; background:var(--blue)"></div></div>
-              <span class="dash-audit-ok">PASS</span>
-            </div>
-            <div class="dash-audit-row">
-              <div class="dash-audit-badge" style="background:rgba(96,165,250,0.15); color:var(--blue)">⊕</div>
-              <span class="dash-audit-name">Touch targets</span>
-              <div class="dash-audit-track"><div class="dash-audit-fill" style="width:100%; background:var(--blue)"></div></div>
-              <span class="dash-audit-ok">PASS</span>
-            </div>
-          </div>
-
-          <div class="dash-divider"></div>
-
-          <div class="dash-kpis">
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:var(--blue)">47</div>
-              <div class="dash-kpi-lbl">Componentes</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:#34d399">1</div>
-              <div class="dash-kpi-lbl">Design System</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:rgba(255,255,255,0.7)">0</div>
-              <div class="dash-kpi-lbl">Solo-ratón</div>
-            </div>
-          </div>
-        </div>
+        <img src="assets/CEF/CALENDARIO%20(WEB)/calendario.png" class="sc-img" alt="CEF Calendario Académico">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2538,6 +2323,164 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <a href="caso-3.html" class="sc-corner" style="color: var(--blue);" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
+
+    <!-- BLOCK: BRANDING & ECOSISTEMA DIGITAL -->
+    <div class="block-divider">
+      <div class="block-label">
+        <span class="block-label-text">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+          Branding &amp; Ecosistema Digital · <span style="opacity:0.45; font-weight:400;">We Are Actions · 2020–2022</span>
+        </span>
+        <div class="block-label-line"></div>
+      </div>
+    </div>
+
+    <!-- CASO 4: PAOLO BY DANNY'S JAZZ — Brand System & Digital 360° -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num" style="color: #F2A222;">04</div>
+          <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">Paolo by Danny's Jazz</span>
+        </div>
+        <h3 class="sc-title es" style="color:#F2A222">De 0 a sistema: <em style="color:rgba(255,255,255,0.65)">brand identity &amp; ecosistema digital completo</em></h3>
+        <h3 class="sc-title en" style="color:#F2A222">From 0 to system: <em style="color:rgba(255,255,255,0.65)">brand identity &amp; full digital ecosystem</em></h3>
+        <p class="sc-desc es">Primer proyecto como diseñadora en consultoría. Construí desde cero la identidad visual, el design system y el ecosistema digital de una cadena artesana de pizzerías en Madrid — que pasó de 1 a 6 locales durante el proyecto. Diseño físico (señalética, uniformes, carta) y digital (web WordPress, RRSS, delivery, Google My Business) con ownership completo durante 2 años. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · 2 años de ownership end-to-end</em></p>
+        <p class="sc-desc en">First project as a designer in consultancy. Built from scratch the visual identity, design system and digital ecosystem of an artisan pizza chain in Madrid — which scaled from 1 to 6 locations during the project. Physical design (signage, uniforms, menu) and digital (WordPress web, social media, delivery, Google My Business) with full ownership over 2 years. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · 2 years end-to-end ownership</em></p>
+        <div class="sc-cta-row">
+          <a href="caso-4.html" class="sc-cta es" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
+          <a href="caso-4.html" class="sc-cta en" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
+        </div>
+      </div>
+      <div class="sc-visual" aria-hidden="true">
+        <img src="projects/04-paolo/assets/01-signage.jpg" class="sc-img" alt="Paolo by Danny's Jazz">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval" style="color:#F2A222">×6</div>
+          <div class="sc-mname es">Locales durante el proyecto</div>
+          <div class="sc-mname en">Locations during project</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">2 años</div>
+          <div class="sc-mname es">Ownership end-to-end</div>
+          <div class="sc-mname en">End-to-end ownership</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">1</div>
+          <div class="sc-mname es">Design System construido desde 0</div>
+          <div class="sc-mname en">Design System built from scratch</div>
+        </div>
+      </div>
+      <a href="caso-4.html" class="sc-corner" style="color:#F2A222;" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
+
+    <!-- CASO 5: WE ARE ACTIONS IT OPS — Build vs. Buy -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num" style="color:#06b6d4;">05</div>
+          <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">We Are Actions · Dept. IT</span>
+        </div>
+        <h3 class="sc-title es" style="color:#06b6d4">Cuando comprar no resuelve: <em style="color:rgba(255,255,255,0.65)">diagnóstico de fricción operativa IT</em></h3>
+        <h3 class="sc-title en" style="color:#06b6d4">When buying doesn't solve it: <em style="color:rgba(255,255,255,0.65)">IT operational friction diagnosis</em></h3>
+        <p class="sc-desc es">Integrada en el equipo de IT de We Are Actions, identifiqué que Oracle — la herramienta corporativa de gestión de incidencias — generaba más fricción de la que resolvía. Analicé 4 patrones de fallo críticos, propuse una decisión estratégica Build vs. Buy y diseñé conceptualmente una plataforma interna de operaciones con 4 módulos. El proyecto no llegó a producción — fue el detonante directo de mi bootcamp de Product Design. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: discovery contextual · propuesta conceptual · estrategia de producto</em></p>
+        <p class="sc-desc en">Embedded in We Are Actions' IT team, I identified that Oracle — the corporate incident management tool — was generating more friction than it resolved. I analysed 4 critical failure patterns, proposed a Build vs. Buy strategic decision and conceptually designed an internal operations platform with 4 modules. The project didn't reach production — it was the direct trigger for my Product Design bootcamp. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: contextual discovery · conceptual proposal · product strategy</em></p>
+        <div class="sc-cta-row">
+          <a href="caso-5.html" class="sc-cta es" style="border-color:rgba(6,182,212,0.35); color:#06b6d4">Case Study</a>
+          <a href="caso-5.html" class="sc-cta en" style="border-color:rgba(6,182,212,0.35); color:#06b6d4">Case Study</a>
+        </div>
+      </div>
+      <div class="sc-visual" aria-hidden="true">
+        <!-- Dashboard: Build vs Buy / fricción IT -->
+        <div class="dash-widget">
+          <div class="dash-grid"></div>
+          <div class="dash-topbar">
+            <span class="dash-dot" style="background:#06b6d4"></span>
+            <span class="dash-dot" style="background:rgba(255,255,255,0.12)"></span>
+            <span class="dash-label">IT Ops · Build vs. Buy · 2022–2024</span>
+            <span class="dash-live" style="color:#06b6d4; border-color:rgba(6,182,212,0.3)"><span class="dash-live-dot" style="background:#06b6d4; box-shadow:0 0 6px #06b6d4;"></span>Research</span>
+          </div>
+
+          <!-- Sparkline: curva de fricción acumulada -->
+          <div class="dash-spark">
+            <svg viewBox="0 0 220 60" preserveAspectRatio="none" style="height:60px">
+              <defs>
+                <linearGradient id="it1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.22"></stop>
+                  <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <!-- Curva de fricción creciente: va subiendo (problema creciente) -->
+              <polyline class="dash-spark-area" points="0,54 40,50 80,43 120,34 160,22 200,8 220,4" fill="url(#it1)" stroke="none"></polyline>
+              <polyline class="dash-spark-line" points="0,54 40,50 80,43 120,34 160,22 200,8 220,4" stroke="#06b6d4"></polyline>
+              <circle class="dash-spark-dot" cx="220" cy="4" r="3" fill="#ef4444"></circle>
+              <circle class="dash-spark-dot" cx="220" cy="4" r="6" fill="#ef4444" style="opacity:0.2"></circle>
+              <circle cx="0" cy="54" r="2.5" fill="rgba(6,182,212,0.4)"></circle>
+            </svg>
+          </div>
+
+          <!-- Metric bars: hallazgos del discovery -->
+          <div class="dash-bars" style="margin-bottom:14px">
+            <div class="dash-bar-row">
+              <span class="dash-bar-lbl" style="color:rgba(255,255,255,0.4)">Usuarios plataforma</span>
+              <div class="dash-bar-track">
+                <div class="dash-bar-fill" style="width:100%; background:rgba(6,182,212,0.18)"></div>
+              </div>
+              <span class="dash-bar-val" style="color:rgba(255,255,255,0.4)">+50</span>
+            </div>
+            <div class="dash-bar-row">
+              <span class="dash-bar-lbl" style="color:#06b6d4">Patrones críticos</span>
+              <div class="dash-bar-track">
+                <div class="dash-bar-fill" style="width:80%; background: linear-gradient(90deg, #0891b2, #06b6d4, #22d3ee)"></div>
+              </div>
+              <span class="dash-bar-val" style="color:#06b6d4; font-weight:700">4</span>
+            </div>
+            <div class="dash-bar-row">
+              <span class="dash-bar-lbl" style="color:rgba(255,255,255,0.5)">Módulos propuestos</span>
+              <div class="dash-bar-track">
+                <div class="dash-bar-fill" style="width:80%; background:rgba(6,182,212,0.22)"></div>
+              </div>
+              <span class="dash-bar-val" style="color:rgba(255,255,255,0.5)">4</span>
+            </div>
+          </div>
+
+          <div class="dash-divider"></div>
+
+          <div class="dash-kpis">
+            <div class="dash-kpi">
+              <div class="dash-kpi-val" style="color:#06b6d4">Build</div>
+              <div class="dash-kpi-lbl">Decisión estratégica</div>
+            </div>
+            <div class="dash-kpi">
+              <div class="dash-kpi-val" style="color:#34d399">4</div>
+              <div class="dash-kpi-lbl">Módulos MVP</div>
+            </div>
+            <div class="dash-kpi">
+              <div class="dash-kpi-val" style="color:rgba(255,255,255,0.65)">IT Ops</div>
+              <div class="dash-kpi-lbl">Sector</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval" style="color:#06b6d4">4</div>
+          <div class="sc-mname es">Patrones de fallo identificados</div>
+          <div class="sc-mname en">Failure patterns identified</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">Build</div>
+          <div class="sc-mname es">Decisión estratégica vs. Buy</div>
+          <div class="sc-mname en">Strategic decision vs. Buy</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">4</div>
+          <div class="sc-mname es">Módulos en propuesta conceptual</div>
+          <div class="sc-mname en">Modules in conceptual proposal</div>
+        </div>
+      </div>
+      <a href="caso-5.html" class="sc-corner" style="color:#06b6d4;" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
   </div>
@@ -2606,12 +2549,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="about-right">
         <div class="about-stats">
           <div>
-            <div class="stat-value">3<em>+</em></div>
+            <div class="stat-value">5</div>
             <div class="stat-label"><span class="es">Casos de estudio estratégicos</span><span class="en">Strategic case studies</span></div>
           </div>
           <div>
-            <div class="stat-value">2<em>×</em></div>
-            <div class="stat-label"><span class="es">Sectores: hostelería + EdTech</span><span class="en">Industries: hospitality + EdTech</span></div>
+            <div class="stat-value">4</div>
+            <div class="stat-label"><span class="es">Sectores: Turismo, EdTech, Branding e IT Ops</span><span class="en">Industries: Tourism, EdTech, Branding &amp; IT Ops</span></div>
           </div>
         </div>
 
@@ -2629,10 +2572,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
           In every project I've been responsible for <strong>defining the business problem</strong>, not just solving it. Real analytics diagnosis, impact-prioritised hypotheses, argued proposals to leadership, and post-launch tracking with real data.
         </p>
         <p class="about-narrative es" style="margin-top: -12px;">
-          He trabajado con restricciones reales: stacks de producción (AEM), limitaciones técnicas, timelines de dev y decisiones de negocio que no dependen solo de diseño. Eso me hace mejor diseñadora de producto, no peor.
+          He trabajado con restricciones reales: stacks de producción (AEM), limitaciones técnicas, timelines de dev, ecosistemas de marca en expansión (Paolo) y fricciones operativas en herramientas heredadas (Oracle ERP en We Are Actions). Eso me hace mejor diseñadora de producto, no peor.
         </p>
         <p class="about-narrative en" style="margin-top: -12px;">
-          I've worked with real constraints: production stacks (AEM), technical limitations, dev timelines, and business decisions that don't depend on design alone. That makes me a better product designer, not a worse one.
+          I've worked with real constraints: production stacks (AEM), technical limitations, dev timelines, expanding brand systems (Paolo) and operational friction in legacy enterprise tools (Oracle ERP at We Are Actions). That makes me a better product designer, not a worse one.
+        </p>
+        <p class="about-narrative es" style="margin-top: -12px;">
+          Mi evolución profesional partió de la consultoría estratégica en We Are Actions. Allí aprendí a analizar la eficiencia operativa en departamentos de IT y a diseñar sistemas visuales de marca coherentes que acompañan al crecimiento físico del negocio. Esta visión de 360° me ayuda a diseñar productos digitales que no solo convierten bien, sino que se integran perfectamente en la estructura técnica e identidad de la empresa.
+        </p>
+        <p class="about-narrative en" style="margin-top: -12px;">
+          My professional evolution began with strategic consulting at We Are Actions. There, I learned to analyze operational efficiency in IT departments and design cohesive brand systems that support physical business expansion. This 360° perspective helps me design digital products that not only convert well, but also integrate seamlessly into the company's technical and brand infrastructure.
         </p>
 
         <a href="CV_Marta_Morales_2026.html" class="btn-primary" style="display: inline-flex;">
