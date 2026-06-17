@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paolo's Pizzería · Pizza artesana en Madrid · 5 restaurantes</title>
+<meta name="description" content="Paolo's Pizzería. Cinco restaurantes familiares en Madrid. Masa artesana, mozzarella de calidad, recetas de la casa." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS — 2 tipografías:
+   · Fraunces (display)  → titulares + acentos italic
+   · Inter (sans)        → body, UI, nav
+   ========================================================= */
+:root{
+  --naranja:#F2A222;
+  --naranja-2:#F2A222;
+  --negro:#1A1918;
+  --carbon:#0D0C0B;
+  --crema:#F5EDD8;
+  --crema-2:#F5EDD8;
+  --blanco:#FFFFFF;
+  --rojo:#C0272D;
+  --verde:#506833;
+  --gris:#665B53;
+  --gris-cl:#A1968D;
+  --borde:rgba(26,25,24,.10);
+
+  --display:"Playfair Display", Georgia, serif;
+  --sans:"Inter", system-ui, -apple-system, sans-serif;
+
+  --r:8px;
+  --r-lg:14px;
+  --shadow-sm:0 4px 12px rgba(42,36,33,.04);
+  --shadow:0 12px 30px rgba(42,36,33,.08);
+  --shadow-lg:0 24px 60px rgba(42,36,33,.12);
+
+  --max:1240px;
+  --gutter:clamp(20px, 4vw, 36px);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  color:var(--negro);
+  background:var(--crema-2);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:3px;border-radius:4px}
+
+/* =========================================================
+   TYPOGRAPHY SYSTEM
+   ========================================================= */
+.h-display{
+  font-family:var(--display);
+  font-weight:800;
+  font-style:italic;
+  line-height:1.05;
+  letter-spacing:-.01em;
+}
+.h-display em{
+  font-style:italic;font-weight:900;
+  color:var(--naranja);
+}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:13px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--naranja-2);
+  display:inline-block;margin-bottom:14px;
+}
+.lead{
+  font-family:var(--display);
+  font-weight:400;font-style:italic;
+  font-size:clamp(18px, 1.4vw, 22px);
+  line-height:1.5;
+  color:var(--gris);
+}
+
+h1{font-size:clamp(40px, 7vw, 88px)}
+h2{font-size:clamp(34px, 4.5vw, 64px)}
+h3{font-size:clamp(22px, 1.6vw, 28px)}
+h4{font-size:18px}
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(70px, 9vw, 120px)}
+.section-head{max-width:760px;margin-bottom:clamp(40px, 5vw, 64px)}
+.section-head.center{margin-inline:auto;text-align:center}
+
+/* =========================================================
+   SKIP LINK
+   ========================================================= */
+.skip{
+  position:absolute;left:-9999px;top:0;background:var(--negro);color:var(--crema);
+  padding:14px 20px;z-index:9999;font-weight:600;
+}
+.skip:focus{left:10px;top:10px}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;
+  padding:14px var(--gutter);
+  background:rgba(251,246,232,.92);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;
+  transition:padding .25s, background .25s, border-color .25s;
+}
+.nav.scrolled{
+  padding:10px var(--gutter);
+  background:rgba(251,246,232,.98);
+  border-bottom-color:var(--borde);
+  box-shadow:var(--shadow-sm);
+}
+.brand{display:flex;align-items:center;flex-shrink:0;height:48px}
+.brand img{height:100%;width:auto;object-fit:contain}
+.nav.scrolled .brand{height:38px}
+
+.nav-links{
+  display:flex;gap:28px;align-items:center;
+  position:absolute;left:50%;transform:translateX(-50%);
+}
+.nav-links a{
+  font-size:14px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;
+  color:var(--negro);
+  padding:8px 0;
+  border-bottom:2px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.nav-links a:hover, .nav-links a.active{border-bottom-color:var(--naranja);color:var(--naranja-2)}
+
+.nav-right{display:flex;align-items:center;gap:14px}
+.tel-nav{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:600;font-size:15px;
+}
+.tel-nav svg{width:18px;height:18px;color:var(--naranja-2)}
+.cta-nav{
+  background:var(--negro);color:var(--crema);
+  padding:12px 22px;border-radius:40px;
+  font-weight:600;font-size:14px;
+  transition:.2s;
+}
+.cta-nav:hover{background:var(--naranja);color:var(--negro)}
+
+.burger{
+  display:none;width:42px;height:42px;
+  align-items:center;justify-content:center;
+  border-radius:50%;background:transparent;
+}
+.burger span{
+  position:relative;display:block;width:22px;height:2px;
+  background:var(--negro);border-radius:2px;
+  transition:.3s;
+}
+.burger span::before,.burger span::after{
+  content:"";position:absolute;left:0;width:100%;height:2px;
+  background:var(--negro);border-radius:2px;transition:.3s;
+}
+.burger span::before{top:-7px}
+.burger span::after{top:7px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;align-items:center;
+  padding:120px var(--gutter) 80px;
+  overflow:hidden;
+  color:var(--crema-2);
+}
+.hero video, .hero .hero-fallback{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:0;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg, rgba(13,12,11,.45) 0%, rgba(13,12,11,.55) 50%, rgba(13,12,11,.85) 100%);
+}
+.hero-inner{position:relative;z-index:2;max-width:900px;margin-inline:auto;text-align:center}
+
+.hero-logo{
+  margin: 0 auto 8px;
+  max-width: 280px;
+  width: 100%;
+}
+.hero-logo img{
+  width:100%;height:auto;object-fit:contain;
+  filter: brightness(0) invert(1);
+}
+
+.hero h1{
+  font-family:var(--display);
+  font-weight:600;letter-spacing:-.02em;line-height:1.02;
+  color:var(--crema-2);
+  margin-bottom:22px;
+  text-shadow:0 2px 30px rgba(0,0,0,.4);
+}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--naranja);display:block}
+.hero .sub{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(18px, 1.6vw, 22px);
+  color:var(--crema-2);opacity:.95;
+  max-width:620px;margin:0 auto 22px;line-height:1.5;
+}
+.hero .badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(242,162,34,.18);border:1px solid rgba(242,162,34,.55);
+  color:var(--crema-2);padding:8px 16px;border-radius:30px;
+  font-size:13px;font-weight:500;letter-spacing:.4px;
+  margin-bottom:32px;
+}
+.hero .badge strong{color:var(--naranja);font-weight:700}
+
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:6px;
+  font-family:var(--sans);font-weight:700;font-size:15px;
+  min-height:52px;
+  transition:transform .2s, background .2s, color .2s, box-shadow .2s;
+  border:2px solid transparent;
+  white-space:nowrap;
+}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--naranja);color:var(--negro)}
+.btn-primary:hover{background:var(--crema-2);box-shadow:0 12px 28px rgba(242,162,34,.4)}
+.btn-ghost{background:rgba(255,255,255,.10);color:var(--crema-2);border-color:var(--crema-2);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:var(--crema-2);color:var(--negro)}
+.btn-dark{background:var(--negro);color:var(--crema-2)}
+.btn-dark:hover{background:var(--naranja);color:var(--negro)}
+
+
+
+/* =========================================================
+   HISTORIA
+   ========================================================= */
+.historia{background:var(--crema)}
+.historia .grid{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px, 6vw, 80px);
+  align-items:center;
+}
+.historia-text p{margin-bottom:18px;font-size:17px;color:var(--gris);line-height:1.7}
+.historia-text blockquote{
+  font-family:var(--display);font-style:italic;
+  font-size:clamp(20px, 1.8vw, 26px);
+  line-height:1.4;color:var(--negro);
+  border-left:3px solid var(--naranja);padding:6px 0 6px 24px;
+  margin:28px 0;
+}
+.historia-img{
+  position:relative;height:560px;border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.historia-img img{width:100%;height:100%;object-fit:cover}
+.sello{
+  position:absolute;top:24px;right:24px;
+  background:var(--naranja);color:var(--negro);
+  padding:18px 22px;border-radius:var(--r);
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+.sello .yr{font-family:var(--display);font-weight:700;font-size:32px;line-height:1}
+.sello .lbl{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
+
+/* =========================================================
+   CARTA
+   ========================================================= */
+.carta{background:var(--crema-2)}
+.cat-tabs{
+  display:flex;gap:8px;flex-wrap:wrap;
+  margin-bottom:48px;padding-bottom:24px;
+  border-bottom:1px solid var(--borde);
+}
+.cat-tabs button{
+  padding:12px 22px;border-radius:40px;
+  font-weight:500;font-size:15px;
+  background:var(--blanco);color:var(--negro);
+  border:1px solid var(--borde);
+  min-height:46px;transition:.2s;
+}
+.cat-tabs button:hover{border-color:var(--naranja)}
+.cat-tabs button.on{background:var(--negro);color:var(--crema-2);border-color:var(--negro)}
+
+.menu-cat{display:none;grid-template-columns:repeat(3, 1fr);gap:28px}
+.menu-cat.on{display:grid}
+
+.pizza-card{
+  background:var(--blanco);border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;
+  border:1px solid var(--borde);
+  transition:transform .25s, box-shadow .25s;
+}
+.pizza-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.pizza-img{position:relative;aspect-ratio:4/3;overflow:hidden}
+.pizza-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pizza-card:hover .pizza-img img{transform:scale(1.04)}
+.tags{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
+.tag{
+  font-size:11px;font-weight:600;letter-spacing:.5px;
+  padding:5px 10px;border-radius:30px;
+  background:var(--blanco);box-shadow:var(--shadow-sm);
+}
+.pizza-card.no-img .tags{position:static;margin-bottom:12px}
+.pizza-card.no-img .tag{background:rgba(0,0,0,0.03);box-shadow:none;border:1px solid var(--borde)}
+.tag.veg{color:var(--verde)}
+.tag.spicy{color:var(--rojo)}
+.tag.kids{color:var(--naranja-2)}
+.tag.new{background:var(--naranja);color:var(--negro)}
+
+.pizza-body{padding:22px 24px 24px;flex:1;display:flex;flex-direction:column}
+.pizza-body h3{font-family:var(--display);font-weight:600;margin-bottom:8px;font-size:22px;display:flex;align-items:center;gap:8px}
+.fav-icon{width:22px;height:22px;fill:var(--naranja-2);stroke:var(--naranja-2);flex-shrink:0}
+.pizza-body .desc{font-size:14.5px;color:var(--gris);margin-bottom:18px;flex:1;line-height:1.55}
+.pizza-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:16px;border-top:1px dashed var(--borde);
+}
+.price{font-family:var(--display);font-weight:700;font-size:22px;color:var(--naranja-2)}
+.add{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--negro);color:var(--crema-2);
+  padding:9px 16px;border-radius:30px;
+  font-size:13px;font-weight:600;
+  transition:.2s;
+}
+.add:hover{background:var(--naranja);color:var(--negro)}
+.add svg{width:14px;height:14px}
+
+/* =========================================================
+   LEGADO
+   ========================================================= */
+.legado {
+  background: var(--crema);
+  border-top: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+}
+.motivos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media(min-width: 768px) {
+  .motivos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.motivo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.motivo-card img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 8px;
+  width: 100%;
+}
+.motivo-card h4 {
+  font-size: 24px;
+  color: var(--negro);
+  font-family: var(--display);
+}
+.motivo-card p {
+  font-size: 16px;
+  color: var(--gris);
+  line-height: 1.5;
+}
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 24px; border: 2px solid var(--naranja); color: var(--naranja);
+  font-weight: 700; border-radius: 6px; transition: .2s;
+  align-self: flex-start; margin-top: auto;
+}
+.btn-outline:hover { background: var(--naranja); color: var(--negro); }
+
+/* =========================================================
+   LOCALES
+   ========================================================= */
+.locales{background:var(--negro);color:var(--crema-2)}
+.locales .section-head h2{color:var(--crema-2)}
+.locales .lead{color:var(--crema-2);opacity:.8}
+
+.locales-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 900px) {
+  .locales-layout {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+}
+.locales-map {
+  height: 560px;
+  background: rgba(247,241,224,.10);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  border: 1px solid rgba(247,241,224,.20);
+}
+.locales-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.local-card {
+  background:rgba(247,241,224,.04);
+  border:1px solid rgba(247,241,224,.10);
+  border-radius:var(--r-lg);
+  display:flex;flex-direction:column;
+  transition:.25s;
+}
+.local-card[open]{border-color:var(--naranja);background:rgba(247,241,224,.08)}
+.local-card summary{
+  padding:20px 24px;
+  cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  list-style:none;
+}
+.local-card summary::-webkit-details-marker{display:none}
+.local-card summary:hover{background:rgba(247,241,224,.03)}
+.local-summary-text{display:flex;flex-direction:column;gap:4px}
+.local-card h3{font-family:var(--display);font-weight:600;color:var(--crema-2);font-size:20px}
+.local-card .barrio{font-size:13px;color:var(--naranja);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.icon-plus{width:24px;height:24px;stroke:var(--naranja);transition:.3s;flex-shrink:0}
+.local-card[open] .icon-plus{transform:rotate(45deg)}
+.local-content{padding:0 24px 24px;display:flex;flex-direction:column}
+.local-card .addr{font-size:15px;color:var(--crema-2);opacity:.9}
+.local-card .ref{font-size:13.5px;color:var(--crema-2);opacity:.65;margin-top:4px;margin-bottom:12px}
+.local-card .horario{
+  font-size:13.5px;color:var(--crema-2);opacity:.75;
+  padding-top:16px;border-top:1px dashed rgba(247,241,224,.15);
+}
+.local-actions{display:flex;gap:8px;margin-top:14px}
+.local-actions a{
+  flex:1;text-align:center;padding:10px;border-radius:4px;
+  font-size:13.5px;font-weight:700;
+  border:1px solid rgba(247,241,224,.25);
+  transition:.2s;color:var(--crema-2);
+}
+.local-actions a:hover{background:var(--naranja);color:var(--negro);border-color:var(--naranja)}
+.local-actions a.primary{background:var(--naranja);color:var(--negro);border-color:var(--naranja)}
+.local-actions a.primary:hover{background:transparent;color:var(--naranja);border-color:var(--naranja)}
+
+/* =========================================================
+   SISTEMA TELEFONO
+   ========================================================= */
+.sistema{
+  background:
+    linear-gradient(135deg, rgba(13,12,11,.92), rgba(13,12,11,.75)),
+    url("assets/story-table.jpg") center/cover;
+  color:var(--crema-2);text-align:center;
+}
+.sistema h2{color:var(--crema-2)}
+.sistema .lead{color:var(--crema-2);opacity:.85;margin:0 auto}
+.tel-box{
+  display:inline-flex;align-items:center;gap:20px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.15);
+  color:var(--crema-2);
+  padding:16px 40px 16px 16px;border-radius:60px;
+  margin:40px 0 60px;box-shadow:0 12px 40px rgba(0,0,0,.3);
+  transition:transform .3s, background .3s, border-color .3s;
+  text-decoration: none;
+}
+.tel-box:hover{
+  transform:translateY(-6px);
+  background:rgba(255,255,255,.08);
+  border-color:var(--naranja);
+}
+.tel-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--naranja);color:var(--negro);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.tel-icon svg { width: 30px; height: 30px; stroke-width: 2px; }
+.tel-text { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.tel-box .lbl{font-family:var(--sans);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--naranja)}
+.tel-box .num{font-family:var(--display);font-weight:700;font-size:clamp(32px, 4vw, 40px);letter-spacing:1px;line-height:1;margin-top:2px}
+
+.steps{
+  display:grid;grid-template-columns:repeat(3, 1fr);gap:24px;
+  max-width:1100px;margin:0 auto;
+}
+.step{
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r-lg);
+  padding:36px 28px;text-align:center;
+  transition: .3s;
+}
+.step:hover { background:rgba(255,255,255,.06); transform:translateY(-4px); }
+.step .n{
+  display:inline-flex;width:48px;height:48px;border-radius:50%;
+  background:rgba(242,162,34,.15);color:var(--naranja);
+  border: 1px solid rgba(242,162,34,.3);
+  align-items:center;justify-content:center;
+  font-family:var(--sans);font-weight:700;font-size:20px;
+  margin-bottom:20px;
+  line-height:1;
+}
+.step h4{font-family:var(--display);font-weight:600;font-size:22px;color:var(--crema-2);margin-bottom:12px}
+.step p{font-size:15px;color:var(--crema-2);opacity:.75;line-height:1.6;margin:0}
+
+/* =========================================================
+   OPINIONES
+   ========================================================= */
+.opiniones{background:var(--crema)}
+.op-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px}
+.op-card{
+  background:var(--blanco);padding:32px 28px;border-radius:var(--r-lg);
+  box-shadow:var(--shadow-sm);position:relative;
+  border:1px solid var(--borde);
+}
+.stars{color:var(--naranja);font-size:16px;letter-spacing:2px;margin-bottom:12px}
+.op-card blockquote{
+  font-family:var(--display);font-style:italic;
+  font-size:17px;color:var(--gris);line-height:1.6;margin-bottom:18px;
+}
+.op-card cite{font-style:normal;font-weight:600;color:var(--negro);font-size:14.5px;display:block}
+.op-card cite span{display:block;font-weight:400;font-size:13px;color:var(--gris-cl);margin-top:2px}
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+.cta-final{
+  background:var(--naranja);color:var(--negro);
+  text-align:center;padding-block:clamp(60px, 7vw, 90px);
+}
+.cta-final h2{font-family:var(--display);font-weight:600;margin-bottom:14px;letter-spacing:-.02em}
+.cta-final p{
+  font-family:var(--display);font-style:italic;
+  font-size:clamp(18px,1.6vw,22px);max-width:600px;
+  margin:0 auto 28px;color:var(--negro);
+}
+.cta-final-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 28px}
+.foot-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:42px;
+  max-width:var(--max);margin:0 auto 50px;
+}
+.foot-brand img{height:56px;width:auto;margin-bottom:18px}
+.foot-brand p{font-size:15px;opacity:.75;line-height:1.55;max-width:320px;margin-bottom:16px}
+.foot-brand .tel-foot{font-family:var(--display);font-weight:700;font-size:24px;color:var(--naranja);letter-spacing:.5px}
+
+.foot-col h5{font-family:var(--display);font-weight:600;font-size:17px;color:var(--naranja);margin-bottom:16px}
+.foot-col a, .foot-col p{
+  display:block;font-size:14.5px;opacity:.75;
+  margin-bottom:8px;transition:opacity .2s, color .2s;
+}
+.foot-col a:hover{opacity:1;color:var(--naranja)}
+
+.foot-social{display:flex;gap:10px;margin-top:12px}
+.foot-social a{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(247,241,224,.20);
+  display:inline-flex;align-items:center;justify-content:center;
+  opacity:.85;transition:.2s;
+}
+.foot-social a:hover{background:var(--naranja);border-color:var(--naranja);color:var(--negro);opacity:1}
+.foot-social svg{width:18px;height:18px}
+
+.foot-bottom{
+  max-width:var(--max);margin:0 auto;
+  border-top:1px solid rgba(247,241,224,.08);padding-top:24px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  font-size:13px;color:var(--gris-cl);
+}
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   - 1100px : desktop reducido
+   - 860px  : tablet
+   - 600px  : móvil
+   ========================================================= */
+@media (max-width:1100px){
+  .menu-cat{grid-template-columns:repeat(2,1fr);gap:22px}
+  .op-grid{grid-template-columns:repeat(2,1fr)}
+  .motivos-grid {grid-template-columns:repeat(2,1fr);gap:24px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .foot-brand{grid-column:span 2}
+}
+
+@media (max-width:860px){
+  .nav-links{
+    display:none;
+    position:fixed;inset:64px 0 0 0;
+    flex-direction:column;align-items:flex-start;
+    background:var(--crema-2);
+    padding:24px var(--gutter) 40px;
+    gap:0;
+    border-top:1px solid var(--borde);
+    overflow-y:auto;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{
+    width:100%;padding:18px 0;font-size:18px;
+    border-bottom:1px solid var(--borde);
+  }
+  .burger{display:inline-flex}
+  .tel-nav{display:none}
+
+  .historia .grid{grid-template-columns:1fr;gap:36px}
+  .historia-img{height:380px;order:-1}
+  
+  .motivos-grid {grid-template-columns:1fr}
+
+  .locales-map {height:400px; position:relative; top:0}
+
+  .steps{grid-template-columns:1fr;gap:18px;max-width:480px}
+  .step{padding:20px 16px}
+}
+
+@media (max-width:600px){
+  html{font-size:16px}
+  body{font-size:16px}
+
+  .cta-nav{padding:10px 18px;font-size:13px}
+
+  .hero{padding:110px 20px 70px;min-height:90svh}
+  .hero-logo-wrap{padding:10px 20px;margin-bottom:22px}
+  .hero-logo-wrap img{height:42px}
+  .hero .badge{font-size:12px;padding:6px 14px;margin-bottom:24px}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas .btn{width:100%}
+
+  .historia-img{height:300px}
+  .sello{top:14px;right:14px;padding:14px 16px}
+  .sello .yr{font-size:24px}
+
+  .cat-tabs{
+    flex-wrap:nowrap;overflow-x:auto;padding-bottom:12px;
+    -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
+  }
+  .cat-tabs button{scroll-snap-align:start;white-space:nowrap}
+  .menu-cat{grid-template-columns:1fr;gap:20px}
+  .pizza-img{aspect-ratio:5/3}
+
+  .locales-map {height:300px}
+
+  .op-grid{grid-template-columns:1fr}
+
+  .tel-box{
+    flex-direction:column;gap:12px;padding:24px 32px;
+    border-radius:30px;width:100%;max-width:340px;text-align:center;
+  }
+  .tel-text{align-items:center;text-align:center}
+  .tel-box .num{font-size:clamp(28px, 6vw, 36px);margin-top:8px}
+
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+  .foot-brand{grid-column:span 1}
+  .foot-bottom{justify-content:flex-start;flex-direction:column;gap:8px}
+}
+
+@media (max-width:380px){
+  .cta-nav{display:none}
+  .brand{height:38px}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Saltar al contenido</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Paolo's · inicio">
+    <img src="assets/logo-fusion-vertical.jpg-removebg-preview.sinfondo.png" alt="" aria-hidden="true" />
+  </a>
+  <nav class="nav-links" id="navLinks" aria-label="Principal">
+    <a href="#historia">Historia</a>
+    <a href="#carta">Carta</a>
+    <a href="#locales">Restaurantes</a>
+    <a href="#sistema">Pedidos</a>
+    <a href="#opiniones">Opiniones</a>
+  </nav>
+  <div class="nav-right">
+    <a href="tel:914458374" class="tel-nav" aria-label="Llamar al teléfono central">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      91 445 83 74
+    </a>
+    <a href="#cta-final" class="cta-nav">Reservar</a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <video autoplay muted loop playsinline preload="metadata"
+    poster="https://images.unsplash.com/photo-1542834369-f10ebf06d3e0?auto=format&fit=crop&w=2000&q=80"
+    aria-hidden="true">
+    <source src="assets/hero-banner.mp4" type="video/mp4" />
+  </video>
+  <img class="hero-fallback" src="https://images.unsplash.com/photo-1542834369-f10ebf06d3e0?auto=format&fit=crop&w=2000&q=80" alt="" aria-hidden="true" style="display:none" />
+
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <img src="assets/logo-hero-vertical-dannys.png" alt="Paolo by Danny's Jazz" />
+    </div>
+    <h1 class="h-display"><em>Las pizzas del barrio</em></h1>
+    <p class="sub">Masa artesana de fermentación lenta, pensada para compartir en familia o disfrutar en casa. Desde 2019 haciendo las pizzas de tu barrio.</p>
+    <span class="badge"><strong>5</strong> restaurantes &nbsp;·&nbsp; <strong>1</strong> teléfono &nbsp;·&nbsp; todo Madrid</span>
+    <div class="hero-ctas">
+      <a href="#sistema" class="btn btn-primary">Pedir a domicilio
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#locales" class="btn btn-ghost">Encontrar restaurante</a>
+      <a href="#cta-final" class="btn btn-ghost">Reservar mesa</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ HISTORIA ============ -->
+<section class="historia" id="historia">
+  <div class="wrap grid">
+    <div class="historia-text reveal">
+      <span class="eyebrow">Nuestra historia</span>
+      <h2 class="h-display">Las pizzas del barrio, <em>para compartir.</em></h2>
+      <p style="margin-top:24px">Paolo nació en 2019 en el barrio de Conde Duque, Madrid, con una idea sencilla: hacer pizzas que nos gustase poner en la mesa de nuestra propia familia.</p>
+      <blockquote>"Las mejores cosas pasan alrededor de una buena pizza."</blockquote>
+      <p>Empezamos con un horno y muchas ganas de hacer las cosas bien. Amasando a mano cada día, cuidando la fermentación y seleccionando ingredientes de verdad.</p>
+      <p>Hoy somos una familia de pizzerías con presencia en toda la ciudad. Seguimos siendo el lugar donde vienes a celebrar un cumpleaños, a cenar un viernes o a pedir en casa, siempre con el mismo espíritu de barrio con el que empezamos.</p>
+    </div>
+    <div class="historia-img reveal">
+      <div class="sello">
+        <div class="yr">2019</div>
+        <div class="lbl">Desde</div>
+      </div>
+      <img src="assets/story-dough.jpg" alt="Amasando la pizza a mano" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOTIVOS / VENTA ============ -->
+<section class="motivos" id="motivos">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Lo que nos hace únicos</span>
+      <h2 class="h-display">Disfruta de Paolo's <em>como quieras.</em></h2>
+      <p class="lead" style="margin-top:16px">Nuestra esencia está en la masa, pero la experiencia la eliges tú. Descubre todo lo que Paolo's tiene preparado para ti.</p>
+    </div>
+    <div class="motivos-grid reveal">
+      <div class="motivo-card">
+        <img src="assets/motivo-takeaway.jpg" alt="Pizza en caja lista para llevar" loading="lazy" />
+        <h4>Llévanos a casa</h4>
+        <p>Pide tu pizza para recoger o a domicilio. Caliente, crujiente y directa del horno a tu mesa para esas noches en familia.</p>
+        <a href="#sistema" class="btn-outline">Pedir a domicilio</a>
+      </div>
+      <div class="motivo-card">
+        <img src="assets/story-table.jpg" alt="Familia cenando pizza" loading="lazy" />
+        <h4>Tu mesa te espera</h4>
+        <p>Trato cercano, tronas para los más pequeños y un ambiente perfecto para celebrar cumpleaños o reunirse con los tuyos.</p>
+        <a href="#cta-final" class="btn-outline">Reservar mesa</a>
+      </div>
+      <div class="motivo-card">
+        <img src="assets/motivo-esencia.jpg" alt="Equipo amasando la pizza" loading="lazy" />
+        <h4>100% Artesanal</h4>
+        <p>Sin secretos. Masa madre, ingredientes frescos y cocinado a la vista. El verdadero sabor de las pizzas del barrio hecho a mano cada día.</p>
+        <a href="#locales" class="btn-outline">Ver restaurantes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARTA ============ -->
+<section class="carta" id="carta">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nuestra carta</span>
+      <h2 class="h-display">Cada pizza <em>cuenta algo.</em></h2>
+      <p class="lead" style="margin-top:16px">Masa muy fina, mozzarella 100% centro de leche y los ingredientes que la familia llevaría a su propia mesa. Disponibles también en versión sin gluten, sin lactosa y vegana.</p>
+    </div>
+
+    <div class="cat-tabs" role="tablist" aria-label="Categorías de la carta">
+      <button class="on" data-cat="populares" role="tab" aria-selected="true">Populares</button>
+      <button data-cat="clasicas" role="tab" aria-selected="false">Clásicas</button>
+      <button data-cat="especiales" role="tab" aria-selected="false">Especialidades</button>
+      <button data-cat="veg" role="tab" aria-selected="false">Vegetarianas</button>
+      <button data-cat="pastas" role="tab" aria-selected="false">Pastas y lasañas</button>
+      <button data-cat="postres" role="tab" aria-selected="false">Postres</button>
+    </div>
+
+    <div class="menu-cat on" data-cat="populares"></div>
+    <div class="menu-cat" data-cat="clasicas"></div>
+    <div class="menu-cat" data-cat="especiales"></div>
+    <div class="menu-cat" data-cat="veg"></div>
+    <div class="menu-cat" data-cat="pastas"></div>
+    <div class="menu-cat" data-cat="postres"></div>
+  </div>
+</section>
+
+<!-- ============ LOCALES ============ -->
+<section class="locales" id="locales">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Cinco casas, una familia</span>
+      <h2 class="h-display">Tu Paolo's <em>más cercano.</em></h2>
+      <p class="lead" style="margin-top:16px">Cinco restaurantes repartidos por Madrid. Cada uno con su barrio, su gente y sus habituales — pero todos con la misma masa.</p>
+    </div>
+    <div class="locales-layout">
+      <div class="locales-map reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d48574.65991873738!2d-3.7371904576352314!3d40.42838384102925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spizzerias%20madrid!5e0!3m2!1sen!2ses!4v1700000000000!5m2!1sen!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="locales-list" id="locales-list-container"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SISTEMA TELEFONO ============ -->
+<section class="sistema" id="sistema">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="color:var(--naranja)">Un solo número</span>
+      <h2 class="h-display">Donde estés, <em>tu Paolo's te atiende.</em></h2>
+      <p class="lead">Para pedir la cena del viernes, organizar un cumpleaños infantil o simplemente disfrutar en casa. Dinos desde qué zona llamas y te conectamos con tu Paolo's de confianza.</p>
+    </div>
+    <div style="text-align:center">
+      <a href="tel:914458374" class="tel-box" aria-label="Llamar al teléfono central">
+        <div class="tel-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="tel-text">
+          <span class="lbl">llámanos al</span>
+          <span class="num">91 445 83 74</span>
+        </div>
+      </a>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h4>Llamas</h4><p>Un único número para los cinco restaurantes. Sin colas, sin pulsar opciones.</p></div>
+      <div class="step reveal"><div class="n">2</div><h4>Nos dices tu zona</h4><p>"Llamo desde Vallecas" o "soy de Conde Duque". Te derivamos al instante.</p></div>
+      <div class="step reveal"><div class="n">3</div><h4>Pides o reservas</h4><p>A domicilio, recoger en local o mesa para esta noche. Tu Paolo's te atiende.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPINIONES ============ -->
+<section class="opiniones" id="opiniones">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Lo dice quien viene</span>
+      <h2 class="h-display">La familia crece, <em>la masa es la misma.</em></h2>
+    </div>
+    <div class="op-grid">
+      <div class="op-card reveal">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <blockquote>"Desde que abrieron el primer local en Conde Duque somos fijos. Celebramos mi cumpleaños aquí y ahora es la pizzería favorita de mis hijos."</blockquote>
+        <cite>Carlos M. <span>Cliente desde 2019</span></cite>
+      </div>
+      <div class="op-card reveal">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <blockquote>"Llamé desde Vallecas un domingo. Pizza en la mesa en 35 minutos, caliente, y el repartidor preguntó por mi hijo."</blockquote>
+        <cite>Lucía R. <span>Habitual de Nueva Numancia</span></cite>
+      </div>
+      <div class="op-card reveal">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <blockquote>"La carta para peques con su dibujo, las tronas, el camarero que se acuerda de los nombres. Como cenar en casa de la familia."</blockquote>
+        <cite>Pablo G. <span>Padre y cliente</span></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="cta-final">
+  <div class="wrap">
+    <h2 class="h-display">¿Mesa para esta noche?</h2>
+    <p>Reserva en el restaurante que te quede más cerca. O llámanos — siempre cogemos.</p>
+    <div class="cta-final-actions">
+      <a href="tel:914458374" class="btn btn-dark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        91 445 83 74
+      </a>
+      <a href="#locales" class="btn btn-dark">Ver restaurantes</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/logo-fusion-vertical.jpg-removebg-preview.sinfondo.blanco.png" alt="Logo de Paolo's Pizzería" loading="lazy" />
+      <p>Pizzería artesana en Madrid. Cinco restaurantes, una familia, la misma masa desde 2019.</p>
+      <a href="tel:914458374" class="tel-foot">91 445 83 74</a>
+    </div>
+    <div class="foot-col">
+      <h5>Restaurantes</h5>
+      <a href="#locales">Doctor Ramón Castroviejo</a>
+      <a href="#locales">Conde Duque</a>
+      <a href="#locales">Plaza del Beso</a>
+      <a href="#locales">Nueva Numancia</a>
+      <a href="#locales">Puerta Cerrada</a>
+    </div>
+    <div class="foot-col">
+      <h5>Explora</h5>
+      <a href="#historia">Historia</a>
+      <a href="#carta">Carta</a>
+      <a href="#sistema">Pedidos a domicilio</a>
+      <a href="#cta-final">Reservar mesa</a>
+      <a href="#opiniones">Opiniones</a>
+    </div>
+    <div class="foot-col">
+      <h5>Horario</h5>
+      <p>De lunes a domingo<br>13:00 – 16:30<br>20:00 – 00:00</p>
+      <div class="foot-social" aria-label="Redes sociales">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Paolo's Pizzería</span>
+    <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a></span>
+  </div>
+</footer>
+
+<script>
+/* ===================== DATA ===================== */
+const IMG = {
+  margherita:"assets/4formaggi-nueva.jpg",
+  prosc:"assets/platos/edit1.jpg",
+  napoli:"assets/napoli.png",
+  cuatro:"assets/4 stagioni.png",
+  diavola:"assets/diavola.png",
+  carbonara:"assets/platos/edit2.jpg",
+  paolo:"assets/composicion de platos.png",
+  trufa:"assets/tartufo.png",
+  bbq:"assets/platos/diavola.jpg",
+  pera:"assets/4formaggi.png",
+  asturiana:"assets/diavola.png",
+  conde:"assets/platos/edit1.jpg",
+  veg:"assets/platos/4stagioni.jpg",
+  vita:"assets/4 stagioni.png",
+  veggie:"assets/platos/4stagioni.jpg",
+  parm:"assets/platos/4formaggi.jpg",
+  tierra:"assets/platos/tartufo.jpg",
+  kid1:"assets/platos/4formaggi.jpg",
+  kid2:"assets/platos/edit1.jpg",
+  lasab:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_bruschetta_iberica_2880x2304.jpg",
+  lasav:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_bruschetta_jamon_y_queso_2880x2304.jpg",
+  tagl:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_bruschetta_4_quesos_2880x2304.jpg",
+  tira:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_tiramisu_clasico_2880x2304.jpg",
+  panna:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_tiramisu_de_coco_2880x2304.jpg",
+  cannoli:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_tiramisu_clasico_2880x2304.jpg",
+};
+
+const MENU = {
+  populares:[
+    {img:IMG.cuatro, n:"4 Stagioni", d:"Tomate, mozzarella, alcachofas, champiñones, jamón, anchoas y aceitunas.", p:"12,80"},
+    {img:IMG.margherita, n:"4 Formaggi", d:"Tomate, mozzarella, gorgonzola, gouda y parmesano.", p:"12,80"},
+    {img:IMG.diavola, n:"Diávola", d:"Tomate, mozzarella y salami picante.", p:"12,80", tag:"spicy"},
+    {img:IMG.napoli, n:"Nápoli", d:"Tomate, mozzarella, anchoas y aceitunas.", p:"12,80"},
+    {img:IMG.trufa, n:"Tartufo", d:"Tomate, mozzarella, boletus con crema de champiñón al tartufo.", p:"12,10"},
+  ],
+  clasicas:[
+    {n:"Nanno e nonna", d:"Tomate, Mozzarella, pimiento, champiñones y beicon.", p:"12,80"},
+    {n:"Calzone", d:"Tomate, mozzarella, jamón, champiñones y alcachofas.", p:"12,30"},
+    {n:"Capricciosa", d:"Tomate, mozzarella, beicon, pimientos y anchoas.", p:"12,80"},
+    {n:"Paolo", d:"Tomate, mozzarella, carne picada, ajo y perejil.", p:"12,80"},
+    {n:"Parmigiano", d:"Tomate natural, mozzarella, parmesano y albahaca.", p:"12,80"},
+    {n:"Mare e Monti 'Tania'", d:"Tomate, mozzarella, jamón, aceitunas y bonito.", p:"12,80"},
+    {n:"Carbonara", d:"Tomate, mozzarella, huevo, beicon y nata.", p:"12,80"},
+    {n:"Blancaneve", d:"Tomate, mozzarella, gorgonzola y nueces.", p:"12,80"},
+    {n:"Regina", d:"Tomate, mozzarella, jamón y aceitunas.", p:"12,80"},
+  ],
+  especiales:[
+    {n:"Tijuana", d:"Tomate, mozzarella, jalapeños, carne y queso Gouda.", p:"12,80", tag:"spicy"},
+    {n:"Nórdica", d:"Tomate, mozzarella, salmón y queso brie.", p:"12,80"},
+    {n:"Don Miguel Gil", d:"Tomate, mozzarella, gorgonzola, anchoa y tabasco.", p:"12,80"},
+    {n:"Frutti di mare", d:"Tomate, mozzarella, gambas y mejillones.", p:"12,80"},
+    {n:"Barbecue", d:"Tomate, mozzarella, salsa barbacoa, piña y carne.", p:"13,20"},
+    {n:"Spangola", d:"Tomate, mozzarella, chorizo y cebolla.", p:"12,80"},
+    {n:"Conde Duque", d:"Tomate seco, mozzarella y huevos de codorniz.", p:"12,80"},
+    {n:"Alemana", d:"Tomate, mozzarella y genuina salchicha alemana.", p:"12,30"},
+    {n:"Cielito lindo", d:"Tomate, mozzarella, pollo enchilado, pimiento, cebolla, ajo y salsa roja.", p:"13,80"},
+    {n:"Órale", d:"Tomate, mozzarella, cochinita pibill, pimiento, cebolla, ajo y salsa roja mexicana.", p:"13,80"},
+    {n:"Party pernil", d:"Pernil de cerdo asado, burrata y tomate seco.", p:"13,20"},
+    {n:"Asturiana", d:"Tomate, mozzarella y chorizo ahumado de Tineo con huevos camperos.", p:"13,80"},
+  ],
+  veg:[
+    {n:"Fresca", d:"Tomate natural, mozzarella y rúcula.", p:"12,80", tag:"veg"},
+    {n:"Alle verdure", d:"Tomate, mozzarella, cebolla, champiñón, alcachofa, pimiento y aceitunas.", p:"12,80", tag:"veg"},
+    {n:"Vita Pura", d:"Tomate mini reed con pesto y mozzarella.", p:"13,80", tag:"veg"},
+    {n:"Veggie bravissimo", d:"Tomate, mozzarella, boletus con crema de champiñón al tartufo.", p:"12,10", tag:"veg"},
+    {n:"De la terra", d:"Tomate natural y surtido de hongos.", p:"12,10", tag:"veg"},
+  ],
+  pastas:[
+    {img:IMG.lasab, n:"Lasaña Boloñesa", d:"Pasta fresca, ragú de ternera, bechamel y parmesano gratinado.", p:"12,50"},
+    {img:IMG.lasav, n:"Lasaña de verduras", d:"Calabacín, berenjena, espinacas y mozzarella.", p:"11,90", tag:"veg"},
+    {img:IMG.tagl, n:"Tagliatelle Carbonara", d:"Pasta fresca con guanciale, huevo y pecorino. Sin nata.", p:"12,80"},
+  ],
+  postres:[
+    {img:IMG.tira, n:"Tiramisú de la casa", d:"Receta de la nonna. Mascarpone, café y cacao.", p:"5,50"},
+    {img:IMG.panna, n:"Panna Cotta", d:"Nata cuajada con coulis de frutos rojos.", p:"5,00"},
+    {img:IMG.cannoli, n:"Cannoli siciliano", d:"Crujiente relleno de ricotta y pistacho.", p:"5,50"},
+  ],
+};
+const TAG_LABEL = {veg:"Vegetariana", spicy:"Picante", kids:"Para peques", new:"Nueva", gf:"Sin gluten"};
+
+const LOCALES = [
+  {n:1, name:"Paolo's Doctor Ramón Castroviejo", barrio:"Tetuán", addr:"C/ Doctor Ramón Castroviejo, 59 · 28039 Madrid", horario:"L–D 13:00 – 16:30 / 20:00 – 00:00",
+   img:"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+   ref:"Junto al metro Estrecho. Barrio de Berruguete."},
+  {n:2, name:"Paolo's Conde Duque", barrio:"Conde Duque · Universidad", addr:"C/ del Conde Duque, 28 · 28015 Madrid", horario:"L–D 13:00 – 00:30",
+   img:"https://images.unsplash.com/photo-1571066811602-716837d681de?auto=format&fit=crop&w=900&q=80",
+   ref:"Entre Malasaña y Argüelles. Frente al Cuartel."},
+  {n:3, name:"Paolo's Plaza del Beso", barrio:"Bellas Vistas · Tetuán", addr:"Plaza del Beso, 4 · 28039 Madrid", horario:"L–D 13:00 – 16:00 / 20:00 – 00:00",
+   img:"https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=900&q=80",
+   ref:"Plaza tranquila con terraza. A 5 min de Valdeacederas."},
+  {n:4, name:"Paolo's Nueva Numancia", barrio:"Puente de Vallecas", addr:"Av. Nueva Numancia, 52 · 28038 Madrid", horario:"L–D 13:00 – 16:30 / 20:00 – 00:00",
+   img:"https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=900&q=80",
+   ref:"Junto al metro Nueva Numancia. El Paolo's del sur."},
+  {n:5, name:"Paolo's Puerta Cerrada", barrio:"La Latina · Centro", addr:"Plaza Puerta Cerrada, 15 · 28005 Madrid", horario:"L–D 13:00 – 01:00",
+   img:"https://images.unsplash.com/photo-1542834369-f10ebf06d3e0?auto=format&fit=crop&w=900&q=80",
+   ref:"Corazón de La Latina, junto a Cava Baja y Plaza Mayor."},
+];
+
+/* ===================== RENDER ===================== */
+function renderMenu(){
+  Object.keys(MENU).forEach(cat=>{
+    const cont = document.querySelector(`.menu-cat[data-cat="${cat}"]`);
+    if(cont) {
+      cont.innerHTML = MENU[cat].map(item=>{
+        const tag = item.tag ? `<div class="tags"><span class="tag ${item.tag}">${TAG_LABEL[item.tag]}</span></div>` : "";
+        const imgHtml = item.img ? `<div class="pizza-img">${tag}<img src="${item.img}" alt="Pizza ${item.n}" loading="lazy" /></div>` : tag;
+        const favIcon = cat === 'populares' ? `<svg class="fav-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>` : "";
+        
+        return `<article class="pizza-card reveal ${!item.img ? 'no-img' : ''}">
+          ${imgHtml}
+          <div class="pizza-body">
+            <h3>${item.n} ${favIcon}</h3>
+            <p class="desc">${item.d}</p>
+            <div class="pizza-foot">
+              <span class="price">${item.p} €</span>
+              <a href="tel:914458374" class="add" aria-label="Pedir ${item.n}">Pedir
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+  });
+}
+
+function renderLocales(){
+  const cont = document.getElementById("locales-list-container");
+  if(!cont) return;
+  cont.innerHTML = LOCALES.map((l, i)=>`
+    <details class="local-card reveal" data-addr="${l.addr}" ${i===0 ? "open" : ""}>
+      <summary>
+        <div class="local-summary-text">
+          <span class="barrio">${l.barrio}</span>
+          <h3>${l.name}</h3>
+        </div>
+        <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      </summary>
+      <div class="local-content">
+        <p class="addr">${l.addr}</p>
+        <p class="ref">${l.ref}</p>
+        <p class="horario">${l.horario}</p>
+        <div class="local-actions">
+          <a href="tel:914458374" class="primary">Llamar</a>
+          <a href="https://maps.google.com/?q=${encodeURIComponent(l.addr)}" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+    </details>`).join("");
+}
+
+function setupLocalesAccordion(){
+  const details = document.querySelectorAll(".locales-list details");
+  const iframe = document.querySelector(".locales-map iframe");
+  if(!iframe) return;
+  
+  details.forEach(d => {
+    d.addEventListener("toggle", (e) => {
+      if (d.open) {
+        details.forEach(other => { if (other !== d && other.open) other.open = false; });
+        const queryAddr = d.dataset.addr.replace(" · ", ", ");
+        iframe.src = `https://maps.google.com/maps?q=${encodeURIComponent(queryAddr)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+      }
+    });
+  });
+  
+  if(details.length > 0) {
+    const queryAddr = details[0].dataset.addr.replace(" · ", ", ");
+    iframe.src = `https://maps.google.com/maps?q=${encodeURIComponent(queryAddr)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  }
+}
+
+/* ===================== UI ===================== */
+function setupTabs(){
+  document.querySelectorAll(".cat-tabs button").forEach(b=>{
+    b.addEventListener("click",()=>{
+      document.querySelectorAll(".cat-tabs button").forEach(x=>{x.classList.remove("on");x.setAttribute("aria-selected","false")});
+      document.querySelectorAll(".menu-cat").forEach(x=>x.classList.remove("on"));
+      b.classList.add("on");
+      b.setAttribute("aria-selected","true");
+      document.querySelector(`.menu-cat[data-cat="${b.dataset.cat}"]`).classList.add("on");
+    });
+  });
+}
+
+function setupNav(){
+  const nav = document.getElementById("nav");
+  const burger = document.getElementById("burger");
+  const navLinks = document.getElementById("navLinks");
+  window.addEventListener("scroll",()=>nav.classList.toggle("scrolled", window.scrollY > 20));
+  burger.addEventListener("click",()=>{
+    const open = navLinks.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open);
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+  navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+    navLinks.classList.remove("open");
+    burger.setAttribute("aria-expanded","false");
+    document.body.style.overflow = "";
+  }));
+}
+
+function setupReveals(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+}
+
+renderMenu();
+renderLocales();
+setupLocalesAccordion();
+setupTabs();
+setupNav();
+setupReveals();
+</script>
+</body>
+</html>
