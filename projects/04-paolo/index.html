@@ -412,81 +412,139 @@ body { top: 0 !important; }
 .motivos-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
-  max-width: 1000px;
+  gap: 24px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 @media(min-width: 768px) {
   .motivos-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
   }
 }
+
+/* Desktop: editorial card — image top, text bottom */
 .motivo-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-align: center;
-  align-items: center;
-  min-height: 440px;
-  padding: 32px 24px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  background: var(--blanco);
+  box-shadow: 0 2px 16px rgba(13,12,11,.08);
+  border: 1px solid var(--borde);
+  display: flex;
+  flex-direction: column;
   transition: transform .3s, box-shadow .3s;
 }
 .motivo-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 48px rgba(13,12,11,.14);
 }
-.motivo-card img {
-  position: absolute;
-  inset: 0;
+/* Image container */
+.motivo-card .mc-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+.motivo-card .mc-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  transition: transform .5s ease;
+  position: static;
+  inset: auto;
 }
-.motivo-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(13,12,11,.95) 0%, rgba(13,12,11,.4) 60%, rgba(13,12,11,0) 100%);
-  z-index: 1;
+.motivo-card:hover .mc-img img {
+  transform: scale(1.04);
 }
-.motivo-card h4, .motivo-card p, .motivo-card .btn-outline {
-  position: relative;
-  z-index: 2;
+/* Text area */
+.motivo-card .mc-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .motivo-card h4 {
-  font-size: 28px;
-  color: var(--crema-2);
   font-family: var(--display);
-  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--negro);
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 .motivo-card p {
-  font-size: 16px;
-  color: rgba(245,237,216,.85);
-  line-height: 1.6;
+  font-size: 15px;
+  color: var(--gris);
+  line-height: 1.65;
   margin-bottom: 24px;
-}
-@media (max-width: 600px) {
-  .motivo-card p { display: none; }
-  .motivo-card { min-height: 320px; }
-  .motivo-card h4 { margin-bottom: 16px; font-size: 26px; }
+  flex: 1;
 }
 .motivo-card .btn-outline {
-  margin-top: 0;
-  border-color: rgba(245,237,216,.3);
-  color: var(--crema-2);
-  background: rgba(13,12,11,.4);
-  backdrop-filter: blur(8px);
+  align-self: flex-start;
+  margin-top: auto;
+  border-color: var(--naranja);
+  color: var(--naranja);
+  background: transparent;
+  backdrop-filter: none;
+  font-size: 14px;
+  padding: 10px 22px;
 }
 .motivo-card .btn-outline:hover {
   background: var(--naranja);
   color: var(--negro);
   border-color: var(--naranja);
 }
+
+/* Mobile: keep overlay dark style */
+@media (max-width: 767px) {
+  .motivo-card {
+    background: transparent;
+    border: none;
+    box-shadow: var(--shadow);
+    position: relative;
+    min-height: 320px;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+  .motivo-card .mc-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+  }
+  .motivo-card .mc-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .motivo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,12,11,.95) 0%, rgba(13,12,11,.4) 60%, rgba(13,12,11,0) 100%);
+    z-index: 1;
+  }
+  .motivo-card .mc-body {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+  }
+  .motivo-card h4 {
+    color: var(--crema-2);
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  .motivo-card p { display: none; }
+  .motivo-card .btn-outline {
+    align-self: center;
+    border-color: rgba(245,237,216,.3);
+    color: var(--crema-2);
+    background: rgba(13,12,11,.4);
+    backdrop-filter: blur(8px);
+  }
+}
+
 .btn-outline {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 10px 24px; border: 2px solid var(--naranja); color: var(--naranja);
@@ -938,22 +996,28 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
     </div>
     <div class="motivos-grid reveal">
       <div class="motivo-card">
-        <img src="assets/motivo-takeaway.jpg" alt="Pizza en caja lista para llevar" loading="lazy" />
-        <h4>Llévanos a casa</h4>
-        <p>Pide tu pizza para recoger o a domicilio. Caliente, crujiente y directa del horno a tu mesa para esas noches en familia.</p>
-        <a href="#sistema" class="btn-outline">Pedir a domicilio</a>
+        <div class="mc-img"><img src="assets/motivo-takeaway.jpg" alt="Pizza en caja lista para llevar" loading="lazy" /></div>
+        <div class="mc-body">
+          <h4>Llévanos a casa</h4>
+          <p>Pide tu pizza para recoger o a domicilio. Caliente, crujiente y directa del horno a tu mesa para esas noches en familia.</p>
+          <a href="#sistema" class="btn-outline">Pedir a domicilio</a>
+        </div>
       </div>
       <div class="motivo-card">
-        <img src="assets/story-table.jpg" alt="Familia cenando pizza" loading="lazy" />
-        <h4>Tu mesa te espera</h4>
-        <p>Trato cercano, tronas para los más pequeños y un ambiente perfecto para celebrar cumpleaños o reunirse con los tuyos.</p>
-        <a href="#cta-final" class="btn-outline">Reservar mesa</a>
+        <div class="mc-img"><img src="assets/story-table.jpg" alt="Familia cenando pizza" loading="lazy" /></div>
+        <div class="mc-body">
+          <h4>Tu mesa te espera</h4>
+          <p>Trato cercano, tronas para los más pequeños y un ambiente perfecto para celebrar cumpleaños o reunirse con los tuyos.</p>
+          <a href="#cta-final" class="btn-outline">Reservar mesa</a>
+        </div>
       </div>
       <div class="motivo-card">
-        <img src="assets/motivo-esencia.jpg" alt="Equipo amasando la pizza" loading="lazy" />
-        <h4>100% Artesanal</h4>
-        <p>Sin secretos. Masa madre, ingredientes frescos y cocinado a la vista. El verdadero sabor de las pizzas del barrio hecho a mano cada día.</p>
-        <a href="#locales" class="btn-outline">Ver restaurantes</a>
+        <div class="mc-img"><img src="assets/motivo-esencia.jpg" alt="Equipo amasando la pizza" loading="lazy" /></div>
+        <div class="mc-body">
+          <h4>100% Artesanal</h4>
+          <p>Sin secretos. Masa madre, ingredientes frescos y cocinado a la vista. El verdadero sabor de las pizzas del barrio hecho a mano cada día.</p>
+          <a href="#locales" class="btn-outline">Ver restaurantes</a>
+        </div>
       </div>
     </div>
   </div>
