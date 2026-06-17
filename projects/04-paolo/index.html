@@ -664,6 +664,26 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
 }
 
 /* =========================================================
+   BACK TO TOP
+   ========================================================= */
+.btn-back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--naranja); color: var(--negro);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(13,12,11,.15);
+  z-index: 99; opacity: 0; pointer-events: none;
+  transition: opacity .3s, transform .2s, background .2s;
+}
+.btn-back-to-top.visible { opacity: 1; pointer-events: auto; }
+.btn-back-to-top:hover { transform: translateY(-4px); background: var(--crema-2); }
+.btn-back-to-top svg { width: 22px; height: 22px; }
+
+@media (max-width: 600px) {
+  .btn-back-to-top { bottom: 16px; right: 16px; width: 44px; height: 44px; }
+}
+
+/* =========================================================
    REVEAL
    ========================================================= */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
@@ -1062,6 +1082,10 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
   </div>
 </footer>
 
+<a href="#" class="btn-back-to-top" id="backToTop" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</a>
+
 <script>
 /* ===================== DATA ===================== */
 const IMG = {
@@ -1273,12 +1297,20 @@ function setupReveals(){
   document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 }
 
+function setupBackToTop() {
+  const btn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    btn.classList.toggle("visible", window.scrollY > 500);
+  });
+}
+
 renderMenu();
 renderLocales();
 setupLocalesAccordion();
 setupTabs();
 setupNav();
 setupReveals();
+setupBackToTop();
 </script>
 </body>
 </html>
