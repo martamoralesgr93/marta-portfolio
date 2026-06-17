@@ -785,8 +785,9 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
   .tel-text{align-items:center;text-align:center}
   .tel-box .num{font-size:clamp(28px, 6vw, 36px);margin-top:8px}
 
-  .foot-grid{grid-template-columns:1fr;gap:30px}
-  .foot-brand{grid-column:span 1}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:40px 20px}
+  .foot-brand{grid-column:span 2;margin-bottom:10px}
+  .foot-grid .foot-col:nth-child(4){grid-column:span 2}
   .foot-bottom{justify-content:flex-start;flex-direction:column;gap:8px}
 }
 
