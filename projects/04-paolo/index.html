@@ -166,14 +166,15 @@ section{padding-block:clamp(70px, 9vw, 120px)}
   align-items:center;justify-content:center;
   border-radius:50%;background:transparent;
 }
+.burger-icon{display:flex;align-items:center;justify-content:center;width:18px;height:16px}
 .burger span{
-  position:relative;display:block;width:22px;height:2px;
-  background:var(--negro);border-radius:2px;
+  position:relative;display:block;width:18px;height:2px;
+  background:var(--crema-2);border-radius:2px;
   transition:.3s;
 }
 .burger span::before,.burger span::after{
   content:"";position:absolute;left:0;width:100%;height:2px;
-  background:var(--negro);border-radius:2px;transition:.3s;
+  background:var(--crema-2);border-radius:2px;transition:.3s;
 }
 .burger span::before{top:-7px}
 .burger span::after{top:7px}
@@ -754,7 +755,7 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Llamar
     </a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
-      <span></span>
+      <div class="burger-icon"><span></span></div> Menú
     </button>
   </div>
 </header>
