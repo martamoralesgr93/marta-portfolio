@@ -1234,12 +1234,12 @@ const IMG = {
   tierra:"assets/platos/tartufo.jpg",
   kid1:"assets/platos/4formaggi.jpg",
   kid2:"assets/platos/edit1.jpg",
-  lasab:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_bruschetta_iberica_2880x2304.jpg",
-  lasav:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_bruschetta_jamon_y_queso_2880x2304.jpg",
-  tagl:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_bruschetta_4_quesos_2880x2304.jpg",
-  tira:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_tiramisu_clasico_2880x2304.jpg",
-  panna:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_tiramisu_de_coco_2880x2304.jpg",
-  cannoli:"assets/platos/paolo_-_sfdcid_0011j00001myn6tqar_tiramisu_clasico_2880x2304.jpg",
+  lasab:"https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=800&q=80",
+  lasav:"https://images.unsplash.com/photo-1619895092538-128341789043?auto=format&fit=crop&w=800&q=80",
+  tagl:"https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=800&q=80",
+  tira:"https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80",
+  panna:"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80",
+  cannoli:"https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80",
 };
 
 const MENU = {
@@ -1322,7 +1322,7 @@ function renderMenu(){
         const tag = item.tag ? `<div class="tags"><span class="tag ${item.tag}">${TAG_LABEL[item.tag]}</span></div>` : "";
         const imgHtml = item.img
           ? `<div class="pizza-img">${tag}<img src="${item.img}" alt="Pizza ${item.n}" loading="lazy" /></div>`
-          : `<div class="pizza-img empty">${tag}</div>`;
+          : tag;
         const favIcon = cat === 'populares' ? `<svg class="fav-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>` : "";
         
         return `<article class="pizza-card reveal ${!item.img ? 'no-img' : ''}">
