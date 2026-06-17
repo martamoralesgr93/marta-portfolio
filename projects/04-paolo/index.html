@@ -313,6 +313,7 @@ section{padding-block:clamp(70px, 9vw, 120px)}
 }
 .cat-tabs button:hover{border-color:var(--naranja)}
 .cat-tabs button.on{background:var(--negro);color:var(--crema-2);border-color:var(--negro)}
+.btn-more-cats{display:none}
 
 .menu-cat{display:none;grid-template-columns:repeat(3, 1fr);gap:28px}
 .menu-cat.on{display:grid}
@@ -749,13 +750,26 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
   .sello .yr{font-size:24px}
 
   .cat-tabs{
-    flex-wrap:nowrap;overflow-x:auto;padding-bottom:12px;
-    margin-right:-20px;padding-right:20px;
-    -webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
-    scrollbar-width:none;
+    flex-wrap:wrap;overflow:hidden;
+    max-height:46px;
+    margin-right:0;padding-right:0;
+    padding-bottom:0;border-bottom:none;
+    margin-bottom:16px;
+    transition:max-height .3s;
   }
-  .cat-tabs::-webkit-scrollbar{display:none}
-  .cat-tabs button{scroll-snap-align:start;white-space:nowrap}
+  .cat-tabs.expanded{
+    max-height:300px;
+    padding-bottom:24px;border-bottom:1px solid var(--borde);
+    margin-bottom:32px;
+  }
+  .btn-more-cats{
+    display:flex;width:100%;align-items:center;justify-content:center;
+    padding:12px;border-radius:40px;
+    background:rgba(242,162,34,.1);color:var(--naranja);
+    border:1px dashed var(--naranja);
+    font-weight:600;font-size:14px;
+    margin-bottom:32px;cursor:pointer;
+  }
   .menu-cat{grid-template-columns:1fr;gap:20px}
   .pizza-img{aspect-ratio:5/3}
 
@@ -899,7 +913,7 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
       <p class="lead" style="margin-top:16px">Masa muy fina, mozzarella 100% centro de leche y los ingredientes que la familia llevaría a su propia mesa. Disponibles también en versión sin gluten, sin lactosa y vegana.</p>
     </div>
 
-    <div class="cat-tabs" role="tablist" aria-label="Categorías de la carta">
+    <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Categorías de la carta">
       <button class="on" data-cat="populares" role="tab" aria-selected="true">Populares</button>
       <button data-cat="clasicas" role="tab" aria-selected="false">Clásicas</button>
       <button data-cat="especiales" role="tab" aria-selected="false">Especialidades</button>
@@ -907,6 +921,7 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
       <button data-cat="pastas" role="tab" aria-selected="false">Pastas y lasañas</button>
       <button data-cat="postres" role="tab" aria-selected="false">Postres</button>
     </div>
+    <button class="btn-more-cats" onclick="document.getElementById('catTabs').classList.add('expanded'); this.style.display='none'">+ Ver más categorías</button>
 
     <div class="menu-cat on" data-cat="populares"></div>
     <div class="menu-cat" data-cat="clasicas"></div>
