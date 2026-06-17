@@ -1353,17 +1353,22 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en'}, 'google_translate_element');
 }
 function toggleTranslation() {
-  var combo = document.querySelector('.goog-te-combo');
-  if (!combo) return;
   let btn = document.getElementById('btnTranslate');
   if (btn.textContent.trim() === 'EN') {
-    combo.value = 'en';
-    combo.dispatchEvent(new Event('change'));
-    btn.textContent = 'ES';
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = 'en';
+      combo.dispatchEvent(new Event('change'));
+      btn.textContent = 'ES';
+    } else {
+      document.cookie = "googtrans=/es/en; path=/";
+      location.reload();
+    }
   } else {
-    combo.value = 'es';
-    combo.dispatchEvent(new Event('change'));
-    btn.textContent = 'EN';
+    // Restaurar a español borrando la cookie y recargando para asegurar un DOM limpio
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+    location.reload();
   }
 }
 window.addEventListener('DOMContentLoaded', () => {
