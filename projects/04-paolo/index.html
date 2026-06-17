@@ -381,38 +381,65 @@ section{padding-block:clamp(70px, 9vw, 120px)}
   }
 }
 .motivo-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  text-align: center;
-  align-items: center;
-  background: var(--blanco);
-  padding: 24px 24px 32px;
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--borde);
+  justify-content: flex-end;
+  text-align: left;
+  align-items: flex-start;
+  min-height: 440px;
+  padding: 32px 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
   transition: transform .3s, box-shadow .3s;
 }
 .motivo-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
 }
 .motivo-card img {
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  border-radius: var(--r);
+  position: absolute;
+  inset: 0;
   width: 100%;
-  margin-bottom: 4px;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.motivo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,12,11,.95) 0%, rgba(13,12,11,.4) 60%, rgba(13,12,11,0) 100%);
+  z-index: 1;
+}
+.motivo-card h4, .motivo-card p, .motivo-card .btn-outline {
+  position: relative;
+  z-index: 2;
 }
 .motivo-card h4 {
-  font-size: 24px;
-  color: var(--negro);
+  font-size: 28px;
+  color: var(--crema-2);
   font-family: var(--display);
+  margin-bottom: 12px;
 }
 .motivo-card p {
   font-size: 16px;
-  color: var(--gris);
-  line-height: 1.5;
+  color: rgba(245,237,216,.85);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.motivo-card .btn-outline {
+  margin-top: 0;
+  border-color: rgba(245,237,216,.3);
+  color: var(--crema-2);
+  background: rgba(13,12,11,.4);
+  backdrop-filter: blur(8px);
+}
+.motivo-card .btn-outline:hover {
+  background: var(--naranja);
+  color: var(--negro);
+  border-color: var(--naranja);
 }
 .btn-outline {
   display: inline-flex; align-items: center; justify-content: center;
