@@ -375,6 +375,44 @@ nav {
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
+/* Checks personales */
+.sobre-checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.sobre-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.sobre-check-icon {
+  font-size: 13px;
+  color: var(--purple);
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+.sobre-check-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sobre-check-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.sobre-check-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.55;
+}
+
 @media (max-width: 1100px) {
   .sobre-grid-layout {
     grid-template-columns: 1fr;
@@ -2208,43 +2246,61 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </div>
         </div>
 
-        <!-- Columna derecha: habilidades de gestión ("Skills Off") -->
+        <!-- Columna derecha: checks personales -->
         <div class="sobre-aside-col">
           <div class="sobre-skills-off">
             <h3 class="sobre-skills-title">
-              <span class="es">Habilidades de Gestión</span>
-              <span class="en">Management Skills</span>
+              <span class="es">Cómo trabajo</span>
+              <span class="en">How I work</span>
             </h3>
 
-            <div class="sobre-skills-group">
-              <span class="sobre-skills-group-title">Estrategia &amp; Negocio</span>
-              <div class="sobre-skills-pills">
-                <span class="sobre-skill-pill"><span class="es">Discovery Contextual</span><span class="en">Contextual Discovery</span></span>
-                <span class="sobre-skill-pill"><span class="es">Alineación de Negocio</span><span class="en">Business Alignment</span></span>
-                <span class="sobre-skill-pill"><span class="es">Decisiones Basadas en Datos</span><span class="en">Data-Driven Decisions</span></span>
-                <span class="sobre-skill-pill">Product Thinking</span>
-                <span class="sobre-skill-pill"><span class="es">Estrategia de Producto</span><span class="en">Product Strategy</span></span>
-              </div>
-            </div>
-
-            <div class="sobre-skills-group">
-              <span class="sobre-skills-group-title">Liderazgo &amp; Proceso</span>
-              <div class="sobre-skills-pills">
-                <span class="sobre-skill-pill"><span class="es">Ownership End-to-end</span><span class="en">End-to-End Ownership</span></span>
-                <span class="sobre-skill-pill"><span class="es">Gestión de Stakeholders</span><span class="en">Stakeholder Management</span></span>
-                <span class="sobre-skill-pill"><span class="es">Metodologías Ágiles</span><span class="en">Agile (Scrum)</span></span>
-                <span class="sobre-skill-pill"><span class="es">Colaboración Multidisciplinar</span><span class="en">Cross-team Collab.</span></span>
-                <span class="sobre-skill-pill">Design QA &amp; Handoff</span>
-              </div>
-            </div>
-            <div class="sobre-skills-group">
-              <span class="sobre-skills-group-title">Comunicación &amp; Influencia</span>
-              <div class="sobre-skills-pills">
-                <span class="sobre-skill-pill"><span class="es">Presentación a Dirección</span><span class="en">C-Level Presentation</span></span>
-                <span class="sobre-skill-pill"><span class="es">Pensamiento Crítico</span><span class="en">Critical Thinking</span></span>
-                <span class="sobre-skill-pill"><span class="es">Empatía con el Usuario</span><span class="en">User Empathy</span></span>
-              </div>
-            </div>
+            <ul class="sobre-checks">
+              <li class="sobre-check-item">
+                <span class="sobre-check-icon">✦</span>
+                <div>
+                  <span class="sobre-check-title es">Documento todo.</span>
+                  <span class="sobre-check-title en">I document everything.</span>
+                  <span class="sobre-check-desc es">Si no está escrito, no existe — y eso me cuesta.</span>
+                  <span class="sobre-check-desc en">If it's not written down, it doesn't exist — and that drives me mad.</span>
+                </div>
+              </li>
+              <li class="sobre-check-item">
+                <span class="sobre-check-icon">✦</span>
+                <div>
+                  <span class="sobre-check-title es">Simplifico antes de añadir.</span>
+                  <span class="sobre-check-title en">I simplify before adding.</span>
+                  <span class="sobre-check-desc es">Mi primera pregunta siempre es: ¿esto se puede hacer con menos pasos?</span>
+                  <span class="sobre-check-desc en">My first question is always: can this be done in fewer steps?</span>
+                </div>
+              </li>
+              <li class="sobre-check-item">
+                <span class="sobre-check-icon">✦</span>
+                <div>
+                  <span class="sobre-check-title es">Diseño para personas, no para pantallas.</span>
+                  <span class="sobre-check-title en">I design for people, not screens.</span>
+                  <span class="sobre-check-desc es">La empatía es mi herramienta más técnica.</span>
+                  <span class="sobre-check-desc en">Empathy is my most technical tool.</span>
+                </div>
+              </li>
+              <li class="sobre-check-item">
+                <span class="sobre-check-icon">✦</span>
+                <div>
+                  <span class="sobre-check-title es">Las mejores ideas me las han dado mis compañeros.</span>
+                  <span class="sobre-check-title en">My best ideas have come from my teammates.</span>
+                  <span class="sobre-check-desc es">Por eso las críticas no me asustan, me interesan.</span>
+                  <span class="sobre-check-desc en">That's why feedback doesn't scare me — it interests me.</span>
+                </div>
+              </li>
+              <li class="sobre-check-item">
+                <span class="sobre-check-icon">✦</span>
+                <div>
+                  <span class="sobre-check-title es">Los datos primero, el sketch después.</span>
+                  <span class="sobre-check-title en">Data first, sketch second.</span>
+                  <span class="sobre-check-desc es">Nunca abro Figma sin entender el problema — y suelo hacer mapas mentales hasta que algo encaja.</span>
+                  <span class="sobre-check-desc en">I never open Figma without understanding the problem — I usually map it out until something clicks.</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
