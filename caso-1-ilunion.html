@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ILUNION Hotels — CRO Case Study</title>
+  <style>
+    /* ── RESET & BASE ────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:  #0a0a0a;
+      --gray-1: #1a1a1a;
+      --gray-2: #2e2e2e;
+      --gray-3: #5a5a5a;
+      --gray-4: #9a9a9a;
+      --gray-5: #d4d4d4;
+      --gray-6: #efefef;
+      --white:  #ffffff;
+      --accent: #0a0a0a;
+      --font:   'Inter', system-ui, -apple-system, sans-serif;
+      --radius: 12px;
+      --section-gap: 120px;
+      --content-max: 1080px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    section {
+      padding: var(--section-gap) 0;
+      border-top: 1px solid var(--gray-6);
+    }
+
+    /* ── LABELS ──────────────────────────────────── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+      margin-bottom: 32px;
+    }
+
+    /* ── IMAGES / PLACEHOLDERS ───────────────────── */
+    .img-placeholder {
+      background: var(--gray-6);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-4);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    /* ════════════════════════════════════════════
+       01 · HERO
+    ═══════════════════════════════════════════ */
+    #hero {
+      padding: 80px 0 var(--section-gap);
+      border-top: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--gray-3);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 52px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid var(--gray-5);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-2);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 0;
+      margin-top: 0;
+    }
+
+    .metric {
+      flex: 1;
+      padding: 28px 32px 28px 0;
+      border-right: 1px solid var(--gray-6);
+    }
+    .metric:last-child { border-right: none; }
+
+    .metric-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--black);
+    }
+
+    .metric-sub {
+      font-size: 12px;
+      color: var(--gray-4);
+      margin-top: 4px;
+    }
+
+    .hero-image {
+      height: 360px;
+    }
+
+    /* ════════════════════════════════════════════
+       02 · OVERVIEW
+    ═══════════════════════════════════════════ */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--gray-5);
+      border: 1px solid var(--gray-5);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .overview-card {
+      background: var(--white);
+      padding: 40px 40px 44px;
+    }
+
+    .overview-card:nth-child(1) { border-radius: var(--radius) 0 0 0; }
+    .overview-card:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+    .overview-card:nth-child(3) { border-radius: 0 0 0 var(--radius); }
+    .overview-card:nth-child(4) { border-radius: 0 0 var(--radius) 0; }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-icon svg { width: 28px; height: 28px; }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+      margin-bottom: 12px;
+    }
+
+    .card-text {
+      font-size: 15px;
+      color: var(--gray-2);
+      line-height: 1.65;
+    }
+
+    /* ════════════════════════════════════════════
+       03 · INVESTIGACIÓN
+    ═══════════════════════════════════════════ */
+    .audit-block {
+      background: var(--gray-6);
+      border-radius: var(--radius);
+      padding: 12px;
+      margin-bottom: 24px;
+    }
+
+    .audit-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+      margin-bottom: 12px;
+      padding: 4px 8px;
+    }
+
+    .audit-image {
+      height: 320px;
+      border-radius: 8px;
+      background: var(--gray-5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-4);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    .research-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .research-card {
+      border: 1px solid var(--gray-5);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .research-card-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+      margin-bottom: 24px;
+    }
+
+    /* Funnel */
+    .funnel-rows { display: flex; flex-direction: column; gap: 14px; }
+
+    .funnel-row { display: flex; align-items: center; gap: 12px; }
+
+    .funnel-name {
+      font-size: 13px;
+      color: var(--gray-2);
+      width: 140px;
+      flex-shrink: 0;
+    }
+
+    .funnel-bar-wrap {
+      flex: 1;
+      height: 8px;
+      background: var(--gray-6);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .funnel-bar {
+      height: 100%;
+      background: var(--black);
+      border-radius: 4px;
+      transition: width 0.6s ease;
+    }
+
+    .funnel-pct {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      width: 42px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .funnel-n {
+      font-size: 12px;
+      color: var(--gray-4);
+      width: 58px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* Insights list */
+    .insights-list { display: flex; flex-direction: column; gap: 16px; }
+
+    .insight-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .insight-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--black);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .insight-text {
+      font-size: 14px;
+      color: var(--gray-2);
+      line-height: 1.55;
+    }
+
+    .clarity-image {
+      margin-top: 20px;
+      height: 140px;
+      border-radius: 8px;
+    }
+
+    /* ════════════════════════════════════════════
+       04 · DIAGNÓSTICO → DECISIONES
+    ═══════════════════════════════════════════ */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 24px 0 0;
+    }
+
+    .timeline-item:last-child { padding-right: 0; }
+
+    .timeline-connector {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .timeline-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--white);
+      z-index: 1;
+    }
+
+    .timeline-circle svg { width: 20px; height: 20px; }
+
+    .timeline-line {
+      flex: 1;
+      height: 1px;
+      background: var(--gray-5);
+      margin-left: 0;
+    }
+
+    .timeline-item:last-child .timeline-line { display: none; }
+
+    .timeline-step {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .timeline-text {
+      font-size: 14px;
+      color: var(--gray-3);
+      line-height: 1.6;
+    }
+
+    .mejoras-pill {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 14px;
+      border: 1px solid var(--gray-5);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--gray-3);
+      cursor: default;
+    }
+
+    /* ════════════════════════════════════════════
+       05 · WIREFRAMES + DISEÑO FINAL
+    ═══════════════════════════════════════════ */
+    .wireframes-block {
+      background: var(--gray-6);
+      border-radius: var(--radius);
+      padding: 12px;
+      margin-bottom: 24px;
+    }
+
+    .wireframes-block .audit-label { padding: 8px 12px 4px; }
+
+    .wireframes-inner {
+      display: flex;
+      gap: 12px;
+      padding: 8px;
+    }
+
+    .wireframe-thumb {
+      flex: 1;
+      height: 200px;
+      border-radius: 8px;
+      background: var(--gray-5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-4);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .design-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 24px;
+    }
+
+    .design-block {
+      border: 1px solid var(--gray-5);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .design-block-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--gray-6);
+    }
+
+    .design-block-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-4);
+    }
+
+    .design-block-body {
+      padding: 24px;
+    }
+
+    .desktop-screens {
+      display: flex;
+      gap: 8px;
+    }
+
+    .screen-thumb {
+      flex: 1;
+      border-radius: 6px;
+      background: var(--gray-6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-4);
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .desktop-screen { height: 160px; }
+
+    .mobile-screens {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .mobile-screen {
+      width: 72px;
+      height: 160px;
+      border-radius: 6px;
+      background: var(--gray-6);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 8px;
+      color: var(--gray-4);
+      font-size: 9px;
+      font-weight: 500;
+    }
+
+    /* ════════════════════════════════════════════
+       06 · IMPLEMENTACIÓN + ITERACIÓN
+    ═══════════════════════════════════════════ */
+    .impl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .impl-card {
+      border: 1px solid var(--gray-5);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+
+    .impl-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--gray-6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .impl-icon svg { width: 22px; height: 22px; }
+
+    .impl-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .impl-text {
+      font-size: 14px;
+      color: var(--gray-3);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .impl-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      background: var(--gray-6);
+      border-radius: 6px;
+      font-size: 12px;
+      color: var(--gray-3);
+      font-weight: 500;
+    }
+
+    /* ════════════════════════════════════════════
+       07 · RESULTADOS
+    ═══════════════════════════════════════════ */
+    #resultados { background: var(--black); color: var(--white); }
+    #resultados .section-label { color: rgba(255,255,255,0.3); }
+
+    .results-hero {
+      text-align: center;
+      padding: 40px 0 64px;
+    }
+
+    .results-main-number {
+      font-size: clamp(96px, 16vw, 180px);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      color: var(--white);
+    }
+
+    .results-label-big {
+      font-size: 14px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 16px;
+      margin-bottom: 48px;
+    }
+
+    .results-uplift-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .uplift-number {
+      font-size: clamp(48px, 7vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--white);
+    }
+
+    .uplift-arrow {
+      font-size: 40px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .results-progression {
+      font-size: 18px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+    }
+
+    .results-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 0;
+    }
+
+    .results-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      padding: 48px 0 0;
+    }
+
+    .kpi {
+      padding: 0 32px 0 0;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .kpi:last-child { border-right: none; padding-right: 0; }
+    .kpi:not(:first-child) { padding-left: 32px; }
+
+    .kpi-icon {
+      font-size: 20px;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+
+    .kpi-value {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .kpi-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.45;
+    }
+
+    /* ════════════════════════════════════════════
+       08 · LEARNINGS
+    ═══════════════════════════════════════════ */
+    .learnings-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gray-5);
+      border: 1px solid var(--gray-5);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .learning-card {
+      background: var(--white);
+      padding: 40px 36px 44px;
+    }
+
+    .learning-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .learning-card:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+
+    .learning-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .learning-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .learning-text {
+      font-size: 13px;
+      color: var(--gray-3);
+      line-height: 1.6;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      :root { --section-gap: 72px; }
+      .hero-grid, .overview-grid, .research-bottom,
+      .timeline, .design-grid, .impl-grid,
+      .results-kpis, .learnings-grid { grid-template-columns: 1fr; }
+      .metrics-row { flex-direction: column; }
+      .metric { border-right: none; border-bottom: 1px solid var(--gray-6); padding: 20px 0; }
+      .metric:last-child { border-bottom: none; }
+      .timeline-item { padding: 0 0 32px 0; }
+      .timeline-connector { margin-bottom: 16px; }
+      .timeline-line { display: none; }
+      .results-main-number { font-size: 80px; }
+      .kpi { border-right: none; padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .kpi:last-child { border-bottom: none; }
+      .kpi:not(:first-child) { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     01 · HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <p class="hero-eyebrow">CRO Case Study</p>
+    <h1 class="hero-title">ILUNION Hotels</h1>
+    <p class="hero-subtitle">
+      Rediseño del componente de ofertas para aumentar
+      la conversión del canal directo.
+    </p>
+    <div class="tag-row">
+      <span class="tag">CRO</span>
+      <span class="tag">UX/UI Design</span>
+      <span class="tag">AEM</span>
+      <span class="tag">Analytics</span>
+      <span class="tag">Hoteles</span>
+    </div>
+
+    <div class="hero-grid">
+      <div class="metrics-row">
+        <div class="metric">
+          <div class="metric-label">Conversión Final</div>
+          <div class="metric-value">6.5%</div>
+          <div class="metric-sub">Resultado final</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Uplift</div>
+          <div class="metric-value">+93%</div>
+          <div class="metric-sub">Mejora relativa</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Impacto Anual Estimado</div>
+          <div class="metric-value">+585K€</div>
+          <div class="metric-sub">Ingresos incrementales</div>
+        </div>
+      </div>
+
+      <div class="img-placeholder hero-image">IMAGEN HERO — DISEÑO FINAL</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     02 · OVERVIEW
+══════════════════════════════════════════ -->
+<section id="overview">
+  <div class="container">
+    <p class="section-label">02 — Overview</p>
+
+    <div class="overview-grid">
+
+      <!-- Contexto -->
+      <div class="overview-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <p class="card-title">Contexto</p>
+        <p class="card-text">
+          ILUNION Hotels operaba con un componente de ofertas en su web corporativa
+          con bajo rendimiento de conversión. El canal directo representaba una
+          oportunidad estratégica frente a intermediarios con altas comisiones.
+        </p>
+      </div>
+
+      <!-- Mi Rol -->
+      <div class="overview-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <p class="card-title">Mi Rol</p>
+        <p class="card-text">
+          Lead UX/UI Designer. Responsable de la auditoría del componente actual,
+          análisis cuantitativo y cualitativo, definición de hipótesis, diseño
+          de wireframes y supervisión de implementación en AEM.
+        </p>
+      </div>
+
+      <!-- Problema -->
+      <div class="overview-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <p class="card-title">Problema</p>
+        <p class="card-text">
+          El componente de ofertas generaba alta fricción visual y escasa
+          urgencia de compra. La conversión en el motor de reservas era
+          del 3.36%, con un 23% de abandono antes de completar la reserva.
+        </p>
+      </div>
+
+      <!-- Objetivo -->
+      <div class="overview-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <p class="card-title">Objetivo</p>
+        <p class="card-text">
+          Aumentar la tasa de conversión del canal directo rediseñando el
+          componente de ofertas para generar más confianza, urgencia y
+          claridad de valor en el proceso de reserva.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     03 · INVESTIGACIÓN Y DIAGNÓSTICO
+══════════════════════════════════════════ -->
+<section id="investigacion">
+  <div class="container">
+    <p class="section-label">03 — Investigación y Diagnóstico</p>
+
+    <!-- Auditoría grande -->
+    <div class="audit-block">
+      <div class="audit-label">AUDITORÍA DEL COMPONENTE ACTUAL</div>
+      <div class="audit-image">
+        CAPTURAS DE AUDITORÍA — COMPONENTE ACTUAL (ANTES)
+      </div>
+    </div>
+
+    <!-- Funnel + Insights -->
+    <div class="research-bottom">
+
+      <!-- Funnel -->
+      <div class="research-card">
+        <p class="research-card-title">Funnel de Conversión</p>
+        <div class="funnel-rows">
+          <div class="funnel-row">
+            <span class="funnel-name">Home</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:100%"></div></div>
+            <span class="funnel-pct">100%</span>
+            <span class="funnel-n">327.381</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-name">Listado hoteles</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:46.2%"></div></div>
+            <span class="funnel-pct">46.2%</span>
+            <span class="funnel-n">151.388</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-name">Ficha hotel</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:21.3%"></div></div>
+            <span class="funnel-pct">21.3%</span>
+            <span class="funnel-n">69.768</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-name">Motor reservas</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:9.1%"></div></div>
+            <span class="funnel-pct">9.1%</span>
+            <span class="funnel-n">29.812</span>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-name">Confirmación</span>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:3.36%"></div></div>
+            <span class="funnel-pct">3.36%</span>
+            <span class="funnel-n">10.982</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insights Clarity + Analytics -->
+      <div class="research-card">
+        <p class="research-card-title">Insights Principales (Clarity + Analytics)</p>
+        <div class="insights-list">
+          <div class="insight-item">
+            <span class="insight-dot"></span>
+            <span class="insight-text">El 67% de los usuarios no interactúa con el componente de ofertas en mobile.</span>
+          </div>
+          <div class="insight-item">
+            <span class="insight-dot"></span>
+            <span class="insight-text">Alta tasa de "rage clicks" en el CTA principal, indicando fricción en el flujo de reserva.</span>
+          </div>
+          <div class="insight-item">
+            <span class="insight-dot"></span>
+            <span class="insight-text">El precio con descuento no era distinguible visualmente del precio base.</span>
+          </div>
+          <div class="insight-item">
+            <span class="insight-dot"></span>
+            <span class="insight-text">El 38% de los abandonos ocurren en la transición oferta → motor de reservas.</span>
+          </div>
+        </div>
+        <div class="img-placeholder clarity-image">HEATMAP CLARITY</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     04 · DIAGNÓSTICO → DECISIONES
+══════════════════════════════════════════ -->
+<section id="diagnostico">
+  <div class="container">
+    <p class="section-label">04 — Diagnóstico → Decisiones</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-connector">
+          <div class="timeline-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1l2.1-2.1M17 7l2.1-2.1"/>
+            </svg>
+          </div>
+          <div class="timeline-line"></div>
+        </div>
+        <p class="timeline-step">Step 1</p>
+        <p class="timeline-title">Insight clave</p>
+        <p class="timeline-text">
+          Los usuarios no perciben el valor diferencial de las ofertas ni la urgencia para reservar en ese momento.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-connector">
+          <div class="timeline-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0h10a2 2 0 002-2V9M9 14H4a2 2 0 01-2-2V9m0 0h20"/>
+            </svg>
+          </div>
+          <div class="timeline-line"></div>
+        </div>
+        <p class="timeline-step">Step 2</p>
+        <p class="timeline-title">Hipótesis</p>
+        <p class="timeline-text">
+          Si mostramos el ahorro en euros, añadimos urgencia temporal y mejoramos la jerarquía visual, aumentaremos el click-through al motor de reservas.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-connector">
+          <div class="timeline-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"/>
+              <line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/>
+              <line x1="3" y1="6" x2="3.01" y2="6"/>
+              <line x1="3" y1="12" x2="3.01" y2="12"/>
+              <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+          </div>
+          <div class="timeline-line"></div>
+        </div>
+        <p class="timeline-step">Step 3</p>
+        <p class="timeline-title">12 mejoras priorizadas</p>
+        <p class="timeline-text">
+          Priorizadas por impacto en conversión vs. esfuerzo de implementación, usando matriz ICE.
+        </p>
+        <span class="mejoras-pill">Ver lista de mejoras →</span>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-connector">
+          <div class="timeline-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+        <p class="timeline-step">Step 4</p>
+        <p class="timeline-title">Decisión final</p>
+        <p class="timeline-text">
+          Rediseño completo del componente con nuevo sistema de cards, precios con descuento visibles, badge de urgencia y CTA prominente.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     05 · WIREFRAMES + DISEÑO FINAL
+══════════════════════════════════════════ -->
+<section id="diseno">
+  <div class="container">
+    <p class="section-label">05 — Wireframes + Diseño Final</p>
+
+    <!-- Wireframes -->
+    <div class="wireframes-block">
+      <div class="audit-label">WIREFRAMES</div>
+      <div class="wireframes-inner">
+        <div class="wireframe-thumb">Wireframe 1</div>
+        <div class="wireframe-thumb">Wireframe 2</div>
+        <div class="wireframe-thumb">Wireframe 3</div>
+      </div>
+    </div>
+
+    <!-- Desktop + Mobile -->
+    <div class="design-grid">
+
+      <div class="design-block">
+        <div class="design-block-header">
+          <span class="design-block-label">Diseño Final — Desktop</span>
+        </div>
+        <div class="design-block-body">
+          <div class="desktop-screens">
+            <div class="screen-thumb desktop-screen">Oferta 1</div>
+            <div class="screen-thumb desktop-screen">Oferta 2</div>
+            <div class="screen-thumb desktop-screen">Oferta 3</div>
+            <div class="screen-thumb desktop-screen">Oferta 4</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-block">
+        <div class="design-block-header">
+          <span class="design-block-label">Diseño Final — Mobile</span>
+        </div>
+        <div class="design-block-body">
+          <div class="mobile-screens">
+            <div class="mobile-screen">M1</div>
+            <div class="mobile-screen">M2</div>
+            <div class="mobile-screen">M3</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     06 · IMPLEMENTACIÓN + ITERACIÓN
+══════════════════════════════════════════ -->
+<section id="implementacion">
+  <div class="container">
+    <p class="section-label">06 — Implementación + Iteración</p>
+
+    <div class="impl-grid">
+
+      <div class="impl-card">
+        <div class="impl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <p class="impl-title">Implementación</p>
+        <p class="impl-text">
+          El desarrollo se realizó sobre Adobe Experience Manager (AEM).
+          Trabajo en coordinación directa con el equipo de front-end para
+          garantizar fidelidad al diseño. Se implementó un sistema de
+          componentes reutilizables y configurables por el equipo de contenidos.
+        </p>
+        <span class="impl-badge">Tiempo de desarrollo: 3 semanas</span>
+      </div>
+
+      <div class="impl-card">
+        <div class="impl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+          </svg>
+        </div>
+        <p class="impl-title">Aprendizaje post-lanzamiento</p>
+        <p class="impl-text">
+          Tras el lanzamiento, monitorizamos la evolución semanal con
+          Analytics y Clarity. Los datos confirmaron la hipótesis inicial:
+          el nuevo componente aumentó el engagement con las ofertas y
+          redujo la fricción antes del motor de reservas.
+        </p>
+        <span class="impl-badge">Mejora continua basada en datos reales</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     07 · RESULTADOS
+══════════════════════════════════════════ -->
+<section id="resultados">
+  <div class="container">
+    <p class="section-label">07 — Resultados</p>
+
+    <div class="results-hero">
+      <div class="results-main-number">6.5%</div>
+      <p class="results-label-big">Conversión Final</p>
+
+      <div class="results-uplift-row">
+        <span class="uplift-arrow">↑</span>
+        <span class="uplift-number">+93%</span>
+      </div>
+      <p class="results-progression">3.36% → 6.5%</p>
+    </div>
+
+    <hr class="results-divider" />
+
+    <div class="results-kpis">
+      <div class="kpi">
+        <div class="kpi-icon">↗</div>
+        <div class="kpi-value">+585K€</div>
+        <div class="kpi-desc">Ingresos anuales incrementales estimados</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-icon">📅</div>
+        <div class="kpi-value">+129%</div>
+        <div class="kpi-desc">Mejora en conversión del canal directo</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-icon">↙</div>
+        <div class="kpi-value">−23%</div>
+        <div class="kpi-desc">Reducción del abandono en el funnel</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-icon">€</div>
+        <div class="kpi-value">+18%</div>
+        <div class="kpi-desc">Aumento del valor medio de reserva</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     08 · LEARNINGS
+══════════════════════════════════════════ -->
+<section id="learnings">
+  <div class="container">
+    <p class="section-label">08 — Learnings</p>
+
+    <div class="learnings-grid">
+
+      <div class="learning-card">
+        <span class="learning-icon">📊</span>
+        <p class="learning-title">Data First</p>
+        <p class="learning-text">
+          Sin datos cuantitativos no hay hipótesis. El funnel y los heatmaps
+          fueron la base de cada decisión de diseño, no las intuiciones.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <span class="learning-icon">🚀</span>
+        <p class="learning-title">Launch ≠ Finish</p>
+        <p class="learning-text">
+          El lanzamiento es el principio del ciclo, no el final. La monitorización
+          post-lanzamiento generó iteraciones que consolidaron los resultados.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <span class="learning-icon">💎</span>
+        <p class="learning-title">Constraints Create Design</p>
+        <p class="learning-text">
+          Las limitaciones técnicas de AEM no frenaron la solución; obligaron
+          a encontrar respuestas más elegantes y sostenibles a largo plazo.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <span class="learning-icon">💬</span>
+        <p class="learning-title">Business Language Matters</p>
+        <p class="learning-text">
+          Hablar en euros y porcentajes de mejora —no en píxeles— fue clave
+          para alinear stakeholders y conseguir recursos para iterar.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

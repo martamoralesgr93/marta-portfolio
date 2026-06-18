@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build vs. Buy · Diagnóstico de fricción operativa IT · Marta Morales</title>
-  <meta name="description" content="Cómo un Excel del responsable de sistemas desencadenó un diagnóstico de producto: investigación de fricción operativa y propuesta de plataforma interna para reducir la carga de tickets IT.">
+  <title>Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales</title>
+  <meta name="description" content="Cómo construí desde cero la identidad visual completa, el design system y el ecosistema digital de una cadena de pizzerías artesanas — de 1 a 6 locales en 2 años.">
+  <meta name="keywords" content="Brand Design System, Visual Identity, Digital Strategy, WordPress, Adobe XD, Metricool, Product Designer, UX, Spain, Pizzeria">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://martamorales.vercel.app/caso-5.html">
-  <meta property="og:title" content="Build vs. Buy · Diagnóstico de fricción operativa IT · Marta Morales">
+  <meta property="og:title" content="Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales">
+  <meta property="og:description" content="De 0 a 6 locales. Identidad visual, design system y ecosistema digital completo construido desde cero para una cadena de pizzerías artesanas en Madrid.">
   <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="design-system.css">
 
   <style>
@@ -24,86 +27,443 @@
     /* Specific Component Styles */
     .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
 
+    .dash-widget { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
+    .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
+    .dash-impact-row { display: flex; align-items: baseline; gap: 16px; }
+    .dash-impact-num { font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif; }
+    .dash-impact-text { font-size: 18px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* DESIGN SYSTEM DISPLAY */
+    .ds-section { margin: 60px 0; }
+    .ds-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; font-weight: 600; }
+    .color-palette { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .color-chip { border-radius: 10px; overflow: hidden; width: 120px; }
+    .color-swatch { height: 64px; }
+    .color-info { padding: 10px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; }
+    .color-name { font-size: 11px; font-weight: 600; color: var(--white); }
+    .color-hex { font-size: 10px; color: var(--text-dim); font-family: monospace; }
+
+    .typo-row { border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; align-items: baseline; gap: 24px; }
+    .typo-layer { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); min-width: 80px; }
+    .typo-sample { color: var(--white); }
+
+    /* TOUCHPOINT MAP */
+    .touchpoint-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; max-width: 720px; }
+    .tp-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .tp-cat { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+    .tp-items { font-size: 13px; color: var(--text); line-height: 1.9; }
+
+    .cs-ba-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+    .cs-ba-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+
     /* QUICK SUMMARY */
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding: 32px 0; border-top: 1px solid var(--border); }
     .qs-col { display: flex; flex-direction: column; }
     .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
     .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
     .qs-bullets { list-style: none; padding: 0; margin: 0; }
     .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
     .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
-    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
-    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
+    .qs-result-box { margin-top: 4px; padding: 0; }
+    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--accent); line-height: 1.5; }
 
-    /* INSIGHT BOX */
-    .insight-box { border-left: 2px solid var(--accent); padding-left: 24px; margin: 40px 0; max-width: 680px; }
-    .insight-box p { font-size: 19px; color: var(--text-bright); font-weight: 300; line-height: 1.6; font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
+    /* LEFT RAIL STAR LAYOUT */
+    .cs-star {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 0 40px;
+      align-items: start;
+    }
+    .cs-rail {
+      position: sticky;
+      top: 88px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cs-rail-letter {
+      font-size: 44px;
+      font-weight: 800;
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .cs-rail-label {
+      font-size: 7.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      margin-top: 10px;
+      opacity: 0.5;
+    }
+    .cs-rail-bar {
+      width: 1px;
+      height: 100%;
+      min-height: 60px;
+      background: linear-gradient(to bottom, rgba(242,162,34,0.25), transparent);
+      margin-top: 14px;
+    }
+    /* HORIZONTAL PHASE STEPS */
+    .phase-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 32px 0 48px;
+    }
+    .phase-step {
+      padding: 0 14px 0 0;
+      border-right: 1px solid var(--border);
+    }
+    .phase-step:last-child {
+      border-right: none;
+    }
+    .phase-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .phase-name {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .phase-desc {
+      font-size: 11px;
+      color: var(--text);
+      line-height: 1.5;
+    }
 
-    /* AFFINITY MAP */
-    .affinity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 48px 0; }
-    .affinity-cluster { border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: rgba(255,255,255,0.015); }
-    .affinity-cluster-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-    .affinity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .affinity-cards { display: flex; flex-direction: column; gap: 8px; }
-    .affinity-card { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.5; border-left: 2px solid transparent; }
+    /* ─── RESULTS STRIP ───────────────────────── */
+    .paolo-results-strip {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-top: 32px; margin-bottom: 24px;
+    }
+    .prs-cell {
+      padding: 28px 20px; border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .prs-cell:last-child { border-right: none; }
+    .prs-hero { background: var(--accent-glow); border-right-color: var(--accent-border); }
+    .prs-val {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 2.8vw, 40px);
+      font-weight: 700; line-height: 1; color: var(--white);
+    }
+    .prs-hero .prs-val { color: var(--accent); }
+    .prs-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim); line-height: 1.4;
+    }
+    .prs-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+    .prs-quote {
+      font-size: 13px; color: var(--text); line-height: 1.65;
+      font-style: italic; border-left: 2px solid var(--accent-border);
+      padding-left: 16px; flex: 1; min-width: 280px; margin: 0;
+    }
+    .prs-ctas { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
+    .prs-btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 22px; background: var(--accent); color: #000;
+      border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none;
+    }
+    .prs-btn-ghost {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 22px; background: transparent; color: var(--accent);
+      border: 1px solid var(--accent-border); border-radius: 8px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+    }
 
-    /* HONEST NOTE */
-    .honest-note { background: rgba(6,182,212,0.04); border: 1px solid rgba(6,182,212,0.16); border-radius: 14px; padding: 28px 32px; margin: 48px 0; max-width: 720px; }
-    .honest-note-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-    .honest-note p { font-size: 14px; color: var(--text); line-height: 1.75; }
-
-    /* IA TREE */
-    .ia-tree-wrap { margin: 40px 0 60px; }
-    .ia-root-row { display: flex; justify-content: center; }
-    .ia-root-node { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 32px; border: 1px solid var(--accent-border); border-radius: 14px; background: var(--accent-glow); min-width: 200px; }
-    .ia-root-icon { font-size: 20px; color: var(--accent); }
-    .ia-root-label { font-size: 16px; font-weight: 700; color: var(--white); }
-    .ia-root-sub { font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
-    .ia-trunk { width: 1px; height: 28px; background: var(--accent-border); margin: 0 auto; }
-    .ia-branches-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .ia-branch { display: flex; flex-direction: column; align-items: center; }
-    .ia-branch-connector { width: 1px; height: 28px; background: var(--border); }
-    .ia-branch-head { width: 100%; border: 1px solid; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 16px; }
-    .ia-branch-icon { font-size: 18px; }
-    .ia-branch-title { font-size: 14px; font-weight: 700; }
-    .ia-branch-desc { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; }
-    .ia-branch-items { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-    .ia-item { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,0.02); font-size: 13px; color: var(--text-bright); }
-    .ia-item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-    .ia-surface-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; border: 1px solid; }
-
-    /* hide lang children */
-    html:not(.lang-en) [lang="en"]:not(.en) { display: none; }
-    html.lang-en [lang="es"]:not(.es) { display: none; }
+    /* ─── LEARNINGS CARDS ──────────────────────── */
+    .paolo-learnings {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 0; border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-top: 32px;
+    }
+    .pl-card {
+      padding: 28px 20px; border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .pl-card:last-child { border-right: none; }
+    .pl-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .pl-title {
+      font-size: 13px; font-weight: 700; color: var(--white);
+      line-height: 1.3; margin: 0;
+    }
+    .pl-text {
+      font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;
+    }
 
     /* RESPONSIVE OVERRIDES */
     @media (max-width: 900px) {
+      .tool-grid { grid-template-columns: 1fr 1fr; }
+      .touchpoint-grid { grid-template-columns: 1fr; }
       .quick-summary-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
-      .affinity-grid, .user-groups, .modules-grid, .learning-grid, .ia-branches-row { grid-template-columns: 1fr; }
-      .scenario-cols { grid-template-columns: 1fr; }
-      .scenario-col + .scenario-col { border-left: none; border-top: 1px solid var(--border); }
     }
     @media (max-width: 768px) {
       .quick-summary-grid { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+      .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
+      .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .dash-impact-num { font-size: 64px; }
+      .paolo-results-strip { grid-template-columns: 1fr 1fr; }
+      .paolo-learnings { grid-template-columns: 1fr 1fr; }
+      .pl-card, .prs-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .pl-card:last-child, .prs-cell:last-child { border-bottom: none; }
+      .dash-impact-text { font-size: 14px; }
+      .color-palette { gap: 8px; }
+      .color-chip { width: 100px; }
+      .typo-row { flex-direction: column; gap: 8px; padding: 16px 0; }
+      .typo-layer { min-width: auto; }
       .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
-      .insight-box { padding-left: 18px; margin: 28px 0; }
-      .insight-box p { font-size: 16px; }
-      .affinity-grid { gap: 12px; margin: 32px 0; }
-      .affinity-cluster { padding: 18px; }
-      .honest-note { padding: 22px 24px; margin: 32px 0; }
-      .ia-tree-wrap { margin: 28px 0 40px; }
-      .ia-root-node { padding: 14px 24px; min-width: 160px; }
-      .ia-root-label { font-size: 14px; }
-      .ia-branch-head { padding: 14px 16px; }
-      .ia-branch-title { font-size: 13px; }
-      .ia-item { font-size: 12px; padding: 7px 12px; }
+      .ds-section { margin: 40px 0; }
+      .touchpoint-grid { margin: 28px 0; }
+      .tp-card { padding: 18px; }
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .cs-star { grid-template-columns: 44px minmax(0, 1fr); gap: 0 16px; }
+      .cs-rail { position: relative; top: 0; }
+      .cs-rail-letter { font-size: 30px; }
+      .phase-steps { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 480px) {
-      .insight-box p { font-size: 15px; }
-      .affinity-cluster-label { font-size: 9px; }
-      .affinity-card { font-size: 12px; padding: 8px 12px; }
-      .ia-branches-row { gap: 14px; }
+      .dash-impact-num { font-size: 48px; }
+      .color-chip { width: 80px; }
+      .color-swatch { height: 48px; }
+      .color-info { padding: 8px 10px; }
+      .color-name { font-size: 10px; }
+    }
+
+    /* ── 13. STORYTELLING & HIERARCHY SYSTEM ── */
+    .story-header {
+      margin-bottom: 24px;
+    }
+    .story-num {
+      font-family: var(--font-serif);
+      font-size: 64px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+    }
+    .story-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 4px;
+      display: block;
+    }
+    .story-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    .story-title em {
+      font-style: italic;
+      font-weight: normal;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* Design Explorations Flow */
+    .explorations-section {
+      margin-top: 36px;
+      margin-bottom: 36px;
+    }
+    .explorations-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .explorations-flow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      scrollbar-width: thin;
+      margin-bottom: 24px;
+    }
+    .exploration-item {
+      flex: 0 0 120px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.02);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .exploration-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(242, 162, 34, 0.35);
+    }
+    .exploration-item img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .exploration-arrow {
+      color: var(--text-dim);
+      font-size: 14px;
+      font-weight: bold;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    /* Decision Card */
+    .card-decision {
+      background: rgba(242, 162, 34, 0.03);
+      border: 1px solid rgba(242, 162, 34, 0.15);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 24px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .card-decision-icon {
+      font-size: 20px;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .card-decision-content {
+      flex: 1;
+    }
+    .card-decision-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .card-decision-text {
+      font-size: 13px;
+      color: var(--text-bright);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Impact Card */
+    .card-impact {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      max-width: 420px;
+      text-align: left;
+    }
+    .card-impact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(242, 162, 34, 0.08);
+      border: 1px solid rgba(242, 162, 34, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .card-impact-content {
+      flex: 1;
+    }
+    .card-impact-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .card-impact-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Device frames */
+    /* Device frames - simplified to flat wrappers without borders, bases or shadows */
+    .device-laptop-minimal {
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: hidden;
+    }
+    .device-laptop-minimal img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    .device-laptop-base {
+      display: none;
+    }
+
+    .device-phone-minimal {
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: hidden;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+    .device-phone-minimal img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Key rule notes */
+    .key-rule-note {
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .key-rule-note svg {
+      color: #10b981;
     }
   </style>
 </head>
@@ -123,15 +483,15 @@
       <div class="cs-dropdown-menu">
         <a href="caso-1.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
-          <div class="cs-item-title">ILUNION CRO</div>
-          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
-          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
-        </a>
-        <a href="caso-2.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 02</div>
           <div class="cs-item-title">Booking Engine</div>
           <div class="cs-item-skill es">Design Ops & Componentes</div>
           <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="caso-2.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
         <a href="caso-3.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 03</div>
@@ -139,17 +499,18 @@
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <a href="caso-4.html" class="cs-dropdown-item">
+        <div class="cs-dropdown-item" style="opacity: 0.45; cursor: default; pointer-events: none;">
           <div class="cs-item-num">Caso 04</div>
-          <div class="cs-item-title">Paolo Brand System</div>
-          <div class="cs-item-skill es">Identidad de Marca & Ecosistema Digital 360°</div>
-          <div class="cs-item-skill en">Brand Identity & 360° Digital Ecosystem</div>
-        </a>
+          <div class="cs-item-title es">IT Ops &amp; Oracle ERP (Próximamente)</div>
+          <div class="cs-item-title en">IT Ops &amp; Oracle ERP (Coming Soon)</div>
+          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
+        </div>
         <a href="caso-5.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 05</div>
-          <div class="cs-item-title">IT Ops & Oracle ERP</div>
-          <div class="cs-item-skill es">Investigación de Producto & Herramientas Internas</div>
-          <div class="cs-item-skill en">Product Research & Internal Tooling</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
         </a>
       </div>
     </div>
@@ -163,44 +524,39 @@
   <div class="cs-hero-overlay"></div>
   <div class="cs-hero-glow"></div>
   <div class="cs-hero-content">
-    <span class="cs-eyebrow es">05 — We Are Actions · IT Operations · Investigación de producto</span>
-    <span class="cs-eyebrow en">05 — We Are Actions · IT Operations · Product Research</span>
+    <span class="cs-eyebrow">
+      05 — Paolo by Danny's Jazz · Customer Journey · Producto Digital
+    </span>
     <h1 class="cs-title">
-      <span class="es">Cuando comprar<br><em>no resuelve el problema</em></span>
-      <span class="en">When buying<br><em>doesn't solve the problem</em></span>
+      El ecosistema digital que conectó<br><em>una pizzería en expansión con sus clientes</em>
     </h1>
     <div class="cs-tags">
-      <span class="cs-tag">Product Strategy</span>
-      <span class="cs-tag">Build vs. Buy</span>
-      <span class="cs-tag">Discovery contextual</span>
-      <span class="cs-tag">ITSM · Oracle</span>
-      <span class="cs-tag">Gestión de incidencias</span>
-      <span class="cs-tag">Propuesta conceptual</span>
-      <span class="cs-tag">Fricción operativa</span>
-      <span class="cs-tag">Herramienta interna</span>
+      <span class="cs-tag">Customer Journey</span>
+      <span class="cs-tag">UX/UI Design</span>
+      <span class="cs-tag">Information Architecture</span>
+      <span class="cs-tag">Frontend Development</span>
+      <span class="cs-tag">Delivery Ecosystem</span>
+      <span class="cs-tag">Microsoft Clarity</span>
+      <span class="cs-tag">Google Analytics 4</span>
+      <span class="cs-tag">Digital Transformation</span>
+      <span class="cs-tag">Product Design</span>
     </div>
     <div class="cs-meta">
       <div>
-        <div class="cs-meta-label es">Empresa</div>
-        <div class="cs-meta-label en">Company</div>
-        <div class="cs-meta-val">We Are Actions</div>
+        <div class="cs-meta-label">Cliente</div>
+        <div class="cs-meta-val">Paolo by Danny's Jazz</div>
       </div>
       <div>
-        <div class="cs-meta-label es">Rol</div>
-        <div class="cs-meta-label en">Role</div>
-        <div class="cs-meta-val es">Diseñadora · Research & Propuesta conceptual</div>
-        <div class="cs-meta-val en">Designer · Research & Conceptual proposal</div>
+        <div class="cs-meta-label">Rol</div>
+        <div class="cs-meta-val">Product Designer · Frontend Developer</div>
       </div>
       <div>
-        <div class="cs-meta-label es">Periodo</div>
-        <div class="cs-meta-label en">Period</div>
-        <div class="cs-meta-val">2022 – 2024 · Dept. IT</div>
+        <div class="cs-meta-label">Periodo</div>
+        <div class="cs-meta-val">2019 – 2022</div>
       </div>
       <div>
-        <div class="cs-meta-label es">Escala</div>
-        <div class="cs-meta-label en">Scale</div>
-        <div class="cs-meta-val es">+50 usuarios · &lt;15 gestores</div>
-        <div class="cs-meta-val en">+50 users · &lt;15 managers</div>
+        <div class="cs-meta-label">Escala</div>
+        <div class="cs-meta-val">1 → 6 locales</div>
       </div>
     </div>
   </div>
@@ -209,647 +565,997 @@
 <!-- QUICK SUMMARY -->
 <section class="quick-summary-section">
   <div class="cs-wrap">
-    <div class="quick-summary-grid fu">
+    <div class="quick-summary-grid">
       <div class="qs-col">
-        <div class="qs-label">⚠ <span class="es">El problema</span><span class="en">The problem</span></div>
-        <div class="qs-val es">Una herramienta estándar de mercado usada durante años para necesidades cada vez más custom. La fricción acumulada empezaba a costar horas reales de equipo.</div>
-        <div class="qs-val en">A standard market tool used for years to meet increasingly custom needs. The accumulated friction was starting to cost real team hours.</div>
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          El Problema
+        </span>
+        <div class="qs-val">
+          Una cadena de pizzerías artesanas sin canal digital en 2020. La pandemia convirtió "tener presencia online" de ventaja competitiva en condición de supervivencia.
+        </div>
       </div>
       <div class="qs-col">
-        <div class="qs-label">🔍 <span class="es">Mi rol</span><span class="en">My role</span></div>
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Mi Rol
+        </span>
+        <div class="qs-val">
+          <strong>Ownership completo del producto digital:</strong> diseño UX/UI, arquitectura de información, desarrollo frontend, activación de canales y análisis continuo. De la decisión al código.
+        </div>
+      </div>
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Qué Hice
+        </span>
         <ul class="qs-bullets">
-          <li class="es">Discovery contextual con el equipo IT</li>
-          <li class="en">Contextual discovery with IT team</li>
-          <li class="es">Síntesis de hallazgos y patrones</li>
-          <li class="en">Findings synthesis and pattern mapping</li>
-          <li class="es">Propuesta estratégica Build vs. Buy</li>
-          <li class="en">Build vs. Buy strategic proposal</li>
-          <li class="es">Diseño conceptual de solución interna</li>
-          <li class="en">Conceptual design of internal solution</li>
+          <li>Diseñé los 3 customer journeys del negocio: delivery, visita al local y reserva.</li>
+          <li>Construí la web completa — Adobe XD → HTML/CSS en WordPress + Elementor.</li>
+          <li>Activé el ecosistema de delivery (Glovo, Uber Eats, JustEat) e implementé QR.</li>
+          <li>Itero sobre datos: Clarity para comportamiento, GA4 para conversión, Metricool para contenido.</li>
         </ul>
       </div>
       <div class="qs-col">
-        <div class="qs-label">📐 <span class="es">Decisión clave</span><span class="en">Key decision</span></div>
-        <div class="qs-val es">No parchear Oracle. Proponer una herramienta interna diseñada alrededor de los flujos reales del equipo — no adaptada a los flujos que una plataforma genérica asume.</div>
-        <div class="qs-val en">Don't patch Oracle. Propose an internal tool designed around the team's real workflows — not adapted to those a generic platform assumes.</div>
-      </div>
-      <div class="qs-col">
-        <div class="qs-label">🎯 <span class="es">Objetivo de negocio</span><span class="en">Business goal</span></div>
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Resultado
+        </span>
         <div class="qs-result-box">
-          <div class="qs-result-highlight es">Liberar la bolsa de horas dedicada a gestión de tickets para reorientarla a trabajo técnico de mayor valor.</div>
-          <div class="qs-result-highlight en">Free up the hours dedicated to ticket management to redirect them to higher-value technical work.</div>
+          <div class="qs-result-highlight">
+            El producto escala de 1 a 6 locales en 2 años sin rediseño. Cuando el proyecto terminó, el ecosistema digital seguía funcionando solo.
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- [S] SITUACIÓN -->
+<!-- MI ROL -->
 <section class="cs-block">
-  <div class="cs-behance-letter">S</div>
+  <div class="cs-behance-letter" style="opacity:0.35">M</div>
   <div class="cs-wrap">
-
     <div class="fu">
-      <span class="block-label es">Situación</span>
-      <span class="block-label en">Situation</span>
-      <h2 class="block-h es">El Excel que lo<br><em>cambió todo</em></h2>
-      <h2 class="block-h en">The spreadsheet that<br><em>changed everything</em></h2>
+      <span class="block-label">MI ROL · Responsabilidades</span>
+      <h2 class="block-h">Primer proyecto.<br><em>Ownership del producto digital de principio a fin</em></h2>
     </div>
-
-    <p class="p fu es"><strong>We Are Actions es una consultora digital de más de 30 años.</strong> Durante ese tiempo, la gestión de incidencias, solicitudes internas, permisos y accesos se realizaba a través de Oracle — una plataforma corporativa de mercado, robusta y consolidada, pero diseñada para organizaciones con procesos estandarizados y homogéneos.</p>
-    <p class="p fu en"><strong>We Are Actions is a digital consultancy with over 30 years of history.</strong> During that time, incident management, internal requests, permissions and access were handled through Oracle — a robust, established market platform, but one designed for organizations with standardized, homogeneous processes.</p>
-
-    <p class="p fu es">La empresa creció. Los procesos se complejizaron. Y Oracle siguió siendo el mismo.</p>
-    <p class="p fu en">The company grew. Processes became more complex. And Oracle stayed the same.</p>
-
-    <div class="insight-box fu">
-      <p class="es">El Senior de Sistemas — máximo responsable técnico de la empresa — llevó a dirección un Excel. No era un informe elaborado. Era una hoja de cálculo con datos reales que demostraba que la plataforma generaba más carga de trabajo de la que resolvía.</p>
-      <p class="en">The Senior Systems Manager — the company's top technical authority — brought a spreadsheet to management. Not an elaborate report. A spreadsheet with real data showing that the platform was generating more workload than it was resolving.</p>
-    </div>
-
-    <p class="p fu es">Ese Excel fue la señal. El problema tenía validación al más alto nivel técnico de la organización antes de que yo entrara. Mi trabajo fue convertir esa señal en una propuesta de producto.</p>
-    <p class="p fu en">That spreadsheet was the signal. The problem had validation at the highest technical level of the organisation before I got involved. My job was to turn that signal into a product proposal.</p>
-
-    <div class="data-band fu">
-      <div class="data-cell">
-        <div class="data-v">+50</div>
-        <div class="data-l es">usuarios generando solicitudes en la plataforma</div>
-        <div class="data-l en">users generating requests in the platform</div>
-      </div>
-      <div class="data-cell">
-        <div class="data-v">&lt;15</div>
-        <div class="data-l es">personas del equipo IT gestionando toda la operativa</div>
-        <div class="data-l en">IT team members managing all operations</div>
-      </div>
-      <div class="data-cell">
-        <div class="data-v">30+</div>
-        <div class="data-l es">años de Oracle en la organización — herramienta heredada, nunca cuestionada</div>
-        <div class="data-l en">years of Oracle in the organisation — inherited tool, never questioned</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- [T] TAREA -->
-<section class="cs-block">
-  <div class="cs-behance-letter">T</div>
-  <div class="cs-wrap">
-
-    <div class="fu">
-      <span class="block-label es">Tarea · El problema real</span>
-      <span class="block-label en">Task · The real problem</span>
-      <h2 class="block-h es">No era un problema<br><em>de usabilidad</em></h2>
-      <h2 class="block-h en">It wasn't a<br><em>usability problem</em></h2>
-    </div>
-
-    <p class="p fu es">La primera tentación era mejorar la interfaz de Oracle. Hacerla más clara, reorganizar los menús, añadir algunas instrucciones. Ese habría sido un proyecto de UX. Y habría sido el proyecto equivocado.</p>
-    <p class="p fu en">The first temptation was to improve Oracle's interface. Make it clearer, reorganise the menus, add some instructions. That would have been a UX project. And it would have been the wrong project.</p>
-
-    <p class="p fu es">Al observar cómo el equipo trabajaba realmente con la herramienta, el diagnóstico fue otro: <strong>Oracle no estaba mal diseñado para lo que fue creado. Estaba mal elegido para lo que esta organización necesitaba.</strong> Es una distinción que importa porque cambia completamente la respuesta.</p>
-    <p class="p fu en">Looking at how the team actually worked with the tool, the diagnosis was different: <strong>Oracle wasn't poorly designed for what it was built for. It was poorly chosen for what this organisation needed.</strong> That's a distinction that matters because it completely changes the answer.</p>
-
-    <div class="user-groups fu">
-      <div class="user-group">
-        <div class="user-group-badge" style="background:var(--accent-glow); color:var(--accent); border:1px solid var(--accent-border);">
-          <span>⚙</span> <span class="es">Grupo A · Gestores IT</span><span class="en">Group A · IT Managers</span>
-        </div>
-        <div class="user-group-name es">Equipo de soporte y sistemas</div>
-        <div class="user-group-name en">Support and systems team</div>
-        <div class="user-group-count es">Menos de 15 personas · perfil técnico</div>
-        <div class="user-group-count en">Fewer than 15 people · technical profile</div>
-        <ul class="user-group-needs">
-          <li class="es">Triaje eficiente de incidencias por urgencia</li>
-          <li class="en">Efficient incident triage by urgency</li>
-          <li class="es">Visibilidad del estado de cada solicitud</li>
-          <li class="en">Visibility of each request's status</li>
-          <li class="es">Flujos para tareas repetitivas sin rehacer</li>
-          <li class="en">Flows for repetitive tasks without redoing</li>
-          <li class="es">Prevención de errores en producción</li>
-          <li class="en">Error prevention in production</li>
+    <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
+        <ul class="bullet-list">
+          <li>Definición de la arquitectura de información de la web — cómo se organiza la carta, cómo se comunica la escala (5 locales, 1 número), qué CTAs y en qué orden</li>
+          <li>Diseño UX/UI — prototipo completo en Adobe XD, responsive mobile-first, interacciones y estados</li>
+          <li>Desarrollo frontend — maquetación en WordPress + Elementor, HTML/CSS, publicación y mantenimiento</li>
+          <li>Implementación QR — sustitución de cartas físicas y punto de entrada digital en local</li>
+          <li>Activación de ecosistema de delivery — Glovo, Uber Eats, JustEat: configuración, oferta y optimización</li>
+          <li>Análisis de comportamiento y conversión — Microsoft Clarity + Google Analytics 4 → iteraciones concretas</li>
+          <li>Gestión de presencia digital — Google My Business, contenido, reputación online</li>
         </ul>
       </div>
-      <div class="user-group">
-        <div class="user-group-badge" style="background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.5); border:1px solid var(--border);">
-          <span>👤</span> <span class="es">Grupo B · Usuarios internos</span><span class="en">Group B · Internal users</span>
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Herramientas</p>
+        <div class="tool-grid" style="grid-template-columns:1fr 1fr; gap:12px; margin:0 0 24px;">
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <div class="tool-name">Adobe XD</div>
+            <div class="tool-role">Diseño UI / prototipos web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="tool-name">WordPress · Elementor</div>
+            <div class="tool-role">Desarrollo web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="tool-name">Metricool</div>
+            <div class="tool-role">RRSS analytics</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="tool-name">Microsoft Clarity</div>
+            <div class="tool-role">Comportamiento web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <div class="tool-name">Google Analytics 4</div>
+            <div class="tool-role">Tráfico y conversión</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+            <div class="tool-name">Glovo · Uber · JustEat</div>
+            <div class="tool-role">Canales de delivery</div>
+          </div>
         </div>
-        <div class="user-group-name es">Resto de la empresa</div>
-        <div class="user-group-name en">Rest of the company</div>
-        <div class="user-group-count es">Más de 50 personas · perfil no técnico</div>
-        <div class="user-group-count en">More than 50 people · non-technical profile</div>
-        <ul class="user-group-needs">
-          <li class="es">Saber cómo reportar sin cometer errores</li>
-          <li class="en">Know how to report without making mistakes</li>
-          <li class="es">Seguimiento del estado de su solicitud</li>
-          <li class="en">Track the status of their request</li>
-          <li class="es">Interfaz comprensible sin formación técnica</li>
-          <li class="en">Understandable interface without technical training</li>
-          <li class="es">Menos fricción en tareas simples y repetidas</li>
-          <li class="en">Less friction on simple, repeated tasks</li>
-        </ul>
+        <p class="p" style="margin-top:0; padding-left:16px; border-left:2px solid var(--accent); font-size:13px; color:rgba(255,255,255,0.55);">Primer cliente profesional. No había equipo, no había briefing de producto, no había estructura. Tuve que decidir qué construir, en qué orden y por qué — y luego construirlo. El proyecto duró 2 años y el negocio pasó de 1 a 6 locales durante ese tiempo.</p>
       </div>
     </div>
-
-    <p class="p fu es">Oracle trataba a ambos grupos de la misma manera. Una cola única, un formato único, una experiencia única. El resultado: el equipo IT dedicaba una parte significativa de su tiempo a gestionar la confusión generada por la propia herramienta, en lugar de resolver los problemas que había venido a solucionar.</p>
-    <p class="p fu en">Oracle treated both groups the same way. One queue, one format, one experience. The result: the IT team spent a significant portion of their time managing the confusion generated by the tool itself, rather than solving the problems it was supposed to address.</p>
-
-    <div class="insight-box fu">
-      <p class="es">El objetivo no era rediseñar Oracle. Era responder una pregunta de producto: ¿tiene más sentido adaptar indefinidamente una herramienta genérica, o construir algo que encaje con los flujos reales de este equipo?</p>
-      <p class="en">The goal wasn't to redesign Oracle. It was to answer a product question: does it make more sense to indefinitely adapt a generic tool, or to build something that fits this team's real workflows?</p>
-    </div>
-
   </div>
 </section>
 
-<!-- [A] INVESTIGACIÓN & HALLAZGOS -->
-<section class="cs-block">
-  <div class="cs-behance-letter">A</div>
+<!-- [S] SITUATION -->
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
   <div class="cs-wrap">
-
-    <div class="fu">
-      <span class="block-label es">Acción · Discovery</span>
-      <span class="block-label en">Action · Discovery</span>
-      <h2 class="block-h es">Lo que el equipo<br><em>decía sin decir</em></h2>
-      <h2 class="block-h en">What the team was<br><em>saying without saying it</em></h2>
-    </div>
-
-    <p class="p fu es">La investigación se hizo desde dentro. Al estar integrada en el equipo de IT, tuve acceso a los momentos de fricción tal como ocurrían — no en una sesión de entrevista, sino en el flujo de trabajo real. Las conversaciones con el equipo de soporte y sistemas revelaron patrones que se repetían de forma consistente.</p>
-    <p class="p fu en">The research was done from the inside. Being embedded in the IT team gave me access to friction moments as they happened — not in an interview session, but in the real workflow. Conversations with the support and systems team revealed patterns that repeated consistently.</p>
-
-    <p class="p fu es">Para este case study he sintetizado esos patrones en un mapa de afinidad retrospectivo que refleja lo identificado durante el proceso de observación.</p>
-    <p class="p fu en">For this case study I've synthesised those patterns into a retrospective affinity map reflecting what was identified during the observation process.</p>
-
-    <!-- AFFINITY MAP -->
-    <div class="affinity-grid fu">
-      <div class="affinity-cluster">
-        <div class="affinity-cluster-label" style="color:#f59e0b;">
-          <div class="affinity-dot" style="background:#f59e0b;"></div>
-          <span class="es">Patrón 1 · Trabajo manual sin automatizar</span>
-          <span class="en">Pattern 1 · Manual work without automation</span>
-        </div>
-        <div class="affinity-cards">
-          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">Renovación de certificados web: proceso manual repetido cada vez</div>
-          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">Asignación de permisos: mismas acciones para cada nuevo usuario</div>
-          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">El sistema no recuerda procesos previos similares</div>
-          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">Web certificate renewal: manual process repeated each time</div>
-          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">Permission assignment: same actions for each new user</div>
-          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">The system has no memory of similar previous processes</div>
-        </div>
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">S</div>
+        <div class="cs-rail-label">SITUATION</div>
+        <div class="cs-rail-bar"></div>
       </div>
-      <div class="affinity-cluster">
-        <div class="affinity-cluster-label" style="color:#ef4444;">
-          <div class="affinity-dot" style="background:#ef4444;"></div>
-          <span class="es">Patrón 2 · Sistema sin guardianes de error</span>
-          <span class="en">Pattern 2 · System without error guards</span>
-        </div>
-        <div class="affinity-cards">
-          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Archivos eliminados por accidente — sin confirmación previa</div>
-          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Procesos ejecutados en entorno incorrecto (prod vs staging)</div>
-          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Consultas pesadas lanzadas sin validar su impacto</div>
-          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Files accidentally deleted — no prior confirmation</div>
-          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Processes run in the wrong environment (prod vs staging)</div>
-          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Heavy queries launched without validating their impact</div>
-        </div>
-      </div>
-      <div class="affinity-cluster">
-        <div class="affinity-cluster-label" style="color:#8b5cf6;">
-          <div class="affinity-dot" style="background:#8b5cf6;"></div>
-          <span class="es">Patrón 3 · Arquitectura de información plana</span>
-          <span class="en">Pattern 3 · Flat information architecture</span>
-        </div>
-        <div class="affinity-cards">
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Incidencias críticas y consultas menores en la misma cola</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Priorización dependía del criterio individual de cada gestor</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Tiempo de triaje elevado en momentos de alta carga</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Critical incidents and minor queries in the same queue</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Prioritisation depended on each manager's individual judgement</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">High triage time during peak load moments</div>
-        </div>
-      </div>
-      <div class="affinity-cluster">
-        <div class="affinity-cluster-label" style="color:#06b6d4;">
-          <div class="affinity-dot" style="background:#06b6d4;"></div>
-          <span class="es">Patrón 4 · Visibilidad nula del estado</span>
-          <span class="en">Pattern 4 · Zero status visibility</span>
-        </div>
-        <div class="affinity-cards">
-          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">Quien solicita no sabe en qué punto está sin preguntar</div>
-          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">Cada ticket empezaba de cero, sin contexto previo</div>
-          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">El equipo IT recibía preguntas de estado que consumían tiempo</div>
-          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">Requesters don't know the status without asking directly</div>
-          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">Each ticket started from scratch, with no prior context</div>
-          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">IT team received status queries that consumed their time</div>
-        </div>
-      </div>
-    </div>
+      <div>
+        <span class="block-label">SITUATION · Contexto</span>
+        <h2 class="block-h">
+          Un negocio en expansión.<br><em>Sin canal digital en el peor momento para no tenerlo</em>
+        </h2>
 
-    <div class="fu">
-      <div class="insight-box">
-        <p class="es">El insight que une los cuatro patrones: el sistema descarga en el usuario la carga cognitiva que debería asumir el propio producto. Los errores no eran aleatorios — eran predecibles y prevenibles.</p>
-        <p class="en">The insight connecting all four patterns: the system offloads onto the user the cognitive burden the product itself should handle. The errors weren't random — they were predictable and preventable.</p>
-      </div>
-    </div>
-
-    <!-- HMW -->
-    <div class="fu" style="margin-top:60px; padding:36px; background:rgba(6,182,212,0.04); border:1px solid rgba(6,182,212,0.18); border-radius:16px; max-width:780px;">
-      <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">How Might We</div>
-      <p style="font-size:20px; color:var(--white); font-family:'Playfair Display', serif; font-style:italic; line-height:1.55;" class="es">¿Cómo podríamos diseñar un sistema de operaciones interno que reduzca la carga cognitiva del equipo IT, prevenga errores antes de que ocurran y haga visible el estado de cada proceso sin esfuerzo adicional?</p>
-      <p style="font-size:20px; color:var(--white); font-family:'Playfair Display', serif; font-style:italic; line-height:1.55;" class="en">How might we design an internal operations system that reduces the IT team's cognitive load, prevents errors before they occur, and makes each process's status visible without additional effort?</p>
-    </div>
-
-    <!-- ESTRATEGIA: BUILD VS BUY -->
-    <div class="fu" style="margin-top:80px;">
-      <span class="block-label es">Decisión estratégica · Build vs. Buy</span>
-      <span class="block-label en">Strategic decision · Build vs. Buy</span>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="es">Por qué no parchear Oracle</h3>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="en">Why not patch Oracle</h3>
-    </div>
-
-    <p class="p fu es">Antes de proponer nada, la primera decisión era estratégica. Parchear Oracle significaba trabajar dentro de sus restricciones — configuraciones limitadas, flujos genéricos, sin capacidad de adaptarse a la tipología específica de solicitudes de este equipo.</p>
-    <p class="p fu en">Before proposing anything, the first decision was strategic. Patching Oracle meant working within its constraints — limited configurations, generic flows, no ability to adapt to this team's specific request types.</p>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:40px 0;" class="fu">
-      <div style="padding:28px; border:1px solid rgba(239,68,68,0.2); border-radius:14px; background:rgba(239,68,68,0.03);">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239,68,68,0.7); margin-bottom:16px;">❌ <span class="es">Parchear Oracle</span><span class="en">Patch Oracle</span></div>
-        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Configuraciones limitadas por la plataforma</li>
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>No resuelve la arquitectura de información plana</li>
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>No permite flujos guiados por tipo de solicitud</li>
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Costes de mantenimiento crecientes</li>
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Configurations limited by the platform</li>
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Doesn't solve the flat information architecture</li>
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Doesn't allow guided flows by request type</li>
-          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Growing maintenance costs</li>
-        </ul>
-      </div>
-      <div style="padding:28px; border:1px solid var(--accent-border); border-radius:14px; background:var(--accent-glow);">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">✓ <span class="es">Herramienta interna</span><span class="en">Internal tool</span></div>
-        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Diseñada para los flujos reales del equipo</li>
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Clasificación tipificada desde el primer clic</li>
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Validaciones específicas para cada tipo de error</li>
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Evoluciona con las necesidades del equipo</li>
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Designed for the team's real workflows</li>
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Typed classification from the first click</li>
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Specific validations for each error type</li>
-          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Evolves with the team's needs</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 4 MÓDULOS -->
-    <div class="fu" style="margin-top:72px;">
-      <span class="block-label es">Propuesta conceptual · 4 módulos</span>
-      <span class="block-label en">Conceptual proposal · 4 modules</span>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">La herramienta que el equipo merecía</h3>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The tool the team deserved</h3>
-      <p class="p es">Una plataforma interna de operaciones con dos superficies distintas — una para quien gestiona, otra para quien solicita — y cuatro módulos que responden directamente a los patrones identificados.</p>
-      <p class="p en">An internal operations platform with two distinct surfaces — one for managers, one for requesters — and four modules that directly address the identified patterns.</p>
-    </div>
-
-    <div class="modules-grid fu">
-      <div class="module-card">
-        <div class="module-num">Módulo 01</div>
-        <div class="module-title es">Centro de solicitudes con clasificación inteligente</div>
-        <div class="module-title en">Request centre with smart classification</div>
-        <div class="module-desc es">Punto único de entrada con tipología predefinida: incidencia crítica / solicitud de acceso / tarea recurrente / consulta. La categoría determina automáticamente la urgencia y el flujo de resolución.</div>
-        <div class="module-desc en">Single entry point with predefined typology: critical incident / access request / recurring task / query. The category automatically determines urgency and resolution flow.</div>
-        <div class="module-solves es">Resuelve: patrón 3 (arquitectura plana) y tiempo de triaje manual</div>
-        <div class="module-solves en">Solves: pattern 3 (flat architecture) and manual triage time</div>
-      </div>
-      <div class="module-card">
-        <div class="module-num">Módulo 02</div>
-        <div class="module-title es">Flujos guiados para tareas repetitivas</div>
-        <div class="module-title en">Guided flows for repetitive tasks</div>
-        <div class="module-desc es">Para procesos recurrentes conocidos — renovación de certificados, alta de usuario, asignación de permisos — el sistema propone un flujo paso a paso que reduce decisiones innecesarias y elimina errores por omisión.</div>
-        <div class="module-desc en">For known recurring processes — certificate renewal, user onboarding, permission assignment — the system offers a step-by-step flow that reduces unnecessary decisions and eliminates errors by omission.</div>
-        <div class="module-solves es">Resuelve: patrón 1 (trabajo manual repetitivo)</div>
-        <div class="module-solves en">Solves: pattern 1 (repetitive manual work)</div>
-      </div>
-      <div class="module-card">
-        <div class="module-num">Módulo 03</div>
-        <div class="module-title es">Validaciones y confirmaciones contextuales</div>
-        <div class="module-title en">Contextual validations and confirmations</div>
-        <div class="module-desc es">Antes de ejecutar acciones de alto impacto — eliminar, mover a producción, lanzar una consulta sobre base de datos — el sistema solicita confirmación específica con contexto real: qué vas a hacer, en qué entorno, qué puede pasar.</div>
-        <div class="module-desc en">Before executing high-impact actions — deleting, moving to production, running a database query — the system requests specific confirmation with real context: what you're about to do, in which environment, what could happen.</div>
-        <div class="module-solves es">Resuelve: patrón 2 (errores sin guardianes)</div>
-        <div class="module-solves en">Solves: pattern 2 (errors without guards)</div>
-      </div>
-      <div class="module-card">
-        <div class="module-num">Módulo 04</div>
-        <div class="module-title es">Panel de estado en tiempo real</div>
-        <div class="module-title en">Real-time status dashboard</div>
-        <div class="module-desc es">Cada solicitud tiene un ciclo de vida visible para quien la hizo y para quien la gestiona: recibida, en revisión, en curso, bloqueada, resuelta. Sin necesidad de preguntar. Sin interrupciones al equipo IT.</div>
-        <div class="module-desc en">Each request has a visible lifecycle for both the requester and the manager: received, under review, in progress, blocked, resolved. No need to ask. No interruptions to the IT team.</div>
-        <div class="module-solves es">Resuelve: patrón 4 (visibilidad nula del estado)</div>
-        <div class="module-solves en">Solves: pattern 4 (zero status visibility)</div>
-      </div>
-    </div>
-
-    <!-- ARQUITECTURA DE INFORMACIÓN -->
-    <div class="fu" style="margin-top:72px;">
-      <span class="block-label es">Arquitectura de información · Propuesta conceptual</span>
-      <span class="block-label en">Information architecture · Conceptual proposal</span>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Dos superficies, una lógica común</h3>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Two surfaces, one shared logic</h3>
-      <p class="p es">La plataforma separa las necesidades de quienes gestionan (IT) y quienes solicitan (resto de la empresa), con un portal de entrada común que clasifica desde el primer paso.</p>
-      <p class="p en">The platform separates the needs of those who manage (IT) and those who request (rest of the company), with a shared entry portal that classifies from the first step.</p>
-    </div>
-
-    <div class="fu ia-tree-wrap">
-      <!-- Raíz -->
-      <div class="ia-root-row">
-        <div class="ia-root-node">
-          <div class="ia-root-icon">⊞</div>
-          <div class="ia-root-label es">Portal IT</div>
-          <div class="ia-root-label en">IT Portal</div>
-          <div class="ia-root-sub es">Punto de entrada único</div>
-          <div class="ia-root-sub en">Single entry point</div>
-        </div>
-      </div>
-
-      <!-- Conector central -->
-      <div class="ia-trunk"></div>
-
-      <!-- Tres ramas -->
-      <div class="ia-branches-row">
-
-        <!-- Rama 1: Portal de entrada -->
-        <div class="ia-branch">
-          <div class="ia-branch-connector"></div>
-          <div class="ia-branch-head" style="border-color:var(--accent-border); background:var(--accent-glow);">
-            <div class="ia-branch-icon" style="color:var(--accent);">⊕</div>
-            <div class="ia-branch-title" style="color:var(--accent);" lang="es">Solicitudes</div>
-            <div class="ia-branch-title" style="color:var(--accent);" lang="en">Requests</div>
-            <div class="ia-branch-desc" lang="es">4 tipos</div>
-            <div class="ia-branch-desc" lang="en">4 types</div>
+        <div class="row g-4" style="margin-top:32px;">
+          <div class="col-md-7">
+            <p class="lead">Paolo es una pizzería artesana en Conde Duque (Madrid). Producto bueno, clientes fieles, propuesta de valor clara. Pero en 2020, su única forma de llegar a un cliente nuevo era el boca a boca o que alguien pasara por la puerta. No había web, no había delivery, no había presencia digital.</p>
+            <p class="p">Y llegó la pandemia. En pocas semanas, los restaurantes sin canal digital dejaron de ingresar. Los que tenían Glovo activo y una web con la carta online podían seguir vendiendo. Paolo no tenía ninguno de los dos.</p>
+            <p class="p">Mi trabajo fue construir el producto digital que conectara lo que Paolo era físicamente con sus clientes en el mundo online: dónde encontrarlo, cómo ver la carta, cómo pedir, cómo reservar.</p>
           </div>
-          <div class="ia-branch-items">
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:var(--accent);"></div>
-              <span lang="es">Incidencias</span><span lang="en">Incidents</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:var(--accent);"></div>
-              <span lang="es">Accesos y permisos</span><span lang="en">Access & permissions</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:var(--accent);"></div>
-              <span lang="es">Tareas recurrentes</span><span lang="en">Recurring tasks</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:var(--accent);"></div>
-              <span lang="es">Consultas</span><span lang="en">Queries</span>
+          <div class="col-md-5">
+            <div style="display:flex; flex-direction:column; gap:0;">
+              <div style="padding:24px 0; border-bottom:1px solid var(--border);">
+                <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">0</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">Presencia digital al inicio — sin web, sin delivery, sin Google My Business</div>
+              </div>
+              <div style="padding:24px 0; border-bottom:1px solid var(--border);">
+                <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">2020</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">El año en que digitalizar dejó de ser una opción para la restauración</div>
+              </div>
+              <div style="padding:24px 0;">
+                <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">1→6</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">Locales — el mismo producto digital escaló sin rediseño</div>
+              </div>
             </div>
           </div>
-          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="es">Superficie compartida</div>
-          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="en">Shared surface</div>
         </div>
-
-        <!-- Rama 2: Dashboard gestor -->
-        <div class="ia-branch">
-          <div class="ia-branch-connector"></div>
-          <div class="ia-branch-head" style="border-color:rgba(245,158,11,0.3); background:rgba(245,158,11,0.06);">
-            <div class="ia-branch-icon" style="color:#f59e0b;">⊞</div>
-            <div class="ia-branch-title" style="color:#f59e0b;" lang="es">Dashboard IT</div>
-            <div class="ia-branch-title" style="color:#f59e0b;" lang="en">IT Dashboard</div>
-            <div class="ia-branch-desc" lang="es">Vista de gestores</div>
-            <div class="ia-branch-desc" lang="en">Manager view</div>
-          </div>
-          <div class="ia-branch-items">
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:#f59e0b;"></div>
-              <span lang="es">Cola priorizada</span><span lang="en">Priority queue</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:#ef4444;"></div>
-              <span lang="es">Tickets críticos</span><span lang="en">Critical tickets</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:rgba(255,255,255,0.3);"></div>
-              <span lang="es">Pendientes</span><span lang="en">Pending</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:#34d399;"></div>
-              <span lang="es">Resueltos</span><span lang="en">Resolved</span>
-            </div>
-          </div>
-          <div class="ia-surface-badge" style="color:#f59e0b; border-color:rgba(245,158,11,0.3);" lang="es">Perfil: gestor IT (&lt;15)</div>
-          <div class="ia-surface-badge" style="color:#f59e0b; border-color:rgba(245,158,11,0.3);" lang="en">Profile: IT manager (&lt;15)</div>
-        </div>
-
-        <!-- Rama 3: Dashboard usuario -->
-        <div class="ia-branch">
-          <div class="ia-branch-connector"></div>
-          <div class="ia-branch-head" style="border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.03);">
-            <div class="ia-branch-icon" style="color:rgba(255,255,255,0.5);">◱</div>
-            <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="es">Mi portal</div>
-            <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="en">My portal</div>
-            <div class="ia-branch-desc" lang="es">Vista del solicitante</div>
-            <div class="ia-branch-desc" lang="en">Requester view</div>
-          </div>
-          <div class="ia-branch-items">
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:rgba(255,255,255,0.4);"></div>
-              <span lang="es">Mis solicitudes</span><span lang="en">My requests</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:var(--accent);"></div>
-              <span lang="es">Estado en tiempo real</span><span lang="en">Real-time status</span>
-            </div>
-            <div class="ia-item">
-              <div class="ia-item-dot" style="background:rgba(255,255,255,0.25);"></div>
-              <span lang="es">Historial</span><span lang="en">History</span>
-            </div>
-          </div>
-          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="es">Perfil: usuario interno (+50)</div>
-          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="en">Profile: internal user (+50)</div>
-        </div>
-
-      </div><!-- /ia-branches-row -->
-    </div><!-- /ia-tree-wrap -->
-
-    <!-- PRIORIZACIÓN -->
-    <div class="fu" style="margin-top:60px;">
-      <span class="block-label es">Priorización del MVP</span>
-      <span class="block-label en">MVP Prioritisation</span>
+      </div>
     </div>
-    <table class="priority-table fu">
-      <thead>
-        <tr>
-          <th class="es">Funcionalidad</th>
-          <th class="en">Feature</th>
-          <th class="es">Prioridad</th>
-          <th class="en">Priority</th>
-          <th class="es">Criterio</th>
-          <th class="en">Rationale</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="es">Clasificación tipificada de solicitudes</td>
-          <td class="en">Typed request classification</td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td class="es">Impacto máximo, mínima complejidad técnica. Reduce triaje sin cambiar ningún flujo existente.</td>
-          <td class="en">Maximum impact, minimal technical complexity. Reduces triage without changing any existing flow.</td>
-        </tr>
-        <tr>
-          <td class="es">Confirmaciones ante acciones de alto riesgo</td>
-          <td class="en">Confirmations on high-risk actions</td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td class="es">Los errores más costosos en tiempo de resolución son los evitables. Una capa de validación reduce los incidentes más frecuentes.</td>
-          <td class="en">The most costly errors in resolution time are the preventable ones. A validation layer reduces the most frequent incidents.</td>
-        </tr>
-        <tr>
-          <td class="es">Panel de visibilidad de estado</td>
-          <td class="en">Status visibility panel</td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td class="es">Elimina las consultas de estado que interrumpen al equipo IT sin añadir valor al flujo de resolución.</td>
-          <td class="en">Eliminates status queries that interrupt the IT team without adding value to the resolution flow.</td>
-        </tr>
-        <tr>
-          <td class="es">Flujos guiados para tareas recurrentes</td>
-          <td class="en">Guided flows for recurring tasks</td>
-          <td><span class="p-badge p2">P2</span></td>
-          <td><span class="p-badge p2">P2</span></td>
-          <td class="es">Alto valor, mayor esfuerzo de mapeo de procesos. Requiere documentar flujos existentes antes de automatizarlos.</td>
-          <td class="en">High value, greater process mapping effort. Requires documenting existing flows before automating them.</td>
-        </tr>
-        <tr>
-          <td class="es">Automatización completa de procesos</td>
-          <td class="en">Full process automation</td>
-          <td><span class="p-badge p3">Fase 2</span></td>
-          <td><span class="p-badge p3">Phase 2</span></td>
-          <td class="es">Requiere integración con sistemas externos. Fuera del alcance del MVP.</td>
-          <td class="en">Requires integration with external systems. Out of scope for MVP.</td>
-        </tr>
-      </tbody>
-    </table>
-
   </div>
 </section>
 
-<!-- [R] RESULTADO ESPERADO -->
+<!-- [T] TASK -->
 <section class="cs-block">
-  <div class="cs-behance-letter">R</div>
   <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">T</div>
+        <div class="cs-rail-label">TASK</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+        <span class="block-label">TASK · El reto</span>
+        <h2 class="block-h">
+          No era una web.<br><em>Era un problema de experiencia de usuario y crecimiento de negocio.</em>
+        </h2>
 
-    <div class="fu">
-      <span class="block-label es">Resultado · Impacto esperado</span>
-      <span class="block-label en">Result · Expected impact</span>
-      <h2 class="block-h es">Escenarios antes / después<br><em>e hipótesis de impacto</em></h2>
-      <h2 class="block-h en">Before / after scenarios<br><em>and impact hypotheses</em></h2>
-    </div>
-
-    <div class="honest-note fu">
-      <div class="honest-note-label es">Nota sobre este proyecto</div>
-      <div class="honest-note-label en">Note on this project</div>
-      <p class="es">Este proyecto no llegó a implementación mientras estuve en la empresa. Los estudios y la propuesta se presentaron a dirección, pero la ejecución requería una profundidad técnica que en ese momento no tenía. Las hipótesis de impacto que siguen se basan en los patrones identificados, no en métricas medidas.</p>
-      <p class="en">This project didn't reach implementation during my time at the company. The studies and proposal were presented to management, but execution required a technical depth I didn't have at that point. The impact hypotheses below are based on identified patterns, not measured metrics.</p>
-    </div>
-
-    <!-- ESCENARIO 1 -->
-    <div class="scenario fu">
-      <div class="scenario-header es">Escenario · Error de entorno (prod vs staging)</div>
-      <div class="scenario-header en">Scenario · Environment error (prod vs staging)</div>
-      <div class="scenario-cols">
-        <div class="scenario-col">
-          <div class="scenario-badge badge-before">Antes</div>
-          <div class="scenario-text es">Un desarrollador ejecuta una consulta pesada creyendo estar en staging. El sistema no muestra en qué entorno está activo. La acción se ejecuta en producción. <strong>Resultado: incidencia que requiere horas de resolución.</strong></div>
-          <div class="scenario-text en">A developer runs a heavy query believing they're in staging. The system doesn't show which environment is active. The action executes in production. <strong>Result: incident requiring hours to resolve.</strong></div>
+        <div class="row g-4 fu" style="margin-top:28px; margin-bottom:40px;">
+          <div class="col-md-6">
+            <p class="lead" style="margin-bottom:16px;">"¿Cómo encuentra Paolo un cliente nuevo? ¿Cómo ve la carta? ¿Cómo pide? En 2020, la respuesta a las tres era: no puede."</p>
+            <p class="p">El reto era de producto. Había 6 necesidades de usuario distintas, 11 touchpoints posibles y un negocio que iba a crecer de 1 a 6 locales. El mismo sistema tenía que resolver todo eso sin rediseño.</p>
+          </div>
+          <div class="col-md-6">
+            <div style="height:100%; display:flex; flex-direction:column; justify-content:center; gap:8px;">
+              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:6px;">El ecosistema que había que construir</div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 24px;">
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Web propia</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">QR en local</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Google Maps / GMB</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Glovo · Uber · JustEat</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">RRSS + contenido</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">WhatsApp · Teléfono</div>
+              </div>
+              <div style="margin-top:8px; font-size:11px; color:var(--text-dim);">11 touchpoints · 1 sistema coherente · escalable a 6 locales</div>
+            </div>
+          </div>
         </div>
-        <div class="scenario-col">
-          <div class="scenario-badge badge-after">Con la propuesta</div>
-          <div class="scenario-text es">Antes de ejecutar, el sistema muestra el entorno activo con alerta visual de alto contraste y solicita confirmación explícita: "Estás en PRODUCCIÓN. Esta acción afectará a datos reales. ¿Confirmar?" <strong>La acción incorrecta se detiene antes de ocurrir.</strong></div>
-          <div class="scenario-text en">Before executing, the system shows the active environment with high-contrast visual alert and requests explicit confirmation: "You're in PRODUCTION. This action will affect real data. Confirm?" <strong>The incorrect action is stopped before it happens.</strong></div>
+
+        <!-- 6 JOBS TO BE DONE -->
+        <div class="fu" style="margin-bottom:16px;">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;">6 necesidades de usuario distintas · 1 ecosistema</div>
+        </div>
+        <div class="row g-3 fu">
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:2px solid var(--accent); height:100%;">
+              <div style="margin-bottom:12px; color:var(--accent);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Encontrar el restaurante</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">Google Maps + GMB optimizado. Sección RESTAURANTES con mapa y dirección de cada local.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Pedir a domicilio</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">CTA principal en desktop. Glovo + Uber Eats + JustEat activos. Sección PEDIDOS con acceso directo.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Reservar mesa</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">CTA "Reservar mesa" → WhatsApp directo. Sin formulario. Confirmación en minutos.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Ver la carta</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">Sección CARTA como eje central de la IA — la más visitada según Clarity. Acceso desde hero y nav.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Contactar con Paolo</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">1 número centralizado para todos los locales. CTA "Llamar" como acción principal en mobile.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Descubrir la marca</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">Sección HISTORIA, RRSS, QR en mesa. Danny's Jazz como diferencial cultural de barrio.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- ESCENARIO 2 -->
-    <div class="scenario fu">
-      <div class="scenario-header es">Escenario · Solicitud de permiso sin seguimiento</div>
-      <div class="scenario-header en">Scenario · Permission request with no tracking</div>
-      <div class="scenario-cols">
-        <div class="scenario-col">
-          <div class="scenario-badge badge-before">Antes</div>
-          <div class="scenario-text es">Un empleado reporta una solicitud de acceso a través de Oracle. No sabe si ha llegado, quién la tiene, ni cuándo esperar respuesta. <strong>Llama o escribe al equipo IT para preguntar por el estado — interrumpiendo el flujo de trabajo de los gestores.</strong></div>
-          <div class="scenario-text en">An employee submits an access request through Oracle. They don't know if it arrived, who has it, or when to expect a response. <strong>They call or message the IT team to ask about status — interrupting the managers' workflow.</strong></div>
-        </div>
-        <div class="scenario-col">
-          <div class="scenario-badge badge-after">Con la propuesta</div>
-          <div class="scenario-text es">La solicitud entra clasificada como "acceso". El empleado ve en su panel: Recibida → En revisión → Asignada a [gestor] → Completada. <strong>Sin necesidad de preguntar. Sin interrupciones al equipo IT.</strong></div>
-          <div class="scenario-text en">The request enters classified as "access". The employee sees in their panel: Received → Under review → Assigned to [manager] → Completed. <strong>No need to ask. No interruptions to the IT team.</strong></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HIPÓTESIS DE IMPACTO -->
-    <div class="fu" style="margin-top:60px;">
-      <span class="block-label es">Hipótesis de impacto</span>
-      <span class="block-label en">Impact hypotheses</span>
-    </div>
-
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0;" class="fu">
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Triaje de incidencias</div>
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Incident triage</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La clasificación tipificada eliminaría la decisión manual de prioridad. Hipótesis: reducción significativa del tiempo de gestión inicial en cada ticket.</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Typed classification would eliminate manual priority decisions. Hypothesis: significant reduction in initial management time per ticket.</div>
-      </div>
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Errores evitables</div>
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Preventable errors</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">Los incidentes más frecuentes compartían causa raíz: ausencia de confirmación previa. Una capa de validación contextual los interceptaría antes de producirse.</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">The most frequent incidents shared a root cause: absence of prior confirmation. A contextual validation layer would intercept them before they occur.</div>
-      </div>
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Interrupciones al equipo IT</div>
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">IT team interruptions</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La visibilidad de estado eliminaría el principal motivo de contacto reactivo — "¿en qué punto está mi solicitud?" — liberando tiempo para trabajo técnico real.</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Status visibility would eliminate the main reason for reactive contact — "where is my request?" — freeing up time for actual technical work.</div>
-      </div>
-    </div>
-
   </div>
 </section>
+
+<!-- [A] ACTION -->
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+        <span class="block-label">ACTION · Lo que hice, y por qué</span>
+        <h2 class="block-h">
+          Diseñar el producto, construirlo,<br><em>analizarlo. De principio a fin.</em>
+        </h2>
+
+        <!-- HORIZONTAL PHASE STEPS -->
+        <div class="phase-steps fu">
+          <div class="phase-step">
+            <div class="phase-num">1</div>
+            <div class="phase-name">Discovery</div>
+            <div class="phase-desc">Mapear los 3 journeys de usuario reales antes de diseñar</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">2</div>
+            <div class="phase-name">IA + UX</div>
+            <div class="phase-desc">5 secciones, 3 CTAs jerarquizados, 1 teléfono. Adobe XD</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">3</div>
+            <div class="phase-name">UI + Dev</div>
+            <div class="phase-desc">Diseño y código en una sola persona. WordPress + Elementor + QR</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">4</div>
+            <div class="phase-name">Ecosistema</div>
+            <div class="phase-desc">Glovo, Uber, JustEat, GMB. Todos los canales activos</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">5</div>
+            <div class="phase-name">Iteración</div>
+            <div class="phase-desc">Clarity + GA4 + Metricool. Ciclo mensual de propuestas basadas en datos</div>
+          </div>
+        </div>
+
+    <!-- WIREFRAMES: EL PROCESO DE DISEÑO -->
+    <!-- WIREFRAMES: EL PROCESO DE DISEÑO -->
+    <div class="story-header fu" style="margin-top: 64px; text-align: left;">
+      <span class="story-label">01 · ARQUITECTURA Y DECISIONES CLAVE</span>
+      <h3 class="story-title">Wireframe low-fi — Home</h3>
+      <p class="p" style="margin-bottom: 8px; font-size: 15px;">El wireframe low-fi de la pantalla más recurrente — el home — concentra las decisiones de producto más importantes del proyecto.</p>
+      <p class="p" style="margin-bottom: 32px; font-size: 15px; color: var(--text-dim);">3 CTAs en orden de frecuencia de uso real, 1 número de teléfono para todos los locales, y la jerarquía que funciona igual en desktop y mobile.</p>
+    </div>
+
+    <!-- Wireframes Layout Grid -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; align-items: start;">
+      <!-- DESKTOP HOMEPAGE -->
+      <div class="col-lg-5 col-md-7">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">DESKTOP · HOMEPAGE</div>
+        <div class="device-laptop-minimal">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-desk.png" alt="Wireframe desktop homepage Paolo">
+        </div>
+        <div class="device-laptop-base" style="margin-bottom: 0;"></div>
+      </div>
+      
+      <!-- MOBILE HOMEPAGE -->
+      <div class="col-lg-3 col-md-5">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">MOBILE · HOMEPAGE</div>
+        <div class="device-phone-minimal" style="max-width: 260px; margin: 0;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-mobile.png" alt="Wireframe mobile homepage Paolo">
+        </div>
+      </div>
+      
+      <!-- DECISIONES CLAVE -->
+      <div class="col-lg-4 col-md-12 text-start">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:24px;">DECISIONES CLAVE EN ESTE WIREFRAME</div>
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <!-- Item 1 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">3 CTAs, no más</div>
+              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Pedir a domicilio · Encontrar restaurante · Reservar mesa</div>
+              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">En ese orden por frecuencia de uso real. Todo lo demás, en la navegación.</div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">1 teléfono visible siempre</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">“Llamar” está en la cabecera en desktop y en el header en mobile. Accesible, consistente y siempre a 1 clic.</div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Misma jerarquía en ambos dispositivos</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Mismo orden de lectura, mismos elementos clave, adaptados al espacio disponible. Mobile-first, pero con lógica de producto.</div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Información clave justo debajo del claim</div>
+              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Refuerza confianza y contexto:</div>
+              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">5 restaurantes · 1 teléfono · todo Madrid.</div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">5</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Simplicidad que guía</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Menos opciones, más claridad. El usuario entiende en 3 segundos qué puede hacer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Por qué esto importa banner -->
+    <div class="fu" style="margin-bottom: 64px; background: rgba(255,255,255,0.01); border: 1px solid var(--border); border-radius: 12px; padding: 24px 32px; display: flex; gap: 20px; align-items: center; text-align: left;">
+      <div style="flex-shrink:0; display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:rgba(242,162,34,0.08); border:1px solid rgba(242,162,34,0.25);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="6"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+      </div>
+      <div>
+        <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">POR QUÉ ESTO IMPORTA</div>
+        <p style="font-size:13.5px; color:var(--text); line-height:1.6; margin:0;">Este es el punto de entrada más importante del sitio. Cada elemento compite por la atención. Esta arquitectura elimina fricción, guía al usuario y maximiza la conversión.</p>
+      </div>
+    </div>
+
+    <!-- SISTEMA DE DISEÑO COMPACTO -->
+    <div class="story-header fu" style="margin-top: 64px; text-align: left;">
+      <span class="story-label">02 · SISTEMA VISUAL</span>
+      <h3 class="story-title">La identidad visual <em>que dio cara al ecosistema</em></h3>
+      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Los wireframes definieron la arquitectura. El sistema visual definió el carácter. La paleta de 3 colores con roles claros y la combinación de tipografía display serif + sans-serif funcional son los mismos en todos los touchpoints — web, QR, RRSS, GMB.</p>
+    </div>
+
+    <!-- LOGO Y SU HISTORIA -->
+    <div class="row g-4 fu align-items-center" style="margin-bottom: 48px; text-align: left;">
+      <div class="col-md-4">
+        <div style="border-radius: 12px; overflow: hidden; background: #ffffff; padding: 24px; display: flex; align-items: center; justify-content: center; aspect-ratio: 1/1;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-fusion-dannys.jpg.jpg" alt="Logo de Paolo by Danny's Jazz" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">EL IMAGOTIPO</span>
+        <h4 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#fff; margin-bottom:12px;">Una identidad heredada</h4>
+        <p style="font-size:14px; color:var(--text); line-height:1.75; margin-bottom:14px;">El logotipo original de Paolo (una composición del imagotipo orgánico de la masa/pizza y la tipografía gestual con el subtítulo "BY DANNY'S JAZZ") fue heredado de un trabajo previo de branding. El reto de diseño no fue crear la marca desde cero, sino estructurar un sistema visual coherente que permitiera escalar esta marca física hacia un ecosistema digital y de restauración 360°.</p>
+        <p style="font-size:13.5px; color:var(--text-dim); line-height:1.75; margin:0;">Mi rol consistió en tomar esta marca existente y normativizarla, definiendo las reglas de convivencia, los roles cromáticos precisos y las jerarquías tipográficas para que la identidad luciera consistente en la fachada, el menú impreso, los uniformes, la web de pedidos y las redes sociales.</p>
+      </div>
+    </div>
+
+    <!-- COLORES Y TIPOGRAFÍAS -->
+    <div class="row g-4 fu" style="margin-bottom:64px; text-align: left;">
+      <div class="col-md-5">
+        <div>
+          <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Paleta · 3 colores, roles claros</div>
+          <div style="display:flex; gap:10px; margin-bottom:16px;">
+            <div style="flex:1;">
+              <div style="height:52px; border-radius:8px; background:#F2A222; margin-bottom:8px;"></div>
+              <div style="font-size:11px; font-weight:600; color:#fff;">Ámbar</div>
+              <div style="font-size:10px; color:var(--text-dim);">#F2A222 · Acción, símbolo</div>
+            </div>
+            <div style="flex:1;">
+              <div style="height:52px; border-radius:8px; background:#1A1107; margin-bottom:8px;"></div>
+              <div style="font-size:11px; font-weight:600; color:#fff;">Negro cálido</div>
+              <div style="font-size:10px; color:var(--text-dim);">#1A1107 · Base, texto</div>
+            </div>
+            <div style="flex:1;">
+              <div style="height:52px; border-radius:8px; background:#FEF8ED; border:1px solid rgba(255,255,255,0.1); margin-bottom:8px;"></div>
+              <div style="font-size:11px; font-weight:600; color:#fff;">Crema</div>
+              <div style="font-size:10px; color:var(--text-dim);">#FEF8ED · Fondo, espacio</div>
+            </div>
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin:0;">El ámbar aparece exclusivamente para el símbolo y las acciones — lo convierte en color de firma. Ningún otro touchpoint lo usa como fondo genérico.</p>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Tipografía · Display + Funcional</div>
+          <div style="border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:14px;">
+            <div style="font-family:'Playfair Display',serif; font-size:26px; font-style:italic; font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Las pizzas del barrio,<br>para compartir.</div>
+            <div style="font-size:10px; color:var(--text-dim);">Display Serif Italic · Titulares · Carácter y calor de marca</div>
+          </div>
+          <div style="border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:14px;">
+            <div style="font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#fff; font-weight:600; margin-bottom:4px;">HISTORIA · CARTA · RESTAURANTES · PEDIDOS</div>
+            <div style="font-size:10px; color:var(--text-dim);">Sans-serif Uppercase · Navegación y etiquetas · Claridad funcional</div>
+          </div>
+          <div>
+            <div style="font-size:14px; color:rgba(255,255,255,0.7); line-height:1.6; margin-bottom:4px;">Masa artesana de fermentación lenta, pensada para compartir.</div>
+            <div style="font-size:10px; color:var(--text-dim);">Sans-serif Regular · Cuerpo de texto · Legibilidad y accesibilidad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECOSISTEMA FÍSICO + DIGITAL -->
+    <div class="story-header fu" style="margin-top: 64px;">
+      <span class="story-label">03 · TOUCHPOINTS FÍSICOS & INTEGRACIÓN DIGITAL</span>
+      <h3 class="story-title">De la pantalla <em>a la calle</em></h3>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-8">
+          <p class="p" style="margin:0 0 12px;">El branding gráfico de Paolo fue heredado —el diseño del imagotipo principal pertenece a otro autor—. Mi rol se centró en proyectar, maquetar e integrar este branding a través de todos los touchpoints del negocio, garantizando coherencia visual y canalizando a los clientes hacia los embudos de venta y comunicación de la marca.</p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Señalética de Fachadas</span>
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Branding de Sombrillas</span>
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Uniformes Industriales</span>
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Campañas en Redes Sociales</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <p class="p" style="font-size:13px; padding-left:16px; border-left:2px solid var(--accent); color:rgba(255,255,255,0.5); margin:0;">El diseño físico y el digital deben hablar el mismo idioma para que la transición del cliente sea natural.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plano Técnico de Terraza (Full Width) -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
+      <div class="col-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Plano Técnico Único · Fachada & Exteriores</div>
+        <div style="border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.015); margin-bottom: 24px;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/plano-sombrillas-montaje.png" alt="Plano de montaje de fachada y sombrillas de terraza Paolo" style="width:100%; height:auto; display:block;">
+        </div>
+        
+        <div style="margin-top:14px;">
+          <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:12px;">Estrategia de Estandarización Exterior (`plano-sombrillas-montaje.png`)</div>
+          <p style="font-size:13.5px; color:var(--text); line-height:1.75; margin-bottom:24px;">Este plano técnico consolida la identidad física de Paolo en la calle, convirtiendo la fachada en un canal estructurado de adquisición física y online. El plano define 4 componentes clave para la replicabilidad del negocio en nuevas aperturas:</p>
+          
+          <div class="row g-4">
+            <!-- Columna 1: Rótulos y Luminoso -->
+            <div class="col-md-6">
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:20px;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Rótulos Horizontales (Buzón de Conversión)</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Diseñados como una landing page física. El rótulo izquierdo prioriza la llamada a la acción ("Take a way" + teléfono de pedidos directos) y el derecho potencia el claim ("Sígueme para más pizza" + usuario de Instagram) para captar el tráfico peatonal y convertirlo en seguidor digital.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Luminoso Vertical (Identificación)</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Señalética vertical con iluminación en negativo (luz blanca brillante únicamente sobre las letras del imagotipo "PAOLO" y el subtítulo "pizzeria artesana"). Esto asegura la visibilidad nocturna y la elegancia sin contaminar visualmente la calle.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Columna 2: Sombrillas y Boceto -->
+            <div class="col-md-6">
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:20px;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Sombrilla de Terraza (Co-branding)</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Estandarización técnica de sombrillas de 300 cm en colaboración con Erdinger. La financiación del mobiliario por parte del proveedor cervecero reduce los costes de apertura del local, mientras que el control del diseño gráfico por el equipo de Paolo garantiza que el espacio mantenga su coherencia estética.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Boceto de Fachada General</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">La composición unificada muestra cómo interactúan todos los elementos físicos (puertas arqueadas, toldos, sombrillas y rótulos) para presentar una fachada coherente y atractiva en el barrio de Conde Duque.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Uniformes Corporativos (Mockup + Realidad en cocina) -->
+    <div class="row g-4 fu" style="margin-bottom:40px; align-items:start;">
+      <div class="col-md-6">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Uniformes · Polo bordado</div>
+        <div style="overflow:hidden; aspect-ratio:4/3; background:rgba(255,255,255,0.03);">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.png" alt="Mockup polo burdeos Paolo — diseño frente y espalda con bordado" style="width:100%; height:100%; object-fit:contain; display:block;">
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Mockup · Polo burdeos, bordado frente y espalda</p>
+      </div>
+      <div class="col-md-6">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">En producción · Cocina</div>
+        <div style="overflow:hidden; aspect-ratio:4/3;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.png" alt="Cocinero Paolo trabajando — polo burdeos en producción real" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">El uniforme convierte a cada trabajador en soporte de marca</p>
+      </div>
+    </div>
+
+    <!-- Adquisición Digital (RRSS / Notificación push ficticia) -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; align-items: center; text-align: left;">
+      <div class="col-md-4">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Social · Notificación Creativa</div>
+        <div style="border-radius: 8px; overflow: hidden;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/04-social.png" alt="Pieza de redes sociales Paolo — foto de pizza con notificación de mensaje como copy creativo" style="width:100%; display:block;">
+        </div>
+      </div>
+      <div class="col-md-8 text-start">
+        <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">ADQUISICIÓN EN RRSS</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#fff; margin-bottom:12px;">Notificación push creativa</h3>
+        <p style="font-size:13.5px; color:var(--text); line-height:1.7; margin-bottom:0;">Creativo publicitario para Instagram Stories (`04-social.png`). Diseñado simulando una interfaz real de notificación push del sistema de mensajería móvil. Al presentar una captura que imita un mensaje entrante de "Paolo" con tono cercano ("¿Cómo llevas el día? Seguro que mejor con pizza"), rompemos la inercia visual del scroll automático del usuario, aumentando drásticamente los clics directos hacia el enlace del sistema de pedidos.</p>
+      </div>
+    </div>
+
+    <!-- Decision card for physical/digital alignment -->
+    <div class="card-decision fu" style="margin-bottom: 64px;">
+      <div class="card-decision-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg></div>
+      <div class="card-decision-content">
+        <div class="card-decision-title">Decisión de Diseño de Ecosistema Físico-Digital</div>
+        <p class="card-decision-text">Los elementos físicos (sombrillas, luminosos, uniformes) y los creativos digitales se estructuran con el mismo principio: no son elementos aislados, sino canales de entrada. Cada touchpoint del restaurante está optimizado para desviar la atención al canal digital principal o reforzar el posicionamiento artesanal de Paolo para justificar sus precios.</p>
+      </div>
+    </div>
+
+    <!-- CORE PRODUCT CASE STUDY: 04 ARQUITECTURA DE LA WEB -->
+    <div class="story-header fu" style="margin-top: 80px; text-align: left;">
+      <span class="story-label">04 · ARQUITECTURA DE LA WEB</span>
+      <h3 class="story-title">Las 5 secciones del sitio</h3>
+      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Cada sección responde a un job-to-be-done específico dentro del recorrido del usuario. Diseñadas para guiar, informar y convertir sin fricción.</p>
+    </div>
+
+    <!-- Vista general de la web (Full Width) -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
+      <div class="col-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Vista General de la Interfaz Web (Escritorio)</div>
+        <div style="border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web.webp" alt="Paolo by Danny's Jazz — Interfaz web completa" style="width:100%; height:auto; display:block; border-radius:8px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 SECTIONS ALTERNATING ROWS -->
+    <div style="display: flex; flex-direction: column; gap: 80px; margin-bottom: 80px;">
+      
+      <!-- Fila 01: Historia -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column -->
+        <div class="col-lg-6 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web1.png" alt="Paolo · Sección HISTORIA" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HISTORIA</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Narrativa de marca</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Establece una conexión inmediata desde el origen local. La sección de historia cuenta de dónde venimos, el respeto por la tradición de la pizza artesana y el alma de barrio que define a Paolo.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Fotografía del origen:</strong> Imágenes de alta calidad del proceso de elaboración de la masa madre para construir confianza visual instantánea.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Narrativa del barrio:</strong> El copy integra al local de Conde Duque en la cultura local, humanizando la marca frente a franquicias corporativas.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Generar confianza y conexión emocional con el posicionamiento artesanal.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 02: Carta -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column (Desktop right, mobile top) -->
+        <div class="col-lg-6 order-lg-2 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web4.png" alt="Paolo · Sección CARTA" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column (Desktop left, mobile bottom) -->
+        <div class="col-lg-6 order-lg-1 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · CARTA</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Explorar y elegir</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Nuestra sección más visitada. Diseñada para que los clientes puedan examinar las pizzas de forma rápida y visual, eliminando la fricción habitual de los menús en PDF descargables o enlaces externos.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Filtros e ingredientes:</strong> Clasificación clara de alérgenos y opciones vegetarianas visibles directamente sobre cada plato sin necesidad de descargas.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Fotografía sin artificios:</strong> Platos reales mostrados desde una perspectiva superior que abre el apetito y muestra la generosidad de la masa.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Encontrar rápidamente la opción perfecta y comprobar ingredientes.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 03: Pedidos -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column -->
+        <div class="col-lg-6 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web3.png" alt="Paolo · Sección PEDIDOS" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · PEDIDOS</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Pedir sin complicaciones</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Optimizamos el flujo de compra online para competir directamente con las grandes plataformas, reduciendo la tasa de abandono del carrito mediante una navegación extremadamente simple.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Compra como invitado:</strong> No se exige registro de usuario para pedir, disminuyendo los clics necesarios en un 40% durante el checkout.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Métodos de pago rápidos:</strong> Integración visible de Apple Pay y Google Pay para acelerar la conversión móvil en un solo toque.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Realizar transacciones de forma rápida, segura y sin fricción de contraseñas.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 04: Restaurantes -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column (Desktop right, mobile top) -->
+        <div class="col-lg-6 order-lg-2 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web5.png" alt="Paolo · Sección RESTAURANTES" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column (Desktop left, mobile bottom) -->
+        <div class="col-lg-6 order-lg-1 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04 · RESTAURANTES</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Dónde encontrarnos</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">El mapa de locales interactivo y la lista lateral permiten encontrar el restaurante más cercano y tomar decisiones físicas de forma inmediata.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Mapa y lista integrados:</strong> Mapeo espacial instantáneo combinado con una lista lateral que detalla dirección, barrio y accesos.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Acciones directas:</strong> Botones rápidos para "Cómo llegar" a través de GPS o "Llamar" telefónicamente para reservas de mesa inmediatas.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Localizar el establecimiento físico más cercano al instante y obtener indicaciones de ruta.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 05: Opiniones -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column -->
+        <div class="col-lg-6 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web2.png" alt="Paolo · Sección OPINIONES" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">05 · OPINIONES</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Confianza real</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Utilizamos la prueba social real para justificar nuestro precio premium frente a alternativas industriales de bajo coste.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Integración automática:</strong> Sincronización directa con Google Maps y TripAdvisor para garantizar que las opiniones son 100% reales.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Foco artesano:</strong> Destacamos opiniones que mencionan explícitamente el sabor único de la masa fermentada lenta durante 48h.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Validar el valor gastronómico del producto con la experiencia sincera de otros usuarios.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Final Decision Card -->
+    <div class="card-decision fu" style="margin-bottom: 64px;">
+      <div class="card-decision-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg></div>
+      <div class="card-decision-content">
+        <div class="card-decision-title">Decisión Final de Estructura Web</div>
+        <p class="card-decision-text">La web se estructuró en 5 secciones claramente identificables desde la navegación que corresponden a pasos clave del embudo: descubrimiento de marca (Historia), evaluación de producto (Carta), conversión offline (Restaurantes), conversión online (Pedidos) y fidelización y prueba social (Opiniones). Cada sección tiene un propósito de negocio definido.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCTO EN VIVO -->
+    <div class="fu" style="margin-bottom:72px; padding:28px 0; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <p style="font-size:13px; color:var(--text-dim); margin:0;">Lo que ves aquí es un producto real y sigue activo — misma IA, mismos CTAs, mismo sistema.</p>
+      <div style="display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap;">
+        <a href="https://04-paolo.vercel.app/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:var(--accent); color:#000; border-radius:8px; font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap;">Ver la web →</a>
+        <a href="https://martamoralesgr93.github.io/marta-portfolio/projects/04-paolo/index.html" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:transparent; color:var(--accent); border:1px solid rgba(242,162,34,0.35); border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; white-space:nowrap;">Código fuente →</a>
+      </div>
+    </div>
+
+    <!-- CORE PRODUCT CASE STUDY: 05 MOBILE CTA / DECISIÓN DE CONTEXTO -->
+    <div class="story-header fu" style="margin-top: 80px;">
+      <span class="story-num">05</span>
+      <span class="story-label">ADAPTACIÓN CONTEXTUAL: MOBILE</span>
+      <h3 class="story-title">“Llamar” como CTA <em>principal en mobile</em></h3>
+    </div>
+
+    <div class="row g-4 align-items-center fu" style="margin-bottom: 64px;">
+      <div class="col-md-5">
+        <div class="device-phone-minimal">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/img-paolo-mobile.webp" alt="Diseño móvil en producción — botón llamar destacado">
+        </div>
+      </div>
+      <div class="col-md-7">
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 16px;">El contexto físico del dispositivo determina la jerarquía visual. En un ordenador, el usuario está habitualmente en su domicilio y tiene mayor disposición a navegar por la web o pedir delivery (CTA principal: "Pedir a domicilio"). En el teléfono móvil, el usuario suele estar en movimiento o en la calle, con urgencia por contactar o localizar el local físico.</p>
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto físico y de dispositivo → distinta llamada a la acción prioritaria.</strong> Por ello, en móviles la barra de navegación destaca el botón de llamada telefónica instantánea junto al menú de hamburguesa.</p>
+        
+        <!-- Impact Card -->
+        <div class="card-impact">
+          <div class="card-impact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div class="card-impact-content">
+            <div class="card-impact-title">Impacto de Conversión</div>
+            <p class="card-impact-text">Aumento en las llamadas directas desde la web móvil en un +32% en los primeros 30 días tras el lanzamiento.</p>
+          </div>
+        </div>
+
+        <div class="key-rule-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>El diseño responsive debe adaptar la jerarquía de conversión a la realidad física de uso de cada dispositivo.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUSTOMER JOURNEYS -->
+    <div class="story-header fu" style="margin-top: 80px;">
+      <span class="story-num">06</span>
+      <span class="story-label">CUSTOMER JOURNEYS</span>
+      <h3 class="story-title">Los tres journeys <em>que diseñé</em></h3>
+      <p class="p" style="margin-bottom:32px;">Tres perfiles, tres momentos, tres objetivos completamente distintos. El ecosistema digital tenía que resolver los tres sin que ninguno interfiriera con los demás.</p>
+    </div>
+
+    <div class="row g-4 fu" style="margin-bottom:64px; align-items: stretch;">
+      <!-- Delivery (Highlighted) -->
+      <div class="col-md-4" style="display: flex; flex-direction: column;">
+        <div style="border: 2px solid var(--accent); border-radius: 12px; padding: 24px; background: rgba(242,162,34,0.02); height: 100%; display: flex; flex-direction: column; text-align: left;">
+          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:12px;">Journey 01 · Delivery</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Quiero pedir una pizza ahora</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--accent); flex-shrink:0; min-width:16px;">1</div>
+              <span style="font-size:13.5px; color:var(--text);">Google/app delivery → Paolo aparece</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--accent); flex-shrink:0; min-width:16px;">2</div>
+              <span style="font-size:13.5px; color:var(--text);">Web: CTA "Pedir a domicilio" → plataforma</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--accent); flex-shrink:0; min-width:16px;">3</div>
+              <span style="font-size:13.5px; color:var(--text);">Pedido completado en &lt; 3 minutos</span>
+            </div>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">Tres plataformas activas (Glovo, Uber Eats, JustEat) para no depender de ninguna. El CTA centralizado en la web desvía al usuario directamente a su canal preferido.</div>
+        </div>
+      </div>
+
+      <!-- Visita al local -->
+      <div class="col-md-4" style="display: flex; flex-direction: column;">
+        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: rgba(255, 255, 255, 0.01); height: 100%; display: flex; flex-direction: column; text-align: left;">
+          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); font-weight:700; margin-bottom:12px;">Journey 02 · Visita al local</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Busco el restaurante más cercano</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">1</div>
+              <span style="font-size:13.5px; color:var(--text);">Google Maps → GMB → Paolo aparece</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">2</div>
+              <span style="font-size:13.5px; color:var(--text);">Web móvil: mapa interactivo en 1 tap</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">3</div>
+              <span style="font-size:13.5px; color:var(--text);">1 número unificado → Llamar instantáneo</span>
+            </div>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">Decisión crítica: 1 número centralizado. El usuario no quiere investigar números por barrio; quiere contactar al local más cercano de inmediato.</div>
+        </div>
+      </div>
+
+      <!-- Reserva -->
+      <div class="col-md-4" style="display: flex; flex-direction: column;">
+        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: rgba(255, 255, 255, 0.01); height: 100%; display: flex; flex-direction: column; text-align: left;">
+          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); font-weight:700; margin-bottom:12px;">Journey 03 · Reserva</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Quiero planificar mi cena/comida</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">1</div>
+              <span style="font-size:13.5px; color:var(--text);">Navega por la web → consulta la carta</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">2</div>
+              <span style="font-size:13.5px; color:var(--text);">CTA "Reservar mesa" → WhatsApp directo</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">3</div>
+              <span style="font-size:13.5px; color:var(--text);">Confirmación conversacional directa</span>
+            </div>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">WhatsApp redujo el rebote de formularios engorrosos en pymes. El usuario que reserva valora la certeza conversacional y la agilidad de confirmación.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARATIVA ANTES/DESPUÉS -->
+    <div class="story-header fu" style="margin-top: 80px;">
+      <span class="story-num">07</span>
+      <span class="story-label">RESULTADO DIGITAL</span>
+      <h3 class="story-title">De cero presencia digital <em>a ecosistema activo</em></h3>
+    </div>
+
+    <div class="cs-ba fu" style="margin-bottom: 64px;">
+      <div class="cs-ba-col" style="text-align: left;">
+        <div class="cs-ba-badge cs-ba-before">Antes · 2020</div>
+        <p style="font-size:14px; color:var(--text); line-height:1.8; margin:16px 0 0; flex:1;">
+          Sin web propia · Sin presencia en Google Maps · Sin canal de delivery activo · Sin sistema de RRSS · Sin métricas · Visibilidad dependiente únicamente de la clientela física y el barrio.
+        </p>
+      </div>
+      <div class="cs-ba-col" style="text-align: left; border-left: 1px solid var(--border);">
+        <div class="cs-ba-badge cs-ba-after" style="background: var(--accent-glow); border-color: var(--accent); color: var(--accent);">Después · 2022</div>
+        <p style="font-size:14px; color:var(--accent); line-height:1.8; margin:16px 0 0; flex:1;">
+          Web propia scalable (Adobe XD → WordPress) · Canales de delivery activos · Google My Business optimizado · Cartas QR en local · Metricool + Clarity + GA4 operativos · Ciclo mensual de analítica y optimizaciones.
+        </p>
+      </div>
+    </div>
+
+    <!-- METRICAS & DATOS -->
+    <div class="story-header fu" style="margin-top: 64px;">
+      <span class="story-label">08 · ANÁLISIS & ITERACIÓN</span>
+      <h3 class="story-title">Datos como herramienta de diseño, <em>no de validación posterior</em></h3>
+      <p class="p fu" style="margin-bottom: 24px;">Microsoft Clarity revelaba detalladamente cómo se comportaban los usuarios en la web: qué secciones ignoraban, dónde abandonaban y qué elementos atraían su atención. GA4 aportaba el volumen y origen de tráfico, mientras que Metricool medía el engagement de redes locales.</p>
+      <p class="p fu">Estos datos no se recopilaban para redactar informes — servían para ejecutar cambios inmediatos. Si Clarity mostraba que la sección de RESTAURANTES en móvil tenía una alta tasa de rebote por no encontrar el local rápido, la solución fue colocar el mapa interactivo como primer impacto visual. Diseño basado en comportamiento empírico, no en intuición.</p>
+    </div>
+      </div><!-- /cs-star main -->
+    </div><!-- /cs-star -->
+  </div><!-- /cs-wrap -->
+</section>
+
+<!-- [R] RESULTADO -->
+<section class="cs-block">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">R</div>
+        <div class="cs-rail-label">RESULT</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+        <span class="block-label">RESULT · El impacto</span>
+        <h2 class="block-h">
+          Un producto que escala.<br><em>Sin rediseño.</em>
+        </h2>
+
+        <!-- Franja KPIs -->
+        <div class="paolo-results-strip fu">
+          <div class="prs-cell prs-hero">
+            <div class="prs-val">1→6</div>
+            <div class="prs-label">Locales · mismo ecosistema · sin rediseño</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">×6</div>
+            <div class="prs-label">Escala en 2 años sin tocar la arquitectura</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">3</div>
+            <div class="prs-label">Customer journeys diseñados: delivery, visita, reserva</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">6</div>
+            <div class="prs-label">Necesidades de usuario resueltas con un solo sistema</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">∞</div>
+            <div class="prs-label">El ecosistema sigue activo hoy</div>
+          </div>
+        </div>
+
+        <!-- Quote + CTAs -->
+        <div class="prs-bottom fu">
+          <p class="prs-quote">"Marta no diseñó una web. Construyó y evolucionó el ecosistema digital de una marca en expansión durante uno de los momentos más complejos para la restauración."</p>
+          <div class="prs-ctas">
+            <a href="https://04-paolo.vercel.app/" target="_blank" rel="noopener" class="prs-btn-primary">Ver el producto →</a>
+            <a href="https://martamoralesgr93.github.io/marta-portfolio/projects/04-paolo/index.html" target="_blank" rel="noopener" class="prs-btn-ghost">Código fuente →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- APRENDIZAJES -->
-<section class="cs-block">
+<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+  <div class="cs-behance-letter">L</div>
   <div class="cs-wrap">
-
     <div class="fu">
-      <span class="block-label es">Aprendizajes</span>
-      <span class="block-label en">Learnings</span>
-      <h2 class="block-h es">Lo que este proyecto<br><em>me enseñó</em></h2>
-      <h2 class="block-h en">What this project<br><em>taught me</em></h2>
+      <span class="block-label">LEARNINGS · Aprendizajes</span>
+      <h2 class="block-h">
+        Lo que este proyecto<br><em>definió en mi forma de pensar producto</em>
+      </h2>
     </div>
-
-    <div class="learning-grid fu">
-      <div class="learning-card">
-        <div class="learning-num">01</div>
-        <div class="learning-text es"><strong>El problema real no siempre es el problema declarado.</strong> El equipo pedía "mejorar Oracle". El problema real era que Oracle era la herramienta equivocada. Aprendí a distinguir entre lo que el equipo pedía y lo que el sistema necesitaba.</div>
-        <div class="learning-text en"><strong>The real problem isn't always the declared problem.</strong> The team asked to "improve Oracle". The real problem was that Oracle was the wrong tool. I learnt to distinguish between what the team was asking for and what the system needed.</div>
+    <div class="paolo-learnings fu">
+      <div class="pl-card">
+        <span class="pl-num">01</span>
+        <p class="pl-title">Contexto de uso ≠ dispositivo</p>
+        <p class="pl-text">El CTA distinto en móvil no fue responsive — fue decisión de producto. El usuario que llega desde la calle tiene una intención completamente diferente al que navega desde casa.</p>
       </div>
-      <div class="learning-card">
-        <div class="learning-num">02</div>
-        <div class="learning-text es"><strong>La investigación desde dentro tiene ventajas que la investigación formal no da.</strong> Estar integrada en el equipo me dio acceso a los momentos de fricción tal como ocurrían. La limitación fue aprender a separar observación de interpretación prematura.</div>
-        <div class="learning-text en"><strong>Research from within has advantages formal research doesn't.</strong> Being embedded in the team gave me access to friction moments as they happened. The challenge was learning to separate observation from premature interpretation.</div>
+      <div class="pl-card">
+        <span class="pl-num">02</span>
+        <p class="pl-title">Menos opciones = más conversión</p>
+        <p class="pl-text">Jerarquizar 3 CTAs y ocultar el resto redujo la carga cognitiva. Un buen diseño de producto requiere saber qué no mostrar tanto como qué mostrar.</p>
       </div>
-      <div class="learning-card">
-        <div class="learning-num">03</div>
-        <div class="learning-text es"><strong>Este proyecto no se implementó porque no tenía los conocimientos técnicos para conectar diseño con desarrollo.</strong> Esa limitación fue directamente la motivación para cursar el bootcamp de Product Design. El proyecto no acabó en producción — pero cambió el rumbo de mi carrera.</div>
-        <div class="learning-text en"><strong>This project wasn't implemented because I lacked the technical knowledge to connect design with development.</strong> That limitation was directly what motivated me to take the Product Design bootcamp. The project didn't reach production — but it changed the direction of my career.</div>
+      <div class="pl-card">
+        <span class="pl-num">03</span>
+        <p class="pl-title">Diseñar y construir te hace mejor diseñadora</p>
+        <p class="pl-text">Haber desarrollado la web cambió cómo pienso los componentes. Las limitaciones del builder no eran obstáculos: eran parámetros de diseño reales.</p>
+      </div>
+      <div class="pl-card">
+        <span class="pl-num">04</span>
+        <p class="pl-title">La IA condiciona todo lo demás</p>
+        <p class="pl-text">5 secciones y 1 teléfono centralizado — decididos en IA, antes de abrir Elementor. Esa decisión permitió escalar a 6 locales sin tocar el código.</p>
+      </div>
+      <div class="pl-card">
+        <span class="pl-num">05</span>
+        <p class="pl-title">Los datos son herramienta, no validación</p>
+        <p class="pl-text">Clarity y GA4 servían para tomar la siguiente decisión, no para demostrar que el diseño funcionó. Paolo fue el primer proyecto donde practiqué ese ciclo de verdad.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="cs-footer">
   <div class="cs-wrap">
     <div class="footer-label es">Siguiente caso</div>
@@ -857,8 +1563,8 @@
     <h2 class="es">¿Vemos otro proyecto?</h2>
     <h2 class="en">Want to see another project?</h2>
     <div class="footer-actions">
-      <a href="caso-4.html" class="btn btn-secondary es">← Caso 04</a>
-      <a href="caso-4.html" class="btn btn-secondary en">← Case 04</a>
+      <a href="caso-3.html" class="btn btn-secondary es">← Caso 03</a>
+      <a href="caso-3.html" class="btn btn-secondary en">← Case 03</a>
       <a href="index.html" class="btn btn-secondary es">Volver</a>
       <a href="index.html" class="btn btn-secondary en">Back</a>
       <a href="caso-1.html" class="btn btn-primary es">Caso 01 →</a>
@@ -867,39 +1573,31 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Fade-up on scroll
-  const fus = document.querySelectorAll('.fu');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  fus.forEach(el => io.observe(el));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+    });
+  }, { threshold: 0.01 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
 
-  // Lang toggle
-  const html = document.documentElement;
+  // Lang toggle (bilingual support)
   const stored = localStorage.getItem('portfolio-lang');
   if (stored === 'en') {
-    html.classList.add('lang-en');
+    document.documentElement.classList.add('lang-en');
     const btn = document.getElementById('langToggle');
     if (btn) btn.textContent = 'ES';
   }
 
   function toggleLang() {
+    const html = document.documentElement;
     const btn = document.getElementById('langToggle');
     const isEn = html.classList.toggle('lang-en');
     btn.textContent = isEn ? 'ES' : 'EN';
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
-    applyLang();
   }
-
-  // Affinity cards: show only current lang
-  function applyLang() {
-    const isEn = html.classList.contains('lang-en');
-    document.querySelectorAll('.affinity-card[lang]').forEach(el => {
-      el.style.display = (isEn ? el.lang === 'en' : el.lang === 'es') ? '' : 'none';
-    });
-  }
-  applyLang();
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

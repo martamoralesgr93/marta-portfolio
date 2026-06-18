@@ -1276,8 +1276,28 @@ nav {
     border-radius: 16px;
     margin-bottom: 40px !important;
   }
-  .sc-visual { height: auto !important; min-height: 280px; padding: 40px 0; order: -1; }
-  .sc-img { max-width: 90%; max-height: 220px; object-fit: contain; transform: none !important; }
+  .sc-visual {
+    height: 260px !important;
+    min-height: 260px !important;
+    padding: 0 !important;
+    order: -1;
+  }
+  /* Imágenes limpias en mobile: sin overlays, sin sombras */
+  .sc-visual::before,
+  .sc-visual::after {
+    display: none !important;
+  }
+  .sc-img {
+    width: 100% !important;
+    height: 260px !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
   .sc-content { padding: 32px 24px 24px !important; }
   .sc-title { font-size: 28px !important; }
   .sc-desc { max-width: 100% !important; margin-bottom: 24px !important; }

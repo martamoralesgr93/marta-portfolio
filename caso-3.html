@@ -28,6 +28,7 @@
   <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="design-system.css">
   <style>
     .cs-hero-glow {
@@ -381,6 +382,32 @@
         padding: 24px;
       }
     }
+
+    /* Evidence pair layout - copied from Caso 2 */
+    .c2-evidence-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; margin-bottom: 48px; }
+    .c2-evidence-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; background: rgba(255,255,255,0.01); }
+    .c2-evidence-header { padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); }
+    .c2-evidence-num { font-family: var(--font-serif); font-size: 36px; font-weight: 700; line-height: 1; color: var(--accent); flex-shrink: 0; }
+    .c2-evidence-meta { display: flex; flex-direction: column; gap: 4px; }
+    .c2-evidence-label { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+    .c2-evidence-sub { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+    .c2-evidence-img { display: block; width: 100%; height: auto; }
+    .c2-evidence-caption { padding: 18px 24px; font-size: 13px; color: var(--text-dim); line-height: 1.6; border-top: 1px solid var(--border); flex: 1; }
+    
+    @media (max-width: 900px) {
+      .c2-evidence-pair { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    /* Helper Grid Layouts for case-3 */
+    .c3-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
+    .c3-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 40px 0; }
+    @media (max-width: 992px) {
+      .c3-grid-4 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .c3-grid-4 { grid-template-columns: 1fr; }
+      .c3-grid-2 { grid-template-columns: 1fr; gap: 24px; }
+    }
   </style>
 </head>
 <body>
@@ -399,15 +426,15 @@
       <div class="cs-dropdown-menu">
         <a href="caso-1.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
-          <div class="cs-item-title">ILUNION CRO</div>
-          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
-          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
-        </a>
-        <a href="caso-2.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 02</div>
           <div class="cs-item-title">Booking Engine</div>
           <div class="cs-item-skill es">Design Ops & Componentes</div>
           <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="caso-2.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
         <a href="caso-3.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 03</div>
@@ -415,17 +442,18 @@
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <a href="caso-4.html" class="cs-dropdown-item">
+        <div class="cs-dropdown-item" style="opacity: 0.45; cursor: default; pointer-events: none;">
           <div class="cs-item-num">Caso 04</div>
-          <div class="cs-item-title">Paolo Brand System</div>
-          <div class="cs-item-skill es">Identidad de Marca & Ecosistema Digital 360°</div>
-          <div class="cs-item-skill en">Brand Identity & 360° Digital Ecosystem</div>
-        </a>
+          <div class="cs-item-title es">IT Ops &amp; Oracle ERP (Próximamente)</div>
+          <div class="cs-item-title en">IT Ops &amp; Oracle ERP (Coming Soon)</div>
+          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
+        </div>
         <a href="caso-5.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 05</div>
-          <div class="cs-item-title">IT Ops & Oracle ERP</div>
-          <div class="cs-item-skill es">Investigación de Producto & Herramientas Internas</div>
-          <div class="cs-item-skill en">Product Research & Internal Tooling</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
         </a>
       </div>
     </div>
@@ -531,10 +559,9 @@
 
 <!-- [M] MI ROL -->
 <section class="cs-block">
-  <div class="cs-behance-letter" style="opacity:0.35">M</div>
   <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label">MI ROL · Responsabilidades</span>
+      <span class="block-label">Responsabilidades</span>
       <h2 class="block-h">Primer design system<br><em>de la institución</em></h2>
     </div>
     <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
@@ -561,118 +588,357 @@
   </div>
 </section>
 
-<!-- [S] SITUATION -->
+<!-- [S] SITUACIÓN -->
 <section class="cs-block">
-  <div class="cs-behance-letter">S</div>
   <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label">SITUATION · Contexto de negocio</span>
+      <span class="block-label">Contexto de negocio</span>
       <h2 class="block-h">
         Múltiples entornos digitales,<br><em>sin criterio unificado</em>
       </h2>
     </div>
-    <div style="padding:0">
-      <p class="lead fu">El ecosistema digital de CEF arrastraba años de deuda técnica y de diseño. Cada módulo — gestión académica, documentación, procesos internos — había crecido de forma independiente, sin un sistema de diseño subyacente. El resultado era un ecosistema donde cada equipo de desarrollo resolvía los mismos problemas de forma diferente, con patrones incompatibles entre sí. Para la institución, esto tenía un coste directo: tiempo de desarrollo duplicado en cada nuevo módulo, discrepancias constantes entre diseño y código, y una experiencia del estudiante fragmentada que generaba soporte innecesario.</p>
-      
-      <p class="p fu">Esto generaba una fragmentación crítica en la experiencia del alumno:</p>
-
-      <ul class="bullet-list fu">
-        <li>Carga cognitiva extrema por interfaces densas y sobrepobladas.</li>
-        <li>Patrones de interacción inconsistentes entre diferentes módulos.</li>
-        <li>Bloqueos de accesibilidad graves (contraste, tipografía) inaceptables para una institución educativa.</li>
-      </ul>
+    <div class="c3-grid-2 fu" style="margin-top: 40px;">
+      <!-- Columna 1: Contexto -->
+      <div>
+        <p class="lead" style="margin: 0; line-height: 1.7; font-size: 17px;">El ecosistema digital de CEF arrastraba años de deuda técnica y de diseño. Cada módulo — gestión académica, documentación, procesos internos — había crecido de forma independiente, sin un sistema de diseño subyacente. El resultado era un ecosistema donde cada equipo de desarrollo resolvía los mismos problemas de forma diferente, con patrones incompatibles entre sí. Para la institución, esto tenía un coste directo: tiempo de desarrollo duplicado en cada nuevo módulo, discrepancias constantes entre diseño y código, y una experiencia del estudiante fragmentada que generaba soporte innecesario.</p>
+      </div>
+      <!-- Columna 2: Impacto/Fragmentación -->
+      <div>
+        <div style="background: rgba(239,68,68,0.02); border: 1px solid rgba(239,68,68,0.15); padding: 28px; border-radius: 16px; height: 100%;">
+          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#ef4444; display:block; margin-bottom:16px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Fragmentación en la experiencia
+          </span>
+          <ul class="bullet-list" style="margin: 0; font-size: 13.5px; color: var(--text-dim);">
+            <li>Carga cognitiva extrema por interfaces densas y sobrepobladas.</li>
+            <li>Patrones de interacción inconsistentes entre diferentes módulos.</li>
+            <li>Bloqueos de accesibilidad graves (contraste, tipografía) inaceptables para una institución educativa.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- [T] TASK -->
 <section class="cs-block" style="background: rgba(255,255,255,0.015);">
-  <div class="cs-behance-letter">T</div>
   <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label">TASK · El reto</span>
+      <span class="block-label">El reto</span>
       <h2 class="block-h">
         Rediseño, unificación y<br><em>cumplimiento WCAG</em>
       </h2>
     </div>
-    <div style="padding:0">
-      <p class="p fu">El objetivo no era un simple "lavado de cara" o restyling visual. El mandato estratégico fue auditar la plataforma, establecer estándares de accesibilidad innegociables (WCAG AA) y sentar las bases del primer Sistema de Diseño escalable para todo el entorno EdTech de la institución.</p>
-      <p class="p fu" style="margin-top:16px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0;">
-        <strong>Restricciones reales del proyecto:</strong> Algunos colores corporativos de CEF no superaban el ratio de contraste WCAG 4.5:1 — lo que obligaba a redefinir la paleta de marca, una decisión con implicaciones más allá del diseño. El equipo de desarrollo necesitaba resultados visibles a corto plazo, mientras que construir el sistema bien requeria tiempo previo de definición. Gestioné esa tensión priorizando los módulos de mayor impacto en el journey del estudiante (calendario y login) como primera prueba de estrés del sistema.
-      </p>
+    <div class="c3-grid-2 fu" style="margin-top: 40px;">
+      <!-- Columna 1: El Objetivo -->
+      <div>
+        <p class="p" style="font-size: 16px; line-height: 1.7; margin: 0;">El objetivo no era un simple "lavado de cara" o restyling visual. El mandato estratégico fue auditar la plataforma, establecer estándares de accesibilidad innegociables (WCAG AA) y sentar las bases del primer Sistema de Diseño escalable para todo el entorno EdTech de la institución.</p>
+      </div>
+      <!-- Columna 2: Restricciones Reales -->
+      <div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 28px; border-radius: 0 16px 16px 0; height: 100%;">
+          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:12px;">Restricciones reales del proyecto</span>
+          <p class="p" style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6; margin: 0;">Algunos colores corporativos de CEF no superaban el ratio de contraste WCAG 4.5:1 — lo que obligaba a redefinir la paleta de marca. El equipo de desarrollo necesitaba resultados a corto plazo, por lo que prioricé los módulos de mayor impacto (calendario y login) como primera prueba de estrés del sistema.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- [A] ACTION -->
 <section class="cs-block">
-  <div class="cs-behance-letter">A</div>
   <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label">ACTION · Lo que hice, y por qué</span>
+      <span class="block-label">El proceso de diseño</span>
       <h2 class="block-h">
         Auditoría, Wireframing<br><em>y unificación de la UI</em>
       </h2>
     </div>
     <div style="padding:0">
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">1. Auditoría UX y Triage de problemas</h3>
-      <p class="p fu"><strong>Insight:</strong> La auditoría heurística reveló que los problemas no eran estéticos — eran sistémicos. Contraste inferior a 3:1, affordance rota en botones primarios, flujos inconsistentes entre módulos. Ningún problema era aislado: todos venían de la ausencia de un sistema compartido. <strong>Hipótesis:</strong> Si establecemos primero los estándares (tokens, tipografía, accesibilidad) antes que la UI, los componentes resultantes serán correctos por construcción, no por revisión manual. <strong>Decisión:</strong> Invertir las primeras semanas en auditar y definir el sistema, antes de diseñar ninguna pantalla. Un enfoque que requirió argumentar a dirección por qué no entregaríamos UI visible de forma inmediata.</p>
-
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Definición de Estilos y Accesibilidad (WCAG)</h3>
-      <p class="p fu">Dado que el producto está dirigido al sector educativo, la accesibilidad era un requisito innegociable. Establecí una nueva paleta de colores corporativos optimizada para garantizar un contraste mínimo (Nivel AA) según las pautas WCAG. También redefiní la tipografía para mejorar la legibilidad y estructuré un sistema de componentes básicos estandarizado.</p>
-
-      <!-- DASHBOARD WIDGET: SCORE -->
-      <div class="dash-widget fu">
-        <div class="dash-title">Evaluación de Accesibilidad · WCAG Nivel AA</div>
-        
-        <div class="score-row">
-          <div class="score-circle perfect">AA</div>
-          <div class="score-info">
-            <h4>Cumplimiento de Contraste y Tipografía</h4>
-            <p>La paleta corporativa y el sistema tipográfico fueron recalibrados para superar la relación de contraste 4.5:1. Esto asegura una legibilidad total para el alumnado y cumple con las normativas internacionales de accesibilidad en plataformas EdTech.</p>
+      <!-- STEP 01 & 02: AUDITORÍA & ESTÁNDARES -->
+      <div class="row g-4 fu" style="margin-top: 60px; margin-bottom: 60px; align-items: stretch;">
+        <!-- Columna 1: Auditoría Heurística -->
+        <div class="col-lg-6 col-md-12">
+          <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 32px; border-radius: 16px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:14px;">Fase 1 · Auditoría &amp; Triage</span>
+              <h3 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">1. Auditoría UX y Triage de problemas</h3>
+              <p class="p" style="font-size: 13.5px; line-height: 1.6; margin: 0; color: var(--text-dim);">
+                <strong style="color:var(--white);">Insight:</strong> La auditoría heurística reveló que los problemas no eran estéticos — eran sistémicos. Contraste inferior a 3:1, affordance rota en botones primarios, flujos inconsistentes. <br><br>
+                <strong style="color:var(--white);">Hipótesis:</strong> Si establecemos los estándares antes que la UI, los componentes serán correctos por construcción.<br><br>
+                <strong style="color:var(--white);">Decisión:</strong> Invertir las primeras semanas en auditar y definir el sistema, antes de diseñar pantallas — lo que exigió argumentar a dirección la falta de UI visible inmediata.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Columna 2: WCAG y Score -->
+        <div class="col-lg-6 col-md-12">
+          <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 32px; border-radius: 16px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:14px;">Fase 2 · Estándares &amp; Contraste</span>
+              <h3 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">2. Definición de Estilos y Accesibilidad (WCAG)</h3>
+              <p class="p" style="font-size: 13.5px; line-height: 1.6; margin-bottom: 24px; color: var(--text-dim);">
+                Dado que el producto está dirigido al sector educativo, la accesibilidad era un requisito innegociable. Establecí una nueva paleta de colores corporativos optimizada para garantizar un contraste mínimo (Nivel AA) según las pautas WCAG. También redefiní la tipografía para mejorar la legibilidad y estructuré un sistema de componentes básicos estandarizado.
+              </p>
+            </div>
+            <!-- DASHBOARD WIDGET: SCORE integrado -->
+            <div class="dash-widget fu" style="margin: 0; padding: 20px; background: rgba(255,255,255,0.01); border-color: rgba(255,255,255,0.05); border-radius: 12px; width: 100%; max-width: none;">
+              <div class="score-row" style="gap: 20px;">
+                <div class="score-circle perfect" style="width: 80px; height: 80px; font-size: 24px; border-width: 4px; flex-shrink: 0;">AA</div>
+                <div class="score-info">
+                  <h4 style="font-size: 14px; margin-bottom: 4px; font-weight: 700;">Accesibilidad WCAG Nivel AA</h4>
+                  <p style="font-size: 12px; line-height: 1.4; margin: 0;">Paleta cromática y tipografía recalibradas para superar una relación de contraste mínima de 4.5:1 en toda la plataforma.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">3. Arquitectura de Componentes</h3>
-      <p class="p fu">Traspasé el foco de "diseñar pantallas" a "diseñar sistemas". Empecé estructurando wireframes de baja fidelidad para resolver la jerarquía del layout base (Navegación, Contenedores, Formularios) antes de inyectar la nueva capa visual.</p>
-      
-      <div class="cs-frame-auto fu" style="padding: 40px;">
-        <img loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.png" alt="Wireframe de Calendario Web" style="width: 100%;">
+      <!-- STEP 03: CALENDARIO (WEB) - MAIN INTERACTIVE TOOL -->
+      <div class="story-header fu" style="margin-top: 80px; text-align: left; border-top: 1px solid var(--border); padding-top: 60px;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 3 · Calendario Académico (Herramienta Principal)</span>
+        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">3. Arquitectura y Diseño Visual de la Herramienta de Calendario</h3>
+        <p class="p" style="font-size: 15px; color: var(--text-dim); margin-bottom: 32px;">
+          El Calendario Académico no es una simple landing corporativa; es la <strong>herramienta interactiva principal</strong> que el estudiante consulta a diario para gestionar su activity formativa. Diseñamos este módulo desde el flujo lógico y los wireframes hasta la UI de alta fidelidad, estresando y validando la escalabilidad del nuevo sistema de componentes.
+        </p>
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">4. UI Kit y Estandarización Visual</h3>
-      <p class="p fu">Con la estructura validada, construí un UI Kit centralizado en Figma: tokens de diseño, jerarquía tipográfica matemática y componentes interactivos con todos sus estados (Hover, Active, Disabled). El rediseño del Calendario Académico fue la primera prueba de estrés del sistema.</p>
-      
-      <div class="cs-frame-auto fu" style="padding: 20px;">
-        <img loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.png" alt="Diseño final del Calendario Web" style="width: 100%;">
+      <!-- Calendario: Paso 3.1 Wireframe -->
+      <div class="row g-5 fu" style="align-items: center; margin-top: 40px; margin-bottom: 60px;">
+        <!-- Columna Izquierda: Texto de Wireframe -->
+        <div class="col-lg-5 col-md-12 text-start">
+          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:14px;">3.1 · Arquitectura de Componentes</span>
+          <h4 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">Estructura lógica (Wireframe)</h4>
+          <p class="p" style="font-size: 13.5px; line-height: 1.6; color: var(--text-dim);">Traspasé el foco de "diseñar pantallas" a "diseñar sistemas". Creamos wireframes de baja fidelidad para resolver la jerarquía del layout base — Navegación, Contenedores, Formularios — antes de inyectar la capa visual. Esto asegura que la lógica funcional esté validada antes de definir colores y tipografías.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top: 20px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Layout base:</strong> Distribución clara de contenedores, formularios y paneles de navegación principal.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Contenedores de eventos:</strong> Espaciado predecible para las asignaturas y fechas clave del alumno.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 20px; text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Resolver la arquitectura de información antes de definir la capa tipográfica y cromática.
+          </div>
+        </div>
+        <!-- Columna Derecha: Imagen Wireframe -->
+        <div class="col-lg-7 col-md-12">
+          <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.015);">
+            <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.png" alt="Wireframe de Calendario Web">
+          </div>
+        </div>
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">5. Handoff y Escalabilidad</h3>
-      <p class="p fu">Para evitar discrepancias entre diseño y código, documenté el comportamiento de cada componente. Este mismo sistema permitió iterar a velocidad récord otros flujos críticos del portal, demostrando su viabilidad como única fuente de verdad técnica.</p>
-      
-      <p class="p fu" style="margin-bottom: 12px;">Despliegue del Design System en otros módulos clave:</p>
-      
-      <div class="cs-ba fu" style="margin-top:24px; margin-bottom:40px;">
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.png" alt="Pasarela Pago Desktop"></div>
-          <p class="p" style="font-size:13px; margin-top: 8px;">Pasarela de Pago · Diseño Desktop</p>
+      <!-- Paso 3.2 & 3.3: Diseño Final (Desktop vs. Mobile) -->
+      <div class="story-header fu" style="margin-top: 40px; text-align: left;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">3.2 · Diseño Final Implementado</span>
+        <h4 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:12px; font-family:'Playfair Display', serif;">Diseño Final: Desktop vs. Mobile</h4>
+        <p class="p" style="font-size: 14px; color: var(--text-dim); margin-bottom: 24px;">
+          Aplicamos los tokens del nuevo UI Kit centralizado en Figma sobre la estructura lógica validada, logrando una interfaz limpia y de alta accesibilidad, consistente en escritorio y pantallas móviles.
+        </p>
+      </div>
+
+      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px;">
+        <!-- Mobile Calendar -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num">03.2</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Calendario Web · Mobile</span>
+              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+            </div>
+          </div>
+          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.png" alt="Diseño final del Calendario Web — Mobile">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión móvil reorganiza la agenda en una vista de lista y cuadrícula mensual adaptada para interacción táctil en smartphone, garantizando legibilidad y accesibilidad.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Adaptabilidad responsive:</strong> Redefinición de cuadrícula y botones flotantes para optimizar el espacio en pantallas verticales.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.png" alt="Pasarela Pago Mobile"></div>
-          <p class="p" style="font-size:13px; margin-top: 8px;">Pasarela de Pago · Diseño Mobile</p>
+
+        <!-- Desktop Calendar -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num" style="color: var(--accent);">03.3</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Calendario Web · Desktop</span>
+              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+            </div>
+          </div>
+          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.png" alt="Diseño final del Calendario Web — Escritorio">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión de escritorio del calendario académico permite al estudiante visualizar de un vistazo su agenda académica diaria y semanal, facilitando la interacción rápida con asignaturas y filtros avanzados.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Consistencia visual:</strong> Sincronización al 100% con los componentes interactivos del design system y colores de contraste AA (WCAG).</p>
+              </div>
+            </div>
+            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Permitir al alumno comprender de un vistazo su agenda académica diaria y semanal desde cualquier dispositivo.
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="cs-ba fu" style="margin-top:24px; margin-bottom:60px;">
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.png" alt="Login Desktop"></div>
-          <p class="p" style="font-size:13px; margin-top: 8px;">Login y Bolsa de Empleo · Diseño Desktop</p>
+      <!-- STEP 04: PASARELA DE PAGO (DESKTOP & MOBILE CHECKOUT) -->
+      <div class="story-header fu" style="margin-top: 80px; text-align: left; border-top: 1px solid var(--border); padding-top: 60px;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 4 · Pasarela de Pago</span>
+        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">4. Pasarela de Pago: Rediseño del Checkout Responsive</h3>
+        <p class="p" style="font-size: 15px; color: var(--text-dim); margin-bottom: 32px;">
+          El checkout de matrícula es un flujo crítico donde la fricción se traduce directamente en pérdida de ingresos. Aplicamos el sistema de componentes para rediseñar la pasarela de pago, optimizando la jerarquía visual de los conceptos económicos y estructurando una experiencia adaptativa fluida tanto en desktop como en dispositivos móviles.
+        </p>
+      </div>
+
+      <!-- Pasarela de Pago: Desktop vs Mobile -->
+      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
+        <!-- Desktop Pasarela -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num">04.1</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Diseño Desktop · Checkout de Matrícula</span>
+              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+            </div>
+          </div>
+          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.png" alt="Pasarela de Pago — Diseño Desktop">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En resoluciones de escritorio, el checkout divide la pantalla de forma equilibrada para mostrar en paralelo el desglose transaccional detallado (conceptos de matrícula, descuentos, tasas) y las opciones de pago (tarjeta, financiación, domiciliación).</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Estructura en dos columnas:</strong> Resumen financiero fijo a la derecha y formulario interactivo de pago a la izquierda.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.png" alt="Login Mobile"></div>
-          <p class="p" style="font-size:13px; margin-top: 8px;">Login y Bolsa de Empleo · Diseño Mobile</p>
+
+        <!-- Mobile Pasarela -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num" style="color: var(--accent);">04.2</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Diseño Mobile · Fricción y Comportamiento táctil</span>
+              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+            </div>
+          </div>
+          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.png" alt="Pasarela de Pago — Diseño Móvil">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión móvil reorganiza los bloques verticalmente y prioriza el paso de pago activo, reduciendo la altura de scroll requerida para completar la transacción. Los campos de formulario y botones de llamada a la acción adoptan tamaños óptimos para interacción táctil.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Reducción de ruido:</strong> Elementos de desglose colapsados en un acordeón resumen al inicio para enfocar la pantalla en los datos de cobro.</p>
+              </div>
+            </div>
+            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Transaccionar de manera segura e inequívoca, visualizando importes exactos y plazos seleccionados.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 05: LOGIN Y BOLSA DE EMPLEO (ACCESO UNIFICADO DESKTOP & MOBILE) -->
+      <div class="story-header fu" style="margin-top: 80px; text-align: left; border-top: 1px solid var(--border); padding-top: 60px;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 5 · Acceso Unificado &amp; Empleo</span>
+        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">5. Login, Landing y Bolsa de Empleo: Portal del Alumno</h3>
+        <p class="p" style="font-size: 15px; color: var(--text-dim); margin-bottom: 32px;">
+          El portal de acceso y la Bolsa de Empleo unifican la experiencia del estudiante tanto para ingresar a la plataforma como para buscar oportunidades profesionales. Estandarizamos este módulo con las mismas reglas de color y tipografía del Design System, acelerando drásticamente el desarrollo frontend y logrando una presentación de ofertas impecable en todas las pantallas.
+        </p>
+      </div>
+
+      <!-- Login y Empleo: Desktop vs Mobile -->
+      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
+        <!-- Desktop Login/Bolsa -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num">05.1</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Portal de Empleo · Escritorio</span>
+              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+            </div>
+          </div>
+          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.png" alt="Login y Bolsa de Empleo — Diseño Desktop">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">El diseño desktop organiza de forma clara las áreas funcionales del portal: acceso directo con credenciales institucionales, listado interactivo de vacantes laborales de la Bolsa de Empleo, y destacados informativos corporativos de CEF.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Reutilización de componentes:</strong> Los campos de formulario y las tarjetas de ofertas de empleo se nutren directamente de la librería compartida de Figma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Login/Bolsa -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num" style="color: var(--accent);">05.2</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Portal de Empleo · Pantalla Móvil</span>
+              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+            </div>
+          </div>
+          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.png" alt="Login y Bolsa de Empleo — Diseño Móvil">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">El layout móvil adapta la visualización priorizando la accesibilidad de las llamadas a la acción primarias y simplificando los bloques informativos de fondo para evitar scroll excesivo en la pantalla táctil.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Coherencia tipográfica:</strong> La escala responsive de textos asegura que los títulos de ofertas de empleo y campos de input sigan siendo completamente legibles (relación AA).</p>
+              </div>
+            </div>
+            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Facilitar un inicio de sesión sin fricciones y una navegación cómoda por las ofertas de empleo desde cualquier dispositivo.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 06: HANDOFF Y DOCUMENTACIÓN TÉCNICA -->
+      <div class="row g-5 fu" style="--bs-gutter-x: 4rem; margin-top: 80px; margin-bottom: 20px; border-top: 1px solid var(--border); padding-top: 60px;">
+        <!-- Columna 1: Explicación del Handoff -->
+        <div class="col-lg-7 col-md-12 text-start">
+          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 6 · Handoff Técnico &amp; Escalabilidad</span>
+          <h3 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">6. Handoff y Escalabilidad</h3>
+          <p class="p">El handoff no fue entregar un Figma bien organizado y esperar. Documenté el comportamiento de cada componente — estados, variantes, casos límite — en un formato que el equipo de desarrollo pudiera consumir directamente como referencia de implementación. Eso implica entender cómo se traduce un token de spacing a una variable CSS, cómo se estructura un componente para que sus variantes sean predecibles en código, y dónde está el límite entre lo que se resuelve en diseño y lo que se resuelve en front. Con formación en desarrollo web completo, ese lenguaje no era ajeno — y eso acortó ciclos de revisión de forma visible.</p>
+          <p class="p" style="margin-top: 20px; color: var(--text-dim);">Despliegue del Design System en otros módulos clave:</p>
+        </div>
+        <!-- Columna 2: Especificaciones Técnicas del Handoff -->
+        <div class="col-lg-5 col-md-12">
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border); padding: 28px; border-radius: 16px; height: 100%;">
+            <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Entregables del Handoff Técnico</span>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <p style="font-size:12.5px; color:var(--text-dim); margin:0;"><strong style="color:#fff;">Figma Tokens:</strong> Nomenclatura semántica mapeada con variables CSS de desarrollo.</p>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <p style="font-size:12.5px; color:var(--text-dim); margin:0;"><strong style="color:#fff;">Matriz de Estados:</strong> Comportamientos definidos para Default, Hover, Active, Focus, Disabled y Loading.</p>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <p style="font-size:12.5px; color:var(--text-dim); margin:0;"><strong style="color:#fff;">Guía de Layout:</strong> Breakpoints responsive y reglas de comportamiento adaptativo por componente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>op: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Iniciar sesión o aplicar a ofertas de empleo de forma rápida desde cualquier dispositivo.
+            </div>
+          </div>
         </div>
       </div>
 
@@ -682,126 +948,33 @@
 
 <!-- [R] RESULTADO -->
 <section class="cs-block" style="background: rgba(255,255,255,0.015);">
-  <div class="cs-behance-letter">R</div>
   <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label">RESULT · El impacto</span>
+      <span class="block-label">Resultados</span>
       <h2 class="block-h">
         Claridad visual y<br><em>escalabilidad técnica</em>
       </h2>
     </div>
 
-    <ul class="bullet-list fu" style="margin-bottom: 48px;">
-      <li><strong>Deuda de diseño eliminada:</strong> Interfaz coherente y estandarizada en todo el journey del estudiante.</li>
-      <li><strong>Accesibilidad certificada:</strong> Superación del ratio 4.5:1 en todos los componentes interactivos (WCAG Nivel AA).</li>
-      <li><strong>Time-to-market reducido:</strong> El equipo de desarrollo ahora ensambla nuevas vistas usando componentes predefinidos en lugar de maquetar desde cero.</li>
-      <li><strong>Base escalable:</strong> El UI Kit se ha convertido en el estándar fundacional para la futura evolución tecnológica de la plataforma CEF.</li>
-    </ul>
-
-    <div class="fu pm-widget">
-      <div class="pm-header">
-        <div class="pm-header-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
-        </div>
-        <div class="pm-header-text">
-          <h3 class="pm-title">Traducción a metodología de producto</h3>
-          <p class="pm-desc">Cada actividad de este proyecto tiene nombre en equipos de producto.</p>
-        </div>
+    <!-- Rejilla de Impacto de Resultados (Maquetado en rejilla) -->
+    <div class="c3-grid-4 fu" style="margin-bottom: 48px;">
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.01); display: flex; flex-direction: column;">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Deuda eliminada</div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Deuda de diseño eliminada:</strong> Interfaz coherente y estandarizada en todo el journey del estudiante de CEF.</p>
       </div>
-
-      <div class="pm-list">
-
-        <div class="pm-map-row" data-accent="purple">
-          <span class="pm-num">01</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </div>
-            <span class="pm-work-label">Revisión de problemas de la interfaz actual</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Heuristic Evaluation / UX Audit</div>
-        </div>
-
-        <div class="pm-map-row" data-accent="blue">
-          <span class="pm-num">02</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            </div>
-            <span class="pm-work-label">Mejora de colores para legibilidad</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Accessibility Design</div>
-        </div>
-
-        <div class="pm-map-row" data-accent="cyan">
-          <span class="pm-num">03</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-            </div>
-            <span class="pm-work-label">Creación de estructura base</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Wireframing / Information Architecture</div>
-        </div>
-
-        <div class="pm-map-row" data-accent="purple">
-          <span class="pm-num">04</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4z"></path><path d="M14 4h6v6h-6z"></path><path d="M4 14h6v6H4z"></path><path d="M14 14h6v6h-6z"></path></svg>
-            </div>
-            <span class="pm-work-label">Estandarización de botones y estilos</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">UI Kit / Component Library</div>
-        </div>
-
-        <div class="pm-map-row" data-accent="blue">
-          <span class="pm-num">05</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-            </div>
-            <span class="pm-work-label">Pase a desarrollo con documentación</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Design Handoff</div>
-        </div>
-
-        <div class="pm-map-row" data-accent="cyan">
-          <span class="pm-num">06</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-            </div>
-            <span class="pm-work-label">Diseño aplicable a otros módulos</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Scalable Design System</div>
-        </div>
-
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.01); display: flex; flex-direction: column;">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Accesibilidad AA</div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Accesibilidad certificada:</strong> Superación del ratio 4.5:1 de contraste en todos los componentes interactivos.</p>
       </div>
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.01); display: flex; flex-direction: column;">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Time-to-market</div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Time-to-market reducido:</strong> El equipo frontend ensambla vistas usando componentes predefinidos sin maquetar de cero.</p>
+      </div>
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.01); display: flex; flex-direction: column;">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Base escalable</div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Base escalable:</strong> El UI Kit es la base de referencia única para la futura evolución tecnológica de CEF.</p>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -809,35 +982,38 @@
 
 <!-- [L] LEARNINGS -->
 <section class="cs-block">
-  <div class="cs-behance-letter">L</div>
   <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label">LEARNINGS · Aprendizajes</span>
+      <span class="block-label">Aprendizajes</span>
       <h2 class="block-h">Lo que construir un sistema<br><em>desde cero enseña</em></h2>
     </div>
 
-    <div class="fu" style="display:flex; flex-direction:column; gap:32px; margin-top:48px; max-width:760px;">
-
-      <div>
-        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">El design system no es el entregable. La adopción sí.</h3>
-        <p class="p">El entregable real no era un archivo de Figma con componentes bien organizados — era que el equipo de desarrollo lo usara como referencia única. Eso implicó documentar no solo el aspecto de cada componente, sino su comportamiento: estados, variantes, casos límite y guía de uso. Un UI Kit que no se adopta es una librería abandonada. La diferencia entre uno y otro es la documentación y la confianza del equipo en el sistema.</p>
+    <!-- Rejilla de Aprendizajes (Maquetado en 4 columnas de tarjetas con iconos) -->
+    <div class="c3-grid-4 fu" style="margin-top: 48px;">
+      <!-- Aprendizaje 1 -->
+      <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
+        <span style="font-size: 24px; margin-bottom: 14px;">📦</span>
+        <h4 style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">La adopción es el entregable</h4>
+        <p style="font-size: 12.5px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>El design system no es el entregable. La adopción sí.</strong> El entregable real no era un archivo de Figma, sino que desarrollo lo adoptara como referencia única, lo que exigió documentar estados, variantes y comportamientos.</p>
       </div>
-
-      <div>
-        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">Empezar por estructura antes que por estética cambia el resultado.</h3>
-        <p class="p">Trabajar con wireframes de baja fidelidad antes de inyectar UI evitó un error habitual: resolver problemas de jerarquía y layout con recursos visuales. Al separar ambas capas, las decisiones de estructura fueron más claras y la UI resultante más consistente. Los componentes no nacieron de preferencias estéticas — nacieron de decisiones funcionales ya validadas.</p>
+      <!-- Aprendizaje 2 -->
+      <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
+        <span style="font-size: 24px; margin-bottom: 14px;">📐</span>
+        <h4 style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">Estructura antes que estética</h4>
+        <p style="font-size: 12.5px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>Empezar por estructura cambia el resultado.</strong> Trabajar con wireframes de baja fidelidad antes de inyectar UI evitó resolver problemas de jerarquía con recursos visuales, basando la UI en decisiones funcionales.</p>
       </div>
-
-      <div>
-        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">La accesibilidad como restricción es una palanca, no un bloqueo.</h3>
-        <p class="p">Redefinir la paleta corporativa para cumplir WCAG AA fue una decisión que afectaba a la identidad de marca, no solo al diseño. En lugar de presentarla como una imposición técnica, la argumenté como una mejora del sistema: colores más versátiles, mayor legibilidad en todos los contextos y cumplimiento de normativa para una institución educativa. La restricción regulatoria, bien comunicada, se convirtió en argumento a favor del cambio.</p>
+      <!-- Aprendizaje 3 -->
+      <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
+        <span style="font-size: 24px; margin-bottom: 14px;">♿</span>
+        <h4 style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">La accesibilidad como palanca</h4>
+        <p style="font-size: 12.5px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>La accesibilidad como restricción es palanca.</strong> Redefinir la paleta para cumplir WCAG AA no limitó el diseño visual: se argumentó como mejora del sistema, logrando colores versátiles y legibilidad en todo contexto.</p>
       </div>
-
-      <div>
-        <h3 class="block-h" style="font-size:20px; margin-bottom:10px;">Diseñar sistemas es diseñar para otros diseñadores y desarrolladores, no para usuarios finales.</h3>
-        <p class="p">En este proyecto, mis usuarios directos eran el equipo de desarrollo. Eso implicó pensar en nomenclatura coherente, documentación clara y componentes con variantes que redujeran la ambigüedad. Es una lógica diferente a la del diseño de producto para usuarios finales — y más cercana a la de construir infraestructura. Esa perspectiva me sirve directamente para proyectos de escala donde el impacto se mide en velocidad de iteración del equipo, no solo en métricas de usuario.</p>
+      <!-- Aprendizaje 4 -->
+      <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
+        <span style="font-size: 24px; margin-bottom: 14px;">👥</span>
+        <h4 style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">Diseñar para el equipo interno</h4>
+        <p style="font-size: 12.5px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>Diseñar sistemas es diseñar para el equipo.</strong> El design system es una herramienta interna. Si la biblioteca no es cómoda en Figma y los tokens no son lógicos en código, morirá. Empatizar con desarrollo es ineludible.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -854,18 +1030,17 @@
       <a href="caso-2.html" class="btn btn-secondary en">← Case 02</a>
       <a href="index.html" class="btn btn-secondary es">Volver</a>
       <a href="index.html" class="btn btn-secondary en">Back</a>
-      <a href="caso-4.html" class="btn btn-primary es">Caso 04 →</a>
-      <a href="caso-4.html" class="btn btn-primary en">Case 04 →</a>
+      <a href="caso-5.html" class="btn btn-primary es">Caso 05 →</a>
+      <a href="caso-5.html" class="btn btn-primary en">Case 05 →</a>
     </div>
   </div>
-</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   const io = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
       if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.01 });
   document.querySelectorAll('.fu').forEach(el => io.observe(el));
 
   // Lang toggle (bilingual support)

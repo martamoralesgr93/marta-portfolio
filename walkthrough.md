@@ -1,25 +1,44 @@
-# Walkthrough: Corrección de Snapping Adaptativo de Lectura Fluida
+# Walkthrough: Actualizaciones de Imágenes y Optimización del Portfolio
 
-Hemos solucionado con éxito el problema del desbordamiento y los cortes de contenido, logrando que todas las secciones del portafolio (Hero, Metodología STAR, Proyectos, Sobre Mí y Contacto) se puedan leer de forma fluida y completa sin perder los efectos tridimensionales.
+Hemos completado con éxito las actualizaciones de imágenes y optimización de diseño solicitadas para los casos del portafolio en la página principal (`index.html`) y las páginas de casos de estudio.
 
 ---
 
 ## Cambios Realizados
 
-### 1. Snapping Adaptativo con Desbordamiento Visible
-* **Eliminación de Límites Estrictos de Altura:** Quitamos las reglas `height: 100vh !important` y `max-height: 100vh !important` que causaban que las secciones con más volumen de contenido (como los proyectos seleccionados o el perfil biográfico) se cortaran a la mitad.
-* **Maquetación `min-height: 100vh` con `height: auto`:** Cada sección principal ahora tiene una altura mínima equivalente al 100% de la altura visible del navegador (`min-height: 100vh !important`), pero puede expandirse verticalmente de forma natural si su contenido lo requiere (`height: auto !important`).
-* **Desbordamiento Visible (`overflow: visible`):** El desbordamiento de las secciones ya no se oculta, permitiendo que todos los elementos (como los mockups del tríptico y el timeline de experiencia) sean completamente legibles y accesibles.
-* **Comportamiento Snapping Magnético:**
-  * Si la sección cabe perfectamente en pantalla (Hero, Metodología STAR y Contacto), se presenta en un solo viewport centralizado.
-  * Si es más larga (Proyectos y Sobre Mí), el snapping se engancha magnéticamente a su **inicio** (`scroll-snap-align: start`). El usuario puede desplazarse verticalmente de forma natural por toda la sección, y al finalizar la lectura, el scroll engancha limpiamente el inicio del siguiente slide.
+### 1. Caso Paolo: Imagen Ajustada en Index
+* **Ajuste de Imagen del Card de Paolo:** En [index.html](file:///c:/Users/mmora/Desktop/Marta%20Morales%20%E2%80%94%20Product%20Designer_files/index.html) (línea 2358), se restauró la imagen de escritorio **`web4.png`**. Para evitar cualquier desborde o corte, se limitaron sus dimensiones con estilos inline (`max-width: 90%; max-height: 90%;`), garantizando que encaje de forma contenida con un margen visual aireado y elegante.
 
-### 2. Conservación del Efecto de Revelación 3D de Apple
-* Se mantienen intactas las transiciones tridimensionales y desvanecimientos en perspectiva 3D (`transform-style: preserve-3d` y perspectiva de `1200px`) controlados por el Intersection Observer de `script.js` al ingresar y salir del viewport, brindando una experiencia inmersiva y sumamente sofisticada.
+### 2. Caso ILUNION: Cambio de Imagen en Index
+* **Imagen del Card de ILUNION:** Se cambió la imagen del card de ILUNION (Caso 1) en la portada a `assets/ILUNION/RE-COMPONETIZACION/re-compo-index.png` para mejorar la consistencia visual, optimizando el espacio del card para que la imagen se vea más grande y limpia, sin sombras pesadas ni marcos tridimensionales.
+
+### 3. Limpieza de Estilos y Efecto WOW en Portada
+* **Optimización de Imágenes de Showcase:** En los estilos locales de `index.html` (dentro de `.sc-img`), se eliminaron sombras, bordes redondeados y la rotación en perspectiva 3D para lograr una visualización plana, moderna y limpia. Además, se ampliaron el alto y ancho máximos al `100%` para aprovechar todo el espacio disponible y maximizar el impacto visual ("WOW").
+
+### 4. Caso 3 (CEF): Reestructuración del Calendario
+* **Paso 03.2 y 03.3:** En [caso-3.html](file:///c:/Users/mmora/Desktop/Marta%20Morales%20%E2%80%94%20Product%20Designer_files/caso-3.html), reestructuramos el flujo del calendario académico:
+  * El Wireframe (`wireframe-calendar.png`) se muestra ahora al principio en una columna completa.
+  * Los pasos 03.2 y 03.3 se muestran en una cuadrícula comparativa de dos columnas (`.c2-evidence-pair`):
+    * **Paso 03.2 (Mobile):** Muestra el recurso `calendariooo.png`.
+    * **Paso 03.3 (Desktop):** Muestra el recurso `calendario.png`.
+  * Se removieron contenedores o mockups adicionales para que las capturas utilicen el 100% del espacio de la columna, previniendo que se rendericen demasiado pequeñas y garantizando legibilidad total.
+
+### 5. Caso 5: Maquetación y Distribución Visual en Columnas
+* **Distribución Multicolumna (`.cs-grid-2`):** Para romper los bloques densos de lectura y la excesiva longitud de scroll vertical en [caso-5.html](file:///c:/Users/mmora/Desktop/Marta%20Morales%20%E2%80%94%20Product%20Designer_files/caso-5.html), refactorizamos la prosa lineal distribuyéndola en rejillas de 2 columnas:
+  * **Sección Contexto:** Ubica el texto introductorio al lado izquierdo y un nuevo recurso interactivo de **Friction Audit Spreadsheet (CSS Mockup)** al derecho para simular la hoja de cálculo clave.
+  * **Sección El Reto:** Separa "La trampa de la usabilidad" del "Diagnóstico real" en columnas enfrentadas.
+  * **Sección Discovery:** Presenta la "Investigación contextual" y el "Mapa de afinidad" lado a lado.
+  * **Sección Estrategia (Build vs Buy):** Enfrenta la disyuntiva estratégica al lado de un bloque destacado de cita de producto.
+  * **Secciones de Propuesta y Arquitectura:** Estructuran los encabezados del bloque a la izquierda y el texto del párrafo a la derecha de manera asimétrica y elegante.
+  * **Sección de Impacto:** Organiza el título principal alineado side-by-side con la "Nota sobre este proyecto" (Honest Note) in formato de tarjeta flotante.
+
+### 6. Estandarización de Iconografía a Blanco Sólido
+* **Icono de Estrella de 6 Puntas (Sparkle):** Se reemplazó el icono de estrella de 5 puntas de color violeta (`#a78bfa`) en el "Resumen de Impacto" de la página principal (`index.html`) por un icono de **estrella de 6 puntas (outline)** dibujado mediante SVG en blanco sólido, coincidiendo con la referencia visual compartida.
+* **Estilos Globales de Iconos en Blanco Sólido:** Añadimos reglas de sobrescritura a [design-system.css](file:///c:/Users/mmora/Desktop/Marta%20Morales%20%E2%80%94%20Product%20Designer_files/design-system.css) para forzar que todos los SVGs de etiquetas de categoría, rejillas de resumen de los casos de estudio y cabeceras hereden color y trazo blanco sólido (`#ffffff`) y opacidad completa (`opacity: 1`), logrando uniformidad visual en todo el portafolio.
 
 ---
 
 ## Verificación de Calidad
 
-* **Compilación CSS:** La ejecución de `npm run build-local` compiló todo el código SCSS de forma óptima sin advertencias ni errores.
-* **Validación de Lectura:** Desplazarse de arriba a abajo por el portafolio en escritorio permite ahora leer **todas y cada una de las secciones de forma completa y continua**, resolviendo de raíz el error de corte de elementos y manteniendo la tridimensionalidad cinemática del portafolio.
+* **Compilación de Activos:** Ejecutamos `npm run build-local` correctamente para regenerar los estilos del portafolio.
+* **Integridad de Rutas y Estilos:** Se validó que las nuevas rutas a `web4.png`, `re-compo-index.png`, `calendariooo.png` y `calendario.png` corresponden a archivos existentes en el sistema y se renderizan correctamente sin distorsión ni recortes. La nueva iconografía en blanco sólido y la estructura de grillas de Caso 5 no generan desbordamiento horizontal y cargan de forma limpia.

@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales</title>
-  <meta name="description" content="Cómo construí desde cero la identidad visual completa, el design system y el ecosistema digital de una cadena de pizzerías artesanas — de 1 a 6 locales en 2 años.">
-  <meta name="keywords" content="Brand Design System, Visual Identity, Digital Strategy, WordPress, Adobe XD, Metricool, Product Designer, UX, Spain, Pizzeria">
+  <title>Build vs. Buy · Diagnóstico de fricción operativa IT · Marta Morales</title>
+  <meta name="description" content="Cómo un Excel del responsable de sistemas desencadenó un diagnóstico de producto: investigación de fricción operativa y propuesta de plataforma interna para reducir la carga de tickets IT.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://martamorales.vercel.app/caso-4.html">
-  <meta property="og:title" content="Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales">
-  <meta property="og:description" content="De 0 a 6 locales. Identidad visual, design system y ecosistema digital completo construido desde cero para una cadena de pizzerías artesanas en Madrid.">
+  <meta property="og:title" content="Build vs. Buy · Diagnóstico de fricción operativa IT · Marta Morales">
   <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/logo.png">
@@ -27,39 +25,9 @@
     /* Specific Component Styles */
     .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
 
-    .dash-widget { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
-    .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
-    .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
-    .dash-impact-row { display: flex; align-items: baseline; gap: 16px; }
-    .dash-impact-num { font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif; }
-    .dash-impact-text { font-size: 18px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
-
-    /* DESIGN SYSTEM DISPLAY */
-    .ds-section { margin: 60px 0; }
-    .ds-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; font-weight: 600; }
-    .color-palette { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
-    .color-chip { border-radius: 10px; overflow: hidden; width: 120px; }
-    .color-swatch { height: 64px; }
-    .color-info { padding: 10px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; }
-    .color-name { font-size: 11px; font-weight: 600; color: var(--white); }
-    .color-hex { font-size: 10px; color: var(--text-dim); font-family: monospace; }
-
-    .typo-row { border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; align-items: baseline; gap: 24px; }
-    .typo-layer { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); min-width: 80px; }
-    .typo-sample { color: var(--white); }
-
-    /* TOUCHPOINT MAP */
-    .touchpoint-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; max-width: 720px; }
-    .tp-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
-    .tp-cat { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
-    .tp-items { font-size: 13px; color: var(--text); line-height: 1.9; }
-
-    .cs-ba-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
-    .cs-ba-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
-
     /* QUICK SUMMARY */
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
     .qs-col { display: flex; flex-direction: column; }
     .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
     .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
@@ -69,34 +37,238 @@
     .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
     .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
 
+    /* INSIGHT BOX */
+    .insight-box { border-left: 2px solid var(--accent); padding-left: 24px; margin: 40px 0; max-width: 680px; }
+    .insight-box p { font-size: 19px; color: var(--text-bright); font-weight: 300; line-height: 1.6; font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
+
+    /* AFFINITY MAP */
+    .affinity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 48px 0; }
+    .affinity-cluster { border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: rgba(255,255,255,0.015); }
+    .affinity-cluster-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .affinity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .affinity-cards { display: flex; flex-direction: column; gap: 8px; }
+    .affinity-card { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.5; border-left: 2px solid transparent; }
+
+    /* HONEST NOTE */
+    .honest-note { background: rgba(6,182,212,0.04); border: 1px solid rgba(6,182,212,0.16); border-radius: 14px; padding: 28px 32px; margin: 48px 0; max-width: 720px; }
+    .honest-note-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .honest-note p { font-size: 14px; color: var(--text); line-height: 1.75; }
+
+    /* SPREADSHEET MOCKUP */
+    .spreadsheet-mockup { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+    .ss-header { background: rgba(255,255,255,0.04); padding: 12px 18px; font-size: 11px; color: var(--text-dim); border-bottom: 1px solid var(--border); font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
+    .ss-header-dots { display: flex; gap: 6px; }
+    .ss-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+    .ss-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .ss-table th, .ss-table td { padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,0.03); text-align: left; }
+    .ss-table th { background: rgba(255,255,255,0.01); color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 9.5px; letter-spacing: 0.08em; }
+    .ss-table td { color: var(--text-dim); }
+    .ss-table tr:last-child td { border-bottom: none; }
+    .ss-table td.bad { color: #f59e0b; font-weight: 600; }
+    .ss-table td.critical { color: #ef4444; font-weight: 600; }
+
+    /* IA TREE */
+    .ia-tree-wrap { margin: 40px 0 60px; }
+    .ia-root-row { display: flex; justify-content: center; }
+    .ia-root-node { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 32px; border: 1px solid var(--accent-border); border-radius: 14px; background: var(--accent-glow); min-width: 200px; }
+    .ia-root-icon { font-size: 20px; color: var(--accent); }
+    .ia-root-label { font-size: 16px; font-weight: 700; color: var(--white); }
+    .ia-root-sub { font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+    .ia-trunk { width: 1px; height: 28px; background: var(--accent-border); margin: 0 auto; }
+    .ia-branches-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .ia-branch { display: flex; flex-direction: column; align-items: center; }
+    .ia-branch-connector { width: 1px; height: 28px; background: var(--border); }
+    .ia-branch-head { width: 100%; border: 1px solid; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 16px; }
+    .ia-branch-icon { font-size: 18px; }
+    .ia-branch-title { font-size: 14px; font-weight: 700; }
+    .ia-branch-desc { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; }
+    .ia-branch-items { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .ia-item { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,0.02); font-size: 13px; color: var(--text-bright); }
+    .ia-item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .ia-surface-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; border: 1px solid; }
+
+    /* USER GROUPS GRID & CARDS */
+    .user-groups {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 48px 0;
+    }
+    .user-group {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .user-group:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .user-group-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .user-group-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .user-group-count {
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .user-group-needs {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .user-group-needs li {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .user-group-needs li::before {
+      content: "—";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+
+    /* MODULES GRID & CARDS */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .module-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .module-card:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .module-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .module-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .module-desc {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .module-solves {
+      font-size: 11px;
+      color: var(--text-bright);
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-weight: 500;
+    }
+
+    /* LEARNINGS GRID & CARDS */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .learning-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .learning-card:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .learning-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .learning-text {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* hide lang children */
+    html:not(.lang-en) [lang="en"]:not(.en) { display: none; }
+    html.lang-en [lang="es"]:not(.es) { display: none; }
+
     /* RESPONSIVE OVERRIDES */
     @media (max-width: 900px) {
-      .tool-grid { grid-template-columns: 1fr 1fr; }
-      .touchpoint-grid { grid-template-columns: 1fr; }
       .quick-summary-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
+      .affinity-grid, .user-groups, .modules-grid, .learning-grid, .ia-branches-row { grid-template-columns: 1fr; }
+      .scenario-cols { grid-template-columns: 1fr; }
+      .scenario-col + .scenario-col { border-left: none; border-top: 1px solid var(--border); }
+      .compare-grid { grid-template-columns: 1fr !important; }
+      .impact-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 640px) {
+      .impact-grid { grid-template-columns: 1fr !important; }
     }
     @media (max-width: 768px) {
       .quick-summary-grid { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
-      .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
-      .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .dash-impact-num { font-size: 64px; }
-      .dash-impact-text { font-size: 14px; }
-      .color-palette { gap: 8px; }
-      .color-chip { width: 100px; }
-      .typo-row { flex-direction: column; gap: 8px; padding: 16px 0; }
-      .typo-layer { min-width: auto; }
       .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
-      .ds-section { margin: 40px 0; }
-      .touchpoint-grid { margin: 28px 0; }
-      .tp-card { padding: 18px; }
-      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .insight-box { padding-left: 18px; margin: 28px 0; }
+      .insight-box p { font-size: 16px; }
+      .affinity-grid { gap: 12px; margin: 32px 0; }
+      .affinity-cluster { padding: 18px; }
+      .honest-note { padding: 22px 24px; margin: 32px 0; }
+      .ia-tree-wrap { margin: 28px 0 40px; }
+      .ia-root-node { padding: 14px 24px; min-width: 160px; }
+      .ia-root-label { font-size: 14px; }
+      .ia-branch-head { padding: 14px 16px; }
+      .ia-branch-title { font-size: 13px; }
+      .ia-item { font-size: 12px; padding: 7px 12px; }
     }
     @media (max-width: 480px) {
-      .dash-impact-num { font-size: 48px; }
-      .color-chip { width: 80px; }
-      .color-swatch { height: 48px; }
-      .color-info { padding: 8px 10px; }
-      .color-name { font-size: 10px; }
+      .insight-box p { font-size: 15px; }
+      .affinity-cluster-label { font-size: 9px; }
+      .affinity-card { font-size: 12px; padding: 8px 12px; }
+      .ia-branches-row { gap: 14px; }
     }
   </style>
 </head>
@@ -116,15 +288,15 @@
       <div class="cs-dropdown-menu">
         <a href="caso-1.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
-          <div class="cs-item-title">ILUNION CRO</div>
-          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
-          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
-        </a>
-        <a href="caso-2.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 02</div>
           <div class="cs-item-title">Booking Engine</div>
           <div class="cs-item-skill es">Design Ops & Componentes</div>
           <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="caso-2.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
         <a href="caso-3.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 03</div>
@@ -132,17 +304,18 @@
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <a href="caso-4.html" class="cs-dropdown-item">
+        <div class="cs-dropdown-item" style="opacity: 0.45; cursor: default; pointer-events: none;">
           <div class="cs-item-num">Caso 04</div>
-          <div class="cs-item-title">Paolo Brand System</div>
-          <div class="cs-item-skill es">Identidad de Marca & Ecosistema Digital 360°</div>
-          <div class="cs-item-skill en">Brand Identity & 360° Digital Ecosystem</div>
-        </a>
+          <div class="cs-item-title es">IT Ops &amp; Oracle ERP (Próximamente)</div>
+          <div class="cs-item-title en">IT Ops &amp; Oracle ERP (Coming Soon)</div>
+          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
+        </div>
         <a href="caso-5.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 05</div>
-          <div class="cs-item-title">IT Ops & Oracle ERP</div>
-          <div class="cs-item-skill es">Investigación de Producto & Herramientas Internas</div>
-          <div class="cs-item-skill en">Product Research & Internal Tooling</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
         </a>
       </div>
     </div>
@@ -156,39 +329,44 @@
   <div class="cs-hero-overlay"></div>
   <div class="cs-hero-glow"></div>
   <div class="cs-hero-content">
-    <span class="cs-eyebrow">
-      04 — Paolo by Danny's Jazz · Brand System · Digital 360°
-    </span>
+    <span class="cs-eyebrow es">04 — We Are Actions · IT Operations · Investigación de producto</span>
+    <span class="cs-eyebrow en">04 — We Are Actions · IT Operations · Product Research</span>
     <h1 class="cs-title">
-      De la identidad<br><em>al ecosistema digital</em>
+      <span class="es">Cuando comprar<br><em>no resuelve el problema</em></span>
+      <span class="en">When buying<br><em>doesn't solve the problem</em></span>
     </h1>
     <div class="cs-tags">
-      <span class="cs-tag">Brand Design System</span>
-      <span class="cs-tag">Visual Identity</span>
-      <span class="cs-tag">Adobe XD</span>
-      <span class="cs-tag">WordPress · Elementor</span>
-      <span class="cs-tag">Metricool</span>
-      <span class="cs-tag">Microsoft Clarity</span>
-      <span class="cs-tag">Delivery Strategy</span>
-      <span class="cs-tag">Google My Business</span>
-      <span class="cs-tag">Social Media</span>
+      <span class="cs-tag">Product Strategy</span>
+      <span class="cs-tag">Build vs. Buy</span>
+      <span class="cs-tag">Discovery contextual</span>
+      <span class="cs-tag">ITSM · Oracle</span>
+      <span class="cs-tag">Gestión de incidencias</span>
+      <span class="cs-tag">Propuesta conceptual</span>
+      <span class="cs-tag">Fricción operativa</span>
+      <span class="cs-tag">Herramienta interna</span>
     </div>
     <div class="cs-meta">
       <div>
-        <div class="cs-meta-label">Cliente</div>
-        <div class="cs-meta-val">Paolo by Danny's Jazz</div>
+        <div class="cs-meta-label es">Empresa</div>
+        <div class="cs-meta-label en">Company</div>
+        <div class="cs-meta-val">We Are Actions</div>
       </div>
       <div>
-        <div class="cs-meta-label">Rol</div>
-        <div class="cs-meta-val">Brand Designer · Digital Strategist · Frontend</div>
+        <div class="cs-meta-label es">Rol</div>
+        <div class="cs-meta-label en">Role</div>
+        <div class="cs-meta-val es">Diseñadora · Research & Propuesta conceptual</div>
+        <div class="cs-meta-val en">Designer · Research & Conceptual proposal</div>
       </div>
       <div>
-        <div class="cs-meta-label">Periodo</div>
-        <div class="cs-meta-val">Jun 2020 – Ago 2022</div>
+        <div class="cs-meta-label es">Periodo</div>
+        <div class="cs-meta-label en">Period</div>
+        <div class="cs-meta-val">2022 – 2024 · Dept. IT</div>
       </div>
       <div>
-        <div class="cs-meta-label">Escala</div>
-        <div class="cs-meta-val">1 → 6 locales</div>
+        <div class="cs-meta-label es">Escala</div>
+        <div class="cs-meta-label en">Scale</div>
+        <div class="cs-meta-val es">+50 usuarios · &lt;15 gestores</div>
+        <div class="cs-meta-val en">+50 users · &lt;15 managers</div>
       </div>
     </div>
   </div>
@@ -197,693 +375,686 @@
 <!-- QUICK SUMMARY -->
 <section class="quick-summary-section">
   <div class="cs-wrap">
-    <div class="quick-summary-grid">
+    <div class="quick-summary-grid fu">
       <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          El Problema
-        </span>
-        <div class="qs-val">
-          Una pizzería artesana con identidad visual potente pero sin sistema. Cada pieza nueva se creaba desde cero, sin referencia. Cero presencia digital, cero canal de delivery activo.
-        </div>
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="es">El problema</span><span class="en">The problem</span></div>
+        <div class="qs-val es">Una herramienta estándar de mercado usada durante años para necesidades cada vez más custom. La fricción acumulada empezaba a costar horas reales de equipo.</div>
+        <div class="qs-val en">A standard market tool used for years to meet increasingly custom needs. The accumulated friction was starting to cost real team hours.</div>
       </div>
       <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Mi Rol
-        </span>
-        <div class="qs-val">
-          <strong>Ownership 360° autónomo:</strong> auditoría visual, design system, aplicaciones físicas y digitales, desarrollo web y gestión de canales. Primer cliente profesional.
-        </div>
-      </div>
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Qué Hice
-        </span>
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="es">Mi rol</span><span class="en">My role</span></div>
         <ul class="qs-bullets">
-          <li>Auditoría de 16 activos visuales existentes.</li>
-          <li>Brand design system en 5 capas: logo, color, tipografía, fotografía, aplicaciones.</li>
-          <li>Web completa Adobe XD → WordPress + Elementor.</li>
-          <li>Gestión delivery (Glovo, Uber Eats, JustEat) + RRSS + GMB + Clarity + GA4.</li>
+          <li class="es">Discovery contextual con el equipo IT</li>
+          <li class="en">Contextual discovery with IT team</li>
+          <li class="es">Síntesis de hallazgos y patrones</li>
+          <li class="en">Findings synthesis and pattern mapping</li>
+          <li class="es">Propuesta estratégica Build vs. Buy</li>
+          <li class="en">Build vs. Buy strategic proposal</li>
+          <li class="es">Diseño conceptual de solución interna</li>
+          <li class="en">Conceptual design of internal solution</li>
         </ul>
       </div>
       <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Resultado
-        </span>
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span class="es">Decisión clave</span><span class="en">Key decision</span></div>
+        <div class="qs-val es">No parchear Oracle. Proponer una herramienta interna diseñada alrededor de los flujos reales del equipo — no adaptada a los flujos que una plataforma genérica asume.</div>
+        <div class="qs-val en">Don't patch Oracle. Propose an internal tool designed around the team's real workflows — not adapted to those a generic platform assumes.</div>
+      </div>
+      <div class="qs-col">
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><span class="es">Objetivo de negocio</span><span class="en">Business goal</span></div>
         <div class="qs-result-box">
-          <div class="qs-result-highlight">
-            El sistema escaló de 1 a 6 locales en 2 años. Cuando el proyecto terminó, el ecosistema seguía funcionando solo.
-          </div>
+          <div class="qs-result-highlight es">Liberar la bolsa de horas dedicada a gestión de tickets para reorientarla a trabajo técnico de mayor valor.</div>
+          <div class="qs-result-highlight en">Free up the hours dedicated to ticket management to redirect them to higher-value technical work.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MI ROL -->
+<!-- [S] SITUACIÓN -->
 <section class="cs-block">
-  <div class="cs-behance-letter" style="opacity:0.35">M</div>
   <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">MI ROL · Responsabilidades</span>
-      <h2 class="block-h">Primer proyecto.<br><em>Ownership total desde el día uno</em></h2>
-    </div>
-    <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
-        <ul class="bullet-list">
-          <li>Auditoría visual completa de activos existentes — análisis de inconsistencias, patrones y decisiones de diseño conscientes vs. accidentales</li>
-          <li>Diseño y documentación del Brand Design System — logo system, paleta, tipografía, fotografía, ilustración y componentes</li>
-          <li>Diseño físico — señalética exterior e interior, uniformes, menú físico, brochure, sombrillas, cartelería</li>
-          <li>Diseño y desarrollo web — prototipo en Adobe XD, maquetación en WordPress con Elementor</li>
-          <li>Estrategia y gestión RRSS — contenido, calendario editorial, métricas con Metricool</li>
-          <li>Activación y optimización de canales de delivery — Glovo, Uber Eats, JustEat</li>
-          <li>Gestión de Google My Business y reputación online</li>
-          <li>Análisis de comportamiento web — Microsoft Clarity + Google Analytics 4</li>
-        </ul>
-      </div>
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Herramientas</p>
-        <div class="tool-grid" style="grid-template-columns:1fr 1fr; gap:12px; margin:0 0 24px;">
-          <div class="tool-card">
-            <div class="tool-icon">✏️</div>
-            <div class="tool-name">Adobe XD</div>
-            <div class="tool-role">Diseño UI / prototipos web</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon">🌐</div>
-            <div class="tool-name">WordPress · Elementor</div>
-            <div class="tool-role">Desarrollo web</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon">📊</div>
-            <div class="tool-name">Metricool</div>
-            <div class="tool-role">RRSS analytics</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon">👁️</div>
-            <div class="tool-name">Microsoft Clarity</div>
-            <div class="tool-role">Comportamiento web</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon">📈</div>
-            <div class="tool-name">Google Analytics 4</div>
-            <div class="tool-role">Tráfico y conversión</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon">🍕</div>
-            <div class="tool-name">Glovo · Uber · JustEat</div>
-            <div class="tool-role">Canales de delivery</div>
-          </div>
-        </div>
-        <p class="p" style="margin-top:0; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0; font-size:13px; color:rgba(255,255,255,0.55);">Este fue mi primer cliente profesional. Entré sin red y con ownership total — desde la auditoría estratégica hasta el pixel en producción. El proyecto duró 2 años y escaló a 6 locales.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- [S] SITUATION -->
-<section class="cs-block" style="background: rgba(255,255,255,0.015);">
-  <div class="cs-behance-letter">S</div>
-  <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label">SITUATION · Contexto</span>
-      <h2 class="block-h">
-        Una marca con alma.<br><em>Sin sistema, sin presencia digital</em>
-      </h2>
+      <span class="block-label es">Contexto</span>
+      <span class="block-label en">Context</span>
+      <h2 class="block-h es">El Excel que lo<br><em>cambió todo</em></h2>
+      <h2 class="block-h en">The spreadsheet that<br><em>changed everything</em></h2>
     </div>
-    <p class="lead fu">Paolo es una pizzería artesana en el barrio de Conde Duque (Madrid), nacida bajo el paraguas de Danny's Jazz, un local de música en vivo con identidad cultural propia. El logo era bueno. El claim era memorable. La pizza, excelente. Pero en 2020, digitalmente, Paolo no existía.</p>
-    <p class="p fu">Lo que había: un logo (en varias versiones sin criterio de uso), un menú impreso, señalética exterior y un equipo con polos rojos que no conectaban con ningún otro elemento de la marca. No había web, no había presencia en plataformas de delivery, no había canal social sistematizado.</p>
-    <p class="p fu">Lo que faltaba: un sistema que permitiera crear cualquier pieza nueva con coherencia, sin depender del diseñador original. Y toda la capa digital — web, delivery, RRSS — que en el contexto de 2020, post-pandemia, había pasado de ser una ventaja a ser una necesidad de supervivencia.</p>
+
+    <div class="cs-grid-2 fu">
+      <div>
+        <p class="p es"><strong>We Are Actions es una consultora digital de más de 30 años.</strong> Durante ese tiempo, la gestión de incidencias, solicitudes internas, permisos y accesos se realizaba a través de Oracle — una plataforma corporativa de mercado, robusta y consolidada, pero diseñada para organizaciones con procesos estandarizados y homogéneos.</p>
+        <p class="p en"><strong>We Are Actions is a digital consultancy with over 30 years of history.</strong> During that time, incident management, internal requests, permissions and access were handled through Oracle — a robust, established market platform, but one designed for organizations with standardized, homogeneous processes.</p>
+
+        <p class="p es" style="margin-top: 16px;">La empresa creció. Los procesos se complejizaron. Y Oracle siguió siendo el mismo.</p>
+        <p class="p en" style="margin-top: 16px;">The company grew. Processes became more complex. And Oracle stayed the same.</p>
+
+        <p class="p es" style="margin-top: 16px;">El Senior de Sistemas — máximo responsable técnico — llevó a dirección una hoja de cálculo con datos reales que demostraba que la plataforma generaba más carga de trabajo de la que resolvía. Mi trabajo fue convertir esa señal de fricción en una propuesta de producto.</p>
+        <p class="p en" style="margin-top: 16px;">The Senior Systems Manager — the top technical authority — brought a spreadsheet to management with real data showing that the platform generated more workload than it resolved. My job was to turn that friction signal into a product proposal.</p>
+      </div>
+
+      <div>
+        <div class="spreadsheet-mockup">
+          <div class="ss-header">
+            <span>Friction_Audit_2022.xlsx</span>
+            <div class="ss-header-dots">
+              <div class="ss-dot"></div>
+              <div class="ss-dot"></div>
+              <div class="ss-dot"></div>
+            </div>
+          </div>
+          <table class="ss-table">
+            <thead>
+              <tr>
+                <th>Proceso (Process)</th>
+                <th>Fricción (Friction)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Renovación Certificados (Certs)</td>
+                <td class="bad">4.5 hrs/mes</td>
+              </tr>
+              <tr>
+                <td>Alta de Usuarios (Onboarding)</td>
+                <td class="bad">12 hrs/mes</td>
+              </tr>
+              <tr>
+                <td>Confusión de Entornos (Env)</td>
+                <td class="critical">18 hrs/mes</td>
+              </tr>
+              <tr>
+                <td>Preguntas de Estado (Status queries)</td>
+                <td class="critical">22 hrs/mes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box fu">
+      <p class="es">El Excel no era un informe elaborado. Era la validación empírica, al más alto nivel técnico, de que el canal de soporte y operaciones internas generaba fricciones crónicas.</p>
+      <p class="en">The spreadsheet wasn't an elaborate report. It was the empirical proof, at the highest technical level, that the support and internal operations channel was generating chronic friction.</p>
+    </div>
 
     <div class="data-band fu">
       <div class="data-cell">
-        <div class="data-v">16</div>
-        <div class="data-l">Activos visuales existentes auditados — logos, señalética, mural, uniformes, brochure, cartelería, digital</div>
+        <div class="data-v">+50</div>
+        <div class="data-l es">usuarios generando solicitudes en la plataforma</div>
+        <div class="data-l en">users generating requests in the platform</div>
       </div>
       <div class="data-cell">
-        <div class="data-v">0</div>
-        <div class="data-l">Presencia digital al inicio — sin web propia, sin delivery activo, sin RRSS sistematizadas</div>
+        <div class="data-v">&lt;15</div>
+        <div class="data-l es">personas del equipo IT gestionando toda la operativa</div>
+        <div class="data-l en">IT team members managing all operations</div>
       </div>
       <div class="data-cell">
-        <div class="data-v">1→6</div>
-        <div class="data-l">Locales escalados durante el proyecto — el sistema tuvo que sobrevivir esa multiplicación</div>
+        <div class="data-v">30+</div>
+        <div class="data-l es">años de Oracle en la organización — herramienta heredada, nunca cuestionada</div>
+        <div class="data-l en">years of Oracle in the organisation — inherited tool, never questioned</div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- [T] TASK -->
+<!-- [T] TAREA -->
 <section class="cs-block">
-  <div class="cs-behance-letter">T</div>
   <div class="cs-wrap">
+
     <div class="fu">
-      <span class="block-label">TASK · El reto</span>
-      <h2 class="block-h">
-        No rediseñar.<br><em>Sistematizar y digitalizar</em>
-      </h2>
-    </div>
-    <div class="insight-box fu">
-      <p>"Paolo no tiene un problema de identidad. Tiene un problema de sistema."</p>
-    </div>
-    <p class="p fu">La tentación en un proyecto de branding para pequeña empresa es siempre la misma: proponer algo nuevo, diferente, propio. Aquí tomé la decisión contraria. El símbolo de infinito era un activo real, diferencial y memorable. El claim "Las pizzas del barrio" estaba arraigado. El posicionamiento era claro. No había nada que cambiar — había que documentar, organizar y completar.</p>
-    <p class="p fu">El reto real era doble: construir un sistema visual que cualquier proveedor o miembro del equipo pudiera usar sin romper la marca, y al mismo tiempo construir desde cero todo el ecosistema digital — web, canales de venta, RRSS, analytics — en un momento en que la digitalización no era una opción sino una condición de supervivencia para la hostelería.</p>
-
-    <div class="touchpoint-grid fu">
-      <div class="tp-card">
-        <div class="tp-cat">Brand System</div>
-        <div class="tp-items">Sistema de logos · Paleta cromática · Jerarquía tipográfica · Estilo fotográfico · Estilo ilustrativo · Componentes</div>
-      </div>
-      <div class="tp-card">
-        <div class="tp-cat">Aplicaciones Físicas</div>
-        <div class="tp-items">Señalética exterior · Luminosos · Uniformes · Menú físico · Brochure · Cartelería interior · Sombrillas</div>
-      </div>
-      <div class="tp-card">
-        <div class="tp-cat">Ecosistema Digital</div>
-        <div class="tp-items">Web WordPress · Canales delivery · Redes sociales · WhatsApp Marketing · Google My Business</div>
-      </div>
-      <div class="tp-card">
-        <div class="tp-cat">Análisis y Métricas</div>
-        <div class="tp-items">Microsoft Clarity · Google Analytics 4 · Metricool · Revisión de rendimiento delivery · Propuestas de oferta</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- [A] ACTION -->
-<section class="cs-block" style="background: rgba(255,255,255,0.015);">
-  <div class="cs-behance-letter">A</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">ACTION · Lo que hice, y por qué</span>
-      <h2 class="block-h">
-        Del caos visual<br><em>al sistema documentado</em>
-      </h2>
+      <span class="block-label es">El reto</span>
+      <span class="block-label en">The challenge</span>
+      <h2 class="block-h es">No era un problema<br><em>de usabilidad</em></h2>
+      <h2 class="block-h en">It wasn't a<br><em>usability problem</em></h2>
     </div>
 
-    <!-- TIMELINE -->
-    <div class="timeline fu">
-      <div class="tl-item">
-        <div class="tl-dot">1</div>
-        <div class="tl-content">
-          <div class="tl-phase">Fase 1 · Auditoría Visual</div>
-          <div class="tl-title">Inventariar antes de proponer</div>
-          <div class="tl-desc">Antes de tocar nada, analicé los 16 activos existentes: logos en sus distintas versiones, señalética, mural, uniformes, brochure, cartelería y el único post digital disponible. Identifiqué qué era intencional, qué era accidental y qué era verdaderamente valioso.</div>
-        </div>
+    <div class="cs-grid-2 fu">
+      <div>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">La trampa de la usabilidad</h4>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The usability trap</h4>
+        <p class="p es">La primera tentación era mejorar la interfaz de Oracle. Hacerla más clara, reorganizar los menús, añadir algunas instrucciones. Ese habría sido un proyecto de UX. Y habría sido el proyecto equivocado.</p>
+        <p class="p en">The first temptation was to improve Oracle's interface. Make it clearer, reorganise the menus, add some instructions. That would have been a UX project. And it would have been the wrong project.</p>
       </div>
-      <div class="tl-item">
-        <div class="tl-dot">2</div>
-        <div class="tl-content">
-          <div class="tl-phase">Fase 2 · Brand Design System</div>
-          <div class="tl-title">Construir el sistema en 5 capas</div>
-          <div class="tl-desc">Logo system con criterios de uso por versión, paleta formalizada con roles de aplicación, jerarquía tipográfica de 4 capas, dos estilos fotográficos codificados y estilo ilustrativo documentado.</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot">3</div>
-        <div class="tl-content">
-          <div class="tl-phase">Fase 3 · Aplicaciones Físicas</div>
-          <div class="tl-title">Diseño a escala real</div>
-          <div class="tl-desc">Señalética exterior (luminosos horizontales y vertical, señal circular de calle), uniformes co-branded, carta física, brochure/tríptico, cartelería interior y brief de exteriores con especificaciones de producción.</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot">4</div>
-        <div class="tl-content">
-          <div class="tl-phase">Fase 4 · Ecosistema Digital</div>
-          <div class="tl-title">De Adobe XD a WordPress en producción</div>
-          <div class="tl-desc">Diseñé la web en Adobe XD y la desarrollé con WordPress + Elementor. Activé y configuré todos los canales de delivery. Construí el sistema de contenido para RRSS. Configuré Google My Business. Arranqué Metricool para gestión y análisis.</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot">5</div>
-        <div class="tl-content">
-          <div class="tl-phase">Fase 5 · Análisis y Optimización Continua</div>
-          <div class="tl-title">Iterar sobre datos, no intuición</div>
-          <div class="tl-desc">Microsoft Clarity para comportamiento en web, GA4 para tráfico y conversión, métricas de delivery para proponer cambios de oferta, análisis de reseñas GMB, Metricool para rendimiento de contenido. Ciclo mensual de revisión y propuesta.</div>
-        </div>
+      <div>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">El diagnóstico real</h4>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The real diagnosis</h4>
+        <p class="p es">Al observar cómo el equipo trabajaba realmente con la herramienta, el diagnóstico fue otro: <strong>Oracle no estaba mal diseñado para lo que fue creado. Estaba mal elegido para lo que esta organización necesitaba.</strong> Es una distinción que importa porque cambia la respuesta.</p>
+        <p class="p en">Looking at how the team actually worked with the tool, the diagnosis was different: <strong>Oracle wasn't poorly designed for what it was built for. It was poorly chosen for what this organisation needed.</strong> That's a distinction that matters because it changes the answer.</p>
       </div>
     </div>
 
-    <!-- SIGNAGE IMAGE -->
-    <div class="cs-frame-auto fu">
-      <img loading="lazy" decoding="async" src="projects/04-paolo/assets/01-signage.jpg" alt="Señal circular de fachada Paolo — identidad en espacio real">
-      <div class="cs-frame-caption">Señal circular de fachada · Logo master en versión reducida · Identidad en espacio público</div>
-    </div>
-
-    <!-- DESIGN SYSTEM SECTION -->
-    <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin:60px 0 16px; font-family:'Playfair Display', serif;">El Design System: de activos heredados a lenguaje escalable</h3>
-    <div class="fu" style="padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid rgba(242,162,34,0.4); border-radius:0 10px 10px 0; margin-bottom:24px;">
-      <p style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.7; margin:0;"><strong style="color:rgba(255,255,255,0.8);">Nota de rol:</strong> El logotipo de Paolo — el símbolo de infinito y el wordmark — fue creado por el diseñador original de la marca, no por mí. Mi trabajo comenzó donde terminó el suyo: tomar esos activos heredados, auditarlos, formalizarlos y construir el sistema que los hiciera escalables a 6 locales sin que la marca se deformara en el proceso.</p>
-    </div>
-    <p class="p fu">El hallazgo más importante de la auditoría fue el símbolo de infinito. Aparecía en absolutamente todos los touchpoints sin excepción — era el elemento de mayor valor patrimonial de la marca. El problema no era el logo: era que nadie había documentado cuándo usar cada versión, con qué margen, sobre qué fondo, en combinación con qué tipografía. A partir de ahí, construí el sistema.</p>
-
-    <!-- LOGO SYSTEM -->
-    <div class="ds-section fu">
-      <div class="ds-label">Sistema de logos · Versiones formalizadas — logo heredado, sistema diseñado por mí</div>
-
-      <!-- Logo principal + horizontal -->
-      <div class="row g-4" style="margin-bottom:24px;">
-        <div class="col-md-6">
-          <div style="background:#fff; border-radius:12px; overflow:hidden; padding:40px; display:flex; align-items:center; justify-content:center; min-height:200px;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-hero-vertical-dannys.png" alt="Logo master Paolo — versión color sobre blanco" style="max-width:200px; width:100%; display:block; margin:0 auto;">
-          </div>
-          <div style="margin-top:12px; padding:16px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">Logo master · Color</div>
-            <p style="font-size:12px; color:var(--text); line-height:1.7; margin:0;">Uso principal: toda comunicación a tamaño grande. El símbolo de infinito necesita espacio para leerse — por debajo de 80px empieza a perder detalle.</p>
-          </div>
+    <div class="user-groups fu">
+      <div class="user-group">
+        <div class="user-group-badge" style="background:var(--accent-glow); color:var(--accent); border:1px solid var(--accent-border);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span class="es">Grupo A · Gestores IT</span><span class="en">Group A · IT Managers</span>
         </div>
-        <div class="col-md-6">
-          <div style="background:#1A1918; border-radius:12px; overflow:hidden; padding:40px; display:flex; align-items:center; justify-content:center; min-height:200px; border:1px solid rgba(255,255,255,0.08);">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-fusion-vertical.jpg-removebg-preview.sinfondo.blanco.png" alt="Logo Paolo versión negativa sobre negro" style="max-width:200px; width:100%; display:block; margin:0 auto;">
-          </div>
-          <div style="margin-top:12px; padding:16px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">Logo negativo · Sobre oscuro</div>
-            <p style="font-size:12px; color:var(--text); line-height:1.7; margin:0;">Señalética nocturna, fondo de pantalla, Instagram oscuro. El naranja del símbolo mantiene su temperatura sin fondo blanco que lo contamine.</p>
-          </div>
-        </div>
+        <div class="user-group-name es">Equipo de soporte y sistemas</div>
+        <div class="user-group-name en">Support and systems team</div>
+        <div class="user-group-count es">Menos de 15 personas · perfil técnico</div>
+        <div class="user-group-count en">Fewer than 15 people · technical profile</div>
+        <ul class="user-group-needs">
+          <li class="es">Triaje eficiente de incidencias por urgencia</li>
+          <li class="en">Efficient incident triage by urgency</li>
+          <li class="es">Visibilidad del estado de cada solicitud</li>
+          <li class="en">Visibility of each request's status</li>
+          <li class="es">Flujos para tareas repetitivas sin rehacer</li>
+          <li class="en">Flows for repetitive tasks without redoing</li>
+          <li class="es">Prevención de errores en producción</li>
+          <li class="en">Error prevention in production</li>
+        </ul>
       </div>
-
-      <!-- Lockup horizontal + co-branding reducido -->
-      <div class="row g-4" style="margin-bottom:24px;">
-        <div class="col-md-6">
-          <div style="background:#1A1918; border-radius:12px; overflow:hidden; padding:32px 40px; display:flex; align-items:center; justify-content:center; min-height:160px; border:1px solid rgba(255,255,255,0.08);">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-fusion-dannys.jpg-removebg-preview.sinfondo.png" alt="Lockup horizontal PAOLO by Danny's Jazz" style="max-width:280px; width:100%; display:block; margin:0 auto;">
-          </div>
-          <div style="margin-top:12px; padding:16px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">Lockup horizontal · Sin símbolo</div>
-            <p style="font-size:12px; color:var(--text); line-height:1.7; margin:0;">Para headers de web, sombrillas, packaging de ancho fijo. Cuando el espacio no permite el símbolo, el wordmark mantiene la identidad.</p>
-          </div>
+      <div class="user-group">
+        <div class="user-group-badge" style="background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.5); border:1px solid var(--border);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="es">Grupo B · Usuarios internos</span><span class="en">Group B · Internal users</span>
         </div>
-        <div class="col-md-6">
-          <div style="background:#fff; border-radius:12px; overflow:hidden; padding:32px 40px; display:flex; align-items:center; justify-content:center; min-height:160px;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-hero-final.png" alt="Logo reducido Paolo — versión compacta" style="max-width:240px; width:100%; display:block; margin:0 auto;">
-          </div>
-          <div style="margin-top:12px; padding:16px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">Versión compacta · Espacios pequeños</div>
-            <p style="font-size:12px; color:var(--text); line-height:1.7; margin:0;">Favicon, app de delivery, etiqueta de caja. A esta escala "BY DANNY'S JAZZ" desaparece — Paolo tiene que sostenerse solo.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Decisión de co-branding -->
-      <div style="background:rgba(242,162,34,0.05); border:1px solid rgba(242,162,34,0.2); border-radius:12px; padding:24px 28px;">
-        <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:12px;">La decisión que el cliente nunca había tomado</div>
-        <p style="font-size:13.5px; color:var(--text-bright); line-height:1.75; margin:0;">Había tres lockups distintos circulando con tres lecturas distintas de quién era la marca principal. Sin una regla, cada proveedor elegiría. La decisión del sistema fue simple: <strong style="color:#fff;">Paolo lidera siempre visualmente</strong>; Danny's Jazz aparece en cuerpo de texto o en un 60% del tamaño de Paolo. No es una restricción arbitraria — es lo que hace que la marca sea legible cuando escala a 6 locales sin pasar por el diseñador original cada vez.</p>
-      </div>
-    </div>
-
-    <!-- COLOR PALETTE -->
-    <div class="ds-section fu">
-      <div class="ds-label">Paleta cromática · Roles formalizados</div>
-      <div class="color-palette">
-        <div class="color-chip">
-          <div class="color-swatch" style="background:#F2A222;"></div>
-          <div class="color-info">
-            <div class="color-name">Paolo Naranja</div>
-            <div class="color-hex">#F2A222</div>
-          </div>
-        </div>
-        <div class="color-chip">
-          <div class="color-swatch" style="background:#1A1918;"></div>
-          <div class="color-info">
-            <div class="color-name">Paolo Negro</div>
-            <div class="color-hex">#1A1918</div>
-          </div>
-        </div>
-        <div class="color-chip">
-          <div class="color-swatch" style="background:#FFFFFF; border:1px solid rgba(255,255,255,0.1);"></div>
-          <div class="color-info">
-            <div class="color-name">Paolo Blanco</div>
-            <div class="color-hex">#FFFFFF</div>
-          </div>
-        </div>
-        <div class="color-chip">
-          <div class="color-swatch" style="background:#F5EDD8;"></div>
-          <div class="color-info">
-            <div class="color-name">Paolo Crema</div>
-            <div class="color-hex">#F5EDD8</div>
-          </div>
-        </div>
-        <div class="color-chip">
-          <div class="color-swatch" style="background:#0D0C0B;"></div>
-          <div class="color-info">
-            <div class="color-name">Paolo Carbón</div>
-            <div class="color-hex">#0D0C0B</div>
-          </div>
-        </div>
-        <div class="color-chip">
-          <div class="color-swatch" style="background:#C0272D;"></div>
-          <div class="color-info">
-            <div class="color-name">Rojo Equipo</div>
-            <div class="color-hex">#C0272D · Solo uniformes</div>
-          </div>
-        </div>
-      </div>
-      <p class="p" style="font-size:13px; margin-top:16px;">Una de las inconsistencias clave que documenté: el rojo de los uniformes no aparecía en ningún otro touchpoint. Lo clasifiqué como "color de equipo humano" — presente en el sistema pero claramente acotado, sin permitir que contaminara la comunicación gráfica.</p>
-    </div>
-
-    <!-- TYPOGRAPHY -->
-    <div class="ds-section fu">
-      <div class="ds-label">Jerarquía tipográfica · 4 capas</div>
-      <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:32px; max-width:720px;">
-        <div class="typo-row">
-          <div class="typo-layer">Capa 1</div>
-          <div class="typo-sample" style="font-family:'Playfair Display', serif; font-size:32px; font-style:italic; color:var(--accent);">PAOLO</div>
-          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Custom wordmark · Intransferible</div>
-        </div>
-        <div class="typo-row">
-          <div class="typo-layer">Capa 2</div>
-          <div class="typo-sample" style="font-family:'Playfair Display', serif; font-size:22px; font-style:italic;">Las pizzas del barrio</div>
-          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Script · Claims y titulares</div>
-        </div>
-        <div class="typo-row">
-          <div class="typo-layer">Capa 3</div>
-          <div class="typo-sample" style="font-size:16px; font-style:italic; color:rgba(255,255,255,0.7);">· pizzeria artesana ·</div>
-          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Serif italic · Descriptores</div>
-        </div>
-        <div class="typo-row" style="border-bottom:none;">
-          <div class="typo-layer">Capa 4</div>
-          <div class="typo-sample" style="font-size:15px; font-weight:400;">Carbonara — Tomate, huevo, beicon y nata · <strong>12,80€</strong></div>
-          <div style="font-size:11px; color:var(--text-dim); margin-left:auto;">Sans-serif · Cuerpo</div>
-        </div>
-      </div>
-      <p class="p" style="font-size:13px; margin-top:16px;">Regla de jerarquía: nunca más de 3 niveles activos en una sola pieza. Si se necesita más información, se reduce la densidad de contenido — no se añaden niveles.</p>
-    </div>
-
-    <!-- PHYSICAL APPLICATIONS -->
-    <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin:60px 0 16px; font-family:'Playfair Display', serif;">Aplicaciones físicas: el sistema en el espacio</h3>
-    <p class="p fu">El diseño del espacio físico es donde el sistema tiene que sobrevivir a las condiciones reales: distancia de lectura, luz del sol, impresión de terceros, proveedores que no son diseñadores. Cada especificación tenía que ser lo suficientemente precisa para que cualquiera la ejecutara correctamente.</p>
-
-    <!-- SEÑALÉTICA: imagen izquierda, texto derecha -->
-    <div class="row align-items-center g-4 fu" style="margin:48px 0;">
-      <div class="col-md-7">
-        <div style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/plano-sombrillas-montaje.png" alt="Brief de diseño de exteriores — luminosos y sombrillas de terraza" style="width:100%; display:block;">
-        </div>
-      </div>
-      <div class="col-md-5">
-        <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:14px;">Señalética y diseño de exteriores</p>
-        <h4 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3;">Brief técnico completo para producción</h4>
-        <p style="font-size:14px; color:var(--text); line-height:1.8; margin-bottom:20px;">Cada pieza exterior se documentó con especificaciones de producción reales: dimensiones, tipo de iluminación, materiales y forma de anclaje — para que cualquier proveedor pudiera ejecutarlo sin ambigüedad.</p>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>2 luminosos horizontales con iluminación trasera</li>
-          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>1 luminoso vertical en negativo (logo blanco)</li>
-          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Sombrillas de terraza: specs de forma y tamaño (300×265cm)</li>
-          <li style="font-size:13px; color:var(--text); padding:8px 0; display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Boceto general de fachada con jerarquía visual completa</li>
+        <div class="user-group-name es">Resto de la empresa</div>
+        <div class="user-group-name en">Rest of the company</div>
+        <div class="user-group-count es">Más de 50 personas · perfil no técnico</div>
+        <div class="user-group-count en">More than 50 people · non-technical profile</div>
+        <ul class="user-group-needs">
+          <li class="es">Saber cómo reportar sin cometer errores</li>
+          <li class="en">Know how to report without making mistakes</li>
+          <li class="es">Seguimiento del estado de su solicitud</li>
+          <li class="en">Track the status of their request</li>
+          <li class="es">Interfaz comprensible sin formación técnica</li>
+          <li class="en">Understandable interface without technical training</li>
+          <li class="es">Menos fricción en tareas simples y repetidas</li>
+          <li class="en">Less friction on simple, repeated tasks</li>
         </ul>
       </div>
     </div>
 
-    <!-- UNIFORMES: texto izquierda, imagen derecha -->
-    <div class="row align-items-center g-4 fu" style="margin:48px 0;">
-      <div class="col-md-5 order-md-1 order-2">
-        <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:14px;">Uniformes · Co-branding</p>
-        <h4 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:var(--white); margin-bottom:16px; line-height:1.3;">La marca que lleva puesta el equipo</h4>
-        <p style="font-size:14px; color:var(--text); line-height:1.8; margin-bottom:20px;">El uniforme es el touchpoint más cercano al cliente en sala. Diseñé una pieza que comunicara la marca Paolo sin sacrificar la relación con Danny's Jazz.</p>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Pecho izquierdo: co-branding "Danny's Jazz & Paolo"</li>
-          <li style="font-size:13px; color:var(--text); padding:8px 0; border-bottom:1px solid var(--border); display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>Trasera: "Las pizzas del barrio" en script caligráfico blanco</li>
-          <li style="font-size:13px; color:var(--text); padding:8px 0; display:flex; gap:12px;"><span style="color:var(--accent); font-weight:700;">—</span>El rojo, documentado como color de equipo — presente en el sistema pero acotado</li>
-        </ul>
-      </div>
-      <div class="col-md-7 order-md-2 order-1">
-        <div style="background:#f5f5f5; border-radius:16px; overflow:hidden; padding:32px; box-shadow:0 8px 40px rgba(0,0,0,0.5); margin-bottom:16px;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.png" alt="Diseño de uniformes — polo co-branded Danny's Jazz & Paolo" style="width:100%; display:block;">
-        </div>
-        <div style="border-radius:16px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.png" alt="Equipo Paolo con el uniforme en sala" style="width:100%; display:block;">
-        </div>
-      </div>
-    </div>
-
-    <!-- MENÚ: decisión tipográfica en contexto real -->
-    <div class="fu" style="margin:48px 0;">
-      <div style="border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
-        <div style="background:rgba(26,25,24,0.95); padding:24px 32px; border-bottom:1px solid rgba(242,162,34,0.2);">
-          <p style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:6px;">La jerarquía tipográfica en su contexto real</p>
-          <p style="font-size:14px; color:rgba(255,255,255,0.75); line-height:1.6; margin:0;">El menú es donde la tipografía tiene que resolver sola. Sin diseñador delante. Sin explicación. La regla era: nombre del plato en caligráfica (capa 2), ingredientes en sans-serif neutro (capa 4), precio destacado. Máximo 3 capas activas — si necesitas más texto, reduces densidad, no añades nivel.</p>
-        </div>
-        <div style="background:#fff;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/05-menu.jpg" alt="Menú interior — jerarquía tipográfica del sistema en aplicación real" style="width:100%; display:block;">
-        </div>
-      </div>
-    </div>
-
-    <!-- DIGITAL ECOSYSTEM -->
-    <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin:60px 0 16px; font-family:'Playfair Display', serif;">Ecosistema digital: de cero a sistema activo</h3>
-    <p class="p fu">La web la diseñé primero en Adobe XD — arquitectura de información, flujos de usuario, componentes UI — y luego la desarrollé directamente en WordPress con Elementor. Este proceso me enseñó algo que muy pocos libros de diseño enseñan: las restricciones del builder son parámetros de diseño, no obstáculos.</p>
-
-    <div class="cs-ba fu">
-      <div class="cs-ba-col">
-        <div class="cs-ba-badge cs-ba-before">Antes</div>
-        <div style="padding:24px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; flex:1;">
-          <p style="font-size:14px; color:var(--text); line-height:1.8; margin:0;">
-            Sin web propia · Sin presencia en Google Maps · Sin canal de delivery activo · RRSS sin sistema · Sin métricas · Visibilidad: únicamente boca a boca y clientela de Danny's Jazz
-          </p>
-        </div>
-      </div>
-      <div class="cs-ba-col">
-        <div class="cs-ba-badge cs-ba-after">Después</div>
-        <div style="padding:24px; background:var(--accent-glow); border:1px solid var(--accent-border); border-radius:12px; flex:1;">
-          <p style="font-size:14px; color:var(--text-bright); line-height:1.8; margin:0;">
-            Web en WordPress (Adobe XD → Elementor) · Glovo + Uber Eats + JustEat activos · RRSS con calendario editorial · GMB optimizado · Metricool + Clarity + GA4 operativos · Análisis mensual de rendimiento y propuestas de cambio
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <p class="p fu">Con Metricool analizaba qué contenido tenía mejor rendimiento y cuáles eran los mejores momentos para la audiencia de Conde Duque. Con Clarity veía cómo los usuarios interactuaban con la web — dónde hacían clic, qué secciones ignoraban, qué formularios abandonaban. Esos datos informaban propuestas concretas de cambio al cliente, no intuiciones.</p>
-  </div>
-</section>
-
-<!-- [R] RESULTADO -->
-<section class="cs-block">
-  <div class="cs-behance-letter">R</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">RESULT · El impacto</span>
-      <h2 class="block-h">
-        Un sistema que sobrevivió<br><em>sin el diseñador</em>
-      </h2>
-    </div>
-
-    <div class="dash-widget fu">
-      <div class="dash-title">Escala del proyecto · Jun 2020 – Ago 2022</div>
-      <div class="dash-impact-row">
-        <span class="dash-impact-num">6</span>
-        <span class="dash-impact-text">Locales con el mismo sistema visual activo</span>
-      </div>
-      <p style="margin-top:16px; font-size:14px; color:var(--text-bright); max-width:480px;">El sistema se replicó a cada nueva apertura sin necesidad de rediseño — solo aplicación. Eso es lo que hace que un sistema sea real.</p>
-    </div>
-
-    <ul class="bullet-list fu">
-      <li><strong>De 0 a presencia digital completa:</strong> Web propia, 3 canales de delivery activos, RRSS sistematizadas, Google My Business optimizado y métricas funcionando en paralelo.</li>
-      <li><strong>El sistema escaló 6 veces:</strong> Cada nueva apertura usó el mismo brand system — colores, logo versions, tipografías, plantillas de comunicación — sin necesidad de empezar de cero ni de volver a mí.</li>
-      <li><strong>Coherencia visible en el espacio físico:</strong> Señalética, uniformes, menú, cartelería y comunicación digital usando el mismo lenguaje visual en todos los puntos de contacto.</li>
-      <li><strong>Iteración basada en datos:</strong> Propuestas de oferta y cambios visuales sustentados en análisis de rendimiento — delivery, RRSS y comportamiento web — no en intuición.</li>
-      <li><strong>El proyecto terminó cuando la digitalización estaba hecha:</strong> La mejor prueba de que el sistema funcionaba es que cuando cerré la etapa, el ecosistema siguió corriendo solo.</li>
-    </ul>
+    <p class="p fu es">Oracle trataba a ambos grupos de la misma manera. Una cola única, un formato único, una experiencia única. El resultado: el equipo IT dedicaba una parte significativa de su tiempo a gestionar la confusión generada por la propia herramienta, en lugar de resolver los problemas que había venido a solucionar.</p>
+    <p class="p fu en">Oracle treated both groups the same way. One queue, one format, one experience. The result: the IT team spent a significant portion of their time managing the confusion generated by the tool itself, rather than solving the problems it was supposed to address.</p>
 
     <div class="insight-box fu">
-      <p>"La identidad no documentada es identidad en riesgo. Cada vez que alguien crea una pieza sin referencia, el sistema se debilita un poco. La documentación es la vacuna."</p>
+      <p class="es">El objetivo no era rediseñar Oracle. Era responder una pregunta de producto: ¿tiene más sentido adaptar indefinidamente una herramienta genérica, o construir algo que encaje con los flujos reales de este equipo?</p>
+      <p class="en">The goal wasn't to redesign Oracle. It was to answer a product question: does it make more sense to indefinitely adapt a generic tool, or to build something that fits this team's real workflows?</p>
     </div>
+
   </div>
 </section>
 
-<!-- AUDITORÍA ESTRATÉGICA 2026 -->
-<section class="cs-block" style="background: linear-gradient(135deg, rgba(242,162,34,0.04) 0%, rgba(0,0,0,0) 60%), rgba(255,255,255,0.01); border-top: 1px solid rgba(242,162,34,0.2);">
-  <div class="cs-behance-letter" style="opacity:0.025">★</div>
+<!-- [A] INVESTIGACIÓN & HALLAZGOS -->
+<section class="cs-block">
   <div class="cs-wrap">
 
-    <!-- FRAMING -->
-    <div class="fu" style="margin-bottom:64px;">
-      <span class="block-label">REVISIÓN ESTRATÉGICA · 2026</span>
-      <h2 class="block-h">Esto es lo que hice.<br><em>Esto es lo que veo ahora.</em></h2>
-      <div style="max-width:760px; padding:28px 32px; background:rgba(242,162,34,0.06); border:1px solid rgba(242,162,34,0.18); border-radius:16px; margin-top:32px;">
-        <p style="font-size:16px; color:rgba(255,255,255,0.82); line-height:1.75; margin:0;">Durante el proyecto (2020–2022) trabajé con lo que el cliente tenía, en el ritmo que el negocio permitía. Las decisiones estuvieron condicionadas por presupuesto, proveedores, urgencias operativas y la propia velocidad de escalar de 1 a 6 locales. <strong style="color:#fff;">Ahora, con perspectiva y con formación en diseño de producto</strong>, hago el ejercicio que no pude hacer entonces: una auditoría estratégica que separa la identidad real de los ruidos acumulados.</p>
-      </div>
-    </div>
-
-    <!-- ADN VS RUIDO -->
-    <div class="fu" style="margin-bottom:60px;">
-      <h3 style="font-family:'Playfair Display', serif; font-size:26px; font-weight:700; color:var(--white); margin-bottom:8px;">¿Qué es identidad y qué es ruido?</h3>
-      <p class="p" style="margin-bottom:32px;">La primera pregunta de cualquier auditoría no es qué cambiar. Es entender qué pertenece realmente a la marca y qué llegó por inercia, por un proveedor, por un cliente con prisa o por una convención de sector.</p>
-
-      <div class="row g-3">
-        <div class="col-md-6">
-          <div style="border:1px solid rgba(242,162,34,0.3); border-radius:14px; padding:28px; height:100%;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
-              <div style="width:10px; height:10px; border-radius:50%; background:#F2A222; box-shadow:0 0 10px #F2A222; flex-shrink:0;"></div>
-              <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#F2A222; font-weight:700;">ADN de marca · Inviolable</span>
-            </div>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">∞</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">El símbolo de infinito</div>
-                  <div style="font-size:12px; color:var(--text-dim);">Aparece en el 100% de los touchpoints. Original, no genérico, polisémico — evoca pizza, música, permanencia.</div>
-                </div>
-              </li>
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">"</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">"Las pizzas del barrio"</div>
-                  <div style="font-size:12px; color:var(--text-dim);">Claim ganado por uso repetido. Une posicionamiento, categoría y diferenciación en cuatro palabras.</div>
-                </div>
-              </li>
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">◉</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">Ámbar + negro cálido + blanco</div>
-                  <div style="font-size:12px; color:var(--text-dim);">Paleta de 3 colores con roles claros. El naranja exclusivo para el símbolo lo convierte en color de firma.</div>
-                </div>
-              </li>
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:#F2A222; font-size:18px; line-height:1; flex-shrink:0;">✦</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:#fff; margin-bottom:3px;">Tensión artesanía/accesibilidad</div>
-                  <div style="font-size:12px; color:var(--text-dim)">"Finísimo gusto" conviviendo con "7,90€ take-away". No es incoherencia — es la propuesta de valor.</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div style="border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:28px; height:100%;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
-              <div style="width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.25); flex-shrink:0;"></div>
-              <span style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); font-weight:700;">Ruido acumulado · Revisable</span>
-            </div>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">El rojo de los uniformes</div>
-                  <div style="font-size:12px; color:var(--text-dim);">No existe en ningún otro touchpoint. Convención genérica de hostelería italiana asumida sin cuestionarse.</div>
-                </div>
-              </li>
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">Las sombrillas ERDINGER</div>
-                  <div style="font-size:12px; color:var(--text-dim);">Dominan el exterior. En el boceto de fachada, el ojo va primero a ERDINGER — Paolo desaparece en su propio espacio.</div>
-                </div>
-              </li>
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">La jerarquía Danny's Jazz sin decidir</div>
-                  <div style="font-size:12px; color:var(--text-dim);">Tres lockups distintos, tres lecturas distintas de quién es la marca principal. El cliente nunca tomó esa decisión.</div>
-                </div>
-              </li>
-              <li style="display:flex; gap:14px; align-items:flex-start;">
-                <span style="color:rgba(255,255,255,0.25); font-size:18px; line-height:1; flex-shrink:0;">✕</span>
-                <div>
-                  <div style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:3px;">"paulopizza.es" vs "PAOLO"</div>
-                  <div style="font-size:12px; color:var(--text-dim);">Fractura de identidad digital. Dos referencias distintas para la misma entidad. El cliente que busca no siempre encuentra.</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 10 PREGUNTAS DE AUDITORÍA -->
     <div class="fu">
-      <h3 style="font-family:'Playfair Display', serif; font-size:26px; font-weight:700; color:var(--white); margin-bottom:8px;">Auditoría estratégica: las 10 preguntas</h3>
-      <p class="p" style="margin-bottom:40px;">Este es el ejercicio que haría antes de tocar un solo píxel en cualquier proyecto de identidad. Analizar antes de proponer. Entender antes de cambiar.</p>
+      <span class="block-label es">Discovery</span>
+      <span class="block-label en">Discovery</span>
+      <h2 class="block-h es">Lo que el equipo<br><em>decía sin decir</em></h2>
+      <h2 class="block-h en">What the team was<br><em>saying without saying it</em></h2>
+    </div>
 
-      <div class="row g-3">
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">01 · Consistencia visual</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo, el claim y la paleta ámbar-negro-blanco. Tres elementos que sobreviven a todos los contextos, todos los proveedores y todos los años. El resto varía.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">02 · Elementos circunstanciales</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El rojo en uniformes, las sombrillas de proveedor, el verde en el brochure, "Tigelle Burger" en la señalética de take-away. Decisiones tomadas por otros, en otros momentos, sin visión de sistema.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">03 · Qué transmite realmente</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">Alguien con criterio y sin pretensión que quiere que sus vecinos coman bien. Artesanía accesible. Calidad sin ceremonia. El WhatsApp "¿Cómo llevas el día?" es el resumen más honesto de la voz de marca.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">04 · Valores percibidos</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">Calidad de ingredientes creíble, arraigo local genuino, precio honesto. Y un diferencial cultural — Danny's Jazz — que ninguna pizzería de barrio puede fabricar: o lo tienes o no.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">05 · Diferenciación real</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo de infinito frente a los iconos de chef, llamas o rodillos de la competencia. La conexión con Danny's Jazz como dimensión cultural. "Del barrio" como reivindicación de permanencia que las aperturas nuevas no pueden copiar.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">06 · El papel de Danny's Jazz</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">Activo estratégico, no lastre. Aporta contexto cultural y legitimidad de barrio. Pero la relación jerárquica entre las dos marcas nunca se decidió — y eso se nota en cada pieza de co-branding.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">07 · Principios con fuerza real</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo polisémico como icono de marca. "Las pizzas del barrio" como declaración de posicionamiento. Y la tensión artesanía/precio como propuesta de valor — no es inconsistencia, es el diferencial.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">08 · Fuentes de ruido</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El rojo en uniformes. Las sombrillas de proveedor que desplazan la marca. Tres versiones de co-branding sin criterio. El dominio digital que no coincide con el nombre. Cada nueva pieza creada sin referencia.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">09 · Conservar a largo plazo</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">El símbolo intacto. El claim intacto. La paleta ámbar-negro-blanco. El tono conversacional y cercano. La conexión con Danny's Jazz. La caligráfica como tipografía de campaña.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:12px; padding:24px; height:100%;">
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:10px;">10 · Redefinición futura</div>
-            <p style="font-size:13.5px; color:var(--text-bright); line-height:1.7; margin:0;">La estrategia de color en uniformes. La jerarquía Paolo/Danny's Jazz. El naming digital. La presencia exterior frente a marcas de proveedor. El packaging de take-away como touchpoint prioritario sin desarrollar.</p>
-          </div>
-        </div>
-
+    <div class="cs-grid-2 fu">
+      <div>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Investigación contextual</h4>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Contextual research</h4>
+        <p class="p es">La investigación se hizo desde dentro. Al estar integrada en el equipo de IT, tuve acceso a los momentos de fricción tal como ocurrían — no en una sesión de entrevista, sino en el flujo de trabajo real. Las conversaciones con el equipo de soporte y sistemas revelaron patrones que se repetían de forma consistente.</p>
+        <p class="p en">The research was done from the inside. Being embedded in the IT team gave me access to friction moments as they happened — not in an interview session, but in the real workflow. Conversations with the support and systems team revealed patterns that repeated consistently.</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Mapa de afinidad</h4>
+        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Affinity map</h4>
+        <p class="p es">Para este case study he sintetizado esos patrones en un mapa de afinidad retrospectivo que refleja lo identificado durante el proceso de observación diaria y la recopilación de quejas de los usuarios del sistema.</p>
+        <p class="p en">For this case study I've synthesised those patterns into a retrospective affinity map reflecting what was identified during daily observation and the compilation of system users' complaints.</p>
       </div>
     </div>
 
-    <!-- INSIGHT CLAVE -->
+    <!-- AFFINITY MAP -->
+    <div class="affinity-grid fu">
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#f59e0b;">
+          <div class="affinity-dot" style="background:#f59e0b;"></div>
+          <span class="es">Patrón 1 · Trabajo manual sin automatizar</span>
+          <span class="en">Pattern 1 · Manual work without automation</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">Renovación de certificados web: proceso manual repetido cada vez</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">Asignación de permisos: mismas acciones para cada nuevo usuario</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">El sistema no recuerda procesos previos similares</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">Web certificate renewal: manual process repeated each time</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">Permission assignment: same actions for each new user</div>
+          <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="en">The system has no memory of similar previous processes</div>
+        </div>
+      </div>
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#ef4444;">
+          <div class="affinity-dot" style="background:#ef4444;"></div>
+          <span class="es">Patrón 2 · Sistema sin guardianes de error</span>
+          <span class="en">Pattern 2 · System without error guards</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Archivos eliminados por accidente — sin confirmación previa</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Procesos ejecutados en entorno incorrecto (prod vs staging)</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="es">Consultas pesadas lanzadas sin validar su impacto</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Files accidentally deleted — no prior confirmation</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Processes run in the wrong environment (prod vs staging)</div>
+          <div class="affinity-card" style="border-left-color:rgba(239,68,68,0.4);" lang="en">Heavy queries launched without validating their impact</div>
+        </div>
+      </div>
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#8b5cf6;">
+          <div class="affinity-dot" style="background:#8b5cf6;"></div>
+          <span class="es">Patrón 3 · Arquitectura de información plana</span>
+          <span class="en">Pattern 3 · Flat information architecture</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Incidencias críticas y consultas menores en la misma cola</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Priorización dependía del criterio individual de cada gestor</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Tiempo de triaje elevado en momentos de alta carga</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Critical incidents and minor queries in the same queue</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Prioritisation depended on each manager's individual judgement</div>
+          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">High triage time during peak load moments</div>
+        </div>
+      </div>
+      <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#06b6d4;">
+          <div class="affinity-dot" style="background:#06b6d4;"></div>
+          <span class="es">Patrón 4 · Visibilidad nula del estado</span>
+          <span class="en">Pattern 4 · Zero status visibility</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">Quien solicita no sabe en qué punto está sin preguntar</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">Cada ticket empezaba de cero, sin contexto previo</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="es">El equipo IT recibía preguntas de estado que consumían tiempo</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">Requesters don't know the status without asking directly</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">Each ticket started from scratch, with no prior context</div>
+          <div class="affinity-card" style="border-left-color:rgba(6,182,212,0.4);" lang="en">IT team received status queries that consumed their time</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fu">
+      <div class="insight-box">
+        <p class="es">El insight que une los cuatro patrones: el sistema descarga en el usuario la carga cognitiva que debería asumir el propio producto. Los errores no eran aleatorios — eran predecibles y prevenibles.</p>
+        <p class="en">The insight connecting all four patterns: the system offloads onto the user the cognitive burden the product itself should handle. The errors weren't random — they were predictable and preventable.</p>
+      </div>
+    </div>
+
+    <!-- HMW -->
+    <div class="fu" style="margin-top:60px; padding:36px; background:rgba(6,182,212,0.04); border:1px solid rgba(6,182,212,0.18); border-radius:16px; max-width:780px;">
+      <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">How Might We</div>
+      <p style="font-size:20px; color:var(--white); font-family:'Playfair Display', serif; font-style:italic; line-height:1.55;" class="es">¿Cómo podríamos diseñar un sistema de operaciones interno que reduzca la carga cognitiva del equipo IT, prevenga errores antes de que ocurran y haga visible el estado de cada proceso sin esfuerzo adicional?</p>
+      <p style="font-size:20px; color:var(--white); font-family:'Playfair Display', serif; font-style:italic; line-height:1.55;" class="en">How might we design an internal operations system that reduces the IT team's cognitive load, prevents errors before they occur, and makes each process's status visible without additional effort?</p>
+    </div>
+
+    <!-- ESTRATEGIA: BUILD VS BUY -->
+    <div class="fu" style="margin-top:80px;">
+      <span class="block-label es">Decisión estratégica · Build vs. Buy</span>
+      <span class="block-label en">Strategic decision · Build vs. Buy</span>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="es">Por qué no parchear Oracle</h3>
+      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="en">Why not patch Oracle</h3>
+    </div>
+
+    <div class="cs-grid-2 fu">
+      <div>
+        <p class="p es">Antes de proponer nada, la primera decisión era estratégica. Parchear Oracle significaba trabajar dentro de sus restricciones — configuraciones limitadas, flujos genéricos, sin capacidad de adaptarse a la tipología específica de solicitudes de este equipo.</p>
+        <p class="p en">Before proposing anything, the first decision was strategic. Patching Oracle meant working within its constraints — limited configurations, generic flows, no ability to adapt to this team's specific request types.</p>
+      </div>
+      <div>
+        <div style="padding: 20px 24px; border-left: 2px solid var(--accent); background: rgba(255,255,255,0.015); border-radius: 0 8px 8px 0; margin-top: 6px;">
+          <p style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6; margin: 0; font-weight: 500;" class="es">La disyuntiva de producto: ¿es viable adaptar una herramienta heredada cuando la escala del negocio ya superó sus límites?</p>
+          <p style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6; margin: 0; font-weight: 500;" class="en">The product dilemma: is it viable to adapt a legacy tool when the business scale has already exceeded its limits?</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:40px 0;" class="fu compare-grid">
+      <div style="padding:28px; border:1px solid rgba(239,68,68,0.2); border-radius:14px; background:rgba(239,68,68,0.03);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239,68,68,0.7); margin-bottom:16px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="es">Parchear Oracle</span><span class="en">Patch Oracle</span></div>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Configuraciones limitadas por la plataforma</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>No resuelve la arquitectura de información plana</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>No permite flujos guiados por tipo de solicitud</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Costes de mantenimiento crecientes</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Configurations limited by the platform</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Doesn't solve the flat information architecture</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Doesn't allow guided flows by request type</li>
+          <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:rgba(239,68,68,0.5);">—</span>Growing maintenance costs</li>
+        </ul>
+      </div>
+      <div style="padding:28px; border:1px solid var(--accent-border); border-radius:14px; background:var(--accent-glow);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><polyline points="20 6 9 17 4 12"/></svg><span class="es">Herramienta interna</span><span class="en">Internal tool</span></div>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Diseñada para los flujos reales del equipo</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Clasificación tipificada desde el primer clic</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Validaciones específicas para cada tipo de error</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Evoluciona con las necesidades del equipo</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Designed for the team's real workflows</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Typed classification from the first click</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Specific validations for each error type</li>
+          <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="en"><span style="position:absolute;left:0;color:var(--accent);">—</span>Evolves with the team's needs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 MÓDULOS -->
+    <div class="fu cs-grid-2" style="margin-top:72px; align-items: center;">
+      <div>
+        <span class="block-label es">Propuesta conceptual · 4 módulos</span>
+        <span class="block-label en">Conceptual proposal · 4 modules</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="es">La herramienta que el equipo merecía</h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="en">The tool the team deserved</h3>
+      </div>
+      <div>
+        <p class="p es" style="margin: 0; font-size: 15px; line-height: 1.75;">Una plataforma interna de operaciones con dos superficies distintas — una para quien gestiona, otra para quien solicita — y cuatro módulos que responden directamente a los patrones identificados.</p>
+        <p class="p en" style="margin: 0; font-size: 15px; line-height: 1.75;">An internal operations platform with two distinct surfaces — one for managers, one for requesters — and four modules that directly address the identified patterns.</p>
+      </div>
+    </div>
+
+    <div class="modules-grid fu">
+      <div class="module-card">
+        <div class="module-num">Módulo 01</div>
+        <div class="module-title es">Centro de solicitudes con clasificación inteligente</div>
+        <div class="module-title en">Request centre with smart classification</div>
+        <div class="module-desc es">Punto único de entrada con tipología predefinida: incidencia crítica / solicitud de acceso / tarea recurrente / consulta. La categoría determina automáticamente la urgencia y el flujo de resolución.</div>
+        <div class="module-desc en">Single entry point with predefined typology: critical incident / access request / recurring task / query. The category automatically determines urgency and resolution flow.</div>
+        <div class="module-solves es">Resuelve: patrón 3 (arquitectura plana) y tiempo de triaje manual</div>
+        <div class="module-solves en">Solves: pattern 3 (flat architecture) and manual triage time</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 02</div>
+        <div class="module-title es">Flujos guiados para tareas repetitivas</div>
+        <div class="module-title en">Guided flows for repetitive tasks</div>
+        <div class="module-desc es">Para procesos recurrentes conocidos — renovación de certificados, alta de usuario, asignación de permisos — el sistema propone un flujo paso a paso que reduce decisiones innecesarias y elimina errores por omisión.</div>
+        <div class="module-desc en">For known recurring processes — certificate renewal, user onboarding, permission assignment — the system offers a step-by-step flow that reduces unnecessary decisions and eliminates errors by omission.</div>
+        <div class="module-solves es">Resuelve: patrón 1 (trabajo manual repetitivo)</div>
+        <div class="module-solves en">Solves: pattern 1 (repetitive manual work)</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 03</div>
+        <div class="module-title es">Validaciones y confirmaciones contextuales</div>
+        <div class="module-title en">Contextual validations and confirmations</div>
+        <div class="module-desc es">Antes de ejecutar acciones de alto impacto — eliminar, mover a producción, lanzar una consulta sobre base de datos — el sistema solicita confirmación específica con contexto real: qué vas a hacer, en qué entorno, qué puede pasar.</div>
+        <div class="module-desc en">Before executing high-impact actions — deleting, moving to production, running a database query — the system requests specific confirmation with real context: what you're about to do, in which environment, what could happen.</div>
+        <div class="module-solves es">Resuelve: patrón 2 (errores sin guardianes)</div>
+        <div class="module-solves en">Solves: pattern 2 (errors without guards)</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">Módulo 04</div>
+        <div class="module-title es">Panel de estado en tiempo real</div>
+        <div class="module-title en">Real-time status dashboard</div>
+        <div class="module-desc es">Cada solicitud tiene un ciclo de vida visible para quien la hizo y para quien la gestiona: recibida, en revisión, en curso, bloqueada, resuelta. Sin necesidad de preguntar. Sin interrupciones al equipo IT.</div>
+        <div class="module-desc en">Each request has a visible lifecycle for both the requester and the manager: received, under review, in progress, blocked, resolved. No need to ask. No interruptions to the IT team.</div>
+        <div class="module-solves es">Resuelve: patrón 4 (visibilidad nula del estado)</div>
+        <div class="module-solves en">Solves: pattern 4 (zero status visibility)</div>
+      </div>
+    </div>
+
+    <!-- ARQUITECTURA DE INFORMACIÓN -->
+    <div class="fu cs-grid-2" style="margin-top:72px; align-items: center;">
+      <div>
+        <span class="block-label es">Arquitectura de información · Propuesta conceptual</span>
+        <span class="block-label en">Information architecture · Conceptual proposal</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="es">Dos superficies, una lógica común</h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="en">Two surfaces, one shared logic</h3>
+      </div>
+      <div>
+        <p class="p es" style="margin: 0; font-size: 15px; line-height: 1.75;">La plataforma separa las necesidades de quienes gestionan (IT) y quienes solicitan (resto de la empresa), con un portal de entrada común que clasifica desde el primer paso.</p>
+        <p class="p en" style="margin: 0; font-size: 15px; line-height: 1.75;">The platform separates the needs of those who manage (IT) and those who request (rest of the company), with a shared entry portal that classifies from the first step.</p>
+      </div>
+    </div>
+
+    <div class="fu ia-tree-wrap">
+      <!-- Raíz -->
+      <div class="ia-root-row">
+        <div class="ia-root-node">
+          <div class="ia-root-icon">⊞</div>
+          <div class="ia-root-label es">Portal IT</div>
+          <div class="ia-root-label en">IT Portal</div>
+          <div class="ia-root-sub es">Punto de entrada único</div>
+          <div class="ia-root-sub en">Single entry point</div>
+        </div>
+      </div>
+
+      <!-- Conector central -->
+      <div class="ia-trunk"></div>
+
+      <!-- Tres ramas -->
+      <div class="ia-branches-row">
+
+        <!-- Rama 1: Portal de entrada -->
+        <div class="ia-branch">
+          <div class="ia-branch-connector"></div>
+          <div class="ia-branch-head" style="border-color:var(--accent-border); background:var(--accent-glow);">
+            <div class="ia-branch-icon" style="color:var(--accent);">⊕</div>
+            <div class="ia-branch-title" style="color:var(--accent);" lang="es">Solicitudes</div>
+            <div class="ia-branch-title" style="color:var(--accent);" lang="en">Requests</div>
+            <div class="ia-branch-desc" lang="es">4 tipos</div>
+            <div class="ia-branch-desc" lang="en">4 types</div>
+          </div>
+          <div class="ia-branch-items">
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Incidencias</span><span lang="en">Incidents</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Accesos y permisos</span><span lang="en">Access & permissions</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Tareas recurrentes</span><span lang="en">Recurring tasks</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Consultas</span><span lang="en">Queries</span>
+            </div>
+          </div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="es">Superficie compartida</div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="en">Shared surface</div>
+        </div>
+
+        <!-- Rama 2: Dashboard gestor -->
+        <div class="ia-branch">
+          <div class="ia-branch-connector"></div>
+          <div class="ia-branch-head" style="border-color:rgba(245,158,11,0.3); background:rgba(245,158,11,0.06);">
+            <div class="ia-branch-icon" style="color:#f59e0b;">⊞</div>
+            <div class="ia-branch-title" style="color:#f59e0b;" lang="es">Dashboard IT</div>
+            <div class="ia-branch-title" style="color:#f59e0b;" lang="en">IT Dashboard</div>
+            <div class="ia-branch-desc" lang="es">Vista de gestores</div>
+            <div class="ia-branch-desc" lang="en">Manager view</div>
+          </div>
+          <div class="ia-branch-items">
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:#f59e0b;"></div>
+              <span lang="es">Cola priorizada</span><span lang="en">Priority queue</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:#ef4444;"></div>
+              <span lang="es">Tickets críticos</span><span lang="en">Critical tickets</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:rgba(255,255,255,0.3);"></div>
+              <span lang="es">Pendientes</span><span lang="en">Pending</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:#34d399;"></div>
+              <span lang="es">Resueltos</span><span lang="en">Resolved</span>
+            </div>
+          </div>
+          <div class="ia-surface-badge" style="color:#f59e0b; border-color:rgba(245,158,11,0.3);" lang="es">Perfil: gestor IT (&lt;15)</div>
+          <div class="ia-surface-badge" style="color:#f59e0b; border-color:rgba(245,158,11,0.3);" lang="en">Profile: IT manager (&lt;15)</div>
+        </div>
+
+        <!-- Rama 3: Dashboard usuario -->
+        <div class="ia-branch">
+          <div class="ia-branch-connector"></div>
+          <div class="ia-branch-head" style="border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.03);">
+            <div class="ia-branch-icon" style="color:rgba(255,255,255,0.5);">◱</div>
+            <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="es">Mi portal</div>
+            <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="en">My portal</div>
+            <div class="ia-branch-desc" lang="es">Vista del solicitante</div>
+            <div class="ia-branch-desc" lang="en">Requester view</div>
+          </div>
+          <div class="ia-branch-items">
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:rgba(255,255,255,0.4);"></div>
+              <span lang="es">Mis solicitudes</span><span lang="en">My requests</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:var(--accent);"></div>
+              <span lang="es">Estado en tiempo real</span><span lang="en">Real-time status</span>
+            </div>
+            <div class="ia-item">
+              <div class="ia-item-dot" style="background:rgba(255,255,255,0.25);"></div>
+              <span lang="es">Historial</span><span lang="en">History</span>
+            </div>
+          </div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="es">Perfil: usuario interno (+50)</div>
+          <div class="ia-surface-badge" style="color:rgba(255,255,255,0.4); border-color:var(--border);" lang="en">Profile: internal user (+50)</div>
+        </div>
+
+      </div><!-- /ia-branches-row -->
+    </div><!-- /ia-tree-wrap -->
+
+    <!-- PRIORIZACIÓN -->
     <div class="fu" style="margin-top:60px;">
-      <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(242,162,34,0.25); border-radius:16px; padding:40px 48px; display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap;">
-        <div style="flex-shrink:0;">
-          <div style="width:56px; height:56px; border-radius:50%; background:rgba(242,162,34,0.12); border:1px solid rgba(242,162,34,0.3); display:flex; align-items:center; justify-content:center; font-size:22px;">💡</div>
+      <span class="block-label es">Priorización del MVP</span>
+      <span class="block-label en">MVP Prioritisation</span>
+    </div>
+    <table class="priority-table fu">
+      <thead>
+        <tr>
+          <th class="es">Funcionalidad</th>
+          <th class="en">Feature</th>
+          <th class="es">Prioridad</th>
+          <th class="en">Priority</th>
+          <th class="es">Criterio</th>
+          <th class="en">Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="es">Clasificación tipificada de solicitudes</td>
+          <td class="en">Typed request classification</td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td class="es">Impacto máximo, mínima complejidad técnica. Reduce triaje sin cambiar ningún flujo existente.</td>
+          <td class="en">Maximum impact, minimal technical complexity. Reduces triage without changing any existing flow.</td>
+        </tr>
+        <tr>
+          <td class="es">Confirmaciones ante acciones de alto riesgo</td>
+          <td class="en">Confirmations on high-risk actions</td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td class="es">Los errores más costosos en tiempo de resolución son los evitables. Una capa de validación reduce los incidentes más frecuentes.</td>
+          <td class="en">The most costly errors in resolution time are the preventable ones. A validation layer reduces the most frequent incidents.</td>
+        </tr>
+        <tr>
+          <td class="es">Panel de visibilidad de estado</td>
+          <td class="en">Status visibility panel</td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td><span class="p-badge p1">P1</span></td>
+          <td class="es">Elimina las consultas de estado que interrumpen al equipo IT sin añadir valor al flujo de resolución.</td>
+          <td class="en">Eliminates status queries that interrupt the IT team without adding value to the resolution flow.</td>
+        </tr>
+        <tr>
+          <td class="es">Flujos guiados para tareas recurrentes</td>
+          <td class="en">Guided flows for recurring tasks</td>
+          <td><span class="p-badge p2">P2</span></td>
+          <td><span class="p-badge p2">P2</span></td>
+          <td class="es">Alto valor, mayor esfuerzo de mapeo de procesos. Requiere documentar flujos existentes antes de automatizarlos.</td>
+          <td class="en">High value, greater process mapping effort. Requires documenting existing flows before automating them.</td>
+        </tr>
+        <tr>
+          <td class="es">Automatización completa de procesos</td>
+          <td class="en">Full process automation</td>
+          <td><span class="p-badge p3">Fase 2</span></td>
+          <td><span class="p-badge p3">Phase 2</span></td>
+          <td class="es">Requiere integración con sistemas externos. Fuera del alcance del MVP.</td>
+          <td class="en">Requires integration with external systems. Out of scope for MVP.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<!-- [R] RESULTADO ESPERADO -->
+<section class="cs-block">
+  <div class="cs-wrap">
+
+    <div class="fu cs-grid-2" style="align-items: center; margin-bottom: 40px;">
+      <div>
+        <span class="block-label es">Impacto esperado</span>
+        <span class="block-label en">Expected impact</span>
+        <h2 class="block-h es" style="margin: 8px 0 0;">Escenarios antes / después<br><em>e hipótesis de impacto</em></h2>
+        <h2 class="block-h en" style="margin: 8px 0 0;">Before / after scenarios<br><em>and impact hypotheses</em></h2>
+      </div>
+      <div>
+        <div class="honest-note" style="margin: 0;">
+          <div class="honest-note-label es">Nota sobre este proyecto</div>
+          <div class="honest-note-label en">Note on this project</div>
+          <p class="es" style="margin: 0; font-size: 13px; line-height: 1.6;">Este proyecto no llegó a implementación. Los estudios y la propuesta se presentaron a dirección, pero la ejecución requería una profundidad técnica que en ese momento no tenía. Las hipótesis de impacto se basan en los patrones identificados.</p>
+          <p class="en" style="margin: 0; font-size: 13px; line-height: 1.6;">This project didn't reach implementation. The studies and proposal were presented to management, but execution required technical depth I lacked then. The impact hypotheses are based on identified patterns.</p>
         </div>
-        <div style="flex:1; min-width:260px;">
-          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#F2A222; font-weight:600; margin-bottom:12px;">El insight de producto</div>
-          <p style="font-size:18px; font-family:'Playfair Display', serif; font-style:italic; color:#fff; line-height:1.65; margin-bottom:16px;">"Paolo no tiene un problema de identidad. Tiene un problema de sistema."</p>
-          <p style="font-size:14px; color:var(--text); line-height:1.75; margin:0;">Cuando un sistema visual tiene que sobrevivir a 6 locales, múltiples proveedores y 2 años sin referencia centralizada, la inconsistencia no es un fallo de diseño — es una consecuencia arquitectónica. Este es exactamente el tipo de problema que resuelve el diseño de producto: no inventar identidades nuevas, sino construir sistemas que escalen sin romperse.</p>
+      </div>
+    </div>
+
+    <!-- ESCENARIO 1 -->
+    <div class="scenario fu">
+      <div class="scenario-header es">Escenario · Error de entorno (prod vs staging)</div>
+      <div class="scenario-header en">Scenario · Environment error (prod vs staging)</div>
+      <div class="scenario-cols">
+        <div class="scenario-col">
+          <div class="scenario-badge badge-before">Antes</div>
+          <div class="scenario-text es">Un desarrollador ejecuta una consulta pesada creyendo estar en staging. El sistema no muestra en qué entorno está activo. La acción se ejecuta en producción. <strong>Resultado: incidencia que requiere horas de resolución.</strong></div>
+          <div class="scenario-text en">A developer runs a heavy query believing they're in staging. The system doesn't show which environment is active. The action executes in production. <strong>Result: incident requiring hours to resolve.</strong></div>
         </div>
+        <div class="scenario-col">
+          <div class="scenario-badge badge-after">Con la propuesta</div>
+          <div class="scenario-text es">Antes de ejecutar, el sistema muestra el entorno activo con alerta visual de alto contraste y solicita confirmación explícita: "Estás en PRODUCCIÓN. Esta acción afectará a datos reales. ¿Confirmar?" <strong>La acción incorrecta se detiene antes de ocurrir.</strong></div>
+          <div class="scenario-text en">Before executing, the system shows the active environment with high-contrast visual alert and requests explicit confirmation: "You're in PRODUCTION. This action will affect real data. Confirm?" <strong>The incorrect action is stopped before it happens.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESCENARIO 2 -->
+    <div class="scenario fu">
+      <div class="scenario-header es">Escenario · Solicitud de permiso sin seguimiento</div>
+      <div class="scenario-header en">Scenario · Permission request with no tracking</div>
+      <div class="scenario-cols">
+        <div class="scenario-col">
+          <div class="scenario-badge badge-before">Antes</div>
+          <div class="scenario-text es">Un empleado reporta una solicitud de acceso a través de Oracle. No sabe si ha llegado, quién la tiene, ni cuándo esperar respuesta. <strong>Llama o escribe al equipo IT para preguntar por el estado — interrumpiendo el flujo de trabajo de los gestores.</strong></div>
+          <div class="scenario-text en">An employee submits an access request through Oracle. They don't know if it arrived, who has it, or when to expect a response. <strong>They call or message the IT team to ask about status — interrupting the managers' workflow.</strong></div>
+        </div>
+        <div class="scenario-col">
+          <div class="scenario-badge badge-after">Con la propuesta</div>
+          <div class="scenario-text es">La solicitud entra clasificada como "acceso". El empleado ve en su panel: Recibida → En revisión → Asignada a [gestor] → Completada. <strong>Sin necesidad de preguntar. Sin interrupciones al equipo IT.</strong></div>
+          <div class="scenario-text en">The request enters classified as "access". The employee sees in their panel: Received → Under review → Assigned to [manager] → Completed. <strong>No need to ask. No interruptions to the IT team.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIPÓTESIS DE IMPACTO -->
+    <div class="fu" style="margin-top:60px;">
+      <span class="block-label es">Hipótesis de impacto</span>
+      <span class="block-label en">Impact hypotheses</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0;" class="fu impact-grid">
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Triaje de incidencias</div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Incident triage</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La clasificación tipificada eliminaría la decisión manual de prioridad. Hipótesis: reducción significativa del tiempo de gestión inicial en cada ticket.</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Typed classification would eliminate manual priority decisions. Hypothesis: significant reduction in initial management time per ticket.</div>
+      </div>
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Errores evitables</div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Preventable errors</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">Los incidentes más frecuentes compartían causa raíz: ausencia de confirmación previa. Una capa de validación contextual los interceptaría antes de producirse.</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">The most frequent incidents shared a root cause: absence of prior confirmation. A contextual validation layer would intercept them before they occur.</div>
+      </div>
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Interrupciones al equipo IT</div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">IT team interruptions</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La visibilidad de estado eliminaría el principal motivo de contacto reactivo — "¿en qué punto está mi solicitud?" — liberando tiempo para trabajo técnico real.</div>
+        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Status visibility would eliminate the main reason for reactive contact — "where is my request?" — freeing up time for actual technical work.</div>
       </div>
     </div>
 
@@ -891,23 +1062,38 @@
 </section>
 
 <!-- APRENDIZAJES -->
-<section class="cs-block" style="background: rgba(255,255,255,0.015);">
-  <div class="cs-behance-letter">L</div>
+<section class="cs-block">
   <div class="cs-wrap">
+
     <div class="fu">
-      <span class="block-label">LEARNINGS · Aprendizajes</span>
-      <h2 class="block-h">
-        Lo que este primer proyecto<br><em>cambió en mi forma de diseñar</em>
-      </h2>
+      <span class="block-label es">Aprendizajes</span>
+      <span class="block-label en">Learnings</span>
+      <h2 class="block-h es">Lo que este proyecto<br><em>me enseñó</em></h2>
+      <h2 class="block-h en">What this project<br><em>taught me</em></h2>
     </div>
-    <p class="p fu"><strong>La auditoría antes que el diseño.</strong> El impulso natural es ir directo a proponer. Este proyecto me enseñó que la auditoría rigurosa revela que muchas de las mejores soluciones ya existen — solo necesitan ser reconocidas y documentadas. El diseñador que sabe cuándo no rediseñar es más valioso que el que siempre propone algo nuevo.</p>
-    <p class="p fu"><strong>Un sistema debe sobrevivir sin su autor.</strong> El test real de un design system no es si funciona el día que lo entregas — es si funciona seis meses después, ejecutado por alguien que no estaba en la sala cuando se creó. Diseñé pensando en ese momento desde el principio.</p>
-    <p class="p fu"><strong>El símbolo polisémico como activo estratégico.</strong> El infinito de Paolo funciona porque puede significar pizza, música, permanencia y artesanía al mismo tiempo. Un logo que se puede explicar desde múltiples ángulos es un logo con longevidad. Aprendí a identificar y proteger ese tipo de activo.</p>
-    <p class="p fu"><strong>Diseñar y desarrollar te hace mejor diseñadora.</strong> Haber construido la web — no solo diseñado los mockups — cambió cómo pienso los componentes, los estados, los márgenes y las restricciones. Entender lo que viene después del handoff es ventaja competitiva.</p>
-    <p class="p fu"><strong>Los datos de negocio son parte del brief.</strong> Analizar el rendimiento de los platos en delivery, ver qué contenido tenía mayor engagement en Metricool y proponer cambios concretos al cliente basándome en esos datos fue la parte más valiosa del proyecto. El diseño sin contexto de negocio es decoración.</p>
+
+    <div class="learning-grid fu">
+      <div class="learning-card">
+        <div class="learning-num">01</div>
+        <div class="learning-text es"><strong>El problema real no siempre es el problema declarado.</strong> El equipo pedía "mejorar Oracle". El problema real era que Oracle era la herramienta equivocada. Aprendí a distinguir entre lo que el equipo pedía y lo que el sistema necesitaba.</div>
+        <div class="learning-text en"><strong>The real problem isn't always the declared problem.</strong> The team asked to "improve Oracle". The real problem was that Oracle was the wrong tool. I learnt to distinguish between what the team was asking for and what the system needed.</div>
+      </div>
+      <div class="learning-card">
+        <div class="learning-num">02</div>
+        <div class="learning-text es"><strong>La investigación desde dentro tiene ventajas que la investigación formal no da.</strong> Estar integrada en el equipo me dio acceso a los momentos de fricción tal como ocurrían. La limitación fue aprender a separar observación de interpretación prematura.</div>
+        <div class="learning-text en"><strong>Research from within has advantages formal research doesn't.</strong> Being embedded in the team gave me access to friction moments as they happened. The challenge was learning to separate observation from premature interpretation.</div>
+      </div>
+      <div class="learning-card">
+        <div class="learning-num">03</div>
+        <div class="learning-text es"><strong>Este proyecto no se implementó porque no tenía los conocimientos técnicos para conectar diseño con desarrollo.</strong> Esa limitación fue directamente la motivación para cursar el bootcamp de Product Design. El proyecto no acabó en producción — pero cambió el rumbo de mi carrera.</div>
+        <div class="learning-text en"><strong>This project wasn't implemented because I lacked the technical knowledge to connect design with development.</strong> That limitation was directly what motivated me to take the Product Design bootcamp. The project didn't reach production — but it changed the direction of my career.</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="cs-footer">
   <div class="cs-wrap">
     <div class="footer-label es">Siguiente caso</div>
@@ -923,32 +1109,40 @@
       <a href="caso-5.html" class="btn btn-primary en">Case 05 →</a>
     </div>
   </div>
-</footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+  // Fade-up on scroll
+  const fus = document.querySelectorAll('.fu');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
+  fus.forEach(el => io.observe(el));
 
-  // Lang toggle (bilingual support)
+  // Lang toggle
+  const html = document.documentElement;
   const stored = localStorage.getItem('portfolio-lang');
   if (stored === 'en') {
-    document.documentElement.classList.add('lang-en');
+    html.classList.add('lang-en');
     const btn = document.getElementById('langToggle');
     if (btn) btn.textContent = 'ES';
   }
 
   function toggleLang() {
-    const html = document.documentElement;
     const btn = document.getElementById('langToggle');
     const isEn = html.classList.toggle('lang-en');
     btn.textContent = isEn ? 'ES' : 'EN';
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+    applyLang();
   }
+
+  // Affinity cards: show only current lang
+  function applyLang() {
+    const isEn = html.classList.contains('lang-en');
+    document.querySelectorAll('.affinity-card[lang]').forEach(el => {
+      el.style.display = (isEn ? el.lang === 'en' : el.lang === 'es') ? '' : 'none';
+    });
+  }
+  applyLang();
 </script>
 </body>
 </html>
