@@ -3,420 +3,466 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ILUNION Hotels · Booking Engine Redesign — UX & CRO · Marta Morales</title>
+  <title>ILUNION Hotels · CRO Case Study — From 3.36% to 6.5% Conversion · Marta Morales</title>
 
-  <meta name="description" content="Redesign of ILUNION Hotels' booking engine: resolved misalignment between business architecture and user intent, reducing friction and accelerating the booking funnel.">
+  <meta name="description" content="How I diagnosed and redesigned ILUNION Hotels' offer component to double direct channel conversion — from 3.36% to 6.5%. CRO, AEM, behavioural research.">
+  <meta name="keywords" content="CRO Case Study, Product Designer Portfolio, Conversion Rate Optimization, ILUNION Hotels, AEM, Adobe Analytics, Microsoft Clarity, UX Research, Booking Funnel, Spain">
 
-  <meta name="keywords" content="Booking Engine UX, CRO Case Study, Product Designer Portfolio, ILUNION Hotels, AEM, Customer Journey, UX Research, Conversion Funnel, Spain, Remote">
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://martamorales.vercel.app/caso-2.html">
-  <meta property="og:title" content="ILUNION Hotels · Booking Engine — From Showcase to Conversion · Marta Morales">
-  <meta property="og:description" content="How I resolved the misalignment between business architecture and user intent in ILUNION Hotels' booking engine — reducing friction and accelerating direct bookings.">
+  <meta property="og:title" content="ILUNION Hotels · CRO Case Study — +93% Conversion Uplift · Marta Morales">
+  <meta property="og:description" content="Diagnosis and redesign of the offer component for ILUNION Hotels' direct channel. From 3.36% to 6.5% conversion — data-driven, end-to-end ownership.">
   <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://martamorales.vercel.app/caso-2.html">
-  <meta name="twitter:title" content="ILUNION Hotels · Booking Engine Redesign · Marta Morales">
-  <meta name="twitter:description" content="How I resolved the misalignment between business architecture and user intent — reducing friction and accelerating direct bookings.">
+  <meta name="twitter:title" content="ILUNION Hotels · CRO Case Study — +93% Conversion · Marta Morales">
+  <meta name="twitter:description" content="Diagnosis and redesign of the offer component for ILUNION Hotels' direct channel. From 3.36% to 6.5% conversion — data-driven, end-to-end ownership.">
   <meta name="twitter:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="  <link rel="stylesheet" href="design-system.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+
   <style>
-    .cs-hero-glow {
-      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%);
-    }
-    
-    /* Specific Component Styles for Caso 2 */
-    .dash-widget { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
-    .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
-    .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
-    
-    /* Premium Metric Cards */
-    .metric-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px; margin-bottom: 24px; }
-    .metric-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 40px 24px; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s ease; }
-    .metric-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
-    .metric-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.1); }
-    .metric-card.alert::before { background: #ef4444; box-shadow: 0 0 24px rgba(239,68,68,0.6); }
-    .metric-card.success::before { background: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
-    .metric-val { font-size: 52px; font-weight: 800; color: var(--white); font-family: var(--font-serif); line-height: 1; margin-bottom: 16px; }
-    .metric-card.alert .metric-val { color: #ef4444; }
-    .metric-card.success .metric-val { color: var(--accent); }
-    .metric-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5; }
-    
-    .dash-stat { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.05); }
-    .dash-stat-label { font-size: 14px; color: var(--text-dim); }
-    .dash-stat-val { font-size: 24px; font-weight: 700; color: var(--accent); }
-
-    /* ─── OPCIÓN C: MAPPING LINES ───────────────────────────────────────── */
-    /* Inspiración: Stripe · Linear — cada fila = una transformación visual  */
-
-    .pm-widget {
-      margin-top: 72px;
-      position: relative;
-    }
-    /* Glow ambiental de fondo */
-    .pm-widget::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 10%;
-      width: 80%; height: 60%;
-      transform: translateY(-50%);
-      background: radial-gradient(ellipse at 20% 50%, rgba(139,92,246,.07) 0%, transparent 60%),
-                  radial-gradient(ellipse at 80% 50%, rgba(59,130,246,.05) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* CABECERA DEL WIDGET */
-    .pm-header {
+    /* ─── 01 HERO — métricas rápidas ─────────────── */
+    .hero-metrics {
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 1;
-    }
-    .pm-header-icon {
-      width: 44px; height: 44px;
-      flex-shrink: 0;
-      border-radius: 12px;
-      background: rgba(139,92,246,0.1);
-      border: 1px solid rgba(139,92,246,0.25);
-      display: flex; align-items: center; justify-content: center;
-      color: #a78bfa;
-      box-shadow: 0 0 20px rgba(139,92,246,0.15);
-    }
-    .pm-header-text { flex: 1; min-width: 0; }
-    .pm-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.3;
-      margin-bottom: 6px;
-      word-break: break-word;
-    }
-    .pm-desc { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.5; }
-
-    /* LISTA DE MAPEOS */
-    .pm-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* UNA FILA = UNA TRANSFORMACIÓN */
-    .pm-map-row {
-      display: grid;
-      grid-template-columns: 28px 1fr auto 1fr;
-      align-items: center;
-      gap: 16px;
-      padding: 4px 0;
-      transition: all 0.25s ease;
-    }
-    .pm-map-row:hover .pm-bridge-line { opacity: 1; }
-    .pm-map-row:hover .pm-work-card { border-color: rgba(255,255,255,0.12); }
-    .pm-map-row:hover .pm-method-badge { box-shadow: 0 0 28px var(--row-glow, rgba(139,92,246,0.25)); }
-
-    /* NÚMERO ANCLA */
-    .pm-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.12);
-      letter-spacing: 0.05em;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-      line-height: 1;
-      padding-top: 2px;
-    }
-
-    /* PANEL IZQUIERDO — actividad real */
-    .pm-work-card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      padding: 14px 16px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: border-color 0.25s ease;
-      min-width: 0;
-    }
-    .pm-work-icon {
-      width: 32px; height: 32px;
-      flex-shrink: 0;
-      border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--row-icon-bg, rgba(139,92,246,0.1));
-      border: 1px solid var(--row-icon-border, rgba(139,92,246,0.2));
-      color: var(--row-color, #a78bfa);
-    }
-    .pm-work-label {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.35;
-      min-width: 0;
-    }
-
-    /* PUENTE VERBAL — zona central */
-    .pm-bridge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-      flex-shrink: 0;
-      width: 80px;
-    }
-    .pm-bridge-label {
-      font-size: 8px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--row-color, rgba(139,92,246,0.6));
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .pm-bridge-line {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--row-color, rgba(139,92,246,0.4)), transparent);
-      opacity: 0.5;
-      transition: opacity 0.25s ease;
-      position: relative;
-    }
-    .pm-bridge-line::after {
-      content: '→';
-      position: absolute;
-      right: -2px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 11px;
-      color: var(--row-color, #a78bfa);
-      line-height: 1;
-    }
-
-    /* PANEL DERECHO — badge de metodología */
-    .pm-method-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-      letter-spacing: 0.01em;
-      background: var(--row-badge-bg, rgba(139,92,246,0.1));
-      border: 1px solid var(--row-badge-border, rgba(139,92,246,0.25));
-      color: var(--row-color, #a78bfa);
-      box-shadow: 0 0 16px var(--row-glow, rgba(139,92,246,0.12));
-      backdrop-filter: blur(8px);
-      transition: box-shadow 0.25s ease;
-      justify-self: start;
-    }
-
-    /* VARIACIÓN DE COLOR POR FILA — violeta, azul, cyan, violeta... */
-    .pm-map-row[data-accent="purple"] {
-      --row-color: #a78bfa;
-      --row-icon-bg: rgba(139,92,246,0.1);
-      --row-icon-border: rgba(139,92,246,0.2);
-      --row-badge-bg: rgba(139,92,246,0.08);
-      --row-badge-border: rgba(139,92,246,0.22);
-      --row-glow: rgba(139,92,246,0.2);
-    }
-    .pm-map-row[data-accent="blue"] {
-      --row-color: #93c5fd;
-      --row-icon-bg: rgba(59,130,246,0.1);
-      --row-icon-border: rgba(59,130,246,0.2);
-      --row-badge-bg: rgba(59,130,246,0.08);
-      --row-badge-border: rgba(59,130,246,0.22);
-      --row-glow: rgba(59,130,246,0.2);
-    }
-    .pm-map-row[data-accent="cyan"] {
-      --row-color: #67e8f9;
-      --row-icon-bg: rgba(6,182,212,0.1);
-      --row-icon-border: rgba(6,182,212,0.2);
-      --row-badge-bg: rgba(6,182,212,0.08);
-      --row-badge-border: rgba(6,182,212,0.22);
-      --row-glow: rgba(6,182,212,0.2);
-    }
-
-    @media (min-width: 769px) and (max-width: 1100px) {
-      .cs-nav { padding: 0 32px; }
-      .cs-hero-content { padding: 0 32px 72px; }
-      .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
-      .cs-block { padding: 80px 0; }
-      .cs-title { font-size: clamp(38px, 5vw, 60px); }
-      .block-h { font-size: clamp(28px, 3vw, 42px); }
-      .lead { font-size: 18px; }
-      .cs-ba { grid-template-columns: 1fr; gap: 24px; }
-      .metric-cards { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .metric-card { padding: 28px 16px; }
-      .metric-val { font-size: 40px; }
-      /* Role grid: stack to 1 col */
-      .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
-      .dash-widget { padding: 32px 28px; }
-      /* pm-widget mapping rows: stack vertical like mobile to prevent tablet overflows */
-      .pm-map-row {
-        grid-template-columns: 24px 1fr !important;
-        grid-template-rows: auto auto !important;
-        gap: 8px 12px !important;
-        padding: 0 0 16px !important;
-        border-bottom: 1px solid rgba(255,255,255,0.04) !important;
-      }
-      .pm-bridge { display: none !important; }
-      .pm-method-badge {
-        grid-column: 2 !important;
-        font-size: 11px !important;
-        padding: 7px 14px !important;
-        white-space: normal !important;
-      }
-      .pm-num { padding-top: 14px !important; }
-    }
-
-    /* RESPONSIVE MOBILE */
-    @media (max-width: 768px) {
-      .cs-nav { padding: 0 24px; height: 56px; }
-      .nav-label { display: none; }
-      .cs-hero-content { padding: 0 24px 72px; }
-      .cs-wrap, .cs-wrap-wide { padding: 0 24px; }
-      .cs-block { padding: 80px 0; }
-      .cs-ba { grid-template-columns: 1fr; gap: 40px; }
-      .metric-cards { grid-template-columns: 1fr; gap: 16px; }
-      .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
-      .cs-frame, .cs-frame-auto {
-        aspect-ratio: auto;
-        min-height: 240px;
-        border-radius: 12px;
-        overflow: hidden;
-        padding: 0 !important;
-      }
-      .cs-frame img, .cs-frame-auto img {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-        max-height: none !important;
-        object-fit: cover;
-        border-radius: 0;
-        display: block;
-      }
-      .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
-      /* Mapping Lines mobile: stack vertical */
-      .pm-map-row {
-        grid-template-columns: 24px 1fr;
-        grid-template-rows: auto auto;
-        gap: 8px 12px;
-        padding: 0 0 16px;
-        border-bottom: 1px solid rgba(255,255,255,0.04);
-      }
-      .pm-map-row:last-child { border-bottom: none; padding-bottom: 0; }
-      .pm-bridge { display: none; }
-      .pm-method-badge {
-        grid-column: 2;
-        font-size: 11px;
-        padding: 7px 14px;
-        white-space: normal;
-      }
-      .pm-num { padding-top: 14px; }
-    }
-
-    /* ===================== QUICK SUMMARY CARD ===================== */
-    .quick-summary-section {
-      padding: 60px 0 40px;
-      border-top: 1px solid var(--border);
-      position: relative;
-    }
-    .quick-summary-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      background: rgba(255, 255, 255, 0.02);
+      margin-top: 12px;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-width: 520px;
     }
-    .qs-col {
+    .hm-item {
+      flex: 1;
+      padding: 18px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .hm-item:last-child { border-right: none; }
+    .hm-label {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px;
+    }
+    .hm-value {
+      font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
+      color: var(--accent); line-height: 1;
+    }
+    .hm-sub { font-size: 10px; color: var(--text-dim); margin-top: 3px; }
+
+    /* ─── SEC NUM ─────────────────────────────────── */
+    .sec-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 36px; display: block;
+    }
+    .sec-num span { color: var(--accent); }
+
+    /* ─── 02 OVERVIEW — 2×2 grid ─────────────────── */
+    .overview-2x2 {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .ov-card { background: rgba(255,255,255,0.02); padding: 40px 44px 48px; }
+    .ov-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--accent-glow); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    }
+    .ov-icon svg { width: 18px; height: 18px; color: var(--accent); }
+    .ov-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .ov-text { font-size: 14px; color: var(--text); line-height: 1.7; }
+    .ov-text strong { color: var(--white); }
+
+    /* ─── 03 INVESTIGACIÓN ────────────────────────── */
+
+    /* Composición auditoría: imagen + findings */
+    .audit-composition {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .audit-img-panel {
+      background: rgba(255,255,255,0.02);
       display: flex;
       flex-direction: column;
     }
-    .qs-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .qs-label svg {
-      color: var(--accent);
+    .audit-panel-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim);
       flex-shrink: 0;
     }
-    .qs-val {
-      font-size: 13.5px;
-      color: var(--text-bright);
-      line-height: 1.6;
+    .audit-panel-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      min-height: 260px;
     }
-    .qs-bullets {
-      list-style: none;
+    .audit-panel-body img {
+      max-width: 100%; height: auto; display: block;
+      border-radius: var(--radius-sm);
+    }
+    .audit-findings-panel {
+      background: rgba(255,255,255,0.015);
+      display: flex; flex-direction: column;
+    }
+    .audit-finding {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--border);
+      flex: 1;
+    }
+    .audit-finding:last-child { border-bottom: none; }
+    .af-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+    }
+    .af-stat {
+      font-size: 36px; font-weight: 800; letter-spacing: -0.03em;
+      color: var(--white); line-height: 1; margin-bottom: 6px;
+      font-family: var(--font-serif);
+    }
+    .af-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+    /* Funnel + Insights */
+    .research-2col {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .research-panel {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+    }
+    .rp-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px;
+    }
+    .fn-rows { display: flex; flex-direction: column; gap: 14px; }
+    .fn-row { display: flex; align-items: center; gap: 12px; }
+    .fn-name { font-size: 12px; color: var(--text); width: 148px; flex-shrink: 0; }
+    .fn-bar-bg {
+      flex: 1; height: 6px; background: rgba(255,255,255,0.06);
+      border-radius: 3px; overflow: hidden;
+    }
+    .fn-bar-fill { height: 100%; background: var(--accent); border-radius: 3px; }
+    .fn-pct { font-size: 12px; font-weight: 700; color: var(--white); width: 40px; text-align: right; flex-shrink: 0; }
+    .fn-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0 8px; }
+
+    .insight-list { display: flex; flex-direction: column; gap: 16px; }
+    .insight-row { display: flex; gap: 12px; align-items: flex-start; }
+    .insight-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 8px;
+    }
+    .insight-txt { font-size: 13px; color: var(--text); line-height: 1.6; }
+    .insight-txt strong { color: var(--white); }
+
+    /* ─── 04 DIAGNÓSTICO → DECISIONES ────────────── */
+    .h-timeline {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .ht-item { padding-right: 32px; }
+    .ht-item:last-child { padding-right: 0; }
+    .ht-connector { display: flex; align-items: center; margin-bottom: 24px; }
+    .ht-circle {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent-glow); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .ht-circle svg { width: 18px; height: 18px; color: var(--accent); }
+    .ht-line { flex: 1; height: 1px; background: var(--border); }
+    .ht-item:last-child .ht-line { display: none; }
+    .ht-step {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+    }
+    .ht-title {
+      font-size: 16px; font-weight: 700; color: var(--white);
+      margin-bottom: 10px; font-family: var(--font-serif);
+    }
+    .ht-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+    .ht-text strong { color: var(--white); }
+    .ht-pill {
+      display: inline-block; margin-top: 12px; padding: 5px 14px;
+      border: 1px solid var(--accent-border); border-radius: var(--radius-pill);
+      font-size: 11px; color: var(--accent);
+    }
+
+    /* ─── 05 WIREFRAMES + DISEÑO FINAL ───────────── */
+
+    /* Statement header */
+    .wf-statement {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center; margin-bottom: 48px;
+    }
+    .wf-big-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 3.8vw, 52px);
+      font-weight: 700; line-height: 1.1; color: var(--white);
+    }
+    .wf-big-title em { font-style: italic; color: var(--accent); display: block; }
+    .wf-statement-desc {
+      font-size: 15px; color: var(--text); line-height: 1.7;
+      border-left: 2px solid var(--accent-border); padding-left: 24px;
+    }
+
+    /* Comparison — wireframe full width + 2-col finals */
+    .wf-comparison {
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 32px;
+    }
+
+    /* Row 1: wireframe full width */
+    .wf-row-wire { width: 100%; }
+    .wf-row-wire .wf-col-header {
+      padding: 14px 28px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.02);
+    }
+    .wf-row-wire .wf-col-body {
       padding: 0;
-      margin: 0;
     }
-    .qs-bullets li {
-      font-size: 13px;
-      color: var(--text);
-      line-height: 1.5;
-      margin-bottom: 8px;
-      padding-left: 14px;
+    .wf-row-wire .wf-col-body img {
+      width: 100%; height: auto; display: block;
+    }
+    .wf-row-wire .wf-tags {
+      display: flex; gap: 6px; padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,0.01);
+    }
+
+    /* Arrow divider between rows */
+    .wf-row-arrow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; padding: 18px 28px;
+      border-top: 1px solid var(--border);
+      background: rgba(249, 115, 22, 0.04);
+    }
+    .wf-row-arrow span {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .wf-row-arrow .wf-arrow-line {
+      flex: 1; height: 1px; background: var(--accent-border);
+    }
+
+    /* Row 2: desktop + mobile side by side */
+    .wf-row-finals {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .wf-final-col {
+      display: flex; flex-direction: column;
+    }
+    .wf-final-col + .wf-final-col {
+      border-left: 1px solid var(--border);
+    }
+    .wf-final-col .wf-col-header {
+      padding: 14px 28px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.02);
+    }
+    .wf-final-col .wf-col-body {
+      padding: 0; flex: 1;
+    }
+    .wf-final-col .wf-col-body img {
+      width: 100%; height: auto; display: block;
+    }
+    .wf-final-col .wf-tags {
+      display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,0.01);
+    }
+
+    /* Shared label pieces */
+    .wf-col-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .wf-col-name {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+
+    /* Pill tags under wireframes */
+    .wf-tag {
+      display: inline-block; padding: 3px 10px;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: var(--radius-pill); font-size: 11px; color: var(--text-dim);
+    }
+
+    /* Process steps */
+    .wf-process {
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .wf-process-label {
+      padding: 16px 28px; border-bottom: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .wf-process-label span { color: var(--accent); }
+    .wf-process-label em { color: var(--text-dim); font-style: normal; }
+    .wf-steps {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 0; background: var(--border);
+    }
+    .wf-step {
+      background: rgba(255,255,255,0.015); padding: 24px 24px 28px;
+      display: flex; flex-direction: column; gap: 10px;
       position: relative;
     }
-    .qs-bullets li::before {
-      content: "—";
-      color: var(--accent);
-      position: absolute;
-      left: 0;
+    .wf-step::after {
+      content: "→"; position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+      font-size: 14px; color: var(--text-dim); z-index: 1;
     }
-    .qs-result-box {
-      background: var(--accent-glow);
-      border: 1px solid var(--accent-border);
-      border-radius: 10px;
-      padding: 16px;
-      margin-top: 4px;
+    .wf-step:last-child::after { display: none; }
+    .wf-step-num {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
     }
-    .qs-result-highlight {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.5;
+    .wf-step-icon {
+      font-size: 18px; line-height: 1;
     }
-    @media (max-width: 900px) {
-      .quick-summary-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 24px;
-      }
+    .wf-step-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--white); line-height: 1.3;
+    }
+    .wf-step-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+    /* Legacy (keep for backward compat) */
+    .panel-block {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 24px;
+    }
+    .panel-header {
+      padding: 16px 24px; border-bottom: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .panel-header svg { width: 13px; height: 13px; color: var(--text-dim); flex-shrink: 0; }
+    .panel-body {
+      padding: 28px; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .panel-body img { max-width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
+
+    .design-2col {
+      display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px;
+    }
+
+    /* ─── 06 IMPLEMENTACIÓN ───────────────────────── */
+    .impl-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .impl-card {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px;
+    }
+    .impl-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--accent-glow); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
+    }
+    .impl-icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .impl-title {
+      font-size: 20px; font-weight: 700; color: var(--white);
+      font-family: var(--font-serif); margin-bottom: 14px;
+    }
+    .impl-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 20px; max-width: none; }
+    .impl-text strong { color: var(--white); }
+    .impl-badge {
+      display: inline-block; padding: 5px 14px;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); font-size: 11px; color: var(--text-dim);
+    }
+
+    /* ─── 07 RESULTADOS ───────────────────────────── */
+    .results-strip {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 24px;
+    }
+    .rs-cell {
+      padding: 32px 24px; border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .rs-cell:last-child { border-right: none; }
+    .rs-cell--hero { background: var(--accent-glow); border-right-color: var(--accent-border); }
+    .rs-val {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; line-height: 1; color: var(--white);
+    }
+    .rs-cell--hero .rs-val { color: var(--accent); }
+    .rs-up { display: flex; align-items: center; gap: 6px; }
+    .rs-up-arrow { font-size: 14px; color: var(--accent); }
+    .rs-sub { font-size: 12px; color: var(--text-dim); letter-spacing: 0.04em; }
+    .rs-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); line-height: 1.4;
+    }
+    .results-disclaimer {
+      font-size: 11px; color: var(--text-dim); line-height: 1.6;
+      border-left: 2px solid var(--border); padding-left: 16px;
+    }
+
+    /* ─── 08 LEARNINGS — 4 cards ──────────────────── */
+    .learnings-4col {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .lc-card { background: rgba(255,255,255,0.02); padding: 40px 36px 44px; }
+    .lc-icon { font-size: 24px; margin-bottom: 20px; display: block; }
+    .lc-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+    .lc-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 960px) {
+      .overview-2x2,
+      .research-2col,
+      .h-timeline,
+      .design-2col,
+      .impl-2col { grid-template-columns: 1fr; }
+      .audit-composition { grid-template-columns: 1fr; }
+      .ht-item { padding-right: 0; padding-bottom: 32px; }
+      .ht-line { display: none; }
+      .results-kpis { grid-template-columns: 1fr 1fr; }
+      .learnings-4col { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .hero-metrics { flex-direction: column; }
+      .hm-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .hm-item:last-child { border-bottom: none; }
+      .results-kpis,
+      .learnings-4col { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
 <nav class="cs-nav">
   <a href="index.html" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
-  
   <div class="cs-nav-right">
     <div class="cs-nav-dropdown">
       <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
@@ -426,15 +472,15 @@
       <div class="cs-dropdown-menu">
         <a href="caso-1.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
-          <div class="cs-item-title">ILUNION CRO</div>
-          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
-          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
-        </a>
-        <a href="caso-2.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 02</div>
           <div class="cs-item-title">Booking Engine</div>
           <div class="cs-item-skill es">Design Ops & Componentes</div>
           <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="caso-2.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
         <a href="caso-3.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 03</div>
@@ -442,17 +488,18 @@
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <a href="caso-4.html" class="cs-dropdown-item">
+        <div class="cs-dropdown-item" style="opacity: 0.45; cursor: default; pointer-events: none;">
           <div class="cs-item-num">Caso 04</div>
-          <div class="cs-item-title">Paolo Brand System</div>
-          <div class="cs-item-skill es">Identidad de Marca & Ecosistema Digital 360°</div>
-          <div class="cs-item-skill en">Brand Identity & 360° Digital Ecosystem</div>
-        </a>
+          <div class="cs-item-title es">IT Ops &amp; Oracle ERP (Próximamente)</div>
+          <div class="cs-item-title en">IT Ops &amp; Oracle ERP (Coming Soon)</div>
+          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
+        </div>
         <a href="caso-5.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 05</div>
-          <div class="cs-item-title">IT Ops & Oracle ERP</div>
-          <div class="cs-item-skill es">Investigación de Producto & Herramientas Internas</div>
-          <div class="cs-item-skill en">Product Research & Internal Tooling</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
         </a>
       </div>
     </div>
@@ -460,459 +507,575 @@
   </div>
 </nav>
 
+
+<!-- ══════════════════════════════════════
+     01 · HERO
+══════════════════════════════════════ -->
 <header class="cs-hero">
   <div class="cs-hero-logo"></div>
   <div class="cs-hero-overlay"></div>
-  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-glow" style="background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 65%);"></div>
   <div class="cs-hero-content">
-    <span class="cs-eyebrow">
-      02 — ILUNION Hotels · CRO · Product Design
-    </span>
+    <span class="cs-eyebrow">02 — ILUNION Hotels · CRO · Product Design</span>
     <h1 class="cs-title">
-      Rediseño del motor<br><em>de reservas</em>
+      Componente de Ofertas<br><em>y Conversión</em>
     </h1>
     <div class="cs-tags">
       <span class="cs-tag">Product Design</span>
       <span class="cs-tag">CRO</span>
-      <span class="cs-tag">Experimentación</span>
       <span class="cs-tag">Customer Journey</span>
-      <span class="cs-tag">Ecommerce Hotelero</span>
+      <span class="cs-tag">Experimentación</span>
+      <span class="cs-tag">Ecommerce hotelero</span>
+      <span class="cs-tag">Analytics</span>
+      <span class="cs-tag">AEM</span>
     </div>
-    <div class="cs-meta">
-      <div>
-        <div class="cs-meta-label">Empresa</div>
-        <div class="cs-meta-val">ILUNION Hotels</div>
+    <div class="hero-metrics fu">
+      <div class="hm-item">
+        <div class="hm-label">Conversión Final</div>
+        <div class="hm-value">6.5%</div>
+        <div class="hm-sub">vs 3.36% inicial</div>
       </div>
-      <div>
-        <div class="cs-meta-label">Rol</div>
-        <div class="cs-meta-val">Product Designer · CRO Lead</div>
+      <div class="hm-item">
+        <div class="hm-label">Mejora relativa</div>
+        <div class="hm-value">+93%</div>
+        <div class="hm-sub">Uplift</div>
       </div>
-      <div>
-        <div class="cs-meta-label">Año</div>
-        <div class="cs-meta-val">Sep 2024 – Actualidad</div>
-      </div>
-      <div>
-        <div class="cs-meta-label">Metodología</div>
-        <div class="cs-meta-val">CRO · Data-driven design</div>
+      <div class="hm-item">
+        <div class="hm-label">Club ÚNICOS</div>
+        <div class="hm-value">+50%</div>
+        <div class="hm-sub">Reservas fidelizadas</div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ==================== QUICK SUMMARY ==================== -->
-<section class="quick-summary-section">
+
+<!-- ══════════════════════════════════════
+     02 · OVERVIEW
+══════════════════════════════════════ -->
+<section class="cs-block">
   <div class="cs-wrap">
-    <div class="quick-summary-grid">
-      <!-- Col 1: El Problema -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          El Problema
-        </span>
-        <div class="qs-val">
-          Fricción inicial en los flujos del buscador de reservas. El proyecto se desarrolló de forma concurrente con el Caso 01 (Ofertas) bajo la misma iniciativa de optimización del funnel en AEM (de 3,36% a 6,5%), balanceando los accesos al buscador con el resto de la narrativa comercial.
+    <span class="sec-num fu"><span>02</span> — Overview</span>
+
+    <div class="overview-2x2 fu">
+
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          </svg>
         </div>
+        <p class="ov-title">Contexto</p>
+        <p class="ov-text">
+          ILUNION Hotels opera en un entorno digital competitivo donde el canal directo es estratégico. El equipo de negocio digital consolidó una contribución clave, representando el <strong>13% de las ventas totales</strong>. Tras la migración a AEM en septiembre 2025, la conversión cayó a un baseline crítico del <strong>3,36%</strong>. La tecnología funcionaba, pero el flujo no convertía.
+        </p>
       </div>
 
-      <!-- Col 2: Mi Rol -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Mi Rol
-        </span>
-        <div class="qs-val">
-          <strong>Product Designer Lead</strong> gestionando la colaboración directa con BI para recabar datos de comportamiento, y con desarrollo frontend para la validación y despliegue del componente de búsqueda.
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
         </div>
+        <p class="ov-title">Mi Rol</p>
+        <p class="ov-text">
+          <strong>Product Designer</strong> con ownership end-to-end de manera autónoma. Lideré el ciclo completo de diagnóstico, propuesta visual y coordinación con el equipo de desarrollo. Gestioné diagnóstico, propuesta y presentación directa a comité — sin intermediarios de producto entre el análisis y la toma de decisión.
+        </p>
       </div>
 
-      <!-- Col 3: Qué Hice -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Qué Hice
-        </span>
-        <ul class="qs-bullets">
-          <li>UX Research cuantitativo detectando fricción crítica en mobile (60%).</li>
-          <li>Problem framing para alinear objetivos comerciales y comportamiento real.</li>
-          <li>Diseño y maquetación de flujos de búsqueda limpios y sin distracciones.</li>
-          <li>Coordinación de especificaciones técnicas con desarrollo en AEM.</li>
-          <li>Descubrimiento post-lanzamiento de patrones de exploración geográfica.</li>
-        </ul>
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <p class="ov-title">Problema</p>
+        <p class="ov-text">
+          La jerarquía inicial priorizaba el posicionamiento aspiracional de marca. Esto requería scroll adicional para transaccionar, generando una fricción no intencionada en los flujos de <strong>alta intención de compra</strong> al inicio del funnel. El programa ÚNICOS aparecía antes de las opciones directas de reserva.
+        </p>
       </div>
 
-      <!-- Col 4: Resultado -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Resultado
-        </span>
-        <div class="qs-result-box">
-          <div class="qs-result-highlight">
-            Motor de reservas visible y priorizado desde el primer scroll. Reducción del patrón de scroll-sin-búsqueda (baseline: 75% de sesiones) y discovery de nuevo patrón de uso que validó landings de destino de alta conversión como siguiente iteración.
-          </div>
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          </svg>
         </div>
+        <p class="ov-title">Objetivo</p>
+        <p class="ov-text">
+          Diagnosticar el motivo de la fuga de usuarios con alta intención de reserva y diseñar experimentos que elevaran la conversión del 3,36% al objetivo de negocio. Todo ello dentro de los <strong>constraints técnicos de AEM</strong> sin comprometer el posicionamiento de marca ni el programa de fidelización ÚNICOS.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- [M] MI ROL -->
-<section class="cs-block">
-  <div class="cs-behance-letter" style="opacity:0.35">M</div>
+
+<!-- ══════════════════════════════════════
+     03 · INVESTIGACIÓN Y DIAGNÓSTICO
+══════════════════════════════════════ -->
+<section class="cs-block" style="background:rgba(255,255,255,0.012);">
   <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">MI ROL · Responsabilidades</span>
-      <h2 class="block-h">Único diseñador<br><em>en un proyecto de CRO activo</em></h2>
+    <span class="sec-num fu"><span>03</span> — Investigación y Diagnóstico</span>
+
+    <!-- COMPOSICIÓN AUDITORÍA: imagen pequeña + 3 findings -->
+    <div class="audit-composition fu">
+
+      <div class="audit-img-panel">
+        <div class="audit-panel-header">Auditoría del Componente Actual</div>
+        <div class="audit-panel-body">
+          <img
+            loading="lazy" decoding="async"
+            src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.png"
+            alt="Auditoría del componente de ofertas ILUNION — estado inicial"
+          >
+        </div>
+      </div>
+
+      <div class="audit-findings-panel">
+        <div class="audit-finding">
+          <p class="af-num">Finding 01 · Scroll map</p>
+          <p class="af-stat">15%</p>
+          <p class="af-desc">Solo el 15% de los usuarios superaba el bloque de ofertas en la home. El componente requería mayor interacción vertical que modelos referentes.</p>
+        </div>
+        <div class="audit-finding">
+          <p class="af-num">Finding 02 · Jerarquía visual</p>
+          <p class="af-stat">ÚNICOS</p>
+          <p class="af-desc">El programa de fidelización presentaba gran relevancia visual antes de mostrar las opciones directas de reserva, compitiendo con la intención de compra.</p>
+        </div>
+        <div class="audit-finding">
+          <p class="af-num">Finding 03 · Herramientas</p>
+          <p class="af-stat" style="font-size:22px; letter-spacing:-0.01em;">Clarity + Analytics</p>
+          <p class="af-desc">Microsoft Clarity (scroll maps, heatmaps, grabaciones) + Adobe Analytics (patrones de navegación y abandono) como única fuente de verdad compartida.</p>
+        </div>
+      </div>
+
     </div>
-    <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
+
+    <!-- FUNNEL + INSIGHTS -->
+    <div class="research-2col">
+
+      <div class="research-panel fu">
+        <p class="rp-title">Análisis de Fuga · Scroll Map Home</p>
+        <div class="fn-rows">
+          <div class="fn-row">
+            <span class="fn-name">Visitas Iniciales</span>
+            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:100%"></div></div>
+            <span class="fn-pct">100%</span>
+          </div>
+          <div class="fn-row">
+            <span class="fn-name">Llegan a ÚNICOS</span>
+            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:60%"></div></div>
+            <span class="fn-pct">60%</span>
+          </div>
+          <div class="fn-row">
+            <span class="fn-name">Superan bloque Ofertas</span>
+            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:15%"></div></div>
+            <span class="fn-pct">15%</span>
+          </div>
+          <hr class="fn-divider">
+          <div class="fn-row">
+            <span class="fn-name" style="color:var(--text-dim);">Abandono Crítico</span>
+            <div class="fn-bar-bg" style="background:rgba(239,68,68,0.08);">
+              <div class="fn-bar-fill" style="width:85%;background:rgba(239,68,68,0.65);"></div>
+            </div>
+            <span class="fn-pct" style="color:#ef4444;">85%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-panel fu">
+        <p class="rp-title">Insights Principales · Clarity + Analytics</p>
+        <div class="insight-list">
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">Solo el <strong>15% de los usuarios superaba el bloque de ofertas</strong> en la home.</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">El componente requería <strong>mayor interacción vertical</strong> que otros modelos referentes para visualizar las opciones de reserva.</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">El programa de fidelización <strong>ÚNICOS presentaba gran relevancia visual</strong> antes de mostrar las opciones directas de reserva.</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">Benchmarking contra cadenas hoteleras y portales de distribución referentes: precio, disponibilidad y CTA en primer fold.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     04 · DIAGNÓSTICO → DECISIONES
+══════════════════════════════════════ -->
+<section class="cs-block">
+  <div class="cs-wrap">
+    <span class="sec-num fu"><span>04</span> — Diagnóstico → Decisiones</span>
+
+    <div class="h-timeline fu">
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1l2.1-2.1M17 7l2.1-2.1"/>
+            </svg>
+          </div>
+          <div class="ht-line"></div>
+        </div>
+        <p class="ht-step">Paso 1</p>
+        <p class="ht-title">Insight clave</p>
+        <p class="ht-text">
+          Un usuario que llega desde paid media con intención de compra alta requiere comprobar disponibilidad y precio de forma directa. La narrativa de marca estaba bloqueando el inicio de la búsqueda.
+        </p>
+      </div>
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0h10a2 2 0 002-2V9M9 14H4a2 2 0 01-2-2V9"/>
+            </svg>
+          </div>
+          <div class="ht-line"></div>
+        </div>
+        <p class="ht-step">Paso 2</p>
+        <p class="ht-title">Hipótesis</p>
+        <p class="ht-text">
+          Reducir la fricción inicial priorizando el producto visible (oferta, precio, CTA) para acelerar el inicio de la búsqueda mejorará la conversión del embudo. Hipótesis sustentada analíticamente mediante scroll maps y benchmarking sectorial.
+        </p>
+      </div>
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/>
+              <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
+              <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+          </div>
+          <div class="ht-line"></div>
+        </div>
+        <p class="ht-step">Paso 3</p>
+        <p class="ht-title">12 mejoras priorizadas</p>
+        <p class="ht-text">
+          Traduje el diagnóstico en un documento estratégico con 12 mejoras, priorizadas por impacto directo en conversión y viabilidad técnica en AEM. 4 niveles de impacto. La propuesta fue aprobada en comité.
+        </p>
+        <span class="ht-pill">Ver lista de mejoras →</span>
+      </div>
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+        <p class="ht-step">Paso 4</p>
+        <p class="ht-title">Decisión final</p>
+        <p class="ht-text">
+          <strong>ÚNICOS no se eliminó:</strong> se integró como componente de valor secundario que asiste al usuario sin interferir en la búsqueda. La restricción de AEM (sin CSS diferencial por dispositivo) se resolvió reordenando la jerarquía estructural de los componentes.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     05 · WIREFRAMES + DISEÑO FINAL
+══════════════════════════════════════ -->
+<section class="cs-block" style="background:rgba(255,255,255,0.012);">
+  <div class="cs-wrap">
+    <span class="sec-num fu"><span>05</span> — Wireframes + Diseño Final</span>
+
+    <!-- STATEMENT HEADER -->
+    <div class="wf-statement fu">
       <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
-        <ul class="bullet-list">
-          <li>Análisis cuantitativo de comportamiento: Microsoft Clarity (scroll, patrones de clic, grabaciones) + Adobe Analytics (funnel y abandono)</li>
-          <li>Problem framing: identificar la desalineación real entre el modelo mental del site y el del usuario de alta intención</li>
-          <li>Diseño diferenciado por dispositivo: arquitectura distinta para desktop y mobile según comportamiento real observado</li>
-          <li>Coordinación técnica con desarrollo en Adobe AEM</li>
-          <li>Comunicación directa con dirección y marketing en lenguaje de negocio (conversión, customer journey)</li>
-        </ul>
+        <p class="wf-big-title">
+          Del wireframe<br>
+          <em>al resultado final</em>
+        </p>
       </div>
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Con quién colaboré</p>
-        <ul class="bullet-list">
-          <li><strong>Equipo de desarrollo frontend</strong> — implementación en AEM, validación funcional en staging, gestión de constraints técnicos de la plataforma</li>
-          <li><strong>Marketing y canal digital</strong> — contexto de objetivos de captación y restricciones operativas del entorno en producción</li>
-          <li><strong>BI y analítica</strong> — fuente de datos de comportamiento y validación de hipótesis</li>
-          <li><strong>Dirección de negocio</strong> — validación de objetivos y aprobación de propuestas</li>
-          <li><strong>Equipo de contenidos</strong> — coordinación para mantener coherencia de comunicación durante los cambios estructurales</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- [S] SITUATION -->
-<section class="cs-block">
-  <div class="cs-behance-letter">S</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">SITUATION · Contexto de negocio</span>
-      <h2 class="block-h">
-        Alta intención de compra,<br><em>fricción en el funnel</em>
-      </h2>
-    </div>
-    <div style="padding:0">
-      <p class="lead fu">En ILUNION Hotels, el motor de reservas es la pieza clave para la captación digital. Durante el periodo 2024-2025, el canal directo (negocio digital) representó el 13% de la venta total de la compañía. Este proyecto (Motor de Reservas) y el Caso 01 (Componente de Ofertas) formaron parte de la misma iniciativa estratégica de optimización del funnel de reservas en AEM en 2026, buscando elevar la conversión global del 3,36% al 6,5%.</p>
-      
-      <p class="p fu">El componente convivía con múltiples objetivos de negocio simultáneos: promociones, branding, fidelización y contenido inspiracional. Esta acumulación generaba una experiencia poco clara para usuarios con intención transaccional directa.</p>
-
-      <p class="p fu">El acceso al motor aparecía en puntos clave del ecosistema: homepage, páginas de hotel, páginas travel y campañas promocionales. Sin embargo, el comportamiento de usuario mostraba señales claras de fricción:</p>
-
-      <ul class="bullet-list fu">
-        <li>Usuarios que no iniciaban búsqueda</li>
-        <li>Navegación innecesaria antes de encontrar el motor</li>
-        <li>Abandono temprano</li>
-        <li>Dificultades para localizar rápidamente el acceso a reservas</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- [T] TASK -->
-<section class="cs-block" style="background: rgba(255,255,255,0.015);">
-  <div class="cs-behance-letter">T</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">TASK · El reto</span>
-      <h2 class="block-h">
-        Re-alinear las prioridades<br><em>con el comportamiento real</em>
-      </h2>
-    </div>
-    <div style="padding:0">
-      <p class="p fu">Analizar el comportamiento del acceso al motor desde una perspectiva UX y CRO para detectar puntos de abandono y proponer una solución más clara, escalable y alineada con los objetivos de negocio.</p>
-      
-      <p class="p fu">La solución debía:</p>
-      <ul class="bullet-list fu">
-        <li>Funcionar correctamente en desktop y mobile</li>
-        <li>Convivir con campañas activas</li>
-        <li>Mantener coherencia con la identidad visual</li>
-        <li>Adaptarse a las limitaciones técnicas de Adobe Experience Manager</li>
-      </ul>
-
-      <p class="p fu">El reto no era simplemente "hacer visible un buscador" — era resolver una <strong>desalineación entre las prioridades del negocio, la arquitectura de contenidos y el comportamiento real del usuario</strong>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- [A] ACTION -->
-<section class="cs-block">
-  <div class="cs-behance-letter">A</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">ACTION · Lo que hice, y por qué</span>
-      <h2 class="block-h">
-        Investigación, estrategia y<br><em>rediseño del motor</em>
-      </h2>
-    </div>
-    <div style="padding:0">
-
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">1. Research & Análisis de comportamiento</h3>
-      <p class="p fu">Empecé analizando el comportamiento mediante <strong>Microsoft Clarity</strong> y <strong>Adobe Analytics</strong> para identificar:</p>
-      <ul class="bullet-list fu">
-        <li>Profundidad de scroll y visibilidad del motor</li>
-        <li>Patrones de interacción con CTAs</li>
-        <li>Puntos de abandono dentro del customer journey</li>
-        <li>Comportamiento diferenciado entre desktop y mobile</li>
-      </ul>
-
-      <p class="p fu"><strong>Insight:</strong> El 75% de los usuarios realizaba scroll sin iniciar ninguna búsqueda debido a la saturación visual. El motor de reservas competía visualmente con banners inspiracionales, menús extensos y promociones en un mismo espacio de primer nivel. Un usuario con alta motivación de reserva no necesita explorar contenido general: busca contrastar disponibilidad y precio inmediato. El diseño inicial obstaculizaba este flujo natural. <strong>Hipótesis:</strong> Al priorizar jerárquicamente el motor de reservas y reducir la contaminación visual a su alrededor, se incrementará la tasa de inicio de búsqueda en el funnel de reserva, mejorando el rendimiento global de la inversión en captación digital.</p>
-      
-      <!-- DASHBOARD WIDGET: METRIC CARDS -->
-      <div class="dash-widget fu">
-        <div class="dash-title">Interacción vs Ruido Visual · Entorno Legacy</div>
-        <div class="metric-cards">
-          <div class="metric-card">
-            <div class="metric-val">75%</div>
-            <div class="metric-label">Scroll sin<br>Búsqueda</div>
-          </div>
-          <div class="metric-card alert">
-            <div class="metric-val">60%</div>
-            <div class="metric-label">Fricción Crítica<br>Mobile</div>
-          </div>
-          <div class="metric-card success">
-            <div class="metric-val">20%</div>
-            <div class="metric-label">Inicio de Búsqueda<br>Rápido</div>
-          </div>
-        </div>
-        <p style="font-size: 13px; color: var(--text-dim); text-align: center; margin-top: 16px;">El ruido visual y el contenido inspiracional aplastaban la interacción directa de reserva.</p>
-      </div>
-
-      <div style="border-left:2px solid var(--accent); padding:14px 0 14px 28px; margin:40px 0;" class="fu">
-        <p style="font-family:'Playfair Display',serif; font-size:21px; line-height:1.55; color:rgba(255,255,255,.78); font-style:italic;">"El usuario no quería explorar primero. Quería comprobar disponibilidad lo antes posible."</p>
-      </div>
-
-      <div class="cs-ba fu" style="margin-top:40px; margin-bottom:60px;">
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-desk.png" alt="Análisis de abandono Desktop"></div>
-          <p class="p" style="font-size:13px; margin-top: 12px;">Experimento previo: Análisis de abandonos · Desktop</p>
-        </div>
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-abandonado-mobile.png" alt="Análisis de abandono Mobile"></div>
-          <p class="p" style="font-size:13px; margin-top: 12px;">Experimento previo: Puntos de fuga en Mobile</p>
-        </div>
-      </div>
-
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">2. Problem Framing</h3>
-      <p class="p fu">Existía un conflicto directo entre el <strong>modelo mental corporativo</strong> ("explora, descubre nuestra marca") y el <strong>modelo mental del usuario</strong> ("quiero ver disponibilidad y precios"). El rediseño debía transformar un escaparate en una herramienta de conversión eficiente.</p>
-      <p class="p fu" style="margin-top:16px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0;">
-        <strong>Trade-offs gestionados:</strong> El rediseño operaba sobre un entorno en producción activo, con contenido existente que no podía eliminarse. AEM imponía limitaciones en la personalización de componentes según dispositivo. La solución tuvo que funcionar dentro de estos constraints reales — no en condiciones de laboratorio.
+      <p class="wf-statement-desc">
+        A partir de los wireframes iniciales definí la propuesta visual final, la jerarquía de contenidos,
+        el sistema de componentes y la adaptación responsive para desktop y mobile.
+        Los constraints técnicos de AEM no frenaron la solución — los integré como parámetros de diseño.
       </p>
+    </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">3. UX Strategy & Priorización</h3>
-      <p class="p fu">A partir del análisis, redefiní la jerarquía del acceso al motor priorizando:</p>
-      <ul class="bullet-list fu">
-        <li>Rapidez de identificación del buscador</li>
-        <li>Claridad visual y reducción de competencia entre elementos</li>
-        <li>Reducción de fricción en el inicio de búsqueda</li>
-        <li>Facilidad de interacción desde tráfico de alta intención</li>
-      </ul>
+    <!-- COMPARACIÓN: wireframe full width → diseño final 2-col -->
+    <div class="wf-comparison fu">
 
-      <div class="cs-ba fu" style="margin-top:40px; margin-bottom:60px;">
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/exp-cro-destinos-desk.png" alt="Test Selección Destino Desktop"></div>
-          <p class="p" style="font-size:13px; margin-top: 12px;">Experimento previo: Test de selección de destino</p>
+      <!-- FILA 1: Wireframe ancho completo -->
+      <div class="wf-row-wire">
+        <div class="wf-col-header">
+          <span class="wf-col-num">01.</span>
+          <span class="wf-col-name">Wireframe — Estructura</span>
         </div>
-        <div class="cs-ba-col">
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/EXP-CRO-DESTINOS-POPUP.png" alt="Test Selección Destino Mobile"></div>
-          <p class="p" style="font-size:13px; margin-top: 12px;">Simplificación y validación de hipótesis (100% fiabilidad)</p>
+        <div class="wf-col-body">
+          <img
+            loading="lazy" decoding="async"
+            src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wireframe-recompo.png"
+            alt="Wireframe re-componetización — jerarquía buscador + ofertas"
+          >
+        </div>
+        <div class="wf-tags">
+          <span class="wf-tag">Buscador prioritario</span>
+          <span class="wf-tag">Jerarquía diferenciada</span>
+          <span class="wf-tag">Componentes diferenciados Club ÚNICOS</span>
         </div>
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">4. Adaptación al contexto de uso</h3>
-      <p class="p fu"><strong>Desktop:</strong> Acceso rápido al motor, visibilidad de fechas y ocupación, relación directa entre promociones y búsqueda, CTAs claramente expuestos.</p>
-      <p class="p fu"><strong>Mobile:</strong> Estructura simplificada para comportamiento táctil — reorganización vertical, reducción de elementos secundarios, mejora de jerarquía, optimización del primer scroll.</p>
-
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:60px; margin-bottom:20px; font-family:'Playfair Display', serif;">5. Colaboración e Implementación</h3>
-      <p class="p fu">Trabajé directamente con el equipo de desarrollo en la definición funcional y validación en entorno staging. El objetivo no era entregar diseño visual, sino asegurar coherencia funcional, viabilidad técnica y correcta integración en AEM.</p>
-
-      <div class="cs-ba fu" style="margin-top:60px;">
-        <div class="cs-ba-col">
-          <div class="cs-ba-badge cs-ba-before">Antes / Problema</div>
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/antes-recompo.png" alt="Antes Motor"></div>
-        </div>
-        <div class="cs-ba-col">
-          <div class="cs-ba-badge cs-ba-after">Después / Solución Implementada</div>
-          <div class="cs-frame" style="margin:0"><img loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.png" alt="Después Motor"></div>
-        </div>
+      <!-- Flecha divisor -->
+      <div class="wf-row-arrow">
+        <div class="wf-arrow-line"></div>
+        <span>Diseño final →</span>
+        <div class="wf-arrow-line"></div>
       </div>
 
-      <h3 class="fu" style="font-size:18px; font-weight:700; color:var(--white); margin-top:80px; margin-bottom:20px; font-family:'Playfair Display', serif;">6. Iteración post-lanzamiento</h3>
-      <p class="p fu">Tras el lanzamiento, el seguimiento con Clarity reveló un hallazgo inesperado: los usuarios utilizaban el buscador como herramienta de exploración de destinos, no únicamente como acceso transaccional.</p>
-      <p class="p fu">Este descubrimiento derivó en una nueva e importante línea de trabajo estratégica: el diseño de landings específicas por destino con lógica de alta conversión, cerrando con éxito la fase de implementación inicial y abriendo una nueva oportunidad de producto que no estaba contemplada originalmente.</p>
+      <!-- FILA 2: Desktop + Mobile al 50% -->
+      <div class="wf-row-finals">
 
-    </div>
-  </div>
-</section>
-
-<!-- [R] RESULTADO -->
-<section class="cs-block" style="background: rgba(255,255,255,0.015);">
-  <div class="cs-behance-letter">R</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">RESULT · El impacto</span>
-      <h2 class="block-h">
-        Resolución y valor<br><em>de negocio</em>
-      </h2>
-    </div>
-
-    <p class="lead fu" style="margin-bottom: 24px;">El rediseño resolvió la desalineación estructural entre la arquitectura del site y el comportamiento transaccional del usuario. El motor pasó a ser el elemento dominante en el primer scroll, eliminando la competencia visual con contenido inspiracional.</p>
-    <p class="p fu" style="margin-bottom: 32px;">El insight post-lanzamiento — usuarios usando el buscador para explorar destinos — derivó en una nueva línea de trabajo: landings específicas por destino con lógica de alta conversión. El proyecto cerró su fase de implementación y abrió una nueva oportunidad de producto que no estaba en el brief original.</p>
-
-    <div style="padding:0; border-left: 2px solid var(--accent); padding-left: 24px;">
-      <p class="p fu" style="font-size: 14px; color: var(--text-dim); margin: 0;">📌 Algunos datos específicos de conversión y negocio son confidenciales. Los resultados reflejan seguimiento analítico, observación de comportamiento y validaciones internas posteriores al lanzamiento.</p>
-    </div>
-
-    <div class="fu pm-widget">
-      <div class="pm-header">
-        <div class="pm-header-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        <div class="wf-final-col">
+          <div class="wf-col-header">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-dim);flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span class="wf-col-num">02.</span>
+            <span class="wf-col-name">Diseño Final — Desktop</span>
+          </div>
+          <div class="wf-col-body">
+            <img
+              loading="lazy" decoding="async"
+              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.png"
+              alt="Diseño final desktop — carrusel de ofertas en primer fold con precio, descuento y CTA"
+            >
+          </div>
+          <div class="wf-tags">
+            <span class="wf-tag">Precio visible sin scroll</span>
+            <span class="wf-tag">ÚNICOS en secundario</span>
+          </div>
         </div>
-        <div class="pm-header-text">
-          <h3 class="pm-title">Traducción a metodología de producto</h3>
-          <p class="pm-desc">Cada actividad de este proyecto tiene nombre en equipos de producto.</p>
+
+        <div class="wf-final-col">
+          <div class="wf-col-header">
+            <svg width="11" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-dim);flex-shrink:0;"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+            <span class="wf-col-num">03.</span>
+            <span class="wf-col-name">Diseño Final — Mobile</span>
+          </div>
+          <div class="wf-col-body">
+            <img
+              loading="lazy" decoding="async"
+              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.png"
+              alt="Diseño final mobile — jerarquía adaptada al contexto táctil"
+            >
+          </div>
+          <div class="wf-tags">
+            <span class="wf-tag">Contexto táctil</span>
+            <span class="wf-tag">Primer scroll transaccional</span>
+          </div>
         </div>
+
       </div>
+    </div>
 
-      <div class="pm-list">
-
-        <div class="pm-map-row" data-accent="purple">
-          <span class="pm-num">01</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </div>
-            <span class="pm-work-label">Análisis con Clarity + Analytics</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Quantitative UX Research</div>
+    <!-- MI PROCESO — 5 pasos -->
+    <div class="wf-process fu">
+      <div class="wf-process-label">
+        <span>MI PROCESO</span>
+        <em>— del problema estructural a la solución visual</em>
+      </div>
+      <div class="wf-steps">
+        <div class="wf-step">
+          <span class="wf-step-num">1.</span>
+          <span class="wf-step-icon">🗂️</span>
+          <p class="wf-step-title">Estructura</p>
+          <p class="wf-step-desc">Definí la arquitectura de la información y la disposición de los bloques clave.</p>
         </div>
-
-        <div class="pm-map-row" data-accent="blue">
-          <span class="pm-num">02</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            </div>
-            <span class="pm-work-label">Benchmarking funcional</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Competitive Analysis</div>
+        <div class="wf-step">
+          <span class="wf-step-num">2.</span>
+          <span class="wf-step-icon">🎨</span>
+          <p class="wf-step-title">Diseño visual</p>
+          <p class="wf-step-desc">Apliqué identidad visual premium reforzando la jerarquía y el contraste.</p>
         </div>
-
-        <div class="pm-map-row" data-accent="cyan">
-          <span class="pm-num">03</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <span class="pm-work-label">Propuesta jerarquizada por impacto</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Impact Mapping</div>
+        <div class="wf-step">
+          <span class="wf-step-num">3.</span>
+          <span class="wf-step-icon">📱</span>
+          <p class="wf-step-title">Adaptación responsive</p>
+          <p class="wf-step-desc">Ajusté la experiencia para desktop y mobile priorizando usabilidad y conversión.</p>
         </div>
-
-        <div class="pm-map-row" data-accent="purple">
-          <span class="pm-num">04</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-            </div>
-            <span class="pm-work-label">Trabajo con desarrollo en staging</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Design QA / Design Handoff</div>
+        <div class="wf-step">
+          <span class="wf-step-num">4.</span>
+          <span class="wf-step-icon">🧩</span>
+          <p class="wf-step-title">Sistema de componentes</p>
+          <p class="wf-step-desc">Diseñé componentes reutilizables para asegurar consistencia y escalabilidad.</p>
         </div>
-
-        <div class="pm-map-row" data-accent="blue">
-          <span class="pm-num">05</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-            </div>
-            <span class="pm-work-label">Observación post-lanzamiento</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Continuous Discovery</div>
+        <div class="wf-step">
+          <span class="wf-step-num">5.</span>
+          <span class="wf-step-icon">🔗</span>
+          <p class="wf-step-title">Integración de marca</p>
+          <p class="wf-step-desc">Integré el diseño dentro del ecosistema digital de ILUNION Hotels.</p>
         </div>
-
-        <div class="pm-map-row" data-accent="cyan">
-          <span class="pm-num">06</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            </div>
-            <span class="pm-work-label">Detección de nuevo patrón de uso</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Quantitative UX Research</div>
-        </div>
-
-        <div class="pm-map-row" data-accent="purple">
-          <span class="pm-num">07</span>
-          <div class="pm-work-card">
-            <div class="pm-work-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <span class="pm-work-label">Coordinación con Marketing, BI y Negocio</span>
-          </div>
-          <div class="pm-bridge">
-            <span class="pm-bridge-label">traduce a</span>
-            <div class="pm-bridge-line"></div>
-          </div>
-          <div class="pm-method-badge">Stakeholder Alignment</div>
-        </div>
-
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- APRENDIZAJES -->
+
+<!-- ══════════════════════════════════════
+     06 · IMPLEMENTACIÓN + ITERACIÓN
+══════════════════════════════════════ -->
 <section class="cs-block">
-  <div class="cs-behance-letter">L</div>
   <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">LEARNINGS · Aprendizajes</span>
-      <h2 class="block-h">
-        Lo que este proyecto<br><em>reveló sobre tomar decisiones de producto</em>
-      </h2>
-    </div>
-    <div style="padding:0">
-      <p class="p fu"><strong>El usuario no siempre sabe lo que quiere — pero sus datos sí.</strong> El análisis post-lanzamiento reveló que los usuarios usaban el buscador de hoteles para explorar destinos, no solo para reservar. Ese insight no estaba en los requisitos iniciales. Solo apareció midiendo comportamiento real.</p>
-      <p class="p fu"><strong>El conflicto entre branding y conversión es un problema de priorización, no de diseño.</strong> La tensión entre "mostrar la marca" y "facilitar la reserva" no se resuelve con un rediseño visual — se resuelve tomando una decisión estratégica explícita sobre qué objetivo tiene más peso en cada punto del customer journey.</p>
-      <p class="p fu"><strong>El liderazgo y la coordinación directa obligan a hablar el lenguaje del negocio.</strong> Cuando explico una decisión de diseño en términos de tasa de inicio de búsqueda o coste por captación, se aprueba. Cuando la explico en términos de UX o experiencia de usuario, genera debate. No es un juicio — es una observación práctica sobre cómo funciona la toma de decisiones en un entorno de negocio.</p>
-      <p class="p fu"><strong>La validación continua como parte del proceso, no como una fase final.</strong> Este proyecto sigue en optimización activa. El lanzamiento fue el inicio del ciclo de aprendizaje, no el final del proyecto.</p>
+    <span class="sec-num fu"><span>06</span> — Implementación + Iteración</span>
+
+    <div class="impl-2col">
+
+      <div class="impl-card fu">
+        <div class="impl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <p class="impl-title">Implementación</p>
+        <p class="impl-text">
+          Trabajé directamente con el equipo de desarrollo en entorno staging — no entregando especificaciones para que alguien las interpretara, sino revisando el comportamiento real del componente en la plataforma. Saber qué estás mirando en staging, entender por qué un componente se rompe en un breakpoint y proponer la corrección correcta sin pedir otro sprint.
+        </p>
+        <p class="impl-text">
+          La propuesta se presentó en comité interno y se aprobó para lanzamiento a producción.
+        </p>
+      </div>
+
+      <div class="impl-card fu">
+        <div class="impl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+          </svg>
+        </div>
+        <p class="impl-title">Aprendizaje post-lanzamiento</p>
+        <p class="impl-text">
+          Tras el lanzamiento, los datos de Clarity mostraron algo inesperado: en mobile, los usuarios <strong>deslizaban sobre el selector de fechas en lugar de hacer clic</strong>. El patrón de interacción táctil no era el que habíamos diseñado.
+        </p>
+        <p class="impl-text">
+          Lo detecté, lo documenté y coordiné el desarrollo de la interacción de swipe a posteriori. No fue un fallo de diseño — fue el proceso funcionando como debe. La diferencia entre hacer una entrega y hacer producto es exactamente esta: seguir mirando después de publicar.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
 
+
+<!-- ══════════════════════════════════════
+     07 · RESULTADOS
+══════════════════════════════════════ -->
+<section class="cs-block" style="background:rgba(255,255,255,0.012);">
+  <div class="cs-wrap">
+    <span class="sec-num fu"><span>07</span> — Resultados</span>
+
+    <div class="results-strip fu">
+
+      <div class="rs-cell rs-cell--hero">
+        <div class="rs-val">6.5%</div>
+        <div class="rs-label">Conversión canal directo post-AEM</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-up">
+          <span class="rs-up-arrow">↑</span>
+          <div class="rs-val">+93%</div>
+        </div>
+        <div class="rs-sub">3,36% → 6,5%</div>
+        <div class="rs-label">Uplift de conversión</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-val">+50%</div>
+        <div class="rs-label">Reservas atribuidas a Club ÚNICOS</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-val">13%</div>
+        <div class="rs-label">Peso canal directo sobre ventas totales</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-val">×2</div>
+        <div class="rs-label">Extensión del componente a otras páginas</div>
+      </div>
+
+    </div>
+
+    <p class="results-disclaimer fu">
+      📌 Las cifras representan métricas del canal directo y analítica agregada. No incluyen información financiera sensible de la empresa.
+    </p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     08 · LEARNINGS
+══════════════════════════════════════ -->
+<section class="cs-block">
+  <div class="cs-wrap">
+    <span class="sec-num fu"><span>08</span> — Learnings</span>
+
+    <div class="learnings-4col fu">
+
+      <div class="lc-card">
+        <span class="lc-icon">📊</span>
+        <p class="lc-title">Data First</p>
+        <p class="lc-text">
+          El brief decía "optimiza el bloque promocional". Los datos decían que el problema era de jerarquía. Aprendí a profundizar en los datos analíticos antes de iniciar la conceptualización visual.
+        </p>
+      </div>
+
+      <div class="lc-card">
+        <span class="lc-icon">🚀</span>
+        <p class="lc-title">Launch ≠ Finish</p>
+        <p class="lc-text">
+          El comportamiento de swipe en mobile detectado post-lanzamiento reforzó que la observación analítica activa y el mantenimiento de producto son fases esenciales para asegurar la madurez de cualquier desarrollo digital.
+        </p>
+      </div>
+
+      <div class="lc-card">
+        <span class="lc-icon">💎</span>
+        <p class="lc-title">Constraints Create Design</p>
+        <p class="lc-text">
+          Las limitaciones de AEM fueron tomadas como variables creativas, guiándonos a resolver el orden visual estructuralmente y fortaleciendo la adaptabilidad del diseño final.
+        </p>
+      </div>
+
+      <div class="lc-card">
+        <span class="lc-icon">💬</span>
+        <p class="lc-title">Business Language Matters</p>
+        <p class="lc-text">
+          Colaborar directamente con comités directivos, tecnología y marketing exige fundamentar el diseño en impacto transaccional y objetivos del negocio. Lograr esa alineación es lo que impulsa el éxito de los productos digitales.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
 <footer class="cs-footer">
   <div class="cs-wrap">
     <div class="footer-label es">Siguiente caso</div>
@@ -930,15 +1093,16 @@
   </div>
 </footer>
 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   const io = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
       if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.01 });
   document.querySelectorAll('.fu').forEach(el => io.observe(el));
 
-  // Lang toggle (bilingual support)
   const stored = localStorage.getItem('portfolio-lang');
   if (stored === 'en') {
     document.documentElement.classList.add('lang-en');
@@ -956,4 +1120,3 @@
 </script>
 </body>
 </html>
-

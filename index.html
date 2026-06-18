@@ -224,7 +224,7 @@ nav {
 
 .sobre-diptych {
   display: grid;
-  grid-template-columns: 42% 58%;
+  grid-template-columns: 35% 65%;
   min-height: 660px;
   align-items: stretch;
 }
@@ -302,6 +302,85 @@ nav {
 }
 .sobre-body strong { color: rgba(255,255,255,0.74); font-weight: 600; }
 .sobre-body em { color: rgba(255,255,255,0.55); }
+
+/* ── Layout grid dentro del panel de texto ── */
+.sobre-grid-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+  width: 100%;
+}
+.sobre-narrative-col {
+  display: flex;
+  flex-direction: column;
+}
+.sobre-aside-col {
+  width: 100%;
+}
+.sobre-skills-off {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top: 2px solid rgba(167, 139, 250, 0.55);
+  border-radius: 16px;
+  padding: 28px 28px 32px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.07);
+}
+.sobre-skills-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.sobre-skills-group {
+  display: flex;
+  flex-direction: column;
+}
+.sobre-skills-group-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(167, 139, 250, 0.70);
+  margin-bottom: 10px;
+  display: block;
+}
+.sobre-skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sobre-skill-pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: default;
+}
+.sobre-skill-pill:hover {
+  background: linear-gradient(145deg, rgba(167,139,250,0.12), rgba(249,115,22,0.06));
+  border-color: rgba(167,139,250,0.3);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 1100px) {
+  .sobre-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
 
 /* CTA */
 .sobre-cta {
@@ -452,11 +531,11 @@ nav {
   border-color: rgba(var(--c-theme-rgb), 0.18);
   box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 60px rgba(var(--c-theme-rgb), 0.07);
 }
-.sc-card:nth-of-type(1) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
+.sc-card:nth-of-type(1) { --c-theme: #a855f7; --c-theme-rgb: 168, 85, 247; }
 .sc-card:nth-of-type(2) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
-.sc-card:nth-of-type(3) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
-.sc-card:nth-of-type(4) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
-.sc-card:nth-of-type(5) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
+.sc-card:nth-of-type(3) { --c-theme: #3b82f6; --c-theme-rgb: 59, 130, 246; }
+.sc-card:nth-of-type(4) { --c-theme: #06b6d4; --c-theme-rgb: 6, 182, 212; }
+.sc-card:nth-of-type(5) { --c-theme: #F2A222; --c-theme-rgb: 242, 162, 34; }
 
 /* Top shimmer line — dynamic gradient */
 .sc-card::before {
@@ -577,27 +656,22 @@ nav {
     linear-gradient(to top, rgba(5,4,12,0.40) 0%, transparent 32%);
 }
 .sc-img {
-  /* Show at natural size or smaller — never upscale */
-  max-width: 78%;
-  max-height: 78%;
+  /* Show at maximum container size */
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
   display: block;
   position: relative; z-index: 2;
   object-fit: contain;
-  border-radius: 10px;
-  transform: perspective(1100px) rotateY(-6deg) rotateX(1.5deg);
-  transform-origin: center center;
-  filter: brightness(0.95) contrast(1.04);
-  box-shadow:
-    0 24px 64px rgba(0,0,0,0.65),
-    0 0 0 1px rgba(255,255,255,0.05),
-    0 0 40px rgba(124,58,237,0.10);
-  transition: transform 0.75s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  filter: none;
+  transition: transform 0.4s ease;
 }
 .sc-card:hover .sc-img {
-  transform: perspective(1100px) rotateY(-2deg) rotateX(0.8deg);
-  filter: brightness(1.0) contrast(1.06);
+  transform: scale(1.03);
 }
 
 /* ── Metrics column ── */
@@ -1532,6 +1606,8 @@ nav {
   box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px rgba(124,58,237,0.25);
 }
 
+
+
 /* ===================== QUICK PROFILE SECTION ===================== */
 .quick-profile-section {
   padding: 80px 0;
@@ -1932,10 +2008,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#sobre"><span class="es">Estrategia de Producto</span><span class="en">Product Strategy</span></a></li>
+    <li><a href="#sobre"><span class="es">Sobre mí</span><span class="en">About me</span></a></li>
+    <li><a href="#stack"><span class="es">Skills &amp; Stack</span><span class="en">Skills &amp; Stack</span></a></li>
     <li><a href="#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
     <li><a href="#process"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
-    <li><a href="#stack"><span class="es">Stack</span><span class="en">Stack</span></a></li>
     <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <div class="nav-right">
@@ -1959,10 +2035,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
     </svg>
   </button>
   <ul class="mobile-menu-links">
-    <li><a href="#sobre" onclick="closeMenu()"><span class="es">Estrategia de Producto</span><span class="en">Product Strategy</span></a></li>
+    <li><a href="#sobre" onclick="closeMenu()"><span class="es">Sobre mí</span><span class="en">About me</span></a></li>
+    <li><a href="#stack" onclick="closeMenu()"><span class="es">Skills &amp; Stack</span><span class="en">Skills &amp; Stack</span></a></li>
     <li><a href="#work" onclick="closeMenu()"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
     <li><a href="#process" onclick="closeMenu()"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
-    <li><a href="#stack" onclick="closeMenu()"><span class="es">Stack</span><span class="en">Stack</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <button class="mobile-menu-lang" onclick="toggleLang(); updateMenuLangBtn();" id="menuLangBtn">EN</button>
@@ -2002,8 +2078,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
       <div class="impact-card">
         <div class="impact-header">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-            <path d="M6.5 0.5L7.8 4.5H12L8.8 6.9L10.1 10.9L6.5 8.3L2.9 10.9L4.2 6.9L1 4.5H5.2L6.5 0.5Z" fill="#a78bfa"></path>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2 L15 7 L21 7 L18 12 L21 17 L15 17 L12 22 L9 17 L3 17 L6 12 L3 7 L9 7 Z"></path>
           </svg>
           <span class="es">Resumen de impacto</span>
           <span class="en">Impact Overview</span>
@@ -2063,48 +2139,95 @@ html.lang-en .hero-positioning.en { display: block !important; }
 <section class="sobre-section" id="sobre">
   <div class="sobre-diptych">
 
-    <!-- Panel izquierdo: foto sin fondo, grande -->
+    <!-- Panel izquierdo: foto editorial -->
     <div class="sobre-img-panel">
       <img fetchpriority="high" decoding="async" src="assets/marta-entera-2.png" alt="Marta Morales García de los Ríos — Product Designer" class="sobre-portrait">
     </div>
 
-    <!-- Panel derecho: texto -->
+    <!-- Panel derecho: texto + skills off -->
     <div class="sobre-text-panel">
 
       <h2 class="sobre-heading es">sobre<br><em>mí<span class="c-purple">.</span></em></h2>
       <h2 class="sobre-heading en">about<br><em>me<span class="c-purple">.</span></em></h2>
 
-      <p class="sobre-tagline es">PRODUCT DESIGNER · +4 AÑOS · <span class="c-purple">DIAGNÓSTICO · DECISIÓN · IMPACTO.</span></p>
-      <p class="sobre-tagline en">PRODUCT DESIGNER · 4+ YEARS · <span class="c-purple">DIAGNOSIS · DECISION · IMPACT.</span></p>
+      <div class="sobre-grid-layout">
 
-      <div class="sobre-body">
-        <p class="es">He trabajado como <strong>product designer con ownership real</strong> — no ejecutando briefs, sino construyendo el diagnóstico desde cero, priorizando por impacto y defendiendo la propuesta ante dirección.</p>
-        <p class="en">I've worked as a <strong>product designer with real ownership</strong> — not executing briefs, but building the diagnosis from scratch, prioritising by impact, and defending proposals directly to leadership.</p>
-        <p class="es">Adobe Analytics y Clarity antes del primer wireframe. Una propuesta al comité, no tres variantes para que elijan. Seguimiento con datos después del lanzamiento — porque ahí es cuando aparece lo que no diseñaste bien.</p>
-        <p class="en">Adobe Analytics and Clarity before the first wireframe. One proposal to the committee, not three variants for them to choose from. Post-launch data tracking — because that's when what you didn't design well shows up.</p>
-        <p class="es">Empecé construyendo la identidad visual de una pizzería que pasó de 1 a 6 locales. Después identifiqué que Oracle generaba más fricción de la que resolvía — y propuse reemplazarlo. Hoy trabajo en el funnel de reservas de un hotel con canal directo como palanca principal. El hilo es el mismo: entender qué está fallando antes de diseñar nada.</p>
-        <p class="en">I started building the visual identity of a pizza chain that went from 1 to 6 locations. Then I identified that Oracle was generating more friction than it resolved — and proposed replacing it. Today I work on the booking funnel of a hotel where direct channel is the main lever. The thread is the same: understand what's failing before designing anything.</p>
+        <!-- Columna izquierda: narrativa + cta + meta -->
+        <div class="sobre-narrative-col">
+          <p class="sobre-tagline es">PRODUCT DESIGNER · +4 AÑOS · <span class="c-purple">DIAGNÓSTICO · DECISIÓN · IMPACTO.</span></p>
+          <p class="sobre-tagline en">PRODUCT DESIGNER · 4+ YEARS · <span class="c-purple">DIAGNOSIS · DECISION · IMPACT.</span></p>
+
+          <div class="sobre-body">
+            <p class="es">Empecé mi trayectoria en diseño visual, branding y gráfica corporativa, lo que me llevó a entender el diseño web no como algo estático, sino como un producto global. De ahí di el salto al entorno tecnológico full stack, especializándome en UX/UI y CRO con un fuerte perfil frontend.</p>
+            <p class="es">Para llegar aquí, he recorrido un camino evolutivo: comencé diseñando y maquetando webs informativas y desarrollando maquetación frontend para landings y mailings. Luego, me enfoqué en analizar problemas complejos de experiencia de usuario para resolver flujos transaccionales. Esto me abrió las puertas a plataformas EdTech de gran escala donde el objetivo principal era la optimización del funnel para la captación de leads.</p>
+            <p class="es">Por último, me sumé al equipo de negocio digital de ILUNION Hotels, liderando la evolución de su canal directo (un ecosistema ecommerce con 32 hoteles activos) y colaborando con partners y un gran equipo interno en el lanzamiento de una web 100% accesible que ahora se postula a premios de accesibilidad. Tras casi dos años construyendo este ecosistema de alto impacto, el día a día suma y sigue, pero estoy abierta a nuevos retos y propósitos profesionales.</p>
+
+            <p class="en">I started my career in design, but over time I became increasingly interested in what happens beyond the interface: understanding user behaviour, measuring impact and connecting design decisions with business outcomes.</p>
+            <p class="en">Today, I work within the Digital Business team at ILUNION Hotels, contributing to the evolution of the direct digital channel of a 32-hotel chain. My work combines UX/UI Design, Customer Journey Optimisation, Accessibility, CRO and Data-Informed Design through tools such as Adobe Analytics, Microsoft Clarity, Figma and A/B Testing.</p>
+            <p class="en">Throughout my career, I have designed digital products across Hospitality, EdTech, eCommerce and B2B environments, built Design Systems from scratch and worked as the sole designer within multidisciplinary teams.</p>
+            <p class="en">Since 2023, I have actively incorporated AI tools into my daily workflow and continuously explore emerging technologies to improve research, ideation, problem-solving and product thinking.</p>
+          </div>
+
+          <a href="#work" class="sobre-cta">
+            <span class="sobre-cta-icon">→</span>
+            <div class="sobre-cta-label">
+              <span class="es">VER MI TRABAJO.</span>
+              <span class="en">SEE MY WORK.</span>
+            </div>
+          </a>
+
+          <div class="sobre-meta">
+            <div class="sobre-eq">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="sobre-location">
+              <div class="sobre-loc-dot"></div>
+              <div class="sobre-loc-text es">España &nbsp;·&nbsp; <span id="sobreTime">--:--:-- CET</span></div>
+              <div class="sobre-loc-text en">Spain &nbsp;·&nbsp; <span id="sobreTimeEn">--:--:-- CET</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha: habilidades de gestión ("Skills Off") -->
+        <div class="sobre-aside-col">
+          <div class="sobre-skills-off">
+            <h3 class="sobre-skills-title">
+              <span class="es">Habilidades de Gestión</span>
+              <span class="en">Management Skills</span>
+            </h3>
+
+            <div class="sobre-skills-group">
+              <span class="sobre-skills-group-title">Estrategia &amp; Negocio</span>
+              <div class="sobre-skills-pills">
+                <span class="sobre-skill-pill"><span class="es">Discovery Contextual</span><span class="en">Contextual Discovery</span></span>
+                <span class="sobre-skill-pill"><span class="es">Alineación de Negocio</span><span class="en">Business Alignment</span></span>
+                <span class="sobre-skill-pill"><span class="es">Decisiones Basadas en Datos</span><span class="en">Data-Driven Decisions</span></span>
+                <span class="sobre-skill-pill">Product Thinking</span>
+                <span class="sobre-skill-pill"><span class="es">Estrategia de Producto</span><span class="en">Product Strategy</span></span>
+              </div>
+            </div>
+
+            <div class="sobre-skills-group">
+              <span class="sobre-skills-group-title">Liderazgo &amp; Proceso</span>
+              <div class="sobre-skills-pills">
+                <span class="sobre-skill-pill"><span class="es">Ownership End-to-end</span><span class="en">End-to-End Ownership</span></span>
+                <span class="sobre-skill-pill"><span class="es">Gestión de Stakeholders</span><span class="en">Stakeholder Management</span></span>
+                <span class="sobre-skill-pill"><span class="es">Metodologías Ágiles</span><span class="en">Agile (Scrum)</span></span>
+                <span class="sobre-skill-pill"><span class="es">Colaboración Multidisciplinar</span><span class="en">Cross-team Collab.</span></span>
+                <span class="sobre-skill-pill">Design QA &amp; Handoff</span>
+              </div>
+            </div>
+            <div class="sobre-skills-group">
+              <span class="sobre-skills-group-title">Comunicación &amp; Influencia</span>
+              <div class="sobre-skills-pills">
+                <span class="sobre-skill-pill"><span class="es">Presentación a Dirección</span><span class="en">C-Level Presentation</span></span>
+                <span class="sobre-skill-pill"><span class="es">Pensamiento Crítico</span><span class="en">Critical Thinking</span></span>
+                <span class="sobre-skill-pill"><span class="es">Empatía con el Usuario</span><span class="en">User Empathy</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <a href="#work" class="sobre-cta">
-        <span class="sobre-cta-icon">→</span>
-        <div class="sobre-cta-label">
-          <span class="es">VER MI TRABAJO.</span>
-          <span class="en">SEE MY WORK.</span>
-        </div>
-      </a>
-
-      <div class="sobre-meta">
-        <div class="sobre-eq">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <div class="sobre-location">
-          <div class="sobre-loc-dot"></div>
-          <div class="sobre-loc-text es">España &nbsp;·&nbsp; <span id="sobreTime">--:--:-- CET</span></div>
-          <div class="sobre-loc-text en">Spain &nbsp;·&nbsp; <span id="sobreTimeEn">--:--:-- CET</span></div>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -2174,13 +2297,60 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </div>
 </section>
 
+
+<!-- ==================== TECH STACK SECTION ==================== -->
+<section class="stack-section" id="stack">
+  <div class="wrap">
+    <div class="sec-num"><span>02</span><div class="sec-num-line"></div></div>
+    
+    <div class="stack-content">
+      <div class="stack-eyebrow">
+        <span class="es">• STACK DE PRODUCTO</span>
+        <span class="en">• PRODUCT STACK</span>
+      </div>
+      <h2 class="stack-title">
+        <span class="es">Producto, datos e IA como <span class="stack-text-gradient">una sola capa de decisión.</span></span>
+        <span class="en">Product, data, and AI as <span class="stack-text-gradient">a single decision layer.</span></span>
+      </h2>
+      <p class="stack-desc">
+        <span class="es">El stack no define el trabajo — el problema de negocio sí. Estas herramientas me permiten ir desde el diagnóstico de comportamiento hasta el diseño final y la medición de resultados en un único flujo de trabajo integrado.</span>
+        <span class="en">The stack doesn't define the work — the business problem does. These tools let me move from behaviour diagnosis to final design and results measurement in a single integrated workflow.</span>
+      </p>
+    </div>
+
+    <div class="stack-video-container">
+      <video src="assets/video-stack.mp4" autoplay="" loop="" muted="" playsinline="" class="stack-video"></video>
+    </div>
+
+    <div class="stack-pills">
+      <span class="stack-pill"><span class="es">Product Discovery</span><span class="en">Product Discovery</span></span>
+      <span class="stack-pill">CRO &amp; A/B Testing</span>
+      <span class="stack-pill">Design Systems</span>
+      <span class="stack-pill">Figma</span>
+      <span class="stack-pill">Bootstrap</span>
+      <span class="stack-pill">HTML &amp; CSS</span>
+      <span class="stack-pill">Adobe Analytics</span>
+      <span class="stack-pill">Microsoft Clarity</span>
+      <span class="stack-pill">Power BI</span>
+      <span class="stack-pill">WCAG 2.1</span>
+      <span class="stack-pill">AEM</span>
+      <span class="stack-pill"><span class="es">Customer Journey Mapping</span><span class="en">Customer Journey Mapping</span></span>
+      <span class="stack-pill">Impact Mapping</span>
+      <span class="stack-pill"><span class="es">Experimentación</span><span class="en">Experimentation</span></span>
+      <span class="stack-pill">Claude / IA</span>
+      <span class="stack-pill">GitHub</span>
+    </div>
+  </div>
+</section>
+
+
 <!-- ==================== WORK SECTION ==================== -->
 <section class="work-section" id="work">
   <div class="wrap">
 
     <div class="work-header">
       <div>
-        <div class="sec-num"><span>02</span><div class="sec-num-line"></div></div>
+        <div class="sec-num"><span>03</span><div class="sec-num-line"></div></div>
         <div class="sec-title es">Casos de producto<span class="c-purple">.</span></div>
         <div class="sec-title en">Product Cases<span class="c-purple">.</span></div>
       </div>
@@ -2199,52 +2369,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="block-label-line"></div>
     </div>
 
-    <!-- CASO 1: ILUNION — Rediseño del componente de Ofertas -->
+    <!-- CASO 1: ILUNION — Rediseño del motor de reservas -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num">01</div>
-          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
-        </div>
-        <h3 class="sc-title es">Experimentos AEM: de <em>3,36% a 6,5% de conversión</em></h3>
-        <h3 class="sc-title en">AEM Experiments: from <em>3.36% to 6.5% conversion</em></h3>
-        <p class="sc-desc es">Optimización del funnel de reservas en el canal directo tras migración a AEM. Diagnóstico estratégico y experimentos basados en research de comportamiento real. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em></p>
-        <p class="sc-desc en">Direct channel booking funnel optimization post AEM migration. Strategic diagnosis and experiments based on real behavioral research. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em></p>
-        <div class="sc-cta-row">
-          <a href="caso-1.html" class="sc-cta es">Case Study</a>
-          <a href="caso-1.html" class="sc-cta en">Case Study</a>
-          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
-          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
-        </div>
-      </div>
-      <div class="sc-visual" aria-hidden="true">
-        <img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.png" class="sc-img" alt="ILUNION Hotels Ofertas">
-      </div>
-      <div class="sc-metrics">
-        <div class="sc-metric">
-          <div class="sc-mval">6.5%</div>
-          <div class="sc-mname es">Funnel de reservas</div>
-          <div class="sc-mname en">Booking funnel</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval">13%</div>
-          <div class="sc-mname es">Venta representada</div>
-          <div class="sc-mname en">Share of sales</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval">&gt;50%</div>
-          <div class="sc-mname es">Club ÚNICOS (Loyalty)</div>
-          <div class="sc-mname en">Club ÚNICOS Loyalty</div>
-        </div>
-      </div>
-      <a href="caso-1.html" class="sc-corner" style="color:var(--orange);" aria-label="Ver Caso de Estudio">↗</a>
-    </div>
-
-    <!-- CASO 2: ILUNION — Rediseño del motor de reservas -->
-    <div class="sc-card reveal">
-      <div class="sc-content">
-        <div class="sc-num-row">
-          <div class="sc-num" style="color: var(--purple);">02</div>
+          <div class="sc-num" style="color: var(--purple);">01</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
         </div>
         <h3 class="sc-title sc-title-purple es">Motor de reservas: de <em>escaparate a conversión</em></h3>
@@ -2252,8 +2381,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer lead · Ingeniería + marketing</em></p>
         <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: lead product designer · Engineering + marketing</em></p>
         <div class="sc-cta-row">
-          <a href="caso-2.html" class="sc-cta es">Case Study</a>
-          <a href="caso-2.html" class="sc-cta en">Case Study</a>
+          <a href="caso-1.html" class="sc-cta es">Case Study</a>
+          <a href="caso-1.html" class="sc-cta en">Case Study</a>
           <a href="https://www.notion.so/35ed112a771e8133b0cfdfca47a8cca2" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
           <a href="https://www.notion.so/35ed112a771e8133b0cfdfca47a8cca2" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
@@ -2278,7 +2407,48 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">Validation channels</div>
         </div>
       </div>
-      <a href="caso-2.html" class="sc-corner" style="color:var(--purple);" aria-label="Ver Caso de Estudio">↗</a>
+      <a href="caso-1.html" class="sc-corner" style="color:var(--purple);" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
+
+    <!-- CASO 2: ILUNION — Rediseño del componente de Ofertas -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num" style="color: var(--orange);">02</div>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
+        </div>
+        <h3 class="sc-title es">Experimentos AEM: de <em>3,36% a 6,5% de conversión</em></h3>
+        <h3 class="sc-title en">AEM Experiments: from <em>3.36% to 6.5% conversion</em></h3>
+        <p class="sc-desc es">Optimización del funnel de reservas en el canal directo tras migración a AEM. Diagnóstico estratégico y experimentos basados en research de comportamiento real. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em></p>
+        <p class="sc-desc en">Direct channel booking funnel optimization post AEM migration. Strategic diagnosis and experiments based on real behavioral research. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em></p>
+        <div class="sc-cta-row">
+          <a href="caso-2.html" class="sc-cta es">Case Study</a>
+          <a href="caso-2.html" class="sc-cta en">Case Study</a>
+          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
+        </div>
+      </div>
+      <div class="sc-visual" aria-hidden="true">
+        <img src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.png" class="sc-img" alt="ILUNION Hotels Ofertas">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval">6.5%</div>
+          <div class="sc-mname es">Funnel de reservas</div>
+          <div class="sc-mname en">Booking funnel</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">13%</div>
+          <div class="sc-mname es">Venta representada</div>
+          <div class="sc-mname en">Share of sales</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">&gt;50%</div>
+          <div class="sc-mname es">Club ÚNICOS (Loyalty)</div>
+          <div class="sc-mname en">Club ÚNICOS Loyalty</div>
+        </div>
+      </div>
+      <a href="caso-2.html" class="sc-corner" style="color:var(--orange);" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
     <!-- BLOCK: TOOLS & B2B -->
@@ -2332,70 +2502,31 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="caso-3.html" class="sc-corner" style="color: var(--blue);" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
-    <!-- BLOCK: BRANDING & ECOSISTEMA DIGITAL -->
+    <!-- BLOCK: CUSTOMER JOURNEY & PRODUCTO DIGITAL -->
     <div class="block-divider">
       <div class="block-label">
         <span class="block-label-text">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-          Branding &amp; Ecosistema Digital · <span style="opacity:0.45; font-weight:400;">We Are Actions · 2020–2022</span>
+          Customer Journey &amp; Producto Digital · <span style="opacity:0.45; font-weight:400;">We Are Actions · 2020–2022</span>
         </span>
         <div class="block-label-line"></div>
       </div>
     </div>
 
-    <!-- CASO 4: PAOLO BY DANNY'S JAZZ — Brand System & Digital 360° -->
+    <!-- CASO 04: WE ARE ACTIONS IT OPS — Build vs. Buy (En construcción) -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num" style="color: #F2A222;">04</div>
-          <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">Paolo by Danny's Jazz</span>
-        </div>
-        <h3 class="sc-title es" style="color:#F2A222">De 0 a sistema: <em style="color:rgba(255,255,255,0.65)">brand identity &amp; ecosistema digital completo</em></h3>
-        <h3 class="sc-title en" style="color:#F2A222">From 0 to system: <em style="color:rgba(255,255,255,0.65)">brand identity &amp; full digital ecosystem</em></h3>
-        <p class="sc-desc es">Primer proyecto como diseñadora en consultoría. Construí desde cero la identidad visual, el design system y el ecosistema digital de una cadena artesana de pizzerías en Madrid — que pasó de 1 a 6 locales durante el proyecto. Diseño físico (señalética, uniformes, carta) y digital (web WordPress, RRSS, delivery, Google My Business) con ownership completo durante 2 años. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · 2 años de ownership end-to-end</em></p>
-        <p class="sc-desc en">First project as a designer in consultancy. Built from scratch the visual identity, design system and digital ecosystem of an artisan pizza chain in Madrid — which scaled from 1 to 6 locations during the project. Physical design (signage, uniforms, menu) and digital (WordPress web, social media, delivery, Google My Business) with full ownership over 2 years. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · 2 years end-to-end ownership</em></p>
-        <div class="sc-cta-row">
-          <a href="caso-4.html" class="sc-cta es" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
-          <a href="caso-4.html" class="sc-cta en" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
-        </div>
-      </div>
-      <div class="sc-visual" aria-hidden="true">
-        <img src="projects/04-paolo/assets/01-signage.jpg" class="sc-img" alt="Paolo by Danny's Jazz">
-      </div>
-      <div class="sc-metrics">
-        <div class="sc-metric">
-          <div class="sc-mval" style="color:#F2A222">×6</div>
-          <div class="sc-mname es">Locales durante el proyecto</div>
-          <div class="sc-mname en">Locations during project</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval">2 años</div>
-          <div class="sc-mname es">Ownership end-to-end</div>
-          <div class="sc-mname en">End-to-end ownership</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval">1</div>
-          <div class="sc-mname es">Design System construido desde 0</div>
-          <div class="sc-mname en">Design System built from scratch</div>
-        </div>
-      </div>
-      <a href="caso-4.html" class="sc-corner" style="color:#F2A222;" aria-label="Ver Caso de Estudio">↗</a>
-    </div>
-
-    <!-- CASO 5: WE ARE ACTIONS IT OPS — Build vs. Buy -->
-    <div class="sc-card reveal">
-      <div class="sc-content">
-        <div class="sc-num-row">
-          <div class="sc-num" style="color:#06b6d4;">05</div>
+          <div class="sc-num" style="color:#06b6d4;">04</div>
           <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">We Are Actions · Dept. IT</span>
         </div>
         <h3 class="sc-title es" style="color:#06b6d4">Cuando comprar no resuelve: <em style="color:rgba(255,255,255,0.65)">diagnóstico de fricción operativa IT</em></h3>
         <h3 class="sc-title en" style="color:#06b6d4">When buying doesn't solve it: <em style="color:rgba(255,255,255,0.65)">IT operational friction diagnosis</em></h3>
-        <p class="sc-desc es">Integrada en el equipo de IT de We Are Actions, identifiqué que Oracle — la herramienta corporativa de gestión de incidencias — generaba más fricción de la que resolvía. Analicé 4 patrones de fallo críticos, propuse una decisión estratégica Build vs. Buy y diseñé conceptualmente una plataforma interna de operaciones con 4 módulos. El proyecto no llegó a producción — fue el detonante directo de mi bootcamp de Product Design. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: discovery contextual · propuesta conceptual · estrategia de producto</em></p>
-        <p class="sc-desc en">Embedded in We Are Actions' IT team, I identified that Oracle — the corporate incident management tool — was generating more friction than it resolved. I analysed 4 critical failure patterns, proposed a Build vs. Buy strategic decision and conceptually designed an internal operations platform with 4 modules. The project didn't reach production — it was the direct trigger for my Product Design bootcamp. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: contextual discovery · conceptual proposal · product strategy</em></p>
+        <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, diagnostiqué que Oracle generaba más fricción de la que resolvía. Propuse la decisión Build vs. Buy y diseñé conceptualmente la plataforma interna. Fue el detonante de mi formación en Product Design. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: discovery contextual · propuesta conceptual · estrategia de producto</em></p>
+        <p class="sc-desc en">Embedded in We Are Actions' IT team, I diagnosed that Oracle was generating more friction than it solved. Proposed the Build vs. Buy decision and conceptually designed the internal platform. It triggered my Product Design training. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: contextual discovery · conceptual proposal · product strategy</em></p>
         <div class="sc-cta-row">
-          <a href="caso-5.html" class="sc-cta es" style="border-color:rgba(6,182,212,0.35); color:#06b6d4">Case Study</a>
-          <a href="caso-5.html" class="sc-cta en" style="border-color:rgba(6,182,212,0.35); color:#06b6d4">Case Study</a>
+          <span class="sc-cta sc-cta-disabled es" style="border-color:rgba(6,182,212,0.18); color:rgba(6,182,212,0.5); cursor:default; background:rgba(6,182,212,0.03);">En construcción</span>
+          <span class="sc-cta sc-cta-disabled en" style="border-color:rgba(6,182,212,0.18); color:rgba(6,182,212,0.5); cursor:default; background:rgba(6,182,212,0.03);">Coming Soon</span>
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
@@ -2487,7 +2618,48 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">Modules in conceptual proposal</div>
         </div>
       </div>
-      <a href="caso-5.html" class="sc-corner" style="color:#06b6d4;" aria-label="Ver Caso de Estudio">↗</a>
+      <span class="sc-corner-lock" style="color:rgba(6,182,212,0.35); cursor:default; position:absolute; top:28px; right:28px; font-size:14px;" aria-hidden="true" title="En construcción / Under construction">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </span>
+    </div>
+
+    <!-- CASO 05: PAOLO BY DANNY'S JAZZ — Customer Journey & Producto Digital -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num" style="color: #F2A222;">05</div>
+          <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">Paolo by Danny's Jazz</span>
+        </div>
+        <h3 class="sc-title es" style="color:#F2A222">El ecosistema digital que conectó <em style="color:rgba(255,255,255,0.65)">una pizzería en expansión con sus clientes</em></h3>
+        <h3 class="sc-title en" style="color:#F2A222">The digital ecosystem that connected <em style="color:rgba(255,255,255,0.65)">a growing pizzeria with its customers</em></h3>
+        <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 6 locales sin rediseño. Construido en pandemia. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
+        <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 6 locations without redesign. Built during the pandemic. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
+        <div class="sc-cta-row">
+          <a href="caso-5.html" class="sc-cta es" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
+          <a href="caso-5.html" class="sc-cta en" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
+        </div>
+      </div>
+      <div class="sc-visual" aria-hidden="true">
+        <img src="projects/04-paolo/assets/web4.png" class="sc-img" style="max-width: 90%; max-height: 90%;" alt="Paolo by Danny's Jazz — producto digital en producción">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval" style="color:#F2A222">×6</div>
+          <div class="sc-mname es">Locales sin rediseño</div>
+          <div class="sc-mname en">Locations without redesign</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">3</div>
+          <div class="sc-mname es">Journeys cubiertos en 1 producto</div>
+          <div class="sc-mname en">Journeys covered in 1 product</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval">2 años</div>
+          <div class="sc-mname es">Ownership end-to-end</div>
+          <div class="sc-mname en">End-to-end ownership</div>
+        </div>
+      </div>
+      <a href="caso-5.html" class="sc-corner" style="color:#F2A222;" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
   </div>
@@ -2496,7 +2668,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 <!-- ==================== PROCESS / ABOUT SECTION ==================== -->
 <section class="process-section" id="process">
   <div class="wrap">
-    <div class="sec-num"><span>03</span><div class="sec-num-line"></div></div>
+    <div class="sec-num"><span>04</span><div class="sec-num-line"></div></div>
     <div class="process-grid">
 
       <!-- Left: process steps -->
@@ -2601,50 +2773,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </div>
 </section>
 
-<!-- ==================== TECH STACK SECTION ==================== -->
-<section class="stack-section" id="stack">
-  <div class="wrap">
-    <div class="sec-num"><span>04</span><div class="sec-num-line"></div></div>
-    
-    <div class="stack-content">
-      <div class="stack-eyebrow">
-        <span class="es">• STACK DE PRODUCTO</span>
-        <span class="en">• PRODUCT STACK</span>
-      </div>
-      <h2 class="stack-title">
-        <span class="es">Producto, datos e IA como <span class="stack-text-gradient">una sola capa de decisión.</span></span>
-        <span class="en">Product, data, and AI as <span class="stack-text-gradient">a single decision layer.</span></span>
-      </h2>
-      <p class="stack-desc">
-        <span class="es">El stack no define el trabajo — el problema de negocio sí. Estas herramientas me permiten ir desde el diagnóstico de comportamiento hasta el diseño final y la medición de resultados en un único flujo de trabajo integrado.</span>
-        <span class="en">The stack doesn't define the work — the business problem does. These tools let me move from behaviour diagnosis to final design and results measurement in a single integrated workflow.</span>
-      </p>
-    </div>
 
-    <div class="stack-video-container">
-      <video src="assets/video-stack.mp4" autoplay="" loop="" muted="" playsinline="" class="stack-video"></video>
-    </div>
-
-    <div class="stack-pills">
-      <span class="stack-pill"><span class="es">Product Discovery</span><span class="en">Product Discovery</span></span>
-      <span class="stack-pill">CRO &amp; A/B Testing</span>
-      <span class="stack-pill">Design Systems</span>
-      <span class="stack-pill">Figma</span>
-      <span class="stack-pill">Bootstrap</span>
-      <span class="stack-pill">HTML &amp; CSS</span>
-      <span class="stack-pill">Adobe Analytics</span>
-      <span class="stack-pill">Microsoft Clarity</span>
-      <span class="stack-pill">Power BI</span>
-      <span class="stack-pill">WCAG 2.1</span>
-      <span class="stack-pill">AEM</span>
-      <span class="stack-pill"><span class="es">Customer Journey Mapping</span><span class="en">Customer Journey Mapping</span></span>
-      <span class="stack-pill">Impact Mapping</span>
-      <span class="stack-pill"><span class="es">Experimentación</span><span class="en">Experimentation</span></span>
-      <span class="stack-pill">Claude / IA</span>
-      <span class="stack-pill">GitHub</span>
-    </div>
-  </div>
-</section>
 
 <!-- ==================== CONTACT SECTION ==================== -->
 <section class="contact-section" id="contact">
