@@ -2603,6 +2603,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <div class="sc-cta-row">
           <span class="sc-cta sc-cta-disabled es" style="border-color:rgba(6,182,212,0.18); color:rgba(6,182,212,0.5); cursor:default; background:rgba(6,182,212,0.03);">En construcción</span>
           <span class="sc-cta sc-cta-disabled en" style="border-color:rgba(6,182,212,0.18); color:rgba(6,182,212,0.5); cursor:default; background:rgba(6,182,212,0.03);">Coming Soon</span>
+          <a href="https://www.notion.so/386d112a771e815d97e8fc97223509e0" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://www.notion.so/386d112a771e815d97e8fc97223509e0" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
@@ -2713,6 +2715,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <div class="sc-cta-row">
           <a href="caso-5.html" class="sc-cta es" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
           <a href="caso-5.html" class="sc-cta en" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
+          <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
@@ -3008,26 +3012,4 @@ function closeMenu() {
       setTimeout(tick, 1000);
     }
     tick();
-  })();
-
-  const fadeTargets = document.querySelectorAll(
-    '.sobre-content-col, .mobile-impact, ' +
-    '.process-step, .about-right, .contact-section, .work-header'
-  );
-  fadeTargets.forEach(el => el.classList.add('fade-up'));
-
-  // sc-cards: only trigger the dashboard animations (revealed class), no fade-up movement
-  const scCards = document.querySelectorAll('.sc-card');
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classList.add('revealed'); io.unobserve(target); }
-    });
-  }, { threshold: 0.10 });
-
-  fadeTargets.forEach(el => io.observe(el));
-  scCards.forEach(el => io.observe(el));
-})();
-</script>
-
-</body></html>
+  
