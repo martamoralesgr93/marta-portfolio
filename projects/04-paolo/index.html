@@ -1275,9 +1275,9 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
 <section class="sistema" id="sistema">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="eyebrow" style="color:var(--naranja)">Atención digital</span>
-      <h2 class="h-display">Donde estés, <em>tu Paolo's te atiende.</em></h2>
-      <p class="lead">Para pedir la cena del viernes, organizar un cumpleaños infantil o simplemente consultar alérgenos. Escríbenos y te respondemos al instante, sin esperas.</p>
+      <span class="eyebrow" style="color:var(--naranja)">Asistente virtual · siempre disponible</span>
+      <h2 class="h-display">Reserva, pide y consulta <em>sin llamar.</em></h2>
+      <p class="lead">Hemos creado un asistente de chat para que puedas reservar una mesa, hacer tu pedido a domicilio o resolver cualquier duda — alérgenos, horarios, restaurantes — sin necesidad de llamar. Pulsa el botón naranja que aparece en la esquina de la pantalla y el asistente se abre al instante.</p>
     </div>
     <div style="text-align:center">
       <a href="#reservar" class="tel-box" aria-label="Abrir asistente de Paolo's">
@@ -1285,16 +1285,16 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <div class="tel-text">
-          <span class="lbl">escríbenos ahora</span>
-          <span class="num" style="font-size:clamp(22px,3vw,32px)">Reservar o pedir</span>
+          <span class="lbl">toca para abrir el chat</span>
+          <span class="num" style="font-size:clamp(22px,3vw,32px)">Abrir el asistente</span>
         </div>
       </a>
       <p style="margin-top:18px;font-size:14px;color:rgba(245,237,216,.55)">¿Prefieres hablar con nosotros? <a href="tel:914458374" style="color:var(--naranja);font-weight:600">Llámanos al 91 445 83 74</a></p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="n">1</div><h4>Escríbenos</h4><p>Abre el asistente desde cualquier página. Sin esperas, sin pulsar opciones.</p></div>
-      <div class="step reveal"><div class="n">2</div><h4>Dinos qué necesitas</h4><p>Reservar mesa, pedir a domicilio, consultar alérgenos u horarios. Tú eliges.</p></div>
-      <div class="step reveal"><div class="n">3</div><h4>Confirmamos al instante</h4><p>Tu reserva o pedido queda registrado. Te avisamos si hay algún cambio.</p></div>
+      <div class="step reveal"><div class="n">1</div><h4>Pulsa el botón naranja</h4><p>Está fijo en la esquina inferior derecha de la pantalla. Lo ves en cualquier momento, en cualquier página.</p></div>
+      <div class="step reveal"><div class="n">2</div><h4>Elige lo que necesitas</h4><p>Reservar mesa, pedir a domicilio, consultar alérgenos u horarios. El asistente te guía paso a paso.</p></div>
+      <div class="step reveal"><div class="n">3</div><h4>Listo en segundos</h4><p>Tu reserva o pedido queda registrado. Sin esperas, sin música de espera, sin llamadas.</p></div>
     </div>
   </div>
 </section>
@@ -1427,24 +1427,24 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
 /* ===================== DATA ===================== */
 const IMG = {
   margherita:"assets/4formaggi-nueva.jpg",
-  prosc:"assets/platos/edit1.jpg",
+  prosc:"assets/cocinando.png",
   napoli:"assets/napoli.png",
   cuatro:"assets/4 stagioni.png",
   diavola:"assets/diavola.png",
-  carbonara:"assets/platos/edit2.jpg",
+  carbonara:"assets/cocinando2.png",
   paolo:"assets/composicion de platos.png",
   trufa:"assets/tartufo.png",
-  bbq:"assets/platos/diavola.jpg",
-  pera:"assets/4formaggi.png",
+  bbq:"assets/diavola.png",
+  pera:"assets/4 formaggi.png",
   asturiana:"assets/diavola.png",
-  conde:"assets/platos/edit1.jpg",
-  veg:"assets/platos/4stagioni.jpg",
+  conde:"assets/composicion de platos.png",
+  veg:"assets/4 stagioni.png",
   vita:"assets/4 stagioni.png",
-  veggie:"assets/platos/4stagioni.jpg",
-  parm:"assets/platos/4formaggi.jpg",
-  tierra:"assets/platos/tartufo.jpg",
-  kid1:"assets/platos/4formaggi.jpg",
-  kid2:"assets/platos/edit1.jpg",
+  veggie:"assets/4 stagioni.png",
+  parm:"assets/4 formaggi.png",
+  tierra:"assets/tartufo.png",
+  kid1:"assets/4 formaggi.png",
+  kid2:"assets/cocinando.png",
   lasab:"https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=800&q=80",
   lasav:"https://images.unsplash.com/photo-1619895092538-128341789043?auto=format&fit=crop&w=800&q=80",
   tagl:"https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=800&q=80",
@@ -1670,15 +1670,21 @@ setupBackToTop();
   let pedido  = {};    // datos acumulados de pedido
 
   /* ---- OPEN / CLOSE ---- */
-  function openChat(){
+  function openChat(flow){
     isOpen = true;
     win.classList.add('open');
     trigger.classList.add('open');
     trigger.setAttribute('aria-expanded','true');
     badge.classList.add('hidden');
-    if(!msgsEl.children.length) initConversation();
+    if(!msgsEl.children.length){
+      initConversation(flow);
+    } else if(flow){
+      // Chat ya iniciado: lanzar el flujo directamente
+      addMsg(flow==='reservar' ? 'Reservar mesa' : 'Pedir a domicilio', 'user');
+      clearQuick();
+      handleAction(flow, flow==='reservar' ? 'Reservar mesa' : 'Pedir a domicilio');
+    }
     setTimeout(()=>input.focus(),300);
-    // Limpiar hash para no interferir con navegación
     if(location.hash === '#reservar') history.replaceState(null,'',location.pathname + location.search);
   }
   function closeChat(){
@@ -1691,9 +1697,9 @@ setupBackToTop();
   trigger.addEventListener('click', ()=>{ isOpen ? closeChat() : openChat(); });
   closeBtn.addEventListener('click', closeChat);
 
-  // Abrir cuando se navega a #reservar
-  window.addEventListener('hashchange', ()=>{ if(location.hash==='#reservar') openChat(); });
-  if(location.hash==='#reservar') setTimeout(openChat, 400);
+  // Abrir cuando se navega a #reservar — lanza flujo de reserva directamente
+  window.addEventListener('hashchange', ()=>{ if(location.hash==='#reservar') openChat('reservar'); });
+  if(location.hash==='#reservar') setTimeout(()=>openChat('reservar'), 400);
 
   /* ---- MENSAJES ---- */
   function addMsg(text, who, delay=0){
@@ -2076,16 +2082,25 @@ En unos minutos te confirman el tiempo estimado. ¡Que aproveche! 🍕`,'bot');
     });
   }
   // Reiniciar setQuick y re-lanzar
-  function initConversation(){
+  function initConversation(flow){
     state = 'start';
     showTyping(600).then(()=>{
       addMsg('Hola, soy el asistente de Paolo\'s. ¿En qué puedo ayudarte?','bot');
-      setQuick([
-        {label:'Alérgenos',        action:'alergenos', icon:'alergenos'},
-        {label:'Reservar mesa',    action:'reservar',  icon:'reservar'},
-        {label:'Pedir a domicilio',action:'pedir',     icon:'pedir'},
-        {label:'Horarios',         action:'horarios',  icon:'horarios'},
-      ]);
+      if(flow === 'reservar'){
+        // Saltar directamente al flujo de reserva
+        setTimeout(()=>{
+          addMsg('Reservar mesa','user');
+          clearQuick();
+          handleAction('reservar','Reservar mesa');
+        }, 350);
+      } else {
+        setQuick([
+          {label:'Alérgenos',        action:'alergenos', icon:'alergenos'},
+          {label:'Reservar mesa',    action:'reservar',  icon:'reservar'},
+          {label:'Pedir a domicilio',action:'pedir',     icon:'pedir'},
+          {label:'Horarios',         action:'horarios',  icon:'horarios'},
+        ]);
+      }
     });
   }
 
@@ -2131,7 +2146,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 500);
 });
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script async src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
