@@ -70,7 +70,7 @@ En orden de impacto para los roles objetivo:
 4. **Activación de ecosistema de delivery** (Glovo, Uber Eats, JustEat) — esto es product strategy: ¿en qué canales estamos? ¿Con qué oferta? ¿Cómo afecta al margen?
 5. **Analytics → decisiones concretas** — Clarity + GA4 usados para identificar fricción y proponer cambios. Esto es product iteration, no reporting.
 6. **Frontend development propio** — diseñó y construyó. Es señal de ownership end-to-end.
-7. **Escalabilidad: 1 → 6 locales, mismo producto** — cómo el sistema digital se replicó sin rediseño.
+7. **Escalabilidad: 1 → 5 locales, mismo producto** — cómo el sistema digital se replicó sin rediseño.
 8. **QR como sustituto de carta física** — decisión de touchpoint tomada en contexto real (pandemia).
 9. **La web vive en GitHub** — el producto existe, es público, se puede ver. Eso es shipping.
 
@@ -79,12 +79,12 @@ En orden de impacto para los roles objetivo:
 ## 5. La narrativa correcta
 
 ### Frase de arranque para el caso:
-> "En 2020, tener presencia digital dejó de ser una ventaja competitiva para la restauración. Se convirtió en la condición de seguir abierto. Diseñé y construí el ecosistema digital que conectó a Paolo con sus clientes durante ese momento — y que siguió funcionando mientras el negocio crecía de 1 a 6 locales."
+> "En 2020, tener presencia digital dejó de ser una ventaja competitiva para la restauración. Se convirtió en la condición de seguir abierto. Diseñé y construí el ecosistema digital que conectó a Paolo con sus clientes durante ese momento — y que siguió funcionando mientras el negocio crecía de 1 a 5 locales."
 
 ### La historia en tres actos:
 - **Acto 1 — El problema de negocio:** Una pizzería artesana con producto excelente e identidad reconocible, pero sin ningún canal digital en el peor momento posible para no tenerlo.
 - **Acto 2 — El producto que construí:** Decisiones de UX, IA y frontend que conectaron la experiencia física del restaurante con el mundo online — delivery, localización, reserva, carta digital.
-- **Acto 3 — El impacto:** Un ecosistema digital que sobrevivió al crecimiento (×6 locales) y siguió funcionando cuando el proyecto terminó.
+- **Acto 3 — El impacto:** Un ecosistema digital que sobrevivió al crecimiento (×5 locales) y siguió funcionando cuando el proyecto terminó.
 
 ---
 
@@ -95,13 +95,13 @@ En orden de impacto para los roles objetivo:
 - **Título:** Conectar una experiencia física con el mundo digital. En el peor momento para no haberlo hecho antes.
 - **Tags a usar:** Customer Journey · UX/UI · Information Architecture · Frontend Development · Delivery Ecosystem · Analytics · Product Design · Digital Transformation
 - **Rol:** Product Designer · Frontend Developer
-- **Meta datos:** Período 2019–2022 · Escala 1→6 locales · Stack: WordPress · Elementor · Adobe XD · Clarity · GA4
+- **Meta datos:** Período 2019–2022 · Escala 1→5 locales · Stack: WordPress · Elementor · Adobe XD · Clarity · GA4
 
 ### QUICK SUMMARY (reencuadrar)
 - **El Problema:** Una cadena de pizzerías en expansión sin canal digital en 2020.
 - **Mi Rol:** Ownership completo del producto digital — de la arquitectura de información al código en producción.
 - **Qué Hice:** Diseñé los 3 customer journeys del negocio (delivery, visita, reserva), construí la web y activé el ecosistema digital completo.
-- **Resultado:** Producto vivo, activo y escalado a 6 locales sin rediseño.
+- **Resultado:** Producto vivo, activo y escalado a 5 locales sin rediseño.
 
 ### [NUEVA SECCIÓN] — EL CONTEXTO DE NEGOCIO (breve, 3-4 párrafos)
 - Quién es Paolo (sin historia de marca — contexto de negocio)
@@ -146,7 +146,7 @@ Las decisiones que merece explicar una Product Designer:
    - Problema de IA: las cartas físicas tienen lógica visual, las digitales tienen lógica de scroll
    - Decisión de categorización y nomenclatura
 
-5. **¿Cómo escala el mismo producto digital a 6 locales?**
+5. **¿Cómo escala el mismo producto digital a 5 locales?**
    - Qué elementos son centrales (misma web) y cuáles son locales (horarios, teléfonos)
    - La arquitectura que permite replicar sin rediseño
 
@@ -182,7 +182,7 @@ Este material existe pero está enterrado. Necesita su propia sección:
 - La "Auditoría estratégica 2026" completa (las 10 preguntas, el ADN vs. ruido — es brand strategy, no product design)
 
 ### [MANTENER] — RESULT
-- El ×6 locales sigue siendo el número más potente
+- El ×5 locales sigue siendo el número más potente
 - Añadir: el producto sigue vivo, accesible en martamoralesgr93.github.io
 - Añadir: el ecosistema funcionó sin el diseñador cuando el proyecto terminó
 
@@ -214,7 +214,7 @@ Hiberus trabaja con clientes de industrias distintas. Busca diseñadores que ent
 - Capacidad técnica (frontend)
 - Trabajo con datos (Clarity, GA4)
 - Contexto de cliente real
-- Resultado visible y medible (6 locales, producto vivo)
+- Resultado visible y medible (5 locales, producto vivo)
 
 **Veredicto con el frame actual:** "Freelance de branding, no es lo que buscamos."
 **Veredicto con el reframe:** "Diseñadora que construye de principio a fin, interesante."

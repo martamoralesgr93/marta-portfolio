@@ -2722,8 +2722,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es" style="color:#F2A222">El ecosistema digital que conectó <em style="color:rgba(255,255,255,0.65)">una pizzería en expansión con sus clientes</em></h3>
         <h3 class="sc-title en" style="color:#F2A222">The digital ecosystem that connected <em style="color:rgba(255,255,255,0.65)">a growing pizzeria with its customers</em></h3>
-        <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 6 locales sin rediseño. Construido en pandemia. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
-        <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 6 locations without redesign. Built during the pandemic. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
+        <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 5 locales sin rediseño. Construido en pandemia. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
+        <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
         <div class="sc-cta-row">
           <a href="paolo-pizzeria" class="sc-cta es" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
           <a href="paolo-pizzeria" class="sc-cta en" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
@@ -3257,6 +3257,17 @@ function closeMenu() {
   #chat-panel { right: 12px; left: 12px; width: auto; bottom: 84px; }
   #chat-trigger { right: 20px; bottom: 20px; }
 }
+
+/* Undo button */
+#chat-undo {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.35); cursor: pointer;
+  display: none; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+#chat-undo:hover { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.75); transform: scale(1.08); }
+#chat-undo.visible { display: flex; }
 </style>
 
 <button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
@@ -3284,6 +3295,11 @@ function closeMenu() {
         <span class="en">Available now</span>
       </div>
     </div>
+    <button id="chat-undo" onclick="chatUndo()" aria-label="Deshacer último mensaje" title="Volver atrás">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>
+      </svg>
+    </button>
   </div>
   <div class="chat-messages" id="chatMessages"></div>
   <div class="chat-chips" id="chatChips"></div>
@@ -3321,7 +3337,7 @@ function closeMenu() {
         "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
       ],
       cases: [
-        "Casos de estudio con impacto real:<br><br>• <strong>ILUNION CRO</strong> — conversión directa del 3.36% al 6.5% con rediseño basado en datos<br>• <strong>Booking Engine</strong> — motor de reservas hotelero de research a producción<br>• <strong>CEF Design System</strong> — +80 componentes con tokens, accesibilidad y docs para dev<br>• <strong>IT Ops Oracle</strong> — producto B2B para operaciones IT<br><br>¿Te cuento más sobre alguno?"
+        "Marta has <strong>5 case studies across 4 different sectors</strong>. What ties them together isn't the industry — it's the same pattern: she diagnoses the business problem before touching a single pixel.<br><br>• <strong>Booking Engine (ILUNION)</strong> — hotel booking engine redesign from scratch to production<br>• <strong>CRO AEM (ILUNION)</strong> — direct conversion 3.36% → 6.5% using real data experiments<br>• <strong>CEF Design System</strong> — EdTech design system from zero: 80+ components, tokens, WCAG<br>• <strong>Paolo by Danny's Jazz</strong> — visual identity + full digital ecosystem for a chain that grew from 1 to 5 locations <em>without a redesign</em><br>• <strong>Build vs. Buy · Oracle IT</strong> — strategic friction diagnosis embedded in the team: conclusion was to build an internal tool, not patch Oracle<br><br>Want me to go deeper on any of them?"
       ],
       remote: [
         "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
@@ -3347,6 +3363,18 @@ function closeMenu() {
       ],
       cro: [
         "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
+      ],
+      paolo: [
+        "Paolo by Danny's Jazz es uno de los proyectos que mejor refleja el <strong>ownership real de Marta</strong>. No fue un encargo de diseño — fue un problema de negocio entero: una cadena de pizzerías artesanas sin canal digital en plena pandemia, sin web, sin delivery, sin presencia en Google.<br><br>Diseñó y construyó desde cero: identidad visual completa, web (Adobe XD → WordPress + Elementor), los 3 customer journeys del negocio (delivery, visita al local, reserva), ecosistema de delivery activo (Glovo, Uber Eats, JustEat), cartas QR, Google My Business y un ciclo mensual de analítica con Clarity + GA4 + Metricool.<br><br>Resultado: el producto escaló de 1 a 5 locales en 2 años <strong>sin necesidad de rediseño</strong>. +32% en llamadas directas desde móvil el primer mes. Cuando el proyecto terminó, el ecosistema seguía funcionando solo. Eso es diseño que funciona."
+      ],
+      oracle: [
+        "El caso Oracle (Build vs. Buy) muestra a Marta en modo <strong>diagnosticadora estratégica, no ejecutora de interfaces.</strong><br><br>We Are Actions llevaba años gestionando incidencias IT con Oracle. El responsable de sistemas llegó a dirección con un Excel con datos reales de fricción. Marta estaba <em>embebida en el equipo IT</em>, así que hizo discovery contextual desde dentro: vio la fricción ocurrir en tiempo real, no en una sesión de research artificial.<br><br>Su diagnóstico: Oracle no estaba mal diseñado — era simplemente la herramienta equivocada para <em>sus</em> flujos. La recomendación fue construir una herramienta interna en lugar de seguir parcheando una plataforma genérica.<br><br>El caso study está en elaboración, pero la propuesta conceptual fue entregada. Representa exactamente el tipo de trabajo que más le interesa: <strong>identificar el problema real antes de proponer la solución.</strong>"
+      ],
+      booking: [
+        "El <strong>Booking Engine de ILUNION</strong> fue el rediseño end-to-end del motor de reservas de una cadena hotelera — de la investigación con usuarios hasta la entrega a producción. El reto era entender por qué la conversión en canal directo era tan baja y proponer una solución argumentada. Marta lideró todo: research, arquitectura de información, prototipado, test con usuarios y handoff. Este proyecto fue la base sobre la que después se aplicaron los experimentos de CRO que llevaron la conversión del 3.36% al 6.5%."
+      ],
+      cef: [
+        "El <strong>CEF Design System</strong> demuestra la capacidad de Marta para crear infraestructura de diseño desde cero en un entorno EdTech con restricciones de accesibilidad estrictas.<br><br>Construyó un sistema con +80 componentes en Figma: tokens de diseño, variantes, estados, documentación para desarrollo y cumplimiento WCAG 2.1 AA. El objetivo no era solo coherencia visual — era que los equipos de desarrollo pudieran construir con él de forma autónoma."
       ],
       whyhire: [
         "Tres razones para hablar con Marta:<br><br>1. <strong>Piensa en negocio, no solo en pixels</strong> — cada decisión de diseño la ancla en datos y objetivos medibles.<br>2. <strong>Ownership real</strong> — lleva proyectos desde el discovery hasta producción sin que nadie le tenga que gestionar el proceso.<br>3. <strong>Adaptabilidad multisector</strong> — ha demostrado impacto en turismo, EdTech y consultoría. Aprende rápido y entrega rápido."
@@ -3405,6 +3433,18 @@ function closeMenu() {
       cro: [
         "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
       ],
+      paolo: [
+        "Paolo by Danny's Jazz is one of the projects that best shows Marta's <strong>real ownership mindset</strong>. It wasn't a design brief — it was an entire business problem: an artisan pizza chain in the middle of a pandemic with no website, no delivery, no Google presence, nothing.<br><br>She designed and built from scratch: complete visual identity, the full website (Adobe XD → WordPress + Elementor), 3 customer journeys (delivery, in-store visit, booking), active delivery ecosystem (Glovo, Uber Eats, JustEat), QR menus, Google My Business, and a monthly analytics cycle with Clarity + GA4 + Metricool.<br><br>Result: the product scaled from 1 to 5 locations in 2 years <strong>without a redesign</strong>. +32% in direct mobile calls in the first month. When the project ended, the ecosystem kept running on its own. That's what good design looks like."
+      ],
+      oracle: [
+        "The Oracle case (Build vs. Buy) shows Marta in <strong>strategic diagnostician mode — not interface executor.</strong><br><br>We Are Actions had been managing IT incidents with Oracle for years. The systems manager came to leadership with real-data showing friction costs. Marta was <em>embedded in the IT team</em>, so she did contextual discovery from the inside: she saw friction happening in real time, not in an artificial research session.<br><br>Her diagnosis: Oracle wasn't badly designed — it was simply the wrong tool for <em>their</em> workflows. The recommendation was to build an internal tool rather than keep patching a generic platform.<br><br>The case study is still being documented, but the conceptual proposal was delivered. It represents exactly the kind of work she values most: <strong>finding the real problem before proposing the solution.</strong>"
+      ],
+      booking: [
+        "The <strong>ILUNION Booking Engine</strong> was an end-to-end redesign of a hotel chain's reservation engine — from user research to production handoff. The challenge was understanding why direct channel conversion was so low and proposing a data-backed solution. Marta led the full process: research, information architecture, prototyping, user testing and handoff. This was the foundation for the CRO experiments that later lifted conversion from 3.36% to 6.5%."
+      ],
+      cef: [
+        "The <strong>CEF Design System</strong> shows Marta's ability to build design infrastructure from scratch in an EdTech environment with strict accessibility requirements.<br><br>She built a system with 80+ Figma components: design tokens, variants, states, developer documentation and WCAG 2.1 AA compliance. The goal wasn't just visual consistency — it was enabling development teams to build autonomously."
+      ],
       whyhire: [
         "Three reasons to talk to Marta:<br><br>1. <strong>Business-first thinking</strong> — every design decision is anchored in data and measurable goals.<br>2. <strong>Real ownership</strong> — she takes projects from discovery to production without needing her process managed.<br>3. <strong>Multi-sector adaptability</strong> — proven impact in travel, EdTech and consulting. Fast learner, fast deliverer."
       ],
@@ -3421,17 +3461,17 @@ function closeMenu() {
   var CHIPS = {
     es: [
       {label:'¿Quién es Marta?',key:'about'},
-      {label:'Casos de estudio',key:'cases'},
-      {label:'Habilidades',key:'skills'},
-      {label:'Disponibilidad',key:'availability'},
+      {label:'Todos los casos',key:'cases'},
+      {label:'Paolo · ecosistema digital',key:'paolo'},
+      {label:'Oracle · diagnóstico IT',key:'oracle'},
       {label:'¿Por qué contratarla?',key:'whyhire'},
       {label:'Concertar entrevista',key:'interview'}
     ],
     en: [
       {label:'Who is Marta?',key:'about'},
-      {label:'Case studies',key:'cases'},
-      {label:'Skills',key:'skills'},
-      {label:'Availability',key:'availability'},
+      {label:'All case studies',key:'cases'},
+      {label:'Paolo · digital ecosystem',key:'paolo'},
+      {label:'Oracle · IT diagnosis',key:'oracle'},
       {label:'Why hire her?',key:'whyhire'},
       {label:'Schedule interview',key:'interview'}
     ]
@@ -3442,7 +3482,12 @@ function closeMenu() {
     {keys:['experiencia','experience','años','years','trayectoria','background','worked','llevás','llevas'],intent:'experience'},
     {keys:['habilidad','skill','sabe','know','domina','masters','puedes','capaz','capable'],intent:'skills'},
     {keys:['herramienta','tool','adobe','jira','notion','hotjar','bootstrap','figma','stack','usa'],intent:'tools'},
-    {keys:['caso','case','estudio','study','proyecto','project','portfolio','portafolio','ilunion','booking','cef','oracle','trabajo','work'],intent:'cases'},
+    {keys:['caso','case','estudio','study','proyecto','project','portfolio','portafolio','trabajo','work'],intent:'cases'},
+    {keys:['paolo','pizzería','pizzeria','pizzer','danny','ecosistema digital','digital ecosystem','1 a 5','1 to 5','wordpress','elementor'],intent:'paolo'},
+    {keys:['oracle','it ops','build vs','fricción it','it friction','herramienta interna','internal tool','incidencia','incident','ticket it'],intent:'oracle'},
+    {keys:['booking','motor de reservas','reserva','hotel','hospedaje','hospitality'],intent:'booking'},
+    {keys:['cef','design system','sistema de diseño','edtech','accesibilidad','accessibility','wcag','componente','component','token'],intent:'cef'},
+    {keys:['ilunion','cro','conversion','conversión','a/b','ab test','aem','experimento','experiment'],intent:'cro'},
     {keys:['remoto','remote','presencial','hybrid','hibrido','híbrido','madrid','ubicacion','location','donde','where'],intent:'remote'},
     {keys:['disponib','available','cuándo','when','incorpor','start','join','empezar','inmediata'],intent:'availability'},
     {keys:['salario','salary','sueldo','wage','pay','rango','compensacion','compensation','pretensiones','expectations'],intent:'salary'},
@@ -3475,6 +3520,7 @@ function closeMenu() {
     var bubble=document.createElement('div');bubble.className='chat-bubble';
     bubble.innerHTML=text;wrap.appendChild(bubble);box.appendChild(wrap);
     box.scrollTop=box.scrollHeight;
+    return wrap;
   }
 
   function showTyping(){
@@ -3489,27 +3535,61 @@ function closeMenu() {
   function renderChips(items){
     var c=document.getElementById('chatChips');c.innerHTML='';
     items.forEach(function(chip){
-      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
+      var btn=document.createElement('button');btn.className='chat-chip';
+      btn.textContent=chip.label;
+      btn.setAttribute('data-key',chip.key);
       btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
       c.appendChild(btn);
     });
   }
 
+  /* History stack: each entry = {userEl, botEl, chips} */
+  var history=[];
+
   function resetChat(){
     document.getElementById('chatMessages').innerHTML='';
     document.getElementById('chatChips').innerHTML='';
+    document.getElementById('chat-undo').classList.remove('visible');
+    history=[];
     initialized=false;
     isTyping=false;
     initChat();
   }
 
+  window.chatUndo=function(){
+    if(!history.length||isTyping)return;
+    var last=history.pop();
+    if(last.userEl&&last.userEl.parentNode) last.userEl.parentNode.removeChild(last.userEl);
+    if(last.botEl&&last.botEl.parentNode)   last.botEl.parentNode.removeChild(last.botEl);
+    /* Restore chips */
+    var c=document.getElementById('chatChips');c.innerHTML='';
+    (last.prevChips||[]).forEach(function(chip){
+      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
+      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
+      c.appendChild(btn);
+    });
+    if(!history.length) document.getElementById('chat-undo').classList.remove('visible');
+    var box=document.getElementById('chatMessages');
+    box.scrollTop=box.scrollHeight;
+  };
+
   function sendMessage(text,intentOverride){
     if(isTyping)return;
-    addMsg(text,'user');isTyping=true;
+    /* Snapshot current chips before clearing */
+    var prevChips=[];
+    document.getElementById('chatChips').querySelectorAll('.chat-chip').forEach(function(b){
+      prevChips.push({label:b.textContent,key:b.getAttribute('data-key')||''});
+    });
+    var userEl=addMsg(text,'user');
+    isTyping=true;
     var intent=intentOverride||detectIntent(text);
     showTyping();
     setTimeout(function(){
-      removeTyping();addMsg(getResponse(intent),'bot');isTyping=false;
+      removeTyping();
+      var botEl=addMsg(getResponse(intent),'bot');
+      isTyping=false;
+      history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
+      document.getElementById('chat-undo').classList.add('visible');
       var lang=getLang();
       var alwaysChips = lang==='en'
         ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]

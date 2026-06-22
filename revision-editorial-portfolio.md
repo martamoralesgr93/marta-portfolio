@@ -62,12 +62,12 @@ Las **correcciones en los casos** son menores: algunos learnings demasiado gené
 ### Párrafo de trayectoria ⚠️ CAMBIO URGENTE
 
 **Original:**
-> "Mi trayectoria combina la investigación profunda de fricción operativa en sistemas complejos B2B (como la estrategia Build vs. Buy para operaciones de IT en We Are Actions) con la creación y escalado de sistemas de diseño 360° desde la base (llevando a Paolo de 1 a 6 locales). Esta base híbrida entre diseño de marca y análisis operativo me permite hoy abordar problemas complejos de conversión web y diseño de sistemas con un fuerte enfoque técnico y de negocio."
+> "Mi trayectoria combina la investigación profunda de fricción operativa en sistemas complejos B2B (como la estrategia Build vs. Buy para operaciones de IT en We Are Actions) con la creación y escalado de sistemas de diseño 360° desde la base (llevando a Paolo de 1 a 5 locales). Esta base híbrida entre diseño de marca y análisis operativo me permite hoy abordar problemas complejos de conversión web y diseño de sistemas con un fuerte enfoque técnico y de negocio."
 
 **Problema:** "Esta base híbrida entre diseño de marca y análisis operativo me permite hoy abordar problemas complejos con un fuerte enfoque técnico y de negocio" — cada palabra de esta frase es genérica. "Base híbrida", "abordar problemas complejos", "fuerte enfoque técnico y de negocio" son exactamente el lenguaje que quieres eliminar.
 
 **Propuesta:**
-> "Empecé construyendo la identidad visual de una pizzería que pasó de 1 a 6 locales. Después identifiqué que Oracle generaba más fricción de la que resolvía — y propuse reemplazarlo. Hoy trabajo en el funnel de reservas de un hotel con canal directo como palanca principal. El hilo es el mismo: entender qué está fallando antes de diseñar nada."
+> "Empecé construyendo la identidad visual de una pizzería que pasó de 1 a 5 locales. Después identifiqué que Oracle generaba más fricción de la que resolvía — y propuse reemplazarlo. Hoy trabajo en el funnel de reservas de un hotel con canal directo como palanca principal. El hilo es el mismo: entender qué está fallando antes de diseñar nada."
 
 **Por qué funciona:** narra la trayectoria a través de decisiones concretas, no de capacidades abstractas. El lector infiere la "base híbrida" sin que tengas que declararla.
 
