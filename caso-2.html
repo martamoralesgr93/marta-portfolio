@@ -1102,4 +1102,26 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   const io = new IntersectionObserver(entries => {
-    entries.forEach(({ target, isIntersecti
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+    });
+  }, { threshold: 0.01 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  const stored = localStorage.getItem('portfolio-lang');
+  if (stored === 'en') {
+    document.documentElement.classList.add('lang-en');
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = 'ES';
+  }
+
+  function toggleLang() {
+    const html = document.documentElement;
+    const btn = document.getElementById('langToggle');
+    const isEn = html.classList.toggle('lang-en');
+    btn.textContent = isEn ? 'ES' : 'EN';
+    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+  }
+</script>
+</body>
+</html>

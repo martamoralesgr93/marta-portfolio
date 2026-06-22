@@ -774,4 +774,27 @@
 <script>
   const io = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classLis
+      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  // Lang toggle (bilingual support)
+  const stored = localStorage.getItem('portfolio-lang');
+  if (stored === 'en') {
+    document.documentElement.classList.add('lang-en');
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = 'ES';
+  }
+
+  function toggleLang() {
+    const html = document.documentElement;
+    const btn = document.getElementById('langToggle');
+    const isEn = html.classList.toggle('lang-en');
+    btn.textContent = isEn ? 'ES' : 'EN';
+    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+  }
+</script>
+</body>
+</html>
+
