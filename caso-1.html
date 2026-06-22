@@ -715,6 +715,11 @@
       <p class="p fu" style="font-size: 13px; color: var(--text-dim); margin: 0;">Datos específicos de conversión son confidenciales. Los resultados reflejan seguimiento analítico, observación de comportamiento y validaciones internas posteriores al lanzamiento.</p>
     </div>
 
+    <div style="margin-top: 20px; padding: 14px 18px; border-left: 2px solid rgba(167,139,250,0.35); background: rgba(167,139,250,0.04); border-radius: 0 8px 8px 0;">
+      <p class="es fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generación y coordinación de assets visuales del canal directo con IA generativa (Vertex AI · Gemini · Figma) — garantizando consistencia de marca y nivel de calidad.</p>
+      <p class="en fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generation and coordination of direct channel visual assets using generative AI (Vertex AI · Gemini · Figma) — ensuring brand consistency and quality standard.</p>
+    </div>
+
   </div>
 </section>
 
@@ -769,27 +774,4 @@
 <script>
   const io = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(el => io.observe(el));
-
-  // Lang toggle (bilingual support)
-  const stored = localStorage.getItem('portfolio-lang');
-  if (stored === 'en') {
-    document.documentElement.classList.add('lang-en');
-    const btn = document.getElementById('langToggle');
-    if (btn) btn.textContent = 'ES';
-  }
-
-  function toggleLang() {
-    const html = document.documentElement;
-    const btn = document.getElementById('langToggle');
-    const isEn = html.classList.toggle('lang-en');
-    btn.textContent = isEn ? 'ES' : 'EN';
-    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
-  }
-</script>
-</body>
-</html>
-
+      if (isIntersecting) { target.classLis

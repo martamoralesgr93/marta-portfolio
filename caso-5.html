@@ -1557,48 +1557,34 @@
   </div>
 </section>
 
-<footer class="cs-footer">
-  <div class="cs-wrap">
-    <div class="footer-label es">Siguiente caso</div>
-    <div class="footer-label en">Next case</div>
-    <h2 class="es">¿Vemos otro proyecto?</h2>
-    <h2 class="en">Want to see another project?</h2>
-    <div class="footer-actions">
-      <a href="caso-3.html" class="btn btn-secondary es">← Caso 03</a>
-      <a href="caso-3.html" class="btn btn-secondary en">← Case 03</a>
-      <a href="index.html" class="btn btn-secondary es">Volver</a>
-      <a href="index.html" class="btn btn-secondary en">Back</a>
-      <a href="caso-1.html" class="btn btn-primary es">Caso 01 →</a>
-      <a href="caso-1.html" class="btn btn-primary en">Case 01 →</a>
+
+<!-- ══════════════════════════════════════
+     2026 LAB · Experimentación prospectiva
+══════════════════════════════════════ -->
+<section style="padding: 80px 0; border-top: 1px solid rgba(242,162,34,0.18); background: linear-gradient(180deg, rgba(242,162,34,0.04) 0%, transparent 100%); position: relative; overflow: hidden;">
+  <!-- Decorative glow -->
+  <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:200px; background:radial-gradient(ellipse, rgba(242,162,34,0.08) 0%, transparent 70%); pointer-events:none;"></div>
+
+  <div class="cs-wrap" style="position:relative; z-index:1;">
+
+    <!-- Badge -->
+    <div style="display:inline-flex; align-items:center; gap:10px; padding:6px 16px; border-radius:100px; border:1px solid rgba(242,162,34,0.35); background:rgba(242,162,34,0.07); margin-bottom:28px;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#F2A222;display:block;box-shadow:0 0 8px rgba(242,162,34,0.6);"></span>
+      <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#F2A222;">2026 Lab</span>
     </div>
-  </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
-    });
-  }, { threshold: 0.01 });
-  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+    <!-- ES -->
+    <div class="es">
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">Laboratorio 2026:<br><em style="color:rgba(255,255,255,0.65);">lo que experimentaría hoy sobre este proyecto</em></h2>
+      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:680px; margin-bottom:48px;">Paolo fue un proyecto real con problemas reales. Hoy lo uso también como campo de experimentación para soluciones que aplicaría con las herramientas disponibles en 2026, siendo fiel al contexto que viví entre 2020 y 2022.</p>
 
-  // Lang toggle (bilingual support)
-  const stored = localStorage.getItem('portfolio-lang');
-  if (stored === 'en') {
-    document.documentElement.classList.add('lang-en');
-    const btn = document.getElementById('langToggle');
-    if (btn) btn.textContent = 'ES';
-  }
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(242,162,34,0.12); border:1px solid rgba(242,162,34,0.18); border-radius:16px; overflow:hidden;">
 
-  function toggleLang() {
-    const html = document.documentElement;
-    const btn = document.getElementById('langToggle');
-    const isEn = html.classList.toggle('lang-en');
-    btn.textContent = isEn ? 'ES' : 'EN';
-    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
-  }
-</script>
-</body>
-</html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+        <div style="background:#050409; padding:32px 28px;">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Edición con IA generativa</div>
+          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">He actualizado parte de los assets visuales del proyecto usando IA generativa, sin necesidad de nueva producción fotográfica — manteniendo la coherencia visual del ecosistema.</p>
+        </div>
+
+        <div style="background:#050409; padding:32px 28px; border-left:1px solid rgba(242,162,34,0.12);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Chatbot para preguntas frecuentes</div>
+          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">Uno de los problemas reales del negocio era el colapso de la línea telefónica con pre
