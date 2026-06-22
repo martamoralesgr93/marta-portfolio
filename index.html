@@ -672,6 +672,16 @@ nav {
 }
 .sc-cta:hover::after { transform: translateX(3px); }
 
+/* CTA hierarchy: Case Study = primary */
+.sc-cta-primary {
+  background: rgba(var(--c-theme-rgb), 0.68);
+  border-color: rgba(var(--c-theme-rgb), 0.50);
+}
+.sc-cta-primary:hover {
+  background: rgba(var(--c-theme-rgb), 0.92);
+  border-color: transparent;
+}
+
 /* ── Visual column ── */
 .sc-visual {
   position: relative; overflow: hidden;
@@ -2185,7 +2195,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <div class="nav-right">
-    <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
     <a href="CV_Marta_Morales_2026" class="nav-cta nav-cv"><span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗</a>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
@@ -2211,7 +2220,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#process" onclick="closeMenu()"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
-  <button class="mobile-menu-lang" onclick="toggleLang(); updateMenuLangBtn();" id="menuLangBtn">EN</button>
   <a href="CV_Marta_Morales_2026" class="mobile-menu-cta"><span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗</a>
 </div>
 
@@ -2339,12 +2347,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
             <p class="es">Empecé mi trayectoria en diseño visual, branding y gráfica corporativa, lo que me llevó a entender el diseño web no como algo estático, sino como un producto global. De ahí di el salto al entorno tecnológico full stack, especializándome en UX/UI y CRO con un fuerte perfil frontend.</p>
             <p class="es">Para llegar aquí, he recorrido un camino evolutivo: comencé diseñando y maquetando webs informativas y desarrollando maquetación frontend para landings y mailings. Luego, me enfoqué en analizar problemas complejos de experiencia de usuario para resolver flujos transaccionales. Esto me abrió las puertas a plataformas EdTech de gran escala donde el objetivo principal era la optimización del funnel para la captación de leads.</p>
             <p class="es">Por último, me sumé al equipo de negocio digital de ILUNION Hotels, liderando la evolución de su canal directo (un ecosistema ecommerce con 32 hoteles activos) y colaborando con partners y un gran equipo interno en el lanzamiento de una web 100% accesible que ahora se postula a premios de accesibilidad. Tras casi dos años construyendo este ecosistema de alto impacto, el día a día suma y sigue, pero estoy abierta a nuevos retos y propósitos profesionales.</p>
-            <p class="es">Desde 2023 incorporo IA en mi flujo de trabajo — y en ILUNION he dado un paso más: coordino la generación de assets visuales del canal directo (fotografía de producto, materiales para el entorno digital) usando IA generativa con Vertex AI, Gemini y Figma, garantizando que el resultado mantiene la línea visual de la marca y el nivel de calidad exigido.</p>
+            <p class="es">Desde 2023 incorporo IA en mi flujo de trabajo. En ILUNION he dado un paso más: coordino la generación de assets visuales del canal directo (fotografía de producto, materiales para el entorno digital) usando IA generativa con Vertex AI, Gemini y Figma, garantizando que el resultado mantiene la línea visual de la marca y el nivel de calidad exigido.</p>
 
             <p class="en">I started my career in design, but over time I became increasingly interested in what happens beyond the interface: understanding user behaviour, measuring impact and connecting design decisions with business outcomes.</p>
             <p class="en">Today, I work within the Digital Business team at ILUNION Hotels, contributing to the evolution of the direct digital channel of a 32-hotel chain. My work combines UX/UI Design, Customer Journey Optimisation, Accessibility, CRO and Data-Informed Design through tools such as Adobe Analytics, Microsoft Clarity, Figma and A/B Testing.</p>
             <p class="en">Throughout my career, I have designed digital products across Hospitality, EdTech, eCommerce and B2B environments, built Design Systems from scratch and worked as the sole designer within multidisciplinary teams.</p>
-            <p class="en">Since 2023, I have actively incorporated AI tools into my daily workflow — and at ILUNION Hotels I've taken that further: I coordinate the generation of visual assets for the direct channel (product photography, digital marketing materials) using generative AI with Vertex AI, Gemini and Figma, ensuring outputs are consistent with brand guidelines and meet the required quality standard.</p>
+            <p class="en">Since 2023, I have actively incorporated AI tools into my daily workflow. At ILUNION Hotels I've taken that further: I coordinate the generation of visual assets for the direct channel (product photography, digital marketing materials) using generative AI with Vertex AI, Gemini and Figma, ensuring outputs are consistent with brand guidelines and meet the required quality standard.</p>
           </div>
 
           <a href="#work" class="sobre-cta">
@@ -2458,8 +2466,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
       </div>
       <div class="feature-title es">PROPUESTA,<br>NO OPCIONES.</div>
       <div class="feature-title en">PROPOSAL,<br>NOT OPTIONS.</div>
-      <p class="feature-desc es">Presento una decisión argumentada con datos — no tres variantes para que el stakeholder elija. Criterio de negocio, no preferencia visual.</p>
-      <p class="feature-desc en">I bring a data-backed decision to leadership — not three variants for them to choose. Business rationale, not visual preference.</p>
+      <p class="feature-desc es">Presento una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio, no preferencia visual.</p>
+      <p class="feature-desc en">I bring a data-backed decision to leadership, not three variants for them to choose. Business rationale, not visual preference.</p>
       <div class="feature-line"></div>
     </div>
 
@@ -2573,15 +2581,15 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num" style="color: var(--purple);">01</div>
-          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">ILUNION Hotels ↗</a>
         </div>
-        <h3 class="sc-title sc-title-purple es">Motor de reservas: de <em>escaparate a conversión</em></h3>
-        <h3 class="sc-title sc-title-purple en">Booking Engine: from <em>showcase to conversion</em></h3>
+        <h3 class="sc-title sc-title-purple es">Booking Engine — de <em>escaparate a conversión</em></h3>
+        <h3 class="sc-title sc-title-purple en">Booking Engine — from <em>showcase to conversion</em></h3>
         <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer lead · Ingeniería + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
         <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: lead product designer · Engineering + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
         <div class="sc-cta-row">
-          <a href="booking-engine" class="sc-cta es">Case Study</a>
-          <a href="booking-engine" class="sc-cta en">Case Study</a>
+          <a href="booking-engine" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="booking-engine" class="sc-cta sc-cta-primary en">Case Study</a>
           <a href="https://www.notion.so/35ed112a771e8133b0cfdfca47a8cca2" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
           <a href="https://www.notion.so/35ed112a771e8133b0cfdfca47a8cca2" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
@@ -2614,15 +2622,15 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num" style="color: var(--orange);">02</div>
-          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">ILUNION Hotels ↗</a>
         </div>
         <h3 class="sc-title es">Experimentos AEM: de <em>3,36% a 6,5% de conversión</em></h3>
         <h3 class="sc-title en">AEM Experiments: from <em>3.36% to 6.5% conversion</em></h3>
         <p class="sc-desc es">Optimización del funnel de reservas en el canal directo tras migración a AEM. Diagnóstico estratégico y experimentos basados en research de comportamiento real. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
         <p class="sc-desc en">Direct channel booking funnel optimization post AEM migration. Strategic diagnosis and experiments based on real behavioral research. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
         <div class="sc-cta-row">
-          <a href="ilunion-cro" class="sc-cta es">Case Study</a>
-          <a href="ilunion-cro" class="sc-cta en">Case Study</a>
+          <a href="ilunion-cro" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="ilunion-cro" class="sc-cta sc-cta-primary en">Case Study</a>
           <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
           <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
@@ -2666,15 +2674,15 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num" style="color: var(--blue);">03</div>
-          <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
+          <a href="https://www.cef.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">CEF ↗</a>
         </div>
         <h3 class="sc-title sc-title-blue es">Design System &amp; <em>Accesibilidad EdTech</em></h3>
         <h3 class="sc-title sc-title-blue en">Design System &amp; <em>EdTech Accessibility</em></h3>
         <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
         <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em></p>
         <div class="sc-cta-row">
-          <a href="cef-design-system" class="sc-cta es">Case Study</a>
-          <a href="cef-design-system" class="sc-cta en">Case Study</a>
+          <a href="cef-design-system" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="cef-design-system" class="sc-cta sc-cta-primary en">Case Study</a>
           <a href="https://www.notion.so/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
           <a href="https://www.notion.so/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
@@ -2724,8 +2732,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, diagnostiqué que Oracle generaba más fricción de la que resolvía. Propuse la decisión Build vs. Buy y diseñé conceptualmente la plataforma interna. Fue el detonante de mi formación en Product Design. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: discovery contextual · propuesta conceptual · estrategia de producto</em></p>
         <p class="sc-desc en">Embedded in We Are Actions' IT team, I diagnosed that Oracle was generating more friction than it solved. Proposed the Build vs. Buy decision and conceptually designed the internal platform. It triggered my Product Design training. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: contextual discovery · conceptual proposal · product strategy</em></p>
         <div class="sc-cta-row">
-          <a href="it-ops-oracle" class="sc-cta es" style="border-color:rgba(6,182,212,0.35); color:#06b6d4">Case Study</a>
-          <a href="it-ops-oracle" class="sc-cta en" style="border-color:rgba(6,182,212,0.35); color:#06b6d4">Case Study</a>
+          <a href="it-ops-oracle" class="sc-cta sc-cta-primary es" style="color:#fff">Case Study</a>
+          <a href="it-ops-oracle" class="sc-cta sc-cta-primary en" style="color:#fff">Case Study</a>
           <a href="https://www.notion.so/386d112a771e815d97e8fc97223509e0" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
           <a href="https://www.notion.so/386d112a771e815d97e8fc97223509e0" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
@@ -2834,8 +2842,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 5 locales sin rediseño. Construido en pandemia. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
         <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
         <div class="sc-cta-row">
-          <a href="paolo-pizzeria.html" class="sc-cta es" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
-          <a href="paolo-pizzeria.html" class="sc-cta en" style="border-color:rgba(242,162,34,0.35); color:#F2A222">Case Study</a>
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es" style="color:#fff">Case Study</a>
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en" style="color:#fff">Case Study</a>
           <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
           <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
@@ -3042,31 +3050,9 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 <script>
 /* ---- LANGUAGE: restore from localStorage ---- */
-(function() {
-  const saved = localStorage.getItem('portfolio-lang');
-  if (saved === 'en') {
-    document.documentElement.classList.add('lang-en');
-    document.documentElement.lang = 'en';
-    const btn = document.getElementById('langToggle');
-    if (btn) btn.textContent = 'ES';
-    updateMenuLangBtn();
-  }
-})();
 
-/* ---- LANGUAGE TOGGLE ---- */
-function toggleLang() {
-  const html = document.documentElement;
-  const btn  = document.getElementById('langToggle');
-  const isEn = html.classList.toggle('lang-en');
-  html.lang  = isEn ? 'en' : 'es';
-  btn.textContent = isEn ? 'ES' : 'EN';
-  localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
-  updateMenuLangBtn();
-}
-function updateMenuLangBtn() {
-  const b = document.getElementById('menuLangBtn');
-  if (b) b.textContent = document.documentElement.classList.contains('lang-en') ? 'ES' : 'EN';
-}
+
+
 
 /* ---- MOBILE MENU ---- */
 function openMenu() {
@@ -3663,92 +3649,4 @@ function closeMenu() {
   function resetChat(){
     document.getElementById('chatMessages').innerHTML='';
     document.getElementById('chatChips').innerHTML='';
-    document.getElementById('chat-undo').classList.remove('visible');
-    history=[];
-    initialized=false;
-    isTyping=false;
-    initChat();
-  }
-
-  window.chatUndo=function(){
-    if(!history.length||isTyping)return;
-    var last=history.pop();
-    if(last.userEl&&last.userEl.parentNode) last.userEl.parentNode.removeChild(last.userEl);
-    if(last.botEl&&last.botEl.parentNode)   last.botEl.parentNode.removeChild(last.botEl);
-    /* Restore chips */
-    var c=document.getElementById('chatChips');c.innerHTML='';
-    (last.prevChips||[]).forEach(function(chip){
-      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
-      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
-      c.appendChild(btn);
-    });
-    if(!history.length) document.getElementById('chat-undo').classList.remove('visible');
-    var box=document.getElementById('chatMessages');
-    box.scrollTop=box.scrollHeight;
-  };
-
-  function sendMessage(text,intentOverride){
-    if(isTyping)return;
-    /* Snapshot current chips before clearing */
-    var prevChips=[];
-    document.getElementById('chatChips').querySelectorAll('.chat-chip').forEach(function(b){
-      prevChips.push({label:b.textContent,key:b.getAttribute('data-key')||''});
-    });
-    var userEl=addMsg(text,'user');
-    isTyping=true;
-    var intent=intentOverride||detectIntent(text);
-    showTyping();
-    setTimeout(function(){
-      removeTyping();
-      var botEl=addMsg(getResponse(intent),'bot');
-      isTyping=false;
-      history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
-      document.getElementById('chat-undo').classList.add('visible');
-      var lang=getLang();
-      var alwaysChips = lang==='en'
-        ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
-        : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
-      var casesChips = lang==='en'
-        ? [{label:'Schedule interview',key:'interview'},{label:'Skills',key:'skills'}]
-        : [{label:'Concertar entrevista',key:'interview'},{label:'Habilidades',key:'skills'}];
-      if(intent==='cases'){renderChips(casesChips);}
-      else if(intent!=='interview'&&intent!=='contact'){renderChips(alwaysChips);}
-    },650+Math.random()*400);
-  }
-
-  function initChat(){
-    if(initialized)return;initialized=true;
-    setTimeout(function(){addMsg(getResponse('greeting'),'bot');renderChips(CHIPS[getLang()]);},180);
-  }
-
-  window.chatToggle=function(){
-    var panel=document.getElementById('chat-panel');
-    var trigger=document.getElementById('chat-trigger');
-    var badge=document.getElementById('chat-badge');
-    isOpen=!isOpen;
-    panel.classList.toggle('open',isOpen);
-    trigger.classList.toggle('open',isOpen);
-    if(isOpen){badge.classList.add('hidden');initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
-  };
-  window.chatSend=function(){
-    var input=document.getElementById('chatInput');
-    var text=input.value.trim();
-    if(!text||isTyping)return;
-    input.value='';input.style.height='';
-    document.getElementById('chatChips').innerHTML='';
-    sendMessage(text);
-  };
-  window.chatKeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();chatSend();}};
-  window.chatAutoResize=function(el){el.style.height='';el.style.height=Math.min(el.scrollHeight,90)+'px';};
-
-  /* Language switch: reset chat so greeting appears in the new language */
-  new MutationObserver(function(){
-    var input=document.getElementById('chatInput');
-    if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
-    if(isOpen&&initialized){resetChat();}
-  }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
-})();
-</script>
-<!-- ===================== / CHATBOT MARTA ===================== -->
-
-</body></html>
+    document.getElementById('chat-undo').c
