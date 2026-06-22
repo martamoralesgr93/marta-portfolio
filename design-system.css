@@ -56,6 +56,14 @@ body {
   font-size: 17px; 
   line-height: 1.75; 
 }
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+.cs-dropdown-trigger:focus-visible,
+.lang-toggle:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 4px !important;
+}
 
 /* Scrollbars */
 ::-webkit-scrollbar { width: 3px; }
@@ -261,7 +269,8 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
   z-index: 300;
   text-align: left;
 }
-.cs-nav-dropdown:hover .cs-dropdown-menu {
+.cs-nav-dropdown:hover .cs-dropdown-menu,
+.cs-nav-dropdown:focus-within .cs-dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -323,8 +332,8 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
 
 @media (max-width: 768px) {
   .cs-nav { padding: 0 var(--space-sm); height: 60px; }
-  .cs-hero { min-height: 85svh; }
-  .cs-hero-content { padding: 0 var(--space-sm) 52px; }
+  .cs-hero { min-height: auto; padding-top: 120px; display: block; overflow: visible; }
+  .cs-hero-content { padding: 0 var(--space-sm) 40px; }
   .cs-title { font-size: clamp(32px, 8vw, 52px); margin-bottom: 24px; }
   .cs-eyebrow { font-size: 10px; margin-bottom: 16px; }
   .cs-tags { gap: 5px; margin-bottom: var(--space-md); }
@@ -367,7 +376,7 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
 }
 
 @media (max-width: 480px) {
-  .cs-hero { min-height: 80svh; }
+  .cs-hero { min-height: auto; }
   .cs-title { font-size: clamp(28px, 7.5vw, 40px); }
   .cs-meta { flex-direction: column; gap: var(--space-xs); }
   .block-h { font-size: clamp(24px, 5.5vw, 32px); }

@@ -218,6 +218,25 @@
       font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;
     }
 
+    /* 2026 LAB SECTION STYLES */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(242,162,34,0.12);
+      border: 1px solid rgba(242,162,34,0.18);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 32px 0;
+    }
+    .lab-cell {
+      background: #050409;
+      padding: 32px 28px;
+    }
+    .lab-cell:not(:first-child) {
+      border-left: 1px solid rgba(242,162,34,0.12);
+    }
+
     /* RESPONSIVE OVERRIDES */
     @media (max-width: 900px) {
       .tool-grid { grid-template-columns: 1fr 1fr; }
@@ -247,6 +266,8 @@
       .cs-rail { position: relative; top: 0; }
       .cs-rail-letter { font-size: 30px; }
       .phase-steps { grid-template-columns: 1fr 1fr; }
+      .lab-grid { grid-template-columns: 1fr; }
+      .lab-cell:not(:first-child) { border-left: none; border-top: 1px solid rgba(242,162,34,0.12); }
     }
     @media (max-width: 480px) {
       .dash-impact-num { font-size: 48px; }
@@ -254,6 +275,10 @@
       .color-swatch { height: 48px; }
       .color-info { padding: 8px 10px; }
       .color-name { font-size: 10px; }
+      .paolo-results-strip,
+      .paolo-learnings {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ── 13. STORYTELLING & HIERARCHY SYSTEM ── */
@@ -501,13 +526,12 @@
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <div class="cs-dropdown-item" style="opacity: 0.45; cursor: default; pointer-events: none;">
+        <a href="it-ops-oracle" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 04</div>
-          <div class="cs-item-title es">IT Ops &amp; Oracle ERP (Próximamente)</div>
-          <div class="cs-item-title en">IT Ops &amp; Oracle ERP (Coming Soon)</div>
+          <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
           <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
           <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
-        </div>
+        </a>
         <a href="paolo-pizzeria" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 05</div>
           <div class="cs-item-title">Paolo Brand System</div>
@@ -1580,19 +1604,19 @@
       <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">Laboratorio 2026:<br><em style="color:rgba(255,255,255,0.65);">lo que experimentaría hoy sobre este proyecto</em></h2>
       <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:680px; margin-bottom:48px;">Paolo fue un proyecto real con problemas reales. Hoy lo uso también como campo de experimentación para soluciones que aplicaría con las herramientas disponibles en 2026, siendo fiel al contexto que viví entre 2020 y 2022.</p>
 
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(242,162,34,0.12); border:1px solid rgba(242,162,34,0.18); border-radius:16px; overflow:hidden;">
+      <div class="lab-grid">
 
-        <div style="background:#050409; padding:32px 28px;">
+        <div class="lab-cell">
           <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Edición con IA generativa</div>
           <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">He actualizado parte de los assets visuales del proyecto usando IA generativa, sin necesidad de nueva producción fotográfica — manteniendo la coherencia visual del ecosistema.</p>
         </div>
 
-        <div style="background:#050409; padding:32px 28px; border-left:1px solid rgba(242,162,34,0.12);">
+        <div class="lab-cell">
           <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Chatbot para preguntas frecuentes</div>
           <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">Uno de los problemas reales del negocio era el colapso de la línea telefónica con preguntas repetitivas: alérgenos, horarios, disponibilidad. La solución que diseñaría hoy es un asistente conversacional que resuelva estas consultas en tiempo real, liberando al equipo en sala y reduciendo la fricción del cliente en el momento de decisión.</p>
         </div>
 
-        <div style="background:#050409; padding:32px 28px; border-left:1px solid rgba(242,162,34,0.12);">
+        <div class="lab-cell">
           <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Automatización de pedidos recurrentes</div>
           <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">Para clientes habituales, implementaría comandos de pedido recurrente que acortaran el camino entre intención y compra en el canal directo — sin fricciones, sin llamadas.</p>
         </div>
@@ -1607,19 +1631,19 @@
       <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">2026 Lab:<br><em style="color:rgba(255,255,255,0.65);">what I'd experiment with today on this project</em></h2>
       <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:680px; margin-bottom:48px;">Paolo was a real project with real problems. Today I also use it as a sandbox for solutions I'd apply with the tools available in 2026 — staying true to the context I lived between 2020 and 2022.</p>
 
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(242,162,34,0.12); border:1px solid rgba(242,162,34,0.18); border-radius:16px; overflow:hidden;">
+      <div class="lab-grid">
 
-        <div style="background:#050409; padding:32px 28px;">
+        <div class="lab-cell">
           <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Generative AI editing</div>
           <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">I've updated some of the project's visual assets using generative AI, without new photo production — maintaining visual coherence across the ecosystem.</p>
         </div>
 
-        <div style="background:#050409; padding:32px 28px; border-left:1px solid rgba(242,162,34,0.12);">
+        <div class="lab-cell">
           <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Chatbot for recurring questions</div>
           <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">One of the business's real problems was an overloaded phone line with repetitive questions: allergens, opening hours, availability. The solution I'd design today is a conversational assistant that resolves these queries in real time, freeing the in-store team and reducing customer friction at the decision point.</p>
         </div>
 
-        <div style="background:#050409; padding:32px 28px; border-left:1px solid rgba(242,162,34,0.12);">
+        <div class="lab-cell">
           <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Recurring order automation</div>
           <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">For regular customers, I'd implement recurring order commands to shorten the path between intent and purchase on the direct channel — no friction, no phone calls.</p>
         </div>
@@ -1663,6 +1687,7 @@
   const stored = localStorage.getItem('portfolio-lang');
   if (stored === 'en') {
     document.documentElement.classList.add('lang-en');
+    document.documentElement.lang = 'en';
     const btn = document.getElementById('langToggle');
     if (btn) btn.textContent = 'ES';
   }
@@ -1671,6 +1696,7 @@
     const html = document.documentElement;
     const btn = document.getElementById('langToggle');
     const isEn = html.classList.toggle('lang-en');
+    html.lang = isEn ? 'en' : 'es';
     btn.textContent = isEn ? 'ES' : 'EN';
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
   }
