@@ -2133,6 +2133,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <a href="#work" class="btn-ghost"><span class="es">Ver mi trabajo</span><span class="en">View my work</span>  ↓</a>
           <a href="https://wa.me/34659879887" class="btn-ghost" target="_blank">WhatsApp  ↗</a>
         </div>
+        <button onclick="chatToggle()" class="chat-nudge-hero es" aria-label="Abrir chat de dudas">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+          ¿Tienes dudas? Pregúntame aquí
+        </button>
+        <button onclick="chatToggle()" class="chat-nudge-hero en" aria-label="Open chat">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+          Any questions? Ask me here
+        </button>
       </div>
 
       <div class="impact-card">
@@ -2877,6 +2885,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <p class="contact-sub en">
       Looking for teams where the diagnosis matters as much as the delivery. Based in Spain, available remotely. Let's talk about the problem you're trying to solve.
     </p>
+    <button onclick="chatToggle()" class="chat-nudge-contact es" aria-label="Abrir chat">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+      ¿Tienes preguntas? El chatbot responde al instante →
+    </button>
+    <button onclick="chatToggle()" class="chat-nudge-contact en" aria-label="Open chat">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+      Got questions? The chatbot answers instantly →
+    </button>
     
     <!-- LinkedIn Profile Badge (Custom Premium Card) -->
     <div class="contact-badge-container">
@@ -3033,9 +3049,512 @@ function closeMenu() {
     });
   }, { threshold: 0.10 });
 
-  fadeTargets.forEach(el => io.observe(el));
+  fadeTargets.forEach(el => io.observe(el))
   scCards.forEach(el => io.observe(el));
 })();
 </script>
+
+<!-- ===================== CHATBOT MARTA ===================== -->
+<style>
+/* ── Nudge buttons ── */
+.chat-nudge-hero {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 18px;
+  background: none; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif; font-size: 11.5px;
+  color: rgba(167,139,250,0.72); letter-spacing: 0.02em;
+  padding: 0; transition: color 0.2s;
+}
+.chat-nudge-hero:hover { color: rgba(167,139,250,1); }
+.chat-nudge-hero svg { opacity: 0.65; flex-shrink: 0; }
+
+.chat-nudge-contact {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 20px; margin-bottom: 8px;
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(167,139,250,0.25);
+  border-radius: 100px; padding: 10px 20px;
+  cursor: pointer; font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 500;
+  color: rgba(167,139,250,0.85); letter-spacing: 0.01em;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.chat-nudge-contact:hover {
+  background: rgba(124,58,237,0.18);
+  border-color: rgba(167,139,250,0.55);
+  color: #fff; transform: translateY(-1px);
+}
+.chat-nudge-contact svg { flex-shrink: 0; opacity: 0.7; }
+
+/* ── Chat bubble trigger ── */
+#chat-trigger {
+  position: fixed; bottom: 28px; right: 28px; z-index: 9000;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.85));
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
+  outline: none;
+}
+#chat-trigger:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+#chat-trigger:active { transform: scale(0.96); }
+#chat-trigger .icon-chat { opacity: 1; position: absolute; transition: opacity 0.2s; }
+#chat-trigger .icon-close { opacity: 0; position: absolute; transition: opacity 0.2s; }
+#chat-trigger.open .icon-chat { opacity: 0; }
+#chat-trigger.open .icon-close { opacity: 1; }
+
+#chat-trigger::before {
+  content: '';
+  position: absolute; inset: -6px; border-radius: 50%;
+  border: 1.5px solid rgba(167,139,250,0.45);
+  animation: chat-pulse 2.8s ease-out infinite;
+}
+#chat-trigger.open::before { animation: none; opacity: 0; }
+@keyframes chat-pulse {
+  0%   { transform: scale(1);    opacity: 0.7; }
+  70%  { transform: scale(1.35); opacity: 0;   }
+  100% { transform: scale(1.35); opacity: 0;   }
+}
+
+#chat-badge {
+  position: absolute;
+  bottom: calc(100% + 12px); right: 0;
+  background: #fff;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600; line-height: 1.2;
+  padding: 8px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.06);
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s;
+}
+/* Arrow pointing down to the button */
+#chat-badge::after {
+  content: '';
+  position: absolute; bottom: -6px; right: 18px;
+  width: 12px; height: 12px;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#chat-badge.hidden { transform: translateY(6px) scale(0.92); opacity: 0; pointer-events: none; }
+
+/* ── Chat panel ── */
+#chat-panel {
+  position: fixed; bottom: 96px; right: 28px; z-index: 8999;
+  width: 360px; max-height: 540px;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  display: flex; flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+  transform-origin: bottom right;
+  transform: scale(0.88) translateY(12px);
+  opacity: 0; pointer-events: none;
+  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), opacity 0.25s;
+  overflow: hidden;
+}
+#chat-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+#chat-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.7), rgba(249,115,22,0.5), transparent);
+}
+
+.chat-header {
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+}
+.chat-avatar {
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  border: 1.5px solid rgba(167,139,250,0.4);
+  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.2));
+  display: flex; align-items: center; justify-content: center;
+}
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-avatar-fallback {
+  font-size: 14px; font-weight: 700; color: var(--purple);
+  font-family: 'Inter', sans-serif;
+}
+.chat-header-info { flex: 1; min-width: 0; }
+.chat-header-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
+.chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+.chat-status-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #34d399;
+  box-shadow: 0 0 6px rgba(52,211,153,0.6);
+  animation: blink-dot 3s ease-in-out infinite;
+}
+@keyframes blink-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.chat-messages {
+  flex: 1; overflow-y: auto; padding: 16px 16px 8px;
+  display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
+}
+.chat-messages::-webkit-scrollbar { width: 3px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+.chat-msg { display: flex; gap: 8px; align-items: flex-end; animation: msg-in 0.28s cubic-bezier(0.16,1,0.3,1) both; }
+@keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.chat-msg.user { flex-direction: row-reverse; }
+
+.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; font-family: 'Inter', sans-serif; }
+.chat-msg.bot .chat-bubble {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
+}
+.chat-msg.user .chat-bubble {
+  background: linear-gradient(135deg, rgba(124,58,237,0.75), rgba(249,115,22,0.60));
+  border: 1px solid rgba(167,139,250,0.25); color: rgba(255,255,255,0.95); border-bottom-right-radius: 4px;
+}
+.chat-bubble a { color: var(--purple); text-decoration: underline; text-underline-offset: 2px; }
+.chat-bubble strong { color: var(--white); font-weight: 600; }
+
+.chat-typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; }
+.chat-typing span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); animation: typing-bounce 1.2s infinite; }
+.chat-typing span:nth-child(2) { animation-delay: 0.18s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes typing-bounce { 0%,80%,100% { transform: translateY(0); opacity: 0.4; } 40% { transform: translateY(-6px); opacity: 1; } }
+
+.chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
+.chat-chip {
+  padding: 6px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500;
+  font-family: 'Inter', sans-serif; border: 1px solid rgba(167,139,250,0.35);
+  color: rgba(167,139,250,0.9); background: rgba(124,58,237,0.08); cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
+}
+.chat-chip:hover { background: rgba(124,58,237,0.2); border-color: rgba(167,139,250,0.6); color: #fff; transform: translateY(-1px); }
+
+.chat-input-area {
+  padding: 10px 12px 14px; border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0;
+}
+.chat-input {
+  flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px; padding: 9px 14px; color: rgba(255,255,255,0.88);
+  font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
+  min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
+}
+.chat-input::placeholder { color: rgba(255,255,255,0.25); }
+.chat-input:focus { border-color: rgba(167,139,250,0.4); }
+.chat-send {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.75));
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.chat-send:hover { opacity: 0.85; transform: scale(1.05); }
+.chat-send svg { width: 16px; height: 16px; }
+
+@media (max-width: 480px) {
+  #chat-panel { right: 12px; left: 12px; width: auto; bottom: 84px; }
+  #chat-trigger { right: 20px; bottom: 20px; }
+}
+</style>
+
+<button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
+  <span id="chat-badge"><span class="es">¿Hablamos?</span><span class="en">Let's talk!</span></span>
+  <img class="icon-chat" src="assets/logo-sinfondo.png" alt="Marta"
+    style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);"
+    onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
+  <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="width:22px;height:22px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+  </svg>
+</button>
+
+<div id="chat-panel" role="dialog" aria-label="Chat con Marta">
+  <div class="chat-header">
+    <div class="chat-avatar">
+      <img src="assets/logo-sinfondo.png" alt="Marta" style="filter:brightness(0) invert(1);object-fit:contain;padding:4px;"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="chat-avatar-fallback" style="display:none">MM</span>
+    </div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Marta Morales</div>
+      <div class="chat-header-status">
+        <span class="chat-status-dot"></span>
+        <span class="es">Disponible ahora</span>
+        <span class="en">Available now</span>
+      </div>
+    </div>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chatInput" rows="1"
+      placeholder="Escribe tu pregunta…"
+      onkeydown="chatKeydown(event)" oninput="chatAutoResize(this)"></textarea>
+    <button class="chat-send" onclick="chatSend()" aria-label="Enviar">
+      <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var KB = {
+    es: {
+      greeting: [
+        "¡Hola! 👋 Soy el asistente de Marta. Si eres recruiter o hiring manager, estás en el sitio correcto — puedo contarte todo lo que necesitas para tomar una decisión. ¿Por dónde empezamos?"
+      ],
+      about: [
+        "Marta es <strong>Product Designer estratégica con +4 años</strong> liderando productos digitales end-to-end: UX research, design systems, WCAG y CRO. Ha trabajado en turismo, EdTech y consultoría digital, siempre con impacto de negocio medible. No solo ejecuta — diagnostica el problema antes de diseñar la solución."
+      ],
+      experience: [
+        "<strong>+4 años</strong> como Product Designer end-to-end en turismo, EdTech y consultoría. Ha llevado productos desde el research hasta producción, incluyendo el <strong>rediseño del motor de reservas</strong> de una cadena hotelera (conversión 3.36% → 6.5%), el <strong>Design System de CEF</strong> (+80 componentes) y accesibilidad WCAG 2.1 AA. Actualmente busca su próximo reto en tech, SaaS o travel.",
+        "Lo que diferencia a Marta: no espera a que le traigan el brief. <strong>Identifica el problema, propone el enfoque y mide el resultado.</strong> Sus 4+ años abarcan turismo (booking engines), EdTech (sistemas de diseño) y consultoría digital."
+      ],
+      skills: [
+        "<strong>Habilidades clave:</strong> Figma avanzado (variables, sistemas de diseño, auto-layout), UX Research, Accesibilidad WCAG 2.1, CRO & A/B Testing, Adobe Analytics, Bootstrap. Colaboración fluida con producto e ingeniería.",
+        "Domina el proceso completo: <strong>discovery → research → arquitectura → prototipado → test con usuarios → handoff → análisis post-lanzamiento.</strong> No es una ejecutora de wireframes — es propietaria del proceso."
+      ],
+      tools: [
+        "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
+      ],
+      cases: [
+        "Casos de estudio con impacto real:<br><br>• <strong>ILUNION CRO</strong> — conversión directa del 3.36% al 6.5% con rediseño basado en datos<br>• <strong>Booking Engine</strong> — motor de reservas hotelero de research a producción<br>• <strong>CEF Design System</strong> — +80 componentes con tokens, accesibilidad y docs para dev<br>• <strong>IT Ops Oracle</strong> — producto B2B para operaciones IT<br><br>¿Te cuento más sobre alguno?"
+      ],
+      remote: [
+        "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
+      ],
+      availability: [
+        "Marta está <strong>activamente buscando su próxima oportunidad</strong> y puede incorporarse con relativa rapidez. Hay otras conversaciones en curso, así que si hay fit, merece la pena hablar pronto. ¿Tienes alguna posición en mente?"
+      ],
+      salary: [
+        "Marta maneja expectativas alineadas con su experiencia y el mercado actual. Es un detalle que se aclara en cinco minutos en una llamada. ¿Le damos una oportunidad a esa conversación?"
+      ],
+      interview: [
+        "¡Perfecto! Escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h 🚀 O usa el formulario de contacto al final de la página.",
+        "Genial. La mejor forma es un email a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> proponiendo día y hora. Marta es flexible y se adapta a vuestra agenda."
+      ],
+      contact: [
+        "Email directo: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Responde rápido, menos de 24h."
+      ],
+      research: [
+        "Marta tiene <strong>base sólida en UX Research:</strong> entrevistas con usuarios, card sorting, tree testing, análisis heurístico y síntesis de insights. Lo más importante: siempre conecta el research con decisiones de negocio concretas."
+      ],
+      systems: [
+        "Ha construido <strong>design systems desde cero:</strong> el sistema de CEF incluye +80 componentes, tokens de diseño, guías de accesibilidad y documentación para desarrollo. Domina Figma Variables, Auto Layout avanzado y versionado de componentes."
+      ],
+      cro: [
+        "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
+      ],
+      whyhire: [
+        "Tres razones para hablar con Marta:<br><br>1. <strong>Piensa en negocio, no solo en pixels</strong> — cada decisión de diseño la ancla en datos y objetivos medibles.<br>2. <strong>Ownership real</strong> — lleva proyectos desde el discovery hasta producción sin que nadie le tenga que gestionar el proceso.<br>3. <strong>Adaptabilidad multisector</strong> — ha demostrado impacto en turismo, EdTech y consultoría. Aprende rápido y entrega rápido."
+      ],
+      sector: [
+        "Marta tiene experiencia en <strong>turismo / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (sistemas de diseño, accesibilidad) y <strong>consultoría digital</strong>. Busca su próximo reto en empresas <strong>tech, SaaS o travel</strong> con producto propio."
+      ],
+      default: [
+        "Buena pregunta 🙂 Para eso mejor habla con Marta directamente: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+        "Eso lo responde Marta mejor que yo en persona. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h."
+      ]
+    },
+    en: {
+      greeting: [
+        "Hi! 👋 I'm Marta's assistant. If you're a recruiter or hiring manager, you're in the right place — I can tell you everything you need to make a decision. Where shall we start?"
+      ],
+      about: [
+        "Marta is a <strong>strategic Product Designer with 4+ years</strong> leading digital products end-to-end: UX research, design systems, WCAG accessibility and CRO. She's worked across travel, EdTech and digital consulting — always with measurable business impact. She doesn't just execute — she diagnoses the problem before designing the solution."
+      ],
+      experience: [
+        "<strong>4+ years</strong> as an end-to-end Product Designer across travel, EdTech and consulting. She's taken products from research to production, including a <strong>hotel booking engine redesign</strong> (conversion 3.36% → 6.5%), the <strong>CEF Design System</strong> (80+ components) and WCAG 2.1 AA accessibility work. Looking for her next challenge in tech, SaaS or travel.",
+        "What sets Marta apart: she doesn't wait for a brief. <strong>She identifies the problem, proposes the approach and measures the outcome.</strong> 4+ years across travel (booking engines), EdTech (design systems) and digital consulting."
+      ],
+      skills: [
+        "<strong>Core skills:</strong> Figma advanced (variables, design systems, auto-layout), UX Research, WCAG 2.1 Accessibility, CRO & A/B Testing, Adobe Analytics, Bootstrap. Smooth collaboration with product and engineering.",
+        "She masters the full process: <strong>discovery → research → IA → prototyping → user testing → handoff → post-launch analysis.</strong> Not a wireframe executor — a process owner."
+      ],
+      tools: [
+        "Daily stack: <strong>Figma</strong> (design systems, variables, components), <strong>Adobe Analytics + Hotjar</strong> (behaviour data), <strong>Notion & Jira</strong> (product management), Bootstrap and close engineering collaboration."
+      ],
+      cases: [
+        "Case studies with real impact:<br><br>• <strong>ILUNION CRO</strong> — direct channel conversion from 3.36% to 6.5% with a data-driven redesign<br>• <strong>Booking Engine</strong> — hotel booking flow from research to production<br>• <strong>CEF Design System</strong> — 80+ components with tokens, accessibility & dev docs<br>• <strong>IT Ops Oracle</strong> — B2B product for IT operations management<br><br>Want details on any of them?"
+      ],
+      remote: [
+        "Marta is <strong>open to fully remote and hybrid.</strong> Based in Madrid, experienced with distributed teams and async communication."
+      ],
+      availability: [
+        "Marta is <strong>actively looking for her next opportunity</strong> and can onboard relatively quickly. There are other conversations in progress, so if there's a fit, it's worth talking soon. Got a role in mind?",
+      ],
+      salary: [
+        "Marta's expectations are aligned with her experience and the current market. It's a detail that takes five minutes to clarify in a call. Shall we make that happen?"
+      ],
+      interview: [
+        "Great! Email her directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — she replies within 24h 🚀 Or use the contact form at the bottom of the page.",
+        "Perfect. The easiest way is an email to <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> suggesting a time. Marta is flexible and adapts to your schedule."
+      ],
+      contact: [
+        "Direct email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Replies fast, under 24h."
+      ],
+      research: [
+        "Marta has a <strong>solid UX Research foundation:</strong> user interviews, card sorting, tree testing, heuristic analysis and insight synthesis. Most importantly: she always connects research to concrete business decisions."
+      ],
+      systems: [
+        "She built <strong>design systems from scratch:</strong> CEF's system includes 80+ components, design tokens, accessibility guidelines and developer documentation. Proficient in Figma Variables, advanced Auto Layout and component versioning."
+      ],
+      cro: [
+        "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
+      ],
+      whyhire: [
+        "Three reasons to talk to Marta:<br><br>1. <strong>Business-first thinking</strong> — every design decision is anchored in data and measurable goals.<br>2. <strong>Real ownership</strong> — she takes projects from discovery to production without needing her process managed.<br>3. <strong>Multi-sector adaptability</strong> — proven impact in travel, EdTech and consulting. Fast learner, fast deliverer."
+      ],
+      sector: [
+        "Marta has experience in <strong>travel / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (design systems, accessibility) and <strong>digital consulting.</strong> She's looking for her next challenge at a <strong>tech, SaaS or travel</strong> company with its own product."
+      ],
+      default: [
+        "Great question 🙂 That's better answered by Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+        "Marta can answer that better than me in person. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — replies within 24h."
+      ]
+    }
+  };
+
+  var CHIPS = {
+    es: [
+      {label:'¿Quién es Marta?',key:'about'},
+      {label:'Casos de estudio',key:'cases'},
+      {label:'Habilidades',key:'skills'},
+      {label:'Disponibilidad',key:'availability'},
+      {label:'¿Por qué contratarla?',key:'whyhire'},
+      {label:'Concertar entrevista',key:'interview'}
+    ],
+    en: [
+      {label:'Who is Marta?',key:'about'},
+      {label:'Case studies',key:'cases'},
+      {label:'Skills',key:'skills'},
+      {label:'Availability',key:'availability'},
+      {label:'Why hire her?',key:'whyhire'},
+      {label:'Schedule interview',key:'interview'}
+    ]
+  };
+
+  var RULES = [
+    {keys:['quién','quien','eres','about','who','marta','sobre','yourself','tell me','cuéntame','presentate'],intent:'about'},
+    {keys:['experiencia','experience','años','years','trayectoria','background','worked','llevás','llevas'],intent:'experience'},
+    {keys:['habilidad','skill','sabe','know','domina','masters','puedes','capaz','capable'],intent:'skills'},
+    {keys:['herramienta','tool','adobe','jira','notion','hotjar','bootstrap','figma','stack','usa'],intent:'tools'},
+    {keys:['caso','case','estudio','study','proyecto','project','portfolio','portafolio','ilunion','booking','cef','oracle','trabajo','work'],intent:'cases'},
+    {keys:['remoto','remote','presencial','hybrid','hibrido','híbrido','madrid','ubicacion','location','donde','where'],intent:'remote'},
+    {keys:['disponib','available','cuándo','when','incorpor','start','join','empezar','inmediata'],intent:'availability'},
+    {keys:['salario','salary','sueldo','wage','pay','rango','compensacion','compensation','pretensiones','expectations'],intent:'salary'},
+    {keys:['entrevista','interview','reunión','meeting','llamada','call','hablar','talk','conocer','meet','contactar','schedule','cita','appointment'],intent:'interview'},
+    {keys:['contact','contacto','email','correo','escribir','reach','write','linkedin'],intent:'contact'},
+    {keys:['research','investig','usuario','user','test','usab','entrev'],intent:'research'},
+    {keys:['design system','sistema de diseño','componente','component','token','library','libreria','figma system'],intent:'systems'},
+    {keys:['cro','conversión','conversion','optimiz','a/b','ab test','funnel','analytics','metr'],intent:'cro'},
+    {keys:['por qué','why','contratar','hire','elegir','choose','diferencia','different','valor','value','aporta','brings'],intent:'whyhire'},
+    {keys:['sector','industria','industry','turismo','travel','edtech','saas','empresa','company','tipo','type'],intent:'sector'}
+  ];
+
+  var isOpen=false, isTyping=false, initialized=false;
+
+  function getLang(){return document.documentElement.classList.contains('lang-en')?'en':'es';}
+  function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+  function getResponse(intent){var lang=getLang();return pick(KB[lang][intent]||KB[lang].default);}
+  function detectIntent(text){
+    var t=text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    for(var i=0;i<RULES.length;i++){
+      var r=RULES[i];
+      for(var j=0;j<r.keys.length;j++){if(t.indexOf(r.keys[j])!==-1)return r.intent;}
+    }
+    return 'default';
+  }
+
+  function addMsg(text,role){
+    var box=document.getElementById('chatMessages');
+    var wrap=document.createElement('div');wrap.className='chat-msg '+role;
+    var bubble=document.createElement('div');bubble.className='chat-bubble';
+    bubble.innerHTML=text;wrap.appendChild(bubble);box.appendChild(wrap);
+    box.scrollTop=box.scrollHeight;
+  }
+
+  function showTyping(){
+    var box=document.getElementById('chatMessages');
+    var wrap=document.createElement('div');wrap.className='chat-msg bot';wrap.id='chatTypingMsg';
+    var bubble=document.createElement('div');bubble.className='chat-bubble chat-typing';
+    bubble.innerHTML='<span></span><span></span><span></span>';
+    wrap.appendChild(bubble);box.appendChild(wrap);box.scrollTop=box.scrollHeight;
+  }
+  function removeTyping(){var el=document.getElementById('chatTypingMsg');if(el)el.remove();}
+
+  function renderChips(items){
+    var c=document.getElementById('chatChips');c.innerHTML='';
+    items.forEach(function(chip){
+      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
+      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
+      c.appendChild(btn);
+    });
+  }
+
+  function resetChat(){
+    document.getElementById('chatMessages').innerHTML='';
+    document.getElementById('chatChips').innerHTML='';
+    initialized=false;
+    isTyping=false;
+    initChat();
+  }
+
+  function sendMessage(text,intentOverride){
+    if(isTyping)return;
+    addMsg(text,'user');isTyping=true;
+    var intent=intentOverride||detectIntent(text);
+    showTyping();
+    setTimeout(function(){
+      removeTyping();addMsg(getResponse(intent),'bot');isTyping=false;
+      var lang=getLang();
+      var alwaysChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
+      var casesChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Skills',key:'skills'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'Habilidades',key:'skills'}];
+      if(intent==='cases'){renderChips(casesChips);}
+      else if(intent!=='interview'&&intent!=='contact'){renderChips(alwaysChips);}
+    },650+Math.random()*400);
+  }
+
+  function initChat(){
+    if(initialized)return;initialized=true;
+    setTimeout(function(){addMsg(getResponse('greeting'),'bot');renderChips(CHIPS[getLang()]);},180);
+  }
+
+  window.chatToggle=function(){
+    var panel=document.getElementById('chat-panel');
+    var trigger=document.getElementById('chat-trigger');
+    var badge=document.getElementById('chat-badge');
+    isOpen=!isOpen;
+    panel.classList.toggle('open',isOpen);
+    trigger.classList.toggle('open',isOpen);
+    if(isOpen){badge.classList.add('hidden');initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
+  };
+  window.chatSend=function(){
+    var input=document.getElementById('chatInput');
+    var text=input.value.trim();
+    if(!text||isTyping)return;
+    input.value='';input.style.height='';
+    document.getElementById('chatChips').innerHTML='';
+    sendMessage(text);
+  };
+  window.chatKeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();chatSend();}};
+  window.chatAutoResize=function(el){el.style.height='';el.style.height=Math.min(el.scrollHeight,90)+'px';};
+
+  /* Language switch: reset chat so greeting appears in the new language */
+  new MutationObserver(function(){
+    var input=document.getElementById('chatInput');
+    if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
+    if(isOpen&&initialized){resetChat();}
+  }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<!-- ===================== / CHATBOT MARTA ===================== -->
 
 </body></html>

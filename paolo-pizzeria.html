@@ -1674,6 +1674,39 @@
     btn.textContent = isEn ? 'ES' : 'EN';
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
   }
+
+  // Generación de token dinámico para abrir el proyecto Paolo
+  (function() {
+    function generateToken(dateString) {
+      const secret = "paolo-secret-key-2026";
+      const str = secret + dateString;
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return Math.abs(hash).toString(36);
+    }
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const token = generateToken(todayStr);
+    
+    // Buscar y actualizar los enlaces correspondientes
+    const links = document.querySelectorAll('a[href*="04-paolo.vercel.app"]');
+    links.forEach(link => {
+      try {
+        const url = new URL(link.href);
+        url.searchParams.set('token', token);
+        link.href = url.toString();
+      } catch(e) {
+        if (link.href.indexOf('?') > -1) {
+          link.href += '&token=' + token;
+        } else {
+          link.href += '?token=' + token;
+        }
+      }
+    });
+  })();
 </script>
 </body>
 </html>
