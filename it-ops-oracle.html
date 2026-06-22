@@ -311,7 +311,7 @@
           <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
           <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
         </a>
-        <a href="paolo-pizzeria" class="cs-dropdown-item">
+        <a href="paolo-pizzeria.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 05</div>
           <div class="cs-item-title">Paolo Brand System</div>
           <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
@@ -1105,8 +1105,8 @@
       <a href="cef-design-system" class="btn btn-secondary en">← Case 03</a>
       <a href="/" class="btn btn-secondary es">Volver</a>
       <a href="/" class="btn btn-secondary en">Back</a>
-      <a href="paolo-pizzeria" class="btn btn-primary es">Caso 05 →</a>
-      <a href="paolo-pizzeria" class="btn btn-primary en">Case 05 →</a>
+      <a href="paolo-pizzeria.html" class="btn btn-primary es">Caso 05 →</a>
+      <a href="paolo-pizzeria.html" class="btn btn-primary en">Case 05 →</a>
     </div>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1142,10 +1142,4 @@
     const html = document.documentElement;
     const isEn = html.classList.contains('lang-en');
     document.querySelectorAll('.affinity-card[lang]').forEach(el => {
-      el.style.display = (isEn ? el.lang === 'en' : el.lang === 'es') ? '' : 'none';
-    });
-  }
-  applyLang();
-</script>
-</body>
-</html>
+      el.style.display = (isEn ? el.lang === 'en' : el.lang 

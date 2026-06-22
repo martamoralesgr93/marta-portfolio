@@ -268,6 +268,10 @@
       .phase-steps { grid-template-columns: 1fr 1fr; }
       .lab-grid { grid-template-columns: 1fr; }
       .lab-cell:not(:first-child) { border-left: none; border-top: 1px solid rgba(242,162,34,0.12); }
+      /* 2026 chatbot problem grid */
+      .lab-chatbot-grid { grid-template-columns: 1fr !important; }
+      .lab-chatbot-grid > div { border-left: none !important; border-right: none !important; border-bottom: 1px solid rgba(242,162,34,0.12); }
+      .lab-chatbot-grid > div:last-child { border-bottom: none; }
     }
     @media (max-width: 480px) {
       .dash-impact-num { font-size: 48px; }
@@ -532,7 +536,7 @@
           <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
           <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
         </a>
-        <a href="paolo-pizzeria" class="cs-dropdown-item">
+        <a href="paolo-pizzeria.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 05</div>
           <div class="cs-item-title">Paolo Brand System</div>
           <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
@@ -1116,11 +1120,14 @@
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Mockup · Polo burdeos, bordado frente y espalda</p>
       </div>
       <div class="col-md-6">
-        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">En producción · Cocina</div>
-        <div style="overflow:hidden; aspect-ratio:4/3;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.png" alt="Cocinero Paolo trabajando — polo burdeos en producción real" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+          <span>Uniforme en uso · Equipo</span>
+          <span style="font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); background:rgba(242,162,34,0.1); border:1px solid rgba(242,162,34,0.25); padding:2px 8px; border-radius:100px;">2026 · IA</span>
         </div>
-        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">El uniforme convierte a cada trabajador en soporte de marca</p>
+        <div style="overflow:hidden; aspect-ratio:4/3;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.png" alt="Camarero Paolo con polo burdeos — generado con IA para humanizar el ecosistema web" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Imagen generada con IA · El uniforme convierte a cada persona en soporte de marca</p>
       </div>
     </div>
 
@@ -1585,72 +1592,273 @@
 
 
 <!-- ══════════════════════════════════════
-     2026 LAB · Experimentación prospectiva
+     2026 · Evolución real del ecosistema con IA
 ══════════════════════════════════════ -->
-<section style="padding: 80px 0; border-top: 1px solid rgba(242,162,34,0.18); background: linear-gradient(180deg, rgba(242,162,34,0.04) 0%, transparent 100%); position: relative; overflow: hidden;">
-  <!-- Decorative glow -->
-  <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:200px; background:radial-gradient(ellipse, rgba(242,162,34,0.08) 0%, transparent 70%); pointer-events:none;"></div>
+<section style="padding: 80px 0; border-top: 1px solid rgba(242,162,34,0.18); background: linear-gradient(180deg, rgba(242,162,34,0.04) 0%, transparent 60%); position: relative; overflow: hidden;">
+
+  <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:700px; height:220px; background:radial-gradient(ellipse, rgba(242,162,34,0.07) 0%, transparent 70%); pointer-events:none;"></div>
 
   <div class="cs-wrap" style="position:relative; z-index:1;">
 
     <!-- Badge -->
     <div style="display:inline-flex; align-items:center; gap:10px; padding:6px 16px; border-radius:100px; border:1px solid rgba(242,162,34,0.35); background:rgba(242,162,34,0.07); margin-bottom:28px;">
       <span style="width:6px;height:6px;border-radius:50%;background:#F2A222;display:block;box-shadow:0 0 8px rgba(242,162,34,0.6);"></span>
-      <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#F2A222;">2026 Lab</span>
+      <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#F2A222;">2026 · Evolución del Proyecto</span>
     </div>
 
-    <!-- ES -->
-    <div class="es">
-      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">Laboratorio 2026:<br><em style="color:rgba(255,255,255,0.65);">lo que experimentaría hoy sobre este proyecto</em></h2>
-      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:680px; margin-bottom:48px;">Paolo fue un proyecto real con problemas reales. Hoy lo uso también como campo de experimentación para soluciones que aplicaría con las herramientas disponibles en 2026, siendo fiel al contexto que viví entre 2020 y 2022.</p>
-
-      <div class="lab-grid">
-
-        <div class="lab-cell">
-          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Edición con IA generativa</div>
-          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">He actualizado parte de los assets visuales del proyecto usando IA generativa, sin necesidad de nueva producción fotográfica — manteniendo la coherencia visual del ecosistema.</p>
-        </div>
-
-        <div class="lab-cell">
-          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Chatbot para preguntas frecuentes</div>
-          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">Uno de los problemas reales del negocio era el colapso de la línea telefónica con preguntas repetitivas: alérgenos, horarios, disponibilidad. La solución que diseñaría hoy es un asistente conversacional que resuelva estas consultas en tiempo real, liberando al equipo en sala y reduciendo la fricción del cliente en el momento de decisión.</p>
-        </div>
-
-        <div class="lab-cell">
-          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Automatización de pedidos recurrentes</div>
-          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">Para clientes habituales, implementaría comandos de pedido recurrente que acortaran el camino entre intención y compra en el canal directo — sin fricciones, sin llamadas.</p>
-        </div>
-
-      </div>
-
-      <p style="font-size:13px; color:rgba(255,255,255,0.32); line-height:1.7; max-width:640px; margin-top:28px; font-style:italic;">Ninguna de estas soluciones existía cuando diseñé y desarrollé este proyecto. Son la evolución natural que propondría hoy, con el contexto real de ese negocio como base.</p>
+    <!-- ES HEADER -->
+    <div class="es fu">
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">Rediseño 2026:<br><em style="color:rgba(255,255,255,0.65);">lo que la IA permitió resolver que en 2022 era imposible</em></h2>
+      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">En 2022 el proyecto tenía tres cuellos de botella reales: fotografía de producto cara, una centralita colapsada con FAQs repetitivas y materiales de RRSS dependientes de producción física. En 2026 regresé al ecosistema con IA generativa y los resolví. Este es el resultado.</p>
     </div>
 
-    <!-- EN -->
-    <div class="en">
-      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">2026 Lab:<br><em style="color:rgba(255,255,255,0.65);">what I'd experiment with today on this project</em></h2>
-      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:680px; margin-bottom:48px;">Paolo was a real project with real problems. Today I also use it as a sandbox for solutions I'd apply with the tools available in 2026 — staying true to the context I lived between 2020 and 2022.</p>
+    <!-- EN HEADER -->
+    <div class="en fu">
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">2026 Redesign:<br><em style="color:rgba(255,255,255,0.65);">what AI made possible that was impossible in 2022</em></h2>
+      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">In 2022 the project had three real bottlenecks: expensive product photography, a phone line overwhelmed by repetitive FAQs, and social media content dependent on physical production. In 2026 I returned to the ecosystem with generative AI and solved them all. Here's the result.</p>
+    </div>
 
-      <div class="lab-grid">
-
-        <div class="lab-cell">
-          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Generative AI editing</div>
-          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">I've updated some of the project's visual assets using generative AI, without new photo production — maintaining visual coherence across the ecosystem.</p>
+    <!-- ─── Fila 01 · VIDEO · imagen izquierda + texto derecha ─── -->
+    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Hero Banner · Vídeo web generativo</div>
+        <div style="border-radius: 8px; overflow: hidden;">
+          <video autoplay loop muted playsinline style="width:100%; display:block; object-fit: cover;">
+            <source src="projects/04-paolo/assets/hero-banner.mp4" type="video/mp4">
+          </video>
         </div>
-
-        <div class="lab-cell">
-          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Chatbot for recurring questions</div>
-          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">One of the business's real problems was an overloaded phone line with repetitive questions: allergens, opening hours, availability. The solution I'd design today is a conversational assistant that resolves these queries in real time, freeing the in-store team and reducing customer friction at the decision point.</p>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Generado con IA · 2026</p>
+      </div>
+      <div class="col-lg-6 col-md-12 text-start">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HERO BANNER · VÍDEO GENERATIVO</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Misma marca,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">nueva capa audiovisual</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Same brand,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">new audiovisual layer</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022, un vídeo hero requería producción, cámara y edición. En 2026, el mismo resultado se consigue con IA generativa: misma paleta ámbar/negro cálido, misma atmósfera artesana, sin sesión de rodaje.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022, a hero video required production, camera and editing. In 2026, the same result is achieved with generative AI: same amber/warm black palette, same artisan atmosphere, no shoot.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">RESULTADO:</span><span class="es"> Hero video del repositorio público — coherente con el sistema visual sin coste de producción.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">RESULT:</span><span class="en"> Web repository hero video — consistent with the visual system at zero production cost.</span>
         </div>
+      </div>
+    </div>
 
-        <div class="lab-cell">
-          <div style="font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#F2A222; margin-bottom:14px;">Recurring order automation</div>
-          <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.72; margin:0;">For regular customers, I'd implement recurring order commands to shorten the path between intent and purchase on the direct channel — no friction, no phone calls.</p>
+    <!-- ─── Fila 02 · FOTOGRAFÍA PRODUCTO · texto izquierda + grid fotos derecha ─── -->
+    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12 text-start">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · MANUAL GRÁFICO · FOTOGRAFÍA DE PRODUCTO CON IA</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El archivo fotográfico<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">reconstruido sin sesión</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The photo archive<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">rebuilt without a shoot</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 no había presupuesto para fotografía profesional consistente entre locales. En 2026, con IA generativa y el manual visual de Paolo como referencia — paleta ámbar y negro cálido, masa artesana, plano cenital — regeneré los 4 platos estrella manteniendo la coherencia del sistema original.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 there was no budget for consistent professional photography across locations. In 2026, with generative AI and Paolo's visual manual as reference — amber and warm black palette, artisan dough, overhead angle — I regenerated the 4 star dishes maintaining the original system's coherence.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Actualizar la imagen de producto de todos los locales sin nueva sesión fotográfica.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Update product photography across all locations without a new photo session.</span>
         </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="row g-3">
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">4 Formaggi</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/4 formaggi.webp" alt="4 Formaggi — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Tartufo</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/tartufo.webp" alt="Tartufo — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Diavola</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/diavola.webp" alt="Diavola — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Napoli</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/napoli.webp" alt="Napoli — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">4 platos estrella · Generados con IA · Mismo encuadre y paleta que el sistema visual original</p>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">4 star dishes · AI-generated · Same framing and palette as the original visual system</p>
+      </div>
+    </div>
 
+    <!-- ─── Fila 03 · RRSS WEB · imagen izquierda + texto derecha ─── -->
+    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Story Table · Hero repositorio web</div>
+        <div style="border-radius: 8px; overflow: hidden;">
+          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/story-table.jpg" alt="Mesa con pizza Paolo — hero banner repositorio web generado con IA" style="width:100%; height:auto; display:block;">
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Generado con IA · Header del repositorio público</p>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">AI-generated · Public repository header</p>
+      </div>
+      <div class="col-lg-6 col-md-12 text-start">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · RRSS Y WEB · REPO VISUAL CON IA</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Cards de servicio y social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">del mismo estilo</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Service cards and social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">in the same style</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Mismo hilo visual, nuevos materiales. Las piezas generadas con IA sirven tanto para las cards principales de servicios de la web como para los formatos de RRSS — story vertical, post cuadrado, hero de repositorio — sin depender de nueva producción fotográfica.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Same visual thread, new materials. The AI-generated pieces serve both as main service cards on the website and as social media formats — vertical story, square post, repository hero — without depending on new photography.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Generar contenido visual para todos los canales sin sesión fotográfica, manteniendo coherencia de marca.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Generate visual content for all channels without a photo session, maintaining brand coherence.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Fila 03b · PIEZAS SOCIALES · texto izquierda + collage derecha ─── -->
+    <div class="row g-5 align-items-start fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12 text-start" style="padding-top: 4px;">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03b · RRSS · PIEZAS SOCIALES Y CARDS</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Tres formatos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">mismo manual visual</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Three formats,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">same visual manual</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Story vertical humanizado para Instagram, card cuadrada de servicio y pieza de take-away — los tres formatos necesarios para activar todos los canales de comunicación del restaurante sin nueva producción de material.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Humanized vertical story for Instagram, square service card and take-away piece — the three formats needed to activate all restaurant communication channels without new material production.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Cubrir Instagram, web de servicios y take-away con un único briefing visual generado con IA.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Cover Instagram, services web and take-away with a single AI-generated visual brief.</span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start;">
+          <div>
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Niño Story · RRSS</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:3/4;">
+              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/niño-story.webp" alt="Niño con pizza — story Instagram generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div>
+              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Motivo Social · Card</div>
+              <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+                <img loading="lazy" decoding="async" src="projects/04-paolo/assets/motivo-social.jpg" alt="Motivo social Paolo — card de servicios" style="width:100%; height:100%; object-fit:cover; display:block;">
+              </div>
+            </div>
+            <div>
+              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Take Away · Card</div>
+              <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+                <img loading="lazy" decoding="async" src="projects/04-paolo/assets/take-away.webp" alt="Take Away Paolo — card generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">Story + Card social + Card servicio · Generadas con IA · 2026</p>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">Story + Social card + Service card · AI-generated · 2026</p>
+      </div>
+    </div>
+
+    <!-- ─── 04 · AGENTE DIGITAL · CHATBOT FAQ ─── -->
+    <div style="border-top: 1px solid rgba(242,162,34,0.12); padding-top:64px; margin-bottom:48px;">
+
+      <div class="story-header fu">
+        <span class="story-label">04 · AGENTE DIGITAL · CHATBOT FAQ</span>
+        <div class="es"><h3 class="story-title">Eliminando el cuello de botella <em>telefónico</em></h3></div>
+        <div class="en"><h3 class="story-title">Eliminating the <em>phone bottleneck</em></h3></div>
       </div>
 
-      <p style="font-size:13px; color:rgba(255,255,255,0.32); line-height:1.7; max-width:640px; margin-top:28px; font-style:italic;">None of these solutions existed when I designed and built this project. They're the natural evolution I'd propose today, using that real business context as the base.</p>
+      <div class="fu lab-chatbot-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border:1px solid rgba(242,162,34,0.18); border-radius:12px; overflow:hidden; margin-bottom:80px;">
+        <div style="padding:28px 24px; background:rgba(242,162,34,0.03);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El problema · 2022</div>
+          <div class="es" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">La centralita colapsaba con preguntas repetitivas</div>
+          <div class="en" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">The phone line was collapsing with repetitive questions</div>
+          <div class="es" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Alérgenos, horarios, disponibilidad... el equipo en sala tenía que interrumpir el servicio físico para responder por teléfono.</div>
+          <div class="en" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Allergens, opening hours, availability... floor staff had to interrupt physical service to answer the phone.</div>
+        </div>
+        <div style="padding:28px 24px; border-left:1px solid rgba(242,162,34,0.12); border-right:1px solid rgba(242,162,34,0.12);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El impacto real</div>
+          <div class="es" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Staff distraído = experiencia en mesa degradada</div>
+          <div class="en" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Distracted staff = degraded table experience</div>
+          <div class="es" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Cada llamada de FAQ era tiempo robado al servicio. Y muchas preguntas se quedaban sin responder porque la línea estaba ocupada.</div>
+          <div class="en" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Every FAQ call was time stolen from service. And many questions went unanswered because the line was busy.</div>
+        </div>
+        <div style="padding:28px 24px; background:rgba(242,162,34,0.04);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">La solución · 2026</div>
+          <div class="es" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Agente conversacional entrenado con el negocio</div>
+          <div class="en" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Conversational agent trained on the business</div>
+          <div class="es" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">El chatbot responde alérgenos, horarios y gestiona reservas en tiempo real. El personal en sala se queda en sala.</div>
+          <div class="en" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">The chatbot answers allergens, hours and manages reservations in real time. Floor staff stays on the floor.</div>
+        </div>
+      </div>
+
+      <!-- Fila A · seccion.ia · imagen izquierda + texto derecha -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+        <div class="col-lg-6 col-md-12">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Sección IA · Integración en la web</div>
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/seccion.ia.png" alt="Nueva sección IA integrada en la web de Paolo 2026" style="width:100%; height:auto; display:block;">
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Nueva sección incorporada al sitio · 2026</p>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">New section added to the site · 2026</p>
+        </div>
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04A · PRESENTACIÓN DEL AGENTE EN WEB</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El agente presentado<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin salir de la web</em></h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The agent presented<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without leaving the site</em></h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Nueva sección en el sitio que introduce el agente digital, explica qué preguntas puede resolver y ofrece la activación directa. El usuario no necesita ir a una app de mensajería ni llamar — todo ocurre en el mismo contexto de navegación.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">New section on the site that introduces the digital agent, explains what questions it can resolve and offers direct activation. The user does not need to go to a messaging app or call — everything happens in the same browsing context.</p>
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Introducir el canal del chatbot al usuario sin fricciones y sin abandonar la experiencia web.</span>
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Introduce the chatbot channel to the user frictionlessly without leaving the web experience.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila B · reserva.chat · texto izquierda + imagen derecha -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04B · CONVERSACIÓN REAL · ALÉRGENOS Y RESERVA</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Respuestas en segundos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin llamar</em></h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Answers in seconds,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without calling</em></h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El flujo real: el cliente pregunta por alérgenos de un plato o solicita una reserva. El agente, entrenado con los datos del negocio, responde con precisión en segundos — sin ocupar la línea, sin interrumpir al equipo en sala.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The real flow: the customer asks about allergens in a dish or requests a reservation. The agent, trained on business data, responds accurately in seconds — without tying up the line, without interrupting the floor team.</p>
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Resolver las FAQs más repetitivas del negocio sin intervención humana y en tiempo real.</span>
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Resolve the most repetitive business FAQs without human intervention and in real time.</span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Chat · Alérgenos y reserva en tiempo real</div>
+          <div class="device-phone-minimal">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/reserva.chat.png" alt="Chatbot Paolo — conversación real de reserva y consulta de alérgenos">
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Flujo de conversación real del agente digital · 2026</p>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">Real conversation flow of the digital agent · 2026</p>
+        </div>
+      </div>
+
+      <!-- Fila C · agente mobile · imagen izquierda + texto derecha -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <div class="col-lg-6 col-md-12">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Mobile · Agente en mano</div>
+          <div class="device-phone-minimal">
+            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/agenta.ia.mobile.png" alt="Agente IA de Paolo en móvil — diseño responsive del chatbot">
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px; text-align:center;" class="es">Versión mobile del agente · Acceso directo en el contexto de uso real</p>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px; text-align:center;" class="en">Mobile version of the agent · Direct access in the real usage context</p>
+        </div>
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04C · AGENTE EN MOBILE · CONTEXTO REAL DE USO</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El canal en el dispositivo<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">donde ocurre la decisión</em></h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The channel on the device<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">where the decision happens</em></h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El agente funciona en mobile sin redireccionamientos. El usuario que está en la calle decidiendo dónde cenar puede preguntar por alérgenos, confirmar horarios o hacer una reserva — todo en el mismo flujo, sin llamar, sin esperar.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The agent works on mobile without redirects. The user on the street deciding where to dine can ask about allergens, confirm hours or make a reservation — all in the same flow, without calling, without waiting.</p>
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Acceder al agente en el mismo contexto de decisión de compra, sin fricciones de dispositivo o canal.</span>
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Access the agent in the same purchase decision context, with no device or channel friction.</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /agente digital -->
+
+    <!-- Cierre -->
+    <div class="fu" style="padding-top:16px; border-top:1px solid rgba(255,255,255,0.05);">
+      <p class="es" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">La IA no reemplazó el trabajo de diseño de 2020–2022. Lo amplificó. La arquitectura, los journeys y el sistema visual seguían siendo la base. La IA resolvió los cuellos de botella que la tecnología de aquel momento no podía cubrir.</p>
+      <p class="en" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">AI did not replace the 2020–2022 design work. It amplified it. The architecture, journeys and visual system were still the foundation. AI solved the bottlenecks that the technology of that time could not cover.</p>
     </div>
 
   </div>
@@ -1683,7 +1891,6 @@
   }, { threshold: 0.01 });
   document.querySelectorAll('.fu').forEach(el => io.observe(el));
 
-  // Lang toggle (bilingual support)
   const stored = localStorage.getItem('portfolio-lang');
   if (stored === 'en') {
     document.documentElement.classList.add('lang-en');
@@ -1701,7 +1908,6 @@
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
   }
 
-  // Generación de token dinámico para abrir el proyecto Paolo
   (function() {
     function generateToken(dateString) {
       const secret = "paolo-secret-key-2026";
@@ -1716,8 +1922,6 @@
     }
     const todayStr = new Date().toISOString().slice(0, 10);
     const token = generateToken(todayStr);
-    
-    // Buscar y actualizar los enlaces correspondientes
     const links = document.querySelectorAll('a[href*="04-paolo.vercel.app"]');
     links.forEach(link => {
       try {
@@ -1725,15 +1929,10 @@
         url.searchParams.set('token', token);
         link.href = url.toString();
       } catch(e) {
-        if (link.href.indexOf('?') > -1) {
-          link.href += '&token=' + token;
-        } else {
-          link.href += '?token=' + token;
-        }
+        link.href += (link.href.indexOf('?') > -1 ? '&' : '?') + 'token=' + token;
       }
     });
   })();
 </script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
