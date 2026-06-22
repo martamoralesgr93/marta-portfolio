@@ -1434,6 +1434,81 @@ nav {
   }
   .footer-links { justify-content: center; flex-wrap: wrap; gap: 18px; }
   .contact-footer { padding-bottom: 84px; }
+
+  /* --- RESPONSIVE MOBILE GLOWS & GLASSMORPHISM POP --- */
+  /* Deep base ambient color on mobile body */
+  body {
+    background: radial-gradient(circle at 50% 0%, #0d091e 0%, #030206 45%, #000 100%) !important;
+  }
+
+  /* Add scrolling ambient section gradients to ensure glass cards always overlay colors */
+  .sobre-section {
+    background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 60%) !important;
+  }
+  .stack-section {
+    background: radial-gradient(circle at 90% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 60%) !important;
+  }
+  .work-section {
+    background: radial-gradient(circle at 15% 20%, rgba(249, 115, 22, 0.07) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 50%) !important;
+  }
+  .process-section {
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 60%) !important;
+  }
+  .contact-section {
+    background: radial-gradient(circle at 50% 90%, rgba(167, 139, 250, 0.09) 0%, transparent 60%) !important;
+  }
+
+  /* Reposition and vertically elongate glow blobs to span the taller mobile scroll height */
+  .glow {
+    filter: blur(90px) !important;
+  }
+  .g1 {
+    width: 320px !important; height: 500px !important;
+    top: -120px !important; right: -80px !important;
+    background: rgba(124, 58, 237, 0.45) !important;
+  }
+  .g2 {
+    width: 260px !important; height: 500px !important;
+    top: 380px !important; left: -100px !important;
+    background: rgba(249, 115, 22, 0.28) !important;
+  }
+  .g3 {
+    width: 300px !important; height: 600px !important;
+    top: 1400px !important; right: -120px !important;
+    background: rgba(59, 130, 246, 0.26) !important;
+  }
+  .g4 {
+    width: 280px !important; height: 600px !important;
+    top: 2600px !important; left: -100px !important;
+    background: rgba(167, 139, 250, 0.24) !important;
+  }
+  .g5 {
+    width: 300px !important; height: 850px !important;
+    top: 3900px !important; right: -120px !important;
+    background: rgba(249, 115, 22, 0.22) !important;
+  }
+  .g6 {
+    width: 350px !important; height: 850px !important;
+    top: 5200px !important; left: -120px !important;
+    background: rgba(124, 58, 237, 0.25) !important;
+  }
+
+  /* Enable glassmorphic blur on mobile metrics cards */
+  .mobile-metric-card {
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    background: rgba(255, 255, 255, 0.038) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  }
+
+  /* Make case study cards semi-transparent with blur to allow background colors to shine through */
+  .sc-card {
+    background: linear-gradient(155deg, rgba(7, 6, 14, 0.72) 0%, rgba(5, 4, 9, 0.72) 55%, rgba(6, 5, 16, 0.72) 100%) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
 }
 
 @media (max-width: 480px) {
