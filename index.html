@@ -713,14 +713,13 @@ nav {
   display: block;
   position: relative; z-index: 2;
   object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.5);
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .sc-card:hover .sc-img {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.7), 0 0 30px rgba(124, 58, 237, 0.15);
+  transform: scale(1.02);
 }
 
 /* ── Metrics column ── */
@@ -1536,15 +1535,14 @@ nav {
   padding: 22px 20px 18px;
   position: relative; overflow: hidden;
   font-family: 'Inter', sans-serif;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  background: linear-gradient(160deg, rgba(255,255,255,0.025) 0%, transparent 70%);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .sc-card:hover .dash-widget {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.7), 0 0 30px rgba(124, 58, 237, 0.15);
+  transform: scale(1.02);
 }
 .dash-topbar {
   display: flex; align-items: center; gap: 5px; margin-bottom: 18px;
