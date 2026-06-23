@@ -557,26 +557,18 @@ nav {
   display: grid;
   grid-template-columns: 460px 1fr 180px;
   min-height: 360px;
-  background: linear-gradient(155deg, #07060e 0%, #050409 55%, #060510 100%);
+  background: #07060b;
   border: 1px solid rgba(255,255,255,0.055);
-  border-radius: 18px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 14px;
+  margin-bottom: 24px;
   position: relative;
-  transition: border-color 0.38s, box-shadow 0.38s;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 .sc-card:hover {
-  border-color: rgba(167, 139, 250, 0.22);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 60px rgba(167, 139, 250, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: #090810;
 }
-
-/* Top shimmer line — dynamic gradient */
-.sc-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent 5%, rgba(167, 139, 250, 0.40) 45%, rgba(167, 139, 250, 0.18) 72%, transparent 95%);
-  opacity: 0; transition: opacity 0.42s; z-index: 10;
-}
-.sc-card:hover::before { opacity: 1; }
 
 /* ── Content column ── */
 .sc-content {
@@ -596,13 +588,11 @@ nav {
 .sc-num-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
 .sc-num-row .sc-num { margin-bottom: 0; }
 .sc-client-link {
-  font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-  color: rgba(255,255,255,0.5); text-decoration: none; transition: all 0.2s;
-  padding: 5px 12px; border: 1px solid rgba(255,255,255,0.1); border-radius: 100px;
-  background: rgba(255,255,255,0.02);
+  font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s ease;
 }
-.sc-client-link:hover {
-  color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.06);
+a.sc-client-link:hover {
+  color: var(--white);
 }
 .sc-title {
   font-family: 'Playfair Display', Georgia, serif;
@@ -684,24 +674,9 @@ nav {
 .sc-visual {
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: #040308;
   padding: 32px 24px;
-}
-/* Purple atmospheric glow behind image */
-.sc-visual::before {
-  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background:
-    radial-gradient(ellipse at 65% 44%, rgba(124,58,237,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 28% 78%, rgba(139,92,246,0.06) 0%, transparent 48%);
-}
-/* Dark edge vignette — cool black */
-.sc-visual::after {
-  content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none;
-  background:
-    linear-gradient(to right, rgba(5,4,12,0.60) 0%, transparent 28%),
-    linear-gradient(to left, rgba(5,4,12,0.42) 0%, transparent 25%),
-    linear-gradient(to bottom, rgba(5,4,12,0.25) 0%, transparent 30%),
-    linear-gradient(to top, rgba(5,4,12,0.40) 0%, transparent 32%);
+  border-left: 1px solid rgba(255,255,255,0.04);
 }
 .sc-img {
   /* Show at maximum container size */
@@ -747,15 +722,15 @@ nav {
 .sc-corner {
   position: absolute; bottom: 18px; right: 18px; z-index: 5;
   width: 26px; height: 26px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.18); font-size: 9px; text-decoration: none;
-  transition: all 0.22s ease;
+  color: rgba(255,255,255,0.25); font-size: 9px; text-decoration: none;
+  transition: all 0.2s ease;
 }
 .sc-card:hover .sc-corner {
-  border-color: rgba(167, 139, 250, 0.45);
-  color: var(--purple);
-  background: rgba(167, 139, 250, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 /* ===================== SKILLS / PROCESS SECTION ===================== */
@@ -2226,8 +2201,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <div class="nav-right">
-    <a href="assets/cv-marta-ats-es.pdf" download class="nav-cta nav-cv es">Descargar CV  ↗</a>
-    <a href="assets/cv-marta-ats-en.pdf" download class="nav-cta nav-cv en">Download CV  ↗</a>
+    <a href="assets/cv-marta-ats-es.pdf" download="" class="nav-cta nav-cv es">Descargar CV  ↗</a>
+    <a href="assets/cv-marta-ats-en.pdf" download="" class="nav-cta nav-cv en">Download CV  ↗</a>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
         <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
@@ -2252,8 +2227,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#process" onclick="closeMenu()"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
-  <a href="assets/cv-marta-ats-es.pdf" download class="mobile-menu-cta es">Descargar CV  ↗</a>
-  <a href="assets/cv-marta-ats-en.pdf" download class="mobile-menu-cta en">Download CV  ↗</a>
+  <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-cta es">Descargar CV  ↗</a>
+  <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-cta en">Download CV  ↗</a>
 </div>
 
 <!-- ==================== HERO ==================== -->
@@ -2281,8 +2256,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
           4 years working in hospitality, edtech and consulting. Always as the person who defines the problem, not just solves it.
         </p>
         <div class="hero-actions">
-          <a href="assets/cv-marta-ats-es.pdf" download class="btn-primary cta-download es">Descargar CV  ↗</a>
-          <a href="assets/cv-marta-ats-en.pdf" download class="btn-primary cta-download en">Download CV  ↗</a>
+          <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-primary cta-download es">Descargar CV  ↗</a>
+          <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-primary cta-download en">Download CV  ↗</a>
           <a href="#work" class="btn-ghost"><span class="es">Ver mi trabajo</span><span class="en">View my work</span>  ↓</a>
         </div>
       </div>
@@ -2601,10 +2576,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">01</div>
-          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">ILUNION Hotels ↗</a>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
         </div>
-        <h3 class="sc-title es">Booking Engine<br><em>de escaparate a conversión</em></h3>
-        <h3 class="sc-title en">Booking Engine<br><em>from showcase to conversion</em></h3>
+        <h3 class="sc-title es">ILUNION Booking Engine<br><em>de escaparate a conversión</em></h3>
+        <h3 class="sc-title en">ILUNION Booking Engine<br><em>from showcase to conversion</em></h3>
         <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer lead · Ingeniería + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
         <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: lead product designer · Engineering + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
         <div class="sc-cta-row">
@@ -2642,10 +2617,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">02</div>
-          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">ILUNION Hotels ↗</a>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels ↗</a>
         </div>
-        <h3 class="sc-title es">Experimentos AEM<br><em>de 3,36% a 6,5% de conversión</em></h3>
-        <h3 class="sc-title en">AEM Experiments<br><em>from 3.36% to 6.5% conversion</em></h3>
+        <h3 class="sc-title es">ILUNION CRO<br><em>de 3,36% a 6,5% de conversión</em></h3>
+        <h3 class="sc-title en">ILUNION CRO<br><em>from 3.36% to 6.5% conversion</em></h3>
         <p class="sc-desc es">Optimización del funnel de reservas en el canal directo tras migración a AEM. Diagnóstico estratégico y experimentos basados en research de comportamiento real. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
         <p class="sc-desc en">Direct channel booking funnel optimization post AEM migration. Strategic diagnosis and experiments based on real behavioral research. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
         <div class="sc-cta-row">
@@ -2694,10 +2669,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">03</div>
-          <a href="https://www.cef.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">CEF ↗</a>
+          <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
         </div>
-        <h3 class="sc-title es">Design System &amp; <em>Accesibilidad EdTech</em></h3>
-        <h3 class="sc-title en">Design System &amp; <em>EdTech Accessibility</em></h3>
+        <h3 class="sc-title es">CEF Design System<br><em>y accesibilidad EdTech</em></h3>
+        <h3 class="sc-title en">CEF Design System<br><em>and EdTech accessibility</em></h3>
         <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
         <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em></p>
         <div class="sc-cta-row">
@@ -2713,7 +2688,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-metrics">
         <div class="sc-metric">
           <div class="sc-mval">100%</div>
-          <div class="sc-mname">WCAG AA</div>
+          <div class="sc-mname es">WCAG AA</div>
+          <div class="sc-mname en">WCAG AA</div>
         </div>
         <div class="sc-metric">
           <div class="sc-mval">0</div>
@@ -2745,10 +2721,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">04</div>
-          <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">We Are Actions · Dept. IT</span>
+          <span class="sc-client-link" style="cursor:default;">We Are Actions</span>
         </div>
-        <h3 class="sc-title es">Cuando comprar no resuelve<br><em>diagnóstico de fricción operativa IT</em></h3>
-        <h3 class="sc-title en">When buying doesn't solve it<br><em>IT operational friction diagnosis</em></h3>
+        <h3 class="sc-title es">Oracle ERP &amp; IT Ops<br><em>cuando comprar no resuelve</em></h3>
+        <h3 class="sc-title en">Oracle ERP &amp; IT Ops<br><em>when buying doesn't solve it</em></h3>
         <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, diagnostiqué que Oracle generaba más fricción de la que resolvía. Propuse la decisión Build vs. Buy y diseñé conceptualmente la plataforma interna. Fue el detonante de mi formación en Product Design. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: discovery contextual · propuesta conceptual · estrategia de producto</em></p>
         <p class="sc-desc en">Embedded in We Are Actions' IT team, I diagnosed that Oracle was generating more friction than it solved. Proposed the Build vs. Buy decision and conceptually designed the internal platform. It triggered my Product Design training. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: contextual discovery · conceptual proposal · product strategy</em></p>
         <div class="sc-cta-row">
@@ -2759,76 +2735,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <!-- Dashboard: Build vs Buy / fricción IT -->
-        <div class="dash-widget">
-          <div class="dash-grid"></div>
-          <div class="dash-topbar">
-            <span class="dash-dot" style="background:#06b6d4"></span>
-            <span class="dash-dot" style="background:rgba(255,255,255,0.12)"></span>
-            <span class="dash-label">IT Ops · Build vs. Buy · 2022–2024</span>
-            <span class="dash-live" style="color:#06b6d4; border-color:rgba(6,182,212,0.3)"><span class="dash-live-dot" style="background:#06b6d4; box-shadow:0 0 6px #06b6d4;"></span>Research</span>
-          </div>
-
-          <!-- Sparkline: curva de fricción acumulada -->
-          <div class="dash-spark">
-            <svg viewBox="0 0 220 60" preserveAspectRatio="none" style="height:60px">
-              <defs>
-                <linearGradient id="it1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.22"></stop>
-                  <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-              <!-- Curva de fricción creciente: va subiendo (problema creciente) -->
-              <polyline class="dash-spark-area" points="0,54 40,50 80,43 120,34 160,22 200,8 220,4" fill="url(#it1)" stroke="none"></polyline>
-              <polyline class="dash-spark-line" points="0,54 40,50 80,43 120,34 160,22 200,8 220,4" stroke="#06b6d4"></polyline>
-              <circle class="dash-spark-dot" cx="220" cy="4" r="3" fill="#ef4444"></circle>
-              <circle class="dash-spark-dot" cx="220" cy="4" r="6" fill="#ef4444" style="opacity:0.2"></circle>
-              <circle cx="0" cy="54" r="2.5" fill="rgba(6,182,212,0.4)"></circle>
-            </svg>
-          </div>
-
-          <!-- Metric bars: hallazgos del discovery -->
-          <div class="dash-bars" style="margin-bottom:14px">
-            <div class="dash-bar-row">
-              <span class="dash-bar-lbl" style="color:rgba(255,255,255,0.4)">Usuarios plataforma</span>
-              <div class="dash-bar-track">
-                <div class="dash-bar-fill" style="width:100%; background:rgba(6,182,212,0.18)"></div>
-              </div>
-              <span class="dash-bar-val" style="color:rgba(255,255,255,0.4)">+50</span>
-            </div>
-            <div class="dash-bar-row">
-              <span class="dash-bar-lbl" style="color:#06b6d4">Patrones críticos</span>
-              <div class="dash-bar-track">
-                <div class="dash-bar-fill" style="width:80%; background: linear-gradient(90deg, #0891b2, #06b6d4, #22d3ee)"></div>
-              </div>
-              <span class="dash-bar-val" style="color:#06b6d4; font-weight:700">4</span>
-            </div>
-            <div class="dash-bar-row">
-              <span class="dash-bar-lbl" style="color:rgba(255,255,255,0.5)">Módulos propuestos</span>
-              <div class="dash-bar-track">
-                <div class="dash-bar-fill" style="width:80%; background:rgba(6,182,212,0.22)"></div>
-              </div>
-              <span class="dash-bar-val" style="color:rgba(255,255,255,0.5)">4</span>
-            </div>
-          </div>
-
-          <div class="dash-divider"></div>
-
-          <div class="dash-kpis">
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:#06b6d4">Build</div>
-              <div class="dash-kpi-lbl">Decisión estratégica</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:#34d399">4</div>
-              <div class="dash-kpi-lbl">Módulos MVP</div>
-            </div>
-            <div class="dash-kpi">
-              <div class="dash-kpi-val" style="color:rgba(255,255,255,0.65)">IT Ops</div>
-              <div class="dash-kpi-lbl">Sector</div>
-            </div>
-          </div>
-        </div>
+        <img src="assets/oracle_it_ops.png" class="sc-img" alt="Oracle ERP &amp; IT Ops">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2855,10 +2762,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">05</div>
-          <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">Paolo by Danny's Jazz</span>
+          <span class="sc-client-link" style="cursor:default;">Paolo by Danny's Jazz</span>
         </div>
-        <h3 class="sc-title es">El ecosistema digital que conectó<br><em>una pizzería en expansión con sus clientes</em></h3>
-        <h3 class="sc-title en">The digital ecosystem that connected<br><em>a growing pizzeria with its customers</em></h3>
+        <h3 class="sc-title es">Paolo Pizzeria<br><em>ecosistema digital de delivery</em></h3>
+        <h3 class="sc-title en">Paolo Pizzeria<br><em>digital delivery ecosystem</em></h3>
         <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 5 locales sin rediseño. Construido en pandemia. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
         <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
         <div class="sc-cta-row">
@@ -2869,7 +2776,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <img src="projects/04-paolo/assets/web4.png" class="sc-img" style="max-width: 90%; max-height: 90%;" alt="Paolo by Danny's Jazz — producto digital en producción">
+        <img src="projects/04-paolo/assets/web4.png" class="sc-img" alt="Paolo Pizzeria">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2992,8 +2899,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
           It started in consulting, analysing IT operational flows. Before designing interfaces, I learned to break down processes and find where they failed. That habit is still the first thing I activate in any new project.
         </p>
 
-        <a href="assets/cv-marta-ats-es.pdf" download class="btn-primary es" style="display: inline-flex;">Descargar CV  ↗</a>
-        <a href="assets/cv-marta-ats-en.pdf" download class="btn-primary en" style="display: inline-flex;">Download CV  ↗</a>
+        <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-primary es" style="display: inline-flex;">Descargar CV  ↗</a>
+        <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-primary en" style="display: inline-flex;">Download CV  ↗</a>
 
       </div>
 
@@ -3050,8 +2957,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <div class="contact-actions">
       <a href="mailto:mmoralesgr93@gmail.com" class="btn-primary">Email  →</a>
       <a href="https://wa.me/34659879887" class="btn-ghost" target="_blank">WhatsApp  ↗</a>
-      <a href="assets/cv-marta-ats-es.pdf" download class="btn-ghost es">Descargar CV</a>
-      <a href="assets/cv-marta-ats-en.pdf" download class="btn-ghost en">Download CV</a>
+      <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-ghost es">Descargar CV</a>
+      <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-ghost en">Download CV</a>
     </div>
     
     <!-- ==================== INLINE FOOTER ==================== -->
