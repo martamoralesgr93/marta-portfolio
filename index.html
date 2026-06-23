@@ -556,7 +556,7 @@ nav {
 /* ===================== SHOWCASE CASE STUDY CARDS ===================== */
 .sc-card {
   display: grid;
-  grid-template-columns: 380px 1fr 140px;
+  grid-template-columns: 460px 1fr 180px;
   min-height: 360px;
   background: linear-gradient(155deg, #07060e 0%, #050409 55%, #060510 100%);
   border: 1px solid rgba(255,255,255,0.055);
@@ -567,19 +567,14 @@ nav {
   transition: border-color 0.38s, box-shadow 0.38s;
 }
 .sc-card:hover {
-  border-color: rgba(var(--c-theme-rgb), 0.18);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 60px rgba(var(--c-theme-rgb), 0.07);
+  border-color: rgba(167, 139, 250, 0.22);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 60px rgba(167, 139, 250, 0.08);
 }
-.sc-card:nth-of-type(1) { --c-theme: #a855f7; --c-theme-rgb: 168, 85, 247; }
-.sc-card:nth-of-type(2) { --c-theme: #f97316; --c-theme-rgb: 249, 115, 22; }
-.sc-card:nth-of-type(3) { --c-theme: #3b82f6; --c-theme-rgb: 59, 130, 246; }
-.sc-card:nth-of-type(4) { --c-theme: #06b6d4; --c-theme-rgb: 6, 182, 212; }
-.sc-card:nth-of-type(5) { --c-theme: #F2A222; --c-theme-rgb: 242, 162, 34; }
 
 /* Top shimmer line — dynamic gradient */
 .sc-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent 5%, rgba(var(--c-theme-rgb), 0.40) 45%, rgba(var(--c-theme-rgb), 0.18) 72%, transparent 95%);
+  background: linear-gradient(90deg, transparent 5%, rgba(167, 139, 250, 0.40) 45%, rgba(167, 139, 250, 0.18) 72%, transparent 95%);
   opacity: 0; transition: opacity 0.42s; z-index: 10;
 }
 .sc-card:hover::before { opacity: 1; }
@@ -592,8 +587,12 @@ nav {
 }
 .sc-num {
   font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
-  color: var(--orange); opacity: 0.7; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35); text-transform: uppercase;
   margin-bottom: 22px;
+  transition: color 0.32s ease;
+}
+.sc-card:hover .sc-num {
+  color: var(--purple);
 }
 .sc-num-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
 .sc-num-row .sc-num { margin-bottom: 0; }
@@ -614,13 +613,11 @@ nav {
 }
 .sc-title em {
   font-style: italic;
-  color: var(--orange);
+  color: var(--purple);
 }
-.sc-title-purple em { color: var(--purple); }
-.sc-title-blue em   { color: var(--blue);   }
 .sc-desc {
   font-size: 13px; color: rgba(255,255,255,0.92); line-height: 1.82;
-  margin-bottom: 28px; max-width: 320px;
+  margin-bottom: 28px; max-width: 400px;
 }
 /* Two-button CTA row */
 .sc-cta-row {
@@ -688,14 +685,15 @@ nav {
 .sc-visual {
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
-  background: #04030c;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 32px 24px;
 }
 /* Purple atmospheric glow behind image */
 .sc-visual::before {
   content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    radial-gradient(ellipse at 65% 44%, rgba(124,58,237,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse at 28% 78%, rgba(249,115,22,0.08) 0%, transparent 48%);
+    radial-gradient(ellipse at 65% 44%, rgba(124,58,237,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 28% 78%, rgba(139,92,246,0.06) 0%, transparent 48%);
 }
 /* Dark edge vignette — cool black */
 .sc-visual::after {
@@ -708,21 +706,21 @@ nav {
 }
 .sc-img {
   /* Show at maximum container size */
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
   width: auto;
   height: auto;
   display: block;
   position: relative; z-index: 2;
   object-fit: contain;
-  border-radius: 0;
-  box-shadow: none;
-  transform: none;
-  filter: none;
-  transition: transform 0.4s ease;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
 .sc-card:hover .sc-img {
-  transform: scale(1.03);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.7), 0 0 30px rgba(124, 58, 237, 0.15);
 }
 
 /* ── Metrics column ── */
@@ -754,11 +752,12 @@ nav {
   border: 1px solid rgba(255,255,255,0.09);
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.18); font-size: 9px; text-decoration: none;
-  transition: border-color 0.22s, color 0.22s, background 0.22s;
+  transition: all 0.22s ease;
 }
 .sc-card:hover .sc-corner {
-  border-color: rgba(255,255,255,0.28); color: rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.04);
+  border-color: rgba(167, 139, 250, 0.45);
+  color: var(--purple);
+  background: rgba(167, 139, 250, 0.05);
 }
 
 /* ===================== SKILLS / PROCESS SECTION ===================== */
@@ -1532,12 +1531,20 @@ nav {
 
 /* ===================== DASHBOARD WIDGETS ===================== */
 .dash-widget {
-  width: 100%; height: 100%; min-height: 280px;
+  width: 100%; height: 100%; min-height: 260px;
   display: flex; flex-direction: column;
   padding: 22px 20px 18px;
   position: relative; overflow: hidden;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(160deg, rgba(255,255,255,0.025) 0%, transparent 70%);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+.sc-card:hover .dash-widget {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.7), 0 0 30px rgba(124, 58, 237, 0.15);
 }
 .dash-topbar {
   display: flex; align-items: center; gap: 5px; margin-bottom: 18px;
@@ -2593,11 +2600,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num" style="color: var(--purple);">01</div>
+          <div class="sc-num">01</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">ILUNION Hotels ↗</a>
         </div>
-        <h3 class="sc-title sc-title-purple es">Booking Engine<br><em>de escaparate a conversión</em></h3>
-        <h3 class="sc-title sc-title-purple en">Booking Engine<br><em>from showcase to conversion</em></h3>
+        <h3 class="sc-title es">Booking Engine<br><em>de escaparate a conversión</em></h3>
+        <h3 class="sc-title en">Booking Engine<br><em>from showcase to conversion</em></h3>
         <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer lead · Ingeniería + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
         <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: lead product designer · Engineering + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
         <div class="sc-cta-row">
@@ -2627,14 +2634,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">Validation channels</div>
         </div>
       </div>
-      <a href="booking-engine.html" class="sc-corner" style="color:var(--purple);" aria-label="Ver Caso de Estudio">↗</a>
+      <a href="booking-engine.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
     <!-- CASO 2: ILUNION — Rediseño del componente de Ofertas -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num" style="color: var(--orange);">02</div>
+          <div class="sc-num">02</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">ILUNION Hotels ↗</a>
         </div>
         <h3 class="sc-title es">Experimentos AEM<br><em>de 3,36% a 6,5% de conversión</em></h3>
@@ -2668,7 +2675,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">Club ÚNICOS Loyalty</div>
         </div>
       </div>
-      <a href="ilunion-cro.html" class="sc-corner" style="color:var(--orange);" aria-label="Ver Caso de Estudio">↗</a>
+      <a href="ilunion-cro.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
     <!-- BLOCK: TOOLS & B2B -->
@@ -2686,11 +2693,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num" style="color: var(--blue);">03</div>
+          <div class="sc-num">03</div>
           <a href="https://www.cef.com/" target="_blank" rel="noopener" style="font-size:10.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;">CEF ↗</a>
         </div>
-        <h3 class="sc-title sc-title-blue es">Design System &amp; <em>Accesibilidad EdTech</em></h3>
-        <h3 class="sc-title sc-title-blue en">Design System &amp; <em>EdTech Accessibility</em></h3>
+        <h3 class="sc-title es">Design System &amp; <em>Accesibilidad EdTech</em></h3>
+        <h3 class="sc-title en">Design System &amp; <em>EdTech Accessibility</em></h3>
         <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
         <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em></p>
         <div class="sc-cta-row">
@@ -2719,7 +2726,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">Unified Design System</div>
         </div>
       </div>
-      <a href="cef-design-system.html" class="sc-corner" style="color: var(--blue);" aria-label="Ver Caso de Estudio">↗</a>
+      <a href="cef-design-system.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
     <!-- BLOCK: CUSTOMER JOURNEY & PRODUCTO DIGITAL -->
@@ -2737,7 +2744,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num" style="color:#06b6d4;">04</div>
+          <div class="sc-num">04</div>
           <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">We Are Actions · Dept. IT</span>
         </div>
         <h3 class="sc-title es">Cuando comprar no resuelve<br><em>diagnóstico de fricción operativa IT</em></h3>
@@ -2840,14 +2847,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">Modules in conceptual proposal</div>
         </div>
       </div>
-      <a href="it-ops-oracle.html" class="sc-corner" style="color:#06b6d4;" aria-label="Ver Caso de Estudio">↗</a>
+      <a href="it-ops-oracle.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
     <!-- CASO 05: PAOLO BY DANNY'S JAZZ — Customer Journey & Producto Digital -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num" style="color: #F2A222;">05</div>
+          <div class="sc-num">05</div>
           <span class="sc-client-link" style="color:rgba(255,255,255,0.32); font-size:12px; letter-spacing:0.04em; cursor:default;">Paolo by Danny's Jazz</span>
         </div>
         <h3 class="sc-title es">El ecosistema digital que conectó<br><em>una pizzería en expansión con sus clientes</em></h3>
@@ -2881,7 +2888,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">End-to-end ownership</div>
         </div>
       </div>
-      <a href="paolo-pizzeria.html" class="sc-corner" style="color:#F2A222;" aria-label="Ver Caso de Estudio">↗</a>
+      <a href="paolo-pizzeria.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
   </div>
