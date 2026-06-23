@@ -74,12 +74,12 @@ html.lang-en .es { display: none !important; }
   pointer-events: none; z-index: 0; overflow: hidden;
 }
 .glow { position: absolute; border-radius: 50%; filter: blur(120px); }
-.g1 { background: rgba(124,58,237,0.34); width: 760px; height: 760px; top: -240px; right: -220px; }
-.g2 { background: rgba(249,115,22,0.22); width: 520px; height: 520px; top: 80px; right: -80px; }
-.g3 { background: rgba(59,130,246,0.18); width: 600px; height: 600px; top: 1100px; left: -250px; }
-.g4 { background: rgba(167,139,250,0.14); width: 440px; height: 440px; top: 2100px; right: 60px; }
-.g5 { background: rgba(249,115,22,0.12); width: 480px; height: 480px; top: 3200px; left: 80px; }
-.g6 { background: rgba(124,58,237,0.16); width: 600px; height: 260px; top: 4400px; left: 50%; transform: translateX(-50%); }
+.g1 { background: rgba(124,58,237,0.20); width: 760px; height: 760px; top: -240px; right: -220px; }
+.g2 { background: rgba(249,115,22,0.12); width: 520px; height: 520px; top: 80px; right: -80px; }
+.g3 { background: rgba(59,130,246,0.10); width: 600px; height: 600px; top: 1100px; left: -250px; }
+.g4 { background: rgba(167,139,250,0.08); width: 440px; height: 440px; top: 2100px; right: 60px; }
+.g5 { background: rgba(249,115,22,0.07); width: 480px; height: 480px; top: 3200px; left: 80px; }
+.g6 { background: rgba(124,58,237,0.09); width: 600px; height: 260px; top: 4400px; left: 50%; transform: translateX(-50%); }
 
 /* ===================== LAYOUT ===================== */
 .wrap { max-width: 1160px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
@@ -1812,8 +1812,8 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 22px;
   padding: 32px 28px;
-  backdrop-filter: blur(48px) saturate(220%);
-  -webkit-backdrop-filter: blur(48px) saturate(220%);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
   position: relative;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease, box-shadow 0.4s ease;
@@ -2168,12 +2168,37 @@ html.lang-en .hero-positioning.en { display: block !important; }
     animation: none !important;
   }
 }
+
+/* ===================== LIGHTBOX ===================== */
+.sc-img { cursor: zoom-in; }
+#lightbox-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92); backdrop-filter: blur(6px);
+  align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+#lightbox-overlay.open { display: flex; }
+#lightbox-img {
+  max-width: 90vw; max-height: 88vh;
+  object-fit: contain; border-radius: 8px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+  cursor: default;
+}
+#lightbox-close {
+  position: fixed; top: 20px; right: 24px; z-index: 10000;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+  color: #fff; font-size: 16px; cursor: pointer;
+  display: none; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+#lightbox-close.open { display: flex; }
+#lightbox-close:hover { background: rgba(255,255,255,0.16); }
+
 </style>
 </head>
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
-<div class="accent-strip"></div>
 <div class="glow-layer">
   <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
   <div class="glow g4"></div><div class="glow g5"></div><div class="glow g6"></div>
@@ -2250,16 +2275,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <div class="hero-actions">
           <a href="CV_Marta_Morales_2026" class="btn-primary cta-download"><span class="es">Descargar CV</span><span class="en">Download CV</span>  ↗</a>
           <a href="#work" class="btn-ghost"><span class="es">Ver mi trabajo</span><span class="en">View my work</span>  ↓</a>
-          <a href="https://wa.me/34659879887" class="btn-ghost" target="_blank">WhatsApp  ↗</a>
         </div>
-        <button onclick="chatToggle()" class="chat-nudge-hero es" aria-label="Abrir chat de dudas">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-          ¿Tienes dudas? Pregúntame aquí
-        </button>
-        <button onclick="chatToggle()" class="chat-nudge-hero en" aria-label="Open chat">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-          Any questions? Ask me here
-        </button>
       </div>
 
       <div class="impact-card">
@@ -2344,15 +2360,13 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <p class="sobre-tagline en">PRODUCT DESIGNER · 4+ YEARS · <span class="c-purple">DIAGNOSIS · DECISION · IMPACT.</span></p>
 
           <div class="sobre-body">
-            <p class="es">Empecé mi trayectoria en diseño visual, branding y gráfica corporativa, lo que me llevó a entender el diseño web no como algo estático, sino como un producto global. De ahí di el salto al entorno tecnológico full stack, especializándome en UX/UI y CRO con un fuerte perfil frontend.</p>
-            <p class="es">Para llegar aquí, he recorrido un camino evolutivo: comencé diseñando y maquetando webs informativas y desarrollando maquetación frontend para landings y mailings. Luego, me enfoqué en analizar problemas complejos de experiencia de usuario para resolver flujos transaccionales. Esto me abrió las puertas a plataformas EdTech de gran escala donde el objetivo principal era la optimización del funnel para la captación de leads.</p>
-            <p class="es">Por último, me sumé al equipo de negocio digital de ILUNION Hotels, liderando la evolución de su canal directo (un ecosistema ecommerce con 32 hoteles activos) y colaborando con partners y un gran equipo interno en el lanzamiento de una web 100% accesible que ahora se postula a premios de accesibilidad. Tras casi dos años construyendo este ecosistema de alto impacto, el día a día suma y sigue, pero estoy abierta a nuevos retos y propósitos profesionales.</p>
-            <p class="es">Desde 2023 incorporo IA en mi flujo de trabajo. En ILUNION he dado un paso más: coordino la generación de assets visuales del canal directo (fotografía de producto, materiales para el entorno digital) usando IA generativa con Vertex AI, Gemini y Figma, garantizando que el resultado mantiene la línea visual de la marca y el nivel de calidad exigido.</p>
+            <p class="es">4 años en producto digital: hospitality, EdTech y consultoría B2B. Siempre como la persona responsable de definir el problema, no solo de resolverlo.</p>
+            <p class="es">Los últimos dos años en ILUNION Hotels, liderando el canal directo de una cadena con 32 propiedades. Llegué a un ecommerce con deuda técnica y sin design system. Hoy tiene accesibilidad WCAG AA, experimentación continua y activos visuales generados con IA (Vertex AI, Gemini, Figma).</p>
+            <p class="es">Antes: plataforma académica EdTech donde construí el primer design system desde cero y diagnostiqué que una herramienta enterprise generaba más fricción de la que resolvía. Esa decisión —proponer Build vs. Buy— fue lo que me llevó al product design.</p>
 
-            <p class="en">I started my career in design, but over time I became increasingly interested in what happens beyond the interface: understanding user behaviour, measuring impact and connecting design decisions with business outcomes.</p>
-            <p class="en">Today, I work within the Digital Business team at ILUNION Hotels, contributing to the evolution of the direct digital channel of a 32-hotel chain. My work combines UX/UI Design, Customer Journey Optimisation, Accessibility, CRO and Data-Informed Design through tools such as Adobe Analytics, Microsoft Clarity, Figma and A/B Testing.</p>
-            <p class="en">Throughout my career, I have designed digital products across Hospitality, EdTech, eCommerce and B2B environments, built Design Systems from scratch and worked as the sole designer within multidisciplinary teams.</p>
-            <p class="en">Since 2023, I have actively incorporated AI tools into my daily workflow. At ILUNION Hotels I've taken that further: I coordinate the generation of visual assets for the direct channel (product photography, digital marketing materials) using generative AI with Vertex AI, Gemini and Figma, ensuring outputs are consistent with brand guidelines and meet the required quality standard.</p>
+            <p class="en">4 years in digital product: hospitality, EdTech and B2B consulting. Always as the person responsible for defining the problem, not just solving it.</p>
+            <p class="en">The last two years at ILUNION Hotels, leading the direct channel for a 32-property chain. Arrived at a technically-indebted ecommerce with no design system. Today: WCAG AA compliant, continuously tested, with visual assets produced using generative AI (Vertex AI, Gemini, Figma).</p>
+            <p class="en">Before that: EdTech academic platform where I built the first design system from scratch, and diagnosed that an enterprise tool was generating more friction than it solved. That decision — proposing Build vs. Buy — is what led me to product design.</p>
           </div>
 
           <a href="#work" class="sobre-cta">
@@ -2364,13 +2378,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </a>
 
           <div class="sobre-meta">
-            <div class="sobre-eq">
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
             <div class="sobre-location">
               <div class="sobre-loc-dot"></div>
-              <div class="sobre-loc-text es">España &nbsp;·&nbsp; <span id="sobreTime">--:--:-- CET</span></div>
-              <div class="sobre-loc-text en">Spain &nbsp;·&nbsp; <span id="sobreTimeEn">--:--:-- CET</span></div>
+              <div class="sobre-loc-text es">España &nbsp;·&nbsp; Disponible en remoto</div>
+              <div class="sobre-loc-text en">Spain &nbsp;·&nbsp; Available remotely</div>
             </div>
           </div>
         </div>
@@ -2599,7 +2610,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
-          <div class="sc-mval">↑</div>
+          <div class="sc-mval">#1</div>
           <div class="sc-mname es">Motor above the fold</div>
           <div class="sc-mname en">Engine above the fold</div>
         </div>
@@ -3029,8 +3040,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
     </div>
 
     <div class="contact-actions">
-      <a href="mailto:mmoralesgr93@gmail.com" class="btn-primary">Email  →</a>
-      <a href="https://wa.me/34659879887" class="btn-primary" style="background: linear-gradient(135deg, rgba(37,211,102,0.85), rgba(18,140,126,0.85)); box-shadow: 0 4px 15px rgba(37,211,102,0.2); border: 1px solid rgba(255,255,255,0.1);">WhatsApp  ↗</a>
+      <a href="mailto:mmoralesgr93@gmail.com" class="btn-primary">Email  →</a>
+      <a href="https://wa.me/34659879887" class="btn-ghost" target="_blank">WhatsApp  ↗</a>
       <a href="CV_Marta_Morales_2026" class="btn-ghost"><span class="es">Descargar CV</span><span class="en">Download CV</span></a>
     </div>
     
@@ -3117,17 +3128,6 @@ function closeMenu() {
 
 
   /* Scroll reveal — fade-up sections as they enter viewport */
-  /* Live clock for sobre section */
-  (function clock() {
-    const els = ['sobreTime','sobreTimeEn'].map(id => document.getElementById(id)).filter(Boolean);
-    if (!els.length) return;
-    function tick() {
-      const t = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      els.forEach(el => { el.textContent = t + ' CET'; });
-      setTimeout(tick, 1000);
-    }
-    tick();
-  })();
 
   const fadeTargets = document.querySelectorAll(
     '.sobre-content-col, .mobile-impact, ' +
@@ -3147,7 +3147,46 @@ function closeMenu() {
   fadeTargets.forEach(el => io.observe(el))
   scCards.forEach(el => io.observe(el));
 })();
+
+/* ---- LIGHTBOX ---- */
+(function() {
+  var overlay = document.getElementById('lightbox-overlay');
+  var lbImg   = document.getElementById('lightbox-img');
+  var lbClose = document.getElementById('lightbox-close');
+  if (!overlay) return;
+
+  function openLightbox(src, alt) {
+    lbImg.src = src; lbImg.alt = alt || '';
+    overlay.classList.add('open');
+    lbClose.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    overlay.classList.remove('open');
+    lbClose.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('.sc-img').forEach(function(img) {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLightbox(this.src, this.alt);
+    });
+  });
+
+  overlay.addEventListener('click', closeLightbox);
+  lbClose.addEventListener('click', function(e) { e.stopPropagation(); closeLightbox(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+})();
 </script>
+
+<!-- Lightbox -->
+<div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<button id="lightbox-close" aria-label="Cerrar imagen">✕</button>
+
 
 <!-- ===================== CHATBOT MARTA ===================== -->
 <style>
@@ -3649,4 +3688,92 @@ function closeMenu() {
   function resetChat(){
     document.getElementById('chatMessages').innerHTML='';
     document.getElementById('chatChips').innerHTML='';
-    document.getElementById('chat-undo').c
+    document.getElementById('chat-undo').classList.remove('visible');
+    history=[];
+    initialized=false;
+    isTyping=false;
+    initChat();
+  }
+
+  window.chatUndo=function(){
+    if(!history.length||isTyping)return;
+    var last=history.pop();
+    if(last.userEl&&last.userEl.parentNode) last.userEl.parentNode.removeChild(last.userEl);
+    if(last.botEl&&last.botEl.parentNode)   last.botEl.parentNode.removeChild(last.botEl);
+    /* Restore chips */
+    var c=document.getElementById('chatChips');c.innerHTML='';
+    (last.prevChips||[]).forEach(function(chip){
+      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
+      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
+      c.appendChild(btn);
+    });
+    if(!history.length) document.getElementById('chat-undo').classList.remove('visible');
+    var box=document.getElementById('chatMessages');
+    box.scrollTop=box.scrollHeight;
+  };
+
+  function sendMessage(text,intentOverride){
+    if(isTyping)return;
+    /* Snapshot current chips before clearing */
+    var prevChips=[];
+    document.getElementById('chatChips').querySelectorAll('.chat-chip').forEach(function(b){
+      prevChips.push({label:b.textContent,key:b.getAttribute('data-key')||''});
+    });
+    var userEl=addMsg(text,'user');
+    isTyping=true;
+    var intent=intentOverride||detectIntent(text);
+    showTyping();
+    setTimeout(function(){
+      removeTyping();
+      var botEl=addMsg(getResponse(intent),'bot');
+      isTyping=false;
+      history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
+      document.getElementById('chat-undo').classList.add('visible');
+      var lang=getLang();
+      var alwaysChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
+      var casesChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Skills',key:'skills'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'Habilidades',key:'skills'}];
+      if(intent==='cases'){renderChips(casesChips);}
+      else if(intent!=='interview'&&intent!=='contact'){renderChips(alwaysChips);}
+    },650+Math.random()*400);
+  }
+
+  function initChat(){
+    if(initialized)return;initialized=true;
+    setTimeout(function(){addMsg(getResponse('greeting'),'bot');renderChips(CHIPS[getLang()]);},180);
+  }
+
+  window.chatToggle=function(){
+    var panel=document.getElementById('chat-panel');
+    var trigger=document.getElementById('chat-trigger');
+    var badge=document.getElementById('chat-badge');
+    isOpen=!isOpen;
+    panel.classList.toggle('open',isOpen);
+    trigger.classList.toggle('open',isOpen);
+    if(isOpen){badge.classList.add('hidden');initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
+  };
+  window.chatSend=function(){
+    var input=document.getElementById('chatInput');
+    var text=input.value.trim();
+    if(!text||isTyping)return;
+    input.value='';input.style.height='';
+    document.getElementById('chatChips').innerHTML='';
+    sendMessage(text);
+  };
+  window.chatKeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();chatSend();}};
+  window.chatAutoResize=function(el){el.style.height='';el.style.height=Math.min(el.scrollHeight,90)+'px';};
+
+  /* Language switch: reset chat so greeting appears in the new language */
+  new MutationObserver(function(){
+    var input=document.getElementById('chatInput');
+    if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
+    if(isOpen&&initialized){resetChat();}
+  }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<!-- ===================== / CHATBOT MARTA ===================== -->
+
+</body></html>
