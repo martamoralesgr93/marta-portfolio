@@ -1144,4 +1144,10 @@
     const html = document.documentElement;
     const isEn = html.classList.contains('lang-en');
     document.querySelectorAll('.affinity-card[lang]').forEach(el => {
-      el.style.display = (isEn ? el.lang === 'en' : el.lang 
+      el.style.display = (isEn ? el.lang === 'en' : el.lang === 'es') ? 'block' : 'none';
+    });
+  }
+  applyLang();
+</script>
+</body>
+</html>
