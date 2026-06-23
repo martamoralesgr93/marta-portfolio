@@ -61,7 +61,7 @@
     /* ─── EVIDENCE CARDS (dato + imagen + caption) ── */
     .c2-evidence-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
     .c2-evidence-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
-    .c2-evidence-header { padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
+    .c2-evidence-header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
     .c2-evidence-num { font-family: var(--font-serif); font-size: 42px; font-weight: 700; line-height: 1; color: #ef4444; flex-shrink: 0; }
     .c2-evidence-meta { display: flex; flex-direction: column; gap: 4px; }
     .c2-evidence-label { font-size: 12px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
@@ -117,7 +117,9 @@
       .cs-block { padding: 80px 0; }
       .cs-ba { grid-template-columns: 1fr; gap: 40px; }
       .metric-cards { grid-template-columns: 1fr; gap: 16px; }
-      .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
+      .cs-hero-logo {
+  display: none;
+}
       .cs-frame, .cs-frame-auto {
         aspect-ratio: auto;
         min-height: 240px;
@@ -305,7 +307,7 @@
 <body>
 
 <nav class="cs-nav">
-  <a href="/" class="nav-back">
+  <a href="index.html" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   
@@ -316,25 +318,25 @@
         <span class="en">Case Studies ▾</span>
       </button>
       <div class="cs-dropdown-menu">
-        <a href="booking-engine" class="cs-dropdown-item">
+        <a href="booking-engine.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
           <div class="cs-item-title">Booking Engine</div>
           <div class="cs-item-skill es">Design Ops & Componentes</div>
           <div class="cs-item-skill en">Design Ops & Components</div>
         </a>
-        <a href="ilunion-cro" class="cs-dropdown-item">
+        <a href="ilunion-cro.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 02</div>
           <div class="cs-item-title">ILUNION CRO</div>
           <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
           <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
-        <a href="cef-design-system" class="cs-dropdown-item">
+        <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 03</div>
           <div class="cs-item-title">CEF EdTech</div>
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <a href="it-ops-oracle" class="cs-dropdown-item">
+        <a href="it-ops-oracle.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 04</div>
           <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
           <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
@@ -361,7 +363,7 @@
       01 — Booking Engine · Design Ops & Componentes
     </span>
     <h1 class="cs-title">
-      Rediseño del motor<br><em>de reservas</em>
+      Booking Engine<br><em>de escaparate a conversión</em>
     </h1>
     <div class="cs-tags">
       <span class="cs-tag">Product Design</span>
@@ -771,10 +773,10 @@
     <div class="footer-actions">
       <a href="paolo-pizzeria.html" class="btn btn-secondary es">← Caso 05</a>
       <a href="paolo-pizzeria.html" class="btn btn-secondary en">← Case 05</a>
-      <a href="/" class="btn btn-secondary es">Volver</a>
-      <a href="/" class="btn btn-secondary en">Back</a>
-      <a href="ilunion-cro" class="btn btn-primary es">Caso 02 →</a>
-      <a href="ilunion-cro" class="btn btn-primary en">Case 02 →</a>
+      <a href="index.html" class="btn btn-secondary es">Volver</a>
+      <a href="index.html" class="btn btn-secondary en">Back</a>
+      <a href="ilunion-cro.html" class="btn btn-primary es">Caso 02 →</a>
+      <a href="ilunion-cro.html" class="btn btn-primary en">Case 02 →</a>
     </div>
   </div>
 </footer>

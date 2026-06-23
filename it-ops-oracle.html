@@ -57,7 +57,7 @@
 
     /* SPREADSHEET MOCKUP */
     .spreadsheet-mockup { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
-    .ss-header { background: rgba(255,255,255,0.04); padding: 12px 18px; font-size: 11px; color: var(--text-dim); border-bottom: 1px solid var(--border); font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
+    .ss-header { background: rgba(255,255,255,0.04); position: relative; overflow: hidden; padding: 12px 18px; font-size: 11px; color: var(--text-dim); border-bottom: 1px solid var(--border); font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
     .ss-header-dots { display: flex; gap: 6px; }
     .ss-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
     .ss-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
@@ -252,7 +252,9 @@
     }
     @media (max-width: 768px) {
       .quick-summary-grid { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
-      .cs-hero-logo { display: block; opacity: 0.1; mask-image: linear-gradient(to bottom, black 0%, transparent 60%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 60%); background-position: top center; background-size: 150%; }
+      .cs-hero-logo {
+  display: none;
+}
       .insight-box { padding-left: 18px; margin: 28px 0; }
       .insight-box p { font-size: 16px; }
       .affinity-grid { gap: 12px; margin: 32px 0; }
@@ -276,7 +278,7 @@
 <body>
 
 <nav class="cs-nav">
-  <a href="/" class="nav-back">
+  <a href="index.html" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   
@@ -287,25 +289,25 @@
         <span class="en">Case Studies ▾</span>
       </button>
       <div class="cs-dropdown-menu">
-        <a href="booking-engine" class="cs-dropdown-item">
+        <a href="booking-engine.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
           <div class="cs-item-title">Booking Engine</div>
           <div class="cs-item-skill es">Design Ops & Componentes</div>
           <div class="cs-item-skill en">Design Ops & Components</div>
         </a>
-        <a href="ilunion-cro" class="cs-dropdown-item">
+        <a href="ilunion-cro.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 02</div>
           <div class="cs-item-title">ILUNION CRO</div>
           <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
           <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
-        <a href="cef-design-system" class="cs-dropdown-item">
+        <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 03</div>
           <div class="cs-item-title">CEF EdTech</div>
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <a href="it-ops-oracle" class="cs-dropdown-item">
+        <a href="it-ops-oracle.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 04</div>
           <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
           <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
@@ -1101,10 +1103,10 @@
     <h2 class="es">¿Vemos otro proyecto?</h2>
     <h2 class="en">Want to see another project?</h2>
     <div class="footer-actions">
-      <a href="cef-design-system" class="btn btn-secondary es">← Caso 03</a>
-      <a href="cef-design-system" class="btn btn-secondary en">← Case 03</a>
-      <a href="/" class="btn btn-secondary es">Volver</a>
-      <a href="/" class="btn btn-secondary en">Back</a>
+      <a href="cef-design-system.html" class="btn btn-secondary es">← Caso 03</a>
+      <a href="cef-design-system.html" class="btn btn-secondary en">← Case 03</a>
+      <a href="index.html" class="btn btn-secondary es">Volver</a>
+      <a href="index.html" class="btn btn-secondary en">Back</a>
       <a href="paolo-pizzeria.html" class="btn btn-primary es">Caso 05 →</a>
       <a href="paolo-pizzeria.html" class="btn btn-primary en">Case 05 →</a>
     </div>

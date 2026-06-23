@@ -102,7 +102,7 @@
       flex-direction: column;
     }
     .audit-panel-header {
-      padding: 16px 24px;
+      position: relative; overflow: hidden; padding: 16px 24px;
       border-bottom: 1px solid var(--border);
       font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--text-dim);
@@ -454,6 +454,9 @@
       .results-kpis,
       .learnings-4col { grid-template-columns: 1fr; }
     }
+    .cs-hero-logo {
+  display: none;
+}
   </style>
 </head>
 <body>
@@ -462,7 +465,7 @@
      NAV
 ══════════════════════════════════════ -->
 <nav class="cs-nav">
-  <a href="/" class="nav-back">
+  <a href="index.html" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   <div class="cs-nav-right">
@@ -472,25 +475,25 @@
         <span class="en">Case Studies ▾</span>
       </button>
       <div class="cs-dropdown-menu">
-        <a href="booking-engine" class="cs-dropdown-item">
+        <a href="booking-engine.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
           <div class="cs-item-title">Booking Engine</div>
           <div class="cs-item-skill es">Design Ops & Componentes</div>
           <div class="cs-item-skill en">Design Ops & Components</div>
         </a>
-        <a href="ilunion-cro" class="cs-dropdown-item">
+        <a href="ilunion-cro.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 02</div>
           <div class="cs-item-title">ILUNION CRO</div>
           <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
           <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
-        <a href="cef-design-system" class="cs-dropdown-item">
+        <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 03</div>
           <div class="cs-item-title">CEF EdTech</div>
           <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
           <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
         </a>
-        <a href="it-ops-oracle" class="cs-dropdown-item">
+        <a href="it-ops-oracle.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 04</div>
           <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
           <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
@@ -519,7 +522,7 @@
   <div class="cs-hero-content">
     <span class="cs-eyebrow">02 — ILUNION Hotels · CRO · Product Design</span>
     <h1 class="cs-title">
-      Componente de Ofertas<br><em>y Conversión</em>
+      Experimentos AEM<br><em>de 3,36% a 6,5% de conversión</em>
     </h1>
     <div class="cs-tags">
       <span class="cs-tag">Product Design</span>
@@ -1059,7 +1062,7 @@
       </div>
 
       <div class="lc-card">
-        <span class="lc-icon">💎</span>
+        <span class="lc-icon">◆</span>
         <p class="lc-title">Constraints Create Design</p>
         <p class="lc-text">
           Las limitaciones de AEM fueron tomadas como variables creativas, guiándonos a resolver el orden visual estructuralmente y fortaleciendo la adaptabilidad del diseño final.
@@ -1089,12 +1092,12 @@
     <h2 class="es">¿Vemos otro proyecto?</h2>
     <h2 class="en">Want to see another project?</h2>
     <div class="footer-actions">
-      <a href="booking-engine" class="btn btn-secondary es">← Caso 01</a>
-      <a href="booking-engine" class="btn btn-secondary en">← Case 01</a>
-      <a href="/" class="btn btn-secondary es">Volver</a>
-      <a href="/" class="btn btn-secondary en">Back</a>
-      <a href="cef-design-system" class="btn btn-primary es">Caso 03 →</a>
-      <a href="cef-design-system" class="btn btn-primary en">Case 03 →</a>
+      <a href="booking-engine.html" class="btn btn-secondary es">← Caso 01</a>
+      <a href="booking-engine.html" class="btn btn-secondary en">← Case 01</a>
+      <a href="index.html" class="btn btn-secondary es">Volver</a>
+      <a href="index.html" class="btn btn-secondary en">Back</a>
+      <a href="cef-design-system.html" class="btn btn-primary es">Caso 03 →</a>
+      <a href="cef-design-system.html" class="btn btn-primary en">Case 03 →</a>
     </div>
   </div>
 </footer>
