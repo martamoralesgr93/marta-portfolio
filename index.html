@@ -4464,8 +4464,8 @@ div.mobile-only {
     if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? '<strong>Google access coming soon:</strong> Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4255)</small>' 
-        : '<strong>Acceso con Google próximamente:</strong> Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4255)</small>';
+        ? '<strong>Restricted access:</strong> You cannot log in with this account yet as it requires prior authorization. Please complete the form on the left to request access.' 
+        : '<strong>Acceso restringido:</strong> Aún no puedes acceder con esta cuenta porque primero necesitas autorización. Por favor, completa el formulario de la izquierda para solicitar acceso.';
       
       showFormGuide(msg, 'info');
       
@@ -4561,8 +4561,8 @@ div.mobile-only {
     if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? '<strong>Microsoft access coming soon:</strong> Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4256)</small>' 
-        : '<strong>Acceso con Microsoft próximamente:</strong> Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4256)</small>';
+        ? '<strong>Restricted access:</strong> You cannot log in with this account yet as it requires prior authorization. Please complete the form on the left to request access.' 
+        : '<strong>Acceso restringido:</strong> Aún no puedes acceder con esta cuenta porque primero necesitas autorización. Por favor, completa el formulario de la izquierda para solicitar acceso.';
       
       showFormGuide(msg, 'info');
       
@@ -4652,12 +4652,10 @@ div.mobile-only {
 
   window.loginWithLinkedIn = function() {
     const lang = getLang();
-    const statusDiv = document.getElementById('lock-status');
-    statusDiv.style.display = 'block';
-    statusDiv.className = 'lock-status-container success';
-    statusDiv.innerHTML = lang === 'en'
-      ? 'Please fill out the form on the left, including your LinkedIn Profile, to request access.'
-      : 'Por favor, completa el formulario de la izquierda incluyendo tu perfil de LinkedIn para solicitar acceso.';
+    const msg = lang === 'en'
+      ? '<strong>LinkedIn Verification:</strong> Please complete the form on the left and include your LinkedIn profile to request access.'
+      : '<strong>Verificación por LinkedIn:</strong> Por favor, completa el formulario de la izquierda e incluye tu perfil de LinkedIn para solicitar tu acceso.';
+    showFormGuide(msg, 'info');
 
     window.switchLockTab('request');
     const linkedinInput = document.getElementById('req-linkedin');
