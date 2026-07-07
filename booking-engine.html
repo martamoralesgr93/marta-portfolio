@@ -311,6 +311,8 @@
       .c2rs-cell, .c2lc { border-right: none; border-bottom: 1px solid var(--border); }
       .c2rs-cell:last-child, .c2lc:last-child { border-bottom: none; }
       .pm-grid-cell { border-right: none; }
+      .pm-grid-cell[style*="opacity:0"] { display: none !important; }
+      .pm-grid-cell:nth-child(7) { border-bottom: none !important; }
     }
   </style>
 </head>
