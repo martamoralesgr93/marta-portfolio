@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="lang-es" lang="es">
 <head>
   <script type="text/javascript">
@@ -69,7 +69,10 @@
 
     /* QUICK SUMMARY */
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding: 32px 0; border-top: 1px solid var(--border); }
+    .quick-summary-grid {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding: 32px 0; border-top: 1px solid var(--border); }
     .qs-col { display: flex; flex-direction: column; }
     .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
     .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
@@ -249,10 +252,18 @@
     @media (max-width: 900px) {
       .tool-grid { grid-template-columns: 1fr 1fr; }
       .touchpoint-grid { grid-template-columns: 1fr; }
-      .quick-summary-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
+      .quick-summary-grid {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px; grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
     }
     @media (max-width: 768px) {
-      .quick-summary-grid { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+      /* Ocultar letra decorativa gigante en mobile para evitar overflow horizontal */
+      .cs-behance-letter { display: none !important; }
+      .quick-summary-grid {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px; grid-template-columns: 1fr; gap: 16px; padding: 20px; }
       .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
       .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
       .dash-impact-num { font-size: 64px; }

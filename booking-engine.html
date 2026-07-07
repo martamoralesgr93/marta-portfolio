@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="lang-es" lang="es">
 <head>
   <script type="text/javascript">
@@ -109,7 +109,7 @@
       .lead { font-size: 18px; }
       .cs-ba { grid-template-columns: 1fr; gap: 24px; }
       .metric-cards { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .metric-card { padding: 28px 16px; }
+      .metric-card { padding: 24px 14px; }
       .metric-val { font-size: 40px; }
       /* Role grid: stack to 1 col */
       .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
@@ -118,6 +118,8 @@
 
     /* RESPONSIVE MOBILE */
     @media (max-width: 768px) {
+      /* Ocultar letra decorativa gigante en mobile para evitar overflow horizontal */
+      .cs-behance-letter { display: none !important; }
       .cs-nav { padding: 0 24px; height: 56px; }
       .nav-label { display: none; }
       .cs-hero-content { padding: 0 24px 72px; }

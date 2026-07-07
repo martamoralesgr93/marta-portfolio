@@ -315,6 +315,10 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
 .footer-actions { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
 
 /* ── 12. RESPONSIVE DESIGN & ADAPTABILITY ── */
+
+/* Consolidado: ocultar logo de fondo en hero (evita duplicación en cada página) */
+.cs-hero-logo { display: none; }
+
 @media (max-width: 900px) {
   .cs-nav { padding: 0 var(--space-md); }
   .cs-hero-content { padding: 0 var(--space-md) 72px; }
@@ -324,6 +328,7 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
   .tool-grid { grid-template-columns: 1fr 1fr; }
   .cs-grid-2, .cs-grid-3 { grid-template-columns: 1fr; gap: var(--space-sm); }
   .cs-frame-auto { padding: 0; }
+  /* Paso intermedio: 2 columnas entre 600–900px */
   .quick-summary-grid { grid-template-columns: 1fr 1fr !important; gap: var(--space-md) !important; padding: var(--space-md) !important; }
   .cs-meta { gap: var(--space-md); }
   .footer-actions { flex-direction: column; align-items: center; }
@@ -333,14 +338,15 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
 @media (max-width: 768px) {
   .cs-nav { padding: 0 var(--space-sm); height: 60px; }
   .cs-hero { min-height: auto; padding-top: 120px; display: block; overflow: visible; }
-  .cs-hero-content { padding: 0 var(--space-sm) 40px; }
+  .cs-hero-content { padding: 0 20px 40px; }
   .cs-title { font-size: clamp(32px, 8vw, 52px); margin-bottom: 24px; }
   .cs-eyebrow { font-size: 10px; margin-bottom: 16px; }
   .cs-tags { gap: 5px; margin-bottom: var(--space-md); }
   .cs-tag { font-size: 10px; padding: 4px 10px; }
   .cs-meta { gap: var(--space-sm) var(--space-md); }
   .cs-meta-val { font-size: 13px; }
-  .cs-wrap, .cs-wrap-wide { padding: 0 var(--space-sm); }
+  /* Padding lateral reducido en mobile: 48px → 20px */
+  .cs-wrap, .cs-wrap-wide { padding: 0 20px; }
   .cs-block { padding: 60px 0; }
   .block-h { font-size: clamp(26px, 6vw, 36px); margin-bottom: 28px; }
   .lead { font-size: 17px; }
@@ -355,6 +361,7 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
   .cs-frame { margin: 32px 0; }
   .cs-frame-auto { padding: 0; margin: 32px 0; border-radius: var(--radius-md); }
   .cs-grid-2, .cs-grid-3 { margin: 32px 0; }
+  /* Mobile: 1 columna */
   .quick-summary-grid { grid-template-columns: 1fr !important; gap: var(--space-sm) !important; padding: var(--space-sm) !important; }
   .cs-footer h2 { font-size: clamp(26px, 6vw, 40px); }
   .footer-actions { flex-direction: column; align-items: stretch; }
@@ -367,12 +374,19 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
   .lang-toggle { font-size: 10px; padding: 4px 10px; }
   .cs-dropdown-trigger { font-size: 11px; padding: 5px 12px; }
 
-  /* Global responsive grid utility overrides for case studies */
+  /* Tablas responsivas: scroll horizontal en vez de truncar */
+  .cs-wrap table, .cs-wrap-wide table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Global responsive grid overrides — cubren variantes con y sin espacio tras los dos puntos */
   .c2-evidence-pair { grid-template-columns: 1fr !important; gap: var(--space-md) !important; }
   .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   .fu[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  /* Grids inline: capturamos también variantes con gap inline para mayor robustez */
   div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: var(--space-md) !important; }
   div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; gap: var(--space-md) !important; }
+  /* Capturar grids con gap explícito en el style inline */
+  div[style*="grid-template-columns"][style*="gap:64px"] { grid-template-columns: 1fr !important; gap: var(--space-md) !important; }
+  div[style*="grid-template-columns"][style*="gap: 64px"] { grid-template-columns: 1fr !important; gap: var(--space-md) !important; }
 }
 
 @media (max-width: 480px) {

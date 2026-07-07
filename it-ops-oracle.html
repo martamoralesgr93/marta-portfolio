@@ -248,6 +248,9 @@
 
     /* RESPONSIVE OVERRIDES */
     @media (max-width: 900px) {
+      /* IA tree: overflow-x scroll en tablet para preservar estructura */
+      .ia-tree-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .ia-branches-row { min-width: 640px; }
       .quick-summary-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
       .affinity-grid, .user-groups, .modules-grid, .learning-grid, .ia-branches-row { grid-template-columns: 1fr; }
       .scenario-cols { grid-template-columns: 1fr; }
@@ -926,7 +929,8 @@
       <span class="block-label es">Priorización del MVP</span>
       <span class="block-label en">MVP Prioritisation</span>
     </div>
-    <table class="priority-table fu">
+    <div style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin: 0 -4px;">
+    <table class="priority-table fu" style="min-width:540px">
       <thead>
         <tr>
           <th class="es">Funcionalidad</th>
@@ -980,6 +984,7 @@
         </tr>
       </tbody>
     </table>
+    </div><!-- end overflow wrapper -->
 
   </div>
 </section>
