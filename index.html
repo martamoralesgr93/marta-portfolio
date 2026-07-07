@@ -4174,18 +4174,7 @@ div.mobile-only {
         </button>
       </div>
 
-      <!-- Token Entry Section -->
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 16px;">
-        <div class="form-group" style="margin-bottom: 12px;">
-          <input type="text" id="unlock-token" placeholder="Token" class="form-input" onkeydown="handleTokenKeydown(event)">
-        </div>
-        
-        <button onclick="unlockWithEnteredToken()" class="lock-submit-btn" style="margin-bottom: 0;">
-          <span class="es">Desbloquear</span>
-          <span class="en">Unlock</span>
-        </button>
-        <div id="lock-status" class="lock-status-container" style="width: 100%; margin-top: 12px;"></div>
-      </div>
+      <div id="lock-status" class="lock-status-container" style="width: 100%; margin-top: 12px;"></div>
 
       <!-- Privacy Notice (Compact, at the bottom) -->
       <div class="lock-privacy-note es" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 12px;">
@@ -4221,11 +4210,17 @@ div.mobile-only {
   }
 
   // Initialize Lock Screen State
+  const urlParamsInit = new URLSearchParams(window.location.search);
+  const urlToken = urlParamsInit.get('token');
+  if (urlToken && isValidToken(urlToken)) {
+    localStorage.setItem('portfolio_token', urlToken.trim().toLowerCase());
+  }
+
   const token = localStorage.getItem('portfolio_token');
   const savedGoogleEmail = localStorage.getItem('portfolio_google_email');
   
   const isTokenAuthorized = isValidToken(token);
-  const isGoogleAuthorized = savedGoogleEmail && WHITELISTED_EMAILS.includes(savedGoogleEmail.trim().toLowerCase());
+  const isGoogleAuthorized = savedGoogleEmail && WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(savedGoogleEmail.trim().toLowerCase());
   
   if (isTokenAuthorized || isGoogleAuthorized) {
     document.getElementById('portfolio-content').style.display = 'block';
@@ -4405,12 +4400,13 @@ div.mobile-only {
     });
   };
 
-  // Unlock with token entered manually
-  window.unlockWithEnteredToken = function() {
+  // Unlock with token entered manually or passed programmatically
+  window.unlockWithEnteredToken = function(customToken) {
     const input = document.getElementById('unlock-token');
-    const token = input.value.trim();
+    const token = typeof customToken === 'string' ? customToken.trim() : (input ? input.value.trim() : '');
     const statusDiv = document.getElementById('lock-status');
     const lang = getLang();
+    if (!token) return;
 
     if (isValidToken(token)) {
       statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
@@ -4447,8 +4443,10 @@ div.mobile-only {
     } else {
       statusDiv.textContent = lang === 'en' ? 'Invalid token. Please try again.' : 'Token inválido. Inténtalo de nuevo.';
       statusDiv.className = 'lock-status-container error';
-      input.focus();
-      input.select();
+      if (input) {
+        input.focus();
+        input.select();
+      }
     }
   };
 
