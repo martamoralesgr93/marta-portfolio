@@ -4047,14 +4047,38 @@ div.mobile-only {
         <p class="lock-subtitle">Product Designer</p>
       </div>
       
+      <!-- Mobile flow guide legend -->
+      <div class="mobile-only" style="margin-top: -12px; margin-bottom: 16px; text-align: center; font-size: 11px; line-height: 1.4; color: var(--dim);">
+        <span class="es">¿Primera vez? Solicita acceso. ¿Ya verificado? Usa Redes o Token.</span>
+        <span class="en">First time? Request access. Already verified? Use Social or Token.</span>
+      </div>
+      
       <div class="lock-message desktop-only" style="margin-bottom: 24px;">
         <div class="es">
-          <p class="lock-text-main" style="text-align: center; margin-bottom: 8px;">Este portfolio está disponible para profesionales verificados. La verificación ayuda a preservar la confidencialidad de determinados proyectos y a ofrecer una experiencia de revisión personalizada.</p>
-          <p class="lock-text-sub" style="text-align: center;">Accede rápido con tus redes profesionales para entrar al instante.</p>
+          <p class="lock-text-main" style="text-align: center; margin-bottom: 12px;">Este portfolio está disponible para profesionales verificados. La verificación ayuda a preservar la confidencialidad de determinados proyectos y a ofrecer una experiencia de revisión personalizada.</p>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; margin-top: 16px; font-size: 13px; line-height: 1.45; text-align: left; color: rgba(255,255,255,0.75);">
+            <div style="margin-bottom: 10px;">
+              👉 <strong>¿Es tu primera vez aquí?</strong><br>
+              Solicita acceso a través del formulario manual. Tras verificar tu solicitud, se autorizará tu correo.
+            </div>
+            <div>
+              🔐 <strong>¿Ya tienes autorización o invitación?</strong><br>
+              Entra al instante con tu cuenta de <strong>Google/Microsoft</strong> o introduce tu <strong>Token</strong> de acceso.
+            </div>
+          </div>
         </div>
         <div class="en">
-          <p class="lock-text-main" style="text-align: center; margin-bottom: 8px;">This portfolio is available for verified professionals. Verification helps preserve the confidentiality of certain projects and offers a personalized review experience.</p>
-          <p class="lock-text-sub" style="text-align: center;">Sign in with your professional accounts for instant access.</p>
+          <p class="lock-text-main" style="text-align: center; margin-bottom: 12px;">This portfolio is available for verified professionals. Verification helps preserve the confidentiality of certain projects and offers a personalized review experience.</p>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; margin-top: 16px; font-size: 13px; line-height: 1.45; text-align: left; color: rgba(255,255,255,0.75);">
+            <div style="margin-bottom: 10px;">
+              👉 <strong>First time here?</strong><br>
+              Request access using the manual form. Once verified, your email will be authorized.
+            </div>
+            <div>
+              🔐 <strong>Already authorized or invited?</strong><br>
+              Sign in instantly with your <strong>Google/Microsoft</strong> account or enter your access <strong>Token</strong>.
+            </div>
+          </div>
         </div>
       </div>
       
@@ -4506,9 +4530,12 @@ div.mobile-only {
     if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? 'Google Sign-in is not configured yet. Marta needs to add her production Client ID in index.html (Line 4082).' 
-        : 'El acceso con Google no está configurado aún. Marta debe reemplazar el Client ID de prueba en index.html (Línea 4082).';
-      alert(msg);
+        ? 'Google Sign-in is not configured yet. Marta needs to add her production Client ID in index.html (Line 4255).' 
+        : 'El acceso con Google no está configurado aún. Marta debe reemplazar el Client ID de prueba en index.html (Línea 4255).';
+      const statusDiv = document.getElementById('lock-status');
+      statusDiv.style.display = 'block';
+      statusDiv.innerHTML = msg;
+      statusDiv.className = 'lock-status-container error';
       console.warn(msg);
       return;
     }
@@ -4622,9 +4649,12 @@ div.mobile-only {
     if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? 'Microsoft Sign-in is not configured yet. Marta needs to add her Azure Client ID in index.html (Line 4083).' 
-        : 'El acceso con Microsoft no está configurado aún. Marta debe reemplazar el Azure Client ID de prueba en index.html (Línea 4083).';
-      alert(msg);
+        ? 'Microsoft Sign-in is not configured yet. Marta needs to add her Azure Client ID in index.html (Line 4256).' 
+        : 'El acceso con Microsoft no está configurado aún. Marta debe reemplazar el Azure Client ID de prueba en index.html (Línea 4256).';
+      const statusDiv = document.getElementById('lock-status');
+      statusDiv.style.display = 'block';
+      statusDiv.innerHTML = msg;
+      statusDiv.className = 'lock-status-container error';
       console.warn(msg);
       return;
     }
