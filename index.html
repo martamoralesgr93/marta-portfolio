@@ -4442,13 +4442,17 @@ div.mobile-only {
     if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? 'Google Sign-in is not configured yet. Marta needs to add her production Client ID in index.html (Line 4255).' 
-        : 'El acceso con Google no está configurado aún. Marta debe reemplazar el Client ID de prueba en index.html (Línea 4255).';
+        ? 'Google Sign-in will be enabled soon. Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4255)</small>' 
+        : 'El acceso con Google se habilitará próximamente. Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4255)</small>';
+      
       const statusDiv = document.getElementById('lock-status');
       statusDiv.style.display = 'block';
       statusDiv.innerHTML = msg;
-      statusDiv.className = 'lock-status-container error';
-      console.warn(msg);
+      statusDiv.className = 'lock-status-container success';
+      
+      window.switchLockTab('request');
+      const reqName = document.getElementById('req-name');
+      if (reqName) reqName.focus();
       return;
     }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
@@ -4503,56 +4507,34 @@ div.mobile-only {
         }
       }, 400);
     } else {
-      statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
-      statusDiv.className = 'lock-status-container loading';
+      // Pre-fill the form on the left with Google OAuth details
+      const reqName = document.getElementById('req-name');
+      const reqEmail = document.getElementById('req-email');
+      if (reqName) reqName.value = name || '';
+      if (reqEmail) reqEmail.value = email || '';
       
-      fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          company: 'Google Account User',
-          message: 'Solicitud de acceso rápido a través de Google Sign-in',
-          _subject: `Solicitud de Acceso Google - Portafolio (De: ${name})`,
-          _captcha: 'false'
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success === 'true' || data.success === true) {
-          statusDiv.innerHTML = lang === 'en' 
-            ? '<strong>Request sent!</strong> Google account not authorized yet. Marta has been notified to whitelist your email.' 
-            : '<strong>¡Solicitud enviada!</strong> Tu cuenta de Google aún no está autorizada. Marta ha sido notificada para añadir tu email a la lista permitida.';
-          statusDiv.className = 'lock-status-container success';
-          
-          if (typeof window.clarity === "function") {
-            let domain = "unknown";
-            if (email.includes("@")) {
-              domain = email.split("@")[1];
-            }
-            window.clarity("identify", email);
-            window.clarity("set", "name", name);
-            window.clarity("set", "company", email);
-            window.clarity("set", "company_domain", domain);
-            if (payload.locale) {
-              window.clarity("set", "user_locale", payload.locale);
-            }
-            window.clarity("set", "user_type", "google_request_pending");
-          }
-        } else {
-          throw new Error('Error de envío');
+      // Switch view to left column and focus Company
+      window.switchLockTab('request');
+      const reqCompany = document.getElementById('req-company');
+      if (reqCompany) reqCompany.focus();
+      
+      // Display encouraging message
+      statusDiv.style.display = 'block';
+      statusDiv.innerHTML = lang === 'en'
+        ? '<strong>Almost there!</strong> We pre-filled your name and email. Please enter your Company to complete the request.'
+        : '<strong>¡Casi listo!</strong> Hemos completado tu nombre y correo. Por favor, escribe tu Empresa en la izquierda para completar tu solicitud.';
+      statusDiv.className = 'lock-status-container success';
+      
+      if (typeof window.clarity === "function") {
+        let domain = "unknown";
+        if (email.includes("@")) {
+          domain = email.split("@")[1];
         }
-      })
-      .catch(err => {
-        statusDiv.textContent = lang === 'en'
-          ? 'Error sending request. Please email mmoralesgr93@gmail.com'
-          : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
-        statusDiv.className = 'lock-status-container error';
-      });
+        window.clarity("identify", email);
+        window.clarity("set", "name", name);
+        window.clarity("set", "company_domain", domain);
+        window.clarity("set", "user_type", "google_login_failed_prefilled");
+      }
     }
   }
 
@@ -4561,13 +4543,17 @@ div.mobile-only {
     if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? 'Microsoft Sign-in is not configured yet. Marta needs to add her Azure Client ID in index.html (Line 4256).' 
-        : 'El acceso con Microsoft no está configurado aún. Marta debe reemplazar el Azure Client ID de prueba en index.html (Línea 4256).';
+        ? 'Microsoft Sign-in will be enabled soon. Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4256)</small>' 
+        : 'El acceso con Microsoft se habilitará próximamente. Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4256)</small>';
+      
       const statusDiv = document.getElementById('lock-status');
       statusDiv.style.display = 'block';
       statusDiv.innerHTML = msg;
-      statusDiv.className = 'lock-status-container error';
-      console.warn(msg);
+      statusDiv.className = 'lock-status-container success';
+      
+      window.switchLockTab('request');
+      const reqName = document.getElementById('req-name');
+      if (reqName) reqName.focus();
       return;
     }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
@@ -4619,58 +4605,46 @@ div.mobile-only {
         }
       }, 400);
     } else {
-      statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
-      statusDiv.className = 'lock-status-container loading';
+      // Pre-fill the form on the left with Microsoft OAuth details
+      const reqName = document.getElementById('req-name');
+      const reqEmail = document.getElementById('req-email');
+      if (reqName) reqName.value = name || '';
+      if (reqEmail) reqEmail.value = email || '';
       
-      fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          company: 'Microsoft Account User',
-          message: 'Solicitud de acceso rápido a través de Microsoft Sign-in',
-          _subject: `Solicitud de Acceso Microsoft - Portafolio (De: ${name})`,
-          _captcha: 'false'
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success === 'true' || data.success === true) {
-          statusDiv.innerHTML = lang === 'en' 
-            ? '<strong>Request sent!</strong> Microsoft account not authorized yet. Marta has been notified to whitelist your email.' 
-            : '<strong>¡Solicitud enviada!</strong> Tu cuenta de Microsoft aún no está autorizada. Marta ha sido notificada para añadir tu email a la lista permitida.';
-          statusDiv.className = 'lock-status-container success';
-          
-          if (typeof window.clarity === "function") {
-            let domain = "unknown";
-            if (email.includes("@")) {
-              domain = email.split("@")[1];
-            }
-            window.clarity("identify", email);
-            window.clarity("set", "name", name);
-            window.clarity("set", "company", email);
-            window.clarity("set", "company_domain", domain);
-            window.clarity("set", "user_type", "microsoft_request_pending");
-          }
-        } else {
-          throw new Error('Error de envío');
+      // Switch view to left column and focus Company
+      window.switchLockTab('request');
+      const reqCompany = document.getElementById('req-company');
+      if (reqCompany) reqCompany.focus();
+      
+      // Display encouraging message
+      statusDiv.style.display = 'block';
+      statusDiv.innerHTML = lang === 'en'
+        ? '<strong>Almost there!</strong> We pre-filled your name and email. Please enter your Company to complete the request.'
+        : '<strong>¡Casi listo!</strong> Hemos completado tu nombre y correo. Por favor, escribe tu Empresa en la izquierda para completar tu solicitud.';
+      statusDiv.className = 'lock-status-container success';
+      
+      if (typeof window.clarity === "function") {
+        let domain = "unknown";
+        if (email.includes("@")) {
+          domain = email.split("@")[1];
         }
-      })
-      .catch(err => {
-        statusDiv.textContent = lang === 'en'
-          ? 'Error sending request. Please email mmoralesgr93@gmail.com'
-          : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
-        statusDiv.className = 'lock-status-container error';
-      });
+        window.clarity("identify", email);
+        window.clarity("set", "name", name);
+        window.clarity("set", "company_domain", domain);
+        window.clarity("set", "user_type", "microsoft_login_failed_prefilled");
+      }
     }
   }
 
-  // Acción al hacer clic en LinkedIn
   window.loginWithLinkedIn = function() {
+    const lang = getLang();
+    const statusDiv = document.getElementById('lock-status');
+    statusDiv.style.display = 'block';
+    statusDiv.className = 'lock-status-container success';
+    statusDiv.innerHTML = lang === 'en'
+      ? 'Please fill out the form on the left, including your LinkedIn Profile, to request access.'
+      : 'Por favor, completa el formulario de la izquierda incluyendo tu perfil de LinkedIn para solicitar acceso.';
+
     window.switchLockTab('request');
     const linkedinInput = document.getElementById('req-linkedin');
     if (linkedinInput) {
@@ -4680,7 +4654,7 @@ div.mobile-only {
       setTimeout(() => {
         linkedinInput.style.borderColor = '';
         linkedinInput.style.boxShadow = '';
-      }, 2000);
+      }, 3000);
     }
   };
 })();
