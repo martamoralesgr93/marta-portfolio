@@ -1,5 +1,12 @@
 <!DOCTYPE html><html lang="es"><head>
-<script src="/auth-lock.js"></script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xisxzka5pe");
+  </script>
+  <script src="/auth-lock.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marta Morales — Product Designer · UX/UI · Design Systems · Spain</title>
@@ -4076,6 +4083,12 @@ function closeMenu() {
     .then(response => response.json())
     .then(data => {
       if (data.success === 'true' || data.success === true) {
+        if (typeof window.clarity === "function") {
+          window.clarity("identify", email);
+          window.clarity("set", "name", name);
+          window.clarity("set", "company", company);
+          window.clarity("set", "user_type", "request_success");
+        }
         statusDiv.innerHTML = lang === 'en' 
           ? '<strong>Request sent!</strong> Marta will receive it and email you an access link.' 
           : '<strong>¡Solicitud enviada!</strong> Marta la recibirá y te enviará un enlace de acceso por email.';
@@ -4105,6 +4118,11 @@ function closeMenu() {
       statusDiv.className = 'lock-status-container success';
       
       localStorage.setItem('portfolio_token', token.toLowerCase());
+      
+      if (typeof window.clarity === "function") {
+        window.clarity("set", "company", token.toLowerCase());
+        window.clarity("set", "user_type", "token_holder");
+      }
       
       // Animate lock screen out
       const lockScreen = document.getElementById('portfolio-lock-screen');

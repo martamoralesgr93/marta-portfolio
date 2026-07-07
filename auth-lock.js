@@ -41,6 +41,12 @@
   const savedToken = localStorage.getItem('portfolio_token');
   const isAuthorized = isValidToken(savedToken);
 
+  // Registrar en Clarity si está autorizado
+  if (isAuthorized && typeof window.clarity === "function") {
+    window.clarity("set", "company", savedToken);
+    window.clarity("set", "user_type", "token_holder");
+  }
+
   // Determinar si es la página de inicio
   const isIndexPage = window.location.pathname === '/' || 
                       window.location.pathname.endsWith('index.html') || 
