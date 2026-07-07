@@ -3861,6 +3861,25 @@ div.mobile-only {
     gap: 16px;
     margin: 16px;
   }
+  
+  /* Mobile tab display logic */
+  .lock-card.show-request #pane-right {
+    display: none !important;
+  }
+  .lock-card.show-request #pane-left {
+    display: block !important;
+  }
+  
+  .lock-card.show-unlock #pane-left > *:not(.lock-header):not(.mobile-only) {
+    display: none !important;
+  }
+  .lock-card.show-unlock #pane-left {
+    display: block !important;
+  }
+  .lock-card.show-unlock #pane-right {
+    display: block !important;
+  }
+
   .lock-pane-left {
     padding-right: 0;
     border-right: none;
@@ -4039,157 +4058,50 @@ div.mobile-only {
   </div>
   
   <div class="lock-card">
-    <!-- Left Pane: Identity & Social Login -->
-    <div class="lock-pane-left">
-      <div class="lock-header" style="margin-bottom: 24px;">
+    <!-- Tabs header (Visible on mobile only) -->
+    <div class="lock-tabs mobile-only" style="margin-bottom: 20px; width: 100%;">
+      <button id="tab-request-btn" class="lock-tab-btn active" onclick="switchLockTab('request')" type="button">
+        <span class="es">Solicitar Acceso</span>
+        <span class="en">Request Access</span>
+      </button>
+      <button id="tab-unlock-btn" class="lock-tab-btn" onclick="switchLockTab('unlock')" type="button">
+        <span class="es">Ya tengo acceso</span>
+        <span class="en">Already verified</span>
+      </button>
+    </div>
+
+    <!-- Column 1 / Left Pane: Header & Request Form (First time) -->
+    <div id="pane-left" class="lock-pane-left">
+      <!-- Header (Always visible at the top) -->
+      <div class="lock-header" style="margin-bottom: 20px;">
         <img src="assets/logo-nuevo.png" alt="Marta Morales" class="lock-logo">
         <h1 class="lock-title">Marta Morales</h1>
         <p class="lock-subtitle">Product Designer</p>
       </div>
-      
+
       <!-- Mobile flow guide legend -->
       <div class="mobile-only" style="margin-top: -12px; margin-bottom: 16px; text-align: center; font-size: 11px; line-height: 1.4; color: var(--dim);">
-        <span class="es">¿Primera vez? Solicita acceso. ¿Ya verificado? Usa Redes o Token.</span>
-        <span class="en">First time? Request access. Already verified? Use Social or Token.</span>
-      </div>
-      
-      <div class="lock-message desktop-only" style="margin-bottom: 24px;">
-        <div class="es">
-          <p class="lock-text-main" style="text-align: center; margin-bottom: 12px;">Este portfolio está disponible para profesionales verificados. La verificación ayuda a preservar la confidencialidad de determinados proyectos y a ofrecer una experiencia de revisión personalizada.</p>
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; margin-top: 16px; font-size: 13px; line-height: 1.45; text-align: left; color: rgba(255,255,255,0.75);">
-            <div style="margin-bottom: 10px;">
-              👉 <strong>¿Es tu primera vez aquí?</strong><br>
-              Solicita acceso a través del formulario manual. Tras verificar tu solicitud, se autorizará tu correo.
-            </div>
-            <div>
-              🔐 <strong>¿Ya tienes autorización o invitación?</strong><br>
-              Entra al instante con tu cuenta de <strong>Google/Microsoft</strong> o introduce tu <strong>Token</strong> de acceso.
-            </div>
-          </div>
-        </div>
-        <div class="en">
-          <p class="lock-text-main" style="text-align: center; margin-bottom: 12px;">This portfolio is available for verified professionals. Verification helps preserve the confidentiality of certain projects and offers a personalized review experience.</p>
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; margin-top: 16px; font-size: 13px; line-height: 1.45; text-align: left; color: rgba(255,255,255,0.75);">
-            <div style="margin-bottom: 10px;">
-              👉 <strong>First time here?</strong><br>
-              Request access using the manual form. Once verified, your email will be authorized.
-            </div>
-            <div>
-              🔐 <strong>Already authorized or invited?</strong><br>
-              Sign in instantly with your <strong>Google/Microsoft</strong> account or enter your access <strong>Token</strong>.
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="social-btn-stack desktop-only">
-        <!-- Google -->
-        <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Continuar con Google" type="button">
-          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
-          </svg>
-          <span class="es">Continuar con Google</span>
-          <span class="en">Continue with Google</span>
-        </button>
-        
-        <!-- Microsoft -->
-        <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Continuar con Microsoft" type="button">
-          <svg class="social-icon" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="11" height="11" fill="#F25022"></rect>
-            <rect x="12" width="11" height="11" fill="#7FBA00"></rect>
-            <rect y="12" width="11" height="11" fill="#00A4EF"></rect>
-            <rect x="12" y="12" width="11" height="11" fill="#FFB900"></rect>
-          </svg>
-          <span class="es">Continuar con Microsoft</span>
-          <span class="en">Continue with Microsoft</span>
-        </button>
-        
-        <!-- LinkedIn -->
-        <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="Solicitar acceso con LinkedIn" type="button">
-          <svg class="social-icon" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-          </svg>
-          <span class="es">Solicitar con LinkedIn</span>
-          <span class="en">Request with LinkedIn</span>
-        </button>
+        <span class="es">Primera vez: Solicita acceso. Ya verificado: Usa la pestaña "Ya tengo acceso".</span>
+        <span class="en">First time: Request access. Already verified: Use the "Already verified" tab.</span>
       </div>
 
-      <!-- Privacy Notice -->
-      <div class="lock-privacy-note es desktop-only" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 16px;">
-        🔒 <strong>Privacidad</strong>: Datos cifrados de extremo a extremo. Tu correo se usa únicamente para verificación profesional en Clarity.
-      </div>
-      <div class="lock-privacy-note en desktop-only" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 16px;">
-        🔒 <strong>Privacy</strong>: Data is encrypted end-to-end. Your email is used solely for professional validation in Clarity.
-      </div>
-    </div>
-    
-    <!-- Right Pane: Forms & Access Tokens -->
-    <div class="lock-pane-right">
-      <div class="lock-tabs" style="margin-bottom: 24px;">
-        <button id="tab-social-btn" class="lock-tab-btn mobile-only" onclick="switchLockTab('social')">
-          <span class="es">Redes</span>
-          <span class="en">Social</span>
-        </button>
-        <button id="tab-request-btn" class="lock-tab-btn active" onclick="switchLockTab('request')">
-          <span class="es">Solicitar Acceso</span>
-          <span class="en">Request Access</span>
-        </button>
-        <button id="tab-unlock-btn" class="lock-tab-btn" onclick="switchLockTab('unlock')">
-          <span class="es">Tengo un Token</span>
-          <span class="en">I have a Token</span>
-        </button>
+      <!-- Introductory copy (Hide on mobile to save space) -->
+      <div class="lock-message desktop-only" style="margin-bottom: 20px;">
+        <p class="lock-text-main" style="font-size: 13px; line-height: 1.45; color: var(--dim); text-align: left;">
+          <span class="es">Este portfolio está disponible para profesionales verificados. La verificación ayuda a preservar la confidencialidad de determinados proyectos y a ofrecer una experiencia de revisión personalizada.</span>
+          <span class="en">This portfolio is available for verified professionals. Verification helps preserve the confidentiality of certain projects and offers a personalized review experience.</span>
+        </p>
       </div>
 
-      <!-- Tab 0: Social Access Form (Mobile only) -->
-      <div id="lock-social-form" class="lock-tab-content mobile-only" style="display: none;">
-        <div class="social-btn-stack" style="margin-bottom: 14px;">
-          <!-- Google -->
-          <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Continuar con Google" type="button">
-            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
-            </svg>
-            <span class="es">Continuar con Google</span>
-            <span class="en">Continue with Google</span>
-          </button>
-          
-          <!-- Microsoft -->
-          <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Continuar con Microsoft" type="button">
-            <svg class="social-icon" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="11" height="11" fill="#F25022"></rect>
-              <rect x="12" width="11" height="11" fill="#7FBA00"></rect>
-              <rect y="12" width="11" height="11" fill="#00A4EF"></rect>
-              <rect x="12" y="12" width="11" height="11" fill="#FFB900"></rect>
-            </svg>
-            <span class="es">Continuar con Microsoft</span>
-            <span class="en">Continue with Microsoft</span>
-          </button>
-          
-          <!-- LinkedIn -->
-          <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="Solicitar acceso con LinkedIn" type="button">
-            <svg class="social-icon" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-            </svg>
-            <span class="es">Solicitar con LinkedIn</span>
-            <span class="en">Request with LinkedIn</span>
-          </button>
-        </div>
-        <div class="lock-privacy-note es" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 12px;">
-          🔒 Tu email se usa exclusivamente para verificar tu acceso profesional en Clarity.
-        </div>
-        <div class="lock-privacy-note en" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 12px;">
-          🔒 Your email is used solely to verify your professional access in Clarity.
-        </div>
-      </div>
-      
-      <!-- Tab 1: Request Access Form -->
-      <form id="lock-request-form" class="lock-tab-content active-content" onsubmit="submitAccessRequest(event)">
-        <div class="form-grid-row" style="margin-bottom: 14px;">
+      <!-- Section Title for Request Access (Desktop only) -->
+      <h2 class="lock-section-title desktop-only" style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 8px;">
+        <span class="es">¿Es tu primera vez aquí? Solicita acceso</span>
+        <span class="en">First time here? Request access</span>
+      </h2>
+
+      <!-- Form: Request Access -->
+      <form id="lock-request-form" onsubmit="submitAccessRequest(event)">
+        <div class="form-grid-row" style="margin-bottom: 12px;">
           <div class="form-grid-col">
             <div class="form-group" style="margin-bottom: 0;">
               <label for="req-name">
@@ -4210,7 +4122,7 @@ div.mobile-only {
           </div>
         </div>
         
-        <div class="form-grid-row" style="margin-bottom: 14px;">
+        <div class="form-grid-row" style="margin-bottom: 12px;">
           <div class="form-grid-col">
             <div class="form-group" style="margin-bottom: 0;">
               <label for="req-email">
@@ -4236,7 +4148,7 @@ div.mobile-only {
             <span class="es">Mensaje (opcional)</span>
             <span class="en">Message (optional)</span>
           </label>
-          <textarea id="req-message" rows="2" placeholder="Detalles sobre el proyecto o vacante... / Details about the project or role..." class="form-input"></textarea>
+          <textarea id="req-message" rows="2" placeholder="Detalles sobre el proyecto o vacante..." class="form-input"></textarea>
         </div>
         
         <button type="submit" class="lock-submit-btn" style="margin-bottom: 12px;">
@@ -4244,13 +4156,58 @@ div.mobile-only {
           <span class="en">Send Request</span>
         </button>
       </form>
-      
-      <!-- Tab 2: Unlock Form -->
-      <div id="lock-unlock-form" class="lock-tab-content" style="display: none;">
-        <div class="form-group" style="margin-bottom: 20px;">
+    </div>
+
+    <!-- Column 2 / Right Pane: Social Logins & Token Unlock (Returning/Authorized) -->
+    <div id="pane-right" class="lock-pane-right">
+      <h2 class="lock-section-title" style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 8px;">
+        <span class="es">¿Ya tienes acceso? Entra aquí</span>
+        <span class="en">Already verified? Enter here</span>
+      </h2>
+      <p class="lock-section-desc" style="font-size: 12px; color: var(--dim); margin-bottom: 20px; line-height: 1.4;">
+        <span class="es">Accede rápido con tus cuentas profesionales o introduce tu token.</span>
+        <span class="en">Access quickly with your professional accounts or enter your token.</span>
+      </p>
+
+      <div class="social-btn-stack" style="margin-bottom: 20px;">
+        <!-- Google -->
+        <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Continuar con Google" type="button">
+          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#fff"></path>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#fff"></path>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#fff"></path>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#fff"></path>
+          </svg>
+          <span class="es">Continuar con Google</span>
+          <span class="en">Continue with Google</span>
+        </button>
+        
+        <!-- Microsoft -->
+        <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Continuar con Microsoft" type="button">
+          <svg class="social-icon" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="11" height="11" fill="#fff"></rect>
+            <rect x="12" width="11" height="11" fill="#fff"></rect>
+            <rect y="12" width="11" height="11" fill="#fff"></rect>
+            <rect x="12" y="12" width="11" height="11" fill="#fff"></rect>
+          </svg>
+          <span class="es">Continuar con Microsoft</span>
+          <span class="en">Continue with Microsoft</span>
+        </button>
+        
+        <!-- LinkedIn -->
+        <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="Solicitar acceso con LinkedIn" type="button">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+          </svg>
+          <span class="es">Solicitar con LinkedIn</span>
+          <span class="en">Request with LinkedIn</span>
+        </button>
+      </div>
+
+      <!-- Token Entry Section -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 16px;">
+        <div class="form-group" style="margin-bottom: 12px;">
           <label for="unlock-token">
-            <span class="es">Introduce tu token de acceso *</span>
-            <span class="en">Enter your access token *</span>
           </label>
           <input type="text" id="unlock-token" placeholder="Introduce tu token / Enter your token" class="form-input" onkeydown="handleTokenKeydown(event)">
         </div>
@@ -4334,67 +4291,48 @@ div.mobile-only {
     }
   }
 
-  // Tab switching
+  // Tab switching (Mobile only)
   window.switchLockTab = function(tab) {
-    const reqForm = document.getElementById('lock-request-form');
-    const unlockForm = document.getElementById('lock-unlock-form');
-    const socialForm = document.getElementById('lock-social-form');
-    
+    const card = document.querySelector('.lock-card');
     const reqBtn = document.getElementById('tab-request-btn');
     const unlockBtn = document.getElementById('tab-unlock-btn');
-    const socialBtn = document.getElementById('tab-social-btn');
     const statusDiv = document.getElementById('lock-status');
+    
+    if (!card) return;
     
     statusDiv.style.display = 'none';
     statusDiv.className = 'lock-status-container';
     
     if (tab === 'request') {
-      reqForm.style.display = 'block';
-      if (unlockForm) unlockForm.style.display = 'none';
-      if (socialForm) socialForm.style.display = 'none';
-      
+      card.classList.remove('show-unlock');
+      card.classList.add('show-request');
       reqBtn.classList.add('active');
-      if (unlockBtn) unlockBtn.classList.remove('active');
-      if (socialBtn) socialBtn.classList.remove('active');
-    } else if (tab === 'unlock') {
-      reqForm.style.display = 'none';
-      if (unlockForm) unlockForm.style.display = 'block';
-      if (socialForm) socialForm.style.display = 'none';
-      
+      unlockBtn.classList.remove('active');
+    } else {
+      card.classList.remove('show-request');
+      card.classList.add('show-unlock');
       reqBtn.classList.remove('active');
-      if (unlockBtn) unlockBtn.classList.add('active');
-      if (socialBtn) socialBtn.classList.remove('active');
+      unlockBtn.classList.add('active');
       setTimeout(() => {
         const input = document.getElementById('unlock-token');
         if (input) input.focus();
       }, 50);
-    } else if (tab === 'social') {
-      reqForm.style.display = 'none';
-      if (unlockForm) unlockForm.style.display = 'none';
-      if (socialForm) socialForm.style.display = 'block';
-      
-      reqBtn.classList.remove('active');
-      if (unlockBtn) unlockBtn.classList.remove('active');
-      if (socialBtn) socialBtn.classList.add('active');
     }
   };
 
-  // Auto-switch tabs based on viewport width
+  // Initialize tabs based on screen size
   function handleViewportTabs() {
     const isMobile = window.innerWidth <= 820;
-    const socialBtn = document.getElementById('tab-social-btn');
+    const card = document.querySelector('.lock-card');
+    if (!card) return;
     
     if (isMobile) {
-      const reqActive = document.getElementById('tab-request-btn').classList.contains('active');
-      const unlockActive = document.getElementById('tab-unlock-btn').classList.contains('active');
-      if (!unlockActive && reqActive) {
-        window.switchLockTab('social');
-      }
-    } else {
-      const socialActive = socialBtn && socialBtn.classList.contains('active');
-      if (socialActive) {
+      if (!card.classList.contains('show-request') && !card.classList.contains('show-unlock')) {
         window.switchLockTab('request');
       }
+    } else {
+      card.classList.remove('show-request');
+      card.classList.remove('show-unlock');
     }
   }
 
