@@ -7,8 +7,6 @@
     })(window, document, "clarity", "script", "xisxzka5pe");
   </script>
   <script src="/auth-lock.js"></script>
-  <!-- Google Identity Services -->
-  <script src="https://accounts.google.com/gsi/client" async="" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marta Morales — Product Designer · UX/UI · Design Systems · Spain</title>
@@ -3765,34 +3763,34 @@ function closeMenu() {
   flex: 1;
   min-width: 0;
 }
-.social-btn-container {
+.social-btn-stack {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
   margin-bottom: 16px;
-  flex-wrap: wrap;
+  width: 100%;
 }
 .social-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  height: 40px;
+  position: relative;
+  width: 100%;
+  height: 44px;
   padding: 0 16px;
-  border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.85);
   font-family: inherit;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .social-btn:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
   color: #fff;
   transform: translateY(-1px);
 }
@@ -3800,25 +3798,27 @@ function closeMenu() {
   transform: translateY(0);
 }
 .social-icon {
-  width: 16px;
-  height: 16px;
+  position: absolute;
+  left: 16px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
+}
+.google-btn:hover {
+  background: rgba(66, 133, 244, 0.08);
+  border-color: rgba(66, 133, 244, 0.2);
+}
+.ln-btn:hover {
+  background: rgba(0, 119, 181, 0.08);
+  border-color: rgba(0, 119, 181, 0.2);
 }
 @media (max-width: 580px) {
   .lock-card {
-    padding: 30px 24px;
+    padding: 30px 20px;
   }
   .form-grid-row {
     flex-direction: column;
     gap: 0;
-  }
-  .social-btn-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  #google-signin-btn {
-    display: flex;
-    justify-content: center;
   }
 }
 @keyframes cardFadeIn {
@@ -4022,19 +4022,29 @@ function closeMenu() {
     
     <!-- Social Sign-in Options -->
     <div class="lock-social-login">
-      <div class="social-btn-container">
+      <div class="social-btn-stack">
         <!-- Google -->
-        <div id="google-signin-btn"></div>
+        <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Continuar con Google" type="button">
+          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+          </svg>
+          <span class="es">Continuar con Google</span>
+          <span class="en">Continue with Google</span>
+        </button>
         
         <!-- Microsoft -->
-        <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Acceder con Microsoft" type="button">
+        <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Continuar con Microsoft" type="button">
           <svg class="social-icon" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="11" height="11" fill="#F25022"></rect>
             <rect x="12" width="11" height="11" fill="#7FBA00"></rect>
             <rect y="12" width="11" height="11" fill="#00A4EF"></rect>
             <rect x="12" y="12" width="11" height="11" fill="#FFB900"></rect>
           </svg>
-          <span>Microsoft</span>
+          <span class="es">Continuar con Microsoft</span>
+          <span class="en">Continue with Microsoft</span>
         </button>
         
         <!-- LinkedIn -->
@@ -4184,12 +4194,14 @@ function closeMenu() {
     document.getElementById('portfolio-lock-screen').style.display = 'flex';
   }
 
-  // Comprobar si hay un token de Microsoft (OAuth OIDC fragment en hash)
+  // Comprobar si hay un token de OAuth (OIDC fragment en hash)
   const hash = window.location.hash;
   if (hash && hash.includes("id_token=")) {
     try {
       const idTokenParam = hash.split("id_token=")[1].split("&")[0];
-      // Descodificar el JWT de Microsoft de forma segura
+      const stateParam = hash.includes("state=") ? hash.split("state=")[1].split("&")[0] : "";
+      
+      // Descodificar el JWT de forma segura
       const base64Url = idTokenParam.split('.')[1];
       const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
       const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
@@ -4198,17 +4210,21 @@ function closeMenu() {
       
       const payload = JSON.parse(jsonPayload);
       const email = (payload.email || payload.preferred_username || payload.upn).trim().toLowerCase();
-      const name = payload.name || "Microsoft User";
+      const name = payload.name || "Authenticated User";
       
       // Limpiar el fragmento de la URL sin recargar
       window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
       
-      // Validar acceso
+      // Validar acceso según el proveedor (state)
       setTimeout(() => {
-        handleMicrosoftLoginResult(email, name, payload);
+        if (stateParam === 'google_auth') {
+          handleGoogleLoginResult(email, name, payload);
+        } else {
+          handleMicrosoftLoginResult(email, name, payload);
+        }
       }, 300);
     } catch (e) {
-      console.error("Microsoft OIDC decode error", e);
+      console.error("OIDC decode error", e);
     }
   }
 
@@ -4360,141 +4376,112 @@ function closeMenu() {
     }
   };
 
-  // Callback de respuesta de credenciales de Google
-  window.handleGoogleCredentialResponse = function(response) {
+  // Login con Google (Implicit Flow redirect)
+  window.loginWithGoogle = function() {
+    const redirectUri = encodeURIComponent(window.location.origin + '/');
+    const nonce = Math.random().toString(36).substring(2);
+    const state = 'google_auth';
+    
+    const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&response_type=id_token&redirect_uri=${redirectUri}&scope=openid%20profile%20email&response_mode=fragment&state=${state}&nonce=${nonce}`;
+    
+    window.location.href = authUrl;
+  };
+
+  // Callback de respuesta de Google (desde redirect)
+  function handleGoogleLoginResult(email, name, payload) {
     const statusDiv = document.getElementById('lock-status');
     const lang = getLang();
     
-    try {
-      // Descodificar el JWT de Google de forma segura en cliente
-      const base64Url = response.credential.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
+    if (WHITELISTED_EMAILS.includes(email)) {
+      statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
+      statusDiv.className = 'lock-status-container success';
       
-      const payload = JSON.parse(jsonPayload);
-      const email = payload.email.trim().toLowerCase();
-      const name = payload.name;
+      localStorage.setItem('portfolio_google_email', email);
       
-      // Comprobar si está en la lista blanca
-      if (WHITELISTED_EMAILS.includes(email)) {
-        statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
-        statusDiv.className = 'lock-status-container success';
-        
-        localStorage.setItem('portfolio_google_email', email);
-        
-        // Registrar en Clarity si está cargado
-        if (typeof window.clarity === "function") {
-          let domain = "unknown";
-          if (email && email.includes("@")) {
-            domain = email.split("@")[1];
-          }
-          window.clarity("identify", email);
-          window.clarity("set", "name", name);
-          window.clarity("set", "company", email);
-          window.clarity("set", "company_domain", domain);
-          if (payload.locale) {
-            window.clarity("set", "user_locale", payload.locale);
-          }
-          window.clarity("set", "user_type", "google_auth");
+      if (typeof window.clarity === "function") {
+        let domain = "unknown";
+        if (email.includes("@")) {
+          domain = email.split("@")[1];
         }
-        
-        // Desbloquear con animación
-        const lockScreen = document.getElementById('portfolio-lock-screen');
-        const portfolioContent = document.getElementById('portfolio-content');
-        
-        portfolioContent.style.display = 'block';
-        lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        lockScreen.style.opacity = '0';
-        lockScreen.style.transform = 'scale(1.05)';
-        
-        setTimeout(() => {
-          lockScreen.style.display = 'none';
-          
-          // Redirección si existe
-          const urlParams = new URLSearchParams(window.location.search);
-          const redirectUrl = urlParams.get('redirect');
-          if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
-            window.location.href = redirectUrl;
-          }
-        }, 400);
-        
-      } else {
-        // No está en la lista blanca: enviar solicitud de acceso automáticamente
-        statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
-        statusDiv.className = 'lock-status-container loading';
-        
-        fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            company: 'Google Sign-In User',
-            message: 'Solicitud de acceso rápido a través de Google Sign-in',
-            _subject: `Solicitud de Acceso Google - Portafolio (De: ${name})`,
-            _captcha: 'false'
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success === 'true' || data.success === true) {
-            statusDiv.innerHTML = lang === 'en' 
-              ? '<strong>Request sent!</strong> Google account not authorized yet. Marta has been notified to whitelist your email.' 
-              : '<strong>¡Solicitud enviada!</strong> Tu cuenta de Google aún no está autorizada. Marta ha sido notificada para añadir tu email a la lista permitida.';
-            statusDiv.className = 'lock-status-container success';
-            
-            if (typeof window.clarity === "function") {
-              let domain = "unknown";
-              if (email && email.includes("@")) {
-                domain = email.split("@")[1];
-              }
-              window.clarity("identify", email);
-              window.clarity("set", "name", name);
-              window.clarity("set", "company", email);
-              window.clarity("set", "company_domain", domain);
-              if (payload.locale) {
-                window.clarity("set", "user_locale", payload.locale);
-              }
-              window.clarity("set", "user_type", "google_request_pending");
-            }
-          } else {
-            throw new Error('Error de envío');
-          }
-        })
-        .catch(err => {
-          statusDiv.textContent = lang === 'en'
-            ? 'Error sending request. Please email mmoralesgr93@gmail.com'
-            : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
-          statusDiv.className = 'lock-status-container error';
-        });
+        window.clarity("identify", email);
+        window.clarity("set", "name", name);
+        window.clarity("set", "company", email);
+        window.clarity("set", "company_domain", domain);
+        if (payload.locale) {
+          window.clarity("set", "user_locale", payload.locale);
+        }
+        window.clarity("set", "user_type", "google_auth");
       }
       
-    } catch (e) {
-      statusDiv.textContent = lang === 'en' ? 'Google Authentication error.' : 'Error en la autenticación de Google.';
-      statusDiv.className = 'lock-status-container error';
-    }
-  };
-
-  // Inicializar Google Identity Services
-  window.initGoogleSignIn = function() {
-    if (typeof google !== 'undefined' && google.accounts && google.accounts.id) {
-      google.accounts.id.initialize({
-        client_id: GOOGLE_CLIENT_ID,
-        callback: window.handleGoogleCredentialResponse
-      });
-      google.accounts.id.renderButton(
-        document.getElementById("google-signin-btn"),
-        { theme: "dark", size: "large", shape: "pill", text: "signin_with", logo_alignment: "left" }
-      );
+      const lockScreen = document.getElementById('portfolio-lock-screen');
+      const portfolioContent = document.getElementById('portfolio-content');
+      
+      portfolioContent.style.display = 'block';
+      lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      lockScreen.style.opacity = '0';
+      lockScreen.style.transform = 'scale(1.05)';
+      
+      setTimeout(() => {
+        lockScreen.style.display = 'none';
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect');
+        if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
+          window.location.href = redirectUrl;
+        }
+      }, 400);
     } else {
-      setTimeout(window.initGoogleSignIn, 200);
+      statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
+      statusDiv.className = 'lock-status-container loading';
+      
+      fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          company: 'Google Account User',
+          message: 'Solicitud de acceso rápido a través de Google Sign-in',
+          _subject: `Solicitud de Acceso Google - Portafolio (De: ${name})`,
+          _captcha: 'false'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          statusDiv.innerHTML = lang === 'en' 
+            ? '<strong>Request sent!</strong> Google account not authorized yet. Marta has been notified to whitelist your email.' 
+            : '<strong>¡Solicitud enviada!</strong> Tu cuenta de Google aún no está autorizada. Marta ha sido notificada para añadir tu email a la lista permitida.';
+          statusDiv.className = 'lock-status-container success';
+          
+          if (typeof window.clarity === "function") {
+            let domain = "unknown";
+            if (email.includes("@")) {
+              domain = email.split("@")[1];
+            }
+            window.clarity("identify", email);
+            window.clarity("set", "name", name);
+            window.clarity("set", "company", email);
+            window.clarity("set", "company_domain", domain);
+            if (payload.locale) {
+              window.clarity("set", "user_locale", payload.locale);
+            }
+            window.clarity("set", "user_type", "google_request_pending");
+          }
+        } else {
+          throw new Error('Error de envío');
+        }
+      })
+      .catch(err => {
+        statusDiv.textContent = lang === 'en'
+          ? 'Error sending request. Please email mmoralesgr93@gmail.com'
+          : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
+        statusDiv.className = 'lock-status-container error';
+      });
     }
-  };
+  }
 
   // Login con Microsoft (Implicit Flow redirect)
   window.loginWithMicrosoft = function() {
@@ -4611,8 +4598,6 @@ function closeMenu() {
       }, 2000);
     }
   };
-  
-  window.addEventListener('load', window.initGoogleSignIn);
 })();
 </script>
 <!-- ===================== / CHATBOT MARTA ===================== -->
