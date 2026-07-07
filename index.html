@@ -1,4 +1,5 @@
 <!DOCTYPE html><html lang="es"><head>
+<script src="/auth-lock.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marta Morales — Product Designer · UX/UI · Design Systems · Spain</title>
@@ -2179,6 +2180,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 </style>
 </head>
 <body>
+<div id="portfolio-content" style="display: none;">
 
 <div class="glow-layer">
   <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
@@ -3676,6 +3678,466 @@ function closeMenu() {
     if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
     if(isOpen&&initialized){resetChat();}
   }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<!-- ===================== / CHATBOT MARTA ===================== -->
+</div> <!-- /portfolio-content -->
+
+<!-- ===================== PORTFOLIO LOCK SCREEN ===================== -->
+<style>
+#portfolio-lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  font-family: 'Inter', sans-serif;
+  overflow-y: auto;
+  padding: 24px;
+}
+.lock-glow-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.lock-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.45;
+}
+.lg1 {
+  background: rgba(124, 58, 237, 0.35);
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  left: -10%;
+  animation: pulse1 10s infinite alternate;
+}
+.lg2 {
+  background: rgba(249, 115, 22, 0.25);
+  width: 500px;
+  height: 500px;
+  bottom: -10%;
+  right: -10%;
+  animation: pulse2 12s infinite alternate;
+}
+@keyframes pulse1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, 40px) scale(1.1); }
+}
+@keyframes pulse2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-50px, -30px) scale(1.15); }
+}
+.lock-card {
+  position: relative;
+  z-index: 1;
+  max-width: 460px;
+  width: 100%;
+  background: rgba(15, 12, 28, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.06);
+  animation: cardFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.lock-logo {
+  height: 52px;
+  width: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lock-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.lock-subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+  text-align: center;
+  margin-bottom: 24px;
+}
+.lock-message {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.lock-text-main {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 10px;
+}
+.lock-text-sub {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.lock-tabs {
+  display: flex;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 5px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+.lock-tab-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.lock-tab-btn.active {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+.form-group label {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+}
+.form-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.form-input:focus {
+  border-color: var(--purple);
+  background: rgba(255,255,255,0.08);
+}
+.lock-submit-btn {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.8));
+  color: #fff;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(124,58,237,0.3);
+}
+.lock-submit-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+.lock-submit-btn:active {
+  transform: translateY(0);
+}
+.lock-status-container {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+}
+.lock-status-container.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+.lock-status-container.success {
+  display: block;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  color: #34d399;
+}
+.lock-status-container.loading {
+  display: block;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255,255,255,0.85);
+}
+</style>
+
+<div id="portfolio-lock-screen" style="display: none;">
+  <div class="lock-glow-layer">
+    <div class="lock-glow lg1"></div>
+    <div class="lock-glow lg2"></div>
+  </div>
+  
+  <div class="lock-card">
+    <div class="lock-header">
+      <img src="assets/logo-nuevo.png" alt="Marta Morales" class="lock-logo">
+      <h1 class="lock-title">Marta Morales</h1>
+      <p class="lock-subtitle">Product Designer</p>
+    </div>
+    
+    <div class="lock-message">
+      <div class="es">
+        <p class="lock-text-main">Este portafolio es privado para proteger la confidencialidad de mi situación laboral actual.</p>
+        <p class="lock-text-sub">Si eres una empresa (como Hiberus) o recruiter, introduce tu token o solicita acceso para recibir uno en tu email.</p>
+      </div>
+      <div class="en">
+        <p class="lock-text-main">This portfolio is private to protect the confidentiality of my current employment.</p>
+        <p class="lock-text-sub">If you are a company (like Hiberus) or recruiter, enter your token or request access to receive one via email.</p>
+      </div>
+    </div>
+    
+    <div class="lock-tabs">
+      <button id="tab-request-btn" class="lock-tab-btn active" onclick="switchLockTab('request')">
+        <span class="es">Solicitar Acceso</span>
+        <span class="en">Request Access</span>
+      </button>
+      <button id="tab-unlock-btn" class="lock-tab-btn" onclick="switchLockTab('unlock')">
+        <span class="es">Tengo un Token</span>
+        <span class="en">I have a Token</span>
+      </button>
+    </div>
+    
+    <!-- Tab 1: Request Access -->
+    <form id="lock-request-form" class="lock-tab-content active-content" onsubmit="submitAccessRequest(event)">
+      <div class="form-group">
+        <label for="req-name">
+          <span class="es">Nombre completo *</span>
+          <span class="en">Full name *</span>
+        </label>
+        <input type="text" id="req-name" required="" placeholder="Ej. Juan Pérez" class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="req-company">
+          <span class="es">Empresa *</span>
+          <span class="en">Company *</span>
+        </label>
+        <input type="text" id="req-company" required="" placeholder="Ej. Hiberus" class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="req-email">
+          <span class="es">Email corporativo *</span>
+          <span class="en">Work email *</span>
+        </label>
+        <input type="email" id="req-email" required="" placeholder="recruiter@empresa.com" class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="req-message">
+          <span class="es">Mensaje (opcional)</span>
+          <span class="en">Message (optional)</span>
+        </label>
+        <textarea id="req-message" rows="3" placeholder="Detalles de la oportunidad..." class="form-input"></textarea>
+      </div>
+      
+      <button type="submit" class="lock-submit-btn">
+        <span class="es">Enviar Solicitud</span>
+        <span class="en">Send Request</span>
+      </button>
+    </form>
+    
+    <!-- Tab 2: Unlock -->
+    <div id="lock-unlock-form" class="lock-tab-content" style="display: none;">
+      <div class="form-group">
+        <label for="unlock-token">
+          <span class="es">Introduce tu token de acceso *</span>
+          <span class="en">Enter your access token *</span>
+        </label>
+        <input type="text" id="unlock-token" placeholder="Ej. hiberus" class="form-input" onkeydown="handleTokenKeydown(event)">
+      </div>
+      
+      <button onclick="unlockWithEnteredToken()" class="lock-submit-btn">
+        <span class="es">Desbloquear Portafolio</span>
+        <span class="en">Unlock Portfolio</span>
+      </button>
+    </div>
+    
+    <div id="lock-status" class="lock-status-container"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const VALID_TOKENS = ['hiberus', 'recruiter', 'talent', 'hiring', 'invited', 'design-team', 'marta2026', 'acceso', 'hr', 'guest', 'oportunidad'];
+  
+  function getLang() {
+    return document.documentElement.classList.contains('lang-en') ? 'en' : 'es';
+  }
+  
+  function isValidToken(token) {
+    if (!token) return false;
+    return VALID_TOKENS.includes(token.trim().toLowerCase());
+  }
+
+  // Initialize Lock Screen State
+  const token = localStorage.getItem('portfolio_token');
+  if (isValidToken(token)) {
+    document.getElementById('portfolio-content').style.display = 'block';
+  } else {
+    document.getElementById('portfolio-lock-screen').style.display = 'flex';
+  }
+
+  // Tab switching
+  window.switchLockTab = function(tab) {
+    const reqForm = document.getElementById('lock-request-form');
+    const unlockForm = document.getElementById('lock-unlock-form');
+    const reqBtn = document.getElementById('tab-request-btn');
+    const unlockBtn = document.getElementById('tab-unlock-btn');
+    const statusDiv = document.getElementById('lock-status');
+    
+    statusDiv.style.display = 'none';
+    statusDiv.className = 'lock-status-container';
+    
+    if (tab === 'request') {
+      reqForm.style.display = 'block';
+      unlockForm.style.display = 'none';
+      reqBtn.classList.add('active');
+      unlockBtn.classList.remove('active');
+    } else {
+      reqForm.style.display = 'none';
+      unlockForm.style.display = 'block';
+      reqBtn.classList.remove('active');
+      unlockBtn.classList.add('active');
+      setTimeout(() => document.getElementById('unlock-token').focus(), 50);
+    }
+  };
+
+  // Submit access request via AJAX
+  window.submitAccessRequest = function(event) {
+    event.preventDefault();
+    const name = document.getElementById('req-name').value.trim();
+    const company = document.getElementById('req-company').value.trim();
+    const email = document.getElementById('req-email').value.trim();
+    const message = document.getElementById('req-message').value.trim();
+    const statusDiv = document.getElementById('lock-status');
+    const lang = getLang();
+
+    if (!name || !company || !email) {
+      statusDiv.textContent = lang === 'en' ? 'Please fill in all required fields.' : 'Por favor, rellena todos los campos obligatorios.';
+      statusDiv.className = 'lock-status-container error';
+      return;
+    }
+
+    statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
+    statusDiv.className = 'lock-status-container loading';
+
+    fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        company: company,
+        message: message,
+        _subject: `Solicitud de Acceso - Portafolio (De: ${company})`,
+        _captcha: 'false'
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success === 'true' || data.success === true) {
+        statusDiv.innerHTML = lang === 'en' 
+          ? '<strong>Request sent!</strong> Marta will receive it and email you an access link.' 
+          : '<strong>¡Solicitud enviada!</strong> Marta la recibirá y te enviará un enlace de acceso por email.';
+        statusDiv.className = 'lock-status-container success';
+        document.getElementById('lock-request-form').reset();
+      } else {
+        throw new Error('Error backend');
+      }
+    })
+    .catch(err => {
+      statusDiv.textContent = lang === 'en'
+        ? 'Error sending request. Please try again or email mmoralesgr93@gmail.com'
+        : 'Error al enviar la solicitud. Inténtalo de nuevo o escribe a mmoralesgr93@gmail.com';
+      statusDiv.className = 'lock-status-container error';
+    });
+  };
+
+  // Unlock with token entered manually
+  window.unlockWithEnteredToken = function() {
+    const input = document.getElementById('unlock-token');
+    const token = input.value.trim();
+    const statusDiv = document.getElementById('lock-status');
+    const lang = getLang();
+
+    if (isValidToken(token)) {
+      statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
+      statusDiv.className = 'lock-status-container success';
+      
+      localStorage.setItem('portfolio_token', token.toLowerCase());
+      
+      // Animate lock screen out
+      const lockScreen = document.getElementById('portfolio-lock-screen');
+      const portfolioContent = document.getElementById('portfolio-content');
+      
+      portfolioContent.style.display = 'block';
+      lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      lockScreen.style.opacity = '0';
+      lockScreen.style.transform = 'scale(1.05)';
+      
+      setTimeout(() => {
+        lockScreen.style.display = 'none';
+        
+        // Handle redirect
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect');
+        if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
+          window.location.href = redirectUrl;
+        }
+      }, 400);
+    } else {
+      statusDiv.textContent = lang === 'en' ? 'Invalid token. Please try again.' : 'Token inválido. Inténtalo de nuevo.';
+      statusDiv.className = 'lock-status-container error';
+      input.focus();
+      input.select();
+    }
+  };
+
+  window.handleTokenKeydown = function(event) {
+    if (event.key === 'Enter') {
+      unlockWithEnteredToken();
+    }
+  };
 })();
 </script>
 <!-- ===================== / CHATBOT MARTA ===================== -->
