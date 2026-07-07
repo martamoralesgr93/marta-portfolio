@@ -55,7 +55,17 @@
   // Registrar en Clarity si está autorizado
   if (isAuthorized && typeof window.clarity === "function") {
     const trackingId = savedGoogleEmail || savedToken;
+    let domain = "unknown";
+    if (savedGoogleEmail && savedGoogleEmail.includes("@")) {
+      domain = savedGoogleEmail.split("@")[1];
+    } else if (isTokenAuthorized) {
+      domain = savedToken.toLowerCase();
+    }
+    
+    // Identificar al usuario en Clarity con su email/token y registrar el dominio
+    window.clarity("identify", trackingId);
     window.clarity("set", "company", trackingId);
+    window.clarity("set", "company_domain", domain);
     window.clarity("set", "user_type", isGoogleAuthorized ? "google_auth" : "token_holder");
   }
 

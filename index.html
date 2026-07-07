@@ -3958,7 +3958,15 @@ function closeMenu() {
     
     <!-- Google Sign-in Option -->
     <div class="lock-social-login">
-      <div id="google-signin-btn" style="display: flex; justify-content: center;"></div>
+      <div id="google-signin-btn" style="display: flex; justify-content: center; margin-bottom: 12px;"></div>
+      
+      <!-- Privacy Notice -->
+      <div class="lock-privacy-note es" style="font-size: 11px; line-height: 1.45; color: var(--dim); text-align: center; max-width: 380px; margin: 0 auto;">
+        🔒 <strong>Privacidad</strong>: Tu email de Google se usa únicamente para verificar tu identidad profesional y analizar de forma anónima el comportamiento de la navegación en Clarity. No compartimos tus datos.
+      </div>
+      <div class="lock-privacy-note en" style="font-size: 11px; line-height: 1.45; color: var(--dim); text-align: center; max-width: 380px; margin: 0 auto;">
+        🔒 <strong>Privacy Notice</strong>: Your Google email is used solely to verify your professional identity and analyze website usability anonymously in Clarity. We will never share your data.
+      </div>
       
       <div class="lock-divider">
         <span class="es">o solicita acceso manual / introduce token</span>
@@ -4134,9 +4142,14 @@ function closeMenu() {
     .then(data => {
       if (data.success === 'true' || data.success === true) {
         if (typeof window.clarity === "function") {
+          let domain = "unknown";
+          if (email && email.includes("@")) {
+            domain = email.split("@")[1];
+          }
           window.clarity("identify", email);
           window.clarity("set", "name", name);
           window.clarity("set", "company", company);
+          window.clarity("set", "company_domain", domain);
           window.clarity("set", "user_type", "request_success");
         }
         statusDiv.innerHTML = lang === 'en' 
@@ -4170,7 +4183,9 @@ function closeMenu() {
       localStorage.setItem('portfolio_token', token.toLowerCase());
       
       if (typeof window.clarity === "function") {
+        window.clarity("identify", token.toLowerCase());
         window.clarity("set", "company", token.toLowerCase());
+        window.clarity("set", "company_domain", token.toLowerCase());
         window.clarity("set", "user_type", "token_holder");
       }
       
@@ -4233,9 +4248,17 @@ function closeMenu() {
         
         // Registrar en Clarity si está cargado
         if (typeof window.clarity === "function") {
+          let domain = "unknown";
+          if (email && email.includes("@")) {
+            domain = email.split("@")[1];
+          }
           window.clarity("identify", email);
           window.clarity("set", "name", name);
           window.clarity("set", "company", email);
+          window.clarity("set", "company_domain", domain);
+          if (payload.locale) {
+            window.clarity("set", "user_locale", payload.locale);
+          }
           window.clarity("set", "user_type", "google_auth");
         }
         
@@ -4288,8 +4311,17 @@ function closeMenu() {
             statusDiv.className = 'lock-status-container success';
             
             if (typeof window.clarity === "function") {
+              let domain = "unknown";
+              if (email && email.includes("@")) {
+                domain = email.split("@")[1];
+              }
               window.clarity("identify", email);
               window.clarity("set", "name", name);
+              window.clarity("set", "company", email);
+              window.clarity("set", "company_domain", domain);
+              if (payload.locale) {
+                window.clarity("set", "user_locale", payload.locale);
+              }
               window.clarity("set", "user_type", "google_request_pending");
             }
           } else {
