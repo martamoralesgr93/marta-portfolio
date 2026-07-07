@@ -7,6 +7,8 @@
     })(window, document, "clarity", "script", "xisxzka5pe");
   </script>
   <script src="/auth-lock.js"></script>
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async="" defer=""></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marta Morales — Product Designer · UX/UI · Design Systems · Spain</title>
@@ -3903,6 +3905,31 @@ function closeMenu() {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255,255,255,0.85);
 }
+.lock-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--dim);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 24px 0;
+}
+.lock-divider::before, .lock-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.lock-divider:not(:empty)::before {
+  margin-right: .6em;
+}
+.lock-divider:not(:empty)::after {
+  margin-left: .6em;
+}
+.lock-social-login {
+  margin-bottom: 10px;
+}
 </style>
 
 <div id="portfolio-lock-screen" style="display: none;">
@@ -3921,11 +3948,21 @@ function closeMenu() {
     <div class="lock-message">
       <div class="es">
         <p class="lock-text-main">Este portafolio es privado para proteger la confidencialidad de mi situación laboral actual.</p>
-        <p class="lock-text-sub">Si eres una empresa (como Hiberus) o recruiter, introduce tu token o solicita acceso para recibir uno en tu email.</p>
+        <p class="lock-text-sub">Si eres una empresa o recruiter, accede con tu cuenta de Google o solicita acceso a continuación.</p>
       </div>
       <div class="en">
         <p class="lock-text-main">This portfolio is private to protect the confidentiality of my current employment.</p>
-        <p class="lock-text-sub">If you are a company (like Hiberus) or recruiter, enter your token or request access to receive one via email.</p>
+        <p class="lock-text-sub">If you are a company or recruiter, sign in with Google or request access below.</p>
+      </div>
+    </div>
+    
+    <!-- Google Sign-in Option -->
+    <div class="lock-social-login">
+      <div id="google-signin-btn" style="display: flex; justify-content: center;"></div>
+      
+      <div class="lock-divider">
+        <span class="es">o solicita acceso manual / introduce token</span>
+        <span class="en">or request manual access / enter token</span>
       </div>
     </div>
     
@@ -4002,6 +4039,14 @@ function closeMenu() {
 
 <script>
 (function() {
+  const GOOGLE_CLIENT_ID = '100000000000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'; // Marta debe reemplazar esto con su Client ID real
+  
+  const WHITELISTED_EMAILS = [
+    'mmoralesgr93@gmail.com', // Marta
+    'recruiter@google.com',
+    'talent@hiberus.com'
+  ];
+
   const VALID_TOKENS = ['hiberus', 'recruiter', 'talent', 'hiring', 'invited', 'design-team', 'marta2026', 'acceso', 'hr', 'guest', 'oportunidad'];
   
   function getLang() {
@@ -4015,7 +4060,12 @@ function closeMenu() {
 
   // Initialize Lock Screen State
   const token = localStorage.getItem('portfolio_token');
-  if (isValidToken(token)) {
+  const savedGoogleEmail = localStorage.getItem('portfolio_google_email');
+  
+  const isTokenAuthorized = isValidToken(token);
+  const isGoogleAuthorized = savedGoogleEmail && WHITELISTED_EMAILS.includes(savedGoogleEmail.trim().toLowerCase());
+  
+  if (isTokenAuthorized || isGoogleAuthorized) {
     document.getElementById('portfolio-content').style.display = 'block';
   } else {
     document.getElementById('portfolio-lock-screen').style.display = 'flex';
@@ -4156,6 +4206,127 @@ function closeMenu() {
       unlockWithEnteredToken();
     }
   };
+
+  // Callback de respuesta de credenciales de Google
+  window.handleGoogleCredentialResponse = function(response) {
+    const statusDiv = document.getElementById('lock-status');
+    const lang = getLang();
+    
+    try {
+      // Descodificar el JWT de Google de forma segura en cliente
+      const base64Url = response.credential.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      
+      const payload = JSON.parse(jsonPayload);
+      const email = payload.email.trim().toLowerCase();
+      const name = payload.name;
+      
+      // Comprobar si está en la lista blanca
+      if (WHITELISTED_EMAILS.includes(email)) {
+        statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
+        statusDiv.className = 'lock-status-container success';
+        
+        localStorage.setItem('portfolio_google_email', email);
+        
+        // Registrar en Clarity si está cargado
+        if (typeof window.clarity === "function") {
+          window.clarity("identify", email);
+          window.clarity("set", "name", name);
+          window.clarity("set", "company", email);
+          window.clarity("set", "user_type", "google_auth");
+        }
+        
+        // Desbloquear con animación
+        const lockScreen = document.getElementById('portfolio-lock-screen');
+        const portfolioContent = document.getElementById('portfolio-content');
+        
+        portfolioContent.style.display = 'block';
+        lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        lockScreen.style.opacity = '0';
+        lockScreen.style.transform = 'scale(1.05)';
+        
+        setTimeout(() => {
+          lockScreen.style.display = 'none';
+          
+          // Redirección si existe
+          const urlParams = new URLSearchParams(window.location.search);
+          const redirectUrl = urlParams.get('redirect');
+          if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
+            window.location.href = redirectUrl;
+          }
+        }, 400);
+        
+      } else {
+        // No está en la lista blanca: enviar solicitud de acceso automáticamente
+        statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
+        statusDiv.className = 'lock-status-container loading';
+        
+        fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            company: 'Google Sign-In User',
+            message: 'Solicitud de acceso rápido a través de Google Sign-in',
+            _subject: `Solicitud de Acceso Google - Portafolio (De: ${name})`,
+            _captcha: 'false'
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success === 'true' || data.success === true) {
+            statusDiv.innerHTML = lang === 'en' 
+              ? '<strong>Request sent!</strong> Google account not authorized yet. Marta has been notified to whitelist your email.' 
+              : '<strong>¡Solicitud enviada!</strong> Tu cuenta de Google aún no está autorizada. Marta ha sido notificada para añadir tu email a la lista permitida.';
+            statusDiv.className = 'lock-status-container success';
+            
+            if (typeof window.clarity === "function") {
+              window.clarity("identify", email);
+              window.clarity("set", "name", name);
+              window.clarity("set", "user_type", "google_request_pending");
+            }
+          } else {
+            throw new Error('Error de envío');
+          }
+        })
+        .catch(err => {
+          statusDiv.textContent = lang === 'en'
+            ? 'Error sending request. Please email mmoralesgr93@gmail.com'
+            : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
+          statusDiv.className = 'lock-status-container error';
+        });
+      }
+      
+    } catch (e) {
+      statusDiv.textContent = lang === 'en' ? 'Google Authentication error.' : 'Error en la autenticación de Google.';
+      statusDiv.className = 'lock-status-container error';
+    }
+  };
+
+  // Inicializar Google Identity Services
+  window.initGoogleSignIn = function() {
+    if (typeof google !== 'undefined' && google.accounts && google.accounts.id) {
+      google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: window.handleGoogleCredentialResponse
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("google-signin-btn"),
+        { theme: "dark", size: "large", shape: "pill", text: "signin_with", logo_alignment: "left" }
+      );
+    } else {
+      setTimeout(window.initGoogleSignIn, 200);
+    }
+  };
+  
+  window.addEventListener('load', window.initGoogleSignIn);
 })();
 </script>
 <!-- ===================== / CHATBOT MARTA ===================== -->

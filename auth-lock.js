@@ -1,4 +1,11 @@
 (function() {
+  // Lista de emails autorizados para entrar directamente con su cuenta de Google (en minúscula)
+  const WHITELISTED_EMAILS = [
+    'mmoralesgr93@gmail.com', // Marta
+    'recruiter@google.com',
+    'talent@hiberus.com'
+  ];
+
   // Lista de tokens válidos (en minúsculas y sin espacios)
   const VALID_TOKENS = [
     'hiberus',
@@ -39,12 +46,17 @@
   }
 
   const savedToken = localStorage.getItem('portfolio_token');
-  const isAuthorized = isValidToken(savedToken);
+  const savedGoogleEmail = localStorage.getItem('portfolio_google_email');
+  
+  const isTokenAuthorized = isValidToken(savedToken);
+  const isGoogleAuthorized = savedGoogleEmail && WHITELISTED_EMAILS.includes(savedGoogleEmail.trim().toLowerCase());
+  const isAuthorized = isTokenAuthorized || isGoogleAuthorized;
 
   // Registrar en Clarity si está autorizado
   if (isAuthorized && typeof window.clarity === "function") {
-    window.clarity("set", "company", savedToken);
-    window.clarity("set", "user_type", "token_holder");
+    const trackingId = savedGoogleEmail || savedToken;
+    window.clarity("set", "company", trackingId);
+    window.clarity("set", "user_type", isGoogleAuthorized ? "google_auth" : "token_holder");
   }
 
   // Determinar si es la página de inicio
