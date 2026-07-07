@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    PORTFOLIO DESIGN SYSTEM — Core Tokens & Case Study Components
    Marta Morales — Product Designer
    ========================================================================== */
@@ -390,6 +390,7 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
 }
 
 @media (max-width: 480px) {
+  .wf-steps { grid-template-columns: 1fr !important; }
   .cs-hero { min-height: auto; }
   .cs-title { font-size: clamp(28px, 7.5vw, 40px); }
   .cs-meta { flex-direction: column; gap: var(--space-xs); }
@@ -443,3 +444,48 @@ ul.bullet-list li::before { content: "—"; color: var(--accent); position: abso
 }
 
 
+
+/* ── 13. PROCESS STEPS (Shared across case studies) ── */
+.wf-process {
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.wf-process-label {
+  padding: 16px 28px; border-bottom: 1px solid var(--border);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.wf-process-label span { color: var(--accent); }
+.wf-process-label em { color: var(--text-dim); font-style: normal; }
+.wf-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 0; background: var(--border);
+}
+.wf-step {
+  background: rgba(255,255,255,0.015); padding: 24px 24px 28px;
+  display: flex; flex-direction: column; gap: 10px;
+  position: relative;
+}
+.wf-step::after {
+  content: "→"; position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+  font-size: 14px; color: var(--text-dim); z-index: 1;
+}
+.wf-step:last-child::after { display: none; }
+.wf-step-num {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent);
+}
+.wf-step-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--white); line-height: 1.3;
+}
+.wf-step-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+@media (max-width: 768px) {
+  .wf-steps { grid-template-columns: 1fr 1fr !important; gap: 1px !important; }
+  .wf-step::after { display: none !important; }
+}
+@media (max-width: 560px) {
+  .wf-steps { grid-template-columns: 1fr !important; }
+}

@@ -761,6 +761,31 @@ a.sc-client-link:hover {
 .step-content {}
 .step-name { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.78); margin-bottom: 6px; letter-spacing: -0.2px; }
 .step-desc { font-size: 13px; color: rgba(255,255,255,0.32); line-height: 1.6; }
+.step-ai-integration {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(167, 139, 250, 0.035);
+  border-left: 2px solid rgba(167, 139, 250, 0.45);
+  border-radius: 0 8px 8px 0;
+  max-width: 480px;
+}
+.step-ai-integration p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.60);
+}
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  margin-bottom: 6px;
+}
 
 /* Right column: about narrative + tools */
 .about-right { padding-top: 12px; }
@@ -2865,6 +2890,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
               <div class="step-name en">Diagnosis before solution</div>
               <div class="step-desc es">Adobe Analytics y Clarity primero. El brief que recibo nunca es el problema real. Es el punto de partida para encontrarlo.</div>
               <div class="step-desc en">Adobe Analytics and Clarity first. The brief I receive is never the real problem. It's the starting point to find it.</div>
+              
+              <!-- AI Integration step 1 -->
+              <div class="step-ai-integration es">
+                <span class="ai-badge">🤖 Copiloto IA: Research &amp; Datos</span>
+                <p>Ingesta de transcripciones cualitativas de usuarios y entrevistas en LLMs (Gemini/Claude) para categorizar fricciones recurrentes, clusterizar dolores y extraer patrones de comportamiento a gran escala.</p>
+              </div>
+              <div class="step-ai-integration en">
+                <span class="ai-badge">🤖 AI Co-pilot: Research &amp; Data</span>
+                <p>Ingesting qualitative user transcripts and interviews into LLMs (Gemini/Claude) to categorize recurring friction points, cluster user pain points, and extract behavioral patterns at scale.</p>
+              </div>
             </div>
           </li>
           <li class="process-step">
@@ -2874,6 +2909,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
               <div class="step-name en">Argued proposal, not decorative options</div>
               <div class="step-desc es">Una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio sobre preferencia visual.</div>
               <div class="step-desc en">A data-backed decision, not three variants to choose from. Business criteria over visual preference.</div>
+              
+              <!-- AI Integration step 2 -->
+              <div class="step-ai-integration es">
+                <span class="ai-badge">🤖 Copiloto IA: Sparring de Concepto</span>
+                <p>Uso de IA para la iteración rápida de variantes de microcopy, simulaciones preliminares de legibilidad y accesibilidad visual, y análisis heurístico inicial de flujos de interacción.</p>
+              </div>
+              <div class="step-ai-integration en">
+                <span class="ai-badge">🤖 AI Co-pilot: Concept Sparring</span>
+                <p>Leveraging AI for rapid microcopy variants generation, readability heuristic simulations (contrast and accessibility mapping), and initial interaction flow stress-testing.</p>
+              </div>
             </div>
           </li>
           <li class="process-step">
@@ -2883,6 +2928,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
               <div class="step-name en">Design within real constraints</div>
               <div class="step-desc es">Diseño conociendo las restricciones del stack (AEM, APIs, timelines). Priorizo lo que tiene mayor impacto con el menor coste de implementación.</div>
               <div class="step-desc en">Designing within stack constraints (AEM, APIs, timelines). Prioritising what has the highest impact at the lowest implementation cost.</div>
+              
+              <!-- AI Integration step 3 -->
+              <div class="step-ai-integration es">
+                <span class="ai-badge">🤖 Copiloto IA: Tokenización &amp; Código</span>
+                <p>Generación automatizada de documentación de diseño en Figma, mapeo de tokens CSS/JSON para desarrollo frontend y aceleración del diseño de componentes reutilizables.</p>
+              </div>
+              <div class="step-ai-integration en">
+                <span class="ai-badge">🤖 AI Co-pilot: Tokens &amp; Frontend Bridge</span>
+                <p>Automated generation of design spec sheets in Figma, mapping CSS/JSON design tokens to speed up frontend development, and accelerating modular component structure creation.</p>
+              </div>
             </div>
           </li>
           <li class="process-step">
@@ -2892,6 +2947,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
               <div class="step-name en">Launch is not the end</div>
               <div class="step-desc es">Mido comportamiento real e itero con datos post-lanzamiento. Ahí es donde empieza el aprendizaje y la optimización real.</div>
               <div class="step-desc en">Measuring real behavior and iterating with post-launch data. That's where real learning and optimization begin.</div>
+              
+              <!-- AI Integration step 4 -->
+              <div class="step-ai-integration es">
+                <span class="ai-badge">🤖 Copiloto IA: Análisis de Funnel</span>
+                <p>Análisis sintáctico y de opinión de las encuestas post-compra, y monitorización de anomalías de embudo de conversión a través de modelos de IA analíticos.</p>
+              </div>
+              <div class="step-ai-integration en">
+                <span class="ai-badge">🤖 AI Co-pilot: Funnel Analytics</span>
+                <p>Sentiment and intent analysis on post-purchase feedback, alongside monitoring conversion funnel anomalies using automated analytics models.</p>
+              </div>
             </div>
           </li>
           <li class="process-step">
@@ -2901,6 +2966,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
               <div class="step-name en">Real product team collaboration</div>
               <div class="step-desc es">Coordinación directa con ingeniería, BI, marketing y dirección. Hablo el idioma de dev y de negocio para alinear prioridades.</div>
               <div class="step-desc en">Direct alignment with engineering, BI, marketing, and leadership. Speaking both technical and business languages.</div>
+              
+              <!-- AI Integration step 5 -->
+              <div class="step-ai-integration es">
+                <span class="ai-badge">🤖 Copiloto IA: Alineación Técnica</span>
+                <p>Automatización de informes de Design QA (comparación de producción vs Figma) y generación de resúmenes ejecutivos bilingües y especificaciones de componentes en lenguaje de ingeniería.</p>
+              </div>
+              <div class="step-ai-integration en">
+                <span class="ai-badge">🤖 AI Co-pilot: Tech Alignment</span>
+                <p>Automated Design QA reviews (comparing staging/prod builds with Figma specs) and generating executive bilingual summaries and component documentation in engineering syntax.</p>
+              </div>
             </div>
           </li>
         </ul>
