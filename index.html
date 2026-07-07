@@ -3744,16 +3744,32 @@ function closeMenu() {
 .lock-card {
   position: relative;
   z-index: 1;
-  max-width: 560px;
+  max-width: 920px;
   width: 100%;
   background: rgba(15, 12, 28, 0.45);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
-  padding: 40px;
+  padding: 48px;
   box-shadow: 0 30px 70px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.06);
   animation: cardFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  display: flex;
+  gap: 48px;
+}
+.lock-pane-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 48px;
+}
+.lock-pane-right {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .form-grid-row {
   display: flex;
@@ -3812,9 +3828,19 @@ function closeMenu() {
   background: rgba(0, 119, 181, 0.08);
   border-color: rgba(0, 119, 181, 0.2);
 }
-@media (max-width: 580px) {
+@media (max-width: 820px) {
   .lock-card {
-    padding: 30px 20px;
+    flex-direction: column;
+    max-width: 500px;
+    padding: 36px 24px;
+    gap: 32px;
+    margin: 20px;
+  }
+  .lock-pane-left {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 32px;
   }
   .form-grid-row {
     flex-direction: column;
@@ -3969,31 +3995,6 @@ function closeMenu() {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255,255,255,0.85);
 }
-.lock-divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: var(--dim);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 24px 0;
-}
-.lock-divider::before, .lock-divider::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-.lock-divider:not(:empty)::before {
-  margin-right: .6em;
-}
-.lock-divider:not(:empty)::after {
-  margin-left: .6em;
-}
-.lock-social-login {
-  margin-bottom: 10px;
-}
 </style>
 
 <div id="portfolio-lock-screen" style="display: none;">
@@ -4003,25 +4004,25 @@ function closeMenu() {
   </div>
   
   <div class="lock-card">
-    <div class="lock-header">
-      <img src="assets/logo-nuevo.png" alt="Marta Morales" class="lock-logo">
-      <h1 class="lock-title">Marta Morales</h1>
-      <p class="lock-subtitle">Product Designer</p>
-    </div>
-    
-    <div class="lock-message">
-      <div class="es">
-        <p class="lock-text-main">Este portafolio es privado para proteger la confidencialidad de mi situación laboral actual.</p>
-        <p class="lock-text-sub">Si eres una empresa o recruiter, accede rápido con tus redes profesionales o solicita acceso manual a continuación.</p>
+    <!-- Left Pane: Identity & Social Login -->
+    <div class="lock-pane-left">
+      <div class="lock-header" style="margin-bottom: 24px;">
+        <img src="assets/logo-nuevo.png" alt="Marta Morales" class="lock-logo">
+        <h1 class="lock-title">Marta Morales</h1>
+        <p class="lock-subtitle">Product Designer</p>
       </div>
-      <div class="en">
-        <p class="lock-text-main">This portfolio is private to protect the confidentiality of my current employment.</p>
-        <p class="lock-text-sub">If you are a company or recruiter, sign in with your professional accounts or request manual access below.</p>
+      
+      <div class="lock-message" style="margin-bottom: 24px;">
+        <div class="es">
+          <p class="lock-text-main" style="text-align: center; margin-bottom: 8px;">Este portafolio es privado para proteger la confidencialidad de mi situación laboral actual.</p>
+          <p class="lock-text-sub" style="text-align: center;">Accede rápido con tus redes profesionales para entrar al instante.</p>
+        </div>
+        <div class="en">
+          <p class="lock-text-main" style="text-align: center; margin-bottom: 8px;">This portfolio is private to protect the confidentiality of my current employment.</p>
+          <p class="lock-text-sub" style="text-align: center;">Sign in with your professional accounts for instant access.</p>
+        </div>
       </div>
-    </div>
-    
-    <!-- Social Sign-in Options -->
-    <div class="lock-social-login">
+      
       <div class="social-btn-stack">
         <!-- Google -->
         <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Continuar con Google" type="button">
@@ -4048,112 +4049,110 @@ function closeMenu() {
         </button>
         
         <!-- LinkedIn -->
-        <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="Acceder con LinkedIn" type="button">
+        <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="Solicitar acceso con LinkedIn" type="button">
           <svg class="social-icon" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
           </svg>
-          <span>LinkedIn</span>
+          <span class="es">Solicitar con LinkedIn</span>
+          <span class="en">Request with LinkedIn</span>
+        </button>
+      </div>
+
+      <!-- Privacy Notice -->
+      <div class="lock-privacy-note es" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 16px;">
+        🔒 <strong>Privacidad</strong>: Datos cifrados de extremo a extremo. Tu correo se usa únicamente para verificación profesional en Clarity.
+      </div>
+      <div class="lock-privacy-note en" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 16px;">
+        🔒 <strong>Privacy</strong>: Data is encrypted end-to-end. Your email is used solely for professional validation in Clarity.
+      </div>
+    </div>
+    
+    <!-- Right Pane: Forms & Access Tokens -->
+    <div class="lock-pane-right">
+      <div class="lock-tabs" style="margin-bottom: 24px;">
+        <button id="tab-request-btn" class="lock-tab-btn active" onclick="switchLockTab('request')">
+          <span class="es">Solicitar Acceso</span>
+          <span class="en">Request Access</span>
+        </button>
+        <button id="tab-unlock-btn" class="lock-tab-btn" onclick="switchLockTab('unlock')">
+          <span class="es">Tengo un Token</span>
+          <span class="en">I have a Token</span>
         </button>
       </div>
       
-      <!-- Privacy Notice -->
-      <div class="lock-privacy-note es" style="font-size: 11px; line-height: 1.45; color: var(--dim); text-align: center; max-width: 440px; margin: 0 auto;">
-        🔒 <strong>Privacidad</strong>: Tus datos se usan únicamente para verificar tu identidad profesional y analizar de forma anónima la usabilidad de la web en Clarity. Nunca compartimos tus datos.
-      </div>
-      <div class="lock-privacy-note en" style="font-size: 11px; line-height: 1.45; color: var(--dim); text-align: center; max-width: 440px; margin: 0 auto;">
-        🔒 <strong>Privacy Notice</strong>: Your data is used solely to verify your professional identity and analyze website usability anonymously in Clarity. We will never share your data.
-      </div>
-      
-      <div class="lock-divider">
-        <span class="es">o solicita acceso manual / introduce token</span>
-        <span class="en">or request manual access / enter token</span>
-      </div>
-    </div>
-    
-    <div class="lock-tabs">
-      <button id="tab-request-btn" class="lock-tab-btn active" onclick="switchLockTab('request')">
-        <span class="es">Solicitar Acceso</span>
-        <span class="en">Request Access</span>
-      </button>
-      <button id="tab-unlock-btn" class="lock-tab-btn" onclick="switchLockTab('unlock')">
-        <span class="es">Tengo un Token</span>
-        <span class="en">I have a Token</span>
-      </button>
-    </div>
-    
-    <!-- Tab 1: Request Access -->
-    <form id="lock-request-form" class="lock-tab-content active-content" onsubmit="submitAccessRequest(event)">
-      <div class="form-grid-row" style="margin-bottom: 14px;">
-        <div class="form-grid-col">
-          <div class="form-group" style="margin-bottom: 0;">
-            <label for="req-name">
-              <span class="es">Nombre completo *</span>
-              <span class="en">Full name *</span>
-            </label>
-            <input type="text" id="req-name" required="" placeholder="Tu nombre / Your name" class="form-input">
+      <!-- Tab 1: Request Access Form -->
+      <form id="lock-request-form" class="lock-tab-content active-content" onsubmit="submitAccessRequest(event)">
+        <div class="form-grid-row" style="margin-bottom: 14px;">
+          <div class="form-grid-col">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="req-name">
+                <span class="es">Nombre completo *</span>
+                <span class="en">Full name *</span>
+              </label>
+              <input type="text" id="req-name" required="" placeholder="Tu nombre / Your name" class="form-input">
+            </div>
+          </div>
+          <div class="form-grid-col">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="req-company">
+                <span class="es">Empresa *</span>
+                <span class="en">Company *</span>
+              </label>
+              <input type="text" id="req-company" required="" placeholder="Tu empresa / Your company" class="form-input">
+            </div>
           </div>
         </div>
-        <div class="form-grid-col">
-          <div class="form-group" style="margin-bottom: 0;">
-            <label for="req-company">
-              <span class="es">Empresa *</span>
-              <span class="en">Company *</span>
-            </label>
-            <input type="text" id="req-company" required="" placeholder="Tu empresa / Your company" class="form-input">
+        
+        <div class="form-grid-row" style="margin-bottom: 14px;">
+          <div class="form-grid-col">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="req-email">
+                <span class="es">Email corporativo *</span>
+                <span class="en">Work email *</span>
+              </label>
+              <input type="email" id="req-email" required="" placeholder="correo@empresa.com" class="form-input">
+            </div>
+          </div>
+          <div class="form-grid-col">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="req-linkedin">
+                <span class="es">Perfil de LinkedIn (opcional)</span>
+                <span class="en">LinkedIn Profile (optional)</span>
+              </label>
+              <input type="url" id="req-linkedin" placeholder="linkedin.com/in/usuario" class="form-input">
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="form-grid-row" style="margin-bottom: 14px;">
-        <div class="form-grid-col">
-          <div class="form-group" style="margin-bottom: 0;">
-            <label for="req-email">
-              <span class="es">Email corporativo *</span>
-              <span class="en">Work email *</span>
-            </label>
-            <input type="email" id="req-email" required="" placeholder="correo@empresa.com / name@company.com" class="form-input">
-          </div>
+        
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="req-message">
+            <span class="es">Mensaje (opcional)</span>
+            <span class="en">Message (optional)</span>
+          </label>
+          <textarea id="req-message" rows="2" placeholder="Detalles sobre el proyecto o vacante... / Details about the project or role..." class="form-input"></textarea>
         </div>
-        <div class="form-grid-col">
-          <div class="form-group" style="margin-bottom: 0;">
-            <label for="req-linkedin">
-              <span class="es">Perfil de LinkedIn (opcional)</span>
-              <span class="en">LinkedIn Profile (optional)</span>
-            </label>
-            <input type="url" id="req-linkedin" placeholder="linkedin.com/in/usuario" class="form-input">
-          </div>
+        
+        <button type="submit" class="lock-submit-btn" style="margin-bottom: 12px;">
+          <span class="es">Enviar Solicitud</span>
+          <span class="en">Send Request</span>
+        </button>
+      </form>
+      
+      <!-- Tab 2: Unlock Form -->
+      <div id="lock-unlock-form" class="lock-tab-content" style="display: none;">
+        <div class="form-group" style="margin-bottom: 20px;">
+          <label for="unlock-token">
+            <span class="es">Introduce tu token de acceso *</span>
+            <span class="en">Enter your access token *</span>
+          </label>
+          <input type="text" id="unlock-token" placeholder="Introduce tu token / Enter your token" class="form-input" onkeydown="handleTokenKeydown(event)">
         </div>
+        
+        <button onclick="unlockWithEnteredToken()" class="lock-submit-btn" style="margin-bottom: 12px;">
+          <span class="es">Desbloquear Portafolio</span>
+          <span class="en">Unlock Portfolio</span>
+        </button>
       </div>
-      
-      <div class="form-group" style="margin-bottom: 18px;">
-        <label for="req-message">
-          <span class="es">Mensaje (opcional)</span>
-          <span class="en">Message (optional)</span>
-        </label>
-        <textarea id="req-message" rows="2" placeholder="Detalles sobre el proyecto o vacante... / Details about the project or role..." class="form-input"></textarea>
-      </div>
-      
-      <button type="submit" class="lock-submit-btn">
-        <span class="es">Enviar Solicitud</span>
-        <span class="en">Send Request</span>
-      </button>
-    </form>
-    
-    <!-- Tab 2: Unlock -->
-    <div id="lock-unlock-form" class="lock-tab-content" style="display: none;">
-      <div class="form-group">
-        <label for="unlock-token">
-          <span class="es">Introduce tu token de acceso *</span>
-          <span class="en">Enter your access token *</span>
-        </label>
-        <input type="text" id="unlock-token" placeholder="Introduce tu token / Enter your token" class="form-input" onkeydown="handleTokenKeydown(event)">
-      </div>
-      
-      <button onclick="unlockWithEnteredToken()" class="lock-submit-btn">
-        <span class="es">Desbloquear Portafolio</span>
-        <span class="en">Unlock Portfolio</span>
-      </button>
-    </div>
     
     <div id="lock-status" class="lock-status-container"></div>
   </div>
@@ -4602,4 +4601,4 @@ function closeMenu() {
 </script>
 <!-- ===================== / CHATBOT MARTA ===================== -->
 
-</body></html>
+</div></body></html>
