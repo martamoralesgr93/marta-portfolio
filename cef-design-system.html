@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="lang-es" lang="es">
 <head>
   <script type="text/javascript">
@@ -946,12 +946,44 @@
             </div>
           </div>
         </div>
-      </div>op: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
-              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Iniciar sesión o aplicar a ofertas de empleo de forma rápida desde cualquier dispositivo.
-            </div>
-          </div>
+      </div>
+      
+          <!-- DIAGRAMA DE ARQUITECTURA DEL DESIGN SYSTEM -->
+    <div class="ux-flowchart fu">
+      <div class="ux-flow-header">
+        <span class="ux-flow-subtitle">Design System Architecture</span>
+        <h3 class="ux-flow-title">Estructura de Tokens y Componentes (CEF UI System)</h3>
+      </div>
+      <div class="ux-flow-grid">
+        <div class="ux-flow-step ux-flow-step--decision">
+          <span class="ux-flow-badge">Nivel 1: Tokens Globales</span>
+          <p class="ux-flow-step-title">Tokens de Fundación (Figma Variables)</p>
+          <p class="ux-flow-step-desc es">Valores atómicos globales independientes de contexto: paletas cromáticas primarias/secundarias y escala tipográfica.</p>
+          <p class="ux-flow-step-desc en">Atomic global values independent of context: primary/secondary colors and typography hierarchy scales.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--decision">
+          <span class="ux-flow-badge">Nivel 2: Tokens Semánticos</span>
+          <p class="ux-flow-step-title">Tokens de Alias (CSS Custom Properties)</p>
+          <p class="ux-flow-step-desc es">Asignación por rol: color de fondo del botón principal (--btn-primary-bg), bordes activos e intensidades de sombreado.</p>
+          <p class="ux-flow-step-desc en">Role-based semantic mapping: main button fill color (--btn-primary-bg), active border tokens, and shadow properties.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--action">
+          <span class="ux-flow-badge">Nivel 3: Componentes Átomos</span>
+          <p class="ux-flow-step-title">Componentes Estructurados</p>
+          <p class="ux-flow-step-desc es">Bloques funcionales básicos: Botón, Input Text, Checkbox y Píldora de estado, configurados con variantes e interactividad en Figma.</p>
+          <p class="ux-flow-step-desc en">Core functional assets: Button, Input, Checkbox, and Badges configured with states and variants inside Figma library.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--success">
+          <span class="ux-flow-badge">Nivel 4: Patrones Complejos</span>
+          <p class="ux-flow-step-title">Módulos EdTech Reutilizables</p>
+          <p class="ux-flow-step-desc es">Componentes compuestos formados por átomos: Buscador de Cursos, Calendario de Clases y Formulario de Registro.</p>
+          <p class="ux-flow-step-desc en">Composite patterns composed of atoms: Course Finder search bar, Calendar Widget, and Registration Form.</p>
         </div>
       </div>
+    </div>
 
     </div>
   </div>

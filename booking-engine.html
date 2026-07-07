@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="lang-es" lang="es">
 <head>
   <script type="text/javascript">
@@ -696,6 +696,43 @@
         <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04 · ITERACIÓN POST-LANZAMIENTO</span>
         <p class="p">Tras el lanzamiento, el seguimiento con Clarity reveló un hallazgo inesperado: los usuarios utilizaban el buscador como herramienta de exploración de destinos, no únicamente como acceso transaccional. Este descubrimiento derivó en una nueva línea de trabajo estratégica: el diseño de landings específicas por destino con lógica de alta conversión. La diferencia entre hacer una entrega y hacer producto es exactamente esta: seguir mirando después de publicar.</p>
       </div>
+      
+          <!-- DIAGRAMA DE ESTADOS DE INTERACCIÓN (UX STATE MACHINE) -->
+    <div class="ux-flowchart fu" style="margin-top: 40px;">
+      <div class="ux-flow-header">
+        <span class="ux-flow-subtitle">Interaction States Flow</span>
+        <h3 class="ux-flow-title">Estados de Interacción y Lógica del Buscador</h3>
+      </div>
+      <div class="ux-flow-grid">
+        <div class="ux-flow-step ux-flow-step--action">
+          <span class="ux-flow-badge">Estado 1: Vacío</span>
+          <p class="ux-flow-step-title">Estado Inicial (Empty State)</p>
+          <p class="ux-flow-step-desc es">El motor muestra inputs por defecto (ej: "Selecciona destino"). Campo de fechas pre-rellenado con las del día siguiente.</p>
+          <p class="ux-flow-step-desc en">Default inputs displayed (e.g. "Select destination"). Dates prefilled with tomorrow's parameters.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--decision">
+          <span class="ux-flow-badge">Estado 2: Foco</span>
+          <p class="ux-flow-step-title">Foco y Sugerencias (Focused)</p>
+          <p class="ux-flow-step-desc es">El usuario activa el input. Despliegue de autocompletado inteligente con los hoteles visitados recientemente y destinos top.</p>
+          <p class="ux-flow-step-desc en">User focuses on input. Intelligent auto-complete reveals recently viewed hotels and top destinations.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--decision">
+          <span class="ux-flow-badge">Estado 3: Validación</span>
+          <p class="ux-flow-step-title">Validación de Fechas (Validation)</p>
+          <p class="ux-flow-step-desc es">Lógica de control: fecha de salida posterior a entrada. Si hay inconsistencia, aviso en vivo con tooltip accesible sin refrescar.</p>
+          <p class="ux-flow-step-desc en">Control check: check-out date must be after check-in. Visual tooltip alert shown inline for invalid queries.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--success">
+          <span class="ux-flow-badge">Estado 4: Éxito</span>
+          <p class="ux-flow-step-title">Envío y Carga (Search Triggered)</p>
+          <p class="ux-flow-step-desc es">Bloqueo de doble clic en CTA mediante estado Loading. Redirección limpia al motor de reservas con parámetros en la URL.</p>
+          <p class="ux-flow-step-desc en">Disable search button on double-click (loading state active). Clean redirection to search results page with parameters in URL.</p>
+        </div>
+      </div>
+    </div>
 
     </div>
   </div>
