@@ -4487,7 +4487,8 @@ div.mobile-only {
     const statusDiv = document.getElementById('lock-status');
     const lang = getLang();
     
-    if (WHITELISTED_EMAILS.includes(email)) {
+    const cleanEmail = email ? email.trim().toLowerCase() : '';
+    if (WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(cleanEmail)) {
       statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
       statusDiv.className = 'lock-status-container success';
       
@@ -4584,7 +4585,8 @@ div.mobile-only {
     const statusDiv = document.getElementById('lock-status');
     const lang = getLang();
     
-    if (WHITELISTED_EMAILS.includes(email)) {
+    const cleanEmail = email ? email.trim().toLowerCase() : '';
+    if (WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(cleanEmail)) {
       statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
       statusDiv.className = 'lock-status-container success';
       
