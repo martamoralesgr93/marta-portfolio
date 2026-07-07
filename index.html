@@ -4093,6 +4093,9 @@ div.mobile-only {
         </p>
       </div>
 
+      <!-- Guide callout message -->
+      <div id="lock-form-guide" style="display: none; margin-bottom: 16px; padding: 14px 18px; border-radius: 12px; font-size: 13px; line-height: 1.5; text-align: left; animation: cardFadeIn 0.3s ease both;"></div>
+
       <!-- Form: Request Access -->
       <form id="lock-request-form" onsubmit="submitAccessRequest(event)">
         <div class="form-grid-row" style="margin-bottom: 12px;">
@@ -4265,6 +4268,23 @@ div.mobile-only {
     }
   }
 
+  // Guide message banner above request form
+  function showFormGuide(msg, type = 'info') {
+    const guide = document.getElementById('lock-form-guide');
+    if (!guide) return;
+    guide.innerHTML = msg;
+    guide.style.display = 'block';
+    if (type === 'error') {
+      guide.style.background = 'rgba(239, 68, 68, 0.08)';
+      guide.style.border = '1px solid rgba(239, 68, 68, 0.2)';
+      guide.style.color = '#f87171';
+    } else {
+      guide.style.background = 'rgba(163, 112, 255, 0.08)';
+      guide.style.border = '1px solid rgba(163, 112, 255, 0.2)';
+      guide.style.color = '#d4bbff';
+    }
+  }
+
   // Tab switching (Mobile only)
   window.switchLockTab = function(tab) {
     const card = document.querySelector('.lock-card');
@@ -4283,6 +4303,8 @@ div.mobile-only {
       reqBtn.classList.add('active');
       unlockBtn.classList.remove('active');
     } else {
+      const guide = document.getElementById('lock-form-guide');
+      if (guide) guide.style.display = 'none';
       card.classList.remove('show-request');
       card.classList.add('show-unlock');
       reqBtn.classList.remove('active');
@@ -4442,13 +4464,10 @@ div.mobile-only {
     if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? 'Google Sign-in will be enabled soon. Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4255)</small>' 
-        : 'El acceso con Google se habilitará próximamente. Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4255)</small>';
+        ? '<strong>Google access coming soon:</strong> Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4255)</small>' 
+        : '<strong>Acceso con Google próximamente:</strong> Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4255)</small>';
       
-      const statusDiv = document.getElementById('lock-status');
-      statusDiv.style.display = 'block';
-      statusDiv.innerHTML = msg;
-      statusDiv.className = 'lock-status-container success';
+      showFormGuide(msg, 'info');
       
       window.switchLockTab('request');
       const reqName = document.getElementById('req-name');
@@ -4519,11 +4538,10 @@ div.mobile-only {
       if (reqCompany) reqCompany.focus();
       
       // Display encouraging message
-      statusDiv.style.display = 'block';
-      statusDiv.innerHTML = lang === 'en'
-        ? '<strong>Almost there!</strong> We pre-filled your name and email. Please enter your Company to complete the request.'
-        : '<strong>¡Casi listo!</strong> Hemos completado tu nombre y correo. Por favor, escribe tu Empresa en la izquierda para completar tu solicitud.';
-      statusDiv.className = 'lock-status-container success';
+      const msg = lang === 'en'
+        ? '<strong>Complete the form:</strong> We pre-filled your name and email. Enter your company name to send the request.'
+        : '<strong>Completa el formulario:</strong> Hemos completado tu nombre y correo. Introduce tu empresa para terminar de solicitar tu acceso.';
+      showFormGuide(msg, 'info');
       
       if (typeof window.clarity === "function") {
         let domain = "unknown";
@@ -4543,13 +4561,10 @@ div.mobile-only {
     if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
       const lang = getLang();
       const msg = lang === 'en' 
-        ? 'Microsoft Sign-in will be enabled soon. Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4256)</small>' 
-        : 'El acceso con Microsoft se habilitará próximamente. Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4256)</small>';
+        ? '<strong>Microsoft access coming soon:</strong> Please fill out the form on the left to request access. <br><small style="opacity:0.75">(Dev note: Replace Client ID in index.html, Line 4256)</small>' 
+        : '<strong>Acceso con Microsoft próximamente:</strong> Por favor, completa el formulario de la izquierda para solicitar acceso. <br><small style="opacity:0.75">(Nota: Marta debe configurar el Client ID en index.html, Línea 4256)</small>';
       
-      const statusDiv = document.getElementById('lock-status');
-      statusDiv.style.display = 'block';
-      statusDiv.innerHTML = msg;
-      statusDiv.className = 'lock-status-container success';
+      showFormGuide(msg, 'info');
       
       window.switchLockTab('request');
       const reqName = document.getElementById('req-name');
@@ -4617,11 +4632,10 @@ div.mobile-only {
       if (reqCompany) reqCompany.focus();
       
       // Display encouraging message
-      statusDiv.style.display = 'block';
-      statusDiv.innerHTML = lang === 'en'
-        ? '<strong>Almost there!</strong> We pre-filled your name and email. Please enter your Company to complete the request.'
-        : '<strong>¡Casi listo!</strong> Hemos completado tu nombre y correo. Por favor, escribe tu Empresa en la izquierda para completar tu solicitud.';
-      statusDiv.className = 'lock-status-container success';
+      const msg = lang === 'en'
+        ? '<strong>Complete the form:</strong> We pre-filled your name and email. Enter your company name to send the request.'
+        : '<strong>Completa el formulario:</strong> Hemos completado tu nombre y correo. Introduce tu empresa para terminar de solicitar tu acceso.';
+      showFormGuide(msg, 'info');
       
       if (typeof window.clarity === "function") {
         let domain = "unknown";
