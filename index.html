@@ -4503,6 +4503,15 @@ div.mobile-only {
 
   // Login con Google (Implicit Flow redirect)
   window.loginWithGoogle = function() {
+    if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
+      const lang = getLang();
+      const msg = lang === 'en' 
+        ? 'Google Sign-in is not configured yet. Marta needs to add her production Client ID in index.html (Line 4082).' 
+        : 'El acceso con Google no está configurado aún. Marta debe reemplazar el Client ID de prueba en index.html (Línea 4082).';
+      alert(msg);
+      console.warn(msg);
+      return;
+    }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
     const nonce = Math.random().toString(36).substring(2);
     const state = 'google_auth';
@@ -4610,6 +4619,15 @@ div.mobile-only {
 
   // Login con Microsoft (Implicit Flow redirect)
   window.loginWithMicrosoft = function() {
+    if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
+      const lang = getLang();
+      const msg = lang === 'en' 
+        ? 'Microsoft Sign-in is not configured yet. Marta needs to add her Azure Client ID in index.html (Line 4083).' 
+        : 'El acceso con Microsoft no está configurado aún. Marta debe reemplazar el Azure Client ID de prueba en index.html (Línea 4083).';
+      alert(msg);
+      console.warn(msg);
+      return;
+    }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
     const nonce = Math.random().toString(36).substring(2);
     const state = 'microsoft_auth';
