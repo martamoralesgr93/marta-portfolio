@@ -4184,6 +4184,7 @@ div.mobile-only {
           <span class="es">Desbloquear</span>
           <span class="en">Unlock</span>
         </button>
+        <div id="lock-status" class="lock-status-container" style="width: 100%; margin-top: 12px;"></div>
       </div>
 
       <!-- Privacy Notice (Compact, at the bottom) -->
@@ -4194,8 +4195,6 @@ div.mobile-only {
         Privacy: Data is encrypted end-to-end. Your email is used solely for professional validation in Clarity.
       </div>
     </div>
-    
-    <div id="lock-status" class="lock-status-container" style="width: 100%; order: 3; margin-top: 16px;"></div>
   </div>
 </div>
 
@@ -4278,6 +4277,10 @@ div.mobile-only {
       guide.style.background = 'rgba(239, 68, 68, 0.08)';
       guide.style.border = '1px solid rgba(239, 68, 68, 0.2)';
       guide.style.color = '#f87171';
+    } else if (type === 'success') {
+      guide.style.background = 'rgba(16, 185, 129, 0.08)';
+      guide.style.border = '1px solid rgba(16, 185, 129, 0.2)';
+      guide.style.color = '#34d399';
     } else {
       guide.style.background = 'rgba(163, 112, 255, 0.08)';
       guide.style.border = '1px solid rgba(163, 112, 255, 0.2)';
@@ -4348,13 +4351,11 @@ div.mobile-only {
     const lang = getLang();
 
     if (!name || !company || !email) {
-      statusDiv.textContent = lang === 'en' ? 'Please fill in all required fields.' : 'Por favor, rellena todos los campos obligatorios.';
-      statusDiv.className = 'lock-status-container error';
+      showFormGuide(lang === 'en' ? 'Please fill in all required fields.' : 'Por favor, rellena todos los campos obligatorios.', 'error');
       return;
     }
 
-    statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
-    statusDiv.className = 'lock-status-container loading';
+    showFormGuide(lang === 'en' ? 'Sending request...' : 'Enviando solicitud...', 'info');
 
     fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
       method: 'POST',
@@ -4389,20 +4390,18 @@ div.mobile-only {
           }
           window.clarity("set", "user_type", "request_success");
         }
-        statusDiv.innerHTML = lang === 'en' 
+        showFormGuide(lang === 'en' 
           ? '<strong>Request sent!</strong> Marta will receive it and email you an access link.' 
-          : '<strong>¡Solicitud enviada!</strong> Marta la recibirá y te enviará un enlace de acceso por email.';
-        statusDiv.className = 'lock-status-container success';
+          : '<strong>¡Solicitud enviada!</strong> Marta la recibirá y te enviará un enlace de acceso por email.', 'success');
         document.getElementById('lock-request-form').reset();
       } else {
         throw new Error('Error backend');
       }
     })
     .catch(err => {
-      statusDiv.textContent = lang === 'en'
+      showFormGuide(lang === 'en'
         ? 'Error sending request. Please try again or email mmoralesgr93@gmail.com'
-        : 'Error al enviar la solicitud. Inténtalo de nuevo o escribe a mmoralesgr93@gmail.com';
-      statusDiv.className = 'lock-status-container error';
+        : 'Error al enviar la solicitud. Inténtalo de nuevo o escribe a mmoralesgr93@gmail.com', 'error');
     });
   };
 
