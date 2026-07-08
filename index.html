@@ -612,7 +612,7 @@ a.sc-client-link:hover {
 }
 .sc-title em {
   font-style: italic;
-  color: var(--purple);
+  color: var(--white);
 }
 .sc-desc {
   font-size: 13px; color: rgba(255,255,255,0.92); line-height: 1.82;
@@ -628,21 +628,22 @@ a.sc-client-link:hover {
 }
 .sc-cta-notion {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 12px; font-weight: 600;
-  color: rgba(255,255,255,0.92);
-  text-decoration: none;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--white); text-decoration: none;
+  text-transform: uppercase; width: fit-content;
   padding: 10px 22px;
   border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.03);
   transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
 }
 .sc-cta-notion:hover {
-  color: #fff;
-  border-color: rgba(255,255,255,0.32);
-  background: rgba(255,255,255,0.06);
+  color: #050409;
+  background: var(--white);
+  border-color: var(--white);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
 }
 .sc-cta-notion .notion-arrow { font-size: 11px; }
 
