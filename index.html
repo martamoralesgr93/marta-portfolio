@@ -3805,18 +3805,16 @@ function closeMenu() {
 <!-- ===================== PORTFOLIO LOCK SCREEN ===================== -->
 <style>
 body.visitor-unauthorized .locked-metric {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
-  color: transparent !important;
-  text-shadow: none !important;
-  display: inline-block;
+  filter: blur(5px);
+  opacity: 0.6;
   user-select: none;
   pointer-events: auto;
   cursor: pointer;
-  transition: background 0.2s;
+  display: inline-block;
 }
-body.visitor-unauthorized .locked-metric:hover {
-  background: rgba(255, 255, 255, 0.15);
+
+body.visitor-unauthorized .sc-card .sc-metrics {
+  display: none !important;
 }
 
 #portfolio-lock-screen {
