@@ -3805,24 +3805,18 @@ function closeMenu() {
 <!-- ===================== PORTFOLIO LOCK SCREEN ===================== -->
 <style>
 body.visitor-unauthorized .locked-metric {
-  filter: blur(4.5px);
-  opacity: 0.55;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: transparent !important;
+  text-shadow: none !important;
+  display: inline-block;
   user-select: none;
   pointer-events: auto;
   cursor: pointer;
-  display: inline-block;
-  position: relative;
+  transition: background 0.2s;
 }
-body.visitor-unauthorized .locked-metric::after {
-  content: "🔒";
-  font-size: 0.8em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: none;
-  opacity: 1;
-  color: var(--purple);
+body.visitor-unauthorized .locked-metric:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 #portfolio-lock-screen {
