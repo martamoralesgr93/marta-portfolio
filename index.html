@@ -3856,46 +3856,26 @@ function closeMenu() {
 .lock-card {
   position: relative;
   z-index: 1;
-  max-width: 920px;
+  max-width: 440px;
   width: 100%;
   background: rgba(15, 12, 28, 0.45);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
-  padding: 48px;
+  padding: 40px 32px;
   box-shadow: 0 30px 70px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.06);
   animation: cardFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
   display: flex;
-  gap: 48px;
-}
-.lock-pane-left {
-  flex: 1;
-  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  padding-right: 48px;
-}
-.lock-pane-right {
-  flex: 1.1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.form-grid-row {
-  display: flex;
-  gap: 16px;
-}
-.form-grid-col {
-  flex: 1;
-  min-width: 0;
+  align-items: center;
+  gap: 20px;
 }
 .social-btn-stack {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   width: 100%;
 }
 .social-btn {
@@ -3940,78 +3920,25 @@ function closeMenu() {
   background: rgba(0, 119, 181, 0.08);
   border-color: rgba(0, 119, 181, 0.2);
 }
-.mobile-only {
-  display: none !important;
+.lock-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 4px 0;
 }
-.desktop-only {
-  display: block !important;
+.lock-divider::before,
+.lock-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
 }
-div.desktop-only {
-  display: block !important;
-}
-div.mobile-only {
-  display: none !important;
-}
-@media (max-width: 820px) {
-  .desktop-only {
-    display: none !important;
-  }
-  .mobile-only {
-    display: block !important;
-  }
-  div.mobile-only {
-    display: block !important;
-  }
-  button.mobile-only {
-    display: inline-flex !important;
-  }
-  
-  .lock-card {
-    flex-direction: column;
-    max-width: 440px;
-    padding: 24px 20px;
-    gap: 16px;
-    margin: 16px;
-  }
-  
-  /* Mobile tab display logic */
-  .lock-card.show-request #pane-right {
-    display: none !important;
-  }
-  .lock-card.show-request #pane-left {
-    display: block !important;
-  }
-  
-  .lock-card.show-unlock #pane-left > *:not(.lock-header):not(.mobile-only) {
-    display: none !important;
-  }
-  .lock-card.show-unlock #pane-left {
-    display: block !important;
-  }
-  .lock-card.show-unlock #pane-right {
-    display: block !important;
-  }
-
-  .lock-pane-left {
-    padding-right: 0;
-    border-right: none;
-    padding-bottom: 0;
-  }
-  .lock-logo {
-    height: 36px !important;
-    margin-bottom: 10px !important;
-  }
-  .lock-title {
-    font-size: 20px !important;
-    margin-bottom: 2px !important;
-  }
-  .lock-subtitle {
-    font-size: 13px !important;
-  }
-  .form-grid-row {
-    flex-direction: column;
-    gap: 0;
-  }
+.lock-divider span {
+  padding: 0 12px;
+  font-size: 11px;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 @keyframes cardFadeIn {
   from { opacity: 0; transform: translateY(20px) scale(0.96); }
@@ -4020,13 +3947,13 @@ div.mobile-only {
 .lock-logo {
   height: 52px;
   width: auto;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 .lock-title {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: -1px;
   text-align: center;
@@ -4040,66 +3967,24 @@ div.mobile-only {
   text-transform: uppercase;
   color: var(--purple);
   text-align: center;
-  margin-bottom: 24px;
-}
-.lock-message {
-  text-align: center;
-  margin-bottom: 28px;
-}
-.lock-text-main {
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.5;
-  color: rgba(255,255,255,0.95);
-  margin-bottom: 10px;
-}
-.lock-text-sub {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-.lock-tabs {
-  display: flex;
-  gap: 8px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 5px;
-  border-radius: 100px;
-  margin-bottom: 28px;
-}
-.lock-tab-btn {
-  flex: 1;
-  border: none;
-  background: transparent;
-  color: var(--muted);
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-.lock-tab-btn.active {
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
 }
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   text-align: left;
+  width: 100%;
 }
 .form-group label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.65);
 }
 .form-input {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 11px 14px;
   color: #fff;
@@ -4107,10 +3992,11 @@ div.mobile-only {
   font-size: 13.5px;
   outline: none;
   transition: border-color 0.2s, background 0.2s;
+  width: 100%;
 }
 .form-input:focus {
   border-color: var(--purple);
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 .lock-submit-btn {
   width: 100%;
@@ -4124,7 +4010,6 @@ div.mobile-only {
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s;
-  margin-top: 10px;
   box-shadow: 0 4px 15px rgba(124,58,237,0.3);
 }
 .lock-submit-btn:hover {
@@ -4135,11 +4020,6 @@ div.mobile-only {
   transform: translateY(0);
 }
 .lock-status-container {
-  margin-top: 20px;
-  font-size: 13px;
-  line-height: 1.5;
-  text-align: center;
-  border-radius: 10px;
   padding: 10px;
   display: none;
 }
@@ -4170,132 +4050,69 @@ div.mobile-only {
   </div>
   
   <div class="lock-card">
-    <!-- Tabs header (Visible on mobile only) -->
-    <div class="lock-tabs mobile-only" style="margin-bottom: 20px; width: 100%;">
-      <button id="tab-request-btn" class="lock-tab-btn active" onclick="switchLockTab('request')" type="button">
-        <span class="es">Solicitar Acceso</span>
-        <span class="en">Request Access</span>
+    <!-- Header -->
+    <div class="lock-header" style="text-align: center; margin-bottom: 8px; width: 100%;">
+      <img src="assets/logo-nuevo.png" alt="Marta Morales" class="lock-logo">
+      <h1 class="lock-title">Marta Morales</h1>
+      <p class="lock-subtitle">Product Designer</p>
+    </div>
+
+    <!-- Social Login Buttons -->
+    <div class="social-btn-stack">
+      <!-- Google -->
+      <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Google" type="button">
+        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+        </svg>
+        <span>Google</span>
       </button>
-      <button id="tab-unlock-btn" class="lock-tab-btn" onclick="switchLockTab('unlock')" type="button">
-        <span class="es">Entrar</span>
-        <span class="en">Sign In</span>
+      
+      <!-- Microsoft -->
+      <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Microsoft" type="button">
+        <svg class="social-icon" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="11" height="11" fill="#F25022"></rect>
+          <rect x="12" width="11" height="11" fill="#7FBA00"></rect>
+          <rect y="12" width="11" height="11" fill="#00A4EF"></rect>
+          <rect x="12" y="12" width="11" height="11" fill="#FFB900"></rect>
+        </svg>
+        <span>Microsoft</span>
+      </button>
+
+      <!-- LinkedIn -->
+      <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="LinkedIn" type="button">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+        </svg>
+        <span>LinkedIn</span>
       </button>
     </div>
 
-    <!-- Column 1 / Left Pane: Header & Request Form (First time) -->
-    <div id="pane-left" class="lock-pane-left">
-      <!-- Header (Always visible at the top) -->
-      <div class="lock-header" style="margin-bottom: 16px;">
-        <img src="assets/logo-nuevo.png" alt="Marta Morales" class="lock-logo">
-        <h1 class="lock-title">Marta Morales</h1>
-        <p class="lock-subtitle">Product Designer</p>
-      </div>
-
-      <!-- Mobile flow guide legend -->
-      <div class="mobile-only" style="margin-top: -12px; margin-bottom: 16px; text-align: center; font-size: 11px; line-height: 1.4; color: var(--dim);">
-        <span class="es">Primera vez: Solicita acceso. Ya verificado: Usa la pestaña "Entrar".</span>
-        <span class="en">First time: Request access. Already verified: Use the "Sign In" tab.</span>
-      </div>
-
-      <!-- Introductory copy (Hide on mobile to save space) -->
-      <div class="lock-message desktop-only" style="margin-bottom: 20px;">
-        <p class="lock-text-main" style="font-size: 13px; line-height: 1.45; color: var(--dim); text-align: left; margin: 0;">
-          <span class="es">Este portfolio está disponible para profesionales verificados. La verificación ayuda a preservar la confidencialidad de determinados proyectos y a ofrecer una experiencia de revisión personalizada.</span>
-          <span class="en">This portfolio is available for verified professionals. Verification helps preserve the confidentiality of certain projects and offers a personalized review experience.</span>
-        </p>
-      </div>
-
-      <!-- Guide callout message -->
-      <div id="lock-form-guide" style="display: none; margin-bottom: 16px; padding: 14px 18px; border-radius: 12px; font-size: 13px; line-height: 1.5; text-align: left; animation: cardFadeIn 0.3s ease both;"></div>
-
-      <!-- Form: Request Access -->
-      <form id="lock-request-form" onsubmit="submitAccessRequest(event)">
-        <div class="form-grid-row" style="margin-bottom: 12px;">
-          <div class="form-grid-col">
-            <div class="form-group" style="margin-bottom: 0;">
-              <input type="text" id="req-name" required="" placeholder="Nombre / Name *" class="form-input">
-            </div>
-          </div>
-          <div class="form-grid-col">
-            <div class="form-group" style="margin-bottom: 0;">
-              <input type="text" id="req-company" required="" placeholder="Empresa / Company *" class="form-input">
-            </div>
-          </div>
-        </div>
-        
-        <div class="form-grid-row" style="margin-bottom: 12px;">
-          <div class="form-grid-col">
-            <div class="form-group" style="margin-bottom: 0;">
-              <input type="email" id="req-email" required="" placeholder="Email corporativo *" class="form-input">
-            </div>
-          </div>
-          <div class="form-grid-col">
-            <div class="form-group" style="margin-bottom: 0;">
-              <input type="text" id="req-linkedin" placeholder="LinkedIn Profile (opcional)" class="form-input">
-            </div>
-          </div>
-        </div>
-        
-        <div class="form-group" style="margin-bottom: 16px;">
-          <textarea id="req-message" rows="2" placeholder="Mensaje / Message (opcional)" class="form-input"></textarea>
-        </div>
-        
-        <button type="submit" class="lock-submit-btn" style="margin-bottom: 0;">
-          <span class="es">Solicitar Acceso</span>
-          <span class="en">Request Access</span>
-        </button>
-      </form>
+    <!-- Divider -->
+    <div class="lock-divider">
+      <span class="es">o</span>
+      <span class="en">or</span>
     </div>
 
-    <!-- Column 2 / Right Pane: Social Logins & Token Unlock (Returning/Authorized) -->
-    <div id="pane-right" class="lock-pane-right" style="justify-content: center;">
-      <h2 class="lock-section-title" style="font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 16px; text-align: center;">
+    <!-- Token Form -->
+    <div style="width: 100%;">
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label for="unlock-token">
+          <span class="es">Token de acceso</span>
+          <span class="en">Access Token</span>
+        </label>
+        <input type="text" id="unlock-token" placeholder="Token" class="form-input" style="text-align: center;" onkeydown="handleTokenKeydown(event)">
+      </div>
+      <button onclick="unlockWithEnteredToken()" class="lock-submit-btn" type="button" style="margin-top: 4px;">
         <span class="es">Entrar</span>
-        <span class="en">Sign In</span>
-      </h2>
-
-      <div class="social-btn-stack" style="margin-bottom: 16px;">
-        <!-- Google -->
-        <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Google" type="button">
-          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
-          </svg>
-          <span>Google</span>
-        </button>
-        
-        <!-- Microsoft -->
-        <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Microsoft" type="button">
-          <svg class="social-icon" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="11" height="11" fill="#F25022"></rect>
-            <rect x="12" width="11" height="11" fill="#7FBA00"></rect>
-            <rect y="12" width="11" height="11" fill="#00A4EF"></rect>
-            <rect x="12" y="12" width="11" height="11" fill="#FFB900"></rect>
-          </svg>
-          <span>Microsoft</span>
-        </button>
-        
-        <!-- LinkedIn -->
-        <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="LinkedIn" type="button">
-          <svg class="social-icon" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-          </svg>
-          <span>LinkedIn</span>
-        </button>
-      </div>
-
-      <div id="lock-status" class="lock-status-container" style="width: 100%; margin-top: 12px;"></div>
-
-      <!-- Privacy Notice (Compact, at the bottom) -->
-      <div class="lock-privacy-note es" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 12px;">
-        Privacidad: Datos cifrados de extremo a extremo. Tu correo se usa únicamente para verificación profesional en Clarity.
-      </div>
-      <div class="lock-privacy-note en" style="font-size: 10px; line-height: 1.45; color: var(--dim); text-align: center; margin-top: 12px;">
-        Privacy: Data is encrypted end-to-end. Your email is used solely for professional validation in Clarity.
-      </div>
+        <span class="en">Enter</span>
+      </button>
     </div>
+
+    <!-- Status display -->
+    <div id="lock-status" class="lock-status-container" style="width: 100%; margin-top: 8px;"></div>
   </div>
 </div>
 
@@ -4310,7 +4127,19 @@ div.mobile-only {
     'talent@hiberus.com'
   ];
 
-  const VALID_TOKENS = ['marta2026'];
+  const VALID_TOKENS = [
+    'hiberus',
+    'recruiter',
+    'talent',
+    'hiring',
+    'invited',
+    'design-team',
+    'marta2026',
+    'acceso',
+    'hr',
+    'guest',
+    'oportunidad'
+  ];
   
   function getLang() {
     return document.documentElement.classList.contains('lang-en') ? 'en' : 'es';
@@ -4374,95 +4203,13 @@ div.mobile-only {
     }
   }
 
-  // Guide message banner above request form
-  function showFormGuide(msg, type = 'info') {
-    const guide = document.getElementById('lock-form-guide');
-    if (!guide) return;
-    guide.innerHTML = msg;
-    guide.style.display = 'block';
-    if (type === 'error') {
-      guide.style.background = 'rgba(239, 68, 68, 0.08)';
-      guide.style.border = '1px solid rgba(239, 68, 68, 0.2)';
-      guide.style.color = '#f87171';
-    } else if (type === 'success') {
-      guide.style.background = 'rgba(16, 185, 129, 0.08)';
-      guide.style.border = '1px solid rgba(16, 185, 129, 0.2)';
-      guide.style.color = '#34d399';
-    } else {
-      guide.style.background = 'rgba(163, 112, 255, 0.08)';
-      guide.style.border = '1px solid rgba(163, 112, 255, 0.2)';
-      guide.style.color = '#d4bbff';
-    }
-  }
-
-  // Tab switching (Mobile only)
-  window.switchLockTab = function(tab) {
-    const card = document.querySelector('.lock-card');
-    const reqBtn = document.getElementById('tab-request-btn');
-    const unlockBtn = document.getElementById('tab-unlock-btn');
-    const statusDiv = document.getElementById('lock-status');
-    
-    if (!card) return;
-    
-    statusDiv.style.display = 'none';
-    statusDiv.className = 'lock-status-container';
-    
-    if (tab === 'request') {
-      card.classList.remove('show-unlock');
-      card.classList.add('show-request');
-      reqBtn.classList.add('active');
-      unlockBtn.classList.remove('active');
-    } else {
-      const guide = document.getElementById('lock-form-guide');
-      if (guide) guide.style.display = 'none';
-      card.classList.remove('show-request');
-      card.classList.add('show-unlock');
-      reqBtn.classList.remove('active');
-      unlockBtn.classList.add('active');
-      setTimeout(() => {
-        const input = document.getElementById('unlock-token');
-        if (input) input.focus();
-      }, 50);
-    }
-  };
-
-  // Initialize tabs based on screen size
-  function handleViewportTabs() {
-    const isMobile = window.innerWidth <= 820;
-    const card = document.querySelector('.lock-card');
-    if (!card) return;
-    
-    if (isMobile) {
-      if (!card.classList.contains('show-request') && !card.classList.contains('show-unlock')) {
-        window.switchLockTab('request');
-      }
-    } else {
-      card.classList.remove('show-request');
-      card.classList.remove('show-unlock');
-    }
-  }
-
-  window.addEventListener('resize', handleViewportTabs);
-  // Run immediately
-  setTimeout(handleViewportTabs, 50);
-
-  // Submit access request via AJAX
-  window.submitAccessRequest = function(event) {
-    event.preventDefault();
-    const name = document.getElementById('req-name').value.trim();
-    const company = document.getElementById('req-company').value.trim();
-    const email = document.getElementById('req-email').value.trim();
-    const linkedin = document.getElementById('req-linkedin').value.trim();
-    const message = document.getElementById('req-message').value.trim();
+  // Helper to send the request via AJAX to FormSubmit automatically
+  function sendAutomaticAccessRequest(email, name) {
     const statusDiv = document.getElementById('lock-status');
     const lang = getLang();
-
-    if (!name || !company || !email) {
-      showFormGuide(lang === 'en' ? 'Please fill in all required fields.' : 'Por favor, rellena todos los campos obligatorios.', 'error');
-      return;
-    }
-
-    showFormGuide(lang === 'en' ? 'Sending request...' : 'Enviando solicitud...', 'info');
+    
+    statusDiv.textContent = lang === 'en' ? 'Requesting access...' : 'Solicitando acceso...';
+    statusDiv.className = 'lock-status-container loading';
 
     fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
       method: 'POST',
@@ -4471,46 +4218,101 @@ div.mobile-only {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        name: name,
+        name: name || 'Usuario Autenticado',
         email: email,
-        company: company,
-        linkedin: linkedin,
-        message: message,
-        _subject: `Solicitud de Acceso - Portafolio (De: ${company})`,
+        message: 'Solicitud de acceso automática al iniciar sesión con login social.',
+        _subject: `Solicitud de Acceso - Portafolio (Login Social: ${name || email})`,
         _captcha: 'false'
       })
     })
     .then(response => response.json())
     .then(data => {
       if (data.success === 'true' || data.success === true) {
-        if (typeof window.clarity === "function") {
-          let domain = "unknown";
-          if (email && email.includes("@")) {
-            domain = email.split("@")[1];
-          }
-          window.clarity("identify", email);
-          window.clarity("set", "name", name);
-          window.clarity("set", "company", company);
-          window.clarity("set", "company_domain", domain);
-          if (linkedin) {
-            window.clarity("set", "linkedin_profile", linkedin);
-          }
-          window.clarity("set", "user_type", "request_success");
-        }
-        showFormGuide(lang === 'en' 
-          ? '<strong>Request sent!</strong> Marta will receive it and email you an access link.' 
-          : '<strong>¡Solicitud enviada!</strong> Marta la recibirá y te enviará un enlace de acceso por email.', 'success');
-        document.getElementById('lock-request-form').reset();
+        localStorage.setItem('access_requested_' + email.trim().toLowerCase(), 'pending');
+        showPendingMessage(lang);
       } else {
-        throw new Error('Error backend');
+        throw new Error('FormSubmit error');
       }
     })
     .catch(err => {
-      showFormGuide(lang === 'en'
-        ? 'Error sending request. Please try again or email mmoralesgr93@gmail.com'
-        : 'Error al enviar la solicitud. Inténtalo de nuevo o escribe a mmoralesgr93@gmail.com', 'error');
+      console.error("FormSubmit error:", err);
+      statusDiv.textContent = lang === 'en'
+        ? 'Error sending request. Please write to mmoralesgr93@gmail.com'
+        : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
+      statusDiv.className = 'lock-status-container error';
     });
-  };
+  }
+
+  // Helper to display the pending message
+  function showPendingMessage(lang) {
+    const statusDiv = document.getElementById('lock-status');
+    statusDiv.innerHTML = lang === 'en'
+      ? '<strong>Access pending approval:</strong> Marta will authorize you at mmoralesgr93@gmail.com. Please wait.'
+      : '<strong>Acceso pendiente de aprobación:</strong> Marta te dará acceso en mmoralesgr93@gmail.com. Por favor, espera.';
+    statusDiv.className = 'lock-status-container warning';
+  }
+
+  // Handle Social Login result (whitelist check + auto request flow)
+  function handleSocialLoginResult(email, name, provider) {
+    const statusDiv = document.getElementById('lock-status');
+    const lang = getLang();
+    const cleanEmail = email ? email.trim().toLowerCase() : '';
+    
+    if (!cleanEmail) {
+      statusDiv.textContent = lang === 'en' ? 'Unable to retrieve email from social login.' : 'No se pudo obtener el email del inicio de sesión.';
+      statusDiv.className = 'lock-status-container error';
+      return;
+    }
+
+    if (WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(cleanEmail)) {
+      statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
+      statusDiv.className = 'lock-status-container success';
+      
+      localStorage.setItem('portfolio_google_email', cleanEmail);
+      
+      if (typeof window.clarity === "function") {
+        let domain = cleanEmail.includes("@") ? cleanEmail.split("@")[1] : "unknown";
+        window.clarity("identify", cleanEmail);
+        window.clarity("set", "name", name);
+        window.clarity("set", "company", cleanEmail);
+        window.clarity("set", "company_domain", domain);
+        window.clarity("set", "user_type", provider);
+      }
+      
+      const lockScreen = document.getElementById('portfolio-lock-screen');
+      const portfolioContent = document.getElementById('portfolio-content');
+      portfolioContent.style.display = 'block';
+      lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      lockScreen.style.opacity = '0';
+      lockScreen.style.transform = 'scale(1.05)';
+      
+      setTimeout(() => {
+        lockScreen.style.display = 'none';
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect');
+        if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
+          window.location.href = redirectUrl;
+        }
+      }, 400);
+    } else {
+      const requestState = localStorage.getItem('access_requested_' + cleanEmail);
+      if (requestState === 'pending') {
+        showPendingMessage(lang);
+        if (typeof window.clarity === "function") {
+          window.clarity("identify", cleanEmail);
+          window.clarity("set", "name", name);
+          window.clarity("set", "user_type", "returning_pending_social_login");
+        }
+      } else {
+        sendAutomaticAccessRequest(cleanEmail, name);
+        if (typeof window.clarity === "function") {
+          window.clarity("identify", cleanEmail);
+          window.clarity("set", "name", name);
+          window.clarity("set", "user_type", "first_time_pending_social_login");
+        }
+      }
+    }
+  }
 
   // Unlock with token entered manually or passed programmatically
   window.unlockWithEnteredToken = function(customToken) {
@@ -4533,7 +4335,6 @@ div.mobile-only {
         window.clarity("set", "user_type", "token_holder");
       }
       
-      // Animate lock screen out
       const lockScreen = document.getElementById('portfolio-lock-screen');
       const portfolioContent = document.getElementById('portfolio-content');
       
@@ -4544,8 +4345,6 @@ div.mobile-only {
       
       setTimeout(() => {
         lockScreen.style.display = 'none';
-        
-        // Handle redirect
         const urlParams = new URLSearchParams(window.location.search);
         const redirectUrl = urlParams.get('redirect');
         if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
@@ -4568,19 +4367,23 @@ div.mobile-only {
     }
   };
 
-  // Login con Google (Implicit Flow redirect)
+  // Login con Google
   window.loginWithGoogle = function() {
     if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
+      // Simulation mode
       const lang = getLang();
-      const msg = lang === 'en' 
-        ? '<strong>Restricted access:</strong> You cannot log in with this account yet as it requires prior authorization. Please complete the form on the left to request access.' 
-        : '<strong>Acceso restringido:</strong> Aún no puedes acceder con esta cuenta porque primero necesitas autorización. Por favor, completa el formulario de la izquierda para solicitar acceso.';
+      const email = prompt(lang === 'en' 
+        ? 'Google Sign-In is not configured in this environment. Enter an email to simulate the login:'
+        : 'El inicio con Google no está configurado en este entorno. Introduce un email para simular el inicio:');
       
-      showFormGuide(msg, 'info');
-      
-      window.switchLockTab('request');
-      const reqName = document.getElementById('req-name');
-      if (reqName) reqName.focus();
+      if (email && email.trim()) {
+        const cleanEmail = email.trim().toLowerCase();
+        if (cleanEmail.includes('@')) {
+          handleSocialLoginResult(cleanEmail, 'Simulated Google User', 'google_auth');
+        } else {
+          alert(lang === 'en' ? 'Invalid email format' : 'Formato de email inválido');
+        }
+      }
       return;
     }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
@@ -4588,97 +4391,30 @@ div.mobile-only {
     const state = 'google_auth';
     
     const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&response_type=id_token&redirect_uri=${redirectUri}&scope=openid%20profile%20email&response_mode=fragment&state=${state}&nonce=${nonce}`;
-    
     window.location.href = authUrl;
   };
 
-  // Callback de respuesta de Google (desde redirect)
   function handleGoogleLoginResult(email, name, payload) {
-    const statusDiv = document.getElementById('lock-status');
-    const lang = getLang();
-    
-    const cleanEmail = email ? email.trim().toLowerCase() : '';
-    if (WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(cleanEmail)) {
-      statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
-      statusDiv.className = 'lock-status-container success';
-      
-      localStorage.setItem('portfolio_google_email', email);
-      
-      if (typeof window.clarity === "function") {
-        let domain = "unknown";
-        if (email.includes("@")) {
-          domain = email.split("@")[1];
-        }
-        window.clarity("identify", email);
-        window.clarity("set", "name", name);
-        window.clarity("set", "company", email);
-        window.clarity("set", "company_domain", domain);
-        if (payload.locale) {
-          window.clarity("set", "user_locale", payload.locale);
-        }
-        window.clarity("set", "user_type", "google_auth");
-      }
-      
-      const lockScreen = document.getElementById('portfolio-lock-screen');
-      const portfolioContent = document.getElementById('portfolio-content');
-      
-      portfolioContent.style.display = 'block';
-      lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-      lockScreen.style.opacity = '0';
-      lockScreen.style.transform = 'scale(1.05)';
-      
-      setTimeout(() => {
-        lockScreen.style.display = 'none';
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirectUrl = urlParams.get('redirect');
-        if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
-          window.location.href = redirectUrl;
-        }
-      }, 400);
-    } else {
-      // Pre-fill the form on the left with Google OAuth details
-      const reqName = document.getElementById('req-name');
-      const reqEmail = document.getElementById('req-email');
-      if (reqName) reqName.value = name || '';
-      if (reqEmail) reqEmail.value = email || '';
-      
-      // Switch view to left column and focus Company
-      window.switchLockTab('request');
-      const reqCompany = document.getElementById('req-company');
-      if (reqCompany) reqCompany.focus();
-      
-      // Display encouraging message
-      const msg = lang === 'en'
-        ? '<strong>Complete the form:</strong> We pre-filled your name and email. Enter your company name to send the request.'
-        : '<strong>Completa el formulario:</strong> Hemos completado tu nombre y correo. Introduce tu empresa para terminar de solicitar tu acceso.';
-      showFormGuide(msg, 'info');
-      
-      if (typeof window.clarity === "function") {
-        let domain = "unknown";
-        if (email.includes("@")) {
-          domain = email.split("@")[1];
-        }
-        window.clarity("identify", email);
-        window.clarity("set", "name", name);
-        window.clarity("set", "company_domain", domain);
-        window.clarity("set", "user_type", "google_login_failed_prefilled");
-      }
-    }
+    handleSocialLoginResult(email, name, 'google_auth');
   }
 
-  // Login con Microsoft (Implicit Flow redirect)
+  // Login con Microsoft
   window.loginWithMicrosoft = function() {
     if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
+      // Simulation mode
       const lang = getLang();
-      const msg = lang === 'en' 
-        ? '<strong>Restricted access:</strong> You cannot log in with this account yet as it requires prior authorization. Please complete the form on the left to request access.' 
-        : '<strong>Acceso restringido:</strong> Aún no puedes acceder con esta cuenta porque primero necesitas autorización. Por favor, completa el formulario de la izquierda para solicitar acceso.';
+      const email = prompt(lang === 'en' 
+        ? 'Microsoft Sign-In is not configured in this environment. Enter an email to simulate the login:'
+        : 'El inicio con Microsoft no está configurado en este entorno. Introduce un email para simular el inicio:');
       
-      showFormGuide(msg, 'info');
-      
-      window.switchLockTab('request');
-      const reqName = document.getElementById('req-name');
-      if (reqName) reqName.focus();
+      if (email && email.trim()) {
+        const cleanEmail = email.trim().toLowerCase();
+        if (cleanEmail.includes('@')) {
+          handleSocialLoginResult(cleanEmail, 'Simulated Microsoft User', 'microsoft_auth');
+        } else {
+          alert(lang === 'en' ? 'Invalid email format' : 'Formato de email inválido');
+        }
+      }
       return;
     }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
@@ -4686,98 +4422,27 @@ div.mobile-only {
     const state = 'microsoft_auth';
     
     const authUrl = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=${MICROSOFT_CLIENT_ID}&response_type=id_token&redirect_uri=${redirectUri}&scope=openid%20profile%20email&response_mode=fragment&state=${state}&nonce=${nonce}`;
-    
     window.location.href = authUrl;
   };
 
-  // Callback de respuesta de Microsoft
   function handleMicrosoftLoginResult(email, name, payload) {
-    const statusDiv = document.getElementById('lock-status');
-    const lang = getLang();
-    
-    const cleanEmail = email ? email.trim().toLowerCase() : '';
-    if (WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(cleanEmail)) {
-      statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
-      statusDiv.className = 'lock-status-container success';
-      
-      localStorage.setItem('portfolio_google_email', email);
-      
-      if (typeof window.clarity === "function") {
-        let domain = "unknown";
-        if (email.includes("@")) {
-          domain = email.split("@")[1];
-        }
-        window.clarity("identify", email);
-        window.clarity("set", "name", name);
-        window.clarity("set", "company", email);
-        window.clarity("set", "company_domain", domain);
-        window.clarity("set", "user_type", "microsoft_auth");
-      }
-      
-      const lockScreen = document.getElementById('portfolio-lock-screen');
-      const portfolioContent = document.getElementById('portfolio-content');
-      
-      portfolioContent.style.display = 'block';
-      lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-      lockScreen.style.opacity = '0';
-      lockScreen.style.transform = 'scale(1.05)';
-      
-      setTimeout(() => {
-        lockScreen.style.display = 'none';
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirectUrl = urlParams.get('redirect');
-        if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
-          window.location.href = redirectUrl;
-        }
-      }, 400);
-    } else {
-      // Pre-fill the form on the left with Microsoft OAuth details
-      const reqName = document.getElementById('req-name');
-      const reqEmail = document.getElementById('req-email');
-      if (reqName) reqName.value = name || '';
-      if (reqEmail) reqEmail.value = email || '';
-      
-      // Switch view to left column and focus Company
-      window.switchLockTab('request');
-      const reqCompany = document.getElementById('req-company');
-      if (reqCompany) reqCompany.focus();
-      
-      // Display encouraging message
-      const msg = lang === 'en'
-        ? '<strong>Complete the form:</strong> We pre-filled your name and email. Enter your company name to send the request.'
-        : '<strong>Completa el formulario:</strong> Hemos completado tu nombre y correo. Introduce tu empresa para terminar de solicitar tu acceso.';
-      showFormGuide(msg, 'info');
-      
-      if (typeof window.clarity === "function") {
-        let domain = "unknown";
-        if (email.includes("@")) {
-          domain = email.split("@")[1];
-        }
-        window.clarity("identify", email);
-        window.clarity("set", "name", name);
-        window.clarity("set", "company_domain", domain);
-        window.clarity("set", "user_type", "microsoft_login_failed_prefilled");
-      }
-    }
+    handleSocialLoginResult(email, name, 'microsoft_auth');
   }
 
+  // Login con LinkedIn
   window.loginWithLinkedIn = function() {
     const lang = getLang();
-    const msg = lang === 'en'
-      ? '<strong>LinkedIn Verification:</strong> Please complete the form on the left and include your LinkedIn profile to request access.'
-      : '<strong>Verificación por LinkedIn:</strong> Por favor, completa el formulario de la izquierda e incluye tu perfil de LinkedIn para solicitar tu acceso.';
-    showFormGuide(msg, 'info');
-
-    window.switchLockTab('request');
-    const linkedinInput = document.getElementById('req-linkedin');
-    if (linkedinInput) {
-      linkedinInput.focus();
-      linkedinInput.style.borderColor = '#0077b5';
-      linkedinInput.style.boxShadow = '0 0 10px rgba(0, 119, 181, 0.4)';
-      setTimeout(() => {
-        linkedinInput.style.borderColor = '';
-        linkedinInput.style.boxShadow = '';
-      }, 3000);
+    const email = prompt(lang === 'en' 
+      ? 'LinkedIn Sign-In is not configured in this environment. Enter an email to simulate the login:'
+      : 'El inicio con LinkedIn no está configurado en este entorno. Introduce un email para simular el inicio:');
+    
+    if (email && email.trim()) {
+      const cleanEmail = email.trim().toLowerCase();
+      if (cleanEmail.includes('@')) {
+        handleSocialLoginResult(cleanEmail, 'Simulated LinkedIn User', 'linkedin_auth');
+      } else {
+        alert(lang === 'en' ? 'Invalid email format' : 'Formato de email inválido');
+      }
     }
   };
 })();
