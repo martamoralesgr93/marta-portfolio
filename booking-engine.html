@@ -55,7 +55,7 @@
     .metric-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 40px 24px; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s ease; }
     .metric-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
     .metric-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.1); }
-    .metric-card.alert::before { background: #ef4444; box-shadow: 0 0 24px rgba(239,68,68,0.6); }
+    .metric-card.alert::before { background: #ef4444; box-shadow: 0 0 24px rgba(239, 68, 68,0.6); }
     .metric-card.success::before { background: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
     .metric-val { font-size: 52px; font-weight: 800; color: var(--white); font-family: var(--font-serif); line-height: 1; margin-bottom: 16px; }
     .metric-card.alert .metric-val { color: #ef4444; }
@@ -86,7 +86,7 @@
       font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       margin-bottom: 10px;
     }
-    .c2-tf-badge--before { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #ef4444; }
+    .c2-tf-badge--before { background: rgba(239, 68, 68,0.1); border: 1px solid rgba(239, 68, 68,0.2); color: #ef4444; }
     .c2-tf-badge--after  { background: var(--accent-glow); border: 1px solid var(--accent-border); color: var(--accent); }
     .c2-tf-img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--border); }
     .c2-tf-divider {
@@ -96,7 +96,7 @@
     .c2-tf-div-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
     .c2-tf-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
     .c2-tf-chip { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
-    .c2-tf-chip--problem  { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.18); color: #ef4444; }
+    .c2-tf-chip--problem  { background: rgba(239, 68, 68,0.08); border: 1px solid rgba(239, 68, 68,0.18); color: #ef4444; }
     .c2-tf-chip--solution { background: var(--accent-glow); border: 1px solid var(--accent-border); color: var(--accent); }
 
     @media (min-width: 769px) and (max-width: 1100px) {
@@ -316,7 +316,7 @@
     }
   </style>
 </head>
-<body>
+<body class="cs-booking-engine">
 
 <nav class="cs-nav">
   <a href="index.html" class="nav-back">
@@ -406,7 +406,7 @@
 </header>
 
 <!-- ==================== QUICK SUMMARY ==================== -->
-<section class="quick-summary-section">
+<section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
   <div class="cs-wrap">
     <div class="quick-summary-grid">
       <!-- Col 1: El Problema -->
@@ -463,11 +463,12 @@
 </section>
 
 <!-- [M] MI ROL -->
-<section class="cs-block">
-  <div class="cs-behance-letter" style="opacity:0.35">M</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">MI ROL · Responsabilidades</span>
+<section class="cs-block cs-block-light">
+    <div class="cs-wrap">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-12">
+        <div class="fu">
+          <span class="block-label">MI ROL · Responsabilidades</span>
       <h2 class="block-h">Único diseñador<br><em>en un proyecto de CRO activo</em></h2>
     </div>
     <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
@@ -490,6 +491,18 @@
           <li><strong>Dirección de negocio</strong>: validación de objetivos y aprobación de propuestas</li>
           <li><strong>Equipo de contenidos</strong>: coordinación para mantener coherencia de comunicación durante los cambios estructurales</li>
         </ul>
+              </div>
+      </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-flex justify-content-center align-items-center">
+        <div class="shape-container">
+          <div class="capsule-trio" style="position: relative; right: -25px;">
+            <div class="capsule-trio-item" style="height: 180px; margin-top: -30px;"></div>
+            <div class="capsule-trio-item" style="height: 240px; transform: scaleY(1.05);"></div>
+            <div class="capsule-trio-item" style="height: 180px; margin-top: 30px;"></div>
+          </div>
+          <div class="circle-decorator" style="position: absolute; top: 10%; right: 10px; width: 60px; height: 60px;"></div>
+        </div>
       </div>
     </div>
 
@@ -536,7 +549,7 @@
 </section>
 
 <!-- [S+T] SITUATION + TASK — fusionadas -->
-<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+<section class="cs-block cs-block-indigo">
   <div class="cs-behance-letter">S</div>
   <div class="cs-wrap">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
@@ -739,7 +752,7 @@
 </section>
 
 <!-- [R] RESULTADO -->
-<section class="cs-block" style="background: rgba(255,255,255,0.015);">
+<section class="cs-block cs-block-light">
   <div class="cs-behance-letter">R</div>
   <div class="cs-wrap">
     <div class="fu">
