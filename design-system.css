@@ -569,7 +569,10 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 }
 
 @media (max-width: 900px) {
-  .ux-flow-grid { flex-direction: column; gap: 12px; /* Page-Level Accent Configuration */
+  .ux-flow-grid { flex-direction: column; gap: 12px; }
+}
+
+/* Page-Level Accent Configuration */
 .cs-booking-engine {
   --accent: #c29b38 !important;
   --accent-glow: rgba(194, 155, 56, 0.12) !important;
@@ -887,3 +890,51 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 }
 
 
+
+/* ===================== CASE HERO · GLASSMORPHIC MOTION ===================== */
+/* Dos capas de cristal flotando sobre la imagen del hero: blur real del fondo
+   (backdrop-filter), borde luminoso y deriva lenta. Bajo el contenido (z3). */
+.cs-hero::before,
+.cs-hero::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 60%);
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 24px 60px rgba(0,0,0,0.25);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  will-change: transform;
+}
+.cs-hero::after {
+  width: clamp(220px, 26vw, 380px);
+  height: clamp(220px, 26vw, 380px);
+  top: 12%;
+  right: 7%;
+  animation: heroGlassDriftA 16s ease-in-out infinite alternate;
+}
+.cs-hero::before {
+  width: clamp(140px, 16vw, 230px);
+  height: clamp(140px, 16vw, 230px);
+  top: 46%;
+  left: 55%;
+  border-radius: 34%;
+  animation: heroGlassDriftB 21s ease-in-out infinite alternate;
+}
+@keyframes heroGlassDriftA {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { transform: translate(-42px, 34px) rotate(9deg) scale(1.06); }
+}
+@keyframes heroGlassDriftB {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(48px, -30px) rotate(-12deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-hero::before, .cs-hero::after { animation: none; }
+}
+@media (max-width: 768px) {
+  .cs-hero::before { display: none; }
+  .cs-hero::after { top: 8%; right: -10%; }
+}
