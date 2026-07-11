@@ -36,9 +36,36 @@ Hemos completado con éxito las actualizaciones de imágenes y optimización de 
 * **Icono de Estrella de 6 Puntas (Sparkle):** Se reemplazó el icono de estrella de 5 puntas de color violeta (`#a78bfa`) en el "Resumen de Impacto" de la página principal (`index.html`) por un icono de **estrella de 6 puntas (outline)** dibujado mediante SVG en blanco sólido, coincidiendo con la referencia visual compartida.
 * **Estilos Globales de Iconos en Blanco Sólido:** Añadimos reglas de sobrescritura a [design-system.css](file:///c:/Users/mmora/Desktop/Marta%20Morales%20%E2%80%94%20Product%20Designer_files/design-system.css) para forzar que todos los SVGs de etiquetas de categoría, rejillas de resumen de los casos de estudio y cabeceras hereden color y trazo blanco sólido (`#ffffff`) y opacidad completa (`opacity: 1`), logrando uniformidad visual en todo el portafolio.
 
+### 7. Efecto Glassmorphic en el Hero
+* **Efecto de Cristal Translúcido:** En [design-system.css](file:///c:/Users/mmora/Desktop/Marta%20Morales%20%E2%80%94%20Product%20Designer_files/design-system.css), rediseñamos las formas geométricas flotantes (`.cs-hero::before` y `.cs-hero::after`) en el hero para dotarlas de un aspecto mucho más premium, ligero y translúcido ("más glass").
+* **Gradients de Color (Azul & Morado):** Implementamos gradientes translúcidos que van de tonos violetas (`rgba(167, 139, 250)`) a azules (`rgba(59, 130, 246)`), rompiendo el aspecto grisáceo y opaco anterior.
+* **Bordes y Reflejos de Cristal:**
+  * Duplicamos el nivel de desenfoque de fondo (`backdrop-filter: blur(28px) saturate(170%)`) para un efecto esmerilado más suave.
+  * Ajustamos los bordes a `1.5px` coloreados y añadimos sombras internas (`box-shadow: inset 0 1.5px 2px...`) para simular la refracción y el biselado del vidrio.
+  * Añadimos un resplandor ambiental exterior (glow) en azul y morado alrededor de las figuras.
+* **Fondo de Resplandor Neon (`.cs-hero-glow`):** Reposicionamos y rediseñamos la mancha de luz de fondo para que sea un degradado de 720px que combine morado, azul y lavanda directamente detrás de las figuras flotantes, sirviendo como contraluz cromático perfecto.
+* **Solución de Capas y Sombreado (z-index):** Corregimos un conflicto de capas donde la máscara oscura `.cs-hero-overlay` (z-index: 2) se renderizaba sobre el resplandor de fondo y las figuras (que tenían z-index: 2 y 1), provocando que las figuras se vieran grises, opacas y apagadas. Reestructuramos la jerarquía visual:
+  * `.cs-hero-logo` (Logo de fondo): `z-index: 1`
+  * `.cs-hero-overlay` (Filtro degradado oscuro): `z-index: 2`
+  * `.cs-hero-glow` (Resplandor de color): `z-index: 3` (ahora brilla intensamente sobre la máscara oscura)
+  * `.cs-hero::before` / `.cs-hero::after` (Figuras de cristal): `z-index: 4` (reciben la luz del resplandor de fondo y muestran un desenfoque y brillo de cristal real)
+  * `.cs-hero-content` (Textos del hero): `z-index: 5` (legibilidad garantizada sobre los cristales)
+
+### 8. Corrección de Enlaces de Navegación "Casos de Producto"
+* **Redirección de Enlaces a la Portada (`index.html#work`):** Modificamos los enlaces de la barra de navegación superior en todos los casos de estudio (incluyendo la recuperación y fijación del archivo [it-ops-oracle.html](file:///c:/Users/mmora/Desktop/Marta%20Morales%20%E2%80%94%20Product%20Designer_files/it-ops-oracle.html)):
+  * **Botón "Volver":** Cambió su href de `index.html` a `index.html#work` para llevar directamente a la sección de proyectos.
+  * **Trigger "Casos de Producto":** Convertimos el botón de dropdown `.cs-dropdown-trigger` en un enlace (`<a>`) con `href="index.html#work"`. De esta forma:
+    * En desktop, pasar el ratón (hover) abre el menú desplegable de casos como siempre.
+    * Hacer click directamente en el texto "Casos de Producto" redirige a la sección `#work` de la portada.
+    * En dispositivos táctiles (mobile/tablet), pulsar el botón redirige inmediatamente a la sección correspondiente del index, eliminando el error de redirección involuntaria.
+
 ---
 
 ## Verificación de Calidad
 
 * **Compilación de Activos:** Ejecutamos `npm run build-local` correctamente para regenerar los estilos del portafolio.
 * **Integridad de Rutas y Estilos:** Se validó que las nuevas rutas a `web4.png`, `re-compo-index.png`, `calendariooo.png` y `calendario.png` corresponden a archivos existentes en el sistema y se renderizan correctamente sin distorsión ni recortes. La nueva iconografía en blanco sólido y la estructura de grillas de Caso 5 no generan desbordamiento horizontal y cargan de forma limpia.
+* **Estilos del Hero:** Se comprobó que las reglas mejoradas de glassmorphism cargan de manera consistente en todas las páginas de casos de estudio y mejoran la estética visual integrando la gama cromática azul/morada sin desbordar el contenedor.
+* **Navegación:** Se validó la corrección de todos los enlaces de la barra de navegación y la conversión del botón disparador a enlace anchor sin afectar el estilo ni el menú desplegable en CSS.
+
+

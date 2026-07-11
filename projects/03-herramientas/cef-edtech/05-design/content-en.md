@@ -1,4 +1,4 @@
-# Design & UX Strategy (ACTION)
+# Design & UX Strategy
 
 ### 1. Problem Framing
 The tool had grown functionally, but not from a unified experience logic. Many modules responded to specific business or academic management needs, but the overall experience lacked consistency and clarity for the end user. There was a disconnect between the technical structure and the user's actual understanding, forcing them to interpret too many visual decisions before completing simple tasks.

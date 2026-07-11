@@ -1,0 +1,19 @@
+:root {
+  --brand-accent: #a78bfa;
+  --brand-accent-rgb: 167, 139, 250;
+  --brand-accent-strong: #7c3aed;
+  --brand-accent-secondary: #f97316;
+  --brand-accent-secondary-rgb: 249, 115, 22;
+
+  --accent: var(--brand-accent);
+  --accent-rgb: var(--brand-accent-rgb);
+  --accent-strong: var(--brand-accent-strong);
+  --accent-secondary: var(--brand-accent-secondary);
+  --accent-secondary-rgb: var(--brand-accent-secondary-rgb);
+
+  --cta-bg: linear-gradient(135deg, var(--brand-accent-strong) 0%, var(--brand-accent-secondary) 100%);
+  --cta-surface: rgba(var(--brand-accent-rgb), 0.16);
+  --cta-surface-hover: rgba(var(--brand-accent-rgb), 0.24);
+  --cta-border: rgba(var(--brand-accent-rgb), 0.35);
+  --cta-border-strong: rgba(var(--brand-accent-rgb), 0.5);
+}

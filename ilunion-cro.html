@@ -260,7 +260,7 @@
       display: flex; align-items: center; justify-content: center;
       gap: 12px; padding: 18px 28px;
       border-top: 1px solid var(--border);
-      background: rgba(167, 139, 250, 0.04);
+      background: rgba(var(--accent-rgb), 0.04);
     }
     .wf-row-arrow span {
       font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
@@ -468,20 +468,21 @@
   </style>
 </head>
 <body class="cs-ilunion-cro">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
 <!-- ══════════════════════════════════════
      NAV
 ══════════════════════════════════════ -->
-<nav class="cs-nav">
-  <a href="index.html" class="nav-back">
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   <div class="cs-nav-right">
     <div class="cs-nav-dropdown">
-      <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
         <span class="es">Casos de Producto ▾</span>
         <span class="en">Case Studies ▾</span>
-      </button>
+      </a>
       <div class="cs-dropdown-menu">
         <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
@@ -519,6 +520,8 @@
   </div>
 </nav>
 
+<main id="main">
+
 
 <!-- ══════════════════════════════════════
      01 · HERO
@@ -528,6 +531,13 @@
   <div class="cs-hero-overlay"></div>
   <div class="cs-hero-glow" style="background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 65%);"></div>
   <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">ILUNION CRO</span></li>
+      </ol>
+    </nav>
     <span class="cs-eyebrow">02 — ILUNION Hotels · CRO · Product Design</span>
     <h1 class="cs-title">
       Experimentos AEM<br><em>de 3,36% a 6,5% de conversión</em>
@@ -640,9 +650,9 @@
       <div class="audit-img-panel">
         <div class="audit-panel-header">Auditoría del Componente Actual</div>
         <div class="audit-panel-body">
-          <img
+          <img width="1920" height="1440"
             loading="lazy" decoding="async"
-            src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.png"
+            src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.webp"
             alt="Auditoría del componente de ofertas ILUNION — estado inicial"
           >
         </div>
@@ -884,9 +894,9 @@
           <span class="wf-col-name">Wireframe — Estructura</span>
         </div>
         <div class="wf-col-body">
-          <img
+          <img width="1920" height="1440"
             loading="lazy" decoding="async"
-            src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wireframe-recompo.png"
+            src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wireframe-recompo.webp"
             alt="Wireframe re-componetización — jerarquía buscador + ofertas"
           >
         </div>
@@ -914,9 +924,9 @@
             <span class="wf-col-name">Diseño Final — Desktop</span>
           </div>
           <div class="wf-col-body">
-            <img
+            <img width="1920" height="1440"
               loading="lazy" decoding="async"
-              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.png"
+              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.webp"
               alt="Diseño final desktop — carrusel de ofertas en primer fold con precio, descuento y CTA"
             >
           </div>
@@ -933,9 +943,9 @@
             <span class="wf-col-name">Diseño Final — Mobile</span>
           </div>
           <div class="wf-col-body">
-            <img
+            <img width="1920" height="1440"
               loading="lazy" decoding="async"
-              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.png"
+              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.webp"
               alt="Diseño final mobile — jerarquía adaptada al contexto táctil"
             >
           </div>
@@ -989,26 +999,26 @@
     </div>
 
         <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
-    <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(167, 139, 250, 0.22); background: rgba(167, 139, 250, 0.02);">
-      <div class="wf-process-label" style="border-bottom: 1px solid rgba(167, 139, 250, 0.15);">
-        <span style="color: #a78bfa;">INTEGRACIÓN DE IA EN RESEARCH Y AUDITORÍA DE DATOS</span>
+    <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02);">
+      <div class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);">
+        <span style="color: var(--accent);">INTEGRACIÓN DE IA EN RESEARCH Y AUDITORÍA DE DATOS</span>
         <em style="color: rgba(255,255,255,0.65);">— Optimización CRO basada en datos cuali-cuanti</em>
       </div>
       <div class="wf-steps" style="grid-template-columns: repeat(3, 1fr);">
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">1.</span>
+          <span class="wf-step-num" style="color: var(--accent);">1.</span>
           <p class="wf-step-title" style="color: #fff;">Auditoría de Logs (MCP)</p>
           <p class="wf-step-desc es">Conexión de Claude mediante MCP SQL a bases de datos de Adobe Analytics para procesar, limpiar y filtrar 10,000+ logs del funnel de reservas post-migración, localizando caídas exactas.</p>
           <p class="wf-step-desc en">Connecting Claude via MCP SQL to Adobe Analytics to pull, clean, and filter 10,000+ logs from the reservation funnel post-migration, isolating checkout drop-offs.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">2.</span>
+          <span class="wf-step-num" style="color: var(--accent);">2.</span>
           <p class="wf-step-title" style="color: #fff;">Clustering de Clarity</p>
           <p class="wf-step-desc es">Ingesta automatizada de 250+ transcripciones cualitativas de Microsoft Clarity a través de LLMs para categorizar fricciones en el flujo de selección de habitaciones en tiempo récord.</p>
           <p class="wf-step-desc en">Ingesting 250+ Microsoft Clarity qualitative session logs into Claude to automatically categorize layout friction points during the room selection process.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">3.</span>
+          <span class="wf-step-num" style="color: var(--accent);">3.</span>
           <p class="wf-step-title" style="color: #fff;">Variantes de Microcopy</p>
           <p class="wf-step-desc es">Generé 15 variantes bilingües de microcopy para llamadas a la acción en pruebas A/B usando prompts estructurados con restricciones de longitud de caracteres de AEM.</p>
           <p class="wf-step-desc en">Generated 15 bilingual variants of microcopy call-to-actions for A/B tests using structured prompts bounded by AEM character length constraints.</p>
@@ -1105,7 +1115,7 @@
       Las cifras representan métricas del canal directo y analítica agregada. No incluyen información financiera sensible de la empresa.
     </p>
 
-    <div style="margin-top: 20px; padding: 14px 18px; border-left: 2px solid rgba(167,139,250,0.35); background: rgba(167,139,250,0.04); border-radius: 0 8px 8px 0;">
+    <div style="margin-top: 20px; padding: 14px 18px; border-left: 2px solid rgba(var(--accent-rgb),0.35); background: rgba(var(--accent-rgb),0.04); border-radius: 0 8px 8px 0;">
       <p class="es fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generación y coordinación de assets visuales del canal directo con IA generativa (Vertex AI · Gemini · Figma), garantizando consistencia de marca y nivel de calidad.</p>
       <p class="en fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generation and coordination of direct channel visual assets using generative AI (Vertex AI · Gemini · Figma), ensuring brand consistency and quality standard.</p>
     </div>
@@ -1162,6 +1172,8 @@
 <!-- ══════════════════════════════════════
      FOOTER
 ══════════════════════════════════════ -->
+</main>
+
 <footer class="cs-footer">
   <div class="cs-wrap">
     <div class="footer-label es">Siguiente caso</div>
@@ -1206,5 +1218,6 @@
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
   }
 </script>
+<script src="cs-enhancements.js" defer></script>
 </body>
 </html>

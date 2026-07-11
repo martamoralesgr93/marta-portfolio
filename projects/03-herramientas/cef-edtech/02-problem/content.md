@@ -1,4 +1,4 @@
-# El reto (TASK)
+# El reto
 
 El objetivo era mejorar la experiencia de uso de la herramienta académica reduciendo complejidad y facilitando la interacción en tareas frecuentes dentro del entorno educativo.
 

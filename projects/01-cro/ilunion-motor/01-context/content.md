@@ -1,4 +1,4 @@
-# Contexto de negocio (SITUATION)
+# Contexto de negocio
 
 En ILUNION Hotels, el motor de reservas es uno de los principales puntos de conversión del canal directo. Gran parte del tráfico provenía de campañas de Paid Media con alta intención de compra, pero el acceso al motor presentaba fricción dentro del customer journey digital.
 

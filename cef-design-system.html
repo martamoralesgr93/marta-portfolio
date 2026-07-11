@@ -71,7 +71,7 @@
       top: 50%; left: 10%;
       width: 80%; height: 60%;
       transform: translateY(-50%);
-      background: radial-gradient(ellipse at 20% 50%, rgba(139,92,246,.07) 0%, transparent 60%),
+      background: radial-gradient(ellipse at 20% 50%, rgba(var(--accent-rgb),.07) 0%, transparent 60%),
                   radial-gradient(ellipse at 80% 50%, rgba(59,130,246,.05) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
@@ -88,11 +88,11 @@
       width: 44px; height: 44px;
       flex-shrink: 0;
       border-radius: 12px;
-      background: rgba(139,92,246,0.1);
-      border: 1px solid rgba(139,92,246,0.25);
+      background: rgba(var(--accent-rgb),0.1);
+      border: 1px solid rgba(var(--accent-rgb),0.25);
       display: flex; align-items: center; justify-content: center;
-      color: #a78bfa;
-      box-shadow: 0 0 20px rgba(139,92,246,0.15);
+      color: var(--accent);
+      box-shadow: 0 0 20px rgba(var(--accent-rgb),0.15);
     }
     .pm-header-text { flex: 1; min-width: 0; }
     .pm-title {
@@ -121,7 +121,7 @@
     }
     .pm-map-row:hover .pm-bridge-line { opacity: 1; }
     .pm-map-row:hover .pm-work-card { border-color: rgba(255,255,255,0.12); }
-    .pm-map-row:hover .pm-method-badge { box-shadow: 0 0 28px var(--row-glow, rgba(139,92,246,0.25)); }
+    .pm-map-row:hover .pm-method-badge { box-shadow: 0 0 28px var(--row-glow, rgba(var(--accent-rgb),0.25)); }
     .pm-num {
       font-size: 11px;
       font-weight: 700;
@@ -150,9 +150,9 @@
       flex-shrink: 0;
       border-radius: 9px;
       display: flex; align-items: center; justify-content: center;
-      background: var(--row-icon-bg, rgba(139,92,246,0.1));
-      border: 1px solid var(--row-icon-border, rgba(139,92,246,0.2));
-      color: var(--row-color, #a78bfa);
+      background: var(--row-icon-bg, rgba(var(--accent-rgb),0.1));
+      border: 1px solid var(--row-icon-border, rgba(var(--accent-rgb),0.2));
+      color: var(--row-color, var(--accent));
     }
     .pm-work-label {
       font-size: 13px;
@@ -173,14 +173,14 @@
       font-size: 8px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--row-color, rgba(139,92,246,0.6));
+      color: var(--row-color, rgba(var(--accent-rgb),0.6));
       font-weight: 700;
       white-space: nowrap;
     }
     .pm-bridge-line {
       width: 100%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--row-color, rgba(139,92,246,0.4)), transparent);
+      background: linear-gradient(90deg, transparent, var(--row-color, rgba(var(--accent-rgb),0.4)), transparent);
       opacity: 0.5;
       transition: opacity 0.25s ease;
       position: relative;
@@ -192,7 +192,7 @@
       top: 50%;
       transform: translateY(-50%);
       font-size: 11px;
-      color: var(--row-color, #a78bfa);
+      color: var(--row-color, var(--accent));
       line-height: 1;
     }
     .pm-method-badge {
@@ -204,21 +204,21 @@
       font-weight: 600;
       white-space: nowrap;
       letter-spacing: 0.01em;
-      background: var(--row-badge-bg, rgba(139,92,246,0.1));
-      border: 1px solid var(--row-badge-border, rgba(139,92,246,0.25));
-      color: var(--row-color, #a78bfa);
-      box-shadow: 0 0 16px var(--row-glow, rgba(139,92,246,0.12));
+      background: var(--row-badge-bg, rgba(var(--accent-rgb),0.1));
+      border: 1px solid var(--row-badge-border, rgba(var(--accent-rgb),0.25));
+      color: var(--row-color, var(--accent));
+      box-shadow: 0 0 16px var(--row-glow, rgba(var(--accent-rgb),0.12));
       backdrop-filter: blur(8px);
       transition: box-shadow 0.25s ease;
       justify-self: start;
     }
     .pm-map-row[data-accent="purple"] {
-      --row-color: #a78bfa;
-      --row-icon-bg: rgba(139,92,246,0.1);
-      --row-icon-border: rgba(139,92,246,0.2);
-      --row-badge-bg: rgba(139,92,246,0.08);
-      --row-badge-border: rgba(139,92,246,0.22);
-      --row-glow: rgba(139,92,246,0.2);
+      --row-color: var(--accent);
+      --row-icon-bg: rgba(var(--accent-rgb),0.1);
+      --row-icon-border: rgba(var(--accent-rgb),0.2);
+      --row-badge-bg: rgba(var(--accent-rgb),0.08);
+      --row-badge-border: rgba(var(--accent-rgb),0.22);
+      --row-glow: rgba(var(--accent-rgb),0.2);
     }
     .pm-map-row[data-accent="blue"] {
       --row-color: #93c5fd;
@@ -239,9 +239,9 @@
 
     @media (min-width: 769px) and (max-width: 1100px) {
       .cs-nav { padding: 0 32px; }
-      .cs-hero-content { padding: 0 32px 72px; }
+      .cs-hero-content { padding: 0 32px 48px; }
       .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
-      .cs-block { padding: 80px 0; }
+      .cs-block { padding: 64px 0; }
       .cs-title { font-size: clamp(38px, 5vw, 60px); }
       .block-h { font-size: clamp(28px, 3vw, 42px); }
       .lead { font-size: 18px; }
@@ -273,9 +273,9 @@
     @media (max-width: 768px) {
       .cs-nav { padding: 0 24px; height: 56px; }
       .nav-label { display: none; }
-      .cs-hero-content { padding: 0 24px 72px; }
+      .cs-hero-content { padding: 0 24px 28px; }
       .cs-wrap, .cs-wrap-wide { padding: 0 24px; }
-      .cs-block { padding: 80px 0; }
+      .cs-block { padding: 44px 0; }
       .cs-ba { grid-template-columns: 1fr; gap: 40px; }
       .score-row { flex-direction: column; text-align: center; gap: 24px; }
       .cs-hero-logo {
@@ -423,18 +423,19 @@
   </style>
 </head>
 <body class="cs-cef-design-system">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
-<nav class="cs-nav">
-  <a href="index.html" class="nav-back">
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   
   <div class="cs-nav-right">
     <div class="cs-nav-dropdown">
-      <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
         <span class="es">Casos de Producto ▾</span>
         <span class="en">Case Studies ▾</span>
-      </button>
+      </a>
       <div class="cs-dropdown-menu">
         <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
@@ -472,11 +473,20 @@
   </div>
 </nav>
 
+<main id="main">
+
 <header class="cs-hero">
   <div class="cs-hero-logo"></div>
   <div class="cs-hero-overlay"></div>
   <div class="cs-hero-glow"></div>
   <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">CEF Design System</span></li>
+      </ol>
+    </nav>
     <span class="cs-eyebrow">
       01 — CEF EdTech · UX Strategy · Design System
     </span>
@@ -584,7 +594,7 @@
           </svg>
           <span class="es" style="font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--white); text-transform: none; letter-spacing: normal;">Design System · Recreación 2026</span>
           <span class="en" style="font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--white); text-transform: none; letter-spacing: normal;">Design System · 2026 Recreation</span>
-          <span style="display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.3); color: #a78bfa;">
+          <span style="display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(var(--accent-rgb),0.1); border: 1px solid rgba(var(--accent-rgb),0.3); color: var(--accent);">
             <span class="es">Hecho con IA</span><span class="en">Built with AI</span>
           </span>
         </span>
@@ -601,13 +611,13 @@
         </div>
       </div>
       <div style="padding: 24px 28px 0;">
-        <div class="es" style="font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; padding: 20px 24px; background: rgba(167,139,250,0.04); border-left: 3px solid #a78bfa; border-radius: 0 12px 12px 0;">
+        <div class="es" style="font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; padding: 20px 24px; background: rgba(var(--accent-rgb),0.04); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0;">
           <h4 style="color: var(--white); font-size: 15px; font-weight: 700; margin-bottom: 8px;">Transparencia (NDA) y Recreación con IA</h4>
           <p style="margin-bottom: 10px;">El diseño original de <strong>CEF</strong> es confidencial. Para demostrar mi criterio técnico, he realizado una <strong>recreación completa desde cero</strong> de una marca ficticia (Aulora) mediante flujos de IA Generativa en 2026. Este caso es de mi autoría exclusiva y no revela información protegida.</p>
           <p style="margin-bottom: 10px;"><strong style="color: var(--white);">Ahorro de tiempo del 90%:</strong> Un proceso manual de meses en 2024 fue recreado y auditado en <strong>pocos días</strong> utilizando mi playbook de <strong>Figma + Claude MCP</strong> y vibe coding.</p>
           <p style="margin: 0;"><strong style="color: var(--white);">Dirección Humana:</strong> La IA acelera la producción, pero el criterio (WCAG 2.1 AA, consistencia y lógica de negocio) es humano. He diseñado flujos que unen tokens, Figma y código.</p>
         </div>
-        <div class="en" style="font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; padding: 20px 24px; background: rgba(167,139,250,0.04); border-left: 3px solid #a78bfa; border-radius: 0 12px 12px 0;">
+        <div class="en" style="font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; padding: 20px 24px; background: rgba(var(--accent-rgb),0.04); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0;">
           <h4 style="color: var(--white); font-size: 15px; font-weight: 700; margin-bottom: 8px;">Transparency (NDA) & AI Recreation</h4>
           <p style="margin-bottom: 10px;">CEF's original design is confidential. To demonstrate my workflow, I have built a <strong>complete recreation from scratch</strong> under a fictional brand (Aulora) using 2026 Generative AI pipelines. This project is entirely my own and free of client data.</p>
           <p style="margin-bottom: 10px;"><strong style="color: var(--white);">90% Efficiency Gain:</strong> Months of manual work in 2024 were audited and scaled in <strong>just days</strong> using my <strong>Figma + Claude MCP</strong> playbook and vibe coding workflows.</p>
@@ -820,7 +830,7 @@
         <!-- Columna Derecha: Imagen Wireframe -->
         <div class="col-lg-7 col-md-12">
           <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.015);">
-            <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.png" alt="Wireframe de Calendario Web">
+            <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.webp" alt="Wireframe de Calendario Web">
           </div>
         </div>
       </div>
@@ -844,7 +854,7 @@
               <span class="c2-evidence-sub">VISTA MÓVIL</span>
             </div>
           </div>
-          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.png" alt="Diseño final del Calendario Web — Mobile">
+          <img width="1440" height="1024" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.webp" alt="Diseño final del Calendario Web — Mobile">
           <div class="c2-evidence-caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión móvil reorganiza la agenda en una vista de lista y cuadrícula mensual adaptada para interacción táctil en smartphone, garantizando legibilidad y accesibilidad.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
@@ -865,7 +875,7 @@
               <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
             </div>
           </div>
-          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.png" alt="Diseño final del Calendario Web — Escritorio">
+          <img width="1200" height="800" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" alt="Diseño final del Calendario Web — Escritorio">
           <div class="c2-evidence-caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión de escritorio del calendario académico permite al estudiante visualizar de un vistazo su agenda académica diaria y semanal, facilitando la interacción rápida con asignaturas y filtros avanzados.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
@@ -901,7 +911,7 @@
               <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
             </div>
           </div>
-          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.png" alt="Pasarela de Pago — Diseño Desktop">
+          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.webp" alt="Pasarela de Pago — Diseño Desktop">
           <div class="c2-evidence-caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En resoluciones de escritorio, el checkout divide la pantalla de forma equilibrada para mostrar en paralelo el desglose transaccional detallado (conceptos de matrícula, descuentos, tasas) y las opciones de pago (tarjeta, financiación, domiciliación).</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
@@ -922,7 +932,7 @@
               <span class="c2-evidence-sub">VISTA MÓVIL</span>
             </div>
           </div>
-          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.png" alt="Pasarela de Pago — Diseño Móvil">
+          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.webp" alt="Pasarela de Pago — Diseño Móvil">
           <div class="c2-evidence-caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión móvil reorganiza los bloques verticalmente y prioriza el paso de pago activo, reduciendo la altura de scroll requerida para completar la transacción. Los campos de formulario y botones de llamada a la acción adoptan tamaños óptimos para interacción táctil.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
@@ -958,7 +968,7 @@
               <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
             </div>
           </div>
-          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.png" alt="Login y Bolsa de Empleo — Diseño Desktop">
+          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Desktop">
           <div class="c2-evidence-caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">El diseño desktop organiza de forma clara las áreas funcionales del portal: acceso directo con credenciales institucionales, listado interactivo de vacantes laborales de la Bolsa de Empleo, y destacados informativos corporativos de CEF.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
@@ -979,7 +989,7 @@
               <span class="c2-evidence-sub">VISTA MÓVIL</span>
             </div>
           </div>
-          <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.png" alt="Login y Bolsa de Empleo — Diseño Móvil">
+          <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Móvil">
           <div class="c2-evidence-caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">El layout móvil adapta la visualización priorizando la accesibilidad de las llamadas a la acción primarias y simplificando los bloques informativos de fondo para evitar scroll excesivo en la pantalla táctil.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
@@ -1104,7 +1114,7 @@
 <section class="cs-block">
   <div class="cs-wrap">
     <div class="fu">
-      <span class="block-label" style="color:#a78bfa;">Evolución 2024 → 2026</span>
+      <span class="block-label" style="color:var(--accent);">Evolución 2024 → 2026</span>
       <h2 class="block-h">El mismo sistema,<br><em>recreado con IA en días</em></h2>
       <p class="lead es" style="margin-top:24px; max-width:840px;">En 2024 construí este sistema a mano. En 2026 no puedo compartir aquel archivo —es confidencial—, así que hice algo más útil que enseñar capturas: <strong style="color:var(--white);">lo recreé desde cero con IA</strong> sobre una marca ficticia, aplicando las metodologías que he incorporado desde entonces. El resultado no es una copia: es la prueba medible de cómo ha evolucionado mi forma de trabajar.</p>
       <p class="lead en" style="margin-top:24px; max-width:840px;">I built this system by hand in 2024. In 2026 I can't share that file —it's confidential—, so I did something more useful than showing screenshots: <strong style="color:var(--white);">I recreated it from scratch with AI</strong> under a fictional brand, applying the methodologies I've adopted since. The result isn't a copy: it's measurable proof of how my way of working has evolved.</p>
@@ -1164,9 +1174,9 @@
     </div>
 
     <!-- PLAYBOOK: FIGMA + CLAUDE MCP -->
-    <div class="wf-process fu" style="margin-top: 64px; border-color: rgba(167, 139, 250, 0.22); background: rgba(167, 139, 250, 0.02); border-radius: 16px;">
-      <div class="wf-process-label" style="border-bottom: 1px solid rgba(167, 139, 250, 0.15); padding: 16px 28px;">
-        <span style="color: #a78bfa; display: inline-flex; align-items: center; gap: 9px;">
+    <div class="wf-process fu" style="margin-top: 64px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
+      <div class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
+        <span style="color: var(--accent); display: inline-flex; align-items: center; gap: 9px;">
           <svg width="10" height="15" viewBox="0 0 80 120" style="flex-shrink: 0;" aria-label="Figma"><path d="M20 0C9 0 0 9 0 20s9 20 20 20h20V0H20z" fill="#F24E1E"/><path d="M60 0H40v40h20c11 0 20-9 20-20s-9-20-20-20z" fill="#FF7262"/><path d="M20 40C9 40 0 49 0 60s9 20 20 20h20V40H20z" fill="#A259FF"/><path d="M60 40c11 0 20 9 20 20s-9 20-20 20H40V40h20z" fill="#1ABCFE"/><path d="M20 80c-11 0-20 9-20 20s9 20 20 20c11 0 20-9 20-20V80H20z" fill="#0ACF83"/></svg>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="#D97757" style="flex-shrink: 0;" aria-label="Claude"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg>
           MI PLAYBOOK · FIGMA + CLAUDE (MCP)
@@ -1176,28 +1186,28 @@
       </div>
       <div class="wf-steps" style="grid-template-columns: repeat(4, 1fr);">
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">1.</span>
+          <span class="wf-step-num" style="color: var(--accent);">1.</span>
           <p class="wf-step-title" style="color: #fff;">Diseñar con el sistema</p>
           <p class="wf-step-desc es">Claude conectado a Figma por MCP diseña usando mis variables y componentes reales — nada hardcodeado. El prompt clave: «usa las variables y los componentes que ya tengo en el archivo».</p>
           <p class="wf-step-desc en">Claude connected to Figma via MCP designs using my real variables and components — nothing hardcoded. The key prompt: "use the variables and components already in the file".</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">2.</span>
+          <span class="wf-step-num" style="color: var(--accent);">2.</span>
           <p class="wf-step-title" style="color: #fff;">Auditar y corregir</p>
           <p class="wf-step-desc es">La IA puntúa el sistema de 0 a 100 por categoría (naming, tokens, accesibilidad, consistencia, cobertura), localiza la capa exacta del fallo y aplica la corrección. Este archivo pasó por esa auditoría.</p>
           <p class="wf-step-desc en">AI scores the system 0–100 per category (naming, tokens, accessibility, consistency, coverage), pinpoints the exact faulty layer and applies the fix. This file went through that audit.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">3.</span>
+          <span class="wf-step-num" style="color: var(--accent);">3.</span>
           <p class="wf-step-title" style="color: #fff;">Prototipar en minutos</p>
           <p class="wf-step-desc es">La IA genera la pantalla en código, la importo a Figma con HTML to Design y vinculo mis tokens. Bases de logins, checkouts y landings listas en minutos, no en días.</p>
           <p class="wf-step-desc en">AI generates the screen as code, I import it into Figma with HTML to Design and bind my tokens. Login, checkout and landing foundations ready in minutes, not days.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">4.</span>
+          <span class="wf-step-num" style="color: var(--accent);">4.</span>
           <p class="wf-step-title" style="color: #fff;">Vibe coding: de Figma a producto</p>
-          <p class="wf-step-desc es">Paso los diseños a Claude Code pidiéndole que interprete el diseño y genere sus propios design tokens y componentes en código. Así las pantallas futuras mantienen la cohesión del sistema. Resultado real: <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" style="color:#a78bfa; text-decoration:underline; font-weight:600;">los 57 tokens publicados en GitHub ↗</a></p>
-          <p class="wf-step-desc en">I hand the designs to Claude Code asking it to interpret the design and generate its own design tokens and components in code. Future screens keep the system's cohesion. Real output: <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" style="color:#a78bfa; text-decoration:underline; font-weight:600;">the 57 tokens published on GitHub ↗</a></p>
+          <p class="wf-step-desc es">Paso los diseños a Claude Code pidiéndole que interprete el diseño y genere sus propios design tokens y componentes en código. Así las pantallas futuras mantienen la cohesión del sistema. Resultado real: <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" style="color:var(--accent); text-decoration:underline; font-weight:600;">los 57 tokens publicados en GitHub ↗</a></p>
+          <p class="wf-step-desc en">I hand the designs to Claude Code asking it to interpret the design and generate its own design tokens and components in code. Future screens keep the system's cohesion. Real output: <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" style="color:var(--accent); text-decoration:underline; font-weight:600;">the 57 tokens published on GitHub ↗</a></p>
         </div>
       </div>
     </div>
@@ -1222,8 +1232,8 @@
     </div>
 
     <!-- FILOSOFÍA -->
-    <div class="fu figma-philosophy-block" style="margin-top: 40px; padding: 28px 32px; background: rgba(167,139,250,0.05); border: 1px solid rgba(167,139,250,0.25); border-radius: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
-      <p style="font-size: 15px; color: var(--text-bright); line-height: 1.7; margin: 0; max-width: 720px;"><strong style="color: #a78bfa;">✱</strong>&nbsp; <span class="es">La IA no me sustituye: me multiplica. Sin criterio profesional, la IA produce productos generalistas. Este caso es la prueba de lo contrario: mismo sistema, mismo rigor WCAG, una fracción del tiempo.</span><span class="en">AI doesn't replace me: it multiplies me. Without professional judgement, AI produces generic products. This case proves the opposite: same system, same WCAG rigour, a fraction of the time.</span></p>
+    <div class="fu figma-philosophy-block" style="margin-top: 40px; padding: 28px 32px; background: rgba(var(--accent-rgb),0.05); border: 1px solid rgba(var(--accent-rgb),0.25); border-radius: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+      <p style="font-size: 15px; color: var(--text-bright); line-height: 1.7; margin: 0; max-width: 720px;"><strong style="color: var(--accent);">✱</strong>&nbsp; <span class="es">La IA no me sustituye: me multiplica. Sin criterio profesional, la IA produce productos generalistas. Este caso es la prueba de lo contrario: mismo sistema, mismo rigor WCAG, una fracción del tiempo.</span><span class="en">AI doesn't replace me: it multiplies me. Without professional judgement, AI produces generic products. This case proves the opposite: same system, same WCAG rigour, a fraction of the time.</span></p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0;">
         <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" class="btn btn-secondary" style="text-transform: lowercase; display: inline-flex; align-items: center; gap: 8px;">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -1278,6 +1288,8 @@
 </section>
 
 
+</main>
+
 <footer class="cs-footer">
   <div class="cs-wrap">
     <div class="footer-label es">Siguiente caso</div>
@@ -1320,5 +1332,6 @@
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
   }
 </script>
+<script src="cs-enhancements.js" defer></script>
 </body>
 </html>

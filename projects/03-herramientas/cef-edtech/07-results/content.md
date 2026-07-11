@@ -1,4 +1,4 @@
-# Impacto y Resultados (RESULT)
+# Impacto y Resultados
 
 La reorganización UX redujo la carga cognitiva, mejoró la escaneabilidad en tareas frecuentes y estableció una base sistemática para futuras evoluciones del sistema. La colaboración diseño-desarrollo fue más fluida con menor retrabajo en iteraciones posteriores.
 

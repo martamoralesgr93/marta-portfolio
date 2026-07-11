@@ -1,4 +1,4 @@
-# Impact & Results (RESULT)
+# Impact & Results
 
 The UX reorganisation reduced cognitive load, improved scannability on frequent tasks and established a systematic foundation for future system evolutions. Design-development collaboration became more fluid with less rework in subsequent iterations.
 

@@ -32,6 +32,22 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marta Morales",
+  "jobTitle": "Product Designer",
+  "url": "https://martamorales.vercel.app/",
+  "image": "https://martamorales.vercel.app/assets/marta-retrato.png",
+  "email": "mailto:mmoralesgr93@gmail.com",
+  "sameAs": ["https://linkedin.com/in/martamorales-designer"],
+  "knowsAbout": ["UX Design", "Design Systems", "Accessibility", "CRO", "AI Product Design"],
+  "address": { "@type": "PostalAddress", "addressCountry": "ES" }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
@@ -46,7 +62,7 @@
   --blue: #60a5fa;
   --green: #34d399;
   --muted: rgba(255,255,255,0.62);
-  --dim: rgba(255,255,255,0.38);
+  --dim: rgba(255,255,255,0.50);
   --faint: rgba(255,255,255,0.14);
   --border: rgba(255,255,255,0.10);
   --border-mid: rgba(255,255,255,0.16);
@@ -71,20 +87,36 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img { height: auto; }
+
+/* ===================== A11Y ===================== */
+.skip-link {
+  position: absolute; top: -48px; left: 16px; z-index: 999;
+  padding: 10px 18px; border-radius: 8px;
+  background: var(--purple-deep); color: var(--white);
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible,
+input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 3px;
+}
+
 /* ===================== BILINGUAL ===================== */
 html:not(.lang-en) .en { display: none !important; }
 html.lang-en .es { display: none !important; }
 
 /* ===================== GLOW ===================== */
 .glow-layer {
-  position: fixed; inset: 0;
-  pointer-events: none; z-index: 0; overflow: hidden;
+  display: none !important;
 }
 .glow { position: absolute; border-radius: 50%; filter: blur(120px); }
 .g1 { background: rgba(124,58,237,0.20); width: 760px; height: 760px; top: -240px; right: -220px; }
 .g2 { background: rgba(249,115,22,0.12); width: 520px; height: 520px; top: 80px; right: -80px; }
 .g3 { background: rgba(59,130,246,0.10); width: 600px; height: 600px; top: 1100px; left: -250px; }
-.g4 { background: rgba(167,139,250,0.08); width: 440px; height: 440px; top: 2100px; right: 60px; }
+.g4 { background: rgba(var(--accent-rgb),0.08); width: 440px; height: 440px; top: 2100px; right: 60px; }
 .g5 { background: rgba(249,115,22,0.07); width: 480px; height: 480px; top: 3200px; left: 80px; }
 .g6 { background: rgba(124,58,237,0.09); width: 600px; height: 260px; top: 4400px; left: 50%; transform: translateX(-50%); }
 
@@ -112,8 +144,14 @@ nav {
   color: rgba(255,255,255,0.34); line-height: 1;
 }
 .nav-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 36px; list-style: none; z-index: 10; }
-.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a { position: relative; font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; padding: 8px 0; }
 .nav-links a:hover { color: rgba(255,255,255,0.88); }
+.nav-links a.active { color: var(--white); }
+.nav-links a.active::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--orange));
+}
 .nav-right { display: flex; align-items: center; gap: 14px; }
 .nav-cta {
   display: inline-flex; align-items: center; gap: 5px;
@@ -163,7 +201,7 @@ nav {
 
 .eyebrow { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
 .eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
-.eyebrow-text { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(167,139,250,0.85); }
+.eyebrow-text { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(var(--accent-rgb),0.85); }
 
 .hero-title {
   font-size: 70px; font-weight: 800; line-height: 0.965;
@@ -199,10 +237,6 @@ nav {
   margin-top: 56px;
   background: rgba(255,255,255,0.038); border: 1px solid rgba(255,255,255,0.09);
   border-radius: 22px; padding: 28px 24px; position: relative; overflow: hidden;
-}
-.impact-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.55), transparent);
 }
 .impact-header {
   display: flex; align-items: center; gap: 7px; margin-bottom: 22px;
@@ -261,14 +295,6 @@ nav {
   background:
     linear-gradient(to right, transparent 50%, rgba(0,0,0,0.55) 75%, #000 100%),
     linear-gradient(to top, rgba(0,0,0,0.30) 0%, transparent 20%);
-}
-
-/* Glow violeta sutil sobre la foto */
-.sobre-img-panel::before {
-  content: '';
-  position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: radial-gradient(ellipse at 30% 25%, rgba(124,58,237,0.12) 0%, transparent 60%);
-  mix-blend-mode: screen;
 }
 
 /* ── Panel derecho: texto ── */
@@ -330,7 +356,7 @@ nav {
 .sobre-skills-off {
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid rgba(255, 255, 255, 0.13);
-  border-top: 2px solid rgba(167, 139, 250, 0.55);
+  border-top: 2px solid rgba(var(--accent-rgb), 0.55);
   border-radius: 16px;
   padding: 28px 28px 32px;
   backdrop-filter: blur(8px);
@@ -356,7 +382,7 @@ nav {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(167, 139, 250, 0.70);
+  color: rgba(var(--accent-rgb), 0.70);
   margin-bottom: 10px;
   display: block;
 }
@@ -377,8 +403,8 @@ nav {
   cursor: default;
 }
 .sobre-skill-pill:hover {
-  background: linear-gradient(145deg, rgba(167,139,250,0.12), rgba(249,115,22,0.06));
-  border-color: rgba(167,139,250,0.3);
+  background: linear-gradient(145deg, rgba(var(--accent-rgb),0.12), rgba(249,115,22,0.06));
+  border-color: rgba(var(--accent-rgb),0.3);
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -437,7 +463,7 @@ nav {
 }
 .sobre-cta-icon {
   width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
-  border: 1px solid rgba(167,139,250,0.32);
+  border: 1px solid rgba(var(--accent-rgb),0.32);
   display: flex; align-items: center; justify-content: center;
   font-size: 20px; color: var(--purple);
   transition: background 0.25s, border-color 0.25s, transform 0.28s;
@@ -462,7 +488,7 @@ nav {
 }
 .sobre-eq span {
   display: block; width: 2px;
-  background: rgba(167,139,250,0.42); border-radius: 1px;
+  background: rgba(var(--accent-rgb),0.42); border-radius: 1px;
   animation: eqPulse 1.6s ease-in-out infinite alternate;
 }
 .sobre-eq span:nth-child(1) { height: 8px;  animation-delay: 0s; }
@@ -497,10 +523,8 @@ nav {
   padding: 44px 36px 40px;
   border-right: 1px solid rgba(255,255,255,0.06);
   display: flex; flex-direction: column;
-  transition: background 0.28s;
 }
 .feature-card:last-child { border-right: none; }
-.feature-card:hover { background: rgba(255,255,255,0.018); }
 .feature-icon {
   width: 36px; height: 36px; margin-bottom: 28px;
   color: rgba(255,255,255,0.75);
@@ -517,7 +541,7 @@ nav {
 }
 .feature-line {
   width: 28px; height: 1px;
-  background: rgba(167,139,250,0.38);
+  background: rgba(var(--accent-rgb),0.38);
   margin-top: 32px;
 }
 
@@ -564,20 +588,14 @@ nav {
 /* ===================== SHOWCASE CASE STUDY CARDS ===================== */
 .sc-card {
   display: grid;
-  /* Grid fluido: columna visual más ancha para ver mockups grandes */
   grid-template-columns: minmax(320px, 1.15fr) 1.25fr 168px;
   min-height: 380px;
-  background: #07060b;
-  border: 1px solid rgba(255,255,255,0.055);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 24px;
   position: relative;
-  transition: border-color 0.25s ease, background-color 0.25s ease;
-}
-.sc-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background-color: #090810;
 }
 
 /* ── Content column ── */
@@ -633,17 +651,14 @@ a.sc-client-link:hover {
   text-transform: uppercase; width: fit-content;
   padding: 10px 22px;
   border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.16);
   background: rgba(255,255,255,0.03);
-  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
 }
 .sc-cta-notion:hover {
-  color: #050409;
-  background: var(--white);
-  border-color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.24);
 }
 .sc-cta-notion .notion-arrow { font-size: 11px; }
 
@@ -654,31 +669,27 @@ a.sc-client-link:hover {
   text-transform: uppercase; width: fit-content;
   padding: 10px 22px;
   border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.16);
   background: rgba(255,255,255,0.03);
-  transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
 }
 .sc-cta::after { content: ' →'; transition: transform 0.28s; }
 .sc-cta:hover {
-  color: #050409;
-  background: var(--c-theme, var(--white));
-  border-color: var(--c-theme, var(--white));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(var(--c-theme-rgb), 0.35);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.24);
 }
 .sc-cta:hover::after { transform: translateX(3px); }
 
 /* CTA hierarchy: Case Study = primary */
 .sc-cta-primary {
-  background: rgba(124, 58, 237, 0.65);
-  border-color: rgba(124, 58, 237, 0.45);
+  background: rgba(124, 58, 237, 0.18);
+  border-color: rgba(124, 58, 237, 0.35);
 }
 .sc-cta-primary:hover {
-  background: rgba(124, 58, 237, 0.90);
-  border-color: transparent;
+  background: rgba(124, 58, 237, 0.24);
+  border-color: rgba(124, 58, 237, 0.45);
   color: var(--white);
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
 }
 
 /* ── Visual column ── */
@@ -704,7 +715,7 @@ a.sc-client-link:hover {
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .sc-card:hover .sc-img {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 /* ── Metrics column ── */
@@ -736,12 +747,11 @@ a.sc-client-link:hover {
   border: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.25); font-size: 9px; text-decoration: none;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 .sc-card:hover .sc-corner {
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
   color: var(--white);
-  background: rgba(255, 255, 255, 0.04);
 }
 
 /* ===================== SKILLS / PROCESS SECTION ===================== */
@@ -752,21 +762,48 @@ a.sc-client-link:hover {
 }
 .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 
-.process-steps { list-style: none; display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
+.process-steps { list-style: none; display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
 .process-step {
   display: flex; align-items: flex-start; gap: 20px;
-  padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .process-step:last-child { border-bottom: none; }
 .step-num { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--dim); min-width: 24px; margin-top: 2px; }
-.step-content {}
+.process-accordion { flex: 1; }
+.process-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.process-accordion summary::-webkit-details-marker { display: none; }
+.process-summary-content { flex: 1; }
+.process-expand {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 6px 10px;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.process-accordion[open] .process-expand {
+  background: rgba(var(--accent-rgb), 0.12);
+  border-color: rgba(var(--accent-rgb), 0.28);
+  color: var(--white);
+}
+.step-content { padding-top: 12px; display: flex; flex-direction: column; gap: 12px; }
 .step-name { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.78); margin-bottom: 6px; letter-spacing: -0.2px; }
 .step-desc { font-size: 13px; color: rgba(255,255,255,0.32); line-height: 1.6; }
 .step-ai-integration {
-  margin-top: 12px;
   padding: 10px 14px;
-  background: rgba(167, 139, 250, 0.035);
-  border-left: 2px solid rgba(167, 139, 250, 0.45);
+  background: rgba(var(--accent-rgb), 0.035);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.45);
   border-radius: 0 8px 8px 0;
   max-width: 480px;
 }
@@ -784,9 +821,40 @@ a.sc-client-link:hover {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #a78bfa;
+  color: var(--accent);
   margin-bottom: 6px;
 }
+
+.about-accordion {
+  margin-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 14px;
+}
+.about-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+  font-weight: 600;
+}
+.about-accordion summary::-webkit-details-marker { display: none; }
+.about-accordion .about-expand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.16);
+  font-size: 12px;
+  line-height: 1;
+}
+.about-accordion[open] .about-expand {
+  transform: rotate(45deg);
+}
+.about-accordion-body { display: flex; flex-direction: column; gap: 0; margin-top: 14px; }
 
 /* Right column: about narrative + tools */
 .about-right { padding-top: 12px; }
@@ -797,7 +865,7 @@ a.sc-client-link:hover {
 .about-narrative { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.83; margin-bottom: 28px; max-width: 520px; }
 .about-quote {
   font-size: 14px; font-style: italic; color: rgba(255,255,255,0.42); line-height: 1.73;
-  border-left: 2px solid rgba(167,139,250,0.32); padding-left: 18px; margin-bottom: 40px; max-width: 380px;
+  border-left: 2px solid rgba(var(--accent-rgb),0.32); padding-left: 18px; margin-bottom: 40px; max-width: 380px;
 }
 .tools-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
 
@@ -808,10 +876,7 @@ a.sc-client-link:hover {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 .contact-glow {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: 640px; height: 300px;
-  background: radial-gradient(ellipse, rgba(124,58,237,0.14) 0%, transparent 70%);
-  pointer-events: none;
+  display: none !important;
 }
 .contact-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--dim); margin-bottom: 24px; }
 .contact-title { font-size: 64px; font-weight: 800; letter-spacing: -3px; line-height: 0.96; color: var(--white); margin-bottom: 24px; }
@@ -836,27 +901,13 @@ a.sc-client-link:hover {
   max-width: 320px;
   width: 100%;
   text-align: left;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   position: relative;
   overflow: hidden;
 }
-.custom-linkedin-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 119, 181, 0.08), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
 .custom-linkedin-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(0, 119, 181, 0.3);
-  box-shadow: 0 8px 30px rgba(0, 119, 181, 0.15);
-}
-.custom-linkedin-card:hover::before {
-  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
 }
 .lic-avatar {
   width: 52px;
@@ -906,6 +957,31 @@ a.sc-client-link:hover {
 }
 .contact-actions { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
 
+/* ===================== TRUST STRIP ===================== */
+.trust-strip { margin-top: 72px; }
+.trust-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--dim); margin-bottom: 26px;
+}
+.trust-logos {
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px 56px; flex-wrap: wrap; list-style: none; margin: 0; padding: 0;
+}
+.trust-logo {
+  display: inline-flex; align-items: baseline; gap: 7px;
+  font-size: 17px; font-weight: 800; letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.52); text-decoration: none;
+  transition: color 0.25s ease;
+}
+.trust-logo span { font-size: 12px; font-weight: 500; letter-spacing: 0.03em; color: rgba(255,255,255,0.40); transition: color 0.25s ease; }
+a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
+.trust-paolo { font-family: 'Playfair Display', Georgia, serif; font-style: italic; letter-spacing: 0.01em; }
+@media (max-width: 760px) {
+  .trust-strip { margin-top: 56px; }
+  .trust-logos { gap: 16px 32px; }
+  .trust-logo { font-size: 15px; }
+}
+
 /* ===================== CONTACT FOOTER ===================== */
 .contact-footer {
   margin-top: 60px;
@@ -940,20 +1016,6 @@ a.sc-client-link:hover {
   padding: 32px 28px 0;
   overflow: hidden;
 }
-.device-stage::before {
-  content: '';
-  position: absolute;
-  bottom: -40px; left: 50%; transform: translateX(-50%);
-  width: 80%; height: 180px;
-  border-radius: 50%;
-  filter: blur(50px);
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: 0;
-}
-.device-stage.glow-purple::before { background: radial-gradient(ellipse, rgba(124,58,237,0.7), transparent 70%); }
-.device-stage.glow-orange::before { background: radial-gradient(ellipse, rgba(249,115,22,0.6), transparent 70%); }
-.device-stage.glow-blue::before   { background: radial-gradient(ellipse, rgba(59,130,246,0.6), transparent 70%); }
 
 .device {
   position: relative; z-index: 1;
@@ -962,11 +1024,7 @@ a.sc-client-link:hover {
   border-radius: 26px;
   border: 1.5px solid rgba(255,255,255,0.12);
   padding: 13px;
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.75),
-    0 10px 30px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 0 0 1px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
   transform: perspective(1100px) rotateY(-9deg) rotateX(4deg) rotate(-1deg);
   transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
 }
@@ -1289,7 +1347,7 @@ a.sc-client-link:hover {
     font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--purple); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
   }
-  .mobile-impact-label::after { content: ''; flex: 1; height: 1px; background: rgba(167,139,250,0.20); }
+  .mobile-impact-label::after { content: ''; flex: 1; height: 1px; background: rgba(var(--accent-rgb),0.20); }
   .mobile-impact-cards {
     display: flex;
     overflow-x: auto;
@@ -1436,7 +1494,7 @@ a.sc-client-link:hover {
   }
   .sc-cta {
     background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.15)) !important;
-    border: 1px solid rgba(167,139,250,0.3) !important;
+    border: 1px solid rgba(var(--accent-rgb),0.3) !important;
     color: #fff !important;
   }
   
@@ -1511,7 +1569,7 @@ a.sc-client-link:hover {
     background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 60%) !important;
   }
   .contact-section {
-    background: radial-gradient(circle at 50% 90%, rgba(167, 139, 250, 0.09) 0%, transparent 60%) !important;
+    background: radial-gradient(circle at 50% 90%, rgba(var(--accent-rgb), 0.09) 0%, transparent 60%) !important;
   }
 
   /* Reposition and vertically elongate glow blobs to span the taller mobile scroll height */
@@ -1536,7 +1594,7 @@ a.sc-client-link:hover {
   .g4 {
     width: 280px !important; height: 600px !important;
     top: 2600px !important; left: -100px !important;
-    background: rgba(167, 139, 250, 0.24) !important;
+    background: rgba(var(--accent-rgb), 0.24) !important;
   }
   .g5 {
     width: 300px !important; height: 850px !important;
@@ -1755,7 +1813,7 @@ a.sc-client-link:hover {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #a78bfa;
+  color: var(--accent);
   margin-bottom: 20px;
 }
 .stack-title {
@@ -1806,21 +1864,16 @@ a.sc-client-link:hover {
   color: rgba(255,255,255,0.9);
   padding: 14px 28px;
   border-radius: 100px;
-  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   letter-spacing: 0.02em;
   cursor: default;
 }
 .stack-pill:hover {
-  background: linear-gradient(145deg, rgba(167,139,250,0.15), rgba(249,115,22,0.08));
-  border-color: rgba(167,139,250,0.4);
-  transform: translateY(-4px);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.16);
   color: #fff;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px rgba(124,58,237,0.25);
 }
 
 
@@ -1834,20 +1887,6 @@ a.sc-client-link:hover {
   position: relative;
   overflow: hidden;
   z-index: 2;
-}
-
-/* Ambient glow in background */
-.quick-profile-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .quick-profile-grid {
@@ -1868,48 +1907,12 @@ a.sc-client-link:hover {
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: inset 0 1.5px 0px rgba(255, 255, 255, 0.15), 0 20px 45px rgba(0, 0, 0, 0.5);
-}
-
-/* Custom radial glows inside each card based on its variable */
-.quick-profile-card::after {
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 150px; height: 150px;
-  background: radial-gradient(circle at 100% 0%, rgba(var(--c-theme-rgb), 0.12) 0%, transparent 70%);
-  opacity: 0.6;
-  transition: opacity 0.4s ease, width 0.4s ease, height 0.4s ease;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Top glare line */
-.quick-profile-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
-  background: linear-gradient(90deg, transparent, rgba(var(--c-theme-rgb), 0.5) 30%, rgba(255, 255, 255, 0.6) 50%, rgba(var(--c-theme-rgb), 0.5) 70%, transparent);
-  opacity: 0.25;
-  transition: opacity 0.4s ease;
-  z-index: 10;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .quick-profile-card:hover {
-  transform: translateY(-6px) scale(1.015);
-  border-color: rgba(var(--c-theme-rgb), 0.25);
-  box-shadow: inset 0 1.5px 0px rgba(255, 255, 255, 0.25), 
-              0 30px 60px rgba(0, 0, 0, 0.65), 
-              0 0 40px rgba(var(--c-theme-rgb), 0.12);
-}
-
-.quick-profile-card:hover::after {
-  opacity: 1;
-  width: 200px;
-  height: 200px;
-}
-
-.quick-profile-card:hover::before {
-  opacity: 0.85;
+  border-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 .qp-card-title {
@@ -1936,23 +1939,20 @@ a.sc-client-link:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 15px rgba(var(--c-theme-rgb), 0.15);
-  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .qp-icon-wrapper svg {
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
-  transition: transform 0.4s ease;
+  transition: transform 0.2s ease;
 }
 
 .quick-profile-card:hover .qp-icon-wrapper {
-  transform: rotate(5deg) scale(1.1);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 25px rgba(var(--c-theme-rgb), 0.35);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .quick-profile-card:hover .qp-icon-wrapper svg {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 .qp-list {
@@ -1987,19 +1987,12 @@ a.sc-client-link:hover {
   color: rgba(255, 255, 255, 0.95);
   flex-shrink: 0;
   margin-top: 2px;
-  box-shadow: 0 0 10px rgba(var(--c-theme-rgb), 0.1);
-  transition: all 0.3s ease;
-}
-
-.qp-list-icon svg {
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .quick-profile-card:hover .qp-list-icon {
-  background: rgba(var(--c-theme-rgb), 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 15px rgba(var(--c-theme-rgb), 0.3);
-  transform: scale(1.05);
+  background: rgba(var(--c-theme-rgb), 0.16);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .qp-list-content {
@@ -2047,11 +2040,9 @@ a.sc-client-link:hover {
 }
 
 .qp-pill:hover {
-  background: rgba(var(--c-theme-rgb), 0.15);
-  border-color: rgba(var(--c-theme-rgb), 0.45);
+  background: rgba(var(--c-theme-rgb), 0.12);
+  border-color: rgba(var(--c-theme-rgb), 0.32);
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 15px rgba(var(--c-theme-rgb), 0.25);
 }
 
 .qp-disciplines-grid {
@@ -2078,11 +2069,9 @@ a.sc-client-link:hover {
 
 .qp-discipline-item:hover {
   background: rgba(var(--c-theme-rgb), 0.08);
-  border-color: rgba(var(--c-theme-rgb), 0.25);
+  border-color: rgba(var(--c-theme-rgb), 0.2);
   border-left-color: #ffffff;
   color: #ffffff;
-  transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(var(--c-theme-rgb), 0.15);
 }
 
 @media (max-width: 900px) {
@@ -2159,14 +2148,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
 /* Primary CTA in Hero (Descargar CV) using magenta */
 .btn-primary.cta-download {
   background: var(--magenta-color) !important;
-  box-shadow: 0 4px 15px rgba(255, 75, 145, 0.35) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s !important;
+  transition: opacity 0.2s, transform 0.2s !important;
 }
 .btn-primary.cta-download:hover {
   background: #ff60a5 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(255, 75, 145, 0.55) !important;
+  transform: translateY(-1px) !important;
   opacity: 1 !important;
 }
 
@@ -2250,6 +2237,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 <div id="portfolio-content" style="display: block;">
 
 <div class="glow-layer">
@@ -2258,9 +2246,9 @@ html.lang-en .hero-positioning.en { display: block !important; }
 </div>
 
 <!-- ==================== NAV ==================== -->
-<nav>
+<nav aria-label="Principal">
   <a href="#" class="nav-logo">
-    <img fetchpriority="high" decoding="async" src="assets/logo-nuevo.png" alt="Marta Morales">
+    <img width="1536" height="1024" fetchpriority="high" decoding="async" src="assets/logo-nuevo.webp" alt="Marta Morales">
     <div class="nav-logo-text">
       <span class="nav-logo-name">Marta Morales</span>
     </div>
@@ -2304,8 +2292,9 @@ html.lang-en .hero-positioning.en { display: block !important; }
 </div>
 
 <!-- ==================== HERO ==================== -->
+<main id="main">
 <section class="hero">
-  <div class="hero-video-bg">
+  <div class="hero-video-bg" aria-hidden="true">
     <video autoplay="" muted="" loop="" playsinline="" preload="auto">
       <source src="assets/logo-background-video.mp4" type="video/mp4">
     </video>
@@ -2318,7 +2307,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="es">Marta Morales</span>
           <span class="en">Marta Morales</span>
         </h1>
-        <h1 class="hero-role">Product Designer | UX · Design Systems · AI Product Design · CRO</h1>
+        <p class="hero-role">Product Designer | UX · Design Systems · AI Product Design · CRO</p>
         <p class="hero-positioning es"><em>No diseño pantallas. Diagnostico qué está fallando y propongo una decisión.</em></p>
         <p class="hero-positioning en"><em>I don't design screens. I diagnose what's failing and propose a decision.</em></p>
         <p class="hero-body es">
@@ -2368,24 +2357,24 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <div class="mobile-metric-val"><span class="locked-metric">3.36% → 6.5%</span></div>
         <div class="mobile-metric-lbl"><span class="es">Conversión canal directo</span><span class="en">Direct channel conversion</span></div>
         <svg class="mobile-sparkline" viewBox="0 0 80 28" fill="none">
-          <polyline points="0,20 13,16 26,22 40,10 53,14 66,8 80,12" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-          <circle cx="80" cy="12" r="2.5" fill="#a78bfa"></circle>
+          <polyline points="0,20 13,16 26,22 40,10 53,14 66,8 80,12" stroke="rgba(var(--accent-rgb),0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <circle cx="80" cy="12" r="2.5" fill="var(--accent)"></circle>
         </svg>
       </div>
       <div class="mobile-metric-card">
         <div class="mobile-metric-val"><span class="locked-metric">13%</span></div>
         <div class="mobile-metric-lbl"><span class="es">Venta total compañía</span><span class="en">Total company sales</span></div>
         <svg class="mobile-sparkline" viewBox="0 0 80 28" fill="none">
-          <polyline points="0,18 13,20 26,14 40,16 53,10 66,12 80,8" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-          <circle cx="80" cy="8" r="2.5" fill="#a78bfa"></circle>
+          <polyline points="0,18 13,20 26,14 40,16 53,10 66,12 80,8" stroke="rgba(var(--accent-rgb),0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <circle cx="80" cy="8" r="2.5" fill="var(--accent)"></circle>
         </svg>
       </div>
       <div class="mobile-metric-card">
         <div class="mobile-metric-val"><span class="locked-metric">100% AA</span></div>
         <div class="mobile-metric-lbl"><span class="es">Conformidad WCAG 2.1</span><span class="en">WCAG 2.1 compliance</span></div>
         <svg class="mobile-sparkline" viewBox="0 0 80 28" fill="none">
-          <polyline points="0,22 13,18 26,20 40,14 53,16 66,10 80,9" stroke="rgba(167,139,250,0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-          <circle cx="80" cy="9" r="2.5" fill="#a78bfa"></circle>
+          <polyline points="0,22 13,18 26,20 40,14 53,16 66,10 80,9" stroke="rgba(var(--accent-rgb),0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <circle cx="80" cy="9" r="2.5" fill="var(--accent)"></circle>
         </svg>
       </div>
     </div>
@@ -2399,7 +2388,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
     <!-- Panel izquierdo: foto editorial -->
     <div class="sobre-img-panel">
-      <img fetchpriority="high" decoding="async" src="assets/marta-entera-2.png" alt="Marta Morales García de los Ríos — Product Designer" class="sobre-portrait">
+      <img width="658" height="858" fetchpriority="high" decoding="async" src="assets/marta-entera-2.webp" alt="Marta Morales García de los Ríos — Product Designer" class="sobre-portrait">
     </div>
 
     <!-- Panel derecho: texto + skills off -->
@@ -2662,7 +2651,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <img src="assets/CEF/CALENDARIO%20(WEB)/calendario.png" class="sc-img" alt="CEF Calendario Académico">
+        <img loading="lazy" decoding="async" width="1200" height="800" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" class="sc-img" alt="CEF Calendario Académico">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2714,7 +2703,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <img src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.png" class="sc-img" alt="ILUNION Hotels Ofertas">
+        <img loading="lazy" decoding="async" width="1920" height="1440" src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.webp" class="sc-img" alt="ILUNION Hotels Ofertas">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2755,7 +2744,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <img src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.png" class="sc-img" alt="ILUNION Hotels Motor de Reservas">
+        <img loading="lazy" decoding="async" width="1920" height="1440" src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.webp" class="sc-img" alt="ILUNION Hotels Motor de Reservas">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2807,7 +2796,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <img src="projects/04-paolo/assets/web4.png" class="sc-img" alt="Paolo Pizzeria">
+        <img loading="lazy" decoding="async" width="2672" height="1536" src="projects/04-paolo/assets/web4.webp" class="sc-img" alt="Paolo Pizzeria">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2847,7 +2836,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <img src="assets/oracle_it_ops.png" class="sc-img" alt="Oracle ERP &amp; IT Ops">
+        <img loading="lazy" decoding="async" width="1024" height="1024" src="assets/oracle_it_ops.webp" class="sc-img" alt="Oracle ERP &amp; IT Ops">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -2886,98 +2875,128 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <ul class="process-steps">
           <li class="process-step">
             <span class="step-num">01</span>
-            <div class="step-content">
-              <div class="step-name es">Diagnóstico antes que solución</div>
-              <div class="step-name en">Diagnosis before solution</div>
-              <div class="step-desc es">Adobe Analytics y Clarity primero. El brief que recibo nunca es el problema real. Es el punto de partida para encontrarlo.</div>
-              <div class="step-desc en">Adobe Analytics and Clarity first. The brief I receive is never the real problem. It's the starting point to find it.</div>
-              
-              <!-- AI Integration step 1 -->
-              <div class="step-ai-integration es">
-                <span class="ai-badge">Copiloto IA: Research &amp; Auditoría de Datos (MCP)</span>
-                <p>Conexión de Claude mediante <strong>servidores MCP (Model Context Protocol)</strong> a bases de datos de analítica cuantitativa (Adobe Analytics) y cualitativa (Microsoft Clarity). Automatizo la extracción de logs de conversión, clusterizando transcripciones de sesiones de usuario y feedback para identificar fricciones visuales con datos validados.</p>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">Diagnóstico antes que solución</div>
+                  <div class="step-name en">Diagnosis before solution</div>
+                  <div class="step-desc es">Adobe Analytics y Clarity primero. El brief que recibo nunca es el problema real. Es el punto de partida para encontrarlo.</div>
+                  <div class="step-desc en">Adobe Analytics and Clarity first. The brief I receive is never the real problem. It's the starting point to find it.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <div class="step-ai-integration es">
+                  <span class="ai-badge">Copiloto IA: Research &amp; Auditoría de Datos (MCP)</span>
+                  <p>Conexión de Claude mediante <strong>servidores MCP (Model Context Protocol)</strong> a bases de datos de analítica cuantitativa (Adobe Analytics) y cualitativa (Microsoft Clarity). Automatizo la extracción de logs de conversión, clusterizando transcripciones de sesiones de usuario y feedback para identificar fricciones visuales con datos validados.</p>
+                </div>
+                <div class="step-ai-integration en">
+                  <span class="ai-badge">AI Co-pilot: Data Audit &amp; Research (MCP)</span>
+                  <p>Connecting Claude via <strong>MCP (Model Context Protocol)</strong> to qualitative and quantitative analytics databases (Adobe Analytics, Microsoft Clarity). Automated data extraction of funnel logs, clustering user session transcripts, and programmatically auditing qualitative behavioral data to isolate visual friction points.</p>
+                </div>
               </div>
-              <div class="step-ai-integration en">
-                <span class="ai-badge">AI Co-pilot: Data Audit &amp; Research (MCP)</span>
-                <p>Connecting Claude via <strong>MCP (Model Context Protocol)</strong> to qualitative and quantitative analytics databases (Adobe Analytics, Microsoft Clarity). Automated data extraction of funnel logs, clustering user session transcripts, and programmatically auditing qualitative behavioral data to isolate visual friction points.</p>
-              </div>
-            </div>
+            </details>
           </li>
           <li class="process-step">
             <span class="step-num">02</span>
-            <div class="step-content">
-              <div class="step-name es">Propuesta argumentada, no opciones decorativas</div>
-              <div class="step-name en">Argued proposal, not decorative options</div>
-              <div class="step-desc es">Una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio sobre preferencia visual.</div>
-              <div class="step-desc en">A data-backed decision, not three variants to choose from. Business criteria over visual preference.</div>
-              
-              <!-- AI Integration step 2 -->
-              <div class="step-ai-integration es">
-                <span class="ai-badge">Copiloto IA: Heurística &amp; Copy Sparring</span>
-                <p>Modelado de prompts avanzados para análisis heurístico automático (Leyes de Gestalt, Fitts, Hick). Sparring de copy en Claude para iterar y optimizar variantes de microcopy bilingüe con métricas de legibilidad del sistema de diseño.</p>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">Propuesta argumentada, no opciones decorativas</div>
+                  <div class="step-name en">Argued proposal, not decorative options</div>
+                  <div class="step-desc es">Una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio sobre preferencia visual.</div>
+                  <div class="step-desc en">A data-backed decision, not three variants to choose from. Business criteria over visual preference.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <div class="step-ai-integration es">
+                  <span class="ai-badge">Copiloto IA: Heurística &amp; Copy Sparring</span>
+                  <p>Modelado de prompts avanzados para análisis heurístico automático (Leyes de Gestalt, Fitts, Hick). Sparring de copy en Claude para iterar y optimizar variantes de microcopy bilingüe con métricas de legibilidad del sistema de diseño.</p>
+                </div>
+                <div class="step-ai-integration en">
+                  <span class="ai-badge">AI Co-pilot: Heuristics &amp; Copy Sparring</span>
+                  <p>Advanced prompting models for automated heuristic analysis (Gestalt, Fitts, Hick). Copy sparring in Claude to iterate and optimize bilingual microcopy variables matching readability guidelines.</p>
+                </div>
               </div>
-              <div class="step-ai-integration en">
-                <span class="ai-badge">AI Co-pilot: Heuristics &amp; Copy Sparring</span>
-                <p>Advanced prompting models for automated heuristic analysis (Gestalt, Fitts, Hick). Copy sparring in Claude to iterate and optimize bilingual microcopy variables matching readability guidelines.</p>
-              </div>
-            </div>
+            </details>
           </li>
           <li class="process-step">
             <span class="step-num">03</span>
-            <div class="step-content">
-              <div class="step-name es">Diseño con restricciones reales</div>
-              <div class="step-name en">Design within real constraints</div>
-              <div class="step-desc es">Diseño conociendo las restricciones del stack (AEM, APIs, timelines). Priorizo lo que tiene mayor impacto con el menor coste de implementación.</div>
-              <div class="step-desc en">Designing within stack constraints (AEM, APIs, timelines). Prioritising what has the highest impact at the lowest implementation cost.</div>
-              
-              <!-- AI Integration step 3 -->
-              <div class="step-ai-integration es">
-                <span class="ai-badge">Copiloto IA: Figma MCP &amp; Design Systems</span>
-                <p>Integración de Claude con Figma utilizando <strong>Figma MCP Servers</strong> para inspeccionar la geometría y variables de las mesas de trabajo. Automatizo la generación estructurada de fichas técnicas de componentes, variables semánticas de color/espaciado y archivos JSON de tokens listos para dev.</p>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">Diseño con restricciones reales</div>
+                  <div class="step-name en">Design within real constraints</div>
+                  <div class="step-desc es">Diseño conociendo las restricciones del stack (AEM, APIs, timelines). Priorizo lo que tiene mayor impacto con el menor coste de implementación.</div>
+                  <div class="step-desc en">Designing within stack constraints (AEM, APIs, timelines). Prioritising what has the highest impact at the lowest implementation cost.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <div class="step-ai-integration es">
+                  <span class="ai-badge">Copiloto IA: Figma MCP &amp; Design Systems</span>
+                  <p>Integración de Claude con Figma utilizando <strong>Figma MCP Servers</strong> para inspeccionar la geometría y variables de las mesas de trabajo. Automatizo la generación estructurada de fichas técnicas de componentes, variables semánticas de color/espaciado y archivos JSON de tokens listos para dev.</p>
+                </div>
+                <div class="step-ai-integration en">
+                  <span class="ai-badge">AI Co-pilot: Figma MCP &amp; Design Systems</span>
+                  <p>Integrating Claude with Figma via <strong>Figma MCP Servers</strong> to programmatically read frame geometry and variables. Auto-generating technical component specifications, semantic spacing/color tokens, and dev-ready JSON custom properties.</p>
+                </div>
               </div>
-              <div class="step-ai-integration en">
-                <span class="ai-badge">AI Co-pilot: Figma MCP &amp; Design Systems</span>
-                <p>Integrating Claude with Figma via <strong>Figma MCP Servers</strong> to programmatically read frame geometry and variables. Auto-generating technical component specifications, semantic spacing/color tokens, and dev-ready JSON custom properties.</p>
-              </div>
-            </div>
+            </details>
           </li>
           <li class="process-step">
             <span class="step-num">04</span>
-            <div class="step-content">
-              <div class="step-name es">El lanzamiento no es el final</div>
-              <div class="step-name en">Launch is not the end</div>
-              <div class="step-desc es">Mido comportamiento real e itero con datos post-lanzamiento. Ahí es donde empieza el aprendizaje y la optimización real.</div>
-              <div class="step-desc en">Measuring real behavior and iterating with post-launch data. That's where real learning and optimization begin.</div>
-              
-              <!-- AI Integration step 4 -->
-              <div class="step-ai-integration es">
-                <span class="ai-badge">Copiloto IA: Análisis Continuo de Datos</span>
-                <p>Consultas automatizadas vía MCP SQL para cruzar comportamiento pre y post lanzamiento, clasificando opiniones cualitativas sobre componentes específicos para alimentar el backlog de optimización CRO.</p>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">El lanzamiento no es el final</div>
+                  <div class="step-name en">Launch is not the end</div>
+                  <div class="step-desc es">Mido comportamiento real e itero con datos post-lanzamiento. Ahí es donde empieza el aprendizaje y la optimización real.</div>
+                  <div class="step-desc en">Measuring real behavior and iterating with post-launch data. That's where real learning and optimization begin.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <div class="step-ai-integration es">
+                  <span class="ai-badge">Copiloto IA: Análisis Continuo de Datos</span>
+                  <p>Consultas automatizadas vía MCP SQL para cruzar comportamiento pre y post lanzamiento, clasificando opiniones cualitativas sobre componentes específicos para alimentar el backlog de optimización CRO.</p>
+                </div>
+                <div class="step-ai-integration en">
+                  <span class="ai-badge">AI Co-pilot: Continuous Data Auditing</span>
+                  <p>Automated SQL queries via MCP to cross-reference pre- and post-launch behavior logs, classifying qualitative component feedback to drive continuous CRO backlogs.</p>
+                </div>
               </div>
-              <div class="step-ai-integration en">
-                <span class="ai-badge">AI Co-pilot: Continuous Data Auditing</span>
-                <p>Automated SQL queries via MCP to cross-reference pre- and post-launch behavior logs, classifying qualitative component feedback to drive continuous CRO backlogs.</p>
-              </div>
-            </div>
+            </details>
           </li>
           <li class="process-step">
             <span class="step-num">05</span>
-            <div class="step-content">
-              <div class="step-name es">Trabajo en equipo de producto real</div>
-              <div class="step-name en">Real product team collaboration</div>
-              <div class="step-desc es">Coordinación directa con ingeniería, BI, marketing y dirección. Hablo el idioma de dev y de negocio para alinear prioridades.</div>
-              <div class="step-desc en">Direct alignment with engineering, BI, marketing, and leadership. Speaking both technical and business languages.</div>
-              
-              <!-- AI Integration step 5 -->
-              <div class="step-ai-integration es">
-                <span class="ai-badge">Copiloto IA: Automatización de Handoff</span>
-                <p>Design QA automatizado: comparo la especificación JSON del componente (generada vía Figma MCP) contra el código real maquetado, detectando discrepancias de píxeles y colores de forma programática.</p>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">Trabajo en equipo de producto real</div>
+                  <div class="step-name en">Real product team collaboration</div>
+                  <div class="step-desc es">Coordinación directa con ingeniería, BI, marketing y dirección. Hablo el idioma de dev y de negocio para alinear prioridades.</div>
+                  <div class="step-desc en">Direct alignment with engineering, BI, marketing, and leadership. Speaking both technical and business languages.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <div class="step-ai-integration es">
+                  <span class="ai-badge">Copiloto IA: Automatización de Handoff</span>
+                  <p>Design QA automatizado: comparo la especificación JSON del componente (generada vía Figma MCP) contra el código real maquetado, detectando discrepancias de píxeles y colores de forma programática.</p>
+                </div>
+                <div class="step-ai-integration en">
+                  <span class="ai-badge">AI Co-pilot: Handoff Automation</span>
+                  <p>Automated Design QA: programmatically comparing component JSON specs (extracted via Figma MCP) against compiled frontend code to isolate spacing, padding, and token mismatches.</p>
+                </div>
               </div>
-              <div class="step-ai-integration en">
-                <span class="ai-badge">AI Co-pilot: Handoff Automation</span>
-                <p>Automated Design QA: programmatically comparing component JSON specs (extracted via Figma MCP) against compiled frontend code to isolate spacing, padding, and token mismatches.</p>
-              </div>
-            </div>
+            </details>
           </li>
         </ul>
       </div>
@@ -3008,18 +3027,28 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <p class="about-narrative en">
           In every project I've been responsible for <strong>defining the business problem</strong>, not just solving it. Real analytics diagnosis, impact-prioritised hypotheses, argued proposals to leadership, and post-launch tracking with real data.
         </p>
-        <p class="about-narrative es" style="margin-top: -12px;">
-          He trabajado con restricciones reales: stacks de producción (AEM), limitaciones técnicas, timelines de dev, ecosistemas de marca en expansión (Paolo) y fricciones operativas en herramientas heredadas (Oracle ERP en We Are Actions). Eso me hace mejor diseñadora de producto, no peor.
-        </p>
-        <p class="about-narrative en" style="margin-top: -12px;">
-          I've worked with real constraints: production stacks (AEM), technical limitations, dev timelines, expanding brand systems (Paolo) and operational friction in legacy enterprise tools (Oracle ERP at We Are Actions). That makes me a better product designer, not a worse one.
-        </p>
-        <p class="about-narrative es" style="margin-top: -12px;">
-          Todo empezó en consultoría, analizando flujos operativos de IT. Antes de diseñar interfaces, aprendí a desmontar procesos y encontrar dónde fallaban. Ese hábito sigue siendo lo primero que activo en cualquier proyecto nuevo.
-        </p>
-        <p class="about-narrative en" style="margin-top: -12px;">
-          It started in consulting, analysing IT operational flows. Before designing interfaces, I learned to break down processes and find where they failed. That habit is still the first thing I activate in any new project.
-        </p>
+
+        <details class="about-accordion">
+          <summary>
+            <span class="es">Ver más</span>
+            <span class="en">See more</span>
+            <span class="about-expand">+</span>
+          </summary>
+          <div class="about-accordion-body">
+            <p class="about-narrative es" style="margin-top: -12px;">
+              He trabajado con restricciones reales: stacks de producción (AEM), limitaciones técnicas, timelines de dev, ecosistemas de marca en expansión (Paolo) y fricciones operativas en herramientas heredadas (Oracle ERP en We Are Actions). Eso me hace mejor diseñadora de producto, no peor.
+            </p>
+            <p class="about-narrative en" style="margin-top: -12px;">
+              I've worked with real constraints: production stacks (AEM), technical limitations, dev timelines, expanding brand systems (Paolo) and operational friction in legacy enterprise tools (Oracle ERP at We Are Actions). That makes me a better product designer, not a worse one.
+            </p>
+            <p class="about-narrative es" style="margin-top: -12px;">
+              Todo empezó en consultoría, analizando flujos operativos de IT. Antes de diseñar interfaces, aprendí a desmontar procesos y encontrar dónde fallaban. Ese hábito sigue siendo lo primero que activo en cualquier proyecto nuevo.
+            </p>
+            <p class="about-narrative en" style="margin-top: -12px;">
+              It started in consulting, analysing IT operational flows. Before designing interfaces, I learned to break down processes and find where they failed. That habit is still the first thing I activate in any new project.
+            </p>
+          </div>
+        </details>
 
         <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-primary es" style="display: inline-flex;">Descargar CV  ↗</a>
         <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-primary en" style="display: inline-flex;">Download CV  ↗</a>
@@ -3062,7 +3091,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <!-- LinkedIn Profile Badge (Custom Premium Card) -->
     <div class="contact-badge-container">
       <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="custom-linkedin-card">
-        <img src="assets/marta-retrato.png" alt="Marta Morales" class="lic-avatar">
+        <img loading="lazy" decoding="async" width="1254" height="1254" src="assets/marta-retrato.webp" alt="Marta Morales" class="lic-avatar">
         <div class="lic-info">
           <div class="lic-name">Marta Morales</div>
           <div class="lic-title">Product Designer</div>
@@ -3082,9 +3111,23 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-ghost es">Descargar CV</a>
       <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-ghost en">Download CV</a>
     </div>
-    
+
+    <!-- ==================== TRUST STRIP ==================== -->
+    <div class="trust-strip">
+      <p class="trust-label">
+        <span class="es">Empresas con las que he trabajado</span>
+        <span class="en">Companies I've worked with</span>
+      </p>
+      <ul class="trust-logos">
+        <li><a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="trust-logo">ILUNION<span>Hotels</span></a></li>
+        <li><a href="https://www.cef.com/" target="_blank" rel="noopener" class="trust-logo">CEF<span>Centro de Estudios Financieros</span></a></li>
+        <li><span class="trust-logo">WE ARE ACTIONS<span>Consulting</span></span></li>
+        <li><span class="trust-logo trust-paolo">Paolo<span>by Danny's Jazz</span></span></li>
+      </ul>
+    </div>
+
     <!-- ==================== INLINE FOOTER ==================== -->
-    <div class="contact-footer">
+    <footer class="contact-footer">
       <span class="cf-item">© 2026 Marta Morales</span>
       <span class="cf-dot">·</span>
       <span class="cf-item">Product Designer</span>
@@ -3092,10 +3135,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="mailto:mmoralesgr93@gmail.com" class="cf-link">Email</a>
       <span class="cf-dot">·</span>
       <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="cf-link">LinkedIn</a>
-    </div>
+    </footer>
 
   </div>
 </section>
+</main>
 
 <script>
 /* ---- LANGUAGE: restore from localStorage ---- */
@@ -3120,6 +3164,33 @@ function closeMenu() {
     document.documentElement.style.overflow = '';
   }, 300);
 }
+
+/* ---- SCROLLSPY: sección activa en el nav ---- */
+(function () {
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (!navLinks.length) return;
+  const sections = [];
+  navLinks.forEach(link => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) sections.push({ link, target });
+  });
+  function setActive(activeLink) {
+    navLinks.forEach(l => {
+      l.classList.toggle('active', l === activeLink);
+      if (l === activeLink) l.setAttribute('aria-current', 'true');
+      else l.removeAttribute('aria-current');
+    });
+  }
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const match = sections.find(s => s.target === entry.target);
+        if (match) setActive(match.link);
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => spy.observe(s.target));
+})();
 
 /* ---- INTERACTIVE BACKGROUND ---- */
 (function () {
@@ -3220,15 +3291,15 @@ function closeMenu() {
 .chat-nudge-hero {
   display: inline-flex; align-items: center; gap: 6px;
   margin-top: 18px;
-  background: rgba(167,139,250,0.06); border: 1px solid rgba(167,139,250,0.20);
+  background: rgba(var(--accent-rgb),0.06); border: 1px solid rgba(var(--accent-rgb),0.20);
   border-radius: 100px; padding: 6px 14px; cursor: pointer;
   font-family: 'Inter', sans-serif; font-size: 11.5px;
   color: rgba(196,181,253,0.95); letter-spacing: 0.02em;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
 .chat-nudge-hero:hover {
-  background: rgba(167,139,250,0.12);
-  border-color: rgba(167,139,250,0.45);
+  background: rgba(var(--accent-rgb),0.12);
+  border-color: rgba(var(--accent-rgb),0.45);
   color: #fff;
   transform: translateY(-1px);
 }
@@ -3238,16 +3309,16 @@ function closeMenu() {
   display: inline-flex; align-items: center; gap: 8px;
   margin-top: 20px; margin-bottom: 8px;
   background: rgba(124,58,237,0.08);
-  border: 1px solid rgba(167,139,250,0.25);
+  border: 1px solid rgba(var(--accent-rgb),0.25);
   border-radius: 100px; padding: 10px 20px;
   cursor: pointer; font-family: 'Inter', sans-serif;
   font-size: 13px; font-weight: 500;
-  color: rgba(167,139,250,0.85); letter-spacing: 0.01em;
+  color: rgba(var(--accent-rgb),0.85); letter-spacing: 0.01em;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
 .chat-nudge-contact:hover {
   background: rgba(124,58,237,0.18);
-  border-color: rgba(167,139,250,0.55);
+  border-color: rgba(var(--accent-rgb),0.55);
   color: #fff; transform: translateY(-1px);
 }
 .chat-nudge-contact svg { flex-shrink: 0; opacity: 0.7; }
@@ -3275,7 +3346,7 @@ function closeMenu() {
 #chat-trigger::before {
   content: '';
   position: absolute; inset: -6px; border-radius: 50%;
-  border: 1.5px solid rgba(167,139,250,0.45);
+  border: 1.5px solid rgba(var(--accent-rgb),0.45);
   animation: chat-pulse 2.8s ease-out infinite;
 }
 #chat-trigger.open::before { animation: none; opacity: 0; }
@@ -3291,7 +3362,7 @@ function closeMenu() {
   background: rgba(15, 12, 28, 0.90);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(167, 139, 250, 0.25);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
   color: #fff;
   font-family: 'Inter', sans-serif;
   font-size: 13px; font-weight: 600; line-height: 1.2;
@@ -3308,8 +3379,8 @@ function closeMenu() {
   position: absolute; bottom: -5px; right: 22px;
   width: 10px; height: 10px;
   background: rgba(15, 12, 28, 0.90);
-  border-right: 1px solid rgba(167, 139, 250, 0.25);
-  border-bottom: 1px solid rgba(167, 139, 250, 0.25);
+  border-right: 1px solid rgba(var(--accent-rgb), 0.25);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.25);
   transform: rotate(45deg);
 }
 #chat-badge.hidden { transform: translateY(6px) scale(0.92); opacity: 0; pointer-events: none; }
@@ -3334,7 +3405,7 @@ function closeMenu() {
 #chat-panel::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.7), rgba(249,115,22,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb),0.7), rgba(249,115,22,0.5), transparent);
 }
 
 .chat-header {
@@ -3344,7 +3415,7 @@ function closeMenu() {
 }
 .chat-avatar {
   width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
-  border: 1.5px solid rgba(167,139,250,0.4);
+  border: 1.5px solid rgba(var(--accent-rgb),0.4);
   background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.2));
   display: flex; align-items: center; justify-content: center;
 }
@@ -3382,7 +3453,7 @@ function closeMenu() {
 }
 .chat-msg.user .chat-bubble {
   background: linear-gradient(135deg, rgba(124,58,237,0.75), rgba(249,115,22,0.60));
-  border: 1px solid rgba(167,139,250,0.25); color: rgba(255,255,255,0.95); border-bottom-right-radius: 4px;
+  border: 1px solid rgba(var(--accent-rgb),0.25); color: rgba(255,255,255,0.95); border-bottom-right-radius: 4px;
 }
 .chat-bubble a { color: var(--purple); text-decoration: underline; text-underline-offset: 2px; }
 .chat-bubble strong { color: var(--white); font-weight: 600; }
@@ -3396,11 +3467,11 @@ function closeMenu() {
 .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
 .chat-chip {
   padding: 6px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500;
-  font-family: 'Inter', sans-serif; border: 1px solid rgba(167,139,250,0.35);
-  color: rgba(167,139,250,0.9); background: rgba(124,58,237,0.08); cursor: pointer;
+  font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
+  color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
 }
-.chat-chip:hover { background: rgba(124,58,237,0.2); border-color: rgba(167,139,250,0.6); color: #fff; transform: translateY(-1px); }
+.chat-chip:hover { background: rgba(124,58,237,0.2); border-color: rgba(var(--accent-rgb),0.6); color: #fff; transform: translateY(-1px); }
 
 .chat-input-area {
   padding: 10px 12px 14px; border-top: 1px solid rgba(255,255,255,0.07);
@@ -3413,7 +3484,7 @@ function closeMenu() {
   min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
 }
 .chat-input::placeholder { color: rgba(255,255,255,0.25); }
-.chat-input:focus { border-color: rgba(167,139,250,0.4); }
+.chat-input:focus { border-color: rgba(var(--accent-rgb),0.4); }
 .chat-send {
   width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
   background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.75));
@@ -3442,7 +3513,7 @@ function closeMenu() {
 
 <button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
   <span id="chat-badge"><span class="es">¿Hablamos?</span><span class="en">Let's talk!</span></span>
-  <img class="icon-chat" src="assets/logo-sinfondo.png" alt="Marta" style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
+  <img loading="lazy" decoding="async" class="icon-chat" src="assets/logo-sinfondo.png" alt="Marta" style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
   <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="width:22px;height:22px;">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
   </svg>
@@ -3451,7 +3522,7 @@ function closeMenu() {
 <div id="chat-panel" role="dialog" aria-label="Chat con Marta">
   <div class="chat-header">
     <div class="chat-avatar">
-      <img src="assets/logo-sinfondo.png" alt="Marta" style="filter:brightness(0) invert(1);object-fit:contain;padding:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img loading="lazy" decoding="async" width="300" height="300" src="assets/logo-sinfondo.png" alt="Marta" style="filter:brightness(0) invert(1);object-fit:contain;padding:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <span class="chat-avatar-fallback" style="display:none">MM</span>
     </div>
     <div class="chat-header-info">
@@ -3471,7 +3542,7 @@ function closeMenu() {
   <div class="chat-messages" id="chatMessages"></div>
   <div class="chat-chips" id="chatChips"></div>
   <div class="chat-input-area">
-    <textarea class="chat-input" id="chatInput" rows="1" placeholder="Escribe tu pregunta…" onkeydown="chatKeydown(event)" oninput="chatAutoResize(this)"></textarea>
+    <textarea class="chat-input" id="chatInput" rows="1" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta" onkeydown="chatKeydown(event)" oninput="chatAutoResize(this)"></textarea>
     <button class="chat-send" onclick="chatSend()" aria-label="Enviar">
       <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
@@ -4112,8 +4183,8 @@ body.visitor-unauthorized .locked-metric:hover::after {
     
     <!-- Header -->
     <div class="lock-header" style="text-align: center; margin-bottom: 8px; width: 100%;">
-      <img src="assets/logo-nuevo.png" alt="Marta Morales" class="lock-logo">
-      <h1 class="lock-title">Marta Morales</h1>
+      <img loading="lazy" decoding="async" width="1536" height="1024" src="assets/logo-nuevo.webp" alt="Marta Morales" class="lock-logo">
+      <p class="lock-title">Marta Morales</p>
       <p class="lock-subtitle">Product Designer</p>
     </div>
 

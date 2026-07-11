@@ -1,4 +1,4 @@
-# Estrategia de Diseño (ACTION)
+# Estrategia de Diseño
 
 ### 1. Problem Framing
 La herramienta había crecido de forma funcional, pero no desde una lógica de experiencia unificada. Muchos módulos respondían a necesidades concretas de gestión académica, pero la experiencia global carecía de consistencia y claridad para el usuario final. Existía una desconexión entre la estructura técnica y la comprensión real del usuario, obligándolo a interpretar demasiadas decisiones visuales antes de completar tareas simples.

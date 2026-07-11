@@ -101,9 +101,9 @@
 
     @media (min-width: 769px) and (max-width: 1100px) {
       .cs-nav { padding: 0 32px; }
-      .cs-hero-content { padding: 0 32px 72px; }
+      .cs-hero-content { padding: 0 32px 48px; }
       .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
-      .cs-block { padding: 80px 0; }
+      .cs-block { padding: 64px 0; }
       .cs-title { font-size: clamp(38px, 5vw, 60px); }
       .block-h { font-size: clamp(28px, 3vw, 42px); }
       .lead { font-size: 18px; }
@@ -122,9 +122,9 @@
       .cs-behance-letter { display: none !important; }
       .cs-nav { padding: 0 24px; height: 56px; }
       .nav-label { display: none; }
-      .cs-hero-content { padding: 0 24px 72px; }
+      .cs-hero-content { padding: 0 24px 28px; }
       .cs-wrap, .cs-wrap-wide { padding: 0 24px; }
-      .cs-block { padding: 80px 0; }
+      .cs-block { padding: 44px 0; }
       .cs-ba { grid-template-columns: 1fr; gap: 40px; }
       .metric-cards { grid-template-columns: 1fr; gap: 16px; }
       .cs-hero-logo {
@@ -317,18 +317,19 @@
   </style>
 </head>
 <body class="cs-booking-engine">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
-<nav class="cs-nav">
-  <a href="index.html" class="nav-back">
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   
   <div class="cs-nav-right">
     <div class="cs-nav-dropdown">
-      <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
         <span class="es">Casos de Producto ▾</span>
         <span class="en">Case Studies ▾</span>
-      </button>
+      </a>
       <div class="cs-dropdown-menu">
         <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
@@ -366,11 +367,20 @@
   </div>
 </nav>
 
+<main id="main">
+
 <header class="cs-hero">
   <div class="cs-hero-logo"></div>
   <div class="cs-hero-overlay"></div>
   <div class="cs-hero-glow"></div>
   <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">Booking Engine</span></li>
+      </ol>
+    </nav>
     <span class="cs-eyebrow">
       03 — Booking Engine · Design Ops & Componentes
     </span>
@@ -611,7 +621,7 @@
                 <span class="c2-evidence-sub">Desktop · Scroll map & heatmap · Clarity</span>
               </div>
             </div>
-            <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-desk.png" alt="Análisis de abandono Desktop">
+            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-desk.webp" alt="Análisis de abandono Desktop">
             <div class="c2-evidence-caption">El motor de reservas competía con banners y promociones en el primer nivel. Usuarios con intención de compra no iniciaban búsqueda.</div>
           </div>
           <div class="c2-evidence-item">
@@ -622,7 +632,7 @@
                 <span class="c2-evidence-sub">Mobile · Puntos de fuga en primer scroll</span>
               </div>
             </div>
-            <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-abandonado-mobile.png" alt="Análisis de abandono Mobile">
+            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-abandonado-mobile.webp" alt="Análisis de abandono Mobile">
             <div class="c2-evidence-caption">Mobile mostraba mayor fricción que desktop: el buscador quedaba enterrado bajo contenido inspiracional no transaccional.</div>
           </div>
         </div>
@@ -652,7 +662,7 @@
                 <span class="c2-evidence-sub">Test selección de destino · Variante A</span>
               </div>
             </div>
-            <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/exp-cro-destinos-desk.png" alt="Test Selección Destino Desktop">
+            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/exp-cro-destinos-desk.webp" alt="Test Selección Destino Desktop">
             <div class="c2-evidence-caption">Flujo original: selección de destino integrada en el motor con múltiples pasos de navegación.</div>
           </div>
           <div class="c2-evidence-item">
@@ -663,7 +673,7 @@
                 <span class="c2-evidence-sub">100% confianza estadística validada</span>
               </div>
             </div>
-            <img class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/EXP-CRO-DESTINOS-POPUP.png" alt="Popup de selección de destino">
+            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/EXP-CRO-DESTINOS-POPUP.webp" alt="Popup de selección de destino">
             <div class="c2-evidence-caption">Simplificación del paso de selección mediante popup directo — validado con 100% de fiabilidad estadística.</div>
           </div>
         </div>
@@ -680,7 +690,7 @@
         <div class="c2-transform fu">
           <div class="c2-tf-panel">
             <div class="c2-tf-badge c2-tf-badge--before">Antes · El problema</div>
-            <img class="c2-tf-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/antes-recompo.png" alt="Motor antes del rediseño">
+            <img width="1920" height="1440" class="c2-tf-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/antes-recompo.webp" alt="Motor antes del rediseño">
             <div class="c2-tf-chips">
               <span class="c2-tf-chip c2-tf-chip--problem">75% scroll sin búsqueda</span>
               <span class="c2-tf-chip c2-tf-chip--problem">Motor enterrado tras banners</span>
@@ -694,7 +704,7 @@
           </div>
           <div class="c2-tf-panel">
             <div class="c2-tf-badge c2-tf-badge--after">Después · Solución implementada</div>
-            <img class="c2-tf-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.png" alt="Motor después del rediseño">
+            <img width="1920" height="1440" class="c2-tf-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.webp" alt="Motor después del rediseño">
             <div class="c2-tf-chips">
               <span class="c2-tf-chip c2-tf-chip--solution">Motor en posición #1</span>
               <span class="c2-tf-chip c2-tf-chip--solution">Visible en primer scroll</span>
@@ -788,26 +798,26 @@
     </div>
 
         <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
-    <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(167, 139, 250, 0.22); background: rgba(167, 139, 250, 0.02); border-radius: 16px;">
-      <div class="wf-process-label" style="border-bottom: 1px solid rgba(167, 139, 250, 0.15); padding: 16px 28px;">
-        <span style="color: #a78bfa;">INTEGRACIÓN DE IA EN PRODUCTO</span>
+    <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
+      <div class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
+        <span style="color: var(--accent);">INTEGRACIÓN DE IA EN PRODUCTO</span>
         <em style="color: rgba(255,255,255,0.65);">— Optimización de flujos y especificación técnica</em>
       </div>
       <div class="wf-steps" style="grid-template-columns: repeat(3, 1fr);">
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">1.</span>
+          <span class="wf-step-num" style="color: var(--accent);">1.</span>
           <p class="wf-step-title" style="color: #fff;">Ideación de Flujos</p>
           <p class="wf-step-desc es">Utilicé modelos de lenguaje como sparring partner para modelar posibles casos de uso extremos (edge cases) del motor en pantallas ultra estrechas.</p>
           <p class="wf-step-desc en">Used LLMs to brainstorm and model edge-case behavior for the search engine on ultra-narrow viewport widths.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">2.</span>
+          <span class="wf-step-num" style="color: var(--accent);">2.</span>
           <p class="wf-step-title" style="color: #fff;">UI Copy Sparring</p>
           <p class="wf-step-desc es">Generé con IA y testé variaciones rápidas de microcopy para las etiquetas de búsqueda dinámica en español e inglés, optimizando legibilidad.</p>
           <p class="wf-step-desc en">Generated and validated multiple dynamic search label microcopy options in both Spanish and English for better clarity.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">3.</span>
+          <span class="wf-step-num" style="color: var(--accent);">3.</span>
           <p class="wf-step-title" style="color: #fff;">Design QA Automatizado</p>
           <p class="wf-step-desc es">Inspeccioné el código maquetado del motor usando un prompt estructurado de IA para comparar píxeles, colores y alineaciones contra el UI Kit.</p>
           <p class="wf-step-desc en">Inspected the live UI using structured AI prompts to systematically compare build margins and alignment with the master UI Kit.</p>
@@ -848,6 +858,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="cs-footer">
   <div class="cs-wrap">
@@ -892,6 +904,7 @@
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
   }
 </script>
+<script src="cs-enhancements.js" defer></script>
 </body>
 </html>
 

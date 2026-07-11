@@ -287,18 +287,19 @@
   </style>
 </head>
 <body class="cs-it-ops-oracle">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
-<nav class="cs-nav">
-  <a href="index.html" class="nav-back">
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   
   <div class="cs-nav-right">
     <div class="cs-nav-dropdown">
-      <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
         <span class="es">Casos de Producto ▾</span>
         <span class="en">Case Studies ▾</span>
-      </button>
+      </a>
       <div class="cs-dropdown-menu">
         <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
@@ -336,12 +337,21 @@
   </div>
 </nav>
 
+<main id="main">
+
 <!-- HERO -->
 <header class="cs-hero">
   <div class="cs-hero-logo"></div>
   <div class="cs-hero-overlay"></div>
   <div class="cs-hero-glow"></div>
   <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">IT Ops · Oracle</span></li>
+      </ol>
+    </nav>
     <span class="cs-eyebrow es">05 — We Are Actions · IT Operations · Investigación de producto</span>
     <span class="cs-eyebrow en">05 — We Are Actions · IT Operations · Product Research</span>
     <h1 class="cs-title">
@@ -513,7 +523,7 @@
 </section>
 
 <!-- [T] TAREA -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
   <div class="cs-wrap">
 
     <div class="fu">
@@ -559,7 +569,7 @@
         </ul>
       </div>
       <div class="user-group">
-        <div class="user-group-badge" style="background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.5); border:1px solid var(--border);">
+        <div class="user-group-badge" style="background:var(--accent-glow); color:var(--accent); border:1px solid var(--accent-border);">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="es">Grupo B · Usuarios internos</span><span class="en">Group B · Internal users</span>
         </div>
         <div class="user-group-name es">Resto de la empresa</div>
@@ -655,12 +665,12 @@
           <span class="en">Pattern 3 · Flat information architecture</span>
         </div>
         <div class="affinity-cards">
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Incidencias críticas y consultas menores en la misma cola</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Priorización dependía del criterio individual de cada gestor</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="es">Tiempo de triaje elevado en momentos de alta carga</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Critical incidents and minor queries in the same queue</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">Prioritisation depended on each manager's individual judgement</div>
-          <div class="affinity-card" style="border-left-color:rgba(139,92,246,0.4);" lang="en">High triage time during peak load moments</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Incidencias críticas y consultas menores en la misma cola</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Priorización dependía del criterio individual de cada gestor</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Tiempo de triaje elevado en momentos de alta carga</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">Critical incidents and minor queries in the same queue</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">Prioritisation depended on each manager's individual judgement</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">High triage time during peak load moments</div>
         </div>
       </div>
       <div class="affinity-cluster">
@@ -1073,26 +1083,26 @@
       </div>
     </div>
             <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
-    <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(167, 139, 250, 0.22); background: rgba(167, 139, 250, 0.02); border-radius: 16px;">
-      <div class="wf-process-label" style="border-bottom: 1px solid rgba(167, 139, 250, 0.15); padding: 16px 28px;">
-        <span style="color: #a78bfa;">INTEGRACIÓN DE IA EN RESEARCH Y AUDITORÍA DE DATOS (Figma/Database MCP)</span>
+    <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
+      <div class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
+        <span style="color: var(--accent);">INTEGRACIÓN DE IA EN RESEARCH Y AUDITORÍA DE DATOS (Figma/Database MCP)</span>
         <em style="color: rgba(255,255,255,0.65);">— Optimización de flujos y especificación técnica en ERP corporativo</em>
       </div>
       <div class="wf-steps" style="grid-template-columns: repeat(3, 1fr);">
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">1.</span>
+          <span class="wf-step-num" style="color: var(--accent);">1.</span>
           <p class="wf-step-title" style="color: #fff;">Auditoría de Feedback (MCP)</p>
           <p class="wf-step-desc es">Conexión de Claude mediante MCP Postgres a las bases de datos internas del equipo IT para estructurar y clusterizar 120+ logs de error y transcripciones de soporte, clasificando las frustraciones principales en categorías accionables.</p>
           <p class="wf-step-desc en">Connecting Claude via MCP Postgres to internal IT database systems to parse, clean, and cluster 120+ error logs and support transcripts into structured visual categories.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">2.</span>
+          <span class="wf-step-num" style="color: var(--accent);">2.</span>
           <p class="wf-step-title" style="color: #fff;">Simulación de Journeys</p>
           <p class="wf-step-desc es">Desarrollé prompts de razonamiento lógico en Claude para simular y validar las bifurcaciones y flujos complejos de priorización de tickets frente a los journeys definidos.</p>
           <p class="wf-step-desc en">Leveraging logical reasoning prompts in Claude to validate complex decision paths and ticket prioritization scenarios against user journeys.</p>
         </div>
         <div class="wf-step">
-          <span class="wf-step-num" style="color: #a78bfa;">3.</span>
+          <span class="wf-step-num" style="color: var(--accent);">3.</span>
           <p class="wf-step-title" style="color: #fff;">Handoff Técnico (Figma MCP)</p>
           <p class="wf-step-desc es">Utilicé servidores Figma MCP para inspeccionar la jerarquía visual de las vistas del ERP re-diseñado, extrayendo de forma automatizada las especificaciones técnicas compatibles con la API de Oracle.</p>
           <p class="wf-step-desc en">Used Figma MCP to programmatically inspect frame hierarchy on the redesigned ERP layouts, auto-generating developer specs compliant with Oracle APIs.</p>
@@ -1135,6 +1145,8 @@
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer class="cs-footer">
   <div class="cs-wrap">
     <div class="footer-label es">Siguiente caso</div>
@@ -1188,5 +1200,6 @@
   }
   applyLang();
 </script>
+<script src="cs-enhancements.js" defer></script>
 </body>
 </html>

@@ -520,18 +520,19 @@
   </style>
 </head>
 <body class="cs-paolo-pizzeria">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
-<nav class="cs-nav">
-  <a href="index.html" class="nav-back">
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
     <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
   </a>
   
   <div class="cs-nav-right">
     <div class="cs-nav-dropdown">
-      <button class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
         <span class="es">Casos de Producto ▾</span>
         <span class="en">Case Studies ▾</span>
-      </button>
+      </a>
       <div class="cs-dropdown-menu">
         <a href="cef-design-system.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 01</div>
@@ -569,12 +570,21 @@
   </div>
 </nav>
 
+<main id="main">
+
 <!-- HERO -->
 <header class="cs-hero">
   <div class="cs-hero-logo"></div>
   <div class="cs-hero-overlay"></div>
   <div class="cs-hero-glow"></div>
   <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">Paolo by Danny's Jazz</span></li>
+      </ol>
+    </nav>
     <span class="cs-eyebrow">
       04 — Paolo by Danny's Jazz · Customer Journey · Producto Digital
     </span>
@@ -767,7 +777,7 @@
 </section>
 
 <!-- [T] TASK -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);>
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
   <div class="cs-wrap">
     <div class="cs-star fu">
       <div class="cs-rail">
@@ -914,7 +924,7 @@
       <div class="col-lg-5 col-md-7">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">DESKTOP · HOMEPAGE</div>
         <div class="device-laptop-minimal">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-desk.png" alt="Wireframe desktop homepage Paolo">
+          <img width="1450" height="835" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-desk.webp" alt="Wireframe desktop homepage Paolo">
         </div>
         <div class="device-laptop-base" style="margin-bottom: 0;"></div>
       </div>
@@ -923,7 +933,7 @@
       <div class="col-lg-3 col-md-5">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">MOBILE · HOMEPAGE</div>
         <div class="device-phone-minimal" style="max-width: 260px; margin: 0;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-mobile.png" alt="Wireframe mobile homepage Paolo">
+          <img width="785" height="1382" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-mobile.webp" alt="Wireframe mobile homepage Paolo">
         </div>
       </div>
       
@@ -1003,7 +1013,7 @@
     <div class="row g-4 fu align-items-center" style="margin-bottom: 48px; text-align: left;">
       <div class="col-md-4">
         <div style="border-radius: 12px; overflow: hidden; background: #ffffff; padding: 24px; display: flex; align-items: center; justify-content: center; aspect-ratio: 1/1;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-fusion-dannys.jpg.jpg" alt="Logo de Paolo by Danny's Jazz" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+          <img width="1280" height="1280" loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-fusion-dannys.jpg.webp" alt="Logo de Paolo by Danny's Jazz" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
         </div>
       </div>
       <div class="col-md-8">
@@ -1083,7 +1093,7 @@
       <div class="col-12">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Plano Técnico Único · Fachada & Exteriores</div>
         <div style="border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.015); margin-bottom: 24px;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/plano-sombrillas-montaje.png" alt="Plano de montaje de fachada y sombrillas de terraza Paolo" style="width:100%; height:auto; display:block;">
+          <img width="1536" height="1024" loading="lazy" decoding="async" src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" alt="Plano de montaje de fachada y sombrillas de terraza Paolo" style="width:100%; height:auto; display:block;">
         </div>
         
         <div style="margin-top:14px;">
@@ -1136,7 +1146,7 @@
       <div class="col-md-6">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Uniformes · Polo bordado</div>
         <div style="overflow:hidden; aspect-ratio:4/3; background:rgba(255,255,255,0.03);">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.png" alt="Mockup polo burdeos Paolo — diseño frente y espalda con bordado" style="width:100%; height:100%; object-fit:contain; display:block;">
+          <img width="2372" height="1425" loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.webp" alt="Mockup polo burdeos Paolo — diseño frente y espalda con bordado" style="width:100%; height:100%; object-fit:contain; display:block;">
         </div>
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Mockup · Polo burdeos, bordado frente y espalda</p>
       </div>
@@ -1146,7 +1156,7 @@
           <span style="font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); background:rgba(242,162,34,0.1); border:1px solid rgba(242,162,34,0.25); padding:2px 8px; border-radius:100px;">2026 · IA</span>
         </div>
         <div style="overflow:hidden; aspect-ratio:4/3;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.png" alt="Camarero Paolo con polo burdeos — generado con IA para humanizar el ecosistema web" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img width="2619" height="1340" loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.webp" alt="Camarero Paolo con polo burdeos — generado con IA para humanizar el ecosistema web" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Imagen generada con IA · El uniforme convierte a cada persona en soporte de marca</p>
       </div>
@@ -1157,7 +1167,7 @@
       <div class="col-md-4">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Social · Notificación Creativa</div>
         <div style="border-radius: 8px; overflow: hidden;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/04-social.png" alt="Pieza de redes sociales Paolo — foto de pizza con notificación de mensaje como copy creativo" style="width:100%; display:block;">
+          <img width="1080" height="1080" loading="lazy" decoding="async" src="projects/04-paolo/assets/04-social.webp" alt="Pieza de redes sociales Paolo — foto de pizza con notificación de mensaje como copy creativo" style="width:100%; display:block;">
         </div>
       </div>
       <div class="col-md-8 text-start">
@@ -1188,7 +1198,7 @@
       <div class="col-12">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Vista General de la Interfaz Web (Escritorio)</div>
         <div style="border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web.webp" alt="Paolo by Danny's Jazz — Interfaz web completa" style="width:100%; height:auto; display:block; border-radius:8px;">
+          <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web.webp" alt="Paolo by Danny's Jazz — Interfaz web completa" style="width:100%; height:auto; display:block; border-radius:8px;">
         </div>
       </div>
     </div>
@@ -1201,7 +1211,7 @@
         <!-- Visual Column -->
         <div class="col-lg-6 col-md-12">
           <div style="border-radius: 8px; overflow: hidden;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web1.png" alt="Paolo · Sección HISTORIA" style="width: 100%; height: auto; display: block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web1.webp" alt="Paolo · Sección HISTORIA" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <!-- Content Column -->
@@ -1232,7 +1242,7 @@
         <!-- Visual Column (Desktop right, mobile top) -->
         <div class="col-lg-6 order-lg-2 col-md-12">
           <div style="border-radius: 8px; overflow: hidden;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web4.png" alt="Paolo · Sección CARTA" style="width: 100%; height: auto; display: block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web4.webp" alt="Paolo · Sección CARTA" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <!-- Content Column (Desktop left, mobile bottom) -->
@@ -1263,7 +1273,7 @@
         <!-- Visual Column -->
         <div class="col-lg-6 col-md-12">
           <div style="border-radius: 8px; overflow: hidden;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web3.png" alt="Paolo · Sección PEDIDOS" style="width: 100%; height: auto; display: block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web3.webp" alt="Paolo · Sección PEDIDOS" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <!-- Content Column -->
@@ -1294,7 +1304,7 @@
         <!-- Visual Column (Desktop right, mobile top) -->
         <div class="col-lg-6 order-lg-2 col-md-12">
           <div style="border-radius: 8px; overflow: hidden;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web5.png" alt="Paolo · Sección RESTAURANTES" style="width: 100%; height: auto; display: block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web5.webp" alt="Paolo · Sección RESTAURANTES" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <!-- Content Column (Desktop left, mobile bottom) -->
@@ -1325,7 +1335,7 @@
         <!-- Visual Column -->
         <div class="col-lg-6 col-md-12">
           <div style="border-radius: 8px; overflow: hidden;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/web2.png" alt="Paolo · Sección OPINIONES" style="width: 100%; height: auto; display: block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web2.webp" alt="Paolo · Sección OPINIONES" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <!-- Content Column -->
@@ -1381,7 +1391,7 @@
     <div class="row g-4 align-items-center fu" style="margin-bottom: 64px;">
       <div class="col-md-5">
         <div class="device-phone-minimal">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/img-paolo-mobile.webp" alt="Diseño móvil en producción — botón llamar destacado">
+          <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/img-paolo-mobile.webp" alt="Diseño móvil en producción — botón llamar destacado">
         </div>
       </div>
       <div class="col-md-7">
@@ -1566,26 +1576,26 @@
           </div>
         </div>
         <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
-        <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(167, 139, 250, 0.22); background: rgba(167, 139, 250, 0.02); border-radius: 16px;">
-          <div class="wf-process-label" style="border-bottom: 1px solid rgba(167, 139, 250, 0.15); padding: 16px 28px;">
-            <span style="color: #a78bfa;">INTEGRACIÓN DE IA EN EL SISTEMA DE MARCA</span>
+        <div class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
+          <div class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
+            <span style="color: var(--accent);">INTEGRACIÓN DE IA EN EL SISTEMA DE MARCA</span>
             <em style="color: rgba(255,255,255,0.65);">— Automatización de assets visuales y flujos conversacionales</em>
           </div>
           <div class="wf-steps" style="grid-template-columns: repeat(3, 1fr);">
             <div class="wf-step">
-              <span class="wf-step-num" style="color: #a78bfa;">1.</span>
+              <span class="wf-step-num" style="color: var(--accent);">1.</span>
               <p class="wf-step-title" style="color: #fff;">Ideación y Dirección de Arte</p>
               <p class="wf-step-desc es">Utilicé prompts generativos y herramientas de IA visual para explorar rápidamente 20+ conceptos de aplicaciones de marca (flyers, cartelería, pegatinas) alineados a la pizzería.</p>
               <p class="wf-step-desc en">Used generative visual tools to quickly explore 20+ brand application concepts (flyers, menus, signage) matching the brand guidelines.</p>
             </div>
             <div class="wf-step">
-              <span class="wf-step-num" style="color: #a78bfa;">2.</span>
+              <span class="wf-step-num" style="color: var(--accent);">2.</span>
               <p class="wf-step-title" style="color: #fff;">Producción de Mockups</p>
               <p class="wf-step-desc es">Generé recursos fotográficos realistas de los productos alimenticios mediante IA generativa de imágenes, reduciendo la dependencia de sesiones de fotos costosas.</p>
               <p class="wf-step-desc en">Created realistic food photography and visual mockups using generative AI, saving cost and time on physical photoshoots.</p>
             </div>
             <div class="wf-step">
-              <span class="wf-step-num" style="color: #a78bfa;">3.</span>
+              <span class="wf-step-num" style="color: var(--accent);">3.</span>
               <p class="wf-step-title" style="color: #fff;">Lógica Conversacional</p>
               <p class="wf-step-desc es">Modelé y optimicé el flujo lógico de respuestas automáticas para pedidos rápidos por WhatsApp usando prompts conversacionales estructurados.</p>
               <p class="wf-step-desc en">Designed and mapped out ordering conversation flows and response rules for WhatsApp automated flows using AI prompting assistance.</p>
@@ -1708,25 +1718,25 @@
           <div class="col-6">
             <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">4 Formaggi</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/4 formaggi.webp" alt="4 Formaggi — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <img width="1200" height="1200" loading="lazy" decoding="async" src="projects/04-paolo/assets/4 formaggi.webp" alt="4 Formaggi — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
           <div class="col-6">
             <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Tartufo</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/tartufo.webp" alt="Tartufo — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/tartufo.webp" alt="Tartufo — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
           <div class="col-6">
             <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Diavola</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/diavola.webp" alt="Diavola — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/diavola.webp" alt="Diavola — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
           <div class="col-6">
             <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Napoli</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/napoli.webp" alt="Napoli — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/napoli.webp" alt="Napoli — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
         </div>
@@ -1740,7 +1750,7 @@
       <div class="col-lg-6 col-md-12">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Story Table · Hero repositorio web</div>
         <div style="border-radius: 8px; overflow: hidden;">
-          <img loading="lazy" decoding="async" src="projects/04-paolo/assets/story-table.jpg" alt="Mesa con pizza Paolo — hero banner repositorio web generado con IA" style="width:100%; height:auto; display:block;">
+          <img width="1024" height="434" loading="lazy" decoding="async" src="projects/04-paolo/assets/story-table.webp" alt="Mesa con pizza Paolo — hero banner repositorio web generado con IA" style="width:100%; height:auto; display:block;">
         </div>
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Generado con IA · Header del repositorio público</p>
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">AI-generated · Public repository header</p>
@@ -1776,20 +1786,20 @@
           <div>
             <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Niño Story · RRSS</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:3/4;">
-              <img loading="lazy" decoding="async" src="projects/04-paolo/assets/niño-story.webp" alt="Niño con pizza — story Instagram generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <img width="1121" height="1403" loading="lazy" decoding="async" src="projects/04-paolo/assets/niño-story.webp" alt="Niño con pizza — story Instagram generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
           <div style="display:flex; flex-direction:column; gap:12px;">
             <div>
               <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Motivo Social · Card</div>
               <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-                <img loading="lazy" decoding="async" src="projects/04-paolo/assets/motivo-social.jpg" alt="Motivo social Paolo — card de servicios" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <img width="788" height="1024" loading="lazy" decoding="async" src="projects/04-paolo/assets/motivo-social.webp" alt="Motivo social Paolo — card de servicios" style="width:100%; height:100%; object-fit:cover; display:block;">
               </div>
             </div>
             <div>
               <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Take Away · Card</div>
               <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-                <img loading="lazy" decoding="async" src="projects/04-paolo/assets/take-away.webp" alt="Take Away Paolo — card generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+                <img width="1200" height="1797" loading="lazy" decoding="async" src="projects/04-paolo/assets/take-away.webp" alt="Take Away Paolo — card generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
               </div>
             </div>
           </div>
@@ -1837,7 +1847,7 @@
         <div class="col-lg-6 col-md-12">
           <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Sección IA · Integración en la web</div>
           <div style="border-radius: 8px; overflow: hidden;">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/seccion.ia.png" alt="Nueva sección IA integrada en la web de Paolo 2026" style="width:100%; height:auto; display:block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/seccion.ia.webp" alt="Nueva sección IA integrada en la web de Paolo 2026" style="width:100%; height:auto; display:block;">
           </div>
           <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Nueva sección incorporada al sitio · 2026</p>
           <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">New section added to the site · 2026</p>
@@ -1871,7 +1881,7 @@
         <div class="col-lg-6 col-md-12">
           <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Chat · Alérgenos y reserva en tiempo real</div>
           <div class="device-phone-minimal">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/reserva.chat.png" alt="Chatbot Paolo — conversación real de reserva y consulta de alérgenos">
+            <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/reserva.chat.webp" alt="Chatbot Paolo — conversación real de reserva y consulta de alérgenos">
           </div>
           <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Flujo de conversación real del agente digital · 2026</p>
           <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">Real conversation flow of the digital agent · 2026</p>
@@ -1883,7 +1893,7 @@
         <div class="col-lg-6 col-md-12">
           <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Mobile · Agente en mano</div>
           <div class="device-phone-minimal">
-            <img loading="lazy" decoding="async" src="projects/04-paolo/assets/agenta.ia.mobile.png" alt="Agente IA de Paolo en móvil — diseño responsive del chatbot">
+            <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/agenta.ia.mobile.webp" alt="Agente IA de Paolo en móvil — diseño responsive del chatbot">
           </div>
           <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px; text-align:center;" class="es">Versión mobile del agente · Acceso directo en el contexto de uso real</p>
           <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px; text-align:center;" class="en">Mobile version of the agent · Direct access in the real usage context</p>
@@ -1912,6 +1922,8 @@
   </div>
 </section>
 
+
+</main>
 
 <footer class="cs-footer">
   <div class="cs-wrap">
@@ -1982,5 +1994,6 @@
     });
   })();
 </script>
+<script src="cs-enhancements.js" defer></script>
 </body>
 </html>

@@ -1,66 +1,38 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "Vanity";
-  src: local("Vanity"), local("Vanity-Regular"), local("Vanity Regular"), local("Vanity-Bold"), local("Vanity Bold"), local("Vanity-Light"), local("Vanity Light");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
 :root {
-  --bg: #0a0a0a; /* Deep obsidian base */
-  --text: #ffffff; /* Always white typography */
-  --text-secondary: rgba(255, 255, 255, 0.88); /* Sleek high-readability off-white */
-  --text-muted: rgba(255, 255, 255, 0.65); /* Elegant light grey labels */
-  --text-tertiary: rgba(255, 255, 255, 0.45); /* Muted captions & secondary elements */
-  --text-primary: #ffffff;
-  --divider: rgba(255, 255, 255, 0.08); /* Transparent hairline divider */
-  --divider-strong: rgba(255, 255, 255, 0.15);
-  --hover: rgba(255, 255, 255, 0.06); /* Frosted hover plate */
-  --surface: rgba(255, 255, 255, 0.04); /* Subtly opaque dark glass surface */
-  --accent: #ffffff;
-  --bg-soft: rgba(255, 255, 255, 0.02);
-  --border: rgba(255, 255, 255, 0.08);
-  --shadow: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-subtle: 0 1px 4px rgba(0,0,0,0.03);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.03);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.04);
-  --space-md: 24px;
-  --space-lg: 48px;
-  --space-xl: 80px;
-  --s-8: 8px;
-  --s-16: 16px;
-  --s-24: 24px;
-  --s-32: 32px;
-  --s-48: 48px;
-  --s-64: 64px;
-  --s-80: 80px;
-  --s-96: 96px;
-  --s-128: 128px;
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 64px;
-  --space-6: 88px;
-  --radius-sm: 3px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
-  --radius: 6px;
-  --container-mobile: 390px;
-  --container-desktop: 1440px;
-  --sidebar-width: 420px;
-  --content-max: 1100px;
-  --text-max: 680px;
-  --editorial-max: 580px;
-  --f-hero: clamp(44px, 7.5vw, 68px);
-  --f-section: 38px;
-  --f-project: 26px;
-  --f-body: 17px;
-  --f-small: 12px;
-  /* Easing curves â Vercel/Linear */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --brand-accent: #a78bfa;
+  --brand-accent-rgb: 167, 139, 250;
+  --brand-accent-strong: #7c3aed;
+  --brand-accent-secondary: #f97316;
+  --brand-accent-secondary-rgb: 249, 115, 22;
+  --accent: var(--brand-accent);
+  --accent-rgb: var(--brand-accent-rgb);
+  --accent-strong: var(--brand-accent-strong);
+  --accent-secondary: var(--brand-accent-secondary);
+  --accent-secondary-rgb: var(--brand-accent-secondary-rgb);
+  --cta-bg: linear-gradient(135deg, var(--brand-accent-strong) 0%, var(--brand-accent-secondary) 100%);
+  --cta-surface: rgba(var(--brand-accent-rgb), 0.16);
+  --cta-surface-hover: rgba(var(--brand-accent-rgb), 0.24);
+  --cta-border: rgba(var(--brand-accent-rgb), 0.35);
+  --cta-border-strong: rgba(var(--brand-accent-rgb), 0.5);
+}
+
+:root {
+  --brand-accent: #a78bfa;
+  --brand-accent-rgb: 167, 139, 250;
+  --brand-accent-strong: #7c3aed;
+  --brand-accent-secondary: #f97316;
+  --brand-accent-secondary-rgb: 249, 115, 22;
+  --accent: var(--brand-accent);
+  --accent-rgb: var(--brand-accent-rgb);
+  --accent-strong: var(--brand-accent-strong);
+  --accent-secondary: var(--brand-accent-secondary);
+  --accent-secondary-rgb: var(--brand-accent-secondary-rgb);
+  --cta-bg: linear-gradient(135deg, var(--brand-accent-strong) 0%, var(--brand-accent-secondary) 100%);
+  --cta-surface: rgba(var(--brand-accent-rgb), 0.16);
+  --cta-surface-hover: rgba(var(--brand-accent-rgb), 0.24);
+  --cta-border: rgba(var(--brand-accent-rgb), 0.35);
+  --cta-border-strong: rgba(var(--brand-accent-rgb), 0.5);
 }
 
 * {
@@ -306,8 +278,8 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--text);
-  color: var(--bg) !important;
+  background: var(--cta-bg);
+  color: var(--white) !important;
   text-decoration: none;
   padding: 10px 24px;
   border-radius: var(--radius-md);
@@ -315,13 +287,13 @@ button {
   font-size: 13px;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-  border: 1px solid var(--text);
+  border: 1px solid var(--cta-border);
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
-  background: #333;
-  color: var(--bg) !important;
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.9), rgba(var(--accent-secondary-rgb), 0.84));
+  color: var(--white) !important;
   transform: translateY(-1px);
 }
 
@@ -462,6 +434,21 @@ button {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   opacity: 0.45;
+}
+
+.sc-cta,
+.sc-cta-primary {
+  background: var(--cta-surface);
+  color: var(--white);
+  border: 1px solid var(--cta-border);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.sc-cta:hover,
+.sc-cta-primary:hover {
+  background: var(--cta-surface-hover);
+  border-color: var(--cta-border-strong);
+  transform: translateY(-1px);
 }
 
 /* Executive Career Summary */

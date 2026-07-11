@@ -1,4 +1,4 @@
-# Diseño (ACTION)
+# Diseño
 
 A partir del análisis, redefiní la jerarquía del acceso al motor priorizando:
 - rapidez de identificación

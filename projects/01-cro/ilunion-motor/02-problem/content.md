@@ -1,4 +1,4 @@
-# El reto y el problema (TASK)
+# El reto y el problema
 
 El reto consistía en analizar el comportamiento del acceso al motor desde una perspectiva UX y CRO para detectar puntos de abandono y proponer una solución más clara, escalable y alineada con los objetivos comerciales.
 

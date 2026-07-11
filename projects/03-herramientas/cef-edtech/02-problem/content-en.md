@@ -1,4 +1,4 @@
-# The challenge (TASK)
+# The challenge
 
 The objective was to improve the usability of the academic tool by reducing complexity and facilitating interaction on frequent tasks within the educational environment.
 

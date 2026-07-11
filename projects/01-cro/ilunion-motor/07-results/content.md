@@ -1,4 +1,4 @@
-# Resultados y Aprendizajes (RESULT)
+# Resultados y Aprendizajes
 
 El seguimiento post-lanzamiento con Clarity permitió detectar un nuevo patrón de comportamiento no previsto: los usuarios utilizaban el buscador para explorar destinos, no únicamente como acceso transaccional. Este hallazgo abrió una nueva línea de mejora y demostró un proceso de producto maduro — la diferencia entre hacer una entrega y hacer producto.
 

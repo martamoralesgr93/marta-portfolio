@@ -1,4 +1,4 @@
-# Business Context (SITUATION)
+# Business Context
 
 CEF — Centro de Estudios Financieros managed different digital environments used by students and internal teams to access academic information, documentation and processes related to educational administration.
 

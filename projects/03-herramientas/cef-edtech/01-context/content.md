@@ -1,4 +1,4 @@
-# Contexto de negocio (SITUATION)
+# Contexto de negocio
 
 CEF — Centro de Estudios Financieros gestionaba distintos entornos digitales utilizados por alumnos y equipos internos para acceder a información académica, documentación y procesos relacionados con la gestión educativa.
 
