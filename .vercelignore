@@ -1,0 +1,33 @@
+# ── Documentos internos: no deben ser públicos en la web desplegada ──
+*.md
+!README.md
+
+# Backups y archivos de trabajo
+*.bak
+scratch.txt
+landing-old.html
+caso-1-ilunion.html
+walkthrough.md
+
+# Borradores de CV en la raíz (los CV públicos viven en /assets)
+CV_*.pdf
+CV_*.html
+Marta_Morales_CV_*.pdf
+cv-marta.pdf
+cv-marta.html
+cv-marta-en.html
+cv-marta-ats-es.html
+cv-marta-ats-en.html
+firma_gmail.html
+
+# Tooling local (el deploy es estático, sin build en Vercel)
+node_modules
+sass
+*.scss
+build.js
+generate-cv-pdf.js
+package.json
+package-lock.json
+*.bat
+
+# Fuentes de proyectos (las páginas usan /assets y rutas concretas de /projects)

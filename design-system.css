@@ -398,6 +398,9 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 .footer-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: var(--space-md); }
 .cs-footer h2 { font-family: var(--font-serif); font-size: clamp(32px, 4vw, 56px); font-weight: 700; color: var(--white); margin-bottom: var(--space-lg); }
 .footer-actions { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
+.footer-contact { margin: var(--space-xl) auto 0; padding-top: var(--space-lg); border-top: 1px solid var(--border); max-width: 620px; }
+.footer-contact-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: var(--space-md); }
+.footer-contact-actions { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
 
 /* ── 12. RESPONSIVE DESIGN & ADAPTABILITY ── */
 

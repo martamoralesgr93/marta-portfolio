@@ -69,30 +69,18 @@
     window.clarity("set", "user_type", isGoogleAuthorized ? "google_auth" : "token_holder");
   }
 
-  // Determinar si es la página de inicio
-  const isIndexPage = window.location.pathname === '/' || 
-                      window.location.pathname.endsWith('index.html') || 
-                      window.location.pathname === '';
+  // Portfolio en abierto: no se bloquea ninguna página.
+  // El token por URL se conserva solo como identificador de visita en Clarity
+  // (permite enviar enlaces personalizados a empresas y saber quién visita).
 
-  if (!isAuthorized) {
-    if (!isIndexPage) {
-      // Ocultar el contenido de la página inmediatamente para evitar flashes visuales
-      document.write('<style>html { display: none !important; }</style>');
-      
-      // Redirigir a index.html preservando la página solicitada como redirección
-      const redirectPage = window.location.pathname + window.location.search;
-      window.location.href = '/index.html?redirect=' + encodeURIComponent(redirectPage);
-    }
-  } else {
-    // Si ya está autorizado y está en index.html con un parámetro de redirección, redirigir allí
-    if (isIndexPage) {
-      const redirectUrl = getQueryParam('redirect');
-      if (redirectUrl) {
-        // Validación de seguridad para evitar redirecciones abiertas a otros dominios
-        if (redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
-          window.location.href = redirectUrl;
-        }
-      }
+  // Compatibilidad con enlaces antiguos: index.html?redirect=/pagina → ir directo a la página
+  const isIndexPage = window.location.pathname === '/' ||
+                      window.location.pathname.endsWith('index.html') ||
+                      window.location.pathname === '';
+  if (isIndexPage) {
+    const redirectUrl = getQueryParam('redirect');
+    if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
+      window.location.href = redirectUrl;
     }
   }
 })();

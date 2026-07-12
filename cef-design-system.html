@@ -1077,6 +1077,297 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════
+     SISTEMA EN VIVO · tokens, claro/oscuro y estados renderizados
+══════════════════════════════════════ -->
+<style>
+  /* ── Sistema en vivo: capa de tokens autónoma del tema de la página ── */
+  .ds-live {
+    /* NIVEL 1 · Primitivos (valores crudos, mode-independent) */
+    --p-indigo-700:#4338ca; --p-indigo-600:#4f46e5; --p-indigo-500:#6366f1; --p-indigo-400:#818cf8;
+    --p-neutral-0:#ffffff;  --p-neutral-50:#f8fafc;  --p-neutral-100:#f1f5f9; --p-neutral-200:#e2e8f0;
+    --p-neutral-300:#cbd5e1; --p-neutral-600:#475569; --p-neutral-700:#334155; --p-neutral-800:#1e293b; --p-neutral-900:#0f172a;
+    --p-red-700:#b91c1c; --p-red-400:#f87171; --p-green-700:#15803d; --p-green-400:#4ade80;
+    --ds-r: 12px;
+  }
+  /* NIVEL 2 · Alias semánticos — el mismo rol resuelve dos modos */
+  .ds-scope--light {
+    color-scheme: light;
+    --c-surface:var(--p-neutral-0);  --c-raised:var(--p-neutral-50);
+    --c-text:var(--p-neutral-900);   --c-text-muted:var(--p-neutral-600);
+    --c-border:var(--p-neutral-200); --c-action:var(--p-indigo-600); --c-action-hover:var(--p-indigo-700);
+    --c-on-action:var(--p-neutral-0); --c-focus:var(--p-indigo-600);
+    --c-danger:var(--p-red-700); --c-success:var(--p-green-700);
+    --c-danger-surface:#fef2f2;
+  }
+  .ds-scope--dark {
+    color-scheme: dark;
+    --c-surface:var(--p-neutral-900); --c-raised:var(--p-neutral-800);
+    --c-text:var(--p-neutral-50);     --c-text-muted:var(--p-neutral-300);
+    --c-border:var(--p-neutral-700);  --c-action:var(--p-indigo-600); --c-action-hover:var(--p-indigo-500);
+    --c-on-action:var(--p-neutral-0); --c-focus:var(--p-indigo-400);
+    --c-danger:var(--p-red-400); --c-success:var(--p-green-400);
+    --c-danger-surface:#2a1416;
+  }
+
+  .ds-live { margin-top: 40px; }
+  .ds-live .ds-lead {
+    font-size: 15px; color: var(--text-dim); line-height: 1.7; max-width: 720px; margin-bottom: 40px;
+  }
+  .ds-live .ds-blocktitle {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin: 48px 0 18px;
+  }
+
+  /* ── Cadena de tokens: primitivo → semántico → componente ── */
+  .ds-chain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+  .ds-chain-card {
+    border: 1px solid var(--border); border-radius: 16px; padding: 22px;
+    background: rgba(255,255,255,0.015); position: relative;
+  }
+  .ds-chain-step { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .ds-chain-h { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+  .ds-chain-cap { font-size: 11.5px; color: var(--text-dim); line-height: 1.5; margin-top: 14px; }
+  .ds-token-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; font-size: 12px; }
+  .ds-token-dot { width: 16px; height: 16px; border-radius: 5px; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.14); }
+  .ds-token-name { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; color: var(--text-bright); }
+  .ds-token-hex { margin-left: auto; font-family: ui-monospace, monospace; color: var(--text-dim); font-size: 11px; }
+  .ds-alias-row { padding: 7px 0; font-size: 12px; border-bottom: 1px dashed var(--border); }
+  .ds-alias-row:last-child { border-bottom: none; }
+  .ds-alias-name { font-family: ui-monospace, monospace; color: var(--accent); }
+  .ds-alias-map { color: var(--text-dim); font-size: 11px; margin-top: 3px; }
+
+  /* ── Paneles claro/oscuro lado a lado ── */
+  .ds-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ds-panel {
+    background: var(--c-surface); color: var(--c-text);
+    border: 1px solid var(--c-border); border-radius: 18px; padding: 22px;
+  }
+  .ds-panel-tag {
+    display: inline-flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-text-muted); margin-bottom: 16px;
+  }
+  .ds-panel-tag::before { content:''; width: 9px; height: 9px; border-radius: 50%; background: var(--c-action); }
+  .ds-demo-card { background: var(--c-raised); border: 1px solid var(--c-border); border-radius: var(--ds-r); padding: 18px; }
+  .ds-demo-h { font-size: 16px; font-weight: 700; color: var(--c-text); margin: 0 0 6px; }
+  .ds-demo-p { font-size: 12.5px; color: var(--c-text-muted); line-height: 1.55; margin: 0 0 16px; }
+  .ds-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--c-action); color: var(--c-on-action); border: none; border-radius: 10px;
+    padding: 0 18px; min-height: 44px; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer;
+  }
+  .ds-input {
+    width: 100%; background: var(--c-surface); color: var(--c-text);
+    border: 1px solid var(--c-border); border-radius: 10px; padding: 0 14px; min-height: 44px;
+    font-size: 13px; font-family: inherit; margin-top: 12px;
+  }
+  .ds-input::placeholder { color: var(--c-text-muted); }
+  .ds-chips { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .ds-chip { font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 100px; }
+  .ds-chip--ok { color: var(--c-success); border: 1px solid var(--c-success); }
+  .ds-chip--err { color: var(--c-danger); border: 1px solid var(--c-danger); }
+
+  /* ── Tabla de tokens con valores + ratio AA ── */
+  .ds-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; margin-top: 16px; }
+  .ds-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 560px; }
+  .ds-table th, .ds-table td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--border); }
+  .ds-table th { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); font-weight: 700; }
+  .ds-table tr:last-child td { border-bottom: none; }
+  .ds-table .mono { font-family: ui-monospace, monospace; color: var(--text-bright); }
+  .ds-sw { display: inline-block; width: 13px; height: 13px; border-radius: 4px; vertical-align: -2px; margin-right: 7px; border: 1px solid rgba(255,255,255,0.16); }
+  .ds-aa { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; color: var(--green, #4ade80); }
+  .ds-ratio { color: var(--text-dim); }
+
+  /* ── Estados de componente ── */
+  .ds-states { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .ds-state-cell {
+    border: 1px solid var(--c-border); border-radius: 14px; padding: 18px 16px;
+    background: var(--c-raised); display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-height: 118px;
+  }
+  .ds-state-name { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-muted); }
+  .ds-wcag-list { display: flex; flex-direction: column; gap: 9px; margin-top: 16px; }
+  .ds-wcag-item { display: flex; gap: 9px; align-items: flex-start; font-size: 12.5px; color: var(--text-dim); line-height: 1.45; }
+  .ds-wcag-crit { color: var(--accent); font-weight: 700; font-family: ui-monospace, monospace; font-size: 11px; white-space: nowrap; }
+
+  @media (max-width: 820px) {
+    .ds-chain { grid-template-columns: 1fr; }
+    .ds-modes { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section class="cs-block">
+  <div class="cs-wrap">
+    <div class="ds-live">
+      <div class="fu">
+        <span class="block-label">Fundaciones · renderizadas</span>
+        <h2 class="block-h">El sistema,<br><em>no la captura del sistema</em></h2>
+        <p class="ds-lead">Todo lo que sigue está construido con los mismos tokens semánticos que documenté para CEF/Aulora — no son imágenes. Un único set de alias resuelve claro y oscuro sin tocar un solo componente, y cada valor cita el criterio WCAG que cumple. Es la diferencia entre <em>decir</em> que tengo un design system y <em>enseñarlo</em>.</p>
+      </div>
+
+      <!-- 1 · CADENA DE TOKENS -->
+      <div class="fu">
+        <p class="ds-blocktitle">01 · Cadena de tokens — primitivo → semántico → componente</p>
+        <div class="ds-chain">
+          <!-- Primitivo -->
+          <div class="ds-chain-card ds-live">
+            <div class="ds-chain-step">Nivel 1</div>
+            <div class="ds-chain-h">Primitivos</div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#4f46e5"></span><span class="ds-token-name">indigo-600</span><span class="ds-token-hex">#4f46e5</span></div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#0f172a"></span><span class="ds-token-name">neutral-900</span><span class="ds-token-hex">#0f172a</span></div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#ffffff"></span><span class="ds-token-name">neutral-0</span><span class="ds-token-hex">#ffffff</span></div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#b91c1c"></span><span class="ds-token-name">red-700</span><span class="ds-token-hex">#b91c1c</span></div>
+            <p class="ds-chain-cap">Valores crudos. Nunca se usan directamente en un componente.</p>
+          </div>
+          <!-- Semántico -->
+          <div class="ds-chain-card">
+            <div class="ds-chain-step">Nivel 2</div>
+            <div class="ds-chain-h">Alias semánticos</div>
+            <div class="ds-alias-row"><span class="ds-alias-name">--c-action</span><div class="ds-alias-map">→ indigo-600 · igual en ambos modos</div></div>
+            <div class="ds-alias-row"><span class="ds-alias-name">--c-surface</span><div class="ds-alias-map">→ claro: neutral-0 · oscuro: neutral-900</div></div>
+            <div class="ds-alias-row"><span class="ds-alias-name">--c-text</span><div class="ds-alias-map">→ claro: neutral-900 · oscuro: neutral-50</div></div>
+            <p class="ds-chain-cap">Un rol, dos valores según el modo. <strong style="color:var(--text-bright)">Aquí vive el claro/oscuro</strong>, no en el componente.</p>
+          </div>
+          <!-- Componente -->
+          <div class="ds-chain-card ds-scope--dark" style="background:var(--c-surface);">
+            <div class="ds-chain-step" style="color:var(--c-action)">Nivel 3</div>
+            <div class="ds-chain-h" style="color:var(--c-text)">Componente</div>
+            <button class="ds-btn" type="button" style="width:100%">Matricularme</button>
+            <input class="ds-input" type="text" placeholder="Buscar curso…" aria-label="Buscar curso (demo)">
+            <p class="ds-chain-cap" style="color:var(--c-text-muted)">El componente solo conoce el alias. Cambiar de modo — o de marca — no lo toca.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 · CLARO / OSCURO LADO A LADO -->
+      <div class="fu">
+        <p class="ds-blocktitle">02 · El mismo componente, un solo set de tokens, dos modos</p>
+        <div class="ds-modes ds-live">
+          <!-- CLARO -->
+          <div class="ds-panel ds-scope--light">
+            <span class="ds-panel-tag">Modo claro</span>
+            <div class="ds-demo-card">
+              <h4 class="ds-demo-h">Máster en Dirección Financiera</h4>
+              <p class="ds-demo-p">Plazas abiertas · convocatoria de octubre. Financiación en 10 meses sin intereses.</p>
+              <button class="ds-btn" type="button">Reservar plaza</button>
+              <input class="ds-input" type="text" placeholder="tu@email.com" aria-label="Email (demo claro)">
+              <div class="ds-chips">
+                <span class="ds-chip ds-chip--ok">✓ Plaza confirmada</span>
+                <span class="ds-chip ds-chip--err">! Pago pendiente</span>
+              </div>
+            </div>
+          </div>
+          <!-- OSCURO -->
+          <div class="ds-panel ds-scope--dark">
+            <span class="ds-panel-tag">Modo oscuro</span>
+            <div class="ds-demo-card">
+              <h4 class="ds-demo-h">Máster en Dirección Financiera</h4>
+              <p class="ds-demo-p">Plazas abiertas · convocatoria de octubre. Financiación en 10 meses sin intereses.</p>
+              <button class="ds-btn" type="button">Reservar plaza</button>
+              <input class="ds-input" type="text" placeholder="tu@email.com" aria-label="Email (demo oscuro)">
+              <div class="ds-chips">
+                <span class="ds-chip ds-chip--ok">✓ Plaza confirmada</span>
+                <span class="ds-chip ds-chip--err">! Pago pendiente</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla de tokens con ratio AA verificado -->
+        <div class="ds-tablewrap">
+          <table class="ds-table">
+            <thead>
+              <tr><th>Rol semántico</th><th>Claro</th><th>Contraste</th><th>Oscuro</th><th>Contraste</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">--c-text</td>
+                <td><span class="ds-sw" style="background:#0f172a"></span><span class="mono">#0f172a</span></td>
+                <td><span class="ds-ratio">17.9:1</span> <span class="ds-aa">AAA</span></td>
+                <td><span class="ds-sw" style="background:#f8fafc"></span><span class="mono">#f8fafc</span></td>
+                <td><span class="ds-ratio">17.1:1</span> <span class="ds-aa">AAA</span></td>
+              </tr>
+              <tr>
+                <td class="mono">--c-text-muted</td>
+                <td><span class="ds-sw" style="background:#475569"></span><span class="mono">#475569</span></td>
+                <td><span class="ds-ratio">7.6:1</span> <span class="ds-aa">AAA</span></td>
+                <td><span class="ds-sw" style="background:#cbd5e1"></span><span class="mono">#cbd5e1</span></td>
+                <td><span class="ds-ratio">12.0:1</span> <span class="ds-aa">AAA</span></td>
+              </tr>
+              <tr>
+                <td class="mono">--c-action (texto blanco)</td>
+                <td><span class="ds-sw" style="background:#4f46e5"></span><span class="mono">#4f46e5</span></td>
+                <td><span class="ds-ratio">6.3:1</span> <span class="ds-aa">AA</span></td>
+                <td><span class="ds-sw" style="background:#4f46e5"></span><span class="mono">#4f46e5</span></td>
+                <td><span class="ds-ratio">6.3:1</span> <span class="ds-aa">AA</span></td>
+              </tr>
+              <tr>
+                <td class="mono">--c-danger</td>
+                <td><span class="ds-sw" style="background:#b91c1c"></span><span class="mono">#b91c1c</span></td>
+                <td><span class="ds-ratio">6.5:1</span> <span class="ds-aa">AA</span></td>
+                <td><span class="ds-sw" style="background:#f87171"></span><span class="mono">#f87171</span></td>
+                <td><span class="ds-ratio">6.5:1</span> <span class="ds-aa">AA</span></td>
+              </tr>
+              <tr>
+                <td class="mono">--c-success</td>
+                <td><span class="ds-sw" style="background:#15803d"></span><span class="mono">#15803d</span></td>
+                <td><span class="ds-ratio">5.0:1</span> <span class="ds-aa">AA</span></td>
+                <td><span class="ds-sw" style="background:#4ade80"></span><span class="mono">#4ade80</span></td>
+                <td><span class="ds-ratio">10.3:1</span> <span class="ds-aa">AAA</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ds-chain-cap" style="margin-top:12px;">Ratios calculados sobre cada superficie real (texto sobre <span class="mono" style="font-family:ui-monospace,monospace">--c-surface</span>). Todos ≥ 4.5:1 → <strong style="color:var(--text-bright)">WCAG 2.1 AA</strong>; la mayoría alcanza AAA.</p>
+      </div>
+
+      <!-- 3 · COMPONENTES CON 6 ESTADOS -->
+      <div class="fu">
+        <p class="ds-blocktitle">03 · Un componente = todos sus estados (no solo el "bonito")</p>
+        <div class="ds-scope--dark ds-live" style="border:1px solid var(--c-border); border-radius:18px; padding:22px; background:var(--c-surface);">
+          <span class="ds-panel-tag" style="color:var(--c-text-muted)">Botón primario · 6 estados</span>
+          <div class="ds-states">
+            <div class="ds-state-cell"><span class="ds-state-name">Default</span>
+              <button class="ds-btn" type="button">Matricularme</button></div>
+            <div class="ds-state-cell"><span class="ds-state-name">Hover</span>
+              <button class="ds-btn" type="button" style="background:var(--c-action-hover)">Matricularme</button></div>
+            <div class="ds-state-cell"><span class="ds-state-name">Focus</span>
+              <button class="ds-btn" type="button" style="outline:3px solid var(--c-focus); outline-offset:2px">Matricularme</button></div>
+            <div class="ds-state-cell"><span class="ds-state-name">Active</span>
+              <button class="ds-btn" type="button" style="background:var(--p-indigo-700); transform:translateY(1px)">Matricularme</button></div>
+            <div class="ds-state-cell"><span class="ds-state-name">Disabled</span>
+              <button class="ds-btn" type="button" disabled style="background:var(--c-raised); color:var(--c-text-muted); border:1px solid var(--c-border); cursor:not-allowed">Matricularme</button></div>
+            <div class="ds-state-cell"><span class="ds-state-name">Loading</span>
+              <button class="ds-btn" type="button" style="opacity:0.85; cursor:progress"><span style="display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;"></span> Procesando</button></div>
+          </div>
+
+          <span class="ds-panel-tag" style="color:var(--c-text-muted); margin-top:26px;">Campo de formulario · estados clave</span>
+          <div class="ds-states">
+            <div class="ds-state-cell" style="min-height:96px"><span class="ds-state-name">Default</span>
+              <input class="ds-input" type="text" placeholder="DNI / NIE" aria-label="DNI default"></div>
+            <div class="ds-state-cell" style="min-height:96px"><span class="ds-state-name">Focus</span>
+              <input class="ds-input" type="text" value="X-1234567" style="outline:3px solid var(--c-focus); outline-offset:2px; border-color:var(--c-action)" aria-label="DNI focus"></div>
+            <div class="ds-state-cell" style="min-height:96px"><span class="ds-state-name">Error</span>
+              <input class="ds-input" type="text" value="1234567" style="border-color:var(--c-danger); background:var(--c-danger-surface)" aria-label="DNI error" aria-invalid="true">
+              <span style="font-size:11px; color:var(--c-danger); display:flex; gap:5px; align-items:center;"><span aria-hidden="true">⚠</span> Falta la letra del DNI</span></div>
+            <div class="ds-state-cell" style="min-height:96px"><span class="ds-state-name">Disabled</span>
+              <input class="ds-input" type="text" value="Verificado" disabled style="opacity:0.55; cursor:not-allowed" aria-label="DNI disabled"></div>
+          </div>
+        </div>
+
+        <!-- Criterios WCAG que estos estados cumplen -->
+        <div class="ds-wcag-list">
+          <div class="ds-wcag-item"><span class="ds-wcag-crit">2.4.7</span><span>Foco visible en todos los interactivos — anillo de 3px con contraste ≥ 3:1 contra el fondo.</span></div>
+          <div class="ds-wcag-item"><span class="ds-wcag-crit">1.4.3</span><span>Texto ≥ 4.5:1 sobre su superficie en ambos modos (verificado en la tabla superior).</span></div>
+          <div class="ds-wcag-item"><span class="ds-wcag-crit">1.4.1</span><span>El error no se comunica solo con color: borde + icono + mensaje de texto.</span></div>
+          <div class="ds-wcag-item"><span class="ds-wcag-crit">2.5.8</span><span>Área táctil de botones y campos ≥ 44×44px para uso en móvil.</span></div>
+          <div class="ds-wcag-item"><span class="ds-wcag-crit">1.4.11</span><span>Bordes y estados no textuales ≥ 3:1 — perceptibles sin depender del color de marca.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- [R] RESULTADO -->
 <section class="cs-block cs-block-indigo">
   <div class="cs-wrap">
@@ -1303,6 +1594,15 @@
       <a href="index.html" class="btn btn-secondary en">Back</a>
       <a href="ilunion-cro.html" class="btn btn-primary es">Caso 02 →</a>
       <a href="ilunion-cro.html" class="btn btn-primary en">Case 02 →</a>
+    </div>
+    <div class="footer-contact">
+      <p class="footer-contact-text es">¿Encaja este perfil con tu equipo? Cuéntame qué problema estáis intentando resolver.</p>
+      <p class="footer-contact-text en">Does this profile fit your team? Tell me about the problem you're trying to solve.</p>
+      <div class="footer-contact-actions">
+        <a href="mailto:mmoralesgr93@gmail.com?subject=Entrevista%20%C2%B7%20CEF%20Design%20System" class="btn btn-primary es">Escríbeme →</a>
+        <a href="mailto:mmoralesgr93@gmail.com?subject=Interview%20%C2%B7%20CEF%20Design%20System" class="btn btn-primary en">Email me →</a>
+        <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn ↗</a>
+      </div>
     </div>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

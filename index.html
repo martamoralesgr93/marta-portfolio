@@ -61,13 +61,32 @@
   --orange: #f97316;
   --blue: #60a5fa;
   --green: #34d399;
-  --muted: rgba(255,255,255,0.62);
-  --dim: rgba(255,255,255,0.50);
+  /* Sistema de acento: la home referencia estas variables en 44 sitios
+     (eyebrows, bordes, gradientes). Coincide con design-system.css / styles.css
+     para que el morado de marca sea idéntico en la home y en los case studies. */
+  --accent: #a78bfa;
+  --accent-rgb: 167, 139, 250;
+  --accent-strong: #7c3aed;
+  --accent-secondary: #f97316;
+  --accent-secondary-rgb: 249, 115, 22;
+  /* ── Texto · jerarquía semántica (rol único: color) ── */
+  --text-strong: rgba(255, 255, 255, 0.92);
+  --text: rgba(255, 255, 255, 0.88);
+  --text-secondary: rgba(255, 255, 255, 0.62);
+  --text-muted: rgba(255, 255, 255, 0.50);
+  --text-faint: rgba(255, 255, 255, 0.46);
+  /* Alias heredados → apuntan al mismo rol semántico (compatibilidad) */
+  --muted: var(--text-secondary);
+  --dim: var(--text-muted);
   --faint: rgba(255,255,255,0.14);
-  --border: rgba(255,255,255,0.10);
-  --border-mid: rgba(255,255,255,0.16);
+  /* ── Superficies (rol: background) ── */
+  --surface-1: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.04);
   --card: rgba(255,255,255,0.035);
   --card-h: rgba(255,255,255,0.06);
+  /* ── Bordes (rol mixto: se mantiene literal hasta refactor por rol) ── */
+  --border: rgba(255,255,255,0.10);
+  --border-mid: rgba(255,255,255,0.16);
 }
 
 html {
@@ -2817,7 +2836,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       </div>
       <a href="paolo-pizzeria.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
-    <!-- CASO 04: WE ARE ACTIONS IT OPS — Build vs. Buy (En construcción) -->
+    <!-- CASO 04: WE ARE ACTIONS IT OPS — Build vs. Buy -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
@@ -4284,11 +4303,10 @@ body.visitor-unauthorized .locked-metric:hover::after {
   }
 
   function checkIsAuthorized() {
-    const token = localStorage.getItem('portfolio_token');
-    const savedGoogleEmail = localStorage.getItem('portfolio_google_email');
-    const isTokenAuth = isValidToken(token);
-    const isGoogleAuth = savedGoogleEmail && WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(savedGoogleEmail.trim().toLowerCase());
-    return isTokenAuth || isGoogleAuth;
+    // Portfolio en abierto: métricas y case studies visibles para todo el mundo.
+    // Las métricas son el principal argumento de venta ante un recruiter;
+    // el token por URL sigue funcionando como identificador de visita en Clarity.
+    return true;
   }
 
   // Initialize Lock Screen State

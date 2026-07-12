@@ -93,51 +93,56 @@
 
     /* ─── 03 INVESTIGACIÓN ────────────────────────── */
 
-    /* Composición auditoría: imagen + findings */
+    /* Composición auditoría: evidencia + hallazgos + procedencia */
     .audit-composition {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 1px;
-      background: var(--border);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       overflow: hidden;
+      background: rgba(255,255,255,0.015);
       margin-bottom: 24px;
     }
-    .audit-img-panel {
-      background: rgba(255,255,255,0.02);
-      display: flex;
-      flex-direction: column;
-    }
-    .audit-panel-header {
-      position: relative; overflow: hidden; padding: 16px 24px;
+    /* Cabecera: título de la evidencia + tag de método (fuente de datos) */
+    .audit-header-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      padding: 14px 24px;
       border-bottom: 1px solid var(--border);
+    }
+    .audit-header-title {
       font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--text-dim);
-      flex-shrink: 0;
     }
-    .audit-panel-body {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 24px;
-      min-height: 260px;
+    .audit-header-method {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--accent);
+      padding: 4px 12px; border-radius: 100px;
+      border: 1px solid rgba(var(--accent-rgb), 0.28);
+      background: rgba(var(--accent-rgb), 0.06);
     }
-    .audit-panel-body img {
-      max-width: 100%; height: auto; display: block;
+    .audit-body-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+    }
+    /* Evidencia: la imagen ocupa el panel a sangre, sin bandas vacías */
+    .audit-evidence {
+      margin: 0; padding: 24px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .audit-evidence img {
+      width: 100%; height: auto; display: block;
       border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
     }
-    .audit-findings-panel {
-      background: rgba(255,255,255,0.015);
-      display: flex; flex-direction: column;
+    .audit-evidence-cap {
+      font-size: 11px; color: var(--text-dim); line-height: 1.5; margin: 0;
     }
-    .audit-finding {
-      padding: 28px 32px;
-      border-bottom: 1px solid var(--border);
-      flex: 1;
+    /* Hallazgos: altura por contenido y centrados respecto a la evidencia */
+    .audit-findings {
+      display: flex; flex-direction: column; justify-content: center;
     }
-    .audit-finding:last-child { border-bottom: none; }
+    .audit-finding { padding: 26px 32px; }
+    .audit-finding + .audit-finding { border-top: 1px solid var(--border); }
     .af-num {
       font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
@@ -449,7 +454,8 @@
       .h-timeline,
       .design-2col,
       .impl-2col { grid-template-columns: 1fr; }
-      .audit-composition { grid-template-columns: 1fr; }
+      .audit-body-grid { grid-template-columns: 1fr; }
+      .audit-evidence { border-right: none; border-bottom: 1px solid var(--border); }
       .ht-item { padding-right: 0; padding-bottom: 32px; }
       .ht-line { display: none; }
       .results-kpis { grid-template-columns: 1fr 1fr; }
@@ -642,46 +648,36 @@
   <div class="cs-wrap">
     <span class="sec-num fu"><span>03</span> — Investigación y Diagnóstico</span>
 
-    <!-- COMPOSICIÓN AUDITORÍA: imagen pequeña + 3 findings -->
-    <div class="row align-items-center">
-      <div class="col-lg-9 col-12">
-        <div class="audit-composition fu" style="border: none !important; margin-bottom: 24px;">
+    <!-- COMPOSICIÓN AUDITORÍA: evidencia a sangre + 2 hallazgos + procedencia -->
+    <div class="audit-composition fu">
+      <div class="audit-header-bar">
+        <span class="audit-header-title">Auditoría del Componente Actual</span>
+        <span class="audit-header-method">Fuente · Microsoft Clarity + Adobe Analytics</span>
+      </div>
+      <div class="audit-body-grid">
 
-      <div class="audit-img-panel">
-        <div class="audit-panel-header">Auditoría del Componente Actual</div>
-        <div class="audit-panel-body">
+        <figure class="audit-evidence">
           <img width="1920" height="1440"
             loading="lazy" decoding="async"
             src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.webp"
             alt="Auditoría del componente de ofertas ILUNION — estado inicial"
           >
-        </div>
-      </div>
+          <figcaption class="audit-evidence-cap">Estado inicial · el bloque de ofertas queda por debajo del primer scroll.</figcaption>
+        </figure>
 
-            <div class="audit-findings-panel">
-        <div class="audit-finding">
-          <p class="af-num">Finding 01 · Scroll map</p>
-          <p class="af-stat">15%</p>
-          <p class="af-desc">Solo el 15% de los usuarios superaba el bloque de ofertas en la home. El componente requería mayor interacción vertical que modelos referentes.</p>
+        <div class="audit-findings">
+          <div class="audit-finding">
+            <p class="af-num">Finding 01 · Scroll map</p>
+            <p class="af-stat">15%</p>
+            <p class="af-desc">Solo el 15% de los usuarios superaba el bloque de ofertas en la home. El componente requería mayor interacción vertical que modelos referentes.</p>
+          </div>
+          <div class="audit-finding">
+            <p class="af-num">Finding 02 · Jerarquía visual</p>
+            <p class="af-stat">ÚNICOS</p>
+            <p class="af-desc">El programa de fidelización presentaba gran relevancia visual antes de mostrar las opciones directas de reserva, compitiendo con la intención de compra.</p>
+          </div>
         </div>
-        <div class="audit-finding">
-          <p class="af-num">Finding 02 · Jerarquía visual</p>
-          <p class="af-stat">ÚNICOS</p>
-          <p class="af-desc">El programa de fidelización presentaba gran relevancia visual antes de mostrar las opciones directas de reserva, compitiendo con la intención de compra.</p>
-        </div>
-                <div class="audit-finding">
-          <p class="af-num">Finding 03 · Herramientas</p>
-          <p class="af-stat" style="font-size:22px; letter-spacing:-0.01em;">Clarity + Analytics</p>
-          <p class="af-desc">Microsoft Clarity (scroll maps, heatmaps, grabaciones) + Adobe Analytics (patrones de navegación y abandono) como única fuente de verdad compartida.</p>
-        </div>
-      </div>
 
-    </div>
-      </div>
-      <div class="col-lg-3 d-none d-lg-flex justify-content-center">
-        <div class="shape-container" style="min-height: 250px;">
-          <div class="shape-oval-v" style="height: 220px; width: 110px; border-radius: 55px;"></div>
-        </div>
       </div>
     </div>
 
@@ -1187,6 +1183,15 @@
       <a href="index.html" class="btn btn-secondary en">Back</a>
       <a href="booking-engine.html" class="btn btn-primary es">Caso 03 →</a>
       <a href="booking-engine.html" class="btn btn-primary en">Case 03 →</a>
+    </div>
+    <div class="footer-contact">
+      <p class="footer-contact-text es">¿Encaja este perfil con tu equipo? Cuéntame qué problema estáis intentando resolver.</p>
+      <p class="footer-contact-text en">Does this profile fit your team? Tell me about the problem you're trying to solve.</p>
+      <div class="footer-contact-actions">
+        <a href="mailto:mmoralesgr93@gmail.com?subject=Entrevista%20%C2%B7%20ILUNION%20CRO" class="btn btn-primary es">Escríbeme →</a>
+        <a href="mailto:mmoralesgr93@gmail.com?subject=Interview%20%C2%B7%20ILUNION%20CRO" class="btn btn-primary en">Email me →</a>
+        <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn ↗</a>
+      </div>
     </div>
   </div>
 </footer>
