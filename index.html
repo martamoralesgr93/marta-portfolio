@@ -851,6 +851,7 @@ a.sc-client-link:hover {
 
 .about-accordion {
   margin-top: 8px;
+  margin-bottom: 28px;
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 14px;
 }
@@ -1900,6 +1901,79 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   color: #fff;
 }
 
+/* ── Mobile ticker (replaces the tall wrapped pill grid on small screens) ── */
+.stack-marquee {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.stack-marquee.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stack-marquee-row {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+}
+.stack-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  will-change: transform;
+}
+.stack-marquee-row--a .stack-marquee-track {
+  animation: stackMarqueeLeft 32s linear infinite;
+}
+.stack-marquee-row--b .stack-marquee-track {
+  animation: stackMarqueeRight 38s linear infinite;
+}
+.stack-marquee-track:active {
+  animation-play-state: paused;
+}
+@keyframes stackMarqueeLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes stackMarqueeRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.stack-marquee .stack-pill {
+  font-size: 12.5px;
+  padding: 10px 18px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+.stack-marquee .stack-pill:active {
+  transform: scale(0.93);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.22);
+}
+@media (prefers-reduced-motion: reduce) {
+  .stack-marquee-track { animation: none !important; }
+  .stack-marquee { transition: none; }
+}
+@media (max-width: 768px) {
+  /* .stack-pills stays in the DOM (screen readers) but is visually replaced by the ticker */
+  .stack-pills {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .stack-marquee { display: flex; }
+}
+
 
 
 /* ===================== QUICK PROFILE SECTION ===================== */
@@ -2258,6 +2332,47 @@ html.lang-en .hero-positioning.en { display: block !important; }
 #lightbox-close.open { display: flex; }
 #lightbox-close:hover { background: rgba(255,255,255,0.16); }
 
+/* ===================== FEATURE CARDS — MOBILE COMPACTION ===================== */
+/* Wrapper is inert on desktop (children behave as direct flex items, zero visual change);
+   on mobile it becomes a real row so icon + title sit side by side instead of stacked,
+   cutting each card roughly in half. */
+.feature-head { display: contents; }
+
+@media (max-width: 768px) {
+  .features-grid { grid-template-columns: 1fr !important; }
+  .feature-card {
+    padding: 18px 20px !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    transition: background-color 0.2s ease;
+  }
+  .feature-card:last-child { border-bottom: none !important; }
+  .feature-card:active { background: rgba(255,255,255,0.03); }
+  .feature-head {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 8px !important;
+  }
+  .feature-icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin-bottom: 0 !important;
+    flex-shrink: 0;
+  }
+  .feature-title {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0 !important;
+  }
+  .feature-desc {
+    font-size: 11.5px !important;
+    line-height: 1.6 !important;
+  }
+  .feature-line { display: none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -2520,60 +2635,68 @@ html.lang-en .hero-positioning.en { display: block !important; }
   <div class="features-grid">
 
     <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="4,26 12,18 18,22 26,12 32,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-          <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-        </svg>
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="4,26 12,18 18,22 26,12 32,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <div class="feature-title es">DIAGNÓSTICO<br>PRIMERO.</div>
+        <div class="feature-title en">DIAGNOSIS<br>FIRST.</div>
       </div>
-      <div class="feature-title es">DIAGNÓSTICO<br>PRIMERO.</div>
-      <div class="feature-title en">DIAGNOSIS<br>FIRST.</div>
       <p class="feature-desc es">Antes de cualquier wireframe, entiendo qué está fallando y por qué: datos de comportamiento, señales de negocio, hipótesis validada.</p>
       <p class="feature-desc en">Before any wireframe, I understand what's failing and why: behaviour data, business signals, validated hypothesis.</p>
       <div class="feature-line"></div>
     </div>
 
     <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"></circle>
-          <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.5"></circle>
-          <line x1="18" y1="4" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-          <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-          <line x1="4" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-          <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-        </svg>
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"></circle>
+            <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.5"></circle>
+            <line x1="18" y1="4" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="4" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <div class="feature-title es">PROPUESTA,<br>NO OPCIONES.</div>
+        <div class="feature-title en">PROPOSAL,<br>NOT OPTIONS.</div>
       </div>
-      <div class="feature-title es">PROPUESTA,<br>NO OPCIONES.</div>
-      <div class="feature-title en">PROPOSAL,<br>NOT OPTIONS.</div>
       <p class="feature-desc es">Presento una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio, no preferencia visual.</p>
       <p class="feature-desc en">I bring a data-backed decision to leadership, not three variants for them to choose. Business rationale, not visual preference.</p>
       <div class="feature-line"></div>
     </div>
 
     <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="6" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-          <line x1="6" y1="14" x2="30" y2="14" stroke="currentColor" stroke-width="1.5"></line>
-          <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"></line>
-        </svg>
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
+            <line x1="6" y1="14" x2="30" y2="14" stroke="currentColor" stroke-width="1.5"></line>
+            <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"></line>
+          </svg>
+        </div>
+        <div class="feature-title es">CONVERSIÓN<br>MEDIBLE.</div>
+        <div class="feature-title en">MEASURABLE<br>CONVERSION.</div>
       </div>
-      <div class="feature-title es">CONVERSIÓN<br>MEDIBLE.</div>
-      <div class="feature-title en">MEASURABLE<br>CONVERSION.</div>
       <p class="feature-desc es">Diseño con hipótesis, mido el comportamiento post-lanzamiento y ajusto. Lanzar es cuando empieza el aprendizaje real.</p>
       <p class="feature-desc en">I design with hypotheses, measure post-launch behaviour and iterate. Shipping is when the real learning starts.</p>
       <div class="feature-line"></div>
     </div>
 
     <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 4 L19.8 13.2 L28 12 L21.6 18 L28 24 L19.8 22.8 L18 32 L16.2 22.8 L8 24 L14.4 18 L8 12 L16.2 13.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-        </svg>
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4 L19.8 13.2 L28 12 L21.6 18 L28 24 L19.8 22.8 L18 32 L16.2 22.8 L8 24 L14.4 18 L8 12 L16.2 13.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="feature-title es">SISTEMAS QUE<br>ESCALAN.</div>
+        <div class="feature-title en">SYSTEMS THAT<br>SCALE.</div>
       </div>
-      <div class="feature-title es">SISTEMAS QUE<br>ESCALAN.</div>
-      <div class="feature-title en">SYSTEMS THAT<br>SCALE.</div>
       <p class="feature-desc es">Design systems y componentes modulares que permiten al equipo iterar más rápido, con menos retrabajo y mayor coherencia entre producto y código.</p>
       <p class="feature-desc en">Design systems and modular components that let the team iterate faster, with less rework and stronger consistency between product and code.</p>
       <div class="feature-line"></div>
@@ -2626,6 +2749,56 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <span class="stack-pill">Vertex AI</span>
       <span class="stack-pill">Gemini</span>
       <span class="stack-pill">GitHub</span>
+    </div>
+
+    <!-- Mobile: compact auto-scrolling ticker (replaces the tall wrapped grid on small screens).
+         .stack-pills above stays in the DOM as the screen-reader-accessible source (visually hidden on mobile);
+         this block is decorative (aria-hidden) and purely visual. -->
+    <div class="stack-marquee" aria-hidden="true">
+      <div class="stack-marquee-row stack-marquee-row--a">
+        <div class="stack-marquee-track">
+          <span class="stack-pill"><span class="es">Product Discovery</span><span class="en">Product Discovery</span></span>
+          <span class="stack-pill">CRO &amp; A/B Testing</span>
+          <span class="stack-pill">Design Systems</span>
+          <span class="stack-pill">Figma</span>
+          <span class="stack-pill">Bootstrap</span>
+          <span class="stack-pill">HTML &amp; CSS</span>
+          <span class="stack-pill">Adobe Analytics</span>
+          <span class="stack-pill">Microsoft Clarity</span>
+          <span class="stack-pill">Power BI</span>
+          <span class="stack-pill"><span class="es">Product Discovery</span><span class="en">Product Discovery</span></span>
+          <span class="stack-pill">CRO &amp; A/B Testing</span>
+          <span class="stack-pill">Design Systems</span>
+          <span class="stack-pill">Figma</span>
+          <span class="stack-pill">Bootstrap</span>
+          <span class="stack-pill">HTML &amp; CSS</span>
+          <span class="stack-pill">Adobe Analytics</span>
+          <span class="stack-pill">Microsoft Clarity</span>
+          <span class="stack-pill">Power BI</span>
+        </div>
+      </div>
+      <div class="stack-marquee-row stack-marquee-row--b">
+        <div class="stack-marquee-track">
+          <span class="stack-pill">WCAG 2.1</span>
+          <span class="stack-pill">AEM</span>
+          <span class="stack-pill"><span class="es">Customer Journey Mapping</span><span class="en">Customer Journey Mapping</span></span>
+          <span class="stack-pill">Impact Mapping</span>
+          <span class="stack-pill"><span class="es">Experimentación</span><span class="en">Experimentation</span></span>
+          <span class="stack-pill">Claude / IA</span>
+          <span class="stack-pill">Vertex AI</span>
+          <span class="stack-pill">Gemini</span>
+          <span class="stack-pill">GitHub</span>
+          <span class="stack-pill">WCAG 2.1</span>
+          <span class="stack-pill">AEM</span>
+          <span class="stack-pill"><span class="es">Customer Journey Mapping</span><span class="en">Customer Journey Mapping</span></span>
+          <span class="stack-pill">Impact Mapping</span>
+          <span class="stack-pill"><span class="es">Experimentación</span><span class="en">Experimentation</span></span>
+          <span class="stack-pill">Claude / IA</span>
+          <span class="stack-pill">Vertex AI</span>
+          <span class="stack-pill">Gemini</span>
+          <span class="stack-pill">GitHub</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -3380,35 +3553,6 @@ function closeMenu() {
   100% { transform: scale(1.35); opacity: 0;   }
 }
 
-#chat-badge {
-  position: absolute;
-  bottom: calc(100% + 12px); right: 0;
-  background: rgba(15, 12, 28, 0.90);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(var(--accent-rgb), 0.25);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px; font-weight: 600; line-height: 1.2;
-  padding: 8px 14px;
-  border-radius: 100px;
-  white-space: nowrap;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(124,58,237,0.15);
-  pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s;
-}
-/* Arrow pointing down to the button */
-#chat-badge::after {
-  content: '';
-  position: absolute; bottom: -5px; right: 22px;
-  width: 10px; height: 10px;
-  background: rgba(15, 12, 28, 0.90);
-  border-right: 1px solid rgba(var(--accent-rgb), 0.25);
-  border-bottom: 1px solid rgba(var(--accent-rgb), 0.25);
-  transform: rotate(45deg);
-}
-#chat-badge.hidden { transform: translateY(6px) scale(0.92); opacity: 0; pointer-events: none; }
-
 /* ── Chat panel ── */
 #chat-panel {
   position: fixed; bottom: 96px; right: 28px; z-index: 8999;
@@ -3536,7 +3680,6 @@ function closeMenu() {
 </style>
 
 <button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
-  <span id="chat-badge"><span class="es">¿Hablamos?</span><span class="en">Let's talk!</span></span>
   <img loading="lazy" decoding="async" class="icon-chat" src="assets/logo-sinfondo.webp" alt="Marta" style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
   <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="width:22px;height:22px;">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -3870,11 +4013,10 @@ function closeMenu() {
   window.chatToggle=function(){
     var panel=document.getElementById('chat-panel');
     var trigger=document.getElementById('chat-trigger');
-    var badge=document.getElementById('chat-badge');
     isOpen=!isOpen;
     panel.classList.toggle('open',isOpen);
     trigger.classList.toggle('open',isOpen);
-    if(isOpen){badge.classList.add('hidden');initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
+    if(isOpen){initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
   };
   window.chatSend=function(){
     var input=document.getElementById('chatInput');
@@ -4713,5 +4855,22 @@ body.visitor-unauthorized .locked-metric:hover::after {
 })();
 </script>
 <!-- ===================== / CHATBOT MARTA ===================== -->
+
+<script>
+// Stack ticker (mobile): fade/slide in the first time it enters the viewport
+(function () {
+  var marquee = document.querySelector('.stack-marquee');
+  if (!marquee || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  io.observe(marquee);
+})();
+</script>
 
 </body></html>

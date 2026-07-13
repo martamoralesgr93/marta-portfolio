@@ -103,10 +103,66 @@ html.lang-en .es { display: none !important; }
 .cs-rail-label { font-size: 7.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); writing-mode: vertical-rl; transform: rotate(180deg); margin-top: 10px; opacity: 0.5; }
 .cs-rail-bar { width: 1px; height: 100%; min-height: 60px; background: linear-gradient(to bottom, rgba(var(--accent-rgb), 0.25), transparent); margin-top: 14px; }
 @media (max-width: 768px) {
-  .cs-star { grid-template-columns: 44px minmax(0, 1fr); gap: 0 16px; }
-  .cs-rail { position: relative; top: 0; }
-  .cs-rail-letter { font-size: 30px; }
+  /* Mobile: the rail must never take a dedicated column from the content.
+     It becomes a small horizontal badge above the content, full-width text below it. */
+  .cs-star { display: block; }
+  .cs-rail {
+    position: static; top: auto;
+    flex-direction: row; align-items: center;
+    gap: 8px; margin-bottom: 16px;
+  }
+  .cs-rail-letter { font-size: 18px; }
+  .cs-rail-label {
+    writing-mode: horizontal-tb; transform: none;
+    margin-top: 0; font-size: 9px; opacity: 0.6;
+  }
+  .cs-rail-bar {
+    width: 20px; height: 1px; min-height: 0;
+    background: linear-gradient(to right, rgba(var(--accent-rgb), 0.4), transparent);
+    margin-top: 0;
+  }
 }
+
+/* ── MOBILE GRID SAFETY NET — applies to all 5 case studies ──
+   Several sections across these pages build 2/3/4-column grids with an inline
+   style="grid-template-columns:..." instead of a class, so page-specific mobile
+   overrides kept missing them (that's what squeezed the wireframe images + the
+   Situation/Task columns down to unreadable slivers). This catches every inline
+   grid-template-columns pattern used across the case studies and forces a single
+   column on phones, no matter which page or component it's on. Do not remove —
+   if a new inline grid is added later, extend this list rather than skip it. */
+@media (max-width: 768px) {
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── AI-INTEGRATION ACCORDION — collapsed by default on all 5 case studies ──
+   These "AI Integration Highlight" blocks are supplementary methodology notes,
+   not core narrative — collapsing them by default cuts real scroll length,
+   especially on mobile, while keeping the detail one tap away. */
+details.wf-process { padding: 0; }
+details.wf-process > summary.wf-process-label {
+  cursor: pointer;
+  list-style: none;
+}
+details.wf-process > summary.wf-process-label::-webkit-details-marker { display: none; }
+details.wf-process > summary.wf-process-label::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+details.wf-process[open] > summary.wf-process-label::after { content: "–"; }
+details.wf-process > summary.wf-process-label:hover::after { color: var(--accent); }
+details.wf-process > summary.wf-process-label:hover span:first-child { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ── 4. HEADER & HERO COMPONENTS ──
    Hero compacto: sin 100svh, sin logo de fondo, sin overlay ni glow decorativos.
@@ -140,9 +196,12 @@ html.lang-en .es { display: none !important; }
   pointer-events: none;
 }
 
-/* ── Botón volver arriba ── */
+/* ── Botón volver arriba ──
+   Apilado sobre #chat-trigger (56px, right:28px/bottom:28px en desktop,
+   right:20px/bottom:20px en mobile ≤480px) — mismo centro horizontal,
+   separado verticalmente para que ambos convivan sin solaparse. */
 .back-to-top {
-  position: fixed; right: 22px; bottom: 22px; z-index: 250;
+  position: fixed; right: 32px; bottom: 98px; z-index: 250;
   width: 48px; height: 48px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(12px);
@@ -153,6 +212,9 @@ html.lang-en .es { display: none !important; }
 }
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { background: var(--accent-glow); border-color: var(--accent); }
+@media (max-width: 480px) {
+  .back-to-top { right: 24px; bottom: 90px; }
+}
 
 /* ── Caso actual en el dropdown ── */
 .cs-dropdown-item.current { background: var(--accent-glow); pointer-events: none; }
@@ -258,6 +320,12 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 .cs-ba-badge { display: inline-flex; align-items: center; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; width: fit-content; }
 .cs-ba-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
 .cs-ba-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+@media (max-width: 768px) {
+  /* This ships as a shared component but some pages never gave it a mobile
+     rule of their own — fix it once, here, so it can't regress per-page. */
+  .cs-ba { grid-template-columns: 1fr; gap: 32px; }
+  .cs-ba-col[style*="border-left"] { border-left: none !important; border-top: 1px solid var(--border); padding-top: 24px; }
+}
 
 
 /* ── 9. SCROLL REVEAL ANIMATIONS ── */
