@@ -38,7 +38,8 @@
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
     .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
     .qs-col { display: flex; flex-direction: column; }
-    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px !important; height: 13px !important; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
     .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
     .qs-bullets { list-style: none; padding: 0; margin: 0; }
     .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
@@ -262,7 +263,9 @@
       .impact-grid { grid-template-columns: 1fr !important; }
     }
     @media (max-width: 768px) {
-      .quick-summary-grid { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+      .quick-summary-grid { grid-template-columns: 1fr; gap: 0; padding: 8px 20px; }
+      .quick-summary-grid .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .quick-summary-grid .qs-col:last-child { border-bottom: none; }
       .cs-hero-logo {
   display: none;
 }
@@ -283,6 +286,72 @@
       .affinity-cluster-label { font-size: 9px; }
       .affinity-card { font-size: 12px; padding: 8px 12px; }
       .ia-branches-row { gap: 14px; }
+    }
+
+    /* ─── MAPPING: Patrón → Módulo (plano, sin glow, mismos colores que affinity map) ─── */
+    .pmap-list { display: flex; flex-direction: column; gap: 14px; margin: 40px 0 32px; }
+    .pmap-row { display: grid; grid-template-columns: 1fr 64px 1fr; align-items: stretch; gap: 16px; }
+    .pmap-card { background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 3px solid var(--row-color); border-radius: 12px; padding: 18px 22px; display: flex; align-items: center; gap: 14px; transition: background 0.25s ease; }
+    .pmap-card:hover { background: rgba(255,255,255,0.045); }
+    .pmap-icon { width: 34px; height: 34px; border-radius: 9px; background: color-mix(in srgb, var(--row-color) 12%, transparent); border: 1px solid color-mix(in srgb, var(--row-color) 30%, transparent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .pmap-icon svg { width: 16px; height: 16px; color: var(--row-color); }
+    .pmap-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .pmap-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--row-color); }
+    .pmap-label { font-size: 13.5px; color: var(--text-bright); font-weight: 600; line-height: 1.35; }
+    .pmap-sub { font-size: 11.5px; color: var(--text-dim); line-height: 1.4; }
+    .pmap-bridge { display: flex; align-items: center; justify-content: center; }
+    .pmap-bridge-line { width: 100%; height: 1px; background: var(--row-color); opacity: 0.5; position: relative; }
+    .pmap-bridge-line::after { content: "→"; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); color: var(--row-color); font-size: 14px; line-height: 1; }
+    .pmap-row[data-accent="amber"] { --row-color: #f59e0b; }
+    .pmap-row[data-accent="red"] { --row-color: #ef4444; }
+    .pmap-row[data-accent="purple"] { --row-color: var(--accent); }
+    .pmap-row[data-accent="cyan"] { --row-color: #06b6d4; }
+    .pmap-summary { margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+    .pmap-summary strong { color: var(--text-bright); }
+    @media (max-width: 720px) {
+      .pmap-row { grid-template-columns: 1fr; gap: 4px; }
+      .pmap-bridge { display: none; }
+    }
+    /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
+    .cs-hamburger {
+      display: none; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.20); background: var(--surface-2);
+      cursor: pointer; color: var(--white); flex-shrink: 0; margin-left: 8px;
+    }
+    .cs-mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.97); backdrop-filter: blur(28px);
+      flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.28s ease;
+      touch-action: pan-y; overscroll-behavior: contain;
+    }
+    .cs-mobile-menu.open { opacity: 1; }
+    .cs-mobile-menu-close {
+      position: absolute; top: 18px; right: 20px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06);
+      color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .cs-mobile-menu-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 18px;
+    }
+    .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
+    .cs-mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .cs-mobile-menu-links a { display: block; padding: 16px 4px; text-decoration: none; transition: color 0.2s; }
+    .cs-mmi-num { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+    .cs-mmi-title { font-size: 19px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
+    .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
+    .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
+    .cs-mobile-menu-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .cs-hamburger { display: flex; }
+      .cs-nav-dropdown { display: none; }
     }
   </style>
 </head>
@@ -334,8 +403,34 @@
       </div>
     </div>
     <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
+      </svg>
+    </button>
+
   </div>
 </nav>
+
+<!-- MOBILE MENU: acceso real a los 5 casos en touch (el dropdown de arriba es hover-only) -->
+<div class="cs-mobile-menu" id="csMobileMenu">
+  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
+  </button>
+  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
+  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
+  <ul class="cs-mobile-menu-links">
+    <li><a href="cef-design-system.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
+    <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
+    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+  </ul>
+  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
+</div>
+
 
 <main id="main">
 
@@ -807,6 +902,102 @@
       </div>
     </div>
 
+    <!-- MAPPING VISUAL: Patrón detectado → Módulo diseñado -->
+    <div class="fu" style="margin-top:56px;">
+      <span class="block-label es">Trazabilidad · De la observación a la solución</span>
+      <span class="block-label en">Traceability · From observation to solution</span>
+      <h3 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="es">Cada módulo responde a un patrón real, no a una intuición</h3>
+      <h3 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="en">Every module answers a real pattern, not a hunch</h3>
+    </div>
+    <div class="pmap-list fu">
+      <div class="pmap-row" data-accent="amber">
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Patrón 1 · detectado</span>
+            <span class="pmap-eyebrow en">Pattern 1 · detected</span>
+            <span class="pmap-label es">Trabajo manual sin automatizar</span>
+            <span class="pmap-label en">Manual work without automation</span>
+          </div>
+        </div>
+        <div class="pmap-bridge"><div class="pmap-bridge-line"></div></div>
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Módulo 02 · diseñado</span>
+            <span class="pmap-eyebrow en">Module 02 · designed</span>
+            <span class="pmap-label es">Flujos guiados para tareas repetitivas</span>
+            <span class="pmap-label en">Guided flows for repetitive tasks</span>
+          </div>
+        </div>
+      </div>
+      <div class="pmap-row" data-accent="red">
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Patrón 2 · detectado</span>
+            <span class="pmap-eyebrow en">Pattern 2 · detected</span>
+            <span class="pmap-label es">Sistema sin guardianes de error</span>
+            <span class="pmap-label en">System without error guards</span>
+          </div>
+        </div>
+        <div class="pmap-bridge"><div class="pmap-bridge-line"></div></div>
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Módulo 03 · diseñado</span>
+            <span class="pmap-eyebrow en">Module 03 · designed</span>
+            <span class="pmap-label es">Validaciones y confirmaciones contextuales</span>
+            <span class="pmap-label en">Contextual validations and confirmations</span>
+          </div>
+        </div>
+      </div>
+      <div class="pmap-row" data-accent="purple">
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Patrón 3 · detectado</span>
+            <span class="pmap-eyebrow en">Pattern 3 · detected</span>
+            <span class="pmap-label es">Arquitectura de información plana</span>
+            <span class="pmap-label en">Flat information architecture</span>
+          </div>
+        </div>
+        <div class="pmap-bridge"><div class="pmap-bridge-line"></div></div>
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Módulo 01 · diseñado</span>
+            <span class="pmap-eyebrow en">Module 01 · designed</span>
+            <span class="pmap-label es">Centro de solicitudes con clasificación inteligente</span>
+            <span class="pmap-label en">Request centre with smart classification</span>
+          </div>
+        </div>
+      </div>
+      <div class="pmap-row" data-accent="cyan">
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Patrón 4 · detectado</span>
+            <span class="pmap-eyebrow en">Pattern 4 · detected</span>
+            <span class="pmap-label es">Visibilidad nula del estado</span>
+            <span class="pmap-label en">Zero status visibility</span>
+          </div>
+        </div>
+        <div class="pmap-bridge"><div class="pmap-bridge-line"></div></div>
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Módulo 04 · diseñado</span>
+            <span class="pmap-eyebrow en">Module 04 · designed</span>
+            <span class="pmap-label es">Panel de estado en tiempo real</span>
+            <span class="pmap-label en">Real-time status dashboard</span>
+          </div>
+        </div>
+      </div>
+      <p class="pmap-summary es">Los 4 patrones del mapa de afinidad tienen correspondencia directa con los 4 módulos de la propuesta: <strong>ningún módulo se diseñó sin un hallazgo de research detrás.</strong></p>
+      <p class="pmap-summary en">The 4 patterns from the affinity map map directly onto the 4 proposed modules: <strong>no module was designed without a research finding behind it.</strong></p>
+    </div>
+
     <!-- ARQUITECTURA DE INFORMACIÓN -->
     <div class="fu cs-grid-2" style="margin-top:72px; align-items: center;">
       <div>
@@ -1208,6 +1399,18 @@
     });
   }
   applyLang();
+
+  function openCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.style.display = 'flex';
+    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.classList.remove('open');
+    setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 300);
+  }
 </script>
 <script src="cs-enhancements.js" defer></script>
 </body>

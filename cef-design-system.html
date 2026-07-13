@@ -341,14 +341,22 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
     }
     .qs-label svg {
+      display: inline-block !important;
       color: var(--accent);
       flex-shrink: 0;
+      width: 13px;
+      height: 13px;
+      padding: 6px;
+      box-sizing: content-box;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-border);
+      border-radius: 8px;
     }
     .qs-val {
       font-size: 13.5px;
@@ -390,9 +398,11 @@
     @media (max-width: 900px) {
       .quick-summary-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 24px;
+        gap: 0;
+        padding: 8px 24px;
       }
+      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .qs-col:last-child { border-bottom: none; }
     }
 
     /* Evidence pair layout - copied from Caso 2 */
@@ -419,6 +429,119 @@
     @media (max-width: 640px) {
       .c3-grid-4 { grid-template-columns: 1fr; }
       .c3-grid-2 { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    /* ─── DISCOVERY TIMELINE — número tipográfico en vez de círculo+icono ─── */
+    .dt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 56px 0 64px; }
+    .dt-item { padding: 28px 22px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; transition: border-color 0.3s ease, background 0.3s ease; }
+    .dt-item:hover { border-color: rgba(255,255,255,0.14); background: rgba(255,255,255,0.035); }
+    .dt-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .dt-icon svg { width: 18px; height: 18px; color: var(--accent); }
+    .dt-num { font-family: var(--font-serif); font-size: 28px; font-weight: 700; font-style: italic; color: var(--text-faint); line-height: 1; margin-bottom: 10px; }
+    .dt-step { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .dt-title { font-size: 15px; font-weight: 700; color: var(--white); font-family: var(--font-serif); margin-bottom: 10px; line-height: 1.3; }
+    .dt-text { font-size: 12.5px; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px; }
+    .dt-pill { display: inline-block; padding: 5px 12px; border: 1px solid var(--accent-border); border-radius: var(--radius-pill); font-size: 10px; color: var(--accent); background: rgba(var(--accent-rgb), 0.06); }
+    @media (max-width: 1100px) {
+      .dt-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .dt-grid { grid-template-columns: 1fr; gap: 14px; }
+    }
+
+    /* ─── HERO STAT BAND — cifras reales del caso, a la vista desde el primer scroll ─── */
+    .hero-metrics { display: flex; margin-top: 20px; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; max-width: 560px; }
+    .hm-item { flex: 1; padding: 18px 22px; border-right: 1px solid var(--border); }
+    .hm-item:last-child { border-right: none; }
+    .hm-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px; }
+    .hm-value { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); line-height: 1; }
+    .hm-sub { font-size: 10px; color: var(--text-dim); margin-top: 3px; }
+    @media (max-width: 640px) {
+      .hero-metrics { flex-wrap: wrap; max-width: 100%; }
+      .hm-item { flex: 1 1 50%; border-bottom: 1px solid var(--border); }
+      .hm-item:nth-child(2) { border-right: none; }
+      .hm-item:nth-last-child(-n+2) { border-bottom: none; }
+    }
+
+    /* ─── QUICK SUMMARY — reformulado como tarjetas compactas con icono grande ─── */
+    .qsc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .qsc-card { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.09); border-radius: 18px; padding: 26px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); transition: border-color 0.25s ease, transform 0.25s ease; }
+    .qsc-card:hover { border-color: rgba(255,255,255,0.16); transform: translateY(-2px); }
+    .qsc-icon { width: 42px; height: 42px; border-radius: 11px; background: var(--accent-glow); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .qsc-icon svg { width: 19px; height: 19px; color: var(--accent); }
+    .qsc-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .qsc-text { font-size: 13.5px; color: var(--text); line-height: 1.6; }
+    .qsc-check { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+    .qsc-check li { font-size: 13px; color: var(--text); line-height: 1.45; display: flex; align-items: flex-start; gap: 9px; }
+    .qsc-check li svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+    .qsc-result { grid-column: 1 / -1; background: var(--accent-glow); border: 1px solid var(--accent-border); }
+    .qsc-result .qsc-icon { background: rgba(0,0,0,0.15); }
+    @media (max-width: 640px) {
+      .qsc-grid { grid-template-columns: 1fr; }
+      .qsc-card { padding: 22px; }
+    }
+
+    /* ─── PROCESO: Fase 1/2 como cards con icono (sustituye párrafos de texto) ─── */
+    .proc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 60px; }
+    .proc-card { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.09); border-radius: 18px; padding: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+    .proc-icon { width: 42px; height: 42px; border-radius: 11px; background: var(--accent-glow); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .proc-icon svg { width: 19px; height: 19px; color: var(--accent); }
+    .proc-eyebrow { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .proc-title { font-size: 17px; font-weight: 700; color: var(--white); font-family: var(--font-serif); margin-bottom: 16px; }
+    .proc-row { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; border-top: 1px solid var(--border); }
+    .proc-row:first-of-type { border-top: none; padding-top: 0; }
+    .proc-row-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+    .proc-row-text { font-size: 13px; color: var(--text); line-height: 1.55; }
+    @media (max-width: 900px) {
+      .proc-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── CASE HAMBURGER + MOBILE MENU ───────────────────────────────────
+       El dropdown "Casos de Producto ▾" es hover/focus-within: en touch no
+       hay hover, así que en mobile un tap navega directo sin abrir la lista.
+       Este menú da acceso real a los 5 casos + vuelta a home en mobile. ── */
+    .cs-hamburger {
+      display: none; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.20); background: var(--surface-2);
+      cursor: pointer; color: var(--white); flex-shrink: 0; margin-left: 8px;
+    }
+    .cs-mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.97); backdrop-filter: blur(28px);
+      flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.28s ease;
+      touch-action: pan-y; overscroll-behavior: contain;
+    }
+    .cs-mobile-menu.open { opacity: 1; }
+    .cs-mobile-menu-close {
+      position: absolute; top: 18px; right: 20px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06);
+      color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .cs-mobile-menu-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 18px;
+    }
+    .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
+    .cs-mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .cs-mobile-menu-links a {
+      display: block; padding: 16px 4px; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cs-mmi-num { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+    .cs-mmi-title { font-size: 19px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
+    .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
+    .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
+    .cs-mobile-menu-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .cs-hamburger { display: flex; }
+      .cs-nav-dropdown { display: none; }
     }
   </style>
 </head>
@@ -470,8 +593,32 @@
       </div>
     </div>
     <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
+      </svg>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE MENU: acceso real a los 5 casos en touch (el dropdown de arriba es hover-only) -->
+<div class="cs-mobile-menu" id="csMobileMenu">
+  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
+  </button>
+  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
+  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
+  <ul class="cs-mobile-menu-links">
+    <li><a href="cef-design-system.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
+    <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
+    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+  </ul>
+  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
+</div>
 
 <main id="main">
 
@@ -518,61 +665,65 @@
         <div class="cs-meta-val">Diseño + Desarrollo Frontend</div>
       </div>
     </div>
+    <div class="hero-metrics fu">
+      <div class="hm-item">
+        <div class="hm-label">Nivel WCAG</div>
+        <div class="hm-value">AA</div>
+        <div class="hm-sub">Contraste &gt; 4.5:1</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Variables</div>
+        <div class="hm-value">57</div>
+        <div class="hm-sub">Enlazadas a tokens</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Componentes</div>
+        <div class="hm-value">17</div>
+        <div class="hm-sub">Con 6 estados c/u</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Ahorro IA</div>
+        <div class="hm-value">90%</div>
+        <div class="hm-sub">Meses → días</div>
+      </div>
+    </div>
   </div>
 </header>
 
 <!-- ==================== QUICK SUMMARY ==================== -->
 <section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
   <div class="cs-wrap">
-    <div class="quick-summary-grid">
-      <!-- Col 1: El Problema -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          El Problema
-        </span>
-        <div class="qs-val">
-          Años de deuda técnica y de diseño acumulados en CEF sin estándares comunes. Interfaces sobrecargadas, incoherencias entre módulos (calendario, bolsa de empleo, pasarelas) y bloqueos graves de accesibilidad (contraste &lt; 3:1) que dificultaban la experiencia estudiantil.
-        </div>
+    <div class="qsc-grid">
+      <!-- El Problema -->
+      <div class="qsc-card">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="qsc-label">El Problema</div>
+        <div class="qsc-text">Años de deuda de diseño sin estándares comunes: interfaces sobrecargadas y bloqueos graves de accesibilidad (contraste &lt; 3:1).</div>
       </div>
 
-      <!-- Col 2: Mi Rol -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Mi Rol
-        </span>
-        <div class="qs-val">
-          <strong>Product Designer</strong> como única responsable del diseño del sistema, la accesibilidad de componentes y la coordinación para la adopción de tokens en el equipo frontend.
-        </div>
+      <!-- Mi Rol -->
+      <div class="qsc-card">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="qsc-label">Mi Rol</div>
+        <div class="qsc-text"><strong style="color:var(--white);">Única responsable</strong> del diseño del sistema, la accesibilidad y la adopción de tokens con frontend.</div>
       </div>
 
-      <!-- Col 3: Qué Hice -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Qué Hice
-        </span>
-        <ul class="qs-bullets">
-          <li>Auditoría heurística completa y triage de deuda de accesibilidad UX.</li>
-          <li>Definición de tokens, escala tipográfica y colores conformes a WCAG AA.</li>
-          <li>Creación de UI Kit centralizado en Figma con variantes y estados.</li>
-          <li>Rediseño y validación del sistema en flujos críticos (Calendario, Pago, Login).</li>
-          <li>Documentación técnica exhaustiva para handoff y alineación de equipos.</li>
+      <!-- Qué Hice -->
+      <div class="qsc-card">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="qsc-label">Qué Hice</div>
+        <ul class="qsc-check">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Auditoría heurística y triage de deuda</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tokens y paleta conforme WCAG AA</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>UI Kit en Figma con variantes y estados</li>
         </ul>
       </div>
 
-      <!-- Col 4: Resultado -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Resultado
-        </span>
-        <div class="qs-result-box">
-          <div class="qs-result-highlight">
-            100% cumplimiento WCAG AA (contraste &gt; 4.5:1), estandarización de interfaces y reducción drástica del time-to-market de desarrollo mediante componentes modulares.
-          </div>
-        </div>
+      <!-- Resultado -->
+      <div class="qsc-card qsc-result">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="qsc-label">Resultado</div>
+        <div class="qsc-text" style="color:var(--white); font-weight:500;">100% cumplimiento WCAG AA y reducción drástica del time-to-market mediante componentes modulares.</div>
       </div>
     </div>
   </div>
@@ -755,43 +906,82 @@
     </div>
     <div style="padding:0">
 
-      <!-- STEP 01 & 02: AUDITORÍA & ESTÁNDARES -->
-      <div class="row g-4 fu" style="margin-top: 60px; margin-bottom: 60px; align-items: stretch;">
-        <!-- Columna 1: Auditoría Heurística -->
-        <div class="col-lg-6 col-md-12">
-          <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 32px; border-radius: 16px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:14px;">Fase 1 · Auditoría &amp; Triage</span>
-              <h3 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">1. Auditoría UX y Triage de problemas</h3>
-              <p class="p" style="font-size: 13.5px; line-height: 1.6; margin: 0; color: var(--text-dim);">
-                <strong style="color:var(--white);">Insight:</strong> La auditoría heurística reveló que los problemas eran sistémicos, no solo estéticos. Contraste inferior a 3:1, affordance rota en botones primarios, flujos inconsistentes. <br><br>
-                <strong style="color:var(--white);">Hipótesis:</strong> Si establecemos los estándares antes que la UI, los componentes serán correctos por construcción.<br><br>
-                <strong style="color:var(--white);">Decisión:</strong> Invertir las primeras semanas en auditar y definir el sistema, antes de diseñar pantallas, lo que exigió argumentar a dirección la falta de UI visible inmediata.
-              </p>
-            </div>
+      <!-- STEP 01 & 02: AUDITORÍA & ESTÁNDARES — cards con icono, no párrafos -->
+      <div class="proc-grid fu">
+        <div class="proc-card">
+          <div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <span class="proc-eyebrow">Fase 1 · Auditoría &amp; Triage</span>
+          <p class="proc-title">Auditoría UX y triage de problemas</p>
+          <div class="proc-row">
+            <span class="proc-row-label">Insight</span>
+            <span class="proc-row-text">Problemas sistémicos, no estéticos: contraste &lt; 3:1, affordance rota, flujos inconsistentes.</span>
+          </div>
+          <div class="proc-row">
+            <span class="proc-row-label">Hipótesis</span>
+            <span class="proc-row-text">Si establecemos los estándares antes que la UI, los componentes serán correctos por construcción.</span>
+          </div>
+          <div class="proc-row">
+            <span class="proc-row-label">Decisión</span>
+            <span class="proc-row-text">Invertir las primeras semanas en auditar, argumentando a dirección la falta de UI visible inmediata.</span>
           </div>
         </div>
-        <!-- Columna 2: WCAG y Score -->
-        <div class="col-lg-6 col-md-12">
-          <div style="background: rgba(255,255,255,0.015); border: 1px solid var(--border); padding: 32px; border-radius: 16px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:14px;">Fase 2 · Estándares &amp; Contraste</span>
-              <h3 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">2. Definición de Estilos y Accesibilidad (WCAG)</h3>
-              <p class="p" style="font-size: 13.5px; line-height: 1.6; margin-bottom: 24px; color: var(--text-dim);">
-                Dado que el producto está dirigido al sector educativo, la accesibilidad era un requisito innegociable. Establecí una nueva paleta de colores corporativos optimizada para garantizar un contraste mínimo (Nivel AA) según las pautas WCAG. También redefiní la tipografía para mejorar la legibilidad y estructuré un sistema de componentes básicos estandarizado.
-              </p>
-            </div>
-            <!-- DASHBOARD WIDGET: SCORE integrado -->
-            <div class="dash-widget fu" style="margin: 0; padding: 20px; background: rgba(255,255,255,0.01); border-color: rgba(255,255,255,0.05); border-radius: 12px; width: 100%; max-width: none;">
-              <div class="score-row" style="gap: 20px;">
-                <div class="score-circle perfect" style="width: 80px; height: 80px; font-size: 24px; border-width: 4px; flex-shrink: 0;">AA</div>
-                <div class="score-info">
-                  <h4 style="font-size: 14px; margin-bottom: 4px; font-weight: 700;">Accesibilidad WCAG Nivel AA</h4>
-                  <p style="font-size: 12px; line-height: 1.4; margin: 0;">Paleta cromática y tipografía recalibradas para superar una relación de contraste mínima de 4.5:1 en toda la plataforma.</p>
-                </div>
-              </div>
-            </div>
+        <div class="proc-card">
+          <div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <span class="proc-eyebrow">Fase 2 · Estándares &amp; Contraste</span>
+          <p class="proc-title">Definición de estilos y accesibilidad (WCAG)</p>
+          <p class="qsc-text" style="margin-bottom: 20px;">Requisito innegociable en EdTech: nueva paleta corporativa con contraste mínimo Nivel AA, tipografía relegible y sistema de componentes básicos estandarizado.</p>
+          <div style="display: flex; align-items: center; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div class="score-circle perfect" style="width: 56px; height: 56px; font-size: 17px; border-width: 3px; flex-shrink: 0;">AA</div>
+            <span class="proc-row-text" style="margin: 0;">Paleta y tipografía recalibradas: contraste &gt; 4.5:1 en toda la plataforma.</span>
           </div>
+        </div>
+      </div>
+
+      <!-- DISCOVERY TIMELINE: Del caos al sistema -->
+      <div class="fu" style="margin-top: 80px; border-top: 1px solid var(--border); padding-top: 60px;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Recorrido · De la deuda al sistema</span>
+        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:8px; font-family:'Playfair Display', serif;">Cinco decisiones, en orden</h3>
+      </div>
+      <div class="dt-grid fu">
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="dt-num">01</div>
+          <div class="dt-step">Auditoría</div>
+          <div class="dt-title">Triage de deuda</div>
+          <div class="dt-text">Contraste &lt; 3:1, affordance rota en botones primarios, flujos inconsistentes entre módulos.</div>
+          <span class="dt-pill">Heurística completa</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div class="dt-num">02</div>
+          <div class="dt-step">Decisión</div>
+          <div class="dt-title">Sistema antes que pantallas</div>
+          <div class="dt-text">Invertir las primeras semanas en auditar y definir estándares, sin UI visible inmediata que mostrar a dirección.</div>
+          <span class="dt-pill">Documento de estándares</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <div class="dt-num">03</div>
+          <div class="dt-step">Fundaciones</div>
+          <div class="dt-title">Tokens & paleta AA</div>
+          <div class="dt-text">Cadena primitivo → semántico → componente. Contraste mínimo 4.5:1 en toda la plataforma.</div>
+          <span class="dt-pill">57 variables</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <div class="dt-num">04</div>
+          <div class="dt-step">Componentes</div>
+          <div class="dt-title">UI Kit centralizado</div>
+          <div class="dt-text">17 componentes con variantes, 6 estados y ficha de accesibilidad citando el criterio WCAG exacto.</div>
+          <span class="dt-pill">Figma + tokens</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="dt-num">05</div>
+          <div class="dt-step">Validación</div>
+          <div class="dt-title">Aplicación en flujos críticos</div>
+          <div class="dt-text">Calendario académico, pasarela de pago, login y bolsa de empleo — el sistema puesto a prueba en producción.</div>
+          <span class="dt-pill">4 módulos</span>
         </div>
       </div>
 
@@ -1630,6 +1820,18 @@
     html.lang = isEn ? 'en' : 'es';
     btn.textContent = isEn ? 'ES' : 'EN';
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+  }
+
+  function openCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.style.display = 'flex';
+    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.classList.remove('open');
+    setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 300);
   }
 </script>
 <script src="cs-enhancements.js" defer></script>

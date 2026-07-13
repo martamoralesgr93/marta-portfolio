@@ -180,14 +180,22 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
     }
     .qs-label svg {
+      display: inline-block !important;
       color: var(--accent);
       flex-shrink: 0;
+      width: 13px;
+      height: 13px;
+      padding: 6px;
+      box-sizing: content-box;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-border);
+      border-radius: 8px;
     }
     .qs-val {
       font-size: 13.5px;
@@ -229,9 +237,11 @@
     @media (max-width: 900px) {
       .quick-summary-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 24px;
+        gap: 0;
+        padding: 8px 24px;
       }
+      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .qs-col:last-child { border-bottom: none; }
     }
 
     /* ─── RESULTS STRIP ─────────────────────── */
@@ -314,6 +324,47 @@
       .pm-grid-cell[style*="opacity:0"] { display: none !important; }
       .pm-grid-cell:nth-child(7) { border-bottom: none !important; }
     }
+    /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
+    .cs-hamburger {
+      display: none; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.20); background: var(--surface-2);
+      cursor: pointer; color: var(--white); flex-shrink: 0; margin-left: 8px;
+    }
+    .cs-mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.97); backdrop-filter: blur(28px);
+      flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.28s ease;
+      touch-action: pan-y; overscroll-behavior: contain;
+    }
+    .cs-mobile-menu.open { opacity: 1; }
+    .cs-mobile-menu-close {
+      position: absolute; top: 18px; right: 20px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06);
+      color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .cs-mobile-menu-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 18px;
+    }
+    .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
+    .cs-mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .cs-mobile-menu-links a { display: block; padding: 16px 4px; text-decoration: none; transition: color 0.2s; }
+    .cs-mmi-num { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+    .cs-mmi-title { font-size: 19px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
+    .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
+    .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
+    .cs-mobile-menu-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .cs-hamburger { display: flex; }
+      .cs-nav-dropdown { display: none; }
+    }
   </style>
 </head>
 <body class="cs-booking-engine">
@@ -364,8 +415,34 @@
       </div>
     </div>
     <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
+      </svg>
+    </button>
+
   </div>
 </nav>
+
+<!-- MOBILE MENU: acceso real a los 5 casos en touch (el dropdown de arriba es hover-only) -->
+<div class="cs-mobile-menu" id="csMobileMenu">
+  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
+  </button>
+  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
+  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
+  <ul class="cs-mobile-menu-links">
+    <li><a href="cef-design-system.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
+    <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
+    <li><a href="booking-engine.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+  </ul>
+  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
+</div>
+
 
 <main id="main">
 
@@ -901,6 +978,18 @@
     html.lang = isEn ? 'en' : 'es';
     btn.textContent = isEn ? 'ES' : 'EN';
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+  }
+
+  function openCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.style.display = 'flex';
+    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.classList.remove('open');
+    setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 300);
   }
 </script>
 <script src="cs-enhancements.js" defer></script>
