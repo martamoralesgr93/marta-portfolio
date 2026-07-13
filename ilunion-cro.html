@@ -471,6 +471,20 @@
     .cs-hero-logo {
   display: none;
 }
+
+    /* ===================== QUICK SUMMARY CARD · spine unificado (mismo componente que Booking/CEF/Paolo/It-Ops) ===================== */
+    .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .qs-col { display: flex; flex-direction: column; }
+    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+    .qs-label svg { color: var(--accent); flex-shrink: 0; }
+    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .qs-bullets { list-style: none; padding: 0; margin: 0; }
+    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
+    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
+    @media (max-width: 900px) { .quick-summary-grid { grid-template-columns: 1fr; gap: 24px; padding: 24px; } }
   </style>
 </head>
 <body class="cs-ilunion-cro">
@@ -577,6 +591,65 @@
   </div>
 </header>
 
+
+<!-- ══════════════════════════════════════
+     QUICK SUMMARY · TL;DR 60s (spine unificado)
+══════════════════════════════════════ -->
+<section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
+  <div class="cs-wrap">
+    <div class="quick-summary-grid">
+      <!-- Col 1: El Problema -->
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          El Problema
+        </span>
+        <div class="qs-val">
+          Tras migrar a AEM (sept. 2025) la conversión cayó al <strong>3,36%</strong>. La maqueta daba protagonismo a banners promocionales del club de fidelidad y empujaba el motor de reserva por debajo del primer scroll: solo el 15% de los usuarios superaba el bloque de ofertas.
+        </div>
+      </div>
+
+      <!-- Col 2: Mi Rol -->
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Mi Rol
+        </span>
+        <div class="qs-val">
+          <strong>Product Designer con ownership end-to-end autónomo.</strong> Diagnóstico, propuesta y presentación directa a comité, sin intermediarios de producto entre el análisis y la toma de decisión.
+        </div>
+      </div>
+
+      <!-- Col 3: Qué Hice -->
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Qué Hice
+        </span>
+        <ul class="qs-bullets">
+          <li>Análisis cuanti-cuali: 10.000+ logs de funnel (Adobe Analytics) + 250+ transcripciones (Clarity).</li>
+          <li>Benchmarking de precio, disponibilidad y CTA en primer fold vs. cadenas y portales referentes.</li>
+          <li>Documento estratégico con 12 mejoras priorizadas por impacto y viabilidad en AEM.</li>
+          <li>Diseño responsive diferenciado desktop/mobile, integrando constraints de AEM como variables.</li>
+          <li>Validación en staging, aprobación en comité y observación post-lanzamiento.</li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Resultado -->
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Resultado
+        </span>
+        <div class="qs-result-box">
+          <div class="qs-result-highlight">
+            Conversión del canal directo de 3,36% a <strong>6,5%</strong> (+93% relativo). Club ÚNICOS &gt;50% de reservas fidelizadas. Hallazgo post-launch del patrón de swipe en mobile: detectado, documentado y resuelto como siguiente iteración.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════
      02 · OVERVIEW
