@@ -96,6 +96,18 @@ html.lang-en .es { display: none !important; }
 .cs-wrap-wide { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
 .cs-block { padding: 96px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
 
+/* ── STAR RAIL — spine narrativo compartido (S·T·A·R) en los 5 casos ── */
+.cs-star { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 40px; align-items: start; }
+.cs-rail { position: sticky; top: 88px; height: fit-content; display: flex; flex-direction: column; align-items: center; }
+.cs-rail-letter { font-size: 44px; font-weight: 800; font-family: var(--font-serif); color: var(--accent); line-height: 1; }
+.cs-rail-label { font-size: 7.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); writing-mode: vertical-rl; transform: rotate(180deg); margin-top: 10px; opacity: 0.5; }
+.cs-rail-bar { width: 1px; height: 100%; min-height: 60px; background: linear-gradient(to bottom, rgba(var(--accent-rgb), 0.25), transparent); margin-top: 14px; }
+@media (max-width: 768px) {
+  .cs-star { grid-template-columns: 44px minmax(0, 1fr); gap: 0 16px; }
+  .cs-rail { position: relative; top: 0; }
+  .cs-rail-letter { font-size: 30px; }
+}
+
 /* ── 4. HEADER & HERO COMPONENTS ──
    Hero compacto: sin 100svh, sin logo de fondo, sin overlay ni glow decorativos.
    El contenido (breadcrumb, título, tags, meta) es el protagonista. */
@@ -397,10 +409,33 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 .cs-footer { padding: var(--space-xxl) 0; border-top: 1px solid var(--border); text-align: center; }
 .footer-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: var(--space-md); }
 .cs-footer h2 { font-family: var(--font-serif); font-size: clamp(32px, 4vw, 56px); font-weight: 700; color: var(--white); margin-bottom: var(--space-lg); }
-.footer-actions { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
-.footer-contact { margin: var(--space-xl) auto 0; padding-top: var(--space-lg); border-top: 1px solid var(--border); max-width: 620px; }
-.footer-contact-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: var(--space-md); }
-.footer-contact-actions { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
+
+/* Case pagination: prev/next arrows + numbered index, distinct from CTA buttons */
+.cs-pagination { display: flex; align-items: center; justify-content: center; gap: var(--space-sm); }
+.cs-pagination-arrow {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--border); color: var(--text);
+  font-size: 16px; text-decoration: none; flex-shrink: 0;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.cs-pagination-arrow:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+.cs-pagination-dots { display: flex; align-items: center; gap: 4px; }
+.cs-pagination-dot {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 32px; height: 32px; padding: 0 6px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; letter-spacing: .02em;
+  color: var(--text-dim); text-decoration: none;
+  transition: color .2s, background .2s;
+}
+.cs-pagination-dot:hover { color: var(--white); background: var(--accent-glow); }
+.cs-pagination-dot.is-current { background: var(--accent); color: var(--black); }
+.cs-pagination-index {
+  display: block; margin-top: var(--space-md);
+  font-size: 12px; letter-spacing: .04em; color: var(--text-dim);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.cs-pagination-index:hover { color: var(--accent); }
 
 /* ── 12. RESPONSIVE DESIGN & ADAPTABILITY ── */
 
@@ -420,7 +455,6 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
   /* Paso intermedio: 2 columnas entre 600–900px */
   .quick-summary-grid { grid-template-columns: 1fr 1fr !important; gap: var(--space-md) !important; padding: var(--space-md) !important; }
   .cs-meta { gap: var(--space-md); }
-  .footer-actions { flex-direction: column; align-items: center; }
   .btn { font-size: 13px; padding: 11px 24px; }
 }
 
@@ -463,8 +497,7 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
   /* Mobile: 1 columna */
   .quick-summary-grid { grid-template-columns: 1fr !important; gap: var(--space-sm) !important; padding: var(--space-sm) !important; }
   .cs-footer h2 { font-size: clamp(26px, 6vw, 40px); }
-  .footer-actions { flex-direction: column; align-items: stretch; }
-  .footer-actions .btn { width: 100%; justify-content: center; }
+  .cs-pagination-dots { max-width: 200px; flex-wrap: wrap; justify-content: center; }
   .tl-item { gap: 18px; margin-bottom: 32px; }
   .tl-dot { width: 32px; height: 32px; font-size: 11px; }
   .tl-title { font-size: 15px; }
