@@ -164,7 +164,7 @@ nav {
 }
 .nav-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 36px; list-style: none; z-index: 10; }
 .nav-links a { position: relative; font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; padding: 8px 0; }
-.nav-links a:hover { color: rgba(255,255,255,0.88); }
+.nav-links a:hover { color: var(--text); }
 .nav-links a.active { color: var(--white); }
 .nav-links a.active::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px;
@@ -195,7 +195,7 @@ nav {
 .lang-toggle:hover {
   color: rgba(255,255,255,0.82);
   border-color: rgba(255,255,255,0.38);
-  background: rgba(255,255,255,0.04);
+  background: var(--surface-2);
 }
 
 /* ===================== HERO ===================== */
@@ -245,7 +245,7 @@ nav {
 .btn-primary:hover { opacity: 0.84; transform: translateY(-1px); }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 6px;
-  color: rgba(255,255,255,0.46); font-size: 13px; text-decoration: none;
+  color: var(--text-faint); font-size: 13px; text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -266,7 +266,7 @@ nav {
 .m-row:last-child { border-bottom: none; padding-bottom: 0; }
 .m-row:first-of-type { padding-top: 0; }
 .m-val { font-size: 32px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; color: var(--white); margin-bottom: 5px; }
-.m-label { font-size: 11px; color: rgba(255,255,255,0.46); }
+.m-label { font-size: 11px; color: var(--text-faint); }
 
 /* ===================== SCROLL DIVIDER ===================== */
 
@@ -354,7 +354,7 @@ nav {
   /* Contraste aumentado: 0.38 → 0.62 para cumplir WCAG AA */
   font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.92; max-width: 480px;
 }
-.sobre-body strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+.sobre-body strong { color: var(--text); font-weight: 600; }
 .sobre-body em { color: rgba(255,255,255,0.70); }
 
 /* ── Layout grid dentro del panel de texto ── */
@@ -570,7 +570,7 @@ nav {
 .about-strip-body { font-size: 14px; color: var(--muted); line-height: 1.8; margin-top: 24px; max-width: 360px; }
 .text-link {
   display: inline-flex; align-items: center; gap: 7px; margin-top: 26px;
-  font-size: 13px; color: rgba(255,255,255,0.46); text-decoration: none;
+  font-size: 13px; color: var(--text-faint); text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -652,7 +652,7 @@ a.sc-client-link:hover {
   color: var(--white);
 }
 .sc-desc {
-  font-size: 13px; color: rgba(255,255,255,0.92); line-height: 1.82;
+  font-size: 13px; color: var(--text-strong); line-height: 1.82;
   margin-bottom: 28px; max-width: 400px;
 }
 /* Two-button CTA row */
@@ -671,7 +671,7 @@ a.sc-client-link:hover {
   padding: 10px 22px;
   border-radius: 100px;
   border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.03);
+  background: var(--surface-1);
   transition: border-color 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
 }
@@ -689,7 +689,7 @@ a.sc-client-link:hover {
   padding: 10px 22px;
   border-radius: 100px;
   border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.03);
+  background: var(--surface-1);
   transition: border-color 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
 }
@@ -717,7 +717,7 @@ a.sc-client-link:hover {
   display: flex; align-items: center; justify-content: center;
   background: #040308;
   padding: 16px 12px;
-  border-left: 1px solid rgba(255,255,255,0.04);
+  border-left: 1px solid var(--surface-2);
 }
 .sc-img {
   /* Show at maximum container size */
@@ -741,12 +741,12 @@ a.sc-client-link:hover {
 .sc-metrics {
   padding: 52px 24px 52px 20px;
   display: flex; flex-direction: column; justify-content: center;
-  border-left: 1px solid rgba(255,255,255,0.04);
+  border-left: 1px solid var(--surface-2);
   position: relative; z-index: 2;
 }
 .sc-metric {
   padding: 20px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--surface-2);
 }
 .sc-metric:first-child { padding-top: 0; }
 .sc-metric:last-child { border-bottom: none; padding-bottom: 0; }
@@ -993,7 +993,7 @@ a.sc-client-link:hover {
   transition: color 0.25s ease;
 }
 .trust-logo span { font-size: 12px; font-weight: 500; letter-spacing: 0.03em; color: rgba(255,255,255,0.40); transition: color 0.25s ease; }
-a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
+a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 .trust-paolo { font-family: 'Playfair Display', Georgia, serif; font-style: italic; letter-spacing: 0.01em; }
 @media (max-width: 760px) {
   .trust-strip { margin-top: 56px; }
@@ -1084,7 +1084,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
   position: absolute;
   top: 12px; right: 18px;
   width: 28px; height: 60%;
-  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, transparent 100%);
+  background: linear-gradient(160deg, var(--surface-2) 0%, transparent 100%);
   border-radius: 40px;
   pointer-events: none;
   z-index: 3;
@@ -1144,7 +1144,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
   align-items: center; justify-content: center;
   width: 40px; height: 40px; border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.20);
-  background: rgba(255,255,255,0.04);
+  background: var(--surface-2);
   cursor: pointer; color: var(--white); flex-shrink: 0;
   transition: background 0.2s, border-color 0.2s;
 }
@@ -1383,7 +1383,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
   }
   .mobile-metric-card {
     flex: 0 0 260px;
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    background: var(--surface-2); border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px; padding: 16px 14px 12px;
     scroll-snap-align: start;
   }
@@ -1688,7 +1688,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
 .dash-grid {
   position: absolute; inset: 0; pointer-events: none;
   background-image:
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20%),
+    repeating-linear-gradient(0deg, var(--surface-1) 0, var(--surface-1) 1px, transparent 1px, transparent 20%),
     repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 25%);
 }
 
@@ -1730,7 +1730,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
 /* KPI row */
 .dash-kpis { display: flex; gap: 6px; margin-top: 12px; }
 .dash-kpi {
-  flex:1; background: rgba(255,255,255,0.04); border-radius: 7px;
+  flex:1; background: var(--surface-2); border-radius: 7px;
   padding: 7px 9px; border: 1px solid rgba(255,255,255,0.05);
 }
 .dash-kpi-val { font-size: 15px; font-weight: 800; line-height: 1; letter-spacing: -0.5px; }
@@ -1740,7 +1740,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
 .dash-funnel { display: flex; flex-direction: column; gap: 7px; flex: 1; }
 .dash-funnel-row { display: flex; align-items: center; gap: 6px; }
 .dash-funnel-lbl { font-size: 9px; color: rgba(255,255,255,0.26); width: 46px; flex-shrink:0; }
-.dash-funnel-track { flex:1; height: 18px; border-radius: 3px; background: rgba(255,255,255,0.04); overflow:hidden; position: relative; }
+.dash-funnel-track { flex:1; height: 18px; border-radius: 3px; background: var(--surface-2); overflow:hidden; position: relative; }
 .dash-funnel-fill {
   height: 100%; border-radius: 3px;
   transform-origin: left; transform: scaleX(0);
@@ -1883,7 +1883,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: rgba(255,255,255,0.92); }
   color: rgba(255,255,255,0.9);
   padding: 14px 28px;
   border-radius: 100px;
-  background: rgba(255,255,255,0.04);
+  background: var(--surface-2);
   border: 1px solid rgba(255,255,255,0.1);
   transition: border-color 0.2s ease, background-color 0.2s ease;
   letter-spacing: 0.02em;
@@ -2660,8 +2660,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">CEF Design System<br><em>y accesibilidad EdTech</em></h3>
         <h3 class="sc-title en">CEF Design System<br><em>and EdTech accessibility</em></h3>
-        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Recreación 2026 con IA: Claude + Figma MCP · design tokens publicados en GitHub · vibe coding con Claude Code</span></p>
-        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">2026 AI recreation: Claude + Figma MCP · design tokens published on GitHub · vibe coding with Claude Code</span></p>
+        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Recreación 2026 con IA: Claude + Figma MCP · design tokens publicados en GitHub · vibe coding con Claude Code</span></p>
+        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">2026 AI recreation: Claude + Figma MCP · design tokens published on GitHub · vibe coding with Claude Code</span></p>
         <div class="sc-cta-row">
           <a href="cef-design-system.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="cef-design-system.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -2712,8 +2712,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">ILUNION CRO<br><em>de <span class="locked-metric">3,36% a 6,5%</span> de conversión</em></h3>
         <h3 class="sc-title en">ILUNION CRO<br><em>from <span class="locked-metric">3.36% to 6.5%</span> conversion</em></h3>
-        <p class="sc-desc es">Optimización del funnel de reservas en el canal directo tras migración a AEM. Diagnóstico estratégico y experimentos basados en research de comportamiento real. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
-        <p class="sc-desc en">Direct channel booking funnel optimization post AEM migration. Strategic diagnosis and experiments based on real behavioral research. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
+        <p class="sc-desc es">Optimización del funnel de reservas en el canal directo tras migración a AEM. Diagnóstico estratégico y experimentos basados en research de comportamiento real. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
+        <p class="sc-desc en">Direct channel booking funnel optimization post AEM migration. Strategic diagnosis and experiments based on real behavioral research. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
         <div class="sc-cta-row">
           <a href="ilunion-cro.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="ilunion-cro.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -2753,8 +2753,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">ILUNION Booking Engine<br><em>de escaparate a conversión</em></h3>
         <h3 class="sc-title en">ILUNION Booking Engine<br><em>from showcase to conversion</em></h3>
-        <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: product designer lead · Ingeniería + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
-        <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: lead product designer · Engineering + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
+        <p class="sc-desc es">Desalineación entre arquitectura de negocio e intención de usuario. Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: product designer lead · Ingeniería + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
+        <p class="sc-desc en">Misalignment between business architecture and user intent. Hierarchy redefinition to convert high-intent traffic into direct bookings. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: lead product designer · Engineering + marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
         <div class="sc-cta-row">
           <a href="booking-engine.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="booking-engine.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -2805,8 +2805,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">Paolo Pizzeria<br><em>ecosistema digital de delivery</em></h3>
         <h3 class="sc-title en">Paolo Pizzeria<br><em>digital delivery ecosystem</em></h3>
-        <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 5 locales sin rediseño. Construido en pandemia. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
-        <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
+        <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 5 locales sin rediseño. Construido en pandemia. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
+        <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
         <div class="sc-cta-row">
           <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -2845,8 +2845,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">Oracle ERP &amp; IT Ops<br><em>cuando comprar no resuelve</em></h3>
         <h3 class="sc-title en">Oracle ERP &amp; IT Ops<br><em>when buying doesn't solve it</em></h3>
-        <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, diagnostiqué que Oracle generaba más fricción de la que resolvía. Propuse la decisión Build vs. Buy y diseñé conceptualmente la plataforma interna. Fue el detonante de mi formación en Product Design. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Rol: discovery contextual · propuesta conceptual · estrategia de producto</em></p>
-        <p class="sc-desc en">Embedded in We Are Actions' IT team, I diagnosed that Oracle was generating more friction than it solved. Proposed the Build vs. Buy decision and conceptually designed the internal platform. It triggered my Product Design training. <em style="color:rgba(255,255,255,0.92);font-style:normal;font-weight:500;">Role: contextual discovery · conceptual proposal · product strategy</em></p>
+        <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, diagnostiqué que Oracle generaba más fricción de la que resolvía. Propuse la decisión Build vs. Buy y diseñé conceptualmente la plataforma interna. Fue el detonante de mi formación en Product Design. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: discovery contextual · propuesta conceptual · estrategia de producto</em></p>
+        <p class="sc-desc en">Embedded in We Are Actions' IT team, I diagnosed that Oracle was generating more friction than it solved. Proposed the Build vs. Buy decision and conceptually designed the internal platform. It triggered my Product Design training. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: contextual discovery · conceptual proposal · product strategy</em></p>
         <div class="sc-cta-row">
           <a href="it-ops-oracle.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="it-ops-oracle.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -3413,7 +3413,7 @@ function closeMenu() {
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 22px;
   display: flex; flex-direction: column;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px var(--surface-2);
   transform-origin: bottom right;
   transform: scale(0.88) translateY(12px);
   opacity: 0; pointer-events: none;
@@ -3444,7 +3444,7 @@ function closeMenu() {
   font-family: 'Inter', sans-serif;
 }
 .chat-header-info { flex: 1; min-width: 0; }
-.chat-header-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
+.chat-header-name { font-size: 13px; font-weight: 600; color: var(--text-strong); font-family: 'Inter', sans-serif; line-height: 1.2; }
 .chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
 .chat-status-dot {
   width: 6px; height: 6px; border-radius: 50%; background: #34d399;
@@ -3498,7 +3498,7 @@ function closeMenu() {
 }
 .chat-input {
   flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 100px; padding: 9px 14px; color: rgba(255,255,255,0.88);
+  border-radius: 100px; padding: 9px 14px; color: var(--text);
   font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
   min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
 }
