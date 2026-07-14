@@ -216,6 +216,63 @@ details.wf-process > summary.wf-process-label:hover span:first-child { text-deco
   .back-to-top { right: 24px; bottom: 90px; }
 }
 
+/* ── Nudge "¿Hablamos?" (burbuja junto al chat) ──
+   Ocupa el mismo hueco donde luego aparece .back-to-top: visible antes del
+   25% de scroll, se retira cuando aparece el botón volver-arriba o se abre el chat. */
+.chat-nudge-bubble {
+  position: fixed; right: 20px; bottom: 96px; z-index: 8998;
+  display: flex; align-items: flex-start; gap: 8px;
+  max-width: 200px;
+  background: rgba(10, 10, 14, 0.90);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(var(--accent-rgb), 0.30);
+  border-radius: 16px;
+  padding: 11px 14px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; line-height: 1.4;
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  opacity: 0; visibility: hidden;
+  transform: translateY(10px) scale(0.9);
+  transform-origin: bottom right;
+  transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1), visibility 0.35s, border-color 0.2s;
+}
+.chat-nudge-bubble::before {
+  content: '';
+  position: absolute; top: 0; left: 14px; right: 14px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,58,237,0.65), rgba(249,115,22,0.45), transparent);
+}
+.chat-nudge-bubble::after {
+  content: '';
+  position: absolute; right: 24px; bottom: -6px;
+  width: 11px; height: 11px;
+  background: rgba(10, 10, 14, 0.90);
+  border-right: 1px solid rgba(var(--accent-rgb), 0.30);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.30);
+  transform: rotate(45deg);
+}
+.chat-nudge-bubble:hover { border-color: rgba(var(--accent-rgb), 0.55); }
+.chat-nudge-bubble.visible {
+  opacity: 1; visibility: visible;
+  animation: chat-nudge-in 0.4s cubic-bezier(0.16,1,0.3,1) both,
+             chat-nudge-float 3.2s ease-in-out 0.5s infinite;
+}
+@keyframes chat-nudge-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.85); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes chat-nudge-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-5px) scale(1); }
+}
+@media (max-width: 480px) {
+  .chat-nudge-bubble { right: 16px; bottom: 84px; max-width: 168px; font-size: 12.5px; padding: 9px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-nudge-bubble { transition: opacity 0.25s ease; }
+  .chat-nudge-bubble.visible { animation: none; opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+}
+
 /* ── Caso actual en el dropdown ── */
 .cs-dropdown-item.current { background: var(--accent-glow); pointer-events: none; }
 .cs-dropdown-item.current .cs-item-title::after { content: " ●"; color: var(--accent); font-size: 9px; vertical-align: middle; }
