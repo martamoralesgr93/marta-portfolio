@@ -62,16 +62,38 @@
       domain = savedToken.toLowerCase();
     }
     
-    // Identificar al usuario en Clarity con su email/token y registrar el dominio
     window.clarity("identify", trackingId);
     window.clarity("set", "company", trackingId);
     window.clarity("set", "company_domain", domain);
     window.clarity("set", "user_type", isGoogleAuthorized ? "google_auth" : "token_holder");
   }
 
-  // Portfolio en abierto: no se bloquea ninguna página.
-  // El token por URL se conserva solo como identificador de visita en Clarity
-  // (permite enviar enlaces personalizados a empresas y saber quién visita).
+  // Global Lock: si no está autorizado, inyectar estilos de bloqueo de inmediato para evitar FOUC
+  if (!isAuthorized) {
+    const style = document.createElement('style');
+    style.id = 'auth-lock-style';
+    style.innerHTML = `
+      #portfolio-content { display: none !important; }
+      #portfolio-lock-screen { display: flex !important; }
+      .lock-close-btn { display: none !important; }
+    `;
+    document.head.appendChild(style);
+
+    // Monitorear localStorage periódicamente para detectar el desbloqueo y recargar la página
+    const authInterval = setInterval(function() {
+      const currentToken = localStorage.getItem('portfolio_token');
+      const currentEmail = localStorage.getItem('portfolio_google_email');
+      const isTokenOk = isValidToken(currentToken);
+      const isEmailOk = currentEmail && WHITELISTED_EMAILS.includes(currentEmail.trim().toLowerCase());
+      
+      if (isTokenOk || isEmailOk) {
+        clearInterval(authInterval);
+        const lockStyle = document.getElementById('auth-lock-style');
+        if (lockStyle) lockStyle.parentNode.removeChild(lockStyle);
+        window.location.reload();
+      }
+    }, 300);
+  }
 
   // Compatibilidad con enlaces antiguos: index.html?redirect=/pagina → ir directo a la página
   const isIndexPage = window.location.pathname === '/' ||
