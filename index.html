@@ -4985,7 +4985,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
     </div>
 
     <!-- Social Login Buttons -->
-    <div class="social-btn-stack">
+    <div class="social-btn-stack" id="social-stack">
       <!-- Google -->
       <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Google" type="button">
         <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -5007,7 +5007,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
         </svg>
         <span>Microsoft</span>
       </button>
-
+ 
       <!-- LinkedIn -->
       <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="LinkedIn" type="button">
         <svg class="social-icon" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
@@ -5016,15 +5016,15 @@ body.visitor-unauthorized .locked-metric:hover::after {
         <span>LinkedIn</span>
       </button>
     </div>
-
+ 
     <!-- Divider -->
-    <div class="lock-divider">
+    <div class="lock-divider" id="lock-divider-el">
       <span class="es">o</span>
       <span class="en">or</span>
     </div>
-
+ 
     <!-- Token Form -->
-    <div style="width: 100%;">
+    <div id="token-form-el" style="width: 100%;">
       <div class="form-group" style="margin-bottom: 12px;">
         <label for="unlock-token">
           <span class="es">Token de acceso</span>
@@ -5038,6 +5038,30 @@ body.visitor-unauthorized .locked-metric:hover::after {
       </button>
     </div>
 
+    <!-- Social Email Form (hidden by default) -->
+    <div id="social-email-form" style="display: none; width: 100%; flex-direction: column; gap: 14px; text-align: left;">
+      <button onclick="showMainLockScreen()" class="lock-back-btn" type="button" style="background:none; border:none; color:var(--dim); font-size:12px; cursor:pointer; align-self:flex-start; padding:0; display:flex; align-items:center; gap:4px; font-family:inherit;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span class="es">Volver</span>
+        <span class="en">Back</span>
+      </button>
+      
+      <div class="form-group">
+        <label for="social-email-input">
+          <span class="es" id="social-label-es">Verificar email</span>
+          <span class="en" id="social-label-en">Verify email</span>
+        </label>
+        <input type="email" id="social-email-input" placeholder="nombre@empresa.com" class="form-input" style="text-align: center;" onkeydown="handleSocialEmailKeydown(event)">
+      </div>
+      
+      <button onclick="submitSocialEmail()" class="lock-submit-btn" type="button">
+        <span class="es">Continuar</span>
+        <span class="en">Continue</span>
+      </button>
+    </div>
+ 
     <!-- Status display -->
     <div id="lock-status" class="lock-status-container" style="width: 100%; margin-top: 8px;"></div>
   </div>
@@ -5400,23 +5424,66 @@ body.visitor-unauthorized .locked-metric:hover::after {
     }
   };
 
+  let currentProvider = '';
+
+  window.showMainLockScreen = function() {
+    document.getElementById('social-stack').style.display = 'flex';
+    document.getElementById('lock-divider-el').style.display = 'flex';
+    document.getElementById('token-form-el').style.display = 'block';
+    document.getElementById('social-email-form').style.display = 'none';
+    
+    // Clear status
+    const statusDiv = document.getElementById('lock-status');
+    statusDiv.style.display = 'none';
+    statusDiv.className = 'lock-status-container';
+  };
+
+  function showSocialEmailForm(providerName, providerKey) {
+    currentProvider = providerKey;
+    
+    document.getElementById('social-stack').style.display = 'none';
+    document.getElementById('lock-divider-el').style.display = 'none';
+    document.getElementById('token-form-el').style.display = 'none';
+    
+    const form = document.getElementById('social-email-form');
+    form.style.display = 'flex';
+    
+    const labelEs = document.getElementById('social-label-es');
+    const labelEn = document.getElementById('social-label-en');
+    
+    labelEs.textContent = `Introduce tu email de ${providerName} para verificar acceso`;
+    labelEn.textContent = `Enter your ${providerName} email to verify access`;
+    
+    const input = document.getElementById('social-email-input');
+    input.value = '';
+    input.focus();
+  }
+
+  window.submitSocialEmail = function() {
+    const input = document.getElementById('social-email-input');
+    const email = input.value.trim();
+    const lang = getLang();
+    
+    if (!email || !email.includes('@')) {
+      const statusDiv = document.getElementById('lock-status');
+      statusDiv.textContent = lang === 'en' ? 'Please enter a valid email address.' : 'Por favor, introduce un correo electrónico válido.';
+      statusDiv.className = 'lock-status-container error';
+      return;
+    }
+    
+    handleSocialLoginResult(email.toLowerCase(), 'User', currentProvider);
+  };
+
+  window.handleSocialEmailKeydown = function(event) {
+    if (event.key === 'Enter') {
+      submitSocialEmail();
+    }
+  };
+
   // Login con Google
   window.loginWithGoogle = function() {
     if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
-      // Simulation mode
-      const lang = getLang();
-      const email = prompt(lang === 'en' 
-        ? 'Google Sign-In is not configured in this environment. Enter an email to simulate the login:'
-        : 'El inicio con Google no está configurado en este entorno. Introduce un email para simular el inicio:');
-      
-      if (email && email.trim()) {
-        const cleanEmail = email.trim().toLowerCase();
-        if (cleanEmail.includes('@')) {
-          handleSocialLoginResult(cleanEmail, 'Simulated Google User', 'google_auth');
-        } else {
-          alert(lang === 'en' ? 'Invalid email format' : 'Formato de email inválido');
-        }
-      }
+      showSocialEmailForm('Google', 'google_auth');
       return;
     }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
@@ -5434,20 +5501,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   // Login con Microsoft
   window.loginWithMicrosoft = function() {
     if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
-      // Simulation mode
-      const lang = getLang();
-      const email = prompt(lang === 'en' 
-        ? 'Microsoft Sign-In is not configured in this environment. Enter an email to simulate the login:'
-        : 'El inicio con Microsoft no está configurado en este entorno. Introduce un email para simular el inicio:');
-      
-      if (email && email.trim()) {
-        const cleanEmail = email.trim().toLowerCase();
-        if (cleanEmail.includes('@')) {
-          handleSocialLoginResult(cleanEmail, 'Simulated Microsoft User', 'microsoft_auth');
-        } else {
-          alert(lang === 'en' ? 'Invalid email format' : 'Formato de email inválido');
-        }
-      }
+      showSocialEmailForm('Microsoft', 'microsoft_auth');
       return;
     }
     const redirectUri = encodeURIComponent(window.location.origin + '/');
@@ -5464,19 +5518,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
 
   // Login con LinkedIn
   window.loginWithLinkedIn = function() {
-    const lang = getLang();
-    const email = prompt(lang === 'en' 
-      ? 'LinkedIn Sign-In is not configured in this environment. Enter an email to simulate the login:'
-      : 'El inicio con LinkedIn no está configurado en este entorno. Introduce un email para simular el inicio:');
-    
-    if (email && email.trim()) {
-      const cleanEmail = email.trim().toLowerCase();
-      if (cleanEmail.includes('@')) {
-        handleSocialLoginResult(cleanEmail, 'Simulated LinkedIn User', 'linkedin_auth');
-      } else {
-        alert(lang === 'en' ? 'Invalid email format' : 'Formato de email inválido');
-      }
-    }
+    showSocialEmailForm('LinkedIn', 'linkedin_auth');
   };
 })();
 </script>
