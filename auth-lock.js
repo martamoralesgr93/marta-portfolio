@@ -8,17 +8,7 @@
 
   // Lista de tokens válidos (en minúsculas y sin espacios)
   const VALID_TOKENS = [
-    'hiberus',
-    'recruiter',
-    'talent',
-    'hiring',
-    'invited',
-    'design-team',
-    'marta2026',
-    'acceso',
-    'hr',
-    'guest',
-    'oportunidad'
+    'mmorales2026'
   ];
 
   // Helper para obtener parámetros de la URL

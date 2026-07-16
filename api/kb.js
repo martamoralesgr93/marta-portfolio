@@ -400,7 +400,7 @@ Content:
 
 > No es una lista de empleos: cada etapa se documenta por contexto, productos, usuarios, autonomía, decisiones, herramientas e impacto. El orden es cronológico (de lo actual a lo anterior). Las fechas exactas están en validación (ver metadato \`pending_validation\`); la evolución profesional es completa y fiel.
 
-## ILUNION Hotels — Product Designer, equipo de Negocio Digital (actual)
+## ILUNION Hotels — Digital Business Designer | UX/UI & Conversion (CRO) (actual)
 
 ### Contexto
 ILUNION Hotels es una cadena hotelera con vocación de inclusión social. Trabajo en el equipo de **Negocio Digital**, y soy la **única Product Designer** dentro de un equipo formado principalmente por **desarrolladores backend**. No hay una capa de diseño por encima: la función de diseño del producto soy yo. Mi rol evolucionó desde el **diseño de negocio digital** hacia el **Product Design** completo, asumiendo cada vez más responsabilidad end-to-end.
@@ -1956,7 +1956,7 @@ Content:
 
 > No es una lista de empleos: cada etapa se documenta por contexto, productos, usuarios, autonomía, decisiones, herramientas e impacto. El orden es cronológico (de lo actual a lo anterior). Las fechas exactas están en validación (ver metadato \`pending_validation\`); la evolución profesional es completa y fiel.
 
-## ILUNION Hotels — Product Designer, equipo de Negocio Digital (actual)
+## ILUNION Hotels — Digital Business Designer | UX/UI & Conversion (CRO) (actual)
 
 ### Contexto
 ILUNION Hotels es una cadena hotelera con vocación de inclusión social. Trabajo en el equipo de **Negocio Digital**, y soy la **única Product Designer** dentro de un equipo formado principalmente por **desarrolladores backend**. No hay una capa de diseño por encima: la función de diseño del producto soy yo. Mi rol evolucionó desde el **diseño de negocio digital** hacia el **Product Design** completo, asumiendo cada vez más responsabilidad end-to-end.

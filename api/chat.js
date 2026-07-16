@@ -10,7 +10,7 @@ const FALLBACK = {
   en: "I can't process that right now. Email Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (replies within 24h)."
 };
 
-const VALID_TOKENS = ['hiberus', 'recruiter', 'talent', 'hiring', 'invited', 'design-team', 'marta2026', 'acceso', 'hr', 'guest', 'oportunidad'];
+const VALID_TOKENS = ['mmorales2026'];
 const WHITELISTED_EMAILS = ['mmoralesgr93@gmail.com', 'recruiter@google.com', 'talent@hiberus.com'];
 
 function buildSystem(lang, kb, prompts) {
