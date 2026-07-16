@@ -5015,17 +5015,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   ];
 
   const VALID_TOKENS = [
-    'hiberus',
-    'recruiter',
-    'talent',
-    'hiring',
-    'invited',
-    'design-team',
-    'marta2026',
-    'acceso',
-    'hr',
-    'guest',
-    'oportunidad'
+    'mmorales2026'
   ];
   
   let pendingRedirectUrl = '';
@@ -5040,10 +5030,9 @@ body.visitor-unauthorized .locked-metric:hover::after {
   }
 
   function checkIsAuthorized() {
-    // Portfolio en abierto: métricas y case studies visibles para todo el mundo.
-    // Las métricas son el principal argumento de venta ante un recruiter;
-    // el token por URL sigue funcionando como identificador de visita en Clarity.
-    return true;
+    const t = (localStorage.getItem('portfolio_token') || '').trim().toLowerCase();
+    const e = (localStorage.getItem('portfolio_google_email') || '').trim().toLowerCase();
+    return isValidToken(t) || (e && WHITELISTED_EMAILS.map(x => x.toLowerCase()).includes(e));
   }
 
   // Initialize Lock Screen State
@@ -5057,12 +5046,18 @@ body.visitor-unauthorized .locked-metric:hover::after {
   const initialAuth = checkIsAuthorized();
   if (initialAuth) {
     document.body.classList.add('visitor-authorized');
+    document.getElementById('portfolio-content').style.display = 'block';
   } else {
     document.body.classList.add('visitor-unauthorized');
+    document.getElementById('portfolio-content').style.display = 'none';
+    
+    // Auto-show pending warning if they logged in before but are not whitelisted yet
+    const savedEmail = localStorage.getItem('portfolio_google_email');
+    if (savedEmail) {
+      document.getElementById('portfolio-lock-screen').style.display = 'flex';
+      showPendingMessage(getLang());
+    }
   }
-
-  // Always show portfolio content on home page
-  document.getElementById('portfolio-content').style.display = 'block';
 
   // Check if landing with direct redirect parameter
   const redirectUrlParam = urlParamsInit.get('redirect');
@@ -5256,11 +5251,12 @@ body.visitor-unauthorized .locked-metric:hover::after {
       return;
     }
 
+    // Guardar el email del login social de inmediato para persistencia
+    localStorage.setItem('portfolio_google_email', cleanEmail);
+
     if (WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(cleanEmail)) {
       statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
       statusDiv.className = 'lock-status-container success';
-      
-      localStorage.setItem('portfolio_google_email', cleanEmail);
       
       if (typeof window.clarity === "function") {
         let domain = cleanEmail.includes("@") ? cleanEmail.split("@")[1] : "unknown";
