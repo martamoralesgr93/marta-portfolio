@@ -93,7 +93,7 @@ module.exports = async (req, res) => {
           contents,
           systemInstruction: { parts: [{ text: systemPrompt }] },
           generationConfig: {
-            maxOutputTokens: 500,
+            maxOutputTokens: 2048,
             temperature: 0.2
           }
         })
@@ -101,9 +101,13 @@ module.exports = async (req, res) => {
 
       if (r.ok) {
         const data = await r.json();
-        const reply = data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text
-          ? data.candidates[0].content.parts[0].text
-          : null;
+        let reply = null;
+        if (data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+          reply = data.candidates[0].content.parts
+            .map(p => p.text || '')
+            .join('')
+            .trim();
+        }
         if (reply) {
           res.status(200).json({ reply });
           return;
@@ -127,7 +131,7 @@ module.exports = async (req, res) => {
         },
         body: JSON.stringify({
           model: 'claude-3-5-haiku-latest',
-          max_tokens: 500,
+          max_tokens: 1000,
           system: systemPrompt,
           messages
         })
