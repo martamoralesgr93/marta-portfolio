@@ -1083,7 +1083,7 @@
   position: fixed; bottom: 28px; right: 28px; z-index: 9000;
   width: 56px; height: 56px; border-radius: 50%;
   background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.85));
-  border: none; cursor: pointer; display: none; align-items: center; justify-content: center;
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 24px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.4);
   transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
   outline: none;
@@ -1264,6 +1264,52 @@
 }
 #chat-undo:hover { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.75); transform: scale(1.08); }
 #chat-undo.visible { display: flex; }
+
+/* ── Auth screen ── */
+.chat-auth-screen {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 32px 24px; text-align: center;
+}
+.chat-auth-icon {
+  font-size: 32px; margin-bottom: 16px; animation: float-auth 3s ease-in-out infinite;
+}
+@keyframes float-auth { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.chat-auth-title {
+  font-size: 16px; font-weight: 600; color: var(--text-strong); margin-bottom: 10px;
+  font-family: "Satoshi", sans-serif;
+}
+.chat-auth-desc {
+  font-size: 13.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 24px;
+  font-family: "Satoshi", sans-serif;
+}
+.chat-auth-form {
+  width: 100%; display: flex; gap: 8px; margin-bottom: 16px;
+}
+.chat-auth-input {
+  flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px; padding: 10px 14px; color: var(--text-strong);
+  font-size: 13.5px; font-family: "Satoshi", sans-serif; outline: none;
+  transition: border-color 0.2s;
+}
+.chat-auth-input:focus { border-color: rgba(var(--accent-rgb),0.4); }
+.chat-auth-btn {
+  background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.75));
+  border: none; border-radius: 14px; padding: 0 18px; color: #fff;
+  font-size: 13.5px; font-weight: 500; font-family: "Satoshi", sans-serif; cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.chat-auth-btn:hover { opacity: 0.9; transform: scale(1.03); }
+.chat-auth-error {
+  font-size: 12px; color: #f87171; display: none; margin-bottom: 16px;
+  font-family: "Satoshi", sans-serif;
+}
+.chat-auth-footer {
+  font-size: 12px; color: var(--text-muted); font-family: "Satoshi", sans-serif;
+}
+.chat-auth-link {
+  color: var(--accent); text-decoration: underline; text-underline-offset: 2px;
+}
+.chat-auth-link:hover { opacity: 0.85; }
 </style>
 
 <button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
@@ -1293,9 +1339,28 @@
       </svg>
     </button>
   </div>
+
+  <!-- ── Token Auth Screen ── -->
+  <div id="chatAuthScreen" class="chat-auth-screen" style="display:none;">
+    <div class="chat-auth-icon">🔒</div>
+    <div class="chat-auth-title es">Asistente Reservado</div>
+    <div class="chat-auth-title en">Reserved Assistant</div>
+    <div class="chat-auth-desc es">Este asistente contiene información profesional detallada y está reservado para contactos autorizados. Introduce tu código de acceso para conversar con la IA de Marta.</div>
+    <div class="chat-auth-desc en">This assistant contains detailed professional info and is reserved for authorized contacts. Please enter your access code to chat with Marta's AI.</div>
+    <div class="chat-auth-form">
+      <input type="text" id="chatAuthInput" class="chat-auth-input" placeholder="Código de acceso / Access code..." onkeydown="chatAuthKeydown(event)">
+      <button class="chat-auth-btn es" onclick="chatAuthSubmit()">Entrar</button>
+      <button class="chat-auth-btn en" onclick="chatAuthSubmit()">Enter</button>
+    </div>
+    <div id="chatAuthError" class="chat-auth-error"></div>
+    <div class="chat-auth-footer es">¿No tienes código? Solicítalo en <a href="mailto:mmoralesgr93@gmail.com" class="chat-auth-link">mmoralesgr93@gmail.com</a></div>
+    <div class="chat-auth-footer en">No code? Request one at <a href="mailto:mmoralesgr93@gmail.com" class="chat-auth-link">mmoralesgr93@gmail.com</a></div>
+  </div>
+
+  <!-- ── Chat Content Containers ── -->
   <div class="chat-messages" id="chatMessages"></div>
   <div class="chat-chips" id="chatChips"></div>
-  <div class="chat-input-area">
+  <div class="chat-input-area" id="chatInputArea">
     <textarea class="chat-input" id="chatInput" rows="1" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta" onkeydown="chatKeydown(event)" oninput="chatAutoResize(this)"></textarea>
     <button class="chat-send" onclick="chatSend()" aria-label="Enviar">
       <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
@@ -1845,6 +1910,9 @@
 
   var isOpen=false, isTyping=false, initialized=false, chatHistory=[];
 
+  var VALID_TOKENS = ['hiberus', 'recruiter', 'talent', 'hiring', 'invited', 'design-team', 'marta2026', 'acceso', 'hr', 'guest', 'oportunidad'];
+  var WHITELISTED_EMAILS = ['mmoralesgr93@gmail.com', 'recruiter@google.com', 'talent@hiberus.com'];
+
   function getLang(){return document.documentElement.classList.contains('lang-en')?'en':'es';}
   function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
   function getResponse(intent){var lang=getLang();return pick(KB[lang][intent]||KB[lang].default);}
@@ -1858,12 +1926,62 @@
     return 'default';
   }
 
+  function checkAuth() {
+    var t = (localStorage.getItem('portfolio_token') || '').trim().toLowerCase();
+    var e = (localStorage.getItem('portfolio_google_email') || '').trim().toLowerCase();
+    return VALID_TOKENS.indexOf(t) !== -1 || (e && WHITELISTED_EMAILS.indexOf(e) !== -1);
+  }
+
+  function updateUiAuth() {
+    var authed = checkAuth();
+    var authScreen = document.getElementById('chatAuthScreen');
+    var messages = document.getElementById('chatMessages');
+    var chips = document.getElementById('chatChips');
+    var inputArea = document.getElementById('chatInputArea');
+    var undoBtn = document.getElementById('chat-undo');
+    
+    if (authed) {
+      if (authScreen) authScreen.style.display = 'none';
+      if (messages) messages.style.display = 'flex';
+      if (chips) chips.style.display = 'flex';
+      if (inputArea) inputArea.style.display = 'flex';
+      if (undoBtn && history.length > 0) undoBtn.classList.add('visible');
+    } else {
+      if (authScreen) authScreen.style.display = 'flex';
+      if (messages) messages.style.display = 'none';
+      if (chips) chips.style.display = 'none';
+      if (inputArea) inputArea.style.display = 'none';
+      if (undoBtn) undoBtn.classList.remove('visible');
+    }
+  }
+
+  window.chatAuthSubmit = function() {
+    var valInput = document.getElementById('chatAuthInput');
+    var val = (valInput ? valInput.value : '').trim().toLowerCase();
+    var err = document.getElementById('chatAuthError');
+    if (VALID_TOKENS.indexOf(val) !== -1) {
+      localStorage.setItem('portfolio_token', val);
+      if (err) err.style.display = 'none';
+      updateUiAuth();
+      initChat();
+    } else {
+      if (err) {
+        err.textContent = getLang() === 'en' ? 'Invalid code.' : 'Código de acceso no válido.';
+        err.style.display = 'block';
+      }
+    }
+  };
+
+  window.chatAuthKeydown = function(e) {
+    if (e.key === 'Enter') {
+      chatAuthSubmit();
+    }
+  };
+
   // Client-side simple Markdown to HTML formatter to align styles with reading mode
   function formatMarkdown(text) {
     if (!text) return '';
-    // Replace bold: **text** or __text__ -> <strong>text</strong>
     var html = text.replace(/(\*\*|__)(.*?)\1/g, '<strong>$2</strong>');
-    // Replace italic: *text* or _text_ -> <em>text</em>
     html = html.replace(/(^|[^a-zA-Z0-9\/])\*([^*]+)\*(?=[^a-zA-Z0-9\/]|$)/g, '$1<em>$2</em>');
     
     var lines = html.split('\n');
@@ -1947,7 +2065,8 @@
   function resetChat(){
     document.getElementById('chatMessages').innerHTML='';
     document.getElementById('chatChips').innerHTML='';
-    document.getElementById('chat-undo').classList.remove('visible');
+    var undoBtn = document.getElementById('chat-undo');
+    if (undoBtn) undoBtn.classList.remove('visible');
     history=[];
     chatHistory=[];
     initialized=false;
@@ -1967,7 +2086,8 @@
       btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
       c.appendChild(btn);
     });
-    if(!history.length) document.getElementById('chat-undo').classList.remove('visible');
+    var undoBtn = document.getElementById('chat-undo');
+    if(!history.length && undoBtn) undoBtn.classList.remove('visible');
     var box=document.getElementById('chatMessages');
     box.scrollTop=box.scrollHeight;
   };
@@ -2005,7 +2125,8 @@
     chatHistory.push({role:'assistant',content:reply});
     isTyping=false;
     history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
-    document.getElementById('chat-undo').classList.add('visible');
+    var undoBtn = document.getElementById('chat-undo');
+    if (undoBtn) undoBtn.classList.add('visible');
     var alwaysChips = lang==='en'
       ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
       : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
@@ -2023,7 +2144,15 @@
     isOpen=!isOpen;
     panel.classList.toggle('open',isOpen);
     trigger.classList.toggle('open',isOpen);
-    if(isOpen){initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
+    if(isOpen){
+      updateUiAuth();
+      if(checkAuth()){
+        initChat();
+        setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);
+      } else {
+        setTimeout(function(){var i=document.getElementById('chatAuthInput');if(i)i.focus();},320);
+      }
+    }
   };
   window.chatSend=function(){
     var input=document.getElementById('chatInput');
@@ -2040,21 +2169,16 @@
   new MutationObserver(function(){
     var input=document.getElementById('chatInput');
     if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
+    
+    var authInput = document.getElementById('chatAuthInput');
+    if(authInput)authInput.placeholder=getLang()==='en'?'Access code / Promo...':'Código de acceso / Promo...';
+
     if(isOpen&&initialized){resetChat();}
+    if(isOpen){updateUiAuth();}
   }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
 
-  // Only show trigger if authorized
-  var VALID_TOKENS = ['hiberus', 'recruiter', 'talent', 'hiring', 'invited', 'design-team', 'marta2026', 'acceso', 'hr', 'guest', 'oportunidad'];
-  var WHITELISTED_EMAILS = ['mmoralesgr93@gmail.com', 'recruiter@google.com', 'talent@hiberus.com'];
-  function checkAuth() {
-    var t = (localStorage.getItem('portfolio_token') || '').trim().toLowerCase();
-    var e = (localStorage.getItem('portfolio_google_email') || '').trim().toLowerCase();
-    return VALID_TOKENS.indexOf(t) !== -1 || (e && WHITELISTED_EMAILS.indexOf(e) !== -1);
-  }
-  if (checkAuth()) {
-    var trigger = document.getElementById('chat-trigger');
-    if (trigger) trigger.style.setProperty('display', 'flex', 'important');
-  }
+  // Initial check
+  updateUiAuth();
 })();
 </script>
 
