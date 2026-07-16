@@ -647,14 +647,15 @@ a.sc-client-link:hover {
   color: var(--white);
 }
 .sc-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 36px; font-weight: 700; line-height: 1.12;
-  letter-spacing: -0.3px; color: var(--white);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 34px; font-weight: 800; line-height: 1.14;
+  letter-spacing: -0.6px; color: var(--white);
   margin-bottom: 20px;
 }
 .sc-title em {
-  font-style: italic;
-  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  color: #c3c5cf;
 }
 .sc-desc {
   font-size: 13px; color: var(--text-strong); line-height: 1.82;
@@ -2981,8 +2982,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-num">04</div>
           <span class="sc-client-link" style="cursor:default;">Paolo by Danny's Jazz</span>
         </div>
-        <h3 class="sc-title es">Paolo Pizzeria<br><em>ecosistema digital de delivery</em></h3>
-        <h3 class="sc-title en">Paolo Pizzeria<br><em>digital delivery ecosystem</em></h3>
+        <h3 class="sc-title es">Paolo by Danny's Jazz<br><em>ecosistema digital de delivery</em></h3>
+        <h3 class="sc-title en">Paolo by Danny's Jazz<br><em>digital delivery ecosystem</em></h3>
         <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. El ecosistema escaló de 1 a 5 locales sin rediseño. Construido en pandemia. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
         <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
         <div class="sc-cta-row">
@@ -3489,7 +3490,7 @@ function closeMenu() {
   margin-top: 18px;
   background: rgba(var(--accent-rgb),0.06); border: 1px solid rgba(var(--accent-rgb),0.20);
   border-radius: 100px; padding: 6px 14px; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 11.5px;
+  font-family: "Satoshi", sans-serif; font-size: 12px;
   color: rgba(196,181,253,0.95); letter-spacing: 0.02em;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
@@ -3507,7 +3508,7 @@ function closeMenu() {
   background: rgba(124,58,237,0.08);
   border: 1px solid rgba(var(--accent-rgb),0.25);
   border-radius: 100px; padding: 10px 20px;
-  cursor: pointer; font-family: 'Inter', sans-serif;
+  cursor: pointer; font-family: "Satoshi", sans-serif;
   font-size: 13px; font-weight: 500;
   color: rgba(var(--accent-rgb),0.85); letter-spacing: 0.01em;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
@@ -3555,7 +3556,7 @@ function closeMenu() {
 /* ── Chat panel ── */
 #chat-panel {
   position: fixed; bottom: 96px; right: 28px; z-index: 8999;
-  width: 360px; max-height: 540px;
+  width: 420px; max-height: 600px; height: 80vh;
   background: rgba(8,8,8,0.92);
   backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
   border: 1px solid rgba(255,255,255,0.10);
@@ -3567,6 +3568,7 @@ function closeMenu() {
   opacity: 0; pointer-events: none;
   transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), opacity 0.25s;
   overflow: hidden;
+  font-family: "Satoshi", system-ui, -apple-system, sans-serif;
 }
 #chat-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
 #chat-panel::before {
@@ -3588,12 +3590,12 @@ function closeMenu() {
 }
 .chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .chat-avatar-fallback {
-  font-size: 14px; font-weight: 700; color: var(--purple);
-  font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 700; color: var(--accent);
+  font-family: "Satoshi", sans-serif;
 }
 .chat-header-info { flex: 1; min-width: 0; }
-.chat-header-name { font-size: 13px; font-weight: 600; color: var(--text-strong); font-family: 'Inter', sans-serif; line-height: 1.2; }
-.chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+.chat-header-name { font-size: 14px; font-weight: 600; color: var(--text-strong); font-family: "Satoshi", sans-serif; line-height: 1.2; }
+.chat-header-status { font-size: 12px; color: rgba(255,255,255,0.38); font-family: "Satoshi", sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
 .chat-status-dot {
   width: 6px; height: 6px; border-radius: 50%; background: #34d399;
   box-shadow: 0 0 6px rgba(52,211,153,0.6);
@@ -3613,7 +3615,37 @@ function closeMenu() {
 @keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .chat-msg.user { flex-direction: row-reverse; }
 
-.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; font-family: 'Inter', sans-serif; }
+.chat-bubble {
+  max-width: 85%; padding: 12px 16px; border-radius: 18px;
+  font-size: 14.5px; line-height: 1.6; font-family: "Satoshi", system-ui, -apple-system, sans-serif;
+  word-break: break-word;
+}
+.chat-bubble p {
+  margin: 0 0 10px 0;
+}
+.chat-bubble p:last-child {
+  margin-bottom: 0;
+}
+.chat-bubble ul, .chat-bubble ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+.chat-bubble li {
+  margin-bottom: 4px;
+}
+.chat-bubble strong {
+  color: var(--white);
+  font-weight: 600;
+}
+.chat-bubble a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2.5px;
+}
+.chat-bubble a:hover {
+  opacity: 0.85;
+}
+
 .chat-msg.bot .chat-bubble {
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
   color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
@@ -3622,8 +3654,6 @@ function closeMenu() {
   background: linear-gradient(135deg, rgba(124,58,237,0.75), rgba(249,115,22,0.60));
   border: 1px solid rgba(var(--accent-rgb),0.25); color: rgba(255,255,255,0.95); border-bottom-right-radius: 4px;
 }
-.chat-bubble a { color: var(--purple); text-decoration: underline; text-underline-offset: 2px; }
-.chat-bubble strong { color: var(--white); font-weight: 600; }
 
 .chat-typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; }
 .chat-typing span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); animation: typing-bounce 1.2s infinite; }
@@ -3633,8 +3663,8 @@ function closeMenu() {
 
 .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
 .chat-chip {
-  padding: 6px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500;
-  font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
+  padding: 6px 12px; border-radius: 100px; font-size: 12px; font-weight: 500;
+  font-family: "Satoshi", sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
   color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
 }
@@ -3646,9 +3676,9 @@ function closeMenu() {
 }
 .chat-input {
   flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 100px; padding: 9px 14px; color: var(--text);
-  font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
-  min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
+  border-radius: 20px; padding: 9px 14px; color: var(--text-strong);
+  font-size: 13.5px; font-family: "Satoshi", sans-serif; outline: none; resize: none;
+  min-height: 38px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
 }
 .chat-input::placeholder { color: rgba(255,255,255,0.25); }
 .chat-input:focus { border-color: rgba(var(--accent-rgb),0.4); }
@@ -3662,7 +3692,7 @@ function closeMenu() {
 .chat-send svg { width: 16px; height: 16px; }
 
 @media (max-width: 480px) {
-  #chat-panel { right: 12px; left: 12px; width: auto; bottom: 84px; }
+  #chat-panel { right: 12px; left: 12px; width: auto; bottom: 84px; height: 75vh; }
   #chat-trigger { right: 20px; bottom: 20px; }
 }
 
@@ -3719,194 +3749,548 @@ function closeMenu() {
 
 <script>
 (function() {
+  // Injected at build time by build.js
   var KB = {
-    es: {
-      greeting: [
-        "¡Hola! Soy el asistente de Marta. Si eres recruiter o hiring manager, estás en el sitio correcto — puedo contarte todo lo que necesitas para tomar una decisión. ¿Por dónde empezamos?"
-      ],
-      about: [
-        "Marta Morales se posiciona en el mercado como el 'producto de diseño completo' bajo su principal KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Su portafolio es en sí mismo un reflejo de este producto, y los casos prácticos (EdTech, Travel, B2B) son los ejemplos de uso de cómo sus habilidades de optimización, automatización de sistemas de diseño y flujos con IA resuelven problemas reales de negocio."
-      ],
-      experience: [
-        "<strong>+4 años</strong> de trayectoria liderando el ciclo completo de producto digital. Su enfoque trasciende el diseño visual: actúa como motor estratégico de CRO, estructurando sistemas de diseño scalables y optimizando interfaces complejas mediante automatizaciones de IA para multiplicar la velocidad de desarrollo.",
-        "Marta no espera un brief estructurado: **identifica el problema, define el enfoque y mide el resultado**, utilizando los casos prácticos de su portafolio para poner a prueba sus habilidades frente a constraints reales."
-      ],
-      skills: [
-        "Sus 4 pilares fundamentales son: <strong>UX &amp; Research</strong> (diagnóstico cuantitativo/cualitativo), <strong>Design Systems</strong> (Figma avanzado, variables, handoff estructurado), <strong>AI Product Design</strong> (MCPs, vibe coding, automatización de flujos) y <strong>CRO</strong> (experimentos basados en datos, A/B Testing, incremento de conversión).",
-        "Domina el ciclo completo de producto: **discovery, research de comportamiento, arquitectura de información, prototipado, test con usuarios, handoff y análisis post-lanzamiento**."
-      ],
-      tools: [
-        "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
-      ],
-      cases: [
-        "Marta has <strong>5 case studies across 4 different sectors</strong>. What ties them together isn't the industry — it's the same pattern: she diagnoses the business problem before touching a single pixel.<br><br>• <strong>Booking Engine (ILUNION)</strong> — hotel booking engine redesign from scratch to production<br>• <strong>CRO AEM (ILUNION)</strong> — direct conversion 3.36% → 6.5% using real data experiments<br>• <strong>CEF Design System</strong> — EdTech design system from zero: 80+ components, tokens, WCAG<br>• <strong>Paolo by Danny's Jazz</strong> — visual identity + full digital ecosystem for a chain that grew from 1 to 5 locations <em>without a redesign</em><br>• <strong>Build vs. Buy · Oracle IT</strong> — strategic friction diagnosis embedded in the team: conclusion was to build an internal tool, not patch Oracle<br><br>Want me to go deeper on any of them?"
-      ],
-      remote: [
-        "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
-      ],
-      availability: [
-        "Marta está <strong>activamente buscando su próxima oportunidad</strong> y puede incorporarse con relativa rapidez. Hay otras conversaciones en curso, así que si hay fit, merece la pena hablar pronto. ¿Tienes alguna posición en mente?"
-      ],
-      salary: [
-        "Marta maneja expectativas alineas con su experiencia y el mercado actual. Es un detalle que se aclara en cinco minutos en una llamada. ¿Le damos una oportunidad a esa conversación?"
-      ],
-      interview: [
-        "¡Perfecto! Escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h. O usa el formulario de contacto al final de la página.",
-        "Genial. La mejor forma es un email a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> proponiendo día y hora. Marta es flexible y se adapta a vuestra agenda."
-      ],
-      contact: [
-        "Email directo: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Responde rápido, menos de 24h."
-      ],
-      research: [
-        "Marta tiene <strong>base sólida en UX Research:</strong> entrevistas con usuarios, card sorting, tree testing, análisis heurístico y síntesis de insights. Lo más importante: siempre conecta el research con decisiones de negocio concretas."
-      ],
-      systems: [
-        "Ha construido <strong>design systems desde cero:</strong> el sistema de CEF incluye +80 componentes, tokens de diseño, guías de accesibilidad y documentación para desarrollo. Domina Figma Variables, Auto Layout avanzado y versionado de componentes."
-      ],
-      cro: [
-        "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
-      ],
-      paolo: [
-        "Paolo by Danny's Jazz es uno de los proyectos que mejor refleja el <strong>ownership real de Marta</strong>. No fue un encargo de diseño — fue un problema de negocio entero: una cadena de pizzerías artesanas sin canal digital en plena pandemia, sin web, sin delivery, sin presencia en Google.<br><br>Diseñó y construyó desde cero: identidad visual completa, web (Adobe XD → WordPress + Elementor), los 3 customer journeys del negocio (delivery, visita al local, reserva), ecosistema de delivery activo (Glovo, Uber Eats, JustEat), cartas QR, Google My Business y un ciclo mensual de analítica con Clarity + GA4 + Metricool.<br><br>Resultado: el producto escaló de 1 a 5 locales en 2 años <strong>sin necesidad de rediseño</strong>. +32% en llamadas directas desde móvil el primer mes. Cuando el proyecto terminó, el ecosistema seguía funcionando solo. Eso es diseño que funciona."
-      ],
-      oracle: [
-        "El caso Oracle (Build vs. Buy) muestra a Marta en modo <strong>diagnosticadora estratégica, no ejecutora de interfaces.</strong><br><br>We Are Actions llevaba años gestionando incidencias IT con Oracle. El responsable de sistemas llegó a dirección con un Excel con datos reales de fricción. Marta estaba <em>embebida en el equipo IT</em>, así que hizo discovery contextual desde dentro: vio la fricción ocurrir en tiempo real, no en una sesión de research artificial.<br><br>Su diagnóstico: Oracle no estaba mal diseñado — era simplemente la herramienta equivocada para <em>sus</em> flujos. La recomendación fue construir una herramienta interna en lugar de seguir parcheando una plataforma genérica.<br><br>El caso de estudio ya está publicado y disponible en este portafolio. Representa exactamente el tipo de trabajo que más le interesa: <strong>identificar el problema real antes de proponer la solución.</strong>"
-      ],
-      booking: [
-        "El <strong>Booking Engine de ILUNION</strong> fue el rediseño end-to-end del motor de reservas de una cadena hotelera — de la investigación con usuarios hasta la entrega a producción. El reto era entender por qué la conversión en canal directo era tan baja y proponer una solución argumentada. Marta lideró todo: research, arquitectura de información, prototipado, test con usuarios y handoff. Este proyecto fue la base sobre la que después se aplicaron los experimentos de CRO que llevaron la conversión del 3.36% al 6.5%."
-      ],
-      cef: [
-        "El <strong>CEF Design System</strong> demuestra la capacidad de Marta para crear infraestructura de diseño desde cero en un entorno EdTech con restricciones de accesibilidad estrictas.<br><br>Construyó un sistema con +80 componentes en Figma: tokens de diseño, variantes, estados, documentación para desarrollo y cumplimiento WCAG 2.1 AA. El objetivo no era solo coherencia visual — era que los equipos de desarrollo pudieran construir con él de forma autónoma."
-      ],
-      whyhire: [
-        "Tres cualidades clave:<br><br>1. <strong>Mentalidad de Producto:</strong> Su portafolio y ella misma operan bajo un enfoque orientado a resultados y KPIs claros.<br>2. <strong>Especialización de Vanguardia:</strong> Une el rigor clásico de la accesibilidad y el CRO con flujos avanzados de IA y vibe coding.<br>3. <strong>Autonomía Estratégica:</strong> Diagnóstica la raíz de los problemas y propone la decisión óptima antes de tocar el primer pixel."
-      ],
-      sector: [
-        "Marta tiene experiencia en <strong>turismo / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (sistemas de diseño, accesibilidad) y <strong>consultoría digital</strong>. Busca su próximo reto en empresas <strong>tech, SaaS o travel</strong> con producto propio."
-      ],
-      default: [
-        "Buena pregunta. Para eso mejor habla con Marta directamente: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
-        "Eso lo responde Marta mejor que yo en persona. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h."
-      ]
-    },
-    en: {
-      greeting: [
-        "Hi! I'm Marta's assistant. If you're a recruiter or hiring manager, you're in the right place — I can tell you everything you need to make a decision. Where shall we start?"
-      ],
-      about: [
-        "Marta Morales positions herself as the 'complete design product' under her main KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Her portfolio is a product in itself, demonstrating how her skills in optimization, design systems automation, and AI workflows solve real business challenges."
-      ],
-      experience: [
-        "<strong>4+ years</strong> of experience leading the end-to-end product lifecycle. She acts as a strategic CRO engine, building scalable design systems and optimizing complex interfaces through AI integrations to accelerate development speed.",
-        "Marta doesn't wait for a brief: **she identifies the problem, defines the approach, and measures outcomes**, using her case studies as live test-beds to validate new workflow capabilities."
-      ],
-      skills: [
-        "Her 4 core pillars are: <strong>UX &amp; Research</strong> (qualitative/quantitative diagnostics), <strong>Design Systems</strong> (advanced Figma, variables, structured handoff), <strong>AI Product Design</strong> (MCPs, vibe coding, workflow automation) and <strong>CRO</strong> (data-driven experiments, A/B Testing, conversion lifts).",
-        "She masters the full process: **discovery, behavior research, information architecture, prototyping, user testing, handoff, and post-launch analysis**."
-      ],
-      tools: [
-        "Daily stack: <strong>Figma</strong> (design systems, variables, components), <strong>Adobe Analytics + Hotjar</strong> (behaviour data), <strong>Notion & Jira</strong> (product management), Bootstrap and close engineering collaboration."
-      ],
-      cases: [
-        "Case studies with real impact:<br><br>• <strong>ILUNION CRO</strong> — direct channel conversion from 3.36% to 6.5% with a data-driven redesign<br>• <strong>Booking Engine</strong> — hotel booking flow from research to production<br>• <strong>CEF Design System</strong> — 80+ components with tokens, accessibility & dev docs<br>• <strong>IT Ops Oracle</strong> — B2B product for IT operations management<br><br>Want details on any of them?"
-      ],
-      remote: [
-        "Marta is <strong>open to fully remote and hybrid.</strong> Based in Madrid, experienced with distributed teams and async communication."
-      ],
-      availability: [
-        "Marta is <strong>actively looking for her next opportunity</strong> and can onboard relatively quickly. There are other conversations in progress, so if there's a fit, it's worth talking soon. Got a role in mind?",
-      ],
-      salary: [
-        "Marta's expectations are aligned with her experience and the current market. It's a detail that takes five minutes to clarify in a call. Shall we make that happen?"
-      ],
-      interview: [
-        "Great! Email her directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — she replies within 24h. Or use the contact form at the bottom of the page.",
-        "Perfect. The easiest way is an email to <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> suggesting a time. Marta is flexible and adapts to your schedule."
-      ],
-      contact: [
-        "Direct email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Replies fast, under 24h."
-      ],
-      research: [
-        "Marta has a <strong>solid UX Research foundation:</strong> user interviews, card sorting, tree testing, heuristic analysis and insight synthesis. Most importantly: she always connects research to concrete business decisions."
-      ],
-      systems: [
-        "She built <strong>design systems from scratch:</strong> CEF's system includes 80+ components, design tokens, accessibility guidelines and developer documentation. Proficient in Figma Variables, advanced Auto Layout and component versioning."
-      ],
-      cro: [
-        "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
-      ],
-      paolo: [
-        "Paolo by Danny's Jazz is one of the projects that best shows Marta's <strong>real ownership mindset</strong>. It wasn't a design brief — it was an entire business problem: an artisan pizza chain in the middle of a pandemic with no website, no delivery, no Google presence, nothing.<br><br>She designed and built from scratch: complete visual identity, the full website (Adobe XD → WordPress + Elementor), 3 customer journeys (delivery, in-store visit, booking), active delivery ecosystem (Glovo, Uber Eats, JustEat), QR menus, Google My Business, and a monthly analytics cycle with Clarity + GA4 + Metricool.<br><br>Result: the product scaled from 1 to 5 locations in 2 years <strong>without a redesign</strong>. +32% in direct mobile calls in the first month. When the project ended, the ecosystem kept running on its own. That's what good design looks like."
-      ],
-      oracle: [
-        "The Oracle case (Build vs. Buy) shows Marta in <strong>strategic diagnostician mode — not interface executor.</strong><br><br>We Are Actions had been managing IT incidents with Oracle for years. The systems manager came to leadership with real-data showing friction costs. Marta was <em>embedded in the IT team</em>, so she did contextual discovery from the inside: she saw friction happening in real time, not in an artificial research session.<br><br>Her diagnosis: Oracle wasn't badly designed — it was simply the wrong tool for <em>their</em> workflows. The recommendation was to build an internal tool rather than keep patching a generic platform.<br><br>The case study is now fully published and available. It represents exactly the kind of work she values most: <strong>finding the real problem before proposing the solution.</strong>"
-      ],
-      booking: [
-        "The <strong>ILUNION Booking Engine</strong> was an end-to-end redesign of a hotel chain's reservation engine — from user research to production handoff. The challenge was understanding why direct channel conversion was so low and proposing a data-backed solution. Marta led the full process: research, information architecture, prototyping, user testing and handoff. This was the foundation for the CRO experiments that later lifted conversion from 3.36% to 6.5%."
-      ],
-      cef: [
-        "The <strong>CEF Design System</strong> shows Marta's ability to build design infrastructure from scratch in an EdTech environment with strict accessibility requirements.<br><br>She built a system with 80+ Figma components: design tokens, variants, states, developer documentation and WCAG 2.1 AA compliance. The goal wasn't just visual consistency — it was enabling development teams to build autonomously."
-      ],
-      whyhire: [
-        "Three key qualities:<br><br>1. <strong>Product Mindset:</strong> Both her portfolio and she operate under a results-oriented approach with clear KPIs.<br>2. <strong>Cutting-edge Specialization:</strong> Combines classic CRO and accessibility rigor with advanced AI workflows and vibe coding.<br>3. <strong>Strategic Autonomy:</strong> Diagnoses the root of business problems and proposes the optimal path before designing a single pixel."
-      ],
-      sector: [
-        "Marta has experience in <strong>travel / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (design systems, accessibility) and <strong>digital consulting.</strong> She's looking for her next challenge at a <strong>tech, SaaS or travel</strong> company with its own product."
-      ],
-      default: [
-        "Great question. That's better answered by Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
-        "Marta can answer that better than me in person. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — replies within 24h."
-      ]
-    }
-  };
-
-  var CHIPS = {
-    es: [
-      {label:'¿Quién es Marta?',key:'about'},
-      {label:'Todos los casos',key:'cases'},
-      {label:'Paolo · ecosistema digital',key:'paolo'},
-      {label:'Oracle · diagnóstico IT',key:'oracle'},
-      {label:'¿Por qué contratarla?',key:'whyhire'},
-      {label:'Concertar entrevista',key:'interview'}
+  "es": {
+    "greeting": [
+      "¡Hola! Soy el asistente de Marta. Pregúntame lo que necesites para saber si encaja con tu equipo — sus casos, su impacto en negocio, su forma de trabajar o su disponibilidad. ¿Por dónde empezamos?"
     ],
-    en: [
-      {label:'Who is Marta?',key:'about'},
-      {label:'All case studies',key:'cases'},
-      {label:'Paolo · digital ecosystem',key:'paolo'},
-      {label:'Oracle · IT diagnosis',key:'oracle'},
-      {label:'Why hire her?',key:'whyhire'},
-      {label:'Schedule interview',key:'interview'}
+    "about": [
+      "Marta Morales se posiciona en el mercado como el 'producto de diseño completo' bajo su principal KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Su portafolio es en sí mismo un reflejo de este producto, y los casos prácticos (EdTech, Travel, B2B) son los ejemplos de uso de cómo sus habilidades de optimización, automatización de sistemas de diseño y flujos con IA resuelven problemas reales de negocio."
+    ],
+    "experience": [
+      "<strong>+4 años</strong> de trayectoria liderando el ciclo completo de producto digital. Su enfoque trasciende el diseño visual: actúa como motor estratégico de CRO, estructurando sistemas de diseño scalables y optimizando interfaces complejas mediante automatizaciones de IA para multiplicar la velocidad de desarrollo.",
+      "Marta no espera un brief estructurado: **identifica el problema, define el enfoque y mide el resultado**, utilizando los casos prácticos de su portafolio para poner a prueba sus habilidades frente a constraints reales."
+    ],
+    "skills": [
+      "Sus 4 pilares fundamentales son: <strong>UX &amp; Research</strong> (diagnóstico cuantitativo/cualitativo), <strong>Design Systems</strong> (Figma avanzado, variables, handoff estructurado), <strong>AI Product Design</strong> (MCPs, vibe coding, automatización de flujos) y <strong>CRO</strong> (experimentos basados en datos, A/B Testing, incremento de conversión).",
+      "Domina el ciclo completo de producto: **discovery, research de comportamiento, arquitectura de información, prototipado, test con usuarios, handoff y análisis post-lanzamiento**."
+    ],
+    "tools": [
+      "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
+    ],
+    "cases": [
+      "Marta tiene <strong>5 casos en 4 sectores</strong>. El hilo común no es la industria — es el patrón: diagnostica el problema de negocio antes de tocar un pixel.<br><br>• <strong>CEF Design System</strong> — sistema de diseño EdTech desde cero: tokens, componentes con estados y WCAG 2.1 AA<br>• <strong>ILUNION CRO</strong> — conversión del canal directo de 3,36% a 6,5% con experimentos sobre datos<br>• <strong>ILUNION Booking Engine</strong> — rediseño del motor de reservas, de research a producción<br>• <strong>Paolo by Danny's Jazz</strong> — identidad + ecosistema digital de una cadena que creció de 1 a 5 locales <em>sin rediseño</em><br>• <strong>Oracle · Build vs. Buy</strong> — diagnóstico de fricción IT embebida en el equipo: la conclusión fue construir, no parchear<br><br>¿Profundizamos en alguno?"
+    ],
+    "remote": [
+      "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
+    ],
+    "availability": [
+      "Marta está <strong>activamente buscando su próxima oportunidad</strong> y puede incorporarse con relativa rapidez. Hay otras conversaciones en curso, así que si hay fit, merece la pena hablar pronto. ¿Tienes alguna posición en mente?"
+    ],
+    "salary": [
+      "Marta maneja expectativas alineas con su experiencia y el mercado actual. Es un detalle que se aclara en cinco minutos en una llamada. ¿Le damos una oportunidad a esa conversación?"
+    ],
+    "interview": [
+      "¡Perfecto! Escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h. O usa el formulario de contacto al final de la página.",
+      "Genial. La mejor forma es un email a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> proponiendo día y hora. Marta es flexible y se adapta a vuestra agenda."
+    ],
+    "contact": [
+      "Email directo: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Responde rápido, menos de 24h."
+    ],
+    "research": [
+      "Marta tiene <strong>base sólida en UX Research:</strong> entrevistas con usuarios, card sorting, tree testing, análisis heurístico y síntesis de insights. Lo más importante: siempre conecta el research con decisiones de negocio concretas."
+    ],
+    "systems": [
+      "Ha construido <strong>design systems desde cero:</strong> cadena de tokens primitivo → semántico → componente, componentes con variantes y 6 estados, 57 variables enlazadas y WCAG 2.1 AA. Domina Figma Variables, Auto Layout avanzado y un handoff que desarrollo consume como referencia única."
+    ],
+    "cro": [
+      "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
+    ],
+    "paolo": [
+      "Paolo by Danny's Jazz es uno de los proyectos que mejor refleja el <strong>ownership real de Marta</strong>. No fue un encargo de diseño — fue un problema de negocio entero: una cadena de pizzerías artesanas sin canal digital en plena pandemia, sin web, sin delivery, sin presencia en Google.<br><br>Diseñó y construyó desde cero: identidad visual completa, web (Adobe XD → WordPress + Elementor), los 3 customer journeys del negocio (delivery, visita al local, reserva), ecosistema de delivery activo (Glovo, Uber Eats, JustEat), cartas QR, Google My Business y un ciclo mensual de analítica con Clarity + GA4 + Metricool.<br><br>Resultado: el producto escaló de 1 a 5 locales en 2 años <strong>sin necesidad de rediseño</strong>. +32% en llamadas directas desde móvil el primer mes. Cuando el proyecto terminó, el ecosistema seguía funcionando solo. Eso es diseño que funciona."
+    ],
+    "oracle": [
+      "El caso Oracle (Build vs. Buy) muestra a Marta en modo <strong>diagnosticadora estratégica, no ejecutora de interfaces.</strong><br><br>We Are Actions llevaba años gestionando incidencias IT con Oracle. El responsable de sistemas llegó a dirección con un Excel con datos reales de fricción. Marta estaba <em>embebida en el equipo IT</em>, así que hizo discovery contextual desde dentro: vio la fricción ocurrir en tiempo real, no en una sesión de research artificial.<br><br>Su diagnóstico: Oracle no estaba mal diseñado — era simplemente la herramienta equivocada para <em>sus</em> flujos. La recomendación fue construir una herramienta interna en lugar de seguir parcheando una plataforma genérica.<br><br>El caso de estudio ya está publicado y disponible en este portafolio. Representa exactamente el tipo de trabajo que más le interesa: <strong>identificar el problema real antes de proponer la solución.</strong>"
+    ],
+    "booking": [
+      "El <strong>Booking Engine de ILUNION</strong> fue el rediseño end-to-end del motor de reservas de una cadena hotelera — de la investigación con usuarios hasta la entrega a producción. El reto era entender por qué la conversión en canal directo era tan baja y proponer una solución argumentada. Marta lideró todo: research, arquitectura de información, prototipado, test con usuarios y handoff. Este proyecto fue la base sobre la que después se aplicaron los experimentos de CRO que llevaron la conversión del 3.36% al 6.5%."
+    ],
+    "cef": [
+      "El <strong>CEF Design System</strong> demuestra la capacidad de Marta para crear infraestructura de diseño desde cero en EdTech con accesibilidad estricta.<br><br>Sistema en Figma con tokens enlazados (primitivo → semántico → componente), componentes con 6 estados cada uno, 57 variables y cumplimiento WCAG 2.1 AA documentado por criterio. En 2026 lo recreó desde cero con IA (Figma + Claude MCP) para demostrar el mismo rigor en una fracción del tiempo. El objetivo no era la coherencia visual — era que desarrollo pudiera construir de forma autónoma."
+    ],
+    "whyhire": [
+      "Porque une dos cosas que rara vez van juntas: es un <strong>fichaje de bajo riesgo</strong> — disponible ya, 4+ años de ownership real end-to-end, remoto o híbrido y buen encaje de equipo — y a la vez tiene <strong>craft de alto nivel con impacto medible</strong>: design systems y accesibilidad WCAG documentada por criterio, CRO de 3,36% a 6,5% en ILUNION, y flujos de IA de vanguardia. Diagnostica el problema real antes de tocar un pixel y entrega decisiones, no opciones. ¿Te cuadra para tu vacante? <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>"
+    ],
+    "people": [
+      "Si vienes de <strong>People / Talent</strong>, esto es lo que suele pesar en un screening:<br><br>• <strong>Disponible ya</strong> e incorporación rápida; abierta a remoto total o híbrido (base en Madrid).<br>• <strong>Bajo riesgo:</strong> 4+ años con ownership real end-to-end, acostumbrada a equipos distribuidos y a comunicación async.<br>• <strong>Encaje de equipo:</strong> documenta todo, pide y recibe feedback sin fricción, y hace de puente entre diseño, negocio y desarrollo.<br>• <strong>Comunicación bilingüe</strong> (español e inglés), con portafolio y casos en ambos idiomas.<br><br>Dime el rol y el tipo de contrato y te digo si encaja — o escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (responde en &lt;24h)."
+    ],
+    "designlead": [
+      "Si eres <strong>Head of Design o lead de producto</strong>, esto es lo que verás en Marta:<br><br>• <strong>Craft + sistema:</strong> design systems desde cero con tokens (primitivo → semántico → componente), 6 estados por componente y WCAG 2.1 AA documentado a nivel de criterio.<br>• <strong>Impacto de negocio:</strong> no diseña pantallas, mueve métricas — CRO de 3,36% a 6,5% en ILUNION con experimentos sobre datos reales.<br>• <strong>Cómo opera:</strong> discovery y diagnóstico primero, decisión argumentada, handoff que desarrollo consume solo y medición post-lanzamiento.<br>• <strong>Vanguardia:</strong> flujos con IA (Figma + Claude MCP, vibe coding) que comprimen semanas en días sin perder criterio.<br><br>Para juzgar su nivel, el mejor combo es <strong>CEF Design System</strong> (craft) + <strong>ILUNION CRO</strong> (impacto). ¿Lo vemos en una llamada? <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>"
+    ],
+    "sector": [
+      "Marta tiene experiencia en <strong>turismo / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (sistemas de diseño, accesibilidad) y <strong>consultoría digital</strong>. Busca su próximo reto en empresas <strong>tech, SaaS o travel</strong> con producto propio."
+    ],
+    "default": [
+      "Buena pregunta. Para eso mejor habla con Marta directamente: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+      "Eso lo responde Marta mejor que yo en persona. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h."
     ]
-  };
-
+  },
+  "en": {
+    "greeting": [
+      "Hi! I'm Marta's assistant. Ask me anything you need to tell whether she fits your team — her case studies, business impact, how she works or her availability. Where shall we start?"
+    ],
+    "about": [
+      "Marta Morales positions herself as the 'complete design product' under her main KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Her portfolio is a product in itself, demonstrating how her skills in optimization, design systems automation, and AI workflows solve real business challenges."
+    ],
+    "experience": [
+      "<strong>4+ years</strong> of experience leading the end-to-end product lifecycle. She acts as a strategic CRO engine, building scalable design systems and optimizing complex interfaces through AI integrations to accelerate development speed.",
+      "Marta doesn't wait for a brief: **she identifies the problem, defines the approach, and measures outcomes**, using her case studies as live test-beds to validate new workflow capabilities."
+    ],
+    "skills": [
+      "Her 4 core pillars are: <strong>UX &amp; Research</strong> (qualitative/quantitative diagnostics), <strong>Design Systems</strong> (advanced Figma, variables, structured handoff), <strong>AI Product Design</strong> (MCPs, vibe coding, workflow automation) and <strong>CRO</strong> (data-driven experiments, A/B Testing, conversion lifts).",
+      "She masters the full process: **discovery, behavior research, information architecture, prototyping, user testing, handoff, and post-launch analysis**."
+    ],
+    "tools": [
+      "Daily stack: <strong>Figma</strong> (design systems, variables, components), <strong>Adobe Analytics + Hotjar</strong> (behaviour data), <strong>Notion & Jira</strong> (product management), Bootstrap and close engineering collaboration."
+    ],
+    "cases": [
+      "Case studies with real impact:<br><br>• <strong>CEF Design System</strong> — EdTech design system from zero: tokens, components with states & WCAG 2.1 AA<br>• <strong>ILUNION CRO</strong> — direct channel conversion from 3.36% to 6.5% with data-driven experiments<br>• <strong>ILUNION Booking Engine</strong> — hotel booking engine redesign from research to production<br>• <strong>Paolo by Danny's Jazz</strong> — identity + full digital ecosystem for a chain that grew from 1 to 5 locations <em>without a redesign</em><br>• <strong>Oracle · Build vs. Buy</strong> — IT friction diagnosis embedded in the team: the call was to build, not patch<br><br>Want details on any of them?"
+    ],
+    "remote": [
+      "Marta is <strong>open to fully remote and hybrid.</strong> Based in Madrid, experienced with distributed teams and async communication."
+    ],
+    "availability": [
+      "Marta is <strong>actively looking for her next opportunity</strong> and can onboard relatively quickly. There are other conversations in progress, so if there's a fit, it's worth talking soon. Got a role in mind?"
+    ],
+    "salary": [
+      "Marta's expectations are aligned with her experience and the current market. It's a detail that takes five minutes to clarify in a call. Shall we make that happen?"
+    ],
+    "interview": [
+      "Great! Email her directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — she replies within 24h. Or use the contact form at the bottom of the page.",
+      "Perfect. The easiest way is an email to <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> suggesting a time. Marta is flexible and adapts to your schedule."
+    ],
+    "contact": [
+      "Direct email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Replies fast, under 24h."
+    ],
+    "research": [
+      "Marta has a <strong>solid UX Research foundation:</strong> user interviews, card sorting, tree testing, heuristic analysis and insight synthesis. Most importantly: she always connects research to concrete business decisions."
+    ],
+    "systems": [
+      "She built <strong>design systems from scratch:</strong> a primitive → semantic → component token chain, components with variants and 6 states, 57 linked variables and WCAG 2.1 AA. Proficient in Figma Variables, advanced Auto Layout and a handoff engineering uses as the single source of truth."
+    ],
+    "cro": [
+      "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
+    ],
+    "paolo": [
+      "Paolo by Danny's Jazz is one of the projects that best shows Marta's <strong>real ownership mindset</strong>. It wasn't a design brief — it was an entire business problem: an artisan pizza chain in the middle of a pandemic with no website, no delivery, no Google presence, nothing.<br><br>She designed and built from scratch: complete visual identity, the full website (Adobe XD → WordPress + Elementor), 3 customer journeys (delivery, in-store visit, booking), active delivery ecosystem (Glovo, Uber Eats, JustEat), QR menus, Google My Business, and a monthly analytics cycle with Clarity + GA4 + Metricool.<br><br>Result: the product scaled from 1 to 5 locations in 2 years <strong>without a redesign</strong>. +32% in direct mobile calls in the first month. When the project ended, the ecosystem kept running on its own. That's what good design looks like."
+    ],
+    "oracle": [
+      "The Oracle case (Build vs. Buy) shows Marta in <strong>strategic diagnostician mode — not interface executor.</strong><br><br>We Are Actions had been managing IT incidents with Oracle for years. The systems manager came to leadership with real-data showing friction costs. Marta was <em>embedded in the IT team</em>, so she did contextual discovery from the inside: she saw friction happening in real time, not in an artificial research session."
+    ],
+    "booking": [
+      "The <strong>ILUNION Booking Engine</strong> was an end-to-end redesign of a hotel chain's reservation engine — from user research to production handoff. The challenge was understanding why direct channel conversion was so low and proposing a data-backed solution. Marta led the full process: research, information architecture, prototyping, user testing and handoff. This was the foundation for the CRO experiments that later lifted conversion from 3.36% to 6.5%."
+    ],
+    "cef": [
+      "The <strong>CEF Design System</strong> shows Marta's ability to build design infrastructure from scratch in EdTech with strict accessibility.<br><br>A Figma system with linked tokens (primitive → semantic → component), components with 6 states each, 57 variables and WCAG 2.1 AA documented per criterion. In 2026 she rebuilt it from scratch with AI (Figma + Claude MCP) to prove the same rigor in a fraction of the time. The goal wasn't visual consistency — it was letting engineering build autonomously."
+    ],
+    "whyhire": [
+      "Because she combines two things that rarely go together: she's a <strong>low-risk hire</strong> — available now, 4+ years of real end-to-end ownership, remote or hybrid and strong team fit — and at the same time she brings <strong>high-level craft with measurable impact</strong>: design systems and WCAG accessibility documented at criterion level, CRO from 3.36% to 6.5% at ILUNION, and cutting-edge AI workflows. She diagnoses the real problem before touching a pixel and delivers decisions, not options. Fit for your role? <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>"
+    ],
+    "people": [
+      "If you're in <strong>People / Talent</strong>, here's what usually matters in a screening:<br><br>• <strong>Available now</strong> and quick to onboard; open to fully remote or hybrid (based in Madrid).<br>• <strong>Low risk:</strong> 4+ years with real end-to-end ownership, used to distributed teams and async communication.<br>• <strong>Team fit:</strong> documents everything, gives and takes feedback without friction, and bridges design, business and engineering.<br>• <strong>Bilingual communication</strong> (Spanish and English), portfolio and case studies in both.<br><br>Tell me the role and contract type and I'll tell you if it fits — or email her directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (replies within 24h)."
+    ],
+    "designlead": [
+      "If you're a <strong>Head of Design or product lead</strong>, here's what you'll find in Marta:<br><br>• <strong>Craft + system:</strong> design systems from scratch with tokens (primitive → semantic → component), 6 states per component and WCAG 2.1 AA documented at criterion level.<br>• <strong>Business impact:</strong> she doesn't design screens, she moves metrics — CRO from 3.36% to 6.5% at ILUNION with real-data experiments.<br>• <strong>How she operates:</strong> discovery and diagnosis first, an argued decision, a handoff engineering consumes on its own, and post-launch measurement.<br>• <strong>Cutting edge:</strong> AI workflows (Figma + Claude MCP, vibe coding) that compress weeks into days without losing judgment.<br><br>To gauge her level, the best combo is <strong>CEF Design System</strong> (craft) + <strong>ILUNION CRO</strong> (impact). Shall we jump on a call? <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>"
+    ],
+    "sector": [
+      "Marta has experience in <strong>travel / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (design systems, accessibility) and <strong>digital consulting.</strong> She's looking for her next challenge at a <strong>tech, SaaS or travel</strong> company with its own product."
+    ],
+    "default": [
+      "Great question. That's better answered by Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+      "Marta can answer that better than me in person. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — replies within 24h."
+    ]
+  }
+};
+  var CHIPS = {
+  "es": [
+    {
+      "label": "¿Por qué contratarla?",
+      "key": "whyhire"
+    },
+    {
+      "label": "Todos los casos",
+      "key": "cases"
+    },
+    {
+      "label": "Disponibilidad",
+      "key": "availability"
+    },
+    {
+      "label": "Concertar entrevista",
+      "key": "interview"
+    }
+  ],
+  "en": [
+    {
+      "label": "Why hire her?",
+      "key": "whyhire"
+    },
+    {
+      "label": "All case studies",
+      "key": "cases"
+    },
+    {
+      "label": "Availability",
+      "key": "availability"
+    },
+    {
+      "label": "Schedule interview",
+      "key": "interview"
+    }
+  ]
+};
   var RULES = [
-    {keys:['quién','quien','eres','about','who','marta','sobre','yourself','tell me','cuéntame','presentate'],intent:'about'},
-    {keys:['experiencia','experience','años','years','trayectoria','background','worked','llevás','llevas'],intent:'experience'},
-    {keys:['habilidad','skill','sabe','know','domina','masters','puedes','capaz','capable'],intent:'skills'},
-    {keys:['herramienta','tool','adobe','jira','notion','hotjar','bootstrap','figma','stack','usa'],intent:'tools'},
-    {keys:['caso','case','estudio','study','proyecto','project','portfolio','portafolio','trabajo','work'],intent:'cases'},
-    {keys:['paolo','pizzería','pizzeria','pizzer','danny','ecosistema digital','digital ecosystem','1 a 5','1 to 5','wordpress','elementor'],intent:'paolo'},
-    {keys:['oracle','it ops','build vs','fricción it','it friction','herramienta interna','internal tool','incidencia','incident','ticket it'],intent:'oracle'},
-    {keys:['booking','motor de reservas','reserva','hotel','hospedaje','hospitality'],intent:'booking'},
-    {keys:['cef','design system','sistema de diseño','edtech','accesibilidad','accessibility','wcag','componente','component','token'],intent:'cef'},
-    {keys:['ilunion','cro','conversion','conversión','a/b','ab test','aem','experimento','experiment'],intent:'cro'},
-    {keys:['remoto','remote','presencial','hybrid','hibrido','híbrido','madrid','ubicacion','location','donde','where'],intent:'remote'},
-    {keys:['disponib','available','cuándo','when','incorpor','start','join','empezar','inmediata'],intent:'availability'},
-    {keys:['salario','salary','sueldo','wage','pay','rango','compensacion','compensation','pretensiones','expectations'],intent:'salary'},
-    {keys:['entrevista','interview','reunión','meeting','llamada','call','hablar','talk','conocer','meet','contactar','schedule','cita','appointment'],intent:'interview'},
-    {keys:['contact','contacto','email','correo','escribir','reach','write','linkedin'],intent:'contact'},
-    {keys:['research','investig','usuario','user','test','usab','entrev'],intent:'research'},
-    {keys:['design system','sistema de diseño','componente','component','token','library','libreria','figma system'],intent:'systems'},
-    {keys:['cro','conversión','conversion','optimiz','a/b','ab test','funnel','analytics','metr'],intent:'cro'},
-    {keys:['por qué','why','contratar','hire','elegir','choose','diferencia','different','valor','value','aporta','brings'],intent:'whyhire'},
-    {keys:['sector','industria','industry','turismo','travel','edtech','saas','empresa','company','tipo','type'],intent:'sector'}
-  ];
+  {
+    "keys": [
+      "quién",
+      "quien",
+      "eres",
+      "about",
+      "who",
+      "marta",
+      "sobre",
+      "yourself",
+      "tell me",
+      "cuéntame",
+      "presentate"
+    ],
+    "intent": "about"
+  },
+  {
+    "keys": [
+      "experiencia",
+      "experience",
+      "años",
+      "years",
+      "trayectoria",
+      "background",
+      "worked",
+      "llevás",
+      "llevas"
+    ],
+    "intent": "experience"
+  },
+  {
+    "keys": [
+      "habilidad",
+      "skill",
+      "sabe",
+      "know",
+      "domina",
+      "masters",
+      "puedes",
+      "capaz",
+      "capable"
+    ],
+    "intent": "skills"
+  },
+  {
+    "keys": [
+      "herramienta",
+      "tool",
+      "adobe",
+      "jira",
+      "notion",
+      "hotjar",
+      "bootstrap",
+      "figma",
+      "stack",
+      "usa"
+    ],
+    "intent": "tools"
+  },
+  {
+    "keys": [
+      "caso",
+      "case",
+      "estudio",
+      "study",
+      "proyecto",
+      "project",
+      "portfolio",
+      "portafolio",
+      "trabajo",
+      "work"
+    ],
+    "intent": "cases"
+  },
+  {
+    "keys": [
+      "paolo",
+      "pizzería",
+      "pizzeria",
+      "pizzer",
+      "danny",
+      "ecosistema digital",
+      "digital ecosystem",
+      "1 a 5",
+      "1 to 5",
+      "wordpress",
+      "elementor"
+    ],
+    "intent": "paolo"
+  },
+  {
+    "keys": [
+      "oracle",
+      "it ops",
+      "build vs",
+      "fricción it",
+      "it friction",
+      "herramienta interna",
+      "internal tool",
+      "incidencia",
+      "incident",
+      "ticket it"
+    ],
+    "intent": "oracle"
+  },
+  {
+    "keys": [
+      "booking",
+      "motor de reservas",
+      "reserva",
+      "hotel",
+      "hospedaje",
+      "hospitality"
+    ],
+    "intent": "booking"
+  },
+  {
+    "keys": [
+      "cef",
+      "design system",
+      "sistema de diseño",
+      "edtech",
+      "accesibilidad",
+      "accessibility",
+      "wcag",
+      "componente",
+      "component",
+      "token"
+    ],
+    "intent": "cef"
+  },
+  {
+    "keys": [
+      "ilunion",
+      "cro",
+      "conversion",
+      "conversión",
+      "a/b",
+      "ab test",
+      "aem",
+      "experimento",
+      "experiment"
+    ],
+    "intent": "cro"
+  },
+  {
+    "keys": [
+      "remoto",
+      "remote",
+      "presencial",
+      "hybrid",
+      "hibrido",
+      "híbrido",
+      "madrid",
+      "ubicacion",
+      "location",
+      "donde",
+      "where"
+    ],
+    "intent": "remote"
+  },
+  {
+    "keys": [
+      "disponib",
+      "available",
+      "cuándo",
+      "when",
+      "incorpor",
+      "start",
+      "join",
+      "empezar",
+      "inmediata"
+    ],
+    "intent": "availability"
+  },
+  {
+    "keys": [
+      "salario",
+      "salary",
+      "sueldo",
+      "wage",
+      "pay",
+      "rango",
+      "compensacion",
+      "compensation",
+      "pretensiones",
+      "expectations"
+    ],
+    "intent": "salary"
+  },
+  {
+    "keys": [
+      "entrevista",
+      "interview",
+      "reunión",
+      "meeting",
+      "llamada",
+      "call",
+      "hablar",
+      "talk",
+      "conocer",
+      "meet",
+      "contactar",
+      "schedule",
+      "cita",
+      "appointment"
+    ],
+    "intent": "interview"
+  },
+  {
+    "keys": [
+      "contact",
+      "contacto",
+      "email",
+      "correo",
+      "escribir",
+      "reach",
+      "write",
+      "linkedin"
+    ],
+    "intent": "contact"
+  },
+  {
+    "keys": [
+      "research",
+      "investig",
+      "usuario",
+      "user",
+      "test",
+      "usab",
+      "entrev"
+    ],
+    "intent": "research"
+  },
+  {
+    "keys": [
+      "design system",
+      "sistema de diseño",
+      "componente",
+      "component",
+      "token",
+      "library",
+      "libreria",
+      "figma system"
+    ],
+    "intent": "systems"
+  },
+  {
+    "keys": [
+      "cro",
+      "conversión",
+      "conversion",
+      "optimiz",
+      "a/b",
+      "ab test",
+      "funnel",
+      "analytics",
+      "metr"
+    ],
+    "intent": "cro"
+  },
+  {
+    "keys": [
+      "people",
+      "talent",
+      "recruiter",
+      "reclut",
+      "rrhh",
+      "recursos humanos",
+      "referencia",
+      "reference",
+      "preaviso",
+      "notice",
+      "idioma",
+      "language",
+      "cultura",
+      "culture",
+      "encaj",
+      "soft skill",
+      "fiab",
+      "confian"
+    ],
+    "intent": "people"
+  },
+  {
+    "keys": [
+      "head of design",
+      "design lead",
+      "lead de diseño",
+      "lead de diseno",
+      "manager de diseño",
+      "seniority",
+      "qué nivel",
+      "que nivel",
+      "cómo trabaja",
+      "como trabaja",
+      "how do you work",
+      "how does she work",
+      "proceso de diseño",
+      "design process",
+      "con ingeniería",
+      "with engineering",
+      "handoff",
+      "stakeholder",
+      "craft",
+      "autonom"
+    ],
+    "intent": "designlead"
+  },
+  {
+    "keys": [
+      "por qué",
+      "why",
+      "contratar",
+      "hire",
+      "elegir",
+      "choose",
+      "diferencia",
+      "different",
+      "valor",
+      "value",
+      "aporta",
+      "brings"
+    ],
+    "intent": "whyhire"
+  },
+  {
+    "keys": [
+      "sector",
+      "industria",
+      "industry",
+      "turismo",
+      "travel",
+      "edtech",
+      "saas",
+      "empresa",
+      "company",
+      "tipo",
+      "type"
+    ],
+    "intent": "sector"
+  }
+];
 
-  var isOpen=false, isTyping=false, initialized=false;
+  var isOpen=false, isTyping=false, initialized=false, chatHistory=[];
 
   function getLang(){return document.documentElement.classList.contains('lang-en')?'en':'es';}
   function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
   function getResponse(intent){var lang=getLang();return pick(KB[lang][intent]||KB[lang].default);}
+  
   function detectIntent(text){
     var t=text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
     for(var i=0;i<RULES.length;i++){
@@ -3916,11 +4300,65 @@ function closeMenu() {
     return 'default';
   }
 
+  // Client-side simple Markdown to HTML formatter to align styles with reading mode
+  function formatMarkdown(text) {
+    if (!text) return '';
+    // Replace bold: **text** or __text__ -> <strong>text</strong>
+    var html = text.replace(/(\*\*|__)(.*?)\1/g, '<strong>$2</strong>');
+    // Replace italic: *text* or _text_ -> <em>text</em>
+    html = html.replace(/(^|[^a-zA-Z0-9\/])\*([^*]+)\*(?=[^a-zA-Z0-9\/]|$)/g, '$1<em>$2</em>');
+    
+    var lines = html.split('\n');
+    var result = [];
+    var inList = false;
+    
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) {
+        if (inList) {
+          result.push('</ul>');
+          inList = false;
+        }
+        result.push('<br>');
+        continue;
+      }
+      
+      // Check if line is a bullet item
+      if (line.startsWith('- ') || line.startsWith('* ') || line.startsWith('• ')) {
+        if (!inList) {
+          result.push('<ul style="margin: 6px 0; padding-left: 20px; list-style-type: disc;">');
+          inList = true;
+        }
+        var content = line.replace(/^[-*•]\s+/, '');
+        result.push('<li style="margin-bottom: 4px;">' + content + '</li>');
+      } else {
+        if (inList) {
+          result.push('</ul>');
+          inList = false;
+        }
+        // Headings or normal paragraphs
+        if (line.startsWith('### ')) {
+          result.push('<h4 style="margin: 12px 0 6px 0; font-size: 13px; font-weight: 700; color: var(--white);">' + line.substring(4) + '</h4>');
+        } else if (line.startsWith('## ')) {
+          result.push('<h3 style="margin: 14px 0 8px 0; font-size: 14px; font-weight: 700; color: var(--white);">' + line.substring(3) + '</h3>');
+        } else {
+          result.push('<p style="margin-bottom: 8px; margin-top: 0;">' + line + '</p>');
+        }
+      }
+    }
+    
+    if (inList) {
+      result.push('</ul>');
+    }
+    
+    return result.join('').replace(/(<br>){3,}/g, '<br><br>').trim();
+  }
+
   function addMsg(text,role){
     var box=document.getElementById('chatMessages');
     var wrap=document.createElement('div');wrap.className='chat-msg '+role;
     var bubble=document.createElement('div');bubble.className='chat-bubble';
-    bubble.innerHTML=text;wrap.appendChild(bubble);box.appendChild(wrap);
+    bubble.innerHTML=formatMarkdown(text);wrap.appendChild(bubble);box.appendChild(wrap);
     box.scrollTop=box.scrollHeight;
     return wrap;
   }
@@ -3953,6 +4391,7 @@ function closeMenu() {
     document.getElementById('chatChips').innerHTML='';
     document.getElementById('chat-undo').classList.remove('visible');
     history=[];
+    chatHistory=[];
     initialized=false;
     isTyping=false;
     initChat();
@@ -3975,7 +4414,7 @@ function closeMenu() {
     box.scrollTop=box.scrollHeight;
   };
 
-  function sendMessage(text,intentOverride){
+  async function sendMessage(text,intentOverride){
     if(isTyping)return;
     /* Snapshot current chips before clearing */
     var prevChips=[];
@@ -3984,24 +4423,25 @@ function closeMenu() {
     });
     var userEl=addMsg(text,'user');
     isTyping=true;
-    var intent=intentOverride||detectIntent(text);
+    var lang=getLang();
+    chatHistory.push({role:'user',content:text});
     showTyping();
-    setTimeout(function(){
-      removeTyping();
-      var botEl=addMsg(getResponse(intent),'bot');
-      isTyping=false;
-      history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
-      document.getElementById('chat-undo').classList.add('visible');
-      var lang=getLang();
-      var alwaysChips = lang==='en'
-        ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
-        : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
-      var casesChips = lang==='en'
-        ? [{label:'Schedule interview',key:'interview'},{label:'Skills',key:'skills'}]
-        : [{label:'Concertar entrevista',key:'interview'},{label:'Habilidades',key:'skills'}];
-      if(intent==='cases'){renderChips(casesChips);}
-      else if(intent!=='interview'&&intent!=='contact'){renderChips(alwaysChips);}
-    },650+Math.random()*400);
+    var reply=null;
+    try{
+      var resp=await fetch('/api/chat',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({message:text,lang:lang,history:chatHistory.slice(-6)})});
+      if(resp.ok){var data=await resp.json();if(data&&data.reply)reply=data.reply;}
+    }catch(e){reply=null;}
+    if(!reply){reply=getResponse(intentOverride||detectIntent(text));}
+    removeTyping();
+    var botEl=addMsg(reply,'bot');
+    chatHistory.push({role:'assistant',content:reply});
+    isTyping=false;
+    history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
+    document.getElementById('chat-undo').classList.add('visible');
+    var alwaysChips = lang==='en'
+      ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
+      : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
+    renderChips(alwaysChips);
   }
 
   function initChat(){
@@ -4036,6 +4476,7 @@ function closeMenu() {
   }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
 })();
 </script>
+
 <!-- ===================== / CHATBOT MARTA ===================== -->
 
 <!-- ===================== BOTÓN VOLVER ARRIBA ===================== -->
@@ -4995,7 +5436,6 @@ body.visitor-unauthorized .locked-metric:hover::after {
   };
 })();
 </script>
-<!-- ===================== / CHATBOT MARTA ===================== -->
 
 <script>
 // Stack ticker (mobile): fade/slide in the first time it enters the viewport
@@ -5014,4 +5454,4 @@ body.visitor-unauthorized .locked-metric:hover::after {
 })();
 </script>
 
-</body></html>          
+</body></html>
