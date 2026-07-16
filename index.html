@@ -4669,8 +4669,6 @@ body.visitor-unauthorized .locked-metric:hover::after {
   inset: 0;
   z-index: 100000;
   display: flex;
-  align-items: center;
-  justify-content: center;
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -4720,6 +4718,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   z-index: 1;
   max-width: 440px;
   width: 100%;
+  margin: auto;
   background: rgba(15, 12, 28, 0.45);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -4924,6 +4923,47 @@ body.visitor-unauthorized .locked-metric:hover::after {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255,255,255,0.85);
+}
+
+@media (max-width: 480px) {
+  #portfolio-lock-screen {
+    padding: 16px;
+  }
+  .lock-card {
+    padding: 28px 20px;
+    gap: 16px;
+    border-radius: 20px;
+  }
+  .lock-logo {
+    height: 44px;
+    margin-bottom: 10px;
+  }
+  .lock-title {
+    font-size: 20px;
+  }
+  .lock-subtitle {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .social-btn {
+    height: 40px;
+    font-size: 12.5px;
+    padding: 0 12px;
+  }
+  .lock-divider {
+    margin: 2px 0;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+  .form-input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .lock-submit-btn {
+    padding: 11px 16px;
+    font-size: 13px;
+  }
 }
 </style>
 
