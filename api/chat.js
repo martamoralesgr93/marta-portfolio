@@ -1,11 +1,8 @@
 // Asistente IA del portfolio de Marta Morales — función serverless (Vercel).
-// Responde SOLO con la base de conocimiento (api/kb.js). Sin dependencias externas.
-// Requiere la variable de entorno ANTHROPIC_API_KEY en el proyecto de Vercel.
+// Responde usando la base de conocimiento compilada.
+// Soporta tanto GEMINI (Gratuito via Google AI Studio) como CLAUDE.
 
 const KB = require('./kb.js');
-
-// Modelo económico y rápido. Cambiable si hace falta.
-const MODEL = 'claude-3-5-haiku-latest';
 
 const FALLBACK = {
   es: "Ahora mismo no puedo procesar eso. Escríbele directamente a Marta: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (responde en menos de 24h).",
@@ -51,42 +48,87 @@ module.exports = async (req, res) => {
       return;
     }
 
-    const key = process.env.ANTHROPIC_API_KEY;
-    if (!key) {
-      // Sin clave configurada: degradación elegante (el frontend usa su fallback local).
+    const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    const anthropicKey = process.env.ANTHROPIC_API_KEY;
+
+    if (!geminiKey && !anthropicKey) {
+      // Sin claves configuradas: fallback
       res.status(200).json({ reply: null, unavailable: true });
       return;
     }
 
-    const messages = history
-      .filter(m => m && (m.role === 'user' || m.role === 'assistant') && m.content)
-      .map(m => ({ role: m.role, content: String(m.content).slice(0, 2000) }));
-    messages.push({ role: 'user', content: message });
+    const systemPrompt = buildSystem(lang, KB[lang], KB.prompts);
 
-    const r = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01'
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 500,
-        system: buildSystem(lang, KB[lang], KB.prompts),
-        messages
-      })
-    });
+    // Si hay clave de Gemini, priorizarla por tener capa gratuita
+    if (geminiKey) {
+      const contents = history
+        .filter(m => m && (m.role === 'user' || m.role === 'assistant') && m.content)
+        .map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: String(m.content).slice(0, 2000) }]
+        }));
+      contents.push({ role: 'user', parts: [{ text: message }] });
 
-    if (!r.ok) {
-      res.status(200).json({ reply: FALLBACK[lang], fallback: true });
-      return;
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          contents,
+          systemInstruction: { parts: [{ text: systemPrompt }] },
+          generationConfig: {
+            maxOutputTokens: 500,
+            temperature: 0.2
+          }
+        })
+      });
+
+      if (r.ok) {
+        const data = await r.json();
+        const reply = data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text
+          ? data.candidates[0].content.parts[0].text
+          : null;
+        if (reply) {
+          res.status(200).json({ reply });
+          return;
+        }
+      }
     }
-    const data = await r.json();
-    const reply = data && data.content && data.content[0] && data.content[0].text
-      ? data.content[0].text
-      : FALLBACK[lang];
-    res.status(200).json({ reply });
+
+    // Si hay clave de Anthropic, usar Claude
+    if (anthropicKey) {
+      const messages = history
+        .filter(m => m && (m.role === 'user' || m.role === 'assistant') && m.content)
+        .map(m => ({ role: m.role, content: String(m.content).slice(0, 2000) }));
+      messages.push({ role: 'user', content: message });
+
+      const r = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': anthropicKey,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+          model: 'claude-3-5-haiku-latest',
+          max_tokens: 500,
+          system: systemPrompt,
+          messages
+        })
+      });
+
+      if (r.ok) {
+        const data = await r.json();
+        const reply = data && data.content && data.content[0] && data.content[0].text
+          ? data.content[0].text
+          : null;
+        if (reply) {
+          res.status(200).json({ reply });
+          return;
+        }
+      }
+    }
+
+    res.status(200).json({ reply: FALLBACK[lang], fallback: true });
   } catch (e) {
     res.status(200).json({ reply: FALLBACK.es, fallback: true });
   }
