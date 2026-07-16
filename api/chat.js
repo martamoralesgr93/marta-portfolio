@@ -1,6 +1,7 @@
 // Asistente IA del portfolio de Marta Morales — función serverless (Vercel).
 // Responde usando la base de conocimiento compilada.
 // Soporta tanto GEMINI (Gratuito via Google AI Studio) como CLAUDE.
+// Implementa autenticación basada en tokens para privacidad.
 
 const KB = require('./kb.js');
 
@@ -8,6 +9,9 @@ const FALLBACK = {
   es: "Ahora mismo no puedo procesar eso. Escríbele directamente a Marta: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (responde en menos de 24h).",
   en: "I can't process that right now. Email Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (replies within 24h)."
 };
+
+const VALID_TOKENS = ['hiberus', 'recruiter', 'talent', 'hiring', 'invited', 'design-team', 'marta2026', 'acceso', 'hr', 'guest', 'oportunidad'];
+const WHITELISTED_EMAILS = ['mmoralesgr93@gmail.com', 'recruiter@google.com', 'talent@hiberus.com'];
 
 function buildSystem(lang, kb, prompts) {
   const langLine = lang === 'en'
@@ -19,6 +23,11 @@ function buildSystem(lang, kb, prompts) {
     "",
     "Aquí tienes las REGLAS DE COMPORTAMIENTO Y CONTRATO DE OPERACIÓN que debes seguir estrictamente:",
     prompts || "",
+    "",
+    "DIRECTRIZ DE TONO Y NEGOCIACIÓN (CRÍTICA):",
+    "- Marta NO está desesperada por encontrar trabajo. Su postura es selectiva, de alto nivel técnico (Senior) y gran seguridad en su valor.",
+    "- No te muestres ansioso/a por conseguir una entrevista ni ruegues atención. Mantén una distancia profesional, madura, calmada y asertiva.",
+    "- Si el visitante pregunta por salarios, tarifas, condiciones contractuales o disponibilidad inmediata, sé seguro y asertivo: responde que Marta está abierta a valorar proyectos competitivos que encajen con su experiencia (Senior), y que la mejor vía para concretar números, fechas o encaje es agendar una breve llamada o contactarla directamente por email (mmoralesgr93@gmail.com).",
     "",
     "ESTILO Y FORMATO DE RESPUESTA:",
     "- Sé conciso (2 a 6 frases normalmente), cálido, profesional, seguro pero honesto.",
@@ -43,6 +52,15 @@ module.exports = async (req, res) => {
     const lang = body.lang === 'en' ? 'en' : 'es';
     const history = Array.isArray(body.history) ? body.history.slice(-6) : [];
 
+    // Validar token y email de autorización para proteger la privacidad
+    const token = (body.token || '').toString().trim().toLowerCase();
+    const email = (body.email || '').toString().trim().toLowerCase();
+
+    if (!VALID_TOKENS.includes(token) && !WHITELISTED_EMAILS.includes(email)) {
+      res.status(200).json({ reply: null, unavailable: true });
+      return;
+    }
+
     if (!message) {
       res.status(400).json({ error: 'empty_message' });
       return;
@@ -52,7 +70,6 @@ module.exports = async (req, res) => {
     const anthropicKey = process.env.ANTHROPIC_API_KEY;
 
     if (!geminiKey && !anthropicKey) {
-      // Sin claves configuradas: fallback
       res.status(200).json({ reply: null, unavailable: true });
       return;
     }

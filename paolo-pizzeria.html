@@ -2193,7 +2193,7 @@
   position: fixed; bottom: 28px; right: 28px; z-index: 9000;
   width: 56px; height: 56px; border-radius: 50%;
   background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.85));
-  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  border: none; cursor: pointer; display: none; align-items: center; justify-content: center;
   box-shadow: 0 4px 24px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.4);
   transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
   outline: none;
@@ -3096,7 +3096,17 @@
     showTyping();
     var reply=null;
     try{
-      var resp=await fetch('/api/chat',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({message:text,lang:lang,history:chatHistory.slice(-6)})});
+      var resp=await fetch('/api/chat',{
+        method:'POST',
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify({
+          message:text,
+          lang:lang,
+          token:localStorage.getItem('portfolio_token') || '',
+          email:localStorage.getItem('portfolio_google_email') || '',
+          history:chatHistory.slice(-6)
+        })
+      });
       if(resp.ok){var data=await resp.json();if(data&&data.reply)reply=data.reply;}
     }catch(e){reply=null;}
     if(!reply){reply=getResponse(intentOverride||detectIntent(text));}
@@ -3142,6 +3152,19 @@
     if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
     if(isOpen&&initialized){resetChat();}
   }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+
+  // Only show trigger if authorized
+  var VALID_TOKENS = ['hiberus', 'recruiter', 'talent', 'hiring', 'invited', 'design-team', 'marta2026', 'acceso', 'hr', 'guest', 'oportunidad'];
+  var WHITELISTED_EMAILS = ['mmoralesgr93@gmail.com', 'recruiter@google.com', 'talent@hiberus.com'];
+  function checkAuth() {
+    var t = (localStorage.getItem('portfolio_token') || '').trim().toLowerCase();
+    var e = (localStorage.getItem('portfolio_google_email') || '').trim().toLowerCase();
+    return VALID_TOKENS.indexOf(t) !== -1 || (e && WHITELISTED_EMAILS.indexOf(e) !== -1);
+  }
+  if (checkAuth()) {
+    var trigger = document.getElementById('chat-trigger');
+    if (trigger) trigger.style.setProperty('display', 'flex', 'important');
+  }
 })();
 </script>
 
