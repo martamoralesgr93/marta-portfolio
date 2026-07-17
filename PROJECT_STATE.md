@@ -20,7 +20,7 @@ La web será solo **una** de las interfaces. La misma base debe poder alimentar 
 - **Objetivo:** aumentar la probabilidad de que un recruiter, Head of Design, CEO o Hiring Manager quiera entrevistar a Marta. No mostrar todo el trabajo — **responder preguntas**.
 - **KPI principal:** que cualquier visitante encuentre en **menos de 30 segundos** la respuesta que necesita para decidir si la entrevista.
 - **Regla de los 6 segundos:** el hero debe comunicar de inmediato quién es, qué hace, qué impacto genera y por qué seguir explorando.
-- **Posicionamiento:** Product Designer estratégica con foco en **negocio / CRO**, no diseñadora de interfaces. Objetivo: rol Mid/Senior en empresas **tech, SaaS o travel**. Ubicación: Madrid.
+- **Posicionamiento:** Product Designer estratégica con foco en **negocio / CRO**, no diseñadora de interfaces. Objetivo: rol Mid/Senior en empresas **tech, SaaS o travel**. Abierta a remoto (total o híbrido).
 
 ---
 
@@ -193,7 +193,7 @@ Campo opcional añadido en consolidación: `pending_validation` (lista de datos 
 ## 10. Estado de consolidación del contenido
 
 - **Completamente validado (fuente de verdad, hechos confirmados por Marta):**
-  - Posicionamiento (PD negocio/CRO, Madrid, tech/SaaS/travel).
+  - Posicionamiento (PD negocio/CRO, remoto, tech/SaaS/travel).
   - Contexto ILUNION: única PD en equipo backend de Negocio Digital; canal de venta directa; usuarios 35–65 (familias/parejas/ocio); WCAG 2.1 AA.
   - **Métrica ancla: conversión del canal directo ~3,36% → ~6,5%** (`m-ilunion-directchannel-conversion-01`).
   - Arco de carrera: Comunicación Audiovisual → Marketing Digital → Frontend → Diseño de Negocio Digital → Product Design.

@@ -594,7 +594,7 @@ Cada etapa sumó una capacidad: negocio (marketing), viabilidad técnica (fronte
 Product Designer con impacto estratégico en producto digital (tech/SaaS/travel), con usuarios reales y métricas que mover. → \`profile.es.md\`.
 
 ### ¿Qué tipo de empresa busca?
-Empresas de producto digital en **tech, SaaS o travel**, con usuarios reales y métricas que mover. Ubicación: **Madrid**. → \`profile.es.md\`.
+Empresas de producto digital en **tech, SaaS o travel**, con usuarios reales y métricas que mover, abiertas a **remoto (total o híbrido)**. → \`profile.es.md\`.
 
 ### ¿Qué problemas disfruta resolviendo?
 Conversión, consistencia/escala (sistemas), y problemas ambiguos donde hay que definir antes de resolver. → \`profile.es.md\`.
@@ -784,7 +784,7 @@ Answers: - "¿Quién es Marta?"
   - "¿Qué la diferencia de otros candidatos?"
   - "¿Qué problemas disfruta resolviendo?"
   - "¿Qué busca en su siguiente etapa profesional?"
-Tags: [product-designer, positioning, value-proposition, cro, business, accessibility, design-systems, madrid, differentiation]
+Tags: [product-designer, positioning, value-proposition, cro, business, accessibility, design-systems, remote, differentiation]
 Content:
 # Quién es Marta Morales
 
@@ -830,7 +830,7 @@ A eso sumo una forma madura de **trabajar con IA** como acelerador del proceso s
 
 ## ¿Qué busco en mi siguiente etapa?
 
-Un rol de **Product Designer con impacto estratégico** en producto digital, en empresas **tech, SaaS o travel**, donde pueda seguir uniendo diseño, datos y negocio, crecer en seniority y trabajar sobre productos con usuarios reales y métricas que mover. Ubicación: **Madrid**.
+Un rol de **Product Designer con impacto estratégico** en producto digital, en empresas **tech, SaaS o travel**, donde pueda seguir uniendo diseño, datos y negocio, crecer en seniority y trabajar sobre productos con usuarios reales y métricas que mover. Abierta a **remoto total o híbrido**.
 
 > Nota: \`visibility: gated\` aplica a expectativas económicas y condiciones concretas — se tratan en conversación directa, no se publican.
 ========================================
@@ -2150,7 +2150,7 @@ Cada etapa sumó una capacidad: negocio (marketing), viabilidad técnica (fronte
 Product Designer con impacto estratégico en producto digital (tech/SaaS/travel), con usuarios reales y métricas que mover. → \`profile.es.md\`.
 
 ### ¿Qué tipo de empresa busca?
-Empresas de producto digital en **tech, SaaS o travel**, con usuarios reales y métricas que mover. Ubicación: **Madrid**. → \`profile.es.md\`.
+Empresas de producto digital en **tech, SaaS o travel**, con usuarios reales y métricas que mover, abiertas a **remoto (total o híbrido)**. → \`profile.es.md\`.
 
 ### ¿Qué problemas disfruta resolviendo?
 Conversión, consistencia/escala (sistemas), y problemas ambiguos donde hay que definir antes de resolver. → \`profile.es.md\`.
@@ -2340,7 +2340,7 @@ Answers: - "¿Quién es Marta?"
   - "¿Qué la diferencia de otros candidatos?"
   - "¿Qué problemas disfruta resolviendo?"
   - "¿Qué busca en su siguiente etapa profesional?"
-Tags: [product-designer, positioning, value-proposition, cro, business, accessibility, design-systems, madrid, differentiation]
+Tags: [product-designer, positioning, value-proposition, cro, business, accessibility, design-systems, remote, differentiation]
 Content:
 # Quién es Marta Morales
 
@@ -2386,7 +2386,7 @@ A eso sumo una forma madura de **trabajar con IA** como acelerador del proceso s
 
 ## ¿Qué busco en mi siguiente etapa?
 
-Un rol de **Product Designer con impacto estratégico** en producto digital, en empresas **tech, SaaS o travel**, donde pueda seguir uniendo diseño, datos y negocio, crecer en seniority y trabajar sobre productos con usuarios reales y métricas que mover. Ubicación: **Madrid**.
+Un rol de **Product Designer con impacto estratégico** en producto digital, en empresas **tech, SaaS o travel**, donde pueda seguir uniendo diseño, datos y negocio, crecer en seniority y trabajar sobre productos con usuarios reales y métricas que mover. Abierta a **remoto total o híbrido**.
 
 > Nota: \`visibility: gated\` aplica a expectativas económicas y condiciones concretas — se tratan en conversación directa, no se publican.
 ========================================

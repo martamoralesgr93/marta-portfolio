@@ -6,7 +6,7 @@ layer: knowledge
 lang: es
 summary: "Identidad profesional de Marta: Product Designer con foco en negocio y CRO, única diseñadora en un equipo backend, con origen en marketing digital y frontend. Qué problemas disfruta, su propuesta de valor, qué la diferencia y qué busca."
 personas: [recruiter, head-of-design, ceo, founder, pm, design-manager, ux, dev]
-tags: [product-designer, positioning, value-proposition, cro, business, accessibility, design-systems, madrid, differentiation]
+tags: [product-designer, positioning, value-proposition, cro, business, accessibility, design-systems, remote, differentiation]
 answers:
   - "¿Quién es Marta?"
   - "¿Qué tipo de Product Designer es?"
@@ -67,6 +67,6 @@ A eso sumo una forma madura de **trabajar con IA** como acelerador del proceso s
 
 ## ¿Qué busco en mi siguiente etapa?
 
-Un rol de **Product Designer con impacto estratégico** en producto digital, en empresas **tech, SaaS o travel**, donde pueda seguir uniendo diseño, datos y negocio, crecer en seniority y trabajar sobre productos con usuarios reales y métricas que mover. Ubicación: **Madrid**.
+Un rol de **Product Designer con impacto estratégico** en producto digital, en empresas **tech, SaaS o travel**, donde pueda seguir uniendo diseño, datos y negocio, crecer en seniority y trabajar sobre productos con usuarios reales y métricas que mover. Abierta a **remoto total o híbrido**.
 
 > Nota: `visibility: gated` aplica a expectativas económicas y condiciones concretas — se tratan en conversación directa, no se publican.

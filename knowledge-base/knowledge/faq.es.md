@@ -136,7 +136,7 @@ Cada etapa sumó una capacidad: negocio (marketing), viabilidad técnica (fronte
 Product Designer con impacto estratégico en producto digital (tech/SaaS/travel), con usuarios reales y métricas que mover. → `profile.es.md`.
 
 ### ¿Qué tipo de empresa busca?
-Empresas de producto digital en **tech, SaaS o travel**, con usuarios reales y métricas que mover. Ubicación: **Madrid**. → `profile.es.md`.
+Empresas de producto digital en **tech, SaaS o travel**, con usuarios reales y métricas que mover, abiertas a **remoto (total o híbrido)**. → `profile.es.md`.
 
 ### ¿Qué problemas disfruta resolviendo?
 Conversión, consistencia/escala (sistemas), y problemas ambiguos donde hay que definir antes de resolver. → `profile.es.md`.
