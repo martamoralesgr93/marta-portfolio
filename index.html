@@ -1491,9 +1491,9 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     margin-bottom: 40px !important;
   }
   .sc-visual {
-    height: 220px !important;
-    min-height: 220px !important;
-    padding: 16px 12px !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    padding: 0 !important;
     order: -1;
   }
   /* Imágenes limpias en mobile: sin overlays, sin sombras */
@@ -1502,14 +1502,28 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     display: none !important;
   }
   .sc-img {
+    width: 100% !important;
+    height: 260px !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  /* Paolo Pizzeria: vista contenida (menos zoom) */
+  .sc-visual-contain {
+    height: 220px !important;
+    min-height: 220px !important;
+    padding: 16px 12px !important;
+  }
+  .sc-visual-contain .sc-img {
     width: auto !important;
     height: auto !important;
     max-width: 100% !important;
     max-height: 100% !important;
     object-fit: contain !important;
-    transform: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
   }
   .sc-content { padding: 32px 24px 24px !important; }
   .sc-title { font-size: 28px !important; }
@@ -3008,7 +3022,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
       </div>
-      <div class="sc-visual" aria-hidden="true">
+      <div class="sc-visual sc-visual-contain" aria-hidden="true">
         <img loading="lazy" decoding="async" width="2672" height="1536" src="projects/04-paolo/assets/web4.webp" class="sc-img" alt="Paolo Pizzeria">
       </div>
       <div class="sc-metrics">
