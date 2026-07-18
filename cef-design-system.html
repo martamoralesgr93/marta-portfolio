@@ -8,7 +8,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xisxzka5pe");
   </script>
-  <script src="/auth-lock.js"></script>
+  <script src="auth-lock.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CEF EdTech · Design System & WCAG AA — From Zero · Marta Morales</title>
@@ -1297,29 +1297,31 @@
 <style>
   /* ── Sistema en vivo: capa de tokens autónoma del tema de la página ── */
   .ds-live {
-    /* NIVEL 1 · Primitivos (valores crudos, mode-independent) */
-    --p-indigo-700:#4338ca; --p-indigo-600:#4f46e5; --p-indigo-500:#6366f1; --p-indigo-400:#818cf8;
-    --p-neutral-0:#ffffff;  --p-neutral-50:#f8fafc;  --p-neutral-100:#f1f5f9; --p-neutral-200:#e2e8f0;
-    --p-neutral-300:#cbd5e1; --p-neutral-600:#475569; --p-neutral-700:#334155; --p-neutral-800:#1e293b; --p-neutral-900:#0f172a;
+    /* NIVEL 1 · Primitivos (valores reales de Fundamentos · Aulora) */
+    --p-verde-900:#004D35; --p-verde-800:#074D36; --p-verde-600:#002619;
+    --p-amarillo:#FAF000;
+    --p-blanco:#ffffff; --p-negro:#000000;
+    --p-gris-300:#BDC3C7; --p-gris-200:#D9D9D9;
+    --p-gris-muted-aa:#5F6B6C; /* variante oscurecida de Gris 500 (#7F8C8D) — necesaria para cumplir 4.5:1 en texto pequeño */
     --p-red-700:#b91c1c; --p-red-400:#f87171; --p-green-700:#15803d; --p-green-400:#4ade80;
     --ds-r: 12px;
   }
   /* NIVEL 2 · Alias semánticos — el mismo rol resuelve dos modos */
   .ds-scope--light {
     color-scheme: light;
-    --c-surface:var(--p-neutral-0);  --c-raised:var(--p-neutral-50);
-    --c-text:var(--p-neutral-900);   --c-text-muted:var(--p-neutral-600);
-    --c-border:var(--p-neutral-200); --c-action:var(--p-indigo-600); --c-action-hover:var(--p-indigo-700);
-    --c-on-action:var(--p-neutral-0); --c-focus:var(--p-indigo-600);
+    --c-surface:var(--p-blanco);  --c-raised:var(--p-gris-200);
+    --c-text:var(--p-negro);      --c-text-muted:var(--p-gris-muted-aa);
+    --c-border:var(--p-gris-300); --c-action:var(--p-verde-900); --c-action-hover:var(--p-verde-800);
+    --c-on-action:var(--p-blanco); --c-focus:var(--p-verde-900);
     --c-danger:var(--p-red-700); --c-success:var(--p-green-700);
     --c-danger-surface:#fef2f2;
   }
   .ds-scope--dark {
     color-scheme: dark;
-    --c-surface:var(--p-neutral-900); --c-raised:var(--p-neutral-800);
-    --c-text:var(--p-neutral-50);     --c-text-muted:var(--p-neutral-300);
-    --c-border:var(--p-neutral-700);  --c-action:var(--p-indigo-600); --c-action-hover:var(--p-indigo-500);
-    --c-on-action:var(--p-neutral-0); --c-focus:var(--p-indigo-400);
+    --c-surface:var(--p-verde-900); --c-raised:var(--p-verde-800);
+    --c-text:var(--p-blanco);       --c-text-muted:var(--p-gris-300);
+    --c-border:rgba(127,140,141,0.4); --c-action:var(--p-amarillo); --c-action-hover:#E0D700;
+    --c-on-action:var(--p-verde-600); --c-focus:var(--p-amarillo);
     --c-danger:var(--p-red-400); --c-success:var(--p-green-400);
     --c-danger-surface:#2a1416;
   }
@@ -1426,19 +1428,19 @@
           <div class="ds-chain-card ds-live">
             <div class="ds-chain-step">Nivel 1</div>
             <div class="ds-chain-h">Primitivos</div>
-            <div class="ds-token-row"><span class="ds-token-dot" style="background:#4f46e5"></span><span class="ds-token-name">indigo-600</span><span class="ds-token-hex">#4f46e5</span></div>
-            <div class="ds-token-row"><span class="ds-token-dot" style="background:#0f172a"></span><span class="ds-token-name">neutral-900</span><span class="ds-token-hex">#0f172a</span></div>
-            <div class="ds-token-row"><span class="ds-token-dot" style="background:#ffffff"></span><span class="ds-token-name">neutral-0</span><span class="ds-token-hex">#ffffff</span></div>
-            <div class="ds-token-row"><span class="ds-token-dot" style="background:#b91c1c"></span><span class="ds-token-name">red-700</span><span class="ds-token-hex">#b91c1c</span></div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#004D35"></span><span class="ds-token-name">verde-900</span><span class="ds-token-hex">#004D35</span></div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#FAF000"></span><span class="ds-token-name">amarillo</span><span class="ds-token-hex">#FAF000</span></div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#ffffff"></span><span class="ds-token-name">blanco</span><span class="ds-token-hex">#ffffff</span></div>
+            <div class="ds-token-row"><span class="ds-token-dot" style="background:#BDC3C7"></span><span class="ds-token-name">gris-300</span><span class="ds-token-hex">#BDC3C7</span></div>
             <p class="ds-chain-cap">Valores crudos. Nunca se usan directamente en un componente.</p>
           </div>
           <!-- Semántico -->
           <div class="ds-chain-card">
             <div class="ds-chain-step">Nivel 2</div>
             <div class="ds-chain-h">Alias semánticos</div>
-            <div class="ds-alias-row"><span class="ds-alias-name">--c-action</span><div class="ds-alias-map">→ indigo-600 · igual en ambos modos</div></div>
-            <div class="ds-alias-row"><span class="ds-alias-name">--c-surface</span><div class="ds-alias-map">→ claro: neutral-0 · oscuro: neutral-900</div></div>
-            <div class="ds-alias-row"><span class="ds-alias-name">--c-text</span><div class="ds-alias-map">→ claro: neutral-900 · oscuro: neutral-50</div></div>
+            <div class="ds-alias-row"><span class="ds-alias-name">--c-action</span><div class="ds-alias-map">→ claro: verde-900 · oscuro: amarillo</div></div>
+            <div class="ds-alias-row"><span class="ds-alias-name">--c-surface</span><div class="ds-alias-map">→ claro: blanco · oscuro: verde-900</div></div>
+            <div class="ds-alias-row"><span class="ds-alias-name">--c-text</span><div class="ds-alias-map">→ claro: negro · oscuro: blanco</div></div>
             <p class="ds-chain-cap">Un rol, dos valores según el modo. <strong style="color:var(--text-bright)">Aquí vive el claro/oscuro</strong>, no en el componente.</p>
           </div>
           <!-- Componente -->
@@ -1495,24 +1497,24 @@
             <tbody>
               <tr>
                 <td class="mono">--c-text</td>
-                <td><span class="ds-sw" style="background:#0f172a"></span><span class="mono">#0f172a</span></td>
-                <td><span class="ds-ratio">17.9:1</span> <span class="ds-aa">AAA</span></td>
-                <td><span class="ds-sw" style="background:#f8fafc"></span><span class="mono">#f8fafc</span></td>
-                <td><span class="ds-ratio">17.1:1</span> <span class="ds-aa">AAA</span></td>
+                <td><span class="ds-sw" style="background:#000000"></span><span class="mono">#000000</span></td>
+                <td><span class="ds-ratio">21:1</span> <span class="ds-aa">AAA</span></td>
+                <td><span class="ds-sw" style="background:#ffffff"></span><span class="mono">#ffffff</span></td>
+                <td><span class="ds-ratio">9.9:1</span> <span class="ds-aa">AAA</span></td>
               </tr>
               <tr>
                 <td class="mono">--c-text-muted</td>
-                <td><span class="ds-sw" style="background:#475569"></span><span class="mono">#475569</span></td>
-                <td><span class="ds-ratio">7.6:1</span> <span class="ds-aa">AAA</span></td>
-                <td><span class="ds-sw" style="background:#cbd5e1"></span><span class="mono">#cbd5e1</span></td>
-                <td><span class="ds-ratio">12.0:1</span> <span class="ds-aa">AAA</span></td>
+                <td><span class="ds-sw" style="background:#5F6B6C"></span><span class="mono">#5F6B6C</span></td>
+                <td><span class="ds-ratio">5.5:1</span> <span class="ds-aa">AA</span></td>
+                <td><span class="ds-sw" style="background:#BDC3C7"></span><span class="mono">#BDC3C7</span></td>
+                <td><span class="ds-ratio">5.6:1</span> <span class="ds-aa">AA</span></td>
               </tr>
               <tr>
-                <td class="mono">--c-action (texto blanco)</td>
-                <td><span class="ds-sw" style="background:#4f46e5"></span><span class="mono">#4f46e5</span></td>
-                <td><span class="ds-ratio">6.3:1</span> <span class="ds-aa">AA</span></td>
-                <td><span class="ds-sw" style="background:#4f46e5"></span><span class="mono">#4f46e5</span></td>
-                <td><span class="ds-ratio">6.3:1</span> <span class="ds-aa">AA</span></td>
+                <td class="mono">--c-action</td>
+                <td><span class="ds-sw" style="background:#004D35"></span><span class="mono">#004D35</span></td>
+                <td><span class="ds-ratio">9.9:1</span> <span class="ds-aa">AAA</span> <span class="ds-ratio" style="opacity:.7">· texto blanco</span></td>
+                <td><span class="ds-sw" style="background:#FAF000"></span><span class="mono">#FAF000</span></td>
+                <td><span class="ds-ratio">13.5:1</span> <span class="ds-aa">AAA</span> <span class="ds-ratio" style="opacity:.7">· texto verde-600</span></td>
               </tr>
               <tr>
                 <td class="mono">--c-danger</td>
@@ -1547,7 +1549,7 @@
             <div class="ds-state-cell"><span class="ds-state-name">Focus</span>
               <button class="ds-btn" type="button" style="outline:3px solid var(--c-focus); outline-offset:2px">Matricularme</button></div>
             <div class="ds-state-cell"><span class="ds-state-name">Active</span>
-              <button class="ds-btn" type="button" style="background:var(--p-indigo-700); transform:translateY(1px)">Matricularme</button></div>
+              <button class="ds-btn" type="button" style="background:#E0D700; transform:translateY(1px)">Matricularme</button></div>
             <div class="ds-state-cell"><span class="ds-state-name">Disabled</span>
               <button class="ds-btn" type="button" disabled style="background:var(--c-raised); color:var(--c-text-muted); border:1px solid var(--c-border); cursor:not-allowed">Matricularme</button></div>
             <div class="ds-state-cell"><span class="ds-state-name">Loading</span>
