@@ -768,6 +768,40 @@ body { top: 0 !important; }
 .step p{font-size:15px;color:var(--crema-2);opacity:.75;line-height:1.6;margin:0}
 
 /* =========================================================
+   SHOPIFY · EXPLORACIÓN NO FORMALIZADA
+   ========================================================= */
+.shopify-mock{
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:center;
+  max-width:1000px;margin:64px auto 0;text-align:left;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r-lg);padding:clamp(28px,4vw,44px);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.shopify-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:6px}
+.shopify-badge .dot{width:7px;height:7px;border-radius:50%;background:#ef4444;display:block;flex-shrink:0}
+.shopify-badge span:last-child{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,237,216,.55)}
+.shopify-copy h3{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.2vw,28px);color:var(--crema-2);margin:14px 0}
+.shopify-copy p{font-size:15px;line-height:1.7;color:rgba(245,237,216,.75);margin-bottom:14px}
+.shopify-copy p:last-child{margin-bottom:0}
+.shopify-preview{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:rgba(13,12,11,.6);padding:24px 20px 20px}
+.shopify-preview-url{font-family:var(--sans);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,237,216,.4);margin-bottom:16px}
+.shopify-preview-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+.shopify-label{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,237,216,.4);margin-bottom:8px}
+.shopify-line{display:flex;justify-content:space-between;font-family:var(--sans);font-size:12.5px;color:var(--crema-2);padding-bottom:6px}
+.shopify-line-border{padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:4px}
+.shopify-line-dim{font-size:11px;color:rgba(245,237,216,.45)}
+.shopify-line-total{font-size:14px;font-weight:700;color:#fff;margin-top:2px}
+.shopify-field{height:26px;border-radius:6px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);margin-bottom:8px}
+.shopify-field-row{display:flex;gap:8px}
+.shopify-field-row .shopify-field{flex:1}
+.shopify-pay-btn{width:100%;margin-top:6px;height:32px;border-radius:8px;background:var(--naranja);color:var(--negro);font-family:var(--sans);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:default;opacity:.92}
+.shopify-note{display:block;font-family:var(--sans);font-size:8.5px;color:rgba(245,237,216,.4);text-align:center;margin-top:6px}
+@media (max-width:760px){
+  .shopify-mock{grid-template-columns:1fr}
+  .shopify-preview-grid{grid-template-columns:1fr 1fr}
+}
+
+/* =========================================================
    OPINIONES
    ========================================================= */
 .opiniones{background:var(--crema);color:var(--negro)}
@@ -1345,6 +1379,35 @@ footer{background:var(--carbon);color:var(--crema-2);padding:80px var(--gutter) 
       <div class="step reveal"><div class="n">1</div><h4>Pulsa el botón naranja</h4><p>Está fijo en la esquina inferior derecha de la pantalla. Lo ves en cualquier momento, en cualquier página.</p></div>
       <div class="step reveal"><div class="n">2</div><h4>Elige lo que necesitas</h4><p>Reservar mesa, pedir a domicilio, consultar alérgenos u horarios. El asistente te guía paso a paso.</p></div>
       <div class="step reveal"><div class="n">3</div><h4>Listo en segundos</h4><p>Tu reserva o pedido queda registrado. Sin esperas, sin música de espera, sin llamadas.</p></div>
+    </div>
+
+    <!-- Exploración descartada: checkout directo con Shopify. Mockup no funcional. -->
+    <div class="shopify-mock reveal">
+      <div class="shopify-copy">
+        <div class="shopify-badge"><span class="dot"></span><span>Prototipo · no formalizado</span></div>
+        <h3>Evaluamos un checkout propio con Shopify</h3>
+        <p>Cada pedido por Glovo, Uber Eats o JustEat se lleva una comisión. Prototipamos una integración con Shopify Payments para cobrar directo y quedarnos con esa relación con el cliente.</p>
+        <p>No llegó a formalizarse: un checkout propio necesita su propia flota de reparto, y con cinco locales pequeños no teníamos riders propios. Formalizarlo era duplicar lo que Glovo, Uber Eats y JustEat ya resolvían — así que seguimos dependiendo de ellos.</p>
+      </div>
+      <div class="shopify-preview" aria-hidden="true">
+        <div class="shopify-preview-url">paolo-pizzeria.myshopify.com</div>
+        <div class="shopify-preview-grid">
+          <div class="shopify-cart">
+            <span class="shopify-label">Tu pedido</span>
+            <div class="shopify-line"><span>Diávola · 1</span><span>14,90€</span></div>
+            <div class="shopify-line shopify-line-border"><span>4 Formaggi · 1</span><span>15,90€</span></div>
+            <div class="shopify-line shopify-line-dim"><span>Reparto</span><span>sin flota propia</span></div>
+            <div class="shopify-line shopify-line-total"><span>Total</span><span>30,80€</span></div>
+          </div>
+          <div class="shopify-pay">
+            <span class="shopify-label">Pago</span>
+            <div class="shopify-field"></div>
+            <div class="shopify-field-row"><div class="shopify-field"></div><div class="shopify-field"></div></div>
+            <button class="shopify-pay-btn" disabled>Pagar con tarjeta</button>
+            <span class="shopify-note">Shopify Payments · checkout propio</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

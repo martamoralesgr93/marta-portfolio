@@ -8,7 +8,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xisxzka5pe");
   </script>
-  <script src="/auth-lock.js"></script>
+  <script src="auth-lock.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales</title>
@@ -638,6 +638,7 @@
       <span class="cs-tag">Information Architecture</span>
       <span class="cs-tag">Frontend Development</span>
       <span class="cs-tag">Delivery Ecosystem</span>
+      <span class="cs-tag">Build vs. Buy</span>
       <span class="cs-tag">Microsoft Clarity</span>
       <span class="cs-tag">Google Analytics 4</span>
       <span class="cs-tag">Digital Transformation</span>
@@ -695,6 +696,7 @@
           <li>Diseñé los 3 customer journeys del negocio: delivery, visita al local y reserva.</li>
           <li>Construí la web completa — Adobe XD → HTML/CSS en WordPress + Elementor.</li>
           <li>Activé el ecosistema de delivery (Glovo, Uber Eats, JustEat) e implementé QR.</li>
+          <li>Evalué (y descarté) un checkout propio con Shopify al identificar que la última milla exigía una flota de riders que el negocio no tenía.</li>
           <li>Itero sobre datos: Clarity para comportamiento, GA4 para conversión, Metricool para contenido.</li>
         </ul>
       </div>
@@ -1411,28 +1413,91 @@
         <!-- Visual Column -->
         <div class="col-lg-6 col-md-12">
           <div style="border-radius: 8px; overflow: hidden;">
-            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web3.webp" alt="Paolo · Sección PEDIDOS" style="width: 100%; height: auto; display: block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web2.webp" alt="Paolo · Sección PEDIDOS" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <!-- Content Column -->
         <div class="col-lg-6 col-md-12 text-start">
           <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · PEDIDOS</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Pedir sin complicaciones</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Optimizamos el flujo de compra online para competir directamente con las grandes plataformas, reduciendo la tasa de abandono del carrito mediante una navegación extremadamente simple.</p>
-          
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Un único CTA — "Pedir a domicilio" — enruta directamente al pedido, sin obligar al cliente a elegir entre Glovo, Uber Eats o JustEat manualmente. La decisión de qué plataforma usar la resuelve el sistema, no el usuario.</p>
+
           <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
             <div style="display:flex; gap:10px; align-items:flex-start;">
               <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Compra como invitado:</strong> No se exige registro de usuario para pedir, disminuyendo los clics necesarios en un 40% durante el checkout.</p>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Un clic, sin comparar apps:</strong> el usuario no investiga qué plataforma tiene mejor tarifa o tiempo de entrega — el CTA ya resolvió esa decisión por él.</p>
             </div>
             <div style="display:flex; gap:10px; align-items:flex-start;">
               <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
-              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Métodos de pago rápidos:</strong> Integración visible de Apple Pay y Google Pay para acelerar la conversión móvil en un solo toque.</p>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Sin checkout propio:</strong> pago y entrega ocurren en la plataforma de delivery, que ya trae la flota de reparto resuelta.</p>
             </div>
           </div>
-          
+
           <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Realizar transacciones de forma rápida, segura y sin fricción de contraseñas.
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Pedir a domicilio sin fricción, delegando el pago y la última milla a un canal que ya la resuelve.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 03b: Exploración descartada — checkout directo con Shopify -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-top:64px;">
+        <!-- Visual Column: mockup nativo del checkout, no es un screenshot real -->
+        <div class="col-lg-6 col-md-12">
+          <div style="position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--border); background:#0c0c10;">
+            <div style="position:absolute; top:14px; right:14px; z-index:2; display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border-radius:100px; background:rgba(0,0,0,0.55); border:1px solid rgba(255,255,255,0.18); backdrop-filter: blur(6px);">
+              <span style="width:6px;height:6px;border-radius:50%;background:#ef4444;display:block;"></span>
+              <span style="font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.75);">Prototipo · no formalizado</span>
+            </div>
+            <div style="padding:30px 24px 26px;">
+              <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:20px;">paolo-pizzeria.myshopify.com</div>
+              <div style="display:grid; grid-template-columns: 1.1fr 1fr; gap:22px;">
+                <!-- Cart summary -->
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                  <div style="font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:2px;">Tu pedido</div>
+                  <div style="display:flex; justify-content:space-between; font-size:12.5px; color:var(--text);">
+                    <span>Diavola · 1</span><span>14,90€</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font-size:12.5px; color:var(--text); padding-bottom:10px; border-bottom:1px solid var(--border);">
+                    <span>4 Formaggi · 1</span><span>15,90€</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font-size:11.5px; color:var(--text-dim);">
+                    <span>Reparto</span><span>¿ ? · sin flota propia</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font-size:14px; font-weight:700; color:#fff; margin-top:4px;">
+                    <span>Total</span><span>30,80€</span>
+                  </div>
+                </div>
+                <!-- Payment form -->
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                  <div style="font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:2px;">Pago</div>
+                  <div style="height:28px; border-radius:6px; border:1px solid var(--border); background:rgba(255,255,255,0.03);"></div>
+                  <div style="display:flex; gap:8px;">
+                    <div style="flex:1; height:28px; border-radius:6px; border:1px solid var(--border); background:rgba(255,255,255,0.03);"></div>
+                    <div style="flex:1; height:28px; border-radius:6px; border:1px solid var(--border); background:rgba(255,255,255,0.03);"></div>
+                  </div>
+                  <div style="margin-top:8px; height:34px; border-radius:8px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11.5px; font-weight:700; color:#000;">Pagar con tarjeta</div>
+                  <div style="font-size:9px; color:var(--text-dim); text-align:center; margin-top:4px;">Shopify Payments · checkout propio</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03B · EXPLORACIÓN · CHECKOUT DIRECTO</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Evalué construir el canal propio</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:16px;">Las plataformas de delivery se quedan con una comisión de cada pedido. Prototipé una integración con Shopify — checkout propio, pago con tarjeta directo, sin intermediario — para valorar si Paolo podía recuperar ese margen y la relación directa con el cliente.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Lo que faltaba no era de diseño ni de pago: era logística. Un checkout propio sin flota de reparto solo traslada el problema de la última milla al propio restaurante. Con cinco locales pequeños y ningún rider propio, formalizarlo significaba contratar y gestionar una flota — o delegar el reparto a un tercero de todos modos, que es exactamente lo que Glovo, Uber Eats y JustEat ya resolvían.</p>
+          <div class="card-decision" style="margin:0 0 20px;">
+            <div class="card-decision-icon">⚠</div>
+            <div class="card-decision-content">
+              <div class="card-decision-title">Decisión: no formalizar</div>
+              <p class="card-decision-text">Sin riders propios, el checkout directo no resolvía la última milla — solo la escondía. Archivé la integración con Shopify y reinvertí el esfuerzo en optimizar los tres canales de delivery ya activos, que sí traían la flota incluida.</p>
+            </div>
+          </div>
+          <div class="key-rule-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>No todo lo que se puede construir se debe formalizar. Validar la operación antes que el checkout evitó prometerle al cliente una entrega que Paolo no podía garantizar.</span>
           </div>
         </div>
       </div>
@@ -1473,7 +1538,7 @@
         <!-- Visual Column -->
         <div class="col-lg-6 col-md-12">
           <div style="border-radius: 8px; overflow: hidden;">
-            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web2.webp" alt="Paolo · Sección OPINIONES" style="width: 100%; height: auto; display: block;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web3.webp" alt="Paolo · Sección OPINIONES" style="width: 100%; height: auto; display: block;">
           </div>
         </div>
         <!-- Content Column -->
@@ -1507,15 +1572,6 @@
       <div class="card-decision-content">
         <div class="card-decision-title">Decisión Final de Estructura Web</div>
         <p class="card-decision-text">La web se estructuró en 5 secciones claramente identificables desde la navegación que corresponden a pasos clave del embudo: descubrimiento de marca (Historia), evaluación de producto (Carta), conversión offline (Restaurantes), conversión online (Pedidos) y fidelización y prueba social (Opiniones). Cada sección tiene un propósito de negocio definido.</p>
-      </div>
-    </div>
-
-    <!-- PRODUCTO EN VIVO -->
-    <div class="fu" style="margin-bottom:72px; padding:28px 0; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-      <p style="font-size:13px; color:var(--text-dim); margin:0;">Este es el producto que diseñé y desarrollé entre 2020 y 2022. Las capturas muestran el trabajo original tal como lo entregué.</p>
-      <div style="display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap;">
-        <a href="https://04-paolo.vercel.app/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:var(--accent); color:#000; border-radius:8px; font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap;">Ver la web →</a>
-        <a href="https://github.com/martamoralesgr93/marta-portfolio/tree/main/projects/04-paolo" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:transparent; color:var(--accent); border:1px solid rgba(242,162,34,0.35); border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; white-space:nowrap;">Código fuente →</a>
       </div>
     </div>
 
