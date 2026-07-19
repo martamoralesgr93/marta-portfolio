@@ -60,6 +60,15 @@
 
   // Global Lock: si no está autorizado, inyectar estilos de bloqueo de inmediato para evitar FOUC
   if (!isAuthorized) {
+    const isIndexPage = window.location.pathname === '/' ||
+                        window.location.pathname.endsWith('index.html') ||
+                        window.location.pathname === '';
+    if (!isIndexPage) {
+      const currentPath = window.location.pathname + window.location.search + window.location.hash;
+      window.location.href = '/index.html?redirect=' + encodeURIComponent(currentPath);
+      return;
+    }
+
     const style = document.createElement('style');
     style.id = 'auth-lock-style';
     style.innerHTML = `

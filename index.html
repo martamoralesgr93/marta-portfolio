@@ -4943,8 +4943,9 @@ body.visitor-unauthorized .locked-metric:hover::after {
   transform: translateY(0);
 }
 .lock-status-container {
-  padding: 10px;
+  padding: 12px;
   display: none;
+  border-radius: 10px;
 }
 .lock-status-container.error {
   display: block;
@@ -4958,12 +4959,39 @@ body.visitor-unauthorized .locked-metric:hover::after {
   border: 1px solid rgba(52, 211, 153, 0.25);
   color: #34d399;
 }
+.lock-status-container.warning {
+  display: block;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+}
 .lock-status-container.loading {
   display: block;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255,255,255,0.85);
 }
+.lock-description {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.lock-toggle-link {
+  font-size: 12.5px;
+  color: var(--purple);
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.lock-toggle-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
 
 @media (max-width: 480px) {
   #portfolio-lock-screen {
@@ -5024,82 +5052,60 @@ body.visitor-unauthorized .locked-metric:hover::after {
       <p class="lock-subtitle">Product Designer</p>
     </div>
 
-    <!-- Social Login Buttons -->
-    <div class="social-btn-stack" id="social-stack">
-      <!-- Google -->
-      <button onclick="loginWithGoogle()" class="social-btn google-btn" aria-label="Google" type="button">
-        <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
-        </svg>
-        <span>Google</span>
-      </button>
+    <!-- Request Access Form (Default Screen) -->
+    <div id="request-access-form-el" style="width: 100%;">
+      <p class="lock-description">
+        <span class="es">El contenido de este portafolio es privado. Por favor, solicita acceso introduciendo tu email y te enviaré un token personalizado.</span>
+        <span class="en">The content of this portfolio is private. Please request access by entering your email and I will send you a custom token.</span>
+      </p>
       
-      <!-- Microsoft -->
-      <button onclick="loginWithMicrosoft()" class="social-btn ms-btn" aria-label="Microsoft" type="button">
-        <svg class="social-icon" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="11" height="11" fill="#F25022"></rect>
-          <rect x="12" width="11" height="11" fill="#7FBA00"></rect>
-          <rect y="12" width="11" height="11" fill="#00A4EF"></rect>
-          <rect x="12" y="12" width="11" height="11" fill="#FFB900"></rect>
-        </svg>
-        <span>Microsoft</span>
+      <div class="form-group" style="margin-top: 16px; margin-bottom: 12px;">
+        <label for="request-email">
+          <span class="es">Tu correo electrónico</span>
+          <span class="en">Your email address</span>
+        </label>
+        <input type="email" id="request-email" placeholder="ejemplo@correo.com" class="form-input" style="text-align: center;" onkeydown="handleRequestKeydown(event)">
+      </div>
+      
+      <button onclick="submitAccessRequest()" class="lock-submit-btn" type="button" style="margin-top: 4px;">
+        <span class="es">Solicitar acceso</span>
+        <span class="en">Request Access</span>
       </button>
- 
-      <!-- LinkedIn -->
-      <button onclick="loginWithLinkedIn()" class="social-btn ln-btn" aria-label="LinkedIn" type="button">
-        <svg class="social-icon" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-        </svg>
-        <span>LinkedIn</span>
-      </button>
+
+      <div style="text-align: center; margin-top: 12px;">
+        <a onclick="showTokenForm()" class="lock-toggle-link" role="button" tabindex="0">
+          <span class="es">¿Ya tienes un token? Acceder directamente</span>
+          <span class="en">Already have a token? Access directly</span>
+        </a>
+      </div>
     </div>
  
-    <!-- Divider -->
-    <div class="lock-divider" id="lock-divider-el">
-      <span class="es">o</span>
-      <span class="en">or</span>
-    </div>
- 
-    <!-- Token Form -->
-    <div id="token-form-el" style="width: 100%;">
-      <div class="form-group" style="margin-bottom: 12px;">
+    <!-- Token Form (Secondary Screen, Hidden by default) -->
+    <div id="token-form-el" style="width: 100%; display: none;">
+      <p class="lock-description">
+        <span class="es">Introduce tu token de acceso para desbloquear el contenido del portafolio.</span>
+        <span class="en">Enter your access token to unlock the portfolio content.</span>
+      </p>
+
+      <div class="form-group" style="margin-top: 16px; margin-bottom: 12px;">
         <label for="unlock-token">
           <span class="es">Token de acceso</span>
           <span class="en">Access Token</span>
         </label>
         <input type="text" id="unlock-token" placeholder="Token" class="form-input" style="text-align: center;" onkeydown="handleTokenKeydown(event)">
       </div>
+      
       <button onclick="unlockWithEnteredToken()" class="lock-submit-btn" type="button" style="margin-top: 4px;">
         <span class="es">Entrar</span>
         <span class="en">Enter</span>
       </button>
-    </div>
 
-    <!-- Social Email Form (hidden by default) -->
-    <div id="social-email-form" style="display: none; width: 100%; flex-direction: column; gap: 14px; text-align: left;">
-      <button onclick="showMainLockScreen()" class="lock-back-btn" type="button" style="background:none; border:none; color:var(--dim); font-size:12px; cursor:pointer; align-self:flex-start; padding:0; display:flex; align-items:center; gap:4px; font-family:inherit;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        <span class="es">Volver</span>
-        <span class="en">Back</span>
-      </button>
-      
-      <div class="form-group">
-        <label for="social-email-input">
-          <span class="es" id="social-label-es">Verificar email</span>
-          <span class="en" id="social-label-en">Verify email</span>
-        </label>
-        <input type="email" id="social-email-input" placeholder="ejemplo@outlook.com" class="form-input" style="text-align: center;" onkeydown="handleSocialEmailKeydown(event)">
+      <div style="text-align: center; margin-top: 12px;">
+        <a onclick="showRequestForm()" class="lock-toggle-link" role="button" tabindex="0">
+          <span class="es">Volver a solicitar acceso</span>
+          <span class="en">Back to request access</span>
+        </a>
       </div>
-      
-      <button onclick="submitSocialEmail()" class="lock-submit-btn" type="button">
-        <span class="es">Continuar</span>
-        <span class="en">Continue</span>
-      </button>
     </div>
  
     <!-- Status display -->
@@ -5155,11 +5161,21 @@ body.visitor-unauthorized .locked-metric:hover::after {
     document.body.classList.add('visitor-unauthorized');
     document.getElementById('portfolio-content').style.display = 'none';
     
-    // Auto-show pending warning if they logged in before but are not whitelisted yet
-    const savedEmail = localStorage.getItem('portfolio_google_email');
+    // Auto-show pending warning if they already requested access
+    const savedEmail = localStorage.getItem('portfolio_request_email');
     if (savedEmail) {
       document.getElementById('portfolio-lock-screen').style.display = 'flex';
-      showPendingMessage(getLang());
+      setTimeout(() => {
+        showTokenForm();
+        const statusDiv = document.getElementById('lock-status');
+        const lang = getLang();
+        if (statusDiv) {
+          statusDiv.innerHTML = lang === 'en'
+            ? `Request pending for <strong>${savedEmail}</strong>. Enter the token once received.`
+            : `Solicitud pendiente para <strong>${savedEmail}</strong>. Introduce el token cuando lo recibas.`;
+          statusDiv.className = 'lock-status-container warning';
+        }
+      }, 50);
     }
   }
 
@@ -5200,7 +5216,9 @@ body.visitor-unauthorized .locked-metric:hover::after {
             lockScreen.style.display = 'flex';
             
             setTimeout(() => {
-              const input = document.getElementById('unlock-token');
+              const reqEmail = localStorage.getItem('portfolio_request_email');
+              const inputId = reqEmail ? 'unlock-token' : 'request-email';
+              const input = document.getElementById(inputId);
               if (input) input.focus();
             }, 100);
           }
@@ -5222,7 +5240,9 @@ body.visitor-unauthorized .locked-metric:hover::after {
           lockScreen.style.display = 'flex';
           
           setTimeout(() => {
-            const input = document.getElementById('unlock-token');
+            const reqEmail = localStorage.getItem('portfolio_request_email');
+            const inputId = reqEmail ? 'unlock-token' : 'request-email';
+            const input = document.getElementById(inputId);
             if (input) input.focus();
           }, 100);
         }
@@ -5259,155 +5279,6 @@ body.visitor-unauthorized .locked-metric:hover::after {
       statusDiv.className = 'lock-status-container';
     }
   };
-
-  // Comprobar si hay un token de OAuth (OIDC fragment en hash)
-  const hash = window.location.hash;
-  if (hash && hash.includes("id_token=")) {
-    try {
-      const idTokenParam = hash.split("id_token=")[1].split("&")[0];
-      const stateParam = hash.includes("state=") ? hash.split("state=")[1].split("&")[0] : "";
-      
-      // Descodificar el JWT de forma segura
-      const base64Url = idTokenParam.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      
-      const payload = JSON.parse(jsonPayload);
-      const email = (payload.email || payload.preferred_username || payload.upn).trim().toLowerCase();
-      const name = payload.name || "Authenticated User";
-      
-      // Limpiar el fragmento de la URL sin recargar
-      window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
-      
-      // Validar acceso según el proveedor (state)
-      setTimeout(() => {
-        if (stateParam === 'google_auth') {
-          handleGoogleLoginResult(email, name, payload);
-        } else {
-          handleMicrosoftLoginResult(email, name, payload);
-        }
-      }, 300);
-    } catch (e) {
-      console.error("OIDC decode error", e);
-    }
-  }
-
-  // Helper to send the request via AJAX to FormSubmit automatically
-  function sendAutomaticAccessRequest(email, name) {
-    const statusDiv = document.getElementById('lock-status');
-    const lang = getLang();
-    
-    statusDiv.textContent = lang === 'en' ? 'Requesting access...' : 'Solicitando acceso...';
-    statusDiv.className = 'lock-status-container loading';
-
-    fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        name: name || 'Usuario Autenticado',
-        email: email,
-        message: 'Solicitud de acceso automática al iniciar sesión con login social.',
-        _subject: `Solicitud de Acceso - Portafolio (Login Social: ${name || email})`,
-        _captcha: 'false'
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success === 'true' || data.success === true) {
-        localStorage.setItem('access_requested_' + email.trim().toLowerCase(), 'pending');
-        showPendingMessage(lang);
-      } else {
-        throw new Error('FormSubmit error');
-      }
-    })
-    .catch(err => {
-      console.error("FormSubmit error:", err);
-      statusDiv.textContent = lang === 'en'
-        ? 'Error sending request. Please write to mmoralesgr93@gmail.com'
-        : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
-      statusDiv.className = 'lock-status-container error';
-    });
-  }
-
-  // Helper to display the pending message
-  function showPendingMessage(lang) {
-    const statusDiv = document.getElementById('lock-status');
-    statusDiv.innerHTML = lang === 'en'
-      ? '<strong>Access pending approval:</strong> Marta will authorize you at mmoralesgr93@gmail.com. Please wait.'
-      : '<strong>Acceso pendiente de aprobación:</strong> Marta te dará acceso en mmoralesgr93@gmail.com. Por favor, espera.';
-    statusDiv.className = 'lock-status-container warning';
-  }
-
-  // Handle Social Login result (whitelist check + auto request flow)
-  function handleSocialLoginResult(email, name, provider) {
-    const statusDiv = document.getElementById('lock-status');
-    const lang = getLang();
-    const cleanEmail = email ? email.trim().toLowerCase() : '';
-    
-    if (!cleanEmail) {
-      statusDiv.textContent = lang === 'en' ? 'Unable to retrieve email from social login.' : 'No se pudo obtener el email del inicio de sesión.';
-      statusDiv.className = 'lock-status-container error';
-      return;
-    }
-
-    // Guardar el email del login social de inmediato para persistencia
-    localStorage.setItem('portfolio_google_email', cleanEmail);
-
-    if (WHITELISTED_EMAILS.map(e => e.toLowerCase()).includes(cleanEmail)) {
-      statusDiv.textContent = lang === 'en' ? 'Unlocking...' : 'Desbloqueando...';
-      statusDiv.className = 'lock-status-container success';
-      
-      if (typeof window.clarity === "function") {
-        let domain = cleanEmail.includes("@") ? cleanEmail.split("@")[1] : "unknown";
-        window.clarity("identify", cleanEmail);
-        window.clarity("set", "name", name);
-        window.clarity("set", "company", cleanEmail);
-        window.clarity("set", "company_domain", domain);
-        window.clarity("set", "user_type", provider);
-      }
-      
-      document.body.classList.remove('visitor-unauthorized');
-      document.body.classList.add('visitor-authorized');
-
-      const lockScreen = document.getElementById('portfolio-lock-screen');
-      lockScreen.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-      lockScreen.style.opacity = '0';
-      lockScreen.style.transform = 'scale(1.05)';
-      
-      setTimeout(() => {
-        lockScreen.style.display = 'none';
-        if (pendingRedirectUrl) {
-          window.location.href = pendingRedirectUrl;
-        } else {
-          const url = new URL(window.location.href);
-          url.searchParams.delete('redirect');
-          window.history.replaceState({}, document.title, url.pathname + url.search);
-        }
-      }, 400);
-    } else {
-      const requestState = localStorage.getItem('access_requested_' + cleanEmail);
-      if (requestState === 'pending') {
-        showPendingMessage(lang);
-        if (typeof window.clarity === "function") {
-          window.clarity("identify", cleanEmail);
-          window.clarity("set", "name", name);
-          window.clarity("set", "user_type", "returning_pending_social_login");
-        }
-      } else {
-        sendAutomaticAccessRequest(cleanEmail, name);
-        if (typeof window.clarity === "function") {
-          window.clarity("identify", cleanEmail);
-          window.clarity("set", "name", name);
-          window.clarity("set", "user_type", "first_time_pending_social_login");
-        }
-      }
-    }
-  }
 
   // Unlock with token entered manually or passed programmatically
   window.unlockWithEnteredToken = function(customToken) {
@@ -5464,101 +5335,104 @@ body.visitor-unauthorized .locked-metric:hover::after {
     }
   };
 
-  let currentProvider = '';
-
-  window.showMainLockScreen = function() {
-    document.getElementById('social-stack').style.display = 'flex';
-    document.getElementById('lock-divider-el').style.display = 'flex';
-    document.getElementById('token-form-el').style.display = 'block';
-    document.getElementById('social-email-form').style.display = 'none';
+  window.showTokenForm = function() {
+    const requestForm = document.getElementById('request-access-form-el');
+    const tokenForm = document.getElementById('token-form-el');
+    if (requestForm) requestForm.style.display = 'none';
+    if (tokenForm) tokenForm.style.display = 'block';
     
-    // Clear status
+    // Clear status when switching
     const statusDiv = document.getElementById('lock-status');
-    statusDiv.style.display = 'none';
-    statusDiv.className = 'lock-status-container';
+    if (statusDiv) {
+      statusDiv.style.display = 'none';
+      statusDiv.className = 'lock-status-container';
+    }
+
+    setTimeout(() => {
+      const input = document.getElementById('unlock-token');
+      if (input) input.focus();
+    }, 100);
   };
 
-  function showSocialEmailForm(providerName, providerKey) {
-    currentProvider = providerKey;
+  window.showRequestForm = function() {
+    const requestForm = document.getElementById('request-access-form-el');
+    const tokenForm = document.getElementById('token-form-el');
+    if (requestForm) requestForm.style.display = 'block';
+    if (tokenForm) tokenForm.style.display = 'none';
     
-    document.getElementById('social-stack').style.display = 'none';
-    document.getElementById('lock-divider-el').style.display = 'none';
-    document.getElementById('token-form-el').style.display = 'none';
-    
-    const form = document.getElementById('social-email-form');
-    form.style.display = 'flex';
-    
-    const labelEs = document.getElementById('social-label-es');
-    const labelEn = document.getElementById('social-label-en');
-    
-    labelEs.textContent = `Introduce tu email de ${providerName} para verificar acceso`;
-    labelEn.textContent = `Enter your ${providerName} email to verify access`;
-    
-    const input = document.getElementById('social-email-input');
-    input.value = '';
-    input.focus();
-  }
+    // Clear status when switching
+    const statusDiv = document.getElementById('lock-status');
+    if (statusDiv) {
+      statusDiv.style.display = 'none';
+      statusDiv.className = 'lock-status-container';
+    }
 
-  window.submitSocialEmail = function() {
-    const input = document.getElementById('social-email-input');
-    const email = input.value.trim();
+    setTimeout(() => {
+      const input = document.getElementById('request-email');
+      if (input) input.focus();
+    }, 100);
+  };
+
+  window.submitAccessRequest = function() {
+    const input = document.getElementById('request-email');
+    const email = input ? input.value.trim() : '';
+    const statusDiv = document.getElementById('lock-status');
     const lang = getLang();
-    
+
     if (!email || !email.includes('@')) {
-      const statusDiv = document.getElementById('lock-status');
       statusDiv.textContent = lang === 'en' ? 'Please enter a valid email address.' : 'Por favor, introduce un correo electrónico válido.';
       statusDiv.className = 'lock-status-container error';
       return;
     }
-    
-    handleSocialLoginResult(email.toLowerCase(), 'User', currentProvider);
+
+    statusDiv.textContent = lang === 'en' ? 'Sending request...' : 'Enviando solicitud...';
+    statusDiv.className = 'lock-status-container loading';
+
+    fetch('https://formsubmit.co/ajax/mmoralesgr93@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        message: 'Solicitud de acceso al portafolio privado de Marta Morales.',
+        _subject: `Solicitud de Acceso - Portafolio (${email})`,
+        _captcha: 'false'
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success === 'true' || data.success === true) {
+        localStorage.setItem('portfolio_request_email', email.toLowerCase());
+        localStorage.setItem('access_requested_' + email.toLowerCase(), 'pending');
+        
+        statusDiv.innerHTML = lang === 'en'
+          ? `<strong>Request sent!</strong> I will review it and send a token to <strong>${email}</strong>. Check your inbox soon.`
+          : `<strong>¡Solicitud enviada!</strong> La revisaré y te enviaré un token a <strong>${email}</strong>. Revisa tu bandeja pronto.`;
+        statusDiv.className = 'lock-status-container success';
+
+        // Auto transition to token screen after 2.5 seconds
+        setTimeout(() => {
+          showTokenForm();
+        }, 2500);
+      } else {
+        throw new Error('FormSubmit error');
+      }
+    })
+    .catch(err => {
+      console.error("FormSubmit error:", err);
+      statusDiv.textContent = lang === 'en'
+        ? 'Error sending request. Please write directly to mmoralesgr93@gmail.com'
+        : 'Error al enviar la solicitud. Por favor, escribe a mmoralesgr93@gmail.com';
+      statusDiv.className = 'lock-status-container error';
+    });
   };
 
-  window.handleSocialEmailKeydown = function(event) {
+  window.handleRequestKeydown = function(event) {
     if (event.key === 'Enter') {
-      submitSocialEmail();
+      submitAccessRequest();
     }
-  };
-
-  // Login con Google
-  window.loginWithGoogle = function() {
-    if (GOOGLE_CLIENT_ID.includes('xxxx') || GOOGLE_CLIENT_ID.startsWith('100000000000')) {
-      showSocialEmailForm('Google', 'google_auth');
-      return;
-    }
-    const redirectUri = encodeURIComponent(window.location.origin + '/');
-    const nonce = Math.random().toString(36).substring(2);
-    const state = 'google_auth';
-    
-    const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&response_type=id_token&redirect_uri=${redirectUri}&scope=openid%20profile%20email&response_mode=fragment&state=${state}&nonce=${nonce}`;
-    window.location.href = authUrl;
-  };
-
-  function handleGoogleLoginResult(email, name, payload) {
-    handleSocialLoginResult(email, name, 'google_auth');
-  }
-
-  // Login con Microsoft
-  window.loginWithMicrosoft = function() {
-    if (MICROSOFT_CLIENT_ID.includes('0000-0000') || MICROSOFT_CLIENT_ID.startsWith('10000000-')) {
-      showSocialEmailForm('Microsoft', 'microsoft_auth');
-      return;
-    }
-    const redirectUri = encodeURIComponent(window.location.origin + '/');
-    const nonce = Math.random().toString(36).substring(2);
-    const state = 'microsoft_auth';
-    
-    const authUrl = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=${MICROSOFT_CLIENT_ID}&response_type=id_token&redirect_uri=${redirectUri}&scope=openid%20profile%20email&response_mode=fragment&state=${state}&nonce=${nonce}`;
-    window.location.href = authUrl;
-  };
-
-  function handleMicrosoftLoginResult(email, name, payload) {
-    handleSocialLoginResult(email, name, 'microsoft_auth');
-  }
-
-  // Login con LinkedIn
-  window.loginWithLinkedIn = function() {
-    showSocialEmailForm('LinkedIn', 'linkedin_auth');
   };
 })();
 </script>
