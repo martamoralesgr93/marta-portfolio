@@ -8,6 +8,7 @@
   </script>
   <script src="auth-lock.js"></script>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marta Morales — Product Designer | UX · Design Systems · AI Product Design · CRO</title>
 <meta name="description" content="Product Designer portfolio. 4+ years owning digital products end-to-end — UX research, design systems, accessibility and CRO across multi-sector environments. Based in Spain, available remote.">
@@ -5140,9 +5141,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   }
 
   function checkIsAuthorized() {
-    const t = (localStorage.getItem('portfolio_token') || '').trim().toLowerCase();
-    const e = (localStorage.getItem('portfolio_google_email') || '').trim().toLowerCase();
-    return isValidToken(t) || (e && WHITELISTED_EMAILS.map(x => x.toLowerCase()).includes(e));
+    return true; // Muro de email desactivado — pantalla de discreción en auth-lock.js
   }
 
   // Initialize Lock Screen State

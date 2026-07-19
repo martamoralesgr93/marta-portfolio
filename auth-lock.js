@@ -1,107 +1,72 @@
-(function() {
-  // Lista de emails autorizados para entrar directamente con su cuenta de Google (en minúscula)
-  const WHITELISTED_EMAILS = [
-    'mmoralesgr93@gmail.com', // Marta
-    'recruiter@google.com',
-    'talent@hiberus.com'
-  ];
+(function () {
+  "use strict";
+  var ACK_KEY = 'portfolio_ack';
 
-  // Lista de tokens válidos (en minúsculas y sin espacios)
-  const VALID_TOKENS = [
-    'mmorales2026'
-  ];
+  // Si el visitante ya aceptó antes, no mostramos nada.
+  if (localStorage.getItem(ACK_KEY) === 'true') return;
 
-  // Helper para obtener parámetros de la URL
-  function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
+  function isEN() {
+    return document.documentElement.classList.contains('lang-en');
   }
 
-  // Valida si un token es válido
-  function isValidToken(token) {
-    if (!token) return false;
-    const cleanToken = token.trim().toLowerCase();
-    return VALID_TOKENS.includes(cleanToken);
-  }
-
-  // Comprobar si viene un token por URL
-  const tokenFromUrl = getQueryParam('token');
-  if (tokenFromUrl && isValidToken(tokenFromUrl)) {
-    localStorage.setItem('portfolio_token', tokenFromUrl.trim().toLowerCase());
-    
-    // Limpiar el token de la barra de direcciones de forma sutil
-    const url = new URL(window.location.href);
-    url.searchParams.delete('token');
-    window.history.replaceState({}, document.title, url.pathname + url.search);
-  }
-
-  const savedToken = localStorage.getItem('portfolio_token');
-  const savedGoogleEmail = localStorage.getItem('portfolio_google_email');
-  
-  const isTokenAuthorized = isValidToken(savedToken);
-  const isGoogleAuthorized = savedGoogleEmail && WHITELISTED_EMAILS.includes(savedGoogleEmail.trim().toLowerCase());
-  const isAuthorized = isTokenAuthorized || isGoogleAuthorized;
-
-  // Registrar en Clarity si está autorizado
-  if (isAuthorized && typeof window.clarity === "function") {
-    const trackingId = savedGoogleEmail || savedToken;
-    let domain = "unknown";
-    if (savedGoogleEmail && savedGoogleEmail.includes("@")) {
-      domain = savedGoogleEmail.split("@")[1];
-    } else if (isTokenAuthorized) {
-      domain = savedToken.toLowerCase();
-    }
-    
-    window.clarity("identify", trackingId);
-    window.clarity("set", "company", trackingId);
-    window.clarity("set", "company_domain", domain);
-    window.clarity("set", "user_type", isGoogleAuthorized ? "google_auth" : "token_holder");
-  }
-
-  // Global Lock: si no está autorizado, inyectar estilos de bloqueo de inmediato para evitar FOUC
-  if (!isAuthorized) {
-    const isIndexPage = window.location.pathname === '/' ||
-                        window.location.pathname.endsWith('index.html') ||
-                        window.location.pathname === '';
-    if (!isIndexPage) {
-      const currentPath = window.location.pathname + window.location.search + window.location.hash;
-      window.location.href = '/index.html?redirect=' + encodeURIComponent(currentPath);
-      return;
-    }
-
-    const style = document.createElement('style');
-    style.id = 'auth-lock-style';
-    style.innerHTML = `
-      #portfolio-content { display: none !important; }
-      #portfolio-lock-screen { display: flex !important; }
-      .lock-close-btn { display: none !important; }
-    `;
+  function injectStyles() {
+    if (document.getElementById('discretion-style')) return;
+    var css =
+      '#discretion-screen{position:fixed;inset:0;z-index:99999;display:flex;' +
+      'align-items:center;justify-content:center;background:#0e0b14;padding:24px;}' +
+      '.discretion-card{max-width:440px;width:100%;text-align:center;}' +
+      '.discretion-logo{width:56px;height:56px;margin:0 auto 24px;display:block;}' +
+      '.discretion-title{font-size:24px;line-height:1.3;margin:0 0 16px;color:#fff;font-weight:600;}' +
+      '.discretion-text{font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);margin:0 0 28px;}' +
+      '.discretion-btn{background:#9B4DCA;color:#fff;border:none;border-radius:10px;' +
+      'padding:14px 44px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .2s;}' +
+      '.discretion-btn:hover{opacity:.88;}' +
+      '.discretion-btn:focus-visible{outline:3px solid #fff;outline-offset:3px;}';
+    var style = document.createElement('style');
+    style.id = 'discretion-style';
+    style.textContent = css;
     document.head.appendChild(style);
-
-    // Monitorear localStorage periódicamente para detectar el desbloqueo y recargar la página
-    const authInterval = setInterval(function() {
-      const currentToken = localStorage.getItem('portfolio_token');
-      const currentEmail = localStorage.getItem('portfolio_google_email');
-      const isTokenOk = isValidToken(currentToken);
-      const isEmailOk = currentEmail && WHITELISTED_EMAILS.includes(currentEmail.trim().toLowerCase());
-      
-      if (isTokenOk || isEmailOk) {
-        clearInterval(authInterval);
-        const lockStyle = document.getElementById('auth-lock-style');
-        if (lockStyle) lockStyle.parentNode.removeChild(lockStyle);
-        window.location.reload();
-      }
-    }, 300);
   }
 
-  // Compatibilidad con enlaces antiguos: index.html?redirect=/pagina → ir directo a la página
-  const isIndexPage = window.location.pathname === '/' ||
-                      window.location.pathname.endsWith('index.html') ||
-                      window.location.pathname === '';
-  if (isIndexPage) {
-    const redirectUrl = getQueryParam('redirect');
-    if (redirectUrl && redirectUrl.startsWith('/') && !redirectUrl.startsWith('//')) {
-      window.location.href = redirectUrl;
-    }
+  function mount() {
+    if (document.getElementById('discretion-screen')) return;
+    injectStyles();
+
+    var en = isEN();
+    var overlay = document.createElement('div');
+    overlay.id = 'discretion-screen';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'discretion-title');
+    overlay.innerHTML =
+      '<div class="discretion-card">' +
+      '<img src="assets/logo-sinfondo.webp" alt="Marta Morales" class="discretion-logo" />' +
+      '<h1 class="discretion-title" id="discretion-title">' +
+      (en ? 'A note before you enter' : 'Antes de entrar') + '</h1>' +
+      '<p class="discretion-text">' +
+      (en
+        ? 'This portfolio includes work carried out under confidentiality agreements. I kindly ask for your discretion when sharing it.'
+        : 'Este portfolio incluye trabajo realizado bajo acuerdos de confidencialidad. Te pido discreción al compartirlo.') +
+      '</p>' +
+      '<button type="button" class="discretion-btn" id="discretion-enter">' +
+      (en ? 'Enter' : 'Entrar') + '</button>' +
+      '</div>';
+
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    var btn = document.getElementById('discretion-enter');
+    btn.addEventListener('click', function () {
+      localStorage.setItem(ACK_KEY, 'true');
+      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      document.body.style.overflow = '';
+    });
+    btn.focus();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mount);
+  } else {
+    mount();
   }
 })();

@@ -1,6 +1,8 @@
+# Búsqueda discreta: no queremos aparecer en buscadores.
+# El bloqueo real lo hace X-Robots-Tag (vercel.json) + <meta robots noindex>.
+# Dejamos el rastreo PERMITIDO a propósito: si lo bloqueáramos aquí, Google no
+# llegaría a leer el noindex y podría mantener la URL indexada igualmente.
 User-agent: *
 Allow: /
 Disallow: /landing-old
 Disallow: /index.html.bak
-
-Sitemap: https://martamorales.vercel.app/sitemap.xml
