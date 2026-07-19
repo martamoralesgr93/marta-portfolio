@@ -5055,8 +5055,8 @@ body.visitor-unauthorized .locked-metric:hover::after {
     <!-- Request Access Form (Default Screen) -->
     <div id="request-access-form-el" style="width: 100%;">
       <p class="lock-description">
-        <span class="es">El contenido de este portafolio es privado. Por favor, solicita acceso introduciendo tu email y te enviaré un token personalizado.</span>
-        <span class="en">The content of this portfolio is private. Please request access by entering your email and I will send you a custom token.</span>
+        <span class="es">Hola. Este espacio es confidencial. Algunos de mi proyectos contienen información bajo acuerdo de confidencialidad (NDA). Escribe tu email y te enviaré una clave de acceso en unos minutos.</span>
+        <span class="en">Hi there. This space is confidential. Some of my case studies contain protected data. Enter your email and I'll send you an access key in a few minutes.</span>
       </p>
       
       <div class="form-group" style="margin-top: 16px; margin-bottom: 12px;">
@@ -5068,14 +5068,14 @@ body.visitor-unauthorized .locked-metric:hover::after {
       </div>
       
       <button onclick="submitAccessRequest()" class="lock-submit-btn" type="button" style="margin-top: 4px;">
-        <span class="es">Solicitar acceso</span>
+        <span class="es">Solicitar clave</span>
         <span class="en">Request Access</span>
       </button>
 
       <div style="text-align: center; margin-top: 12px;">
         <a onclick="showTokenForm()" class="lock-toggle-link" role="button" tabindex="0">
-          <span class="es">¿Ya tienes un token? Acceder directamente</span>
-          <span class="en">Already have a token? Access directly</span>
+          <span class="es">¿Ya tienes una clave? Acceder directamente</span>
+          <span class="en">Already have a key? Access directly</span>
         </a>
       </div>
     </div>
@@ -5083,16 +5083,16 @@ body.visitor-unauthorized .locked-metric:hover::after {
     <!-- Token Form (Secondary Screen, Hidden by default) -->
     <div id="token-form-el" style="width: 100%; display: none;">
       <p class="lock-description">
-        <span class="es">Introduce tu token de acceso para desbloquear el contenido del portafolio.</span>
-        <span class="en">Enter your access token to unlock the portfolio content.</span>
+        <span class="es">Introduce tu clave de acceso para desbloquear el contenido del portafolio.</span>
+        <span class="en">Enter your access key to unlock the portfolio content.</span>
       </p>
 
       <div class="form-group" style="margin-top: 16px; margin-bottom: 12px;">
         <label for="unlock-token">
-          <span class="es">Token de acceso</span>
-          <span class="en">Access Token</span>
+          <span class="es">Clave de acceso</span>
+          <span class="en">Access Key</span>
         </label>
-        <input type="text" id="unlock-token" placeholder="Token" class="form-input" style="text-align: center;" onkeydown="handleTokenKeydown(event)">
+        <input type="text" id="unlock-token" placeholder="Clave" class="form-input" style="text-align: center;" onkeydown="handleTokenKeydown(event)">
       </div>
       
       <button onclick="unlockWithEnteredToken()" class="lock-submit-btn" type="button" style="margin-top: 4px;">
@@ -5320,7 +5320,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
         }
       }, 400);
     } else {
-      statusDiv.textContent = lang === 'en' ? 'Invalid token. Please try again.' : 'Token inválido. Inténtalo de nuevo.';
+      statusDiv.textContent = lang === 'en' ? 'Invalid key. Please try again.' : 'Clave inválida. Inténtalo de nuevo.';
       statusDiv.className = 'lock-status-container error';
       if (input) {
         input.focus();
@@ -5408,8 +5408,8 @@ body.visitor-unauthorized .locked-metric:hover::after {
         localStorage.setItem('access_requested_' + email.toLowerCase(), 'pending');
         
         statusDiv.innerHTML = lang === 'en'
-          ? `<strong>Request sent!</strong> I will review it and send a token to <strong>${email}</strong>. Check your inbox soon.`
-          : `<strong>¡Solicitud enviada!</strong> La revisaré y te enviaré un token a <strong>${email}</strong>. Revisa tu bandeja pronto.`;
+          ? `<strong>Request sent!</strong> I will review it and send an access key to <strong>${email}</strong>. Check your inbox soon.`
+          : `<strong>¡Solicitud enviada!</strong> La revisaré y te enviaré una clave de acceso a <strong>${email}</strong>. Revisa tu bandeja pronto.`;
         statusDiv.className = 'lock-status-container success';
 
         // Auto transition to token screen after 2.5 seconds
