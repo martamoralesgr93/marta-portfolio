@@ -451,8 +451,13 @@
       .dt-item { padding: 24px 20px; }
     }
     @media (max-width: 540px) {
-      .dt-grid { grid-template-columns: 1fr; gap: 14px; }
-      .dt-item { padding: 20px 16px; }
+      .dt-grid { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 14px; margin: 56px -16px 64px -16px; padding: 0 16px; -webkit-overflow-scrolling: touch; }
+      .dt-grid::-webkit-scrollbar { height: 3px; }
+      .dt-grid::-webkit-scrollbar-track { background: transparent; }
+      .dt-grid::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); border-radius: 2px; }
+      .dt-item { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); padding: 20px 16px; scroll-snap-align: start; }
+      .fu span[style*="Desliza"] { display: block !important; animation: pulse-hint 2s infinite; }
+      @keyframes pulse-hint { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
     }
 
     /* ─── HERO STAT BAND — cifras reales del caso, a la vista desde el primer scroll ─── */
@@ -1010,6 +1015,7 @@
       <div class="fu" style="margin-top: 80px; border-top: 1px solid var(--border); padding-top: 60px;">
         <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Recorrido · De la deuda al sistema</span>
         <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:8px; font-family:'Playfair Display', serif;">Cinco decisiones, en orden</h3>
+        <span style="font-size:11px; color:rgba(255,255,255,0.5); display:none; margin-top:8px;">← Desliza para ver todas →</span>
       </div>
       <div class="dt-grid fu">
         <div class="dt-item">
