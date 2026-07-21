@@ -419,6 +419,12 @@
     @media (max-width: 900px) {
       .c2-evidence-pair { grid-template-columns: 1fr; gap: 24px; }
     }
+    @media (max-width: 640px) {
+      .c2-evidence-pair { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 32px -16px 48px -16px; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
+      .c2-evidence-pair::-webkit-scrollbar { height: 3px; }
+      .c2-evidence-pair::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
+      .c2-evidence-item { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); scroll-snap-align: start; }
+    }
 
     /* Helper Grid Layouts for case-3 */
     .c3-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
@@ -427,8 +433,14 @@
       .c3-grid-4 { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
-      .c3-grid-4 { grid-template-columns: 1fr; }
-      .c3-grid-2 { grid-template-columns: 1fr; gap: 24px; }
+      .c3-grid-4 { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 40px -16px; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
+      .c3-grid-4::-webkit-scrollbar { height: 3px; }
+      .c3-grid-4::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
+      .c3-grid-4 > * { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); scroll-snap-align: start; }
+      .c3-grid-2 { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 40px -16px; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
+      .c3-grid-2::-webkit-scrollbar { height: 3px; }
+      .c3-grid-2::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
+      .c3-grid-2 > * { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); scroll-snap-align: start; }
     }
 
     /* ─── DISCOVERY TIMELINE — número tipográfico en vez de círculo+icono ─── */
@@ -488,8 +500,10 @@
     .qsc-result { grid-column: 1 / -1; background: var(--accent-glow); border: 1px solid var(--accent-border); }
     .qsc-result .qsc-icon { background: rgba(0,0,0,0.15); }
     @media (max-width: 640px) {
-      .qsc-grid { grid-template-columns: 1fr; }
-      .qsc-card { padding: 22px; }
+      .qsc-grid { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 16px -16px; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
+      .qsc-grid::-webkit-scrollbar { height: 3px; }
+      .qsc-grid::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
+      .qsc-card { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); padding: 22px; scroll-snap-align: start; }
     }
 
     /* ─── PROCESO: Fase 1/2 como cards con icono (sustituye párrafos de texto) ─── */
@@ -505,6 +519,12 @@
     .proc-row-text { font-size: 13px; color: var(--text); line-height: 1.55; }
     @media (max-width: 900px) {
       .proc-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .proc-grid { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 60px -16px 0 -16px; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
+      .proc-grid::-webkit-scrollbar { height: 3px; }
+      .proc-grid::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
+      .proc-card { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); scroll-snap-align: start; }
     }
 
     /* ─── CASE HAMBURGER + MOBILE MENU ───────────────────────────────────
