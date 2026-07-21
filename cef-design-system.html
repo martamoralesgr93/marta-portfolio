@@ -433,10 +433,8 @@
       .c3-grid-4 { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
-      .c3-grid-4 { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 40px 0; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
-      .c3-grid-4::-webkit-scrollbar { height: 3px; }
-      .c3-grid-4::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
-      .c3-grid-4 > * { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); scroll-snap-align: start; }
+      .c3-grid-4 { grid-template-columns: 1fr; gap: 16px; }
+      .c3-grid-4 > * { }
       .c3-grid-2 { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 40px 0; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
       .c3-grid-2::-webkit-scrollbar { height: 3px; }
       .c3-grid-2::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
