@@ -433,8 +433,9 @@
 
     /* ─── DISCOVERY TIMELINE — número tipográfico en vez de círculo+icono ─── */
     .dt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin: 56px 0 64px; }
-    .dt-item { padding: 28px 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; transition: border-color 0.3s ease, background 0.3s ease; }
+    .dt-item { display: flex; flex-direction: column; padding: 28px 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; transition: border-color 0.3s ease, background 0.3s ease; }
     .dt-item:hover { border-color: rgba(255,255,255,0.14); background: rgba(255,255,255,0.035); }
+    .dt-text { flex: 1; }
     .dt-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
     .dt-icon svg { width: 18px; height: 18px; color: var(--accent); }
     .dt-num { font-family: var(--font-serif); font-size: 28px; font-weight: 700; font-style: italic; color: var(--text-faint); line-height: 1; margin-bottom: 10px; }
