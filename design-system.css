@@ -71,6 +71,23 @@ button:focus-visible,
 
 img { height: auto; }
 
+/* ── SANGRADO OBLIGATORIO: Padding en todos los contenedores ── */
+.cs-wrap, .cs-wrap-wide { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+.fu > p, .fu > div > p, .fu > .lead { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+.c3-grid-2 > div > p, .c3-grid-4 > div > p { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+.qsc-card, .proc-card { margin-left: var(--space-lg); margin-right: var(--space-lg); }
+
+@media (max-width: 1024px) {
+  .cs-wrap, .cs-wrap-wide { padding-left: var(--space-md); padding-right: var(--space-md); }
+  .fu > p, .fu > div > p, .fu > .lead { padding-left: var(--space-md); padding-right: var(--space-md); }
+}
+
+@media (max-width: 640px) {
+  .cs-wrap, .cs-wrap-wide { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+  .fu > p, .fu > div > p, .fu > .lead { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+  .c3-grid-2 > div > p, .c3-grid-4 > div > p { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+}
+
 /* Skip link (accesibilidad teclado) */
 .skip-link {
   position: absolute; top: -48px; left: 16px; z-index: 999;
