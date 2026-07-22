@@ -56,6 +56,32 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
+/* ── ICON SYSTEM — Unified minimalist SVG icons (sass style) ── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.icon.filled svg {
+  fill: currentColor;
+  stroke: none;
+}
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -2584,7 +2610,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </div>
 
           <a href="#work" class="sobre-cta">
-            <span class="sobre-cta-icon">→</span>
+            <span class="icon sobre-cta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19"/></svg></span>
             <div class="sobre-cta-label">
               <span class="es">VER MI TRABAJO.</span>
               <span class="en">SEE MY WORK.</span>
@@ -2610,7 +2636,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
             <ul class="sobre-checks">
               <li class="sobre-check-item">
-                <span class="sobre-check-icon">✦</span>
+                <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></span>
                 <div>
                   <span class="sobre-check-title es">Documento todo.</span>
                   <span class="sobre-check-title en">I document everything.</span>
@@ -2619,7 +2645,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
                 </div>
               </li>
               <li class="sobre-check-item">
-                <span class="sobre-check-icon">✦</span>
+                <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></span>
                 <div>
                   <span class="sobre-check-title es">Simplifico antes de añadir.</span>
                   <span class="sobre-check-title en">I simplify before adding.</span>
@@ -2628,7 +2654,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
                 </div>
               </li>
               <li class="sobre-check-item">
-                <span class="sobre-check-icon">✦</span>
+                <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></span>
                 <div>
                   <span class="sobre-check-title es">Diseño para personas, no para pantallas.</span>
                   <span class="sobre-check-title en">I design for people, not screens.</span>
@@ -2637,7 +2663,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
                 </div>
               </li>
               <li class="sobre-check-item">
-                <span class="sobre-check-icon">✦</span>
+                <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></span>
                 <div>
                   <span class="sobre-check-title es">Las mejores ideas me las han dado mis compañeros.</span>
                   <span class="sobre-check-title en">My best ideas have come from my teammates.</span>
@@ -2646,7 +2672,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
                 </div>
               </li>
               <li class="sobre-check-item">
-                <span class="sobre-check-icon">✦</span>
+                <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></span>
                 <div>
                   <span class="sobre-check-title es">Los datos primero, el sketch después.</span>
                   <span class="sobre-check-title en">Data first, sketch second.</span>
