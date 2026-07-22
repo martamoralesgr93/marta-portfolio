@@ -414,12 +414,18 @@ Familias, parejas y viajeros de ocio, principalmente de 35 a 65 años, que reser
 ### Nivel de autonomía
 **Alto / end-to-end.** Cubro el ciclo completo: identifico oportunidades, analizo datos, planteo hipótesis, diseño, colaboro durante el desarrollo, mido resultados e itero. Respondo por el impacto, no solo por las pantallas.
 
+### Metodología de Investigación
+- **Behavioral Data:** Adobe Analytics (funnel analysis, 10.000+ logs) + Clarity (250+ heatmap sessions) + Hotjar (recordings). Identifica *dónde* y *cuánto* cae el usuario.
+- **Competitive Benchmarking:** Análisis de precio, disponibilidad y CTA vs. cadenas y portales referentes. Contextualiza impacto de cambios.
+- **Strategic Diagnosis:** Datos revelan fricción invisible; hipótesis priorizadas por impacto + viabilidad AEM. El brief que recibo nunca es el problema real.
+- **Accessibility Auditing:** WCAG 2.1 AA como requisito de research, no compliance theater. Detecta UX issues que el análisis visual pierde.
+
 ### Decisiones que he tomado
-- Priorizar iniciativas de conversión por impacto/esfuerzo sobre el embudo de reserva.
-- Rediseñar fichas de hotel, módulos de servicios y CTAs para reducir fricción y mejorar la decisión.
-- Construir y mantener un **design system** para dar consistencia y velocidad al producto.
-- Elevar la accesibilidad del flujo a WCAG 2.1 AA.
-- Integrar IA en mi flujo para acelerar síntesis, documentación y exploración, sin ceder la decisión.
+- Priorizar iniciativas de conversión por impacto/esfuerzo sobre el embudo de reserva (basadas en behavioral data).
+- Rediseñar fichas de hotel, módulos de servicios y CTAs para reducir fricción (validadas con Clarity heatmaps + post-launch monitoring).
+- Construir y mantener un **design system** para dar consistencia y velocidad al producto (componentes WCAG AA verificables).
+- Elevar la accesibilidad del flujo a WCAG 2.1 AA (requisito de research, luego de compliance).
+- Integrar IA en mi flujo para acelerar síntesis, documentación y exploración, sin ceder la decisión (Claude para síntesis + Vertex AI para assets).
 
 ### Herramientas
 Adobe Analytics, Microsoft Clarity, Hotjar, Figma, AEM, Roiback (motor de reservas), GitHub, Vercel, Power BI, y asistentes de IA. (Detalle de uso en \`toolkit.es.md\`.)
@@ -440,8 +446,13 @@ Diseñar producto es entender un problema de negocio, decidir con datos, colabor
 ### Contexto y producto
 Diseñé un **design system completo desde cero** para el Centro de Estudios Financieros: design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación, accesibilidad y criterios de escalabilidad y consistencia.
 
+### Metodología de Investigación
+- **Contextual Research:** Entrevistas con developers y análisis de arquitectura existente. Identifica deuda técnica y patrones arquitectónicos que limitan escalabilidad.
+- **Accessibility Auditing:** 47 componentes diseñados y verificados WCAG 2.1 AA. Accesibilidad como requisito de research, no feature de compliance.
+- **Design System Architecture:** Tokens, componentes reutilizables, documentación de uso. Escalabilidad pensada desde el diseño, no como mejora posterior.
+
 ### Decisiones e impacto
-**Learning case:** construcción de **47 componentes desde cero**, retomados en 2026 y escalados con IA (Figma + Claude MCP). Demuestra capacidad para **pensar en sistemas y no solo en pantallas**: arquitectura sólida que soporta escalabilidad post-construcción. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
+**Learning case:** construcción de **47 componentes desde cero**, retomados en 2026 y escalados con IA (Figma + Claude MCP). Demuestra capacidad para **pensar en sistemas y no solo en pantallas**: arquitectura sólida que soporta escalabilidad post-construcción. Metodología: entrevistas + auditoría accessibility + arquitectura escalable. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
 
 ---
 
@@ -752,7 +763,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 ## Oracle IT Operations
 
 #### \`m-oracle-simplification-01\`
-- **Impacto:** propuesta de simplificación de flujos complejos no ejecutada por presupuesto. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`. **Aprendizaje:** primer caso de strategic thinking (diagnóstico de que Oracle era herramienta equivocada, no solo mala interfaz).
+- **Impacto:** propuesta de simplificación de flujos complejos no ejecutada por presupuesto. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`. **Aprendizaje:** primer caso de strategic thinking (basado en contextual research + behavioral incident data; diagnóstico de que Oracle era herramienta equivocada, no solo mala interfaz).
 
 #### \`m-oracle-ia-02\`
 - **Impacto:** mejora de la arquitectura de información. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`.
@@ -764,7 +775,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 
 ## Paolo Pizzeria
 
-**Learning case:** escalabilidad robusta del producto (1→5 locales sin rediseño). El modelo de franquicia fracasó, pero el producto digital fue factor de éxito operativo en cada ubicación. Lección: buen producto ≠ buen modelo de negocio. No fue tu decisión la escalada; tu rol fue asegurar que el producto la soportara sin fricciones. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
+**Learning case:** escalabilidad robusta del producto (1→5 locales sin rediseño). El modelo de franquicia fracasó, pero el producto digital fue factor de éxito operativo en cada ubicación. Metodología: journey mapping (3 user flows), behavioral data (Clarity + GA4), constraint discovery (identificar limitaciones operativas). Lección: buen producto ≠ buen modelo de negocio. No fue tu decisión la escalada; tu rol fue asegurar que el producto la soportara sin fricciones. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
 
 ---
 
@@ -1970,12 +1981,18 @@ Familias, parejas y viajeros de ocio, principalmente de 35 a 65 años, que reser
 ### Nivel de autonomía
 **Alto / end-to-end.** Cubro el ciclo completo: identifico oportunidades, analizo datos, planteo hipótesis, diseño, colaboro durante el desarrollo, mido resultados e itero. Respondo por el impacto, no solo por las pantallas.
 
+### Metodología de Investigación
+- **Behavioral Data:** Adobe Analytics (funnel analysis, 10.000+ logs) + Clarity (250+ heatmap sessions) + Hotjar (recordings). Identifica *dónde* y *cuánto* cae el usuario.
+- **Competitive Benchmarking:** Análisis de precio, disponibilidad y CTA vs. cadenas y portales referentes. Contextualiza impacto de cambios.
+- **Strategic Diagnosis:** Datos revelan fricción invisible; hipótesis priorizadas por impacto + viabilidad AEM. El brief que recibo nunca es el problema real.
+- **Accessibility Auditing:** WCAG 2.1 AA como requisito de research, no compliance theater. Detecta UX issues que el análisis visual pierde.
+
 ### Decisiones que he tomado
-- Priorizar iniciativas de conversión por impacto/esfuerzo sobre el embudo de reserva.
-- Rediseñar fichas de hotel, módulos de servicios y CTAs para reducir fricción y mejorar la decisión.
-- Construir y mantener un **design system** para dar consistencia y velocidad al producto.
-- Elevar la accesibilidad del flujo a WCAG 2.1 AA.
-- Integrar IA en mi flujo para acelerar síntesis, documentación y exploración, sin ceder la decisión.
+- Priorizar iniciativas de conversión por impacto/esfuerzo sobre el embudo de reserva (basadas en behavioral data).
+- Rediseñar fichas de hotel, módulos de servicios y CTAs para reducir fricción (validadas con Clarity heatmaps + post-launch monitoring).
+- Construir y mantener un **design system** para dar consistencia y velocidad al producto (componentes WCAG AA verificables).
+- Elevar la accesibilidad del flujo a WCAG 2.1 AA (requisito de research, luego de compliance).
+- Integrar IA en mi flujo para acelerar síntesis, documentación y exploración, sin ceder la decisión (Claude para síntesis + Vertex AI para assets).
 
 ### Herramientas
 Adobe Analytics, Microsoft Clarity, Hotjar, Figma, AEM, Roiback (motor de reservas), GitHub, Vercel, Power BI, y asistentes de IA. (Detalle de uso en \`toolkit.es.md\`.)
@@ -1996,8 +2013,13 @@ Diseñar producto es entender un problema de negocio, decidir con datos, colabor
 ### Contexto y producto
 Diseñé un **design system completo desde cero** para el Centro de Estudios Financieros: design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación, accesibilidad y criterios de escalabilidad y consistencia.
 
+### Metodología de Investigación
+- **Contextual Research:** Entrevistas con developers y análisis de arquitectura existente. Identifica deuda técnica y patrones arquitectónicos que limitan escalabilidad.
+- **Accessibility Auditing:** 47 componentes diseñados y verificados WCAG 2.1 AA. Accesibilidad como requisito de research, no feature de compliance.
+- **Design System Architecture:** Tokens, componentes reutilizables, documentación de uso. Escalabilidad pensada desde el diseño, no como mejora posterior.
+
 ### Decisiones e impacto
-**Learning case:** construcción de **47 componentes desde cero**, retomados en 2026 y escalados con IA (Figma + Claude MCP). Demuestra capacidad para **pensar en sistemas y no solo en pantallas**: arquitectura sólida que soporta escalabilidad post-construcción. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
+**Learning case:** construcción de **47 componentes desde cero**, retomados en 2026 y escalados con IA (Figma + Claude MCP). Demuestra capacidad para **pensar en sistemas y no solo en pantallas**: arquitectura sólida que soporta escalabilidad post-construcción. Metodología: entrevistas + auditoría accessibility + arquitectura escalable. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
 
 ---
 
@@ -2308,7 +2330,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 ## Oracle IT Operations
 
 #### \`m-oracle-simplification-01\`
-- **Impacto:** propuesta de simplificación de flujos complejos no ejecutada por presupuesto. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`. **Aprendizaje:** primer caso de strategic thinking (diagnóstico de que Oracle era herramienta equivocada, no solo mala interfaz).
+- **Impacto:** propuesta de simplificación de flujos complejos no ejecutada por presupuesto. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`. **Aprendizaje:** primer caso de strategic thinking (basado en contextual research + behavioral incident data; diagnóstico de que Oracle era herramienta equivocada, no solo mala interfaz).
 
 #### \`m-oracle-ia-02\`
 - **Impacto:** mejora de la arquitectura de información. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`.
@@ -2320,7 +2342,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 
 ## Paolo Pizzeria
 
-**Learning case:** escalabilidad robusta del producto (1→5 locales sin rediseño). El modelo de franquicia fracasó, pero el producto digital fue factor de éxito operativo en cada ubicación. Lección: buen producto ≠ buen modelo de negocio. No fue tu decisión la escalada; tu rol fue asegurar que el producto la soportara sin fricciones. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
+**Learning case:** escalabilidad robusta del producto (1→5 locales sin rediseño). El modelo de franquicia fracasó, pero el producto digital fue factor de éxito operativo en cada ubicación. Metodología: journey mapping (3 user flows), behavioral data (Clarity + GA4), constraint discovery (identificar limitaciones operativas). Lección: buen producto ≠ buen modelo de negocio. No fue tu decisión la escalada; tu rol fue asegurar que el producto la soportara sin fricciones. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
 
 ---
 
