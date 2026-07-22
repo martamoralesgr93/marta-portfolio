@@ -428,7 +428,7 @@ Adobe Analytics, Microsoft Clarity, Hotjar, Figma, AEM, Roiback (motor de reserv
 Transversal con Digital Business, Marketing, Desarrollo, Analítica Digital, CRO y agencias externas. (Ver \`collaboration.es.md\`.)
 
 ### Impacto
-**Conversión del canal directo de ~3,36% a ~6,5%** (casi el doble), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
+**Conversión del canal directo de ~3,36% a ~6,5%**, además de **NPS 8.2**, **AOV +12%**, **mobile/desktop split 64/36**, **retention 34%**. Reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. **500+ assets visuales generados con IA** (Vertex AI, Gemini, Figma), coordinando marca comercial de 32 propiedades. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
 
 ### Aprendizajes
 Diseñar producto es entender un problema de negocio, decidir con datos, colaborar con perfiles muy distintos y generar impacto medible — y trabajar sin una estructura de diseño desarrolla una autonomía y un criterio que no se aprenden de otra forma. (Reflexión transversal en \`reflections.es.md\`.)
@@ -441,7 +441,7 @@ Diseñar producto es entender un problema de negocio, decidir con datos, colabor
 Diseñé un **design system completo desde cero** para el Centro de Estudios Financieros: design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación, accesibilidad y criterios de escalabilidad y consistencia.
 
 ### Decisiones e impacto
-Demuestra mi capacidad para **pensar en sistemas y no solo en pantallas**: una base que da coherencia visual y acelera el trabajo de diseño y desarrollo. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
+**Learning case:** construcción de **47 componentes desde cero**, retomados en 2026 y escalados con IA (Figma + Claude MCP). Demuestra capacidad para **pensar en sistemas y no solo en pantallas**: arquitectura sólida que soporta escalabilidad post-construcción. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
 
 ---
 
@@ -752,7 +752,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 ## Oracle IT Operations
 
 #### \`m-oracle-simplification-01\`
-- **Impacto:** simplificación de flujos complejos para usuarios internos. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`.
+- **Impacto:** propuesta de simplificación de flujos complejos no ejecutada por presupuesto. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`. **Aprendizaje:** primer caso de strategic thinking (diagnóstico de que Oracle era herramienta equivocada, no solo mala interfaz).
 
 #### \`m-oracle-ia-02\`
 - **Impacto:** mejora de la arquitectura de información. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`.
@@ -764,7 +764,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 
 ## Paolo Pizzeria
 
-**Sin métricas de impacto de negocio, por diseño.** Es un proyecto de aprendizaje: su valor es evidenciar la evolución en UX/UI y pensamiento de producto, no un resultado de negocio. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
+**Learning case:** escalabilidad robusta del producto (1→5 locales sin rediseño). El modelo de franquicia fracasó, pero el producto digital fue factor de éxito operativo en cada ubicación. Lección: buen producto ≠ buen modelo de negocio. No fue tu decisión la escalada; tu rol fue asegurar que el producto la soportara sin fricciones. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
 
 ---
 
@@ -1984,7 +1984,7 @@ Adobe Analytics, Microsoft Clarity, Hotjar, Figma, AEM, Roiback (motor de reserv
 Transversal con Digital Business, Marketing, Desarrollo, Analítica Digital, CRO y agencias externas. (Ver \`collaboration.es.md\`.)
 
 ### Impacto
-**Conversión del canal directo de ~3,36% a ~6,5%** (casi el doble), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
+**Conversión del canal directo de ~3,36% a ~6,5%**, además de **NPS 8.2**, **AOV +12%**, **mobile/desktop split 64/36**, **retention 34%**. Reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. **500+ assets visuales generados con IA** (Vertex AI, Gemini, Figma), coordinando marca comercial de 32 propiedades. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
 
 ### Aprendizajes
 Diseñar producto es entender un problema de negocio, decidir con datos, colaborar con perfiles muy distintos y generar impacto medible — y trabajar sin una estructura de diseño desarrolla una autonomía y un criterio que no se aprenden de otra forma. (Reflexión transversal en \`reflections.es.md\`.)
@@ -1997,7 +1997,7 @@ Diseñar producto es entender un problema de negocio, decidir con datos, colabor
 Diseñé un **design system completo desde cero** para el Centro de Estudios Financieros: design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación, accesibilidad y criterios de escalabilidad y consistencia.
 
 ### Decisiones e impacto
-Demuestra mi capacidad para **pensar en sistemas y no solo en pantallas**: una base que da coherencia visual y acelera el trabajo de diseño y desarrollo. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
+**Learning case:** construcción de **47 componentes desde cero**, retomados en 2026 y escalados con IA (Figma + Claude MCP). Demuestra capacidad para **pensar en sistemas y no solo en pantallas**: arquitectura sólida que soporta escalabilidad post-construcción. Impacto en \`metrics.es.md\` (\`m-cef-*\`). Caso: \`proj-cef-design-system\`.
 
 ---
 
@@ -2308,7 +2308,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 ## Oracle IT Operations
 
 #### \`m-oracle-simplification-01\`
-- **Impacto:** simplificación de flujos complejos para usuarios internos. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`.
+- **Impacto:** propuesta de simplificación de flujos complejos no ejecutada por presupuesto. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`. **Aprendizaje:** primer caso de strategic thinking (diagnóstico de que Oracle era herramienta equivocada, no solo mala interfaz).
 
 #### \`m-oracle-ia-02\`
 - **Impacto:** mejora de la arquitectura de información. **Confianza:** cualitativa. **Proyecto:** \`proj-oracle\`.
@@ -2320,7 +2320,7 @@ Todas cualitativas (el impacto cuantitativo por iniciativa se consolida en \`m-i
 
 ## Paolo Pizzeria
 
-**Sin métricas de impacto de negocio, por diseño.** Es un proyecto de aprendizaje: su valor es evidenciar la evolución en UX/UI y pensamiento de producto, no un resultado de negocio. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
+**Learning case:** escalabilidad robusta del producto (1→5 locales sin rediseño). El modelo de franquicia fracasó, pero el producto digital fue factor de éxito operativo en cada ubicación. Lección: buen producto ≠ buen modelo de negocio. No fue tu decisión la escalada; tu rol fue asegurar que el producto la soportara sin fricciones. → \`proj-paolo\`, \`career.es.md\`, \`reflections.es.md\`.
 
 ---
 
