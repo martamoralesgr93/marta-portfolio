@@ -1284,57 +1284,9 @@ ul.bullet-list li::before { content: "•"; position: absolute; left: 0; color: 
 
 
 
-/* ===================== CASE HERO · GLASSMORPHIC MOTION ===================== */
-/* Dos capas de cristal flotando sobre la imagen del hero: blur real del fondo
-   (backdrop-filter), borde luminoso y deriva lenta. Bajo el contenido (z3). */
+/* ===================== CASE HERO — CLEAN ===================== */
+/* Formas animadas removidas para diseño limpio y minimalista */
 .cs-hero::before,
 .cs-hero::after {
-  content: '';
-  position: absolute;
-  z-index: 4;
-  pointer-events: none;
-  backdrop-filter: blur(28px) saturate(170%);
-  -webkit-backdrop-filter: blur(28px) saturate(170%);
-  will-change: transform;
-}
-.cs-hero::after {
-  width: clamp(220px, 26vw, 380px);
-  height: clamp(220px, 26vw, 380px);
-  top: 12%;
-  right: 7%;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(167, 139, 250, 0.08) 40%, rgba(59, 130, 246, 0.04) 70%, transparent 100%);
-  border: none !important;
-  box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.45),
-    0 0 80px rgba(167, 139, 250, 0.15);
-  animation: heroGlassDriftA 16s ease-in-out infinite alternate;
-}
-.cs-hero::before {
-  width: clamp(140px, 16vw, 230px);
-  height: clamp(140px, 16vw, 230px);
-  top: 46%;
-  left: 55%;
-  border-radius: 34%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(59, 130, 246, 0.08) 40%, rgba(167, 139, 250, 0.04) 70%, transparent 100%);
-  border: none !important;
-  box-shadow: 
-    0 24px 55px rgba(0, 0, 0, 0.45),
-    0 0 60px rgba(59, 130, 246, 0.15);
-  animation: heroGlassDriftB 21s ease-in-out infinite alternate;
-}
-@keyframes heroGlassDriftA {
-  0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
-  100% { transform: translate(-42px, 34px) rotate(9deg) scale(1.06); }
-}
-@keyframes heroGlassDriftB {
-  0%   { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(48px, -30px) rotate(-12deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cs-hero::before, .cs-hero::after { animation: none; }
-}
-@media (max-width: 768px) {
-  .cs-hero::before { display: none; }
-  .cs-hero::after { top: 8%; right: -10%; }
+  display: none !important;
 }
