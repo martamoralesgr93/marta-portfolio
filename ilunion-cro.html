@@ -876,16 +876,28 @@
       <h2 style="font-size: clamp(24px, 5vw, 42px); font-weight: 700; line-height: 1.2; color: var(--white); margin: 0;">Cómo los datos informaron la decisión</h2>
     </div>
 
-    <div class="fu" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
-      <!-- Finding -->
-      <div>
-        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">El Hallazgo</div>
-        <div style="font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 16px; line-height: 1.5;">Solo 15% de usuarios llegaban al motor de reserva. El bloqueo: jerarquía visual que priorizaba promociones. Costo: conversión de 3.36% en el canal directo.</div>
-        <div style="font-size: 13px; color: var(--text); margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); line-height: 1.6;">Esta fricción no aparece en un brief. Los datos comportamentales (10K+ logs, 250+ sesiones) la revelaron. Decisión: diseño diferenciado desktop/mobile enfocado en conversión sobre promoción.</div>
-      </div>
+    <!-- Accordion Trigger -->
+    <button class="accordion-trigger" data-accordion="research-basis-ilunion" style="grid-column: 1 / -1;">
+      <span style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);">EL HALLAZGO</span>
+        <span style="font-size: 16px; font-weight: 600; color: var(--white);">Solo 15% llegaba al motor de reserva</span>
+      </span>
+      <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
 
-      <!-- Confidence & Impact -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <!-- Accordion Content -->
+    <div class="accordion-content" data-accordion="research-basis-ilunion" style="grid-column: 1 / -1;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+        <!-- Finding -->
+        <div>
+          <div style="font-size: 13px; color: var(--text); line-height: 1.6;">El bloqueo: jerarquía visual que priorizaba promociones. Costo: conversión de 3.36% en el canal directo.</div>
+          <div style="font-size: 13px; color: var(--text); margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); line-height: 1.6;">Esta fricción no aparece en un brief. Los datos comportamentales (10K+ logs, 250+ sesiones) la revelaron. Decisión: diseño diferenciado desktop/mobile enfocado en conversión sobre promoción.</div>
+        </div>
+
+        <!-- Confidence & Impact -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
         <div style="padding: 24px; border: 1px solid rgba(167,139,250,0.2); border-radius: 8px; background: rgba(167,139,250,0.04);">
           <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">Methods Used</div>
           <div style="font-size: 13px; color: var(--text); line-height: 1.6;">
@@ -2604,5 +2616,35 @@
 </script>
 
 <!-- ===================== / CHATBOT MARTA ===================== -->
+
+<!-- Accordion Functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const triggers = document.querySelectorAll('.accordion-trigger');
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      const id = this.getAttribute('data-accordion');
+      const contents = document.querySelectorAll(`[data-accordion="${id}"]`);
+      const isOpen = this.classList.contains('is-open');
+
+      // Close all accordions
+      document.querySelectorAll('.accordion-trigger, .accordion-content').forEach(el => {
+        if (el.getAttribute('data-accordion') !== id) {
+          el.classList.remove('is-open');
+        }
+      });
+
+      // Toggle current
+      this.classList.toggle('is-open');
+      contents.forEach(content => {
+        if (content.classList.contains('accordion-content')) {
+          content.classList.toggle('is-open');
+        }
+      });
+    });
+  });
+});
+</script>
+
 </body>
 </html>

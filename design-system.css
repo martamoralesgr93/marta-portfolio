@@ -584,6 +584,109 @@ ul.bullet-list li::before { content: "•"; position: absolute; left: 0; color: 
   .btn { font-size: 13px; padding: 11px 24px; }
 }
 
+/* ── 13. ACCORDIONS & ANIMATIONS ── */
+
+/* Accordion Trigger (clickable header) */
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  text-align: left;
+  transition: all var(--transition-normal);
+  margin-bottom: var(--space-md);
+}
+
+.accordion-trigger:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--accent-border);
+}
+
+.accordion-trigger.is-open {
+  background: rgba(167, 139, 250, 0.08);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+/* Accordion Icon (chevron) */
+.accordion-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.accordion-trigger.is-open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Accordion Content (collapsible) */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--transition-normal), opacity var(--transition-normal), padding var(--transition-normal);
+}
+
+.accordion-content.is-open {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cs-block {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Increased spacing for breathing room */
+.cs-block {
+  padding: 96px 0 !important;
+}
+
+.fu {
+  gap: 48px !important;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.cs-grid-2, .cs-grid-3 {
+  gap: 32px !important;
+  margin: 32px 0 !important;
+}
+
+.dash-widget {
+  margin: 56px 0 !important;
+}
+
+/* Improved case study section spacing */
+.cs-section-02b,
+.cs-section-02c {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+/* Mobile optimizations */
 @media (max-width: 768px) {
   .cs-nav { padding: 0 var(--space-sm); height: 60px; }
   .cs-hero { min-height: auto; padding-top: 92px; display: block; overflow: visible; }
@@ -597,6 +700,29 @@ ul.bullet-list li::before { content: "•"; position: absolute; left: 0; color: 
   .cs-meta-val { font-size: 13px; }
   /* Padding lateral reducido en mobile: 48px → 20px */
   .cs-wrap, .cs-wrap-wide { padding: 0 20px; }
+
+  /* Accordion mobile optimizations */
+  .accordion-trigger {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 14px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .accordion-content.is-open {
+    padding: 0 var(--space-md) var(--space-md) var(--space-md);
+  }
+
+  /* Reduce spacing on mobile */
+  .cs-block {
+    padding: 64px 0 !important;
+  }
+
+  .fu {
+    gap: 24px !important;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
   .cs-block { padding: 44px 0; }
   .block-h { font-size: clamp(24px, 6vw, 32px); margin-bottom: 18px; }
   .lead { font-size: 16px; line-height: 1.55; margin-bottom: 16px; }
