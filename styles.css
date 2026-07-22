@@ -4803,6 +4803,9 @@ a:hover {
 .work-item:hover .project-card-img {
   transform: scale(1.03) !important; /* Elegant storytelling image zoom on hover */
 }
+.work-item {
+  /* Disable hover shift when active/expanded */
+}
 .work-item.active:hover .work-summary {
   transform: none;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
@@ -4988,6 +4991,9 @@ a:hover {
   font-weight: 800 !important;
   letter-spacing: -0.04em !important;
   line-height: 1 !important;
+}
+.metric-pill {
+  /* Supporting Metadata (Duration and Tools) */
 }
 .metric-pill:not(.highlighted) {
   background: transparent !important;
@@ -5558,6 +5564,9 @@ a:hover {
   color: rgba(255, 255, 255, 0.5) !important;
   margin: 0 !important;
 }
+.star-step-card {
+  /* Monochromatic pure white hover states */
+}
 .star-step-card:hover {
   background: rgba(255, 255, 255, 0.035) !important;
   border-color: rgba(255, 255, 255, 0.25) !important;
@@ -5739,132 +5748,10 @@ a:hover {
     padding-bottom: 100px !important;
     display: block !important;
   }
+  html.project-expanded {
+    /* Make sure main content container behaves naturally */
+  }
   html.project-expanded .container-shift {
     transform: none !important;
-  }
-}
-
-/* ==========================================================================
-   RESPONSIVE OPTIMIZATION: REDUCE SCROLL & IMPROVE MOBILE UX
-   ========================================================================== */
-
-/* PRIORITY 1: Reduce Section Padding on Mobile/Tablet */
-@media (max-width: 768px) {
-  .cs-block, .process-section, section[class*="section"], [style*="padding: 80px"] {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-  }
-  .wrap {
-    padding: 0 24px !important;
-  }
-}
-
-@media (max-width: 425px) {
-  .cs-block, .process-section, section[class*="section"] {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-  }
-  .wrap {
-    padding: 0 16px !important;
-  }
-}
-
-/* PRIORITY 2: Optimize Card Padding & Grid Gaps */
-@media (max-width: 768px) {
-  [class*="card"], [style*="padding: 28px"], [style*="padding: 32px"] {
-    padding: 16px 12px !important;
-  }
-  [style*="gap: 24px"], [style*="gap: 20px"] {
-    gap: 12px !important;
-  }
-}
-
-/* PRIORITY 3: Compress Typography on Mobile */
-@media (max-width: 768px) {
-  .sec-title, [class*="title"], h1, h2, h3 {
-    font-size: clamp(24px, 6vw, 48px) !important;
-    line-height: 1.2 !important;
-  }
-  .sec-num {
-    margin-bottom: 20px !important;
-  }
-  p, [class*="text"], [class*="desc"] {
-    font-size: 13px !important;
-    line-height: 1.6 !important;
-  }
-}
-
-@media (max-width: 425px) {
-  .sec-title, h1, h2 {
-    font-size: clamp(20px, 5vw, 40px) !important;
-    line-height: 1.1 !important;
-  }
-  p, body {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-}
-
-/* PRIORITY 4: Responsive Icon Sizing */
-@media (max-width: 768px) {
-  [class*="icon"], svg[width="32"], svg[width="36"], svg[width="44"] {
-    width: 24px !important;
-    height: 24px !important;
-  }
-}
-
-/* PRIORITY 5: Footer & Section Spacing Optimization */
-@media (max-width: 768px) {
-  .cs-footer, footer, [class*="footer"] {
-    padding: 40px 24px !important;
-  }
-}
-
-/* Accordion & Process Step Compression */
-@media (max-width: 768px) {
-  .process-accordion, [class*="accordion"], .process-step {
-    gap: 12px !important;
-    margin-bottom: 12px !important;
-  }
-  .step-content {
-    padding: 12px 0 !important;
-  }
-}
-
-/* Research Grid Optimization for Mobile/Tablet */
-@media (max-width: 768px) {
-  [style*="grid-template-columns: repeat(auto-fit"],
-  [style*="grid-template-columns: repeat(3"],
-  [style*="grid-template-columns: repeat(2"] {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-  /* Tablet optimization */
-  @media (min-width: 425px) {
-    [style*="grid-template-columns: repeat(3"] {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
-  }
-}
-
-/* Case Study Cards Responsive */
-@media (max-width: 768px) {
-  .sc-card, [class*="sc-"], [style*="border-radius: 16px"][style*="padding"] {
-    padding: 16px 12px !important;
-  }
-}
-
-/* Hero Section Padding Optimization */
-@media (max-width: 768px) {
-  .hero, [class*="hero"] {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-  }
-}
-
-@media (max-width: 425px) {
-  .hero, [class*="hero"] {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
   }
 }
