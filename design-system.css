@@ -92,9 +92,19 @@ html.lang-en .en { display: revert; }
 html.lang-en .es { display: none !important; }
 
 /* ── 3. STRUCTURE ── */
-.cs-wrap { max-width: 1360px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
-.cs-wrap-wide { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
+.cs-wrap { max-width: 1600px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
+.cs-wrap-wide { max-width: 1620px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
 .cs-block { padding: 96px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+
+/* Desktop: optimize horizontal space usage */
+@media (min-width: 1440px) {
+  .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
+  .cs-block { padding: 80px 0; }
+}
+
+@media (min-width: 1920px) {
+  .cs-wrap, .cs-wrap-wide { padding: 0 64px; }
+}
 
 /* ── STAR RAIL — spine narrativo compartido (S·T·A·R) en los 5 casos ── */
 .cs-star { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 40px; align-items: start; }
@@ -687,6 +697,10 @@ ul.bullet-list li::before { content: "•"; position: absolute; left: 0; color: 
 }
 
 /* Mobile optimizations */
+@media (max-width: 1024px) {
+  .cs-wrap, .cs-wrap-wide { padding: 0 var(--space-md); }
+}
+
 @media (max-width: 768px) {
   .cs-nav { padding: 0 var(--space-sm); height: 60px; }
   .cs-hero { min-height: auto; padding-top: 92px; display: block; overflow: visible; }
@@ -698,8 +712,8 @@ ul.bullet-list li::before { content: "•"; position: absolute; left: 0; color: 
   .cs-tag { font-size: 10px; padding: 4px 10px; }
   .cs-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
   .cs-meta-val { font-size: 13px; }
-  /* Padding lateral reducido en mobile: 48px → 20px */
-  .cs-wrap, .cs-wrap-wide { padding: 0 20px; }
+  /* Mobile: optimize padding for small screens */
+  .cs-wrap, .cs-wrap-wide { padding: 0 16px; }
 
   /* Accordion mobile optimizations */
   .accordion-trigger {
@@ -712,16 +726,22 @@ ul.bullet-list li::before { content: "•"; position: absolute; left: 0; color: 
     padding: 0 var(--space-md) var(--space-md) var(--space-md);
   }
 
-  /* Reduce spacing on mobile */
+  /* Reduce spacing on mobile but maintain breathing room */
   .cs-block {
-    padding: 64px 0 !important;
+    padding: 56px 0 !important;
   }
 
   .fu {
-    gap: 24px !important;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    gap: 20px !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
+}
+
+@media (max-width: 425px) {
+  .cs-wrap, .cs-wrap-wide { padding: 0 12px; }
+  .cs-block { padding: 48px 0 !important; }
+  .fu { gap: 16px !important; margin-top: 16px; margin-bottom: 16px; }
 }
   .cs-block { padding: 44px 0; }
   .block-h { font-size: clamp(24px, 6vw, 32px); margin-bottom: 18px; }
