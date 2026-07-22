@@ -3477,35 +3477,12 @@ function closeMenu() {
   sections.forEach(s => spy.observe(s.target));
 })();
 
-/* ---- INTERACTIVE BACKGROUND ---- */
+/* ---- INTERACTIVE BACKGROUND ---- DISABLED: parallax glows removed for cleaner look */
+/*
 (function () {
-  /* Parallax glow orbs — follow mouse at different depths */
-  let mx = 0, my = 0, lx = 0, ly = 0;
-  const layers = [
-    { el: document.querySelector('.g1'), sx: -30, sy: -22 },
-    { el: document.querySelector('.g2'), sx:  22, sy: -16 },
-    { el: document.querySelector('.g3'), sx: -18, sy:  13 },
-    { el: document.querySelector('.g4'), sx:  13, sy: -10 },
-  ];
-
-  document.addEventListener('mousemove', e => {
-    mx = (e.clientX / innerWidth  - 0.5) * 2;
-    my = (e.clientY / innerHeight - 0.5) * 2;
-  });
-
-
-
-  function tick() {
-    /* Smooth lerp */
-    lx += (mx - lx) * 0.045;
-    ly += (my - ly) * 0.045;
-    layers.forEach(({ el, sx, sy }) => {
-      if (el) el.style.transform = `translate(${lx * sx}px, ${ly * sy}px)`;
-    });
-
-    requestAnimationFrame(tick);
-  }
-  tick();
+  // Parallax glow orbs — REMOVED to reduce visual clutter
+})();
+*/
 
 
 
