@@ -738,6 +738,46 @@
   </div>
 </section>
 
+<!-- METODOLOGÍA DE INVESTIGACIÓN -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="fu" style="margin-bottom: 40px;">
+      <span class="sec-num"><span>02B</span> — Metodología de Investigación</span>
+      <h2 style="font-size: clamp(24px, 5vw, 42px); font-weight: 700; line-height: 1.2; color: var(--white); margin: 0;">Cómo validé que el producto soportaba la escalabilidad</h2>
+    </div>
+
+    <div class="fu" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+      <!-- Journey Mapping -->
+      <div style="padding: 24px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.02);">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">01. Journey Mapping</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 12px;">Mapeo de 3 user flows: delivery (Glovo/UE), visita al local, reserva.</div>
+        <div style="font-size: 12px; color: var(--text-dim); padding-top: 12px; border-top: 1px solid var(--border-dim);">Reveló: cada flow tenía patrones consistentes que podían escalar sin fricción.</div>
+      </div>
+
+      <!-- Behavioral Data -->
+      <div style="padding: 24px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.02);">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">02. Behavioral Data</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 12px;">Clarity (heatmaps), GA4 (conversión), Metricool (RRSS).</div>
+        <div style="font-size: 12px; color: var(--text-dim); padding-top: 12px; border-top: 1px solid var(--border-dim);">Validó: comportamiento usuario era homogéneo en 1 local. Escalable a 5 sin rediseño.</div>
+      </div>
+
+      <!-- Constraint Discovery -->
+      <div style="padding: 24px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.02);">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">03. Constraint Discovery</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 12px;">Identificó: checkout propio requería flota de riders que negocio no tenía.</div>
+        <div style="font-size: 12px; color: var(--text-dim); padding-top: 12px; border-top: 1px solid var(--border-dim);">Decisión: usar delivery ecosystems (Glovo, UE, JustEat). Producto robusto en lo que sí controlaba.</div>
+      </div>
+
+      <!-- Operational Viability -->
+      <div style="padding: 24px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.02);">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">04. Operational Viability</div>
+        <div style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 12px;">Flujos diseñados con restricciones operativas reales en mente.</div>
+        <div style="font-size: 12px; color: var(--text-dim); padding-top: 12px; border-top: 1px solid var(--border-dim);">Resultado: 1→5 escalabilidad sin rediseño. La franquicia fracasó, el producto no.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MI ROL -->
 <section class="cs-block cs-block-light">
   <div class="cs-behance-letter" style="opacity:0.35">M</div>
