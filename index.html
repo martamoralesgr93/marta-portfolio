@@ -268,7 +268,7 @@ nav {
 .btn-primary {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 11px 22px; border-radius: 100px;
-  background: #7c3aed;
+  background: linear-gradient(135deg, rgba(124,58,237,0.85), rgba(249,115,22,0.70));
   color: var(--white); font-size: 13px; font-weight: 500; text-decoration: none;
   border: none; cursor: pointer; font-family: inherit; letter-spacing: 0.01em;
   transition: opacity 0.2s, transform 0.2s;
@@ -924,7 +924,7 @@ a.sc-client-link:hover {
 /* ===================== CONTACT SECTION ===================== */
 .contact-section {
   position: relative; z-index: 1;
-  padding: 120px 0 148px; text-align: center;
+  padding: 120px 0 148px; text-align: left;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 .contact-glow {
@@ -932,12 +932,12 @@ a.sc-client-link:hover {
 }
 .contact-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--dim); margin-bottom: 24px; }
 .contact-title { font-size: 64px; font-weight: 800; letter-spacing: -3px; line-height: 0.96; color: var(--white); margin-bottom: 24px; }
-.contact-sub { font-size: 14px; color: var(--muted); line-height: 1.76; margin-bottom: 36px; max-width: 380px; margin-left: auto; margin-right: auto; }
+.contact-sub { font-size: 14px; color: var(--muted); line-height: 1.76; margin-bottom: 36px; max-width: 380px; }
 .contact-badge-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin: 0 auto 36px;
+  margin: 0 0 36px;
   max-width: 100%;
 }
 .custom-linkedin-card {
@@ -1007,7 +1007,7 @@ a.sc-client-link:hover {
 .custom-linkedin-card:hover .lic-icon {
   fill: #0099e5;
 }
-.contact-actions { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
+.contact-actions { display: flex; align-items: center; justify-content: flex-start; gap: 18px; flex-wrap: wrap; }
 
 /* ===================== TRUST STRIP ===================== */
 .trust-strip { margin-top: 72px; }
@@ -1016,7 +1016,7 @@ a.sc-client-link:hover {
   color: var(--dim); margin-bottom: 26px;
 }
 .trust-logos {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: flex-start;
   gap: 20px 56px; flex-wrap: wrap; list-style: none; margin: 0; padding: 0;
 }
 .trust-logo {
@@ -3253,14 +3253,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="en">WCAG detects invisible UX issues. Not compliance theater, it's research.</span>
         </div>
       </div>
-    </div>
-
-    <!-- CTA to Full Dashboard -->
-    <div style="margin-top: 32px;">
-      <a href="data-research.html" class="btn-primary">
-        <span class="es">Explorar metodología y datos →</span>
-        <span class="en">Explore methodology and data →</span>
-      </a>
     </div>
 
   </div>
