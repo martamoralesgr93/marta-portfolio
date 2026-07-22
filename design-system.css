@@ -94,17 +94,51 @@ html.lang-en .es { display: none !important; }
 /* ── 3. STRUCTURE ── */
 .cs-wrap { max-width: 1600px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
 .cs-wrap-wide { max-width: 1620px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
-.cs-block { padding: 96px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+.cs-block { padding: 64px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
 
-/* Desktop: optimize horizontal space usage */
+/* Desktop: optimize horizontal space usage + reduce vertical padding */
 @media (min-width: 1440px) {
   .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
-  .cs-block { padding: 80px 0; }
+  .cs-block { padding: 56px 0; }
 }
 
 @media (min-width: 1920px) {
   .cs-wrap, .cs-wrap-wide { padding: 0 64px; }
+  .cs-block { padding: 64px 0; }
 }
+
+/* ── LAYOUT COMPOSITION: Multi-column grids for better space usage ── */
+/* 2-column grid for content sections (e.g., about, methodology) */
+.cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+
+/* 3-column grid for KPI/insights cards */
+.cs-three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+/* Reduce gap on tablet */
+@media (max-width: 1024px) {
+  .cs-two-col { gap: 32px; }
+  .cs-three-col { gap: 24px; }
+}
+
+/* Stack to single column on mobile */
+@media (max-width: 768px) {
+  .cs-two-col, .cs-three-col { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ── SECTION DENSITY OPTIMIZATION ── */
+/* Reduce heading bottom margin for tighter composition */
+h1, h2, h3, h4, h5, h6 { margin-bottom: 16px; }
+
+/* Tighter paragraph spacing */
+p { margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+
+/* List density */
+ul, ol { margin: 16px 0; padding-left: 20px; }
+li { margin-bottom: 8px; }
+
+/* Grid item text spacing */
+.cs-two-col > div p, .cs-three-col > div p { line-height: 1.65; }
 
 /* ── STAR RAIL — spine narrativo compartido (S·T·A·R) en los 5 casos ── */
 .cs-star { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 40px; align-items: start; }
