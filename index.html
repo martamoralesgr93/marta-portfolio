@@ -3351,20 +3351,20 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 
 /* ---- MOBILE MENU ---- */
-function openMenu() {
+window.openMenu = function() {
   const m = document.getElementById('mobileMenu');
   m.classList.add('open');
   document.body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
-}
-function closeMenu() {
+};
+window.closeMenu = function() {
   const m = document.getElementById('mobileMenu');
   m.classList.remove('open');
   setTimeout(() => {
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
   }, 300);
-}
+};
 
 /* ---- SCROLLSPY: sección activa en el nav ---- */
 (function () {
