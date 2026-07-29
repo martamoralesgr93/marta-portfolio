@@ -3427,10 +3427,8 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 */
 
-
-
+(function() {
   /* Scroll reveal — fade-up sections as they enter viewport */
-
   const fadeTargets = document.querySelectorAll(
     '.sobre-content-col, .mobile-impact, ' +
     '.process-step, .about-right, .contact-section, .work-header'
@@ -3446,7 +3444,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, { threshold: 0.10 });
 
-  fadeTargets.forEach(el => io.observe(el))
+  fadeTargets.forEach(el => io.observe(el));
   scCards.forEach(el => io.observe(el));
 })();
 
