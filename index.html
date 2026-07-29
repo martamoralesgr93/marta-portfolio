@@ -3346,6 +3346,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 /* ---- MOBILE MENU ---- */
 function openMenu() {
   const m = document.getElementById('mobileMenu');
+  if (!m) return;
   m.style.display = 'flex';
   requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
   document.body.style.overflow = 'hidden';
@@ -3353,6 +3354,7 @@ function openMenu() {
 }
 function closeMenu() {
   const m = document.getElementById('mobileMenu');
+  if (!m) return;
   m.classList.remove('open');
   setTimeout(() => {
     m.style.display = 'none';
@@ -3360,6 +3362,36 @@ function closeMenu() {
     document.documentElement.style.overflow = '';
   }, 300);
 }
+
+/* Attach event listeners to hamburger button and close button */
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const closeBtn = document.querySelector('.mobile-menu-close');
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openMenu();
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeMenu();
+    });
+  }
+
+  /* Close menu when clicking on a link */
+  const menuLinks = document.querySelectorAll('.mobile-menu-links a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+});
 
 /* ---- SCROLLSPY: sección activa en el nav ---- */
 (function () {
