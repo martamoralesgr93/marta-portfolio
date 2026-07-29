@@ -3348,7 +3348,7 @@ function openMenu() {
   const m = document.getElementById('mobileMenu');
   if (!m) return;
   m.style.display = 'flex';
-  requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
+  m.classList.add('open');
   document.body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
 }
@@ -3360,7 +3360,7 @@ function closeMenu() {
     m.style.display = 'none';
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
-  }, 300);
+  }, 280);
 }
 
 /* Attach event listeners to hamburger button and close button */
