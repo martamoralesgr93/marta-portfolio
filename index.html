@@ -3351,20 +3351,54 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 
 /* ---- MOBILE MENU ---- */
-window.openMenu = function() {
+function openMenu() {
   const m = document.getElementById('mobileMenu');
+  if (!m) return;
+  m.style.display = 'flex';
   m.classList.add('open');
   document.body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
-};
-window.closeMenu = function() {
+}
+function closeMenu() {
   const m = document.getElementById('mobileMenu');
+  if (!m) return;
   m.classList.remove('open');
   setTimeout(() => {
+    m.style.display = 'none';
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
-  }, 300);
-};
+  }, 280);
+}
+
+/* Attach event listeners to hamburger button and close button */
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const closeBtn = document.querySelector('.mobile-menu-close');
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openMenu();
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeMenu();
+    });
+  }
+
+  /* Close menu when clicking on a link */
+  const menuLinks = document.querySelectorAll('.mobile-menu-links a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+});
 
 /* ---- SCROLLSPY: sección activa en el nav ---- */
 (function () {
@@ -3400,10 +3434,8 @@ window.closeMenu = function() {
 })();
 */
 
-
-
+(function() {
   /* Scroll reveal — fade-up sections as they enter viewport */
-
   const fadeTargets = document.querySelectorAll(
     '.sobre-content-col, .mobile-impact, ' +
     '.process-step, .about-right, .contact-section, .work-header'
@@ -3419,7 +3451,7 @@ window.closeMenu = function() {
     });
   }, { threshold: 0.10 });
 
-  fadeTargets.forEach(el => io.observe(el))
+  fadeTargets.forEach(el => io.observe(el));
   scCards.forEach(el => io.observe(el));
 })();
 
