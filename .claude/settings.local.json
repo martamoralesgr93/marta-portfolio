@@ -52,7 +52,12 @@
       "Bash(cd \"/c/Users/mmora/AppData/Local/Temp/claude/marta-portfolio\" && echo \"🔍 Verificación de cambios en el repo actual:\"; echo \"\"; echo \"✓ CAMBIO 1: SEO blocker\"; grep -c \"index, follow\" index.html || echo \"❌ NO ENCONTRADO\"; echo \"\"; echo \"✓ CAMBIO 2: CRO Designer\"; grep \"CRO Designer\" index.html | head -1 || echo \"❌ NO ENCONTRADO\"; echo \"\"; echo \"✓ CAMBIO 3: Let's talk\"; grep -c \"Let's talk\" index.html || echo \"❌ NO ENCONTRADO\"; echo \"\"; echo \"✓ CAMBIO 4: Sin 2026\"; grep -c \"Recreación 2026\" index.html || echo \"✓ ELIMINADO\")",
       "Bash(sed -i '/\"paolo\":/,/\\\\],$/d' index.html)",
       "Bash(sed -i '/^[[:space:]]*\"paolo\",$/d' index.html)",
-      "Bash(sed -i '/intent.*paolo/d' index.html)"
+      "Bash(sed -i '/intent.*paolo/d' index.html)",
+      "Bash(grep -n \"hero\\\\|sobre\\\\|storytelling\\\\|narrative\" \"C:\\\\Users\\\\mmora\\\\Downloads\\\\index-TODAS-LAS-MEJORAS.html\" | head -30)",
+      "Bash(sed -n '/\\\\.features-grid/,/\\\\.stack-section/p' \"C:\\\\Users\\\\mmora\\\\Downloads\\\\index-TODAS-LAS-MEJORAS.html\" | grep -E \"^\\\\.[a-z]|^}\" | head -50)",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(powershell -Command \"Expand-Archive -Path files.zip -DestinationPath files_extracted -Force\")"
     ]
   }
 }
