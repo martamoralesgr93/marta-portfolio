@@ -510,54 +510,80 @@ ul.bullet-list li::before { content: "•"; position: absolute; left: 0; color: 
 .fu.in { opacity: 1; transform: none; }
 
 /* ── 10. UNIFIED BUTTON COMPONENT SYSTEM ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 12px 28px;
-  border-radius: 100px !important; /* Force pill border-radius */
-  text-decoration: none;
-  transition: all var(--transition-normal);
-  cursor: pointer;
-  font-family: inherit;
-  border: 1px solid transparent;
-}
-
-.btn-primary {
-  background: var(--accent) !important; /* System Accent Color */
-  color: #0c0919 !important; /* Dark text matching background */
-  border: 1px solid var(--accent) !important;
-  box-shadow: 0 4px 14px var(--accent-glow), inset 0 1px 0.5px rgba(255, 255, 255, 0.4) !important; /* Bevel lighting */
-}
-.btn-primary:hover {
-  background: var(--accent) !important;
-  opacity: 0.9 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px var(--accent-glow), inset 0 1px 1px rgba(255, 255, 255, 0.5) !important;
-  color: #0c0919 !important;
-}
-.btn-primary:active {
-  transform: translateY(1px) scale(0.98) !important;
-}
-
+.btn,
+.cs-btn,
+.cs-btn-primary,
+.cs-btn-secondary,
+.btn-primary,
+.btn-primary-hero,
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.04) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(8px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 10px 22px !important;
+  border-radius: 100px !important;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  white-space: nowrap !important;
+  outline: none !important;
+  box-shadow: none !important;
+  line-height: 1.3 !important;
 }
-.btn-secondary:hover {
+
+.btn-primary,
+.btn-primary-hero,
+.cs-btn-primary,
+a.btn-primary,
+a.btn-primary:visited,
+a.btn-primary-hero,
+a.btn-primary-hero:visited,
+a.cs-btn-primary,
+a.cs-btn-primary:visited {
+  background: var(--accent, #a78bfa) !important;
+  color: #000000 !important;
+  border: 1px solid var(--accent, #a78bfa) !important;
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.25) !important;
+}
+
+.btn-primary:hover,
+.btn-primary-hero:hover,
+.cs-btn-primary:hover,
+a.btn-primary:hover,
+a.btn-primary-hero:hover,
+a.cs-btn-primary:hover {
+  background: #b89dfc !important;
+  color: #000000 !important;
+  border-color: #b89dfc !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(167, 139, 250, 0.4) !important;
+}
+
+.btn-secondary,
+.cs-btn-secondary,
+a.btn-secondary,
+a.btn-secondary:visited,
+a.cs-btn-secondary,
+a.cs-btn-secondary:visited {
   background: rgba(255, 255, 255, 0.08) !important;
   color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
-.btn-secondary:active {
-  transform: translateY(1px) scale(0.98) !important;
+
+.btn-secondary:hover,
+.cs-btn-secondary:hover,
+a.btn-secondary:hover,
+a.cs-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
 }
 
 /* ── 11. NAV DROPDOWN COMPONENT ── */
