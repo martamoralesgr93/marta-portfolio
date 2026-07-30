@@ -346,7 +346,8 @@ function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('portfolio-lang', lang);
   document.documentElement.lang = lang;
-  
+  document.documentElement.classList.toggle('lang-en', lang === 'en');
+
   document.querySelectorAll('.lang-toggle').forEach(btn => {
     btn.innerText = lang === 'es' ? 'EN' : 'ES';
   });
