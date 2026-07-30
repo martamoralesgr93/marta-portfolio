@@ -2508,33 +2508,33 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .sc-num { color: #a78bfa !important; opacity: 1 !important; font-weight: 700 !important; }
 .sc-client-link { color: #e4e4e7 !important; }
 
-/* Enhanced Mobile Call CTA Button - Guaranteed single-line fit */
+/* Mobile Header Harmony & Clean Spacing - Clean whitespace without crowded buttons */
 @media (max-width: 768px) {
   .nav-contact {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 6px 12px !important;
-    font-size: 11.5px !important;
-    font-weight: 600 !important;
-    border-radius: 100px !important;
-    background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%) !important;
-    color: #ffffff !important;
-    box-shadow: 0 2px 12px rgba(124, 58, 237, 0.4) !important;
-    letter-spacing: 0.01em !important;
-    white-space: nowrap !important;
-    height: 32px !important;
-    min-height: 32px !important;
-    line-height: 1 !important;
-    text-decoration: none !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
+    display: none !important;
   }
-  .nav-contact:active {
-    transform: scale(0.96) !important;
+  .insights-container {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 14px !important;
+    padding-bottom: 12px !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 24px 0 !important;
+  }
+  .insight-card {
+    flex: 0 0 82% !important;
+    min-width: 82% !important;
+    scroll-snap-align: start !important;
+    padding: 22px !important;
+  }
+  .sc-card {
+    padding: 24px 18px !important;
+    margin-bottom: 32px !important;
   }
 }
 
-/* Insight Cards Framed Box Styling (Production Vercel Match) */
+/* Insight Cards Framed Box Styling */
 .insight-card {
   padding: 28px !important;
   background: rgba(255, 255, 255, 0.02) !important;
@@ -2708,6 +2708,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#process" onclick="closeMenu()"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
+  <div style="margin-top: 20px;">
+    <a href="mailto:mmoralesgr93@gmail.com" class="mobile-menu-cta es" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; font-size: 14px; font-weight: 700; border-radius: 100px; background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%); color: #ffffff; text-decoration: none; box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);" onclick="closeMenu()">Agendar llamada →</a>
+    <a href="mailto:mmoralesgr93@gmail.com" class="mobile-menu-cta en" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; font-size: 14px; font-weight: 700; border-radius: 100px; background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%); color: #ffffff; text-decoration: none; box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);" onclick="closeMenu()">Schedule call →</a>
+  </div>
 </div>
 
 <!-- ==================== HERO ==================== -->
@@ -3436,100 +3440,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </div>
 </section>
 
-<!-- ==================== RESEARCH DATA SECTION ==================== -->
-<section class="data-section">
-  <div class="wrap">
-    <div class="sec-num"><span>05</span></div>
 
-    <div style="margin-bottom: 40px;">
-      <div class="sec-title es">Diagnosis<br>antes que diseño<span class="c-purple">.</span></div>
-      <div class="sec-title en">Diagnosis<br>before design<span class="c-purple">.</span></div>
-      <p style="font-size: 15px; color: var(--text); line-height: 1.7; margin-top: 12px; max-width: 600px;">
-        <span class="es">Comportamiento real, no opinión. Cada decisión proviene de datos: 10K+ analytics logs, 250+ sessions, entrevistas contextuales, auditoría WCAG. 4 casos de estudio con impacto cuantificado.</span>
-        <span class="en">Real behavior, not opinion. Every decision derives from data: 10K+ analytics logs, 250+ sessions, contextual interviews, WCAG audits. 4 case studies with quantified impact.</span>
-      </p>
-    </div>
-
-    <!-- KPI Row -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px;">
-      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
-        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Casos Cerrados</span><span class="en">Closed Cases</span></div>
-        <div style="font-size: 28px; font-weight: 700; color: var(--white);">4</div>
-        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">ILUNION · CEF · Paolo · Oracle</div>
-      </div>
-      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
-        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Métodos Aplicados</span><span class="en">Research Methods</span></div>
-        <div style="font-size: 28px; font-weight: 700; color: var(--white);">4</div>
-        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">Behavioral · Contextual · Audit · Benchmark</div>
-      </div>
-      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
-        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Insights Validados</span><span class="en">Validated Insights</span></div>
-        <div style="font-size: 28px; font-weight: 700; color: var(--white);">3</div>
-        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">Diagnosis · Constraints · Accessibility</div>
-      </div>
-      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
-        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Impacto Cuantificado</span><span class="en">Measurable Impact</span></div>
-        <div style="font-size: 28px; font-weight: 700; color: var(--white);">+94%</div>
-        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;"><span class="es">Conversión ILUNION (3.36% → 6.5%)</span><span class="en">ILUNION Conversion (3.36% → 6.5%)</span></div>
-      </div>
-    </div>
-
-    <!-- Insights Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 48px;">
-      <div style="padding: 20px; border-top: 3px solid var(--accent); border-radius: 8px; background: rgba(255,255,255,0.02);">
-        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
-          <span class="es">Tema 1</span>
-          <span class="en">Theme 1</span>
-        </div>
-        <div style="font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 6px;">
-          <span class="es">Diagnosis Before Solution</span>
-          <span class="en">Diagnosis Before Solution</span>
-        </div>
-        <div style="font-size: 13px; color: var(--text); line-height: 1.5;">
-          <span class="es">El brief nunca es el problema real. Los datos revelan la fricción invisible.</span>
-          <span class="en">The brief is never the real problem. Data reveals invisible friction.</span>
-        </div>
-      </div>
-      <div style="padding: 20px; border-top: 3px solid var(--accent); border-radius: 8px; background: rgba(255,255,255,0.02);">
-        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
-          <span class="es">Tema 2</span>
-          <span class="en">Theme 2</span>
-        </div>
-        <div style="font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 6px;">
-          <span class="es">Hidden Constraints</span>
-          <span class="en">Hidden Constraints</span>
-        </div>
-        <div style="font-size: 13px; color: var(--text); line-height: 1.5;">
-          <span class="es">Identificadas en 3 de 4 proyectos. Restricciones no obvias definen decisiones.</span>
-          <span class="en">Found in 3 of 4 projects. Non-obvious constraints shape decisions.</span>
-        </div>
-      </div>
-      <div style="padding: 20px; border-top: 3px solid var(--accent); border-radius: 8px; background: rgba(255,255,255,0.02);">
-        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
-          <span class="es">Tema 3</span>
-          <span class="en">Theme 3</span>
-        </div>
-        <div style="font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 6px;">
-          <span class="es">Accessibility as Signal</span>
-          <span class="en">Accessibility as Signal</span>
-        </div>
-        <div style="font-size: 13px; color: var(--text); line-height: 1.5;">
-          <span class="es">WCAG detecta issues de UX no visibles. No es compliance, es research.</span>
-          <span class="en">WCAG detects invisible UX issues. Not compliance theater, it's research.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section Footer/Closing -->
-    <div style="padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);">
-      <p style="font-size: 14px; color: var(--text); line-height: 1.7; max-width: 700px;">
-        <span class="es"><strong>4 proyectos, 3 insights, 1 método:</strong> Diagnosis first, decide with data, ship with conviction. Cada caso es una prueba de que cuando entiendes el problema, la solución viene sola.</span>
-        <span class="en"><strong>4 projects, 3 insights, 1 method:</strong> Diagnosis first, decide with data, ship with conviction. Every case proves that when you understand the problem, the solution follows.</span>
-      </p>
-    </div>
-
-  </div>
-</section>
 
 <!-- ==================== CONTACT SECTION ==================== -->
 <section class="contact-section" id="contact">
