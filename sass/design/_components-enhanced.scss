@@ -1053,3 +1053,17 @@
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
+
+// ─── FORCE OVERRIDE — Global <a> override for CTAs ─────────────────────────
+a.btn-primary-hero,
+a.btn-secondary {
+  text-decoration: none !important;
+}
+
+a.btn-primary-hero {
+  color: white !important;
+}
+
+a.btn-secondary {
+  color: var(--color-primary) !important;
+}
