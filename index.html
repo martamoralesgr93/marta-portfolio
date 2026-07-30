@@ -335,6 +335,81 @@ nav {
 .sec-num-line { width: 28px; height: 1px; background: rgba(255,255,255,0.2); }
 .sec-title { font-size: 52px; font-weight: 800; letter-spacing: -2.5px; line-height: 1.0; color: var(--white); }
 
+/* ===================== HOW I WORK — 4 PILLARS ===================== */
+.features-section {
+  position: relative; z-index: 1;
+  padding: 80px 0;
+  background: linear-gradient(180deg, rgba(124,58,237,0.05) 0%, transparent 100%);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 60px;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 36px;
+  border: 1px solid rgba(167,139,250,0.2);
+  border-radius: 16px;
+  background: rgba(167,139,250,0.03);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.2s; }
+.feature-card:nth-child(2) { animation-delay: 0.3s; }
+.feature-card:nth-child(3) { animation-delay: 0.4s; }
+.feature-card:nth-child(4) { animation-delay: 0.5s; }
+
+.feature-card:hover {
+  border-color: rgba(167,139,250,0.4);
+  background: rgba(167,139,250,0.08);
+  transform: translateY(-4px);
+}
+
+.feature-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  color: var(--purple);
+  margin-top: 4px;
+}
+
+.feature-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.feature-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.72);
+  margin: 0;
+}
+
 /* ===================== SOBRE MÍ — DÍPTICO ===================== */
 .sobre-section {
   position: relative; z-index: 1;
@@ -2599,6 +2674,82 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="m-label"><span class="es">Conformidad WCAG 2.1</span><span class="en">WCAG 2.1 compliance</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HOW I WORK ==================== -->
+<section class="features-section">
+  <div class="wrap">
+    <div>
+      <h2 style="font-size: 48px; font-weight: 800; letter-spacing: -2px; margin-bottom: 16px;">
+        <span class="es">Cómo trabajo</span>
+        <span class="en">How I work</span>
+      </h2>
+      <p style="font-size: 16px; color: rgba(255,255,255,0.65); max-width: 520px;">
+        <span class="es">Cuatro principios que guían cada decisión de diseño y producto que tomo.</span>
+        <span class="en">Four principles that guide every design and product decision I make.</span>
+      </p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-head">
+          <div class="feature-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="4,26 12,18 18,22 26,12 32,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </svg>
+          </div>
+          <div class="feature-title"><span class="es">DIAGNÓSTICO<br>PRIMERO</span><span class="en">DIAGNOSIS<br>FIRST</span></div>
+        </div>
+        <p class="feature-desc"><span class="es">Antes de cualquier wireframe, entiendo qué está fallando y por qué: datos de comportamiento, señales de negocio, hipótesis validada.</span><span class="en">Before any wireframe, I understand what's failing and why: behaviour data, business signals, validated hypothesis.</span></p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-head">
+          <div class="feature-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"></circle>
+              <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.5"></circle>
+              <line x1="18" y1="4" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+              <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+              <line x1="4" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+              <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            </svg>
+          </div>
+          <div class="feature-title"><span class="es">PROPUESTA,<br>NO OPCIONES</span><span class="en">PROPOSAL,<br>NOT OPTIONS</span></div>
+        </div>
+        <p class="feature-desc"><span class="es">Presento una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio, no preferencia visual.</span><span class="en">I bring a data-backed decision to leadership, not three variants for them to choose. Business rationale, not visual preference.</span></p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-head">
+          <div class="feature-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
+              <line x1="6" y1="14" x2="30" y2="14" stroke="currentColor" stroke-width="1.5"></line>
+              <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"></line>
+            </svg>
+          </div>
+          <div class="feature-title"><span class="es">CONVERSIÓN<br>MEDIBLE</span><span class="en">MEASURABLE<br>CONVERSION</span></div>
+        </div>
+        <p class="feature-desc"><span class="es">Diseño con hipótesis, mido el comportamiento post-lanzamiento y ajusto. Lanzar es cuando empieza el aprendizaje real.</span><span class="en">I design with hypotheses, measure post-launch behaviour and iterate. Shipping is when the real learning starts.</span></p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-head">
+          <div class="feature-icon">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 4 L19.8 13.2 L28 12 L21.6 18 L28 24 L19.8 22.8 L18 32 L16.2 22.8 L8 24 L14.4 18 L8 12 L16.2 13.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="feature-title"><span class="es">SISTEMAS QUE<br>ESCALAN</span><span class="en">SYSTEMS THAT<br>SCALE</span></div>
+        </div>
+        <p class="feature-desc"><span class="es">Design systems y componentes modulares que permiten al equipo iterar más rápido, con menos retrabajo y mayor coherencia entre producto y código.</span><span class="en">Design systems and modular components that let the team iterate faster, with less rework and stronger consistency between product and code.</span></p>
+      </div>
+
     </div>
   </div>
 </section>
