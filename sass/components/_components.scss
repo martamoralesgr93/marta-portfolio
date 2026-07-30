@@ -1049,3 +1049,73 @@ body.menu-open .container-shift {
   border-color: var(--text);
   color: var(--text);
 }
+
+/* ── Unified High-Contrast Button Components ── */
+.cs-btn,
+.cs-btn-primary,
+.cs-btn-secondary,
+.btn-primary-hero,
+.btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 10px 22px !important;
+  border-radius: 100px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+  text-decoration: none !important;
+  line-height: 1.3 !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.cs-btn-primary,
+a.cs-btn-primary,
+a.cs-btn-primary:visited,
+.btn-primary-hero,
+a.btn-primary-hero,
+a.btn-primary-hero:visited {
+  background: var(--accent, #a78bfa) !important;
+  color: #000000 !important;
+  border: 1px solid var(--accent, #a78bfa) !important;
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.25) !important;
+}
+
+.cs-btn-primary:hover,
+a.cs-btn-primary:hover,
+.btn-primary-hero:hover,
+a.btn-primary-hero:hover {
+  background: #b89dfc !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(167, 139, 250, 0.4) !important;
+}
+
+.cs-btn-secondary,
+a.cs-btn-secondary,
+a.cs-btn-secondary:visited,
+.btn-secondary,
+a.btn-secondary,
+a.btn-secondary:visited {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.cs-btn-secondary:hover,
+a.cs-btn-secondary:hover,
+.btn-secondary:hover,
+a.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
