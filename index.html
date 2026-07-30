@@ -256,37 +256,66 @@ nav {
 .hero-title {
   font-size: 76px; font-weight: 800; line-height: 0.94;
   letter-spacing: -4px; color: var(--white); margin-bottom: 36px;
+  animation: fadeInUp 0.8s ease-out;
 }
 .c-purple { color: var(--purple); }
 .c-orange { color: var(--orange); }
 
-.hero-body { font-size: 15px; color: var(--text-secondary); line-height: 1.82; max-width: 520px; margin-bottom: 52px; }
-.hero-positioning { display: none; }
+.hero-body {
+  font-size: 15px; color: var(--text-secondary); line-height: 1.82; max-width: 520px; margin-bottom: 52px;
+  animation: fadeInUp 0.8s ease-out 0.15s both;
+}
+.hero-positioning {
+  display: none;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
 .hero-mobile-metric { display: none; }
 
-.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.hero-actions {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.25s both;
+}
 .btn-primary {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 13px 28px; border-radius: 100px;
   background: #a78bfa;
   color: #000; font-size: 14px; font-weight: 600; text-decoration: none;
   border: none; cursor: pointer; font-family: inherit; letter-spacing: -0.3px;
-  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.2);
 }
-.btn-primary:hover { opacity: 0.92; transform: translateY(-2px); background: #c4b5fd; }
+.btn-primary:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+  background: #c4b5fd;
+  box-shadow: 0 12px 24px rgba(167, 139, 250, 0.35);
+}
+.btn-primary:active { transform: translateY(-2px); }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   color: rgba(255,255,255,0.65); font-size: 14px; text-decoration: none;
   border: 1px solid rgba(255,255,255,0.25); padding: 12px 24px; border-radius: 100px;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(10px);
 }
-.btn-ghost:hover { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.08); }
+.btn-ghost:hover {
+  color: rgba(255,255,255,0.95);
+  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
 
 /* Impact card */
 .impact-card {
   margin-top: 64px;
   background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.22);
   border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden;
+  animation: fadeInUp 0.8s ease-out 0.35s both;
+  transition: all 0.3s ease;
+}
+.impact-card:hover {
+  border-color: rgba(124,58,237,0.4);
+  background: rgba(124,58,237,0.12);
 }
 .impact-header {
   display: flex; align-items: center; gap: 7px; margin-bottom: 22px;
@@ -1400,12 +1429,17 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   html:not(.lang-en) .hero-positioning.es { display: block; }
   html.lang-en .hero-positioning.en { display: block; }
   .hero-positioning {
-    font-size: 17px;
+    font-size: 20px;
     color: var(--white);
-    line-height: 1.45;
+    line-height: 1.50;
     margin-bottom: 28px;
-    font-weight: 500;
-    letter-spacing: -0.2px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+  .hero-positioning em {
+    font-weight: 700;
+    font-style: normal;
+    color: var(--accent);
   }
 
   html:not(.lang-en) .hero-mobile-metric.es { display: flex; }
@@ -2529,8 +2563,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="en">Marta Morales</span>
         </h1>
         <p class="hero-role"><span class="es">CRO Designer · Conversión 3.36% → 6.5% | Design Systems · WCAG AA</span><span class="en">CRO Designer · 3.36% → 6.5% Conversion | Design Systems · WCAG AA</span></p>
-        <p class="hero-positioning es"><em>Conversión data-driven. Especialista en CRO y design systems que escalan.</em></p>
-        <p class="hero-positioning en"><em>Data-driven conversion. CRO specialist and scalable design systems builder.</em></p>
+        <p class="hero-positioning es"><em>Convierto datos en decisiones de diseño.</em> CRO • Design Systems • Escalabilidad</p>
+        <p class="hero-positioning en"><em>I turn data into design decisions.</em> CRO • Design Systems • Scalability</p>
         <p class="hero-body es">
           4 años trabajando en hospitality, edtech y consultoría. Siempre como la persona que define el problema, no solo quien lo resuelve.
         </p>
@@ -4804,6 +4838,10 @@ body.visitor-unauthorized .locked-metric:hover::after {
 @keyframes cardFadeIn {
   from { opacity: 0; transform: translateY(20px) scale(0.96); }
   to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .lock-logo {
   height: 52px;
