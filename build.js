@@ -307,6 +307,7 @@ function injectChatbot() {
   template = template.replace('/* @INJECT_STATIC_RULES@ */ []', JSON.stringify(staticData.RULES, null, 2));
   
   const filesToInject = [
+    'index.html',
     'booking-engine.html',
     'cef-design-system.html',
     'ilunion-cro.html',
