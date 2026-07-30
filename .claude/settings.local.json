@@ -46,7 +46,10 @@
       "Bash(gh pr *)",
       "Bash(git fetch *)",
       "Bash(git merge *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "PowerShell(git clone https://github.com/martamoralesgr93/marta-portfolio.git $repoDir --depth 1 2>&1)",
+      "PowerShell($repoDir = \"C:\\\\Users\\\\mmora\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\marta-portfolio\")",
+      "Bash(cd \"/c/Users/mmora/AppData/Local/Temp/claude/marta-portfolio\" && echo \"🔍 Verificación de cambios en el repo actual:\"; echo \"\"; echo \"✓ CAMBIO 1: SEO blocker\"; grep -c \"index, follow\" index.html || echo \"❌ NO ENCONTRADO\"; echo \"\"; echo \"✓ CAMBIO 2: CRO Designer\"; grep \"CRO Designer\" index.html | head -1 || echo \"❌ NO ENCONTRADO\"; echo \"\"; echo \"✓ CAMBIO 3: Let's talk\"; grep -c \"Let's talk\" index.html || echo \"❌ NO ENCONTRADO\"; echo \"\"; echo \"✓ CAMBIO 4: Sin 2026\"; grep -c \"Recreación 2026\" index.html || echo \"✓ ELIMINADO\")"
     ]
   }
 }
