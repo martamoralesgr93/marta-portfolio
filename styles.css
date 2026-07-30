@@ -46,7 +46,7 @@
 }
 
 body {
-  font-family: var(--font-family, 'DM Sans', 'Inter', -apple-system, sans-serif);
+  font-family: "Satoshi", system-ui, -apple-system, sans-serif;
   margin: 0;
   background: transparent; /* Transparent base to reveal moving aurora background */
   color: var(--text);
@@ -5320,16 +5320,16 @@ a:hover {
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.15) !important;
 }
 .cs-section[id*=context]::before {
-  content: "CONTEXTO" !important;
+  content: "STAR // SITUATION" !important;
 }
 .cs-section[id*=problem]::before {
-  content: "PROBLEMA Y OBJETIVOS" !important;
+  content: "STAR // TASK" !important;
 }
 .cs-section[id*=research]::before, .cs-section[id*=hypothesis]::before, .cs-section[id*=design]::before, .cs-section[id*=responsive]::before {
-  content: "DIAGNÓSTICO Y EJECUCIÓN" !important;
+  content: "STAR // ACTION" !important;
 }
 .cs-section[id*=results]::before, .cs-section[id*=business-impact]::before {
-  content: "RESULTADOS E IMPACTO" !important;
+  content: "STAR // RESULT" !important;
 }
 
 /* ==========================================================================
