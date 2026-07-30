@@ -2496,43 +2496,13 @@ html.lang-en .hero-positioning.en { display: block !important; }
   }
 }
 
-/* Compact spacing for home <=3500px desktop / <=5000px mobile target */
-.hero { min-height: auto !important; padding: 18px 0 !important; }
-.hero .wrap { padding-top: 4px !important; padding-bottom: 4px !important; }
-.impact-card { margin-top: 8px !important; padding: 10px 14px !important; }
-.sobre-section { padding: 16px 0 !important; }
-.sobre-img-panel { max-height: 220px !important; overflow: hidden !important; border-radius: 12px !important; }
-.sobre-portrait { max-height: 220px !important; object-fit: cover !important; object-position: top !important; width: 100% !important; }
-.sobre-heading { font-size: 22px !important; line-height: 1.1 !important; margin-bottom: 4px !important; }
-.sobre-grid { gap: 10px !important; }
-.about-narrative { margin-bottom: 8px !important; }
-.about-quote { margin-bottom: 8px !important; margin-top: 4px !important; }
-.stat-item { padding: 4px 8px !important; }
-.stack-section { padding: 16px 0 !important; }
-.stack-title { font-size: 18px !important; margin-bottom: 4px !important; }
-.stack-desc { font-size: 12px !important; margin-bottom: 8px !important; }
-.work-section { padding: 16px 0 !important; }
-.sc-card { padding: 14px 16px !important; margin-bottom: 0 !important; }
-.sc-title { font-size: 16px !important; margin-bottom: 4px !important; }
-.sc-desc { font-size: 12px !important; margin-bottom: 6px !important; line-height: 1.3 !important; }
-.process-section { padding: 16px 0 !important; }
-.contact-section { padding: 20px 0 24px !important; }
-.contact-title { font-size: 26px !important; letter-spacing: -1px !important; line-height: 1.1 !important; margin-bottom: 8px !important; }
-.contact-sub { font-size: 12px !important; margin-bottom: 12px !important; max-width: 440px !important; }
-.contact-badge-container { display: none !important; }
-.trust-strip { margin-top: 10px !important; padding-top: 6px !important; }
-
-@media (max-width: 768px) {
-  .sobre-img-panel { display: none !important; }
-  .sc-card { padding: 14px 16px !important; }
-}
-
-/* WCAG 2.1 AA Contrast Fixes */
+/* WCAG 2.1 AA Contrast Fixes - Preserving rich visual design & full layout */
 .nav-contact { background: #7c3aed !important; color: #ffffff !important; font-weight: 600 !important; }
 .lang-toggle { background: #1a1a1a !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.25) !important; }
 .lang-toggle span { color: #ffffff !important; }
 .sobre-tagline { color: #e4e4e7 !important; }
 .sobre-loc-text { color: #e4e4e7 !important; }
+.sobre-cta-label span { color: #e4e4e7 !important; }
 .c-purple { color: #a78bfa !important; }
 .m-label span, .sec-title, .contact-eyebrow, .impact-card-label, .impact-header span { color: #e4e4e7 !important; }
 .sc-num { color: #a78bfa !important; opacity: 1 !important; font-weight: 700 !important; }
@@ -2615,6 +2585,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 }
 
 </style>
+
 <!-- REORDER: ILUNION (Featured #1) antes de CEF (Featured #2) -->
 <style>
   /* Grid/flex container para work section */
@@ -2753,15 +2724,29 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <h2 class="sobre-heading en">about<br><em>me<span class="c-purple">.</span></em></h2>
 
       <div class="sobre-grid-layout">
+
+        <!-- Columna izquierda: narrativa + cta + meta -->
         <div class="sobre-narrative-col">
-          <p class="sobre-tagline es">MARTA MORALES · <span class="c-purple">PRODUCT DESIGNER</span></p>
-          <p class="sobre-tagline en">MARTA MORALES · <span class="c-purple">PRODUCT DESIGNER</span></p>
+          <p class="sobre-tagline es">MARTA MORALES · <span class="c-purple">PRODUCT DESIGNER | UX · DESIGN SYSTEMS · AI PRODUCT DESIGN · CRO</span></p>
+          <p class="sobre-tagline en">MARTA MORALES · <span class="c-purple">PRODUCT DESIGNER | UX · DESIGN SYSTEMS · AI PRODUCT DESIGN · CRO</span></p>
 
           <div class="sobre-body">
-            <p class="es">Product Designer con 4+ años de experiencia en hospitality, EdTech y consultoría B2B. Especializada en optimizar la conversión en productos digitales bajo restricciones reales de tecnología, negocio y accesibilidad WCAG 2.1 AA. En ILUNION Hotels lideré el rediseño del canal directo para 32 propiedades, incrementando la conversión del 3.36% al 6.5% mediante analítica web y tests con usuarios reales.</p>
+            <p class="es">4 años diseñando productos en hospitality, EdTech y consultoría B2B. Especialista en convertir datos en decisiones claras.</p>
+            <p class="es"><strong>Últimos 2 años: ILUNION Hotels.</strong> Transformé canal directo de 32 propiedades de caótico a escalable. Conversión: 3.36% → 6.5%. Sistema WCAG AA desde cero.</p>
+            <p class="es"><strong>Antes: CEF EdTech.</strong> Lideré diagnóstico que derivó en decisión Build vs. Buy para infraestructura crítica. Construí sistema de 47 componentes.</p>
 
-            <p class="en">Product Designer with 4+ years of experience across hospitality, EdTech, and B2B consulting. Specialized in driving product conversion under real technology, business, and WCAG 2.1 AA accessibility constraints. At ILUNION Hotels, I led the direct channel redesign across 32 properties, increasing conversion from 3.36% to 6.5% through web analytics and user testing.</p>
+            <p class="en">4 years designing products in hospitality, EdTech and B2B consulting. Data-driven decision maker.</p>
+            <p class="en"><strong>Last 2 years: ILUNION Hotels.</strong> Transformed direct channel (32 properties) from chaos to scalable system. Conversion: 3.36% → 6.5%. WCAG AA design system from scratch.</p>
+            <p class="en"><strong>Before: CEF EdTech.</strong> Led research that drove Build vs. Buy decision. Built 47-component system from zero.</p>
           </div>
+
+          <a href="#work" class="sobre-cta">
+            <span class="icon sobre-cta-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5L19 12L12 19"></path></svg></span>
+            <div class="sobre-cta-label">
+              <span class="es">VER MI TRABAJO.</span>
+              <span class="en">SEE MY WORK.</span>
+            </div>
+          </a>
 
           <div class="sobre-meta">
             <div class="sobre-location">
@@ -2772,33 +2757,49 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </div>
         </div>
 
+        <!-- Columna derecha: checks personales -->
         <div class="sobre-aside-col">
           <div class="sobre-skills-off">
             <h3 class="sobre-skills-title">
-              <span class="es">Principios de Trabajo</span>
-              <span class="en">Work Principles</span>
+              <span class="es">Cómo trabajo</span>
+              <span class="en">How I work</span>
             </h3>
 
             <ul class="sobre-checks">
               <li class="sobre-check-item">
                 <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg></span>
                 <div>
-                  <span class="sobre-check-title es">1. Diagnosis antes que solución: entender los datos antes de abrir Figma.</span>
-                  <span class="sobre-check-title en">1. Diagnosis before solution: understand data before opening Figma.</span>
+                  <span class="sobre-check-title es">Documento todo.</span>
+                  <span class="sobre-check-title en">I document everything.</span>
+                  <span class="sobre-check-desc es">Si no está escrito, no existe. Y eso me cuesta.</span>
+                  <span class="sobre-check-desc en">If it's not written down, it doesn't exist. And that drives me mad.</span>
                 </div>
               </li>
               <li class="sobre-check-item">
                 <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg></span>
                 <div>
-                  <span class="sobre-check-title es">2. Simplificar antes de añadir: eliminar pasos redundantes en el flujo.</span>
-                  <span class="sobre-check-title en">2. Simplify before adding: eliminate redundant steps in the flow.</span>
+                  <span class="sobre-check-title es">Simplifico antes de añadir.</span>
+                  <span class="sobre-check-title en">I simplify before adding.</span>
+                  <span class="sobre-check-desc es">Mi primera pregunta siempre es: ¿esto se puede hacer con menos pasos?</span>
+                  <span class="sobre-check-desc en">My first question is always: can this be done in fewer steps?</span>
                 </div>
               </li>
               <li class="sobre-check-item">
                 <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg></span>
                 <div>
-                  <span class="sobre-check-title es">3. Decisión argumentada: una sola propuesta justificada en telemetría.</span>
-                  <span class="sobre-check-title en">3. Data-backed decision: a single proposal justified by telemetry.</span>
+                  <span class="sobre-check-title es">Diseño para personas, no para pantallas.</span>
+                  <span class="sobre-check-title en">I design for people, not screens.</span>
+                  <span class="sobre-check-desc es">La empatía es mi herramienta más técnica.</span>
+                  <span class="sobre-check-desc en">Empathy is my most technical tool.</span>
+                </div>
+              </li>
+              <li class="sobre-check-item">
+                <span class="icon sobre-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg></span>
+                <div>
+                  <span class="sobre-check-title es">Los datos primero, el sketch después.</span>
+                  <span class="sobre-check-title en">Data first, sketch second.</span>
+                  <span class="sobre-check-desc es">Nunca abro Figma sin entender el problema — y suelo hacer mapas mentales hasta que algo encaja.</span>
+                  <span class="sobre-check-desc en">I never open Figma without understanding the problem — I usually map it out until something clicks.</span>
                 </div>
               </li>
             </ul>
@@ -2806,6 +2807,146 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- ===== 3 INSIGHTS: Diagnosis Pattern ===== -->
+  <div class="wrap">
+    <div class="insights-container">
+
+      <div class="insight-card insight-diagnosis">
+        <div class="insight-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5" opacity="0.3"></circle>
+            <path d="M24 12V24M24 24L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="24" cy="24" r="3" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <div class="insight-content">
+          <h3 class="insight-title">
+            <span class="es">Diagnosis<br>Before Solution</span>
+            <span class="en">Diagnosis<br>Before Solution</span>
+          </h3>
+          <p class="insight-desc">
+            <span class="es">El brief nunca es el problema real. Los datos revelan la fricción invisible.</span>
+            <span class="en">The brief is never the real problem. Data reveals the invisible friction.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="insight-card insight-constraints">
+        <div class="insight-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="14" width="28" height="20" rx="2" stroke="currentColor" stroke-width="1.5"></rect>
+            <line x1="10" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1.5"></line>
+            <circle cx="24" cy="28" r="2" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <div class="insight-content">
+          <h3 class="insight-title">
+            <span class="es">Hidden<br>Constraints</span>
+            <span class="en">Hidden<br>Constraints</span>
+          </h3>
+          <p class="insight-desc">
+            <span class="es">Identificadas en 3 de 4 proyectos. Restricciones no obvias definen decisiones.</span>
+            <span class="en">Found in 3 of 4 projects. Non-obvious constraints drive decisions.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="insight-card insight-accessibility">
+        <div class="insight-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="12" r="4" stroke="currentColor" stroke-width="1.5"></circle>
+            <path d="M16 20H32C33.1 20 34 20.9 34 22V36C34 37.1 33.1 38 32 38H16C14.9 38 14 37.1 14 36V22C14 20.9 14.9 20 16 20Z" stroke="currentColor" stroke-width="1.5"></path>
+            <line x1="20" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <div class="insight-content">
+          <h3 class="insight-title">
+            <span class="es">Accessibility<br>as Signal</span>
+            <span class="en">Accessibility<br>as Signal</span>
+          </h3>
+          <p class="insight-desc">
+            <span class="es">WCAG detecta issues de UX no visibles. No es compliance, es research.</span>
+            <span class="en">WCAG detects invisible UX issues. Not compliance, it's research.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Features integradas debajo del díptico -->
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="4,26 12,18 18,22 26,12 32,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <div class="feature-title es">DIAGNÓSTICO<br>PRIMERO.</div>
+        <div class="feature-title en">DIAGNOSIS<br>FIRST.</div>
+      </div>
+      <p class="feature-desc es">Antes de cualquier wireframe, entiendo qué está fallando y por qué: datos de comportamiento, señales de negocio, hipótesis validada.</p>
+      <p class="feature-desc en">Before any wireframe, I understand what's failing and why: behaviour data, business signals, validated hypothesis.</p>
+      <div class="feature-line"></div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"></circle>
+            <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.5"></circle>
+            <line x1="18" y1="4" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="4" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+            <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <div class="feature-title es">PROPUESTA,<br>NO OPCIONES.</div>
+        <div class="feature-title en">PROPOSAL,<br>NOT OPTIONS.</div>
+      </div>
+      <p class="feature-desc es">Presento una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio, no preferencia visual.</p>
+      <p class="feature-desc en">I bring a data-backed decision to leadership, not three variants for them to choose. Business rationale, not visual preference.</p>
+      <div class="feature-line"></div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
+            <line x1="6" y1="14" x2="30" y2="14" stroke="currentColor" stroke-width="1.5"></line>
+            <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"></line>
+          </svg>
+        </div>
+        <div class="feature-title es">CONVERSIÓN<br>MEDIBLE.</div>
+        <div class="feature-title en">MEASURABLE<br>CONVERSION.</div>
+      </div>
+      <p class="feature-desc es">Diseño con hipótesis, mido el comportamiento post-lanzamiento y ajusto. Lanzar es cuando empieza el aprendizaje real.</p>
+      <p class="feature-desc en">I design with hypotheses, measure post-launch behaviour and iterate. Shipping is when the real learning starts.</p>
+      <div class="feature-line"></div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-head">
+        <div class="feature-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4 L19.8 13.2 L28 12 L21.6 18 L28 24 L19.8 22.8 L18 32 L16.2 22.8 L8 24 L14.4 18 L8 12 L16.2 13.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="feature-title es">SISTEMAS QUE<br>ESCALAN.</div>
+        <div class="feature-title en">SYSTEMS THAT<br>SCALE.</div>
+      </div>
+      <p class="feature-desc es">Design systems y componentes modulares que permiten al equipo iterar más rápido, con menos retrabajo y mayor coherencia entre producto y código.</p>
+      <p class="feature-desc en">Design systems and modular components that let the team iterate faster, with less rework and stronger consistency between product and code.</p>
+      <div class="feature-line"></div>
+    </div>
+
   </div>
 </section>
 
@@ -2828,6 +2969,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <span class="es">El stack no define el trabajo — el problema de negocio sí. Estas herramientas me permiten ir desde el diagnóstico de comportamiento hasta el diseño final y la medición de resultados en un único flujo de trabajo integrado.</span>
         <span class="en">The stack doesn't define the work — the business problem does. These tools let me move from behaviour diagnosis to final design and results measurement in a single integrated workflow.</span>
       </p>
+    </div>
+
+    <div class="stack-video-container">
+      <video src="assets/video-stack.mp4" autoplay="" loop="" muted="" playsinline="" class="stack-video"></video>
     </div>
 
     <div class="stack-pills">
@@ -2920,83 +3065,254 @@ html.lang-en .hero-positioning.en { display: block !important; }
       </div>
     </div>
 
-    <div class="work-section-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
-      <!-- CASO 1: ILUNION Hotels CRO -->
-      <div class="sc-card reveal" style="padding: 24px; margin-bottom: 0;">
-        <div class="sc-content">
-          <div class="sc-num-row">
-            <div class="sc-num">01</div>
-            <span class="sc-client-link">ILUNION Hotels</span>
-          </div>
-          <h3 class="sc-title es" style="font-size: 20px; margin-bottom: 8px;">ILUNION CRO · Optimización Canal Directo</h3>
-          <h3 class="sc-title en" style="font-size: 20px; margin-bottom: 8px;">ILUNION CRO · Direct Channel Optimization</h3>
-          <p class="sc-desc es" style="font-size: 13px; margin-bottom: 12px;"><strong>Problema:</strong> Caída del 34% de usuarios en el primer scroll por ruido visual promocional post-migración AEM.</p>
-          <p class="sc-desc en" style="font-size: 13px; margin-bottom: 12px;"><strong>Problem:</strong> 34% drop-off on first scroll from promotional visual noise post-AEM migration.</p>
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-size: 12px; font-weight: 700; color: var(--purple); background: rgba(167,139,250,0.12); padding: 4px 10px; border-radius: 100px; display: inline-block; width: fit-content;">+18.4% CTR reservas (3.36% → 6.5% conv.)</span>
-            <span style="font-size: 11px; color: var(--muted);">Rol: Product Designer (CRO &amp; AEM)</span>
-            <a href="ilunion-cro.html" class="sc-cta sc-cta-primary es" style="margin-top: 4px; align-self: flex-start;">Ver Caso Completo →</a>
-            <a href="ilunion-cro.html" class="sc-cta sc-cta-primary en" style="margin-top: 4px; align-self: flex-start;">View Case Study →</a>
-          </div>
+    <!-- BLOCK: IA & DESIGN SYSTEMS -->
+    <div class="block-label">
+        <span class="block-label-text">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path></svg>
+          IA &amp; Design Systems · <span style="opacity:0.75; font-weight:400;">2024</span>
+        </span>
+      <div class="block-label-line"></div>
+    </div>
+
+    <!-- CASO 2: CEF — Plataforma académica EdTech -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num">02</div>
+          <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
+        </div>
+        <h3 class="sc-title es">CEF Design System<br><em>y accesibilidad EdTech</em></h3>
+        <h3 class="sc-title en">CEF Design System<br><em>and EdTech accessibility</em></h3>
+        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
+        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em></p>
+        <div class="sc-cta-row">
+          <a href="cef-design-system.html" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="cef-design-system.html" class="sc-cta sc-cta-primary en">Case Study</a>
+          <a href="https://www.notion.so/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://www.notion.so/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
       </div>
-
-      <!-- CASO 2: CEF Design System -->
-      <div class="sc-card reveal" style="padding: 24px; margin-bottom: 0;">
-        <div class="sc-content">
-          <div class="sc-num-row">
-            <div class="sc-num">02</div>
-            <span class="sc-client-link">CEF EdTech</span>
-          </div>
-          <h3 class="sc-title es" style="font-size: 20px; margin-bottom: 8px;">CEF Design System &amp; Accesibilidad</h3>
-          <h3 class="sc-title en" style="font-size: 20px; margin-bottom: 8px;">CEF Design System &amp; Accessibility</h3>
-          <p class="sc-desc es" style="font-size: 13px; margin-bottom: 12px;"><strong>Problema:</strong> Deuda técnica acumulada y falta de sistema unificado para profesores y alumnos.</p>
-          <p class="sc-desc en" style="font-size: 13px; margin-bottom: 12px;"><strong>Problem:</strong> Accumulated tech debt and lack of a unified design system across portals.</p>
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-size: 12px; font-weight: 700; color: var(--purple); background: rgba(167,139,250,0.12); padding: 4px 10px; border-radius: 100px; display: inline-block; width: fit-content;">100% WCAG 2.1 AA · 47 Componentes</span>
-            <span style="font-size: 11px; color: var(--muted);">Rol: Diseñadora Única (DS + WCAG)</span>
-            <a href="cef-design-system.html" class="sc-cta sc-cta-primary es" style="margin-top: 4px; align-self: flex-start;">Ver Caso Completo →</a>
-            <a href="cef-design-system.html" class="sc-cta sc-cta-primary en" style="margin-top: 4px; align-self: flex-start;">View Case Study →</a>
-          </div>
+      <div class="sc-visual" aria-hidden="true">
+        <img loading="lazy" decoding="async" width="1200" height="800" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" class="sc-img" alt="CEF Calendario Académico">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">100%</div>
+          <div class="sc-mname es">WCAG AA</div>
+          <div class="sc-mname en">WCAG AA</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">0</div>
+          <div class="sc-mname es">Elementos solo-ratón</div>
+          <div class="sc-mname en">Mouse-only elements</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">1</div>
+          <div class="sc-mname es">Design System unificado</div>
+          <div class="sc-mname en">Unified Design System</div>
         </div>
       </div>
+      <a href="cef-design-system.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
 
-      <!-- CASO 3: Paolo by Danny's Jazz -->
-      <div class="sc-card reveal" style="padding: 24px; margin-bottom: 0;">
-        <div class="sc-content">
-          <div class="sc-num-row">
-            <div class="sc-num">03</div>
-            <span class="sc-client-link">Paolo by Danny's Jazz</span>
-          </div>
-          <h3 class="sc-title es" style="font-size: 20px; margin-bottom: 8px;">Paolo Pizzeria · Ecosistema Delivery</h3>
-          <h3 class="sc-title en" style="font-size: 20px; margin-bottom: 8px;">Paolo Pizzeria · Delivery Ecosystem</h3>
-          <p class="sc-desc es" style="font-size: 13px; margin-bottom: 12px;"><strong>Problema:</strong> Necesidad de escalabilidad de delivery en pandemia sin presupuesto de rediseño.</p>
-          <p class="sc-desc en" style="font-size: 13px; margin-bottom: 12px;"><strong>Problem:</strong> Need to scale delivery product during pandemic without redesign budget.</p>
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-size: 12px; font-weight: 700; color: var(--purple); background: rgba(167,139,250,0.12); padding: 4px 10px; border-radius: 100px; display: inline-block; width: fit-content;">×5 Locales integrados sin rediseño</span>
-            <span style="font-size: 11px; color: var(--muted);">Rol: Product Designer &amp; Frontend</span>
-            <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es" style="margin-top: 4px; align-self: flex-start;">Ver Caso Completo →</a>
-            <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en" style="margin-top: 4px; align-self: flex-start;">View Case Study →</a>
-          </div>
+    <!-- CASO 1: ILUNION — Rediseño del componente de Ofertas -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num">01</div>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels · <span class="es">Componente de Ofertas</span><span class="en">Offers component</span> ↗</a>
+        </div>
+        <h3 class="sc-title es">ILUNION CRO<br><em>de <span class="locked-metric">3,36% a 6,5%</span> de conversión</em></h3>
+        <h3 class="sc-title en">ILUNION CRO<br><em>from <span class="locked-metric">3.36% to 6.5%</span> conversion</em></h3>
+        <p class="sc-desc es">Optimización del funnel de reservas en el canal directo tras migración a AEM. Diagnóstico estratégico y experimentos basados en research de comportamiento real. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: product designer responsable · Ownership end-to-end autónomo</em><br><span style="font-size:11px;color:rgba(255,255,255,0.65);font-weight:400;display:block;margin-top:8px;">Assets visuales del canal directo: generación y coordinación con IA generativa (Vertex AI · Gemini · Figma)</span></p>
+        <p class="sc-desc en">Direct channel booking funnel optimization post AEM migration. Strategic diagnosis and experiments based on real behavioral research. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: responsible product designer · Autonomous end-to-end ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.65);font-weight:400;display:block;margin-top:8px;">Direct channel visual assets: generation and coordination with generative AI (Vertex AI · Gemini · Figma)</span></p>
+        <div class="sc-cta-row">
+          <a href="ilunion-cro.html" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="ilunion-cro.html" class="sc-cta sc-cta-primary en">Case Study</a>
+          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
         </div>
       </div>
+      <div class="sc-visual" aria-hidden="true">
+        <img loading="lazy" decoding="async" width="1920" height="1440" src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.webp" class="sc-img" alt="ILUNION Hotels Ofertas">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">6.5%</div>
+          <div class="sc-mname es">Funnel de reservas</div>
+          <div class="sc-mname en">Booking funnel</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">13%</div>
+          <div class="sc-mname es">Venta representada</div>
+          <div class="sc-mname en">Share of sales</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">&gt;50%</div>
+          <div class="sc-mname es">Club ÚNICOS (Loyalty)</div>
+          <div class="sc-mname en">Club ÚNICOS Loyalty</div>
+        </div>
+      </div>
+      <a href="ilunion-cro.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
 
-      <!-- CASO 4: Oracle IT Ops -->
-      <div class="sc-card reveal" style="padding: 24px; margin-bottom: 0;">
-        <div class="sc-content">
-          <div class="sc-num-row">
-            <div class="sc-num">04</div>
-            <span class="sc-client-link">We Are Actions</span>
+    <!-- GRÁFICO: ILUNION Conversión Timeline (Pure SVG) -->
+    <div class="sc-chart-container" style="padding: 40px; background: rgba(155,77,202,0.05); border-radius: 12px; margin: 48px 0; max-width: 900px; margin-left: auto; margin-right: auto; border: 1px solid rgba(167,139,250,0.15);">
+      <h3 style="text-align: center; font-size: 18px; font-weight: 600; margin-bottom: 24px; color: var(--white);">
+        <span class="es">Conversión: Iteración semana a semana (3.36% → 6.5%)</span>
+        <span class="en">Conversion: Week-by-week iteration (3.36% → 6.5%)</span>
+      </h3>
+      <div style="width: 100%; max-width: 700px; margin: 0 auto;">
+        <svg viewBox="0 0 700 240" style="width: 100%; height: auto; overflow: visible;">
+          <!-- Grid lines -->
+          <line x1="60" y1="40" x2="660" y2="40" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
+          <line x1="60" y1="100" x2="660" y2="100" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
+          <line x1="60" y1="160" x2="660" y2="160" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
+          <line x1="60" y1="210" x2="660" y2="210" stroke="rgba(255,255,255,0.15)"/>
+
+          <!-- Y-axis Labels -->
+          <text x="45" y="44" text-anchor="end" fill="rgba(255,255,255,0.5)" font-size="11">7%</text>
+          <text x="45" y="104" text-anchor="end" fill="rgba(255,255,255,0.5)" font-size="11">5%</text>
+          <text x="45" y="164" text-anchor="end" fill="rgba(255,255,255,0.5)" font-size="11">3%</text>
+
+          <!-- Gradient Area Fill -->
+          <defs>
+            <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.0"/>
+            </linearGradient>
+          </defs>
+          <path d="M 100 153 Q 190 140, 210 138 T 320 120 T 430 90 T 540 65 T 620 52 L 620 210 L 100 210 Z" fill="url(#chartGlow)" stroke="none"/>
+
+          <!-- Main Trend Line -->
+          <path d="M 100 153 Q 190 140, 210 138 T 320 120 T 430 90 T 540 65 T 620 52" stroke="#a78bfa" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+          <!-- Baseline Point (3.36%) -->
+          <circle cx="100" cy="153" r="6" fill="#a78bfa" stroke="#000" stroke-width="2"/>
+          <text x="100" y="180" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">3.36%</text>
+          <text x="100" y="228" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">Baseline</text>
+
+          <!-- Intermediate Points -->
+          <circle cx="210" cy="138" r="4" fill="#a78bfa"/>
+          <text x="210" y="228" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">Semana 1</text>
+
+          <circle cx="320" cy="120" r="4" fill="#a78bfa"/>
+          <text x="320" y="228" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">Semana 2</text>
+
+          <circle cx="430" cy="90" r="4" fill="#a78bfa"/>
+          <text x="430" y="228" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">Semana 3</text>
+
+          <circle cx="540" cy="65" r="4" fill="#a78bfa"/>
+          <text x="540" y="228" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">Semana 4</text>
+
+          <!-- Final Point (6.5%) -->
+          <circle cx="620" cy="52" r="7" fill="#34d399" stroke="#000" stroke-width="2"/>
+          <text x="620" y="36" text-anchor="middle" fill="#34d399" font-size="13" font-weight="800">6.5%</text>
+          <text x="620" y="228" text-anchor="middle" fill="#34d399" font-size="11" font-weight="600">Semana 5</text>
+        </svg>
+      </div>
+      <p style="text-align: center; font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 20px; line-height: 1.6;">
+        <span class="es">Post-lanzamiento AEM: 5 semanas de iteración basadas en datos de comportamiento real. Mejoras: jerarquía de contenido, énfasis CTA, reorden de secciones.</span>
+        <span class="en">Post-AEM launch: 5 weeks of data-driven iteration. Improvements: content hierarchy, CTA emphasis, section reordering.</span>
+      </p>
+    </div>
+
+    <!-- BLOCK: CUSTOMER JOURNEY & PRODUCTO DIGITAL -->
+    <div class="block-divider">
+      <div class="block-label">
+        <span class="block-label-text">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l10 5.5-10 5.5L2 7.5 12 2zm-7.4 9.7L12 15.8l7.4-4.1 2.6 1.4-10 5.5-10-5.5 2.6-1.4zm0 4.6L12 20.4l7.4-4.1L22 17.7 12 23.2 2 17.7l2.6-1.4z"></path></svg>
+          Customer Journey &amp; Producto Digital · <span style="opacity:0.75; font-weight:400;">2020–2022</span>
+        </span>
+        <div class="block-label-line"></div>
+      </div>
+    </div>
+
+    <!-- CASO 04: PAOLO BY DANNY'S JAZZ — Customer Journey & Producto Digital -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num">04</div>
+          <span class="sc-client-link" style="cursor:default;">Paolo by Danny's Jazz</span>
+        </div>
+        <h3 class="sc-title es">Paolo by Danny's Jazz<br><em>ecosistema digital de delivery</em></h3>
+        <h3 class="sc-title en">Paolo by Danny's Jazz<br><em>digital delivery ecosystem</em></h3>
+        <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. Ejecuté la escalabilidad de 1 a 5 locales sin rediseño (decisión de negocio, no mía). Learning case: buen producto ≠ buen modelo de negocio. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
+        <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
+        <div class="sc-cta-row">
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en">Case Study</a>
+          <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
+        </div>
+      </div>
+      <div class="sc-visual sc-visual-contain" aria-hidden="true">
+        <img loading="lazy" decoding="async" width="2672" height="1536" src="projects/04-paolo/assets/web4.webp" class="sc-img" alt="Paolo Pizzeria">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">×5</div>
+          <div class="sc-mname es">Locales sin rediseño</div>
+          <div class="sc-mname en">Locations without redesign</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">3</div>
+          <div class="sc-mname es">Journeys cubiertos en 1 producto</div>
+          <div class="sc-mname en">Journeys covered in 1 product</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">2 años</div>
+          <div class="sc-mname es">Ownership end-to-end</div>
+          <div class="sc-mname en">End-to-end ownership</div>
+        </div>
+      </div>
+      <a href="paolo-pizzeria.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
+    <!-- MÁS PROYECTOS COLLAPSED SECTION -->
+    <div style="margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.10);">
+      <div style="margin-bottom: 40px;">
+        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 24px; color: rgba(255,255,255,0.88);">
+          <span class="es">Más proyectos</span>
+          <span class="en">More projects</span>
+        </h3>
+
+        <!-- Collapsed project 1: Booking Engine -->
+        <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 32px; padding: 20px; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; background: rgba(255,255,255,0.02); transition: background 0.2s;">
+          <div style="flex-shrink: 0; font-size: 36px; font-weight: 700; color: var(--purple); opacity: 0.6;">03</div>
+          <div style="flex: 1;">
+            <h4 style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.88); margin-bottom: 6px;">
+              <span class="es">ILUNION Hotels · Motor de reservas</span>
+              <span class="en">ILUNION Hotels · Booking engine</span>
+            </h4>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.62); margin-bottom: 12px; line-height: 1.5;">
+              <span class="es">Redefinición de jerarquía para convertir tráfico de alta intención en reservas directas.</span>
+              <span class="en">Hierarchy redefinition to convert high-intent traffic into direct bookings.</span>
+            </p>
+            <a href="booking-engine.html" style="font-size: 12px; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              <span class="es">Ver caso de estudio</span>
+              <span class="en">View case study</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
+            </a>
           </div>
-          <h3 class="sc-title es" style="font-size: 20px; margin-bottom: 8px;">Oracle ERP &amp; IT Ops · Diagnóstico</h3>
-          <h3 class="sc-title en" style="font-size: 20px; margin-bottom: 8px;">Oracle ERP &amp; IT Ops · Diagnosis</h3>
-          <p class="sc-desc es" style="font-size: 13px; margin-bottom: 12px;"><strong>Problema:</strong> Fricción operativa severa en herramientas ERP heredadas sobre workflows dev.</p>
-          <p class="sc-desc en" style="font-size: 13px; margin-bottom: 12px;"><strong>Problem:</strong> Severe operational friction in legacy ERP tools across developer workflows.</p>
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-size: 12px; font-weight: 700; color: var(--purple); background: rgba(167,139,250,0.12); padding: 4px 10px; border-radius: 100px; display: inline-block; width: fit-content;">Propuesta Build vs Buy</span>
-            <span style="font-size: 11px; color: var(--muted);">Rol: Strategic Research &amp; Operations</span>
-            <a href="it-ops-oracle.html" class="sc-cta sc-cta-primary es" style="margin-top: 4px; align-self: flex-start;">Ver Caso Completo →</a>
-            <a href="it-ops-oracle.html" class="sc-cta sc-cta-primary en" style="margin-top: 4px; align-self: flex-start;">View Case Study →</a>
+        </div>
+
+        <!-- Collapsed project 2: IT Ops -->
+        <div style="display: flex; align-items: flex-start; gap: 24px; margin-bottom: 32px; padding: 20px; border: 1px solid rgba(255,255,255,0.10); border-radius: 12px; background: rgba(255,255,255,0.02); transition: background 0.2s;">
+          <div style="flex-shrink: 0; font-size: 36px; font-weight: 700; color: var(--purple); opacity: 0.6;">05</div>
+          <div style="flex: 1;">
+            <h4 style="font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.88); margin-bottom: 6px;">
+              <span class="es">We Are Actions · Oracle ERP &amp; IT Ops</span>
+              <span class="en">We Are Actions · Oracle ERP &amp; IT Ops</span>
+            </h4>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.62); margin-bottom: 12px; line-height: 1.5;">
+              <span class="es">Diagnóstico estratégico: Oracle generaba más fricción de la que resolvía. Propuse Build vs. Buy. No se ejecutó (presupuesto), pero fue mi primer caso de strategic thinking como designer.</span>
+              <span class="en">Strategic diagnosis: Oracle was generating more friction than it solved. Proposed Build vs. Buy. Not executed due to budget, but my first real strategic thinking case as designer.</span>
+            </p>
+            <a href="it-ops-oracle.html" style="font-size: 12px; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              <span class="es">Ver caso de estudio</span>
+              <span class="en">View case study</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -3006,27 +3322,231 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </div>
 </section>
 
-<!-- ==================== PROCESS SECTION ==================== -->
+<!-- ==================== PROCESS / ABOUT SECTION ==================== -->
 <section class="process-section" id="process">
   <div class="wrap">
     <div class="sec-num"><span>04</span></div>
-    <div class="sec-title es" style="margin-bottom: 24px;">Cómo decido<span class="c-purple">.</span></div>
-    <div class="sec-title en" style="margin-bottom: 24px;">How I decide<span class="c-purple">.</span></div>
-    
-    <ul class="process-steps" style="display: flex; flex-direction: column; gap: 16px; list-style: none;">
-      <li class="process-step" style="padding: 16px 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1);">
-        <span class="step-name es"><strong>01. Diagnosis antes que solución:</strong> Entender los datos de comportamiento antes de abrir Figma.</span>
-        <span class="step-name en"><strong>01. Diagnosis before solution:</strong> Understand behavior data before opening Figma.</span>
-      </li>
-      <li class="process-step" style="padding: 16px 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1);">
-        <span class="step-name es"><strong>02. Simplificar antes de añadir:</strong> Eliminar pasos redundantes en el flujo para maximizar conversión.</span>
-        <span class="step-name en"><strong>02. Simplify before adding:</strong> Eliminate redundant steps in the flow to maximize conversion.</span>
-      </li>
-      <li class="process-step" style="padding: 16px 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1);">
-        <span class="step-name es"><strong>03. Decisión argumentada:</strong> Una sola propuesta sólida fundamentada en telemetría y restricciones reales.</span>
-        <span class="step-name en"><strong>03. Data-backed decision:</strong> A single solid proposal grounded in telemetry and real constraints.</span>
-      </li>
-    </ul>
+    <div class="process-grid">
+
+      <!-- Left: process steps -->
+      <div>
+        <div class="sec-title es">Cómo<br>decido<span class="c-purple">.</span></div>
+        <div class="sec-title en">How I<br>decide<span class="c-purple">.</span></div>
+        <ul class="process-steps">
+          <li class="process-step">
+            <span class="step-num">01</span>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">01 · Diagnosis Before Solution <span style="font-size: 12px; color: var(--accent);">(Behavioral Data)</span></div>
+                  <div class="step-name en">01 · Diagnosis Before Solution <span style="font-size: 12px; color: var(--accent);">(Behavioral Data)</span></div>
+                  <div class="step-desc es">Adobe Analytics + Clarity heatmaps primero. El brief que recibo nunca es el problema real. Los datos revelan las fricciones que los usuarios viven.</div>
+                  <div class="step-desc en">Adobe Analytics + Clarity heatmaps first. The brief I receive is never the real problem. Data reveals the frictions users actually experience.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 0;"><strong>Ejemplo ILUNION:</strong> El brief era "optimiza el bloque promocional". Los datos de Clarity mostraban que solo el 15% de usuarios llegaban al bloque de ofertas. El problema real era jerarquía visual, no la oferta. Behavioral data reveló la fricción invisible en la interfaz.</p>
+                <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 8px 0 0;"><strong>Metodología:</strong> Adobe Analytics (funnel), Clarity (heatmaps + recordings), behavioral segmentation. El brief es punto de partida, nunca el diagnóstico real. Búsqueda de patrón en datos, no opinión.</p>
+              </div>
+            </details>
+          </li>
+          <li class="process-step">
+            <span class="step-num">02</span>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">02 · Argued Proposal <span style="font-size: 12px; color: var(--accent);">(Contextual Research)</span></div>
+                  <div class="step-name en">02 · Argued Proposal <span style="font-size: 12px; color: var(--accent);">(Contextual Research)</span></div>
+                  <div class="step-desc es">Una decisión fundamentada en research, no tres variantes decorativas. Entrevistas + workflow analysis = propuesta estratégica documentada.</div>
+                  <div class="step-desc en">A decision grounded in research, not three decorative variants. Interviews + workflow analysis = documented strategic proposal.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 0;"><strong>Ejemplo Oracle:</strong> El equipo pedía mejorar la interfaz de Oracle. Mis entrevistas contextuales con desarrolladores revelaron que Oracle no era el problema — era la herramienta equivocada para los flujos reales. Mi propuesta: Build vs Buy. No opciones decorativas, sino decisión estratégica documentada.</p>
+                <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 8px 0 0;"><strong>Metodología:</strong> Entrevistas contextuales, journey mapping, workflow analysis. La propuesta sale de research, no de opinión. Criterio de negocio sobre preferencia visual.</p>
+              </div>
+            </details>
+          </li>
+          <li class="process-step">
+            <span class="step-num">03</span>
+            <details class="process-accordion">
+              <summary>
+                <span class="process-summary-content">
+                  <div class="step-name es">03 · Design with Real Constraints <span style="font-size: 12px; color: var(--accent);">(Accessibility Auditing)</span></div>
+                  <div class="step-name en">03 · Design with Real Constraints <span style="font-size: 12px; color: var(--accent);">(Accessibility Auditing)</span></div>
+                  <div class="step-desc es">WCAG 2.1 AA verificable. Diseño dentro del stack real (AEM, APIs, timelines). Máximo impacto con mínimo coste de implementación.</div>
+                  <div class="step-desc en">WCAG 2.1 AA verifiable. Design within real stack constraints (AEM, APIs, timelines). Maximum impact at minimum implementation cost.</div>
+                </span>
+                <span class="process-expand es">Ver más</span>
+                <span class="process-expand en">See more</span>
+              </summary>
+              <div class="step-content">
+                <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 0;"><strong>Ejemplo CEF + Paolo:</strong> En CEF, construí 47 componentes WCAG AA dentro de una deuda técnica inicial. En Paolo, escalé el producto de 1 a 5 locales sin rediseño porque los flujos fueron diseñados considerando restricciones reales desde el inicio. La accesibilidad no es feature, es requisito de investigación.</p>
+                <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 8px 0 0;"><strong>Metodología:</strong> Accessibility auditing (WCAG 2.1 AA), constraint mapping, viabilidad técnica. Diseñar dentro del stack real maximiza impacto y minimiza rework post-lanzamiento.</p>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: about narrative -->
+      <div class="about-right">
+        <div class="about-stats">
+          <div>
+            <div class="stat-value">4+</div>
+            <div class="stat-label"><span class="es">Años · Product Designer full-cycle</span><span class="en">Years · Full-cycle Product Designer</span></div>
+          </div>
+          <div>
+            <div class="stat-value">3</div>
+            <div class="stat-label"><span class="es">Casos destacados + 2 explorados</span><span class="en">Featured cases + 2 explored</span></div>
+          </div>
+          <div>
+            <div class="stat-value">4</div>
+            <div class="stat-label"><span class="es">Sectores: Turismo, EdTech, Branding e IT Ops</span><span class="en">Industries: Tourism, EdTech, Branding &amp; IT Ops</span></div>
+          </div>
+        </div>
+
+        <div class="about-quote es" style="margin-bottom: 20px;">
+          "El brief que recibes nunca es el problema real. Es el punto de partida para encontrarlo."
+        </div>
+        <div class="about-quote en" style="margin-bottom: 20px;">
+          "The brief you receive is never the real problem. It's the starting point for finding it."
+        </div>
+
+        <p class="about-narrative es">
+          En cada proyecto he sido la responsable de <strong>definir el problema de negocio</strong>, no solo de resolverlo. Diagnóstico con analítica real, hipótesis priorizadas por impacto, propuesta argumentada a dirección y seguimiento post-lanzamiento con datos reales.
+        </p>
+        <p class="about-narrative en">
+          In every project I've been responsible for <strong>defining the business problem</strong>, not just solving it. Real analytics diagnosis, impact-prioritised hypotheses, argued proposals to leadership, and post-launch tracking with real data.
+        </p>
+
+        <details class="about-accordion">
+          <summary>
+            <span class="es">Ver más</span>
+            <span class="en">See more</span>
+            <span class="about-expand">+</span>
+          </summary>
+          <div class="about-accordion-body">
+            <p class="about-narrative es" style="margin-top: -12px;">
+              He trabajado con restricciones reales: stacks de producción (AEM), limitaciones técnicas, timelines de dev, ecosistemas de marca en expansión (Paolo) y fricciones operativas en herramientas heredadas (Oracle ERP en We Are Actions). Eso me hace mejor diseñadora de producto, no peor.
+            </p>
+            <p class="about-narrative en" style="margin-top: -12px;">
+              I've worked with real constraints: production stacks (AEM), technical limitations, dev timelines, expanding brand systems (Paolo) and operational friction in legacy enterprise tools (Oracle ERP at We Are Actions). That makes me a better product designer, not a worse one.
+            </p>
+            <p class="about-narrative es" style="margin-top: -12px;">
+              Todo empezó en consultoría, analizando flujos operativos de IT. Antes de diseñar interfaces, aprendí a desmontar procesos y encontrar dónde fallaban. Ese hábito sigue siendo lo primero que activo en cualquier proyecto nuevo.
+            </p>
+            <p class="about-narrative en" style="margin-top: -12px;">
+              It started in consulting, analysing IT operational flows. Before designing interfaces, I learned to break down processes and find where they failed. That habit is still the first thing I activate in any new project.
+            </p>
+          </div>
+        </details>
+
+        <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-primary es" style="display: inline-flex;">Descargar CV  ↗</a>
+        <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-primary en" style="display: inline-flex;">Download CV  ↗</a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== RESEARCH DATA SECTION ==================== -->
+<section class="data-section">
+  <div class="wrap">
+    <div class="sec-num"><span>05</span></div>
+
+    <div style="margin-bottom: 40px;">
+      <div class="sec-title es">Diagnosis<br>antes que diseño<span class="c-purple">.</span></div>
+      <div class="sec-title en">Diagnosis<br>before design<span class="c-purple">.</span></div>
+      <p style="font-size: 15px; color: var(--text); line-height: 1.7; margin-top: 12px; max-width: 600px;">
+        <span class="es">Comportamiento real, no opinión. Cada decisión proviene de datos: 10K+ analytics logs, 250+ sessions, entrevistas contextuales, auditoría WCAG. 4 casos de estudio con impacto cuantificado.</span>
+        <span class="en">Real behavior, not opinion. Every decision derives from data: 10K+ analytics logs, 250+ sessions, contextual interviews, WCAG audits. 4 case studies with quantified impact.</span>
+      </p>
+    </div>
+
+    <!-- KPI Row -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px;">
+      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
+        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Casos Cerrados</span><span class="en">Closed Cases</span></div>
+        <div style="font-size: 28px; font-weight: 700; color: var(--white);">4</div>
+        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">ILUNION · CEF · Paolo · Oracle</div>
+      </div>
+      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
+        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Métodos Aplicados</span><span class="en">Research Methods</span></div>
+        <div style="font-size: 28px; font-weight: 700; color: var(--white);">4</div>
+        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">Behavioral · Contextual · Audit · Benchmark</div>
+      </div>
+      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
+        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Insights Validados</span><span class="en">Validated Insights</span></div>
+        <div style="font-size: 28px; font-weight: 700; color: var(--white);">3</div>
+        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">Diagnosis · Constraints · Accessibility</div>
+      </div>
+      <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
+        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Impacto Cuantificado</span><span class="en">Measurable Impact</span></div>
+        <div style="font-size: 28px; font-weight: 700; color: var(--white);">+94%</div>
+        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;"><span class="es">Conversión ILUNION (3.36% → 6.5%)</span><span class="en">ILUNION Conversion (3.36% → 6.5%)</span></div>
+      </div>
+    </div>
+
+    <!-- Insights Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 48px;">
+      <div style="padding: 20px; border-top: 3px solid var(--accent); border-radius: 8px; background: rgba(255,255,255,0.02);">
+        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
+          <span class="es">Tema 1</span>
+          <span class="en">Theme 1</span>
+        </div>
+        <div style="font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 6px;">
+          <span class="es">Diagnosis Before Solution</span>
+          <span class="en">Diagnosis Before Solution</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text); line-height: 1.5;">
+          <span class="es">El brief nunca es el problema real. Los datos revelan la fricción invisible.</span>
+          <span class="en">The brief is never the real problem. Data reveals invisible friction.</span>
+        </div>
+      </div>
+      <div style="padding: 20px; border-top: 3px solid var(--accent); border-radius: 8px; background: rgba(255,255,255,0.02);">
+        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
+          <span class="es">Tema 2</span>
+          <span class="en">Theme 2</span>
+        </div>
+        <div style="font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 6px;">
+          <span class="es">Hidden Constraints</span>
+          <span class="en">Hidden Constraints</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text); line-height: 1.5;">
+          <span class="es">Identificadas en 3 de 4 proyectos. Restricciones no obvias definen decisiones.</span>
+          <span class="en">Found in 3 of 4 projects. Non-obvious constraints shape decisions.</span>
+        </div>
+      </div>
+      <div style="padding: 20px; border-top: 3px solid var(--accent); border-radius: 8px; background: rgba(255,255,255,0.02);">
+        <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;">
+          <span class="es">Tema 3</span>
+          <span class="en">Theme 3</span>
+        </div>
+        <div style="font-size: 14px; color: var(--white); font-weight: 600; margin-bottom: 6px;">
+          <span class="es">Accessibility as Signal</span>
+          <span class="en">Accessibility as Signal</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text); line-height: 1.5;">
+          <span class="es">WCAG detecta issues de UX no visibles. No es compliance, es research.</span>
+          <span class="en">WCAG detects invisible UX issues. Not compliance theater, it's research.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Footer/Closing -->
+    <div style="padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <p style="font-size: 14px; color: var(--text); line-height: 1.7; max-width: 700px;">
+        <span class="es"><strong>4 proyectos, 3 insights, 1 método:</strong> Diagnosis first, decide with data, ship with conviction. Cada caso es una prueba de que cuando entiendes el problema, la solución viene sola.</span>
+        <span class="en"><strong>4 projects, 3 insights, 1 method:</strong> Diagnosis first, decide with data, ship with conviction. Every case proves that when you understand the problem, the solution follows.</span>
+      </p>
+    </div>
+
   </div>
 </section>
 
