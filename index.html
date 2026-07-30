@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marta Morales — CRO Designer | Conversión 3.36% → 6.5% · Design Systems · WCAG AA</title>
+<title>Marta Morales — Product Designer | UX · Design Systems · AI Product Design · CRO</title>
 <meta name="description" content="Product Designer portfolio. 4+ years owning digital products end-to-end — UX research, design systems, accessibility and CRO across multi-sector environments. Based in Spain, available remote.">
 <link rel="canonical" href="https://martamorales.vercel.app/">
 <meta name="keywords" content="UX/UI Designer, UX Research, Figma, Design Systems, Bootstrap, Accesibilidad, WCAG, A/B Testing, Adobe Analytics, Responsive Design, Ecommerce, Hospitality, EdTech, Spain, Remote">
@@ -17,7 +17,7 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://martamorales.vercel.app/">
-<meta property="og:title" content="Marta Morales · CRO Designer — Conversión 3.36% → 6.5%, Design Systems &amp; WCAG AA">
+<meta property="og:title" content="Marta Morales · Product Designer — UX/UI, Design Systems &amp; Multi-sector">
 <meta property="og:description" content="Product Designer with 4+ years of real end-to-end ownership. UX research, design systems, accessibility and CRO across tourism, EdTech and digital consulting. Case studies with business impact.">
 <meta property="og:image" content="https://martamorales.vercel.app/assets/og-card.png">
 <meta property="og:image:secure_url" content="https://martamorales.vercel.app/assets/og-card.png">
@@ -29,7 +29,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://martamorales.vercel.app/">
-<meta name="twitter:title" content="Marta Morales · CRO Designer — Conversión 3.36% → 6.5%, Design Systems &amp; WCAG AA">
+<meta name="twitter:title" content="Marta Morales · Product Designer — UX/UI, Design Systems &amp; Multi-sector">
 <meta name="twitter:description" content="Product Designer with 4+ years of real end-to-end ownership. UX research, design systems, accessibility and CRO across tourism, EdTech and digital consulting.">
 <meta name="twitter:image" content="https://martamorales.vercel.app/assets/og-card.png">
 
@@ -54,7 +54,7 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
 <style>
 /* ── ICON SYSTEM — Unified minimalist SVG icons (sass style) ── */
 .icon {
@@ -133,7 +133,7 @@ html {
 body {
   background: var(--black);
   color: var(--white);
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -213,6 +213,20 @@ nav {
 }
 .nav-cta:hover { opacity: 0.82; transform: translateY(-1px); }
 
+.nav-contact {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 8px 18px; border-radius: 100px;
+  background: rgba(167, 139, 250, 0.9);
+  border: none; color: var(--white); font-size: 13px; font-weight: 500;
+  text-decoration: none; font-family: inherit;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+}
+.nav-contact:hover { 
+  background: rgba(167, 139, 250, 1);
+  opacity: 0.95; 
+  transform: translateY(-1px); 
+}
+
 /* Language toggle */
 .lang-toggle {
   background: none;
@@ -254,68 +268,39 @@ nav {
 .eyebrow-text { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(var(--accent-rgb),0.85); }
 
 .hero-title {
-  font-size: 84px; font-weight: 800; line-height: 0.92;
-  letter-spacing: -3px; color: var(--white); margin-bottom: 36px;
-  animation: fadeInUp 0.8s ease-out;
+  font-size: 76px; font-weight: 800; line-height: 0.94;
+  letter-spacing: -4px; color: var(--white); margin-bottom: 36px;
 }
 .c-purple { color: var(--purple); }
 .c-orange { color: var(--orange); }
 
-.hero-body {
-  font-size: 15px; color: var(--text-secondary); line-height: 1.82; max-width: 520px; margin-bottom: 52px;
-  animation: fadeInUp 0.8s ease-out 0.15s both;
-}
-.hero-positioning {
-  display: none;
-  animation: fadeInUp 0.8s ease-out 0.1s both;
-}
+.hero-body { font-size: 15px; color: var(--text-secondary); line-height: 1.82; max-width: 520px; margin-bottom: 52px; }
+.hero-positioning { display: none; }
 .hero-mobile-metric { display: none; }
 
-.hero-actions {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease-out 0.25s both;
-}
+.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .btn-primary {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 13px 28px; border-radius: 100px;
   background: #a78bfa;
   color: #000; font-size: 14px; font-weight: 600; text-decoration: none;
   border: none; cursor: pointer; font-family: inherit; letter-spacing: -0.3px;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.2);
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
 }
-.btn-primary:hover {
-  opacity: 1;
-  transform: translateY(-4px);
-  background: #c4b5fd;
-  box-shadow: 0 12px 24px rgba(167, 139, 250, 0.35);
-}
-.btn-primary:active { transform: translateY(-2px); }
+.btn-primary:hover { opacity: 0.92; transform: translateY(-2px); background: #c4b5fd; }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   color: rgba(255,255,255,0.65); font-size: 14px; text-decoration: none;
   border: 1px solid rgba(255,255,255,0.25); padding: 12px 24px; border-radius: 100px;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  backdrop-filter: blur(10px);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
-.btn-ghost:hover {
-  color: rgba(255,255,255,0.95);
-  border-color: rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.12);
-  transform: translateY(-2px);
-}
+.btn-ghost:hover { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.08); }
 
 /* Impact card */
 .impact-card {
   margin-top: 64px;
   background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.22);
   border-radius: 20px; padding: 36px 32px; position: relative; overflow: hidden;
-  animation: fadeInUp 0.8s ease-out 0.35s both;
-  transition: all 0.3s ease;
-}
-.impact-card:hover {
-  border-color: rgba(124,58,237,0.4);
-  background: rgba(124,58,237,0.12);
 }
 .impact-header {
   display: flex; align-items: center; gap: 7px; margin-bottom: 22px;
@@ -334,81 +319,6 @@ nav {
 .sec-num { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); }
 .sec-num-line { width: 28px; height: 1px; background: rgba(255,255,255,0.2); }
 .sec-title { font-size: 52px; font-weight: 800; letter-spacing: -2.5px; line-height: 1.0; color: var(--white); }
-
-/* ===================== HOW I WORK — 4 PILLARS ===================== */
-.features-section {
-  position: relative; z-index: 1;
-  padding: 80px 0;
-  background: linear-gradient(180deg, rgba(124,58,237,0.05) 0%, transparent 100%);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 60px;
-}
-
-.feature-card {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 36px;
-  border: 1px solid rgba(167,139,250,0.2);
-  border-radius: 16px;
-  background: rgba(167,139,250,0.03);
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.feature-card:nth-child(1) { animation-delay: 0.2s; }
-.feature-card:nth-child(2) { animation-delay: 0.3s; }
-.feature-card:nth-child(3) { animation-delay: 0.4s; }
-.feature-card:nth-child(4) { animation-delay: 0.5s; }
-
-.feature-card:hover {
-  border-color: rgba(167,139,250,0.4);
-  background: rgba(167,139,250,0.08);
-  transform: translateY(-4px);
-}
-
-.feature-head {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.feature-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  color: var(--purple);
-  margin-top: 4px;
-}
-
-.feature-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.feature-title {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.3;
-  color: var(--white);
-}
-
-.feature-desc {
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.72);
-  margin: 0;
-}
 
 /* ===================== SOBRE MÍ — DÍPTICO ===================== */
 .sobre-section {
@@ -778,7 +688,7 @@ a.sc-client-link:hover {
   color: var(--white);
 }
 .sc-title {
-  font-family: 'Manrope', -apple-system, sans-serif;
+  font-family: 'Inter', -apple-system, sans-serif;
   font-size: 34px; font-weight: 800; line-height: 1.14;
   letter-spacing: -0.6px; color: var(--white);
   margin-bottom: 20px;
@@ -1469,14 +1379,8 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .nav-logo-name { font-size: 10px; letter-spacing: 0.02em; }
   .nav-logo-role { font-size: 9px; }
   .nav-links { display: none; }
-  .nav-cta { display: inline-flex; }
-  html:not(.lang-en) .nav-cta.en { display: none !important; }
-  html.lang-en .nav-cta.es { display: none !important; }
-  .mobile-menu-cta { display: inline-flex; }
-  html:not(.lang-en) .mobile-menu-cta.en { display: none !important; }
-  html.lang-en .mobile-menu-cta.es { display: none !important; }
+  .nav-cta { display: none; }
   .mobile-menu-lang { display: none !important; }
-  .lang-toggle { display: none !important; }
   .hamburger { display: flex; }
 
   /* Hero */
@@ -1504,17 +1408,12 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   html:not(.lang-en) .hero-positioning.es { display: block; }
   html.lang-en .hero-positioning.en { display: block; }
   .hero-positioning {
-    font-size: 20px;
+    font-size: 17px;
     color: var(--white);
-    line-height: 1.50;
+    line-height: 1.45;
     margin-bottom: 28px;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-  }
-  .hero-positioning em {
-    font-weight: 700;
-    font-style: normal;
-    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: -0.2px;
   }
 
   html:not(.lang-en) .hero-mobile-metric.es { display: flex; }
@@ -1669,6 +1568,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     border-radius: 0 !important;
     box-shadow: none !important;
   }
+  /* Paolo Pizzeria: vista contenida (menos zoom) */
   .sc-visual-contain {
     height: 220px !important;
     min-height: 220px !important;
@@ -1848,7 +1748,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   display: flex; flex-direction: column;
   padding: 22px 20px 18px;
   position: relative; overflow: hidden;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(160deg, rgba(255,255,255,0.025) 0%, transparent 70%);
   border: none;
   border-radius: 0;
@@ -2392,9 +2292,9 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 
 /* Hero Role text: discrete Product Designer line */
 .hero-role {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   opacity: 0.5;
   margin: 0.25rem 0 1rem;
@@ -2560,6 +2460,26 @@ html.lang-en .hero-positioning.en { display: block !important; }
 }
 
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+<!-- REORDER: ILUNION (Featured #1) antes de CEF (Featured #2) -->
+<style>
+  /* Grid/flex container para work section */
+  .showcase-grid, .sc-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Reorder: ILUNION (segundo .sc-card en HTML) aparece primero */
+  .sc-card:nth-of-type(2) { order: -1; }
+  .sc-card:nth-of-type(1) { order: 0; }
+  
+  /* WCAG badge responsive */
+  @media (max-width: 768px) {
+    .cf-wcag-badge { font-size: 11px; }
+  }
+</style>
+
 </head>
 <body>
 <a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
@@ -2586,11 +2506,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <div class="nav-right">
-    <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta nav-email es">¡Hablemos!  →</a>
-    <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta nav-email en">Let's talk  →</a>
+    <a href="mailto:mmoralesgr93@gmail.com" class="nav-contact es">Let's talk →</a>
+    <a href="mailto:mmoralesgr93@gmail.com" class="nav-contact en">Let's talk →</a>
     <a href="assets/cv-marta-ats-es.pdf" download="" class="nav-cta nav-cv es">Descargar CV  ↗</a>
     <a href="assets/cv-marta-ats-en.pdf" download="" class="nav-cta nav-cv en">Download CV  ↗</a>
-    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Toggle language">EN</button>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
         <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
@@ -2614,11 +2533,9 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#work" onclick="closeMenu()"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
     <li><a href="#process" onclick="closeMenu()"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
-  <a href="mailto:mmoralesgr93@gmail.com" class="mobile-menu-cta mobile-menu-email es">¡Hablemos!  →</a>
-  <a href="mailto:mmoralesgr93@gmail.com" class="mobile-menu-cta mobile-menu-email en">Let's talk  →</a>
+  </ul>
   <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-cta es">Descargar CV  ↗</a>
   <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-cta en">Download CV  ↗</a>
-  <button class="mobile-menu-lang" id="mobileLangToggle" onclick="toggleLanguage()">EN</button>
 </div>
 
 <!-- ==================== HERO ==================== -->
@@ -2637,14 +2554,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="es">Marta Morales</span>
           <span class="en">Marta Morales</span>
         </h1>
-        <p class="hero-role"><span class="es">Conversión 3.36% → 6.5% | Design Systems escalables | WCAG AA</span><span class="en">Conversion 3.36% → 6.5% | Scalable Systems | WCAG AA</span></p>
-        <p class="hero-positioning es"><em>No diseño pantallas bonitas.</em> Diseño sistemas que funcionan. Datos + Producto + Accesibilidad.</p>
-        <p class="hero-positioning en"><em>I don't design pretty screens.</em> I design systems that work. Data + Product + Accessibility.</p>
+        <p class="hero-role">CRO Designer — 6.5% conversions | WCAG AA Systems</p>
+        <p class="hero-positioning es"><em>Conversión data-driven. Especialista en CRO y design systems que escalan.</em></p>
+        <p class="hero-positioning en"><em>Data-driven conversion. CRO specialist and scalable design systems builder.</em></p>
         <p class="hero-body es">
-          Especialista en CRO y design systems. 4 años escalando productos en hospitality y edtech. Siempre defino el problema antes de resolverlo.
+          4 años trabajando en hospitality, edtech y consultoría. Siempre como la persona que define el problema, no solo quien lo resuelve.
         </p>
         <p class="hero-body en">
-          Specialist in CRO and design systems. 4 years scaling products in hospitality and edtech. I define the problem before solving it.
+          4 years working in hospitality, edtech and consulting. Always as the person who defines the problem, not just solves it.
         </p>
         <div class="hero-actions">
           <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-primary cta-download es">Descargar CV  ↗</a>
@@ -2678,82 +2595,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </div>
 </section>
 
-<!-- ==================== HOW I WORK ==================== -->
-<section class="features-section">
-  <div class="wrap">
-    <div>
-      <h2 style="font-size: 48px; font-weight: 800; letter-spacing: -2px; margin-bottom: 16px;">
-        <span class="es">Cómo trabajo</span>
-        <span class="en">How I work</span>
-      </h2>
-      <p style="font-size: 16px; color: rgba(255,255,255,0.65); max-width: 520px;">
-        <span class="es">Cuatro principios que guían cada decisión de diseño y producto que tomo.</span>
-        <span class="en">Four principles that guide every design and product decision I make.</span>
-      </p>
-    </div>
-
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="feature-head">
-          <div class="feature-icon">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="4,26 12,18 18,22 26,12 32,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-              <polyline points="26,8 32,8 32,14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            </svg>
-          </div>
-          <div class="feature-title"><span class="es">DIAGNÓSTICO<br>PRIMERO</span><span class="en">DIAGNOSIS<br>FIRST</span></div>
-        </div>
-        <p class="feature-desc"><span class="es">Antes de cualquier wireframe, entiendo qué está fallando y por qué: datos de comportamiento, señales de negocio, hipótesis validada.</span><span class="en">Before any wireframe, I understand what's failing and why: behaviour data, business signals, validated hypothesis.</span></p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-head">
-          <div class="feature-icon">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"></circle>
-              <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="1.5"></circle>
-              <line x1="18" y1="4" x2="18" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-              <line x1="18" y1="28" x2="18" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-              <line x1="4" y1="18" x2="8" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-              <line x1="28" y1="18" x2="32" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
-            </svg>
-          </div>
-          <div class="feature-title"><span class="es">PROPUESTA,<br>NO OPCIONES</span><span class="en">PROPOSAL,<br>NOT OPTIONS</span></div>
-        </div>
-        <p class="feature-desc"><span class="es">Presento una decisión argumentada con datos, no tres variantes para que el stakeholder elija. Criterio de negocio, no preferencia visual.</span><span class="en">I bring a data-backed decision to leadership, not three variants for them to choose. Business rationale, not visual preference.</span></p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-head">
-          <div class="feature-icon">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="6" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-              <line x1="6" y1="14" x2="30" y2="14" stroke="currentColor" stroke-width="1.5"></line>
-              <line x1="14" y1="14" x2="14" y2="30" stroke="currentColor" stroke-width="1.5"></line>
-            </svg>
-          </div>
-          <div class="feature-title"><span class="es">CONVERSIÓN<br>MEDIBLE</span><span class="en">MEASURABLE<br>CONVERSION</span></div>
-        </div>
-        <p class="feature-desc"><span class="es">Diseño con hipótesis, mido el comportamiento post-lanzamiento y ajusto. Lanzar es cuando empieza el aprendizaje real.</span><span class="en">I design with hypotheses, measure post-launch behaviour and iterate. Shipping is when the real learning starts.</span></p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-head">
-          <div class="feature-icon">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 4 L19.8 13.2 L28 12 L21.6 18 L28 24 L19.8 22.8 L18 32 L16.2 22.8 L8 24 L14.4 18 L8 12 L16.2 13.2 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-            </svg>
-          </div>
-          <div class="feature-title"><span class="es">SISTEMAS QUE<br>ESCALAN</span><span class="en">SYSTEMS THAT<br>SCALE</span></div>
-        </div>
-        <p class="feature-desc"><span class="es">Design systems y componentes modulares que permiten al equipo iterar más rápido, con menos retrabajo y mayor coherencia entre producto y código.</span><span class="en">Design systems and modular components that let the team iterate faster, with less rework and stronger consistency between product and code.</span></p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ==================== SOBRE MÍ ==================== -->
 <section class="sobre-section" id="sobre">
   <div class="sobre-diptych">
@@ -2773,15 +2614,17 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
         <!-- Columna izquierda: narrativa + cta + meta -->
         <div class="sobre-narrative-col">
-          <p class="sobre-tagline es"><span class="c-purple">CRO EXPERT | DESIGN SYSTEMS | WCAG AA COMPLIANCE</span></p>
-          <p class="sobre-tagline en"><span class="c-purple">CRO EXPERT | DESIGN SYSTEMS | WCAG AA COMPLIANCE</span></p>
+          <p class="sobre-tagline es">MARTA MORALES · <span class="c-purple">PRODUCT DESIGNER | UX · DESIGN SYSTEMS · AI PRODUCT DESIGN · CRO</span></p>
+          <p class="sobre-tagline en">MARTA MORALES · <span class="c-purple">PRODUCT DESIGNER | UX · DESIGN SYSTEMS · AI PRODUCT DESIGN · CRO</span></p>
 
           <div class="sobre-body">
-            <p class="es"><strong>ILUNION Hotels (2+ años):</strong> Escalé el canal directo de 32 propiedades. Diagnóstico: estructura de información confusa. Solución: sistema WCAG AA. Resultado: CRO 3.36% → 6.5%, 13% del revenue total.</p>
-            <p class="es"><strong>CEF EdTech (1 año):</strong> Construí el primer design system de la empresa desde cero (47 componentes, 57 tokens). Detecté que herramienta enterprise generaba fricción → propuse estrategia Build vs. Buy.</p>
+            <p class="es">4 años diseñando productos en hospitality, EdTech y consultoría B2B. Especialista en convertir datos en decisiones claras.</p>
+            <p class="es"><strong>Últimos 2 años: ILUNION Hotels.</strong> Transformé canal directo de 32 propiedades de caótico a escalable. Conversión: 3.36% → 6.5%. Sistema WCAG AA desde cero.</p>
+            <p class="es"><strong>Antes: CEF EdTech.</strong> Lideré diagnóstico que derivó en decisión Build vs. Buy para infraestructura crítica. Construí sistema de 47 componentes.</p>
 
-            <p class="en"><strong>ILUNION Hotels (2+ years):</strong> Scaled direct channel for 32 properties. Diagnosis: confusing information hierarchy. Solution: WCAG AA system. Results: 3.36% → 6.5% CRO, 13% of total revenue.</p>
-            <p class="en"><strong>CEF EdTech (1 year):</strong> Built the company's first design system from scratch (47 components, 57 tokens). Detected that enterprise tool created friction → proposed Build vs. Buy strategy.</p>
+            <p class="en">4 years designing products in hospitality, EdTech and B2B consulting. Data-driven decision maker.</p>
+            <p class="en"><strong>Last 2 years: ILUNION Hotels.</strong> Transformed direct channel (32 properties) from chaos to scalable system. Conversion: 3.36% → 6.5%. WCAG AA design system from scratch.</p>
+            <p class="en"><strong>Before: CEF EdTech.</strong> Led research that drove Build vs. Buy decision. Built 47-component system from zero.</p>
           </div>
 
           <a href="#work" class="sobre-cta">
@@ -3051,17 +2894,17 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div class="block-label-line"></div>
     </div>
 
-    <!-- CASO 3: CEF — Plataforma académica EdTech -->
+    <!-- CASO 2: CEF — Plataforma académica EdTech -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num">01</div>
+          <div class="sc-num">02</div>
           <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
         </div>
         <h3 class="sc-title es">CEF Design System<br><em>y accesibilidad EdTech</em></h3>
         <h3 class="sc-title en">CEF Design System<br><em>and EdTech accessibility</em></h3>
-        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">Recreación 2026 con IA: Claude + Figma MCP · design tokens publicados en GitHub · vibe coding con Claude Code</span></p>
-        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em><br><span style="font-size:11px;color:rgba(255,255,255,0.32);font-weight:400;display:block;margin-top:8px;">2026 AI recreation: Claude + Figma MCP · design tokens published on GitHub · vibe coding with Claude Code</span></p>
+        <p class="sc-desc es">Años de deuda técnica sin sistema de diseño subyacente. Primer DS escalable desde cero: auditoría WCAG AA, arquitectura de componentes y estándar único para toda la plataforma. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: diseñadora única · DS + WCAG desde cero</em></p>
+        <p class="sc-desc en">Years of tech debt with no underlying design system. First scalable DS from scratch: WCAG AA audit, component architecture and a single standard across the whole platform. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: sole designer · DS + WCAG from scratch</em></p>
         <div class="sc-cta-row">
           <a href="cef-design-system.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="cef-design-system.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -3092,11 +2935,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="cef-design-system.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
-    <!-- CASO 2: ILUNION — Rediseño del componente de Ofertas -->
+    <!-- CASO 1: ILUNION — Rediseño del componente de Ofertas -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
-          <div class="sc-num">02</div>
+          <div class="sc-num">01</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels · <span class="es">Componente de Ofertas</span><span class="en">Offers component</span> ↗</a>
         </div>
         <h3 class="sc-title es">ILUNION CRO<br><em>de <span class="locked-metric">3,36% a 6,5%</span> de conversión</em></h3>
@@ -3133,6 +2976,85 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="ilunion-cro.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
+    <!-- GRÁFICO: ILUNION Conversión Timeline -->
+    <div class="sc-chart-container" style="padding: 60px 40px; background: rgba(155,77,202,0.05); border-radius: 12px; margin: 60px 0; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <h3 style="text-align: center; font-size: 18px; font-weight: 600; margin-bottom: 30px; color: var(--white);">
+        <span class="es">Conversión: Iteración semana a semana</span>
+        <span class="en">Conversion: Week-by-week iteration</span>
+      </h3>
+      <div style="position: relative; height: 300px; width: 100%;">
+        <canvas id="ilunionConversionChart"></canvas>
+      </div>
+      <p style="text-align: center; font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 20px; line-height: 1.6;">
+        <span class="es">Post-lanzamiento AEM: 5 semanas de iteración basadas en datos de comportamiento real. Mejoras: jerarquía de contenido, énfasis CTA, reorden de secciones.</span>
+        <span class="en">Post-AEM launch: 5 weeks of data-driven iteration. Improvements: content hierarchy, CTA emphasis, section reordering.</span>
+      </p>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('ilunionConversionChart');
+        if (ctx) {
+          new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['Baseline', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+              datasets: [{
+                label: 'Conversion %',
+                data: [3.36, 3.8, 4.2, 5.1, 6.0, 6.5],
+                borderColor: '#a78bfa',
+                backgroundColor: 'rgba(167, 139, 250, 0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 5,
+                pointBackgroundColor: '#a78bfa',
+                pointBorderColor: '#7c3aed',
+                pointBorderWidth: 2,
+                pointHoverRadius: 7
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              interaction: { mode: 'index', intersect: false },
+              plugins: {
+                legend: { 
+                  display: true,
+                  labels: { color: 'rgba(255,255,255,0.7)', font: { size: 12 } }
+                },
+                tooltip: {
+                  backgroundColor: 'rgba(0,0,0,0.8)',
+                  titleColor: '#a78bfa',
+                  bodyColor: 'rgba(255,255,255,0.9)',
+                  callbacks: {
+                    label: function(context) {
+                      return context.parsed.y.toFixed(2) + '%';
+                    }
+                  }
+                }
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 10,
+                  ticks: {
+                    color: 'rgba(255,255,255,0.5)',
+                    callback: function(value) { return value + '%'; }
+                  },
+                  grid: { color: 'rgba(255,255,255,0.1)' },
+                  title: { display: true, text: 'Conversion %', color: 'rgba(255,255,255,0.7)' }
+                },
+                x: {
+                  ticks: { color: 'rgba(255,255,255,0.5)' },
+                  grid: { color: 'rgba(255,255,255,0.05)' }
+                }
+              }
+            }
+          });
+        }
+      });
+    </script>
+
     <!-- BLOCK: CUSTOMER JOURNEY & PRODUCTO DIGITAL -->
     <div class="block-divider">
       <div class="block-label">
@@ -3142,6 +3064,47 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </span>
         <div class="block-label-line"></div>
       </div>
+    </div>
+
+    <!-- CASO 04: PAOLO BY DANNY'S JAZZ — Customer Journey & Producto Digital -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num">04</div>
+          <span class="sc-client-link" style="cursor:default;">Paolo by Danny's Jazz</span>
+        </div>
+        <h3 class="sc-title es">Paolo by Danny's Jazz<br><em>ecosistema digital de delivery</em></h3>
+        <h3 class="sc-title en">Paolo by Danny's Jazz<br><em>digital delivery ecosystem</em></h3>
+        <p class="sc-desc es">Ownership completo del producto digital de una cadena de pizzerías en Madrid: UX/UI, IA, frontend y activación de delivery. Ejecuté la escalabilidad de 1 a 5 locales sin rediseño (decisión de negocio, no mía). Learning case: buen producto ≠ buen modelo de negocio. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Product Designer · Frontend Developer · 2 años end-to-end</em></p>
+        <p class="sc-desc en">Full ownership of the digital product of a pizza chain in Madrid: UX/UI, IA, frontend and delivery activation. The ecosystem scaled from 1 to 5 locations without redesign. Built during the pandemic. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Product Designer · Frontend Developer · 2 years end-to-end</em></p>
+        <div class="sc-cta-row">
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en">Case Study</a>
+          <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://www.notion.so/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
+        </div>
+      </div>
+      <div class="sc-visual sc-visual-contain" aria-hidden="true">
+        <img loading="lazy" decoding="async" width="2672" height="1536" src="projects/04-paolo/assets/web4.webp" class="sc-img" alt="Paolo Pizzeria">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">×5</div>
+          <div class="sc-mname es">Locales sin rediseño</div>
+          <div class="sc-mname en">Locations without redesign</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">3</div>
+          <div class="sc-mname es">Journeys cubiertos en 1 producto</div>
+          <div class="sc-mname en">Journeys covered in 1 product</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">2 años</div>
+          <div class="sc-mname es">Ownership end-to-end</div>
+          <div class="sc-mname en">End-to-end ownership</div>
+        </div>
+      </div>
+      <a href="paolo-pizzeria.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
     <!-- MÁS PROYECTOS COLLAPSED SECTION -->
     <div style="margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.10);">
@@ -3260,6 +3223,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
                 <span class="process-expand en">See more</span>
               </summary>
               <div class="step-content">
+                <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 0;"><strong>Ejemplo CEF + Paolo:</strong> En CEF, construí 47 componentes WCAG AA dentro de una deuda técnica inicial. En Paolo, escalé el producto de 1 a 5 locales sin rediseño porque los flujos fueron diseñados considerando restricciones reales desde el inicio. La accesibilidad no es feature, es requisito de investigación.</p>
                 <p style="font-size: 13px; color: var(--text); line-height: 1.6; margin: 8px 0 0;"><strong>Metodología:</strong> Accessibility auditing (WCAG 2.1 AA), constraint mapping, viabilidad técnica. Diseñar dentro del stack real maximiza impacto y minimiza rework post-lanzamiento.</p>
               </div>
             </details>
@@ -3306,8 +3270,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </summary>
           <div class="about-accordion-body">
             <p class="about-narrative es" style="margin-top: -12px;">
+              He trabajado con restricciones reales: stacks de producción (AEM), limitaciones técnicas, timelines de dev, ecosistemas de marca en expansión (Paolo) y fricciones operativas en herramientas heredadas (Oracle ERP en We Are Actions). Eso me hace mejor diseñadora de producto, no peor.
             </p>
             <p class="about-narrative en" style="margin-top: -12px;">
+              I've worked with real constraints: production stacks (AEM), technical limitations, dev timelines, expanding brand systems (Paolo) and operational friction in legacy enterprise tools (Oracle ERP at We Are Actions). That makes me a better product designer, not a worse one.
             </p>
             <p class="about-narrative es" style="margin-top: -12px;">
               Todo empezó en consultoría, analizando flujos operativos de IT. Antes de diseñar interfaces, aprendí a desmontar procesos y encontrar dónde fallaban. Ese hábito sigue siendo lo primero que activo en cualquier proyecto nuevo.
@@ -3346,6 +3312,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
         <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Casos Cerrados</span><span class="en">Closed Cases</span></div>
         <div style="font-size: 28px; font-weight: 700; color: var(--white);">4</div>
+        <div style="font-size: 12px; color: var(--text-dim); margin-top: 4px;">ILUNION · CEF · Paolo · Oracle</div>
       </div>
       <div style="padding: 20px; border: 1px solid rgba(167,139,250,0.1); border-radius: 8px; background: rgba(167,139,250,0.03);">
         <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600;"><span class="es">Métodos Aplicados</span><span class="en">Research Methods</span></div>
@@ -3473,18 +3440,20 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <ul class="trust-logos">
         <li><a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="trust-logo">ILUNION<span>Hotels</span></a></li>
         <li><a href="https://www.cef.com/" target="_blank" rel="noopener" class="trust-logo">CEF<span>Centro de Estudios Financieros</span></a></li>
+        <li><a href="https://actions.es/" target="_blank" rel="noopener" class="trust-logo">WE ARE ACTIONS<span>Consulting · cliente: Paolo by Danny's Jazz</span></a></li>
       </ul>
     </div>
 
-    <!-- ==================== WCAG COMPLIANCE BADGE ==================== -->
-    <div style="margin-top: 48px; padding: 16px 20px; background: rgba(52, 211, 153, 0.08); border: 1px solid rgba(52, 211, 153, 0.25); border-radius: 8px; text-align: center;">
-      <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,0.7);">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><path d="M10 15l-3-3 1.414-1.414L10 12.172l5.586-5.586L17 8l-7 7z"/>
-        </svg>
-        <span class="es">Cumple WCAG 2.1 AA</span>
-        <span class="en">WCAG 2.1 AA Compliant</span>
-      </span>
+    <!-- ==================== WCAG COMPLIANCE ==================== -->
+    <div style="padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px;">
+      <p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 15px;">
+        <span class="es">Este portfolio cumple <strong>WCAG 2.1 AA</strong> · Focus visible, alt text, semantic HTML, color-independent information</span>
+        <span class="en">This portfolio meets <strong>WCAG 2.1 AA</strong> · Focus visible, alt text, semantic HTML, color-independent information</span>
+      </p>
+      <p style="font-size: 11px; color: rgba(255,255,255,0.5);">
+        <span class="es">Testeado con Lighthouse y axe DevTools</span>
+        <span class="en">Tested with Lighthouse and axe DevTools</span>
+      </p>
     </div>
 
     <!-- ==================== INLINE FOOTER ==================== -->
@@ -3941,6 +3910,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
     ],
     "cases": [
+      "Marta tiene <strong>5 casos en 4 sectores</strong>. El hilo común no es la industria — es el patrón: diagnostica el problema de negocio antes de tocar un pixel.<br><br>• <strong>CEF Design System</strong> — sistema de diseño EdTech desde cero: tokens, componentes con estados y WCAG 2.1 AA<br>• <strong>ILUNION CRO</strong> — conversión del canal directo de 3,36% a 6,5% con experimentos sobre datos<br>• <strong>ILUNION Booking Engine</strong> — rediseño del motor de reservas, de research a producción<br>• <strong>Paolo by Danny's Jazz</strong> — identidad + ecosistema digital de una cadena que creció de 1 a 5 locales <em>sin rediseño</em><br>• <strong>Oracle · Build vs. Buy</strong> — diagnóstico de fricción IT embebida en el equipo: la conclusión fue construir, no parchear<br><br>¿Profundizamos en alguno?"
     ],
     "remote": [
       "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
@@ -3966,6 +3936,9 @@ document.addEventListener('DOMContentLoaded', function() {
     ],
     "cro": [
       "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
+    ],
+    "paolo": [
+      "Paolo by Danny's Jazz es uno de los proyectos que mejor refleja el <strong>ownership real de Marta</strong>. No fue un encargo de diseño — fue un problema de negocio entero: una cadena de pizzerías artesanas sin canal digital en plena pandemia, sin web, sin delivery, sin presencia en Google.<br><br>Diseñó y construyó desde cero: identidad visual completa, web (Adobe XD → WordPress + Elementor), los 3 customer journeys del negocio (delivery, visita al local, reserva), ecosistema de delivery activo (Glovo, Uber Eats, JustEat), cartas QR, Google My Business y un ciclo mensual de analítica con Clarity + GA4 + Metricool.<br><br>Resultado: el producto escaló de 1 a 5 locales en 2 años <strong>sin necesidad de rediseño</strong>. +32% en llamadas directas desde móvil el primer mes. Cuando el proyecto terminó, el ecosistema seguía funcionando solo. Eso es diseño que funciona."
     ],
     "oracle": [
       "El caso Oracle (Build vs. Buy) muestra a Marta en modo <strong>diagnosticadora estratégica, no ejecutora de interfaces.</strong><br><br>We Are Actions llevaba años gestionando incidencias IT con Oracle. El responsable de sistemas llegó a dirección con un Excel con datos reales de fricción. Marta estaba <em>embebida en el equipo IT</em>, así que hizo discovery contextual desde dentro: vio la fricción ocurrir en tiempo real, no en una sesión de research artificial.<br><br>Su diagnóstico: Oracle no estaba mal diseñado — era simplemente la herramienta equivocada para <em>sus</em> flujos. La recomendación fue construir una herramienta interna en lugar de seguir parcheando una plataforma genérica.<br><br>El caso de estudio ya está publicado y disponible en este portafolio. Representa exactamente el tipo de trabajo que más le interesa: <strong>identificar el problema real antes de proponer la solución.</strong>"
@@ -4012,6 +3985,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "Daily stack: <strong>Figma</strong> (design systems, variables, components), <strong>Adobe Analytics + Hotjar</strong> (behaviour data), <strong>Notion & Jira</strong> (product management), Bootstrap and close engineering collaboration."
     ],
     "cases": [
+      "Case studies with real impact:<br><br>• <strong>CEF Design System</strong> — EdTech design system from zero: tokens, components with states & WCAG 2.1 AA<br>• <strong>ILUNION CRO</strong> — direct channel conversion from 3.36% to 6.5% with data-driven experiments<br>• <strong>ILUNION Booking Engine</strong> — hotel booking engine redesign from research to production<br>• <strong>Paolo by Danny's Jazz</strong> — identity + full digital ecosystem for a chain that grew from 1 to 5 locations <em>without a redesign</em><br>• <strong>Oracle · Build vs. Buy</strong> — IT friction diagnosis embedded in the team: the call was to build, not patch<br><br>Want details on any of them?"
     ],
     "remote": [
       "Marta is <strong>open to fully remote and hybrid.</strong> Based in Madrid, experienced with distributed teams and async communication."
@@ -4037,6 +4011,9 @@ document.addEventListener('DOMContentLoaded', function() {
     ],
     "cro": [
       "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
+    ],
+    "paolo": [
+      "Paolo by Danny's Jazz is one of the projects that best shows Marta's <strong>real ownership mindset</strong>. It wasn't a design brief — it was an entire business problem: an artisan pizza chain in the middle of a pandemic with no website, no delivery, no Google presence, nothing.<br><br>She designed and built from scratch: complete visual identity, the full website (Adobe XD → WordPress + Elementor), 3 customer journeys (delivery, in-store visit, booking), active delivery ecosystem (Glovo, Uber Eats, JustEat), QR menus, Google My Business, and a monthly analytics cycle with Clarity + GA4 + Metricool.<br><br>Result: the product scaled from 1 to 5 locations in 2 years <strong>without a redesign</strong>. +32% in direct mobile calls in the first month. When the project ended, the ecosystem kept running on its own. That's what good design looks like."
     ],
     "oracle": [
       "The Oracle case (Build vs. Buy) shows Marta in <strong>strategic diagnostician mode — not interface executor.</strong><br><br>We Are Actions had been managing IT incidents with Oracle for years. The systems manager came to leadership with real-data showing friction costs. Marta was <em>embedded in the IT team</em>, so she did contextual discovery from the inside: she saw friction happening in real time, not in an artificial research session."
@@ -4180,6 +4157,7 @@ document.addEventListener('DOMContentLoaded', function() {
   },
   {
     "keys": [
+      "paolo",
       "pizzería",
       "pizzeria",
       "pizzer",
@@ -4191,6 +4169,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "wordpress",
       "elementor"
     ],
+    "intent": "paolo"
   },
   {
     "keys": [
@@ -4681,7 +4660,7 @@ document.addEventListener('DOMContentLoaded', function() {
   border: 1px solid rgba(var(--accent-rgb), 0.30);
   border-radius: 16px;
   padding: 11px 14px;
-  font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500; line-height: 1.4;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; line-height: 1.4;
   color: rgba(255, 255, 255, 0.92);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
   cursor: pointer;
@@ -4751,7 +4730,7 @@ document.addEventListener('DOMContentLoaded', function() {
   bubble.className = 'chat-nudge-bubble';
   bubble.setAttribute('role', 'button');
   bubble.setAttribute('tabindex', '0');
-  bubble.innerHTML = '<span><span class="es">¿Pregunta rápida?</span><span class="en">Quick question?</span></span>';
+  bubble.innerHTML = '<span><span class="es">¿Hablamos?</span><span class="en">Let\'s talk?</span></span>';
   function openChat() { if (typeof window.chatToggle === 'function') window.chatToggle(); }
   bubble.addEventListener('click', openChat);
   bubble.addEventListener('keydown', function (e) {
@@ -4833,7 +4812,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-y: auto;
   padding: 24px;
 }
@@ -4987,10 +4966,6 @@ body.visitor-unauthorized .locked-metric:hover::after {
 @keyframes cardFadeIn {
   from { opacity: 0; transform: translateY(20px) scale(0.96); }
   to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 .lock-logo {
   height: 52px;
