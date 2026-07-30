@@ -1372,6 +1372,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   html:not(.lang-en) .mobile-menu-cta.en { display: none !important; }
   html.lang-en .mobile-menu-cta.es { display: none !important; }
   .mobile-menu-lang { display: none !important; }
+  .lang-toggle { display: none !important; }
   .hamburger { display: flex; }
 
   /* Hero */
@@ -2480,6 +2481,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta nav-email en">Let's talk  →</a>
     <a href="assets/cv-marta-ats-es.pdf" download="" class="nav-cta nav-cv es">Descargar CV  ↗</a>
     <a href="assets/cv-marta-ats-en.pdf" download="" class="nav-cta nav-cv en">Download CV  ↗</a>
+    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Toggle language">EN</button>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
         <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
@@ -2507,6 +2509,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   <a href="mailto:mmoralesgr93@gmail.com" class="mobile-menu-cta mobile-menu-email en">Let's talk  →</a>
   <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-cta es">Descargar CV  ↗</a>
   <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-cta en">Download CV  ↗</a>
+  <button class="mobile-menu-lang" id="mobileLangToggle" onclick="toggleLanguage()">EN</button>
 </div>
 
 <!-- ==================== HERO ==================== -->

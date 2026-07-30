@@ -348,7 +348,7 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   document.documentElement.classList.toggle('lang-en', lang === 'en');
 
-  document.querySelectorAll('.lang-toggle').forEach(btn => {
+  document.querySelectorAll('.lang-toggle, .mobile-menu-lang').forEach(btn => {
     btn.innerText = lang === 'es' ? 'EN' : 'ES';
   });
   
