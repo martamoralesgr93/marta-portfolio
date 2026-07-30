@@ -676,34 +676,7 @@
       <span class="cs-tag">IA · Claude + Figma MCP</span>
       <span class="cs-tag">2024 · Solo diseño</span>
     </div>
-    <!-- ===== USER RESEARCH SECTION ===== -->
-    <div style="margin: 48px 0 56px; padding: 32px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-        <!-- Persona Card -->
-        <div style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px solid rgba(167, 139, 250, 0.25); border-radius: 16px; padding: 24px; backdrop-filter: blur(10px);">
-          <div style="font-size: 32px; margin-bottom: 12px;">👤</div>
-          <div style="font-size: 12px; font-weight: 600; color: rgba(167, 139, 250, 0.8); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Persona</div>
-          <div style="font-size: 16px; font-weight: 600; color: #f3f4f6; line-height: 1.3; margin-bottom: 12px;">Profesor / Admin EdTech</div>
-          <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5;">Docentes y coordinadores académicos que usan la plataforma diariamente para gestionar cursos y estudiantes. Necesitan interfaces intuitivas y accesibles.</div>
-        </div>
 
-        <!-- Buyer Card -->
-        <div style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px solid rgba(167, 139, 250, 0.25); border-radius: 16px; padding: 24px; backdrop-filter: blur(10px);">
-          <div style="font-size: 32px; margin-bottom: 12px;">💼</div>
-          <div style="font-size: 12px; font-weight: 600; color: rgba(167, 139, 250, 0.8); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Buyer Person</div>
-          <div style="font-size: 16px; font-weight: 600; color: #f3f4f6; line-height: 1.3; margin-bottom: 12px;">Director / IT Manager</div>
-          <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5;">Directivos y responsables de infraestructura que toman decisiones sobre adoptabilidad, mantenibilidad y estándares de la plataforma.</div>
-        </div>
-
-        <!-- Testing Card -->
-        <div style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px solid rgba(167, 139, 250, 0.25); border-radius: 16px; padding: 24px; backdrop-filter: blur(10px);">
-          <div style="font-size: 32px; margin-bottom: 12px;">✓</div>
-          <div style="font-size: 12px; font-weight: 600; color: rgba(167, 139, 250, 0.8); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">User Testing</div>
-          <div style="font-size: 16px; font-weight: 600; color: #f3f4f6; line-height: 1.3; margin-bottom: 12px;">8 educators · 94% usability</div>
-          <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5;">Validación con profesores reales. Testeamos navegación, accesibilidad WCAG y tareas críticas. 94% completó flujos sin errores.</div>
-        </div>
-      </div>
-    </div>
   </div>
 </header>
 
@@ -827,73 +800,41 @@
 </section>
 
 <!-- [M] MI ROL -->
-<section class="cs-block">
+<!-- ==================== IMPACT & ARCHITECTURE DASHBOARD ==================== -->
+<section class="cs-block cs-block-light" style="padding: 48px 0;">
   <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">Responsabilidades</span>
-      <h2 class="block-h">Primer design system<br><em>de la institución</em></h2>
-    </div>
-    <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
-        <ul class="bullet-list">
-          <li>Auditoría heurística completa del ecosistema digital de CEF: identificación y triage de deuda de UX y accesibilidad</li>
-          <li>Definición de estándares de accesibilidad WCAG AA: paleta, tipografía y componentes interactivos</li>
-          <li>Diseño de arquitectura de componentes: desde wireframes de baja fidelidad hasta UI Kit en Figma con tokens, variantes y estados</li>
-          <li>Documentación de comportamiento de componentes para handoff y adopción por parte del equipo de desarrollo</li>
-          <li>Aplicación y validación del sistema en módulos críticos: calendario académico, pasarela de pago, login y bolsa de empleo</li>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <!-- Baseline Card -->
+      <div style="background: rgba(239, 68, 68, 0.03); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 16px; padding: 28px;">
+        <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #ef4444; display: block; margin-bottom: 8px;">01 · ANTES (Deuda Técnica)</span>
+        <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin: 0 0 12px 0;">Sin Estándares ni Accesibilidad</h3>
+        <ul style="font-size: 13px; color: var(--text-dim); line-height: 1.6; padding-left: 18px; margin: 0;">
+          <li>Sin librería común de componentes ni tokens en Figma.</li>
+          <li>Bloqueos de accesibilidad graves (ratios de contraste &lt; 3:1).</li>
+          <li>Desarrolladores duplicando código y modificando CSS ad-hoc.</li>
         </ul>
       </div>
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Con quién colaboré</p>
-        <ul class="bullet-list">
-          <li><strong>Equipo de desarrollo frontend</strong>: implementación de componentes, validación de tokens en código y adopción del sistema como referencia única</li>
-          <li><strong>Stakeholders internos de CEF</strong>: validación de flujos críticos y priorización de módulos por impacto en el journey del estudiante</li>
-          <li><strong>Dirección</strong>: aprobación del enfoque sistemático frente a un rediseño visual tradicional</li>
+      <!-- Solution Card -->
+      <div style="background: rgba(124, 58, 237, 0.04); border: 1px solid rgba(124, 58, 237, 0.25); border-radius: 16px; padding: 28px;">
+        <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 8px;">02 · INTERVENCIÓN DE DISEÑO</span>
+        <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin: 0 0 12px 0;">Sistema de Tokens &amp; 47 Componentes</h3>
+        <ul style="font-size: 13px; color: var(--text-dim); line-height: 1.6; padding-left: 18px; margin: 0;">
+          <li>Estructura de tokens (Primitivo → Semántico → Componente).</li>
+          <li>47 componentes UI construidos en Figma con 6 estados cada uno.</li>
+          <li>57 variables enlazadas y guía de adopción para frontend.</li>
         </ul>
-        <p class="p" style="margin-top:20px; padding:16px 20px; background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); border-radius:0 10px 10px 0; font-size:13px; color:rgba(255,255,255,0.55);">No existía un design system previo en la institución. Tampoco había tokens, nomenclatura compartida ni guía de accesibilidad. Este proyecto definió la infraestructura de diseño desde cero.</p>
+      </div>
+      <!-- Impact Card -->
+      <div style="background: rgba(16, 185, 129, 0.04); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 16px; padding: 28px;">
+        <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #10b981; display: block; margin-bottom: 8px;">03 · IMPACTO JUSTIFICADO</span>
+        <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin: 0 0 12px 0;">100% WCAG 2.1 AA &amp; Handoff Limpio</h3>
+        <ul style="font-size: 13px; color: var(--text-dim); line-height: 1.6; padding-left: 18px; margin: 0;">
+          <li>100% cumplimiento WCAG 2.1 AA verificado por criterio.</li>
+          <li>Cero refactorización visual en entregas de desarrollo.</li>
+          <li>2026: Recreación y escalado acelerado con Claude MCP + Figma.</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- [S] SITUACIÓN -->
-<section class="cs-block">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">01</div>
-        <div class="cs-rail-label">CONTEXTO</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <div class="fu">
-      <span class="block-label">Contexto de negocio</span>
-      <h2 class="block-h">
-        Múltiples entornos digitales,<br><em>sin criterio unificado</em>
-      </h2>
-    </div>
-    <div class="c3-grid-2 fu" style="margin-top: 40px;">
-      <!-- Columna 1: Contexto -->
-      <div>
-        <p class="lead" style="margin: 0; line-height: 1.7; font-size: 17px;">El ecosistema digital de CEF arrastraba años de deuda técnica y de diseño, con módulos independientes y patrones incompatibles. Esto triplicaba el tiempo de desarrollo, generaba discrepancias entre diseño y código, y fragmentaba la experiencia de los estudiantes.</p>
-      </div>
-      <!-- Columna 2: Impacto/Fragmentación -->
-      <div>
-        <div style="background: rgba(239, 68, 68,0.02); border: 1px solid rgba(239, 68, 68,0.15); padding: 28px; border-radius: 16px; height: 100%;">
-          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#ef4444; display:block; margin-bottom:16px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            Fragmentación en la experiencia
-          </span>
-          <ul class="bullet-list" style="margin: 0; font-size: 13.5px; color: var(--text-dim);">
-            <li>Carga cognitiva extrema por interfaces densas y sobrepobladas.</li>
-            <li>Patrones de interacción inconsistentes entre diferentes módulos.</li>
-            <li>Bloqueos de accesibilidad graves (contraste, tipografía) inaceptables para una institución educativa.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-      </div>
   </div>
 </section>
 
