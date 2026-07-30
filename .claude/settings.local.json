@@ -63,7 +63,10 @@
       "Bash(sed -i 's/class=\"btn btn btn--primary\"/class=\"btn-primary-hero\"/g' booking-engine.html ilunion-cro.html it-ops-oracle.html paolo-pizzeria.html)",
       "Bash(sed -i 's/class=\"btn btn btn--secondary\"/class=\"btn-secondary\"/g' booking-engine.html ilunion-cro.html it-ops-oracle.html paolo-pizzeria.html)",
       "Bash(sed -i 's/class=\"dash-widget\"/class=\"dash-widget card-elevated\"/g' cef-design-system.html booking-engine.html ilunion-cro.html it-ops-oracle.html paolo-pizzeria.html)",
-      "Bash(sed -i 's/class=\"quick-summary-section\"/class=\"quick-summary-section\" style=\"position: relative; z-index: 1;\"/g' ilunion-cro.html it-ops-oracle.html)"
+      "Bash(sed -i 's/class=\"quick-summary-section\"/class=\"quick-summary-section\" style=\"position: relative; z-index: 1;\"/g' ilunion-cro.html it-ops-oracle.html)",
+      "Bash(npm install *)",
+      "Bash(vercel --prod)",
+      "Bash(vercel deploy *)"
     ]
   }
 }
