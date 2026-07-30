@@ -612,25 +612,26 @@
 
 // ─── CTA BUTTONS — Premium Interactive Experience ──────────────────────────
 .btn-primary-hero {
-  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #f97316 100%);
-  color: white;
-  font-size: var(--font-base);
-  font-weight: 700;
-  padding: 14px 36px;
-  border-radius: var(--radius-full);
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #f97316 100%) !important;
+  color: white !important;
+  font-size: var(--font-base) !important;
+  font-weight: 700 !important;
+  padding: 14px 36px !important;
+  border-radius: var(--radius-full) !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
   box-shadow:
     0 4px 12px rgba(167, 139, 250, 0.25),
-    0 0 24px rgba(167, 139, 250, 0.15);
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  letter-spacing: -0.01em;
+    0 0 24px rgba(167, 139, 250, 0.15) !important;
+  transition: all var(--transition-base) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  letter-spacing: -0.01em !important;
+  opacity: 1 !important;
 
   &::before {
     content: '';
@@ -680,18 +681,20 @@
 }
 
 .btn-secondary {
-  background: rgba(167, 139, 250, 0.1);
-  color: var(--color-primary);
-  font-size: var(--font-base);
-  font-weight: 600;
-  padding: 12px 28px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(167, 139, 250, 0.3);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all var(--transition-base);
+  background: rgba(167, 139, 250, 0.1) !important;
+  color: var(--color-primary) !important;
+  font-size: var(--font-base) !important;
+  font-weight: 600 !important;
+  padding: 12px 28px !important;
+  border-radius: var(--radius-full) !important;
+  border: 1px solid rgba(167, 139, 250, 0.3) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all var(--transition-base) !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
 
   &:hover {
     background: rgba(167, 139, 250, 0.15);
