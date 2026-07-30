@@ -623,9 +623,7 @@
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  box-shadow:
-    0 4px 12px rgba(167, 139, 250, 0.25),
-    0 0 24px rgba(167, 139, 250, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.25), 0 0 24px rgba(167, 139, 250, 0.15) !important;
   transition: all var(--transition-base) !important;
   position: relative !important;
   overflow: hidden !important;
@@ -656,17 +654,15 @@
   }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow:
-      0 8px 20px rgba(167, 139, 250, 0.35),
-      0 0 40px rgba(167, 139, 250, 0.2);
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(167, 139, 250, 0.35), 0 0 40px rgba(167, 139, 250, 0.2) !important;
 
     &::before {
-      opacity: 1;
+      opacity: 1 !important;
     }
 
     &::after {
-      transform: translateX(100%);
+      transform: translateX(100%) !important;
     }
   }
 
