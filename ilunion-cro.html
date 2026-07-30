@@ -176,14 +176,14 @@
     .fn-pct { font-size: 12px; font-weight: 700; color: var(--white); width: 40px; text-align: right; flex-shrink: 0; }
     .fn-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0 8px; }
 
-    .insight-list { display: flex; flex-direction: column; gap: 16px; }
-    .insight-row { display: flex; gap: 12px; align-items: flex-start; }
-    .insight-dot {
+    .insight { display: flex; flex-direction: column; gap: 16px; }
+    .insight__item { display: flex; gap: 12px; align-items: flex-start; }
+    .insight__dot {
       width: 5px; height: 5px; border-radius: 50%;
       background: var(--accent); flex-shrink: 0; margin-top: 8px;
     }
-    .insight-txt { font-size: 13px; color: var(--text); line-height: 1.6; }
-    .insight-txt strong { color: var(--white); }
+    .insight__text { font-size: 13px; color: var(--text); line-height: 1.6; }
+    .insight__text strong { color: var(--white); }
 
     /* ─── 04 DIAGNÓSTICO → DECISIONES ────────────── */
     .h-timeline {
@@ -730,8 +730,8 @@
         </div>
 
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="btn btn-primary" style="background: #a78bfa; color: #000; font-weight: 700; padding: 12px 24px; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Ver Web en Vivo ↗</a>
-          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="btn btn-secondary" style="border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 12px 24px; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Proceso en Notion ↗</a>
+          <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="btn btn btn--primary" style="background: #a78bfa; color: #000; font-weight: 700; padding: 12px 24px; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Ver Web en Vivo ↗</a>
+          <a href="https://www.notion.so/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener" class="btn btn btn--secondary" style="border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 12px 24px; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Proceso en Notion ↗</a>
         </div>
       </div>
     </div>
@@ -994,22 +994,22 @@
 
       <div class="research-panel fu">
         <p class="rp-title">Insights Principales · Clarity + Analytics</p>
-        <div class="insight-list">
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt">Solo el <strong>15% de los usuarios superaba el bloque de ofertas</strong> en la home.</span>
+        <div class="insight">
+          <div class="insight__item">
+            <span class="insight__dot"></span>
+            <span class="insight__text">Solo el <strong>15% de los usuarios superaba el bloque de ofertas</strong> en la home.</span>
           </div>
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt">El componente requería <strong>mayor interacción vertical</strong> que otros modelos referentes para visualizar las opciones de reserva.</span>
+          <div class="insight__item">
+            <span class="insight__dot"></span>
+            <span class="insight__text">El componente requería <strong>mayor interacción vertical</strong> que otros modelos referentes para visualizar las opciones de reserva.</span>
           </div>
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt">El programa de fidelización <strong>ÚNICOS presentaba gran relevancia visual</strong> antes de mostrar las opciones directas de reserva.</span>
+          <div class="insight__item">
+            <span class="insight__dot"></span>
+            <span class="insight__text">El programa de fidelización <strong>ÚNICOS presentaba gran relevancia visual</strong> antes de mostrar las opciones directas de reserva.</span>
           </div>
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt">Benchmarking contra cadenas hoteleras y portales de distribución referentes: precio, disponibilidad y CTA en primer fold.</span>
+          <div class="insight__item">
+            <span class="insight__dot"></span>
+            <span class="insight__text">Benchmarking contra cadenas hoteleras y portales de distribución referentes: precio, disponibilidad y CTA en primer fold.</span>
           </div>
         </div>
       </div>
