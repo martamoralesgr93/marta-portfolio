@@ -2508,28 +2508,55 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .sc-num { color: #a78bfa !important; opacity: 1 !important; font-weight: 700 !important; }
 .sc-client-link { color: #e4e4e7 !important; }
 
-/* Enhanced Mobile Call CTA Button */
+/* Enhanced Mobile Call CTA Button - Guaranteed single-line fit */
 @media (max-width: 768px) {
   .nav-contact {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 8px 16px !important;
-    font-size: 13px !important;
+    padding: 6px 12px !important;
+    font-size: 11.5px !important;
     font-weight: 600 !important;
     border-radius: 100px !important;
     background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%) !important;
     color: #ffffff !important;
     box-shadow: 0 2px 12px rgba(124, 58, 237, 0.4) !important;
-    letter-spacing: 0.02em !important;
+    letter-spacing: 0.01em !important;
     white-space: nowrap !important;
-    min-height: 38px !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    line-height: 1 !important;
     text-decoration: none !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
   }
   .nav-contact:active {
     transform: scale(0.96) !important;
   }
+}
+
+/* Insight Cards Framed Box Styling (Production Vercel Match) */
+.insight-card {
+  padding: 28px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  transition: border-color 0.2s ease, background 0.2s ease !important;
+}
+.insight-card:hover {
+  border-color: rgba(167, 139, 250, 0.25) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+.insight-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.3 !important;
+  margin-bottom: 8px !important;
+}
+.insight-desc {
+  font-size: 13.5px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  line-height: 1.6 !important;
 }
 
 /* Respect prefers-reduced-motion */
@@ -2834,7 +2861,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     </div>
   </div>
 
-  <!-- ===== PRINCIPIOS DE TRABAJO (SIN REPETICIONES) ===== -->
+  <!-- ===== PRINCIPIOS DE TRABAJO (MATCH PRODUCTION VERCEL) ===== -->
   <div class="wrap" style="margin-top: 48px;">
     <div class="insights-container">
 
@@ -2848,12 +2875,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <div class="insight-content">
           <h3 class="insight-title">
-            <span class="es">Diagnóstico basado en datos</span>
-            <span class="en">Data-driven diagnosis</span>
+            <span class="es">Diagnosis<br>Before Solution</span>
+            <span class="en">Diagnosis<br>Before Solution</span>
           </h3>
           <p class="insight-desc">
-            <span class="es">Comportamiento y telemetría real antes de abrir Figma.</span>
-            <span class="en">Real behavior data and telemetry before opening Figma.</span>
+            <span class="es">El brief nunca es el problema real. Los datos revelan la fricción invisible.</span>
+            <span class="en">The brief is never the real problem. Data reveals invisible friction.</span>
           </p>
         </div>
       </div>
@@ -2868,12 +2895,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <div class="insight-content">
           <h3 class="insight-title">
-            <span class="es">Propuesta argumentada</span>
-            <span class="en">Data-backed proposal</span>
+            <span class="es">Hidden<br>Constraints</span>
+            <span class="en">Hidden<br>Constraints</span>
           </h3>
           <p class="insight-desc">
-            <span class="es">Decisión única justificada en restricciones reales de negocio.</span>
-            <span class="en">Single decision justified by real business constraints.</span>
+            <span class="es">Identificadas en 3 de 4 proyectos. Restricciones no obvias definen decisiones.</span>
+            <span class="en">Found in 3 of 4 projects. Non-obvious constraints drive decisions.</span>
           </p>
         </div>
       </div>
@@ -2888,12 +2915,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <div class="insight-content">
           <h3 class="insight-title">
-            <span class="es">Sistemas que escalan</span>
-            <span class="en">Scalable systems</span>
+            <span class="es">Accessibility<br>as Signal</span>
+            <span class="en">Accessibility<br>as Signal</span>
           </h3>
           <p class="insight-desc">
-            <span class="es">Componentes modulares y accesibilidad WCAG AA sin retrabajo.</span>
-            <span class="en">Modular components and WCAG AA accessibility with zero rework.</span>
+            <span class="es">WCAG detecta issues de UX no visibles. No es compliance, es research.</span>
+            <span class="en">WCAG detects invisible UX issues. Not compliance, it's research.</span>
           </p>
         </div>
       </div>
