@@ -5320,16 +5320,16 @@ a:hover {
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.15) !important;
 }
 .cs-section[id*=context]::before {
-  content: "STAR // SITUATION" !important;
+  content: "CONTEXTO" !important;
 }
 .cs-section[id*=problem]::before {
-  content: "STAR // TASK" !important;
+  content: "PROBLEMA Y OBJETIVOS" !important;
 }
 .cs-section[id*=research]::before, .cs-section[id*=hypothesis]::before, .cs-section[id*=design]::before, .cs-section[id*=responsive]::before {
-  content: "STAR // ACTION" !important;
+  content: "DIAGNÓSTICO Y EJECUCIÓN" !important;
 }
 .cs-section[id*=results]::before, .cs-section[id*=business-impact]::before {
-  content: "STAR // RESULT" !important;
+  content: "RESULTADOS E IMPACTO" !important;
 }
 
 /* ==========================================================================
