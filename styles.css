@@ -46,7 +46,7 @@
 }
 
 body {
-  font-family: "Satoshi", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family, 'DM Sans', 'Inter', -apple-system, sans-serif);
   margin: 0;
   background: transparent; /* Transparent base to reveal moving aurora background */
   color: var(--text);

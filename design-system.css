@@ -5,16 +5,24 @@
 
 /* ── 1. DESIGN TOKENS ── */
 :root {
-  /* Color Palette */
-  --white: #ffffff;
-  --black: #000000;
+  /* Audited Core Tokens & Color Palette */
+  --color-primary: #9B4DCA;          /* Surface, borders, accent glows */
+  --color-primary-text: #7B3F9D;     /* 6.34:1 contrast ratio on #F5F5F5 (WCAG 2.1 AA) */
+  --color-secondary: #1A1A1A;        /* Dark text & backgrounds (15.96:1 contrast) */
+  --color-surface: #F5F5F5;          /* Light mode surface */
+  --color-muted: #666666;            /* Muted text (5.27:1 contrast) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --white: var(--color-white);
+  --black: var(--color-black);
   --surface: #000000;
   --border: rgba(255, 255, 255, 0.07);
   --text: rgba(255, 255, 255, 0.62);
   --text-dim: rgba(255, 255, 255, 0.50);
   --text-bright: rgba(255, 255, 255, 0.88);
 
-  /* Unified Global Brand Accent (alineado con theme.scss del index) */
+  /* Unified Brand Accent */
   --accent: #a78bfa;
   --accent-glow: rgba(167, 139, 250, 0.12);
   --accent-border: rgba(167, 139, 250, 0.22);
@@ -22,13 +30,22 @@
   --accent-strong: #7c3aed;
   --accent-secondary: #f97316;
   --accent-secondary-rgb: 249, 115, 22;
+  --purple: var(--color-primary-text);
   --cta-bg: linear-gradient(135deg, var(--accent-strong) 0%, var(--accent-secondary) 100%);
 
   /* Typography */
-  --font-family: 'Inter', sans-serif;
+  --font-family: 'DM Sans', 'Inter', -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
 
-  /* Spacing Scale (8px Grid System) */
+  /* Typography Scale */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+  --font-size-xxl: 40px;
+
+  /* Spacing Scale */
   --space-xxs: 4px;
   --space-xs: 8px;
   --space-sm: 16px;
@@ -38,10 +55,15 @@
   --space-xxl: 120px;
 
   /* Border Radii */
+  --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --radius-pill: 100px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
