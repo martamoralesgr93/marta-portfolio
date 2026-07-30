@@ -1,0 +1,50 @@
+// ──────────────────────────────────────────────────────────────
+// ATOMIC DESIGN SYSTEM FOR PORTFOLIO CASE STUDIES
+// ──────────────────────────────────────────────────────────────
+// Tokens → Atoms → Molecules → Organisms
+
+// TOKENS (already imported in main styles.scss via tokens/)
+
+// ─── ATOMS ───────────────────────────────────────────────────
+@import '../atoms/button';
+@import '../atoms/badge';
+@import '../atoms/label';
+
+// ─── MOLECULES ───────────────────────────────────────────────
+@import '../molecules/card';
+@import '../molecules/grid';
+@import '../molecules/metric';
+
+// ─── ORGANISMS ───────────────────────────────────────────────
+@import '../organisms/case-summary';
+@import '../organisms/evidence';
+@import '../organisms/insight';
+@import '../organisms/meta-bar';
+
+// ──────────────────────────────────────────────────────────────
+// MIGRATION GUIDE:
+// ──────────────────────────────────────────────────────────────
+// Replace inline styles in case study HTML with atomic classes:
+//
+// Buttons:
+//   → .btn .btn--primary .btn--secondary .btn--ghost
+//
+// Cards:
+//   → .card .card--glass .card--accent .card__header .card__body
+//
+// Grids:
+//   → .grid .grid--2col .grid--3col .grid--4col
+//
+// Case summaries:
+//   → .case-summary .case-summary__col .case-summary__label
+//
+// Evidence (before/after):
+//   → .evidence .evidence__item .evidence__header .evidence__image
+//
+// Insights:
+//   → .insight .insight__text
+//
+// Meta bars:
+//   → .meta-bar .meta-bar__item .meta-bar__label .meta-bar__value
+//
+// ──────────────────────────────────────────────────────────────

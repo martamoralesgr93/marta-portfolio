@@ -1,0 +1,98 @@
+// Case Summary organism — unified quick summary component
+.case-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: var(--space-2xl);
+}
+
+.case-summary__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.case-summary__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  svg {
+    display: inline-block !important;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 13px !important;
+    height: 13px !important;
+    padding: 6px;
+    box-sizing: content-box;
+    background: var(--cta-surface);
+    border: 1px solid var(--cta-border);
+    border-radius: 8px;
+  }
+}
+
+.case-summary__value {
+  font-size: var(--text-md);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--line-height-relaxed);
+}
+
+.case-summary__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  li {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: var(--line-height-normal);
+    padding-left: var(--space-md);
+    position: relative;
+
+    &::before {
+      content: "—";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.case-summary__result-box {
+  background: var(--cta-surface);
+  border: 1px solid var(--cta-border);
+  border-radius: 10px;
+  padding: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.case-summary__result {
+  font-size: var(--text-md);
+  font-weight: var(--font-semibold);
+  color: white;
+  line-height: var(--line-height-normal);
+}
+
+@media (max-width: 1024px) {
+  .case-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .case-summary {
+    grid-template-columns: 1fr;
+    padding: var(--space-xl);
+  }
+}

@@ -1,7 +1,10 @@
 @import "theme";
 @import "sass/abstracts/tokens";
+@import "sass/tokens/spacing";
+@import "sass/tokens/typography";
 @import "sass/base/base";
 @import "sass/layout/layout";
 @import "sass/components/components";
+@import "sass/components/atomic-system";
 @import "sass/pages/pages";
 @import "sass/utilities/utilities";

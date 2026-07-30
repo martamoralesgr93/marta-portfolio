@@ -1,0 +1,27 @@
+// Label atoms — typography for labels and captions
+.label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.label--secondary {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.label--muted {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: var(--font-semibold);
+}
+
+.eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}

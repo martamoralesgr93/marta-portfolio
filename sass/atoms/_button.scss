@@ -1,0 +1,54 @@
+// Button atoms — base button styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-family: var(--font-sans);
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.btn--primary {
+  background: var(--cta-bg);
+  color: white;
+  border-color: var(--accent-strong);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(124, 58, 237, 0.3);
+  }
+}
+
+.btn--secondary {
+  background: var(--cta-surface);
+  color: var(--accent);
+  border-color: var(--cta-border);
+
+  &:hover {
+    background: var(--cta-surface-hover);
+    border-color: var(--cta-border-strong);
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: transparent;
+
+  &:hover {
+    background: var(--cta-surface);
+  }
+}

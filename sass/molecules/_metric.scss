@@ -1,0 +1,42 @@
+// Metric molecules — KPI and data display
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.metric__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.metric__value {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  font-family: var(--font-serif);
+  color: var(--accent);
+  line-height: 1;
+}
+
+.metric__unit {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.metric--lg {
+  .metric__value {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+}
+
+.metric--sm {
+  text-align: left;
+
+  .metric__value {
+    font-size: var(--text-2xl);
+  }
+}

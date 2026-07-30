@@ -1,1 +1,20 @@
-// Spacing tokens placeholder for the Sass architecture migration.
+// Spacing scale — 8px base unit
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-2xl: 48px;
+$space-3xl: 64px;
+$space-4xl: 96px;
+
+:root {
+  --space-xs: #{$space-xs};
+  --space-sm: #{$space-sm};
+  --space-md: #{$space-md};
+  --space-lg: #{$space-lg};
+  --space-xl: #{$space-xl};
+  --space-2xl: #{$space-2xl};
+  --space-3xl: #{$space-3xl};
+  --space-4xl: #{$space-4xl};
+}

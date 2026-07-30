@@ -1,0 +1,36 @@
+// Insight organism — highlighted insight/quote component
+.insight {
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-2xl);
+  margin: var(--space-2xl) 0;
+  max-width: 680px;
+}
+
+.insight__text {
+  font-size: var(--text-xl);
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--line-height-relaxed);
+  font-weight: var(--font-light);
+  margin: 0;
+}
+
+.insight--secondary {
+  border-left-color: var(--accent-secondary);
+
+  .insight__text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .insight {
+    padding-left: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+
+  .insight__text {
+    font-size: var(--text-lg);
+  }
+}
