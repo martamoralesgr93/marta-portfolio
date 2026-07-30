@@ -2508,6 +2508,30 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .sc-num { color: #a78bfa !important; opacity: 1 !important; font-weight: 700 !important; }
 .sc-client-link { color: #e4e4e7 !important; }
 
+/* Enhanced Mobile Call CTA Button */
+@media (max-width: 768px) {
+  .nav-contact {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: 100px !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 12px rgba(124, 58, 237, 0.4) !important;
+    letter-spacing: 0.02em !important;
+    white-space: nowrap !important;
+    min-height: 38px !important;
+    text-decoration: none !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+  .nav-contact:active {
+    transform: scale(0.96) !important;
+  }
+}
+
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .nav-cta, .btn-primary, .btn-ghost, .mobile-menu-cta {
@@ -2633,8 +2657,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <a href="mailto:mmoralesgr93@gmail.com" class="nav-contact es">Agendar llamada →</a>
     <a href="mailto:mmoralesgr93@gmail.com" class="nav-contact en">Schedule call →</a>
     <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language"><span class="es">EN</span><span class="en">ES</span></button>
-    <a href="assets/cv-marta-ats-es.pdf" download="" class="nav-cta nav-cv es">Descargar CV  ↗</a>
-    <a href="assets/cv-marta-ats-en.pdf" download="" class="nav-cta nav-cv en">Download CV  ↗</a>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
         <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
@@ -2659,13 +2681,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#process" onclick="closeMenu()"><span class="es">Proceso de Decisión</span><span class="en">Decision Process</span></a></li>
     <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
-  <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-cta es">Descargar CV  ↗</a>
-  <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-cta en">Download CV  ↗</a>
 </div>
 
 <!-- ==================== HERO ==================== -->
 <main id="main">
 <section class="hero">
+  <div class="hero-video-bg" aria-hidden="true">
+    <video autoplay="" muted="" loop="" playsinline="" preload="auto">
+      <source src="assets/logo-background-video.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -2692,16 +2717,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="en">Impact Evidence</span>
         </div>
         <div class="m-row">
-          <div class="m-val"><span class="locked-metric">+18.4%</span></div>
-          <div class="m-label"><span class="es">CTR inicio de búsqueda (motor reservas)</span><span class="en">Search initiation CTR (booking engine)</span></div>
+          <div class="m-val"><span class="locked-metric">3,36% → 6,5%</span></div>
+          <div class="m-label"><span class="es">Conversión canal directo (ILUNION Hotels)</span><span class="en">Direct channel conversion (ILUNION Hotels)</span></div>
         </div>
         <div class="m-row">
-          <div class="m-val"><span class="locked-metric">-45%</span></div>
-          <div class="m-label"><span class="es">Errores de fecha en mobile</span><span class="en">Mobile date entry error reduction</span></div>
+          <div class="m-val"><span class="locked-metric">100% WCAG 2.1 AA</span></div>
+          <div class="m-label"><span class="es">Accesibilidad EdTech (CEF Design System)</span><span class="en">EdTech Accessibility (CEF Design System)</span></div>
         </div>
         <div class="m-row">
-          <div class="m-val"><span class="locked-metric">WCAG 2.1 AA</span></div>
-          <div class="m-label"><span class="es">Accesibilidad en 100% de componentes</span><span class="en">Accessibility across 100% components</span></div>
+          <div class="m-val"><span class="locked-metric">×5 Locales</span></div>
+          <div class="m-label"><span class="es">Escalabilidad sin rediseño (Paolo Pizzeria)</span><span class="en">Scaled without redesign (Paolo Pizzeria)</span></div>
         </div>
       </div>
     </div>
