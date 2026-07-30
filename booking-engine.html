@@ -67,15 +67,15 @@
     .dash-stat-val { font-size: 24px; font-weight: 700; color: var(--accent); }
 
     /* ─── EVIDENCE CARDS (dato + imagen + caption) ── */
-    .c2-evidence-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
-    .c2-evidence-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
-    .c2-evidence-header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
-    .c2-evidence-num { font-family: var(--font-serif); font-size: 42px; font-weight: 700; line-height: 1; color: #ef4444; flex-shrink: 0; }
-    .c2-evidence-meta { display: flex; flex-direction: column; gap: 4px; }
-    .c2-evidence-label { font-size: 12px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
-    .c2-evidence-sub { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
-    .c2-evidence-img { display: block; width: 100%; height: auto; }
-    .c2-evidence-caption { padding: 14px 20px; font-size: 12px; color: var(--text-dim); line-height: 1.55; border-top: 1px solid var(--border); flex: 1; }
+    .evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+    .evidence__item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+    .evidence__header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
+    .evidence__badge { font-family: var(--font-serif); font-size: 42px; font-weight: 700; line-height: 1; color: #ef4444; flex-shrink: 0; }
+    .evidence__meta { display: flex; flex-direction: column; gap: 4px; }
+    .evidence__title { font-size: 12px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+    .evidence__subtitle { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+    .evidence__image { display: block; width: 100%; height: auto; }
+    .evidence__caption { padding: 14px 20px; font-size: 12px; color: var(--text-dim); line-height: 1.55; border-top: 1px solid var(--border); flex: 1; }
 
     /* ─── MOTOR TRANSFORMATION — stacked full-width ── */
     .c2-transform { margin-top: 28px; }
@@ -146,7 +146,7 @@
         border-radius: 0;
         display: block;
       }
-      .c2-evidence-pair { grid-template-columns: 1fr !important; }
+      .evidence { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 480px) {
@@ -165,7 +165,7 @@
       border-top: 1px solid var(--border);
       position: relative;
     }
-    .quick-summary-grid {
+    .case-summary {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
@@ -174,11 +174,11 @@
       border-radius: 16px;
       padding: 32px;
     }
-    .qs-col {
+    .case-summary__col {
       display: flex;
       flex-direction: column;
     }
-    .qs-label {
+    .case-summary__label {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.12em;
@@ -189,7 +189,7 @@
       align-items: center;
       gap: 10px;
     }
-    .qs-label svg {
+    .case-summary__label svg {
       display: inline-block !important;
       color: var(--accent);
       flex-shrink: 0;
@@ -201,17 +201,17 @@
       border: 1px solid var(--accent-border);
       border-radius: 8px;
     }
-    .qs-val {
+    .case-summary__value {
       font-size: 13.5px;
       color: var(--text-bright);
       line-height: 1.6;
     }
-    .qs-bullets {
+    .case-summary__bullets {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    .qs-bullets li {
+    .case-summary__bullets li {
       font-size: 13px;
       color: var(--text);
       line-height: 1.5;
@@ -219,33 +219,33 @@
       padding-left: 14px;
       position: relative;
     }
-    .qs-bullets li::before {
+    .case-summary__bullets li::before {
       content: "—";
       color: var(--accent);
       position: absolute;
       left: 0;
     }
-    .qs-result-box {
+    .case-summary__result-box {
       background: var(--accent-glow);
       border: 1px solid var(--accent-border);
       border-radius: 10px;
       padding: 16px;
       margin-top: 4px;
     }
-    .qs-result-highlight {
+    .case-summary__result {
       font-size: 13.5px;
       font-weight: 600;
       color: var(--white);
       line-height: 1.5;
     }
     @media (max-width: 900px) {
-      .quick-summary-grid {
+      .case-summary {
         grid-template-columns: 1fr;
         gap: 0;
         padding: 8px 24px;
       }
-      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
-      .qs-col:last-child { border-bottom: none; }
+      .case-summary__col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .case-summary__col:last-child { border-bottom: none; }
     }
 
     /* ─── RESULTS STRIP ─────────────────────── */
@@ -499,36 +499,36 @@
 <!-- ==================== QUICK SUMMARY ==================== -->
 <section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
   <div class="cs-wrap">
-    <div class="quick-summary-grid">
+    <div class="case-summary">
       <!-- Col 1: El Problema -->
-      <div class="qs-col">
-        <span class="qs-label">
+      <div class="case-summary__col">
+        <span class="case-summary__label">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           El Problema
         </span>
-        <div class="qs-val">
+        <div class="case-summary__value">
           Fricción inicial en los flujos del buscador de reservas. El proyecto se desarrolló de forma concurrente con el Caso 02 (Ofertas) bajo la misma iniciativa de optimización del funnel en AEM (de 3,36% a 6,5%), balanceando los accesos al buscador con el resto de la narrativa comercial.
         </div>
       </div>
 
       <!-- Col 2: Mi Rol -->
-      <div class="qs-col">
-        <span class="qs-label">
+      <div class="case-summary__col">
+        <span class="case-summary__label">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           Mi Rol
         </span>
-        <div class="qs-val">
+        <div class="case-summary__value">
           <strong>Product Designer Lead</strong> gestionando la colaboración directa con BI para recabar datos de comportamiento, y con desarrollo frontend para la validación y despliegue del componente de búsqueda.
         </div>
       </div>
 
       <!-- Col 3: Qué Hice -->
-      <div class="qs-col">
-        <span class="qs-label">
+      <div class="case-summary__col">
+        <span class="case-summary__label">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Qué Hice
         </span>
-        <ul class="qs-bullets">
+        <ul class="case-summary__bullets">
           <li>UX Research cuantitativo detectando fricción crítica en mobile (60%).</li>
           <li>Problem framing para alinear objetivos comerciales y comportamiento real.</li>
           <li>Diseño y maquetación de flujos de búsqueda limpios y sin distracciones.</li>
@@ -538,13 +538,13 @@
       </div>
 
       <!-- Col 4: Resultado -->
-      <div class="qs-col">
-        <span class="qs-label">
+      <div class="case-summary__col">
+        <span class="case-summary__label">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           Resultado
         </span>
-        <div class="qs-result-box">
-          <div class="qs-result-highlight">
+        <div class="case-summary__result-box">
+          <div class="case-summary__result">
             Motor de reservas visible y priorizado desde el primer scroll. Reducción del patrón de scroll-sin-búsqueda (baseline: 75% de sesiones) y discovery de nuevo patrón de uso que validó landings de destino de alta conversión como siguiente iteración.
           </div>
         </div>
@@ -661,28 +661,28 @@
         <h3 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">Research & Análisis de comportamiento</h3>
         <p class="p">Analicé el comportamiento mediante <strong>Microsoft Clarity</strong> y <strong>Adobe Analytics</strong> para cartografiar la profundidad de scroll, la fricción de clics y la tasa de rebote por dispositivo.</p>
         <!-- Evidencia: dato + imagen + contexto -->
-        <div class="c2-evidence-pair fu" style="margin-top:20px;">
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num">75%</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Scroll sin búsqueda</span>
-                <span class="c2-evidence-sub">Desktop · Scroll map & heatmap · Clarity</span>
+        <div class="evidence fu" style="margin-top:20px;">
+          <div class="evidence__item">
+            <div class="evidence__header">
+              <div class="evidence__badge">75%</div>
+              <div class="evidence__meta">
+                <span class="evidence__title">Scroll sin búsqueda</span>
+                <span class="evidence__subtitle">Desktop · Scroll map & heatmap · Clarity</span>
               </div>
             </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-desk.webp" alt="Análisis de abandono Desktop">
-            <div class="c2-evidence-caption">El motor de reservas competía con banners y promociones en el primer nivel. Usuarios con intención de compra no iniciaban búsqueda.</div>
+            <img width="1920" height="1536" class="evidence__image" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-desk.webp" alt="Análisis de abandono Desktop">
+            <div class="evidence__caption">El motor de reservas competía con banners y promociones en el primer nivel. Usuarios con intención de compra no iniciaban búsqueda.</div>
           </div>
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num">60%</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Fricción crítica en mobile</span>
-                <span class="c2-evidence-sub">Mobile · Puntos de fuga en primer scroll</span>
+          <div class="evidence__item">
+            <div class="evidence__header">
+              <div class="evidence__badge">60%</div>
+              <div class="evidence__meta">
+                <span class="evidence__title">Fricción crítica en mobile</span>
+                <span class="evidence__subtitle">Mobile · Puntos de fuga en primer scroll</span>
               </div>
             </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-abandonado-mobile.webp" alt="Análisis de abandono Mobile">
-            <div class="c2-evidence-caption">Mobile mostraba mayor fricción que desktop: el buscador quedaba enterrado bajo contenido inspiracional no transaccional.</div>
+            <img width="1920" height="1536" class="evidence__image" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-abandonado-mobile.webp" alt="Análisis de abandono Mobile">
+            <div class="evidence__caption">Mobile mostraba mayor fricción que desktop: el buscador quedaba enterrado bajo contenido inspiracional no transaccional.</div>
           </div>
         </div>
 
@@ -723,28 +723,28 @@
         <p class="p" style="margin-top:16px;">Redefiní la jerarquía del acceso al motor priorizando: rapidez de identificación del buscador, claridad visual, reducción de fricción en el inicio de búsqueda y facilidad de interacción desde tráfico de alta intención.</p>
 
         <!-- Evidencia: experimento de selección de destino -->
-        <div class="c2-evidence-pair fu" style="margin-top:28px;">
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num" style="color:var(--text);">A</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Control · flujo original</span>
-                <span class="c2-evidence-sub">Test selección de destino · Variante A</span>
+        <div class="evidence fu" style="margin-top:28px;">
+          <div class="evidence__item">
+            <div class="evidence__header">
+              <div class="evidence__badge" style="color:var(--text);">A</div>
+              <div class="evidence__meta">
+                <span class="evidence__title">Control · flujo original</span>
+                <span class="evidence__subtitle">Test selección de destino · Variante A</span>
               </div>
             </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/exp-cro-destinos-desk.webp" alt="Test Selección Destino Desktop">
-            <div class="c2-evidence-caption">Flujo original: selección de destino integrada en el motor con múltiples pasos de navegación.</div>
+            <img width="1920" height="1536" class="evidence__image" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/exp-cro-destinos-desk.webp" alt="Test Selección Destino Desktop">
+            <div class="evidence__caption">Flujo original: selección de destino integrada en el motor con múltiples pasos de navegación.</div>
           </div>
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num" style="color:var(--accent);">B</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Variante · popup simplificado</span>
-                <span class="c2-evidence-sub">100% confianza estadística validada</span>
+          <div class="evidence__item">
+            <div class="evidence__header">
+              <div class="evidence__badge" style="color:var(--accent);">B</div>
+              <div class="evidence__meta">
+                <span class="evidence__title">Variante · popup simplificado</span>
+                <span class="evidence__subtitle">100% confianza estadística validada</span>
               </div>
             </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/EXP-CRO-DESTINOS-POPUP.webp" alt="Popup de selección de destino">
-            <div class="c2-evidence-caption">Simplificación del paso de selección mediante popup directo — validado con 100% de fiabilidad estadística.</div>
+            <img width="1920" height="1536" class="evidence__image" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/EXP-CRO-DESTINOS-POPUP.webp" alt="Popup de selección de destino">
+            <div class="evidence__caption">Simplificación del paso de selección mediante popup directo — validado con 100% de fiabilidad estadística.</div>
           </div>
         </div>
       </div>

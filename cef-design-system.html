@@ -322,7 +322,7 @@
       border-top: 1px solid var(--border);
       position: relative;
     }
-    .quick-summary-grid {
+    .case-summary {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
@@ -331,11 +331,11 @@
       border-radius: 16px;
       padding: 32px;
     }
-    .qs-col {
+    .case-summary__col {
       display: flex;
       flex-direction: column;
     }
-    .qs-label {
+    .case-summary__label {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.12em;
@@ -346,7 +346,7 @@
       align-items: center;
       gap: 10px;
     }
-    .qs-label svg {
+    .case-summary__label svg {
       display: inline-block !important;
       color: var(--accent);
       flex-shrink: 0;
@@ -358,17 +358,17 @@
       border: 1px solid var(--accent-border);
       border-radius: 8px;
     }
-    .qs-val {
+    .case-summary__value {
       font-size: 13.5px;
       color: var(--text-bright);
       line-height: 1.6;
     }
-    .qs-bullets {
+    .case-summary__bullets {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    .qs-bullets li {
+    .case-summary__bullets li {
       font-size: 13px;
       color: var(--text);
       line-height: 1.5;
@@ -376,54 +376,54 @@
       padding-left: 14px;
       position: relative;
     }
-    .qs-bullets li::before {
+    .case-summary__bullets li::before {
       content: "—";
       color: var(--accent);
       position: absolute;
       left: 0;
     }
-    .qs-result-box {
+    .case-summary__result-box {
       background: var(--accent-glow);
       border: 1px solid var(--accent-border);
       border-radius: 10px;
       padding: 16px;
       margin-top: 4px;
     }
-    .qs-result-highlight {
+    .case-summary__result {
       font-size: 13.5px;
       font-weight: 600;
       color: var(--white);
       line-height: 1.5;
     }
     @media (max-width: 900px) {
-      .quick-summary-grid {
+      .case-summary {
         grid-template-columns: 1fr;
         gap: 0;
         padding: 8px 24px;
       }
-      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
-      .qs-col:last-child { border-bottom: none; }
+      .case-summary__col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .case-summary__col:last-child { border-bottom: none; }
     }
 
     /* Evidence pair layout - copied from Caso 2 */
-    .c2-evidence-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; margin-bottom: 48px; }
-    .c2-evidence-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; background: rgba(255,255,255,0.01); }
-    .c2-evidence-header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; background: rgba(255,255,255,0.02); }
-    .c2-evidence-num { font-family: var(--font-serif); font-size: 36px; font-weight: 700; line-height: 1; color: var(--accent); flex-shrink: 0; }
-    .c2-evidence-meta { display: flex; flex-direction: column; gap: 4px; }
-    .c2-evidence-label { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
-    .c2-evidence-sub { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
-    .c2-evidence-img { display: block; width: 100%; height: auto; }
-    .c2-evidence-caption { padding: 18px 24px; font-size: 13px; color: var(--text-dim); line-height: 1.6; border-top: 1px solid var(--border); flex: 1; }
+    .evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; margin-bottom: 48px; }
+    .evidence__item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; background: rgba(255,255,255,0.01); }
+    .evidence__header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; background: rgba(255,255,255,0.02); }
+    .evidence__badge { font-family: var(--font-serif); font-size: 36px; font-weight: 700; line-height: 1; color: var(--accent); flex-shrink: 0; }
+    .evidence__meta { display: flex; flex-direction: column; gap: 4px; }
+    .evidence__title { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+    .evidence__subtitle { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+    .evidence__image { display: block; width: 100%; height: auto; }
+    .evidence__caption { padding: 18px 24px; font-size: 13px; color: var(--text-dim); line-height: 1.6; border-top: 1px solid var(--border); flex: 1; }
     
     @media (max-width: 900px) {
-      .c2-evidence-pair { grid-template-columns: 1fr; gap: 24px; }
+      .evidence { grid-template-columns: 1fr; gap: 24px; }
     }
     @media (max-width: 640px) {
-      .c2-evidence-pair { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 32px -16px 48px -16px; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
-      .c2-evidence-pair::-webkit-scrollbar { height: 3px; }
-      .c2-evidence-pair::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
-      .c2-evidence-item { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); scroll-snap-align: start; }
+      .evidence { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; margin: 32px -16px 48px -16px; padding: 0 16px; gap: 14px; -webkit-overflow-scrolling: touch; }
+      .evidence::-webkit-scrollbar { height: 3px; }
+      .evidence::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.3); }
+      .evidence__item { flex: 0 0 calc(100vw - 32px); min-width: calc(100vw - 32px); scroll-snap-align: start; }
     }
 
     /* Helper Grid Layouts for case-3 */
@@ -898,7 +898,7 @@
         <!-- Columna Derecha: Imagen Wireframe -->
         <div class="col-lg-7 col-md-12">
           <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.015);">
-            <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.webp" alt="Wireframe de Calendario Web">
+            <img width="1920" height="1440" class="evidence__image" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.webp" alt="Wireframe de Calendario Web">
           </div>
         </div>
       </div>
@@ -912,18 +912,18 @@
         </p>
       </div>
 
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px;">
+      <div class="evidence fu" style="margin-top: 20px; margin-bottom: 80px;">
         <!-- Mobile Calendar -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num">03.2</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Calendario Web · Mobile</span>
-              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+        <div class="evidence__item">
+          <div class="evidence__header">
+            <div class="evidence__badge">03.2</div>
+            <div class="evidence__meta">
+              <span class="evidence__title">Calendario Web · Mobile</span>
+              <span class="evidence__subtitle">VISTA MÓVIL</span>
             </div>
           </div>
-          <img width="1440" height="1024" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.webp" alt="Diseño final del Calendario Web — Mobile">
-          <div class="c2-evidence-caption">
+          <img width="1440" height="1024" class="evidence__image" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.webp" alt="Diseño final del Calendario Web — Mobile">
+          <div class="evidence__caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión móvil reorganiza la agenda en una vista de lista y cuadrícula mensual adaptada para interacción táctil en smartphone, garantizando legibilidad y accesibilidad.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:center;">
@@ -935,16 +935,16 @@
         </div>
 
         <!-- Desktop Calendar -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num" style="color: var(--accent);">03.3</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Calendario Web · Desktop</span>
-              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+        <div class="evidence__item">
+          <div class="evidence__header">
+            <div class="evidence__badge" style="color: var(--accent);">03.3</div>
+            <div class="evidence__meta">
+              <span class="evidence__title">Calendario Web · Desktop</span>
+              <span class="evidence__subtitle">VISTA ESCRITORIO</span>
             </div>
           </div>
-          <img width="1200" height="800" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" alt="Diseño final del Calendario Web — Escritorio">
-          <div class="c2-evidence-caption">
+          <img width="1200" height="800" class="evidence__image" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" alt="Diseño final del Calendario Web — Escritorio">
+          <div class="evidence__caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión de escritorio del calendario académico permite al estudiante visualizar de un vistazo su agenda académica diaria y semanal, facilitando la interacción rápida con asignaturas y filtros avanzados.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:center;">
@@ -969,18 +969,18 @@
       </div>
 
       <!-- Pasarela de Pago: Desktop vs Mobile -->
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: stretch;">
+      <div class="evidence fu" style="margin-top: 20px; margin-bottom: 80px; align-items: stretch;">
         <!-- Desktop Pasarela -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num">04.1</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Diseño Desktop · Checkout de Matrícula</span>
-              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+        <div class="evidence__item">
+          <div class="evidence__header">
+            <div class="evidence__badge">04.1</div>
+            <div class="evidence__meta">
+              <span class="evidence__title">Diseño Desktop · Checkout de Matrícula</span>
+              <span class="evidence__subtitle">VISTA ESCRITORIO</span>
             </div>
           </div>
-          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.webp" alt="Pasarela de Pago — Diseño Desktop">
-          <div class="c2-evidence-caption">
+          <img width="1920" height="1080" class="evidence__image" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.webp" alt="Pasarela de Pago — Diseño Desktop">
+          <div class="evidence__caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En resoluciones de escritorio, el checkout divide la pantalla de forma equilibrada para mostrar en paralelo el desglose transaccional detallado (conceptos de matrícula, descuentos, tasas) y las opciones de pago (tarjeta, financiación, domiciliación).</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:center;">
@@ -992,16 +992,16 @@
         </div>
 
         <!-- Mobile Pasarela -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num" style="color: var(--accent);">04.2</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Diseño Mobile · Fricción y Comportamiento táctil</span>
-              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+        <div class="evidence__item">
+          <div class="evidence__header">
+            <div class="evidence__badge" style="color: var(--accent);">04.2</div>
+            <div class="evidence__meta">
+              <span class="evidence__title">Diseño Mobile · Fricción y Comportamiento táctil</span>
+              <span class="evidence__subtitle">VISTA MÓVIL</span>
             </div>
           </div>
-          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.webp" alt="Pasarela de Pago — Diseño Móvil">
-          <div class="c2-evidence-caption">
+          <img width="1920" height="1080" class="evidence__image" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.webp" alt="Pasarela de Pago — Diseño Móvil">
+          <div class="evidence__caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">La versión móvil reorganiza los bloques verticalmente y prioriza el paso de pago activo, reduciendo la altura de scroll requerida para completar la transacción. Los campos de formulario y botones de llamada a la acción adoptan tamaños óptimos para interacción táctil.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:center;">
@@ -1026,18 +1026,18 @@
       </div>
 
       <!-- Login y Empleo: Desktop vs Mobile -->
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: stretch;">
+      <div class="evidence fu" style="margin-top: 20px; margin-bottom: 80px; align-items: stretch;">
         <!-- Desktop Login/Bolsa -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num">05.1</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Portal de Empleo · Escritorio</span>
-              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+        <div class="evidence__item">
+          <div class="evidence__header">
+            <div class="evidence__badge">05.1</div>
+            <div class="evidence__meta">
+              <span class="evidence__title">Portal de Empleo · Escritorio</span>
+              <span class="evidence__subtitle">VISTA ESCRITORIO</span>
             </div>
           </div>
-          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Desktop">
-          <div class="c2-evidence-caption">
+          <img width="1920" height="1080" class="evidence__image" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Desktop">
+          <div class="evidence__caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">El diseño desktop organiza de forma clara las áreas funcionales del portal: acceso directo con credenciales institucionales, listado interactivo de vacantes laborales de la Bolsa de Empleo, y destacados informativos corporativos de CEF.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:center;">
@@ -1049,16 +1049,16 @@
         </div>
 
         <!-- Mobile Login/Bolsa -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num" style="color: var(--accent);">05.2</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Portal de Empleo · Pantalla Móvil</span>
-              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+        <div class="evidence__item">
+          <div class="evidence__header">
+            <div class="evidence__badge" style="color: var(--accent);">05.2</div>
+            <div class="evidence__meta">
+              <span class="evidence__title">Portal de Empleo · Pantalla Móvil</span>
+              <span class="evidence__subtitle">VISTA MÓVIL</span>
             </div>
           </div>
-          <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Móvil">
-          <div class="c2-evidence-caption">
+          <img width="1920" height="1440" class="evidence__image" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Móvil">
+          <div class="evidence__caption">
             <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">El layout móvil adapta la visualización priorizando la accesibilidad de las llamadas a la acción primarias y simplificando los bloques informativos de fondo para evitar scroll excesivo en la pantalla táctil.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:center;">

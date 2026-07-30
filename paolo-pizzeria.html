@@ -69,7 +69,7 @@
 
     /* QUICK SUMMARY */
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid {
+    .case-summary {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
@@ -78,15 +78,15 @@
   border-radius: 16px;
   padding: 32px;
 }
-    .qs-col { display: flex; flex-direction: column; }
-    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
-    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
-    .qs-bullets { list-style: none; padding: 0; margin: 0; }
-    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
-    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
-    .qs-result-box { margin-top: 4px; padding: 0; }
-    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--accent); line-height: 1.5; }
+    .case-summary__col { display: flex; flex-direction: column; }
+    .case-summary__label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .case-summary__label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
+    .case-summary__value { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .case-summary__bullets { list-style: none; padding: 0; margin: 0; }
+    .case-summary__bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .case-summary__bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .case-summary__result-box { margin-top: 4px; padding: 0; }
+    .case-summary__result { font-size: 13.5px; font-weight: 600; color: var(--accent); line-height: 1.5; }
 
     /* LEFT RAIL STAR LAYOUT — now inherited from design-system.css (shared component,
        same shared mobile behaviour as the other 4 case studies). Do not redefine .cs-star/
@@ -225,7 +225,7 @@
     @media (max-width: 900px) {
       .tool-grid { grid-template-columns: 1fr 1fr; }
       .touchpoint-grid { grid-template-columns: 1fr; }
-      .quick-summary-grid {
+      .case-summary {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
   border-radius: 16px; grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px; }
@@ -233,12 +233,12 @@
     @media (max-width: 768px) {
       /* Ocultar letra decorativa gigante en mobile para evitar overflow horizontal */
       .cs-behance-letter { display: none !important; }
-      .quick-summary-grid {
+      .case-summary {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
   border-radius: 16px; grid-template-columns: 1fr; gap: 0; padding: 8px 20px; }
-      .quick-summary-grid .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
-      .quick-summary-grid .qs-col:last-child { border-bottom: none; }
+      .case-summary .case-summary__col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .case-summary .case-summary__col:last-child { border-bottom: none; }
       .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
       .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
       .dash-impact-num { font-size: 64px; }
@@ -714,21 +714,21 @@
           Una cadena de pizzerías artesanas sin canal digital en 2020. La pandemia convirtió "tener presencia online" de ventaja competitiva en condición de supervivencia.
         </div>
       </div>
-      <div class="qs-col">
-        <span class="qs-label">
+      <div class="case-summary__col">
+        <span class="case-summary__label">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           Mi Rol
         </span>
-        <div class="qs-val">
+        <div class="case-summary__value">
           <strong>Ownership completo del producto digital:</strong> diseño UX/UI, arquitectura de información, desarrollo frontend, activación de canales y análisis continuo. De la decisión al código.
         </div>
       </div>
-      <div class="qs-col">
-        <span class="qs-label">
+      <div class="case-summary__col">
+        <span class="case-summary__label">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Qué Hice
         </span>
-        <ul class="qs-bullets">
+        <ul class="case-summary__bullets">
           <li><strong>Contextual Research:</strong> Journey mapping de 3 user flows (delivery, visita local, reserva).</li>
           <li><strong>Design & Development:</strong> Adobe XD → HTML/CSS en WordPress + Elementor, mobile-first responsive.</li>
           <li><strong>Ecosystem Integration:</strong> Delivery platforms (Glovo, Uber Eats, JustEat) + QR strategy para offline-to-online.</li>
@@ -736,13 +736,13 @@
           <li><strong>Behavioral Data:</strong> Clarity (heatmaps), GA4 (conversión), Metricool (content) → iteración continua.</li>
         </ul>
       </div>
-      <div class="qs-col">
-        <span class="qs-label">
+      <div class="case-summary__col">
+        <span class="case-summary__label">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           Resultado & Learning
         </span>
-        <div class="qs-result-box">
-          <div class="qs-result-highlight">
+        <div class="case-summary__result-box">
+          <div class="case-summary__result">
             Escalabilidad robusta del producto (1→5 locales sin rediseño). El modelo de franquicia fracasó, pero el producto digital fue factor de éxito operativo en cada ubicación. Learning: buen producto ≠ buen modelo de negocio.
           </div>
         </div>

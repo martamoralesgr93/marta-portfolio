@@ -510,20 +510,20 @@
 
     /* ===================== QUICK SUMMARY CARD · spine unificado (mismo componente que Booking/CEF/Paolo/It-Ops) ===================== */
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
-    .qs-col { display: flex; flex-direction: column; }
-    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
-    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
-    .qs-bullets { list-style: none; padding: 0; margin: 0; }
-    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
-    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
-    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
-    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
+    .case-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .case-summary__col { display: flex; flex-direction: column; }
+    .case-summary__label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .case-summary__label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
+    .case-summary__value { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .case-summary__bullets { list-style: none; padding: 0; margin: 0; }
+    .case-summary__bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .case-summary__bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .case-summary__result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
+    .case-summary__result { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
     @media (max-width: 900px) {
-      .quick-summary-grid { grid-template-columns: 1fr; gap: 0; padding: 8px 24px; }
-      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
-      .qs-col:last-child { border-bottom: none; }
+      .case-summary { grid-template-columns: 1fr; gap: 0; padding: 8px 24px; }
+      .case-summary__col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .case-summary__col:last-child { border-bottom: none; }
     }
     /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
     .cs-hamburger {
