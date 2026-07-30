@@ -2527,6 +2527,17 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .sc-card { padding: 14px 16px !important; }
 }
 
+/* WCAG 2.1 AA Contrast Fixes */
+.nav-contact { background: #7c3aed !important; color: #ffffff !important; font-weight: 600 !important; }
+.lang-toggle { background: #1a1a1a !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.25) !important; }
+.lang-toggle span { color: #ffffff !important; }
+.sobre-tagline { color: #e4e4e7 !important; }
+.sobre-loc-text { color: #e4e4e7 !important; }
+.c-purple { color: #a78bfa !important; }
+.m-label span, .sec-title, .contact-eyebrow, .impact-card-label, .impact-header span { color: #e4e4e7 !important; }
+.sc-num { color: #a78bfa !important; opacity: 1 !important; font-weight: 700 !important; }
+.sc-client-link { color: #e4e4e7 !important; }
+
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .nav-cta, .btn-primary, .btn-ghost, .mobile-menu-cta {
@@ -2635,7 +2646,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 <!-- ==================== NAV ==================== -->
 <nav aria-label="Principal">
   <a href="#" class="nav-logo">
-    <img width="1536" height="1024" fetchpriority="high" decoding="async" src="assets/logo-sinfondo.webp" alt="Marta Morales">
+    <img width="1536" height="1024" fetchpriority="high" decoding="async" src="assets/logo-sinfondo.webp" alt="" aria-hidden="true">
     <div class="nav-logo-text">
       <span class="nav-logo-name">Marta Morales</span>
     </div>
