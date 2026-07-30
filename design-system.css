@@ -209,6 +209,59 @@ li { margin-bottom: 8px; }
   }
 }
 
+/* ── CASE STUDY MOBILE HARMONY & SCROLL OPTIMIZATION (ALL 5 CASE STUDIES) ── */
+@media (max-width: 768px) {
+  .cs-nav {
+    padding: 12px 16px !important;
+  }
+  .cs-nav-right {
+    gap: 8px !important;
+  }
+  .cs-hero {
+    padding-top: 100px !important;
+    padding-bottom: 32px !important;
+  }
+  .cs-hero-title {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 16px !important;
+  }
+  .cs-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+  }
+  .quick-summary-grid {
+    padding: 18px 16px !important;
+    gap: 16px !important;
+    border-radius: 12px !important;
+  }
+  .qs-col {
+    padding: 12px 0 !important;
+  }
+  .dash-widget {
+    padding: 20px 16px !important;
+    margin: 24px 0 !important;
+    border-radius: 12px !important;
+  }
+  .dash-impact-num {
+    font-size: 52px !important;
+  }
+  .cs-img-box, .sc-visual, .cs-visual {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    margin-bottom: 20px !important;
+  }
+  .touchpoint-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin: 24px 0 !important;
+  }
+  .tp-card {
+    padding: 16px !important;
+  }
+}
+
 /* ── AI-INTEGRATION ACCORDION — collapsed by default on all 5 case studies ──
    These "AI Integration Highlight" blocks are supplementary methodology notes,
    not core narrative — collapsing them by default cuts real scroll length,
