@@ -75,12 +75,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { overflow-x: hidden; }
 @media (min-width: 1024px) { html { scroll-behavior: smooth; } }
-body { 
-  background: var(--surface); 
-  color: var(--text); 
-  font-family: var(--font-family); 
-  font-size: 17px; 
-  line-height: 1.75; 
+html, body {
+  background-color: #08060f !important;
+  color: var(--text) !important;
+  font-family: var(--font-family);
+  font-size: 17px;
+  line-height: 1.75;
 }
 a:focus-visible,
 button:focus-visible,
@@ -187,6 +187,142 @@ li { margin-bottom: 8px; }
     width: 20px; height: 1px; min-height: 0;
     background: linear-gradient(to right, rgba(var(--accent-rgb), 0.4), transparent);
     margin-top: 0;
+  }
+}
+
+/* ── RESEARCH INSIGHT CARD — UX+UI+CRO bridge (Product Designer signal) ──
+   Compact, visual-first section that shows the key finding that drove design decisions.
+   Replaces redundant "Contexto/Rol/Problema/Objetivo" with data-driven insight.
+   Signals to Product Design recruiters: "diagnosis before design, not UI decoration." */
+.research-insight-card {
+  padding: 48px 0 40px;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+.research-insight-card-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.research-insight-card-label::before {
+  content: "📊";
+  font-size: 14px;
+}
+.research-insight-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.research-insight-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.research-insight-quote {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--white);
+  padding: 0;
+}
+.research-insight-quote em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 700;
+}
+.research-insight-bridge {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.research-insight-bridge-item {
+  flex: 1;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.research-insight-bridge-item strong {
+  display: block;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.research-insight-bridge-item span {
+  color: var(--text);
+  font-weight: 500;
+}
+.research-insight-visual {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 240px;
+  justify-content: center;
+}
+.research-insight-stat {
+  text-align: center;
+}
+.research-insight-stat-value {
+  font-size: 48px;
+  font-weight: 800;
+  font-family: var(--font-serif);
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.research-insight-stat-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.research-insight-divider {
+  height: 1px;
+  background: var(--border);
+}
+@media (max-width: 1024px) {
+  .research-insight-card-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .research-insight-card {
+    padding: 32px 0 24px;
+  }
+  .research-insight-card-label {
+    margin-bottom: 20px;
+    font-size: 9px;
+  }
+  .research-insight-quote {
+    font-size: 16px;
+  }
+  .research-insight-bridge {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .research-insight-visual {
+    padding: 20px;
+    min-height: auto;
+  }
+  .research-insight-stat-value {
+    font-size: 36px;
   }
 }
 
@@ -569,9 +705,9 @@ a.btn-secondary,
 a.btn-secondary:visited,
 a.cs-btn-secondary,
 a.cs-btn-secondary:visited {
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(167, 139, 250, 0.08) !important;
+  color: #a78bfa !important;
+  border: 1px solid rgba(167, 139, 250, 0.35) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
 }
@@ -580,10 +716,11 @@ a.cs-btn-secondary:visited {
 .cs-btn-secondary:hover,
 a.btn-secondary:hover,
 a.cs-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
+  background: rgba(167, 139, 250, 0.18) !important;
+  border-color: #a78bfa !important;
   color: #ffffff !important;
   transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(167, 139, 250, 0.2) !important;
 }
 
 /* ── 11. NAV DROPDOWN COMPONENT ── */
