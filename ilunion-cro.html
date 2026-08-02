@@ -701,59 +701,117 @@
 
 
 <!-- ══════════════════════════════════════
-     QUICK SUMMARY · TL;DR 60s (spine unificado)
+     PROTOTYPE STRUCTURE: CONTEXTO, MÉTRICAS Y DIAGNÓSTICO
 ══════════════════════════════════════ -->
-<section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
+
+<!-- 1. BLOQUE CONTEXTO -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 40px 0; border: 1px solid var(--border); padding: 48px var(--space-lg);">
   <div class="cs-wrap">
-    <div class="quick-summary-grid">
-      <!-- Col 1: El Problema -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          El Problema
-        </span>
-        <div class="qs-val">
-          Tras migrar a AEM (sept. 2025) la conversión cayó al <strong>3,36%</strong>. La maqueta daba protagonismo a banners promocionales del club de fidelidad y empujaba el motor de reserva por debajo del primer scroll: solo el 15% de los usuarios superaba el bloque de ofertas.
+    <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">CONTEXTO</div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; margin-bottom: 40px;">
+      <div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 24px;">
+          El canal directo tenía un problema de identificación, no de tráfico
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14.5px; color: var(--text-bright); line-height: 1.8;">
+          <p>ILUNION Hotels migró a AEM en 2024. La conversión del canal directo partía del 3.36%. El brief inicial planteaba optimizar el bloque promocional.</p>
+          <p>El hallazgo clave: Clarity mostró que solo el 15% de usuarios llegaba a la sección de ofertas debido a la jerarquía visual. Además, muchos socios de Club ÚNICOS reservaban sin iniciar sesión, perdiendo su tarifa preferente.</p>
         </div>
       </div>
 
-      <!-- Col 2: Mi Rol -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Mi Rol
-        </span>
-        <div class="qs-val">
-          <strong>Product Designer con ownership end-to-end autónomo.</strong> Diagnóstico, propuesta y presentación directa a comité, sin intermediarios de producto entre el análisis y la toma de decisión.
+      <!-- MOCKUP DERECHA -->
+      <div style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: rgba(0,0,0,0.5);">
+        <img src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.webp" alt="ILUNION Hotels Mockup AEM" style="width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+
+    <!-- 4 CHIPS METADATOS DEBAJO -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">ROL</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">UX/UI Designer &amp; CRO</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">PERIODO</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Sep 2024 - Presente</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">RESEARCH</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Adobe Analytics + Clarity</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">STACK</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">AEM, Adobe Analytics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. FILA DE MÉTRICAS GRANDES EN SERIF CON EYEBROW DE FUENTE -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 40px var(--space-lg);">
+  <div class="cs-wrap">
+    <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px; font-family: monospace;">
+      ADOBE ANALYTICS · CANAL DIRECTO · BASELINE SEP 2024
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; align-items: flex-start;">
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--purple); line-height: 1; margin-bottom: 8px;">
+          3.36% → 6.5%
         </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">CONVERSIÓN CANAL DIRECTO</div>
       </div>
 
-      <!-- Col 3: Qué Hice -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Qué Hice
-        </span>
-        <ul class="qs-bullets">
-          <li>Análisis cuanti-cuali: 10.000+ logs de funnel (Adobe Analytics) + 250+ transcripciones (Clarity).</li>
-          <li>Benchmarking de precio, disponibilidad y CTA en primer fold vs. cadenas y portales referentes.</li>
-          <li>Documento estratégico con 12 mejoras priorizadas por impacto y viabilidad en AEM.</li>
-          <li>Diseño responsive diferenciado desktop/mobile, integrando constraints de AEM como variables.</li>
-          <li>Validación en staging, aprobación en comité y observación post-lanzamiento.</li>
-        </ul>
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--purple); line-height: 1; margin-bottom: 8px;">
+          13%
+        </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">CUOTA VENTAS CANAL DIRECTO</div>
       </div>
 
-      <!-- Col 4: Resultado -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Resultado
-        </span>
-        <div class="qs-result-box">
-          <div class="qs-result-highlight">
-            Conversión del canal directo de 3,36% a <strong>6,5%</strong> (+93% relativo). Club ÚNICOS &gt;50% de reservas fidelizadas. Hallazgo post-launch del patrón de swipe en mobile: detectado, documentado y resuelto como siguiente iteración.
-          </div>
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 8px;">
+          +50%
         </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">LEALTAD CLUB ÚNICOS</div>
+      </div>
+
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 8px;">
+          32
+        </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">PROPIEDADES</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. BLOQUE DIAGNÓSTICO (H2 + 3 TARJETAS CON BORDE IZQUIERDO) -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 48px var(--space-lg);">
+  <div class="cs-wrap">
+    <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">DIAGNÓSTICO</div>
+    <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 32px;">
+      El brief decía «promo». Los datos decían «jerarquía»
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <!-- TARJETA 1 -->
+      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">ADOBE ANALYTICS</div>
+        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Análisis de funnel: dónde perdíamos usuarios en el proceso de reserva.</div>
+      </div>
+
+      <!-- TARJETA 2 -->
+      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">MICROSOFT CLARITY</div>
+        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Solo el 15% llegaba a la sección de ofertas: invisible, no irrelevante.</div>
+      </div>
+
+      <!-- TARJETA 3 -->
+      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-radius: 16px; border-left: 4px solid var(--purple); padding: 24px 28px;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">SEGMENTACIÓN</div>
+        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Socios Club ÚNICOS reservando sin login: pérdida del precio preferente para ellos y del LTV para el hotel.</div>
       </div>
     </div>
   </div>
