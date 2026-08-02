@@ -2545,24 +2545,45 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 
 <!-- ==================== NARRATIVE GRID (SOBRE MÍ, EXPERIENCIA, CÓMO TRABAJO, PILARES, FORMACIÓN, INDUSTRIAS) ==================== -->
-<section class="sobre-section" id="sobre" style="padding: 72px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<style>
+  .narrative-card {
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+  }
+  .narrative-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(124,58,237,0.4) !important;
+    background: rgba(255,255,255,0.045) !important;
+    box-shadow: 0 16px 36px -8px rgba(124,58,237,0.18);
+  }
+  @keyframes timelinePulse {
+    0% { box-shadow: 0 0 0 0 rgba(124,58,237,0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(124,58,237,0); }
+    100% { box-shadow: 0 0 0 0 rgba(124,58,237,0); }
+  }
+  .timeline-node-active {
+    animation: timelinePulse 2.4s infinite ease-in-out;
+  }
+</style>
+
+<section class="sobre-section" id="sobre" style="padding: 96px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="wrap">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 52px; align-items: start;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start;">
       
       <!-- COLUMNA IZQUIERDA (65% Narrativa, Metodología y Pilares) -->
-      <div style="display: flex; flex-direction: column; gap: 56px;">
+      <div style="display: flex; flex-direction: column; gap: 72px;">
         
         <!-- 1. SOBRE MÍ -->
         <div>
-          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--purple);"></span>
             <span class="es">SOBRE MÍ</span><span class="en">ABOUT ME</span>
           </div>
           
-          <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 3.8vw, 48px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 24px;">
-            Diseño para resultados,<br><em style="color: var(--accent);">no para outputs.</em>
+          <h2 style="font-family: var(--font-serif); font-size: clamp(38px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1.12; margin-bottom: 28px;">
+            Diseño para resultados,<br><em style="color: var(--accent); font-style: italic;">no para outputs.</em>
           </h2>
 
-          <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14.5px; color: var(--text-bright); line-height: 1.7; margin-bottom: 32px;">
+          <div style="display: flex; flex-direction: column; gap: 20px; font-size: 15px; color: var(--text-bright); line-height: 1.8; margin-bottom: 40px;">
             <p class="es">4 años diseñando en hotelería, EdTech y consultoría B2B. No publico una cifra que no pueda defender en una entrevista — y esa disciplina es parte del método.</p>
             <p class="es">En ILUNION Hotels transformé el canal directo (32 propiedades) de caótico a escalable. En CEF construí el DS de accesibilidad desde cero. En consultoría aprendí a mover proyectos con restricciones reales: AEM, timelines, deuda técnica, ERPs legacy.</p>
 
@@ -2571,110 +2592,116 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </div>
 
           <!-- PRINCIPIO RECTOR CARD -->
-          <div style="background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.22); border-radius: 16px; padding: 24px;">
-            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">PRINCIPIO RECTOR</div>
-            <div style="font-family: var(--font-serif); font-size: 16px; font-style: italic; color: var(--white); line-height: 1.5;">
+          <div class="narrative-card" style="background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.25); border-radius: 18px; padding: 28px 32px;">
+            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">PRINCIPIO RECTOR</div>
+            <div style="font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--white); line-height: 1.6;">
               "El brief que recibes nunca es el problema real. Es el punto de partida para encontrarlo."
             </div>
           </div>
         </div>
 
+        <!-- DIVIDER LINE WITH GLOW -->
+        <div style="height: 1px; background: linear-gradient(90deg, rgba(124,58,237,0.5), rgba(249,115,22,0.3), transparent); margin: -16px 0 8px; border-radius: 2px;"></div>
+
         <!-- 2. CÓMO TRABAJO -->
         <div>
-          <h3 style="font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 20px;">
+          <h3 style="font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 24px;">
             <span class="es">Cómo trabajo</span><span class="en">How I work</span>
           </h3>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Documenta todo</div>
-              <div style="font-size: 12.5px; color: var(--text-dim);">Si no está escrito, no existe.</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
+              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Documenta todo</div>
+              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">Si no está escrito, no existe.</div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Simplifica antes de añadir</div>
-              <div style="font-size: 12.5px; color: var(--text-dim);">¿Se puede hacer en menos pasos?</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
+              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Simplifica antes de añadir</div>
+              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">¿Se puede hacer en menos pasos?</div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Diseña para personas, no para pantallas</div>
-              <div style="font-size: 12.5px; color: var(--text-dim);">La empatía es una herramienta técnica.</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
+              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Diseña para personas, no para pantallas</div>
+              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">La empatía es una herramienta técnica.</div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Datos primero, sketch después</div>
-              <div style="font-size: 12.5px; color: var(--text-dim);">Nunca abro Figma sin entender el problema.</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
+              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Datos primero, sketch después</div>
+              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">Nunca abro Figma sin entender el problema.</div>
             </div>
           </div>
         </div>
 
+        <!-- DIVIDER LINE WITH GLOW -->
+        <div style="height: 1px; background: linear-gradient(90deg, rgba(249,115,22,0.5), rgba(16,185,129,0.3), transparent); margin: -16px 0 8px; border-radius: 2px;"></div>
+
         <!-- 3. PILARES DE METODOLOGÍA -->
         <div>
-          <h3 style="font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 20px;">
+          <h3 style="font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 24px;">
             <span class="es">Pilares de metodología</span><span class="en">Methodology pillars</span>
           </h3>
 
-          <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 14px; padding: 20px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px;">Diagnóstico antes que solución</div>
-              <div style="font-size: 13px; color: var(--text-dim);">El brief nunca es el problema real. Los datos revelan la fricción invisible.</div>
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Diagnóstico antes que solución</div>
+              <div style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6;">El brief nunca es el problema real. Los datos revelan la fricción invisible.</div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid var(--orange); border-radius: 14px; padding: 20px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px;">Restricciones ocultas</div>
-              <div style="font-size: 13px; color: var(--text-dim);">Presentes en 3 de 4 proyectos. Las no obvias son las que condicionan de verdad.</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid var(--orange); border-radius: 16px; padding: 24px 28px;">
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Restricciones ocultas</div>
+              <div style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6;">Presentes en 3 de 4 proyectos. Las no obvias son las que condicionan de verdad.</div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid #10b981; border-radius: 14px; padding: 20px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px;">Accesibilidad como señal</div>
-              <div style="font-size: 13px; color: var(--text-dim);">WCAG detecta problemas de UX invisibles. No es compliance — es calidad de producto.</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid #10b981; border-radius: 16px; padding: 24px 28px;">
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Accesibilidad como señal</div>
+              <div style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6;">WCAG detecta problemas de UX invisibles. No es compliance — es calidad de producto.</div>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- COLUMNA DERECHA (35% Sidebar) -->
-      <div style="display: flex; flex-direction: column; gap: 40px;">
+      <!-- COLUMNA DERECHA (35% Sidebar: Experiencia, Formación e Industrias) -->
+      <div style="display: flex; flex-direction: column; gap: 52px;">
         
         <!-- 1. EXPERIENCIA TIMELINE -->
         <div>
-          <h3 style="font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--white); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 24px;">
+          <h3 style="font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: var(--white); border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 28px;">
             <span class="es">Experiencia</span><span class="en">Experience</span>
           </h3>
 
-          <div style="position: relative; padding-left: 20px; border-left: 2px solid rgba(124,58,237,0.4); display: flex; flex-direction: column; gap: 24px;">
+          <div style="position: relative; padding-left: 24px; border-left: 2px solid rgba(124,58,237,0.35); display: flex; flex-direction: column; gap: 28px;">
             
             <div style="position: relative;">
-              <div style="position: absolute; left: -26px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 8px var(--purple);"></div>
-              <div style="font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 2px;">Sep 2024 – Presente</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--white);">UX/UI Designer &amp; CRO</div>
-              <div style="font-size: 12.5px; color: var(--accent); font-weight: 500; margin-bottom: 4px;">ILUNION Hotels</div>
-              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Responsable end-to-end del canal digital directo · 32 propiedades · Conversión 3.36% → 6.5%</div>
+              <div class="timeline-node-active" style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">Sep 2024 – Presente</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">UX/UI Designer &amp; CRO</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">ILUNION Hotels</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">Responsable end-to-end del canal digital directo · 32 propiedades · Conversión 3.36% → 6.5%</div>
             </div>
 
             <div style="position: relative;">
-              <div style="position: absolute; left: -26px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 2px;">Jun – Sep 2024</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--white);">UX/UI Designer</div>
-              <div style="font-size: 12.5px; color: var(--accent); font-weight: 500; margin-bottom: 4px;">CEF Centro de Estudios Financieros</div>
-              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">4 meses · 47 componentes WCAG 2.1 AA · DS completo desde cero · 2 módulos en producción</div>
+              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">Jun – Sep 2024</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">UX/UI Designer</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">CEF Centro de Estudios Financieros</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">4 meses · 47 componentes WCAG 2.1 AA · DS completo desde cero · 2 módulos en producción</div>
             </div>
 
             <div style="position: relative;">
-              <div style="position: absolute; left: -26px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 2px;">Jul 2020 – May 2024</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--white);">UX/UI Designer</div>
-              <div style="font-size: 12.5px; color: var(--accent); font-weight: 500; margin-bottom: 4px;">We Are Actions</div>
-              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Consultoría digital · Paolo by Danny's Jazz (×5 locales) · Oracle ERP Build vs. Buy</div>
+              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">Jul 2020 – May 2024</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">UX/UI Designer</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">We Are Actions</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">Consultoría digital · Paolo by Danny's Jazz (×5 locales) · Oracle ERP Build vs. Buy</div>
             </div>
 
             <div style="position: relative;">
-              <div style="position: absolute; left: -26px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 2px;">2019</div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--white);">Diseñadora Gráfica</div>
-              <div style="font-size: 12.5px; color: var(--accent); font-weight: 500; margin-bottom: 4px;">AIMPLAS (Prácticas)</div>
-              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">I+D · Comunicación institucional</div>
+              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">2019</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">Diseñadora Gráfica</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">AIMPLAS (Prácticas)</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">I+D · Comunicación institucional</div>
             </div>
 
           </div>
@@ -2682,42 +2709,42 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
         <!-- 2. FORMACIÓN -->
         <div>
-          <h3 style="font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--white); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px;">
+          <h3 style="font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: var(--white); border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 24px;">
             <span class="es">Formación</span><span class="en">Education</span>
           </h3>
 
-          <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
-              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 2px;">2024</div>
-              <div style="font-size: 13.5px; font-weight: 700; color: var(--white); margin-bottom: 2px;">Bootcamp Digital Product Design &amp; Frontend Dev</div>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 4px;">2024</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">Bootcamp Digital Product Design &amp; Frontend Dev</div>
               <div style="font-size: 12px; color: var(--text-dim);">Neoland</div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
-              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 2px;">2022 – 2023</div>
-              <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Máster en Formación del Profesorado</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 4px;">2022 – 2023</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">Máster en Formación del Profesorado</div>
               <div style="font-size: 12px; color: var(--text-dim);">Universidad CEU San Pablo</div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 18px;">
-              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 2px;">2016 – 2020</div>
-              <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Grado en Bellas Artes — Diseño Gráfico, Web e Interfaces</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 4px;">2016 – 2020</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">Grado en Bellas Artes — Diseño Gráfico, Web e Interfaces</div>
               <div style="font-size: 12px; color: var(--text-dim);">Universitat Politècnica de València</div>
             </div>
           </div>
         </div>
 
         <!-- 3. INDUSTRIAS -->
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
-          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">INDUSTRIAS</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 6px 14px; border-radius: 100px;">Turismo &amp; Hostelería</span>
-            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 6px 14px; border-radius: 100px;">EdTech</span>
-            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 6px 14px; border-radius: 100px;">Branding &amp; F&amp;B</span>
-            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 6px 14px; border-radius: 100px;">IT Operations</span>
+        <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 20px; padding: 28px;">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">INDUSTRIAS</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">Turismo &amp; Hostelería</span>
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">EdTech</span>
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">Branding &amp; F&amp;B</span>
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">IT Operations</span>
           </div>
-          <div style="font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 14px; display: flex; align-items: center; gap: 6px;">
-            <span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+          <div style="font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 16px; display: flex; align-items: center; gap: 8px;">
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #10b981; display: inline-block; box-shadow: 0 0 8px #10b981;"></span>
             Español Nativo · English B2–C1 Professional
           </div>
         </div>
