@@ -2600,23 +2600,39 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <!-- COLUMNA IZQUIERDA (Narrativa, Cómo trabajo y Pilares Tech) -->
       <div style="display: flex; flex-direction: column; gap: 80px;">
         
-        <!-- 1. SOBRE MÍ -->
+        <!-- 1. SOBRE MÍ CON FOTOGRAFÍA E INFOGRAFÍA -->
         <div>
           <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
             <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--purple);" class="signal-dot-pulse"></span>
             <span class="es">SOBRE MÍ · PERFIL</span><span class="en">ABOUT ME · PROFILE</span>
           </div>
           
-          <h2 style="font-family: var(--font-serif); font-size: clamp(38px, 4.2vw, 54px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 28px;">
+          <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 4vw, 50px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 28px;">
             Diseño para resultados,<br><em style="color: var(--accent); font-style: italic;">no para outputs.</em>
           </h2>
 
-          <div style="display: flex; flex-direction: column; gap: 20px; font-size: 15px; color: var(--text-bright); line-height: 1.85; margin-bottom: 36px;">
-            <p class="es">4 años diseñando en hotelería, EdTech y consultoría B2B. No publico una cifra que no pueda defender en una entrevista — esa disciplina es parte del método.</p>
-            <p class="es">En ILUNION Hotels escalé el canal directo (32 propiedades). En CEF construí el DS de accesibilidad desde cero. En consultoría optimicé con restricciones reales: AEM, timelines y ERPs legacy.</p>
+          <!-- GRID FOTOGRAFÍA + NARRATIVA -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; align-items: center; margin-bottom: 32px;">
+            <!-- FOTOGRAFÍA -->
+            <div class="narrative-card" style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid rgba(124,58,237,0.3); background: rgba(18,18,28,0.6); max-width: 280px;">
+              <img src="assets/marta-retrato.webp" alt="Marta Morales - Product Designer &amp; CRO" style="width: 100%; height: 260px; object-fit: cover; object-position: top; display: block; filter: brightness(0.95) contrast(1.05);">
+              <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(10,10,18,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); padding: 8px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 11px; font-weight: 700; color: var(--white);">Marta Morales</span>
+                <span style="font-size: 10px; color: #10b981; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>
+                  UX/UI &amp; CRO
+                </span>
+              </div>
+            </div>
 
-            <p class="en">4 years designing in hospitality, EdTech, and B2B consulting. I don't publish a single metric I can't defend in an interview — that discipline is part of the method.</p>
-            <p class="en">At ILUNION Hotels I scaled the direct channel (32 properties). At CEF I built the accessibility DS from scratch. In consulting I optimized under real tech constraints: AEM, timelines, legacy ERPs.</p>
+            <!-- NARRATIVA TEXTO -->
+            <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14.5px; color: var(--text-bright); line-height: 1.8;">
+              <p class="es">4 años diseñando en hotelería, EdTech y consultoría B2B. No publico una cifra que no pueda defender en una entrevista — esa disciplina es parte del método.</p>
+              <p class="es">En ILUNION Hotels escalé el canal directo (32 propiedades). En CEF construí el DS de accesibilidad desde cero. En consultoría optimicé con restricciones reales: AEM, timelines y ERPs legacy.</p>
+
+              <p class="en">4 years designing in hospitality, EdTech, and B2B consulting. I don't publish a single metric I can't defend in an interview — that discipline is part of the method.</p>
+              <p class="en">At ILUNION Hotels I scaled the direct channel (32 properties). At CEF I built the accessibility DS from scratch. In consulting I optimized under real tech constraints: AEM, timelines, legacy ERPs.</p>
+            </div>
           </div>
 
           <!-- VISUAL GRAPHIC CHIPS -->
@@ -2639,13 +2655,24 @@ html.lang-en .hero-positioning.en { display: block !important; }
             </span>
           </div>
 
+          <!-- INFOGRAFÍA PROCESO UX CARD -->
+          <div class="narrative-card" style="background: rgba(18,18,28,0.7); border: 1px solid rgba(124,58,237,0.3); border-radius: 20px; padding: 20px; margin-bottom: 28px; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding: 0 4px;">
+              <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: var(--purple); font-family: monospace;">[ INFOGRAFÍA · PROCESO UX RESEARCH ]</span>
+              <span style="font-size: 10px; color: var(--text-faint); font-family: monospace;">VISUAL ARTIFACT</span>
+            </div>
+            <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #000;">
+              <img src="assets/oracle_ux_research.jpg" alt="Infografía Proceso UX Research Marta Morales" style="width: 100%; height: 180px; object-fit: cover; object-position: center; display: block; filter: brightness(0.9) contrast(1.05);">
+            </div>
+          </div>
+
           <!-- PRINCIPIO RECTOR CARD WITH QUOTE GRAPHIC -->
-          <div class="narrative-card" style="background: rgba(124,58,237,0.05); border: 1px solid rgba(124,58,237,0.25); border-radius: 20px; padding: 28px 32px; position: relative;">
-            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+          <div class="narrative-card" style="background: rgba(124,58,237,0.05); border: 1px solid rgba(124,58,237,0.25); border-radius: 20px; padding: 26px 30px; position: relative;">
+            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
               <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--purple);"></span>
               PRINCIPIO RECTOR
             </div>
-            <div style="font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--white); line-height: 1.6;">
+            <div style="font-family: var(--font-serif); font-size: 16.5px; font-style: italic; color: var(--white); line-height: 1.6;">
               "El brief que recibes nunca es el problema real. Es el punto de partida para encontrarlo."
             </div>
           </div>
