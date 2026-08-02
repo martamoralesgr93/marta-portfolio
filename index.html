@@ -2635,29 +2635,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <!-- DIVIDER LINE WITH GLOW -->
         <div style="height: 1px; background: linear-gradient(90deg, rgba(249,115,22,0.5), rgba(16,185,129,0.3), transparent); margin: -16px 0 8px; border-radius: 2px;"></div>
 
-        <!-- 3. PILARES DE METODOLOGÍA -->
-        <div>
-          <h3 style="font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 24px;">
-            <span class="es">Pilares de metodología</span><span class="en">Methodology pillars</span>
-          </h3>
-
-          <div style="display: flex; flex-direction: column; gap: 18px;">
-            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
-              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Diagnóstico antes que solución</div>
-              <div style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6;">El brief nunca es el problema real. Los datos revelan la fricción invisible.</div>
-            </div>
-
-            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid var(--orange); border-radius: 16px; padding: 24px 28px;">
-              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Restricciones ocultas</div>
-              <div style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6;">Presentes en 3 de 4 proyectos. Las no obvias son las que condicionan de verdad.</div>
-            </div>
-
-            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid #10b981; border-radius: 16px; padding: 24px 28px;">
-              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Accesibilidad como señal</div>
-              <div style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6;">WCAG detecta problemas de UX invisibles. No es compliance — es calidad de producto.</div>
-            </div>
-          </div>
-        </div>
+        <!-- 3. PILARES DE METODOLOGÍA (Moviéndose a sección Full-Width abajo) -->
 
       </div>
 
@@ -2754,6 +2732,265 @@ html.lang-en .hero-positioning.en { display: block !important; }
     </div>
   </div>
 </section>
+
+<!-- ==================== PILARES DE METODOLOGÍA FULL-WIDTH TECH ANIMATION ==================== -->
+<style>
+  .tech-pilares-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.12) 0%, rgba(5, 5, 10, 0.98) 70%);
+    border-top: 1px solid rgba(124, 58, 237, 0.25);
+    border-bottom: 1px solid rgba(249, 115, 22, 0.25);
+    padding: 88px 0;
+  }
+  .tech-grid-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.5;
+  }
+  .tech-laser-beam {
+    position: absolute; top: 0; height: 2px; width: 35%;
+    background: linear-gradient(90deg, transparent, var(--purple), var(--orange), transparent);
+    animation: laserBeam 4.5s infinite linear;
+  }
+  @keyframes laserBeam {
+    0% { left: -35%; }
+    100% { left: 100%; }
+  }
+  .tech-pilar-card {
+    background: rgba(18, 18, 28, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  .tech-pilar-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 0 20px 48px -10px rgba(124, 58, 237, 0.25);
+  }
+  @keyframes waveBarPulse {
+    0%, 100% { height: 35%; }
+    50% { height: 95%; }
+  }
+  .tech-wave-bar {
+    width: 4px; border-radius: 4px; background: var(--purple);
+    animation: waveBarPulse 1.6s infinite ease-in-out alternate;
+  }
+  @keyframes signalPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.4); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+  }
+  .signal-dot-pulse {
+    animation: signalPulse 2s infinite ease-in-out;
+  }
+</style>
+
+<section class="tech-pilares-section">
+  <div class="tech-grid-bg"></div>
+  <div class="tech-laser-beam"></div>
+
+  <div class="wrap">
+    <!-- Header -->
+    <div style="text-align: center; max-width: 720px; margin: 0 auto 56px;">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: inline-flex; align-items: center; gap: 8px; background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.3); padding: 6px 16px; border-radius: 100px;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--purple);" class="signal-dot-pulse"></span>
+        <span class="es">FRAMEWORK METODOLÓGICO</span><span class="en">METHODOLOGY FRAMEWORK</span>
+      </div>
+      <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 4vw, 48px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 16px;">
+        Pilares de metodología<span style="color: var(--accent);">.</span>
+      </h2>
+      <p style="font-size: 15px; color: var(--text-dim); line-height: 1.6;">
+        <span class="es">Principios de ingeniería de producto orientados a diagnóstico real, viabilidad técnica y calidad total.</span>
+        <span class="en">Product engineering principles focused on real diagnosis, technical feasibility, and total quality.</span>
+      </p>
+    </div>
+
+    <!-- 3 Tech Columns Full-Width Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+      
+      <!-- PILAR 01 -->
+      <div class="tech-pilar-card" style="border-top: 3px solid var(--purple);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--purple); font-family: monospace;">[ 01 // DIAGNOSTIC MATRIX ]</span>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">ANALYSIS</span>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px;">Diagnóstico antes que solución</h3>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.7; margin-bottom: 24px;">
+          El brief nunca es el problema real. Los datos cuantitativos de comportamiento y la analítica revelan la fricción invisible antes de trazar un solo pixel.
+        </p>
+
+        <!-- Live Tech Graphic Widget 01 -->
+        <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(124,58,237,0.3); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; min-height: 56px;">
+          <div style="display: flex; items-center; gap: 4px; height: 28px; align-items: flex-end;">
+            <div class="tech-wave-bar" style="animation-delay: 0.1s;"></div>
+            <div class="tech-wave-bar" style="animation-delay: 0.3s;"></div>
+            <div class="tech-wave-bar" style="animation-delay: 0.5s;"></div>
+            <div class="tech-wave-bar" style="animation-delay: 0.2s;"></div>
+            <div class="tech-wave-bar" style="animation-delay: 0.4s;"></div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 11px; font-weight: 700; color: var(--purple); font-family: monospace;">84% DIAGNOSTIC ACCURACY</div>
+            <div style="font-size: 10px; color: var(--text-faint);">Quantitative Behavior Signal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILAR 02 -->
+      <div class="tech-pilar-card" style="border-top: 3px solid var(--orange);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--orange); font-family: monospace;">[ 02 // CONSTRAINT DISCOVERY ]</span>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">FEASIBILITY</span>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px;">Restricciones ocultas</h3>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.7; margin-bottom: 24px;">
+          Presentes en 3 de 4 proyectos. Las limitaciones de arquitectura (AEM, ERPs legacy, SLAs) no obvias son las que condicionan de verdad la viabilidad del producto.
+        </p>
+
+        <!-- Live Tech Graphic Widget 02 -->
+        <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(249,115,22,0.3); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; min-height: 56px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: monospace; color: var(--orange);">
+            <span>AEM</span> ⚡ <span>ERP Legacy</span> ⚡ <span>Frontend</span>
+          </div>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--orange);" class="signal-dot-pulse"></span>
+        </div>
+      </div>
+
+      <!-- PILAR 03 -->
+      <div class="tech-pilar-card" style="border-top: 3px solid #10b981;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: #10b981; font-family: monospace;">[ 03 // A11Y QUALITY SIGNAL ]</span>
+          <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">QUALITY AA</span>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px;">Accesibilidad como señal</h3>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.7; margin-bottom: 24px;">
+          WCAG 2.1 AA no es una lista de cumplimiento legal — es un detector de problemas de UX invisibles. Diseñar accesible eleva la calidad general de todo el sistema.
+        </p>
+
+        <!-- Live Tech Graphic Widget 03 -->
+        <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; min-height: 56px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span style="font-size: 11px; font-weight: 700; color: #10b981; font-family: monospace;">100% WCAG 2.1 AA</span>
+          </div>
+          <span style="font-size: 10px; color: var(--text-faint); font-family: monospace;">VERIFIED SIGNAL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      </main></div>
+
+      <!-- COLUMNA DERECHA (35% Sidebar: Experiencia, Formación e Industrias) -->
+      <div style="display: flex; flex-direction: column; gap: 52px;">
+        
+        <!-- 1. EXPERIENCIA TIMELINE -->
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: var(--white); border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 28px;">
+            <span class="es">Experiencia</span><span class="en">Experience</span>
+          </h3>
+
+          <div style="position: relative; padding-left: 24px; border-left: 2px solid rgba(124,58,237,0.35); display: flex; flex-direction: column; gap: 28px;">
+            
+            <div style="position: relative;">
+              <div class="timeline-node-active" style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">Sep 2024 – Presente</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">UX/UI Designer &amp; CRO</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">ILUNION Hotels</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">Responsable end-to-end del canal digital directo · 32 propiedades · Conversión 3.36% → 6.5%</div>
+            </div>
+
+            <div style="position: relative;">
+              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">Jun – Sep 2024</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">UX/UI Designer</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">CEF Centro de Estudios Financieros</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">4 meses · 47 componentes WCAG 2.1 AA · DS completo desde cero · 2 módulos en producción</div>
+            </div>
+
+            <div style="position: relative;">
+              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">Jul 2020 – May 2024</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">UX/UI Designer</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">We Are Actions</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">Consultoría digital · Paolo by Danny's Jazz (×5 locales) · Oracle ERP Build vs. Buy</div>
+            </div>
+
+            <div style="position: relative;">
+              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
+              <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px;">2019</div>
+              <div style="font-size: 14.5px; font-weight: 700; color: var(--white);">Diseñadora Gráfica</div>
+              <div style="font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px;">AIMPLAS (Prácticas)</div>
+              <div style="font-size: 12px; color: var(--text-dim); line-height: 1.55;">I+D · Comunicación institucional</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 2. FORMACIÓN -->
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: var(--white); border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 24px;">
+            <span class="es">Formación</span><span class="en">Education</span>
+          </h3>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 4px;">2024</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">Bootcamp Digital Product Design &amp; Frontend Dev</div>
+              <div style="font-size: 12px; color: var(--text-dim);">Neoland</div>
+            </div>
+
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 4px;">2022 – 2023</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">Máster en Formación del Profesorado</div>
+              <div style="font-size: 12px; color: var(--text-dim);">Universidad CEU San Pablo</div>
+            </div>
+
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px;">
+              <div style="font-size: 11px; color: var(--text-faint); margin-bottom: 4px;">2016 – 2020</div>
+              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">Grado en Bellas Artes — Diseño Gráfico, Web e Interfaces</div>
+              <div style="font-size: 12px; color: var(--text-dim);">Universitat Politècnica de València</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. INDUSTRIAS -->
+        <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 20px; padding: 28px;">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">INDUSTRIAS</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">Turismo &amp; Hostelería</span>
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">EdTech</span>
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">Branding &amp; F&amp;B</span>
+            <span style="font-size: 12px; color: var(--white); background: rgba(255,255,255,0.06); border: 1px solid var(--border); padding: 7px 16px; border-radius: 100px;">IT Operations</span>
+          </div>
+          <div style="font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 16px; display: flex; align-items: center; gap: 8px;">
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #10b981; display: inline-block; box-shadow: 0 0 8px #10b981;"></span>
+            Español Nativo · English B2–C1 Professional
+          </div>
+        </div>
+
+      </div>
+
+    
+  
+
 
 
 <!-- ==================== TECH STACK SECTION ==================== -->
@@ -5065,4 +5302,4 @@ body.visitor-unauthorized .locked-metric:hover::after {
 })();
 </script>
 
-</main></div></body></html>
+</body></html>
