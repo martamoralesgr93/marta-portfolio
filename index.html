@@ -2546,6 +2546,18 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 <!-- ==================== NARRATIVE GRID (SOBRE MÍ, EXPERIENCIA, CÓMO TRABAJO, PILARES, FORMACIÓN, INDUSTRIAS) ==================== -->
 <style>
+  .narrative-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 1023px) {
+    .narrative-main-grid {
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
+    }
+  }
   .narrative-card {
     transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
   }
@@ -2563,14 +2575,30 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .timeline-node-active {
     animation: timelinePulse 2.4s infinite ease-in-out;
   }
+  @keyframes waveBarPulse {
+    0%, 100% { height: 35%; }
+    50% { height: 95%; }
+  }
+  .tech-wave-bar {
+    width: 4px; border-radius: 4px; background: var(--purple);
+    animation: waveBarPulse 1.6s infinite ease-in-out alternate;
+  }
+  @keyframes signalPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.4); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+  }
+  .signal-dot-pulse {
+    animation: signalPulse 2s infinite ease-in-out;
+  }
 </style>
 
-<section class="sobre-section" id="sobre" style="padding: 96px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<section class="sobre-section" id="sobre" style="padding: 88px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="wrap">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start;">
+    <div class="narrative-main-grid">
       
-      <!-- COLUMNA IZQUIERDA (65% Narrativa, Metodología y Pilares) -->
-      <div style="display: flex; flex-direction: column; gap: 72px;">
+      <!-- COLUMNA IZQUIERDA (Narrativa, Cómo trabajo y Pilares Tech) -->
+      <div style="display: flex; flex-direction: column; gap: 64px;">
         
         <!-- 1. SOBRE MÍ -->
         <div>
@@ -2579,11 +2607,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
             <span class="es">SOBRE MÍ</span><span class="en">ABOUT ME</span>
           </div>
           
-          <h2 style="font-family: var(--font-serif); font-size: clamp(38px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1.12; margin-bottom: 28px;">
+          <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 4vw, 50px); font-weight: 700; color: var(--white); line-height: 1.12; margin-bottom: 24px;">
             Diseño para resultados,<br><em style="color: var(--accent); font-style: italic;">no para outputs.</em>
           </h2>
 
-          <div style="display: flex; flex-direction: column; gap: 20px; font-size: 15px; color: var(--text-bright); line-height: 1.8; margin-bottom: 40px;">
+          <div style="display: flex; flex-direction: column; gap: 18px; font-size: 15px; color: var(--text-bright); line-height: 1.8; margin-bottom: 32px;">
             <p class="es">4 años diseñando en hotelería, EdTech y consultoría B2B. No publico una cifra que no pueda defender en una entrevista — y esa disciplina es parte del método.</p>
             <p class="es">En ILUNION Hotels transformé el canal directo (32 propiedades) de caótico a escalable. En CEF construí el DS de accesibilidad desde cero. En consultoría aprendí a mover proyectos con restricciones reales: AEM, timelines, deuda técnica, ERPs legacy.</p>
 
@@ -2592,54 +2620,120 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </div>
 
           <!-- PRINCIPIO RECTOR CARD -->
-          <div class="narrative-card" style="background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.25); border-radius: 18px; padding: 28px 32px;">
-            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">PRINCIPIO RECTOR</div>
-            <div style="font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--white); line-height: 1.6;">
+          <div class="narrative-card" style="background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.25); border-radius: 18px; padding: 26px 30px;">
+            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">PRINCIPIO RECTOR</div>
+            <div style="font-family: var(--font-serif); font-size: 16.5px; font-style: italic; color: var(--white); line-height: 1.6;">
               "El brief que recibes nunca es el problema real. Es el punto de partida para encontrarlo."
             </div>
           </div>
         </div>
 
         <!-- DIVIDER LINE WITH GLOW -->
-        <div style="height: 1px; background: linear-gradient(90deg, rgba(124,58,237,0.5), rgba(249,115,22,0.3), transparent); margin: -16px 0 8px; border-radius: 2px;"></div>
+        <div style="height: 1px; background: linear-gradient(90deg, rgba(124,58,237,0.5), rgba(249,115,22,0.3), transparent); margin: -16px 0 0; border-radius: 2px;"></div>
 
         <!-- 2. CÓMO TRABAJO -->
         <div>
-          <h3 style="font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 24px;">
+          <h3 style="font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 20px;">
             <span class="es">Cómo trabajo</span><span class="en">How I work</span>
           </h3>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
-              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Documenta todo</div>
-              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">Si no está escrito, no existe.</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
+              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Documenta todo</div>
+              <div style="font-size: 12.5px; color: var(--text-dim); line-height: 1.5;">Si no está escrito, no existe.</div>
             </div>
 
-            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
-              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Simplifica antes de añadir</div>
-              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">¿Se puede hacer en menos pasos?</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
+              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Simplifica antes de añadir</div>
+              <div style="font-size: 12.5px; color: var(--text-dim); line-height: 1.5;">¿Se puede hacer en menos pasos?</div>
             </div>
 
-            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
-              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Diseña para personas, no para pantallas</div>
-              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">La empatía es una herramienta técnica.</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
+              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Diseña para personas, no para pantallas</div>
+              <div style="font-size: 12.5px; color: var(--text-dim); line-height: 1.5;">La empatía es una herramienta técnica.</div>
             </div>
 
-            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 24px;">
-              <div style="font-size: 15.5px; font-weight: 700; color: var(--white); margin-bottom: 8px;">Datos primero, sketch después</div>
-              <div style="font-size: 13px; color: var(--text-dim); line-height: 1.5;">Nunca abro Figma sin entender el problema.</div>
+            <div class="narrative-card" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
+              <div style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Datos primero, sketch después</div>
+              <div style="font-size: 12.5px; color: var(--text-dim); line-height: 1.5;">Nunca abro Figma sin entender el problema.</div>
             </div>
           </div>
         </div>
 
         <!-- DIVIDER LINE WITH GLOW -->
-        <div style="height: 1px; background: linear-gradient(90deg, rgba(249,115,22,0.5), rgba(16,185,129,0.3), transparent); margin: -16px 0 8px; border-radius: 2px;"></div>
+        <div style="height: 1px; background: linear-gradient(90deg, rgba(249,115,22,0.5), rgba(16,185,129,0.3), transparent); margin: -16px 0 0; border-radius: 2px;"></div>
 
-        <!-- 3. PILARES DE METODOLOGÍA (Moviéndose a sección Full-Width abajo) -->
+        <!-- 3. PILARES DE METODOLOGÍA (Tech Aesthetic Widgets) -->
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+            <h3 style="font-family: var(--font-serif); font-size: 26px; font-weight: 700; color: var(--white); margin: 0;">
+              <span class="es">Pilares de metodología</span><span class="en">Methodology pillars</span>
+            </h3>
+            <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); font-family: monospace;">[ TECH FRAMEWORK ]</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- PILAR 01 -->
+            <div class="narrative-card" style="background: rgba(18, 18, 28, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--purple); font-family: monospace;">[ 01 // DIAGNOSTIC MATRIX ]</span>
+                <span style="font-size: 10px; color: var(--text-faint); font-family: monospace;">ANALYSIS</span>
+              </div>
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Diagnóstico antes que solución</div>
+              <div style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6; margin-bottom: 16px;">El brief nunca es el problema real. Los datos cuantitativos de comportamiento revelan la fricción invisible antes de trazar un solo pixel.</div>
+              
+              <!-- Tech Live Widget 01 -->
+              <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(124,58,237,0.3); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; gap: 4px; height: 20px; align-items: flex-end;">
+                  <div class="tech-wave-bar" style="animation-delay: 0.1s;"></div>
+                  <div class="tech-wave-bar" style="animation-delay: 0.3s;"></div>
+                  <div class="tech-wave-bar" style="animation-delay: 0.5s;"></div>
+                  <div class="tech-wave-bar" style="animation-delay: 0.2s;"></div>
+                  <div class="tech-wave-bar" style="animation-delay: 0.4s;"></div>
+                </div>
+                <span style="font-size: 10.5px; font-weight: 700; color: var(--purple); font-family: monospace;">84% DIAGNOSTIC SIGNAL</span>
+              </div>
+            </div>
+
+            <!-- PILAR 02 -->
+            <div class="narrative-card" style="background: rgba(18, 18, 28, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid var(--orange); border-radius: 16px; padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--orange); font-family: monospace;">[ 02 // CONSTRAINT MAPPING ]</span>
+                <span style="font-size: 10px; color: var(--text-faint); font-family: monospace;">FEASIBILITY</span>
+              </div>
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Restricciones ocultas</div>
+              <div style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6; margin-bottom: 16px;">Presentes en 3 de 4 proyectos. Las limitaciones de arquitectura (AEM, ERPs legacy, SLAs) no obvias son las que condicionan de verdad.</div>
+              
+              <!-- Tech Live Widget 02 -->
+              <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(249,115,22,0.3); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 11px; font-family: monospace; color: var(--orange);">AEM ⚡ ERP Legacy ⚡ Frontend</span>
+                <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--orange);" class="signal-dot-pulse"></span>
+              </div>
+            </div>
+
+            <!-- PILAR 03 -->
+            <div class="narrative-card" style="background: rgba(18, 18, 28, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #10b981; border-radius: 16px; padding: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: #10b981; font-family: monospace;">[ 03 // A11Y QUALITY SIGNAL ]</span>
+                <span style="font-size: 10px; color: var(--text-faint); font-family: monospace;">QUALITY AA</span>
+              </div>
+              <div style="font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px;">Accesibilidad como señal</div>
+              <div style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6; margin-bottom: 16px;">WCAG 2.1 AA no es una lista de cumplimiento legal — es un detector de problemas de UX invisibles. Diseñar accesible eleva la calidad del producto.</div>
+              
+              <!-- Tech Live Widget 03 -->
+              <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(16,185,129,0.3); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 11px; font-weight: 700; color: #10b981; font-family: monospace;">100% WCAG 2.1 AA VERIFIED</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
       </div>
 
-      <!-- COLUMNA DERECHA (35% Sidebar: Experiencia, Formación e Industrias) -->
+      <!-- COLUMNA DERECHA (Sidebar: Experiencia, Formación e Industrias) -->
       <div style="display: flex; flex-direction: column; gap: 52px;">
         
         <!-- 1. EXPERIENCIA TIMELINE -->
@@ -2727,169 +2821,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
           </div>
         </div>
 
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==================== PILARES DE METODOLOGÍA FULL-WIDTH TECH ANIMATION ==================== -->
-<style>
-  .tech-pilares-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.12) 0%, rgba(5, 5, 10, 0.98) 70%);
-    border-top: 1px solid rgba(124, 58, 237, 0.25);
-    border-bottom: 1px solid rgba(249, 115, 22, 0.25);
-    padding: 88px 0;
-  }
-  .tech-grid-bg {
-    position: absolute; inset: 0; pointer-events: none;
-    background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.5;
-  }
-  .tech-laser-beam {
-    position: absolute; top: 0; height: 2px; width: 35%;
-    background: linear-gradient(90deg, transparent, var(--purple), var(--orange), transparent);
-    animation: laserBeam 4.5s infinite linear;
-  }
-  @keyframes laserBeam {
-    0% { left: -35%; }
-    100% { left: 100%; }
-  }
-  .tech-pilar-card {
-    background: rgba(18, 18, 28, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 32px;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(12px);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
-  }
-  .tech-pilar-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(124, 58, 237, 0.5);
-    box-shadow: 0 20px 48px -10px rgba(124, 58, 237, 0.25);
-  }
-  @keyframes waveBarPulse {
-    0%, 100% { height: 35%; }
-    50% { height: 95%; }
-  }
-  .tech-wave-bar {
-    width: 4px; border-radius: 4px; background: var(--purple);
-    animation: waveBarPulse 1.6s infinite ease-in-out alternate;
-  }
-  @keyframes signalPulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.4); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.8; }
-  }
-  .signal-dot-pulse {
-    animation: signalPulse 2s infinite ease-in-out;
-  }
-</style>
-
-<section class="tech-pilares-section">
-  <div class="tech-grid-bg"></div>
-  <div class="tech-laser-beam"></div>
-
-  <div class="wrap">
-    <!-- Header -->
-    <div style="text-align: center; max-width: 720px; margin: 0 auto 56px;">
-      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: inline-flex; align-items: center; gap: 8px; background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.3); padding: 6px 16px; border-radius: 100px;">
-        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--purple);" class="signal-dot-pulse"></span>
-        <span class="es">FRAMEWORK METODOLÓGICO</span><span class="en">METHODOLOGY FRAMEWORK</span>
-      </div>
-      <h2 style="font-family: var(--font-serif); font-size: clamp(36px, 4vw, 48px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 16px;">
-        Pilares de metodología<span style="color: var(--accent);">.</span>
-      </h2>
-      <p style="font-size: 15px; color: var(--text-dim); line-height: 1.6;">
-        <span class="es">Principios de ingeniería de producto orientados a diagnóstico real, viabilidad técnica y calidad total.</span>
-        <span class="en">Product engineering principles focused on real diagnosis, technical feasibility, and total quality.</span>
-      </p>
-    </div>
-
-    <!-- 3 Tech Columns Full-Width Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
-      
-      <!-- PILAR 01 -->
-      <div class="tech-pilar-card" style="border-top: 3px solid var(--purple);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--purple); font-family: monospace;">[ 01 // DIAGNOSTIC MATRIX ]</span>
-          <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">ANALYSIS</span>
-        </div>
-
-        <h3 style="font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px;">Diagnóstico antes que solución</h3>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.7; margin-bottom: 24px;">
-          El brief nunca es el problema real. Los datos cuantitativos de comportamiento y la analítica revelan la fricción invisible antes de trazar un solo pixel.
-        </p>
-
-        <!-- Live Tech Graphic Widget 01 -->
-        <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(124,58,237,0.3); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; min-height: 56px;">
-          <div style="display: flex; items-center; gap: 4px; height: 28px; align-items: flex-end;">
-            <div class="tech-wave-bar" style="animation-delay: 0.1s;"></div>
-            <div class="tech-wave-bar" style="animation-delay: 0.3s;"></div>
-            <div class="tech-wave-bar" style="animation-delay: 0.5s;"></div>
-            <div class="tech-wave-bar" style="animation-delay: 0.2s;"></div>
-            <div class="tech-wave-bar" style="animation-delay: 0.4s;"></div>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 11px; font-weight: 700; color: var(--purple); font-family: monospace;">84% DIAGNOSTIC ACCURACY</div>
-            <div style="font-size: 10px; color: var(--text-faint);">Quantitative Behavior Signal</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PILAR 02 -->
-      <div class="tech-pilar-card" style="border-top: 3px solid var(--orange);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--orange); font-family: monospace;">[ 02 // CONSTRAINT DISCOVERY ]</span>
-          <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">FEASIBILITY</span>
-        </div>
-
-        <h3 style="font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px;">Restricciones ocultas</h3>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.7; margin-bottom: 24px;">
-          Presentes en 3 de 4 proyectos. Las limitaciones de arquitectura (AEM, ERPs legacy, SLAs) no obvias son las que condicionan de verdad la viabilidad del producto.
-        </p>
-
-        <!-- Live Tech Graphic Widget 02 -->
-        <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(249,115,22,0.3); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; min-height: 56px;">
-          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: monospace; color: var(--orange);">
-            <span>AEM</span> ⚡ <span>ERP Legacy</span> ⚡ <span>Frontend</span>
-          </div>
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--orange);" class="signal-dot-pulse"></span>
-        </div>
-      </div>
-
-      <!-- PILAR 03 -->
-      <div class="tech-pilar-card" style="border-top: 3px solid #10b981;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: #10b981; font-family: monospace;">[ 03 // A11Y QUALITY SIGNAL ]</span>
-          <span style="font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace;">QUALITY AA</span>
-        </div>
-
-        <h3 style="font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px;">Accesibilidad como señal</h3>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.7; margin-bottom: 24px;">
-          WCAG 2.1 AA no es una lista de cumplimiento legal — es un detector de problemas de UX invisibles. Diseñar accesible eleva la calidad general de todo el sistema.
-        </p>
-
-        <!-- Live Tech Graphic Widget 03 -->
-        <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; min-height: 56px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-            <span style="font-size: 11px; font-weight: 700; color: #10b981; font-family: monospace;">100% WCAG 2.1 AA</span>
-          </div>
-          <span style="font-size: 10px; color: var(--text-faint); font-family: monospace;">VERIFIED SIGNAL</span>
-        </div>
       </div>
 
     </div>
