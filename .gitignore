@@ -1,5 +1,6 @@
 node_modules/
 .vercel/
+dist/
 *.bak
 *.log
 step*.json
@@ -7,4 +8,6 @@ recovered_styles.css
 recovered_diff.txt
 extracted_diff.txt
 extracted_index_diff.txt
-mockup_agent_log.json.claude/
+mockup_agent_log.json
+.claude/
+.vercel
