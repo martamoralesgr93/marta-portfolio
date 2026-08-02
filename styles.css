@@ -4803,6 +4803,9 @@ a:hover {
 .work-item:hover .project-card-img {
   transform: scale(1.03) !important; /* Elegant storytelling image zoom on hover */
 }
+.work-item {
+  /* Disable hover shift when active/expanded */
+}
 .work-item.active:hover .work-summary {
   transform: none;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
@@ -4988,6 +4991,9 @@ a:hover {
   font-weight: 800 !important;
   letter-spacing: -0.04em !important;
   line-height: 1 !important;
+}
+.metric-pill {
+  /* Supporting Metadata (Duration and Tools) */
 }
 .metric-pill:not(.highlighted) {
   background: transparent !important;
@@ -5558,6 +5564,9 @@ a:hover {
   color: rgba(255, 255, 255, 0.5) !important;
   margin: 0 !important;
 }
+.star-step-card {
+  /* Monochromatic pure white hover states */
+}
 .star-step-card:hover {
   background: rgba(255, 255, 255, 0.035) !important;
   border-color: rgba(255, 255, 255, 0.25) !important;
@@ -5738,6 +5747,9 @@ a:hover {
     padding-top: 100px !important;
     padding-bottom: 100px !important;
     display: block !important;
+  }
+  html.project-expanded {
+    /* Make sure main content container behaves naturally */
   }
   html.project-expanded .container-shift {
     transform: none !important;
