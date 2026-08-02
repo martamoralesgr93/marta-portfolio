@@ -51,7 +51,7 @@
     .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
     
     /* Premium Metric Cards */
-    .metric-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px; margin-bottom: 24px; }
+    .metric-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 16px; margin-bottom: 24px; }
     .metric-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 40px 24px; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s ease; }
     .metric-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
     .metric-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.1); }
@@ -67,7 +67,7 @@
     .dash-stat-val { font-size: 24px; font-weight: 700; color: var(--accent); }
 
     /* ─── EVIDENCE CARDS (dato + imagen + caption) ── */
-    .c2-evidence-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+    .c2-evidence-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; }
     .c2-evidence-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
     .c2-evidence-header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
     .c2-evidence-num { font-family: var(--font-serif); font-size: 42px; font-weight: 700; line-height: 1; color: #ef4444; flex-shrink: 0; }
@@ -273,7 +273,7 @@
 
     /* ─── pm-widget compacto (grid 2 cols) ────── */
     .pm-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 0; border: 1px solid var(--border); border-radius: var(--radius-lg);
       overflow: hidden; margin-top: 28px;
     }
@@ -319,8 +319,8 @@
     }
 
     @media (max-width: 768px) {
-      .c2-results-strip { grid-template-columns: 1fr 1fr; }
-      .c2-learnings { grid-template-columns: 1fr 1fr; }
+      .c2-results-strip { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .c2-learnings { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
       .pm-grid { grid-template-columns: 1fr; }
       .c2rs-cell, .c2lc { border-right: none; border-bottom: 1px solid var(--border); }
       .c2rs-cell:last-child, .c2lc:last-child { border-bottom: none; }
@@ -561,7 +561,7 @@
       <div class="block-label-line" style="background: var(--accent-border);"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
       <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
         <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">🧳 User Persona 01 · Viajero Frecuente (Alta Intención)</h4>
         <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Llega al sitio con fechas y destino definidos. Requiere interacción inmediata sin scrolls innecesarios. <strong>Aplicación de la Ley de Fitts</strong> (motor flotante accesible al alcance del pulgar en mobile).</p>
@@ -583,7 +583,7 @@
           <span class="block-label">MI ROL · Responsabilidades</span>
       <h2 class="block-h">Único diseñador<br><em>en un proyecto de CRO activo</em></h2>
     </div>
-    <div class="fu" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:40px;">
+    <div class="fu" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:32px; margin-top:40px;">
       <div>
         <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
         <ul class="bullet-list">
@@ -661,7 +661,7 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:64px; align-items:start;">
 
       <div class="fu">
         <span class="block-label">SITUATION · Contexto</span>
@@ -756,7 +756,7 @@
         <h3 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">Problem Framing y priorización de cambios</h3>
         <p class="p">Existía un conflicto directo entre el <strong>modelo mental corporativo</strong> ("explora, descubre nuestra marca") y el <strong>modelo mental del usuario</strong> ("quiero ver disponibilidad y precios"). El rediseño debía transformar un escaparate en una herramienta de conversión eficiente.</p>
 
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:28px 0;" class="fu compare-grid">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin:28px 0;" class="fu compare-grid">
           <div style="padding:28px; border:1px solid rgba(255,255,255,0.1); border-radius:14px; background:rgba(255,255,255,0.02);">
             <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px;">Modelo mental corporativo</div>
             <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
@@ -940,7 +940,7 @@
         <span style="color: var(--accent);">INTEGRACIÓN DE IA EN PRODUCTO</span>
         <em style="color: rgba(255,255,255,0.65);">— Optimización de flujos y especificación técnica</em>
       </summary>
-      <div class="wf-steps" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="wf-steps" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
         <div class="wf-step">
           <span class="wf-step-num" style="color: var(--accent);">1.</span>
           <p class="wf-step-title" style="color: #fff;">Ideación de Flujos</p>
