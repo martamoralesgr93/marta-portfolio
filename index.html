@@ -2235,7 +2235,6 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   margin: 0.25rem 0 1rem;
 }
 
-/* Mobile Drawer Download Button - Large button at the end */
 .mobile-menu-cta {
   display: inline-flex !important;
   width: 85% !important;
@@ -2249,6 +2248,31 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   margin-top: 24px !important;
   text-align: center !important;
 }
+
+/* Mobile Drawer Download Button - Secondary Ghost Button */
+.mobile-menu-secondary {
+  display: inline-flex !important;
+  width: 85% !important;
+  max-width: 320px !important;
+  justify-content: center !important;
+  padding: 14px 28px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border-radius: 100px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: var(--white) !important;
+  margin-top: 14px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s !important;
+}
+.mobile-menu-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
 
 /* Make sure the positioning text displays correctly on both desktop and mobile */
 html:not(.lang-en) .hero-positioning.es { display: block !important; }
@@ -2415,11 +2439,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#stack"><span class="es">Skills &amp; Stack</span><span class="en">Skills &amp; Stack</span></a></li>
     <li><a href="#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
     <li><a href="#process"><span class="es">Cómo trabajo</span><span class="en">How I work</span></a></li>
-    <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
   <div class="nav-right">
     <a href="assets/cv-marta-ats-es.pdf" download="" class="nav-cta nav-cv es">Descargar CV  ↗</a>
     <a href="assets/cv-marta-ats-en.pdf" download="" class="nav-cta nav-cv en">Download CV  ↗</a>
+    <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="nav-cta es">Agendar llamada  ↗</a>
+    <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="nav-cta en">Schedule Call  ↗</a>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
         <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
@@ -2442,10 +2467,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#stack" onclick="closeMenu()"><span class="es">Skills &amp; Stack</span><span class="en">Skills &amp; Stack</span></a></li>
     <li><a href="#work" onclick="closeMenu()"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
     <li><a href="#process" onclick="closeMenu()"><span class="es">Cómo trabajo</span><span class="en">How I work</span></a></li>
-    <li><a href="#contact" onclick="closeMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
   </ul>
-  <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-cta es">Descargar CV  ↗</a>
-  <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-cta en">Download CV  ↗</a>
+  <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="mobile-menu-cta es">Agendar llamada  ↗</a>
+  <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="mobile-menu-cta en">Schedule Call  ↗</a>
+  <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-secondary es">Descargar CV  ↗</a>
+  <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-secondary en">Download CV  ↗</a>
 </div>
 
 <!-- ==================== HERO ==================== -->
