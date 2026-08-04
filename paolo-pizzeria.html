@@ -1,0 +1,2697 @@
+<!DOCTYPE html>
+<html class="lang-es" lang="es">
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xisxzka5pe");
+  </script>
+  <script src="/auth-lock.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales</title>
+  <meta name="description" content="Cómo construí desde cero la identidad visual completa, el design system y el ecosistema digital de una cadena de pizzerías artesanas — de 1 a 5 locales en 2 años.">
+  <meta name="keywords" content="Brand Design System, Visual Identity, Digital Strategy, WordPress, Adobe XD, Metricool, Product Designer, UX, Spain, Pizzeria">
+  <link rel="canonical" href="https://martamorales.vercel.app/paolo-pizzeria">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://martamorales.vercel.app/paolo-pizzeria">
+  <meta property="og:title" content="Paolo by Danny's Jazz · Brand System & Digital 360° · Marta Morales">
+  <meta property="og:description" content="De 0 a 5 locales. Identidad visual, design system y ecosistema digital completo construido desde cero para una cadena de pizzerías artesanas en Madrid.">
+  <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://martamorales.vercel.app/paolo-pizzeria">
+  <link rel="icon" type="image/png" href="assets/logo-nuevo.png">
+  <link rel="apple-touch-icon" href="assets/logo-nuevo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+
+  <style>
+    .cs-hero-glow {
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%);
+    }
+
+    /* Specific Component Styles */
+    .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
+
+    .dash-widget { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
+    .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
+    .dash-impact-row { display: flex; align-items: baseline; gap: 16px; }
+    .dash-impact-num { font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif; }
+    .dash-impact-text { font-size: 18px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* DESIGN SYSTEM DISPLAY */
+    .ds-section { margin: 60px 0; }
+    .ds-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; font-weight: 600; }
+    .color-palette { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .color-chip { border-radius: 10px; overflow: hidden; width: 120px; }
+    .color-swatch { height: 64px; }
+    .color-info { padding: 10px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; }
+    .color-name { font-size: 11px; font-weight: 600; color: var(--white); }
+    .color-hex { font-size: 10px; color: var(--text-dim); font-family: monospace; }
+
+    .typo-row { border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; align-items: baseline; gap: 24px; }
+    .typo-layer { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); min-width: 80px; }
+    .typo-sample { color: var(--white); }
+
+    /* TOUCHPOINT MAP */
+    .touchpoint-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; max-width: 720px; }
+    .tp-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .tp-cat { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+    .tp-items { font-size: 13px; color: var(--text); line-height: 1.9; }
+
+    .cs-ba-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+    .cs-ba-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+
+    /* QUICK SUMMARY */
+    .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
+    .quick-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+    .qs-col { display: flex; flex-direction: column; }
+    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
+    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .qs-bullets { list-style: none; padding: 0; margin: 0; }
+    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .qs-result-box { margin-top: 4px; padding: 0; }
+    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--accent); line-height: 1.5; }
+
+    /* LEFT RAIL STAR LAYOUT — now inherited from design-system.css (shared component,
+       same shared mobile behaviour as the other 4 case studies). Do not redefine .cs-star/
+       .cs-rail* locally here again: a local duplicate is what caused it to re-squeeze
+       content on mobile even after the shared component was fixed. */
+    .cs-rail-bar { background: linear-gradient(to bottom, rgba(242,162,34,0.25), transparent); }
+
+    /* HORIZONTAL PHASE STEPS */
+    .phase-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 32px 0 48px;
+    }
+    .phase-step {
+      padding: 0 14px 0 0;
+      border-right: 1px solid var(--border);
+    }
+    .phase-step:last-child {
+      border-right: none;
+    }
+    .phase-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .phase-name {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .phase-desc {
+      font-size: 11px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ─── RESULTS STRIP ───────────────────────── */
+    .paolo-results-strip {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-top: 32px; margin-bottom: 24px;
+    }
+    .prs-cell {
+      padding: 28px 20px; border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .prs-cell:last-child { border-right: none; }
+    .prs-hero { background: var(--accent-glow); border-right-color: var(--accent-border); }
+    .prs-val {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 2.8vw, 40px);
+      font-weight: 700; line-height: 1; color: var(--white);
+    }
+    .prs-hero .prs-val { color: var(--accent); }
+    .prs-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim); line-height: 1.4;
+    }
+    .prs-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+    .prs-quote {
+      font-size: 13px; color: var(--text); line-height: 1.65;
+      font-style: italic; border-left: 2px solid var(--accent-border);
+      padding-left: 16px; flex: 1; min-width: 280px; margin: 0;
+    }
+    .prs-ctas { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
+    .prs-btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 22px; background: var(--accent); color: #000;
+      border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none;
+    }
+    .prs-btn-ghost {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 11px 22px; background: transparent; color: var(--accent);
+      border: 1px solid var(--accent-border); border-radius: 8px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+    }
+
+    /* ─── LEARNINGS CARDS ──────────────────────── */
+    .paolo-learnings {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 0; border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-top: 32px;
+    }
+    .pl-card {
+      padding: 28px 20px; border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .pl-card:last-child { border-right: none; }
+    .pl-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .pl-title {
+      font-size: 13px; font-weight: 700; color: var(--white);
+      line-height: 1.3; margin: 0;
+    }
+    .pl-text {
+      font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;
+    }
+
+    /* 2026 LAB SECTION STYLES */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: rgba(242,162,34,0.12);
+      border: 1px solid rgba(242,162,34,0.18);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 32px 0;
+    }
+    .lab-cell {
+      background: #050409;
+      padding: 32px 28px;
+    }
+    .lab-cell:not(:first-child) {
+      border-left: 1px solid rgba(242,162,34,0.12);
+    }
+
+    /* RESPONSIVE OVERRIDES */
+    @media (max-width: 900px) {
+      .tool-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .touchpoint-grid { grid-template-columns: 1fr; }
+      .quick-summary-grid {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 24px; }
+    }
+    @media (max-width: 768px) {
+      /* Ocultar letra decorativa gigante en mobile para evitar overflow horizontal */
+      .cs-behance-letter { display: none !important; }
+      .quick-summary-grid {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px; grid-template-columns: 1fr; gap: 0; padding: 8px 20px; }
+      .quick-summary-grid .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .quick-summary-grid .qs-col:last-child { border-bottom: none; }
+      .dash-widget { padding: 28px 24px; margin: 32px 0; border-radius: 12px; }
+      .dash-impact-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .dash-impact-num { font-size: 64px; }
+      .paolo-results-strip { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .paolo-learnings { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .pl-card, .prs-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .pl-card:last-child, .prs-cell:last-child { border-bottom: none; }
+      .dash-impact-text { font-size: 14px; }
+      .color-palette { gap: 8px; }
+      .color-chip { width: 100px; }
+      .typo-row { flex-direction: column; gap: 8px; padding: 16px 0; }
+      .typo-layer { min-width: auto; }
+      .cs-hero-logo {
+  display: none;
+}
+      .ds-section { margin: 40px 0; }
+      .touchpoint-grid { margin: 28px 0; }
+      .tp-card { padding: 18px; }
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      /* .cs-star/.cs-rail mobile layout now lives in design-system.css (shared by all 5 case
+         studies) — removed the local duplicate that was overriding it and re-squeezing content. */
+      .phase-steps { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .lab-grid { grid-template-columns: 1fr; }
+      .lab-cell:not(:first-child) { border-left: none; border-top: 1px solid rgba(242,162,34,0.12); }
+      /* 2026 chatbot problem grid */
+      .lab-chatbot-grid { grid-template-columns: 1fr !important; }
+      .lab-chatbot-grid > div { border-left: none !important; border-right: none !important; border-bottom: 1px solid rgba(242,162,34,0.12); }
+      .lab-chatbot-grid > div:last-child { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .dash-impact-num { font-size: 48px; }
+      .color-chip { width: 80px; }
+      .color-swatch { height: 48px; }
+      .color-info { padding: 8px 10px; }
+      .color-name { font-size: 10px; }
+      .paolo-results-strip,
+      .paolo-learnings {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── 13. STORYTELLING & HIERARCHY SYSTEM ── */
+    .story-header {
+      margin-bottom: 24px;
+    }
+    .story-num {
+      font-family: var(--font-serif);
+      font-size: 64px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+    }
+    .story-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 4px;
+      display: block;
+    }
+    .story-title {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
+    .story-title em {
+      font-style: italic;
+      font-weight: normal;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* Design Explorations Flow */
+    .explorations-section {
+      margin-top: 36px;
+      margin-bottom: 36px;
+    }
+    .explorations-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .explorations-flow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      scrollbar-width: thin;
+      margin-bottom: 24px;
+    }
+    .exploration-item {
+      flex: 0 0 120px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.02);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .exploration-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(242, 162, 34, 0.35);
+    }
+    .exploration-item img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .exploration-arrow {
+      color: var(--text-dim);
+      font-size: 14px;
+      font-weight: bold;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    /* Decision Card */
+    .card-decision {
+      background: rgba(242, 162, 34, 0.03);
+      border: 1px solid rgba(242, 162, 34, 0.15);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 24px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .card-decision-icon {
+      font-size: 20px;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .card-decision-content {
+      flex: 1;
+    }
+    .card-decision-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .card-decision-text {
+      font-size: 13px;
+      color: var(--text-bright);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Impact Card */
+    .card-impact {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      max-width: 420px;
+      text-align: left;
+    }
+    .card-impact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(242, 162, 34, 0.08);
+      border: 1px solid rgba(242, 162, 34, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .card-impact-content {
+      flex: 1;
+    }
+    .card-impact-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .card-impact-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Device frames */
+    /* Device frames - simplified to flat wrappers without borders, bases or shadows */
+    .device-laptop-minimal {
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: hidden;
+    }
+    .device-laptop-minimal img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    .device-laptop-base {
+      display: none;
+    }
+
+    .device-phone-minimal {
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: hidden;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+    .device-phone-minimal img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Key rule notes */
+    .key-rule-note {
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .key-rule-note svg {
+      color: #10b981;
+    }
+    /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
+    .cs-hamburger {
+      display: none; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.20); background: var(--surface-2);
+      cursor: pointer; color: var(--white); flex-shrink: 0; margin-left: 8px;
+    }
+    .cs-mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.97); backdrop-filter: blur(28px);
+      flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.28s ease;
+      touch-action: pan-y; overscroll-behavior: contain;
+    }
+    .cs-mobile-menu.open { opacity: 1; }
+    .cs-mobile-menu-close {
+      position: absolute; top: 18px; right: 20px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06);
+      color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .cs-mobile-menu-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 18px;
+    }
+    .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
+    .cs-mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .cs-mobile-menu-links a { display: block; padding: 16px 4px; text-decoration: none; transition: color 0.2s; }
+    .cs-mmi-num { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+    .cs-mmi-title { font-size: 19px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
+    .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
+    .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
+    .cs-mobile-menu-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .cs-hamburger { display: flex; }
+      .cs-nav-dropdown { display: none; }
+    }
+  </style>
+</head>
+<body class="cs-paolo-pizzeria">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
+
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
+    <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
+  </a>
+  
+  <div class="cs-nav-right">
+    <div class="cs-nav-dropdown">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <span class="es">Casos de Producto ▾</span>
+        <span class="en">Case Studies ▾</span>
+      </a>
+      <div class="cs-dropdown-menu">
+        <a href="cef-design-system.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 01</div>
+          <div class="cs-item-title">CEF EdTech</div>
+          <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
+          <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
+        </a>
+        <a href="ilunion-cro.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
+        </a>
+        <a href="booking-engine.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 03</div>
+          <div class="cs-item-title">Booking Engine</div>
+          <div class="cs-item-skill es">Design Ops & Componentes</div>
+          <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="paolo-pizzeria.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 04</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
+        </a>
+        <a href="it-ops-oracle.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 05</div>
+          <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
+          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
+        </a>
+      </div>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- MOBILE MENU: acceso real a los 5 casos en touch (el dropdown de arriba es hover-only) -->
+<div class="cs-mobile-menu" id="csMobileMenu">
+  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
+  </button>
+  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
+  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
+  <ul class="cs-mobile-menu-links">
+    <li><a href="cef-design-system.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
+    <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
+    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="paolo-pizzeria.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+  </ul>
+  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
+</div>
+
+
+<main id="main">
+
+<!-- HERO -->
+<header class="cs-hero">
+  <div class="cs-hero-logo"></div>
+  <div class="cs-hero-overlay"></div>
+  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">Paolo by Danny's Jazz</span></li>
+      </ol>
+    </nav>
+    <span class="cs-eyebrow">
+      04 — Paolo by Danny's Jazz · Customer Journey · Producto Digital
+    </span>
+    <h1 class="cs-title">
+      El ecosistema digital que conectó<br><em>una pizzería en expansión con sus clientes</em>
+    </h1>
+    <div class="cs-tags">
+      <span class="cs-tag">Customer Journey</span>
+      <span class="cs-tag">UX/UI Design</span>
+      <span class="cs-tag">Information Architecture</span>
+      <span class="cs-tag">Frontend Development</span>
+      <span class="cs-tag">Delivery Ecosystem</span>
+      <span class="cs-tag">Microsoft Clarity</span>
+      <span class="cs-tag">Google Analytics 4</span>
+      <span class="cs-tag">Digital Transformation</span>
+      <span class="cs-tag">Product Design</span>
+    </div>
+    <div class="cs-meta">
+      <div>
+        <div class="cs-meta-label">Cliente</div>
+        <div class="cs-meta-val">Paolo by Danny's Jazz</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Rol</div>
+        <div class="cs-meta-val">Product Designer · Frontend Developer</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Periodo</div>
+        <div class="cs-meta-val">2019 – 2022</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Escala</div>
+        <div class="cs-meta-val">1 → 5 locales</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- QUICK SUMMARY -->
+<section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
+  <div class="cs-wrap">
+    <div class="quick-summary-grid">
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          El Problema
+        </span>
+        <div class="qs-val">
+          Una cadena de pizzerías artesanas sin canal digital en 2020. La pandemia convirtió "tener presencia online" de ventaja competitiva en condición de supervivencia.
+        </div>
+      </div>
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Mi Rol
+        </span>
+        <div class="qs-val">
+          <strong>Ownership completo del producto digital:</strong> diseño UX/UI, arquitectura de información, desarrollo frontend, activación de canales y análisis continuo. De la decisión al código.
+        </div>
+      </div>
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Qué Hice
+        </span>
+        <ul class="qs-bullets">
+          <li>Diseñé los 3 customer journeys del negocio: delivery, visita al local y reserva.</li>
+          <li>Construí la web completa — Adobe XD → HTML/CSS en WordPress + Elementor.</li>
+          <li>Activé el ecosistema de delivery (Glovo, Uber Eats, JustEat) e implementé QR.</li>
+          <li>Itero sobre datos: Clarity para comportamiento, GA4 para conversión, Metricool para contenido.</li>
+        </ul>
+      </div>
+      <div class="qs-col">
+        <span class="qs-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Resultado
+        </span>
+        <div class="qs-result-box">
+          <div class="qs-result-highlight">
+            El producto escala de 1 a 5 locales en 2 años sin rediseño. Cuando el proyecto terminó, el ecosistema digital seguía funcionando solo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUYER PERSONAS & UX PRINCIPLES -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 36px var(--space-lg); margin: 32px 0;">
+  <div class="cs-wrap">
+    <div class="block-label" style="color: var(--accent);">
+      <span class="block-label-text">Buyer Personas &amp; Leyes UX del Ecosistema Paolo</span>
+      <div class="block-label-line" style="background: var(--accent-border);"></div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">🍕 Buyer Persona 01 · Cliente Delivery (Quick-Service)</h4>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Busca pedir en menos de 90 segundos desde su móvil. <strong>Aplicación de la Ley de Miller (Chunking)</strong> organizando la carta en bloques de máximo 7 elementos para evitar parálisis de elección.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">🍷 Buyer Persona 02 · Comensal Presencial / Reserva</h4>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Valora la atmósfera del local y la experiencia artesana. <strong>Aplicación de la Ley de Fitts</strong> con accesos rápidos a la carta digital mediante QR en mesa y sistema de reservas sin fricción.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MI ROL -->
+<section class="cs-block cs-block-light">
+  <div class="cs-behance-letter" style="opacity:0.35">M</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">MI ROL · Responsabilidades</span>
+      <h2 class="block-h">Primer proyecto.<br><em>Ownership del producto digital de principio a fin</em></h2>
+    </div>
+    <div class="fu" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:32px; margin-top:40px;">
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
+        <ul class="bullet-list">
+          <li>Definición de la arquitectura de información de la web — cómo se organiza la carta, cómo se comunica la escala (5 locales, 1 número), qué CTAs y en qué orden</li>
+          <li>Diseño UX/UI — prototipo completo en Adobe XD, responsive mobile-first, interacciones y estados</li>
+          <li>Desarrollo frontend — maquetación en WordPress + Elementor, HTML/CSS, publicación y mantenimiento</li>
+          <li>Implementación QR — sustitución de cartas físicas y punto de entrada digital en local</li>
+          <li>Activación de ecosistema de delivery — Glovo, Uber Eats, JustEat: configuración, oferta y optimización</li>
+          <li>Análisis de comportamiento y conversión — Microsoft Clarity + Google Analytics 4 → iteraciones concretas</li>
+          <li>Gestión de presencia digital — Google My Business, contenido, reputación online</li>
+        </ul>
+      </div>
+      <div>
+        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Herramientas</p>
+        <div class="tool-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin:0 0 24px;">
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <div class="tool-name">Adobe XD</div>
+            <div class="tool-role">Diseño UI / prototipos web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="tool-name">WordPress · Elementor</div>
+            <div class="tool-role">Desarrollo web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="tool-name">Metricool</div>
+            <div class="tool-role">RRSS analytics</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="tool-name">Microsoft Clarity</div>
+            <div class="tool-role">Comportamiento web</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <div class="tool-name">Google Analytics 4</div>
+            <div class="tool-role">Tráfico y conversión</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+            <div class="tool-name">Glovo · Uber · JustEat</div>
+            <div class="tool-role">Canales de delivery</div>
+          </div>
+        </div>
+        <p class="p" style="margin-top:0; padding-left:16px; border-left:2px solid var(--accent); font-size:13px; color:rgba(255,255,255,0.55);">Ownership completo de producto autónomo. Sin briefing previo ni estructura de equipo establecida, definí las prioridades, conceptualicé la UI y maqueté la web completa, escalando el soporte digital de 1 a 5 locales en 2 años.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [S] SITUATION -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">S</div>
+        <div class="cs-rail-label">SITUATION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+        <span class="block-label">SITUATION · Contexto</span>
+        <h2 class="block-h">
+          Un negocio en expansión.<br><em>Sin canal digital en el peor momento para no tenerlo</em>
+        </h2>
+
+        <div class="row g-4" style="margin-top:32px;">
+          <div class="col-md-7">
+            <p class="lead">Paolo es una pizzería artesana en Madrid. En 2020, su única forma de adquirir clientes era el paso peatonal físico o el boca a boca; carecía de sitio web, sistema de reservas y presencia activa en plataformas de delivery.</p>
+            <p class="p">Con las restricciones sanitarias de la pandemia, la falta de un canal online comprometió las ventas del negocio. Activar la digitalización pasó de ser una mejora competitiva a una necesidad de supervivencia.</p>
+            <p class="p">Mi objetivo fue conceptualizar y desarrollar el ecosistema digital de la marca desde cero: carta digital interactiva, flujos de reserva integrados y optimización del delivery directo.</p>
+          </div>
+          <div class="col-md-5">
+            <div style="display:flex; flex-direction:column; gap:0;">
+              <div style="padding:24px 0; border-bottom:1px solid var(--border);">
+                <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">0</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">Presencia digital al inicio — sin web, sin delivery, sin Google My Business</div>
+              </div>
+              <div style="padding:24px 0; border-bottom:1px solid var(--border);">
+                <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">2020</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">El año en que digitalizar dejó de ser una opción para la restauración</div>
+              </div>
+              <div style="padding:24px 0;">
+                <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">1→5</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">Locales — el mismo producto digital escaló sin rediseño</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [T] TASK -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">T</div>
+        <div class="cs-rail-label">TASK</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+        <span class="block-label">TASK · El reto</span>
+        <h2 class="block-h">
+          No era una web.<br><em>Era un problema de experiencia de usuario y crecimiento de negocio.</em>
+        </h2>
+
+        <div class="row g-4 fu" style="margin-top:28px; margin-bottom:40px;">
+          <div class="col-md-6">
+            <p class="lead" style="margin-bottom:16px;">"¿Cómo encuentra Paolo un cliente nuevo? ¿Cómo ve la carta? ¿Cómo pide? En 2020, la respuesta a las tres era: no puede."</p>
+            <p class="p">El reto era de producto. Había 6 necesidades de usuario distintas, 11 touchpoints posibles y un negocio que iba a crecer de 1 a 5 locales. El mismo sistema tenía que resolver todo eso sin rediseño.</p>
+          </div>
+          <div class="col-md-6">
+            <div style="height:100%; display:flex; flex-direction:column; justify-content:center; gap:8px;">
+              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:6px;">El ecosistema que había que construir</div>
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:4px 24px;">
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Web propia</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">QR en local</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Google Maps / GMB</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Glovo · Uber · JustEat</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">RRSS + contenido</div>
+                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">WhatsApp · Teléfono</div>
+              </div>
+              <div style="margin-top:8px; font-size:11px; color:var(--text-dim);">11 touchpoints · 1 sistema coherente · escalable a 5 locales</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 JOBS TO BE DONE -->
+        <div class="fu" style="margin-bottom:16px;">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;">6 necesidades de usuario distintas · 1 ecosistema</div>
+        </div>
+        <div class="row g-3 fu">
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:2px solid var(--accent); height:100%;">
+              <div style="margin-bottom:12px; color:var(--accent);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Encontrar el restaurante</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">Google Maps + GMB optimizado. Sección RESTAURANTES con mapa y dirección de cada local.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Pedir a domicilio</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">CTA principal en desktop. Glovo + Uber Eats + JustEat activos. Sección PEDIDOS con acceso directo.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Reservar mesa</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">CTA "Reservar mesa" → WhatsApp directo. Sin formulario. Confirmación en minutos.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Ver la carta</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">Sección CARTA como eje central de la IA — la más visitada según Clarity. Acceso desde hero y nav.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Contactar con Paolo</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">1 número centralizado para todos los locales. CTA "Llamar" como acción principal en mobile.</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
+              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Descubrir la marca</div>
+              <div style="font-size:12px; color:var(--text); line-height:1.6;">Sección HISTORIA, RRSS, QR en mesa. Danny's Jazz como diferencial cultural de barrio.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [A] ACTION -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+        <span class="block-label">ACTION · Lo que hice, y por qué</span>
+        <h2 class="block-h">
+          Diseñar el producto, construirlo,<br><em>analizarlo. De principio a fin.</em>
+        </h2>
+
+        <!-- HORIZONTAL PHASE STEPS -->
+        <div class="phase-steps fu">
+          <div class="phase-step">
+            <div class="phase-num">1</div>
+            <div class="phase-name">Discovery</div>
+            <div class="phase-desc">Mapear los 3 journeys de usuario reales antes de diseñar</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">2</div>
+            <div class="phase-name">IA + UX</div>
+            <div class="phase-desc">5 secciones, 3 CTAs jerarquizados, 1 teléfono. Adobe XD</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">3</div>
+            <div class="phase-name">UI + Dev</div>
+            <div class="phase-desc">Diseño y código en una sola persona. WordPress + Elementor + QR</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">4</div>
+            <div class="phase-name">Ecosistema</div>
+            <div class="phase-desc">Glovo, Uber, JustEat, GMB. Todos los canales activos</div>
+          </div>
+          <div class="phase-step">
+            <div class="phase-num">5</div>
+            <div class="phase-name">Iteración</div>
+            <div class="phase-desc">Clarity + GA4 + Metricool. Ciclo mensual de propuestas basadas en datos</div>
+          </div>
+        </div>
+
+        <!-- 3 CUSTOMER JOURNEYS REALES DEL NEGOCIO -->
+        <div class="story-header fu" style="margin-top: 56px; text-align: left;">
+          <span class="story-label">DISCOVERY · 3 journeys, un mismo sistema</span>
+          <h3 class="story-title">Delivery, visita al local y reserva</h3>
+          <p class="p" style="margin-bottom: 8px; font-size: 15px;">6 necesidades de usuario, 11 touchpoints posibles. El mismo sistema tenía que resolver los tres caminos sin rediseño.</p>
+        </div>
+
+        <div class="ux-flowchart fu" style="margin-top: 20px;">
+          <div class="ux-flow-header">
+            <span class="ux-flow-subtitle">Journey 1 · Delivery</span>
+            <h3 class="ux-flow-title" style="font-size:17px;">Del descubrimiento al pedido, sin fricción</h3>
+          </div>
+          <div class="ux-flow-grid">
+            <div class="ux-flow-step ux-flow-step--action">
+              <span class="ux-flow-badge">Paso 1</span>
+              <p class="ux-flow-step-title">Descubre</p>
+              <p class="ux-flow-step-desc">Google My Business o RRSS</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--decision">
+              <span class="ux-flow-badge">Paso 2</span>
+              <p class="ux-flow-step-title">Carta digital</p>
+              <p class="ux-flow-step-desc">Web con arquitectura de información mobile-first</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--decision">
+              <span class="ux-flow-badge">Paso 3</span>
+              <p class="ux-flow-step-title">Plataforma delivery</p>
+              <p class="ux-flow-step-desc">Glovo, Uber Eats o JustEat — configurados y optimizados</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--success">
+              <span class="ux-flow-badge">Éxito</span>
+              <p class="ux-flow-step-title">Pedido confirmado</p>
+              <p class="ux-flow-step-desc">Sin fricción entre descubrir y pedir</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ux-flowchart fu" style="margin-top: 20px;">
+          <div class="ux-flow-header">
+            <span class="ux-flow-subtitle">Journey 2 · Visita al local</span>
+            <h3 class="ux-flow-title" style="font-size:17px;">De la calle a la mesa, sin carta física</h3>
+          </div>
+          <div class="ux-flow-grid">
+            <div class="ux-flow-step ux-flow-step--action">
+              <span class="ux-flow-badge">Paso 1</span>
+              <p class="ux-flow-step-title">Paso peatonal</p>
+              <p class="ux-flow-step-desc">O búsqueda directa en Google Maps</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--decision">
+              <span class="ux-flow-badge">Paso 2</span>
+              <p class="ux-flow-step-title">Entra al local</p>
+              <p class="ux-flow-step-desc">Sin carta física impresa</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--decision">
+              <span class="ux-flow-badge">Paso 3</span>
+              <p class="ux-flow-step-title">Escanea QR en mesa</p>
+              <p class="ux-flow-step-desc">Punto de entrada digital que sustituyó la carta física</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--success">
+              <span class="ux-flow-badge">Éxito</span>
+              <p class="ux-flow-step-title">Pide desde la carta digital</p>
+              <p class="ux-flow-step-desc">Misma web, contexto distinto</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ux-flowchart fu" style="margin-top: 20px;">
+          <div class="ux-flow-header">
+            <span class="ux-flow-subtitle">Journey 3 · Reserva</span>
+            <h3 class="ux-flow-title" style="font-size:17px;">De la intención a la confirmación</h3>
+          </div>
+          <div class="ux-flow-grid">
+            <div class="ux-flow-step ux-flow-step--action">
+              <span class="ux-flow-badge">Paso 1</span>
+              <p class="ux-flow-step-title">Busca el local</p>
+              <p class="ux-flow-step-desc">De los 5 locales activos</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--decision">
+              <span class="ux-flow-badge">Paso 2</span>
+              <p class="ux-flow-step-title">Web · reserva</p>
+              <p class="ux-flow-step-desc">CTA de reserva jerarquizado en el home</p>
+            </div>
+            <div class="ux-flow-connector">→</div>
+            <div class="ux-flow-step ux-flow-step--success">
+              <span class="ux-flow-badge">Éxito</span>
+              <p class="ux-flow-step-title">Confirmación</p>
+              <p class="ux-flow-step-desc">Un único número de teléfono para los 5 locales</p>
+            </div>
+          </div>
+        </div>
+
+    <!-- WIREFRAMES: EL PROCESO DE DISEÑO -->
+    <!-- WIREFRAMES: EL PROCESO DE DISEÑO -->
+    <div class="story-header fu" style="margin-top: 64px; text-align: left;">
+      <span class="story-label">01 · ARQUITECTURA Y DECISIONES CLAVE</span>
+      <h3 class="story-title">Wireframe low-fi — Home</h3>
+      <p class="p" style="margin-bottom: 8px; font-size: 15px;">El wireframe low-fi de la pantalla más recurrente — el home — concentra las decisiones de producto más importantes del proyecto.</p>
+      <p class="p" style="margin-bottom: 32px; font-size: 15px; color: var(--text-dim);">3 CTAs en orden de frecuencia de uso real, 1 número de teléfono para todos los locales, y la jerarquía que funciona igual en desktop y mobile.</p>
+    </div>
+
+    <!-- Wireframes Layout Grid -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; align-items: start;">
+      <!-- DESKTOP HOMEPAGE -->
+      <div class="col-lg-5 col-md-7">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">DESKTOP · HOMEPAGE</div>
+        <div class="device-laptop-minimal">
+          <img width="1450" height="835" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-desk.webp" alt="Wireframe desktop homepage Paolo">
+        </div>
+        <div class="device-laptop-base" style="margin-bottom: 0;"></div>
+      </div>
+      
+      <!-- MOBILE HOMEPAGE -->
+      <div class="col-lg-3 col-md-5">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">MOBILE · HOMEPAGE</div>
+        <div class="device-phone-minimal" style="max-width: 260px; margin: 0;">
+          <img width="785" height="1382" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-mobile.webp" alt="Wireframe mobile homepage Paolo">
+        </div>
+      </div>
+      
+      <!-- DECISIONES CLAVE -->
+      <div class="col-lg-4 col-md-12 text-start">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:24px;">DECISIONES CLAVE EN ESTE WIREFRAME</div>
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <!-- Item 1 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">3 CTAs, no más</div>
+              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Pedir a domicilio · Encontrar restaurante · Reservar mesa</div>
+              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">En ese orden por frecuencia de uso real. Todo lo demás, en la navegación.</div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">1 teléfono visible siempre</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">“Llamar” está en la cabecera en desktop y en el header en mobile. Accesible, consistente y siempre a 1 clic.</div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Misma jerarquía en ambos dispositivos</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Mismo orden de lectura, mismos elementos clave, adaptados al espacio disponible. Mobile-first, pero con lógica de producto.</div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Información clave justo debajo del claim</div>
+              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Refuerza confianza y contexto:</div>
+              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">5 restaurantes · 1 teléfono · todo Madrid.</div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">5</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Simplicidad que guía</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Menos opciones, más claridad. El usuario entiende en 3 segundos qué puede hacer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Por qué esto importa banner -->
+    <div class="fu" style="margin-bottom: 64px; background: rgba(255,255,255,0.01); border: 1px solid var(--border); border-radius: 12px; padding: 24px 32px; display: flex; gap: 20px; align-items: center; text-align: left;">
+      <div style="flex-shrink:0; display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:rgba(242,162,34,0.08); border:1px solid rgba(242,162,34,0.25);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="6"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+      </div>
+      <div>
+        <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">POR QUÉ ESTO IMPORTA</div>
+        <p style="font-size:13.5px; color:var(--text); line-height:1.6; margin:0;">Este es el punto de entrada más importante del sitio. Cada elemento compite por la atención. Esta arquitectura elimina fricción, guía al usuario y maximiza la conversión.</p>
+      </div>
+    </div>
+
+    <!-- SISTEMA DE DISEÑO COMPACTO -->
+    <div class="story-header fu" style="margin-top: 64px; text-align: left;">
+      <span class="story-label">02 · SISTEMA VISUAL</span>
+      <h3 class="story-title">La identidad visual <em>que dio cara al ecosistema</em></h3>
+      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Los wireframes definieron la arquitectura. El sistema visual definió el carácter. La paleta de 3 colores con roles claros y la combinación de tipografía display serif + sans-serif funcional son los mismos en todos los touchpoints — web, QR, RRSS, GMB.</p>
+    </div>
+
+    <!-- LOGO Y SU HISTORIA -->
+    <div class="row g-4 fu align-items-center" style="margin-bottom: 48px; text-align: left;">
+      <div class="col-md-4">
+        <div style="border-radius: 12px; overflow: hidden; background: #ffffff; padding: 24px; display: flex; align-items: center; justify-content: center; aspect-ratio: 1/1;">
+          <img width="1280" height="1280" loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-fusion-dannys.jpg.webp" alt="Logo de Paolo by Danny's Jazz" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">EL IMAGOTIPO</span>
+        <h4 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#fff; margin-bottom:12px;">Una identidad heredada</h4>
+        <p style="font-size:14px; color:var(--text); line-height:1.75; margin-bottom:14px;">El logotipo original de Paolo (una composición del imagotipo orgánico de la masa/pizza y la tipografía gestual con el subtítulo "BY DANNY'S JAZZ") fue heredado de un trabajo previo de branding. El reto de diseño no fue crear la marca desde cero, sino estructurar un sistema visual coherente que permitiera escalar esta marca física hacia un ecosistema digital y de restauración 360°.</p>
+        <p style="font-size:13.5px; color:var(--text-dim); line-height:1.75; margin:0;">Mi rol consistió en tomar esta marca existente y normativizarla, definiendo las reglas de convivencia, los roles cromáticos precisos y las jerarquías tipográficas para que la identidad luciera consistente en la fachada, el menú impreso, los uniformes, la web de pedidos y las redes sociales.</p>
+      </div>
+    </div>
+
+    <!-- COLORES Y TIPOGRAFÍAS -->
+    <div class="row g-4 fu" style="margin-bottom:64px; text-align: left;">
+      <div class="col-md-5">
+        <div>
+          <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Paleta · 3 colores, roles claros</div>
+          <div style="display:flex; gap:10px; margin-bottom:16px;">
+            <div style="flex:1;">
+              <div style="height:52px; border-radius:8px; background:#F2A222; margin-bottom:8px;"></div>
+              <div style="font-size:11px; font-weight:600; color:#fff;">Ámbar</div>
+              <div style="font-size:10px; color:var(--text-dim);">#F2A222 · Acción, símbolo</div>
+            </div>
+            <div style="flex:1;">
+              <div style="height:52px; border-radius:8px; background:#1A1107; margin-bottom:8px;"></div>
+              <div style="font-size:11px; font-weight:600; color:#fff;">Negro cálido</div>
+              <div style="font-size:10px; color:var(--text-dim);">#1A1107 · Base, texto</div>
+            </div>
+            <div style="flex:1;">
+              <div style="height:52px; border-radius:8px; background:#FEF8ED; border:1px solid rgba(255,255,255,0.1); margin-bottom:8px;"></div>
+              <div style="font-size:11px; font-weight:600; color:#fff;">Crema</div>
+              <div style="font-size:10px; color:var(--text-dim);">#FEF8ED · Fondo, espacio</div>
+            </div>
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin:0;">El ámbar aparece exclusivamente para el símbolo y las acciones — lo convierte en color de firma. Ningún otro touchpoint lo usa como fondo genérico.</p>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Tipografía · Display + Funcional</div>
+          <div style="border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:14px;">
+            <div style="font-family:'Playfair Display',serif; font-size:26px; font-style:italic; font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Las pizzas del barrio,<br>para compartir.</div>
+            <div style="font-size:10px; color:var(--text-dim);">Display Serif Italic · Titulares · Carácter y calor de marca</div>
+          </div>
+          <div style="border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:14px;">
+            <div style="font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#fff; font-weight:600; margin-bottom:4px;">HISTORIA · CARTA · RESTAURANTES · PEDIDOS</div>
+            <div style="font-size:10px; color:var(--text-dim);">Sans-serif Uppercase · Navegación y etiquetas · Claridad funcional</div>
+          </div>
+          <div>
+            <div style="font-size:14px; color:rgba(255,255,255,0.7); line-height:1.6; margin-bottom:4px;">Masa artesana de fermentación lenta, pensada para compartir.</div>
+            <div style="font-size:10px; color:var(--text-dim);">Sans-serif Regular · Cuerpo de texto · Legibilidad y accesibilidad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECOSISTEMA FÍSICO + DIGITAL -->
+    <div class="story-header fu" style="margin-top: 64px;">
+      <span class="story-label">03 · TOUCHPOINTS FÍSICOS & INTEGRACIÓN DIGITAL</span>
+      <h3 class="story-title">De la pantalla <em>a la calle</em></h3>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-8">
+          <p class="p" style="margin:0 0 12px;">El branding gráfico de Paolo fue heredado —el diseño del imagotipo principal pertenece a otro autor—. Mi rol se centró en proyectar, maquetar e integrar este branding a través de todos los touchpoints del negocio, garantizando coherencia visual y canalizando a los clientes hacia los embudos de venta y comunicación de la marca.</p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Señalética de Fachadas</span>
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Branding de Sombrillas</span>
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Uniformes Industriales</span>
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Campañas en Redes Sociales</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <p class="p" style="font-size:13px; padding-left:16px; border-left:2px solid var(--accent); color:rgba(255,255,255,0.5); margin:0;">El diseño físico y el digital deben hablar el mismo idioma para que la transición del cliente sea natural.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plano Técnico de Terraza (Full Width) -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
+      <div class="col-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Plano Técnico Único · Fachada & Exteriores</div>
+        <div style="border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.015); margin-bottom: 24px;">
+          <img width="1536" height="1024" loading="lazy" decoding="async" src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" alt="Plano de montaje de fachada y sombrillas de terraza Paolo" style="width:100%; height:auto; display:block;">
+        </div>
+        
+        <div style="margin-top:14px;">
+          <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:12px;">Estrategia de Estandarización Exterior (`plano-sombrillas-montaje.png`)</div>
+          <p style="font-size:13.5px; color:var(--text); line-height:1.75; margin-bottom:24px;">Este plano técnico consolida la identidad física de Paolo en la calle, convirtiendo la fachada en un canal estructurado de adquisición física y online. El plano define 4 componentes clave para la replicabilidad del negocio en nuevas aperturas:</p>
+          
+          <div class="row g-4">
+            <!-- Columna 1: Rótulos y Luminoso -->
+            <div class="col-md-6">
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:20px;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Rótulos Horizontales (Buzón de Conversión)</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Diseñados como una landing page física. El rótulo izquierdo prioriza la llamada a la acción ("Take a way" + teléfono de pedidos directos) y el derecho potencia el claim ("Sígueme para más pizza" + usuario de Instagram) para captar el tráfico peatonal y convertirlo en seguidor digital.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Luminoso Vertical (Identificación)</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Señalética vertical con iluminación en negativo (luz blanca brillante únicamente sobre las letras del imagotipo "PAOLO" y el subtítulo "pizzeria artesana"). Esto asegura la visibilidad nocturna y la elegancia sin contaminar visualmente la calle.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Columna 2: Sombrillas y Boceto -->
+            <div class="col-md-6">
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:20px;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Sombrilla de Terraza (Co-branding)</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Estandarización técnica de sombrillas de 300 cm en colaboración con Erdinger. La financiación del mobiliario por parte del proveedor cervecero reduce los costes de apertura del local, mientras que el control del diseño gráfico por el equipo de Paolo garantiza que el espacio mantenga su coherencia estética.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
+                <div>
+                  <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Boceto de Fachada General</h4>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">La composición unificada muestra cómo interactúan todos los elementos físicos (puertas arqueadas, toldos, sombrillas y rótulos) para presentar una fachada coherente y atractiva en el barrio de Conde Duque.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Uniformes Corporativos (Mockup + Realidad en cocina) -->
+    <div class="row g-4 fu" style="margin-bottom:40px; align-items:start;">
+      <div class="col-md-6">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Uniformes · Polo bordado</div>
+        <div style="overflow:hidden; aspect-ratio:4/3; background:rgba(255,255,255,0.03);">
+          <img width="2372" height="1425" loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.webp" alt="Mockup polo burdeos Paolo — diseño frente y espalda con bordado" style="width:100%; height:100%; object-fit:contain; display:block;">
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Mockup · Polo burdeos, bordado frente y espalda</p>
+      </div>
+      <div class="col-md-6">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+          <span>Uniforme en uso · Equipo</span>
+          <span style="font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); background:rgba(242,162,34,0.1); border:1px solid rgba(242,162,34,0.25); padding:2px 8px; border-radius:100px;">2026 · IA</span>
+        </div>
+        <div style="overflow:hidden; aspect-ratio:4/3;">
+          <img width="2619" height="1340" loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.webp" alt="Camarero Paolo con polo burdeos — generado con IA para humanizar el ecosistema web" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Imagen generada con IA · El uniforme convierte a cada persona en soporte de marca</p>
+      </div>
+    </div>
+
+    <!-- Adquisición Digital (RRSS / Notificación push ficticia) -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; align-items: center; text-align: left;">
+      <div class="col-md-4">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Social · Notificación Creativa</div>
+        <div style="border-radius: 8px; overflow: hidden;">
+          <img width="1080" height="1080" loading="lazy" decoding="async" src="projects/04-paolo/assets/04-social.webp" alt="Pieza de redes sociales Paolo — foto de pizza con notificación de mensaje como copy creativo" style="width:100%; display:block;">
+        </div>
+      </div>
+      <div class="col-md-8 text-start">
+        <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">ADQUISICIÓN EN RRSS</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#fff; margin-bottom:12px;">Notificación push creativa</h3>
+        <p style="font-size:13.5px; color:var(--text); line-height:1.7; margin-bottom:0;">Creativo publicitario para Instagram Stories (`04-social.png`). Diseñado simulando una interfaz real de notificación push del sistema de mensajería móvil. Al presentar una captura que imita un mensaje entrante de "Paolo" con tono cercano ("¿Cómo llevas el día? Seguro que mejor con pizza"), rompemos la inercia visual del scroll automático del usuario, aumentando drásticamente los clics directos hacia el enlace del sistema de pedidos.</p>
+      </div>
+    </div>
+
+    <!-- Decision card for physical/digital alignment -->
+    <div class="card-decision fu" style="margin-bottom: 64px;">
+      <div class="card-decision-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg></div>
+      <div class="card-decision-content">
+        <div class="card-decision-title">Decisión de Diseño de Ecosistema Físico-Digital</div>
+        <p class="card-decision-text">Los elementos físicos (sombrillas, luminosos, uniformes) y los creativos digitales se estructuran con el mismo principio: no son elementos aislados, sino canales de entrada. Cada touchpoint del restaurante está optimizado para desviar la atención al canal digital principal o reforzar el posicionamiento artesanal de Paolo para justificar sus precios.</p>
+      </div>
+    </div>
+
+    <!-- CORE PRODUCT CASE STUDY: 04 ARQUITECTURA DE LA WEB -->
+    <div class="story-header fu" style="margin-top: 80px; text-align: left;">
+      <span class="story-label">04 · ARQUITECTURA DE LA WEB</span>
+      <h3 class="story-title">Las 5 secciones del sitio</h3>
+      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Cada sección responde a un job-to-be-done específico dentro del recorrido del usuario. Diseñadas para guiar, informar y convertir sin fricción.</p>
+    </div>
+
+    <!-- Vista general de la web (Full Width) -->
+    <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
+      <div class="col-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Vista General de la Interfaz Web (Escritorio)</div>
+        <div style="border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
+          <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web.webp" alt="Paolo by Danny's Jazz — Interfaz web completa" style="width:100%; height:auto; display:block; border-radius:8px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 SECTIONS ALTERNATING ROWS -->
+    <div style="display: flex; flex-direction: column; gap: 80px; margin-bottom: 80px;">
+      
+      <!-- Fila 01: Historia -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column -->
+        <div class="col-lg-6 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web1.webp" alt="Paolo · Sección HISTORIA" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HISTORIA</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Narrativa de marca</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Establece una conexión inmediata desde el origen local. La sección de historia cuenta de dónde venimos, el respeto por la tradición de la pizza artesana y el alma de barrio que define a Paolo.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Fotografía del origen:</strong> Imágenes de alta calidad del proceso de elaboración de la masa madre para construir confianza visual instantánea.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Narrativa del barrio:</strong> El copy integra al local de Conde Duque en la cultura local, humanizando la marca frente a franquicias corporativas.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Generar confianza y conexión emocional con el posicionamiento artesanal.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 02: Carta -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column (Desktop right, mobile top) -->
+        <div class="col-lg-6 order-lg-2 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web4.webp" alt="Paolo · Sección CARTA" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column (Desktop left, mobile bottom) -->
+        <div class="col-lg-6 order-lg-1 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · CARTA</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Explorar y elegir</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Nuestra sección más visitada. Diseñada para que los clientes puedan examinar las pizzas de forma rápida y visual, eliminando la fricción habitual de los menús en PDF descargables o enlaces externos.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Filtros e ingredientes:</strong> Clasificación clara de alérgenos y opciones vegetarianas visibles directamente sobre cada plato sin necesidad de descargas.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Fotografía sin artificios:</strong> Platos reales mostrados desde una perspectiva superior que abre el apetito y muestra la generosidad de la masa.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Encontrar rápidamente la opción perfecta y comprobar ingredientes.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 03: Pedidos -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column -->
+        <div class="col-lg-6 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web3.webp" alt="Paolo · Sección PEDIDOS" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · PEDIDOS</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Pedir sin complicaciones</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Optimizamos el flujo de compra online para competir directamente con las grandes plataformas, reduciendo la tasa de abandono del carrito mediante una navegación extremadamente simple.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Compra como invitado:</strong> No se exige registro de usuario para pedir, disminuyendo los clics necesarios en un 40% durante el checkout.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Métodos de pago rápidos:</strong> Integración visible de Apple Pay y Google Pay para acelerar la conversión móvil en un solo toque.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Realizar transacciones de forma rápida, segura y sin fricción de contraseñas.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 04: Restaurantes -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column (Desktop right, mobile top) -->
+        <div class="col-lg-6 order-lg-2 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web5.webp" alt="Paolo · Sección RESTAURANTES" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column (Desktop left, mobile bottom) -->
+        <div class="col-lg-6 order-lg-1 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04 · RESTAURANTES</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Dónde encontrarnos</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">El mapa de locales interactivo y la lista lateral permiten encontrar el restaurante más cercano y tomar decisiones físicas de forma inmediata.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Mapa y lista integrados:</strong> Mapeo espacial instantáneo combinado con una lista lateral que detalla dirección, barrio y accesos.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Acciones directas:</strong> Botones rápidos para "Cómo llegar" a través de GPS o "Llamar" telefónicamente para reservas de mesa inmediatas.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Localizar el establecimiento físico más cercano al instante y obtener indicaciones de ruta.
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 05: Opiniones -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <!-- Visual Column -->
+        <div class="col-lg-6 col-md-12">
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web2.webp" alt="Paolo · Sección OPINIONES" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">05 · OPINIONES</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Confianza real</h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Utilizamos la prueba social real para justificar nuestro precio premium frente a alternativas industriales de bajo coste.</p>
+          
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Integración automática:</strong> Sincronización directa con Google Maps y TripAdvisor para garantizar que las opiniones son 100% reales.</p>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+              <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0;"><strong style="color:#fff;">Foco artesano:</strong> Destacamos opiniones que mencionan explícitamente el sabor único de la masa fermentada lenta durante 48h.</p>
+            </div>
+          </div>
+          
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Validar el valor gastronómico del producto con la experiencia sincera de otros usuarios.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Final Decision Card -->
+    <div class="card-decision fu" style="margin-bottom: 64px;">
+      <div class="card-decision-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg></div>
+      <div class="card-decision-content">
+        <div class="card-decision-title">Decisión Final de Estructura Web</div>
+        <p class="card-decision-text">La web se estructuró en 5 secciones claramente identificables desde la navegación que corresponden a pasos clave del embudo: descubrimiento de marca (Historia), evaluación de producto (Carta), conversión offline (Restaurantes), conversión online (Pedidos) y fidelización y prueba social (Opiniones). Cada sección tiene un propósito de negocio definido.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCTO EN VIVO -->
+    <div class="fu" style="margin-bottom:72px; padding:28px 0; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <p style="font-size:13px; color:var(--text-dim); margin:0;">Este es el producto que diseñé y desarrollé entre 2020 y 2022. Las capturas muestran el trabajo original tal como lo entregué.</p>
+      <div style="display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap;">
+        <a href="https://04-paolo.vercel.app/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:var(--accent); color:#000; border-radius:8px; font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap;">Ver la web →</a>
+        <a href="https://github.com/martamoralesgr93/marta-portfolio/tree/main/projects/04-paolo" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:transparent; color:var(--accent); border:1px solid rgba(242,162,34,0.35); border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; white-space:nowrap;">Código fuente →</a>
+      </div>
+    </div>
+
+    <!-- CORE PRODUCT CASE STUDY: 05 MOBILE CTA / DECISIÓN DE CONTEXTO -->
+    <div class="story-header fu" style="margin-top: 80px;">
+      <span class="story-num">05</span>
+      <span class="story-label">ADAPTACIÓN CONTEXTUAL: MOBILE</span>
+      <h3 class="story-title">“Llamar” como CTA <em>principal en mobile</em></h3>
+    </div>
+
+    <div class="row g-4 align-items-center fu" style="margin-bottom: 64px;">
+      <div class="col-md-5">
+        <div class="device-phone-minimal">
+          <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/img-paolo-mobile.webp" alt="Diseño móvil en producción — botón llamar destacado">
+        </div>
+      </div>
+      <div class="col-md-7">
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 16px;">El contexto físico del dispositivo determina la jerarquía visual. En un ordenador, el usuario está habitualmente en su domicilio y tiene mayor disposición a navegar por la web o pedir delivery (CTA principal: "Pedir a domicilio"). En el teléfono móvil, el usuario suele estar en movimiento o en la calle, con urgencia por contactar o localizar el local físico.</p>
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto físico y de dispositivo → distinta llamada a la acción prioritaria.</strong> Por ello, en móviles la barra de navegación destaca el botón de llamada telefónica instantánea junto al menú de hamburguesa.</p>
+        
+        <!-- Impact Card -->
+        <div class="card-impact">
+          <div class="card-impact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div class="card-impact-content">
+            <div class="card-impact-title">Impacto de Conversión</div>
+            <p class="card-impact-text">Aumento en las llamadas directas desde la web móvil en un +32% en los primeros 30 días tras el lanzamiento.</p>
+          </div>
+        </div>
+
+        <div class="key-rule-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>El diseño responsive debe adaptar la jerarquía de conversión a la realidad física de uso de cada dispositivo.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUSTOMER JOURNEYS -->
+    <div class="story-header fu" style="margin-top: 80px;">
+      <span class="story-num">06</span>
+      <span class="story-label">CUSTOMER JOURNEYS</span>
+      <h3 class="story-title">Los tres journeys <em>que diseñé</em></h3>
+      <p class="p" style="margin-bottom:32px;">Tres perfiles, tres momentos, tres objetivos completamente distintos. El ecosistema digital tenía que resolver los tres sin que ninguno interfiriera con los demás.</p>
+    </div>
+
+    <div class="row g-4 fu" style="margin-bottom:64px; align-items: stretch;">
+      <!-- Delivery (Highlighted) -->
+      <div class="col-md-4" style="display: flex; flex-direction: column;">
+        <div style="border: 2px solid var(--accent); border-radius: 12px; padding: 24px; background: rgba(242,162,34,0.02); height: 100%; display: flex; flex-direction: column; text-align: left;">
+          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:12px;">Journey 01 · Delivery</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Quiero pedir una pizza ahora</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--accent); flex-shrink:0; min-width:16px;">1</div>
+              <span style="font-size:13.5px; color:var(--text);">Google/app delivery → Paolo aparece</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--accent); flex-shrink:0; min-width:16px;">2</div>
+              <span style="font-size:13.5px; color:var(--text);">Web: CTA "Pedir a domicilio" → plataforma</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--accent); flex-shrink:0; min-width:16px;">3</div>
+              <span style="font-size:13.5px; color:var(--text);">Pedido completado en &lt; 3 minutos</span>
+            </div>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">Tres plataformas activas (Glovo, Uber Eats, JustEat) para no depender de ninguna. El CTA centralizado en la web desvía al usuario directamente a su canal preferido.</div>
+        </div>
+      </div>
+
+      <!-- Visita al local -->
+      <div class="col-md-4" style="display: flex; flex-direction: column;">
+        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: rgba(255, 255, 255, 0.01); height: 100%; display: flex; flex-direction: column; text-align: left;">
+          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); font-weight:700; margin-bottom:12px;">Journey 02 · Visita al local</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Busco el restaurante más cercano</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">1</div>
+              <span style="font-size:13.5px; color:var(--text);">Google Maps → GMB → Paolo aparece</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">2</div>
+              <span style="font-size:13.5px; color:var(--text);">Web móvil: mapa interactivo en 1 tap</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">3</div>
+              <span style="font-size:13.5px; color:var(--text);">1 número unificado → Llamar instantáneo</span>
+            </div>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">Decisión crítica: 1 número centralizado. El usuario no quiere investigar números por barrio; quiere contactar al local más cercano de inmediato.</div>
+        </div>
+      </div>
+
+      <!-- Reserva -->
+      <div class="col-md-4" style="display: flex; flex-direction: column;">
+        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: rgba(255, 255, 255, 0.01); height: 100%; display: flex; flex-direction: column; text-align: left;">
+          <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); font-weight:700; margin-bottom:12px;">Journey 03 · Reserva</div>
+          <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Quiero planificar mi cena/comida</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">1</div>
+              <span style="font-size:13.5px; color:var(--text);">Navega por la web → consulta la carta</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">2</div>
+              <span style="font-size:13.5px; color:var(--text);">CTA "Reservar mesa" → WhatsApp directo</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div style="font-size:10px; font-weight:700; color:var(--text-dim); flex-shrink:0; min-width:16px;">3</div>
+              <span style="font-size:13.5px; color:var(--text);">Confirmación conversacional directa</span>
+            </div>
+          </div>
+          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">WhatsApp redujo el rebote de formularios engorrosos en pymes. El usuario que reserva valora la certeza conversacional y la agilidad de confirmación.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARATIVA ANTES/DESPUÉS -->
+    <div class="story-header fu" style="margin-top: 80px;">
+      <span class="story-num">07</span>
+      <span class="story-label">RESULTADO DIGITAL</span>
+      <h3 class="story-title">De cero presencia digital <em>a ecosistema activo</em></h3>
+    </div>
+
+    <div class="cs-ba fu" style="margin-bottom: 64px;">
+      <div class="cs-ba-col" style="text-align: left;">
+        <div class="cs-ba-badge cs-ba-before">Antes · 2020</div>
+        <p style="font-size:14px; color:var(--text); line-height:1.8; margin:16px 0 0; flex:1;">
+          Sin web propia · Sin presencia en Google Maps · Sin canal de delivery activo · Sin sistema de RRSS · Sin métricas · Visibilidad dependiente únicamente de la clientela física y el barrio.
+        </p>
+      </div>
+      <div class="cs-ba-col" style="text-align: left; border-left: 1px solid var(--border);">
+        <div class="cs-ba-badge cs-ba-after" style="background: var(--accent-glow); border-color: var(--accent); color: var(--accent);">Después · 2022</div>
+        <p style="font-size:14px; color:var(--accent); line-height:1.8; margin:16px 0 0; flex:1;">
+          Web propia scalable (Adobe XD → WordPress) · Canales de delivery activos · Google My Business optimizado · Cartas QR en local · Metricool + Clarity + GA4 operativos · Ciclo mensual de analítica y optimizaciones.
+        </p>
+      </div>
+    </div>
+
+    <!-- METRICAS & DATOS -->
+    <div class="story-header fu" style="margin-top: 64px;">
+      <span class="story-label">08 · ANÁLISIS & ITERACIÓN</span>
+      <h3 class="story-title">Datos como herramienta de diseño, <em>no de validación posterior</em></h3>
+      <p class="p fu" style="margin-bottom: 24px;">Microsoft Clarity revelaba detalladamente cómo se comportaban los usuarios en la web: qué secciones ignoraban, dónde abandonaban y qué elementos atraían su atención. GA4 aportaba el volumen y origen de tráfico, mientras que Metricool medía el engagement de redes locales.</p>
+      <p class="p fu">Estos datos no se recopilaban para redactar informes — servían para ejecutar cambios inmediatos. Si Clarity mostraba que la sección de RESTAURANTES en móvil tenía una alta tasa de rebote por no encontrar el local rápido, la solución fue colocar el mapa interactivo como primer impacto visual. Diseño basado en comportamiento empírico, no en intuición.</p>
+    </div>
+      </div><!-- /cs-star main -->
+    </div><!-- /cs-star -->
+  </div><!-- /cs-wrap -->
+</section>
+
+<!-- [R] RESULTADO -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">R</div>
+        <div class="cs-rail-label">RESULT</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+        <span class="block-label">RESULT · El impacto</span>
+        <h2 class="block-h">
+          Un producto que escala.<br><em>Sin rediseño.</em>
+        </h2>
+
+        <!-- Franja KPIs -->
+        <div class="paolo-results-strip fu">
+          <div class="prs-cell prs-hero">
+            <div class="prs-val">1→5</div>
+            <div class="prs-label">Locales · mismo ecosistema · sin rediseño</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">×5</div>
+            <div class="prs-label">Escala en 2 años sin tocar la arquitectura</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">3</div>
+            <div class="prs-label">Customer journeys diseñados: delivery, visita, reserva</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">6</div>
+            <div class="prs-label">Necesidades de usuario resueltas con un solo sistema</div>
+          </div>
+          <div class="prs-cell">
+            <div class="prs-val">∞</div>
+            <div class="prs-label">2 años de proyecto continuo</div>
+          </div>
+        </div>
+
+        <!-- Quote + CTAs -->
+        <div class="prs-bottom fu">
+          <p class="prs-quote">"Marta no diseñó una web. Construyó y evolucionó el ecosistema digital de una marca en expansión durante uno de los momentos más complejos para la restauración."</p>
+          <div class="prs-ctas">
+            
+            <a href="https://04-paolo.vercel.app/" target="_blank" rel="noopener" class="prs-btn-primary">Ver la web →</a>
+            <a href="https://github.com/martamoralesgr93/marta-portfolio/tree/main/projects/04-paolo" target="_blank" rel="noopener" class="prs-btn-ghost">Código fuente →</a>
+          </div>
+        </div>
+        <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
+        <details class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
+          <summary class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
+            <span style="color: var(--accent);">INTEGRACIÓN DE IA EN EL SISTEMA DE MARCA</span>
+            <em style="color: rgba(255,255,255,0.65);">— Automatización de assets visuales y flujos conversacionales</em>
+          </summary>
+          <div class="wf-steps" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <div class="wf-step">
+              <span class="wf-step-num" style="color: var(--accent);">1.</span>
+              <p class="wf-step-title" style="color: #fff;">Ideación y Dirección de Arte</p>
+              <p class="wf-step-desc es">Utilicé prompts generativos y herramientas de IA visual para explorar rápidamente 20+ conceptos de aplicaciones de marca (flyers, cartelería, pegatinas) alineados a la pizzería.</p>
+              <p class="wf-step-desc en">Used generative visual tools to quickly explore 20+ brand application concepts (flyers, menus, signage) matching the brand guidelines.</p>
+            </div>
+            <div class="wf-step">
+              <span class="wf-step-num" style="color: var(--accent);">2.</span>
+              <p class="wf-step-title" style="color: #fff;">Producción de Mockups</p>
+              <p class="wf-step-desc es">Generé recursos fotográficos realistas de los productos alimenticios mediante IA generativa de imágenes, reduciendo la dependencia de sesiones de fotos costosas.</p>
+              <p class="wf-step-desc en">Created realistic food photography and visual mockups using generative AI, saving cost and time on physical photoshoots.</p>
+            </div>
+            <div class="wf-step">
+              <span class="wf-step-num" style="color: var(--accent);">3.</span>
+              <p class="wf-step-title" style="color: #fff;">Lógica Conversacional</p>
+              <p class="wf-step-desc es">Modelé y optimicé el flujo lógico de respuestas automáticas para pedidos rápidos por WhatsApp usando prompts conversacionales estructurados.</p>
+              <p class="wf-step-desc en">Designed and mapped out ordering conversation flows and response rules for WhatsApp automated flows using AI prompting assistance.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- APRENDIZAJES -->
+<section class="cs-block cs-block-light">
+  <div class="cs-behance-letter">L</div>
+  <div class="cs-wrap">
+    <div class="fu">
+      <span class="block-label">LEARNINGS · Aprendizajes</span>
+      <h2 class="block-h">
+        Lo que este proyecto<br><em>definió en mi forma de pensar producto</em>
+      </h2>
+    </div>
+    <div class="paolo-learnings fu">
+      <div class="pl-card">
+        <span class="pl-num">01</span>
+        <p class="pl-title">Contexto de uso ≠ dispositivo</p>
+        <p class="pl-text">El CTA distinto en móvil no fue responsive — fue decisión de producto. El usuario que llega desde la calle tiene una intención completamente diferente al que navega desde casa.</p>
+      </div>
+      <div class="pl-card">
+        <span class="pl-num">02</span>
+        <p class="pl-title">Menos opciones = más conversión</p>
+        <p class="pl-text">Jerarquizar 3 CTAs y ocultar el resto redujo la carga cognitiva. Un buen diseño de producto requiere saber qué no mostrar tanto como qué mostrar.</p>
+      </div>
+      <div class="pl-card">
+        <span class="pl-num">03</span>
+        <p class="pl-title">Diseñar y construir te hace mejor diseñadora</p>
+        <p class="pl-text">Haber desarrollado la web cambió cómo pienso los componentes. Las limitaciones del builder no eran obstáculos: eran parámetros de diseño reales.</p>
+      </div>
+      <div class="pl-card">
+        <span class="pl-num">04</span>
+        <p class="pl-title">La IA condiciona todo lo demás</p>
+        <p class="pl-text">5 secciones y 1 teléfono centralizado — decididos en IA, antes de abrir Elementor. Esa decisión permitió escalar a 5 locales sin tocar el código.</p>
+      </div>
+      <div class="pl-card">
+        <span class="pl-num">05</span>
+        <p class="pl-title">Los datos son herramienta, no validación</p>
+        <p class="pl-text">Clarity y GA4 servían para tomar la siguiente decisión, no para demostrar que el diseño funcionó. Paolo fue el primer proyecto donde practiqué ese ciclo de verdad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     2026 · Evolución real del ecosistema con IA
+══════════════════════════════════════ -->
+<section style="padding: 80px 0; border-top: 1px solid rgba(242,162,34,0.18); background: linear-gradient(180deg, rgba(242,162,34,0.04) 0%, transparent 60%); position: relative; overflow: hidden;">
+
+  <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:700px; height:220px; background:radial-gradient(ellipse, rgba(242,162,34,0.07) 0%, transparent 70%); pointer-events:none;"></div>
+
+  <div class="cs-wrap" style="position:relative; z-index:1;">
+
+    <!-- Badge -->
+    <div style="display:inline-flex; align-items:center; gap:10px; padding:6px 16px; border-radius:100px; border:1px solid rgba(242,162,34,0.35); background:rgba(242,162,34,0.07); margin-bottom:28px;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#F2A222;display:block;box-shadow:0 0 8px rgba(242,162,34,0.6);"></span>
+      <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#F2A222;">2026 · Evolución del Proyecto</span>
+    </div>
+
+    <!-- ES HEADER -->
+    <div class="es fu">
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">Rediseño 2026:<br><em style="color:rgba(255,255,255,0.65);">lo que la IA permitió resolver que en 2022 era imposible</em></h2>
+      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">En 2022 el proyecto tenía tres cuellos de botella reales: fotografía de producto cara, una centralita colapsada con FAQs repetitivas y materiales de RRSS dependientes de producción física. En 2026 regresé al ecosistema con IA generativa y los resolví. Este es el resultado.</p>
+    </div>
+
+    <!-- EN HEADER -->
+    <div class="en fu">
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">2026 Redesign:<br><em style="color:rgba(255,255,255,0.65);">what AI made possible that was impossible in 2022</em></h2>
+      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">In 2022 the project had three real bottlenecks: expensive product photography, a phone line overwhelmed by repetitive FAQs, and social media content dependent on physical production. In 2026 I returned to the ecosystem with generative AI and solved them all. Here's the result.</p>
+    </div>
+
+    <!-- ─── Fila 01 · VIDEO · imagen izquierda + texto derecha ─── -->
+    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Hero Banner · Vídeo web generativo</div>
+        <div style="border-radius: 8px; overflow: hidden;">
+          <video autoplay loop muted playsinline style="width:100%; display:block; object-fit: cover;">
+            <source src="projects/04-paolo/assets/hero-banner.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Generado con IA · 2026</p>
+      </div>
+      <div class="col-lg-6 col-md-12 text-start">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HERO BANNER · VÍDEO GENERATIVO</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Misma marca,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">nueva capa audiovisual</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Same brand,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">new audiovisual layer</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022, un vídeo hero requería producción, cámara y edición. En 2026, el mismo resultado se consigue con IA generativa: misma paleta ámbar/negro cálido, misma atmósfera artesana, sin sesión de rodaje.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022, a hero video required production, camera and editing. In 2026, the same result is achieved with generative AI: same amber/warm black palette, same artisan atmosphere, no shoot.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">RESULTADO:</span><span class="es"> Hero video del repositorio público — coherente con el sistema visual sin coste de producción.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">RESULT:</span><span class="en"> Web repository hero video — consistent with the visual system at zero production cost.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Fila 02 · FOTOGRAFÍA PRODUCTO · texto izquierda + grid fotos derecha ─── -->
+    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12 text-start">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · MANUAL GRÁFICO · FOTOGRAFÍA DE PRODUCTO CON IA</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El archivo fotográfico<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">reconstruido sin sesión</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The photo archive<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">rebuilt without a shoot</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 no había presupuesto para fotografía profesional consistente entre locales. En 2026, con IA generativa y el manual visual de Paolo como referencia — paleta ámbar y negro cálido, masa artesana, plano cenital — regeneré los 4 platos estrella manteniendo la coherencia del sistema original.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 there was no budget for consistent professional photography across locations. In 2026, with generative AI and Paolo's visual manual as reference — amber and warm black palette, artisan dough, overhead angle — I regenerated the 4 star dishes maintaining the original system's coherence.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Actualizar la imagen de producto de todos los locales sin nueva sesión fotográfica.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Update product photography across all locations without a new photo session.</span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="row g-3">
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">4 Formaggi</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img width="1200" height="1200" loading="lazy" decoding="async" src="projects/04-paolo/assets/4 formaggi.webp" alt="4 Formaggi — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Tartufo</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/tartufo.webp" alt="Tartufo — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Diavola</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/diavola.webp" alt="Diavola — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div class="col-6">
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Napoli</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+              <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/napoli.webp" alt="Napoli — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">4 platos estrella · Generados con IA · Mismo encuadre y paleta que el sistema visual original</p>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">4 star dishes · AI-generated · Same framing and palette as the original visual system</p>
+      </div>
+    </div>
+
+    <!-- ─── Fila 03 · RRSS WEB · imagen izquierda + texto derecha ─── -->
+    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Story Table · Hero repositorio web</div>
+        <div style="border-radius: 8px; overflow: hidden;">
+          <img width="1024" height="434" loading="lazy" decoding="async" src="projects/04-paolo/assets/story-table.webp" alt="Mesa con pizza Paolo — hero banner repositorio web generado con IA" style="width:100%; height:auto; display:block;">
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Generado con IA · Header del repositorio público</p>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">AI-generated · Public repository header</p>
+      </div>
+      <div class="col-lg-6 col-md-12 text-start">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · RRSS Y WEB · REPO VISUAL CON IA</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Cards de servicio y social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">del mismo estilo</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Service cards and social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">in the same style</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Mismo hilo visual, nuevos materiales. Las piezas generadas con IA sirven tanto para las cards principales de servicios de la web como para los formatos de RRSS — story vertical, post cuadrado, hero de repositorio — sin depender de nueva producción fotográfica.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Same visual thread, new materials. The AI-generated pieces serve both as main service cards on the website and as social media formats — vertical story, square post, repository hero — without depending on new photography.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Generar contenido visual para todos los canales sin sesión fotográfica, manteniendo coherencia de marca.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Generate visual content for all channels without a photo session, maintaining brand coherence.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Fila 03b · PIEZAS SOCIALES · texto izquierda + collage derecha ─── -->
+    <div class="row g-5 align-items-start fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+      <div class="col-lg-6 col-md-12 text-start" style="padding-top: 4px;">
+        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03b · RRSS · PIEZAS SOCIALES Y CARDS</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Tres formatos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">mismo manual visual</em></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Three formats,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">same visual manual</em></h3>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Story vertical humanizado para Instagram, card cuadrada de servicio y pieza de take-away — los tres formatos necesarios para activar todos los canales de comunicación del restaurante sin nueva producción de material.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Humanized vertical story for Instagram, square service card and take-away piece — the three formats needed to activate all restaurant communication channels without new material production.</p>
+        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Cubrir Instagram, web de servicios y take-away con un único briefing visual generado con IA.</span>
+          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Cover Instagram, services web and take-away with a single AI-generated visual brief.</span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; align-items:start;">
+          <div>
+            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Niño Story · RRSS</div>
+            <div style="border-radius:8px; overflow:hidden; aspect-ratio:3/4;">
+              <img width="1121" height="1403" loading="lazy" decoding="async" src="projects/04-paolo/assets/niño-story.webp" alt="Niño con pizza — story Instagram generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div>
+              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Motivo Social · Card</div>
+              <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+                <img width="788" height="1024" loading="lazy" decoding="async" src="projects/04-paolo/assets/motivo-social.webp" alt="Motivo social Paolo — card de servicios" style="width:100%; height:100%; object-fit:cover; display:block;">
+              </div>
+            </div>
+            <div>
+              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Take Away · Card</div>
+              <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
+                <img width="1200" height="1797" loading="lazy" decoding="async" src="projects/04-paolo/assets/take-away.webp" alt="Take Away Paolo — card generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">Story + Card social + Card servicio · Generadas con IA · 2026</p>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">Story + Social card + Service card · AI-generated · 2026</p>
+      </div>
+    </div>
+
+    <!-- ─── 04 · AGENTE DIGITAL · CHATBOT FAQ ─── -->
+    <div style="border-top: 1px solid rgba(242,162,34,0.12); padding-top:64px; margin-bottom:48px;">
+
+      <div class="story-header fu">
+        <span class="story-label">04 · AGENTE DIGITAL · CHATBOT FAQ</span>
+        <div class="es"><h3 class="story-title">Eliminando el cuello de botella <em>telefónico</em></h3></div>
+        <div class="en"><h3 class="story-title">Eliminating the <em>phone bottleneck</em></h3></div>
+      </div>
+
+      <div class="fu lab-chatbot-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border:1px solid rgba(242,162,34,0.18); border-radius:12px; overflow:hidden; margin-bottom:80px;">
+        <div style="padding:28px 24px; background:rgba(242,162,34,0.03);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El problema · 2022</div>
+          <div class="es" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">La centralita colapsaba con preguntas repetitivas</div>
+          <div class="en" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">The phone line was collapsing with repetitive questions</div>
+          <div class="es" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Alérgenos, horarios, disponibilidad... el equipo en sala tenía que interrumpir el servicio físico para responder por teléfono.</div>
+          <div class="en" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Allergens, opening hours, availability... floor staff had to interrupt physical service to answer the phone.</div>
+        </div>
+        <div style="padding:28px 24px; border-left:1px solid rgba(242,162,34,0.12); border-right:1px solid rgba(242,162,34,0.12);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El impacto real</div>
+          <div class="es" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Staff distraído = experiencia en mesa degradada</div>
+          <div class="en" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Distracted staff = degraded table experience</div>
+          <div class="es" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Cada llamada de FAQ era tiempo robado al servicio. Y muchas preguntas se quedaban sin responder porque la línea estaba ocupada.</div>
+          <div class="en" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">Every FAQ call was time stolen from service. And many questions went unanswered because the line was busy.</div>
+        </div>
+        <div style="padding:28px 24px; background:rgba(242,162,34,0.04);">
+          <div style="font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">La solución · 2026</div>
+          <div class="es" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Agente conversacional entrenado con el negocio</div>
+          <div class="en" style="font-size:14px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Conversational agent trained on the business</div>
+          <div class="es" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">El chatbot responde alérgenos, horarios y gestiona reservas en tiempo real. El personal en sala se queda en sala.</div>
+          <div class="en" style="font-size:12.5px; color:var(--text-dim); line-height:1.65;">The chatbot answers allergens, hours and manages reservations in real time. Floor staff stays on the floor.</div>
+        </div>
+      </div>
+
+      <!-- Fila A · seccion.ia · imagen izquierda + texto derecha -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+        <div class="col-lg-6 col-md-12">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Sección IA · Integración en la web</div>
+          <div style="border-radius: 8px; overflow: hidden;">
+            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/seccion.ia.webp" alt="Nueva sección IA integrada en la web de Paolo 2026" style="width:100%; height:auto; display:block;">
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Nueva sección incorporada al sitio · 2026</p>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">New section added to the site · 2026</p>
+        </div>
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04A · PRESENTACIÓN DEL AGENTE EN WEB</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El agente presentado<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin salir de la web</em></h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The agent presented<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without leaving the site</em></h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Nueva sección en el sitio que introduce el agente digital, explica qué preguntas puede resolver y ofrece la activación directa. El usuario no necesita ir a una app de mensajería ni llamar — todo ocurre en el mismo contexto de navegación.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">New section on the site that introduces the digital agent, explains what questions it can resolve and offers direct activation. The user does not need to go to a messaging app or call — everything happens in the same browsing context.</p>
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Introducir el canal del chatbot al usuario sin fricciones y sin abandonar la experiencia web.</span>
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Introduce the chatbot channel to the user frictionlessly without leaving the web experience.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila B · reserva.chat · texto izquierda + imagen derecha -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04B · CONVERSACIÓN REAL · ALÉRGENOS Y RESERVA</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Respuestas en segundos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin llamar</em></h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Answers in seconds,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without calling</em></h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El flujo real: el cliente pregunta por alérgenos de un plato o solicita una reserva. El agente, entrenado con los datos del negocio, responde con precisión en segundos — sin ocupar la línea, sin interrumpir al equipo en sala.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The real flow: the customer asks about allergens in a dish or requests a reservation. The agent, trained on business data, responds accurately in seconds — without tying up the line, without interrupting the floor team.</p>
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Resolver las FAQs más repetitivas del negocio sin intervención humana y en tiempo real.</span>
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Resolve the most repetitive business FAQs without human intervention and in real time.</span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Chat · Alérgenos y reserva en tiempo real</div>
+          <div class="device-phone-minimal">
+            <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/reserva.chat.webp" alt="Chatbot Paolo — conversación real de reserva y consulta de alérgenos">
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Flujo de conversación real del agente digital · 2026</p>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">Real conversation flow of the digital agent · 2026</p>
+        </div>
+      </div>
+
+      <!-- Fila C · agente mobile · imagen izquierda + texto derecha -->
+      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
+        <div class="col-lg-6 col-md-12">
+          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Mobile · Agente en mano</div>
+          <div class="device-phone-minimal">
+            <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/agenta.ia.mobile.webp" alt="Agente IA de Paolo en móvil — diseño responsive del chatbot">
+          </div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px; text-align:center;" class="es">Versión mobile del agente · Acceso directo en el contexto de uso real</p>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px; text-align:center;" class="en">Mobile version of the agent · Direct access in the real usage context</p>
+        </div>
+        <div class="col-lg-6 col-md-12 text-start">
+          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04C · AGENTE EN MOBILE · CONTEXTO REAL DE USO</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El canal en el dispositivo<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">donde ocurre la decisión</em></h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The channel on the device<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">where the decision happens</em></h3>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El agente funciona en mobile sin redireccionamientos. El usuario que está en la calle decidiendo dónde cenar puede preguntar por alérgenos, confirmar horarios o hacer una reserva — todo en el mismo flujo, sin llamar, sin esperar.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The agent works on mobile without redirects. The user on the street deciding where to dine can ask about allergens, confirm hours or make a reservation — all in the same flow, without calling, without waiting.</p>
+          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Acceder al agente en el mismo contexto de decisión de compra, sin fricciones de dispositivo o canal.</span>
+            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Access the agent in the same purchase decision context, with no device or channel friction.</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /agente digital -->
+
+    <!-- Cierre -->
+    <div class="fu" style="padding-top:16px; border-top:1px solid rgba(255,255,255,0.05);">
+      <p class="es" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">La IA no reemplazó el trabajo de diseño de 2020–2022. Lo amplificó. La arquitectura, los journeys y el sistema visual seguían siendo la base. La IA resolvió los cuellos de botella que la tecnología de aquel momento no podía cubrir.</p>
+      <p class="en" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">AI did not replace the 2020–2022 design work. It amplified it. The architecture, journeys and visual system were still the foundation. AI solved the bottlenecks that the technology of that time could not cover.</p>
+    </div>
+
+  </div>
+</section>
+
+
+</main>
+
+<footer class="cs-footer">
+  <div class="cs-wrap">
+    <div class="footer-label es">Siguiente caso</div>
+    <div class="footer-label en">Next case</div>
+    <h2 class="es">¿Vemos otro proyecto?</h2>
+    <h2 class="en">Want to see another project?</h2>
+    <nav class="cs-pagination" aria-label="Navegación entre casos">
+      <a href="booking-engine.html" class="cs-pagination-arrow" aria-label="Caso anterior">←</a>
+      <div class="cs-pagination-dots">
+        <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 01">01</a>
+        <a href="ilunion-cro.html" class="cs-pagination-dot" aria-label="Caso 02">02</a>
+        <a href="booking-engine.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
+        <a href="paolo-pizzeria.html" class="cs-pagination-dot is-current" aria-current="page" aria-label="Caso 04">04</a>
+        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
+      </div>
+      <a href="it-ops-oracle.html" class="cs-pagination-arrow" aria-label="Caso siguiente">→</a>
+    </nav>
+    <a href="index.html" class="cs-pagination-index es">Volver al índice</a>
+    <a href="index.html" class="cs-pagination-index en">Back to index</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+    });
+  }, { threshold: 0.01 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  const stored = localStorage.getItem('portfolio-lang');
+  if (stored === 'en') {
+    document.documentElement.classList.add('lang-en');
+    document.documentElement.lang = 'en';
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = 'ES';
+  }
+
+  function toggleLang() {
+    const html = document.documentElement;
+    const btn = document.getElementById('langToggle');
+    const isEn = html.classList.toggle('lang-en');
+    html.lang = isEn ? 'en' : 'es';
+    btn.textContent = isEn ? 'ES' : 'EN';
+    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+  }
+
+  (function() {
+    function generateToken(dateString) {
+      const secret = "paolo-secret-key-2026";
+      const str = secret + dateString;
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return Math.abs(hash).toString(36);
+    }
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const token = generateToken(todayStr);
+    const links = document.querySelectorAll('a[href*="04-paolo.vercel.app"]');
+    links.forEach(link => {
+      try {
+        const url = new URL(link.href);
+        url.searchParams.set('token', token);
+        link.href = url.toString();
+      } catch(e) {
+        link.href += (link.href.indexOf('?') > -1 ? '&' : '?') + 'token=' + token;
+      }
+    });
+  })();
+
+  function openCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.style.display = 'flex';
+    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.classList.remove('open');
+    setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 300);
+  }
+</script>
+<script src="cs-enhancements.js" defer></script>
+<!-- ===================== CHATBOT MARTA ===================== -->
+<style>
+/* ── Chat bubble trigger ── */
+#chat-trigger {
+  position: fixed; bottom: 28px; right: 28px; z-index: 9000;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.85));
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
+  outline: none;
+}
+#chat-trigger:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+#chat-trigger:active { transform: scale(0.96); }
+#chat-trigger .icon-chat { opacity: 1; position: absolute; transition: opacity 0.2s; }
+#chat-trigger .icon-close { opacity: 0; position: absolute; transition: opacity 0.2s; }
+#chat-trigger.open .icon-chat { opacity: 0; }
+#chat-trigger.open .icon-close { opacity: 1; }
+
+#chat-trigger::before {
+  content: '';
+  position: absolute; inset: -6px; border-radius: 50%;
+  border: 1.5px solid rgba(var(--accent-rgb),0.45);
+  animation: chat-pulse 2.8s ease-out infinite;
+}
+#chat-trigger.open::before { animation: none; opacity: 0; }
+@keyframes chat-pulse {
+  0%   { transform: scale(1);    opacity: 0.7; }
+  70%  { transform: scale(1.35); opacity: 0;   }
+  100% { transform: scale(1.35); opacity: 0;   }
+}
+
+/* ── Chat panel ── */
+#chat-panel {
+  position: fixed; bottom: 96px; right: 28px; z-index: 8999;
+  width: 360px; max-height: 540px;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  display: flex; flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+  transform-origin: bottom right;
+  transform: scale(0.88) translateY(12px);
+  opacity: 0; pointer-events: none;
+  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), opacity 0.25s;
+  overflow: hidden;
+}
+#chat-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+#chat-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb),0.7), rgba(249,115,22,0.5), transparent);
+}
+
+.chat-header {
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+}
+.chat-avatar {
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  border: 1.5px solid rgba(var(--accent-rgb),0.4);
+  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.2));
+  display: flex; align-items: center; justify-content: center;
+}
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-avatar-fallback {
+  font-size: 14px; font-weight: 700; color: var(--accent);
+  font-family: 'Inter', sans-serif;
+}
+.chat-header-info { flex: 1; min-width: 0; }
+.chat-header-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
+.chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+.chat-status-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #34d399;
+  box-shadow: 0 0 6px rgba(52,211,153,0.6);
+  animation: blink-dot 3s ease-in-out infinite;
+}
+@keyframes blink-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.chat-messages {
+  flex: 1; overflow-y: auto; padding: 16px 16px 8px;
+  display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
+}
+.chat-messages::-webkit-scrollbar { width: 3px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+.chat-msg { display: flex; gap: 8px; align-items: flex-end; animation: msg-in 0.28s cubic-bezier(0.16,1,0.3,1) both; }
+@keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.chat-msg.user { flex-direction: row-reverse; }
+
+.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; font-family: 'Inter', sans-serif; }
+.chat-msg.bot .chat-bubble {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
+}
+.chat-msg.user .chat-bubble {
+  background: linear-gradient(135deg, rgba(124,58,237,0.75), rgba(249,115,22,0.60));
+  border: 1px solid rgba(var(--accent-rgb),0.25); color: rgba(255,255,255,0.95); border-bottom-right-radius: 4px;
+}
+.chat-bubble a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.chat-bubble strong { color: var(--white); font-weight: 600; }
+
+.chat-typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; }
+.chat-typing span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); animation: typing-bounce 1.2s infinite; }
+.chat-typing span:nth-child(2) { animation-delay: 0.18s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes typing-bounce { 0%,80%,100% { transform: translateY(0); opacity: 0.4; } 40% { transform: translateY(-6px); opacity: 1; } }
+
+.chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
+.chat-chip {
+  padding: 6px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500;
+  font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
+  color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
+}
+.chat-chip:hover { background: rgba(124,58,237,0.2); border-color: rgba(var(--accent-rgb),0.6); color: #fff; transform: translateY(-1px); }
+
+.chat-input-area {
+  padding: 10px 12px 14px; border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0;
+}
+.chat-input {
+  flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px; padding: 9px 14px; color: var(--text);
+  font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
+  min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
+}
+.chat-input::placeholder { color: rgba(255,255,255,0.25); }
+.chat-input:focus { border-color: rgba(var(--accent-rgb),0.4); }
+.chat-send {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.75));
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.chat-send:hover { opacity: 0.85; transform: scale(1.05); }
+.chat-send svg { width: 16px; height: 16px; }
+
+@media (max-width: 480px) {
+  #chat-panel { right: 12px; left: 12px; width: auto; bottom: 84px; }
+  #chat-trigger { right: 20px; bottom: 20px; }
+}
+
+/* Undo button */
+#chat-undo {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.35); cursor: pointer;
+  display: none; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+#chat-undo:hover { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.75); transform: scale(1.08); }
+#chat-undo.visible { display: flex; }
+</style>
+
+<button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
+  <img loading="lazy" decoding="async" class="icon-chat" src="assets/logo-sinfondo.webp" alt="Marta" style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
+  <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="width:22px;height:22px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
+</button>
+
+<div id="chat-panel" role="dialog" aria-label="Chat con Marta">
+  <div class="chat-header">
+    <div class="chat-avatar">
+      <img loading="lazy" decoding="async" width="300" height="300" src="assets/logo-sinfondo.webp" alt="Marta" style="filter:brightness(0) invert(1);object-fit:contain;padding:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="chat-avatar-fallback" style="display:none">MM</span>
+    </div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Marta Morales</div>
+      <div class="chat-header-status">
+        <span class="chat-status-dot"></span>
+        <span class="es">Disponible ahora</span>
+        <span class="en">Available now</span>
+      </div>
+    </div>
+    <button id="chat-undo" onclick="chatUndo()" aria-label="Deshacer último mensaje" title="Volver atrás">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 14L4 9l5-5"></path><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chatInput" rows="1" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta" onkeydown="chatKeydown(event)" oninput="chatAutoResize(this)"></textarea>
+    <button class="chat-send" onclick="chatSend()" aria-label="Enviar">
+      <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var KB = {
+    es: {
+      greeting: [
+        "¡Hola! Soy el asistente de Marta. Si eres recruiter o hiring manager, estás en el sitio correcto — puedo contarte todo lo que necesitas para tomar una decisión. ¿Por dónde empezamos?"
+      ],
+      about: [
+        "Marta Morales se posiciona en el mercado como el 'producto de diseño completo' bajo su principal KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Su portafolio es en sí mismo un reflejo de este producto, y los casos prácticos (EdTech, Travel, B2B) son los ejemplos de uso de cómo sus habilidades de optimización, automatización de sistemas de diseño y flujos con IA resuelven problemas reales de negocio."
+      ],
+      experience: [
+        "<strong>+4 años</strong> de trayectoria liderando el ciclo completo de producto digital. Su enfoque trasciende el diseño visual: actúa como motor estratégico de CRO, estructurando sistemas de diseño scalables y optimizando interfaces complejas mediante automatizaciones de IA para multiplicar la velocidad de desarrollo.",
+        "Marta no espera un brief estructurado: **identifica el problema, define el enfoque y mide el resultado**, utilizando los casos prácticos de su portafolio para poner a prueba sus habilidades frente a constraints reales."
+      ],
+      skills: [
+        "Sus 4 pilares fundamentales son: <strong>UX &amp; Research</strong> (diagnóstico cuantitativo/cualitativo), <strong>Design Systems</strong> (Figma avanzado, variables, handoff estructurado), <strong>AI Product Design</strong> (MCPs, vibe coding, automatización de flujos) y <strong>CRO</strong> (experimentos basados en datos, A/B Testing, incremento de conversión).",
+        "Domina el ciclo completo de producto: **discovery, research de comportamiento, arquitectura de información, prototipado, test con usuarios, handoff y análisis post-lanzamiento**."
+      ],
+      tools: [
+        "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
+      ],
+      cases: [
+        "Marta has <strong>5 case studies across 4 different sectors</strong>. What ties them together isn't the industry — it's the same pattern: she diagnoses the business problem before touching a single pixel.<br><br>• <strong>Booking Engine (ILUNION)</strong> — hotel booking engine redesign from scratch to production<br>• <strong>CRO AEM (ILUNION)</strong> — direct conversion 3.36% → 6.5% using real data experiments<br>• <strong>CEF Design System</strong> — EdTech design system from zero: 80+ components, tokens, WCAG<br>• <strong>Paolo by Danny's Jazz</strong> — visual identity + full digital ecosystem for a chain that grew from 1 to 5 locations <em>without a redesign</em><br>• <strong>Build vs. Buy · Oracle IT</strong> — strategic friction diagnosis embedded in the team: conclusion was to build an internal tool, not patch Oracle<br><br>Want me to go deeper on any of them?"
+      ],
+      remote: [
+        "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
+      ],
+      availability: [
+        "Marta está <strong>activamente buscando su próxima oportunidad</strong> y puede incorporarse con relativa rapidez. Hay otras conversaciones en curso, así que si hay fit, merece la pena hablar pronto. ¿Tienes alguna posición en mente?"
+      ],
+      salary: [
+        "Marta maneja expectativas alineas con su experiencia y el mercado actual. Es un detalle que se aclara en cinco minutos en una llamada. ¿Le damos una oportunidad a esa conversación?"
+      ],
+      interview: [
+        "¡Perfecto! Escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h. O usa el formulario de contacto al final de la página.",
+        "Genial. La mejor forma es un email a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> proponiendo día y hora. Marta es flexible y se adapta a vuestra agenda."
+      ],
+      contact: [
+        "Email directo: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Responde rápido, menos de 24h."
+      ],
+      research: [
+        "Marta tiene <strong>base sólida en UX Research:</strong> entrevistas con usuarios, card sorting, tree testing, análisis heurístico y síntesis de insights. Lo más importante: siempre conecta el research con decisiones de negocio concretas."
+      ],
+      systems: [
+        "Ha construido <strong>design systems desde cero:</strong> el sistema de CEF incluye +80 componentes, tokens de diseño, guías de accesibilidad y documentación para desarrollo. Domina Figma Variables, Auto Layout avanzado y versionado de componentes."
+      ],
+      cro: [
+        "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
+      ],
+      paolo: [
+        "Paolo by Danny's Jazz es uno de los proyectos que mejor refleja el <strong>ownership real de Marta</strong>. No fue un encargo de diseño — fue un problema de negocio entero: una cadena de pizzerías artesanas sin canal digital en plena pandemia, sin web, sin delivery, sin presencia en Google.<br><br>Diseñó y construyó desde cero: identidad visual completa, web (Adobe XD → WordPress + Elementor), los 3 customer journeys del negocio (delivery, visita al local, reserva), ecosistema de delivery activo (Glovo, Uber Eats, JustEat), cartas QR, Google My Business y un ciclo mensual de analítica con Clarity + GA4 + Metricool.<br><br>Resultado: el producto escaló de 1 a 5 locales en 2 años <strong>sin necesidad de rediseño</strong>. +32% en llamadas directas desde móvil el primer mes. Cuando el proyecto terminó, el ecosistema seguía funcionando solo. Eso es diseño que funciona."
+      ],
+      oracle: [
+        "El caso Oracle (Build vs. Buy) muestra a Marta en modo <strong>diagnosticadora estratégica, no ejecutora de interfaces.</strong><br><br>We Are Actions llevaba años gestionando incidencias IT con Oracle. El responsable de sistemas llegó a dirección con un Excel con datos reales de fricción. Marta estaba <em>embebida en el equipo IT</em>, así que hizo discovery contextual desde dentro: vio la fricción ocurrir en tiempo real, no en una sesión de research artificial.<br><br>Su diagnóstico: Oracle no estaba mal diseñado — era simplemente la herramienta equivocada para <em>sus</em> flujos. La recomendación fue construir una herramienta interna en lugar de seguir parcheando una plataforma genérica.<br><br>El caso de estudio ya está publicado y disponible en este portafolio. Representa exactamente el tipo de trabajo que más le interesa: <strong>identificar el problema real antes de proponer la solución.</strong>"
+      ],
+      booking: [
+        "El <strong>Booking Engine de ILUNION</strong> fue el rediseño end-to-end del motor de reservas de una cadena hotelera — de la investigación con usuarios hasta la entrega a producción. El reto era entender por qué la conversión en canal directo era tan baja y proponer una solución argumentada. Marta lideró todo: research, arquitectura de información, prototipado, test con usuarios y handoff. Este proyecto fue la base sobre la que después se aplicaron los experimentos de CRO que llevaron la conversión del 3.36% al 6.5%."
+      ],
+      cef: [
+        "El <strong>CEF Design System</strong> demuestra la capacidad de Marta para crear infraestructura de diseño desde cero en un entorno EdTech con restricciones de accesibilidad estrictas.<br><br>Construyó un sistema con +80 componentes en Figma: tokens de diseño, variantes, estados, documentación para desarrollo y cumplimiento WCAG 2.1 AA. El objetivo no era solo coherencia visual — era que los equipos de desarrollo pudieran construir con él de forma autónoma."
+      ],
+      whyhire: [
+        "Tres cualidades clave:<br><br>1. <strong>Mentalidad de Producto:</strong> Su portafolio y ella misma operan bajo un enfoque orientado a resultados y KPIs claros.<br>2. <strong>Especialización de Vanguardia:</strong> Une el rigor clásico de la accesibilidad y el CRO con flujos avanzados de IA y vibe coding.<br>3. <strong>Autonomía Estratégica:</strong> Diagnóstica la raíz de los problemas y propone la decisión óptima antes de tocar el primer pixel."
+      ],
+      sector: [
+        "Marta tiene experiencia en <strong>turismo / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (sistemas de diseño, accesibilidad) y <strong>consultoría digital</strong>. Busca su próximo reto en empresas <strong>tech, SaaS o travel</strong> con producto propio."
+      ],
+      default: [
+        "Buena pregunta. Para eso mejor habla con Marta directamente: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+        "Eso lo responde Marta mejor que yo en persona. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h."
+      ]
+    },
+    en: {
+      greeting: [
+        "Hi! I'm Marta's assistant. If you're a recruiter or hiring manager, you're in the right place — I can tell you everything you need to make a decision. Where shall we start?"
+      ],
+      about: [
+        "Marta Morales positions herself as the 'complete design product' under her main KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Her portfolio is a product in itself, demonstrating how her skills in optimization, design systems automation, and AI workflows solve real business challenges."
+      ],
+      experience: [
+        "<strong>4+ years</strong> of experience leading the end-to-end product lifecycle. She acts as a strategic CRO engine, building scalable design systems and optimizing complex interfaces through AI integrations to accelerate development speed.",
+        "Marta doesn't wait for a brief: **she identifies the problem, defines the approach, and measures outcomes**, using her case studies as live test-beds to validate new workflow capabilities."
+      ],
+      skills: [
+        "Her 4 core pillars are: <strong>UX &amp; Research</strong> (qualitative/quantitative diagnostics), <strong>Design Systems</strong> (advanced Figma, variables, structured handoff), <strong>AI Product Design</strong> (MCPs, vibe coding, workflow automation) and <strong>CRO</strong> (data-driven experiments, A/B Testing, conversion lifts).",
+        "She masters the full process: **discovery, behavior research, information architecture, prototyping, user testing, handoff, and post-launch analysis**."
+      ],
+      tools: [
+        "Daily stack: <strong>Figma</strong> (design systems, variables, components), <strong>Adobe Analytics + Hotjar</strong> (behaviour data), <strong>Notion & Jira</strong> (product management), Bootstrap and close engineering collaboration."
+      ],
+      cases: [
+        "Case studies with real impact:<br><br>• <strong>ILUNION CRO</strong> — direct channel conversion from 3.36% to 6.5% with a data-driven redesign<br>• <strong>Booking Engine</strong> — hotel booking flow from research to production<br>• <strong>CEF Design System</strong> — 80+ components with tokens, accessibility & dev docs<br>• <strong>IT Ops Oracle</strong> — B2B product for IT operations management<br><br>Want details on any of them?"
+      ],
+      remote: [
+        "Marta is <strong>open to fully remote and hybrid.</strong> Based in Madrid, experienced with distributed teams and async communication."
+      ],
+      availability: [
+        "Marta is <strong>actively looking for her next opportunity</strong> and can onboard relatively quickly. There are other conversations in progress, so if there's a fit, it's worth talking soon. Got a role in mind?",
+      ],
+      salary: [
+        "Marta's expectations are aligned with her experience and the current market. It's a detail that takes five minutes to clarify in a call. Shall we make that happen?"
+      ],
+      interview: [
+        "Great! Email her directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — she replies within 24h. Or use the contact form at the bottom of the page.",
+        "Perfect. The easiest way is an email to <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> suggesting a time. Marta is flexible and adapts to your schedule."
+      ],
+      contact: [
+        "Direct email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Replies fast, under 24h."
+      ],
+      research: [
+        "Marta has a <strong>solid UX Research foundation:</strong> user interviews, card sorting, tree testing, heuristic analysis and insight synthesis. Most importantly: she always connects research to concrete business decisions."
+      ],
+      systems: [
+        "She built <strong>design systems from scratch:</strong> CEF's system includes 80+ components, design tokens, accessibility guidelines and developer documentation. Proficient in Figma Variables, advanced Auto Layout and component versioning."
+      ],
+      cro: [
+        "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
+      ],
+      paolo: [
+        "Paolo by Danny's Jazz is one of the projects that best shows Marta's <strong>real ownership mindset</strong>. It wasn't a design brief — it was an entire business problem: an artisan pizza chain in the middle of a pandemic with no website, no delivery, no Google presence, nothing.<br><br>She designed and built from scratch: complete visual identity, the full website (Adobe XD → WordPress + Elementor), 3 customer journeys (delivery, in-store visit, booking), active delivery ecosystem (Glovo, Uber Eats, JustEat), QR menus, Google My Business, and a monthly analytics cycle with Clarity + GA4 + Metricool.<br><br>Result: the product scaled from 1 to 5 locations in 2 years <strong>without a redesign</strong>. +32% in direct mobile calls in the first month. When the project ended, the ecosystem kept running on its own. That's what good design looks like."
+      ],
+      oracle: [
+        "The Oracle case (Build vs. Buy) shows Marta in <strong>strategic diagnostician mode — not interface executor.</strong><br><br>We Are Actions had been managing IT incidents with Oracle for years. The systems manager came to leadership with real-data showing friction costs. Marta was <em>embedded in the IT team</em>, so she did contextual discovery from the inside: she saw friction happening in real time, not in an artificial research session.<br><br>Her diagnosis: Oracle wasn't badly designed — it was simply the wrong tool for <em>their</em> workflows. The recommendation was to build an internal tool rather than keep patching a generic platform.<br><br>The case study is now fully published and available. It represents exactly the kind of work she values most: <strong>finding the real problem before proposing the solution.</strong>"
+      ],
+      booking: [
+        "The <strong>ILUNION Booking Engine</strong> was an end-to-end redesign of a hotel chain's reservation engine — from user research to production handoff. The challenge was understanding why direct channel conversion was so low and proposing a data-backed solution. Marta led the full process: research, information architecture, prototyping, user testing and handoff. This was the foundation for the CRO experiments that later lifted conversion from 3.36% to 6.5%."
+      ],
+      cef: [
+        "The <strong>CEF Design System</strong> shows Marta's ability to build design infrastructure from scratch in an EdTech environment with strict accessibility requirements.<br><br>She built a system with 80+ Figma components: design tokens, variants, states, developer documentation and WCAG 2.1 AA compliance. The goal wasn't just visual consistency — it was enabling development teams to build autonomously."
+      ],
+      whyhire: [
+        "Three key qualities:<br><br>1. <strong>Product Mindset:</strong> Both her portfolio and she operate under a results-oriented approach with clear KPIs.<br>2. <strong>Cutting-edge Specialization:</strong> Combines classic CRO and accessibility rigor with advanced AI workflows and vibe coding.<br>3. <strong>Strategic Autonomy:</strong> Diagnoses the root of business problems and proposes the optimal path before designing a single pixel."
+      ],
+      sector: [
+        "Marta has experience in <strong>travel / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (design systems, accessibility) and <strong>digital consulting.</strong> She's looking for her next challenge at a <strong>tech, SaaS or travel</strong> company with its own product."
+      ],
+      default: [
+        "Great question. That's better answered by Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+        "Marta can answer that better than me in person. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — replies within 24h."
+      ]
+    }
+  };
+
+  var CHIPS = {
+    es: [
+      {label:'¿Quién es Marta?',key:'about'},
+      {label:'Todos los casos',key:'cases'},
+      {label:'Paolo · ecosistema digital',key:'paolo'},
+      {label:'Oracle · diagnóstico IT',key:'oracle'},
+      {label:'¿Por qué contratarla?',key:'whyhire'},
+      {label:'Concertar entrevista',key:'interview'}
+    ],
+    en: [
+      {label:'Who is Marta?',key:'about'},
+      {label:'All case studies',key:'cases'},
+      {label:'Paolo · digital ecosystem',key:'paolo'},
+      {label:'Oracle · IT diagnosis',key:'oracle'},
+      {label:'Why hire her?',key:'whyhire'},
+      {label:'Schedule interview',key:'interview'}
+    ]
+  };
+
+  var RULES = [
+    {keys:['quién','quien','eres','about','who','marta','sobre','yourself','tell me','cuéntame','presentate'],intent:'about'},
+    {keys:['experiencia','experience','años','years','trayectoria','background','worked','llevás','llevas'],intent:'experience'},
+    {keys:['habilidad','skill','sabe','know','domina','masters','puedes','capaz','capable'],intent:'skills'},
+    {keys:['herramienta','tool','adobe','jira','notion','hotjar','bootstrap','figma','stack','usa'],intent:'tools'},
+    {keys:['caso','case','estudio','study','proyecto','project','portfolio','portafolio','trabajo','work'],intent:'cases'},
+    {keys:['paolo','pizzería','pizzeria','pizzer','danny','ecosistema digital','digital ecosystem','1 a 5','1 to 5','wordpress','elementor'],intent:'paolo'},
+    {keys:['oracle','it ops','build vs','fricción it','it friction','herramienta interna','internal tool','incidencia','incident','ticket it'],intent:'oracle'},
+    {keys:['booking','motor de reservas','reserva','hotel','hospedaje','hospitality'],intent:'booking'},
+    {keys:['cef','design system','sistema de diseño','edtech','accesibilidad','accessibility','wcag','componente','component','token'],intent:'cef'},
+    {keys:['ilunion','cro','conversion','conversión','a/b','ab test','aem','experimento','experiment'],intent:'cro'},
+    {keys:['remoto','remote','presencial','hybrid','hibrido','híbrido','madrid','ubicacion','location','donde','where'],intent:'remote'},
+    {keys:['disponib','available','cuándo','when','incorpor','start','join','empezar','inmediata'],intent:'availability'},
+    {keys:['salario','salary','sueldo','wage','pay','rango','compensacion','compensation','pretensiones','expectations'],intent:'salary'},
+    {keys:['entrevista','interview','reunión','meeting','llamada','call','hablar','talk','conocer','meet','contactar','schedule','cita','appointment'],intent:'interview'},
+    {keys:['contact','contacto','email','correo','escribir','reach','write','linkedin'],intent:'contact'},
+    {keys:['research','investig','usuario','user','test','usab','entrev'],intent:'research'},
+    {keys:['design system','sistema de diseño','componente','component','token','library','libreria','figma system'],intent:'systems'},
+    {keys:['cro','conversión','conversion','optimiz','a/b','ab test','funnel','analytics','metr'],intent:'cro'},
+    {keys:['por qué','why','contratar','hire','elegir','choose','diferencia','different','valor','value','aporta','brings'],intent:'whyhire'},
+    {keys:['sector','industria','industry','turismo','travel','edtech','saas','empresa','company','tipo','type'],intent:'sector'}
+  ];
+
+  var isOpen=false, isTyping=false, initialized=false;
+
+  function getLang(){return document.documentElement.classList.contains('lang-en')?'en':'es';}
+  function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+  function getResponse(intent){var lang=getLang();return pick(KB[lang][intent]||KB[lang].default);}
+  function detectIntent(text){
+    var t=text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    for(var i=0;i<RULES.length;i++){
+      var r=RULES[i];
+      for(var j=0;j<r.keys.length;j++){if(t.indexOf(r.keys[j])!==-1)return r.intent;}
+    }
+    return 'default';
+  }
+
+  function addMsg(text,role){
+    var box=document.getElementById('chatMessages');
+    var wrap=document.createElement('div');wrap.className='chat-msg '+role;
+    var bubble=document.createElement('div');bubble.className='chat-bubble';
+    bubble.innerHTML=text;wrap.appendChild(bubble);box.appendChild(wrap);
+    box.scrollTop=box.scrollHeight;
+    return wrap;
+  }
+
+  function showTyping(){
+    var box=document.getElementById('chatMessages');
+    var wrap=document.createElement('div');wrap.className='chat-msg bot';wrap.id='chatTypingMsg';
+    var bubble=document.createElement('div');bubble.className='chat-bubble chat-typing';
+    bubble.innerHTML='<span></span><span></span><span></span>';
+    wrap.appendChild(bubble);box.appendChild(wrap);box.scrollTop=box.scrollHeight;
+  }
+  function removeTyping(){var el=document.getElementById('chatTypingMsg');if(el)el.remove();}
+
+  function renderChips(items){
+    var c=document.getElementById('chatChips');c.innerHTML='';
+    items.forEach(function(chip){
+      var btn=document.createElement('button');btn.className='chat-chip';
+      btn.textContent=chip.label;
+      btn.setAttribute('data-key',chip.key);
+      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
+      c.appendChild(btn);
+    });
+  }
+
+  /* History stack: each entry = {userEl, botEl, chips} */
+  var history=[];
+
+  function resetChat(){
+    document.getElementById('chatMessages').innerHTML='';
+    document.getElementById('chatChips').innerHTML='';
+    document.getElementById('chat-undo').classList.remove('visible');
+    history=[];
+    initialized=false;
+    isTyping=false;
+    initChat();
+  }
+
+  window.chatUndo=function(){
+    if(!history.length||isTyping)return;
+    var last=history.pop();
+    if(last.userEl&&last.userEl.parentNode) last.userEl.parentNode.removeChild(last.userEl);
+    if(last.botEl&&last.botEl.parentNode)   last.botEl.parentNode.removeChild(last.botEl);
+    /* Restore chips */
+    var c=document.getElementById('chatChips');c.innerHTML='';
+    (last.prevChips||[]).forEach(function(chip){
+      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
+      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
+      c.appendChild(btn);
+    });
+    if(!history.length) document.getElementById('chat-undo').classList.remove('visible');
+    var box=document.getElementById('chatMessages');
+    box.scrollTop=box.scrollHeight;
+  };
+
+  function sendMessage(text,intentOverride){
+    if(isTyping)return;
+    /* Snapshot current chips before clearing */
+    var prevChips=[];
+    document.getElementById('chatChips').querySelectorAll('.chat-chip').forEach(function(b){
+      prevChips.push({label:b.textContent,key:b.getAttribute('data-key')||''});
+    });
+    var userEl=addMsg(text,'user');
+    isTyping=true;
+    var intent=intentOverride||detectIntent(text);
+    showTyping();
+    setTimeout(function(){
+      removeTyping();
+      var botEl=addMsg(getResponse(intent),'bot');
+      isTyping=false;
+      history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
+      document.getElementById('chat-undo').classList.add('visible');
+      var lang=getLang();
+      var alwaysChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
+      var casesChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Skills',key:'skills'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'Habilidades',key:'skills'}];
+      if(intent==='cases'){renderChips(casesChips);}
+      else if(intent!=='interview'&&intent!=='contact'){renderChips(alwaysChips);}
+    },650+Math.random()*400);
+  }
+
+  function initChat(){
+    if(initialized)return;initialized=true;
+    setTimeout(function(){addMsg(getResponse('greeting'),'bot');renderChips(CHIPS[getLang()]);},180);
+  }
+
+  window.chatToggle=function(){
+    var panel=document.getElementById('chat-panel');
+    var trigger=document.getElementById('chat-trigger');
+    isOpen=!isOpen;
+    panel.classList.toggle('open',isOpen);
+    trigger.classList.toggle('open',isOpen);
+    if(isOpen){initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
+  };
+  window.chatSend=function(){
+    var input=document.getElementById('chatInput');
+    var text=input.value.trim();
+    if(!text||isTyping)return;
+    input.value='';input.style.height='';
+    document.getElementById('chatChips').innerHTML='';
+    sendMessage(text);
+  };
+  window.chatKeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();chatSend();}};
+  window.chatAutoResize=function(el){el.style.height='';el.style.height=Math.min(el.scrollHeight,90)+'px';};
+
+  /* Language switch: reset chat so greeting appears in the new language */
+  new MutationObserver(function(){
+    var input=document.getElementById('chatInput');
+    if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
+    if(isOpen&&initialized){resetChat();}
+  }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<!-- ===================== / CHATBOT MARTA ===================== -->
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

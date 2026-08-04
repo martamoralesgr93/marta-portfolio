@@ -1,0 +1,156 @@
+// Asistente IA del portfolio de Marta Morales — función serverless (Vercel).
+// Responde usando la base de conocimiento compilada.
+// Soporta tanto GEMINI (Gratuito via Google AI Studio) como CLAUDE.
+// Implementa autenticación basada en tokens para privacidad.
+
+const KB = require('./kb.js');
+
+const FALLBACK = {
+  es: "Ahora mismo no puedo procesar eso. Escríbele directamente a Marta: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (responde en menos de 24h).",
+  en: "I can't process that right now. Email Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> (replies within 24h)."
+};
+
+const VALID_TOKENS = ['mmorales2026'];
+const WHITELISTED_EMAILS = ['mmoralesgr93@gmail.com', 'recruiter@google.com', 'talent@hiberus.com'];
+
+function buildSystem(lang, kb, prompts) {
+  const langLine = lang === 'en'
+    ? 'Always answer in English.'
+    : 'Responde siempre en español.';
+  return [
+    "Eres el asistente de IA integrado en el portfolio de Marta Morales, Product Designer.",
+    "OBJETIVO ÚNICO (KPI): que quien visita encuentre, en menos de 30 segundos, lo que necesita para decidir si merece la pena entrevistar o contratar a Marta.",
+    "",
+    "Aquí tienes las REGLAS DE COMPORTAMIENTO Y CONTRATO DE OPERACIÓN que debes seguir estrictamente:",
+    prompts || "",
+    "",
+    "DIRECTRIZ DE TONO Y NEGOCIACIÓN (CRÍTICA):",
+    "- Marta NO está desesperada por encontrar trabajo. Su postura es selectiva, de alto nivel técnico (Senior) y gran seguridad en su valor.",
+    "- No te muestres ansioso/a por conseguir una entrevista ni ruegues atención. Mantén una distancia profesional, madura, calmada y asertiva.",
+    "- Si el visitante pregunta por salarios, tarifas o condiciones económicas, responde con asertividad indicando que Marta prefiere tratar estos detalles confidenciales y económicos directamente en una conversación privada (llamada o email: mmoralesgr93@gmail.com) según el alcance de la posición. NUNCA inventes ni reveles un número o rango salarial bajo ningún concepto; prefiere declinar amablemente dar cifras en público para mantener una postura de negociación profesional.",
+    "",
+    "ESTILO Y FORMATO DE RESPUESTA:",
+    "- Sé conciso (2 a 6 frases normalmente), cálido, profesional, seguro pero honesto.",
+    "- Usa Markdown estándar: **negrita** para datos clave y cifras, listas con guiones (- item) para enumeraciones, y párrafos limpios.",
+    "- El cliente se encargará de renderizar este Markdown a HTML, por lo que NO uses etiquetas HTML crudas (como <strong> o <br>), usa formato Markdown normal.",
+    "- Cuando sea natural, cierra con un pequeño siguiente paso o el contacto (email: mmoralesgr93@gmail.com), sin ser insistente.",
+    " " + langLine,
+    "",
+    "INFORMACIÓN DE LA BASE DE CONOCIMIENTO (única fuente de verdad):",
+    kb
+  ].join("\n");
+}
+
+module.exports = async (req, res) => {
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'method_not_allowed' });
+    return;
+  }
+  try {
+    const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+    const message = (body.message || '').toString().slice(0, 1000).trim();
+    const lang = body.lang === 'en' ? 'en' : 'es';
+    const history = Array.isArray(body.history) ? body.history.slice(-6) : [];
+
+    // Validar token y email de autorización para proteger la privacidad
+    const token = (body.token || '').toString().trim().toLowerCase();
+    const email = (body.email || '').toString().trim().toLowerCase();
+
+    if (!VALID_TOKENS.includes(token) && !WHITELISTED_EMAILS.includes(email)) {
+      res.status(200).json({ reply: null, unavailable: true });
+      return;
+    }
+
+    if (!message) {
+      res.status(400).json({ error: 'empty_message' });
+      return;
+    }
+
+    const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    const anthropicKey = process.env.ANTHROPIC_API_KEY;
+
+    if (!geminiKey && !anthropicKey) {
+      res.status(200).json({ reply: null, unavailable: true });
+      return;
+    }
+
+    const systemPrompt = buildSystem(lang, KB[lang], KB.prompts);
+
+    // Si hay clave de Gemini, priorizarla por tener capa gratuita
+    if (geminiKey) {
+      const contents = history
+        .filter(m => m && (m.role === 'user' || m.role === 'assistant') && m.content)
+        .map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: String(m.content).slice(0, 2000) }]
+        }));
+      contents.push({ role: 'user', parts: [{ text: message }] });
+
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${geminiKey}`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          contents,
+          systemInstruction: { parts: [{ text: systemPrompt }] },
+          generationConfig: {
+            maxOutputTokens: 2048,
+            temperature: 0.2
+          }
+        })
+      });
+
+      if (r.ok) {
+        const data = await r.json();
+        let reply = null;
+        if (data && data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+          reply = data.candidates[0].content.parts
+            .map(p => p.text || '')
+            .join('')
+            .trim();
+        }
+        if (reply) {
+          res.status(200).json({ reply });
+          return;
+        }
+      }
+    }
+
+    // Si hay clave de Anthropic, usar Claude
+    if (anthropicKey) {
+      const messages = history
+        .filter(m => m && (m.role === 'user' || m.role === 'assistant') && m.content)
+        .map(m => ({ role: m.role, content: String(m.content).slice(0, 2000) }));
+      messages.push({ role: 'user', content: message });
+
+      const r = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': anthropicKey,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+          model: 'claude-3-5-haiku-latest',
+          max_tokens: 1000,
+          system: systemPrompt,
+          messages
+        })
+      });
+
+      if (r.ok) {
+        const data = await r.json();
+        const reply = data && data.content && data.content[0] && data.content[0].text
+          ? data.content[0].text
+          : null;
+        if (reply) {
+          res.status(200).json({ reply });
+          return;
+        }
+      }
+    }
+
+    res.status(200).json({ reply: FALLBACK[lang], fallback: true });
+  } catch (e) {
+    res.status(200).json({ reply: FALLBACK.es, fallback: true });
+  }
+};

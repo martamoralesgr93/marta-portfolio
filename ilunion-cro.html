@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html class="lang-es" lang="es">
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xisxzka5pe");
+  </script>
+  <script src="/auth-lock.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ILUNION Hotels · CRO Case Study — From 3.36% to 6.5% Conversion · Marta Morales</title>
+
+  <meta name="description" content="How I diagnosed and redesigned ILUNION Hotels' offer component to double direct channel conversion — from 3.36% to 6.5%. CRO, AEM, behavioural research.">
+  <meta name="keywords" content="CRO Case Study, Product Designer Portfolio, Conversion Rate Optimization, ILUNION Hotels, AEM, Adobe Analytics, Microsoft Clarity, UX Research, Booking Funnel, Spain">
+
+  <link rel="canonical" href="https://martamorales.vercel.app/ilunion-cro">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://martamorales.vercel.app/ilunion-cro">
+  <meta property="og:title" content="ILUNION Hotels · CRO Case Study — +93% Conversion Uplift · Marta Morales">
+  <meta property="og:description" content="Diagnosis and redesign of the offer component for ILUNION Hotels' direct channel. From 3.36% to 6.5% conversion — data-driven, end-to-end ownership.">
+  <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://martamorales.vercel.app/ilunion-cro">
+  <meta name="twitter:title" content="ILUNION Hotels · CRO Case Study — +93% Conversion · Marta Morales">
+  <meta name="twitter:description" content="Diagnosis and redesign of the offer component for ILUNION Hotels' direct channel. From 3.36% to 6.5% conversion — data-driven, end-to-end ownership.">
+  <meta name="twitter:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
+
+  <link rel="icon" type="image/png" href="assets/logo-nuevo.png">
+  <link rel="apple-touch-icon" href="assets/logo-nuevo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+
+  <style>
+    /* ─── 01 HERO — métricas rápidas ─────────────── */
+    .hero-metrics {
+      display: flex;
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-width: 520px;
+    }
+    .hm-item {
+      flex: 1;
+      padding: 18px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .hm-item:last-child { border-right: none; }
+    .hm-label {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px;
+    }
+    .hm-value {
+      font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
+      color: var(--accent); line-height: 1;
+    }
+    .hm-sub { font-size: 10px; color: var(--text-dim); margin-top: 3px; }
+
+    /* ─── SEC NUM ─────────────────────────────────── */
+    .sec-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 36px; display: block;
+    }
+    .sec-num span { color: var(--accent); }
+
+    /* ─── 02 OVERVIEW — 2×2 grid ─────────────────── */
+    .overview-2x2 {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .ov-card { background: rgba(255,255,255,0.02); padding: 40px 44px 48px; }
+    .ov-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--accent-glow); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    }
+    .ov-icon svg { width: 18px; height: 18px; color: var(--accent); }
+    .ov-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .ov-text { font-size: 14px; color: var(--text); line-height: 1.7; }
+    .ov-text strong { color: var(--white); }
+
+    /* ─── 03 INVESTIGACIÓN ────────────────────────── */
+
+    /* Composición auditoría: evidencia + hallazgos + procedencia */
+    .audit-composition {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: rgba(255,255,255,0.015);
+      margin-bottom: 24px;
+    }
+    /* Cabecera: título de la evidencia + tag de método (fuente de datos) */
+    .audit-header-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .audit-header-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+    .audit-header-method {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--accent);
+      padding: 4px 12px; border-radius: 100px;
+      border: 1px solid rgba(var(--accent-rgb), 0.28);
+      background: rgba(var(--accent-rgb), 0.06);
+    }
+    .audit-body-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+    }
+    /* Evidencia: la imagen ocupa el panel a sangre, sin bandas vacías */
+    .audit-evidence {
+      margin: 0; padding: 24px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .audit-evidence img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .audit-evidence-cap {
+      font-size: 11px; color: var(--text-dim); line-height: 1.5; margin: 0;
+    }
+    /* Hallazgos: altura por contenido y centrados respecto a la evidencia */
+    .audit-findings {
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .audit-finding { padding: 26px 32px; }
+    .audit-finding + .audit-finding { border-top: 1px solid var(--border); }
+    .af-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+    }
+    .af-stat {
+      font-size: 36px; font-weight: 800; letter-spacing: -0.03em;
+      color: var(--white); line-height: 1; margin-bottom: 6px;
+      font-family: var(--font-serif);
+    }
+    .af-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+    /* Funnel + Insights */
+    .research-2col {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
+    }
+    .research-panel {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+    }
+    .rp-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px;
+    }
+    .fn-rows { display: flex; flex-direction: column; gap: 14px; }
+    .fn-row { display: flex; align-items: center; gap: 12px; }
+    .fn-name { font-size: 12px; color: var(--text); width: 148px; flex-shrink: 0; }
+    .fn-bar-bg {
+      flex: 1; height: 6px; background: rgba(255,255,255,0.06);
+      border-radius: 3px; overflow: hidden;
+    }
+    .fn-bar-fill { height: 100%; background: var(--accent); border-radius: 3px; }
+    .fn-pct { font-size: 12px; font-weight: 700; color: var(--white); width: 40px; text-align: right; flex-shrink: 0; }
+    .fn-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0 8px; }
+
+    .insight-list { display: flex; flex-direction: column; gap: 16px; }
+    .insight-row { display: flex; gap: 12px; align-items: flex-start; }
+    .insight-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 8px;
+    }
+    .insight-txt { font-size: 13px; color: var(--text); line-height: 1.6; }
+    .insight-txt strong { color: var(--white); }
+
+    /* ─── 04 DIAGNÓSTICO → DECISIONES ────────────── */
+    .h-timeline {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .ht-item { padding-right: 32px; }
+    .ht-item:last-child { padding-right: 0; }
+    .ht-connector { display: flex; align-items: center; margin-bottom: 24px; }
+    .ht-circle {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent-glow); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .ht-circle svg { width: 18px; height: 18px; color: var(--accent); }
+    .ht-line { flex: 1; height: 1px; background: var(--border); }
+    .ht-item:last-child .ht-line { display: none; }
+    .ht-step {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+    }
+    .ht-title {
+      font-size: 16px; font-weight: 700; color: var(--white);
+      margin-bottom: 10px; font-family: var(--font-serif);
+    }
+    .ht-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+    .ht-text strong { color: var(--white); }
+    .ht-pill {
+      display: inline-block; margin-top: 12px; padding: 5px 14px;
+      border: 1px solid var(--accent-border); border-radius: var(--radius-pill);
+      font-size: 11px; color: var(--accent);
+    }
+
+    /* ─── 05 WIREFRAMES + DISEÑO FINAL ───────────── */
+
+    /* Statement header */
+    .wf-statement {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 48px; align-items: center; margin-bottom: 48px;
+    }
+    .wf-big-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 3.8vw, 52px);
+      font-weight: 700; line-height: 1.1; color: var(--white);
+    }
+    .wf-big-title em { font-style: italic; color: var(--accent); display: block; }
+    .wf-statement-desc {
+      font-size: 15px; color: var(--text); line-height: 1.7;
+      border-left: 2px solid var(--accent-border); padding-left: 24px;
+    }
+
+    /* Comparison — wireframe full width + 2-col finals */
+    .wf-comparison {
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 32px;
+    }
+
+    /* Row 1: wireframe full width */
+    .wf-row-wire { width: 100%; }
+    .wf-row-wire .wf-col-header {
+      padding: 14px 28px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.02);
+    }
+    .wf-row-wire .wf-col-body {
+      padding: 0;
+    }
+    .wf-row-wire .wf-col-body img {
+      width: 100%; height: auto; display: block;
+    }
+    .wf-row-wire .wf-tags {
+      display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,0.01);
+    }
+
+    /* Arrow divider between rows */
+    .wf-row-arrow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; padding: 18px 28px;
+      border-top: 1px solid var(--border);
+      background: rgba(var(--accent-rgb), 0.04);
+    }
+    .wf-row-arrow span {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .wf-row-arrow .wf-arrow-line {
+      flex: 1; height: 1px; background: var(--accent-border);
+    }
+
+    /* Row 2: desktop + mobile side by side */
+    .wf-row-finals {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      border-top: 1px solid var(--border);
+    }
+    .wf-final-col {
+      display: flex; flex-direction: column;
+    }
+    .wf-final-col + .wf-final-col {
+      border-left: 1px solid var(--border);
+    }
+    .wf-final-col .wf-col-header {
+      padding: 14px 28px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.02);
+    }
+    .wf-final-col .wf-col-body {
+      padding: 0; flex: 1;
+    }
+    .wf-final-col .wf-col-body img {
+      width: 100%; height: auto; display: block;
+    }
+    .wf-final-col .wf-tags {
+      display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,0.01);
+    }
+
+    /* Shared label pieces */
+    .wf-col-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .wf-col-name {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim);
+    }
+
+    /* Pill tags under wireframes */
+    .wf-tag {
+      display: inline-block; padding: 3px 10px;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: var(--radius-pill); font-size: 11px; color: var(--text-dim);
+    }
+
+    /* Process steps */
+    .wf-process {
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .wf-process-label {
+      padding: 16px 28px; border-bottom: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .wf-process-label span { color: var(--accent); }
+    .wf-process-label em { color: var(--text-dim); font-style: normal; }
+    .wf-steps {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 0; background: var(--border);
+    }
+    .wf-step {
+      background: rgba(255,255,255,0.015); padding: 24px 24px 28px;
+      display: flex; flex-direction: column; gap: 10px;
+      position: relative;
+    }
+    .wf-step::after {
+      content: "→"; position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+      font-size: 14px; color: var(--text-dim); z-index: 1;
+    }
+    .wf-step:last-child::after { display: none; }
+    .wf-step-num {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .wf-step-icon {
+      font-size: 18px; line-height: 1;
+    }
+    .wf-step-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--white); line-height: 1.3;
+    }
+    .wf-step-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+    /* Legacy (keep for backward compat) */
+    .panel-block {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 24px;
+    }
+    .panel-header {
+      padding: 16px 24px; border-bottom: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .panel-header svg { width: 13px; height: 13px; color: var(--text-dim); flex-shrink: 0; }
+    .panel-body {
+      padding: 28px; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .panel-body img { max-width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
+
+    .design-2col {
+      display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px;
+    }
+
+    /* ─── 06 IMPLEMENTACIÓN ───────────────────────── */
+    .impl-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .impl-card {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px;
+    }
+    .impl-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--accent-glow); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
+    }
+    .impl-icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .impl-title {
+      font-size: 20px; font-weight: 700; color: var(--white);
+      font-family: var(--font-serif); margin-bottom: 14px;
+    }
+    .impl-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 20px; max-width: none; }
+    .impl-text strong { color: var(--white); }
+    .impl-badge {
+      display: inline-block; padding: 5px 14px;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); font-size: 11px; color: var(--text-dim);
+    }
+
+    /* ─── 07 RESULTADOS ───────────────────────────── */
+    .results-strip {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 24px;
+    }
+    .rs-cell {
+      padding: 32px 24px; border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .rs-cell:last-child { border-right: none; }
+    .rs-cell--hero { background: var(--accent-glow); border-right-color: var(--accent-border); }
+    .rs-val {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 700; line-height: 1; color: var(--white);
+    }
+    .rs-cell--hero .rs-val { color: var(--accent); }
+    .rs-up { display: flex; align-items: center; gap: 6px; }
+    .rs-up-arrow { font-size: 14px; color: var(--accent); }
+    .rs-sub { font-size: 12px; color: var(--text-dim); letter-spacing: 0.04em; }
+    .rs-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); line-height: 1.4;
+    }
+    .results-disclaimer {
+      font-size: 11px; color: var(--text-dim); line-height: 1.6;
+      border-left: 2px solid var(--border); padding-left: 16px;
+    }
+
+    /* ─── 08 LEARNINGS — 4 cards ──────────────────── */
+    .learnings-4col {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .lc-card { background: rgba(255,255,255,0.02); padding: 40px 36px 44px; }
+    .lc-icon { font-size: 24px; margin-bottom: 20px; display: block; }
+    .lc-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+    .lc-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 960px) {
+      .overview-2x2,
+      .research-2col,
+      .h-timeline,
+      .design-2col,
+      .impl-2col { grid-template-columns: 1fr; }
+      .audit-body-grid { grid-template-columns: 1fr; }
+      .audit-evidence { border-right: none; border-bottom: 1px solid var(--border); }
+      .ht-item { padding-right: 0; padding-bottom: 32px; }
+      .ht-line { display: none; }
+      .results-strip { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .rs-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .rs-cell:last-child { border-bottom: none; }
+      .learnings-4col { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+      /* ── 05 Wireframes + Diseño Final: nothing here ever stacked on mobile — fixed. ── */
+      .wf-statement { grid-template-columns: 1fr; gap: 20px; margin-bottom: 32px; }
+      .wf-statement-desc { border-left: none; padding-left: 0; padding-top: 16px; border-top: 1px solid var(--border); }
+      .wf-row-finals { grid-template-columns: 1fr !important; }
+      .wf-final-col + .wf-final-col { border-left: none; border-top: 1px solid var(--border); }
+      .wf-steps { grid-template-columns: 1fr 1fr !important; }
+      .wf-step::after { display: none; }
+      .wf-row-wire .wf-col-header,
+      .wf-final-col .wf-col-header,
+      .wf-process-label { padding: 12px 16px; }
+      .wf-row-wire .wf-tags,
+      .wf-final-col .wf-tags { padding: 12px 16px; }
+      .wf-process-label { flex-wrap: wrap; row-gap: 4px; }
+    }
+    @media (max-width: 560px) {
+      .wf-steps { grid-template-columns: 1fr !important; }
+    }
+    /* ─── EXPERIMENT CARD: hipótesis → decisión → resultado ─── */
+    .exp-card { display: grid; grid-template-columns: 1.3fr 1fr; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 32px; background: rgba(255,255,255,0.015); }
+    .exp-side { padding: 40px 44px; }
+    .exp-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .exp-icon svg { width: 18px; height: 18px; color: var(--accent); }
+    .exp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
+    .exp-hyp { font-family: var(--font-serif); font-style: italic; font-size: 17px; color: var(--text-bright); line-height: 1.6; margin-bottom: 20px; }
+    .exp-decision { font-size: 13px; color: var(--text-dim); line-height: 1.6; padding-top: 16px; border-top: 1px solid var(--border); }
+    .exp-decision strong { color: var(--white); }
+    .exp-result { background: var(--accent-glow); border-left: 1px solid var(--accent-border); display: flex; flex-direction: column; justify-content: center; }
+    .exp-result-val { font-family: var(--font-serif); font-size: 48px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+    .exp-result-sub { font-size: 11px; color: var(--text-dim); letter-spacing: 0.04em; margin-bottom: 4px; }
+    .exp-result-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+    @media (max-width: 760px) {
+      .exp-card { grid-template-columns: 1fr; }
+      .exp-result { border-left: none; border-top: 1px solid var(--accent-border); padding: 28px 40px; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-metrics { flex-direction: column; }
+      .hm-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .hm-item:last-child { border-bottom: none; }
+      .results-strip,
+      .learnings-4col { grid-template-columns: 1fr; }
+    }
+    .cs-hero-logo {
+  display: none;
+}
+
+    /* ===================== QUICK SUMMARY CARD · spine unificado (mismo componente que Booking/CEF/Paolo/It-Ops) ===================== */
+    .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .qs-col { display: flex; flex-direction: column; }
+    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
+    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .qs-bullets { list-style: none; padding: 0; margin: 0; }
+    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
+    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
+    @media (max-width: 900px) {
+      .quick-summary-grid { grid-template-columns: 1fr; gap: 0; padding: 8px 24px; }
+      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .qs-col:last-child { border-bottom: none; }
+    }
+    /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
+    .cs-hamburger {
+      display: none; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.20); background: var(--surface-2);
+      cursor: pointer; color: var(--white); flex-shrink: 0; margin-left: 8px;
+    }
+    .cs-mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.97); backdrop-filter: blur(28px);
+      flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.28s ease;
+      touch-action: pan-y; overscroll-behavior: contain;
+    }
+    .cs-mobile-menu.open { opacity: 1; }
+    .cs-mobile-menu-close {
+      position: absolute; top: 18px; right: 20px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06);
+      color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .cs-mobile-menu-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 18px;
+    }
+    .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
+    .cs-mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .cs-mobile-menu-links a { display: block; padding: 16px 4px; text-decoration: none; transition: color 0.2s; }
+    .cs-mmi-num { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+    .cs-mmi-title { font-size: 19px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
+    .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
+    .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
+    .cs-mobile-menu-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .cs-hamburger { display: flex; }
+      .cs-nav-dropdown { display: none; }
+    }
+  </style>
+</head>
+<body class="cs-ilunion-cro">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
+    <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
+  </a>
+  <div class="cs-nav-right">
+    <div class="cs-nav-dropdown">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <span class="es">Casos de Producto ▾</span>
+        <span class="en">Case Studies ▾</span>
+      </a>
+      <div class="cs-dropdown-menu">
+        <a href="cef-design-system.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 01</div>
+          <div class="cs-item-title">CEF EdTech</div>
+          <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
+          <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
+        </a>
+        <a href="ilunion-cro.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
+        </a>
+        <a href="booking-engine.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 03</div>
+          <div class="cs-item-title">Booking Engine</div>
+          <div class="cs-item-skill es">Design Ops & Componentes</div>
+          <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="paolo-pizzeria.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 04</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
+        </a>
+        <a href="it-ops-oracle.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 05</div>
+          <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
+          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
+        </a>
+      </div>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- MOBILE MENU: acceso real a los 5 casos en touch (el dropdown de arriba es hover-only) -->
+<div class="cs-mobile-menu" id="csMobileMenu">
+  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
+  </button>
+  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
+  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
+  <ul class="cs-mobile-menu-links">
+    <li><a href="cef-design-system.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
+    <li><a href="ilunion-cro.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
+    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+  </ul>
+  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
+</div>
+
+
+<main id="main">
+
+
+<!-- ══════════════════════════════════════
+     01 · HERO
+══════════════════════════════════════ -->
+<header class="cs-hero">
+  <div class="cs-hero-logo"></div>
+  <div class="cs-hero-overlay"></div>
+  <div class="cs-hero-glow" style="background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 65%);"></div>
+  <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">ILUNION CRO</span></li>
+      </ol>
+    </nav>
+    <span class="cs-eyebrow">02 — ILUNION Hotels · CRO · Product Design</span>
+    <h1 class="cs-title">
+      Experimentos AEM<br><em>de 3,36% a 6,5% de conversión</em>
+    </h1>
+    <div class="cs-tags">
+      <span class="cs-tag">Product Design</span>
+      <span class="cs-tag">CRO</span>
+      <span class="cs-tag">Customer Journey</span>
+      <span class="cs-tag">Experimentación</span>
+      <span class="cs-tag">Ecommerce hotelero</span>
+      <span class="cs-tag">Analytics</span>
+      <span class="cs-tag">AEM</span>
+    </div>
+    <div class="hero-metrics fu">
+      <div class="hm-item">
+        <div class="hm-label">Conversión Final</div>
+        <div class="hm-value">6.5%</div>
+        <div class="hm-sub">vs 3.36% inicial</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Mejora relativa</div>
+        <div class="hm-value">+93%</div>
+        <div class="hm-sub">Uplift</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Club ÚNICOS</div>
+        <div class="hm-value">+50%</div>
+        <div class="hm-sub">Reservas fidelizadas</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════
+     PROTOTYPE STRUCTURE: CONTEXTO, MÉTRICAS Y DIAGNÓSTICO
+══════════════════════════════════════ -->
+
+<!-- 1. BLOQUE CONTEXTO -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 40px 0; border: 1px solid var(--border); padding: 48px var(--space-lg);">
+  <div class="cs-wrap">
+    <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">CONTEXTO</div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; margin-bottom: 40px;">
+      <div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 24px;">
+          El canal directo tenía un problema de identificación, no de tráfico
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14.5px; color: var(--text-bright); line-height: 1.8;">
+          <p>ILUNION Hotels migró a AEM en 2024. La conversión del canal directo partía del 3.36%. El brief inicial planteaba optimizar el bloque promocional.</p>
+          <p>El hallazgo clave: Clarity mostró que solo el 15% de usuarios llegaba a la sección de ofertas debido a la jerarquía visual. Además, muchos socios de Club ÚNICOS reservaban sin iniciar sesión, perdiendo su tarifa preferente.</p>
+        </div>
+      </div>
+
+      <!-- MOCKUP DERECHA -->
+      <div style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: rgba(0,0,0,0.5);">
+        <img src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.webp" alt="ILUNION Hotels Mockup AEM" style="width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+
+    <!-- 4 CHIPS METADATOS DEBAJO -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">ROL</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">UX/UI Designer &amp; CRO</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">PERIODO</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Sep 2024 - Presente</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">RESEARCH</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Adobe Analytics + Clarity</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+        <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">STACK</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">AEM, Adobe Analytics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. FILA DE MÉTRICAS GRANDES EN SERIF CON EYEBROW DE FUENTE -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 40px var(--space-lg);">
+  <div class="cs-wrap">
+    <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px; font-family: monospace;">
+      ADOBE ANALYTICS · CANAL DIRECTO · BASELINE SEP 2024
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; align-items: flex-start;">
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--purple); line-height: 1; margin-bottom: 8px;">
+          3.36% → 6.5%
+        </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">CONVERSIÓN CANAL DIRECTO</div>
+      </div>
+
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--purple); line-height: 1; margin-bottom: 8px;">
+          13%
+        </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">CUOTA VENTAS CANAL DIRECTO</div>
+      </div>
+
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 8px;">
+          +50%
+        </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">LEALTAD CLUB ÚNICOS</div>
+      </div>
+
+      <div>
+        <div style="font-family: var(--font-serif); font-size: clamp(34px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 8px;">
+          32
+        </div>
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);">PROPIEDADES</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. BLOQUE DIAGNÓSTICO (H2 + 3 TARJETAS CON BORDE IZQUIERDO) -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 48px var(--space-lg);">
+  <div class="cs-wrap">
+    <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">DIAGNÓSTICO</div>
+    <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 32px;">
+      El brief decía «promo». Los datos decían «jerarquía»
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <!-- TARJETA 1 -->
+      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">ADOBE ANALYTICS</div>
+        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Análisis de funnel: dónde perdíamos usuarios en el proceso de reserva.</div>
+      </div>
+
+      <!-- TARJETA 2 -->
+      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">MICROSOFT CLARITY</div>
+        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Solo el 15% llegaba a la sección de ofertas: invisible, no irrelevante.</div>
+      </div>
+
+      <!-- TARJETA 3 -->
+      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-radius: 16px; border-left: 4px solid var(--purple); padding: 24px 28px;">
+        <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">SEGMENTACIÓN</div>
+        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Socios Club ÚNICOS reservando sin login: pérdida del precio preferente para ellos y del LTV para el hotel.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGÍA TEST A/B & USER PERSONAS -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 36px var(--space-lg); margin: 32px 0;">
+  <div class="cs-wrap">
+    <div class="block-label" style="color: var(--accent);">
+      <span class="block-label-text">Estrategia UX &amp; Metodología de Experimentación A/B</span>
+      <div class="block-label-line" style="background: var(--accent-border);"></div>
+    </div>
+    
+    <!-- User Personas Section -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">👤 Buyer Persona 01 · Huésped Vacacional</h4>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Sensible al precio y la transparencia de fechas. Busca confirmación visual inmediata del descuento del club y fotos reales de la habitación. <strong>Decisión guiada por la Ley de Fitts</strong> (botón de reserva siempre al alcance del pulgar) y eliminación de costes ocultos.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">💼 Buyer Persona 02 · Gestor / Comprador Corporativo</h4>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Prioriza la velocidad de reserva, la factura simplificada y la confirmación inmediata de políticas de cancelación. <strong>Decisión guiada por la Ley de Hick</strong> (reducción de pasos y opciones secundarias en el embudo directo).</p>
+      </div>
+    </div>
+
+    <!-- Framework Test A/B -->
+    <div style="margin-top: 32px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
+      <h4 style="font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 16px;">🧪 Arquitectura de Test A/B &amp; Significancia Estadística</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+        <div>
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">1. Formulación de Hipótesis</div>
+          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Si reestructuramos la tarjeta de ofertas situando el selector de fechas y precio final <em>above the fold</em>, se reducirá la tasa de abandono en un 25% (Priorización ICE: 9/10).</p>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">2. Variante A (Control) vs. B (Tratamiento)</div>
+          <p style="font-size: 13px; color: var(--text); line-height: 1.5;"><strong>Control (A):</strong> Layout AEM original con banner promocional estático.<br><strong>Tratamiento (B):</strong> Componente dinámico de ofertas con filtro inmediato y selector móvil.</p>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">3. Muestra &amp; Significancia</div>
+          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Tráfico split 50/50 durante 14 días. Muestra validada con nivel de confianza del 95% ($p &lt; 0.05$) elevando la conversión del 3,36% al 6,5%.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     02 · OVERVIEW
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">S</div>
+        <div class="cs-rail-label">SITUATION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu"><span>02</span> — Overview</span>
+
+    <div class="overview-2x2 fu">
+
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <p class="ov-title">Contexto</p>
+        <p class="ov-text">
+          Tras migrar la web a Adobe Experience Manager (AEM) en septiembre 2025, la tasa de conversión cayó al <strong>3,36%</strong>. Aunque la infraestructura técnica era sólida, el flujo de usuario presentaba problemas de fricción comercial.
+        </p>
+      </div>
+
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <p class="ov-title">Mi Rol</p>
+        <p class="ov-text">
+          <strong>Product Designer</strong> con ownership end-to-end de manera autónoma. Lideré el ciclo completo de diagnóstico, propuesta visual y coordinación con el equipo de desarrollo. Gestioné diagnóstico, propuesta y presentación directa a comité, sin intermediarios de producto entre el análisis y la toma de decisión.
+        </p>
+      </div>
+
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <p class="ov-title">Problema</p>
+        <p class="ov-text">
+          La maquetación inicial daba un excesivo protagonismo a banners promocionales del club de fidelidad, empujando el motor de reserva por debajo del primer scroll y dispersando a los usuarios con alta intención de compra.
+        </p>
+      </div>
+
+      <div class="ov-card">
+        <div class="ov-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <p class="ov-title">Objetivo</p>
+        <p class="ov-text">
+          Identificar los puntos de fuga del embudo de conversión y diseñar experimentos iterativos en AEM para elevar la conversión del 3,36% al 6,5% sin degradar el valor del programa de fidelización.
+        </p>
+      </div>
+
+    </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     03 · INVESTIGACIÓN Y DIAGNÓSTICO
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">S</div>
+        <div class="cs-rail-label">SITUATION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu"><span>03</span> — Investigación y Diagnóstico</span>
+
+    <!-- COMPOSICIÓN AUDITORÍA: evidencia a sangre + 2 hallazgos + procedencia -->
+    <div class="audit-composition fu">
+      <div class="audit-header-bar">
+        <span class="audit-header-title">Auditoría del Componente Actual</span>
+        <span class="audit-header-method">Fuente · Microsoft Clarity + Adobe Analytics</span>
+      </div>
+      <div class="audit-body-grid">
+
+        <figure class="audit-evidence">
+          <img width="1920" height="1440"
+            loading="lazy" decoding="async"
+            src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.webp"
+            alt="Auditoría del componente de ofertas ILUNION — estado inicial"
+          >
+          <figcaption class="audit-evidence-cap">Estado inicial · el bloque de ofertas queda por debajo del primer scroll.</figcaption>
+        </figure>
+
+        <div class="audit-findings">
+          <div class="audit-finding">
+            <p class="af-num">Finding 01 · Scroll map</p>
+            <p class="af-stat">15%</p>
+            <p class="af-desc">Solo el 15% de los usuarios superaba el bloque de ofertas en la home. El componente requería mayor interacción vertical que modelos referentes.</p>
+          </div>
+          <div class="audit-finding">
+            <p class="af-num">Finding 02 · Jerarquía visual</p>
+            <p class="af-stat">ÚNICOS</p>
+            <p class="af-desc">El programa de fidelización presentaba gran relevancia visual antes de mostrar las opciones directas de reserva, compitiendo con la intención de compra.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FUNNEL + INSIGHTS -->
+    <div class="research-2col">
+
+      <div class="research-panel fu">
+        <p class="rp-title">Análisis de Fuga · Scroll Map Home</p>
+        <div class="fn-rows">
+          <div class="fn-row">
+            <span class="fn-name">Visitas Iniciales</span>
+            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:100%"></div></div>
+            <span class="fn-pct">100%</span>
+          </div>
+          <div class="fn-row">
+            <span class="fn-name">Llegan a ÚNICOS</span>
+            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:60%"></div></div>
+            <span class="fn-pct">60%</span>
+          </div>
+          <div class="fn-row">
+            <span class="fn-name">Superan bloque Ofertas</span>
+            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:15%"></div></div>
+            <span class="fn-pct">15%</span>
+          </div>
+          <hr class="fn-divider">
+          <div class="fn-row">
+            <span class="fn-name" style="color:var(--text-dim);">Abandono Crítico</span>
+            <div class="fn-bar-bg" style="background:rgba(239, 68, 68,0.08);">
+              <div class="fn-bar-fill" style="width:85%;background:rgba(239, 68, 68,0.65);"></div>
+            </div>
+            <span class="fn-pct" style="color:#ef4444;">85%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-panel fu">
+        <p class="rp-title">Insights Principales · Clarity + Analytics</p>
+        <div class="insight-list">
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">Solo el <strong>15% de los usuarios superaba el bloque de ofertas</strong> en la home.</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">El componente requería <strong>mayor interacción vertical</strong> que otros modelos referentes para visualizar las opciones de reserva.</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">El programa de fidelización <strong>ÚNICOS presentaba gran relevancia visual</strong> antes de mostrar las opciones directas de reserva.</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-dot"></span>
+            <span class="insight-txt">Benchmarking contra cadenas hoteleras y portales de distribución referentes: precio, disponibilidad y CTA en primer fold.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- DIAGRAMA DE FLUJO DE USUARIO (UX USER FLOW) -->
+    <div class="ux-flowchart fu">
+      <div class="ux-flow-header">
+        <span class="ux-flow-subtitle">User Flow Optimization</span>
+        <h3 class="ux-flow-title">Embudo de Conversión CRO: Flujo de Reserva Directa</h3>
+      </div>
+      <div class="ux-flow-grid">
+        <div class="ux-flow-step ux-flow-step--action">
+          <span class="ux-flow-badge">1. Landing</span>
+          <p class="ux-flow-step-title">Acceso a la Home</p>
+          <p class="ux-flow-step-desc es">El usuario entra con intención de compra desde campañas de marketing.</p>
+          <p class="ux-flow-step-desc en">User lands on the homepage with high-intent from marketing campaigns.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--decision">
+          <span class="ux-flow-badge">2. Decisión</span>
+          <p class="ux-flow-step-title">¿Usuario Identificado?</p>
+          <p class="ux-flow-step-desc es">Filtro condicional: ¿Es miembro de Club ÚNICOS?</p>
+          <p class="ux-flow-step-desc en">Conditional check: Is the user a Club ÚNICOS member?</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--action">
+          <span class="ux-flow-badge">3. Persuasión</span>
+          <p class="ux-flow-step-title">Mostrar Beneficios</p>
+          <p class="ux-flow-step-desc es"><strong>SI:</strong> Precios exclusivos con descuento directo aplicado.<br><strong>NO:</strong> Banner de alta rápida de conversión en 1 clic.</p>
+          <p class="ux-flow-step-desc en"><strong>YES:</strong> Direct discounted prices.<br><strong>NO:</strong> 1-click easy sign-up promotion card.</p>
+        </div>
+        <div class="ux-flow-connector">→</div>
+        <div class="ux-flow-step ux-flow-step--success">
+          <span class="ux-flow-badge">4. Conversión</span>
+          <p class="ux-flow-step-title">Checkout Directo</p>
+          <p class="ux-flow-step-desc es">Envío del usuario al motor con fechas preestablecidas. Conversión exitosa.</p>
+          <p class="ux-flow-step-desc en">Redirecting to search engine with dates prefilled. High conversion checkout.</p>
+        </div>
+      </div>
+    </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     04 · DIAGNÓSTICO → DECISIONES
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">T</div>
+        <div class="cs-rail-label">TASK</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu"><span>04</span> — Diagnóstico → Decisiones</span>
+
+    <div class="h-timeline fu">
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1l2.1-2.1M17 7l2.1-2.1"/>
+            </svg>
+          </div>
+          <div class="ht-line"></div>
+        </div>
+        <p class="ht-step">Paso 1</p>
+        <p class="ht-title">Insight clave</p>
+        <p class="ht-text">
+          Un usuario que llega desde paid media con intención de compra alta requiere comprobar disponibilidad y precio de forma directa. La narrativa de marca estaba bloqueando el inicio de la búsqueda.
+        </p>
+      </div>
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0h10a2 2 0 002-2V9M9 14H4a2 2 0 01-2-2V9"/>
+            </svg>
+          </div>
+          <div class="ht-line"></div>
+        </div>
+        <p class="ht-step">Paso 2</p>
+        <p class="ht-title">Hipótesis</p>
+        <p class="ht-text">
+          Reducir la fricción inicial priorizando el producto visible (oferta, precio, CTA) para acelerar el inicio de la búsqueda mejorará la conversión del embudo. Hipótesis sustentada analíticamente mediante scroll maps y benchmarking sectorial.
+        </p>
+      </div>
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/>
+              <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
+              <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+          </div>
+          <div class="ht-line"></div>
+        </div>
+        <p class="ht-step">Paso 3</p>
+        <p class="ht-title">12 mejoras priorizadas</p>
+        <p class="ht-text">
+          Traduje el diagnóstico en un documento estratégico con 12 mejoras, priorizadas por impacto directo en conversión y viabilidad técnica en AEM. 4 niveles de impacto. La propuesta fue aprobada en comité.
+        </p>
+        <span class="ht-pill">Ver lista de mejoras →</span>
+      </div>
+
+      <div class="ht-item">
+        <div class="ht-connector">
+          <div class="ht-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+        <p class="ht-step">Paso 4</p>
+        <p class="ht-title">Decisión final</p>
+        <p class="ht-text">
+          <strong>ÚNICOS no se eliminó:</strong> se integró como componente de valor secundario que asiste al usuario sin interferir en la búsqueda. La restricción de AEM (sin CSS diferencial por dispositivo) se resolvió reordenando la jerarquía estructural de los componentes.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- EXPERIMENT CARD: el ciclo hipótesis → decisión → resultado, cerrado -->
+    <div class="exp-card fu">
+      <div class="exp-side">
+        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3a6 6 0 0 0-4 10.472V16a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.528A6 6 0 0 0 12 3z"/></svg></div>
+        <span class="exp-label">Hipótesis</span>
+        <p class="exp-hyp">"Reducir la fricción inicial priorizando el producto visible —oferta, precio, CTA— para acelerar el inicio de la búsqueda mejorará la conversión del embudo."</p>
+        <p class="exp-decision"><strong>Decisión ejecutada:</strong> ÚNICOS se reordenó como componente secundario dentro de los constraints de AEM, sin eliminarlo — el buscador y la oferta directa pasaron al primer fold.</p>
+      </div>
+      <div class="exp-result">
+        <span class="exp-result-sub">Conversión canal directo</span>
+        <div class="exp-result-val">6.5%</div>
+        <span class="exp-result-label">+93% vs 3,36% pre-rediseño</span>
+      </div>
+    </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     05 · WIREFRAMES + DISEÑO FINAL
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu"><span>05</span> — Wireframes + Diseño Final</span>
+
+    <!-- STATEMENT HEADER -->
+    <div class="wf-statement fu">
+      <div>
+        <p class="wf-big-title">
+          Del wireframe<br>
+          <em>al resultado final</em>
+        </p>
+      </div>
+      <p class="wf-statement-desc">
+        A partir de los wireframes iniciales definí la propuesta visual final, la jerarquía de contenidos,
+        el sistema de componentes y la adaptación responsive para desktop y mobile.
+        Los constraints técnicos de AEM no frenaron la solución; los integré como parámetros de diseño.
+      </p>
+    </div>
+
+    <!-- COMPARACIÓN: wireframe full width → diseño final 2-col -->
+    <div class="wf-comparison fu">
+
+      <!-- FILA 1: Wireframe ancho completo -->
+      <div class="wf-row-wire">
+        <div class="wf-col-header">
+          <span class="wf-col-num">01.</span>
+          <span class="wf-col-name">Wireframe — Estructura</span>
+        </div>
+        <div class="wf-col-body">
+          <img width="1920" height="1440"
+            loading="lazy" decoding="async"
+            src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wireframe-recompo.webp"
+            alt="Wireframe re-componetización — jerarquía buscador + ofertas"
+          >
+        </div>
+        <div class="wf-tags">
+          <span class="wf-tag">Buscador prioritario</span>
+          <span class="wf-tag">Jerarquía diferenciada</span>
+          <span class="wf-tag">Componentes diferenciados Club ÚNICOS</span>
+        </div>
+      </div>
+
+      <!-- Flecha divisor -->
+      <div class="wf-row-arrow">
+        <div class="wf-arrow-line"></div>
+        <span>Diseño final →</span>
+        <div class="wf-arrow-line"></div>
+      </div>
+
+      <!-- FILA 2: Desktop + Mobile al 50% -->
+      <div class="wf-row-finals">
+
+        <div class="wf-final-col">
+          <div class="wf-col-header">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-dim);flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span class="wf-col-num">02.</span>
+            <span class="wf-col-name">Diseño Final — Desktop</span>
+          </div>
+          <div class="wf-col-body">
+            <img width="1920" height="1440"
+              loading="lazy" decoding="async"
+              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.webp"
+              alt="Diseño final desktop — carrusel de ofertas en primer fold con precio, descuento y CTA"
+            >
+          </div>
+          <div class="wf-tags">
+            <span class="wf-tag">Precio visible sin scroll</span>
+            <span class="wf-tag">ÚNICOS en secundario</span>
+          </div>
+        </div>
+
+        <div class="wf-final-col">
+          <div class="wf-col-header">
+            <svg width="11" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-dim);flex-shrink:0;"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+            <span class="wf-col-num">03.</span>
+            <span class="wf-col-name">Diseño Final — Mobile</span>
+          </div>
+          <div class="wf-col-body">
+            <img width="1920" height="1440"
+              loading="lazy" decoding="async"
+              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.webp"
+              alt="Diseño final mobile — jerarquía adaptada al contexto táctil"
+            >
+          </div>
+          <div class="wf-tags">
+            <span class="wf-tag">Contexto táctil</span>
+            <span class="wf-tag">Primer scroll transaccional</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MI PROCESO — 5 pasos -->
+    <div class="wf-process fu">
+      <div class="wf-process-label">
+        <span>MI PROCESO</span>
+        <em>— del problema estructural a la solución visual</em>
+      </div>
+      <div class="wf-steps">
+        <div class="wf-step">
+          <span class="wf-step-num">1.</span>
+          <span class="wf-step-icon"></span>
+          <p class="wf-step-title">Estructura</p>
+          <p class="wf-step-desc">Definí la arquitectura de la información y la disposición de los bloques clave.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-step-num">2.</span>
+          <span class="wf-step-icon"></span>
+          <p class="wf-step-title">Diseño visual</p>
+          <p class="wf-step-desc">Apliqué identidad visual premium reforzando la jerarquía y el contraste.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-step-num">3.</span>
+          <span class="wf-step-icon"></span>
+          <p class="wf-step-title">Adaptación responsive</p>
+          <p class="wf-step-desc">Ajusté la experiencia para desktop y mobile priorizando usabilidad y conversión.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-step-num">4.</span>
+          <span class="wf-step-icon"></span>
+          <p class="wf-step-title">Sistema de componentes</p>
+          <p class="wf-step-desc">Diseñé componentes reutilizables para asegurar consistencia y escalabilidad.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-step-num">5.</span>
+          <span class="wf-step-icon"></span>
+          <p class="wf-step-title">Integración de marca</p>
+          <p class="wf-step-desc">Integré el diseño dentro del ecosistema digital de ILUNION Hotels.</p>
+        </div>
+      </div>
+    </div>
+
+        <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
+    <details class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02);">
+      <summary class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);">
+        <span style="color: var(--accent);">INTEGRACIÓN DE IA EN RESEARCH Y AUDITORÍA DE DATOS</span>
+        <em style="color: rgba(255,255,255,0.65);">— Optimización CRO basada en datos cuali-cuanti</em>
+      </summary>
+      <div class="wf-steps" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="wf-step">
+          <span class="wf-step-num" style="color: var(--accent);">1.</span>
+          <p class="wf-step-title" style="color: #fff;">Auditoría de Logs (MCP)</p>
+          <p class="wf-step-desc es">Conexión de Claude mediante MCP SQL a bases de datos de Adobe Analytics para procesar, limpiar y filtrar 10,000+ logs del funnel de reservas post-migración, localizando caídas exactas.</p>
+          <p class="wf-step-desc en">Connecting Claude via MCP SQL to Adobe Analytics to pull, clean, and filter 10,000+ logs from the reservation funnel post-migration, isolating checkout drop-offs.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-step-num" style="color: var(--accent);">2.</span>
+          <p class="wf-step-title" style="color: #fff;">Clustering de Clarity</p>
+          <p class="wf-step-desc es">Ingesta automatizada de 250+ transcripciones cualitativas de Microsoft Clarity a través de LLMs para categorizar fricciones en el flujo de selección de habitaciones en tiempo récord.</p>
+          <p class="wf-step-desc en">Ingesting 250+ Microsoft Clarity qualitative session logs into Claude to automatically categorize layout friction points during the room selection process.</p>
+        </div>
+        <div class="wf-step">
+          <span class="wf-step-num" style="color: var(--accent);">3.</span>
+          <p class="wf-step-title" style="color: #fff;">Variantes de Microcopy</p>
+          <p class="wf-step-desc es">Generé 15 variantes bilingües de microcopy para llamadas a la acción en pruebas A/B usando prompts estructurados con restricciones de longitud de caracteres de AEM.</p>
+          <p class="wf-step-desc en">Generated 15 bilingual variants of microcopy call-to-actions for A/B tests using structured prompts bounded by AEM character length constraints.</p>
+        </div>
+      </div>
+    </details>
+
+<!-- ══════════════════════════════════════
+     06 · IMPLEMENTACIÓN + ITERACIÓN
+══════════════════════════════════════ -->
+<section class="cs-block">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu"><span>06</span> — Implementación + Iteración</span>
+
+    <div class="impl-2col">
+
+      <div class="impl-card fu">
+        <div class="impl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <p class="impl-title">Implementación</p>
+        <p class="impl-text">
+          Trabajé directamente con el equipo de desarrollo en entorno staging, revisando el comportamiento real del componente en la plataforma en lugar de entregar especificaciones para que alguien las interpretara. Saber qué estás mirando en staging, entender por qué un componente se rompe en un breakpoint y proponer la corrección correcta sin pedir otro sprint.
+        </p>
+        <p class="impl-text">
+          La propuesta se presentó en comité interno y se aprobó para lanzamiento a producción.
+        </p>
+      </div>
+
+      <div class="impl-card fu">
+        <div class="impl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+          </svg>
+        </div>
+        <p class="impl-title">Aprendizaje post-lanzamiento</p>
+        <p class="impl-text">
+          Tras el lanzamiento, los datos de Clarity mostraron algo inesperado: en mobile, los usuarios <strong>deslizaban sobre el selector de fechas en lugar de hacer clic</strong>. El patrón de interacción táctil no era el que habíamos diseñado.
+        </p>
+        <p class="impl-text">
+          Lo detecté, lo documenté y coordiné el desarrollo de la interacción de swipe a posteriori. No fue un fallo de diseño: fue el proceso funcionando como debe. La diferencia entre hacer una entrega y hacer producto es exactamente esta: seguir mirando después de publicar.
+        </p>
+      </div>
+
+    </div>
+      </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     07 · RESULTADOS
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">R</div>
+        <div class="cs-rail-label">RESULT</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu"><span>07</span> — Resultados</span>
+
+    <div class="results-strip fu">
+
+      <div class="rs-cell rs-cell--hero">
+        <div class="rs-val">6.5%</div>
+        <div class="rs-label">Conversión canal directo post-AEM</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-up">
+          <span class="rs-up-arrow">↑</span>
+          <div class="rs-val">+93%</div>
+        </div>
+        <div class="rs-sub">3,36% → 6,5%</div>
+        <div class="rs-label">Uplift de conversión</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-val">+50%</div>
+        <div class="rs-label">Reservas atribuidas a Club ÚNICOS</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-val">13%</div>
+        <div class="rs-label">Peso canal directo sobre ventas totales</div>
+      </div>
+
+      <div class="rs-cell">
+        <div class="rs-val">×2</div>
+        <div class="rs-label">Extensión del componente a otras páginas</div>
+      </div>
+
+    </div>
+
+    <p class="results-disclaimer fu">
+      Las cifras representan métricas del canal directo y analítica agregada. No incluyen información financiera sensible de la empresa.
+    </p>
+
+    <div style="margin-top: 20px; padding: 14px 18px; border-left: 2px solid rgba(var(--accent-rgb),0.35); background: rgba(var(--accent-rgb),0.04); border-radius: 0 8px 8px 0;">
+      <p class="es fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generación y coordinación de assets visuales del canal directo con IA generativa (Vertex AI · Gemini · Figma), garantizando consistencia de marca y nivel de calidad.</p>
+      <p class="en fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generation and coordination of direct channel visual assets using generative AI (Vertex AI · Gemini · Figma), ensuring brand consistency and quality standard.</p>
+    </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     08 · LEARNINGS
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">R</div>
+        <div class="cs-rail-label">RESULT</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu"><span>08</span> — Learnings</span>
+
+    <div class="learnings-4col fu">
+
+      <div class="lc-card">
+        <span class="lc-icon"></span>
+        <p class="lc-title">Data First</p>
+        <p class="lc-text">
+          El brief decía "optimiza el bloque promocional". Los datos decían que el problema era de jerarquía. Aprendí a profundizar en los datos analíticos antes de iniciar la conceptualización visual.
+        </p>
+      </div>
+
+      <div class="lc-card">
+        <span class="lc-icon"></span>
+        <p class="lc-title">Launch ≠ Finish</p>
+        <p class="lc-text">
+          El comportamiento de swipe en mobile detectado post-lanzamiento reforzó que la observación analítica activa y el mantenimiento de producto son fases esenciales para asegurar la madurez de cualquier desarrollo digital.
+        </p>
+      </div>
+
+      <div class="lc-card">
+        <span class="lc-icon">◆</span>
+        <p class="lc-title">Constraints Create Design</p>
+        <p class="lc-text">
+          Las limitaciones de AEM fueron tomadas como variables creativas, guiándonos a resolver el orden visual estructuralmente y fortaleciendo la adaptabilidad del diseño final.
+        </p>
+      </div>
+
+      <div class="lc-card">
+        <span class="lc-icon"></span>
+        <p class="lc-title">Business Language Matters</p>
+        <p class="lc-text">
+          Colaborar directamente con comités directivos, tecnología y marketing exige fundamentar el diseño en impacto transaccional y objetivos del negocio. Lograr esa alineación es lo que impulsa el éxito de los productos digitales.
+        </p>
+      </div>
+
+    </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+</main>
+
+<footer class="cs-footer">
+  <div class="cs-wrap">
+    <div class="footer-label es">Siguiente caso</div>
+    <div class="footer-label en">Next case</div>
+    <h2 class="es">¿Vemos otro proyecto?</h2>
+    <h2 class="en">Want to see another project?</h2>
+    <nav class="cs-pagination" aria-label="Navegación entre casos">
+      <a href="cef-design-system.html" class="cs-pagination-arrow" aria-label="Caso anterior">←</a>
+      <div class="cs-pagination-dots">
+        <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 01">01</a>
+        <a href="ilunion-cro.html" class="cs-pagination-dot is-current" aria-current="page" aria-label="Caso 02">02</a>
+        <a href="booking-engine.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
+        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
+        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
+      </div>
+      <a href="booking-engine.html" class="cs-pagination-arrow" aria-label="Caso siguiente">→</a>
+    </nav>
+    <a href="index.html" class="cs-pagination-index es">Volver al índice</a>
+    <a href="index.html" class="cs-pagination-index en">Back to index</a>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+    });
+  }, { threshold: 0.01 });
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+  const stored = localStorage.getItem('portfolio-lang');
+  if (stored === 'en') {
+    document.documentElement.classList.add('lang-en');
+    document.documentElement.lang = 'en';
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = 'ES';
+  }
+
+  function toggleLang() {
+    const html = document.documentElement;
+    const btn = document.getElementById('langToggle');
+    const isEn = html.classList.toggle('lang-en');
+    html.lang = isEn ? 'en' : 'es';
+    btn.textContent = isEn ? 'ES' : 'EN';
+    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+  }
+
+  function openCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.style.display = 'flex';
+    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCaseMenu() {
+    const m = document.getElementById('csMobileMenu');
+    m.classList.remove('open');
+    setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 300);
+  }
+</script>
+<script src="cs-enhancements.js" defer></script>
+
+<!-- ===================== CHATBOT MARTA ===================== -->
+<style>
+/* ── Chat bubble trigger ── */
+#chat-trigger {
+  position: fixed; bottom: 28px; right: 28px; z-index: 9000;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.85));
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
+  outline: none;
+}
+#chat-trigger:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+#chat-trigger:active { transform: scale(0.96); }
+#chat-trigger .icon-chat { opacity: 1; position: absolute; transition: opacity 0.2s; }
+#chat-trigger .icon-close { opacity: 0; position: absolute; transition: opacity 0.2s; }
+#chat-trigger.open .icon-chat { opacity: 0; }
+#chat-trigger.open .icon-close { opacity: 1; }
+
+#chat-trigger::before {
+  content: '';
+  position: absolute; inset: -6px; border-radius: 50%;
+  border: 1.5px solid rgba(var(--accent-rgb),0.45);
+  animation: chat-pulse 2.8s ease-out infinite;
+}
+#chat-trigger.open::before { animation: none; opacity: 0; }
+@keyframes chat-pulse {
+  0%   { transform: scale(1);    opacity: 0.7; }
+  70%  { transform: scale(1.35); opacity: 0;   }
+  100% { transform: scale(1.35); opacity: 0;   }
+}
+
+/* ── Chat panel ── */
+#chat-panel {
+  position: fixed; bottom: 96px; right: 28px; z-index: 8999;
+  width: 360px; max-height: 540px;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  display: flex; flex-direction: column;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+  transform-origin: bottom right;
+  transform: scale(0.88) translateY(12px);
+  opacity: 0; pointer-events: none;
+  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), opacity 0.25s;
+  overflow: hidden;
+}
+#chat-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+#chat-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb),0.7), rgba(249,115,22,0.5), transparent);
+}
+
+.chat-header {
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+}
+.chat-avatar {
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  border: 1.5px solid rgba(var(--accent-rgb),0.4);
+  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.2));
+  display: flex; align-items: center; justify-content: center;
+}
+.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chat-avatar-fallback {
+  font-size: 14px; font-weight: 700; color: var(--accent);
+  font-family: 'Inter', sans-serif;
+}
+.chat-header-info { flex: 1; min-width: 0; }
+.chat-header-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
+.chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+.chat-status-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #34d399;
+  box-shadow: 0 0 6px rgba(52,211,153,0.6);
+  animation: blink-dot 3s ease-in-out infinite;
+}
+@keyframes blink-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.chat-messages {
+  flex: 1; overflow-y: auto; padding: 16px 16px 8px;
+  display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
+}
+.chat-messages::-webkit-scrollbar { width: 3px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+.chat-msg { display: flex; gap: 8px; align-items: flex-end; animation: msg-in 0.28s cubic-bezier(0.16,1,0.3,1) both; }
+@keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.chat-msg.user { flex-direction: row-reverse; }
+
+.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; font-family: 'Inter', sans-serif; }
+.chat-msg.bot .chat-bubble {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
+}
+.chat-msg.user .chat-bubble {
+  background: linear-gradient(135deg, rgba(124,58,237,0.75), rgba(249,115,22,0.60));
+  border: 1px solid rgba(var(--accent-rgb),0.25); color: rgba(255,255,255,0.95); border-bottom-right-radius: 4px;
+}
+.chat-bubble a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.chat-bubble strong { color: var(--white); font-weight: 600; }
+
+.chat-typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; }
+.chat-typing span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); animation: typing-bounce 1.2s infinite; }
+.chat-typing span:nth-child(2) { animation-delay: 0.18s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes typing-bounce { 0%,80%,100% { transform: translateY(0); opacity: 0.4; } 40% { transform: translateY(-6px); opacity: 1; } }
+
+.chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
+.chat-chip {
+  padding: 6px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500;
+  font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
+  color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
+}
+.chat-chip:hover { background: rgba(124,58,237,0.2); border-color: rgba(var(--accent-rgb),0.6); color: #fff; transform: translateY(-1px); }
+
+.chat-input-area {
+  padding: 10px 12px 14px; border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0;
+}
+.chat-input {
+  flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px; padding: 9px 14px; color: var(--text);
+  font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
+  min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
+}
+.chat-input::placeholder { color: rgba(255,255,255,0.25); }
+.chat-input:focus { border-color: rgba(var(--accent-rgb),0.4); }
+.chat-send {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.75));
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.chat-send:hover { opacity: 0.85; transform: scale(1.05); }
+.chat-send svg { width: 16px; height: 16px; }
+
+@media (max-width: 480px) {
+  #chat-panel { right: 12px; left: 12px; width: auto; bottom: 84px; }
+  #chat-trigger { right: 20px; bottom: 20px; }
+}
+
+/* Undo button */
+#chat-undo {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.35); cursor: pointer;
+  display: none; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+#chat-undo:hover { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.75); transform: scale(1.08); }
+#chat-undo.visible { display: flex; }
+</style>
+
+<button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
+  <img loading="lazy" decoding="async" class="icon-chat" src="assets/logo-sinfondo.webp" alt="Marta" style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
+  <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="width:22px;height:22px;">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
+</button>
+
+<div id="chat-panel" role="dialog" aria-label="Chat con Marta">
+  <div class="chat-header">
+    <div class="chat-avatar">
+      <img loading="lazy" decoding="async" width="300" height="300" src="assets/logo-sinfondo.webp" alt="Marta" style="filter:brightness(0) invert(1);object-fit:contain;padding:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="chat-avatar-fallback" style="display:none">MM</span>
+    </div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Marta Morales</div>
+      <div class="chat-header-status">
+        <span class="chat-status-dot"></span>
+        <span class="es">Disponible ahora</span>
+        <span class="en">Available now</span>
+      </div>
+    </div>
+    <button id="chat-undo" onclick="chatUndo()" aria-label="Deshacer último mensaje" title="Volver atrás">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 14L4 9l5-5"></path><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <div class="chat-input-area">
+    <textarea class="chat-input" id="chatInput" rows="1" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta" onkeydown="chatKeydown(event)" oninput="chatAutoResize(this)"></textarea>
+    <button class="chat-send" onclick="chatSend()" aria-label="Enviar">
+      <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var KB = {
+    es: {
+      greeting: [
+        "¡Hola! Soy el asistente de Marta. Si eres recruiter o hiring manager, estás en el sitio correcto — puedo contarte todo lo que necesitas para tomar una decisión. ¿Por dónde empezamos?"
+      ],
+      about: [
+        "Marta Morales se posiciona en el mercado como el 'producto de diseño completo' bajo su principal KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Su portafolio es en sí mismo un reflejo de este producto, y los casos prácticos (EdTech, Travel, B2B) son los ejemplos de uso de cómo sus habilidades de optimización, automatización de sistemas de diseño y flujos con IA resuelven problemas reales de negocio."
+      ],
+      experience: [
+        "<strong>+4 años</strong> de trayectoria liderando el ciclo completo de producto digital. Su enfoque trasciende el diseño visual: actúa como motor estratégico de CRO, estructurando sistemas de diseño scalables y optimizando interfaces complejas mediante automatizaciones de IA para multiplicar la velocidad de desarrollo.",
+        "Marta no espera un brief estructurado: **identifica el problema, define el enfoque y mide el resultado**, utilizando los casos prácticos de su portafolio para poner a prueba sus habilidades frente a constraints reales."
+      ],
+      skills: [
+        "Sus 4 pilares fundamentales son: <strong>UX &amp; Research</strong> (diagnóstico cuantitativo/cualitativo), <strong>Design Systems</strong> (Figma avanzado, variables, handoff estructurado), <strong>AI Product Design</strong> (MCPs, vibe coding, automatización de flujos) y <strong>CRO</strong> (experimentos basados en datos, A/B Testing, incremento de conversión).",
+        "Domina el ciclo completo de producto: **discovery, research de comportamiento, arquitectura de información, prototipado, test con usuarios, handoff y análisis post-lanzamiento**."
+      ],
+      tools: [
+        "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
+      ],
+      cases: [
+        "Marta has <strong>5 case studies across 4 different sectors</strong>. What ties them together isn't the industry — it's the same pattern: she diagnoses the business problem before touching a single pixel.<br><br>• <strong>Booking Engine (ILUNION)</strong> — hotel booking engine redesign from scratch to production<br>• <strong>CRO AEM (ILUNION)</strong> — direct conversion 3.36% → 6.5% using real data experiments<br>• <strong>CEF Design System</strong> — EdTech design system from zero: 80+ components, tokens, WCAG<br>• <strong>Paolo by Danny's Jazz</strong> — visual identity + full digital ecosystem for a chain that grew from 1 to 5 locations <em>without a redesign</em><br>• <strong>Build vs. Buy · Oracle IT</strong> — strategic friction diagnosis embedded in the team: conclusion was to build an internal tool, not patch Oracle<br><br>Want me to go deeper on any of them?"
+      ],
+      remote: [
+        "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
+      ],
+      availability: [
+        "Marta está <strong>activamente buscando su próxima oportunidad</strong> y puede incorporarse con relativa rapidez. Hay otras conversaciones en curso, así que si hay fit, merece la pena hablar pronto. ¿Tienes alguna posición en mente?"
+      ],
+      salary: [
+        "Marta maneja expectativas alineas con su experiencia y el mercado actual. Es un detalle que se aclara en cinco minutos en una llamada. ¿Le damos una oportunidad a esa conversación?"
+      ],
+      interview: [
+        "¡Perfecto! Escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h. O usa el formulario de contacto al final de la página.",
+        "Genial. La mejor forma es un email a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> proponiendo día y hora. Marta es flexible y se adapta a vuestra agenda."
+      ],
+      contact: [
+        "Email directo: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Responde rápido, menos de 24h."
+      ],
+      research: [
+        "Marta tiene <strong>base sólida en UX Research:</strong> entrevistas con usuarios, card sorting, tree testing, análisis heurístico y síntesis de insights. Lo más importante: siempre conecta el research con decisiones de negocio concretas."
+      ],
+      systems: [
+        "Ha construido <strong>design systems desde cero:</strong> el sistema de CEF incluye +80 componentes, tokens de diseño, guías de accesibilidad y documentación para desarrollo. Domina Figma Variables, Auto Layout avanzado y versionado de componentes."
+      ],
+      cro: [
+        "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
+      ],
+      paolo: [
+        "Paolo by Danny's Jazz es uno de los proyectos que mejor refleja el <strong>ownership real de Marta</strong>. No fue un encargo de diseño — fue un problema de negocio entero: una cadena de pizzerías artesanas sin canal digital en plena pandemia, sin web, sin delivery, sin presencia en Google.<br><br>Diseñó y construyó desde cero: identidad visual completa, web (Adobe XD → WordPress + Elementor), los 3 customer journeys del negocio (delivery, visita al local, reserva), ecosistema de delivery activo (Glovo, Uber Eats, JustEat), cartas QR, Google My Business y un ciclo mensual de analítica con Clarity + GA4 + Metricool.<br><br>Resultado: el producto escaló de 1 a 5 locales en 2 años <strong>sin necesidad de rediseño</strong>. +32% en llamadas directas desde móvil el primer mes. Cuando el proyecto terminó, el ecosistema seguía funcionando solo. Eso es diseño que funciona."
+      ],
+      oracle: [
+        "El caso Oracle (Build vs. Buy) muestra a Marta en modo <strong>diagnosticadora estratégica, no ejecutora de interfaces.</strong><br><br>We Are Actions llevaba años gestionando incidencias IT con Oracle. El responsable de sistemas llegó a dirección con un Excel con datos reales de fricción. Marta estaba <em>embebida en el equipo IT</em>, así que hizo discovery contextual desde dentro: vio la fricción ocurrir en tiempo real, no en una sesión de research artificial.<br><br>Su diagnóstico: Oracle no estaba mal diseñado — era simplemente la herramienta equivocada para <em>sus</em> flujos. La recomendación fue construir una herramienta interna en lugar de seguir parcheando una plataforma genérica.<br><br>El caso de estudio ya está publicado y disponible en este portafolio. Representa exactamente el tipo de trabajo que más le interesa: <strong>identificar el problema real antes de proponer la solución.</strong>"
+      ],
+      booking: [
+        "El <strong>Booking Engine de ILUNION</strong> fue el rediseño end-to-end del motor de reservas de una cadena hotelera — de la investigación con usuarios hasta la entrega a producción. El reto era entender por qué la conversión en canal directo era tan baja y proponer una solución argumentada. Marta lideró todo: research, arquitectura de información, prototipado, test con usuarios y handoff. Este proyecto fue la base sobre la que después se aplicaron los experimentos de CRO que llevaron la conversión del 3.36% al 6.5%."
+      ],
+      cef: [
+        "El <strong>CEF Design System</strong> demuestra la capacidad de Marta para crear infraestructura de diseño desde cero en un entorno EdTech con restricciones de accesibilidad estrictas.<br><br>Construyó un sistema con +80 componentes en Figma: tokens de diseño, variantes, estados, documentación para desarrollo y cumplimiento WCAG 2.1 AA. El objetivo no era solo coherencia visual — era que los equipos de desarrollo pudieran construir con él de forma autónoma."
+      ],
+      whyhire: [
+        "Tres cualidades clave:<br><br>1. <strong>Mentalidad de Producto:</strong> Su portafolio y ella misma operan bajo un enfoque orientado a resultados y KPIs claros.<br>2. <strong>Especialización de Vanguardia:</strong> Une el rigor clásico de la accesibilidad y el CRO con flujos avanzados de IA y vibe coding.<br>3. <strong>Autonomía Estratégica:</strong> Diagnóstica la raíz de los problemas y propone la decisión óptima antes de tocar el primer pixel."
+      ],
+      sector: [
+        "Marta tiene experiencia en <strong>turismo / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (sistemas de diseño, accesibilidad) y <strong>consultoría digital</strong>. Busca su próximo reto en empresas <strong>tech, SaaS o travel</strong> con producto propio."
+      ],
+      default: [
+        "Buena pregunta. Para eso mejor habla con Marta directamente: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+        "Eso lo responde Marta mejor que yo en persona. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h."
+      ]
+    },
+    en: {
+      greeting: [
+        "Hi! I'm Marta's assistant. If you're a recruiter or hiring manager, you're in the right place — I can tell you everything you need to make a decision. Where shall we start?"
+      ],
+      about: [
+        "Marta Morales positions herself as the 'complete design product' under her main KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Her portfolio is a product in itself, demonstrating how her skills in optimization, design systems automation, and AI workflows solve real business challenges."
+      ],
+      experience: [
+        "<strong>4+ years</strong> of experience leading the end-to-end product lifecycle. She acts as a strategic CRO engine, building scalable design systems and optimizing complex interfaces through AI integrations to accelerate development speed.",
+        "Marta doesn't wait for a brief: **she identifies the problem, defines the approach, and measures outcomes**, using her case studies as live test-beds to validate new workflow capabilities."
+      ],
+      skills: [
+        "Her 4 core pillars are: <strong>UX &amp; Research</strong> (qualitative/quantitative diagnostics), <strong>Design Systems</strong> (advanced Figma, variables, structured handoff), <strong>AI Product Design</strong> (MCPs, vibe coding, workflow automation) and <strong>CRO</strong> (data-driven experiments, A/B Testing, conversion lifts).",
+        "She masters the full process: **discovery, behavior research, information architecture, prototyping, user testing, handoff, and post-launch analysis**."
+      ],
+      tools: [
+        "Daily stack: <strong>Figma</strong> (design systems, variables, components), <strong>Adobe Analytics + Hotjar</strong> (behaviour data), <strong>Notion & Jira</strong> (product management), Bootstrap and close engineering collaboration."
+      ],
+      cases: [
+        "Case studies with real impact:<br><br>• <strong>ILUNION CRO</strong> — direct channel conversion from 3.36% to 6.5% with a data-driven redesign<br>• <strong>Booking Engine</strong> — hotel booking flow from research to production<br>• <strong>CEF Design System</strong> — 80+ components with tokens, accessibility & dev docs<br>• <strong>IT Ops Oracle</strong> — B2B product for IT operations management<br><br>Want details on any of them?"
+      ],
+      remote: [
+        "Marta is <strong>open to fully remote and hybrid.</strong> Based in Madrid, experienced with distributed teams and async communication."
+      ],
+      availability: [
+        "Marta is <strong>actively looking for her next opportunity</strong> and can onboard relatively quickly. There are other conversations in progress, so if there's a fit, it's worth talking soon. Got a role in mind?",
+      ],
+      salary: [
+        "Marta's expectations are aligned with her experience and the current market. It's a detail that takes five minutes to clarify in a call. Shall we make that happen?"
+      ],
+      interview: [
+        "Great! Email her directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — she replies within 24h. Or use the contact form at the bottom of the page.",
+        "Perfect. The easiest way is an email to <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> suggesting a time. Marta is flexible and adapts to your schedule."
+      ],
+      contact: [
+        "Direct email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Replies fast, under 24h."
+      ],
+      research: [
+        "Marta has a <strong>solid UX Research foundation:</strong> user interviews, card sorting, tree testing, heuristic analysis and insight synthesis. Most importantly: she always connects research to concrete business decisions."
+      ],
+      systems: [
+        "She built <strong>design systems from scratch:</strong> CEF's system includes 80+ components, design tokens, accessibility guidelines and developer documentation. Proficient in Figma Variables, advanced Auto Layout and component versioning."
+      ],
+      cro: [
+        "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
+      ],
+      paolo: [
+        "Paolo by Danny's Jazz is one of the projects that best shows Marta's <strong>real ownership mindset</strong>. It wasn't a design brief — it was an entire business problem: an artisan pizza chain in the middle of a pandemic with no website, no delivery, no Google presence, nothing.<br><br>She designed and built from scratch: complete visual identity, the full website (Adobe XD → WordPress + Elementor), 3 customer journeys (delivery, in-store visit, booking), active delivery ecosystem (Glovo, Uber Eats, JustEat), QR menus, Google My Business, and a monthly analytics cycle with Clarity + GA4 + Metricool.<br><br>Result: the product scaled from 1 to 5 locations in 2 years <strong>without a redesign</strong>. +32% in direct mobile calls in the first month. When the project ended, the ecosystem kept running on its own. That's what good design looks like."
+      ],
+      oracle: [
+        "The Oracle case (Build vs. Buy) shows Marta in <strong>strategic diagnostician mode — not interface executor.</strong><br><br>We Are Actions had been managing IT incidents with Oracle for years. The systems manager came to leadership with real-data showing friction costs. Marta was <em>embedded in the IT team</em>, so she did contextual discovery from the inside: she saw friction happening in real time, not in an artificial research session.<br><br>Her diagnosis: Oracle wasn't badly designed — it was simply the wrong tool for <em>their</em> workflows. The recommendation was to build an internal tool rather than keep patching a generic platform.<br><br>The case study is now fully published and available. It represents exactly the kind of work she values most: <strong>finding the real problem before proposing the solution.</strong>"
+      ],
+      booking: [
+        "The <strong>ILUNION Booking Engine</strong> was an end-to-end redesign of a hotel chain's reservation engine — from user research to production handoff. The challenge was understanding why direct channel conversion was so low and proposing a data-backed solution. Marta led the full process: research, information architecture, prototyping, user testing and handoff. This was the foundation for the CRO experiments that later lifted conversion from 3.36% to 6.5%."
+      ],
+      cef: [
+        "The <strong>CEF Design System</strong> shows Marta's ability to build design infrastructure from scratch in an EdTech environment with strict accessibility requirements.<br><br>She built a system with 80+ Figma components: design tokens, variants, states, developer documentation and WCAG 2.1 AA compliance. The goal wasn't just visual consistency — it was enabling development teams to build autonomously."
+      ],
+      whyhire: [
+        "Three key qualities:<br><br>1. <strong>Product Mindset:</strong> Both her portfolio and she operate under a results-oriented approach with clear KPIs.<br>2. <strong>Cutting-edge Specialization:</strong> Combines classic CRO and accessibility rigor with advanced AI workflows and vibe coding.<br>3. <strong>Strategic Autonomy:</strong> Diagnoses the root of business problems and proposes the optimal path before designing a single pixel."
+      ],
+      sector: [
+        "Marta has experience in <strong>travel / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (design systems, accessibility) and <strong>digital consulting.</strong> She's looking for her next challenge at a <strong>tech, SaaS or travel</strong> company with its own product."
+      ],
+      default: [
+        "Great question. That's better answered by Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
+        "Marta can answer that better than me in person. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — replies within 24h."
+      ]
+    }
+  };
+
+  var CHIPS = {
+    es: [
+      {label:'¿Quién es Marta?',key:'about'},
+      {label:'Todos los casos',key:'cases'},
+      {label:'Paolo · ecosistema digital',key:'paolo'},
+      {label:'Oracle · diagnóstico IT',key:'oracle'},
+      {label:'¿Por qué contratarla?',key:'whyhire'},
+      {label:'Concertar entrevista',key:'interview'}
+    ],
+    en: [
+      {label:'Who is Marta?',key:'about'},
+      {label:'All case studies',key:'cases'},
+      {label:'Paolo · digital ecosystem',key:'paolo'},
+      {label:'Oracle · IT diagnosis',key:'oracle'},
+      {label:'Why hire her?',key:'whyhire'},
+      {label:'Schedule interview',key:'interview'}
+    ]
+  };
+
+  var RULES = [
+    {keys:['quién','quien','eres','about','who','marta','sobre','yourself','tell me','cuéntame','presentate'],intent:'about'},
+    {keys:['experiencia','experience','años','years','trayectoria','background','worked','llevás','llevas'],intent:'experience'},
+    {keys:['habilidad','skill','sabe','know','domina','masters','puedes','capaz','capable'],intent:'skills'},
+    {keys:['herramienta','tool','adobe','jira','notion','hotjar','bootstrap','figma','stack','usa'],intent:'tools'},
+    {keys:['caso','case','estudio','study','proyecto','project','portfolio','portafolio','trabajo','work'],intent:'cases'},
+    {keys:['paolo','pizzería','pizzeria','pizzer','danny','ecosistema digital','digital ecosystem','1 a 5','1 to 5','wordpress','elementor'],intent:'paolo'},
+    {keys:['oracle','it ops','build vs','fricción it','it friction','herramienta interna','internal tool','incidencia','incident','ticket it'],intent:'oracle'},
+    {keys:['booking','motor de reservas','reserva','hotel','hospedaje','hospitality'],intent:'booking'},
+    {keys:['cef','design system','sistema de diseño','edtech','accesibilidad','accessibility','wcag','componente','component','token'],intent:'cef'},
+    {keys:['ilunion','cro','conversion','conversión','a/b','ab test','aem','experimento','experiment'],intent:'cro'},
+    {keys:['remoto','remote','presencial','hybrid','hibrido','híbrido','madrid','ubicacion','location','donde','where'],intent:'remote'},
+    {keys:['disponib','available','cuándo','when','incorpor','start','join','empezar','inmediata'],intent:'availability'},
+    {keys:['salario','salary','sueldo','wage','pay','rango','compensacion','compensation','pretensiones','expectations'],intent:'salary'},
+    {keys:['entrevista','interview','reunión','meeting','llamada','call','hablar','talk','conocer','meet','contactar','schedule','cita','appointment'],intent:'interview'},
+    {keys:['contact','contacto','email','correo','escribir','reach','write','linkedin'],intent:'contact'},
+    {keys:['research','investig','usuario','user','test','usab','entrev'],intent:'research'},
+    {keys:['design system','sistema de diseño','componente','component','token','library','libreria','figma system'],intent:'systems'},
+    {keys:['cro','conversión','conversion','optimiz','a/b','ab test','funnel','analytics','metr'],intent:'cro'},
+    {keys:['por qué','why','contratar','hire','elegir','choose','diferencia','different','valor','value','aporta','brings'],intent:'whyhire'},
+    {keys:['sector','industria','industry','turismo','travel','edtech','saas','empresa','company','tipo','type'],intent:'sector'}
+  ];
+
+  var isOpen=false, isTyping=false, initialized=false;
+
+  function getLang(){return document.documentElement.classList.contains('lang-en')?'en':'es';}
+  function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+  function getResponse(intent){var lang=getLang();return pick(KB[lang][intent]||KB[lang].default);}
+  function detectIntent(text){
+    var t=text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    for(var i=0;i<RULES.length;i++){
+      var r=RULES[i];
+      for(var j=0;j<r.keys.length;j++){if(t.indexOf(r.keys[j])!==-1)return r.intent;}
+    }
+    return 'default';
+  }
+
+  function addMsg(text,role){
+    var box=document.getElementById('chatMessages');
+    var wrap=document.createElement('div');wrap.className='chat-msg '+role;
+    var bubble=document.createElement('div');bubble.className='chat-bubble';
+    bubble.innerHTML=text;wrap.appendChild(bubble);box.appendChild(wrap);
+    box.scrollTop=box.scrollHeight;
+    return wrap;
+  }
+
+  function showTyping(){
+    var box=document.getElementById('chatMessages');
+    var wrap=document.createElement('div');wrap.className='chat-msg bot';wrap.id='chatTypingMsg';
+    var bubble=document.createElement('div');bubble.className='chat-bubble chat-typing';
+    bubble.innerHTML='<span></span><span></span><span></span>';
+    wrap.appendChild(bubble);box.appendChild(wrap);box.scrollTop=box.scrollHeight;
+  }
+  function removeTyping(){var el=document.getElementById('chatTypingMsg');if(el)el.remove();}
+
+  function renderChips(items){
+    var c=document.getElementById('chatChips');c.innerHTML='';
+    items.forEach(function(chip){
+      var btn=document.createElement('button');btn.className='chat-chip';
+      btn.textContent=chip.label;
+      btn.setAttribute('data-key',chip.key);
+      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
+      c.appendChild(btn);
+    });
+  }
+
+  /* History stack: each entry = {userEl, botEl, chips} */
+  var history=[];
+
+  function resetChat(){
+    document.getElementById('chatMessages').innerHTML='';
+    document.getElementById('chatChips').innerHTML='';
+    document.getElementById('chat-undo').classList.remove('visible');
+    history=[];
+    initialized=false;
+    isTyping=false;
+    initChat();
+  }
+
+  window.chatUndo=function(){
+    if(!history.length||isTyping)return;
+    var last=history.pop();
+    if(last.userEl&&last.userEl.parentNode) last.userEl.parentNode.removeChild(last.userEl);
+    if(last.botEl&&last.botEl.parentNode)   last.botEl.parentNode.removeChild(last.botEl);
+    /* Restore chips */
+    var c=document.getElementById('chatChips');c.innerHTML='';
+    (last.prevChips||[]).forEach(function(chip){
+      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
+      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
+      c.appendChild(btn);
+    });
+    if(!history.length) document.getElementById('chat-undo').classList.remove('visible');
+    var box=document.getElementById('chatMessages');
+    box.scrollTop=box.scrollHeight;
+  };
+
+  function sendMessage(text,intentOverride){
+    if(isTyping)return;
+    /* Snapshot current chips before clearing */
+    var prevChips=[];
+    document.getElementById('chatChips').querySelectorAll('.chat-chip').forEach(function(b){
+      prevChips.push({label:b.textContent,key:b.getAttribute('data-key')||''});
+    });
+    var userEl=addMsg(text,'user');
+    isTyping=true;
+    var intent=intentOverride||detectIntent(text);
+    showTyping();
+    setTimeout(function(){
+      removeTyping();
+      var botEl=addMsg(getResponse(intent),'bot');
+      isTyping=false;
+      history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
+      document.getElementById('chat-undo').classList.add('visible');
+      var lang=getLang();
+      var alwaysChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
+      var casesChips = lang==='en'
+        ? [{label:'Schedule interview',key:'interview'},{label:'Skills',key:'skills'}]
+        : [{label:'Concertar entrevista',key:'interview'},{label:'Habilidades',key:'skills'}];
+      if(intent==='cases'){renderChips(casesChips);}
+      else if(intent!=='interview'&&intent!=='contact'){renderChips(alwaysChips);}
+    },650+Math.random()*400);
+  }
+
+  function initChat(){
+    if(initialized)return;initialized=true;
+    setTimeout(function(){addMsg(getResponse('greeting'),'bot');renderChips(CHIPS[getLang()]);},180);
+  }
+
+  window.chatToggle=function(){
+    var panel=document.getElementById('chat-panel');
+    var trigger=document.getElementById('chat-trigger');
+    isOpen=!isOpen;
+    panel.classList.toggle('open',isOpen);
+    trigger.classList.toggle('open',isOpen);
+    if(isOpen){initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
+  };
+  window.chatSend=function(){
+    var input=document.getElementById('chatInput');
+    var text=input.value.trim();
+    if(!text||isTyping)return;
+    input.value='';input.style.height='';
+    document.getElementById('chatChips').innerHTML='';
+    sendMessage(text);
+  };
+  window.chatKeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();chatSend();}};
+  window.chatAutoResize=function(el){el.style.height='';el.style.height=Math.min(el.scrollHeight,90)+'px';};
+
+  /* Language switch: reset chat so greeting appears in the new language */
+  new MutationObserver(function(){
+    var input=document.getElementById('chatInput');
+    if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
+    if(isOpen&&initialized){resetChat();}
+  }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<!-- ===================== / CHATBOT MARTA ===================== -->
+</body>
+</html>

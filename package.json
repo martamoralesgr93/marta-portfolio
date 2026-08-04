@@ -1,0 +1,20 @@
+{
+  "name": "marta-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio case studies",
+  "main": "build.js",
+  "scripts": {
+    "build-local": "node build.js"
+  },
+  "keywords": [],
+  "author": "Marta Morales",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "marked": "^15.0.0",
+    "sass": "^1.83.4"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}

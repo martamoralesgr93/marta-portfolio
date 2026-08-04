@@ -1,0 +1,1231 @@
+/* --- EXPERIENCE PAGE COMPONENTS --- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  background: var(--text);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  opacity: 0.9;
+}
+
+.summary-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 60ch;
+  color: var(--text-secondary);
+}
+
+.timeline {
+  max-width: var(--content-max);
+  margin-top: var(--space-lg);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-xl); /* Maximum air between roles */
+  max-width: 900px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-role {
+  font-size: 22px; /* Editorial size */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.timeline-company {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.timeline-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: 12px;
+}
+
+.timeline-summary {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-top: 16px;
+  max-width: 75ch;
+}
+
+.timeline-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-bullets li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.timeline-bullets li::before {
+  content: "â";
+  position: absolute;
+  left: 0;
+  color: var(--divider);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  max-width: var(--content-max);
+  margin-top: 32px;
+}
+
+@media (min-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-category h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 10px;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.edu-list {
+  margin-top: 24px;
+}
+
+.edu-item {
+  margin-bottom: 32px;
+}
+
+.edu-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.edu-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (min-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav {
+    display: none !important; /* Hide mobile navbar on desktop to keep layout clean and double-logo-free */
+  }
+
+  .container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+    max-width: 1200px !important;
+    padding: 0 40px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Centered Modern SaaS Hero Section */
+  .hero {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow-y: visible !important;
+    z-index: 10;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 140px auto 40px !important; /* Top margin to clear floating header navigation */
+    gap: 16px !important;
+  }
+
+  .avatar-frame {
+    width: fit-content !important;
+    height: 220px !important; /* Restored massive brand presence */
+    margin-bottom: 0px !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important; /* Centered logo on desktop */
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    cursor: pointer;
+  }
+
+  .avatar {
+    width: auto !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center; /* Centered alignment for dibujo */
+    border-radius: 0 !important;
+    transform-origin: center center !important; /* Balanced morph scaling */
+  }
+
+  .profile-name {
+    font-family: 'Vanity', 'Didot', 'Playfair Display', 'Cinzel', serif !important;
+    font-size: 54px !important; /* Premium center-stage title font size */
+    line-height: 1.05;
+    margin-bottom: 4px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--text) !important;
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 2px; /* Reduced margin */
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .hero-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    gap: 10px;
+    max-width: 65ch !important; /* Elegant readability width */
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .hero-description p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-muted); /* Soft, readable label color */
+    margin: 0;
+  }
+
+  .hero-description p:first-of-type {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Main Scrollable Area aligned to the center */
+  .section:not(.hero) {
+    grid-column: auto !important;
+    padding: 60px 0 !important;
+    margin: 0 auto !important; 
+    max-width: 900px !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .work-item {
+    border-top: 0;
+    border-bottom: 1px solid var(--divider);
+    padding: 44px 0;
+  }
+
+  .work-item:first-of-type {
+    border-top: 1px solid var(--divider);
+  }
+
+  .title {
+    font-size: 32px;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .meta {
+    font-size: var(--f-small);
+    margin-bottom: var(--s-48);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  /* STAR Layout for Experience */
+  .star-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .star-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .star-label {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    border: 1px solid var(--divider);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: #fcfcfc;
+    margin-top: 2px;
+  }
+
+  .star-item p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .timeline-header {
+    margin-bottom: 8px;
+  }
+
+  .timeline-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .timeline-company {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Specific Carousel to Vertical Stack for ILUNION on Desktop */
+  #carousel-ilunion,
+  #carousel-offers {
+    overflow: visible;
+    max-width: 100%;
+  }
+
+  #carousel-ilunion .carousel-actions,
+  #carousel-offers .carousel-actions {
+    display: none;
+  }
+
+  /* Standardized Project Visuals - Elegant & Constrained */
+  .project-visuals {
+    margin: var(--space-lg) 0 var(--space-lg); /* More air */
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--divider);
+    background: var(--bg-soft);
+    box-shadow: var(--shadow-subtle);
+    max-width: 900px; 
+  }
+
+  .media {
+    aspect-ratio: 16 / 9; /* Balanced ratio for UI scannability */
+    overflow: hidden;
+    width: 100%;
+    background: var(--bg-soft);
+  }
+
+  .media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .media:hover img {
+    transform: scale(1.03);
+  }
+
+
+  .work-summary p {
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 560px;
+    color: var(--text-secondary);
+    margin-top: var(--s-24);
+  }
+
+  .detail {
+    display: none;
+    padding-top: 56px;
+    max-width: 900px;
+  }
+
+  .detail p,
+  .detail li {
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 70ch;
+  }
+
+  .project-side-by-side {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin: 80px 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 240px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .about-copy p {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+
+  .contact-title {
+    font-size: 80px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .contact-text {
+    text-align: left;
+    font-size: 24px;
+    margin: 32px 0 0 0;
+    max-width: 30ch;
+  }
+
+  .contact-actions {
+    justify-content: flex-start;
+    margin-top: 48px;
+  }
+
+  .side-nav {
+    margin-top: 32px !important;
+    display: flex !important;
+    flex-direction: row !important; /* Horizontal menu layout on desktop */
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .nav-projects-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 6px 12px; /* Reduced list margins to fit active menus comfortably */
+    display: none;
+    flex-direction: column;
+    gap: 6px; /* Compact links spacing */
+    border-left: 1px solid var(--divider);
+    animation: sideNavEnter 0.3s ease-out;
+  }
+
+  .nav-projects-list.active {
+    display: flex;
+  }
+
+  .nav-project-link {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding-left: 14px;
+    position: relative;
+    display: block;
+    line-height: 1.3;
+    max-width: 200px;
+  }
+
+  .nav-project-link:hover {
+    color: var(--text);
+    transform: translateX(4px);
+  }
+
+  .nav-project-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  .side-nav a, .nav-main-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+    font-size: 13px; /* Slightly smaller for elegance */
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 8px 18px !important;
+    border-radius: 999px !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .side-nav a:hover,
+  .side-nav a.active,
+  .nav-main-link:hover,
+  .nav-main-link.active {
+    color: var(--text) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-1.5px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 
+                0 0 12px rgba(255, 255, 255, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .side-nav a:hover::before,
+  .side-nav a.active::before,
+  .nav-main-link:hover::before,
+  .nav-main-link.active::before {
+    display: none !important;
+  }
+
+  @keyframes sideNavEnter {
+    from { opacity: 0; transform: translateY(-50%) translateX(-4px); }
+    to { opacity: 1; transform: translateY(-50%) translateX(0); }
+  }
+
+  #contact {
+    margin-top: 140px;
+    padding-bottom: 120px;
+    max-width: var(--content-max);
+  }
+
+  .contact-title {
+    font-size: 32px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .contact-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    color: var(--text-secondary);
+  }
+}
+
+/* --- ZOOM MODAL INTERACTION --- */
+img.zoom-target {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  img.zoom-target:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.zoom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.zoom-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.zoom-modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.zoom-modal.active .zoom-modal-img {
+  transform: scale(1);
+}
+
+.zoom-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 10000;
+  line-height: 1;
+  padding: 8px;
+}
+/* === UX FIX HOVER + UNDERLINE (FINE) === */
+
+/* 1. Hover SOLO si NO estÃ¡ activo */
+@media (hover: hover) {
+  .work-item:not(.active):hover {
+    background: var(--hover);
+  }
+
+    .work-item:not(.active):hover .title {
+    text-decoration: none;
+  }
+  .work-item:not(.active):hover .title-project {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+    text-decoration-thickness: 1.5px !important;
+    text-decoration-color: var(--text) !important;
+  }
+}
+
+/* 2. En mobile (tap feedback visual ligero) */
+.work-item:not(.active):active {
+  background: var(--hover);
+}
+
+.work-item:not(.active):active .title-project {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px !important;
+}
+
+/* 3. Estado activo â limpio (sin gris ni subrayado) */
+.work-item.active {
+  background: transparent !important;
+}
+
+.work-item.active .title {
+  text-decoration: none;
+}
+/* Blur effect for sensible data */
+.blurred {
+  filter: blur(4px);
+  /* slight scale to hide blurred edges */
+  transform: scale(1.03); 
+  display: block;
+}
+  .nav-project-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  .side-nav a, .nav-main-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 13px; /* Slightly smaller for elegance */
+    transition: all 0.3s ease;
+    padding-left: 0;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .side-nav a:hover,
+  .side-nav a.active,
+  .nav-main-link:hover,
+  .nav-main-link.active {
+    color: #000;
+    padding-left: 16px;
+    font-weight: 700;
+  }
+
+  .side-nav a:hover::before,
+  .side-nav a.active::before,
+  .nav-main-link:hover::before,
+  .nav-main-link.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 12px;
+    background: #000;
+    border-radius: 4px;
+    animation: sideNavEnter 0.2s ease-out;
+  }
+
+  .side-nav a:hover::before,
+  .side-nav a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 12px;
+    background: #000;
+    border-radius: 4px;
+    animation: sideNavEnter 0.2s ease-out;
+  }
+
+  @keyframes sideNavEnter {
+    from { opacity: 0; transform: translateY(-50%) translateX(-4px); }
+    to { opacity: 1; transform: translateY(-50%) translateX(0); }
+  }
+
+  #contact {
+    margin-top: 140px;
+    padding-bottom: 120px;
+    max-width: var(--content-max);
+  }
+
+  .contact-title {
+    font-size: 32px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .contact-text {
+    font-size: 18px;
+  }
+
+
+/* --- ZOOM MODAL INTERACTION --- */
+img.zoom-target {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  img.zoom-target:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.zoom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.zoom-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.zoom-modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.zoom-modal.active .zoom-modal-img {
+  transform: scale(1);
+}
+
+.zoom-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 10000;
+  line-height: 1;
+  padding: 8px;
+}
+/* === UX FIX HOVER + UNDERLINE (FINE) === */
+
+/* 1. Hover SOLO si NO estÃ¡ activo */
+@media (hover: hover) {
+  .work-item:not(.active):hover {
+    background: var(--hover);
+  }
+
+    .work-item:not(.active):hover .title {
+    text-decoration: none;
+  }
+  .work-item:not(.active):hover .title-project {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+    text-decoration-thickness: 1.5px !important;
+    text-decoration-color: var(--text) !important;
+  }
+}
+
+/* 2. En mobile (tap feedback visual ligero) */
+.work-item:not(.active):active {
+  background: var(--hover);
+}
+
+.work-item:not(.active):active .title-project {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px !important;
+}
+
+/* 3. Estado activo â†’ limpio (sin gris ni subrayado) */
+.work-item.active {
+  background: transparent !important;
+}
+
+.work-item.active .title {
+  text-decoration: none;
+}
+/* Blur effect for sensible data */
+.blurred {
+  filter: blur(4px);
+  /* slight scale to hide blurred edges */
+  transform: scale(1.03); 
+  display: block;
+}
+
+.zoom-modal-img.blurred {
+  filter: blur(6px);
+}
+
+/* Read more button — Built on Liquid Glass Material System */
+.read-more-btn {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important; /* White text strictly on dark surface */
+  /* Liquid Glass: transparent none state with clean refraction glass blur look */
+  background: transparent !important;
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px !important; /* Consistent height */
+  margin-top: var(--space-md) !important; /* Proper vertical spacing */
+  padding: 0 32px !important; /* Wide horizontal padding */
+  border: 1px solid rgba(255, 255, 255, 0.25) !important; /* Elegant hairline glass border (micro-border) */
+  border-radius: 12px !important; /* Liquid glass pebble look */
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+
+  /* Material stack box shadow (Default state)
+     Includes top highlight band reflecting light coming from top-left. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15), /* top light reflection */
+              inset 0 -1px 0 rgba(255, 255, 255, 0.05) !important;
+
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+  /* Gloss sheen swipe overlay */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+    transform: skewX(-20deg);
+  }
+}
+
+.read-more-btn::after {
+  content: '→';
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: 600;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Primary style for special CTAs like CV download */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  background-color: var(--text);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.work-item.active .read-more-btn {
+  display: none;
+}
+
+/* Interactive state deltas unifications as specified by the Liquid Glass playbook */
+
+/* Hover state: Higher edge sparkle, white glow backdrop, translate up, swipe sheen overlay */
+.work-item:hover .read-more-btn {
+  background: rgba(255, 255, 255, 0.12) !important; /* Soft white translucent fill */
+  border-color: rgba(255, 255, 255, 0.9) !important; /* Highly contrasting bright border */
+  color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(255, 255, 255, 0.25), /* Strong white aura glow */
+              inset 0 1px 0 rgba(255, 255, 255, 0.40) !important;
+  transform: translateY(-3px) !important;
+  
+  &::before {
+    left: 150%;
+    transition: left 0.85s ease-in-out !important;
+  }
+}
+
+.work-item:hover .read-more-btn::after {
+  transform: translateX(4px);
+}
+
+/* Pressed (Active) state: stroke and text turn vibrant pink, neon pink glow, subtle pink tint background */
+.work-item:active .read-more-btn {
+  background: rgba(255, 75, 145, 0.08) !important; /* Subtle premium pink background tint */
+  border-color: #ff4b91 !important; /* Vibrant pink border */
+  color: #ff4b91 !important; /* Vibrant pink text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22), 
+              0 0 25px rgba(255, 75, 145, 0.5), /* Intense fuchsia glow */
+              inset 0 1px 0 rgba(255, 75, 145, 0.2) !important;
+  transform: translateY(1px) scale(0.97) !important; /* Physical tactile compression downwards */
+  transition: all 0.08s cubic-bezier(0.16, 1, 0.3, 1) !important; /* Fast tactile response */
+}
+
+.work-item:active .read-more-btn::after {
+  transform: translateX(1px) scale(0.9) !important;
+}
+
+/* Focused state: crisp double-layer ring sitting above the stack */
+.work-item:focus-visible {
+  outline: none !important;
+}
+
+.work-item:focus-visible .read-more-btn {
+  outline: none !important;
+  /* Dual-layer focus ring: 2px background spacer + 2px high contrast dark ring */
+  box-shadow: 0 0 0 2px var(--bg, #ffffff),
+              0 0 0 4px #121212,
+              inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Disabled state: loses edge sparkle, border highlights, and contrast */
+.read-more-btn.disabled,
+.read-more-btn[disabled] {
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: rgba(0, 0, 0, 0.30) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  
+  &::before {
+    display: none !important;
+  }
+  
+  &::after {
+    opacity: 0.4 !important;
+  }
+}
+
+/* Modern Mobile Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-top: 54px; /* Matches header height */
+    padding-bottom: 80px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 24px 48px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .avatar-frame {
+    width: fit-content;
+    height: 120px !important; /* Bold, very large brand presence on mobile */
+    margin-bottom: 12px !important; /* Cohesive breathing room */
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .avatar {
+    width: auto !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center;
+    border-radius: 0 !important;
+    transform-origin: center center !important;
+  }
+  
+  .hero-eyebrow {
+    font-size: 9px;
+    margin-bottom: 8px; /* Tighter vertical rhythm */
+    letter-spacing: 0.15em;
+  }
+  
+  .hero-description {
+    max-width: 100%;
+    gap: 12px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-description p {
+    font-size: 13px;
+    max-width: 34ch;
+    line-height: 1.5;
+  }
+
+  .hero-description p:first-of-type {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .profile-name {
+    font-family: 'Vanity', 'Didot', 'Playfair Display', 'Cinzel', serif !important;
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .section:not(.hero) {
+    padding-top: 80px;
+  }
+
+  /* Breathe for project titles in mobile */
+  .work-item {
+    padding: 60px 0; /* More air per project */
+  }
+
+  .work-header {
+    flex-direction: column; /* Stack to give title full width */
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .impact-badge {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 8px; /* Tighter */
+    display: flex;
+    flex-direction: column; 
+    gap: 4px;
+    padding-left: 0; 
+  }
+
+  .title-company {
+    font-size: 10px; /* More subtle */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 900; /* High contrast weight */
+    opacity: 0.45; /* Less visual weight */
+  }
+
+  .title-project {
+    font-size: 20px; 
+    font-weight: 600; /* More punch */
+    color: var(--text-primary);
+    line-height: 1.25;
+  }
+
+  .title-separator {
+    display: none; 
+  }
+
+  .title-separator {
+    display: none; /* Cleaner in stacked mobile view */
+  }
+
+  .professional-context {
+    font-size: 10px; /* Smaller */
+    margin-bottom: 16px;
+    line-height: 1.4;
+    padding-left: 0; /* Unified alignment */
+    opacity: 0.5;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .project-visuals {
+    margin: 24px 0 32px;
+  }
+}
+
+/* Footer & Disclaimer */
+.footer {
+  padding: 80px 0 40px;
+  border-top: 1px solid var(--divider);
+  margin-top: 40px;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.7;
+  max-width: 100ch;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 40px;
+  letter-spacing: 0.01em;
+}
+
+/* Fix desktop layout: offset footer by sidebar width */
+@media (min-width: 1024px) {
+  .footer {
+    margin-left: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid var(--divider);
+    padding: 60px 0;
+    background: transparent;
+  }
+  
+  .disclaimer {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+}
+
+/* Modern mobile carousel layout */
+@media (max-width: 768px) {
+  .carousel-actions {
+    display: none !important;
+  }
+  
+  .carousel-track {
+    gap: 12px;
+    padding-right: 15%; /* Allow peeking space */
+  }
+  
+  .carousel-track img,
+  .carousel-item {
+    flex: 0 0 88% !important; /* Peek effect */
+    scroll-snap-align: start !important;
+  }
+}
