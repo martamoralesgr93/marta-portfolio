@@ -3034,23 +3034,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
   /* Profile Card & CV Button Styling */
   .sobre-profile-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  .sobre-profile-card:hover {
-    border-color: rgba(124, 58, 237, 0.3);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
   }
   .sobre-portrait-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 2 / 3;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3062,7 +3053,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     filter: grayscale(100%);
     transition: filter 0.4s ease, transform 0.4s ease;
   }
-  .sobre-profile-card:hover .sobre-portrait-img {
+  .sobre-portrait-wrapper:hover .sobre-portrait-img {
     filter: grayscale(40%);
     transform: scale(1.02);
   }
