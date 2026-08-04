@@ -202,6 +202,29 @@ nav {
   transform: scale(1.08);
 }
 
+.lang-toggle-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.lang-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+
 
 /* Language toggle */
 .lang-toggle {
@@ -1247,7 +1270,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   /* ── Nav ── */
   nav { padding: 0 24px; height: 60px; }
   .nav-links { display: none !important; }
-  .nav-cta, .nav-linkedin-btn { display: none !important; }
+  .nav-cta, .nav-linkedin-btn, .lang-toggle-btn { display: none !important; }
   .hamburger { display: flex !important; }
   .lang-toggle { font-size: 11px; padding: 5px 12px; margin-right: 12px; }
 
@@ -1343,7 +1366,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .nav-logo-name { font-size: 10px; letter-spacing: 0.02em; }
   .nav-logo-role { font-size: 9px; }
   .nav-links { display: none; }
-  .nav-cta, .nav-linkedin-btn { display: none; }
+  .nav-cta, .nav-linkedin-btn, .lang-toggle-btn { display: none; }
   .mobile-menu-lang { display: none !important; }
   .hamburger { display: flex; }
 
@@ -2459,6 +2482,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   <div class="nav-right">
     <a href="assets/cv-marta-ats-es.pdf" download="" class="nav-cta nav-cv es">Descargar CV  ↗</a>
     <a href="assets/cv-marta-ats-en.pdf" download="" class="nav-cta nav-cv en">Download CV  ↗</a>
+    <button onclick="toggleLanguage()" class="lang-toggle-btn" style="margin-right: 4px;" aria-label="Toggle language">EN</button>
     <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="nav-linkedin-btn" aria-label="LinkedIn">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: block;">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -2493,6 +2517,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="mobile-menu-cta en">Schedule Call  ↗</a>
   <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-secondary es">Descargar CV  ↗</a>
   <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-secondary en">Download CV  ↗</a>
+  <button onclick="toggleLanguage()" class="lang-toggle-btn mobile-menu-secondary" style="margin-top: 14px !important;" aria-label="Toggle language">EN</button>
 </div>
 
 <!-- ==================== HERO ==================== -->
@@ -3517,7 +3542,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
       <div class="sc-visual" aria-hidden="true">
-        <img loading="lazy" decoding="async" width="1024" height="1024" src="assets/oracle_v2_matrix.jpg" class="sc-img" alt="Oracle ERP &amp; IT Ops System Matrix Strategy">
+        <img loading="lazy" decoding="async" width="1024" height="1024" src="assets/oracle_build_vs_buy.jpg" class="sc-img" alt="Oracle ERP &amp; IT Ops System Matrix Strategy">
       </div>
       <div class="sc-metrics">
         <div class="sc-metric">
@@ -3733,6 +3758,31 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 <script>
 /* ---- LANGUAGE: restore from localStorage ---- */
+(function() {
+  const savedLang = localStorage.getItem('portfolio_lang');
+  if (savedLang === 'en') {
+    document.documentElement.classList.add('lang-en');
+  } else if (savedLang === 'es') {
+    document.documentElement.classList.remove('lang-en');
+  }
+  
+  window.toggleLanguage = function() {
+    const isEn = document.documentElement.classList.toggle('lang-en');
+    localStorage.setItem('portfolio_lang', isEn ? 'en' : 'es');
+    updateLangToggleButtons();
+  };
+  
+  function updateLangToggleButtons() {
+    const isEn = document.documentElement.classList.contains('lang-en');
+    const buttons = document.querySelectorAll('.lang-toggle-btn');
+    buttons.forEach(btn => {
+      btn.textContent = isEn ? 'ES' : 'EN';
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', updateLangToggleButtons);
+  updateLangToggleButtons();
+})();
 
 
 
