@@ -94,8 +94,8 @@ html.lang-en .es { display: none !important; }
 /* ── 3. STRUCTURE ── */
 .cs-wrap { max-width: 1360px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
 .cs-wrap-wide { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-lg); width: 100%; position: relative; z-index: 1; }
-.cs-block { padding: 136px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
-@media (max-width: 768px) { .cs-block { padding: 80px 0; } }
+.cs-block { padding: 96px 0; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+@media (max-width: 768px) { .cs-block { padding: 56px 0; } }
 
 /* ── STAR RAIL — spine narrativo compartido (S·T·A·R) en los 5 casos ── */
 .cs-star { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 40px; align-items: start; }
@@ -1006,14 +1006,14 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 .cs-plate {
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  margin-top: 64px;
-  margin-bottom: 64px;
-  padding: clamp(48px, 6vw, 96px) clamp(24px, 6vw, 120px);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: clamp(32px, 4vw, 64px) clamp(24px, 6vw, 120px);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .cs-plate > :first-child { margin-top: 0; }
 .cs-plate > :last-child { margin-bottom: 0; }
 @media (max-width: 768px) {
-  .cs-plate { margin-top: 40px; margin-bottom: 40px; padding: 40px 20px; }
+  .cs-plate { margin-top: 28px; margin-bottom: 28px; padding: 28px 20px; }
 }
