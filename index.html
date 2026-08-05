@@ -3160,12 +3160,19 @@ html.lang-en .hero-positioning.en { display: block !important; }
     border: 1px solid rgba(124, 58, 237, 0.35);
     transition: all 0.25s ease;
   }
-  .cv-sidebar-btn:hover {
-    background: var(--purple);
+  .cv-sidebar-btn:hover,
+  .cv-sidebar-btn:focus-visible {
+    /* Antes rellenaba con --purple (#a78bfa) y dejaba el texto blanco a
+       2.72:1 — ilegible. El degradado de marca sube el contraste a 5.7:1
+       y unifica el hover con .nav-cta y las pastillas del footer. */
+    background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.80));
     color: #ffffff !important;
-    border-color: var(--purple);
+    border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 10px 24px rgba(124, 58, 237, 0.32);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cv-sidebar-btn:hover, .cv-sidebar-btn:focus-visible { transform: none; }
   }
 </style>
 
