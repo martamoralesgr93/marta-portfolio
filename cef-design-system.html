@@ -1864,15 +1864,20 @@
 #chat-trigger {
   position: fixed; bottom: 28px; right: 28px; z-index: 9000;
   width: 56px; height: 56px; border-radius: 50%;
-  background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.85));
-  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 24px rgba(124,58,237,0.45), 0 2px 8px rgba(0,0,0,0.4);
-  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
+  /* El logo (círculo negro + M blanca) ES el botón. Antes iba un degradado
+     morado→naranja debajo del logotipo forzado a blanco por filtro. */
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.16); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; padding: 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, border-color 0.25s;
   outline: none;
 }
+#chat-trigger:hover { border-color: rgba(var(--accent-rgb),0.55); }
 #chat-trigger:hover {
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 8px 32px rgba(124,58,237,0.6), 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.65), 0 0 0 1px rgba(var(--accent-rgb),0.35);
 }
 #chat-trigger:active { transform: scale(0.96); }
 #chat-trigger .icon-chat { opacity: 1; position: absolute; transition: opacity 0.2s; }
@@ -2020,7 +2025,7 @@
 </style>
 
 <button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
-  <img loading="lazy" decoding="async" class="icon-chat" src="assets/logo-sinfondo.webp" alt="Marta" style="width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
+  <img loading="eager" decoding="async" class="icon-chat" src="assets/logo.png" alt="Marta" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
   <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="width:22px;height:22px;">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
   </svg>
