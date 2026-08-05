@@ -997,3 +997,23 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 .cs-block .p + .c2-evidence-pair,
 .cs-block ul.bullet-list + .panel-block,
 .cs-block ul.bullet-list + .wf-comparison { margin-top: 48px; }
+
+/* ══════════════════════════════════════════════════════════════════
+   LAMINA · evidencia construida en HTML que debe leerse como imagen
+   Saca el bloque a sangre para que ocupe pantalla igual que una foto.
+   No toca el grid interno: solo el ancho, el aire y el encuadre.
+   ══════════════════════════════════════════════════════════════════ */
+.cs-plate {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: 64px;
+  margin-bottom: 64px;
+  padding: clamp(48px, 6vw, 96px) clamp(24px, 6vw, 120px);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.cs-plate > :first-child { margin-top: 0; }
+.cs-plate > :last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .cs-plate { margin-top: 40px; margin-bottom: 40px; padding: 40px 20px; }
+}

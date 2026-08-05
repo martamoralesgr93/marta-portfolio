@@ -475,7 +475,7 @@
     /* ─── CASE HAMBURGER + MOBILE MENU ───────────────────────────────────
        El dropdown "Casos de Producto ▾" es hover/focus-within: en touch no
        hay hover, así que en mobile un tap navega directo sin abrir la lista.
-       Este menú da acceso real a los 5 casos + vuelta a home en mobile. ── */
+       Este menú da acceso real a los 4 casos + vuelta a home en mobile. ── */
     .cs-hamburger {
       display: none; align-items: center; justify-content: center;
       width: 36px; height: 36px; border-radius: 50%;
@@ -548,20 +548,14 @@
           <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
           <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
         </a>
-        <a href="booking-engine.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 03</div>
-          <div class="cs-item-title">Booking Engine</div>
-          <div class="cs-item-skill es">Design Ops & Componentes</div>
-          <div class="cs-item-skill en">Design Ops & Components</div>
-        </a>
         <a href="paolo-pizzeria.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 04</div>
+          <div class="cs-item-num">Caso 03</div>
           <div class="cs-item-title">Paolo Brand System</div>
           <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
           <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
         </a>
         <a href="it-ops-oracle.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 05</div>
+          <div class="cs-item-num">Caso 04</div>
           <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
           <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
           <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
@@ -579,7 +573,7 @@
   </div>
 </nav>
 
-<!-- MOBILE MENU: acceso real a los 5 casos en touch (el dropdown de arriba es hover-only) -->
+<!-- MOBILE MENU: acceso real a los 4 casos en touch (el dropdown de arriba es hover-only) -->
 <div class="cs-mobile-menu" id="csMobileMenu">
   <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
@@ -589,9 +583,8 @@
   <ul class="cs-mobile-menu-links">
     <li><a href="cef-design-system.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
     <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
-    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
-    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
-    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
   </ul>
   <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
 </div>
@@ -1052,7 +1045,7 @@
         </p>
       </div>
 
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px;">
+      <div class="c2-evidence-pair fu cs-plate" style="margin-top: 20px; margin-bottom: 80px;">
         <!-- Mobile Calendar -->
         <div class="c2-evidence-item">
           <div class="c2-evidence-header">
@@ -1109,7 +1102,7 @@
       </div>
 
       <!-- Pasarela de Pago: Desktop vs Mobile -->
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
+      <div class="c2-evidence-pair fu cs-plate" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
         <!-- Desktop Pasarela -->
         <div class="c2-evidence-item">
           <div class="c2-evidence-header">
@@ -1166,7 +1159,7 @@
       </div>
 
       <!-- Login y Empleo: Desktop vs Mobile -->
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
+      <div class="c2-evidence-pair fu cs-plate" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
         <!-- Desktop Login/Bolsa -->
         <div class="c2-evidence-item">
           <div class="c2-evidence-header">
@@ -1629,7 +1622,7 @@
     </div>
 
     <!-- TIMING: ANTES → AHORA -->
-    <div class="pm-widget fu">
+    <div class="pm-widget fu cs-plate">
       <div class="pm-header">
         <div class="pm-header-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -1809,9 +1802,8 @@
       <div class="cs-pagination-dots">
         <a href="cef-design-system.html" class="cs-pagination-dot is-current" aria-current="page" aria-label="Caso 01">01</a>
         <a href="ilunion-cro.html" class="cs-pagination-dot" aria-label="Caso 02">02</a>
-        <a href="booking-engine.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
-        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
-        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
+        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
+        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
       </div>
       <a href="ilunion-cro.html" class="cs-pagination-arrow" aria-label="Caso siguiente">→</a>
     </nav>
