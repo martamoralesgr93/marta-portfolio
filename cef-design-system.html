@@ -1867,17 +1867,27 @@
   /* El logo (círculo negro + M blanca) ES el botón. Antes iba un degradado
      morado→naranja debajo del logotipo forzado a blanco por filtro. */
   background: #000;
-  border: 1px solid rgba(255,255,255,0.16); cursor: pointer;
+  /* El logo es un disco negro sobre una pagina negra: sin un aro claro y un
+     halo, el circulo no se distingue del fondo y solo se ve la M flotando. */
+  border: 1.5px solid rgba(255,255,255,0.38); cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden; padding: 0;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow:
+    0 0 0 5px rgba(0,0,0,0.85),
+    0 10px 30px rgba(0,0,0,0.75),
+    0 0 22px rgba(var(--accent-rgb),0.30);
   transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, border-color 0.25s;
   outline: none;
 }
-#chat-trigger:hover { border-color: rgba(var(--accent-rgb),0.55); }
+#chat-trigger:hover {
+  border-color: rgba(255,255,255,0.72);
+  box-shadow:
+    0 0 0 5px rgba(0,0,0,0.85),
+    0 12px 34px rgba(0,0,0,0.8),
+    0 0 30px rgba(var(--accent-rgb),0.55);
+}
 #chat-trigger:hover {
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.65), 0 0 0 1px rgba(var(--accent-rgb),0.35);
 }
 #chat-trigger:active { transform: scale(0.96); }
 #chat-trigger .icon-chat { opacity: 1; position: absolute; transition: opacity 0.2s; }
