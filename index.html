@@ -1881,12 +1881,24 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 }
 /* ===================== TECH STACK ===================== */
 .stack-section {
-  padding: 120px 0;
+  padding: 88px 0;
   position: relative;
   background: var(--bg);
 }
-.stack-content {
+/* Dos columnas: el argumento a la izquierda, el vídeo a la derecha.
+   Apilados, la sección medía 1.592px — el 20% de la home. */
+.stack-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 4.5vw, 64px);
+  align-items: center;
   margin-top: 40px;
+}
+@media (max-width: 900px) {
+  .stack-row { grid-template-columns: 1fr; gap: 28px; }
+}
+.stack-content {
+  margin-top: 0;
   width: 100%;
   text-align: left;
   display: flex;
@@ -1919,7 +1931,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   font-size: clamp(14px, 2vw, 16px);
   line-height: 1.6;
   color: rgba(255,255,255,0.65);
-  margin-bottom: 48px;
+  margin-bottom: 0;
   max-width: 680px;
 }
 .stack-video-container {
@@ -1928,7 +1940,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 40px 100px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 .stack-video {
   width: 100%;
@@ -1963,15 +1975,20 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 
 /* ── Mobile ticker (replaces the tall wrapped pill grid on small screens) ── */
 .stack-marquee {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 32px;
-  opacity: 0;
-  transform: translateY(16px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.stack-marquee.is-in {
+/* Visible por defecto: ahora el ticker sustituye a .stack-pills en TODAS las
+   anchuras, así que no puede depender de que el IntersectionObserver dispare.
+   La entrada animada solo se aplica si el JS marca .will-animate. */
+.stack-marquee.will-animate {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.stack-marquee.will-animate.is-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2020,18 +2037,16 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .stack-marquee-track { animation: none !important; }
   .stack-marquee { transition: none; }
 }
-@media (max-width: 768px) {
-  /* .stack-pills stays in the DOM (screen readers) but is visually replaced by the ticker */
-  .stack-pills {
-    position: absolute;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  .stack-marquee { display: flex; }
+/* .stack-pills sigue en el DOM como fuente accesible; el ticker es su
+   equivalente visual en todas las anchuras (antes solo en móvil). */
+.stack-pills {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 
@@ -3220,23 +3235,25 @@ html.lang-en .hero-positioning.en { display: block !important; }
   <div class="wrap">
     <div class="sec-num"><span>02</span><div class="sec-num-line"></div></div>
     
-    <div class="stack-content">
-      <div class="stack-eyebrow">
-        <span class="es">• STACK DE PRODUCTO</span>
-        <span class="en">• PRODUCT STACK</span>
+    <div class="stack-row">
+      <div class="stack-content">
+        <div class="stack-eyebrow">
+          <span class="es">• STACK DE PRODUCTO</span>
+          <span class="en">• PRODUCT STACK</span>
+        </div>
+        <h2 class="stack-title">
+          <span class="es">Producto, datos e IA como <span class="stack-text-gradient">una sola capa de decisión.</span></span>
+          <span class="en">Product, data, and AI as <span class="stack-text-gradient">a single decision layer.</span></span>
+        </h2>
+        <p class="stack-desc">
+          <span class="es">El stack no define el trabajo — el problema de negocio sí. Estas herramientas cubren el flujo entero: del diagnóstico de comportamiento al diseño final y su medición.</span>
+          <span class="en">The stack doesn't define the work — the business problem does. These tools cover the whole flow: from behaviour diagnosis to final design and measurement.</span>
+        </p>
       </div>
-      <h2 class="stack-title">
-        <span class="es">Producto, datos e IA como <span class="stack-text-gradient">una sola capa de decisión.</span></span>
-        <span class="en">Product, data, and AI as <span class="stack-text-gradient">a single decision layer.</span></span>
-      </h2>
-      <p class="stack-desc">
-        <span class="es">El stack no define el trabajo — el problema de negocio sí. Estas herramientas me permiten ir desde el diagnóstico de comportamiento hasta el diseño final y la medición de resultados en un único flujo de trabajo integrado.</span>
-        <span class="en">The stack doesn't define the work — the business problem does. These tools let me move from behaviour diagnosis to final design and results measurement in a single integrated workflow.</span>
-      </p>
-    </div>
 
-    <div class="stack-video-container">
-      <video src="assets/video-stack.mp4" autoplay="" loop="" muted="" playsinline="" class="stack-video"></video>
+      <div class="stack-video-container">
+        <video src="assets/video-stack.mp4" autoplay="" loop="" muted="" playsinline="" class="stack-video"></video>
+      </div>
     </div>
 
     <div class="stack-pills">
@@ -5446,15 +5463,16 @@ body.visitor-unauthorized .locked-metric:hover::after {
 (function () {
   var marquee = document.querySelector('.stack-marquee');
   if (!marquee || !('IntersectionObserver' in window)) return;
+  marquee.classList.add('will-animate');
+  var reveal = function () { marquee.classList.add('is-in'); };
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-in');
-        io.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { reveal(); io.unobserve(entry.target); }
     });
   }, { threshold: 0.2 });
   io.observe(marquee);
+  // Red de seguridad: si el observer no dispara, el ticker se muestra igual.
+  setTimeout(reveal, 2500);
 })();
 </script>
 
