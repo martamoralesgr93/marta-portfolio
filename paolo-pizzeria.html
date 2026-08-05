@@ -30,14 +30,9 @@
   <link rel="stylesheet" href="design-system.css">
 
   <style>
-    .cs-hero-glow {
-      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%);
-    }
-
     /* Specific Component Styles */
-    .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
 
-    .dash-widget { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
+    .dash-widget { background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
     .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
     .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
     .dash-impact-row { display: flex; align-items: baseline; gap: 16px; }
@@ -50,7 +45,7 @@
     .color-palette { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
     .color-chip { border-radius: 10px; overflow: hidden; width: 120px; }
     .color-swatch { height: 64px; }
-    .color-info { padding: 10px 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; }
+    .color-info { padding: 10px 12px; background: transparent; border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; }
     .color-name { font-size: 11px; font-weight: 600; color: var(--white); }
     .color-hex { font-size: 10px; color: var(--text-dim); font-family: monospace; }
 
@@ -60,7 +55,7 @@
 
     /* TOUCHPOINT MAP */
     .touchpoint-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; max-width: 720px; }
-    .tp-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .tp-card { background: transparent; border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
     .tp-cat { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
     .tp-items { font-size: 13px; color: var(--text); line-height: 1.9; }
 
@@ -73,14 +68,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 32px;
 }
     .qs-col { display: flex; flex-direction: column; }
     .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
+    .qs-label svg { display: inline-block !important; color: var(--white); flex-shrink: 0; width: 13px; height: 13px; }
     .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
     .qs-bullets { list-style: none; padding: 0; margin: 0; }
     .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
@@ -226,15 +221,14 @@
       .tool-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
       .touchpoint-grid { grid-template-columns: 1fr; }
       .quick-summary-grid {
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
   border: 1px solid var(--border);
   border-radius: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 24px; }
     }
     @media (max-width: 768px) {
       /* Ocultar letra decorativa gigante en mobile para evitar overflow horizontal */
-      .cs-behance-letter { display: none !important; }
       .quick-summary-grid {
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
   border: 1px solid var(--border);
   border-radius: 16px; grid-template-columns: 1fr; gap: 0; padding: 8px 20px; }
       .quick-summary-grid .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
@@ -344,7 +338,7 @@
       border: 1px solid var(--border);
       border-radius: 6px;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.02);
+      background: transparent;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
     .exploration-item:hover {
@@ -381,7 +375,7 @@
     .card-decision-icon {
       font-size: 20px;
       line-height: 1;
-      color: var(--accent);
+      color: var(--white);
     }
     .card-decision-content {
       flex: 1;
@@ -403,7 +397,7 @@
 
     /* Impact Card */
     .card-impact {
-      background: rgba(255, 255, 255, 0.01);
+      background: transparent;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
@@ -418,13 +412,11 @@
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: rgba(242, 162, 34, 0.08);
-      border: 1px solid rgba(242, 162, 34, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 20px;
-      color: var(--accent);
+      color: var(--white);
       flex-shrink: 0;
     }
     .card-impact-content {
@@ -489,7 +481,7 @@
       margin-top: 16px;
     }
     .key-rule-note svg {
-      color: #10b981;
+      color: var(--white);
     }
     /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
     .cs-hamburger {
@@ -714,7 +706,7 @@
 </section>
 
 <!-- BUYER PERSONAS & UX PRINCIPLES -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 36px var(--space-lg); margin: 32px 0;">
+<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 72px var(--space-lg); margin: 32px 0;">
   <div class="cs-wrap">
     <div class="block-label" style="color: var(--accent);">
       <span class="block-label-text">Buyer Personas &amp; Leyes UX del Ecosistema Paolo</span>
@@ -722,13 +714,13 @@
     </div>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
         <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">🍕 Buyer Persona 01 · Cliente Delivery (Quick-Service)</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Busca pedir en menos de 90 segundos desde su móvil. <strong>Aplicación de la Ley de Miller (Chunking)</strong> organizando la carta en bloques de máximo 7 elementos para evitar parálisis de elección.</p>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Quiere pedir en menos de 90 segundos desde el móvil. <strong>Ley de Miller</strong>: carta en bloques de 7 elementos como máximo.</p>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
         <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">🍷 Buyer Persona 02 · Comensal Presencial / Reserva</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Valora la atmósfera del local y la experiencia artesana. <strong>Aplicación de la Ley de Fitts</strong> con accesos rápidos a la carta digital mediante QR en mesa y sistema de reservas sin fricción.</p>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Valora la atmósfera y lo artesano. <strong>Ley de Fitts</strong>: QR en mesa y reserva sin fricción, siempre a un gesto.</p>
       </div>
     </div>
   </div>
@@ -746,7 +738,7 @@
       <div>
         <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
         <ul class="bullet-list">
-          <li>Definición de la arquitectura de información de la web — cómo se organiza la carta, cómo se comunica la escala (5 locales, 1 número), qué CTAs y en qué orden</li>
+          <li>Arquitectura de información: cómo se organiza la carta, cómo se comunica la escala (5 locales, 1 número) y qué CTAs van primero</li>
           <li>Diseño UX/UI — prototipo completo en Adobe XD, responsive mobile-first, interacciones y estados</li>
           <li>Desarrollo frontend — maquetación en WordPress + Elementor, HTML/CSS, publicación y mantenimiento</li>
           <li>Implementación QR — sustitución de cartas físicas y punto de entrada digital en local</li>
@@ -789,7 +781,7 @@
             <div class="tool-role">Canales de delivery</div>
           </div>
         </div>
-        <p class="p" style="margin-top:0; padding-left:16px; border-left:2px solid var(--accent); font-size:13px; color:rgba(255,255,255,0.55);">Ownership completo de producto autónomo. Sin briefing previo ni estructura de equipo establecida, definí las prioridades, conceptualicé la UI y maqueté la web completa, escalando el soporte digital de 1 a 5 locales en 2 años.</p>
+        <p class="p" style="margin-top:0; padding-left:16px; border-left:2px solid var(--accent); font-size:13px; color:rgba(255,255,255,0.55);">Ownership completo, sin briefing ni equipo. Definí prioridades, conceptualicé la UI y maqueté la web: el soporte digital escaló de 1 a 5 locales en 2 años.</p>
       </div>
     </div>
   </div>
@@ -812,9 +804,9 @@
 
         <div class="row g-4" style="margin-top:32px;">
           <div class="col-md-7">
-            <p class="lead">Paolo es una pizzería artesana en Madrid. En 2020, su única forma de adquirir clientes era el paso peatonal físico o el boca a boca; carecía de sitio web, sistema de reservas y presencia activa en plataformas de delivery.</p>
-            <p class="p">Con las restricciones sanitarias de la pandemia, la falta de un canal online comprometió las ventas del negocio. Activar la digitalización pasó de ser una mejora competitiva a una necesidad de supervivencia.</p>
-            <p class="p">Mi objetivo fue conceptualizar y desarrollar el ecosistema digital de la marca desde cero: carta digital interactiva, flujos de reserva integrados y optimización del delivery directo.</p>
+            <p class="lead">Paolo es una pizzería artesana en Madrid. En 2020 solo captaba clientes a pie de calle: sin web, sin reservas, sin delivery.</p>
+            <p class="p">Con las restricciones de la pandemia, no tener canal online dejó de ser una desventaja competitiva para ser un problema de supervivencia.</p>
+            <p class="p">Construir el ecosistema digital desde cero: carta interactiva, reservas integradas y delivery directo.</p>
           </div>
           <div class="col-md-5">
             <div style="display:flex; flex-direction:column; gap:0;">
@@ -856,7 +848,7 @@
         <div class="row g-4 fu" style="margin-top:28px; margin-bottom:40px;">
           <div class="col-md-6">
             <p class="lead" style="margin-bottom:16px;">"¿Cómo encuentra Paolo un cliente nuevo? ¿Cómo ve la carta? ¿Cómo pide? En 2020, la respuesta a las tres era: no puede."</p>
-            <p class="p">El reto era de producto. Había 6 necesidades de usuario distintas, 11 touchpoints posibles y un negocio que iba a crecer de 1 a 5 locales. El mismo sistema tenía que resolver todo eso sin rediseño.</p>
+            <p class="p">El reto era de producto: 6 necesidades de usuario, 11 touchpoints y un negocio que iba a pasar de 1 a 5 locales. Un solo sistema, sin rediseño.</p>
           </div>
           <div class="col-md-6">
             <div style="height:100%; display:flex; flex-direction:column; justify-content:center; gap:8px;">
@@ -881,42 +873,42 @@
         <div class="row g-3 fu">
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:2px solid var(--accent); height:100%;">
-              <div style="margin-bottom:12px; color:var(--accent);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div style="margin-bottom:12px; color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
               <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Encontrar el restaurante</div>
               <div style="font-size:12px; color:var(--text); line-height:1.6;">Google Maps + GMB optimizado. Sección RESTAURANTES con mapa y dirección de cada local.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <div style="margin-bottom:12px; color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
               <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Pedir a domicilio</div>
               <div style="font-size:12px; color:var(--text); line-height:1.6;">CTA principal en desktop. Glovo + Uber Eats + JustEat activos. Sección PEDIDOS con acceso directo.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div style="margin-bottom:12px; color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
               <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Reservar mesa</div>
               <div style="font-size:12px; color:var(--text); line-height:1.6;">CTA "Reservar mesa" → WhatsApp directo. Sin formulario. Confirmación en minutos.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+              <div style="margin-bottom:12px; color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
               <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Ver la carta</div>
               <div style="font-size:12px; color:var(--text); line-height:1.6;">Sección CARTA como eje central de la IA — la más visitada según Clarity. Acceso desde hero y nav.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div style="margin-bottom:12px; color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
               <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Contactar con Paolo</div>
               <div style="font-size:12px; color:var(--text); line-height:1.6;">1 número centralizado para todos los locales. CTA "Llamar" como acción principal en mobile.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="margin-bottom:12px; color:var(--text-bright);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+              <div style="margin-bottom:12px; color:var(--white);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
               <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Descubrir la marca</div>
               <div style="font-size:12px; color:var(--text); line-height:1.6;">Sección HISTORIA, RRSS, QR en mesa. Danny's Jazz como diferencial cultural de barrio.</div>
             </div>
@@ -1147,7 +1139,7 @@
     </div>
 
     <!-- Por qué esto importa banner -->
-    <div class="fu" style="margin-bottom: 64px; background: rgba(255,255,255,0.01); border: 1px solid var(--border); border-radius: 12px; padding: 24px 32px; display: flex; gap: 20px; align-items: center; text-align: left;">
+    <div class="fu" style="margin-bottom: 64px; background: transparent; border: 1px solid var(--border); border-radius: 12px; padding: 24px 32px; display: flex; gap: 20px; align-items: center; text-align: left;">
       <div style="flex-shrink:0; display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:rgba(242,162,34,0.08); border:1px solid rgba(242,162,34,0.25);">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
@@ -1157,7 +1149,7 @@
       </div>
       <div>
         <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6px;">POR QUÉ ESTO IMPORTA</div>
-        <p style="font-size:13.5px; color:var(--text); line-height:1.6; margin:0;">Este es el punto de entrada más importante del sitio. Cada elemento compite por la atención. Esta arquitectura elimina fricción, guía al usuario y maximiza la conversión.</p>
+        <p style="font-size:13.5px; color:var(--text); line-height:1.6; margin:0;">Es el punto de entrada del sitio y todo compite por la atención. Esta arquitectura decide qué gana.</p>
       </div>
     </div>
 
@@ -1165,7 +1157,7 @@
     <div class="story-header fu" style="margin-top: 64px; text-align: left;">
       <span class="story-label">02 · SISTEMA VISUAL</span>
       <h3 class="story-title">La identidad visual <em>que dio cara al ecosistema</em></h3>
-      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Los wireframes definieron la arquitectura. El sistema visual definió el carácter. La paleta de 3 colores con roles claros y la combinación de tipografía display serif + sans-serif funcional son los mismos en todos los touchpoints — web, QR, RRSS, GMB.</p>
+      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Los wireframes definieron la arquitectura; el sistema visual, el carácter. Tres colores con rol claro y un par tipográfico display + funcional, idénticos en web, QR, RRSS y GMB.</p>
     </div>
 
     <!-- LOGO Y SU HISTORIA -->
@@ -1178,8 +1170,8 @@
       <div class="col-md-8">
         <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">EL IMAGOTIPO</span>
         <h4 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#fff; margin-bottom:12px;">Una identidad heredada</h4>
-        <p style="font-size:14px; color:var(--text); line-height:1.75; margin-bottom:14px;">El logotipo original de Paolo (una composición del imagotipo orgánico de la masa/pizza y la tipografía gestual con el subtítulo "BY DANNY'S JAZZ") fue heredado de un trabajo previo de branding. El reto de diseño no fue crear la marca desde cero, sino estructurar un sistema visual coherente que permitiera escalar esta marca física hacia un ecosistema digital y de restauración 360°.</p>
-        <p style="font-size:13.5px; color:var(--text-dim); line-height:1.75; margin:0;">Mi rol consistió en tomar esta marca existente y normativizarla, definiendo las reglas de convivencia, los roles cromáticos precisos y las jerarquías tipográficas para que la identidad luciera consistente en la fachada, el menú impreso, los uniformes, la web de pedidos y las redes sociales.</p>
+        <p style="font-size:14px; color:var(--text); line-height:1.75; margin-bottom:14px;">El logotipo de Paolo venía de un trabajo de branding anterior. El reto no era crear la marca, sino construir el sistema visual que la llevara de la calle a un ecosistema digital 360°.</p>
+        <p style="font-size:13.5px; color:var(--text-dim); line-height:1.75; margin:0;">La normativicé: reglas de convivencia, roles cromáticos y jerarquía tipográfica para que la identidad funcionara igual en fachada, menú, uniforme, web y RRSS.</p>
       </div>
     </div>
 
@@ -1233,7 +1225,7 @@
       <h3 class="story-title">De la pantalla <em>a la calle</em></h3>
       <div class="row g-4 align-items-center">
         <div class="col-md-8">
-          <p class="p" style="margin:0 0 12px;">El branding gráfico de Paolo fue heredado —el diseño del imagotipo principal pertenece a otro autor—. Mi rol se centró en proyectar, maquetar e integrar este branding a través de todos los touchpoints del negocio, garantizando coherencia visual y canalizando a los clientes hacia los embudos de venta y comunicación de la marca.</p>
+          <p class="p" style="margin:0 0 12px;">El imagotipo es de otro autor. Mi trabajo fue proyectarlo e integrarlo en todos los touchpoints, con una sola coherencia visual y cada uno empujando al embudo de venta.</p>
           <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
             <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Señalética de Fachadas</span>
             <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Branding de Sombrillas</span>
@@ -1251,13 +1243,13 @@
     <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
       <div class="col-12">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Plano Técnico Único · Fachada & Exteriores</div>
-        <div style="border-radius: 8px; overflow: hidden; background: rgba(255,255,255,0.015); margin-bottom: 24px;">
+        <div style="border-radius: 8px; overflow: hidden; background: transparent; margin-bottom: 24px;">
           <img width="1536" height="1024" loading="lazy" decoding="async" src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" alt="Plano de montaje de fachada y sombrillas de terraza Paolo" style="width:100%; height:auto; display:block;">
         </div>
         
         <div style="margin-top:14px;">
           <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:12px;">Estrategia de Estandarización Exterior (`plano-sombrillas-montaje.png`)</div>
-          <p style="font-size:13.5px; color:var(--text); line-height:1.75; margin-bottom:24px;">Este plano técnico consolida la identidad física de Paolo en la calle, convirtiendo la fachada en un canal estructurado de adquisición física y online. El plano define 4 componentes clave para la replicabilidad del negocio en nuevas aperturas:</p>
+          <p style="font-size:13.5px; color:var(--text); line-height:1.75; margin-bottom:24px;">El plano convierte la fachada en canal de adquisición, con 4 componentes replicables en cada apertura:</p>
           
           <div class="row g-4">
             <!-- Columna 1: Rótulos y Luminoso -->
@@ -1266,14 +1258,14 @@
                 <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
                 <div>
                   <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Rótulos Horizontales (Buzón de Conversión)</h4>
-                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Diseñados como una landing page física. El rótulo izquierdo prioriza la llamada a la acción ("Take a way" + teléfono de pedidos directos) y el derecho potencia el claim ("Sígueme para más pizza" + usuario de Instagram) para captar el tráfico peatonal y convertirlo en seguidor digital.</p>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Una landing page física: el rótulo izquierdo lleva el CTA («Take away» + teléfono) y el derecho el claim y el Instagram. El peatón se convierte en seguidor.</p>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start;">
                 <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
                 <div>
                   <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Luminoso Vertical (Identificación)</h4>
-                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Señalética vertical con iluminación en negativo (luz blanca brillante únicamente sobre las letras del imagotipo "PAOLO" y el subtítulo "pizzeria artesana"). Esto asegura la visibilidad nocturna y la elegancia sin contaminar visualmente la calle.</p>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Señalética vertical con iluminación en negativo: solo brillan las letras. Visible de noche sin contaminar la calle.</p>
                 </div>
               </div>
             </div>
@@ -1284,14 +1276,14 @@
                 <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
                 <div>
                   <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Sombrilla de Terraza (Co-branding)</h4>
-                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Estandarización técnica de sombrillas de 300 cm en colaboración con Erdinger. La financiación del mobiliario por parte del proveedor cervecero reduce los costes de apertura del local, mientras que el control del diseño gráfico por el equipo de Paolo garantiza que el espacio mantenga su coherencia estética.</p>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Sombrillas de 300 cm estandarizadas con Erdinger: el proveedor financia el mobiliario, Paolo conserva el control gráfico.</p>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start;">
                 <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
                 <div>
                   <h4 style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Boceto de Fachada General</h4>
-                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">La composición unificada muestra cómo interactúan todos los elementos físicos (puertas arqueadas, toldos, sombrillas y rótulos) para presentar una fachada coherente y atractiva en el barrio de Conde Duque.</p>
+                  <p style="font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0;">Puertas, toldos, sombrillas y rótulos leídos como una sola fachada en Conde Duque.</p>
                 </div>
               </div>
             </div>
@@ -1304,7 +1296,7 @@
     <div class="row g-4 fu" style="margin-bottom:40px; align-items:start;">
       <div class="col-md-6">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Uniformes · Polo bordado</div>
-        <div style="overflow:hidden; aspect-ratio:4/3; background:rgba(255,255,255,0.03);">
+        <div style="overflow:hidden; aspect-ratio:4/3; background: transparent;">
           <img width="2372" height="1425" loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.webp" alt="Mockup polo burdeos Paolo — diseño frente y espalda con bordado" style="width:100%; height:100%; object-fit:contain; display:block;">
         </div>
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Mockup · Polo burdeos, bordado frente y espalda</p>
@@ -1332,7 +1324,7 @@
       <div class="col-md-8 text-start">
         <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">ADQUISICIÓN EN RRSS</span>
         <h3 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#fff; margin-bottom:12px;">Notificación push creativa</h3>
-        <p style="font-size:13.5px; color:var(--text); line-height:1.7; margin-bottom:0;">Creativo publicitario para Instagram Stories (`04-social.png`). Diseñado simulando una interfaz real de notificación push del sistema de mensajería móvil. Al presentar una captura que imita un mensaje entrante de "Paolo" con tono cercano ("¿Cómo llevas el día? Seguro que mejor con pizza"), rompemos la inercia visual del scroll automático del usuario, aumentando drásticamente los clics directos hacia el enlace del sistema de pedidos.</p>
+        <p style="font-size:13.5px; color:var(--text); line-height:1.7; margin-bottom:0;">Creativo para Instagram Stories que imita una notificación push de mensajería. Un mensaje entrante de «Paolo» con tono cercano rompe la inercia del scroll y empuja el clic directo a pedidos.</p>
       </div>
     </div>
 
@@ -1341,7 +1333,7 @@
       <div class="card-decision-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg></div>
       <div class="card-decision-content">
         <div class="card-decision-title">Decisión de Diseño de Ecosistema Físico-Digital</div>
-        <p class="card-decision-text">Los elementos físicos (sombrillas, luminosos, uniformes) y los creativos digitales se estructuran con el mismo principio: no son elementos aislados, sino canales de entrada. Cada touchpoint del restaurante está optimizado para desviar la atención al canal digital principal o reforzar el posicionamiento artesanal de Paolo para justificar sus precios.</p>
+        <p class="card-decision-text">Físico y digital comparten principio: no son elementos aislados, son canales de entrada. Cada touchpoint empuja al canal digital o refuerza el posicionamiento artesano.</p>
       </div>
     </div>
 
@@ -1377,7 +1369,7 @@
         <div class="col-lg-6 col-md-12 text-start">
           <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HISTORIA</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Narrativa de marca</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Establece una conexión inmediata desde el origen local. La sección de historia cuenta de dónde venimos, el respeto por la tradición de la pizza artesana y el alma de barrio que define a Paolo.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Cuenta el origen: tradición artesana y alma de barrio. Es la conexión emocional antes del producto.</p>
           
           <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
             <div style="display:flex; gap:10px; align-items:flex-start;">
@@ -1408,7 +1400,7 @@
         <div class="col-lg-6 order-lg-1 col-md-12 text-start">
           <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · CARTA</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Explorar y elegir</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Nuestra sección más visitada. Diseñada para que los clientes puedan examinar las pizzas de forma rápida y visual, eliminando la fricción habitual de los menús en PDF descargables o enlaces externos.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">La sección más visitada. Carta visual y navegable, sin PDF descargables ni enlaces externos.</p>
           
           <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
             <div style="display:flex; gap:10px; align-items:flex-start;">
@@ -1439,7 +1431,7 @@
         <div class="col-lg-6 col-md-12 text-start">
           <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · PEDIDOS</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Pedir sin complicaciones</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Optimizamos el flujo de compra online para competir directamente con las grandes plataformas, reduciendo la tasa de abandono del carrito mediante una navegación extremadamente simple.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Flujo de compra simplificado para competir con las plataformas y bajar el abandono de carrito.</p>
           
           <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
             <div style="display:flex; gap:10px; align-items:flex-start;">
@@ -1527,7 +1519,7 @@
       <div class="card-decision-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg></div>
       <div class="card-decision-content">
         <div class="card-decision-title">Decisión Final de Estructura Web</div>
-        <p class="card-decision-text">La web se estructuró en 5 secciones claramente identificables desde la navegación que corresponden a pasos clave del embudo: descubrimiento de marca (Historia), evaluación de producto (Carta), conversión offline (Restaurantes), conversión online (Pedidos) y fidelización y prueba social (Opiniones). Cada sección tiene un propósito de negocio definido.</p>
+        <p class="card-decision-text">Cinco secciones, un paso del embudo cada una: Historia (descubrir), Carta (evaluar), Restaurantes (convertir offline), Pedidos (convertir online) y Opiniones (prueba social).</p>
       </div>
     </div>
 
@@ -1554,8 +1546,8 @@
         </div>
       </div>
       <div class="col-md-7">
-        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 16px;">El contexto físico del dispositivo determina la jerarquía visual. En un ordenador, el usuario está habitualmente en su domicilio y tiene mayor disposición a navegar por la web o pedir delivery (CTA principal: "Pedir a domicilio"). En el teléfono móvil, el usuario suele estar en movimiento o en la calle, con urgencia por contactar o localizar el local físico.</p>
-        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto físico y de dispositivo → distinta llamada a la acción prioritaria.</strong> Por ello, en móviles la barra de navegación destaca el botón de llamada telefónica instantánea junto al menú de hamburguesa.</p>
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 16px;">El contexto manda sobre la jerarquía. En desktop el usuario está en casa y pide delivery. En móvil está en la calle: quiere llamar o localizar el local, ya.</p>
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto, distinto CTA.</strong> En móvil la barra destaca la llamada directa junto al menú.</p>
         
         <!-- Impact Card -->
         <div class="card-impact">
@@ -1601,13 +1593,13 @@
               <span style="font-size:13.5px; color:var(--text);">Pedido completado en &lt; 3 minutos</span>
             </div>
           </div>
-          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">Tres plataformas activas (Glovo, Uber Eats, JustEat) para no depender de ninguna. El CTA centralizado en la web desvía al usuario directamente a su canal preferido.</div>
+          <div style="font-size:12px; color:var(--text-dim); line-height:1.6; border-top: 1px solid var(--border); padding-top: 12px; margin-top: auto;">Glovo, Uber Eats y JustEat activos para no depender de ninguna. Un CTA centralizado reparte al canal preferido.</div>
         </div>
       </div>
 
       <!-- Visita al local -->
       <div class="col-md-4" style="display: flex; flex-direction: column;">
-        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: rgba(255, 255, 255, 0.01); height: 100%; display: flex; flex-direction: column; text-align: left;">
+        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: transparent; height: 100%; display: flex; flex-direction: column; text-align: left;">
           <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); font-weight:700; margin-bottom:12px;">Journey 02 · Visita al local</div>
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Busco el restaurante más cercano</div>
           <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
@@ -1630,7 +1622,7 @@
 
       <!-- Reserva -->
       <div class="col-md-4" style="display: flex; flex-direction: column;">
-        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: rgba(255, 255, 255, 0.01); height: 100%; display: flex; flex-direction: column; text-align: left;">
+        <div style="border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: transparent; height: 100%; display: flex; flex-direction: column; text-align: left;">
           <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); font-weight:700; margin-bottom:12px;">Journey 03 · Reserva</div>
           <div style="font-size:16px; font-weight:700; color:#fff; margin-bottom:12px; font-family: var(--font-serif);">Quiero planificar mi cena/comida</div>
           <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex: 1;">
@@ -1663,13 +1655,13 @@
       <div class="cs-ba-col" style="text-align: left;">
         <div class="cs-ba-badge cs-ba-before">Antes · 2020</div>
         <p style="font-size:14px; color:var(--text); line-height:1.8; margin:16px 0 0; flex:1;">
-          Sin web propia · Sin presencia en Google Maps · Sin canal de delivery activo · Sin sistema de RRSS · Sin métricas · Visibilidad dependiente únicamente de la clientela física y el barrio.
+          Sin web · Sin Google Maps · Sin delivery · Sin RRSS · Sin métricas. Toda la visibilidad dependía del barrio.
         </p>
       </div>
       <div class="cs-ba-col" style="text-align: left; border-left: 1px solid var(--border);">
         <div class="cs-ba-badge cs-ba-after" style="background: var(--accent-glow); border-color: var(--accent); color: var(--accent);">Después · 2022</div>
         <p style="font-size:14px; color:var(--accent); line-height:1.8; margin:16px 0 0; flex:1;">
-          Web propia scalable (Adobe XD → WordPress) · Canales de delivery activos · Google My Business optimizado · Cartas QR en local · Metricool + Clarity + GA4 operativos · Ciclo mensual de analítica y optimizaciones.
+          Web escalable (Adobe XD → WordPress) · Delivery activo · Google My Business · QR en mesa · Metricool + Clarity + GA4 · Ciclo mensual de optimización.
         </p>
       </div>
     </div>
@@ -1678,8 +1670,8 @@
     <div class="story-header fu" style="margin-top: 64px;">
       <span class="story-label">08 · ANÁLISIS & ITERACIÓN</span>
       <h3 class="story-title">Datos como herramienta de diseño, <em>no de validación posterior</em></h3>
-      <p class="p fu" style="margin-bottom: 24px;">Microsoft Clarity revelaba detalladamente cómo se comportaban los usuarios en la web: qué secciones ignoraban, dónde abandonaban y qué elementos atraían su atención. GA4 aportaba el volumen y origen de tráfico, mientras que Metricool medía el engagement de redes locales.</p>
-      <p class="p fu">Estos datos no se recopilaban para redactar informes — servían para ejecutar cambios inmediatos. Si Clarity mostraba que la sección de RESTAURANTES en móvil tenía una alta tasa de rebote por no encontrar el local rápido, la solución fue colocar el mapa interactivo como primer impacto visual. Diseño basado en comportamiento empírico, no en intuición.</p>
+      <p class="p fu" style="margin-bottom: 24px;">Clarity mostraba qué se ignoraba y dónde se abandonaba. GA4 daba volumen y origen. Metricool, el engagement de las redes locales.</p>
+      <p class="p fu">No eran datos para informes, sino para cambiar cosas. Si RESTAURANTES rebotaba en móvil porque no se encontraba el local, el mapa pasaba a ser el primer impacto visual.</p>
     </div>
       </div><!-- /cs-star main -->
     </div><!-- /cs-star -->
@@ -1769,7 +1761,6 @@
 
 <!-- APRENDIZAJES -->
 <section class="cs-block cs-block-light">
-  <div class="cs-behance-letter">L</div>
   <div class="cs-wrap">
     <div class="fu">
       <span class="block-label">LEARNINGS · Aprendizajes</span>
@@ -1781,7 +1772,7 @@
       <div class="pl-card">
         <span class="pl-num">01</span>
         <p class="pl-title">Contexto de uso ≠ dispositivo</p>
-        <p class="pl-text">El CTA distinto en móvil no fue responsive — fue decisión de producto. El usuario que llega desde la calle tiene una intención completamente diferente al que navega desde casa.</p>
+        <p class="pl-text">El CTA distinto en móvil no fue responsive, fue decisión de producto: la intención en la calle no es la de casa.</p>
       </div>
       <div class="pl-card">
         <span class="pl-num">02</span>
@@ -1811,9 +1802,8 @@
 <!-- ══════════════════════════════════════
      2026 · Evolución real del ecosistema con IA
 ══════════════════════════════════════ -->
-<section style="padding: 80px 0; border-top: 1px solid rgba(242,162,34,0.18); background: linear-gradient(180deg, rgba(242,162,34,0.04) 0%, transparent 60%); position: relative; overflow: hidden;">
+<section style="padding: 80px 0; border-top: 1px solid rgba(242,162,34,0.18); position: relative; overflow: hidden;">
 
-  <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:700px; height:220px; background:radial-gradient(ellipse, rgba(242,162,34,0.07) 0%, transparent 70%); pointer-events:none;"></div>
 
   <div class="cs-wrap" style="position:relative; z-index:1;">
 
@@ -1826,13 +1816,13 @@
     <!-- ES HEADER -->
     <div class="es fu">
       <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">Rediseño 2026:<br><em style="color:rgba(255,255,255,0.65);">lo que la IA permitió resolver que en 2022 era imposible</em></h2>
-      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">En 2022 el proyecto tenía tres cuellos de botella reales: fotografía de producto cara, una centralita colapsada con FAQs repetitivas y materiales de RRSS dependientes de producción física. En 2026 regresé al ecosistema con IA generativa y los resolví. Este es el resultado.</p>
+      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">En 2022 había tres cuellos de botella: fotografía cara, centralita colapsada de FAQs y RRSS atadas a producción física. En 2026 volví con IA generativa y los resolví.</p>
     </div>
 
     <!-- EN HEADER -->
     <div class="en fu">
       <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">2026 Redesign:<br><em style="color:rgba(255,255,255,0.65);">what AI made possible that was impossible in 2022</em></h2>
-      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">In 2022 the project had three real bottlenecks: expensive product photography, a phone line overwhelmed by repetitive FAQs, and social media content dependent on physical production. In 2026 I returned to the ecosystem with generative AI and solved them all. Here's the result.</p>
+      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">In 2022 there were three bottlenecks: costly photography, a phone line drowning in FAQs, and social content tied to physical production. In 2026 I came back with generative AI and solved them.</p>
     </div>
 
     <!-- ─── Fila 01 · VIDEO · imagen izquierda + texto derecha ─── -->
@@ -1850,8 +1840,8 @@
         <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HERO BANNER · VÍDEO GENERATIVO</span>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Misma marca,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">nueva capa audiovisual</em></h3>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Same brand,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">new audiovisual layer</em></h3>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022, un vídeo hero requería producción, cámara y edición. En 2026, el mismo resultado se consigue con IA generativa: misma paleta ámbar/negro cálido, misma atmósfera artesana, sin sesión de rodaje.</p>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022, a hero video required production, camera and editing. In 2026, the same result is achieved with generative AI: same amber/warm black palette, same artisan atmosphere, no shoot.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 el vídeo hero pedía producción, cámara y edición. En 2026 sale con IA: misma paleta ámbar, misma atmósfera, sin rodaje.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 a hero video meant production, camera and editing. In 2026 AI delivers it: same amber palette, same atmosphere, no shoot.</p>
         <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">RESULTADO:</span><span class="es"> Hero video del repositorio público — coherente con el sistema visual sin coste de producción.</span>
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">RESULT:</span><span class="en"> Web repository hero video — consistent with the visual system at zero production cost.</span>
@@ -1865,8 +1855,8 @@
         <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · MANUAL GRÁFICO · FOTOGRAFÍA DE PRODUCTO CON IA</span>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El archivo fotográfico<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">reconstruido sin sesión</em></h3>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The photo archive<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">rebuilt without a shoot</em></h3>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 no había presupuesto para fotografía profesional consistente entre locales. En 2026, con IA generativa y el manual visual de Paolo como referencia — paleta ámbar y negro cálido, masa artesana, plano cenital — regeneré los 4 platos estrella manteniendo la coherencia del sistema original.</p>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 there was no budget for consistent professional photography across locations. In 2026, with generative AI and Paolo's visual manual as reference — amber and warm black palette, artisan dough, overhead angle — I regenerated the 4 star dishes maintaining the original system's coherence.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 no había presupuesto para fotografía consistente entre locales. En 2026, con el manual visual como referencia, regeneré los 4 platos estrella con IA sin romper el sistema.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 there was no budget for consistent photography across locations. In 2026, using the visual manual as reference, I regenerated the 4 star dishes with AI, on-system.</p>
         <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Actualizar la imagen de producto de todos los locales sin nueva sesión fotográfica.</span>
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Update product photography across all locations without a new photo session.</span>
@@ -1918,8 +1908,8 @@
         <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · RRSS Y WEB · REPO VISUAL CON IA</span>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Cards de servicio y social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">del mismo estilo</em></h3>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Service cards and social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">in the same style</em></h3>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Mismo hilo visual, nuevos materiales. Las piezas generadas con IA sirven tanto para las cards principales de servicios de la web como para los formatos de RRSS — story vertical, post cuadrado, hero de repositorio — sin depender de nueva producción fotográfica.</p>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Same visual thread, new materials. The AI-generated pieces serve both as main service cards on the website and as social media formats — vertical story, square post, repository hero — without depending on new photography.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Mismo hilo visual, nuevos materiales: las piezas sirven para las cards de la web y para story, post y hero, sin nueva producción.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Same visual thread, new materials: the pieces work as web service cards and as story, post and hero, with no new shoot.</p>
         <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Generar contenido visual para todos los canales sin sesión fotográfica, manteniendo coherencia de marca.</span>
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Generate visual content for all channels without a photo session, maintaining brand coherence.</span>
@@ -1933,7 +1923,7 @@
         <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03b · RRSS · PIEZAS SOCIALES Y CARDS</span>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Tres formatos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">mismo manual visual</em></h3>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Three formats,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">same visual manual</em></h3>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Story vertical humanizado para Instagram, card cuadrada de servicio y pieza de take-away — los tres formatos necesarios para activar todos los canales de comunicación del restaurante sin nueva producción de material.</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Story vertical, card cuadrada y pieza de take-away: los tres formatos que activan todos los canales, sin producción nueva.</p>
         <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Humanized vertical story for Instagram, square service card and take-away piece — the three formats needed to activate all restaurant communication channels without new material production.</p>
         <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Cubrir Instagram, web de servicios y take-away con un único briefing visual generado con IA.</span>
@@ -2015,8 +2005,8 @@
           <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04A · PRESENTACIÓN DEL AGENTE EN WEB</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El agente presentado<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin salir de la web</em></h3>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The agent presented<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without leaving the site</em></h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Nueva sección en el sitio que introduce el agente digital, explica qué preguntas puede resolver y ofrece la activación directa. El usuario no necesita ir a una app de mensajería ni llamar — todo ocurre en el mismo contexto de navegación.</p>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">New section on the site that introduces the digital agent, explains what questions it can resolve and offers direct activation. The user does not need to go to a messaging app or call — everything happens in the same browsing context.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Una sección presenta el agente, qué resuelve y cómo activarlo. Sin salir a una app de mensajería ni llamar.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">A section introduces the agent, what it answers and how to start it. No messaging app, no phone call.</p>
           <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Introducir el canal del chatbot al usuario sin fricciones y sin abandonar la experiencia web.</span>
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Introduce the chatbot channel to the user frictionlessly without leaving the web experience.</span>
@@ -2030,8 +2020,8 @@
           <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04B · CONVERSACIÓN REAL · ALÉRGENOS Y RESERVA</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Respuestas en segundos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin llamar</em></h3>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Answers in seconds,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without calling</em></h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El flujo real: el cliente pregunta por alérgenos de un plato o solicita una reserva. El agente, entrenado con los datos del negocio, responde con precisión en segundos — sin ocupar la línea, sin interrumpir al equipo en sala.</p>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The real flow: the customer asks about allergens in a dish or requests a reservation. The agent, trained on business data, responds accurately in seconds — without tying up the line, without interrupting the floor team.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El cliente pregunta por alérgenos o pide mesa. El agente, entrenado con los datos del negocio, responde en segundos sin ocupar la línea ni al equipo de sala.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The customer asks about allergens or books a table. The agent, trained on business data, answers in seconds without tying up the line or the floor team.</p>
           <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Resolver las FAQs más repetitivas del negocio sin intervención humana y en tiempo real.</span>
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Resolve the most repetitive business FAQs without human intervention and in real time.</span>
@@ -2061,8 +2051,8 @@
           <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04C · AGENTE EN MOBILE · CONTEXTO REAL DE USO</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El canal en el dispositivo<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">donde ocurre la decisión</em></h3>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The channel on the device<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">where the decision happens</em></h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El agente funciona en mobile sin redireccionamientos. El usuario que está en la calle decidiendo dónde cenar puede preguntar por alérgenos, confirmar horarios o hacer una reserva — todo en el mismo flujo, sin llamar, sin esperar.</p>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The agent works on mobile without redirects. The user on the street deciding where to dine can ask about allergens, confirm hours or make a reservation — all in the same flow, without calling, without waiting.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En móvil funciona sin redirecciones: quien está en la calle decidiendo dónde cenar pregunta, confirma horario o reserva en el mismo flujo.</p>
+          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">On mobile it works without redirects: someone on the street picking a place can ask, check hours or book in the same flow.</p>
           <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Acceder al agente en el mismo contexto de decisión de compra, sin fricciones de dispositivo o canal.</span>
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Access the agent in the same purchase decision context, with no device or channel friction.</span>
@@ -2074,8 +2064,8 @@
 
     <!-- Cierre -->
     <div class="fu" style="padding-top:16px; border-top:1px solid rgba(255,255,255,0.05);">
-      <p class="es" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">La IA no reemplazó el trabajo de diseño de 2020–2022. Lo amplificó. La arquitectura, los journeys y el sistema visual seguían siendo la base. La IA resolvió los cuellos de botella que la tecnología de aquel momento no podía cubrir.</p>
-      <p class="en" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">AI did not replace the 2020–2022 design work. It amplified it. The architecture, journeys and visual system were still the foundation. AI solved the bottlenecks that the technology of that time could not cover.</p>
+      <p class="es" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">La IA no reemplazó el diseño de 2020–2022: lo amplificó. La arquitectura, los journeys y el sistema visual siguen siendo la base.</p>
+      <p class="en" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">AI didn't replace the 2020–2022 design work: it amplified it. The architecture, journeys and visual system are still the foundation.</p>
     </div>
 
   </div>

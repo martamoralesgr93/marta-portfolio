@@ -77,13 +77,12 @@
       gap: 1px; background: var(--border);
       border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
     }
-    .ov-card { background: rgba(255,255,255,0.02); padding: 40px 44px 48px; }
+    .ov-card { background: var(--surface); padding: 40px 44px 48px; }
     .ov-icon {
       width: 36px; height: 36px; border-radius: 8px;
-      background: var(--accent-glow); border: 1px solid var(--accent-border);
       display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
     }
-    .ov-icon svg { width: 18px; height: 18px; color: var(--accent); }
+    .ov-icon svg { width: 18px; height: 18px; color: var(--white); }
     .ov-title {
       font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
@@ -98,7 +97,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       overflow: hidden;
-      background: rgba(255,255,255,0.015);
+      background: transparent;
       margin-bottom: 24px;
     }
     /* Cabecera: título de la evidencia + tag de método (fuente de datos) */
@@ -159,7 +158,7 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
     }
     .research-panel {
-      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      background: transparent; border: 1px solid var(--border);
       border-radius: var(--radius-lg); padding: 32px;
     }
     .rp-title {
@@ -195,10 +194,9 @@
     .ht-connector { display: flex; align-items: center; margin-bottom: 24px; }
     .ht-circle {
       width: 44px; height: 44px; border-radius: 50%;
-      background: var(--accent-glow); border: 1px solid var(--accent-border);
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .ht-circle svg { width: 18px; height: 18px; color: var(--accent); }
+    .ht-circle svg { width: 18px; height: 18px; color: var(--white); }
     .ht-line { flex: 1; height: 1px; background: var(--border); }
     .ht-item:last-child .ht-line { display: none; }
     .ht-step {
@@ -246,7 +244,7 @@
     .wf-row-wire .wf-col-header {
       padding: 14px 28px; border-bottom: 1px solid var(--border);
       display: flex; align-items: center; gap: 10px;
-      background: rgba(255,255,255,0.02);
+      background: transparent;
     }
     .wf-row-wire .wf-col-body {
       padding: 0;
@@ -257,7 +255,7 @@
     .wf-row-wire .wf-tags {
       display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px;
       border-top: 1px solid var(--border);
-      background: rgba(255,255,255,0.01);
+      background: transparent;
     }
 
     /* Arrow divider between rows */
@@ -289,7 +287,7 @@
     .wf-final-col .wf-col-header {
       padding: 14px 28px; border-bottom: 1px solid var(--border);
       display: flex; align-items: center; gap: 10px;
-      background: rgba(255,255,255,0.02);
+      background: transparent;
     }
     .wf-final-col .wf-col-body {
       padding: 0; flex: 1;
@@ -300,7 +298,7 @@
     .wf-final-col .wf-tags {
       display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px;
       border-top: 1px solid var(--border);
-      background: rgba(255,255,255,0.01);
+      background: transparent;
     }
 
     /* Shared label pieces */
@@ -312,11 +310,12 @@
       font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--text-dim);
     }
+    .wf-col-header svg { color: var(--white); }
 
     /* Pill tags under wireframes */
     .wf-tag {
       display: inline-block; padding: 3px 10px;
-      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      background: transparent; border: 1px solid var(--border);
       border-radius: var(--radius-pill); font-size: 11px; color: var(--text-dim);
     }
 
@@ -338,7 +337,7 @@
       gap: 0; background: var(--border);
     }
     .wf-step {
-      background: rgba(255,255,255,0.015); padding: 24px 24px 28px;
+      background: var(--surface); padding: 24px 24px 28px;
       display: flex; flex-direction: column; gap: 10px;
       position: relative;
     }
@@ -351,9 +350,6 @@
       font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--accent);
     }
-    .wf-step-icon {
-      font-size: 18px; line-height: 1;
-    }
     .wf-step-title {
       font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
       text-transform: uppercase; color: var(--white); line-height: 1.3;
@@ -362,7 +358,7 @@
 
     /* Legacy (keep for backward compat) */
     .panel-block {
-      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      background: transparent; border: 1px solid var(--border);
       border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 24px;
     }
     .panel-header {
@@ -385,15 +381,14 @@
     /* ─── 06 IMPLEMENTACIÓN ───────────────────────── */
     .impl-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
     .impl-card {
-      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      background: transparent; border: 1px solid var(--border);
       border-radius: var(--radius-lg); padding: 40px;
     }
     .impl-icon {
       width: 44px; height: 44px; border-radius: 10px;
-      background: var(--accent-glow); border: 1px solid var(--accent-border);
       display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
     }
-    .impl-icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .impl-icon svg { width: 20px; height: 20px; color: var(--white); }
     .impl-title {
       font-size: 20px; font-weight: 700; color: var(--white);
       font-family: var(--font-serif); margin-bottom: 14px;
@@ -402,7 +397,7 @@
     .impl-text strong { color: var(--white); }
     .impl-badge {
       display: inline-block; padding: 5px 14px;
-      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      background: transparent; border: 1px solid var(--border);
       border-radius: var(--radius-sm); font-size: 11px; color: var(--text-dim);
     }
 
@@ -442,8 +437,7 @@
       gap: 1px; background: var(--border);
       border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
     }
-    .lc-card { background: rgba(255,255,255,0.02); padding: 40px 36px 44px; }
-    .lc-icon { font-size: 24px; margin-bottom: 20px; display: block; }
+    .lc-card { background: var(--surface); padding: 40px 36px 44px; }
     .lc-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
     .lc-text { font-size: 13px; color: var(--text); line-height: 1.65; }
 
@@ -481,10 +475,10 @@
       .wf-steps { grid-template-columns: 1fr !important; }
     }
     /* ─── EXPERIMENT CARD: hipótesis → decisión → resultado ─── */
-    .exp-card { display: grid; grid-template-columns: 1.3fr 1fr; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 32px; background: rgba(255,255,255,0.015); }
+    .exp-card { display: grid; grid-template-columns: 1.3fr 1fr; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 32px; background: transparent; }
     .exp-side { padding: 40px 44px; }
-    .exp-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-glow); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-    .exp-icon svg { width: 18px; height: 18px; color: var(--accent); }
+    .exp-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .exp-icon svg { width: 18px; height: 18px; color: var(--white); }
     .exp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
     .exp-hyp { font-family: var(--font-serif); font-style: italic; font-size: 17px; color: var(--text-bright); line-height: 1.6; margin-bottom: 20px; }
     .exp-decision { font-size: 13px; color: var(--text-dim); line-height: 1.6; padding-top: 16px; border-top: 1px solid var(--border); }
@@ -511,10 +505,10 @@
 
     /* ===================== QUICK SUMMARY CARD · spine unificado (mismo componente que Booking/CEF/Paolo/It-Ops) ===================== */
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
     .qs-col { display: flex; flex-direction: column; }
     .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px; height: 13px; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
+    .qs-label svg { display: inline-block !important; color: var(--white); flex-shrink: 0; width: 13px; height: 13px; }
     .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
     .qs-bullets { list-style: none; padding: 0; margin: 0; }
     .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
@@ -657,7 +651,7 @@
 <header class="cs-hero">
   <div class="cs-hero-logo"></div>
   <div class="cs-hero-overlay"></div>
-  <div class="cs-hero-glow" style="background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 65%);"></div>
+  <div class="cs-hero-glow"></div>
   <div class="cs-hero-content">
     <nav class="cs-breadcrumb" aria-label="Breadcrumb">
       <ol>
@@ -705,7 +699,7 @@
 ══════════════════════════════════════ -->
 
 <!-- 1. BLOQUE CONTEXTO -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 40px 0; border: 1px solid var(--border); padding: 48px var(--space-lg);">
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 40px 0; border: 1px solid var(--border); padding: 72px var(--space-lg);">
   <div class="cs-wrap">
     <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">CONTEXTO</div>
     
@@ -715,8 +709,8 @@
           El canal directo tenía un problema de identificación, no de tráfico
         </h2>
         <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14.5px; color: var(--text-bright); line-height: 1.8;">
-          <p>ILUNION Hotels migró a AEM en 2024. La conversión del canal directo partía del 3.36%. El brief inicial planteaba optimizar el bloque promocional.</p>
-          <p>El hallazgo clave: Clarity mostró que solo el 15% de usuarios llegaba a la sección de ofertas debido a la jerarquía visual. Además, muchos socios de Club ÚNICOS reservaban sin iniciar sesión, perdiendo su tarifa preferente.</p>
+          <p>ILUNION Hotels migró a AEM en 2024. El canal directo convertía al 3,36% y el brief pedía optimizar el bloque promocional.</p>
+          <p>Clarity contaba otra cosa: solo el <strong>15%</strong> llegaba a ver las ofertas. Y los socios de Club ÚNICOS reservaban sin login, perdiendo su tarifa preferente.</p>
         </div>
       </div>
 
@@ -728,19 +722,19 @@
 
     <!-- 4 CHIPS METADATOS DEBAJO -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
         <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">ROL</div>
         <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">UX/UI Designer &amp; CRO</div>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
         <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">PERIODO</div>
         <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Sep 2024 - Presente</div>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
         <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">RESEARCH</div>
         <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Adobe Analytics + Clarity</div>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
         <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">STACK</div>
         <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">AEM, Adobe Analytics</div>
       </div>
@@ -749,7 +743,7 @@
 </section>
 
 <!-- 2. FILA DE MÉTRICAS GRANDES EN SERIF CON EYEBROW DE FUENTE -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 40px var(--space-lg);">
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 72px var(--space-lg);">
   <div class="cs-wrap">
     <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px; font-family: monospace;">
       ADOBE ANALYTICS · CANAL DIRECTO · BASELINE SEP 2024
@@ -788,7 +782,7 @@
 </section>
 
 <!-- 3. BLOQUE DIAGNÓSTICO (H2 + 3 TARJETAS CON BORDE IZQUIERDO) -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 48px var(--space-lg);">
+<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 32px 0; border: 1px solid var(--border); padding: 72px var(--space-lg);">
   <div class="cs-wrap">
     <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">DIAGNÓSTICO</div>
     <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 32px;">
@@ -797,28 +791,28 @@
 
     <div style="display: flex; flex-direction: column; gap: 18px;">
       <!-- TARJETA 1 -->
-      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
         <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">ADOBE ANALYTICS</div>
         <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Análisis de funnel: dónde perdíamos usuarios en el proceso de reserva.</div>
       </div>
 
       <!-- TARJETA 2 -->
-      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 16px; padding: 24px 28px;">
         <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">MICROSOFT CLARITY</div>
         <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Solo el 15% llegaba a la sección de ofertas: invisible, no irrelevante.</div>
       </div>
 
       <!-- TARJETA 3 -->
-      <div style="background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-radius: 16px; border-left: 4px solid var(--purple); padding: 24px 28px;">
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; border-left: 4px solid var(--purple); padding: 24px 28px;">
         <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; font-family: monospace;">SEGMENTACIÓN</div>
-        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Socios Club ÚNICOS reservando sin login: pérdida del precio preferente para ellos y del LTV para el hotel.</div>
+        <div style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6;">Socios reservando sin login: pierden su precio preferente, el hotel pierde LTV.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- METODOLOGÍA TEST A/B & USER PERSONAS -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 36px var(--space-lg); margin: 32px 0;">
+<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 72px var(--space-lg); margin: 32px 0;">
   <div class="cs-wrap">
     <div class="block-label" style="color: var(--accent);">
       <span class="block-label-text">Estrategia UX &amp; Metodología de Experimentación A/B</span>
@@ -827,31 +821,31 @@
     
     <!-- User Personas Section -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">👤 Buyer Persona 01 · Huésped Vacacional</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Sensible al precio y la transparencia de fechas. Busca confirmación visual inmediata del descuento del club y fotos reales de la habitación. <strong>Decisión guiada por la Ley de Fitts</strong> (botón de reserva siempre al alcance del pulgar) y eliminación de costes ocultos.</p>
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Buyer Persona 01 · Huésped Vacacional</h4>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Sensible al precio y a la transparencia de fechas. Necesita ver el descuento del club antes de decidir. <strong>Ley de Fitts</strong>: botón de reserva siempre al alcance del pulgar.</p>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">💼 Buyer Persona 02 · Gestor / Comprador Corporativo</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Prioriza la velocidad de reserva, la factura simplificada y la confirmación inmediata de políticas de cancelación. <strong>Decisión guiada por la Ley de Hick</strong> (reducción de pasos y opciones secundarias en el embudo directo).</p>
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Buyer Persona 02 · Gestor / Comprador Corporativo</h4>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Prioriza velocidad, factura simple y política de cancelación clara. <strong>Ley de Hick</strong>: menos pasos y menos opciones secundarias.</p>
       </div>
     </div>
 
     <!-- Framework Test A/B -->
     <div style="margin-top: 32px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
-      <h4 style="font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 16px;">🧪 Arquitectura de Test A/B &amp; Significancia Estadística</h4>
+      <h4 style="font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 16px;">Arquitectura de Test A/B &amp; Significancia Estadística</h4>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
         <div>
           <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">1. Formulación de Hipótesis</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Si reestructuramos la tarjeta de ofertas situando el selector de fechas y precio final <em>above the fold</em>, se reducirá la tasa de abandono en un 25% (Priorización ICE: 9/10).</p>
+          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Si el selector de fechas y el precio final suben <em>above the fold</em>, el abandono cae un 25%. Priorización ICE: 9/10.</p>
         </div>
         <div>
           <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">2. Variante A (Control) vs. B (Tratamiento)</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5;"><strong>Control (A):</strong> Layout AEM original con banner promocional estático.<br><strong>Tratamiento (B):</strong> Componente dinámico de ofertas con filtro inmediato y selector móvil.</p>
+          <p style="font-size: 13px; color: var(--text); line-height: 1.5;"><strong>A:</strong> layout AEM original, banner estático.<br><strong>B:</strong> ofertas dinámicas con filtro inmediato y selector móvil.</p>
         </div>
         <div>
           <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">3. Muestra &amp; Significancia</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Tráfico split 50/50 durante 14 días. Muestra validada con nivel de confianza del 95% ($p &lt; 0.05$) elevando la conversión del 3,36% al 6,5%.</p>
+          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Split 50/50 durante 14 días. Confianza del 95% (p &lt; 0,05). Conversión: 3,36% → 6,5%.</p>
         </div>
       </div>
     </div>
@@ -882,7 +876,7 @@
         </div>
         <p class="ov-title">Contexto</p>
         <p class="ov-text">
-          Tras migrar la web a Adobe Experience Manager (AEM) en septiembre 2025, la tasa de conversión cayó al <strong>3,36%</strong>. Aunque la infraestructura técnica era sólida, el flujo de usuario presentaba problemas de fricción comercial.
+          Tras migrar a AEM, la conversión cayó al <strong>3,36%</strong>. La infraestructura era sólida; la fricción estaba en el flujo comercial.
         </p>
       </div>
 
@@ -894,7 +888,7 @@
         </div>
         <p class="ov-title">Mi Rol</p>
         <p class="ov-text">
-          <strong>Product Designer</strong> con ownership end-to-end de manera autónoma. Lideré el ciclo completo de diagnóstico, propuesta visual y coordinación con el equipo de desarrollo. Gestioné diagnóstico, propuesta y presentación directa a comité, sin intermediarios de producto entre el análisis y la toma de decisión.
+          <strong>Product Designer</strong>, ownership end-to-end: diagnóstico, propuesta visual, coordinación con desarrollo y defensa en comité. Sin intermediarios entre el análisis y la decisión.
         </p>
       </div>
 
@@ -907,7 +901,7 @@
         </div>
         <p class="ov-title">Problema</p>
         <p class="ov-text">
-          La maquetación inicial daba un excesivo protagonismo a banners promocionales del club de fidelidad, empujando el motor de reserva por debajo del primer scroll y dispersando a los usuarios con alta intención de compra.
+          Los banners del club empujaban el motor de reserva por debajo del primer scroll y dispersaban al usuario con alta intención de compra.
         </p>
       </div>
 
@@ -919,7 +913,7 @@
         </div>
         <p class="ov-title">Objetivo</p>
         <p class="ov-text">
-          Identificar los puntos de fuga del embudo de conversión y diseñar experimentos iterativos en AEM para elevar la conversión del 3,36% al 6,5% sin degradar el valor del programa de fidelización.
+          Cerrar las fugas del embudo con experimentos iterativos en AEM, sin degradar el valor del programa de fidelización.
         </p>
       </div>
 
@@ -964,12 +958,12 @@
           <div class="audit-finding">
             <p class="af-num">Finding 01 · Scroll map</p>
             <p class="af-stat">15%</p>
-            <p class="af-desc">Solo el 15% de los usuarios superaba el bloque de ofertas en la home. El componente requería mayor interacción vertical que modelos referentes.</p>
+            <p class="af-desc">Solo el 15% superaba el bloque de ofertas en la home.</p>
           </div>
           <div class="audit-finding">
             <p class="af-num">Finding 02 · Jerarquía visual</p>
             <p class="af-stat">ÚNICOS</p>
-            <p class="af-desc">El programa de fidelización presentaba gran relevancia visual antes de mostrar las opciones directas de reserva, compitiendo con la intención de compra.</p>
+            <p class="af-desc">El club ocupaba el primer fold y competía con la intención de compra.</p>
           </div>
         </div>
 
@@ -1013,19 +1007,15 @@
         <div class="insight-list">
           <div class="insight-row">
             <span class="insight-dot"></span>
-            <span class="insight-txt">Solo el <strong>15% de los usuarios superaba el bloque de ofertas</strong> en la home.</span>
+            <span class="insight-txt"><strong>85% de abandono</strong> antes de llegar a la oferta.</span>
           </div>
           <div class="insight-row">
             <span class="insight-dot"></span>
-            <span class="insight-txt">El componente requería <strong>mayor interacción vertical</strong> que otros modelos referentes para visualizar las opciones de reserva.</span>
+            <span class="insight-txt">El componente exigía <strong>más scroll</strong> que cualquier referente del sector.</span>
           </div>
           <div class="insight-row">
             <span class="insight-dot"></span>
-            <span class="insight-txt">El programa de fidelización <strong>ÚNICOS presentaba gran relevancia visual</strong> antes de mostrar las opciones directas de reserva.</span>
-          </div>
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt">Benchmarking contra cadenas hoteleras y portales de distribución referentes: precio, disponibilidad y CTA en primer fold.</span>
+            <span class="insight-txt">Benchmark: los referentes ponen <strong>precio, disponibilidad y CTA</strong> en el primer fold.</span>
           </div>
         </div>
       </div>
@@ -1101,7 +1091,7 @@
         <p class="ht-step">Paso 1</p>
         <p class="ht-title">Insight clave</p>
         <p class="ht-text">
-          Un usuario que llega desde paid media con intención de compra alta requiere comprobar disponibilidad y precio de forma directa. La narrativa de marca estaba bloqueando el inicio de la búsqueda.
+          Quien llega desde paid media quiere ver precio y disponibilidad, no relato de marca. La narrativa bloqueaba el inicio de la búsqueda.
         </p>
       </div>
 
@@ -1117,7 +1107,7 @@
         <p class="ht-step">Paso 2</p>
         <p class="ht-title">Hipótesis</p>
         <p class="ht-text">
-          Reducir la fricción inicial priorizando el producto visible (oferta, precio, CTA) para acelerar el inicio de la búsqueda mejorará la conversión del embudo. Hipótesis sustentada analíticamente mediante scroll maps y benchmarking sectorial.
+          Si el producto (oferta, precio, CTA) es lo primero visible, la búsqueda arranca antes y el embudo convierte más.
         </p>
       </div>
 
@@ -1136,7 +1126,7 @@
         <p class="ht-step">Paso 3</p>
         <p class="ht-title">12 mejoras priorizadas</p>
         <p class="ht-text">
-          Traduje el diagnóstico en un documento estratégico con 12 mejoras, priorizadas por impacto directo en conversión y viabilidad técnica en AEM. 4 niveles de impacto. La propuesta fue aprobada en comité.
+          12 mejoras priorizadas por impacto en conversión y viabilidad en AEM, en 4 niveles. Aprobadas en comité.
         </p>
         <span class="ht-pill">Ver lista de mejoras →</span>
       </div>
@@ -1152,7 +1142,7 @@
         <p class="ht-step">Paso 4</p>
         <p class="ht-title">Decisión final</p>
         <p class="ht-text">
-          <strong>ÚNICOS no se eliminó:</strong> se integró como componente de valor secundario que asiste al usuario sin interferir en la búsqueda. La restricción de AEM (sin CSS diferencial por dispositivo) se resolvió reordenando la jerarquía estructural de los componentes.
+          <strong>ÚNICOS no se eliminó:</strong> pasó a componente secundario. AEM no permitía CSS por dispositivo, así que la jerarquía se resolvió reordenando la estructura.
         </p>
       </div>
 
@@ -1164,7 +1154,7 @@
         <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3a6 6 0 0 0-4 10.472V16a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.528A6 6 0 0 0 12 3z"/></svg></div>
         <span class="exp-label">Hipótesis</span>
         <p class="exp-hyp">"Reducir la fricción inicial priorizando el producto visible —oferta, precio, CTA— para acelerar el inicio de la búsqueda mejorará la conversión del embudo."</p>
-        <p class="exp-decision"><strong>Decisión ejecutada:</strong> ÚNICOS se reordenó como componente secundario dentro de los constraints de AEM, sin eliminarlo — el buscador y la oferta directa pasaron al primer fold.</p>
+        <p class="exp-decision"><strong>Decisión:</strong> buscador y oferta directa al primer fold; ÚNICOS a secundario, dentro de los constraints de AEM.</p>
       </div>
       <div class="exp-result">
         <span class="exp-result-sub">Conversión canal directo</span>
@@ -1200,9 +1190,7 @@
         </p>
       </div>
       <p class="wf-statement-desc">
-        A partir de los wireframes iniciales definí la propuesta visual final, la jerarquía de contenidos,
-        el sistema de componentes y la adaptación responsive para desktop y mobile.
-        Los constraints técnicos de AEM no frenaron la solución; los integré como parámetros de diseño.
+        Definí jerarquía, sistema de componentes y adaptación responsive a partir de los wireframes. Los constraints de AEM entraron como parámetro de diseño, no como freno.
       </p>
     </div>
 
@@ -1241,7 +1229,7 @@
 
         <div class="wf-final-col">
           <div class="wf-col-header">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-dim);flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--white);flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             <span class="wf-col-num">02.</span>
             <span class="wf-col-name">Diseño Final — Desktop</span>
           </div>
@@ -1260,7 +1248,7 @@
 
         <div class="wf-final-col">
           <div class="wf-col-header">
-            <svg width="11" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-dim);flex-shrink:0;"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+            <svg width="11" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--white);flex-shrink:0;"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
             <span class="wf-col-num">03.</span>
             <span class="wf-col-name">Diseño Final — Mobile</span>
           </div>
@@ -1289,33 +1277,28 @@
       <div class="wf-steps">
         <div class="wf-step">
           <span class="wf-step-num">1.</span>
-          <span class="wf-step-icon"></span>
           <p class="wf-step-title">Estructura</p>
-          <p class="wf-step-desc">Definí la arquitectura de la información y la disposición de los bloques clave.</p>
+          <p class="wf-step-desc">Arquitectura de información y disposición de los bloques clave.</p>
         </div>
         <div class="wf-step">
           <span class="wf-step-num">2.</span>
-          <span class="wf-step-icon"></span>
           <p class="wf-step-title">Diseño visual</p>
-          <p class="wf-step-desc">Apliqué identidad visual premium reforzando la jerarquía y el contraste.</p>
+          <p class="wf-step-desc">Identidad visual premium: jerarquía y contraste reforzados.</p>
         </div>
         <div class="wf-step">
           <span class="wf-step-num">3.</span>
-          <span class="wf-step-icon"></span>
           <p class="wf-step-title">Adaptación responsive</p>
-          <p class="wf-step-desc">Ajusté la experiencia para desktop y mobile priorizando usabilidad y conversión.</p>
+          <p class="wf-step-desc">Desktop y mobile, priorizando usabilidad y conversión.</p>
         </div>
         <div class="wf-step">
           <span class="wf-step-num">4.</span>
-          <span class="wf-step-icon"></span>
           <p class="wf-step-title">Sistema de componentes</p>
-          <p class="wf-step-desc">Diseñé componentes reutilizables para asegurar consistencia y escalabilidad.</p>
+          <p class="wf-step-desc">Componentes reutilizables para consistencia y escalabilidad.</p>
         </div>
         <div class="wf-step">
           <span class="wf-step-num">5.</span>
-          <span class="wf-step-icon"></span>
           <p class="wf-step-title">Integración de marca</p>
-          <p class="wf-step-desc">Integré el diseño dentro del ecosistema digital de ILUNION Hotels.</p>
+          <p class="wf-step-desc">Integración en el ecosistema digital de ILUNION Hotels.</p>
         </div>
       </div>
     </div>
@@ -1330,20 +1313,20 @@
         <div class="wf-step">
           <span class="wf-step-num" style="color: var(--accent);">1.</span>
           <p class="wf-step-title" style="color: #fff;">Auditoría de Logs (MCP)</p>
-          <p class="wf-step-desc es">Conexión de Claude mediante MCP SQL a bases de datos de Adobe Analytics para procesar, limpiar y filtrar 10,000+ logs del funnel de reservas post-migración, localizando caídas exactas.</p>
-          <p class="wf-step-desc en">Connecting Claude via MCP SQL to Adobe Analytics to pull, clean, and filter 10,000+ logs from the reservation funnel post-migration, isolating checkout drop-offs.</p>
+          <p class="wf-step-desc es">Claude vía MCP SQL sobre Adobe Analytics: 10.000+ logs del funnel filtrados para localizar las caídas exactas.</p>
+          <p class="wf-step-desc en">Claude via MCP SQL over Adobe Analytics: 10,000+ funnel logs filtered to isolate the exact drop-offs.</p>
         </div>
         <div class="wf-step">
           <span class="wf-step-num" style="color: var(--accent);">2.</span>
           <p class="wf-step-title" style="color: #fff;">Clustering de Clarity</p>
-          <p class="wf-step-desc es">Ingesta automatizada de 250+ transcripciones cualitativas de Microsoft Clarity a través de LLMs para categorizar fricciones en el flujo de selección de habitaciones en tiempo récord.</p>
-          <p class="wf-step-desc en">Ingesting 250+ Microsoft Clarity qualitative session logs into Claude to automatically categorize layout friction points during the room selection process.</p>
+          <p class="wf-step-desc es">250+ sesiones de Clarity clasificadas automáticamente para agrupar fricciones en la selección de habitación.</p>
+          <p class="wf-step-desc en">250+ Clarity sessions auto-classified to cluster friction in the room selection flow.</p>
         </div>
         <div class="wf-step">
           <span class="wf-step-num" style="color: var(--accent);">3.</span>
           <p class="wf-step-title" style="color: #fff;">Variantes de Microcopy</p>
-          <p class="wf-step-desc es">Generé 15 variantes bilingües de microcopy para llamadas a la acción en pruebas A/B usando prompts estructurados con restricciones de longitud de caracteres de AEM.</p>
-          <p class="wf-step-desc en">Generated 15 bilingual variants of microcopy call-to-actions for A/B tests using structured prompts bounded by AEM character length constraints.</p>
+          <p class="wf-step-desc es">15 variantes bilingües de microcopy para A/B, generadas con los límites de caracteres de AEM como restricción.</p>
+          <p class="wf-step-desc en">15 bilingual microcopy variants for A/B tests, generated within AEM character limits.</p>
         </div>
       </div>
     </details>
@@ -1372,7 +1355,7 @@
         </div>
         <p class="impl-title">Implementación</p>
         <p class="impl-text">
-          Trabajé directamente con el equipo de desarrollo en entorno staging, revisando el comportamiento real del componente en la plataforma en lugar de entregar especificaciones para que alguien las interpretara. Saber qué estás mirando en staging, entender por qué un componente se rompe en un breakpoint y proponer la corrección correcta sin pedir otro sprint.
+          Revisé el componente en staging con desarrollo, en vez de entregar specs para que alguien las interpretara. Entender por qué algo se rompe en un breakpoint y corregirlo ahí evita pedir otro sprint.
         </p>
         <p class="impl-text">
           La propuesta se presentó en comité interno y se aprobó para lanzamiento a producción.
@@ -1388,10 +1371,10 @@
         </div>
         <p class="impl-title">Aprendizaje post-lanzamiento</p>
         <p class="impl-text">
-          Tras el lanzamiento, los datos de Clarity mostraron algo inesperado: en mobile, los usuarios <strong>deslizaban sobre el selector de fechas en lugar de hacer clic</strong>. El patrón de interacción táctil no era el que habíamos diseñado.
+          Clarity mostró algo inesperado: en mobile los usuarios <strong>deslizaban sobre el selector de fechas en lugar de hacer clic</strong>.
         </p>
         <p class="impl-text">
-          Lo detecté, lo documenté y coordiné el desarrollo de la interacción de swipe a posteriori. No fue un fallo de diseño: fue el proceso funcionando como debe. La diferencia entre hacer una entrega y hacer producto es exactamente esta: seguir mirando después de publicar.
+          Lo documenté y coordiné el desarrollo del swipe. Hacer producto, y no una entrega, es seguir mirando después de publicar.
         </p>
       </div>
 
@@ -1454,8 +1437,8 @@
     </p>
 
     <div style="margin-top: 20px; padding: 14px 18px; border-left: 2px solid rgba(var(--accent-rgb),0.35); background: rgba(var(--accent-rgb),0.04); border-radius: 0 8px 8px 0;">
-      <p class="es fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generación y coordinación de assets visuales del canal directo con IA generativa (Vertex AI · Gemini · Figma), garantizando consistencia de marca y nivel de calidad.</p>
-      <p class="en fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Generation and coordination of direct channel visual assets using generative AI (Vertex AI · Gemini · Figma), ensuring brand consistency and quality standard.</p>
+      <p class="es fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Assets visuales del canal directo generados y coordinados con IA (Vertex AI · Gemini · Figma), manteniendo consistencia de marca.</p>
+      <p class="en fu" style="font-size: 12px; color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Direct-channel visual assets generated and coordinated with AI (Vertex AI · Gemini · Figma), keeping brand consistency.</p>
     </div>
       </div>
   </div>
@@ -1479,34 +1462,30 @@
     <div class="learnings-4col fu">
 
       <div class="lc-card">
-        <span class="lc-icon"></span>
         <p class="lc-title">Data First</p>
         <p class="lc-text">
-          El brief decía "optimiza el bloque promocional". Los datos decían que el problema era de jerarquía. Aprendí a profundizar en los datos analíticos antes de iniciar la conceptualización visual.
+          El brief decía «optimiza la promo». Los datos decían jerarquía. Primero los datos, después el pixel.
         </p>
       </div>
 
       <div class="lc-card">
-        <span class="lc-icon"></span>
         <p class="lc-title">Launch ≠ Finish</p>
         <p class="lc-text">
-          El comportamiento de swipe en mobile detectado post-lanzamiento reforzó que la observación analítica activa y el mantenimiento de producto son fases esenciales para asegurar la madurez de cualquier desarrollo digital.
+          El swipe en mobile apareció después de publicar. Observar el producto vivo es parte del diseño, no una fase opcional.
         </p>
       </div>
 
       <div class="lc-card">
-        <span class="lc-icon">◆</span>
         <p class="lc-title">Constraints Create Design</p>
         <p class="lc-text">
-          Las limitaciones de AEM fueron tomadas como variables creativas, guiándonos a resolver el orden visual estructuralmente y fortaleciendo la adaptabilidad del diseño final.
+          Las limitaciones de AEM se convirtieron en variable creativa: obligaron a resolver el orden visual en la estructura.
         </p>
       </div>
 
       <div class="lc-card">
-        <span class="lc-icon"></span>
         <p class="lc-title">Business Language Matters</p>
         <p class="lc-text">
-          Colaborar directamente con comités directivos, tecnología y marketing exige fundamentar el diseño en impacto transaccional y objetivos del negocio. Lograr esa alineación es lo que impulsa el éxito de los productos digitales.
+          Ante comité, tecnología y marketing, el diseño se defiende en impacto transaccional. Esa alineación es la que mueve el producto.
         </p>
       </div>
 

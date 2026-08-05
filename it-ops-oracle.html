@@ -27,19 +27,14 @@
   <link rel="stylesheet" href="design-system.css">
 
   <style>
-    .cs-hero-glow {
-      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%);
-    }
-
     /* Specific Component Styles */
-    .cs-behance-letter { position: absolute; top: 20px; left: -20px; font-size: clamp(200px, 20vw, 380px); font-weight: 800; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0; font-family: 'Playfair Display', Georgia, serif; }
 
     /* QUICK SUMMARY */
     .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
     .qs-col { display: flex; flex-direction: column; }
     .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .qs-label svg { display: inline-block !important; color: var(--accent); flex-shrink: 0; width: 13px !important; height: 13px !important; padding: 6px; box-sizing: content-box; background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 8px; }
+    .qs-label svg { display: inline-block !important; color: var(--white); flex-shrink: 0; width: 13px !important; height: 13px !important; }
     .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
     .qs-bullets { list-style: none; padding: 0; margin: 0; }
     .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
@@ -53,7 +48,7 @@
 
     /* AFFINITY MAP */
     .affinity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 48px 0; }
-    .affinity-cluster { border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: rgba(255,255,255,0.015); }
+    .affinity-cluster { border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: transparent; }
     .affinity-cluster-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
     .affinity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .affinity-cards { display: flex; flex-direction: column; gap: 8px; }
@@ -65,13 +60,13 @@
     .honest-note p { font-size: 14px; color: var(--text); line-height: 1.75; }
 
     /* SPREADSHEET MOCKUP */
-    .spreadsheet-mockup { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+    .spreadsheet-mockup { background: transparent; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
     .ss-header { background: rgba(255,255,255,0.04); position: relative; overflow: hidden; padding: 12px 18px; font-size: 11px; color: var(--text-dim); border-bottom: 1px solid var(--border); font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
     .ss-header-dots { display: flex; gap: 6px; }
     .ss-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
     .ss-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
     .ss-table th, .ss-table td { padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,0.03); text-align: left; }
-    .ss-table th { background: rgba(255,255,255,0.01); color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 9.5px; letter-spacing: 0.08em; }
+    .ss-table th { background: transparent; color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 9.5px; letter-spacing: 0.08em; }
     .ss-table td { color: var(--text-dim); }
     .ss-table tr:last-child td { border-bottom: none; }
     .ss-table td.bad { color: #f59e0b; font-weight: 600; }
@@ -93,7 +88,7 @@
     .ia-branch-title { font-size: 14px; font-weight: 700; }
     .ia-branch-desc { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; }
     .ia-branch-items { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-    .ia-item { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,0.02); font-size: 13px; color: var(--text-bright); }
+    .ia-item { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: transparent; font-size: 13px; color: var(--text-bright); }
     .ia-item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
     .ia-surface-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; border: 1px solid; }
 
@@ -105,7 +100,7 @@
       margin: 48px 0;
     }
     .user-group {
-      background: rgba(255, 255, 255, 0.02);
+      background: transparent;
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 28px;
@@ -169,7 +164,7 @@
       margin: 40px 0;
     }
     .module-card {
-      background: rgba(255, 255, 255, 0.02);
+      background: transparent;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
@@ -219,7 +214,7 @@
       margin: 40px 0;
     }
     .learning-card {
-      background: rgba(255, 255, 255, 0.02);
+      background: transparent;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
@@ -291,10 +286,10 @@
     /* ─── MAPPING: Patrón → Módulo (plano, sin glow, mismos colores que affinity map) ─── */
     .pmap-list { display: flex; flex-direction: column; gap: 14px; margin: 40px 0 32px; }
     .pmap-row { display: grid; grid-template-columns: 1fr 64px 1fr; align-items: stretch; gap: 16px; }
-    .pmap-card { background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-left: 3px solid var(--row-color); border-radius: 12px; padding: 18px 22px; display: flex; align-items: center; gap: 14px; transition: background 0.25s ease; }
+    .pmap-card { background: transparent; border: 1px solid var(--border); border-left: 3px solid var(--row-color); border-radius: 12px; padding: 18px 22px; display: flex; align-items: center; gap: 14px; transition: background 0.25s ease; }
     .pmap-card:hover { background: rgba(255,255,255,0.045); }
-    .pmap-icon { width: 34px; height: 34px; border-radius: 9px; background: color-mix(in srgb, var(--row-color) 12%, transparent); border: 1px solid color-mix(in srgb, var(--row-color) 30%, transparent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .pmap-icon svg { width: 16px; height: 16px; color: var(--row-color); }
+    .pmap-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .pmap-icon svg { width: 16px; height: 16px; color: var(--white); }
     .pmap-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
     .pmap-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--row-color); }
     .pmap-label { font-size: 13.5px; color: var(--text-bright); font-weight: 600; line-height: 1.35; }
@@ -514,7 +509,7 @@
       </div>
       <div class="qs-col">
         <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span class="es">Decisión clave</span><span class="en">Key decision</span></div>
-        <div class="qs-val es">No parchear Oracle. Proponer una herramienta interna diseñada alrededor de los flujos reales del equipo — no adaptada a los flujos que una plataforma genérica asume.</div>
+        <div class="qs-val es">No parchear Oracle: proponer una herramienta construida alrededor de los flujos reales del equipo.</div>
         <div class="qs-val en">Don't patch Oracle. Propose an internal tool designed around the team's real workflows — not adapted to those a generic platform assumes.</div>
       </div>
       <div class="qs-col">
@@ -538,7 +533,7 @@
 </div>
 
 <!-- INTERNAL USER PERSONAS & NIELSEN HEURISTICS -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 36px var(--space-lg); margin: 32px 0;">
+<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 72px var(--space-lg); margin: 32px 0;">
   <div class="cs-wrap">
     <div class="block-label" style="color: var(--accent);">
       <span class="block-label-text">Internal User Personas &amp; Heurísticas de Nielsen (IT Ops)</span>
@@ -546,12 +541,12 @@
     </div>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">💻 Internal User Persona 01 · Técnico de Soporte IT</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Gestiona decenas de incidencias diarias. Necesita visibilidad inmediata del estado de los sistemas (<strong>Heurística 1 de Nielsen: Visibilidad del Estado del Sistema</strong>) sin menús anidados de Oracle.</p>
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Internal User Persona 01 · Técnico de Soporte IT</h4>
+        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Gestiona decenas de incidencias al día. Necesita ver el estado de los sistemas al instante —<strong>Heurística 1 de Nielsen</strong>—, no menús anidados.</p>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">📊 Internal User Persona 02 · Responsable de Operaciones</h4>
+      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
+        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Internal User Persona 02 · Responsable de Operaciones</h4>
         <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Requiere informes de rendimiento sin errores de formato. <strong>Aplicación de la Heurística 5 (Prevención de Errores)</strong> eliminando campos manuales ambiguos.</p>
       </div>
     </div>
@@ -578,14 +573,14 @@
 
     <div class="cs-grid-2 fu">
       <div>
-        <p class="p es"><strong>We Are Actions es una consultora digital de más de 30 años.</strong> Durante años, la gestión de incidencias y solicitudes se realizaba a través de Oracle, una plataforma robusta pero diseñada para procesos estandarizados y rígidos que no se adaptaban al dinamismo de la empresa.</p>
-        <p class="p en"><strong>We Are Actions is a digital consultancy with over 30 years of history.</strong> For years, internal requests and incidents were managed via Oracle, a robust platform designed for standardized, rigid processes that didn't fit our team's agile environment.</p>
+        <p class="p es"><strong>We Are Actions es una consultora digital de más de 30 años.</strong> Durante años gestionó incidencias y solicitudes en Oracle: una plataforma robusta, pero pensada para procesos rígidos que no encajaban con el ritmo de la empresa.</p>
+        <p class="p en"><strong>We Are Actions is a digital consultancy with over 30 years of history.</strong> For years incidents and requests ran through Oracle: robust, but built for rigid processes that didn't match the company's pace.</p>
 
         <p class="p es" style="margin-top: 16px;">La empresa creció. Los procesos se complejizaron. Y Oracle siguió siendo el mismo.</p>
         <p class="p en" style="margin-top: 16px;">The company grew. Processes became more complex. And Oracle stayed the same.</p>
 
-        <p class="p es" style="margin-top: 16px;">El Senior de Sistemas, máximo responsable técnico, llevó a dirección una hoja de cálculo con datos reales que demostraba que la plataforma generaba más carga de trabajo de la que resolvía. Mi trabajo fue convertir esa señal de fricción en una propuesta de producto.</p>
-        <p class="p en" style="margin-top: 16px;">The Senior Systems Manager, the top technical authority, brought a spreadsheet to management with real data showing that the platform generated more workload than it resolved. My job was to turn that friction signal into a product proposal.</p>
+        <p class="p es" style="margin-top: 16px;">El Senior de Sistemas llevó a dirección una hoja de cálculo: la plataforma generaba más trabajo del que resolvía. Mi trabajo fue convertir esa señal en una propuesta de producto.</p>
+        <p class="p en" style="margin-top: 16px;">The Senior Systems Manager took a spreadsheet to management: the platform created more work than it solved. My job was turning that signal into a product proposal.</p>
       </div>
 
       <div>
@@ -677,20 +672,20 @@
       <div>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">La trampa de la usabilidad</h4>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The usability trap</h4>
-        <p class="p es">La primera idea fue mejorar la interfaz nativa de Oracle. Sin embargo, no era un problema estético o de navegación, sino de falta de adecuación de la herramienta a los flujos reales de la consultora.</p>
-        <p class="p en">The initial thought was to optimize Oracle's native interface. However, the problem wasn't aesthetic; it was the lack of functional fit between the enterprise software and the team's actual workflows.</p>
+        <p class="p es">La primera idea fue mejorar la interfaz de Oracle. Pero no era un problema estético: la herramienta no encajaba con los flujos reales.</p>
+        <p class="p en">The first idea was to fix Oracle's interface. But this wasn't aesthetic: the tool didn't fit the team's actual workflows.</p>
       </div>
       <div>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">El diagnóstico real</h4>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The real diagnosis</h4>
-        <p class="p es">Al analizar el uso real, el diagnóstico fue claro: <strong>Oracle no estaba mal diseñado en sí, sino mal elegido para las necesidades de la consultora.</strong> Esta distinción nos llevó a proponer un desarrollo a medida en lugar de un parche.</p>
-        <p class="p en">By observing actual usage, the diagnosis shifted: <strong>Oracle wasn't poorly designed, but rather ill-suited for this organization's needs.</strong> This distinction led us to design a custom tool rather than patching a generic system.</p>
+        <p class="p es">El diagnóstico fue claro: <strong>Oracle no estaba mal diseñado, estaba mal elegido.</strong> Esa distinción llevó a proponer desarrollo a medida en lugar de un parche.</p>
+        <p class="p en">The diagnosis was clear: <strong>Oracle wasn't badly designed, it was badly chosen.</strong> That distinction led to a custom build instead of a patch.</p>
       </div>
     </div>
 
     <div class="user-groups fu">
       <div class="user-group">
-        <div class="user-group-badge" style="background:var(--accent-glow); color:var(--accent); border:1px solid var(--accent-border);">
+        <div class="user-group-badge" style="color:var(--white);">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span class="es">Grupo A · Gestores IT</span><span class="en">Group A · IT Managers</span>
         </div>
         <div class="user-group-name es">Equipo de soporte y sistemas</div>
@@ -709,7 +704,7 @@
         </ul>
       </div>
       <div class="user-group">
-        <div class="user-group-badge" style="background:var(--accent-glow); color:var(--accent); border:1px solid var(--accent-border);">
+        <div class="user-group-badge" style="color:var(--white);">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="es">Grupo B · Usuarios internos</span><span class="en">Group B · Internal users</span>
         </div>
         <div class="user-group-name es">Resto de la empresa</div>
@@ -729,12 +724,12 @@
       </div>
     </div>
 
-    <p class="p fu es">Oracle trataba a ambos grupos de la misma manera. Una cola única, un formato único, una experiencia única. El resultado: el equipo IT dedicaba una parte significativa de su tiempo a gestionar la confusión generada por la propia herramienta, en lugar de resolver los problemas que había venido a solucionar.</p>
-    <p class="p fu en">Oracle treated both groups the same way. One queue, one format, one experience. The result: the IT team spent a significant portion of their time managing the confusion generated by the tool itself, rather than solving the problems it was supposed to address.</p>
+    <p class="p fu es">Oracle trataba igual a los dos grupos: una cola, un formato, una experiencia. El equipo IT pasaba buena parte del día gestionando la confusión que creaba la herramienta.</p>
+    <p class="p fu en">Oracle treated both groups the same: one queue, one format, one experience. IT spent much of the day managing the confusion the tool created.</p>
 
     <div class="insight-box fu">
-      <p class="es">El objetivo no era rediseñar Oracle. Era responder una pregunta de producto: ¿tiene más sentido adaptar indefinidamente una herramienta genérica, o construir algo que encaje con los flujos reales de este equipo?</p>
-      <p class="en">The goal wasn't to redesign Oracle. It was to answer a product question: does it make more sense to indefinitely adapt a generic tool, or to build something that fits this team's real workflows?</p>
+      <p class="es">El objetivo no era rediseñar Oracle, sino responder una pregunta de producto: ¿adaptar indefinidamente una herramienta genérica, o construir la que encaja?</p>
+      <p class="en">The goal wasn't redesigning Oracle. It was a product question: keep adapting a generic tool forever, or build one that fits?</p>
     </div>
 
       </div>
@@ -763,14 +758,14 @@
       <div>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Investigación contextual</h4>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Contextual research</h4>
-        <p class="p es">La investigación se hizo desde dentro. Al estar integrada en el equipo de IT, tuve acceso a los momentos de fricción tal como ocurrían, no en una sesión de entrevista, sino en el flujo de trabajo real. Las conversaciones con el equipo de soporte y sistemas revelaron patrones que se repetían de forma consistente.</p>
-        <p class="p en">The research was done from the inside. Being embedded in the IT team gave me access to friction moments as they happened, not in an interview session, but in the real workflow. Conversations with the support and systems team revealed patterns that repeated consistently.</p>
+        <p class="p es">Investigué desde dentro. Integrada en el equipo de IT, vi la fricción cuando ocurría, no en una entrevista. Las conversaciones con soporte y sistemas revelaron patrones que se repetían.</p>
+        <p class="p en">I researched from the inside. Embedded in IT, I saw friction as it happened, not in an interview. Support and systems conversations revealed repeating patterns.</p>
       </div>
       <div>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Mapa de afinidad</h4>
         <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Affinity map</h4>
-        <p class="p es">Para este case study he sintetizado esos patrones en un mapa de afinidad retrospectivo que refleja lo identificado durante el proceso de observación diaria y la recopilación de quejas de los usuarios del sistema.</p>
-        <p class="p en">For this case study I've synthesised those patterns into a retrospective affinity map reflecting what was identified during daily observation and the compilation of system users' complaints.</p>
+        <p class="p es">Los sinteticé en un mapa de afinidad retrospectivo, a partir de la observación diaria y las quejas recogidas.</p>
+        <p class="p en">I synthesised them into a retrospective affinity map, built from daily observation and collected complaints.</p>
       </div>
     </div>
 
@@ -840,8 +835,8 @@
 
     <div class="fu">
       <div class="insight-box">
-        <p class="es">El insight que une los cuatro patrones: el sistema descarga en el usuario la carga cognitiva que debería asumir el propio producto. Los errores no eran aleatorios; eran predecibles y prevenibles.</p>
-        <p class="en">The insight connecting all four patterns: the system offloads onto the user the cognitive burden the product itself should handle. The errors weren't random; they were predictable and preventable.</p>
+        <p class="es">El insight que une los cuatro patrones: el sistema descarga en el usuario la carga que debería asumir el producto. Los errores eran predecibles, no aleatorios.</p>
+        <p class="en">The insight linking all four: the system offloads onto the user what the product should carry. The errors were predictable, not random.</p>
       </div>
     </div>
 
@@ -862,11 +857,11 @@
 
     <div class="cs-grid-2 fu">
       <div>
-        <p class="p es">Antes de proponer nada, la primera decisión era estratégica. Parchear Oracle significaba trabajar dentro de sus restricciones, con configuraciones limitadas, flujos genéricos, sin capacidad de adaptarse a la tipología específica de solicitudes de este equipo.</p>
-        <p class="p en">Before proposing anything, the first decision was strategic. Patching Oracle meant working within its constraints: limited configurations, generic flows, no ability to adapt to this team's specific request types.</p>
+        <p class="p es">La primera decisión era estratégica. Parchear Oracle significaba quedarse dentro de sus restricciones: configuración limitada, flujos genéricos, cero adaptación a la tipología real de solicitudes.</p>
+        <p class="p en">The first decision was strategic. Patching Oracle meant staying inside its constraints: limited config, generic flows, no fit to real request types.</p>
       </div>
       <div>
-        <div style="padding: 20px 24px; border-left: 2px solid var(--accent); background: rgba(255,255,255,0.015); border-radius: 0 8px 8px 0; margin-top: 6px;">
+        <div style="padding: 20px 24px; border-left: 2px solid var(--accent); background: transparent; border-radius: 0 8px 8px 0; margin-top: 6px;">
           <p style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6; margin: 0; font-weight: 500;" class="es">La disyuntiva de producto: ¿es viable adaptar una herramienta heredada cuando la escala del negocio ya superó sus límites?</p>
           <p style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6; margin: 0; font-weight: 500;" class="en">The product dilemma: is it viable to adapt a legacy tool when the business scale has already exceeded its limits?</p>
         </div>
@@ -875,7 +870,7 @@
 
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin:40px 0;" class="fu compare-grid">
       <div style="padding:28px; border:1px solid rgba(239, 68, 68,0.2); border-radius:14px; background:rgba(239, 68, 68,0.03);">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239, 68, 68,0.7); margin-bottom:16px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="es">Parchear Oracle</span><span class="en">Patch Oracle</span></div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239, 68, 68,0.7); margin-bottom:16px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--white); display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="es">Parchear Oracle</span><span class="en">Patch Oracle</span></div>
         <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
           <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239, 68, 68,0.5);">—</span>Configuraciones limitadas por la plataforma</li>
           <li style="font-size:13.5px; color:var(--text); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:rgba(239, 68, 68,0.5);">—</span>No resuelve la arquitectura de información plana</li>
@@ -888,7 +883,7 @@
         </ul>
       </div>
       <div style="padding:28px; border:1px solid var(--accent-border); border-radius:14px; background:var(--accent-glow);">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><polyline points="20 6 9 17 4 12"/></svg><span class="es">Herramienta interna</span><span class="en">Internal tool</span></div>
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--white); display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><polyline points="20 6 9 17 4 12"/></svg><span class="es">Herramienta interna</span><span class="en">Internal tool</span></div>
         <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
           <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Diseñada para los flujos reales del equipo</li>
           <li style="font-size:13.5px; color:var(--text-bright); padding-left:16px; position:relative;" class="es"><span style="position:absolute;left:0;color:var(--accent);">—</span>Clasificación tipificada desde el primer clic</li>
@@ -911,7 +906,7 @@
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="en">The tool the team deserved</h3>
       </div>
       <div>
-        <p class="p es" style="margin: 0; font-size: 15px; line-height: 1.75;">Una plataforma interna de operaciones con dos superficies distintas: una para quien gestiona, otra para quien solicita, con cuatro módulos que responden directamente a los patrones identificados.</p>
+        <p class="p es" style="margin: 0; font-size: 15px; line-height: 1.75;">Una plataforma interna con dos superficies —quien gestiona y quien solicita— y cuatro módulos, uno por patrón identificado.</p>
         <p class="p en" style="margin: 0; font-size: 15px; line-height: 1.75;">An internal operations platform with two distinct surfaces: one for managers, one for requesters, and four modules that directly address the identified patterns.</p>
       </div>
     </div>
@@ -921,7 +916,7 @@
         <div class="module-num">Módulo 01</div>
         <div class="module-title es">Centro de solicitudes con clasificación inteligente</div>
         <div class="module-title en">Request centre with smart classification</div>
-        <div class="module-desc es">Punto único de entrada con tipología predefinida: incidencia crítica / solicitud de acceso / tarea recurrente / consulta. La categoría determina automáticamente la urgencia y el flujo de resolución.</div>
+        <div class="module-desc es">Entrada única con tipología predefinida: incidencia crítica, acceso, tarea recurrente o consulta. La categoría fija la urgencia y el flujo.</div>
         <div class="module-desc en">Single entry point with predefined typology: critical incident / access request / recurring task / query. The category automatically determines urgency and resolution flow.</div>
         <div class="module-solves es">Resuelve: patrón 3 (arquitectura plana) y tiempo de triaje manual</div>
         <div class="module-solves en">Solves: pattern 3 (flat architecture) and manual triage time</div>
@@ -930,8 +925,8 @@
         <div class="module-num">Módulo 02</div>
         <div class="module-title es">Flujos guiados para tareas repetitivas</div>
         <div class="module-title en">Guided flows for repetitive tasks</div>
-        <div class="module-desc es">Para procesos recurrentes conocidos — renovación de certificados, alta de usuario, asignación de permisos — el sistema propone un flujo paso a paso que reduce decisiones innecesarias y elimina errores por omisión.</div>
-        <div class="module-desc en">For known recurring processes — certificate renewal, user onboarding, permission assignment — the system offers a step-by-step flow that reduces unnecessary decisions and eliminates errors by omission.</div>
+        <div class="module-desc es">En procesos conocidos —certificados, alta de usuario, permisos— el sistema guía paso a paso y elimina los errores por omisión.</div>
+        <div class="module-desc en">For known processes —certificates, onboarding, permissions— the system guides step by step and removes errors by omission.</div>
         <div class="module-solves es">Resuelve: patrón 1 (trabajo manual repetitivo)</div>
         <div class="module-solves en">Solves: pattern 1 (repetitive manual work)</div>
       </div>
@@ -939,8 +934,8 @@
         <div class="module-num">Módulo 03</div>
         <div class="module-title es">Validaciones y confirmaciones contextuales</div>
         <div class="module-title en">Contextual validations and confirmations</div>
-        <div class="module-desc es">Antes de ejecutar acciones de alto impacto — eliminar, mover a producción, lanzar una consulta sobre base de datos — el sistema solicita confirmación específica con contexto real: qué vas a hacer, en qué entorno, qué puede pasar.</div>
-        <div class="module-desc en">Before executing high-impact actions — deleting, moving to production, running a database query — the system requests specific confirmation with real context: what you're about to do, in which environment, what could happen.</div>
+        <div class="module-desc es">Antes de una acción de alto impacto —borrar, subir a producción, lanzar una query— el sistema pide confirmación con contexto: qué haces, dónde y qué puede pasar.</div>
+        <div class="module-desc en">Before a high-impact action —delete, promote to production, run a query— the system asks for confirmation with context: what, where, and what could happen.</div>
         <div class="module-solves es">Resuelve: patrón 2 (errores sin guardianes)</div>
         <div class="module-solves en">Solves: pattern 2 (errors without guards)</div>
       </div>
@@ -948,8 +943,8 @@
         <div class="module-num">Módulo 04</div>
         <div class="module-title es">Panel de estado en tiempo real</div>
         <div class="module-title en">Real-time status dashboard</div>
-        <div class="module-desc es">Cada solicitud tiene un ciclo de vida visible para quien la hizo y para quien la gestiona: recibida, en revisión, en curso, bloqueada, resuelta. Sin necesidad de preguntar. Sin interrupciones al equipo IT.</div>
-        <div class="module-desc en">Each request has a visible lifecycle for both the requester and the manager: received, under review, in progress, blocked, resolved. No need to ask. No interruptions to the IT team.</div>
+        <div class="module-desc es">Ciclo de vida visible para ambos lados: recibida, en revisión, en curso, bloqueada, resuelta. Nadie pregunta, nadie interrumpe.</div>
+        <div class="module-desc en">Visible lifecycle on both sides: received, under review, in progress, blocked, resolved. Nobody asks, nobody interrupts.</div>
         <div class="module-solves es">Resuelve: patrón 4 (visibilidad nula del estado)</div>
         <div class="module-solves en">Solves: pattern 4 (zero status visibility)</div>
       </div>
@@ -1047,8 +1042,8 @@
           </div>
         </div>
       </div>
-      <p class="pmap-summary es">Los 4 patrones del mapa de afinidad tienen correspondencia directa con los 4 módulos de la propuesta: <strong>ningún módulo se diseñó sin un hallazgo de research detrás.</strong></p>
-      <p class="pmap-summary en">The 4 patterns from the affinity map map directly onto the 4 proposed modules: <strong>no module was designed without a research finding behind it.</strong></p>
+      <p class="pmap-summary es">Cada módulo nace de un patrón del mapa: <strong>ninguno se diseñó sin un hallazgo detrás.</strong></p>
+      <p class="pmap-summary en">Every module comes from a pattern: <strong>none was designed without a research finding behind it.</strong></p>
     </div>
 
     <!-- ARQUITECTURA DE INFORMACIÓN -->
@@ -1060,8 +1055,8 @@
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="en">Two surfaces, one shared logic</h3>
       </div>
       <div>
-        <p class="p es" style="margin: 0; font-size: 15px; line-height: 1.75;">La plataforma separa las necesidades de quienes gestionan (IT) y quienes solicitan (resto de la empresa), con un portal de entrada común que clasifica desde el primer paso.</p>
-        <p class="p en" style="margin: 0; font-size: 15px; line-height: 1.75;">The platform separates the needs of those who manage (IT) and those who request (rest of the company), with a shared entry portal that classifies from the first step.</p>
+        <p class="p es" style="margin: 0; font-size: 15px; line-height: 1.75;">Dos superficies —IT y resto de la empresa— con un portal común que clasifica desde el primer paso.</p>
+        <p class="p en" style="margin: 0; font-size: 15px; line-height: 1.75;">Two surfaces —IT and everyone else— with a shared portal that classifies from step one.</p>
       </div>
     </div>
 
@@ -1150,7 +1145,7 @@
         <!-- Rama 3: Dashboard usuario -->
         <div class="ia-branch">
           <div class="ia-branch-connector"></div>
-          <div class="ia-branch-head" style="border-color:rgba(255,255,255,0.12); background:rgba(255,255,255,0.03);">
+          <div class="ia-branch-head" style="border-color:rgba(255,255,255,0.12); background: transparent;">
             <div class="ia-branch-icon" style="color:rgba(255,255,255,0.5);">◱</div>
             <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="es">Mi portal</div>
             <div class="ia-branch-title" style="color:rgba(255,255,255,0.7);" lang="en">My portal</div>
@@ -1266,7 +1261,7 @@
         <div class="honest-note" style="margin: 0;">
           <div class="honest-note-label es">Nota sobre este proyecto</div>
           <div class="honest-note-label en">Note on this project</div>
-          <p class="es" style="margin: 0; font-size: 13px; line-height: 1.6;">Este proyecto no llegó a implementación. Los estudios y la propuesta se presentaron a dirección, pero la ejecución requería una profundidad técnica que en ese momento no tenía. Las hipótesis de impacto se basan en los patrones identificados.</p>
+          <p class="es" style="margin: 0; font-size: 13px; line-height: 1.6;">El proyecto no llegó a implementación: se presentó a dirección, pero la ejecución requería una profundidad técnica que entonces no tenía. Las hipótesis de impacto salen de los patrones identificados.</p>
           <p class="en" style="margin: 0; font-size: 13px; line-height: 1.6;">This project didn't reach implementation. The studies and proposal were presented to management, but execution required technical depth I lacked then. The impact hypotheses are based on identified patterns.</p>
         </div>
       </div>
@@ -1279,13 +1274,13 @@
       <div class="scenario-cols">
         <div class="scenario-col">
           <div class="scenario-badge badge-before">Antes</div>
-          <div class="scenario-text es">Un desarrollador ejecuta una consulta pesada creyendo estar en staging. El sistema no muestra en qué entorno está activo. La acción se ejecuta en producción. <strong>Resultado: incidencia que requiere horas de resolución.</strong></div>
-          <div class="scenario-text en">A developer runs a heavy query believing they're in staging. The system doesn't show which environment is active. The action executes in production. <strong>Result: incident requiring hours to resolve.</strong></div>
+          <div class="scenario-text es">Un desarrollador lanza una query pesada creyendo estar en staging. El sistema nunca dice en qué entorno está. <strong>Se ejecuta en producción: horas de incidencia.</strong></div>
+          <div class="scenario-text en">A developer runs a heavy query thinking they're in staging. The system never shows the environment. <strong>It hits production: hours of incident.</strong></div>
         </div>
         <div class="scenario-col">
           <div class="scenario-badge badge-after">Con la propuesta</div>
-          <div class="scenario-text es">Antes de ejecutar, el sistema muestra el entorno activo con alerta visual de alto contraste y solicita confirmación explícita: "Estás en PRODUCCIÓN. Esta acción afectará a datos reales. ¿Confirmar?" <strong>La acción incorrecta se detiene antes de ocurrir.</strong></div>
-          <div class="scenario-text en">Before executing, the system shows the active environment with high-contrast visual alert and requests explicit confirmation: "You're in PRODUCTION. This action will affect real data. Confirm?" <strong>The incorrect action is stopped before it happens.</strong></div>
+          <div class="scenario-text es">El sistema muestra el entorno en alto contraste y pide confirmación: «Estás en PRODUCCIÓN. Afectará a datos reales». <strong>El error se detiene antes de ocurrir.</strong></div>
+          <div class="scenario-text en">The system shows the environment in high contrast and asks: "You're in PRODUCTION. This will affect real data." <strong>The error stops before it happens.</strong></div>
         </div>
       </div>
     </div>
@@ -1297,13 +1292,13 @@
       <div class="scenario-cols">
         <div class="scenario-col">
           <div class="scenario-badge badge-before">Antes</div>
-          <div class="scenario-text es">Un empleado reporta una solicitud de acceso a través de Oracle. No sabe si ha llegado, quién la tiene, ni cuándo esperar respuesta. <strong>Llama o escribe al equipo IT para preguntar por el estado — interrumpiendo el flujo de trabajo de los gestores.</strong></div>
-          <div class="scenario-text en">An employee submits an access request through Oracle. They don't know if it arrived, who has it, or when to expect a response. <strong>They call or message the IT team to ask about status — interrupting the managers' workflow.</strong></div>
+          <div class="scenario-text es">Un empleado pide un acceso por Oracle. No sabe si llegó, quién lo tiene ni cuándo tendrá respuesta. <strong>Llama a IT para preguntar, e interrumpe a los gestores.</strong></div>
+          <div class="scenario-text en">An employee requests access via Oracle. No idea if it arrived, who has it, or when. <strong>They call IT to ask, interrupting the managers.</strong></div>
         </div>
         <div class="scenario-col">
           <div class="scenario-badge badge-after">Con la propuesta</div>
-          <div class="scenario-text es">La solicitud entra clasificada como "acceso". El empleado ve en su panel: Recibida → En revisión → Asignada a [gestor] → Completada. <strong>Sin necesidad de preguntar. Sin interrupciones al equipo IT.</strong></div>
-          <div class="scenario-text en">The request enters classified as "access". The employee sees in their panel: Received → Under review → Assigned to [manager] → Completed. <strong>No need to ask. No interruptions to the IT team.</strong></div>
+          <div class="scenario-text es">Entra clasificada como «acceso» y el empleado ve su estado: Recibida → En revisión → Asignada → Completada. <strong>Nadie pregunta, nadie interrumpe.</strong></div>
+          <div class="scenario-text en">It enters as "access" and the employee tracks it: Received → Under review → Assigned → Completed. <strong>Nobody asks, nobody interrupts.</strong></div>
         </div>
       </div>
     </div>
@@ -1315,19 +1310,19 @@
     </div>
 
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin:32px 0;" class="fu impact-grid">
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent;">
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Triaje de incidencias</div>
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Incident triage</div>
         <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La clasificación tipificada eliminaría la decisión manual de prioridad. Hipótesis: reducción significativa del tiempo de gestión inicial en cada ticket.</div>
         <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Typed classification would eliminate manual priority decisions. Hypothesis: significant reduction in initial management time per ticket.</div>
       </div>
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent;">
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Errores evitables</div>
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Preventable errors</div>
         <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">Los incidentes más frecuentes compartían causa raíz: ausencia de confirmación previa. Una capa de validación contextual los interceptaría antes de producirse.</div>
         <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">The most frequent incidents shared a root cause: absence of prior confirmation. A contextual validation layer would intercept them before they occur.</div>
       </div>
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.015);">
+      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent;">
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Interrupciones al equipo IT</div>
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">IT team interruptions</div>
         <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La visibilidad de estado eliminaría el principal motivo de contacto reactivo — "¿en qué punto está mi solicitud?" — liberando tiempo para trabajo técnico real.</div>
@@ -1344,7 +1339,7 @@
         <div class="wf-step">
           <span class="wf-step-num" style="color: var(--accent);">1.</span>
           <p class="wf-step-title" style="color: #fff;">Auditoría de Feedback (MCP)</p>
-          <p class="wf-step-desc es">Conexión de Claude mediante MCP Postgres a las bases de datos internas del equipo IT para estructurar y clusterizar 120+ logs de error y transcripciones de soporte, clasificando las frustraciones principales en categorías accionables.</p>
+          <p class="wf-step-desc es">Claude vía MCP Postgres sobre las bases internas de IT: 120+ logs de error y transcripciones de soporte agrupados en categorías accionables.</p>
           <p class="wf-step-desc en">Connecting Claude via MCP Postgres to internal IT database systems to parse, clean, and cluster 120+ error logs and support transcripts into structured visual categories.</p>
         </div>
         <div class="wf-step">
@@ -1356,7 +1351,7 @@
         <div class="wf-step">
           <span class="wf-step-num" style="color: var(--accent);">3.</span>
           <p class="wf-step-title" style="color: #fff;">Handoff Técnico (Figma MCP)</p>
-          <p class="wf-step-desc es">Utilicé servidores Figma MCP para inspeccionar la jerarquía visual de las vistas del ERP re-diseñado, extrayendo de forma automatizada las especificaciones técnicas compatibles con la API de Oracle.</p>
+          <p class="wf-step-desc es">Figma MCP para inspeccionar la jerarquía de las vistas y extraer specs compatibles con la API de Oracle.</p>
           <p class="wf-step-desc en">Used Figma MCP to programmatically inspect frame hierarchy on the redesigned ERP layouts, auto-generating developer specs compliant with Oracle APIs.</p>
         </div>
       </div>
@@ -1379,18 +1374,18 @@
     <div class="learning-grid fu">
       <div class="learning-card">
         <div class="learning-num">01</div>
-        <div class="learning-text es"><strong>El problema real no siempre es el problema declarado.</strong> El equipo pedía "mejorar Oracle". El problema real era que Oracle era la herramienta equivocada. Aprendí a distinguir entre lo que el equipo pedía y lo que el sistema necesitaba.</div>
-        <div class="learning-text en"><strong>The real problem isn't always the declared problem.</strong> The team asked to "improve Oracle". The real problem was that Oracle was the wrong tool. I learnt to distinguish between what the team was asking for and what the system needed.</div>
+        <div class="learning-text es"><strong>El problema real no siempre es el problema declarado.</strong> El equipo pedía «mejorar Oracle». El problema era que Oracle sobraba. Aprendí a separar lo que se pide de lo que hace falta.</div>
+        <div class="learning-text en"><strong>The real problem isn't always the declared problem.</strong> The team asked to "improve Oracle". The real problem was Oracle itself. I learnt to separate what's asked from what's needed.</div>
       </div>
       <div class="learning-card">
         <div class="learning-num">02</div>
-        <div class="learning-text es"><strong>La investigación desde dentro tiene ventajas que la investigación formal no da.</strong> Estar integrada en el equipo me dio acceso a los momentos de fricción tal como ocurrían. La limitación fue aprender a separar observación de interpretación prematura.</div>
-        <div class="learning-text en"><strong>Research from within has advantages formal research doesn't.</strong> Being embedded in the team gave me access to friction moments as they happened. The challenge was learning to separate observation from premature interpretation.</div>
+        <div class="learning-text es"><strong>Investigar desde dentro da acceso a la fricción real, no a la recordada.</strong> El reto fue separar la observación de la interpretación prematura.</div>
+        <div class="learning-text en"><strong>Researching from inside gives access to friction as it happens, not as it's remembered.</strong> The challenge: separating observation from premature interpretation.</div>
       </div>
       <div class="learning-card">
         <div class="learning-num">03</div>
-        <div class="learning-text es"><strong>Este proyecto no se implementó porque no tenía los conocimientos técnicos para conectar diseño con desarrollo.</strong> Esa limitación fue directamente la motivación para cursar el bootcamp de Product Design. El proyecto no acabó en producción — pero cambió el rumbo de mi carrera.</div>
-        <div class="learning-text en"><strong>This project wasn't implemented because I lacked the technical knowledge to connect design with development.</strong> That limitation was directly what motivated me to take the Product Design bootcamp. The project didn't reach production — but it changed the direction of my career.</div>
+        <div class="learning-text es"><strong>Este proyecto no se implementó porque no tenía los conocimientos técnicos para conectar diseño con desarrollo.</strong> Esa limitación me llevó al bootcamp de Product Design. No acabó en producción, pero cambió el rumbo de mi carrera.</div>
+        <div class="learning-text en"><strong>This project wasn't implemented because I lacked the technical knowledge to connect design with development.</strong> That limitation sent me to the Product Design bootcamp. It never shipped, but it changed my career.</div>
       </div>
     </div>
 
