@@ -295,17 +295,6 @@ a.footer-link:focus-visible {
   padding: 0; position: relative; overflow: hidden;
   display: flex; align-items: center;
 }
-.hero-video-bg {
-  position: absolute; inset: 0; z-index: 0; overflow: hidden;
-  pointer-events: none;
-}
-.hero-video-bg::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.65) 100%);
-}
-.hero-video-bg video {
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.78;
-}
 .hero .wrap { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 72px; }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; }
 
@@ -1437,7 +1426,6 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .hero-actions { flex-direction: row; gap: 16px; flex-wrap: wrap; }
   .hero-actions .btn-ghost { display: none !important; }
   .impact-card { display: block; }
-  .hero-video-bg { display: none; }
 
   html:not(.lang-en) .hero-positioning.es { display: block; }
   html.lang-en .hero-positioning.en { display: block; }
@@ -2519,6 +2507,43 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .feature-line { display: none !important; }
 }
 
+/* ============ HERO · REVELADO DEL TITULAR ============
+   El wrapper .mm-reveal vive por dentro del span .es/.en, para no romper la
+   conmutación bilingüe. El subrayado se acota a .hero-title .c-purple porque
+   esa clase se usa en más sitios del documento y allí no debe cambiar. */
+:root { --mm-ease: cubic-bezier(.22, 1, .36, 1); }
+
+.mm-reveal { display: block; overflow: hidden; }
+.mm-reveal > span {
+  display: block; transform: translateY(102%);
+  transition: transform 1s var(--mm-ease);
+}
+.is-ready .mm-reveal > span { transform: none; }
+
+.hero-title .c-purple { position: relative; }
+.hero-title .c-purple::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .05em;
+  background: var(--purple); transform: scaleX(0); transform-origin: left;
+  transition: transform .7s var(--mm-ease) .85s;
+}
+.is-ready .hero-title .c-purple::after { transform: scaleX(1); }
+
+.mm-rise {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .7s var(--mm-ease), transform .7s var(--mm-ease);
+}
+.is-ready .mm-rise { opacity: 1; transform: none; }
+.mm-d1 { transition-delay: .30s; }
+.mm-d2 { transition-delay: .42s; }
+.mm-d3 { transition-delay: .56s; }
+
+/* Sin animación todo queda en su estado final: nada se queda en opacity 0 */
+@media (prefers-reduced-motion: reduce) {
+  .mm-reveal > span { transform: none; transition: none; }
+  .mm-rise { opacity: 1; transform: none; transition: none; }
+  .hero-title .c-purple::after { transform: scaleX(1); transition: none; }
+}
+
 </style>
 </head>
 <body>
@@ -2585,45 +2610,31 @@ html.lang-en .hero-positioning.en { display: block !important; }
 <!-- ==================== HERO ==================== -->
 <main id="main">
 <section class="hero">
-  <div class="hero-video-bg" aria-hidden="true">
-    <video autoplay="" muted="" loop="" playsinline="" preload="auto">
-      <source src="assets/logo-background-video.mp4" type="video/mp4">
-    </video>
-  </div>
-
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">
+        <div class="eyebrow mm-rise mm-d1">
           <div class="eyebrow-dot"></div>
           <span class="eyebrow-text es">Disponible · Open to opportunities · 2026</span>
           <span class="eyebrow-text en">Available · Open to opportunities · 2026</span>
         </div>
 
         <h1 class="hero-title">
-          <span class="es">Diseño de producto orientado a <span class="c-purple">conversión</span> bajo restricciones reales<span class="c-orange">.</span></span>
-          <span class="en">Product design focused on <span class="c-purple">conversion</span> under real constraints<span class="c-orange">.</span></span>
+          <span class="es"><span class="mm-reveal"><span>Diseño de producto orientado a <span class="c-purple">conversión</span> bajo restricciones reales<span class="c-orange">.</span></span></span></span>
+          <span class="en"><span class="mm-reveal"><span>Product design focused on <span class="c-purple">conversion</span> under real constraints<span class="c-orange">.</span></span></span></span>
         </h1>
         
-        <p class="hero-positioning es" style="display:block; font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 16px;"><em>Cero opciones de relleno: una sola propuesta argumentada en datos.</em></p>
-        <p class="hero-positioning en" style="display:block; font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 16px;"><em>Zero filler options: a single proposal backed by data.</em></p>
+        <p class="hero-positioning es mm-rise mm-d2" style="display:block; font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 16px;"><em>Cero opciones de relleno: una sola propuesta argumentada en datos.</em></p>
+        <p class="hero-positioning en mm-rise mm-d2" style="display:block; font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 16px;"><em>Zero filler options: a single proposal backed by data.</em></p>
         
 
 
-        <div class="hero-actions">
+        <div class="hero-actions mm-rise mm-d2">
           <a href="assets/cv-marta-ats-es.pdf" download="" class="btn-primary cta-download es">Descargar CV  ↗</a>
           <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-primary cta-download en">Download CV  ↗</a>
           <a href="#work" class="btn-ghost"><span class="es">Ver mi trabajo</span><span class="en">View my work</span> ≀↓</a>
         </div>
 
-        <!-- Pills Row -->
-        <div class="hero-pills-row" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:28px;">
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">CRO &amp; Conversión</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Design Systems</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Product Research</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Restricciones reales</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Discovery &amp; Delivery</span>
-        </div>
       </div>
 
 
@@ -5553,4 +5564,12 @@ body.visitor-unauthorized .locked-metric:hover::after {
 })();
 </script>
 
+<script>
+/* Revelado del hero. El doble requestAnimationFrame asegura que el estado
+   inicial se ha pintado antes de disparar la transición: sin él, el navegador
+   colapsa ambos estados en un frame y no se ve nada. */
+requestAnimationFrame(function () {
+  requestAnimationFrame(function () { document.body.classList.add('is-ready'); });
+});
+</script>
 </main></div></body></html>
