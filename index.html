@@ -3447,8 +3447,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
     
     <div class="ref-accordion-trigger-container">
       <button onclick="toggleReferencesAccordion()" class="btn-ghost ref-accordion-btn" id="refAccordionBtn" aria-expanded="false" aria-controls="referencias">
-        <span class="es">Mostrar todas las recomendaciones &nbsp;≀↓</span>
-        <span class="en">Show all recommendations &nbsp;≀↓</span>
+        <span class="es">Mostrar todas las recomendaciones &nbsp;↓</span>
+        <span class="en">Show all recommendations &nbsp;↓</span>
       </button>
     </div>
     
@@ -3609,8 +3609,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
 /* Accordion button styling */
 .ref-accordion-trigger-container {
   display: flex;
-  justify-content: center;
-  margin-top: 36px;
+  justify-content: flex-start;
+  margin-top: 24px;
 }
 .ref-accordion-btn {
   background: none;
@@ -4219,11 +4219,11 @@ window.toggleReferencesAccordion = function() {
   btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
   
   if (isExpanded) {
-    btn.querySelector('.es').innerHTML = 'Mostrar menos &nbsp;≀↑';
-    btn.querySelector('.en').innerHTML = 'Show less &nbsp;≀↑';
+    btn.querySelector('.es').innerHTML = 'Mostrar menos &nbsp;↑';
+    btn.querySelector('.en').innerHTML = 'Show less &nbsp;↑';
   } else {
-    btn.querySelector('.es').innerHTML = 'Mostrar todas las recomendaciones &nbsp;≀↓';
-    btn.querySelector('.en').innerHTML = 'Show all recommendations &nbsp;≀↓';
+    btn.querySelector('.es').innerHTML = 'Mostrar todas las recomendaciones &nbsp;↓';
+    btn.querySelector('.en').innerHTML = 'Show all recommendations &nbsp;↓';
     
     // Desplazamiento suave al inicio de testimonios al colapsar
     document.getElementById('referencias').scrollIntoView({ behavior: 'smooth' });
