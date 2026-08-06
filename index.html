@@ -295,7 +295,7 @@ a.footer-link:focus-visible {
   padding: 0; position: relative; overflow: hidden;
   display: flex; align-items: center;
 }
-.hero-video-bg {
+/* .hero-video-bg {
   position: absolute; inset: 0; z-index: 0; overflow: hidden;
   pointer-events: none;
 }
@@ -305,7 +305,7 @@ a.footer-link:focus-visible {
 }
 .hero-video-bg video {
   width: 100%; height: 100%; object-fit: cover; opacity: 0.78;
-}
+} */
 .hero .wrap { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 72px; }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; }
 
@@ -1437,7 +1437,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .hero-actions { flex-direction: row; gap: 16px; flex-wrap: wrap; }
   .hero-actions .btn-ghost { display: none !important; }
   .impact-card { display: block; }
-  .hero-video-bg { display: none; }
+  /* .hero-video-bg { display: none; } */
 
   html:not(.lang-en) .hero-positioning.es { display: block; }
   html.lang-en .hero-positioning.en { display: block; }
@@ -2585,11 +2585,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 <!-- ==================== HERO ==================== -->
 <main id="main">
 <section class="hero">
-  <div class="hero-video-bg" aria-hidden="true">
-    <video autoplay="" muted="" loop="" playsinline="" preload="auto">
-      <source src="assets/logo-background-video.mp4" type="video/mp4">
-    </video>
-  </div>
+
 
   <div class="wrap">
     <div class="hero-grid">
@@ -2616,14 +2612,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <a href="#work" class="btn-ghost"><span class="es">Ver mi trabajo</span><span class="en">View my work</span> ≀↓</a>
         </div>
 
-        <!-- Pills Row -->
-        <div class="hero-pills-row" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:28px;">
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">CRO &amp; Conversión</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Design Systems</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Product Research</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Restricciones reales</span>
-          <span class="stack-pill" style="font-size:11px; padding:6px 14px;">Discovery &amp; Delivery</span>
-        </div>
+
       </div>
 
 
