@@ -2729,6 +2729,13 @@ html.lang-en .hero-positioning.en { display: block !important; }
 }
 
 </style>
+<noscript><style>
+  /* Sin JS nadie añade is-ready y el hero entero se quedaría en opacity 0.
+     Aquí se muestra directamente en su estado final. */
+  .mm-reveal > span { transform: none; }
+  .mm-rise { opacity: 1; transform: none; }
+  .hero-title .c-purple::after { transform: scaleX(1); }
+</style></noscript>
 </head>
 <body>
 <a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
