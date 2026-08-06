@@ -3823,110 +3823,133 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 
 <!-- ==================== REFERENCIAS ==================== -->
-<section id="referencias" style="padding: 100px 0; border-top: 1px solid var(--border);">
-  <div style="max-width: 1080px; margin: 0 auto; padding: 0 32px;">
+<section id="referencias" style="padding: 0; overflow:hidden; position:relative;">
 
-    <!-- Header -->
-    <div style="margin-bottom: 56px;">
-      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:var(--accent); flex-shrink:0;" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
-        <span style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent);" class="es">Referencias</span>
-        <span style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent);" class="en">References</span>
+  <!-- Fondo con glow y degradado completo -->
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(167,139,250,0.07) 0%,rgba(0,0,0,0) 50%,rgba(249,115,22,0.05) 100%);pointer-events:none;"></div>
+  <div style="position:absolute;top:-120px;left:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(167,139,250,0.12) 0%,transparent 70%);pointer-events:none;border-radius:50%;"></div>
+  <div style="position:absolute;bottom:-80px;right:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(249,115,22,0.08) 0%,transparent 70%);pointer-events:none;border-radius:50%;"></div>
+
+  <div style="position:relative; max-width:100%; padding: 100px 5vw;">
+
+    <!-- Header centrado -->
+    <div style="text-align:center; margin-bottom:64px;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.25);border-radius:100px;padding:6px 16px;margin-bottom:20px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+        <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);" class="es">Qué dicen de Marta</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);" class="en">What they say</span>
       </div>
-      <h2 style="font-size:clamp(24px,3vw,36px); font-weight:700; color:var(--text-strong); margin:0 0 8px; line-height:1.2;" class="es">Lo que dicen quienes han trabajado con Marta</h2>
-      <h2 style="font-size:clamp(24px,3vw,36px); font-weight:700; color:var(--text-strong); margin:0 0 8px; line-height:1.2;" class="en">What people say about working with Marta</h2>
-      <p style="font-size:14px; color:var(--text-dim); margin:0;" class="es">Recomendaciones verificadas en <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">LinkedIn ↗</a></p>
-      <p style="font-size:14px; color:var(--text-dim); margin:0;" class="en">Verified recommendations on <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">LinkedIn ↗</a></p>
+      <h2 style="font-size:clamp(28px,4vw,52px);font-weight:800;color:var(--text-strong);margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;" class="es">Personas reales.<br><span style="background:linear-gradient(90deg,var(--accent),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Palabras reales.</span></h2>
+      <h2 style="font-size:clamp(28px,4vw,52px);font-weight:800;color:var(--text-strong);margin:0 0 12px;line-height:1.1;letter-spacing:-0.02em;" class="en">Real people.<br><span style="background:linear-gradient(90deg,var(--accent),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Real words.</span></h2>
+      <p style="font-size:15px;color:var(--text-dim);margin:0;" class="es">Recomendaciones verificadas en <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:600;">LinkedIn ↗</a></p>
+      <p style="font-size:15px;color:var(--text-dim);margin:0;" class="en">Verified on <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-weight:600;">LinkedIn ↗</a></p>
     </div>
 
-    <!-- Grid de cards -->
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap:20px;">
+    <!-- Grid masonry visual: 2 cols, alturas variadas -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1200px;margin:0 auto;">
 
-      <!-- Card 1: Pedro Lérida Nieto -->
-      <div class="ref-card reveal" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 28px 28px 24px; display:flex; flex-direction:column; gap:20px; transition: border-color 0.25s, background 0.25s;">
-        <div style="display:flex; gap:6px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        </div>
-        <p style="font-size:15px; line-height:1.7; color:var(--text-bright); margin:0; font-style:italic;">"Marta es una persona con una actitud altamente exigente consigo misma, siempre esforzándose por dar lo mejor de ella en cada proyecto. Su dedicación y compromiso se reflejan en la calidad de su trabajo, donde no solo aplica su amplio conocimiento previo, sino que también se esfuerza por aprender y mejorar continuamente. En el ámbito del trabajo en equipo, destaca por sus excelentes habilidades sociales. Es una comunicadora efectiva y gestiona su tiempo de manera ejemplar."</p>
-        <div style="display:flex; align-items:center; gap:12px; padding-top:4px; border-top: 1px solid var(--border);">
-          <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#7c3aed); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:#fff; flex-shrink:0;">PL</div>
-          <div>
-            <div style="font-size:13px; font-weight:700; color:var(--text-strong);">Pedro Lérida Nieto</div>
-            <div style="font-size:11.5px; color:var(--text-dim);">Full Stack Developer & Teacher · Neoland</div>
+      <!-- Card 1: Pedro — grande, ocupa más espacio vertical -->
+      <div class="ref-card-v2 reveal" style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.2);border-radius:20px;padding:36px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;">
+        <div style="position:absolute;top:-16px;left:20px;font-size:120px;font-weight:900;color:rgba(167,139,250,0.08);line-height:1;pointer-events:none;user-select:none;">"</div>
+        <div style="position:relative;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+            <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 4px 20px rgba(167,139,250,0.4);">PL</div>
+            <div>
+              <div style="font-size:15px;font-weight:700;color:var(--text-strong);">Pedro Lérida Nieto</div>
+              <div style="font-size:12px;color:var(--accent);font-weight:500;">Full Stack Dev & Teacher · Neoland</div>
+            </div>
+            <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="margin-left:auto;color:rgba(167,139,250,0.5);flex-shrink:0;transition:color 0.2s;" aria-label="Ver en LinkedIn" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(167,139,250,0.5)'">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
           </div>
-          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="margin-left:auto; color:var(--text-dim); flex-shrink:0;" aria-label="Ver en LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
+          <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.85);margin:0 0 20px;">"Marta es una persona con una actitud altamente exigente consigo misma, siempre esforzándose por dar lo mejor de ella en cada proyecto. Su dedicación y compromiso se reflejan en la calidad de su trabajo. En el ámbito del trabajo en equipo, destaca por sus excelentes habilidades sociales — es una comunicadora efectiva y gestiona su tiempo de manera ejemplar."</p>
+          <div style="display:flex;gap:4px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#a78bfa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#a78bfa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#a78bfa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#a78bfa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#a78bfa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
         </div>
       </div>
 
-      <!-- Card 2: Amaya Salamero -->
-      <div class="ref-card reveal" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 28px 28px 24px; display:flex; flex-direction:column; gap:20px; transition: border-color 0.25s, background 0.25s;">
-        <div style="display:flex; gap:6px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        </div>
-        <p style="font-size:15px; line-height:1.7; color:var(--text-bright); margin:0; font-style:italic;">"Recomiendo a Marta por el impecable trabajo que desempeña, dando siempre ese toque de frescura y creatividad que la caracteriza. Marta es esa profesional y gran compañera de equipo que todos queremos tener cerca."</p>
-        <div style="display:flex; align-items:center; gap:12px; padding-top:4px; border-top: 1px solid var(--border);">
-          <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#0ea5e9,#6366f1); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:#fff; flex-shrink:0;">AS</div>
-          <div>
-            <div style="font-size:13px; font-weight:700; color:var(--text-strong);">Amaya Salamero</div>
-            <div style="font-size:11.5px; color:var(--text-dim);">Directora de Calidad y RR.HH</div>
-          </div>
-          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="margin-left:auto; color:var(--text-dim); flex-shrink:0;" aria-label="Ver en LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-        </div>
-      </div>
+      <!-- Columna derecha: 2 cards apiladas -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
 
-      <!-- Card 3: Javier Capó Terrer -->
-      <div class="ref-card reveal" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 28px 28px 24px; display:flex; flex-direction:column; gap:20px; transition: border-color 0.25s, background 0.25s;">
-        <div style="display:flex; gap:6px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        </div>
-        <p style="font-size:15px; line-height:1.7; color:var(--text-bright); margin:0; font-style:italic;">"Tuve el placer de trabajar con Marta en AIMPLAS. Se involucraba al máximo y dominaba el trabajo en equipo. Además me fascinó sus ganas constantes de aprender y mejorar."</p>
-        <div style="display:flex; align-items:center; gap:12px; padding-top:4px; border-top: 1px solid var(--border);">
-          <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#10b981,#0ea5e9); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:#fff; flex-shrink:0;">JC</div>
-          <div>
-            <div style="font-size:13px; font-weight:700; color:var(--text-strong);">Javier Capó Terrer</div>
-            <div style="font-size:11.5px; color:var(--text-dim);">Gerente · Kapey Marketing S.L.</div>
+        <!-- Card 2: Amaya -->
+        <div class="ref-card-v2 reveal" style="background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.2);border-radius:20px;padding:28px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;">
+          <div style="position:absolute;top:-16px;left:16px;font-size:100px;font-weight:900;color:rgba(14,165,233,0.08);line-height:1;pointer-events:none;user-select:none;">"</div>
+          <div style="position:relative;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#0ea5e9,#6366f1);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 4px 16px rgba(14,165,233,0.4);">AS</div>
+              <div>
+                <div style="font-size:14px;font-weight:700;color:var(--text-strong);">Amaya Salamero</div>
+                <div style="font-size:11px;color:#60a5fa;font-weight:500;">Directora de Calidad y RR.HH</div>
+              </div>
+              <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="margin-left:auto;color:rgba(96,165,250,0.4);flex-shrink:0;transition:color 0.2s;" aria-label="Ver en LinkedIn" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='rgba(96,165,250,0.4)'">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+            </div>
+            <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.82);margin:0 0 14px;">"Recomiendo a Marta por el impecable trabajo que desempeña, dando siempre ese toque de frescura y creatividad que la caracteriza. <strong style="color:#fff;">Marta es esa profesional y gran compañera de equipo que todos queremos tener cerca.</strong>"</p>
+            <div style="display:flex;gap:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#60a5fa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#60a5fa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#60a5fa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#60a5fa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#60a5fa" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
           </div>
-          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="margin-left:auto; color:var(--text-dim); flex-shrink:0;" aria-label="Ver en LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
         </div>
-      </div>
 
-      <!-- Card 4: Inés Díaz López -->
-      <div class="ref-card reveal" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 16px; padding: 28px 28px 24px; display:flex; flex-direction:column; gap:20px; transition: border-color 0.25s, background 0.25s;">
-        <div style="display:flex; gap:6px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        </div>
-        <p style="font-size:15px; line-height:1.7; color:var(--text-bright); margin:0; font-style:italic;">"¡Marta es una profesional de pies a cabeza! Muy curranta y perfeccionista, se adapta fácilmente, no tiene problemas en trabajar en equipo y puedes estar seguro de que todo lo que esté en su mano, lo va a hacer."</p>
-        <div style="display:flex; align-items:center; gap:12px; padding-top:4px; border-top: 1px solid var(--border);">
-          <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#f59e0b,#ef4444); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:#fff; flex-shrink:0;">ID</div>
-          <div>
-            <div style="font-size:13px; font-weight:700; color:var(--text-strong);">Inés Díaz López</div>
-            <div style="font-size:11.5px; color:var(--text-dim);">Bellas Artes · Universitat Politècnica de València</div>
+        <!-- Card 3: Javier -->
+        <div class="ref-card-v2 reveal" style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.2);border-radius:20px;padding:28px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;">
+          <div style="position:absolute;top:-16px;left:16px;font-size:100px;font-weight:900;color:rgba(52,211,153,0.08);line-height:1;pointer-events:none;user-select:none;">"</div>
+          <div style="position:relative;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#10b981,#0ea5e9);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 4px 16px rgba(52,211,153,0.35);">JC</div>
+              <div>
+                <div style="font-size:14px;font-weight:700;color:var(--text-strong);">Javier Capó Terrer</div>
+                <div style="font-size:11px;color:#34d399;font-weight:500;">Gerente · Kapey Marketing S.L.</div>
+              </div>
+              <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="margin-left:auto;color:rgba(52,211,153,0.4);flex-shrink:0;transition:color 0.2s;" aria-label="Ver en LinkedIn" onmouseover="this.style.color='#34d399'" onmouseout="this.style.color='rgba(52,211,153,0.4)'">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+            </div>
+            <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.82);margin:0 0 14px;">"Tuve el placer de trabajar con Marta en AIMPLAS. Se involucraba al máximo y dominaba el trabajo en equipo. <strong style="color:#fff;">Me fascinó sus ganas constantes de aprender y mejorar.</strong>"</p>
+            <div style="display:flex;gap:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#34d399" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#34d399" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#34d399" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#34d399" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#34d399" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
           </div>
-          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="margin-left:auto; color:var(--text-dim); flex-shrink:0;" aria-label="Ver en LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
+        </div>
+
+      </div><!-- /columna derecha -->
+
+      <!-- Card 4: Inés — ancho completo, naranja, cierre impactante -->
+      <div class="ref-card-v2 reveal" style="grid-column:1/-1;background:linear-gradient(135deg,rgba(249,115,22,0.08),rgba(239,68,68,0.05));border:1px solid rgba(249,115,22,0.25);border-radius:20px;padding:36px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;display:flex;align-items:center;gap:40px;">
+        <div style="position:absolute;top:-20px;left:24px;font-size:160px;font-weight:900;color:rgba(249,115,22,0.07);line-height:1;pointer-events:none;user-select:none;">"</div>
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 6px 24px rgba(249,115,22,0.45);">ID</div>
+        <div style="position:relative;flex:1;">
+          <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.88);margin:0 0 18px;font-style:italic;">"<strong style="color:#fff;font-style:normal;">¡Marta es una profesional de pies a cabeza!</strong> Muy curranta y perfeccionista, se adapta fácilmente, no tiene problemas en trabajar en equipo y puedes estar seguro de que todo lo que esté en su mano, lo va a hacer."</p>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--text-strong);">Inés Díaz López</div>
+              <div style="font-size:12px;color:#f97316;font-weight:500;">Bellas Artes · Universitat Politècnica de València</div>
+            </div>
+            <div style="display:flex;gap:4px;margin-left:auto;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#f97316" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#f97316" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#f97316" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#f97316" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#f97316" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="color:rgba(249,115,22,0.5);transition:color 0.2s;" aria-label="Ver en LinkedIn" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='rgba(249,115,22,0.5)'">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -3935,13 +3958,21 @@ html.lang-en .hero-positioning.en { display: block !important; }
 </section>
 
 <style>
-.ref-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.4) !important;
-  background: rgba(255,255,255,0.05) !important;
+.ref-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
-@media (max-width: 600px) {
-  #referencias > div > div:last-child {
+@media (max-width: 768px) {
+  #referencias > div > div:nth-child(2) {
     grid-template-columns: 1fr !important;
+  }
+  #referencias > div > div:nth-child(2) > div:first-child,
+  #referencias > div > div:nth-child(2) > div:last-child {
+    grid-column: 1 !important;
+  }
+  #referencias [style*="grid-column:1/-1"] {
+    flex-direction: column !important;
+    gap: 20px !important;
   }
 }
 </style>
