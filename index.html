@@ -2665,6 +2665,18 @@ html.lang-en .hero-positioning.en { display: block !important; }
 @media (prefers-reduced-motion:reduce){
   .mm-combo[data-open="true"] .mm-opt{animation:none !important}
 }
+
+/* Focos visibles para A11y en especímenes claros (PASO 4) */
+.mm-native:focus-visible,
+.mm-trigger:focus-visible {
+  outline: 2px solid var(--purple-deep) !important;
+  outline-offset: 3px !important;
+}
+.mm-opt:focus-visible {
+  outline: 2px solid var(--purple-deep) !important;
+  outline-offset: -2px !important;
+  background: #F3EEFB !important;
+}
 </style>
 </head>
 <body>
