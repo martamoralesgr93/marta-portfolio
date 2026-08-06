@@ -3446,10 +3446,9 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
     
     <div class="ref-accordion-trigger-container">
-      <button onclick="toggleReferencesAccordion()" class="ref-accordion-btn" id="refAccordionBtn" aria-expanded="false" aria-controls="referencias">
-        <span class="es">Mostrar todas las recomendaciones</span>
-        <span class="en">Show all recommendations</span>
-        <svg class="ref-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: translateY(1px);"><polyline points="6 9 12 15 18 9"/></svg>
+      <button onclick="toggleReferencesAccordion()" class="btn-ghost ref-accordion-btn" id="refAccordionBtn" aria-expanded="false" aria-controls="referencias">
+        <span class="es">Mostrar todas las recomendaciones &nbsp;≀↓</span>
+        <span class="en">Show all recommendations &nbsp;≀↓</span>
       </button>
     </div>
     
@@ -3614,36 +3613,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
   margin-top: 36px;
 }
 .ref-accordion-btn {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
-  color: var(--text-bright);
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 12px 28px;
-  border-radius: 99px;
+  background: none;
+  border: none;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.ref-accordion-btn:hover {
-  background: rgba(var(--accent-rgb), 0.08);
-  border-color: rgba(var(--accent-rgb), 0.4);
-  color: var(--white);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(var(--accent-rgb), 0.2);
-}
-.ref-accordion-btn:active {
-  transform: translateY(1px);
-}
-.ref-chevron {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.ref-chevron.rotated {
-  transform: rotate(180deg);
+  font-family: inherit;
 }
 </style>
 
@@ -4242,20 +4215,17 @@ html.lang-en .hero-positioning.en { display: block !important; }
 window.toggleReferencesAccordion = function() {
   const grid = document.querySelector('.ref-grid');
   const btn = document.getElementById('refAccordionBtn');
-  const chevron = btn.querySelector('.ref-chevron');
   const isExpanded = grid.classList.toggle('expanded');
   btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
   
   if (isExpanded) {
-    chevron.classList.add('rotated');
-    btn.querySelector('.es').textContent = 'Mostrar menos';
-    btn.querySelector('.en').textContent = 'Show less';
+    btn.querySelector('.es').innerHTML = 'Mostrar menos &nbsp;≀↑';
+    btn.querySelector('.en').innerHTML = 'Show less &nbsp;≀↑';
   } else {
-    chevron.classList.remove('rotated');
-    btn.querySelector('.es').textContent = 'Mostrar todas las recomendaciones';
-    btn.querySelector('.en').textContent = 'Show all recommendations';
+    btn.querySelector('.es').innerHTML = 'Mostrar todas las recomendaciones &nbsp;≀↓';
+    btn.querySelector('.en').innerHTML = 'Show all recommendations &nbsp;≀↓';
     
-    // Smooth scroll back to references header when collapsing
+    // Desplazamiento suave al inicio de testimonios al colapsar
     document.getElementById('referencias').scrollIntoView({ behavior: 'smooth' });
   }
 };
