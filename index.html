@@ -2544,6 +2544,119 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .hero-title .c-purple::after { transform: scaleX(1); transition: none; }
 }
 
+/* ============ HERO · BANCO DE PRUEBAS ============
+   Dos especímenes iluminados sobre pared oscura. La superficie es blanca
+   porque la interfaz real de ILUNION es clara: oscurecerla para integrarla
+   falsearía lo que el bloque documenta. */
+:root {
+  --mm-costa: #FFD100;      /* amarillo corporativo ILUNION, del boton Reservar */
+  --mm-urbano: #3B7DD8;
+  --mm-spec-ink: #1A1A1A;
+  --mm-spec-line: #E4E1E6;
+}
+
+.mm-bench {
+  margin-top: clamp(44px, 7vh, 76px);
+  display: grid; grid-template-columns: 1fr 1.25fr;
+  gap: clamp(18px, 2.6vw, 32px); align-items: start;
+}
+
+.mm-slot-head { margin-bottom: 12px; }
+.mm-slot-head .n { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+.mm-slot--was .n { color: var(--text-muted); }
+.mm-slot--now .n { color: var(--purple); }
+.mm-slot-head p { margin: 6px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--text-secondary); }
+.mm-slot-head code {
+  font-size: 12px; background: var(--card); border: 1px solid var(--border);
+  border-radius: 4px; padding: 1px 5px; color: var(--text);
+}
+
+.mm-spec {
+  background: #fff; border-radius: 12px; padding: 18px; color: var(--mm-spec-ink);
+  box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 30px 70px -40px rgba(167,139,250,.55);
+}
+.mm-slot--now .mm-spec {
+  box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 34px 80px -38px rgba(167,139,250,.85);
+  /* Altura reservada: la tarjeta ya mide lo que medirá con el panel abierto,
+     así abrirlo no desplaza las píldoras ni la nota. Cero layout shift. */
+  min-height: 392px;
+}
+
+/* Lado nativo: es el navegador, no diseño. Por eso es un <select> real. */
+.mm-native-label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--mm-spec-ink); }
+.mm-native {
+  width: 100%; font: inherit; font-size: 14px; padding: 11px 12px; color: var(--mm-spec-ink);
+  border: 1px solid var(--mm-spec-line); border-radius: 7px; background: #fff; cursor: pointer;
+}
+.mm-code {
+  margin: 14px 0 0; padding: 11px; border-radius: 7px; background: #FAF9FB;
+  border: 1px solid var(--mm-spec-line); font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px; line-height: 1.7; color: #5C5C5C; overflow-x: auto; white-space: pre;
+}
+.mm-code b { color: var(--mm-spec-ink); font-weight: 600; }
+
+/* Componente reconstruido */
+.mm-combo { position: relative; }
+.mm-trigger {
+  width: 100%; text-align: left; font: inherit; background: #fff; cursor: pointer;
+  border: 1px solid var(--mm-spec-ink); border-radius: 0; padding: 9px 13px 10px;
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; color: var(--mm-spec-ink);
+}
+.mm-trigger .lbl { display: block; font-size: 13px; margin-bottom: 4px; }
+.mm-trigger .ph { display: block; font-size: 16px; color: #5C5C5C; }
+.mm-trigger svg { flex: 0 0 auto; margin-bottom: 4px; transition: transform .3s var(--mm-ease); }
+.mm-combo[data-open="true"] .mm-trigger svg { transform: rotate(180deg); }
+
+/* El panel se superpone, como cualquier desplegable real: va fuera del flujo,
+   así que abrirlo no empuja nada. NO usar max-height aquí: animarla dentro
+   del flujo es justo lo que provocaba el salto. */
+.mm-panel {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 5;
+  border: 1px solid var(--mm-spec-line); border-top: 0; background: #fff;
+  display: grid; grid-template-columns: 1fr 1.15fr;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .3s var(--mm-ease), transform .35s var(--mm-ease), visibility 0s .35s;
+}
+.mm-combo[data-open="true"] .mm-panel { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+
+.mm-col {
+  padding: 15px 13px; overflow-y: auto; max-height: 320px;
+  scrollbar-width: thin; scrollbar-color: var(--mm-costa) #F1F0F3;
+}
+.mm-col::-webkit-scrollbar { width: 8px; }
+.mm-col::-webkit-scrollbar-track { background: #F1F0F3; }
+.mm-col::-webkit-scrollbar-thumb { background: var(--mm-costa); border-radius: 99px; }
+.mm-col + .mm-col { border-left: 1px solid var(--mm-spec-line); }
+.mm-col h3 { margin: 0 0 11px; font-size: 14px; font-weight: 700; color: var(--mm-spec-ink); }
+.mm-col--hotels h3 { text-decoration: underline; text-underline-offset: 3px; }
+.mm-col ul { list-style: none; margin: 0; padding: 0; }
+.mm-opt {
+  width: 100%; display: flex; gap: 9px; align-items: flex-start; font: inherit; font-size: 14px;
+  line-height: 1.35; text-align: left; background: transparent; border: 0; border-radius: 6px;
+  padding: 6px 8px; cursor: pointer; color: var(--mm-spec-ink); transition: background .15s;
+}
+.mm-opt:hover { background: #F3EEFB; }
+.mm-opt svg { flex: 0 0 16px; margin-top: 1px; }
+.mm-combo[data-open="true"] .mm-opt { animation: mmPop .36s var(--mm-ease) backwards; }
+@keyframes mmPop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.mm-caps-title {
+  margin: 20px 0 9px; font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; font-weight: 600; color: var(--text-muted);
+}
+.mm-caps { display: flex; flex-wrap: wrap; gap: 7px; }
+.mm-cap {
+  display: inline-flex; align-items: center; gap: 7px; font-size: 11px; color: var(--text-secondary);
+  background: var(--card); border: 1px solid var(--border); border-radius: 99px; padding: 6px 13px;
+}
+.mm-cap::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex: 0 0 auto; }
+.mm-note { font-size: 11px; line-height: 1.6; color: var(--text-muted); margin: 24px 0 0; max-width: 80ch; }
+
+@media (max-width: 860px) {
+  .mm-bench { grid-template-columns: 1fr; gap: 26px; }
+  .mm-panel { grid-template-columns: 1fr 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -2637,8 +2750,96 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
       </div>
 
+    </div>
+
+    <!-- ==================== BANCO DE PRUEBAS ==================== -->
+    <div class="mm-bench mm-rise mm-d3">
+
+      <div class="mm-slot mm-slot--was">
+        <div class="mm-slot-head">
+          <span class="n es">01 · Antes — elemento nativo</span>
+          <span class="n en">01 · Before — native element</span>
+          <p class="es">Ábrelo. Esto no es una captura: es el mismo <code>&lt;select&gt;</code> que había en el motor de reservas.</p>
+          <p class="en">Open it. This is not a screenshot: it is the same <code>&lt;select&gt;</code> the booking engine had.</p>
+        </div>
+        <div class="mm-spec">
+          <label class="mm-native-label" for="mmNat"><span class="es">Destino</span><span class="en">Destination</span></label>
+          <select id="mmNat" class="mm-native">
+            <option data-es="Seleccionar un hotel o destino" data-en="Select a hotel or destination">Seleccionar un hotel o destino</option>
+            <optgroup label="Madrid">
+              <option>Hotel ILUNION Alcalá Norte</option>
+              <option>Hotel ILUNION Atrium</option>
+              <option>Hotel ILUNION Pío XII</option>
+              <option>Hotel ILUNION Suites Madrid</option>
+            </optgroup>
+            <optgroup label="Valencia">
+              <option>Hotel ILUNION Aqua 3</option>
+              <option>Hotel ILUNION Aqua 4</option>
+              <option>Hotel ILUNION Valencia 3</option>
+              <option>Hotel ILUNION Valencia 4</option>
+            </optgroup>
+            <optgroup label="Málaga">
+              <option>Hotel ILUNION Hacienda de Mijas</option>
+              <option>Hotel ILUNION Málaga</option>
+              <option>Hotel ILUNION Fuengirola</option>
+              <option>Aparthotel ILUNION Miramar</option>
+            </optgroup>
+            <optgroup label="Barcelona">
+              <option>Hotel ILUNION Barcelona</option>
+              <option>Hotel ILUNION Les Corts – Spa</option>
+              <option>Hotel ILUNION Almirante</option>
+              <option>Hotel ILUNION Auditori</option>
+              <option>Hotel ILUNION Bel Art</option>
+            </optgroup>
+          </select>
+          <pre class="mm-code">&lt;select&gt;
+  &lt;<b>optgroup</b> label="Madrid"&gt;
+    &lt;option&gt;Hotel ILUNION Atrium&lt;/option&gt;
+    …</pre>
+        </div>
+      </div>
+
+      <div class="mm-slot mm-slot--now">
+        <div class="mm-slot-head">
+          <span class="n es">02 · Después — componente de sistema</span>
+          <span class="n en">02 · After — system component</span>
+          <p class="es">Reconstrucción funcional del selector en producción. Mismo contenido, misma jerarquía.</p>
+          <p class="en">Functional rebuild of the selector in production. Same content, same hierarchy.</p>
+        </div>
+        <div class="mm-spec">
+          <div class="mm-combo" id="mmCombo" data-open="false">
+            <button class="mm-trigger" id="mmTrigger" aria-expanded="false" aria-controls="mmPanel">
+              <span>
+                <span class="lbl"><span class="es">¿Dónde quieres ir?</span><span class="en">Where do you want to go?</span></span>
+                <span class="ph"><span class="es">Buscar hotel o destino</span><span class="en">Search hotel or destination</span></span>
+              </span>
+              <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+                <path d="M1 1l6 6 6-6" stroke="#1A1A1A" stroke-width="1.8"></path>
+              </svg>
+            </button>
+            <div class="mm-panel" id="mmPanel" role="region" aria-label="Destinos y hoteles">
+              <div class="mm-col"><h3><span class="es">DESTINOS</span><span class="en">DESTINATIONS</span></h3><ul id="mmDest"></ul></div>
+              <div class="mm-col mm-col--hotels"><h3><span class="es">NUESTROS HOTELES</span><span class="en">OUR HOTELS</span></h3><ul id="mmHot"></ul></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mm-caps-title"><span class="es">Lo que el elemento nativo no permitía</span><span class="en">What the native element could not do</span></p>
+        <div class="mm-caps">
+          <span class="mm-cap"><span class="es">Dos taxonomías en paralelo</span><span class="en">Two taxonomies in parallel</span></span>
+          <span class="mm-cap"><span class="es">Iconografía por tipo de entidad</span><span class="en">Iconography by entity type</span></span>
+          <span class="mm-cap"><span class="es">Color: costa / urbano</span><span class="en">Colour: coast / urban</span></span>
+          <span class="mm-cap"><span class="es">Nombres largos sin truncar</span><span class="en">Long names without truncation</span></span>
+          <span class="mm-cap"><span class="es">Panel contenido en móvil</span><span class="en">Panel contained on mobile</span></span>
+        </div>
+      </div>
 
     </div>
+
+    <p class="mm-note">
+      <span class="es">Selector de destino del motor de reservas de ILUNION Hotels. El bloque 01 reproduce la agrupación real del <code>&lt;select&gt;</code> anterior; el 02 es una reconstrucción funcional del componente en producción. Métricas de conversión del canal, en el case study.</span>
+      <span class="en">Destination selector from the ILUNION Hotels booking engine. Block 01 reproduces the real grouping of the previous <code>&lt;select&gt;</code>; block 02 is a functional rebuild of the component in production. Channel conversion metrics live in the case study.</span>
+    </p>
   </div>
 </section>
 
@@ -5571,5 +5772,76 @@ body.visitor-unauthorized .locked-metric:hover::after {
 requestAnimationFrame(function () {
   requestAnimationFrame(function () { document.body.classList.add('is-ready'); });
 });
+</script>
+
+<script>
+/* Banco de pruebas: el componente que sustituyó al <select> nativo. */
+(function () {
+  var combo = document.getElementById('mmCombo');
+  var trigger = document.getElementById('mmTrigger');
+  var destUl = document.getElementById('mmDest');
+  var hotUl = document.getElementById('mmHot');
+  if (!combo || !trigger || !destUl || !hotUl) return;
+
+  var DESTINOS = ['Barcelona', 'Bilbao', 'Cádiz', 'Extremadura', 'Girona', 'Huelva', 'Lanzarote',
+                  'Madrid', 'Málaga', 'Mallorca', 'Menorca', 'San Sebastián', 'Sevilla'];
+  var HOTELES = [
+    ['ILUNION Islantilla', 'costa'], ['ILUNION Sancti Petri', 'costa'],
+    ['ILUNION Calas de Conil', 'costa'], ['ILUNION Alcalá Norte', 'urbano'],
+    ['ILUNION Alcora Sevilla', 'urbano'], ['ILUNION Almirante', 'urbano'],
+    ['ILUNION Aqua 3', 'urbano'], ['ILUNION Aqua 4', 'urbano'],
+    ['ILUNION Atrium', 'urbano'], ['ILUNION Auditori', 'urbano'],
+    ['ILUNION Barcelona', 'urbano'], ['ILUNION Bel Art', 'urbano'],
+    ['ILUNION Les Corts – Spa', 'urbano'], ['ILUNION Pío XII', 'urbano']
+  ];
+
+  var PIN = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
+    '<path d="M8 1.6c-2.3 0-4.2 1.9-4.2 4.2C3.8 9 8 14.4 8 14.4S12.2 9 12.2 5.8c0-2.3-1.9-4.2-4.2-4.2z" ' +
+    'stroke="#5C5C5C" stroke-width="1.2"/><circle cx="8" cy="5.8" r="1.5" stroke="#5C5C5C" stroke-width="1.2"/></svg>';
+
+  function bed(c) {
+    return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
+      '<path d="M1.6 11.6V5m0 3.2h12.8V11.6m0-2.6V7.4a1.6 1.6 0 00-1.6-1.6H7.8V9" stroke="' + c +
+      '" stroke-width="1.3" stroke-linecap="round"/><circle cx="4.6" cy="7" r="1.3" stroke="' + c + '" stroke-width="1.3"/></svg>';
+  }
+
+  destUl.innerHTML = DESTINOS.map(function (c, i) {
+    return '<li><button type="button" class="mm-opt" style="animation-delay:' + (i * 22) + 'ms">' +
+           PIN + '<span>' + c + '</span></button></li>';
+  }).join('');
+
+  hotUl.innerHTML = HOTELES.map(function (h, i) {
+    var c = h[1] === 'costa' ? '#FFD100' : '#3B7DD8';
+    return '<li><button type="button" class="mm-opt" style="animation-delay:' + (i * 22) + 'ms">' +
+           bed(c) + '<span>' + h[0] + '</span></button></li>';
+  }).join('');
+
+  function toggle(open) {
+    combo.dataset.open = String(open);
+    trigger.setAttribute('aria-expanded', String(open));
+  }
+
+  trigger.addEventListener('click', function () { toggle(combo.dataset.open !== 'true'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && combo.dataset.open === 'true') { toggle(false); trigger.focus(); }
+  });
+  document.addEventListener('click', function (e) { if (!combo.contains(e.target)) toggle(false); });
+
+  /* Se abre solo para que el visitante vea que es manipulable sin tener que
+     descubrirlo. Bajo reduced-motion no se abre: nada se mueve sin pedirlo. */
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setTimeout(function () { toggle(true); }, 1300);
+  }
+
+  /* Un <option> no admite <span>, así que el patrón .es/.en por CSS no le
+     sirve: este placeholder se sincroniza con la clase lang-en del <html>. */
+  var ph = document.querySelector('#mmNat option[data-es]');
+  function syncLang() {
+    if (!ph) return;
+    ph.textContent = document.documentElement.classList.contains('lang-en') ? ph.dataset.en : ph.dataset.es;
+  }
+  syncLang();
+  new MutationObserver(syncLang).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+})();
 </script>
 </main></div></body></html>
