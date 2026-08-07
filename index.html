@@ -92,6 +92,14 @@
   /* ── Bordes (rol mixto: se mantiene literal hasta refactor por rol) ── */
   --border: rgba(255,255,255,0.10);
   --border-mid: rgba(255,255,255,0.16);
+  --mm-ease: cubic-bezier(.22,1,.36,1);
+  --mm-primary-ink: #7A3396;
+  
+  /* Específicos del bloque nuevo */
+  --mm-costa:#FFD100;      /* amarillo corporativo ILUNION, muestreado del botón Reservar */
+  --mm-urbano:#3B7DD8;     /* azul aproximado — pendiente de confirmar */
+  --mm-spec-ink:#1A1A1A;   /* tinta dentro de los especímenes claros */
+  --mm-spec-line:#E4E1E6;
 }
 
 html {
@@ -295,6 +303,17 @@ a.footer-link:focus-visible {
   padding: 0; position: relative; overflow: hidden;
   display: flex; align-items: center;
 }
+/* .hero-video-bg {
+  position: absolute; inset: 0; z-index: 0; overflow: hidden;
+  pointer-events: none;
+}
+.hero-video-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.65) 100%);
+}
+.hero-video-bg video {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.78;
+} */
 .hero .wrap { position: relative; z-index: 1; padding-top: 72px; padding-bottom: 72px; }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; }
 
@@ -1426,6 +1445,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .hero-actions { flex-direction: row; gap: 16px; flex-wrap: wrap; }
   .hero-actions .btn-ghost { display: none !important; }
   .impact-card { display: block; }
+  /* .hero-video-bg { display: none; } */
 
   html:not(.lang-en) .hero-positioning.es { display: block; }
   html.lang-en .hero-positioning.en { display: block; }
@@ -2507,161 +2527,155 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .feature-line { display: none !important; }
 }
 
-/* ============ HERO · REVELADO DEL TITULAR ============
-   El wrapper .mm-reveal vive por dentro del span .es/.en, para no romper la
-   conmutación bilingüe. El subrayado se acota a .hero-title .c-purple porque
-   esa clase se usa en más sitios del documento y allí no debe cambiar. */
-:root { --mm-ease: cubic-bezier(.22, 1, .36, 1); }
-
-.mm-reveal { display: block; overflow: hidden; }
+/* ===================== HERO REVEAL & RISE (PASO 2) ===================== */
+.mm-reveal {
+  display: block;
+  overflow: hidden;
+}
 .mm-reveal > span {
-  display: block; transform: translateY(102%);
+  display: block;
+  transform: translateY(102%);
   transition: transform 1s var(--mm-ease);
 }
-.is-ready .mm-reveal > span { transform: none; }
+.is-ready .mm-reveal > span {
+  transform: none;
+}
 
-.hero-title .c-purple { position: relative; }
+/* El subrayado se aplica solo a .c-purple dentro de .hero-title */
+.hero-title .c-purple {
+  position: relative;
+}
 .hero-title .c-purple::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .05em;
-  background: var(--purple); transform: scaleX(0); transform-origin: left;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: .02em;
+  height: .05em;
+  background: var(--purple);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform .7s var(--mm-ease) .85s;
 }
-.is-ready .hero-title .c-purple::after { transform: scaleX(1); }
+.is-ready .hero-title .c-purple::after {
+  transform: scaleX(1);
+}
 
 .mm-rise {
-  opacity: 0; transform: translateY(14px);
+  opacity: 0;
+  transform: translateY(14px);
   transition: opacity .7s var(--mm-ease), transform .7s var(--mm-ease);
 }
-.is-ready .mm-rise { opacity: 1; transform: none; }
+.is-ready .mm-rise {
+  opacity: 1;
+  transform: none;
+}
 .mm-d1 { transition-delay: .30s; }
 .mm-d2 { transition-delay: .42s; }
 .mm-d3 { transition-delay: .56s; }
 
-/* Sin animación todo queda en su estado final: nada se queda en opacity 0 */
 @media (prefers-reduced-motion: reduce) {
-  .mm-reveal > span { transform: none; transition: none; }
-  .mm-rise { opacity: 1; transform: none; transition: none; }
-  .hero-title .c-purple::after { transform: scaleX(1); transition: none; }
+  .mm-reveal > span {
+    transform: none !important;
+    transition: none !important;
+  }
+  .mm-rise {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-title .c-purple::after {
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
 }
 
-/* ============ HERO · BANCO DE PRUEBAS ============
-   Dos especímenes iluminados sobre pared oscura. La superficie es blanca
-   porque la interfaz real de ILUNION es clara: oscurecerla para integrarla
-   falsearía lo que el bloque documenta. */
-:root {
-  --mm-costa: #FFD100;      /* amarillo corporativo ILUNION, del boton Reservar */
-  --mm-urbano: #3B7DD8;
-  --mm-spec-ink: #1A1A1A;
-  --mm-spec-line: #E4E1E6;
-}
+/* ── Banco de pruebas: dos especímenes claros sobre negro ── */
+.mm-bench{margin-top:clamp(44px,7vh,76px);
+  display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(18px,2.6vw,32px);align-items:start}
 
-.mm-bench {
-  margin-top: clamp(44px, 7vh, 76px);
-  display: grid; grid-template-columns: 1fr 1.25fr;
-  gap: clamp(18px, 2.6vw, 32px); align-items: start;
-}
+.mm-slot-head{margin-bottom:12px}
+.mm-slot-head .n{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.mm-slot--was .n{color:var(--text-muted)}
+.mm-slot--now .n{color:var(--purple)}
+.mm-slot-head p{margin:6px 0 0;font-size:12.5px;line-height:1.55;color:var(--text-secondary)}
+.mm-slot-head code{font-size:12px;background:var(--card);border:1px solid var(--border);
+  border-radius:4px;padding:1px 5px;color:var(--text)}
 
-.mm-slot-head { margin-bottom: 12px; }
-.mm-slot-head .n { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
-.mm-slot--was .n { color: var(--text-muted); }
-.mm-slot--now .n { color: var(--purple); }
-.mm-slot-head p { margin: 6px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--text-secondary); }
-.mm-slot-head code {
-  font-size: 12px; background: var(--card); border: 1px solid var(--border);
-  border-radius: 4px; padding: 1px 5px; color: var(--text);
-}
+/* La superficie clara: es la interfaz real de ILUNION, por eso no se oscurece */
+.mm-spec{background:#fff;border-radius:12px;padding:18px;color:var(--mm-spec-ink);
+  box-shadow:0 1px 2px rgba(0,0,0,.4),0 30px 70px -40px rgba(167,139,250,.55)}
+.mm-slot--now .mm-spec{box-shadow:0 1px 2px rgba(0,0,0,.4),0 34px 80px -38px rgba(167,139,250,.85)}
 
-.mm-spec {
-  background: #fff; border-radius: 12px; padding: 18px; color: var(--mm-spec-ink);
-  box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 30px 70px -40px rgba(167,139,250,.55);
-}
-.mm-slot--now .mm-spec {
-  box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 34px 80px -38px rgba(167,139,250,.85);
-}
-
-/* Lado nativo: es el navegador, no diseño. Por eso es un <select> real. */
-.mm-native-label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; color: var(--mm-spec-ink); }
-.mm-native {
-  width: 100%; font: inherit; font-size: 14px; padding: 11px 12px; color: var(--mm-spec-ink);
-  border: 1px solid var(--mm-spec-line); border-radius: 7px; background: #fff; cursor: pointer;
-}
-.mm-code {
-  margin: 14px 0 0; padding: 11px; border-radius: 7px; background: #FAF9FB;
-  border: 1px solid var(--mm-spec-line); font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px; line-height: 1.7; color: #5C5C5C; overflow-x: auto; white-space: pre;
-}
-.mm-code b { color: var(--mm-spec-ink); font-weight: 600; }
+/* Lado nativo */
+.mm-native-label{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--mm-spec-ink)}
+.mm-native{width:100%;font:inherit;font-size:14px;padding:11px 12px;color:var(--mm-spec-ink);
+  border:1px solid var(--mm-spec-line);border-radius:7px;background:#fff;cursor:pointer}
+.mm-code{margin:14px 0 0;padding:11px;border-radius:7px;background:#FAF9FB;
+  border:1px solid var(--mm-spec-line);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11px;line-height:1.7;color:#5C5C5C;overflow-x:auto;white-space:pre}
+.mm-code b{color:var(--mm-spec-ink);font-weight:600}
 
 /* Componente reconstruido */
-.mm-combo { position: relative; }
-.mm-trigger {
-  width: 100%; text-align: left; font: inherit; background: #fff; cursor: pointer;
-  border: 1px solid var(--mm-spec-ink); border-radius: 0; padding: 9px 13px 10px;
-  display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; color: var(--mm-spec-ink);
-}
-.mm-trigger .lbl { display: block; font-size: 13px; margin-bottom: 4px; }
-.mm-trigger .ph { display: block; font-size: 16px; color: #5C5C5C; }
-.mm-trigger svg { flex: 0 0 auto; margin-bottom: 4px; transition: transform .3s var(--mm-ease); }
-.mm-combo[data-open="true"] .mm-trigger svg { transform: rotate(180deg); }
+.mm-combo{position:relative}
+.mm-trigger{width:100%;text-align:left;font:inherit;background:#fff;cursor:pointer;
+  border:1px solid var(--mm-spec-ink);border-radius:0;padding:9px 13px 10px;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:12px;color:var(--mm-spec-ink)}
+.mm-trigger .lbl{display:block;font-size:13px;margin-bottom:4px}
+.mm-trigger .ph{display:block;font-size:16px;color:#5C5C5C}
+.mm-trigger svg{flex:0 0 auto;margin-bottom:4px;transition:transform .3s var(--mm-ease)}
+.mm-combo[data-open="true"] .mm-trigger svg{transform:rotate(180deg)}
 
-/* El panel se superpone, como cualquier desplegable real: va fuera del flujo,
-   así que abrirlo no empuja nada. NO usar max-height aquí: animarla dentro
-   del flujo es justo lo que provocaba el salto. */
-.mm-panel {
-  position: absolute; top: 100%; left: 0; right: 0; z-index: 5;
-  border: 1px solid var(--mm-spec-line); border-top: 0; background: #fff;
-  display: grid; grid-template-columns: 1fr 1.15fr;
-  opacity: 0; visibility: hidden; transform: translateY(-6px);
-  transition: opacity .3s var(--mm-ease), transform .35s var(--mm-ease), visibility 0s .35s;
-}
-.mm-combo[data-open="true"] .mm-panel { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.mm-panel{border:1px solid var(--mm-spec-line);border-top:0;background:#fff;
+  display:grid;grid-template-columns:1fr 1.15fr;
+  max-height:0;overflow:hidden;transition:max-height .45s var(--mm-ease)}
+.mm-combo[data-open="true"] .mm-panel{max-height:320px}
 
-.mm-col {
-  padding: 15px 13px; overflow-y: auto; max-height: 320px;
-  scrollbar-width: thin; scrollbar-color: var(--mm-costa) #F1F0F3;
-}
-.mm-col::-webkit-scrollbar { width: 8px; }
-.mm-col::-webkit-scrollbar-track { background: #F1F0F3; }
-.mm-col::-webkit-scrollbar-thumb { background: var(--mm-costa); border-radius: 99px; }
-.mm-col + .mm-col { border-left: 1px solid var(--mm-spec-line); }
-.mm-col h3 { margin: 0 0 11px; font-size: 14px; font-weight: 700; color: var(--mm-spec-ink); }
-.mm-col--hotels h3 { text-decoration: underline; text-underline-offset: 3px; }
-.mm-col ul { list-style: none; margin: 0; padding: 0; }
-.mm-opt {
-  width: 100%; display: flex; gap: 9px; align-items: flex-start; font: inherit; font-size: 14px;
-  line-height: 1.35; text-align: left; background: transparent; border: 0; border-radius: 6px;
-  padding: 6px 8px; cursor: pointer; color: var(--mm-spec-ink); transition: background .15s;
-}
-.mm-opt:hover { background: #F3EEFB; }
-.mm-opt svg { flex: 0 0 16px; margin-top: 1px; }
-.mm-combo[data-open="true"] .mm-opt { animation: mmPop .36s var(--mm-ease) backwards; }
-@keyframes mmPop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.mm-col{padding:15px 13px;overflow-y:auto;max-height:320px;
+  scrollbar-width:thin;scrollbar-color:var(--mm-costa) #F1F0F3}
+.mm-col::-webkit-scrollbar{width:8px}
+.mm-col::-webkit-scrollbar-track{background:#F1F0F3}
+.mm-col::-webkit-scrollbar-thumb{background:var(--mm-costa);border-radius:99px}
+.mm-col + .mm-col{border-left:1px solid var(--mm-spec-line)}
+.mm-col h3{margin:0 0 11px;font-size:14px;font-weight:700;color:var(--mm-spec-ink)}
+.mm-col--hotels h3{text-decoration:underline;text-underline-offset:3px}
+.mm-col ul{list-style:none;margin:0;padding:0}
+.mm-opt{width:100%;display:flex;gap:9px;align-items:flex-start;font:inherit;font-size:14px;
+  line-height:1.35;text-align:left;background:transparent;border:0;border-radius:6px;
+  padding:6px 8px;cursor:pointer;color:var(--mm-spec-ink);transition:background .15s}
+.mm-opt:hover{background:#F3EEFB}
+.mm-opt svg{flex:0 0 16px;margin-top:1px}
+.mm-combo[data-open="true"] .mm-opt{animation:mmPop .36s var(--mm-ease) backwards}
+@keyframes mmPop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-.mm-caps-title {
-  margin: 20px 0 9px; font-size: 11px; letter-spacing: .12em;
-  text-transform: uppercase; font-weight: 600; color: var(--text-muted);
-}
-.mm-caps { display: flex; flex-wrap: wrap; gap: 7px; }
-.mm-cap {
-  display: inline-flex; align-items: center; gap: 7px; font-size: 11px; color: var(--text-secondary);
-  background: var(--card); border: 1px solid var(--border); border-radius: 99px; padding: 6px 13px;
-}
-.mm-cap::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex: 0 0 auto; }
-/* Va delante del banco: presenta lo que se va a manipular en vez de
-   explicarlo después. */
-.mm-note { font-size: 11px; line-height: 1.6; color: var(--text-muted); margin: clamp(36px, 5vh, 56px) 0 0; max-width: 80ch; }
+/* Capacidades */
+.mm-caps-title{margin:20px 0 9px;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:600;color:var(--text-muted)}
+.mm-caps{display:flex;flex-wrap:wrap;gap:7px}
+.mm-cap{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:var(--text-secondary);
+  background:var(--card);border:1px solid var(--border);border-radius:99px;padding:6px 13px}
+.mm-cap::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--purple)}
+.mm-note{font-size:11px;line-height:1.6;color:var(--text-muted);margin:24px 0 0;max-width:80ch}
 
-@media (max-width: 860px) {
-  .mm-bench { grid-template-columns: 1fr; gap: 26px; }
-  .mm-panel { grid-template-columns: 1fr 1fr; }
+@media (max-width:860px){
+  .hero-title{max-width:none}
+  .mm-bench{grid-template-columns:1fr;gap:26px}
+  .mm-panel{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .mm-combo[data-open="true"] .mm-opt{animation:none !important}
 }
 
-/* El panel sigue abriéndose y cerrándose, pero sin recorrido: aparece ya
-   colocado, y las opciones no entran una a una. */
-@media (prefers-reduced-motion: reduce) {
-  .mm-panel { transition: opacity 0s, visibility 0s; transform: none; }
-  .mm-combo[data-open="true"] .mm-opt { animation: none; }
-  .mm-trigger svg { transition: none; }
+/* Focos visibles para A11y en especímenes claros (PASO 4) */
+.mm-native:focus-visible,
+.mm-trigger:focus-visible {
+  outline: 2px solid var(--purple-deep) !important;
+  outline-offset: 3px !important;
+}
+.mm-opt:focus-visible {
+  outline: 2px solid var(--purple-deep) !important;
+  outline-offset: -2px !important;
+  background: #F3EEFB !important;
 }
 
 /* ============ HERO · CAPA DE ATMÓSFERA ============
@@ -2670,15 +2684,13 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .hero { isolation: isolate; }
 .hero > .wrap { position: relative; z-index: 2; }
 
-/* El hero ya no recorta: el desplegable del banco se sale de su caja y
+/* El hero deja de recortar: el desplegable del banco se sale de su caja y
    quedaba cortado por abajo. La atmósfera no lo necesita, se recorta ella
    sola con su propio overflow. */
 .hero { overflow: visible; }
 
-/* Y mientras el desplegable está abierto el hero sube de plano: la sección
-   siguiente lleva z-index 1 y si no le tapaba al panel la mitad de abajo,
-   dejándola además sin poder clicar. Solo se aplica con el panel abierto,
-   así que el resto del tiempo el apilamiento queda como estaba. */
+/* Con el panel abierto el hero sube de plano: la sección siguiente lleva
+   z-index 1 y si no le tapaba la mitad de abajo, dejándola sin clicar. */
 .hero:has(.mm-combo[data-open="true"]) { z-index: 3; }
 
 .mm-atmos { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
@@ -2699,8 +2711,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .mm-atmos-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* 2 · Luz que sigue al cursor. Un solo div movido con transform: lo compone
-   la GPU, sin reflow. Morado y naranja son los dos acentos del sistema, así
-   que la luz pertenece a la paleta en vez de ser un efecto pegado. */
+   la GPU, sin reflow. Morado y naranja son los dos acentos del sistema. */
 .mm-atmos-glow {
   position: absolute; top: 0; left: 0; width: 760px; height: 760px;
   margin: -380px 0 0 -380px;
@@ -2722,6 +2733,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* La nota pasa delante del banco: presenta lo que se va a manipular en vez
+   de explicarlo después. */
+.mm-note { margin-top: clamp(36px, 5vh, 56px); }
+
 /* Sin movimiento: el vídeo se sustituye por un degradado estático y la luz
    del cursor desaparece. */
 @media (prefers-reduced-motion: reduce) {
@@ -2737,15 +2752,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .mm-atmos-glow { display: none; }
   .mm-atmos-video { opacity: .28; filter: blur(24px); }
 }
-
 </style>
-<noscript><style>
-  /* Sin JS nadie añade is-ready y el hero entero se quedaría en opacity 0.
-     Aquí se muestra directamente en su estado final. */
-  .mm-reveal > span { transform: none; }
-  .mm-rise { opacity: 1; transform: none; }
-  .hero-title .c-purple::after { transform: scaleX(1); }
-</style></noscript>
 </head>
 <body>
 <a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
@@ -2776,8 +2783,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
       </svg>
     </a>
-    <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="nav-cta es">Agendar llamada  ↗</a>
-    <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="nav-cta en">Schedule Call  ↗</a>
+    <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta es">Agendar llamada  ↗</a>
+    <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta en">Schedule Call  ↗</a>
     <button class="hamburger" id="hamburgerBtn" onclick="openMenu()" aria-label="Menú">
       <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
         <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
@@ -2801,8 +2808,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <li><a href="#work" onclick="closeMenu()"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
     <li><a href="#process" onclick="closeMenu()"><span class="es">Cómo trabajo</span><span class="en">How I work</span></a></li>
   </ul>
-  <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="mobile-menu-cta es">Agendar llamada  ↗</a>
-  <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="mobile-menu-cta en">Schedule Call  ↗</a>
+  <a href="mailto:mmoralesgr93@gmail.com" class="mobile-menu-cta es">Agendar llamada  ↗</a>
+  <a href="mailto:mmoralesgr93@gmail.com" class="mobile-menu-cta en">Schedule Call  ↗</a>
   <a href="assets/cv-marta-ats-es.pdf" download="" class="mobile-menu-secondary es">Descargar CV  ↗</a>
   <a href="assets/cv-marta-ats-en.pdf" download="" class="mobile-menu-secondary en">Download CV  ↗</a>
   <button onclick="toggleLanguage()" class="lang-toggle-btn mobile-menu-secondary" style="margin-top: 14px !important;" aria-label="Toggle language">EN</button>
@@ -2846,30 +2853,56 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <a href="assets/cv-marta-ats-en.pdf" download="" class="btn-primary cta-download en">Download CV  ↗</a>
           <a href="#work" class="btn-ghost"><span class="es">Ver mi trabajo</span><span class="en">View my work</span> ≀↓</a>
         </div>
-
       </div>
-
     </div>
 
-    <p class="mm-note mm-rise mm-d3">
-      <span class="es">Selector de destino del motor de reservas de ILUNION Hotels. El bloque 01 reproduce la agrupación real del <code>&lt;select&gt;</code> anterior; el 02 es una reconstrucción funcional del componente en producción. Métricas de conversión del canal, en el case study.</span>
-      <span class="en">Destination selector from the ILUNION Hotels booking engine. Block 01 reproduces the real grouping of the previous <code>&lt;select&gt;</code>; block 02 is a functional rebuild of the component in production. Channel conversion metrics live in the case study.</span>
-    </p>
+    <!-- ── BANCO DE PRUEBAS ── -->
+    <p class="mm-note es mm-rise mm-d3">Selector de destino del motor de reservas de ILUNION Hotels. El bloque 01 reproduce la agrupación real del <code>&lt;select&gt;</code> anterior; el 02 es una reconstrucción funcional del componente en producción. Métricas de conversión del canal, en el case study.</p>
+    <p class="mm-note en mm-rise mm-d3">Destination selector of the ILUNION Hotels booking engine. Block 01 reproduces the actual grouping of the previous <code>&lt;select&gt;</code>; block 02 is a functional reconstruction of the component in production. Channel conversion metrics are in the case study.</p>
 
-    <!-- ==================== BANCO DE PRUEBAS ==================== -->
     <div class="mm-bench mm-rise mm-d3">
 
+      <!-- LADO ANTES -->
       <div class="mm-slot mm-slot--was">
         <div class="mm-slot-head">
           <span class="n es">01 · Antes — elemento nativo</span>
           <span class="n en">01 · Before — native element</span>
           <p class="es">Ábrelo. Esto no es una captura: es el mismo <code>&lt;select&gt;</code> que había en el motor de reservas.</p>
-          <p class="en">Open it. This is not a screenshot: it is the same <code>&lt;select&gt;</code> the booking engine had.</p>
+          <p class="en">Open it. This is not a screenshot: it is the same <code>&lt;select&gt;</code> that was in the booking engine.</p>
         </div>
         <div class="mm-spec">
-          <label class="mm-native-label" for="mmNat"><span class="es">Destino</span><span class="en">Destination</span></label>
-          <select id="mmNat" class="mm-native">
-            <option data-es="Seleccionar un hotel o destino" data-en="Select a hotel or destination">Seleccionar un hotel o destino</option>
+          <label class="mm-native-label es" for="mmNat">Destino</label>
+          <label class="mm-native-label en" for="mmNatEn">Destination</label>
+          <select id="mmNat" class="mm-native es">
+            <option>Seleccionar un hotel o destino</option>
+            <optgroup label="Madrid">
+              <option>Hotel ILUNION Alcalá Norte</option>
+              <option>Hotel ILUNION Atrium</option>
+              <option>Hotel ILUNION Pío XII</option>
+              <option>Hotel ILUNION Suites Madrid</option>
+            </optgroup>
+            <optgroup label="Valencia">
+              <option>Hotel ILUNION Aqua 3</option>
+              <option>Hotel ILUNION Aqua 4</option>
+              <option>Hotel ILUNION Valencia 3</option>
+              <option>Hotel ILUNION Valencia 4</option>
+            </optgroup>
+            <optgroup label="Málaga">
+              <option>Hotel ILUNION Hacienda de Mijas</option>
+              <option>Hotel ILUNION Málaga</option>
+              <option>Hotel ILUNION Fuengirola</option>
+              <option>Aparthotel ILUNION Miramar</option>
+            </optgroup>
+            <optgroup label="Barcelona">
+              <option>Hotel ILUNION Barcelona</option>
+              <option>Hotel ILUNION Les Corts – Spa</option>
+              <option>Hotel ILUNION Almirante</option>
+              <option>Hotel ILUNION Auditori</option>
+              <option>Hotel ILUNION Bel Art</option>
+            </optgroup>
+          </select>
+          <select id="mmNatEn" class="mm-native en">
+            <option>Select a hotel or destination</option>
             <optgroup label="Madrid">
               <option>Hotel ILUNION Alcalá Norte</option>
               <option>Hotel ILUNION Atrium</option>
@@ -2903,38 +2936,69 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
       </div>
 
+      <!-- LADO DESPUÉS -->
       <div class="mm-slot mm-slot--now">
         <div class="mm-slot-head">
           <span class="n es">02 · Después — componente de sistema</span>
           <span class="n en">02 · After — system component</span>
           <p class="es">Reconstrucción funcional del selector en producción. Mismo contenido, misma jerarquía.</p>
-          <p class="en">Functional rebuild of the selector in production. Same content, same hierarchy.</p>
+          <p class="en">Functional reconstruction of the selector in production. Same content, same hierarchy.</p>
         </div>
         <div class="mm-spec">
           <div class="mm-combo" id="mmCombo" data-open="false">
             <button class="mm-trigger" id="mmTrigger" aria-expanded="false" aria-controls="mmPanel">
               <span>
-                <span class="lbl"><span class="es">¿Dónde quieres ir?</span><span class="en">Where do you want to go?</span></span>
-                <span class="ph"><span class="es">Buscar hotel o destino</span><span class="en">Search hotel or destination</span></span>
+                <span class="lbl es">¿Dónde quieres ir?</span>
+                <span class="lbl en">Where do you want to go?</span>
+                <span class="ph es">Buscar hotel o destino</span>
+                <span class="ph en">Search hotel or destination</span>
               </span>
               <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
-                <path d="M1 1l6 6 6-6" stroke="#1A1A1A" stroke-width="1.8"></path>
+                <path d="M1 1l6 6 6-6" stroke="#1A1A1A" stroke-width="1.8"/>
               </svg>
             </button>
             <div class="mm-panel" id="mmPanel" role="region" aria-label="Destinos y hoteles">
-              <div class="mm-col"><h3><span class="es">DESTINOS</span><span class="en">DESTINATIONS</span></h3><ul id="mmDest"></ul></div>
-              <div class="mm-col mm-col--hotels"><h3><span class="es">NUESTROS HOTELES</span><span class="en">OUR HOTELS</span></h3><ul id="mmHot"></ul></div>
+              <div class="mm-col">
+                <h3>
+                  <span class="es">DESTINOS</span>
+                  <span class="en">DESTINATIONS</span>
+                </h3>
+                <ul id="mmDest"></ul>
+              </div>
+              <div class="mm-col mm-col--hotels">
+                <h3>
+                  <span class="es">NUESTROS HOTELES</span>
+                  <span class="en">OUR HOTELS</span>
+                </h3>
+                <ul id="mmHot"></ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <p class="mm-caps-title"><span class="es">Lo que el elemento nativo no permitía</span><span class="en">What the native element could not do</span></p>
+        <p class="mm-caps-title es">Lo que el elemento nativo no permitía</p>
+        <p class="mm-caps-title en">What the native element did not allow</p>
         <div class="mm-caps">
-          <span class="mm-cap"><span class="es">Dos taxonomías en paralelo</span><span class="en">Two taxonomies in parallel</span></span>
-          <span class="mm-cap"><span class="es">Iconografía por tipo de entidad</span><span class="en">Iconography by entity type</span></span>
-          <span class="mm-cap"><span class="es">Color: costa / urbano</span><span class="en">Colour: coast / urban</span></span>
-          <span class="mm-cap"><span class="es">Nombres largos sin truncar</span><span class="en">Long names without truncation</span></span>
-          <span class="mm-cap"><span class="es">Panel contenido en móvil</span><span class="en">Panel contained on mobile</span></span>
+          <span class="mm-cap">
+            <span class="es">Dos taxonomías en paralelo</span>
+            <span class="en">Two parallel taxonomies</span>
+          </span>
+          <span class="mm-cap">
+            <span class="es">Iconografía por tipo de entidad</span>
+            <span class="en">Iconography by entity type</span>
+          </span>
+          <span class="mm-cap">
+            <span class="es">Color: costa / urbano</span>
+            <span class="en">Color: beach / urban</span>
+          </span>
+          <span class="mm-cap">
+            <span class="es">Nombres largos sin truncar</span>
+            <span class="en">Long names without truncation</span>
+          </span>
+          <span class="mm-cap">
+            <span class="es">Panel contenido en móvil</span>
+            <span class="en">Contained panel on mobile</span>
+          </span>
         </div>
       </div>
 
@@ -3595,6 +3659,342 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </div>
 </section>
 
+<!-- ==================== REFERENCIAS ==================== -->
+<section class="process-section" id="referencias" style="padding: 100px 0; border-top: 1px solid var(--border);">
+  <div class="wrap">
+    
+
+    <!-- Header Horizontal Limpio — Mismo patrón que el resto de secciones -->
+    <div style="margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">
+        <span class="es">• TESTIMONIALES &amp; FEEDBACK</span>
+        <span class="en">• TESTIMONIALS &amp; FEEDBACK</span>
+      </div>
+      <h2 style="font-family: var(--font-serif); font-size: clamp(32px, 3.5vw, 44px); font-weight: 700; color: var(--white); margin: 0; line-height: 1.1;">
+        <span class="es">Lo que dicen quienes han trabajado con Marta<span class="c-purple">.</span></span>
+        <span class="en">What people say about working with Marta<span class="c-purple">.</span></span>
+      </h2>
+      <p style="font-size:14px; color:var(--text-dim); margin:8px 0 0;" class="es">Recomendaciones verificadas en <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
+      <p style="font-size:14px; color:var(--text-dim); margin:8px 0 0;" class="en">Verified on <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
+    </div>
+
+    <!-- Grid de cards del sistema -->
+    <div class="ref-grid">
+
+      <!-- Card 1: Pedro Lérida Nieto -->
+      <div class="ref-card reveal">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">"Marta es una persona con una actitud altamente exigente consigo misma, siempre esforzándose por dar lo mejor en cada proyecto. Su dedicación y compromiso se reflejan en la calidad de su trabajo, donde no solo aplica su amplio conocimiento, sino que se esfuerza por aprender y mejorar continuamente. En equipo destaca por sus excelentes habilidades sociales: es una comunicadora efectiva."</p>
+        <div class="ref-stars">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <div class="ref-author">
+          <img src="assets/avatar-pedro.jpg" alt="Pedro Lérida Nieto" class="ref-avatar">
+          <div>
+            <div class="ref-name">Pedro Lérida Nieto</div>
+            <div class="ref-role">Full Stack Developer &amp; Teacher · Neoland</div>
+          </div>
+          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="ref-linkedin" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Amaya Salamero -->
+      <div class="ref-card reveal">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">"Recomiendo a Marta por el impecable trabajo que desempeña, dando siempre ese toque de frescura y creatividad que la caracteriza. Marta es esa profesional y gran compañera de equipo que todos queremos tener cerca."</p>
+        <div class="ref-stars">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <div class="ref-author">
+          <img src="assets/avatar-amaya.jpg" alt="Amaya Salamero" class="ref-avatar">
+          <div>
+            <div class="ref-name">Amaya Salamero</div>
+            <div class="ref-role">Directora de Calidad y RR.HH</div>
+          </div>
+          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="ref-linkedin" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Nerea Sánchez Carazo -->
+      <div class="ref-card reveal">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">"Sin duda, Marta es una persona capaz de hacer todo aquello que se proponga, con una sonrisa enorme y muchas ganas de aprender."</p>
+        <div class="ref-stars">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <div class="ref-author">
+          <img src="assets/avatar-nerea.jpg" alt="Nerea Sánchez Carazo" class="ref-avatar">
+          <div>
+            <div class="ref-name">Nerea Sánchez Carazo</div>
+            <div class="ref-role">Front end developer</div>
+          </div>
+          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="ref-linkedin" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4: Javier Capó Terrer -->
+      <div class="ref-card reveal">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">"Tuve el placer de trabajar con Marta en AIMPLAS. Se involucraba al máximo y dominaba el trabajo en equipo. Además me fascinó sus ganas constantes de aprender y mejorar."</p>
+        <div class="ref-stars">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <div class="ref-author">
+          <img src="assets/avatar-javier.jpg" alt="Javier Capó Terrer" class="ref-avatar">
+          <div>
+            <div class="ref-name">Javier Capó Terrer</div>
+            <div class="ref-role">Gerente · Kapey Marketing S.L.</div>
+          </div>
+          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="ref-linkedin" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5: Fernando Calero Merello -->
+      <div class="ref-card reveal">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">"Persona metódica, organizada y aplicada. Tiene experiencia en diseño gráfico y en campos administrativos de negocio. Es muy agradable y hace más amena la oficina."</p>
+        <div class="ref-stars">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <div class="ref-author">
+          <img src="assets/avatar-fernando.jpg" alt="Fernando Calero Merello" class="ref-avatar">
+          <div>
+            <div class="ref-name">Fernando Calero Merello</div>
+            <div class="ref-role">System and Security Manager · We Are Actions</div>
+          </div>
+          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="ref-linkedin" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6: Inés Díaz López -->
+      <div class="ref-card reveal">
+        <div class="ref-quote">"</div>
+        <p class="ref-text">"¡Marta es una profesional de pies a cabeza! Muy curranta y perfeccionista, se adapta fácilmente, no tiene problemas en trabajar en equipo y puedes estar seguro de que todo lo que esté en su mano, lo va a hacer."</p>
+        <div class="ref-stars">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <div class="ref-author">
+          <img src="assets/avatar-ines.jpg" alt="Inés Díaz López" class="ref-avatar">
+          <div>
+            <div class="ref-name">Inés Díaz López</div>
+            <div class="ref-role">Bellas Artes · Universitat Politècnica de València</div>
+          </div>
+          <a href="https://linkedin.com/in/martamorales-designer" target="_blank" rel="noopener" class="ref-linkedin" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    
+    <div class="ref-accordion-trigger-container">
+      <button onclick="toggleReferencesAccordion()" class="btn-ghost ref-accordion-btn" id="refAccordionBtn" aria-expanded="false" aria-controls="referencias">
+        <span class="es">Mostrar todas las recomendaciones &nbsp;↓</span>
+        <span class="en">Show all recommendations &nbsp;↓</span>
+      </button>
+    </div>
+    
+    </div>
+  </div>
+</section>
+
+<style>
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ref-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+.ref-card:hover {
+  border-color: var(--border-mid);
+  background-color: var(--surface-2);
+  transform: translateY(-2px);
+}
+.ref-quote {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(var(--accent-rgb), 0.08);
+  font-family: Georgia, serif;
+  user-select: none;
+  pointer-events: none;
+}
+.ref-text {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+  padding-top: 16px;
+  flex-grow: 1;
+}
+.ref-stars {
+  display: flex;
+  gap: 3px;
+  margin-top: 4px;
+}
+.ref-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+.ref-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(var(--accent-rgb), 0.15);
+}
+.ref-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+.ref-role {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.ref-linkedin {
+  margin-left: auto;
+  color: var(--text-faint);
+  transition: color 0.2s ease;
+}
+.ref-linkedin:hover {
+  color: var(--accent);
+}
+@media (max-width: 1024px) {
+  .ref-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .ref-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Accordion behavior for desktop & tablet */
+@media (min-width: 769px) {
+  .ref-grid .ref-card:nth-child(n+4) {
+    display: none;
+    opacity: 0;
+  }
+  .ref-grid.expanded .ref-card:nth-child(n+4) {
+    display: flex;
+    animation: refFadeIn 0.5s ease forwards;
+  }
+}
+
+@keyframes refFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile slider / swipeable behavior */
+@media (max-width: 768px) {
+  .ref-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 16px !important;
+    padding: 12px 20px 24px !important;
+    margin: 0 -20px !important;
+  }
+  /* Hide scrollbar */
+  .ref-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .ref-grid {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+  .ref-card {
+    flex: 0 0 85% !important;
+    scroll-snap-align: center !important;
+    margin: 0 !important;
+  }
+  .ref-grid .ref-card:nth-child(n+4) {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .ref-accordion-trigger-container {
+    display: none !important;
+  }
+}
+
+/* Accordion button styling */
+.ref-accordion-trigger-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+.ref-accordion-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+</style>
+
 <!-- ==================== TECH STACK SECTION ==================== -->
 <section class="stack-section" id="stack">
   <div class="wrap">
@@ -3783,6 +4183,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <h3 class="sc-title en">ILUNION CRO<br><em>from <span class="locked-metric">3.36% to 6.5%</span> conversion</em></h3>
         <p class="sc-desc es">Optimización del funnel de reservas mediante análisis automático de 10.000+ logs de funnel y 250+ sesiones de Clarity (via Claude). Las hipótesis salieron de ese análisis de fricciones, no de la intuición. Diseñé y ejecuté <strong>Tests A/B (Control A vs. Tratamiento B)</strong> basados en hipótesis priorizadas (ICE) con verificación de significancia estadística ($p &lt; 0.05$), fundamentados en <strong>Buyer Personas</strong> (huéspedes vacacionales y corporativos) y aplicación de la <strong>Ley de Fitts</strong> en la visibilidad de CTAs clave. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto responsable · Ownership end-to-end de experimentación</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Tests A/B (Control vs. B) · Buyer &amp; User Personas · Ley de Fitts · Priorización ICE</span></p>
         <p class="sc-desc en">Booking funnel optimization driven by automated analysis of 10,000+ funnel logs and 250+ Clarity sessions (via Claude). Hypotheses came out of that friction analysis, not out of intuition. Designed and executed <strong>A/B Tests (Control A vs. Treatment B)</strong> driven by prioritized hypotheses (ICE framework) with statistical significance ($p &lt; 0.05$), built on <strong>Buyer Personas</strong> (leisure &amp; corporate bookers) and <strong>Fitts's Law</strong> for primary CTA ergonomics. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Responsible Product Designer · Autonomous end-to-end experiment ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: A/B Testing (Control vs. B) · Buyer &amp; User Personas · Fitts's Law · ICE Prioritization</span></p>
+        <div class="step-ai-integration es" style="margin-bottom:12px;">
+          <span class="ai-badge">Copiloto IA: Research &amp; Auditoría de Datos (MCP)</span>
+          <p>Extraigo 10.000+ logs de conversión (Analytics + Clarity) en 2h. Automatizo el clustering de sesiones de usuario para aislar fricciones visuales antes de diseñar y feedback para identificar fricciones visuales con datos validados.</p>
+        </div>
+        <div class="step-ai-integration en" style="margin-bottom:12px;">
+          <span class="ai-badge">AI Co-pilot: Data Audit &amp; Research (MCP)</span>
+          <p>I pull 10,000+ conversion logs (Analytics + Clarity) in 2h. I automate user-session clustering to isolate visual friction before designing.</p>
+        </div>
         <div class="sc-cta-row">
           <a href="ilunion-cro.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="ilunion-cro.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -4125,6 +4533,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 
 
+
+
 <!-- ==================== FOOTER ==================== -->
 <footer style="padding: 60px 0; border-top: 1px solid var(--border); background: #000000; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
   <div class="footer-links">
@@ -4146,6 +4556,66 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 
 <script>
+requestAnimationFrame(function(){
+  requestAnimationFrame(function(){ document.body.classList.add('is-ready'); });
+});
+
+/* ── COMPONENTE RECONSTRUIDO (ILUNION BENCH - PASO 3) ── */
+(function(){
+  var DESTINOS = ['Barcelona','Bilbao','Cádiz','Extremadura','Girona','Huelva','Lanzarote',
+                  'Madrid','Málaga','Mallorca','Menorca','San Sebastián','Sevilla'];
+  var HOTELES = [
+    ['ILUNION Islantilla','costa'], ['ILUNION Sancti Petri','costa'],
+    ['ILUNION Calas de Conil','costa'], ['ILUNION Alcalá Norte','urbano'],
+    ['ILUNION Alcora Sevilla','urbano'], ['ILUNION Almirante','urbano'],
+    ['ILUNION Aqua 3','urbano'], ['ILUNION Aqua 4','urbano'],
+    ['ILUNION Atrium','urbano'], ['ILUNION Auditori','urbano'],
+    ['ILUNION Barcelona','urbano'], ['ILUNION Bel Art','urbano'],
+    ['ILUNION Les Corts – Spa','urbano'], ['ILUNION Pío XII','urbano']
+  ];
+
+  var PIN = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
+    '<path d="M8 1.6c-2.3 0-4.2 1.9-4.2 4.2C3.8 9 8 14.4 8 14.4S12.2 9 12.2 5.8c0-2.3-1.9-4.2-4.2-4.2z" ' +
+    'stroke="#5C5C5C" stroke-width="1.2"/><circle cx="8" cy="5.8" r="1.5" stroke="#5C5C5C" stroke-width="1.2"/></svg>';
+  
+  function bed(c){
+    return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
+      '<path d="M1.6 11.6V5m0 3.2h12.8V11.6m0-2.6V7.4a1.6 1.6 0 00-1.6-1.6H7.8V9" stroke="' + c +
+      '" stroke-width="1.3" stroke-linecap="round"/><circle cx="4.6" cy="7" r="1.3" stroke="' + c + '" stroke-width="1.3"/></svg>';
+  }
+
+  var mmDest = document.getElementById('mmDest');
+  var mmHot = document.getElementById('mmHot');
+  
+  if (mmDest) {
+    mmDest.innerHTML = DESTINOS.map(function(c,i){
+      return '<li><button class="mm-opt" style="animation-delay:' + (i*22) + 'ms">' + PIN + '<span>' + c + '</span></button></li>';
+    }).join('');
+  }
+  if (mmHot) {
+    mmHot.innerHTML = HOTELES.map(function(h,i){
+      var c = h[1] === 'costa' ? '#FFD100' : '#3B7DD8';
+      return '<li><button class="mm-opt" style="animation-delay:' + (i*22) + 'ms">' + bed(c) + '<span>' + h[0] + '</span></button></li>';
+    }).join('');
+  }
+
+  var combo = document.getElementById('mmCombo'), trigger = document.getElementById('mmTrigger');
+  function toggle(open){ 
+    if (combo && trigger) {
+      combo.dataset.open = String(open); 
+      trigger.setAttribute('aria-expanded', String(open)); 
+    }
+  }
+  if (trigger) {
+    trigger.addEventListener('click', function(){ toggle(combo.dataset.open !== 'true'); });
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && combo && combo.dataset.open === 'true'){ toggle(false); if (trigger) trigger.focus(); }
+  });
+  document.addEventListener('click', function(e){ if (combo && !combo.contains(e.target)) toggle(false); });
+
+})();
+
 /* ---- LANGUAGE: restore from localStorage ---- */
 (function() {
   const savedLang = localStorage.getItem('portfolio_lang');
@@ -4175,6 +4645,25 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 
 
+
+/* ---- REFERENCES ACCORDION ---- */
+window.toggleReferencesAccordion = function() {
+  const grid = document.querySelector('.ref-grid');
+  const btn = document.getElementById('refAccordionBtn');
+  const isExpanded = grid.classList.toggle('expanded');
+  btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+  
+  if (isExpanded) {
+    btn.querySelector('.es').innerHTML = 'Mostrar menos &nbsp;↑';
+    btn.querySelector('.en').innerHTML = 'Show less &nbsp;↑';
+  } else {
+    btn.querySelector('.es').innerHTML = 'Mostrar todas las recomendaciones &nbsp;↓';
+    btn.querySelector('.en').innerHTML = 'Show all recommendations &nbsp;↓';
+    
+    // Desplazamiento suave al inicio de testimonios al colapsar
+    document.getElementById('referencias').scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 /* ---- MOBILE MENU ---- */
 function openMenu() {
@@ -5861,80 +6350,6 @@ body.visitor-unauthorized .locked-metric:hover::after {
   io.observe(marquee);
   // Red de seguridad: si el observer no dispara, el ticker se muestra igual.
   setTimeout(reveal, 2500);
-})();
-</script>
-
-<script>
-/* Revelado del hero. El doble requestAnimationFrame asegura que el estado
-   inicial se ha pintado antes de disparar la transición: sin él, el navegador
-   colapsa ambos estados en un frame y no se ve nada. */
-requestAnimationFrame(function () {
-  requestAnimationFrame(function () { document.body.classList.add('is-ready'); });
-});
-</script>
-
-<script>
-/* Banco de pruebas: el componente que sustituyó al <select> nativo. */
-(function () {
-  var combo = document.getElementById('mmCombo');
-  var trigger = document.getElementById('mmTrigger');
-  var destUl = document.getElementById('mmDest');
-  var hotUl = document.getElementById('mmHot');
-  if (!combo || !trigger || !destUl || !hotUl) return;
-
-  var DESTINOS = ['Barcelona', 'Bilbao', 'Cádiz', 'Extremadura', 'Girona', 'Huelva', 'Lanzarote',
-                  'Madrid', 'Málaga', 'Mallorca', 'Menorca', 'San Sebastián', 'Sevilla'];
-  var HOTELES = [
-    ['ILUNION Islantilla', 'costa'], ['ILUNION Sancti Petri', 'costa'],
-    ['ILUNION Calas de Conil', 'costa'], ['ILUNION Alcalá Norte', 'urbano'],
-    ['ILUNION Alcora Sevilla', 'urbano'], ['ILUNION Almirante', 'urbano'],
-    ['ILUNION Aqua 3', 'urbano'], ['ILUNION Aqua 4', 'urbano'],
-    ['ILUNION Atrium', 'urbano'], ['ILUNION Auditori', 'urbano'],
-    ['ILUNION Barcelona', 'urbano'], ['ILUNION Bel Art', 'urbano'],
-    ['ILUNION Les Corts – Spa', 'urbano'], ['ILUNION Pío XII', 'urbano']
-  ];
-
-  var PIN = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
-    '<path d="M8 1.6c-2.3 0-4.2 1.9-4.2 4.2C3.8 9 8 14.4 8 14.4S12.2 9 12.2 5.8c0-2.3-1.9-4.2-4.2-4.2z" ' +
-    'stroke="#5C5C5C" stroke-width="1.2"/><circle cx="8" cy="5.8" r="1.5" stroke="#5C5C5C" stroke-width="1.2"/></svg>';
-
-  function bed(c) {
-    return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
-      '<path d="M1.6 11.6V5m0 3.2h12.8V11.6m0-2.6V7.4a1.6 1.6 0 00-1.6-1.6H7.8V9" stroke="' + c +
-      '" stroke-width="1.3" stroke-linecap="round"/><circle cx="4.6" cy="7" r="1.3" stroke="' + c + '" stroke-width="1.3"/></svg>';
-  }
-
-  destUl.innerHTML = DESTINOS.map(function (c, i) {
-    return '<li><button type="button" class="mm-opt" style="animation-delay:' + (i * 22) + 'ms">' +
-           PIN + '<span>' + c + '</span></button></li>';
-  }).join('');
-
-  hotUl.innerHTML = HOTELES.map(function (h, i) {
-    var c = h[1] === 'costa' ? '#FFD100' : '#3B7DD8';
-    return '<li><button type="button" class="mm-opt" style="animation-delay:' + (i * 22) + 'ms">' +
-           bed(c) + '<span>' + h[0] + '</span></button></li>';
-  }).join('');
-
-  function toggle(open) {
-    combo.dataset.open = String(open);
-    trigger.setAttribute('aria-expanded', String(open));
-  }
-
-  trigger.addEventListener('click', function () { toggle(combo.dataset.open !== 'true'); });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && combo.dataset.open === 'true') { toggle(false); trigger.focus(); }
-  });
-  document.addEventListener('click', function (e) { if (!combo.contains(e.target)) toggle(false); });
-
-  /* Un <option> no admite <span>, así que el patrón .es/.en por CSS no le
-     sirve: este placeholder se sincroniza con la clase lang-en del <html>. */
-  var ph = document.querySelector('#mmNat option[data-es]');
-  function syncLang() {
-    if (!ph) return;
-    ph.textContent = document.documentElement.classList.contains('lang-en') ? ph.dataset.en : ph.dataset.es;
-  }
-  syncLang();
-  new MutationObserver(syncLang).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 })();
 </script>
 
