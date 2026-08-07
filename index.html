@@ -2590,6 +2590,13 @@ html.lang-en .hero-positioning.en { display: block !important; }
   }
 }
 
+/* En móvil el titular baja de tamaño y el subrayado queda pegado a las
+   letras: se quita, no se oculta con transform, porque el bloque de
+   reduced-motion de arriba fuerza scaleX(1) con !important. */
+@media (max-width: 768px) {
+  .hero-title .c-purple::after { content: none; }
+}
+
 /* ── Banco de pruebas: dos especímenes claros sobre negro ── */
 .mm-bench{margin-top:clamp(44px,7vh,76px);
   display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(18px,2.6vw,32px);align-items:start}
