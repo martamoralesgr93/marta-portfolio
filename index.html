@@ -2577,9 +2577,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
 }
 .mm-slot--now .mm-spec {
   box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 34px 80px -38px rgba(167,139,250,.85);
-  /* Altura reservada: la tarjeta ya mide lo que medirá con el panel abierto,
-     así abrirlo no desplaza las píldoras ni la nota. Cero layout shift. */
-  min-height: 392px;
 }
 
 /* Lado nativo: es el navegador, no diseño. Por eso es un <select> real. */
@@ -2650,7 +2647,9 @@ html.lang-en .hero-positioning.en { display: block !important; }
   background: var(--card); border: 1px solid var(--border); border-radius: 99px; padding: 6px 13px;
 }
 .mm-cap::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex: 0 0 auto; }
-.mm-note { font-size: 11px; line-height: 1.6; color: var(--text-muted); margin: 24px 0 0; max-width: 80ch; }
+/* Va delante del banco: presenta lo que se va a manipular en vez de
+   explicarlo después. */
+.mm-note { font-size: 11px; line-height: 1.6; color: var(--text-muted); margin: clamp(36px, 5vh, 56px) 0 0; max-width: 80ch; }
 
 @media (max-width: 860px) {
   .mm-bench { grid-template-columns: 1fr; gap: 26px; }
@@ -2670,6 +2669,17 @@ html.lang-en .hero-positioning.en { display: block !important; }
    apilamiento propio para que el blend del vídeo no se escape a la página. */
 .hero { isolation: isolate; }
 .hero > .wrap { position: relative; z-index: 2; }
+
+/* El hero ya no recorta: el desplegable del banco se sale de su caja y
+   quedaba cortado por abajo. La atmósfera no lo necesita, se recorta ella
+   sola con su propio overflow. */
+.hero { overflow: visible; }
+
+/* Y mientras el desplegable está abierto el hero sube de plano: la sección
+   siguiente lleva z-index 1 y si no le tapaba al panel la mitad de abajo,
+   dejándola además sin poder clicar. Solo se aplica con el panel abierto,
+   así que el resto del tiempo el apilamiento queda como estaba. */
+.hero:has(.mm-combo[data-open="true"]) { z-index: 3; }
 
 .mm-atmos { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 
@@ -2841,6 +2851,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
     </div>
 
+    <p class="mm-note mm-rise mm-d3">
+      <span class="es">Selector de destino del motor de reservas de ILUNION Hotels. El bloque 01 reproduce la agrupación real del <code>&lt;select&gt;</code> anterior; el 02 es una reconstrucción funcional del componente en producción. Métricas de conversión del canal, en el case study.</span>
+      <span class="en">Destination selector from the ILUNION Hotels booking engine. Block 01 reproduces the real grouping of the previous <code>&lt;select&gt;</code>; block 02 is a functional rebuild of the component in production. Channel conversion metrics live in the case study.</span>
+    </p>
+
     <!-- ==================== BANCO DE PRUEBAS ==================== -->
     <div class="mm-bench mm-rise mm-d3">
 
@@ -2924,11 +2939,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
       </div>
 
     </div>
-
-    <p class="mm-note">
-      <span class="es">Selector de destino del motor de reservas de ILUNION Hotels. El bloque 01 reproduce la agrupación real del <code>&lt;select&gt;</code> anterior; el 02 es una reconstrucción funcional del componente en producción. Métricas de conversión del canal, en el case study.</span>
-      <span class="en">Destination selector from the ILUNION Hotels booking engine. Block 01 reproduces the real grouping of the previous <code>&lt;select&gt;</code>; block 02 is a functional rebuild of the component in production. Channel conversion metrics live in the case study.</span>
-    </p>
   </div>
 </section>
 
@@ -5915,12 +5925,6 @@ requestAnimationFrame(function () {
     if (e.key === 'Escape' && combo.dataset.open === 'true') { toggle(false); trigger.focus(); }
   });
   document.addEventListener('click', function (e) { if (!combo.contains(e.target)) toggle(false); });
-
-  /* Se abre solo para que el visitante vea que es manipulable sin tener que
-     descubrirlo. Bajo reduced-motion no se abre: nada se mueve sin pedirlo. */
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    setTimeout(function () { toggle(true); }, 1300);
-  }
 
   /* Un <option> no admite <span>, así que el patrón .es/.en por CSS no le
      sirve: este placeholder se sincroniza con la clase lang-en del <html>. */
