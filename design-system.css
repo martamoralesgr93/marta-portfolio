@@ -1017,3 +1017,31 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 @media (max-width: 768px) {
   .cs-plate { margin-top: 28px; margin-bottom: 28px; padding: 28px 20px; }
 }
+
+/* ---------------------------------------------------------------
+   PROCESS DOC — enlace a la documentación del proceso en el footer
+   Antes iba con estilos inline y colores hardcodeados; ahora usa
+   los tokens del sistema como el resto de tarjetas.
+   --------------------------------------------------------------- */
+.cs-process-doc {
+  max-width: 640px;
+  margin: 0 auto var(--space-md);
+  padding: var(--space-md) var(--space-md) 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+.cs-process-doc:hover { border-color: var(--accent-border); background: var(--accent-glow); }
+.cs-process-doc .cs-process-doc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+}
+.cs-process-doc p { font-size: 13.5px; line-height: 1.6; color: var(--text); margin: 0 0 16px; }
+.cs-process-doc a {
+  display: inline-block; font-size: 13px; font-weight: 600;
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid transparent; padding-bottom: 2px;
+  transition: border-color var(--transition-fast);
+}
+.cs-process-doc a:hover { border-bottom-color: var(--accent); }
