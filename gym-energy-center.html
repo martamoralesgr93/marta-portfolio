@@ -689,13 +689,187 @@
         <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Likes, reseñas, historial y testimonios. Señales de progreso y reconocimiento que dan un motivo para volver.</span><span class="en">Likes, reviews, history and testimonials. Signals of progress and recognition that give a reason to return.</span></p>
       </div>
     </div>
+
+    <figure class="cs-figure fu" style="margin: 40px 0 0; max-width: 920px;">
+      <svg viewBox="0 0 920 250" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" style="border: 1px solid var(--border); border-radius: 16px; display: block;">
+        <title><tspan class="es">Flujo de reserva</tspan><tspan class="en">Booking flow</tspan></title>
+        <g class="es"><text x="32" y="42" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4" fill="var(--accent)">PILAR PRÁCTICO — FLUJO DE RESERVA</text></g>
+        <g class="en"><text x="32" y="42" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4" fill="var(--accent)">PRACTICAL PILLAR — BOOKING FLOW</text></g>
+
+        <!-- Paso 1 -->
+        <rect x="32" y="70" width="150" height="62" rx="12" fill="none" stroke="var(--border)"/>
+        <g class="es"><text x="107" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="var(--white)">Feed</text><text x="107" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">filtro por tipo</text></g>
+        <g class="en"><text x="107" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="var(--white)">Feed</text><text x="107" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">filter by type</text></g>
+        <line x1="182" y1="101" x2="212" y2="101" stroke="var(--border)" stroke-width="1.5"/><path d="M212 101 l-7 -4.5 v9 z" fill="var(--text-dim)"/>
+
+        <!-- Paso 2 -->
+        <rect x="218" y="70" width="150" height="62" rx="12" fill="none" stroke="var(--border)"/>
+        <g class="es"><text x="293" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="var(--white)">Actividad</text><text x="293" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">plazas y horario</text></g>
+        <g class="en"><text x="293" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="var(--white)">Activity</text><text x="293" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">places and time</text></g>
+        <line x1="368" y1="101" x2="398" y2="101" stroke="var(--border)" stroke-width="1.5"/><path d="M398 101 l-7 -4.5 v9 z" fill="var(--text-dim)"/>
+
+        <!-- Decisión -->
+        <path d="M474 62 l70 39 -70 39 -70 -39 z" fill="var(--accent-glow)" stroke="var(--accent-border)" stroke-width="1.5"/>
+        <g class="es"><text x="474" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="var(--white)">¿Tiene</text><text x="474" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="var(--white)">sesión?</text></g>
+        <g class="en"><text x="474" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="var(--white)">Logged</text><text x="474" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="var(--white)">in?</text></g>
+
+        <!-- Rama NO (abajo) -->
+        <path d="M474 140 v40 h116" fill="none" stroke="var(--border)" stroke-width="1.5"/><path d="M590 180 l-7 -4.5 v9 z" fill="var(--text-dim)"/>
+        <g class="es"><text x="486" y="162" font-family="Inter, sans-serif" font-size="10.5" fill="var(--text-dim)">no</text></g>
+        <g class="en"><text x="486" y="162" font-family="Inter, sans-serif" font-size="10.5" fill="var(--text-dim)">no</text></g>
+        <rect x="596" y="156" width="140" height="48" rx="12" fill="none" stroke="var(--border)" stroke-dasharray="4 4"/>
+        <g class="es"><text x="666" y="177" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="600" fill="var(--text)">Login / Registro</text><text x="666" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="var(--text-dim)">vuelve a la actividad</text></g>
+        <g class="en"><text x="666" y="177" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="600" fill="var(--text)">Login / Sign up</text><text x="666" y="194" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="var(--text-dim)">returns to the activity</text></g>
+        <path d="M736 180 h30 v-58" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="4 4"/><path d="M766 122 l-4.5 7 h9 z" fill="var(--text-dim)"/>
+
+        <!-- Rama SÍ -->
+        <line x1="544" y1="101" x2="596" y2="101" stroke="var(--accent)" stroke-width="1.5"/><path d="M596 101 l-7 -4.5 v9 z" fill="var(--accent)"/>
+        <g class="es"><text x="556" y="92" font-family="Inter, sans-serif" font-size="10.5" fill="var(--accent)">sí</text></g>
+        <g class="en"><text x="556" y="92" font-family="Inter, sans-serif" font-size="10.5" fill="var(--accent)">yes</text></g>
+
+        <!-- Paso final -->
+        <rect x="602" y="70" width="286" height="62" rx="12" fill="var(--accent-glow)" stroke="var(--accent-border)" stroke-width="1.5"/>
+        <g class="es"><text x="745" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="var(--white)">Calendario → plaza reservada</text><text x="745" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">confirmación por email · aparece en tu perfil</text></g>
+        <g class="en"><text x="745" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="var(--white)">Calendar → place booked</text><text x="745" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">email confirmation · shows up on your profile</text></g>
+
+        <g class="es"><text x="32" y="228" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">El registro no es una puerta de entrada al sitio: aparece en el momento exacto en que el usuario ya quiere algo.</text></g>
+        <g class="en"><text x="32" y="228" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Sign-up isn't the front door to the site: it appears at the exact moment the user already wants something.</text></g>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<!-- MAPA DE CONTEXTOS DE AUTENTICACIÓN -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">03</div>
+    <div class="fu">
+      <div class="block-label"><span class="es">Arquitectura de permisos</span><span class="en">Permission architecture</span></div>
+      <h2>
+        <span class="es">Tres contextos, no tres pantallas</span>
+        <span class="en">Three contexts, not three screens</span>
+      </h2>
+      <p class="es" style="max-width: 720px;">La decisión que más condicionó el frontend: en vez de duplicar vistas por rol, definimos tres contextos de autenticación y dejamos que cada pantalla se resolviera dentro del suyo. Un usuario anónimo y un administrador recorren las mismas rutas; lo que cambia es qué puede hacer cada uno.</p>
+      <p class="en" style="max-width: 720px;">The decision that shaped the frontend most: instead of duplicating views per role, we defined three authentication contexts and let each screen resolve inside its own. An anonymous user and an admin walk the same routes; what changes is what each one can do.</p>
+    </div>
+
+    <figure class="cs-figure fu" style="margin: 36px 0 0; max-width: 920px;">
+      <svg viewBox="0 0 920 512" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" style="border: 1px solid var(--border); border-radius: 16px; display: block;">
+        <title><tspan class="es">Mapa de los tres contextos de autenticación</tspan><tspan class="en">Map of the three authentication contexts</tspan></title>
+
+        <!-- BANDA 1: PÚBLICO -->
+        <rect x="16" y="20" width="888" height="140" rx="14" fill="none" stroke="var(--border)" stroke-width="1"/>
+        <text x="40" y="52" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="var(--accent)">01</text>
+        <g class="es">
+          <text x="40" y="80" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="var(--white)">Público</text>
+          <text x="40" y="102" font-family="Inter, sans-serif" font-size="12" fill="var(--text-dim)">sin contexto</text>
+          <text x="40" y="128" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Puede mirar.</text>
+          <text x="40" y="144" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">No puede actuar.</text>
+        </g>
+        <g class="en">
+          <text x="40" y="80" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="var(--white)">Public</text>
+          <text x="40" y="102" font-family="Inter, sans-serif" font-size="12" fill="var(--text-dim)">no context</text>
+          <text x="40" y="128" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Can look.</text>
+          <text x="40" y="144" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Cannot act.</text>
+        </g>
+        <line x1="212" y1="36" x2="212" y2="144" stroke="var(--border)" stroke-width="1"/>
+        <g class="es">
+          <rect x="236" y="56" width="176" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="324" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Feed de actividades</text>
+          <rect x="424" y="56" width="182" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="515" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Detalle de actividad</text>
+          <rect x="618" y="56" width="152" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="694" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Login / Registro</text>
+          <rect x="236" y="102" width="150" height="34" rx="17" fill="none" stroke="var(--border)" stroke-dasharray="4 4" opacity="0.5"/><text x="311" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text-dim)" opacity="0.75">Reservar — bloqueado</text>
+        </g>
+        <g class="en">
+          <rect x="236" y="56" width="176" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="324" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Activities feed</text>
+          <rect x="424" y="56" width="182" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="515" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Activity detail</text>
+          <rect x="618" y="56" width="152" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="694" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Login / Sign up</text>
+          <rect x="236" y="102" width="150" height="34" rx="17" fill="none" stroke="var(--border)" stroke-dasharray="4 4" opacity="0.5"/><text x="311" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text-dim)" opacity="0.75">Booking — locked</text>
+        </g>
+
+        <!-- BANDA 2: useAuth -->
+        <rect x="16" y="180" width="888" height="140" rx="14" fill="none" stroke="var(--accent-border)" stroke-width="1.5"/>
+        <text x="40" y="212" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="var(--accent)">02</text>
+        <g class="es">
+          <text x="40" y="240" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="var(--white)">useAuth</text>
+          <text x="40" y="262" font-family="Inter, sans-serif" font-size="12" fill="var(--text-dim)">usuario registrado</text>
+          <text x="40" y="288" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Los tres pilares</text>
+          <text x="40" y="304" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">se activan aquí.</text>
+        </g>
+        <g class="en">
+          <text x="40" y="240" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="var(--white)">useAuth</text>
+          <text x="40" y="262" font-family="Inter, sans-serif" font-size="12" fill="var(--text-dim)">registered user</text>
+          <text x="40" y="288" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">All three pillars</text>
+          <text x="40" y="304" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">switch on here.</text>
+        </g>
+        <line x1="212" y1="196" x2="212" y2="304" stroke="var(--border)" stroke-width="1"/>
+        <g class="es">
+          <rect x="236" y="212" width="146" height="34" rx="17" fill="var(--accent-glow)" stroke="var(--accent-border)"/><text x="309" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--white)">Reservar plaza</text>
+          <rect x="394" y="212" width="118" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="453" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Favoritos</text>
+          <rect x="524" y="212" width="122" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="585" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Chat 1-a-1</text>
+          <rect x="658" y="212" width="112" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="714" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Ver muro</text>
+          <rect x="236" y="258" width="112" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="292" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Reseñas</text>
+          <rect x="360" y="258" width="168" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="444" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Seguir monitores</text>
+          <rect x="540" y="258" width="148" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="614" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Perfil público</text>
+        </g>
+        <g class="en">
+          <rect x="236" y="212" width="146" height="34" rx="17" fill="var(--accent-glow)" stroke="var(--accent-border)"/><text x="309" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--white)">Book a place</text>
+          <rect x="394" y="212" width="118" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="453" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Favourites</text>
+          <rect x="524" y="212" width="122" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="585" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">1-to-1 chat</text>
+          <rect x="658" y="212" width="112" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="714" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">View wall</text>
+          <rect x="236" y="258" width="112" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="292" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Reviews</text>
+          <rect x="360" y="258" width="168" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="444" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Follow instructors</text>
+          <rect x="540" y="258" width="148" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="614" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Public profile</text>
+        </g>
+
+        <!-- BANDA 3: useAuthSuper -->
+        <rect x="16" y="340" width="888" height="150" rx="14" fill="none" stroke="var(--border)" stroke-width="1"/>
+        <text x="40" y="372" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="1.6" fill="var(--accent)">03</text>
+        <g class="es">
+          <text x="40" y="400" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="var(--white)">useAuthSuper</text>
+          <text x="40" y="422" font-family="Inter, sans-serif" font-size="12" fill="var(--text-dim)">monitor · admin</text>
+          <text x="40" y="448" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Gestiona el</text>
+          <text x="40" y="464" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">contenido del gimnasio.</text>
+        </g>
+        <g class="en">
+          <text x="40" y="400" font-family="Inter, sans-serif" font-size="17" font-weight="700" fill="var(--white)">useAuthSuper</text>
+          <text x="40" y="422" font-family="Inter, sans-serif" font-size="12" fill="var(--text-dim)">instructor · admin</text>
+          <text x="40" y="448" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Manages the</text>
+          <text x="40" y="464" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">gym's content.</text>
+        </g>
+        <line x1="212" y1="356" x2="212" y2="464" stroke="var(--border)" stroke-width="1"/>
+        <g class="es">
+          <rect x="236" y="372" width="152" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="312" y="394" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Crear actividad</text>
+          <rect x="400" y="372" width="150" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="475" y="394" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Editar / borrar</text>
+          <rect x="562" y="372" width="152" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="638" y="394" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Crear horarios</text>
+          <rect x="236" y="418" width="130" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="301" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Crear muro</text>
+          <rect x="378" y="418" width="156" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="456" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Dar rol monitor</text>
+          <rect x="546" y="418" width="188" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="640" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Dar de baja usuarios</text>
+        </g>
+        <g class="en">
+          <rect x="236" y="372" width="152" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="312" y="394" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Create activity</text>
+          <rect x="400" y="372" width="150" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="475" y="394" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Edit / delete</text>
+          <rect x="562" y="372" width="152" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="638" y="394" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Create schedules</text>
+          <rect x="236" y="418" width="130" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="301" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Create wall</text>
+          <rect x="378" y="418" width="156" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="456" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Grant instructor role</text>
+          <rect x="546" y="418" width="188" height="34" rx="17" fill="none" stroke="var(--border)"/><text x="640" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--text)">Deactivate users</text>
+        </g>
+      </svg>
+      <figcaption style="font-size: 12px; color: var(--text-dim); margin-top: 14px; text-align: center;">
+        <span class="es">Los tres contextos de autenticación. El anónimo ve el catálogo pero la reserva queda bloqueada: ese muro es el que convierte visitante en usuario.</span>
+        <span class="en">The three authentication contexts. Anonymous users see the catalogue but booking stays locked: that wall is what turns a visitor into a user.</span>
+      </figcaption>
+    </figure>
+
+    <div class="insight-box fu" style="margin-top: 32px;">
+      <p style="margin: 0;"><strong><span class="es">Por qué importa:</span><span class="en">Why it matters:</span></strong> <span class="es">tratar los permisos como contexto y no como pantallas evitó duplicar vistas por rol. Cuando en 2026 añada el recomendador con IA, entra en <em>useAuth</em> sin tocar el resto.</span><span class="en">treating permissions as context rather than screens avoided duplicating views per role. When I add the AI recommender in 2026, it drops into <em>useAuth</em> without touching anything else.</span></p>
+    </div>
   </div>
 </section>
 
 <!-- SISTEMA DE DISEÑO -->
 <section class="cs-block cs-block-light">
   <div class="cs-wrap">
-    <div class="cs-star fu">03</div>
+    <div class="cs-star fu">04</div>
     <div class="fu">
       <div class="block-label"><span class="es">Sistema de diseño</span><span class="en">Design system</span></div>
       <h2>
@@ -733,7 +907,7 @@
 <!-- ARQUITECTURA -->
 <section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
   <div class="cs-wrap">
-    <div class="cs-star fu">04</div>
+    <div class="cs-star fu">05</div>
     <div class="fu">
       <div class="block-label"><span class="es">Lo que construyó el equipo</span><span class="en">What the team built</span></div>
       <h2>
@@ -765,14 +939,103 @@
         <div class="hm-label en">User roles</div>
       </div>
     </div>
-    <div class="cs-grid-2 fu" style="margin-top: 32px;">
-      <div style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
-        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">Frontend</div>
-        <p style="margin: 0; font-size: 13.5px; color: var(--text);">React 18 · Vite · Context API · CSS responsive · Cloudinary</p>
-      </div>
-      <div style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
-        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">Backend</div>
-        <p style="margin: 0; font-size: 13.5px; color: var(--text);">Node.js · Express · MongoDB · Mongoose · JWT · Bcrypt · Nodemailer</p>
+    <figure class="cs-figure fu" style="margin: 36px 0 0; max-width: 920px;">
+      <svg viewBox="0 0 920 430" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" style="border: 1px solid var(--border); border-radius: 16px; display: block;">
+        <title><tspan class="es">Arquitectura del sistema</tspan><tspan class="en">System architecture</tspan></title>
+
+        <!-- COLUMNA FRONTEND -->
+        <rect x="24" y="28" width="248" height="374" rx="14" fill="none" stroke="var(--border)"/>
+        <text x="48" y="58" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4" fill="var(--accent)">FRONTEND</text>
+        <text x="48" y="84" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="var(--white)">React 18 · Vite</text>
+        <rect x="48" y="102" width="200" height="30" rx="8" fill="none" stroke="var(--border)"/>
+        <g class="es"><text x="62" y="122" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">40+ componentes</text></g>
+        <g class="en"><text x="62" y="122" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">40+ components</text></g>
+        <rect x="48" y="140" width="200" height="30" rx="8" fill="none" stroke="var(--border)"/>
+        <g class="es"><text x="62" y="160" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">20+ custom hooks</text></g>
+        <g class="en"><text x="62" y="160" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">20+ custom hooks</text></g>
+        <rect x="48" y="178" width="200" height="30" rx="8" fill="var(--accent-glow)" stroke="var(--accent-border)"/>
+        <g class="es"><text x="62" y="198" font-family="Inter, sans-serif" font-size="12" fill="var(--white)">Context API · 3 contextos</text></g>
+        <g class="en"><text x="62" y="198" font-family="Inter, sans-serif" font-size="12" fill="var(--white)">Context API · 3 contexts</text></g>
+        <rect x="48" y="216" width="200" height="30" rx="8" fill="none" stroke="var(--border)"/>
+        <g class="es"><text x="62" y="236" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">CSS responsive</text></g>
+        <g class="en"><text x="62" y="236" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Responsive CSS</text></g>
+        <g class="es"><text x="48" y="286" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="var(--text-dim)">SISTEMA DE DISEÑO</text></g>
+        <g class="en"><text x="48" y="286" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="var(--text-dim)">DESIGN SYSTEM</text></g>
+        <rect x="48" y="298" width="26" height="26" rx="6" fill="#0D5FA6"/>
+        <rect x="82" y="298" width="26" height="26" rx="6" fill="#F2BB16"/>
+        <rect x="116" y="298" width="26" height="26" rx="6" fill="#D92929"/>
+        <rect x="150" y="298" width="26" height="26" rx="6" fill="#E3E3E3"/>
+        <rect x="184" y="298" width="26" height="26" rx="6" fill="#303030" stroke="var(--border)"/>
+        <g class="es"><text x="48" y="352" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Los componentes se</text><text x="48" y="368" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">definieron antes que</text><text x="48" y="384" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">las pantallas.</text></g>
+        <g class="en"><text x="48" y="352" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Components were</text><text x="48" y="368" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">defined before the</text><text x="48" y="384" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">screens were.</text></g>
+
+        <!-- FLECHA 1 -->
+        <line x1="272" y1="215" x2="330" y2="215" stroke="var(--accent)" stroke-width="1.5"/>
+        <path d="M330 215 l-8 -5 v10 z" fill="var(--accent)"/>
+        <g class="es"><text x="301" y="204" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--text-dim)">JWT</text></g>
+        <g class="en"><text x="301" y="204" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--text-dim)">JWT</text></g>
+
+        <!-- COLUMNA BACKEND -->
+        <rect x="336" y="28" width="248" height="374" rx="14" fill="none" stroke="var(--border)"/>
+        <text x="360" y="58" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4" fill="var(--accent)">BACKEND</text>
+        <text x="360" y="84" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="var(--white)">Node.js · Express</text>
+        <rect x="360" y="102" width="200" height="30" rx="8" fill="var(--accent-glow)" stroke="var(--accent-border)"/>
+        <g class="es"><text x="374" y="122" font-family="Inter, sans-serif" font-size="12" fill="var(--white)">30+ endpoints REST</text></g>
+        <g class="en"><text x="374" y="122" font-family="Inter, sans-serif" font-size="12" fill="var(--white)">30+ REST endpoints</text></g>
+        <rect x="360" y="140" width="200" height="30" rx="8" fill="none" stroke="var(--border)"/>
+        <g class="es"><text x="374" y="160" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">JWT + Bcrypt · 3 roles</text></g>
+        <g class="en"><text x="374" y="160" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">JWT + Bcrypt · 3 roles</text></g>
+        <rect x="360" y="178" width="200" height="30" rx="8" fill="none" stroke="var(--border)"/>
+        <g class="es"><text x="374" y="198" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Mongoose ODM</text></g>
+        <g class="en"><text x="374" y="198" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Mongoose ODM</text></g>
+        <g class="es"><text x="360" y="248" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="var(--text-dim)">SERVICIOS EXTERNOS</text></g>
+        <g class="en"><text x="360" y="248" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="var(--text-dim)">EXTERNAL SERVICES</text></g>
+        <rect x="360" y="260" width="122" height="28" rx="14" fill="none" stroke="var(--border)"/><text x="421" y="279" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="var(--text)">Cloudinary</text>
+        <rect x="490" y="260" width="70" height="28" rx="14" fill="none" stroke="var(--border)"/><text x="525" y="279" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" fill="var(--text)">Email</text>
+        <g class="es"><text x="360" y="330" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">4 disparadores de aviso</text><text x="360" y="346" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">por correo: reserva,</text><text x="360" y="362" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">cancelación, alta y</text><text x="360" y="378" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">recuperar contraseña.</text></g>
+        <g class="en"><text x="360" y="330" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">4 email notification</text><text x="360" y="346" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">triggers: booking,</text><text x="360" y="362" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">cancellation, sign-up</text><text x="360" y="378" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">and password reset.</text></g>
+
+        <!-- FLECHA 2 -->
+        <line x1="584" y1="215" x2="642" y2="215" stroke="var(--accent)" stroke-width="1.5"/>
+        <path d="M642 215 l-8 -5 v10 z" fill="var(--accent)"/>
+
+        <!-- COLUMNA DATOS -->
+        <rect x="648" y="28" width="248" height="374" rx="14" fill="none" stroke="var(--border)"/>
+        <text x="672" y="58" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4" fill="var(--accent)">MONGODB</text>
+        <g class="es"><text x="672" y="84" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="var(--white)">8 colecciones</text></g>
+        <g class="en"><text x="672" y="84" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="var(--white)">8 collections</text></g>
+        <rect x="672" y="102" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="121" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">User</text>
+        <rect x="672" y="136" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="155" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Activity</text>
+        <rect x="672" y="170" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="189" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">ActivityToDay</text>
+        <rect x="672" y="204" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="223" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Day</text>
+        <rect x="672" y="238" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="257" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Chat</text>
+        <rect x="672" y="272" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="291" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Message</text>
+        <rect x="672" y="306" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="325" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Review</text>
+        <rect x="672" y="340" width="200" height="28" rx="8" fill="none" stroke="var(--border)"/><text x="686" y="359" font-family="Inter, sans-serif" font-size="12" fill="var(--text)">Wall</text>
+      </svg>
+      <figcaption style="font-size: 12px; color: var(--text-dim); margin-top: 14px; text-align: center;">
+        <span class="es">Arquitectura del MVP. Los tres contextos del frontend y las 30+ rutas del backend se apoyan en las mismas ocho colecciones.</span>
+        <span class="en">MVP architecture. The frontend's three contexts and the backend's 30+ routes rest on the same eight collections.</span>
+      </figcaption>
+    </figure>
+
+    <div class="fu" style="margin-top: 36px;">
+      <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px;"><span class="es">Stack completo</span><span class="en">Full stack</span></div>
+      <div class="cs-tags">
+        <span class="cs-tag">React 18</span>
+        <span class="cs-tag">Vite</span>
+        <span class="cs-tag">Context API</span>
+        <span class="cs-tag">React Router</span>
+        <span class="cs-tag">FullCalendar</span>
+        <span class="cs-tag">Node.js</span>
+        <span class="cs-tag">Express</span>
+        <span class="cs-tag">MongoDB</span>
+        <span class="cs-tag">Mongoose</span>
+        <span class="cs-tag">JWT</span>
+        <span class="cs-tag">Bcrypt</span>
+        <span class="cs-tag">Nodemailer</span>
+        <span class="cs-tag">Cloudinary</span>
+        <span class="cs-tag">Git · GitHub</span>
       </div>
     </div>
   </div>
@@ -781,7 +1044,7 @@
 <!-- 2026 -->
 <section class="cs-block cs-block-light">
   <div class="cs-wrap">
-    <div class="cs-star fu">05</div>
+    <div class="cs-star fu">06</div>
     <div class="fu">
       <div class="block-label"><span class="es">2026 · Trabajo individual</span><span class="en">2026 · Solo work</span></div>
       <h2>
