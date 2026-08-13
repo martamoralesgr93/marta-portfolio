@@ -11,313 +11,301 @@
   <script src="/auth-lock.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ILUNION Hotels · Booking Engine Redesign — UX & CRO · Marta Morales</title>
-
-  <meta name="description" content="Redesign of ILUNION Hotels' booking engine: resolved misalignment between business architecture and user intent, reducing friction and accelerating the booking funnel.">
-
-  <meta name="keywords" content="Booking Engine UX, CRO Case Study, Product Designer Portfolio, ILUNION Hotels, AEM, Customer Journey, UX Research, Conversion Funnel, Spain, Remote">
-
-  <link rel="canonical" href="https://martamorales.vercel.app/booking-engine">
-
-  <!-- Open Graph / Facebook -->
+  <title>Gym Energy Center · MVP en equipo → Product Design 2026 · Marta Morales</title>
+  <meta name="description" content="MVP construido en equipo durante el bootcamp de Neoland. Llevé la investigación, la arquitectura de producto y el sistema de diseño: un framework de 3 pilares (práctico, social y emocional).">
+  <link rel="canonical" href="https://martamorales.vercel.app/gym-energy-center">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://martamorales.vercel.app/booking-engine">
-  <meta property="og:title" content="ILUNION Hotels · Booking Engine — From Showcase to Conversion · Marta Morales">
-  <meta property="og:description" content="How I resolved the misalignment between business architecture and user intent in ILUNION Hotels' booking engine — reducing friction and accelerating direct bookings.">
+  <meta property="og:url" content="https://martamorales.vercel.app/gym-energy-center">
+  <meta property="og:title" content="Gym Energy Center · MVP en equipo → Product Design 2026 · Marta Morales">
   <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://martamorales.vercel.app/booking-engine">
-  <meta name="twitter:title" content="ILUNION Hotels · Booking Engine Redesign · Marta Morales">
-  <meta name="twitter:description" content="How I resolved the misalignment between business architecture and user intent — reducing friction and accelerating direct bookings.">
-  <meta name="twitter:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="any" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="design-system.css">
+
   <style>
-    
-    /* Specific Component Styles for Caso 2 */
-    .dash-widget { background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
-    .dash-title { font-size: 12px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
-    .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
-    
-    /* Premium Metric Cards */
-    .metric-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 16px; margin-bottom: 24px; }
-    .metric-card { background: transparent; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 40px 24px; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s ease; }
-    .metric-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
-    .metric-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.1); }
-    .metric-card.alert::before { background: #ef4444; box-shadow: 0 0 24px rgba(239, 68, 68,0.6); }
-    .metric-card.success::before { background: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
-    .metric-val { font-size: 52px; font-weight: 800; color: var(--white); font-family: var(--font-serif); line-height: 1; margin-bottom: 16px; }
-    .metric-card.alert .metric-val { color: #ef4444; }
-    .metric-card.success .metric-val { color: var(--accent); }
-    .metric-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.5; }
-    
-    .dash-stat { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.05); }
-    .dash-stat-label { font-size: 14px; color: var(--text-dim); }
-    .dash-stat-val { font-size: 24px; font-weight: 700; color: var(--accent); }
+    /* Specific Component Styles */
 
-    /* ─── EVIDENCE CARDS (dato + imagen + caption) ── */
-    .c2-evidence-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; }
-    .c2-evidence-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
-    .c2-evidence-header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: transparent; }
-    .c2-evidence-num { font-family: var(--font-serif); font-size: 42px; font-weight: 700; line-height: 1; color: #ef4444; flex-shrink: 0; }
-    .c2-evidence-meta { display: flex; flex-direction: column; gap: 4px; }
-    .c2-evidence-label { font-size: 12px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
-    .c2-evidence-sub { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
-    .c2-evidence-img { display: block; width: 100%; height: auto; }
-    .c2-evidence-caption { padding: 14px 20px; font-size: 12px; color: var(--text-dim); line-height: 1.55; border-top: 1px solid var(--border); flex: 1; }
+    /* QUICK SUMMARY */
+    .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
+    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+    .qs-col { display: flex; flex-direction: column; }
+    .qs-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .qs-label svg { display: inline-block !important; color: var(--white); flex-shrink: 0; width: 13px !important; height: 13px !important; }
+    .qs-val { font-size: 13.5px; color: var(--text-bright); line-height: 1.6; }
+    .qs-bullets { list-style: none; padding: 0; margin: 0; }
+    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
+    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
+    .qs-result-highlight { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.5; }
 
-    /* ─── MOTOR TRANSFORMATION — stacked full-width ── */
-    .c2-transform { margin-top: 28px; }
-    .c2-tf-panel { position: relative; }
-    .c2-tf-badge {
-      display: inline-flex; align-items: center;
-      padding: 5px 12px; border-radius: 6px;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .c2-tf-badge--before { background: rgba(239, 68, 68,0.1); border: 1px solid rgba(239, 68, 68,0.2); color: #ef4444; }
-    .c2-tf-badge--after  { background: var(--accent-glow); border: 1px solid var(--accent-border); color: var(--accent); }
-    .c2-tf-img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--border); }
-    .c2-tf-divider {
-      display: flex; align-items: center; gap: 20px; padding: 24px 0;
-    }
-    .c2-tf-div-line { flex: 1; height: 1px; background: var(--border); }
-    .c2-tf-div-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
-    .c2-tf-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-    .c2-tf-chip { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
-    .c2-tf-chip--problem  { background: rgba(239, 68, 68,0.08); border: 1px solid rgba(239, 68, 68,0.18); color: #ef4444; }
-    .c2-tf-chip--solution { background: var(--accent-glow); border: 1px solid var(--accent-border); color: var(--accent); }
+    /* INSIGHT BOX */
+    .insight-box { border-left: 2px solid var(--accent); padding-left: 24px; margin: 40px 0; max-width: 680px; }
+    .insight-box p { font-size: 19px; color: var(--text-bright); font-weight: 300; line-height: 1.6; font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
 
-    @media (min-width: 769px) and (max-width: 1100px) {
-      .cs-nav { padding: 0 32px; }
-      .cs-hero-content { padding: 0 32px 48px; }
-      .cs-wrap, .cs-wrap-wide { padding: 0 32px; }
-      .cs-block { padding: 64px 0; }
-      .cs-title { font-size: clamp(38px, 5vw, 60px); }
-      .block-h { font-size: clamp(28px, 3vw, 42px); }
-      .lead { font-size: 18px; }
-      .cs-ba { grid-template-columns: 1fr; gap: 24px; }
-      .metric-cards { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .metric-card { padding: 24px 14px; }
-      .metric-val { font-size: 40px; }
-      /* Role grid: stack to 1 col */
-      .fu[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
-      .dash-widget { padding: 32px 28px; }
-    }
+    /* AFFINITY MAP */
+    .affinity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 48px 0; }
+    .affinity-cluster { border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: transparent; }
+    .affinity-cluster-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .affinity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .affinity-cards { display: flex; flex-direction: column; gap: 8px; }
+    .affinity-card { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--text); line-height: 1.5; border-left: 2px solid transparent; }
 
-    /* RESPONSIVE MOBILE */
-    @media (max-width: 768px) {
-      /* Ocultar letra decorativa gigante en mobile para evitar overflow horizontal */
-      .cs-nav { padding: 0 24px; height: 56px; }
-      .nav-label { display: none; }
-      .cs-hero-content { padding: 0 24px 28px; }
-      .cs-wrap, .cs-wrap-wide { padding: 0 24px; }
-      .cs-block { padding: 44px 0; }
-      .cs-ba { grid-template-columns: 1fr; gap: 40px; }
-      .metric-cards { grid-template-columns: 1fr; gap: 16px; }
-      .cs-hero-logo {
-  display: none;
-}
-      .cs-frame, .cs-frame-auto {
-        aspect-ratio: auto;
-        min-height: 240px;
-        border-radius: 12px;
-        overflow: hidden;
-        padding: 0 !important;
-      }
-      .cs-frame img, .cs-frame-auto img {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-        max-height: none !important;
-        object-fit: cover;
-        border-radius: 0;
-        display: block;
-      }
-      .c2-evidence-pair { grid-template-columns: 1fr !important; }
-    }
+    /* HONEST NOTE */
+    .honest-note { background: rgba(6,182,212,0.04); border: 1px solid rgba(6,182,212,0.16); border-radius: 14px; padding: 28px 32px; margin: 48px 0; max-width: 720px; }
+    .honest-note-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .honest-note p { font-size: 14px; color: var(--text); line-height: 1.75; }
 
-    @media (max-width: 480px) {
-      .c2-results-strip,
-      .c2-learnings {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 760px) {
-      .compare-grid { grid-template-columns: 1fr !important; }
-    }
+    /* SPREADSHEET MOCKUP */
+    .spreadsheet-mockup { background: transparent; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+    .ss-header { background: rgba(255,255,255,0.04); position: relative; overflow: hidden; padding: 12px 18px; font-size: 11px; color: var(--text-dim); border-bottom: 1px solid var(--border); font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
+    .ss-header-dots { display: flex; gap: 6px; }
+    .ss-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+    .ss-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .ss-table th, .ss-table td { padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,0.03); text-align: left; }
+    .ss-table th { background: transparent; color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 9.5px; letter-spacing: 0.08em; }
+    .ss-table td { color: var(--text-dim); }
+    .ss-table tr:last-child td { border-bottom: none; }
+    .ss-table td.bad { color: #f59e0b; font-weight: 600; }
+    .ss-table td.critical { color: #ef4444; font-weight: 600; }
 
-    /* ===================== QUICK SUMMARY CARD ===================== */
-    .quick-summary-section {
-      padding: 60px 0 40px;
-      border-top: 1px solid var(--border);
-      position: relative;
-    }
-    .quick-summary-grid {
+    /* IA TREE */
+    .ia-tree-wrap { margin: 40px 0 60px; }
+    .ia-root-row { display: flex; justify-content: center; }
+    .ia-root-node { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 32px; border: 1px solid var(--accent-border); border-radius: 14px; background: var(--accent-glow); min-width: 200px; }
+    .ia-root-icon { font-size: 20px; color: var(--accent); }
+    .ia-root-label { font-size: 16px; font-weight: 700; color: var(--white); }
+    .ia-root-sub { font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+    .ia-trunk { width: 1px; height: 28px; background: var(--accent-border); margin: 0 auto; }
+    .ia-branches-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .ia-branch { display: flex; flex-direction: column; align-items: center; }
+    .ia-branch-connector { width: 1px; height: 28px; background: var(--border); }
+    .ia-branch-head { width: 100%; border: 1px solid; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 16px; }
+    .ia-branch-icon { font-size: 18px; }
+    .ia-branch-title { font-size: 14px; font-weight: 700; }
+    .ia-branch-desc { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; }
+    .ia-branch-items { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .ia-item { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: transparent; font-size: 13px; color: var(--text-bright); }
+    .ia-item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .ia-surface-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; border: 1px solid; }
+
+    /* USER GROUPS GRID & CARDS */
+    .user-groups {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+      margin: 48px 0;
+    }
+    .user-group {
       background: transparent;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 14px;
+      padding: 28px;
+      transition: border-color 0.3s ease, background 0.3s ease;
     }
-    .qs-col {
-      display: flex;
-      flex-direction: column;
+    .user-group:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
     }
-    .qs-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-      display: flex;
+    .user-group-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
-    .qs-label svg {
-      display: inline-block !important;
+    .user-group-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
       color: var(--white);
-      flex-shrink: 0;
-      width: 13px;
-      height: 13px;
-      }
-    .qs-val {
-      font-size: 13.5px;
-      color: var(--text-bright);
-      line-height: 1.6;
+      margin-bottom: 6px;
     }
-    .qs-bullets {
+    .user-group-count {
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .user-group-needs {
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
-    .qs-bullets li {
-      font-size: 13px;
-      color: var(--text);
+    .user-group-needs li {
+      font-size: 13.5px;
+      color: var(--text-dim);
       line-height: 1.5;
-      margin-bottom: 8px;
       padding-left: 14px;
       position: relative;
     }
-    .qs-bullets li::before {
+    .user-group-needs li::before {
       content: "—";
       color: var(--accent);
       position: absolute;
       left: 0;
     }
-    .qs-result-box {
-      background: var(--accent-glow);
-      border: 1px solid var(--accent-border);
-      border-radius: 10px;
-      padding: 16px;
-      margin-top: 4px;
+
+    /* MODULES GRID & CARDS */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 40px 0;
     }
-    .qs-result-highlight {
-      font-size: 13.5px;
-      font-weight: 600;
+    .module-card {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .module-card:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .module-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .module-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
       color: var(--white);
-      line-height: 1.5;
+      margin-bottom: 12px;
     }
+    .module-desc {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .module-solves {
+      font-size: 11px;
+      color: var(--text-bright);
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-weight: 500;
+    }
+
+    /* LEARNINGS GRID & CARDS */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .learning-card {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .learning-card:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .learning-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .learning-text {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* hide lang children */
+    html:not(.lang-en) [lang="en"]:not(.en) { display: none; }
+    html.lang-en [lang="es"]:not(.es) { display: none; }
+
+    /* RESPONSIVE OVERRIDES */
     @media (max-width: 900px) {
-      .quick-summary-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-        padding: 8px 24px;
-      }
-      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
-      .qs-col:last-child { border-bottom: none; }
+      /* IA tree: overflow-x scroll en tablet para preservar estructura */
+      .ia-tree-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .ia-branches-row { min-width: 640px; }
+      .quick-summary-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 24px; }
+      .affinity-grid, .user-groups, .modules-grid, .learning-grid, .ia-branches-row { grid-template-columns: 1fr; }
+      .scenario-cols { grid-template-columns: 1fr; }
+      .scenario-col + .scenario-col { border-left: none; border-top: 1px solid var(--border); }
+      .compare-grid { grid-template-columns: 1fr !important; }
+      .impact-grid { grid-template-columns: 1fr 1fr !important; }
     }
-
-    /* ─── RESULTS STRIP ─────────────────────── */
-    .c2-results-strip {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden; margin-bottom: 32px;
+    @media (max-width: 640px) {
+      .impact-grid { grid-template-columns: 1fr !important; }
     }
-    .c2rs-cell {
-      padding: 28px 22px; border-right: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 8px;
-    }
-    .c2rs-cell:last-child { border-right: none; }
-    .c2rs-cell--hero { background: var(--accent-glow); border-right-color: var(--accent-border); }
-    .c2rs-val {
-      font-family: var(--font-serif);
-      font-size: clamp(26px, 2.8vw, 42px);
-      font-weight: 700; line-height: 1; color: var(--white);
-    }
-    .c2rs-cell--hero .c2rs-val { color: var(--accent); }
-    .c2rs-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--text-dim); line-height: 1.4;
-    }
-
-    /* ─── pm-widget compacto (grid 2 cols) ────── */
-    .pm-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 0; border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden; margin-top: 28px;
-    }
-    .pm-grid-cell {
-      padding: 16px 20px; border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 14px;
-    }
-    .pm-grid-cell:nth-child(even) { border-right: none; }
-    .pm-grid-cell:nth-last-child(-n+2) { border-bottom: none; }
-    .pm-gc-num {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-      color: var(--accent); flex-shrink: 0;
-    }
-    .pm-gc-work { font-size: 12px; color: var(--text-bright); flex: 1; }
-    .pm-gc-arrow { font-size: 11px; color: var(--accent-border); flex-shrink: 0; }
-    .pm-gc-badge {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--accent); white-space: nowrap;
-    }
-
-    /* ─── LEARNINGS CARDS ───────────────────── */
-    .c2-learnings {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0; border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden; margin-top: 32px;
-    }
-    .c2lc {
-      padding: 28px 22px; border-right: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .c2lc:last-child { border-right: none; }
-    .c2lc-num {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent);
-    }
-    .c2lc-title {
-      font-size: 13px; font-weight: 700; color: var(--white);
-      line-height: 1.3; margin: 0;
-    }
-    .c2lc-text {
-      font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;
-    }
-
     @media (max-width: 768px) {
-      .c2-results-strip { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-      .c2-learnings { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-      .pm-grid { grid-template-columns: 1fr; }
-      .c2rs-cell, .c2lc { border-right: none; border-bottom: 1px solid var(--border); }
-      .c2rs-cell:last-child, .c2lc:last-child { border-bottom: none; }
-      .pm-grid-cell { border-right: none; }
-      .pm-grid-cell[style*="opacity:0"] { display: none !important; }
-      .pm-grid-cell:nth-child(7) { border-bottom: none !important; }
+      .quick-summary-grid { grid-template-columns: 1fr; gap: 0; padding: 8px 20px; }
+      .quick-summary-grid .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
+      .quick-summary-grid .qs-col:last-child { border-bottom: none; }
+      .cs-hero-logo {
+  display: none;
+}
+      .insight-box { padding-left: 18px; margin: 28px 0; }
+      .insight-box p { font-size: 16px; }
+      .affinity-grid { gap: 12px; margin: 32px 0; }
+      .affinity-cluster { padding: 18px; }
+      .honest-note { padding: 22px 24px; margin: 32px 0; }
+      .ia-tree-wrap { margin: 28px 0 40px; }
+      .ia-root-node { padding: 14px 24px; min-width: 160px; }
+      .ia-root-label { font-size: 14px; }
+      .ia-branch-head { padding: 14px 16px; }
+      .ia-branch-title { font-size: 13px; }
+      .ia-item { font-size: 12px; padding: 7px 12px; }
+    }
+    @media (max-width: 480px) {
+      .insight-box p { font-size: 15px; }
+      .affinity-cluster-label { font-size: 9px; }
+      .affinity-card { font-size: 12px; padding: 8px 12px; }
+      .ia-branches-row { gap: 14px; }
+    }
+
+    /* ─── MAPPING: Patrón → Módulo (plano, sin glow, mismos colores que affinity map) ─── */
+    .pmap-list { display: flex; flex-direction: column; gap: 14px; margin: 40px 0 32px; }
+    .pmap-row { display: grid; grid-template-columns: 1fr 64px 1fr; align-items: stretch; gap: 16px; }
+    .pmap-card { background: transparent; border: 1px solid var(--border); border-left: 3px solid var(--row-color); border-radius: 12px; padding: 18px 22px; display: flex; align-items: center; gap: 14px; transition: background 0.25s ease; }
+    .pmap-card:hover { background: rgba(255,255,255,0.045); }
+    .pmap-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .pmap-icon svg { width: 16px; height: 16px; color: var(--white); }
+    .pmap-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .pmap-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--row-color); }
+    .pmap-label { font-size: 13.5px; color: var(--text-bright); font-weight: 600; line-height: 1.35; }
+    .pmap-sub { font-size: 11.5px; color: var(--text-dim); line-height: 1.4; }
+    .pmap-bridge { display: flex; align-items: center; justify-content: center; }
+    .pmap-bridge-line { width: 100%; height: 1px; background: var(--row-color); opacity: 0.5; position: relative; }
+    .pmap-bridge-line::after { content: "→"; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); color: var(--row-color); font-size: 14px; line-height: 1; }
+    .pmap-row[data-accent="amber"] { --row-color: #f59e0b; }
+    .pmap-row[data-accent="red"] { --row-color: #ef4444; }
+    .pmap-row[data-accent="purple"] { --row-color: var(--accent); }
+    .pmap-row[data-accent="cyan"] { --row-color: #06b6d4; }
+    .pmap-summary { margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+    .pmap-summary strong { color: var(--text-bright); }
+    @media (max-width: 720px) {
+      .pmap-row { grid-template-columns: 1fr; gap: 4px; }
+      .pmap-bridge { display: none; }
     }
     /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
     .cs-hamburger {
@@ -360,9 +348,23 @@
       .cs-hamburger { display: flex; }
       .cs-nav-dropdown { display: none; }
     }
+    /* HERO METRICS */
+    .hero-metrics { display: flex; margin-top: 20px; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; max-width: 560px; }
+    .hm-item { flex: 1; padding: 18px 22px; border-right: 1px solid var(--border); }
+    .hm-item:last-child { border-right: none; }
+    .hm-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px; }
+    .hm-value { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); line-height: 1; }
+    .hm-sub { font-size: 10px; color: var(--text-dim); margin-top: 3px; }
+    .data-band .hm-value { font-size: 32px; margin-bottom: 6px; }
+    @media (max-width: 640px) {
+      .hero-metrics { flex-wrap: wrap; max-width: 100%; }
+      .hm-item { flex: 1 1 50%; border-bottom: 1px solid var(--border); }
+      .hm-item:nth-child(2) { border-right: none; }
+      .hm-item:nth-last-child(-n+2) { border-bottom: none; }
+    }
   </style>
 </head>
-<body class="cs-booking-engine">
+<body class="cs-gym-energy-center">
 <a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
 <nav class="cs-nav" aria-label="Principal">
@@ -410,7 +412,7 @@
         <a href="gym-energy-center.html" class="cs-dropdown-item">
           <div class="cs-item-num">Caso 06</div>
           <div class="cs-item-title">Gym Energy Center</div>
-          <div class="cs-item-skill es">Producto en Equipo &amp; Sistema de Dise&#241;o</div>
+          <div class="cs-item-skill es">Producto en Equipo &amp; Sistema de Diseño</div>
           <div class="cs-item-skill en">Team Product &amp; Design System</div>
         </a>
       </div>
@@ -427,7 +429,7 @@
   </div>
 </nav>
 
-<!-- MOBILE MENU: acceso real a los 5 casos en touch (el dropdown de arriba es hover-only) -->
+<!-- MOBILE MENU: acceso real a los 4 casos en touch (el dropdown de arriba es hover-only) -->
 <div class="cs-mobile-menu" id="csMobileMenu">
   <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
@@ -437,10 +439,10 @@
   <ul class="cs-mobile-menu-links">
     <li><a href="cef-design-system.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
     <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
-    <li><a href="booking-engine.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
     <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
     <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
-    <li><a href="gym-energy-center.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">06</span> · <span class="cs-mmi-title">Gym Energy Center</span></a></li>
+    <li><a href="gym-energy-center.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">06</span> · <span class="cs-mmi-title">Gym Energy Center</span></a></li>
   </ul>
   <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
 </div>
@@ -448,6 +450,7 @@
 
 <main id="main">
 
+<!-- HERO -->
 <header class="cs-hero">
   <div class="cs-hero-logo"></div>
   <div class="cs-hero-overlay"></div>
@@ -457,553 +460,380 @@
       <ol>
         <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
         <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
-        <li><span aria-current="page">Booking Engine</span></li>
+        <li><span aria-current="page">Gym Energy Center</span></li>
       </ol>
     </nav>
-    <span class="cs-eyebrow">
-      03 — Booking Engine · Design Ops & Componentes
-    </span>
+    <span class="cs-eyebrow es">06 — Gym Energy Center · Bootcamp Neoland · Producto en equipo</span>
+    <span class="cs-eyebrow en">06 — Gym Energy Center · Neoland Bootcamp · Team product</span>
     <h1 class="cs-title">
-      Booking Engine<br><em>de escaparate a conversión</em>
+      <span class="es">Un gimnasio no es<br><em>una app de reservas</em></span>
+      <span class="en">A gym isn't<br><em>a booking app</em></span>
     </h1>
     <div class="cs-tags">
       <span class="cs-tag">Product Design</span>
-      <span class="cs-tag">CRO</span>
-      <span class="cs-tag">Experimentación</span>
-      <span class="cs-tag">Customer Journey</span>
-      <span class="cs-tag">Ecommerce Hotelero</span>
+      <span class="cs-tag">User Research</span>
+      <span class="cs-tag">Sistema de diseño</span>
+      <span class="cs-tag">Framework de 3 pilares</span>
+      <span class="cs-tag">React · Node · MongoDB</span>
+      <span class="cs-tag">Trabajo en equipo</span>
+      <span class="cs-tag">Handoff a desarrollo</span>
+      <span class="cs-tag">Reconceptualización 2026</span>
     </div>
     <div class="cs-meta">
       <div>
-        <div class="cs-meta-label">Empresa</div>
-        <div class="cs-meta-val">ILUNION Hotels</div>
+        <div class="cs-meta-label es">Proyecto</div>
+        <div class="cs-meta-label en">Project</div>
+        <div class="cs-meta-val">Gym Energy Center</div>
       </div>
       <div>
-        <div class="cs-meta-label">Rol</div>
-        <div class="cs-meta-val">Product Designer · CRO Lead</div>
+        <div class="cs-meta-label es">Mi rol</div>
+        <div class="cs-meta-label en">My role</div>
+        <div class="cs-meta-val es">Product Design · Research y sistema de diseño</div>
+        <div class="cs-meta-val en">Product Design · Research and design system</div>
       </div>
       <div>
-        <div class="cs-meta-label">Año</div>
-        <div class="cs-meta-val">Sep 2024 – Actualidad</div>
+        <div class="cs-meta-label es">Periodo</div>
+        <div class="cs-meta-label en">Period</div>
+        <div class="cs-meta-val es">2024 · Bootcamp Neoland</div>
+        <div class="cs-meta-val en">2024 · Neoland Bootcamp</div>
       </div>
       <div>
-        <div class="cs-meta-label">Metodología</div>
-        <div class="cs-meta-val">CRO · Data-driven design</div>
+        <div class="cs-meta-label es">Equipo</div>
+        <div class="cs-meta-label en">Team</div>
+        <div class="cs-meta-val es">8 personas · ~200 commits</div>
+        <div class="cs-meta-val en">8 people · ~200 commits</div>
       </div>
     </div>
     <div class="hero-metrics fu">
       <div class="hm-item">
-        <div class="hm-label">Motor de reservas</div>
-        <div class="hm-value">#1</div>
-        <div class="hm-sub">Elemento dominante del primer fold</div>
+        <div class="hm-label es">Framework</div>
+        <div class="hm-label en">Framework</div>
+        <div class="hm-value">3</div>
+        <div class="hm-sub es">Pilares: práctico · social · emocional</div>
+        <div class="hm-sub en">Pillars: practical · social · emotional</div>
       </div>
       <div class="hm-item">
-        <div class="hm-label">Scroll sin búsqueda</div>
-        <div class="hm-value">↓75%</div>
-        <div class="hm-sub">Patrón baseline corregido</div>
+        <div class="hm-label es">Equipo</div>
+        <div class="hm-label en">Team</div>
+        <div class="hm-value">8</div>
+        <div class="hm-sub es">Personas entre producto y desarrollo</div>
+        <div class="hm-sub en">People across product and development</div>
       </div>
       <div class="hm-item">
-        <div class="hm-label">Línea nueva</div>
-        <div class="hm-value">+1</div>
-        <div class="hm-sub">Landings de destino, fuera del brief</div>
+        <div class="hm-label es">MVP del equipo</div>
+        <div class="hm-label en">Team MVP</div>
+        <div class="hm-value">40+</div>
+        <div class="hm-sub es">Componentes · 30+ endpoints</div>
+        <div class="hm-sub en">Components · 30+ endpoints</div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ==================== QUICK SUMMARY ==================== -->
+<!-- QUICK SUMMARY -->
 <section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
   <div class="cs-wrap">
-    <div class="quick-summary-grid">
-      <!-- Col 1: El Problema -->
+    <div class="quick-summary-grid fu">
       <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          El Problema
-        </span>
-        <div class="qs-val">
-          Fricción en los flujos del buscador. Se desarrolló en paralelo al Caso 02 (Ofertas), dentro de la misma iniciativa de funnel en AEM: de 3,36% a 6,5%.
-        </div>
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="es">El problema</span><span class="en">The problem</span></div>
+        <div class="qs-val es">Los gimnasios digitalizaban la reserva y se olvidaban del resto. La app resolvía la transacción, no la razón por la que alguien vuelve al gimnasio.</div>
+        <div class="qs-val en">Gyms digitised booking and forgot everything else. The app solved the transaction, not the reason someone comes back.</div>
       </div>
-
-      <!-- Col 2: Mi Rol -->
       <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Mi Rol
-        </span>
-        <div class="qs-val">
-          <strong>Product Designer Lead</strong> gestionando la colaboración directa con BI para recabar datos de comportamiento, y con desarrollo frontend para la validación y despliegue del componente de búsqueda.
-        </div>
-      </div>
-
-      <!-- Col 3: Qué Hice -->
-      <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Qué Hice
-        </span>
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="es">Mi rol</span><span class="en">My role</span></div>
         <ul class="qs-bullets">
-          <li>UX Research cuantitativo detectando fricción crítica en mobile (60%).</li>
-          <li>Problem framing para alinear objetivos comerciales y comportamiento real.</li>
-          <li>Diseño y maquetación de flujos de búsqueda limpios y sin distracciones.</li>
-          <li>Coordinación de especificaciones técnicas con desarrollo en AEM.</li>
-          <li>Descubrimiento post-lanzamiento de patrones de exploración geográfica.</li>
+          <li class="es">Investigación y discovery</li>
+          <li class="en">Research and discovery</li>
+          <li class="es">Arquitectura de producto: los 3 pilares</li>
+          <li class="en">Product architecture: the 3 pillars</li>
+          <li class="es">Sistema de diseño y componentes</li>
+          <li class="en">Design system and components</li>
+          <li class="es">Priorización y handoff a desarrollo</li>
+          <li class="en">Prioritisation and dev handoff</li>
         </ul>
       </div>
-
-      <!-- Col 4: Resultado -->
       <div class="qs-col">
-        <span class="qs-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Resultado
-        </span>
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="es">El equipo</span><span class="en">The team</span></div>
+        <div class="qs-val es">Ocho personas del bootcamp. El frontend en React, el backend en Node, el modelo de datos y la API son trabajo colectivo, no mío.</div>
+        <div class="qs-val en">Eight people from the bootcamp. The React frontend, the Node backend, the data model and the API are collective work, not mine.</div>
+      </div>
+      <div class="qs-col">
+        <div class="qs-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><span class="es">La decisión clave</span><span class="en">Key decision</span></div>
         <div class="qs-result-box">
-          <div class="qs-result-highlight">
-            Motor visible y prioritario en el primer scroll. Cayó el patrón de scroll-sin-búsqueda (baseline: 75% de sesiones) y apareció el uso exploratorio que abrió la siguiente iteración.
-          </div>
+          <div class="qs-result-highlight es">No diseñar features sueltas: definir tres pilares y obligar a cada funcionalidad a justificarse dentro de uno.</div>
+          <div class="qs-result-highlight en">Don't design loose features: define three pillars and make every feature justify itself inside one.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- USER PERSONAS & UX PRINCIPLES -->
+<!-- AUTORÍA -->
 <section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 56px var(--space-lg); margin: 32px 0;">
   <div class="cs-wrap">
     <div class="block-label" style="color: var(--accent);">
-      <span class="block-label-text">User Personas &amp; Leyes UX del Motor de Reservas</span>
-      <div class="block-label-line" style="background: var(--accent-border);"></div>
+      <span class="es">Autoría</span><span class="en">Authorship</span>
     </div>
-    
+    <h2 class="fu">
+      <span class="es">Quién hizo qué</span>
+      <span class="en">Who did what</span>
+    </h2>
+    <p class="fu es" style="max-width: 720px;">Este proyecto no fue un trabajo individual y no tendría sentido presentarlo como si lo fuera. El MVP lo construimos ocho personas durante el bootcamp de Neoland, entre abril y noviembre de 2024. Lo que sigue separa mi aportación de la del equipo.</p>
+    <p class="fu en" style="max-width: 720px;">This wasn't solo work, and it would make no sense to present it as if it were. Eight of us built the MVP during the Neoland bootcamp, between April and November 2024. What follows separates my contribution from the team's.</p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">User Persona 01 · Viajero Frecuente (Alta Intención)</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Llega al sitio con fechas y destino definidos. Requiere interacción inmediata sin scrolls innecesarios. <strong>Aplicación de la Ley de Fitts</strong> (motor flotante accesible al alcance del pulgar en mobile).</p>
+      <div class="fu" style="border: 1px solid var(--accent-border); border-radius: 14px; padding: 24px; background: var(--accent-glow);">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;"><span class="es">Yo · 2024</span><span class="en">Me · 2024</span></div>
+        <ul class="qs-bullets">
+          <li class="es">Investigación de usuario y discovery</li>
+          <li class="en">User research and discovery</li>
+          <li class="es">Arquitectura de producto de 3 pilares</li>
+          <li class="en">3-pillar product architecture</li>
+          <li class="es">Sistema de diseño: paleta, componentes, specs</li>
+          <li class="en">Design system: palette, components, specs</li>
+          <li class="es">Priorización de features y handoff</li>
+          <li class="en">Feature prioritisation and handoff</li>
+          <li class="es">Contribución al código del frontend</li>
+          <li class="en">Contribution to frontend code</li>
+        </ul>
       </div>
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">User Persona 02 · Explorador de Destinos</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Duda entre múltiples ubicaciones y busca inspiración. <strong>Aplicación de la Ley de Hick</strong> (agrupación inteligente de hoteles por zona geográfica y reducción de desplegables complejos).</p>
+      <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;"><span class="es">Todo el equipo · 2024</span><span class="en">The whole team · 2024</span></div>
+        <ul class="qs-bullets">
+          <li class="es">Desarrollo del frontend en React</li>
+          <li class="en">React frontend development</li>
+          <li class="es">Backend en Node y Express</li>
+          <li class="en">Node and Express backend</li>
+          <li class="es">Modelado de la base de datos y la API</li>
+          <li class="en">Database modelling and API</li>
+          <li class="es">Integraciones: Cloudinary, email, JWT</li>
+          <li class="en">Integrations: Cloudinary, email, JWT</li>
+          <li class="es">Testing e iteración del MVP</li>
+          <li class="en">MVP testing and iteration</li>
+        </ul>
+      </div>
+      <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;"><span class="es">Yo sola · 2026</span><span class="en">Me alone · 2026</span></div>
+        <ul class="qs-bullets">
+          <li class="es">Este case study y su documentación</li>
+          <li class="en">This case study and its documentation</li>
+          <li class="es">Reconceptualización de producto 2026</li>
+          <li class="en">2026 product reconceptualisation</li>
+          <li class="es">Rediseño visual</li>
+          <li class="en">Visual redesign</li>
+        </ul>
       </div>
     </div>
+    <p class="fu" style="margin-top: 24px; font-size: 13px; color: var(--text-dim);">
+      <span class="es">Créditos completos en el <a href="https://github.com/ProyectoGymNeoland/Gimnasio/graphs/contributors" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">historial de contribuciones del repositorio original ↗</a></span>
+      <span class="en">Full credits in the <a href="https://github.com/ProyectoGymNeoland/Gimnasio/graphs/contributors" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">original repository's contribution history ↗</a></span>
+    </p>
   </div>
 </section>
 
-<!-- [M] MI ROL -->
-<section class="cs-block cs-block-light">
-    <div class="cs-wrap">
-    <div class="row align-items-center">
-      <div class="col-12">
-        <div class="fu">
-          <span class="block-label">MI ROL · Responsabilidades</span>
-      <h2 class="block-h">Único diseñador<br><em>en un proyecto de CRO activo</em></h2>
-    </div>
-    <div class="fu" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:32px; margin-top:40px;">
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
-        <ul class="bullet-list">
-          <li>Análisis cuantitativo de comportamiento: Microsoft Clarity (scroll, patrones de clic, grabaciones) + Adobe Analytics (funnel y abandono)</li>
-          <li>Problem framing: identificar la desalineación real entre el modelo mental del site y el del usuario de alta intención</li>
-          <li>Diseño diferenciado por dispositivo: arquitectura distinta para desktop y mobile según comportamiento real observado</li>
-          <li>Coordinación técnica con desarrollo en Adobe AEM</li>
-          <li>Comunicación directa con dirección y marketing en lenguaje de negocio (conversión, customer journey)</li>
-        </ul>
-      </div>
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Con quién colaboré</p>
-        <ul class="bullet-list">
-          <li><strong>Equipo de desarrollo frontend</strong>: implementación en AEM, validación funcional en staging, gestión de constraints técnicos de la plataforma</li>
-          <li><strong>Marketing y canal digital</strong>: contexto de objetivos de captación y restricciones operativas del entorno en producción</li>
-          <li><strong>BI y analítica</strong>: fuente de datos de comportamiento y validación de hipótesis</li>
-          <li><strong>Dirección de negocio</strong>: validación de objetivos y aprobación de propuestas</li>
-          <li><strong>Equipo de contenidos</strong>: coordinación para mantener coherencia de comunicación durante los cambios estructurales</li>
-        </ul>
-              </div>
-      </div>
-      </div>
-    </div>
-
-    <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:700; display:block; margin:40px 0 12px;">Metodología · cómo se traduce a equipos de producto</span>
-    <div class="pm-grid fu">
-      <div class="pm-grid-cell">
-        <span class="pm-gc-num">01</span>
-        <span class="pm-gc-work">Análisis con Clarity + Analytics</span>
-        <span class="pm-gc-badge">Quantitative UX Research</span>
-      </div>
-      <div class="pm-grid-cell">
-        <span class="pm-gc-num">02</span>
-        <span class="pm-gc-work">Benchmarking funcional</span>
-        <span class="pm-gc-badge">Competitive Analysis</span>
-      </div>
-      <div class="pm-grid-cell">
-        <span class="pm-gc-num">03</span>
-        <span class="pm-gc-work">Propuesta jerarquizada por impacto</span>
-        <span class="pm-gc-badge">Impact Mapping</span>
-      </div>
-      <div class="pm-grid-cell">
-        <span class="pm-gc-num">04</span>
-        <span class="pm-gc-work">Trabajo con desarrollo en staging</span>
-        <span class="pm-gc-badge">Design QA / Handoff</span>
-      </div>
-      <div class="pm-grid-cell">
-        <span class="pm-gc-num">05</span>
-        <span class="pm-gc-work">Observación post-lanzamiento</span>
-        <span class="pm-gc-badge">Continuous Discovery</span>
-      </div>
-      <div class="pm-grid-cell">
-        <span class="pm-gc-num">06</span>
-        <span class="pm-gc-work">Detección de nuevo patrón de uso</span>
-        <span class="pm-gc-badge">Quantitative UX Research</span>
-      </div>
-      <div class="pm-grid-cell" style="border-right:none;">
-        <span class="pm-gc-num">07</span>
-        <span class="pm-gc-work">Coordinación con Marketing, BI y Negocio</span>
-        <span class="pm-gc-badge">Stakeholder Alignment</span>
-      </div>
-      <div class="pm-grid-cell" style="border-right:none; opacity:0; pointer-events:none;"></div>
-    </div>
-  </div>
-</section>
-
-<!-- [S+T] SITUATION + TASK — fusionadas -->
-<section class="cs-block cs-block-indigo">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">S·T</div>
-        <div class="cs-rail-label">SITUATION + TASK</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:64px; align-items:start;">
-
-      <div class="fu">
-        <span class="block-label">SITUATION · Contexto</span>
-        <h2 class="block-h" style="font-size:clamp(22px,2.4vw,32px);">
-          Alta intención de compra,<br><em>fricción en el funnel</em>
-        </h2>
-        <p class="p" style="margin-top:20px;">El motor competía con promociones y contenido de marca. El usuario con intención de compra se dispersaba y abandonaba sin llegar a buscar.</p>
-        <ul class="bullet-list" style="margin-top:16px;">
-          <li>75% de sesiones: scroll sin búsqueda</li>
-          <li>60% de fricción crítica en mobile</li>
-          <li>Abandono temprano del funnel</li>
-        </ul>
-      </div>
-
-      <div class="fu">
-        <span class="block-label">TASK · El reto</span>
-        <h2 class="block-h" style="font-size:clamp(22px,2.4vw,32px);">
-          Re-alinear prioridades<br><em>con el comportamiento real</em>
-        </h2>
-        <p class="p" style="margin-top:20px;">Balancear la arquitectura de contenidos con el comportamiento real, adaptando el motor a los constraints de AEM en desktop y mobile.</p>
-        <ul class="bullet-list" style="margin-top:16px;">
-          <li>Desktop: visibilidad inmediata del buscador</li>
-          <li>Mobile: arquitectura separada por contexto de uso</li>
-          <li>Restricciones AEM como parámetros de diseño</li>
-        </ul>
-      </div>
-
-    </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- [A] ACTION -->
-<section class="cs-block">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">A</div>
-        <div class="cs-rail-label">ACTION</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <div class="fu">
-      <span class="block-label">ACTION · Lo que hice, y por qué</span>
-      <h2 class="block-h">
-        Investigación, estrategia y<br><em>rediseño del motor</em>
-      </h2>
-    </div>
-    <div style="padding:0">
-
-      <!-- BLOQUE 1: RESEARCH -->
-      <div class="fu" style="margin-bottom:72px;">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · INVESTIGACIÓN</span>
-        <h3 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">Research & Análisis de comportamiento</h3>
-        <p class="p">Analicé el comportamiento mediante <strong>Microsoft Clarity</strong> y <strong>Adobe Analytics</strong> para cartografiar la profundidad de scroll, la fricción de clics y la tasa de rebote por dispositivo.</p>
-        <!-- Evidencia: dato + imagen + contexto -->
-        <div class="c2-evidence-pair fu" style="margin-top:20px;">
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num">75%</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Scroll sin búsqueda</span>
-                <span class="c2-evidence-sub">Desktop · Scroll map & heatmap · Clarity</span>
-              </div>
-            </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-desk.webp" alt="Análisis de abandono Desktop">
-            <div class="c2-evidence-caption">El motor competía con banners en el primer nivel. Quien venía a comprar no llegaba a buscar.</div>
-          </div>
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num">60%</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Fricción crítica en mobile</span>
-                <span class="c2-evidence-sub">Mobile · Puntos de fuga en primer scroll</span>
-              </div>
-            </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/CARRITO-ABANDONADO/cro-carrito-abandonado-mobile.webp" alt="Análisis de abandono Mobile">
-            <div class="c2-evidence-caption">Mobile mostraba mayor fricción que desktop: el buscador quedaba enterrado bajo contenido inspiracional no transaccional.</div>
-          </div>
-        </div>
-
-        <div style="border-left:2px solid var(--accent); padding:14px 0 14px 28px; margin-top:28px;">
-          <p style="font-family:'Playfair Display',serif; font-size:21px; line-height:1.55; color:rgba(255,255,255,.78); font-style:italic;">"El usuario no quería explorar primero. Quería comprobar disponibilidad lo antes posible."</p>
-        </div>
-      </div>
-
-      <!-- BLOQUE 2: DIAGNÓSTICO + ESTRATEGIA + EXPERIMENTO -->
-      <div class="fu" style="margin-bottom:72px;">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · DIAGNÓSTICO Y ESTRATEGIA</span>
-        <h3 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">Problem Framing y priorización de cambios</h3>
-        <p class="p">Chocaban dos modelos mentales: el <strong>corporativo</strong> («descubre nuestra marca») y el <strong>del usuario</strong> («quiero precio y disponibilidad»). Había que convertir un escaparate en una herramienta.</p>
-
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin:28px 0;" class="fu compare-grid">
-          <div style="padding:28px; border:1px solid rgba(255,255,255,0.1); border-radius:14px; background: transparent;">
-            <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px;">Modelo mental corporativo</div>
-            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
-              <li style="font-size:13.5px; color:var(--text-dim); padding-left:0;">Explora la marca primero</li>
-              <li style="font-size:13.5px; color:var(--text-dim); padding-left:0;">Descubre nuestros hoteles</li>
-              <li style="font-size:13.5px; color:var(--text-dim); padding-left:0;">Valora el Club ÚNICOS</li>
-              <li style="font-size:13.5px; color:var(--text-dim); padding-left:0;">Luego busca disponibilidad</li>
-            </ul>
-          </div>
-          <div style="padding:28px; border:1px solid var(--accent-border); border-radius:14px; background:var(--accent-glow);">
-            <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">Modelo mental del usuario</div>
-            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
-              <li style="font-size:13.5px; color:var(--text-bright); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--accent);">—</span>Ya sé que quiero reservar</li>
-              <li style="font-size:13.5px; color:var(--text-bright); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--accent);">—</span>Necesito ver disponibilidad YA</li>
-              <li style="font-size:13.5px; color:var(--text-bright); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--accent);">—</span>Precio y fechas son prioridad</li>
-              <li style="font-size:13.5px; color:var(--text-bright); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--accent);">—</span>No quiero explorar, quiero comprobar</li>
-            </ul>
-          </div>
-        </div>
-        <p class="p" style="margin-top:12px; padding:16px 20px; background: transparent; border-left:2px solid var(--accent); border-radius:0 10px 10px 0;">
-          <strong>Trade-offs:</strong> entorno en producción activo y AEM sin personalización por dispositivo. La solución tenía que caber dentro de esos límites.
-        </p>
-        <p class="p" style="margin-top:16px;">Redefiní la jerarquía de acceso al motor: buscador identificable al instante, menos fricción al iniciar la búsqueda y una interacción pensada para tráfico de alta intención.</p>
-
-        <!-- Evidencia: experimento de selección de destino -->
-        <div class="c2-evidence-pair fu" style="margin-top:28px;">
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num" style="color:var(--text);">A</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Control · flujo original</span>
-                <span class="c2-evidence-sub">Test selección de destino · Variante A</span>
-              </div>
-            </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/exp-cro-destinos-desk.webp" alt="Test Selección Destino Desktop">
-            <div class="c2-evidence-caption">Flujo original: selección de destino integrada en el motor con múltiples pasos de navegación.</div>
-          </div>
-          <div class="c2-evidence-item">
-            <div class="c2-evidence-header">
-              <div class="c2-evidence-num" style="color:var(--accent);">B</div>
-              <div class="c2-evidence-meta">
-                <span class="c2-evidence-label">Variante · popup simplificado</span>
-                <span class="c2-evidence-sub">100% confianza estadística validada</span>
-              </div>
-            </div>
-            <img width="1920" height="1536" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/POP-UP-DESTINO/EXP-CRO-DESTINOS-POPUP.webp" alt="Popup de selección de destino">
-            <div class="c2-evidence-caption">Simplificación del paso de selección mediante popup directo — validado con 100% de fiabilidad estadística.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BLOQUE 3: IMPLEMENTACIÓN + RESULTADO VISUAL -->
-      <div class="fu" style="margin-bottom:48px;">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · IMPLEMENTACIÓN</span>
-        <h3 style="font-size:18px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">Diseño por dispositivo y puesta en producción</h3>
-        <p class="p"><strong>Desktop:</strong> Acceso rápido al motor, visibilidad de fechas y ocupación, CTAs claramente expuestos. <strong>Mobile:</strong> Estructura simplificada para comportamiento táctil: reorganización vertical, reducción de elementos secundarios, optimización del primer scroll.</p>
-        <p class="p" style="margin-top:12px;">Trabajé con desarrollo en la definición funcional y la validación en staging. No se trataba de entregar diseño, sino de asegurar que encajara en AEM.</p>
-
-        <!-- Evidencia: antes y después del motor — full width stacked -->
-        <div class="c2-transform fu">
-          <div class="c2-tf-panel">
-            <div class="c2-tf-badge c2-tf-badge--before">Antes · El problema</div>
-            <img width="1920" height="1440" class="c2-tf-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/antes-recompo.webp" alt="Motor antes del rediseño">
-            <div class="c2-tf-chips">
-              <span class="c2-tf-chip c2-tf-chip--problem">75% scroll sin búsqueda</span>
-              <span class="c2-tf-chip c2-tf-chip--problem">Motor enterrado tras banners</span>
-              <span class="c2-tf-chip c2-tf-chip--problem">60% fricción en mobile</span>
-            </div>
-          </div>
-          <div class="c2-tf-divider">
-            <div class="c2-tf-div-line"></div>
-            <span class="c2-tf-div-label">Rediseño implementado en producción →</span>
-            <div class="c2-tf-div-line"></div>
-          </div>
-          <div class="c2-tf-panel">
-            <div class="c2-tf-badge c2-tf-badge--after">Después · Solución implementada</div>
-            <img width="1920" height="1440" class="c2-tf-img" loading="lazy" decoding="async" src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.webp" alt="Motor después del rediseño">
-            <div class="c2-tf-chips">
-              <span class="c2-tf-chip c2-tf-chip--solution">Motor en posición #1</span>
-              <span class="c2-tf-chip c2-tf-chip--solution">Visible en primer scroll</span>
-              <span class="c2-tf-chip c2-tf-chip--solution">100% confianza estadística</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BLOQUE 4: POST-LANZAMIENTO -->
-      <div class="fu" style="margin-bottom:8px; padding:28px 32px; background: transparent; border:1px solid var(--border); border-radius:14px;">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04 · ITERACIÓN POST-LANZAMIENTO</span>
-        <p class="p">Clarity reveló algo inesperado: el buscador se usaba para <strong>explorar destinos</strong>, no solo para reservar.<br><br>De ahí salió una línea nueva: landings por destino con lógica de conversión. Hacer producto, y no una entrega, es seguir mirando después de publicar.</p>
-      </div>
-      
-          <!-- DIAGRAMA DE ESTADOS DE INTERACCIÓN (UX STATE MACHINE) -->
-    <div class="ux-flowchart fu" style="margin-top: 40px;">
-      <div class="ux-flow-header">
-        <span class="ux-flow-subtitle">Interaction States Flow</span>
-        <h3 class="ux-flow-title">Estados de Interacción y Lógica del Buscador</h3>
-      </div>
-      <div class="ux-flow-grid">
-        <div class="ux-flow-step ux-flow-step--action">
-          <span class="ux-flow-badge">Estado 1: Vacío</span>
-          <p class="ux-flow-step-title">Estado Inicial (Empty State)</p>
-          <p class="ux-flow-step-desc es">El motor muestra inputs por defecto (ej: "Selecciona destino"). Campo de fechas pre-rellenado con las del día siguiente.</p>
-          <p class="ux-flow-step-desc en">Default inputs displayed (e.g. "Select destination"). Dates prefilled with tomorrow's parameters.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--decision">
-          <span class="ux-flow-badge">Estado 2: Foco</span>
-          <p class="ux-flow-step-title">Foco y Sugerencias (Focused)</p>
-          <p class="ux-flow-step-desc es">El usuario activa el input. Despliegue de autocompletado inteligente con los hoteles visitados recientemente y destinos top.</p>
-          <p class="ux-flow-step-desc en">User focuses on input. Intelligent auto-complete reveals recently viewed hotels and top destinations.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--decision">
-          <span class="ux-flow-badge">Estado 3: Validación</span>
-          <p class="ux-flow-step-title">Validación de Fechas (Validation)</p>
-          <p class="ux-flow-step-desc es">Lógica de control: fecha de salida posterior a entrada. Si hay inconsistencia, aviso en vivo con tooltip accesible sin refrescar.</p>
-          <p class="ux-flow-step-desc en">Control check: check-out date must be after check-in. Visual tooltip alert shown inline for invalid queries.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--success">
-          <span class="ux-flow-badge">Estado 4: Éxito</span>
-          <p class="ux-flow-step-title">Envío y Carga (Search Triggered)</p>
-          <p class="ux-flow-step-desc es">Bloqueo de doble clic en CTA mediante estado Loading. Redirección limpia al motor de reservas con parámetros en la URL.</p>
-          <p class="ux-flow-step-desc en">Disable search button on double-click (loading state active). Clean redirection to search results page with parameters in URL.</p>
-        </div>
-      </div>
-    </div>
-
-    </div>
-      </div>
-  </div>
-</section>
-
-<!-- [R] RESULTADO -->
+<!-- PROBLEMA -->
 <section class="cs-block cs-block-light">
   <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">R</div>
-        <div class="cs-rail-label">RESULT</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
+    <div class="cs-star fu">01</div>
     <div class="fu">
-      <span class="block-label">RESULT · El impacto</span>
-      <h2 class="block-h">
-        Motor priorizado,<br><em>nueva oportunidad de producto</em>
+      <div class="block-label"><span class="es">El problema</span><span class="en">The problem</span></div>
+      <h2>
+        <span class="es">Tres dimensiones rotas</span>
+        <span class="en">Three broken dimensions</span>
       </h2>
+      <p class="es" style="max-width: 720px;">Al hablar con usuarios de gimnasio aparecía siempre el mismo patrón: la app resolvía la parte administrativa y abandonaba todo lo demás. La fricción no estaba en reservar, estaba en volver.</p>
+      <p class="en" style="max-width: 720px;">Talking to gym users, the same pattern kept appearing: the app solved the admin part and abandoned everything else. The friction wasn't in booking — it was in coming back.</p>
     </div>
-
-    <div class="c2-results-strip fu" style="margin-top:32px;">
-      <div class="c2rs-cell c2rs-cell--hero">
-        <div class="c2rs-val">#1</div>
-        <div class="c2rs-label">motor visible en primer scroll · sin scroll adicional</div>
+    <div class="cs-grid-2 fu" style="margin-top: 32px;">
+      <div style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;"><span class="es">Operativa</span><span class="en">Operational</span></div>
+        <p style="margin: 0; font-size: 14px;"><span class="es">Reservas sin contexto, calendarios confusos y cero notificaciones. El usuario no sabía qué había reservado ni cuándo.</span><span class="en">Context-free bookings, confusing calendars, zero notifications. Users didn't know what they'd booked or when.</span></p>
       </div>
-      <div class="c2rs-cell">
-        <div class="c2rs-val">100%</div>
-        <div class="c2rs-label">confianza estadística · experimento CRO validado</div>
-      </div>
-      <div class="c2rs-cell">
-        <div class="c2rs-val">↓ 75%</div>
-        <div class="c2rs-label">reducción del patrón scroll-sin-búsqueda · baseline principal</div>
-      </div>
-      <div class="c2rs-cell" style="border-right:none;">
-        <div class="c2rs-val">+1</div>
-        <div class="c2rs-label">nueva línea estratégica · landings de destino de alta conversión</div>
+      <div style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;"><span class="es">Social</span><span class="en">Social</span></div>
+        <p style="margin: 0; font-size: 14px;"><span class="es">Usuarios aislados, sin comunidad y con los monitores invisibles fuera de la sala. Nadie sabía quién más iba a su clase.</span><span class="en">Isolated users, no community, instructors invisible outside the room. Nobody knew who else was in their class.</span></p>
       </div>
     </div>
-
-    <p class="p fu" style="margin-top:24px;">El motor pasó a dominar el primer scroll. El análisis post-lanzamiento reveló algo que no estaba en el brief: los usuarios exploraban destinos desde el buscador. De ahí salió una nueva línea de trabajo.</p>
-
-    <div style="border-left: 2px solid var(--border); padding-left: 20px; margin-top: 16px;">
-      <p class="p fu" style="font-size: 13px; color: var(--text-dim); margin: 0;">Las cifras exactas de conversión son confidenciales. Los resultados reflejan analítica, observación y validación interna post-lanzamiento.</p>
+    <div class="insight-box fu" style="margin-top: 24px;">
+      <p style="margin: 0;"><strong><span class="es">Emocional:</span><span class="en">Emotional:</span></strong> <span class="es">nada incentivaba volver. Sin progreso visible, sin reconocimiento y sin motivo para abrir la app un martes por la tarde, la retención dependía solo de la fuerza de voluntad.</span><span class="en">nothing rewarded coming back. With no visible progress, no recognition and no reason to open the app on a Tuesday evening, retention rested on willpower alone.</span></p>
     </div>
-
-        <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
-    <details class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
-      <summary class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
-        <span style="color: var(--accent);">INTEGRACIÓN DE IA EN PRODUCTO</span>
-        <em style="color: rgba(255,255,255,0.65);">— Optimización de flujos y especificación técnica</em>
-      </summary>
-      <div class="wf-steps" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-        <div class="wf-step">
-          <span class="wf-step-num" style="color: var(--accent);">1.</span>
-          <p class="wf-step-title" style="color: #fff;">Ideación de Flujos</p>
-          <p class="wf-step-desc es">Utilicé modelos de lenguaje como sparring partner para modelar posibles casos de uso extremos (edge cases) del motor en pantallas ultra estrechas.</p>
-          <p class="wf-step-desc en">Used LLMs to brainstorm and model edge-case behavior for the search engine on ultra-narrow viewport widths.</p>
-        </div>
-        <div class="wf-step">
-          <span class="wf-step-num" style="color: var(--accent);">2.</span>
-          <p class="wf-step-title" style="color: #fff;">UI Copy Sparring</p>
-          <p class="wf-step-desc es">Generé con IA y testé variaciones rápidas de microcopy para las etiquetas de búsqueda dinámica en español e inglés, optimizando legibilidad.</p>
-          <p class="wf-step-desc en">Generated and validated multiple dynamic search label microcopy options in both Spanish and English for better clarity.</p>
-        </div>
-        <div class="wf-step">
-          <span class="wf-step-num" style="color: var(--accent);">3.</span>
-          <p class="wf-step-title" style="color: #fff;">Design QA Automatizado</p>
-          <p class="wf-step-desc es">Inspeccioné el código maquetado del motor usando un prompt estructurado de IA para comparar píxeles, colores y alineaciones contra el UI Kit.</p>
-          <p class="wf-step-desc en">Inspected the live UI using structured AI prompts to systematically compare build margins and alignment with the master UI Kit.</p>
-        </div>
-      </div>
-    </details>
-
-      </div>
   </div>
 </section>
 
-<!-- APRENDIZAJES -->
-<section class="cs-block">
+<!-- SOLUCIÓN: 3 PILARES -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
   <div class="cs-wrap">
+    <div class="cs-star fu">02</div>
     <div class="fu">
-      <span class="block-label">LEARNINGS · Aprendizajes</span>
-      <h2 class="block-h">
-        Lo que este proyecto<br><em>reveló sobre tomar decisiones de producto</em>
+      <div class="block-label"><span class="es">La solución</span><span class="en">The solution</span></div>
+      <h2>
+        <span class="es">Un framework de tres pilares</span>
+        <span class="en">A three-pillar framework</span>
       </h2>
+      <p class="es" style="max-width: 720px;">En vez de una lista de features, propuse tres pilares. Cada funcionalidad tenía que justificarse dentro de uno de ellos o se quedaba fuera del MVP. Fue la herramienta que nos permitió priorizar sin discutir gustos.</p>
+      <p class="en" style="max-width: 720px;">Instead of a feature list, I proposed three pillars. Every feature had to justify itself inside one of them or it stayed out of the MVP. It was the tool that let us prioritise without arguing about taste.</p>
     </div>
-    <div class="c2-learnings">
-      <div class="c2lc fu">
-        <span class="c2lc-num">01</span>
-        <p class="p" style="margin:0;"><strong>El usuario no siempre sabe lo que quiere, pero sus datos sí.</strong> El buscador se usaba para explorar destinos. Ese insight no estaba en el brief.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 32px;">
+      <div class="fu" style="border: 1px solid var(--accent-border); border-radius: 14px; padding: 26px; background: var(--accent-glow);">
+        <div style="font-size: 28px; font-weight: 800; color: var(--accent); font-family: var(--font-serif); line-height: 1;">01</div>
+        <h3 style="font-size: 18px; margin: 12px 0 10px;"><span class="es">Práctico</span><span class="en">Practical</span></h3>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Reserva visual, calendario real y notificaciones por email. Que la logística deje de ser un obstáculo.</span><span class="en">Visual booking, a real calendar and email notifications. So logistics stop being an obstacle.</span></p>
       </div>
-      <div class="c2lc fu">
-        <span class="c2lc-num">02</span>
-        <p class="p" style="margin:0;"><strong>El conflicto entre branding y conversión es de priorización, no de diseño.</strong> Se resuelve con una decisión estratégica explícita, no con un rediseño visual.</p>
+      <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
+        <div style="font-size: 28px; font-weight: 800; color: var(--accent); font-family: var(--font-serif); line-height: 1;">02</div>
+        <h3 style="font-size: 18px; margin: 12px 0 10px;"><span class="es">Social</span><span class="en">Social</span></h3>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Muro de monitores, perfiles públicos, sistema de follows y chat. El gimnasio como sitio con gente, no como catálogo de clases.</span><span class="en">Instructor wall, public profiles, follows and chat. The gym as a place with people, not a class catalogue.</span></p>
       </div>
-      <div class="c2lc fu">
-        <span class="c2lc-num">03</span>
-        <p class="p" style="margin:0;"><strong>Hablar el lenguaje del negocio desbloquea decisiones.</strong> Argumentar en tasa de inicio de búsqueda aprueba; argumentar en UX abre debate.</p>
+      <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
+        <div style="font-size: 28px; font-weight: 800; color: var(--accent); font-family: var(--font-serif); line-height: 1;">03</div>
+        <h3 style="font-size: 18px; margin: 12px 0 10px;"><span class="es">Lúdico</span><span class="en">Playful</span></h3>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Likes, reseñas, historial y testimonios. Señales de progreso y reconocimiento que dan un motivo para volver.</span><span class="en">Likes, reviews, history and testimonials. Signals of progress and recognition that give a reason to return.</span></p>
       </div>
-      <div class="c2lc fu" style="border-right:none;">
-        <span class="c2lc-num">04</span>
-        <p class="p" style="margin:0;"><strong>La validación continua como parte del proceso, no como fase final.</strong> El lanzamiento fue el inicio del ciclo de aprendizaje. El proyecto sigue en optimización activa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SISTEMA DE DISEÑO -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">03</div>
+    <div class="fu">
+      <div class="block-label"><span class="es">Sistema de diseño</span><span class="en">Design system</span></div>
+      <h2>
+        <span class="es">Componentes antes que pantallas</span>
+        <span class="en">Components before screens</span>
+      </h2>
+      <p class="es" style="max-width: 720px;">Con siete personas tocando el frontend, dibujar pantallas sueltas era garantía de inconsistencia. Definí primero la paleta y los componentes base, y las pantallas salieron de ahí. El equipo acabó construyendo más de 40 componentes reutilizables.</p>
+      <p class="en" style="max-width: 720px;">With seven people touching the frontend, drawing loose screens guaranteed inconsistency. I defined the palette and base components first, and the screens came out of that. The team ended up building more than 40 reusable components.</p>
+    </div>
+    <div class="fu" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;">
+      <div style="border-radius: 10px; overflow: hidden; width: 130px; border: 1px solid var(--border);">
+        <div style="height: 64px; background: #0D5FA6;"></div>
+        <div style="padding: 10px 12px;"><div style="font-size: 11px; font-weight: 600; color: var(--text-bright);">Primary</div><div style="font-size: 10px; color: var(--text-dim); font-family: monospace;">#0D5FA6</div></div>
       </div>
+      <div style="border-radius: 10px; overflow: hidden; width: 130px; border: 1px solid var(--border);">
+        <div style="height: 64px; background: #F2BB16;"></div>
+        <div style="padding: 10px 12px;"><div style="font-size: 11px; font-weight: 600; color: var(--text-bright);">Accent</div><div style="font-size: 10px; color: var(--text-dim); font-family: monospace;">#F2BB16</div></div>
+      </div>
+      <div style="border-radius: 10px; overflow: hidden; width: 130px; border: 1px solid var(--border);">
+        <div style="height: 64px; background: #D92929;"></div>
+        <div style="padding: 10px 12px;"><div style="font-size: 11px; font-weight: 600; color: var(--text-bright);">Danger</div><div style="font-size: 10px; color: var(--text-dim); font-family: monospace;">#D92929</div></div>
+      </div>
+      <div style="border-radius: 10px; overflow: hidden; width: 130px; border: 1px solid var(--border);">
+        <div style="height: 64px; background: #E3E3E3;"></div>
+        <div style="padding: 10px 12px;"><div style="font-size: 11px; font-weight: 600; color: var(--text-bright);">Neutral</div><div style="font-size: 10px; color: var(--text-dim); font-family: monospace;">#E3E3E3</div></div>
+      </div>
+      <div style="border-radius: 10px; overflow: hidden; width: 130px; border: 1px solid var(--border);">
+        <div style="height: 64px; background: #303030;"></div>
+        <div style="padding: 10px 12px;"><div style="font-size: 11px; font-weight: 600; color: var(--text-bright);">Dark</div><div style="font-size: 10px; color: var(--text-dim); font-family: monospace;">#303030</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARQUITECTURA -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
+  <div class="cs-wrap">
+    <div class="cs-star fu">04</div>
+    <div class="fu">
+      <div class="block-label"><span class="es">Lo que construyó el equipo</span><span class="en">What the team built</span></div>
+      <h2>
+        <span class="es">Un MVP completo, no una maqueta</span>
+        <span class="en">A complete MVP, not a mockup</span>
+      </h2>
+      <p class="es" style="max-width: 720px;">El proyecto llegó a funcionar de punta a punta: autenticación con tres roles, reservas con disponibilidad real, chat, muro y reseñas. Estas cifras son el resultado del trabajo de las ocho personas del equipo.</p>
+      <p class="en" style="max-width: 720px;">The project ended up working end to end: authentication with three roles, bookings with real availability, chat, wall and reviews. These figures are the result of all eight people's work.</p>
+    </div>
+    <div class="data-band fu" style="margin-top: 32px;">
+      <div>
+        <div class="hm-value">40+</div>
+        <div class="hm-label es">Componentes React</div>
+        <div class="hm-label en">React components</div>
+      </div>
+      <div>
+        <div class="hm-value">30+</div>
+        <div class="hm-label es">Endpoints de API</div>
+        <div class="hm-label en">API endpoints</div>
+      </div>
+      <div>
+        <div class="hm-value">8</div>
+        <div class="hm-label es">Modelos MongoDB</div>
+        <div class="hm-label en">MongoDB models</div>
+      </div>
+      <div>
+        <div class="hm-value">3</div>
+        <div class="hm-label es">Roles de usuario</div>
+        <div class="hm-label en">User roles</div>
+      </div>
+    </div>
+    <div class="cs-grid-2 fu" style="margin-top: 32px;">
+      <div style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">Frontend</div>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);">React 18 · Vite · Context API · CSS responsive · Cloudinary</p>
+      </div>
+      <div style="border: 1px solid var(--border); border-radius: 14px; padding: 24px;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px;">Backend</div>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);">Node.js · Express · MongoDB · Mongoose · JWT · Bcrypt · Nodemailer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2026 -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">05</div>
+    <div class="fu">
+      <div class="block-label"><span class="es">2026 · Trabajo individual</span><span class="en">2026 · Solo work</span></div>
+      <h2>
+        <span class="es">Volver al proyecto dos años después</span>
+        <span class="en">Returning to the project two years on</span>
+      </h2>
+      <p class="es" style="max-width: 720px;">En 2024 el objetivo era que funcionara. Con dos años más de especialización en producto, lo que veo ahora son las decisiones que no tomamos. La reconceptualización de 2026 es mía y está en curso.</p>
+      <p class="en" style="max-width: 720px;">In 2024 the goal was to make it work. With two more years specialising in product, what I see now are the decisions we didn't make. The 2026 reconceptualisation is mine and it's in progress.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 32px;">
+      <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px;"><span class="es">Recomendador con IA</span><span class="en">AI recommender</span></h3>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Sugerencias de clase según historial y objetivos, en lugar de un catálogo plano.</span><span class="en">Class suggestions based on history and goals, instead of a flat catalogue.</span></p>
+      </div>
+      <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px;"><span class="es">Dashboard de progreso</span><span class="en">Progress dashboard</span></h3>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">El pilar lúdico llevado en serio: métricas, logros y evolución visible.</span><span class="en">The playful pillar taken seriously: metrics, achievements and visible progress.</span></p>
+      </div>
+      <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
+        <h3 style="font-size: 17px; margin: 0 0 10px;"><span class="es">Seguridad y privacidad</span><span class="en">Security and privacy</span></h3>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">2FA, cifrado y cumplimiento del RGPD: lo que un MVP de bootcamp no aborda.</span><span class="en">2FA, encryption and GDPR compliance: what a bootcamp MVP doesn't tackle.</span></p>
+      </div>
+    </div>
+    <div class="insight-box fu" style="margin-top: 32px;">
+      <p style="margin: 0;"><strong><span class="es">Lo que me llevo:</span><span class="en">What I take away:</span></strong> <span class="es">el mejor código y el mejor diseño fallan igual si no conectan las tres dimensiones. Un gimnasio no se abandona porque la reserva sea lenta: se abandona porque nadie nota que has dejado de ir.</span><span class="en">the best code and the best design fail alike if they don't connect all three dimensions. People don't quit a gym because booking is slow — they quit because nobody notices they stopped showing up.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ENLACES -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--accent-border); padding: 48px var(--space-lg);">
+  <div class="cs-wrap">
+    <div class="block-label" style="color: var(--accent);">
+      <span class="es">Documentación</span><span class="en">Documentation</span>
+    </div>
+    <h2 class="fu">
+      <span class="es">El proyecto en detalle</span>
+      <span class="en">The project in detail</span>
+    </h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 28px;">
+      <a class="fu" href="https://wiggly-jasmine-d25.notion.site/3b9d112a771e81ff8fc0d8622265f274" target="_blank" rel="noopener" style="display: block; border: 1px solid var(--border); border-radius: 14px; padding: 24px; text-decoration: none;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">Notion ↗</div>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Case study completo con el research y el proceso</span><span class="en">Full case study with research and process</span></p>
+      </a>
+      <a class="fu" href="https://github.com/martamoralesgr93/GYM" target="_blank" rel="noopener" style="display: block; border: 1px solid var(--border); border-radius: 14px; padding: 24px; text-decoration: none;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">GitHub ↗</div>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Documentación técnica y arquitectura del backend</span><span class="en">Technical docs and backend architecture</span></p>
+      </a>
+      <a class="fu" href="https://www.figma.com/design/ExAp9QnaeyikrDZHmYqPS5/GYM-26" target="_blank" rel="noopener" style="display: block; border: 1px solid var(--border); border-radius: 14px; padding: 24px; text-decoration: none;">
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">Figma ↗</div>
+        <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">Diseño 2024 y rediseño 2026 en curso</span><span class="en">2024 design and 2026 redesign in progress</span></p>
+      </a>
     </div>
   </div>
 </section>
@@ -1017,7 +847,7 @@
       <p class="en" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin:0 0 8px;">Process documentation</p>
       <p class="es" style="font-size:13.5px;line-height:1.55;opacity:.82;margin:0 0 14px;">Research, hipótesis, decisiones descartadas y trade-offs de este caso, documentados paso a paso.</p>
       <p class="en" style="font-size:13.5px;line-height:1.55;opacity:.82;margin:0 0 14px;">Research, hypotheses, discarded decisions and trade-offs for this case, documented step by step.</p>
-      <a href="https://wiggly-jasmine-d25.notion.site/35ed112a771e8133b0cfdfca47a8cca2" target="_blank" rel="noopener" style="display:inline-block;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;">
+      <a href="https://wiggly-jasmine-d25.notion.site/3b9d112a771e81ff8fc0d8622265f274" target="_blank" rel="noopener" style="display:inline-block;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;">
         <span class="es">Ver el proceso en Notion ↗</span>
         <span class="en">Read the process on Notion ↗</span>
       </a>
@@ -1027,31 +857,31 @@
     <h2 class="es">¿Vemos otro proyecto?</h2>
     <h2 class="en">Want to see another project?</h2>
     <nav class="cs-pagination" aria-label="Navegación entre casos">
-      <a href="ilunion-cro.html" class="cs-pagination-arrow" aria-label="Caso anterior">←</a>
+      <a href="it-ops-oracle.html" class="cs-pagination-arrow" aria-label="Caso anterior">←</a>
       <div class="cs-pagination-dots">
         <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 01">01</a>
         <a href="ilunion-cro.html" class="cs-pagination-dot" aria-label="Caso 02">02</a>
-        <a href="booking-engine.html" class="cs-pagination-dot is-current" aria-current="page" aria-label="Caso 03">03</a>
+        <a href="booking-engine.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
         <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
         <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
-        <a href="gym-energy-center.html" class="cs-pagination-dot" aria-label="Caso 06">06</a>
+        <a href="gym-energy-center.html" class="cs-pagination-dot is-current" aria-current="page" aria-label="Caso 06">06</a>
       </div>
-      <a href="paolo-pizzeria.html" class="cs-pagination-arrow" aria-label="Caso siguiente">→</a>
+      <a href="cef-design-system.html" class="cs-pagination-arrow" aria-label="Caso siguiente">→</a>
     </nav>
     <a href="index.html" class="cs-pagination-index es">Volver al índice</a>
     <a href="index.html" class="cs-pagination-index en">Back to index</a>
   </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+  // Fade-up on scroll
+  const fus = document.querySelectorAll('.fu');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
+  fus.forEach(el => io.observe(el));
 
-  // Lang toggle (bilingual support)
+  // Lang toggle
   const stored = localStorage.getItem('portfolio-lang');
   if (stored === 'en') {
     document.documentElement.classList.add('lang-en');
@@ -1067,7 +897,18 @@
     html.lang = isEn ? 'en' : 'es';
     btn.textContent = isEn ? 'ES' : 'EN';
     localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
+    applyLang();
   }
+
+  // Affinity cards: show only current lang
+  function applyLang() {
+    const html = document.documentElement;
+    const isEn = html.classList.contains('lang-en');
+    document.querySelectorAll('.affinity-card[lang]').forEach(el => {
+      el.style.display = (isEn ? el.lang === 'en' : el.lang === 'es') ? 'block' : 'none';
+    });
+  }
+  applyLang();
 
   function openCaseMenu() {
     const m = document.getElementById('csMobileMenu');
@@ -1082,7 +923,6 @@
   }
 </script>
 <script src="cs-enhancements.js" defer></script>
-
 <!-- ===================== CHATBOT MARTA ===================== -->
 <style>
 /* ── Chat bubble trigger ── */
@@ -1620,4 +1460,3 @@
 <!-- ===================== / CHATBOT MARTA ===================== -->
 </body>
 </html>
-
