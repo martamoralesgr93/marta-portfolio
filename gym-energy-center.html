@@ -736,6 +736,30 @@
         <g class="en"><text x="32" y="228" font-family="Inter, sans-serif" font-size="11" fill="var(--text-dim)">Sign-up isn't the front door to the site: it appears at the exact moment the user already wants something.</text></g>
       </svg>
     </figure>
+
+    <div class="fu" style="margin-top: 44px;">
+      <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 18px;"><span class="es">Pilar social — wireframes de handoff</span><span class="en">Social pillar — handoff wireframes</span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <figure style="margin: 0;">
+          <div style="border: 1px solid var(--border); border-radius: 16px; padding: 16px; background: #fff;">
+            <img loading="lazy" decoding="async" width="1400" height="1347" src="assets/gym/wireframe-muro.webp" alt="Boceto del muro del monitor con permisos de creacion y borrado de posts" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+          </div>
+          <figcaption style="font-size: 12px; color: var(--text-dim); margin-top: 12px;">
+            <span class="es">El muro. Crear y borrar posts solo lo ven monitor y admin; para leerlo hay que tener sesión, seas usuario o monitor.</span>
+            <span class="en">The wall. Creating and deleting posts is visible only to instructors and admins; reading it requires a session, whether you're a user or an instructor.</span>
+          </figcaption>
+        </figure>
+        <figure style="margin: 0;">
+          <div style="border: 1px solid var(--border); border-radius: 16px; padding: 16px; background: #fff;">
+            <img loading="lazy" decoding="async" width="1125" height="1139" src="assets/gym/wireframe-chat.webp" alt="Boceto del componente de chat dentro del perfil de usuario" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+          </div>
+          <figcaption style="font-size: 12px; color: var(--text-dim); margin-top: 12px;">
+            <span class="es">El chat vive dentro del perfil, no en una pantalla aparte: se abre como componente y ordena las conversaciones por fecha del último mensaje.</span>
+            <span class="en">Chat lives inside the profile rather than on a separate screen: it opens as a component and sorts conversations by last-message date.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -857,6 +881,16 @@
       <figcaption style="font-size: 12px; color: var(--text-dim); margin-top: 14px; text-align: center;">
         <span class="es">Los tres contextos de autenticación. El anónimo ve el catálogo pero la reserva queda bloqueada: ese muro es el que convierte visitante en usuario.</span>
         <span class="en">The three authentication contexts. Anonymous users see the catalogue but booking stays locked: that wall is what turns a visitor into a user.</span>
+      </figcaption>
+    </figure>
+
+    <figure class="cs-figure fu" style="margin: 44px 0 0; max-width: 920px;">
+      <div style="border: 1px solid var(--border); border-radius: 16px; padding: 20px; background: #fff;">
+        <img loading="lazy" decoding="async" width="1500" height="1817" src="assets/gym/flujo-actividades.webp" alt="Flujo original de actividades dibujado en Excalidraw, con los tres contextos de autenticacion" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+      </div>
+      <figcaption style="font-size: 12px; color: var(--text-dim); margin-top: 14px; text-align: center;">
+        <span class="es">El artefacto original: el flujo de actividades que dibujé en 2024 para el handoff. De aquí salieron los tres contextos del diagrama anterior — las bandas verde, morada y naranja son «público», «useAuth» y «useAuthSuper».</span>
+        <span class="en">The original artefact: the activities flow I drew in 2024 for the dev handoff. The three contexts in the diagram above came from here — the green, purple and orange bands are "public", "useAuth" and "useAuthSuper".</span>
       </figcaption>
     </figure>
 
@@ -1086,6 +1120,7 @@
     </h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 28px;">
       <a class="fu" href="https://gimnasio-neoland.vercel.app" target="_blank" rel="noopener" style="display: block; border: 1px solid var(--accent-border); background: var(--accent-glow); border-radius: 14px; padding: 24px; text-decoration: none;">
+        <img loading="lazy" decoding="async" width="208" height="145" src="assets/gym/logo-gym-energy.png" alt="Gym Energy Center" style="width: 92px; height: auto; display: block; margin-bottom: 14px; background: #fff; border-radius: 6px; padding: 6px;">
         <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;"><span class="es">Ver la app ↗</span><span class="en">Open the app ↗</span></div>
         <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">El MVP de 2024 sigue desplegado y funcionando</span><span class="en">The 2024 MVP is still deployed and running</span></p>
       </a>
