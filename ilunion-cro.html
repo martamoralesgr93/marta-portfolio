@@ -609,6 +609,32 @@
       .cs-hamburger { display: flex; }
       .cs-nav-dropdown { display: none; }
     }
+  
+    /* ─── CROSS-REFERENCE ENTRE LOS DOS CASOS ILUNION ───
+       Hace explícito que comparten iniciativa y qué mide cada uno.
+       Hereda tokens existentes; no redefine ninguno. */
+    .mm-sibling {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+      margin: 28px 0 0; padding: 16px 20px;
+      border: 1px solid var(--border);
+      border-left: 2px solid rgba(var(--accent-rgb), 0.35);
+      border-radius: 14px; background: rgba(var(--accent-rgb), 0.03);
+    }
+    .mm-sibling-tag {
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); font-family: monospace;
+    }
+    .mm-sibling-txt {
+      font-size: 12.5px; color: var(--text-dim); line-height: 1.65;
+      margin: 0; flex: 1 1 320px;
+    }
+    .mm-sibling-txt strong { color: var(--text-bright); font-weight: 600; }
+    .mm-sibling a {
+      font-size: 12px; font-weight: 600; color: var(--accent);
+      text-decoration: none; white-space: nowrap;
+      border-bottom: 1px solid rgba(var(--accent-rgb), 0.35);
+    }
+    .mm-sibling a:hover { border-bottom-color: var(--accent); }
   </style>
 </head>
 <body class="cs-ilunion-cro">
@@ -783,7 +809,7 @@
       </div>
       <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
         <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">PERIODO</div>
-        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Sep 2024 - Presente</div>
+        <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">Sep 2024 &ndash; <span class="es">Actualidad</span><span class="en">Present</span></div>
       </div>
       <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
         <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">RESEARCH</div>
@@ -793,6 +819,13 @@
         <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">STACK</div>
         <div style="font-size: 13.5px; font-weight: 700; color: var(--white);">AEM, Adobe Analytics</div>
       </div>
+    </div>
+
+    <div class="mm-sibling fu">
+      <span class="mm-sibling-tag"><span class="es">Misma iniciativa</span><span class="en">Same initiative</span></span>
+      <p class="mm-sibling-txt es">Este caso y <strong>ILUNION Booking Engine</strong> son dos frentes del mismo trabajo en AEM desde 2024. Aquí se experimenta sobre el componente de ofertas y se mide el delta de conversión. La arquitectura del motor de búsqueda se trata en el otro.</p>
+      <p class="mm-sibling-txt en">This case and <strong>ILUNION Booking Engine</strong> are two fronts of the same AEM work since 2024. This one experiments on the offers component and measures the conversion delta. The search engine architecture is covered in the other one.</p>
+      <a href="booking-engine.html"><span class="es">Ver Booking Engine →</span><span class="en">View Booking Engine →</span></a>
     </div>
   </div>
 </section>
