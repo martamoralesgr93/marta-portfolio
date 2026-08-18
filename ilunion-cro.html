@@ -215,6 +215,54 @@
       font-size: 11px; color: var(--accent);
     }
 
+    /* ─── 04 · VALIDATION CARD ─────────────────────
+       Diseño del experimento + límites de atribución.
+       Hereda tokens existentes; no redefine ninguno. */
+    .mm-valcard {
+      margin-top: 28px; border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden; background: rgba(0,0,0,0.3);
+    }
+    .mm-valcard-bar {
+      display: flex; flex-wrap: wrap; gap: 6px 18px;
+      align-items: baseline; justify-content: space-between;
+      padding: 14px 22px; border-bottom: 1px solid var(--border);
+      background: rgba(var(--accent-rgb), 0.04);
+    }
+    .mm-valcard-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .mm-valcard-src {
+      font-size: 10.5px; letter-spacing: 0.06em;
+      color: var(--text-dim); font-family: monospace;
+    }
+    .mm-valcard-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+    .mm-valcell {
+      padding: 22px; border-right: 1px solid var(--border);
+    }
+    .mm-valcell:last-child { border-right: none; }
+    .mm-valcell-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 10px; font-family: monospace;
+    }
+    .mm-valcell-txt { font-size: 13px; color: var(--text); line-height: 1.6; margin: 0; }
+    .mm-valcell-txt strong { color: var(--white); }
+    .mm-valcard-note {
+      padding: 18px 22px; border-top: 1px solid var(--border);
+      border-left: 2px solid rgba(var(--accent-rgb), 0.35);
+    }
+    .mm-valcard-note p {
+      font-size: 12.5px; color: var(--text-dim); line-height: 1.7; margin: 0;
+    }
+    .mm-valcard-note strong { color: var(--text-bright); font-weight: 600; }
+    @media (max-width: 700px) {
+      .mm-valcell { border-right: none; border-bottom: 1px solid var(--border); }
+      .mm-valcell:last-child { border-bottom: none; }
+    }
+
     /* ─── 05 WIREFRAMES + DISEÑO FINAL ───────────── */
 
     /* Statement header */
@@ -837,25 +885,6 @@
         <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Prioriza velocidad, factura simple y política de cancelación clara. <strong>Ley de Hick</strong>: menos pasos y menos opciones secundarias.</p>
       </div>
     </div>
-
-    <!-- Framework Test A/B -->
-    <div style="margin-top: 32px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
-      <h4 style="font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 16px;">Arquitectura de Test A/B &amp; Significancia Estadística</h4>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-        <div>
-          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">1. Formulación de Hipótesis</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Si el selector de fechas y el precio final suben <em>above the fold</em>, el abandono cae un 25%. Priorización ICE: 9/10.</p>
-        </div>
-        <div>
-          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">2. Variante A (Control) vs. B (Tratamiento)</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5;"><strong>A:</strong> layout AEM original, banner estático.<br><strong>B:</strong> ofertas dinámicas con filtro inmediato y selector móvil.</p>
-        </div>
-        <div>
-          <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">3. Muestra &amp; Significancia</div>
-          <p style="font-size: 13px; color: var(--text); line-height: 1.5;">Split 50/50 durante 14 días. Confianza del 95% (p &lt; 0,05). Conversión: 3,36% → 6,5%.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1167,6 +1196,51 @@
         <span class="exp-result-sub">Conversión canal directo</span>
         <div class="exp-result-val">6.5%</div>
         <span class="exp-result-label">+93% vs 3,36% pre-rediseño</span>
+      </div>
+    </div>
+
+    <!-- VALIDATION CARD: como se valido y que no puede atribuirse -->
+    <div class="mm-valcard fu">
+      <div class="mm-valcard-bar">
+        <span class="mm-valcard-title">
+          <span class="es">Diseño del experimento · qué se midió y qué no</span>
+          <span class="en">Experiment design · what was measured and what was not</span>
+        </span>
+        <span class="mm-valcard-src">Adobe Analytics · Microsoft Clarity · <span class="es">canal directo</span><span class="en">direct channel</span></span>
+      </div>
+
+      <div class="mm-valcard-grid">
+        <div class="mm-valcell">
+          <p class="mm-valcell-num">
+            <span class="es">01 · Qué se testó</span>
+            <span class="en">01 · What was tested</span>
+          </p>
+          <p class="mm-valcell-txt es">Un tratamiento agrupado. <strong>A:</strong> layout AEM original, banner estático. <strong>B:</strong> buscador y oferta en el primer fold, ÚNICOS a secundario.</p>
+          <p class="mm-valcell-txt en">One bundled treatment. <strong>A:</strong> original AEM layout, static banner. <strong>B:</strong> search and offer above the fold, ÚNICOS demoted to secondary.</p>
+        </div>
+
+        <div class="mm-valcell">
+          <p class="mm-valcell-num">
+            <span class="es">02 · Cómo se validó</span>
+            <span class="en">02 · How it was validated</span>
+          </p>
+          <p class="mm-valcell-txt es">A/B con split 50/50 durante 14 días. Confianza del 95% (p &lt; 0,05). Sirvió para validar la dirección antes de desplegar a producción.</p>
+          <p class="mm-valcell-txt en">50/50 A/B split over 14 days. 95% confidence (p &lt; 0.05). It validated the direction before shipping to production.</p>
+        </div>
+
+        <div class="mm-valcell">
+          <p class="mm-valcell-num">
+            <span class="es">03 · Qué se vigiló después</span>
+            <span class="en">03 · What was tracked after</span>
+          </p>
+          <p class="mm-valcell-txt es">Scroll depth sobre el bloque de ofertas. Antes del cambio solo el <strong>15%</strong> lo superaba.</p>
+          <p class="mm-valcell-txt en">Scroll depth over the offers block. Before the change only <strong>15%</strong> of visitors got past it.</p>
+        </div>
+      </div>
+
+      <div class="mm-valcard-note">
+        <p class="es"><strong>Cómo leer este número.</strong> El A/B validó la dirección de la decisión. El 3,36% y el 6,5% corresponden al baseline y a una medición posterior. No son las dos ramas del test. Las 12 mejoras además se desplegaron como un único paquete, así que el delta pertenece al conjunto y no a cada cambio por separado. Aislarlas habría requerido 12 tests secuenciales y el calendario de negocio daba para uno.</p>
+        <p class="en"><strong>How to read this number.</strong> The A/B validated the direction of the decision. The 3.36% and the 6.5% correspond to the baseline and a later measurement. They are not the two arms of the test. The 12 improvements also shipped as a single package, so the delta belongs to the whole set and not to any change on its own. Isolating them would have taken 12 sequential tests, and the business calendar allowed for one.</p>
       </div>
     </div>
       </div>
