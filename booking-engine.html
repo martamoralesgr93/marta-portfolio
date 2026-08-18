@@ -386,6 +386,69 @@
       border-bottom: 1px solid rgba(var(--accent-rgb), 0.35);
     }
     .mm-sibling a:hover { border-bottom-color: var(--accent); }
+  
+    /* ─── BUSCADOR EN VIVO · los 4 estados funcionando ───
+       Mismo enfoque que el hero del index: el componente real, no su captura.
+       Panel claro sobre el caso oscuro, como el widget real de ILUNION. */
+    .mm-be { margin-top: 40px; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+    .mm-be-head { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); background: rgba(var(--accent-rgb), 0.04); }
+    .mm-be-eyebrow { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); font-family: monospace; margin-bottom: 8px; }
+    .mm-be-title { font-family: var(--font-serif); font-size: clamp(19px, 2vw, 25px); font-weight: 700;
+      color: var(--white); line-height: 1.2; margin: 0 0 8px; }
+    .mm-be-note { font-size: 12.5px; color: var(--text-dim); line-height: 1.6; margin: 0; }
+
+    .mm-be-states { display: flex; flex-wrap: wrap; gap: 8px; list-style: none;
+      margin: 0; padding: 16px 24px; border-bottom: 1px solid var(--border); }
+    .mm-be-st { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: var(--text-dim);
+      border: 1px solid var(--border); border-radius: 100px; padding: 5px 13px; transition: all .25s var(--mm-ease, ease); }
+    .mm-be-st[data-on="1"] { color: var(--white); border-color: rgba(var(--accent-rgb), 0.55);
+      background: rgba(var(--accent-rgb), 0.14); }
+
+    /* el widget: claro, como el motor real */
+    .mm-be-stage { --ink: #1A1A1A; --line: #E4E1E6; background: #fff; padding: 22px 24px 24px; }
+    .mm-be-form { display: grid; grid-template-columns: 1.5fr 1fr 1fr auto; gap: 12px; align-items: end; }
+    .mm-be-field { position: relative; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .mm-be-field label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #6B6B6B; }
+    .mm-be-input { width: 100%; box-sizing: border-box; font: inherit; font-size: 14px; color: var(--ink);
+      background: #fff; border: 1px solid var(--line); border-radius: 7px; padding: 11px 12px; }
+    .mm-be-input::placeholder { color: #8A8A8A; }
+    .mm-be-input:focus-visible { outline: 3px solid #7C3AED; outline-offset: 1px; border-color: var(--ink); }
+    .mm-be-input[aria-invalid="true"] { border-color: #8A1F1F; border-width: 2px; }
+
+    .mm-be-list { position: absolute; z-index: 5; top: calc(100% + 4px); left: 0; right: 0;
+      max-height: 232px; overflow-y: auto; margin: 0; padding: 6px; list-style: none;
+      background: #fff; border: 1px solid var(--line); border-radius: 9px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.16); }
+    .mm-be-group { font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #8A8A8A; padding: 8px 8px 4px; }
+    .mm-be-opt { font-size: 13.5px; color: var(--ink); padding: 8px 9px; border-radius: 6px; cursor: pointer; }
+    .mm-be-opt[aria-selected="true"] { background: #F1ECFB; }
+
+    .mm-be-go { font: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+      color: #1A1A1A; background: #FFD100; border: 1px solid #D9B200; border-radius: 7px;
+      padding: 12px 22px; cursor: pointer; white-space: nowrap; }
+    .mm-be-go:focus-visible { outline: 3px solid #7C3AED; outline-offset: 2px; }
+    .mm-be-go[aria-busy="true"] { background: #EFEFEF; border-color: var(--line); color: #6B6B6B; cursor: progress; }
+
+    .mm-be-err { display: flex; align-items: center; gap: 8px; margin: 12px 0 0;
+      font-size: 13px; font-weight: 600; color: #8A1F1F; }
+    /* el atributo hidden debe ganar a display:flex */
+    .mm-be-err[hidden], .mm-be-out[hidden], .mm-be-list[hidden] { display: none; }
+    .mm-be-err svg { flex: none; }
+    .mm-be-out { margin: 12px 0 0; font-family: monospace; font-size: 12px; line-height: 1.6;
+      color: #3B3B3B; background: #F6F5F8; border: 1px solid var(--line); border-radius: 7px;
+      padding: 10px 12px; word-break: break-all; }
+
+    .mm-be-foot { padding: 14px 24px; border-top: 1px solid var(--border); }
+    .mm-be-foot p { font-size: 12px; color: var(--text-dim); line-height: 1.65; margin: 0; }
+    .mm-be-foot strong { color: var(--text-bright); font-weight: 600; }
+
+    @media (max-width: 720px) {
+      .mm-be-form { grid-template-columns: 1fr 1fr; }
+      .mm-be-field:first-child, .mm-be-go { grid-column: 1 / -1; }
+    }
   </style>
 </head>
 <body class="cs-booking-engine">
@@ -896,41 +959,194 @@
       </div>
       
           <!-- DIAGRAMA DE ESTADOS DE INTERACCIÓN (UX STATE MACHINE) -->
-    <div class="ux-flowchart fu" style="margin-top: 40px;">
-      <div class="ux-flow-header">
-        <span class="ux-flow-subtitle">Interaction States Flow</span>
-        <h3 class="ux-flow-title"><span class="es">Estados de Interacción y Lógica del Buscador</span><span class="en">Interaction States and Search Logic</span></h3>
+    <!-- BUSCADOR EN VIVO: los 4 estados documentados, funcionando -->
+    <div class="mm-be fu">
+      <div class="mm-be-head">
+        <span class="mm-be-eyebrow">Interaction states · live</span>
+        <h3 class="mm-be-title">
+          <span class="es">Los cuatro estados del buscador, funcionando</span>
+          <span class="en">The four search states, running</span>
+        </h3>
+        <p class="mm-be-note es">No es una captura. Escribe un destino, pon la salida antes que la entrada y pulsa Buscar. La lógica es la que se especificó para producción.</p>
+        <p class="mm-be-note en">This is not a screenshot. Type a destination, set check-out before check-in and hit Search. The logic is the one specified for production.</p>
       </div>
-      <div class="ux-flow-grid">
-        <div class="ux-flow-step ux-flow-step--action">
-          <span class="ux-flow-badge"><span class="es">Estado 1: Vacío</span><span class="en">State 1: Empty</span></span>
-          <p class="ux-flow-step-title"><span class="es">Estado Inicial (Empty State)</span><span class="en">Initial state (empty)</span></p>
-          <p class="ux-flow-step-desc es">El motor muestra inputs por defecto (ej: "Selecciona destino"). Campo de fechas pre-rellenado con las del día siguiente.</p>
-          <p class="ux-flow-step-desc en">Default inputs displayed (e.g. "Select destination"). Dates prefilled with tomorrow's parameters.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--decision">
-          <span class="ux-flow-badge"><span class="es">Estado 2: Foco</span><span class="en">State 2: Focus</span></span>
-          <p class="ux-flow-step-title"><span class="es">Foco y Sugerencias (Focused)</span><span class="en">Focus and suggestions</span></p>
-          <p class="ux-flow-step-desc es">El usuario activa el input. Despliegue de autocompletado inteligente con los hoteles visitados recientemente y destinos top.</p>
-          <p class="ux-flow-step-desc en">User focuses on input. Intelligent auto-complete reveals recently viewed hotels and top destinations.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--decision">
-          <span class="ux-flow-badge"><span class="es">Estado 3: Validación</span><span class="en">State 3: Validation</span></span>
-          <p class="ux-flow-step-title"><span class="es">Validación de Fechas (Validation)</span><span class="en">Date validation</span></p>
-          <p class="ux-flow-step-desc es">Lógica de control: fecha de salida posterior a entrada. Si hay inconsistencia, aviso en vivo con tooltip accesible sin refrescar.</p>
-          <p class="ux-flow-step-desc en">Control check: check-out date must be after check-in. Visual tooltip alert shown inline for invalid queries.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--success">
-          <span class="ux-flow-badge"><span class="es">Estado 4: Éxito</span><span class="en">State 4: Success</span></span>
-          <p class="ux-flow-step-title"><span class="es">Envío y Carga (Search Triggered)</span><span class="en">Submit and load (search triggered)</span></p>
-          <p class="ux-flow-step-desc es">Bloqueo de doble clic en CTA mediante estado Loading. Redirección limpia al motor de reservas con parámetros en la URL.</p>
-          <p class="ux-flow-step-desc en">Disable search button on double-click (loading state active). Clean redirection to search results page with parameters in URL.</p>
-        </div>
+
+      <ol class="mm-be-states" id="mmBeStates">
+        <li class="mm-be-st" data-st="1" data-on="1"><span class="es">1 · Vacío</span><span class="en">1 · Empty</span></li>
+        <li class="mm-be-st" data-st="2"><span class="es">2 · Foco</span><span class="en">2 · Focus</span></li>
+        <li class="mm-be-st" data-st="3"><span class="es">3 · Validación</span><span class="en">3 · Validation</span></li>
+        <li class="mm-be-st" data-st="4"><span class="es">4 · Éxito</span><span class="en">4 · Success</span></li>
+      </ol>
+
+      <div class="mm-be-stage">
+        <form class="mm-be-form" id="mmBeForm" novalidate>
+          <div class="mm-be-field">
+            <label for="mmBeDest"><span class="es">Destino u hotel</span><span class="en">Destination or hotel</span></label>
+            <input class="mm-be-input" id="mmBeDest" type="text" autocomplete="off"
+                   role="combobox" aria-expanded="false" aria-controls="mmBeList" aria-autocomplete="list">
+            <ul class="mm-be-list" id="mmBeList" role="listbox" hidden
+                aria-label="Sugerencias de destino"></ul>
+          </div>
+          <div class="mm-be-field">
+            <label for="mmBeIn"><span class="es">Entrada</span><span class="en">Check-in</span></label>
+            <input class="mm-be-input" id="mmBeIn" type="date">
+          </div>
+          <div class="mm-be-field">
+            <label for="mmBeOut"><span class="es">Salida</span><span class="en">Check-out</span></label>
+            <input class="mm-be-input" id="mmBeOut" type="date" aria-describedby="mmBeErr">
+          </div>
+          <button class="mm-be-go" id="mmBeGo" type="submit">
+            <span class="es">Buscar</span><span class="en">Search</span>
+          </button>
+        </form>
+        <p class="mm-be-err" id="mmBeErr" role="status" aria-live="polite" hidden>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.01"/></svg>
+          <span id="mmBeErrTxt"></span>
+        </p>
+        <p class="mm-be-out" id="mmBeUrl" hidden></p>
+      </div>
+
+      <div class="mm-be-foot">
+        <p class="es"><strong>Lo que demuestra:</strong> fechas prerrellenadas al cargar, autocompletado con hoteles vistos recientemente y destinos top, control de salida posterior a entrada resuelto en vivo sin refrescar, y bloqueo de doble clic con estado de carga antes de redirigir con los parámetros en la URL. Navegable con teclado y anunciado por lector de pantalla.</p>
+        <p class="en"><strong>What it demonstrates:</strong> dates prefilled on load, auto-complete with recently viewed hotels and top destinations, the check-out-after-check-in rule resolved live without a refresh, and double-click blocking with a loading state before redirecting with the parameters in the URL. Keyboard navigable and announced by screen readers.</p>
       </div>
     </div>
+
+    <script>
+    (function () {
+      var form = document.getElementById('mmBeForm');
+      if (!form) return;
+      var dest = document.getElementById('mmBeDest'),
+          list = document.getElementById('mmBeList'),
+          din  = document.getElementById('mmBeIn'),
+          dout = document.getElementById('mmBeOut'),
+          go   = document.getElementById('mmBeGo'),
+          err  = document.getElementById('mmBeErr'),
+          errT = document.getElementById('mmBeErrTxt'),
+          out  = document.getElementById('mmBeUrl'),
+          sts  = document.getElementById('mmBeStates');
+
+      function en() { return document.documentElement.classList.contains('lang-en'); }
+      var T = {
+        ph:      ['Selecciona destino', 'Select destination'],
+        recent:  ['Vistos recientemente', 'Recently viewed'],
+        top:     ['Destinos top', 'Top destinations'],
+        errDate: ['La salida tiene que ser posterior a la entrada.', 'Check-out must be later than check-in.'],
+        errDest: ['Elige un destino para buscar.', 'Pick a destination to search.'],
+        loading: ['Buscando…', 'Searching…'],
+        search:  ['Buscar', 'Search'],
+        result:  ['Redirección al motor con los parámetros en la URL:', 'Redirect to the engine with the parameters in the URL:']
+      };
+      function t(k) { return T[k][en() ? 1 : 0]; }
+
+      var RECENT = ['Hotel ILUNION Atrium', 'Hotel ILUNION Málaga'];
+      var TOP = ['Hotel ILUNION Alcalá Norte', 'Hotel ILUNION Pío XII', 'Hotel ILUNION Suites Madrid',
+                 'Hotel ILUNION Valencia 4', 'Hotel ILUNION Barcelona', 'Hotel ILUNION Hacienda de Mijas'];
+
+      /* ── Estado 1 · vacío, con fechas prerrellenadas ─────────────── */
+      function iso(d) { return d.toISOString().slice(0, 10); }
+      var now = new Date();
+      din.value = iso(new Date(now.getTime() + 864e5));
+      dout.value = iso(new Date(now.getTime() + 2 * 864e5));
+      dest.placeholder = t('ph');
+
+      function mark(n) {
+        [].forEach.call(sts.children, function (li) {
+          if (String(n) === li.getAttribute('data-st')) li.setAttribute('data-on', '1');
+          else li.removeAttribute('data-on');
+        });
+      }
+      new MutationObserver(function () {
+        dest.placeholder = t('ph');
+        go.querySelector('.es') && (go.disabled ? go.setAttribute('aria-busy', 'true') : 0);
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+      /* ── Estado 2 · foco y sugerencias ───────────────────────────── */
+      var idx = -1, opts = [];
+      function render(q) {
+        var f = function (a) { return a.filter(function (x) { return !q || x.toLowerCase().indexOf(q.toLowerCase()) > -1; }); };
+        var r = f(RECENT), p = f(TOP);
+        list.innerHTML = '';
+        opts = [];
+        function group(label, arr) {
+          if (!arr.length) return;
+          var h = document.createElement('li');
+          h.className = 'mm-be-group'; h.setAttribute('role', 'presentation'); h.textContent = label;
+          list.appendChild(h);
+          arr.forEach(function (name) {
+            var li = document.createElement('li');
+            li.className = 'mm-be-opt'; li.setAttribute('role', 'option');
+            li.setAttribute('aria-selected', 'false'); li.textContent = name;
+            li.addEventListener('mousedown', function (e) { e.preventDefault(); pick(name); });
+            list.appendChild(li); opts.push(li);
+          });
+        }
+        group(t('recent'), r); group(t('top'), p);
+        var any = opts.length > 0;
+        list.hidden = !any;
+        dest.setAttribute('aria-expanded', any ? 'true' : 'false');
+        idx = -1;
+        if (any) mark(2);
+      }
+      function highlight() {
+        opts.forEach(function (o, k) { o.setAttribute('aria-selected', k === idx ? 'true' : 'false'); });
+        if (opts[idx]) opts[idx].scrollIntoView({ block: 'nearest' });
+      }
+      function close() { list.hidden = true; dest.setAttribute('aria-expanded', 'false'); idx = -1; }
+      function pick(name) { dest.value = name; close(); clearErr(); mark(1); }
+
+      dest.addEventListener('focus', function () { render(dest.value); });
+      dest.addEventListener('input', function () { render(dest.value); });
+      dest.addEventListener('blur', function () { setTimeout(close, 120); });
+      dest.addEventListener('keydown', function (e) {
+        if (list.hidden && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) { render(dest.value); return; }
+        if (e.key === 'ArrowDown') { e.preventDefault(); idx = Math.min(idx + 1, opts.length - 1); highlight(); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); idx = Math.max(idx - 1, 0); highlight(); }
+        else if (e.key === 'Enter' && idx > -1) { e.preventDefault(); pick(opts[idx].textContent); }
+        else if (e.key === 'Escape') { close(); }
+      });
+
+      /* ── Estado 3 · validación en vivo, sin refrescar ────────────── */
+      function clearErr() {
+        err.hidden = true; dout.removeAttribute('aria-invalid'); dest.removeAttribute('aria-invalid');
+      }
+      function showErr(msg, field) {
+        errT.textContent = msg; err.hidden = false;
+        field.setAttribute('aria-invalid', 'true');
+        mark(3);
+      }
+      function checkDates() {
+        if (din.value && dout.value && dout.value <= din.value) { showErr(t('errDate'), dout); return false; }
+        clearErr(); return true;
+      }
+      din.addEventListener('change', checkDates);
+      dout.addEventListener('change', checkDates);
+
+      /* ── Estado 4 · bloqueo de doble clic, carga y redirección ───── */
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        out.hidden = true;
+        if (!dest.value.trim()) { showErr(t('errDest'), dest); dest.focus(); return; }
+        if (!checkDates()) { dout.focus(); return; }
+        if (go.disabled) return;                       /* bloqueo de doble clic */
+        go.disabled = true; go.setAttribute('aria-busy', 'true');
+        var label = go.querySelectorAll('span'), prev = [];
+        [].forEach.call(label, function (sp) {
+          prev.push(sp.textContent);
+          sp.textContent = T.loading[sp.classList.contains('en') ? 1 : 0];
+        });
+        mark(4);
+        setTimeout(function () {
+          go.disabled = false; go.removeAttribute('aria-busy');
+          [].forEach.call(label, function (sp, k) { sp.textContent = prev[k]; });
+          var u = '/reservas?hotel=' + encodeURIComponent(dest.value.trim()) +
+                  '&entrada=' + din.value + '&salida=' + dout.value + '&adultos=2';
+          out.textContent = t('result') + ' ' + u;
+          out.hidden = false;
+        }, 900);
+      });
+    })();
+    </script>
 
     </div>
       </div>
