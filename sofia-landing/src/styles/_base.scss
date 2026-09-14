@@ -1,0 +1,108 @@
+@use 'system' as *;
+
+// Tokens expuestos también como custom properties, para lo que se
+// resuelve en tiempo de ejecución (estados de formulario, temas).
+:root {
+  --sm-marfil: #{$marfil};
+  --sm-marfil-alt: #{$marfil-alt};
+  --sm-linea: #{$linea};
+  --sm-carbon: #{$carbon};
+  --sm-carbon-muted: #{$carbon-muted};
+  --sm-verde: #{$verde};
+  --sm-arena: #{$arena};
+  --sm-gris-calido: #{$gris-calido};
+  --sm-dorado: #{$dorado};
+  --sm-dorado-deep: #{$dorado-deep};
+  --sm-dorado-hover: #{$dorado-hover};
+  --sm-dorado-light: #{$dorado-light};
+  --sm-error: #{$error};
+
+  --sm-font-serif: #{$font-serif};
+  --sm-font-sans: #{$font-sans};
+
+  color-scheme: light;
+  accent-color: #{$dorado-deep};
+}
+
+body {
+  background-color: $marfil;
+  color: $carbon;
+  font-family: $font-sans;
+  font-size: $fs-body;
+  font-weight: 400;
+  line-height: $lh-body;
+  letter-spacing: $ls-body;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include heading;
+}
+
+h1 { font-size: $fs-display; line-height: $lh-tight; }
+h2 { font-size: $fs-h2; }
+h3 { font-size: $fs-h3; }
+h4 { font-size: $fs-h4; font-family: $font-sans; font-weight: 500; letter-spacing: 0; }
+
+strong { font-weight: 600; }
+
+::selection {
+  background: $dorado;
+  color: $carbon;
+}
+
+:focus-visible {
+  @include focus-ring;
+  border-radius: $radius-sm;
+}
+
+// Aparición al hacer scroll: lenta, corta y desactivable.
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity $dur-slow $ease-out,
+    transform $dur-slow $ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal--in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 50%;
+  translate: -50% -120%;
+  z-index: 100;
+  padding: space('xs') space('md');
+  background: $verde;
+  color: $marfil;
+  font-size: $fs-small;
+  letter-spacing: 0.04em;
+  transition: translate $dur-fast $ease-out;
+
+  &:focus-visible {
+    translate: -50% 0;
+  }
+}
+
+.sr-only {
+  @include visually-hidden;
+}
+
+section[id],
+main[id] {
+  scroll-margin-block-start: 6rem;
+}

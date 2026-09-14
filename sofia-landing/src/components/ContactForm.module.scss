@@ -1,0 +1,316 @@
+@use '../styles/system' as *;
+
+.section {
+  @include section-padding;
+
+  position: relative;
+  background-color: $verde;
+  color: $marfil;
+}
+
+.inner {
+  @include container;
+
+  display: grid;
+  gap: space('xl');
+
+  /* En móvil el formulario va justo detrás del titular: quien llega desde
+     un CTA no tiene que atravesar el texto de apoyo para escribir. */
+  @include mq('lg') {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-areas:
+      'head card'
+      'aside card';
+    align-content: start;
+    column-gap: space('3xl');
+    row-gap: space('xl');
+  }
+}
+
+.head {
+  @include mq('lg') {
+    grid-area: head;
+  }
+}
+
+.rule {
+  inline-size: 4rem;
+  block-size: 1px;
+  margin-block: space('md') 0;
+  background-color: $dorado;
+  border: 0;
+}
+
+.aside {
+  @include mq('lg') {
+    grid-area: aside;
+  }
+}
+
+/* ── Columna izquierda ─────────────────────────────────────── */
+.title {
+  margin-block-start: space('md');
+  font-weight: 400;
+  color: $marfil;
+}
+
+.titleAccent {
+  display: block;
+  color: $dorado-light;
+}
+
+.lead {
+  margin-block-start: space('md');
+  max-inline-size: 30rem;
+  font-size: $fs-lead;
+  font-weight: 300;
+  color: rgba($marfil, 0.8);
+}
+
+.note {
+  margin-block-start: space('2xs');
+  max-inline-size: 30rem;
+  font-size: $fs-small;
+  color: rgba($marfil, 0.6);
+}
+
+.help {
+  padding-block-start: space('lg');
+  border-block-start: $border-hair solid rgba($marfil, 0.16);
+}
+
+.helpTitle {
+  font-size: $fs-eyebrow;
+  font-weight: 500;
+  letter-spacing: $ls-eyebrow;
+  text-transform: uppercase;
+  color: rgba($marfil, 0.6);
+}
+
+.helpList {
+  display: grid;
+  gap: space('2xs');
+  margin-block-start: space('sm');
+}
+
+.helpItem {
+  display: flex;
+  gap: space('xs');
+  font-size: $fs-small;
+  color: rgba($marfil, 0.82);
+
+  &::before {
+    content: '';
+    flex: none;
+    inline-size: 0.9rem;
+    block-size: 1px;
+    margin-block-start: 0.75em;
+    background-color: $dorado-light;
+  }
+}
+
+.mailLink {
+  @include underline-grow($dorado-light);
+
+  display: inline-flex;
+  align-items: center;
+  gap: space('2xs');
+  margin-block-start: space('lg');
+  font-size: $fs-small;
+  color: rgba($marfil, 0.85);
+}
+
+/* ── Formulario ────────────────────────────────────────────── */
+.card {
+  padding: space('lg');
+
+  @include mq('lg') {
+    grid-area: card;
+  }
+
+  background-color: $marfil;
+  color: $carbon;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lift;
+
+  @include mq('md') {
+    padding: space('xl');
+  }
+}
+
+.grid {
+  display: grid;
+  gap: space('md');
+
+  @include mq('sm') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.full {
+  @include mq('sm') {
+    grid-column: 1 / -1;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: space('3xs');
+}
+
+.label {
+  font-size: $fs-micro;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $carbon;
+}
+
+.optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: $carbon-muted;
+}
+
+.input,
+.textarea,
+.select {
+  inline-size: 100%;
+  padding: 0.85rem space('sm');
+  background-color: #fff;
+  color: $carbon;
+  border: $border-hair solid $linea;
+  border-radius: $radius-sm;
+  font-size: $fs-body;
+  line-height: $lh-snug;
+  transition: border-color $dur-fast $ease-out, box-shadow $dur-fast $ease-out;
+
+  &::placeholder {
+    color: rgba($carbon-muted, 0.7);
+  }
+
+  &:hover {
+    border-color: #C7C1B5;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $verde;
+    box-shadow: 0 0 0 3px rgba($verde, 0.14);
+  }
+}
+
+.textarea {
+  min-block-size: 9.5rem;
+  resize: vertical;
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none' stroke='%235C6360' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right space('sm') center;
+  padding-inline-end: space('lg');
+}
+
+.invalid {
+  border-color: $error;
+
+  &:focus {
+    border-color: $error;
+    box-shadow: 0 0 0 3px rgba($error, 0.14);
+  }
+}
+
+.hint {
+  font-size: $fs-micro;
+  color: $carbon-muted;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: space('3xs');
+  font-size: $fs-micro;
+  color: $error;
+}
+
+.consent {
+  display: flex;
+  gap: space('xs');
+  align-items: flex-start;
+  margin-block-start: space('md');
+  padding-block-start: space('md');
+  border-block-start: $border-hair solid $linea;
+}
+
+.checkbox {
+  flex: none;
+  inline-size: 1.15rem;
+  block-size: 1.15rem;
+  margin-block-start: 0.15rem;
+  border: $border-hair solid $linea;
+  border-radius: $radius-sm;
+  accent-color: $dorado-deep;
+}
+
+.consentText {
+  font-size: $fs-micro;
+  line-height: $lh-snug;
+  color: $carbon-muted;
+}
+
+.submit {
+  margin-block-start: space('md');
+}
+
+.formNote {
+  margin-block-start: space('sm');
+  font-size: $fs-micro;
+  color: $carbon-muted;
+}
+
+.formError {
+  margin-block-start: space('sm');
+  padding: space('xs') space('sm');
+  background-color: rgba($error, 0.08);
+  border-inline-start: 2px solid $error;
+  font-size: $fs-micro;
+  color: $error;
+}
+
+/* ── Confirmación ──────────────────────────────────────────── */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: space('sm');
+  min-block-size: 22rem;
+  justify-content: center;
+}
+
+.successIcon {
+  color: $dorado-deep;
+}
+
+.successTitle {
+  font-family: $font-serif;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  font-weight: 400;
+  letter-spacing: $ls-display;
+  color: $verde;
+}
+
+.successText {
+  font-size: $fs-small;
+  color: $carbon-muted;
+}
+
+.successLink {
+  @include underline-grow($dorado);
+
+  font-size: $fs-small;
+  color: $dorado-deep;
+}

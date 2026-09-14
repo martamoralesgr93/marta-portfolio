@@ -1,0 +1,114 @@
+@use '../styles/system' as *;
+
+.section {
+  @include section-padding;
+
+  background-color: $marfil;
+}
+
+.inner {
+  @include container;
+
+  display: grid;
+  gap: space('xl');
+
+  @include mq('lg') {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 2.15fr);
+    gap: space('3xl');
+    align-items: start;
+  }
+}
+
+.title {
+  margin-block-start: space('md');
+  max-inline-size: 16ch;
+  font-size: clamp(1.625rem, 1.25rem + 1.5vw, 2.25rem);
+  font-weight: 400;
+}
+
+.list {
+  border-block-start: $border-hair solid $linea;
+}
+
+.item {
+  border-block-end: $border-hair solid $linea;
+}
+
+.trigger {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: space('md');
+  inline-size: 100%;
+  padding-block: space('md');
+  text-align: start;
+  font-family: $font-serif;
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: $ls-display;
+  color: $carbon;
+  transition: color $dur-fast $ease-out;
+
+  &:hover {
+    color: $verde;
+  }
+}
+
+.indicator {
+  position: relative;
+  flex: none;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin-block-start: 0.3rem;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 1px;
+    background-color: $dorado-deep;
+    transition: transform $dur-med $ease-out;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+.open .indicator::after {
+  transform: rotate(0deg);
+}
+
+/* Despliegue con grid: anima sin fijar una altura a mano. */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $dur-med $ease-out;
+}
+
+.panelOpen {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  overflow: hidden;
+  /* Plegado: fuera de la vista y fuera del lector de pantalla. */
+  visibility: hidden;
+  transition: visibility 0s linear $dur-med;
+}
+
+.panelOpen .panelInner {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.answer {
+  max-inline-size: 46ch;
+  padding-block-end: space('md');
+  font-size: $fs-small;
+  line-height: $lh-body;
+  color: $carbon-muted;
+}

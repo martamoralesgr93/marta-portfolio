@@ -1,0 +1,74 @@
+@use '../../styles/system' as *;
+
+.button {
+  --btn-arrow-shift: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: space('xs');
+  min-block-size: 3.25rem;
+  padding-inline: space('md');
+  border: $border-hair solid transparent;
+  border-radius: $radius-sm;
+  font-size: $fs-small;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+  transition:
+    background-color $dur-med $ease-out,
+    border-color $dur-med $ease-out,
+    color $dur-med $ease-out;
+
+  &:hover {
+    --btn-arrow-shift: 3px;
+  }
+}
+
+.icon {
+  flex: none;
+  translate: var(--btn-arrow-shift) 0;
+  transition: translate $dur-med $ease-out;
+}
+
+/* Sólido latón con texto carbón: 5,4:1. El blanco sobre oro no llega a 2,5:1. */
+.primary {
+  background-color: $dorado;
+  color: $carbon;
+
+  &:hover {
+    background-color: $dorado-hover;
+  }
+}
+
+/* Contorno sobre superficies oscuras. */
+.outlineLight {
+  border-color: rgba($marfil, 0.4);
+  color: $marfil;
+
+  &:hover {
+    border-color: $marfil;
+    background-color: rgba($marfil, 0.07);
+  }
+}
+
+/* Contorno sobre marfil. */
+.outlineDark {
+  border-color: rgba($carbon, 0.25);
+  color: $carbon;
+
+  &:hover {
+    border-color: $carbon;
+    background-color: rgba($carbon, 0.04);
+  }
+}
+
+.full {
+  inline-size: 100%;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}

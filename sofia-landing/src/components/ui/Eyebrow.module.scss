@@ -1,0 +1,9 @@
+@use '../../styles/system' as *;
+
+.eyebrow {
+  @include eyebrow($dorado-deep);
+}
+
+.onDark {
+  @include eyebrow($dorado-light);
+}

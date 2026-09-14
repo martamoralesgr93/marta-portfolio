@@ -1,0 +1,119 @@
+@use '../styles/system' as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: $verde;
+  color: $marfil;
+}
+
+/* Foto a sangre: entra por debajo de la cabecera y llega al borde derecho. */
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 65% 45%;
+    filter: saturate(0.94) contrast(1.02) brightness(0.94);
+  }
+
+  /* Un solo degradado continuo sobre toda la foto: sin costura vertical. */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      $verde 0%,
+      rgba($verde, 0.92) 24%,
+      rgba($verde, 0.6) 48%,
+      rgba($verde, 0.28) 76%,
+      rgba($verde, 0.18) 100%
+    );
+
+    @include mq-max('md') {
+      background: linear-gradient(
+        to right,
+        rgba($verde, 0.96) 0%,
+        rgba($verde, 0.86) 55%,
+        rgba($verde, 0.74) 100%
+      );
+    }
+  }
+}
+
+/* Isotipo como filigrana, sobre la foto y detrás del texto. */
+.watermark {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 34%;
+  z-index: -1;
+  inline-size: clamp(16rem, 30vw, 26rem);
+  aspect-ratio: 306 / 286;
+  background-color: rgba($marfil, 0.06);
+  -webkit-mask: url('/brand/isotipo-sm.png') no-repeat center / contain;
+  mask: url('/brand/isotipo-sm.png') no-repeat center / contain;
+  translate: 0 -50%;
+  pointer-events: none;
+
+  @include mq-max('md') {
+    inset-inline-start: 24%;
+    background-color: rgba($marfil, 0.045);
+  }
+}
+
+.inner {
+  @include container;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-block-size: min(88svh, 44rem);
+  padding-block: calc(4.75rem + #{space('2xl')}) space('2xl');
+}
+
+.content {
+  max-inline-size: 38rem;
+}
+
+.title {
+  margin-block: space('md') 0;
+  font-weight: 400;
+}
+
+.titleSecond {
+  display: block;
+}
+
+.titleAccent {
+  color: $dorado;
+}
+
+.lead {
+  margin-block-start: space('md');
+  max-inline-size: 31rem;
+  font-size: $fs-lead;
+  font-weight: 300;
+  line-height: $lh-body;
+  color: rgba($marfil, 0.82);
+}
+
+.actions {
+  margin-block-start: space('xl');
+}
+
+/* Microcopy bajo el CTA: adelanta qué recibe la persona al escribir (§13). */
+.microcopy {
+  max-inline-size: 29rem;
+  margin-block-start: space('md');
+  padding-inline-start: space('sm');
+  border-inline-start: 2px solid rgba($dorado, 0.75);
+  font-size: $fs-small;
+  line-height: $lh-snug;
+  color: rgba($marfil, 0.72);
+}

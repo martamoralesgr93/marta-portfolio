@@ -1,0 +1,4 @@
+// Punto de entrada único para los módulos de componente:
+//   @use '../styles/system' as *;
+@forward 'tokens';
+@forward 'mixins';

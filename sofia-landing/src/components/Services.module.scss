@@ -1,0 +1,90 @@
+@use '../styles/system' as *;
+
+.section {
+  @include section-padding;
+
+  background-color: $marfil-alt;
+}
+
+.inner {
+  @include container;
+}
+
+.head {
+  max-inline-size: 30rem;
+}
+
+.title {
+  margin-block-start: space('md');
+  font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
+  font-weight: 400;
+}
+
+.items {
+  display: grid;
+  gap: space('md');
+  margin-block-start: space('2xl');
+
+  @include mq('sm') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include mq('xl') {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: space('lg');
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: space('xs');
+  padding: space('lg');
+  background-color: $marfil;
+  border: $border-hair solid $linea;
+  border-radius: $radius-sm;
+}
+
+.icon {
+  color: $verde;
+  margin-block-end: space('2xs');
+}
+
+.cardTitle {
+  font-family: $font-serif;
+  font-size: $fs-h3;
+  font-weight: 400;
+  letter-spacing: $ls-display;
+  color: $carbon;
+}
+
+.text {
+  font-size: $fs-small;
+  line-height: $lh-body;
+  color: $carbon-muted;
+}
+
+/* Segunda capa: el vocabulario jurídico, después de la explicación llana. */
+.points {
+  display: grid;
+  gap: space('3xs');
+  margin-block-start: auto;
+  padding-block-start: space('md');
+  border-block-start: $border-hair solid $linea;
+}
+
+.point {
+  display: flex;
+  gap: space('2xs');
+  font-size: $fs-micro;
+  color: $carbon-muted;
+
+  &::before {
+    content: '';
+    flex: none;
+    inline-size: 0.65rem;
+    block-size: 1px;
+    margin-block-start: 0.72em;
+    background-color: $dorado;
+  }
+}

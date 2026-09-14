@@ -1,0 +1,80 @@
+@use '../styles/system' as *;
+
+.section {
+  position: relative;
+  padding-block: $section-y;
+  background-color: $marfil-alt;
+}
+
+.inner {
+  @include container;
+
+  display: grid;
+  gap: space('xl');
+
+  @include mq('lg') {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: space('3xl');
+    align-items: start;
+  }
+}
+
+.title {
+  margin-block-start: space('md');
+  font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
+  font-weight: 400;
+  color: $verde;
+}
+
+.text {
+  margin-block-start: space('md');
+  color: $carbon-muted;
+
+  & + & {
+    margin-block-start: space('sm');
+  }
+}
+
+/* El término técnico llega después de la explicación llana (§16). */
+.note {
+  margin-block-start: space('md');
+  padding-inline-start: space('sm');
+  border-inline-start: 2px solid $dorado;
+  font-size: $fs-micro;
+  color: $carbon-muted;
+}
+
+.options {
+  display: grid;
+  gap: 0;
+}
+
+.option {
+  display: grid;
+  gap: space('3xs');
+  padding-block: space('md');
+  border-block-start: $border-hair solid $linea;
+
+  &:last-child {
+    border-block-end: $border-hair solid $linea;
+  }
+
+  @include mq('sm') {
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: space('md');
+    align-items: baseline;
+  }
+}
+
+.optionTitle {
+  font-family: $font-serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  letter-spacing: $ls-display;
+  color: $carbon;
+}
+
+.optionText {
+  font-size: $fs-small;
+  color: $carbon-muted;
+}

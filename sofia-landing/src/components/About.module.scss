@@ -1,0 +1,93 @@
+@use '../styles/system' as *;
+
+.section {
+  @include section-padding;
+
+  background-color: $marfil-alt;
+}
+
+.inner {
+  @include container;
+
+  display: grid;
+  gap: space('xl');
+
+  @include mq('lg') {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: space('3xl');
+    align-items: center;
+  }
+}
+
+.title {
+  margin-block-start: space('md');
+  max-inline-size: 16ch;
+  font-size: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  font-weight: 400;
+  color: $verde;
+}
+
+.text {
+  margin-block-start: space('md');
+  max-inline-size: 34rem;
+  color: $carbon-muted;
+
+  & + & {
+    margin-block-start: space('sm');
+  }
+}
+
+.values {
+  display: grid;
+  gap: space('md');
+  margin-block-start: space('xl');
+  padding-block-start: space('lg');
+  border-block-start: $border-hair solid $linea;
+
+  @include mq('sm') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: space('lg') space('md');
+  }
+}
+
+.value {
+  display: flex;
+  align-items: flex-start;
+  gap: space('xs');
+}
+
+.valueIcon {
+  flex: none;
+  margin-block-start: 0.15rem;
+  color: $dorado-deep;
+}
+
+.valueTitle {
+  font-size: $fs-h4;
+  font-weight: 500;
+  color: $carbon;
+}
+
+.valueText {
+  font-size: $fs-micro;
+  line-height: $lh-snug;
+  color: $carbon-muted;
+}
+
+/* Bodegón, no retrato: el brief descarta fotografías de Sofía (§18). */
+.media {
+  overflow: hidden;
+  border-radius: $radius-sm;
+  aspect-ratio: 4 / 3;
+
+  @include mq('lg') {
+    aspect-ratio: 4 / 3.4;
+  }
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 62% 60%;
+  }
+}

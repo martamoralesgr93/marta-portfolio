@@ -1,0 +1,115 @@
+@use '../styles/system' as *;
+
+.section {
+  @include section-padding;
+
+  background-color: $verde;
+  color: $marfil;
+}
+
+.inner {
+  @include container;
+}
+
+.head {
+  max-inline-size: 30rem;
+  margin-block-end: space('2xl');
+}
+
+.title {
+  margin-block-start: space('md');
+  font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
+  font-weight: 400;
+  color: $marfil;
+}
+
+.steps {
+  display: grid;
+  gap: space('xl');
+
+  @include mq('sm') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: space('2xl') space('lg');
+  }
+
+  @include mq('lg') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: space('xl') space('lg');
+  }
+
+  @include mq('xl') {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: space('md');
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: space('sm');
+}
+
+/* Recorrido: círculo numerado + filete de puntos hacia el siguiente paso. */
+.marker {
+  display: flex;
+  align-items: center;
+  gap: space('xs');
+  margin-block-end: space('2xs');
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  flex: none;
+  inline-size: 3rem;
+  block-size: 3rem;
+  border: $border-hair solid rgba($marfil, 0.28);
+  border-radius: 50%;
+  font-family: $font-serif;
+  font-size: 1.0625rem;
+  letter-spacing: 0.02em;
+  color: $dorado-light;
+}
+
+.connector {
+  flex: 1;
+  block-size: 1px;
+  border-block-start: 1px dashed rgba($marfil, 0.22);
+
+  @include mq-max('sm') {
+    display: none;
+  }
+}
+
+.arrow {
+  flex: none;
+  color: rgba($marfil, 0.4);
+
+  @include mq-max('sm') {
+    display: none;
+  }
+}
+
+.icon {
+  color: $dorado-light;
+}
+
+.stepTitle {
+  font-family: $font-serif;
+  font-size: $fs-h3;
+  font-weight: 400;
+  letter-spacing: $ls-display;
+  color: $marfil;
+}
+
+.stepText {
+  font-size: $fs-small;
+  line-height: $lh-body;
+  color: rgba($marfil, 0.72);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-block-start: space('2xl');
+}

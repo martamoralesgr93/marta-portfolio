@@ -4,14 +4,39 @@
     {
       "name": "portfolio-static",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "http-server", "-p", "4173", "-c-1", "."],
+      "runtimeArgs": [
+        "--yes",
+        "http-server",
+        "-p",
+        "4173",
+        "-c-1",
+        "."
+      ],
       "port": 4173
     },
     {
       "name": "portfolio-root",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "http-server", "-p", "4180", "-c-1", "."],
+      "runtimeArgs": [
+        "--yes",
+        "http-server",
+        "-p",
+        "4180",
+        "-c-1",
+        "."
+      ],
       "port": 4180
+    },
+    {
+      "name": "sofia-landing",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sofia-landing"
+      ],
+      "port": 5175
     }
   ]
 }

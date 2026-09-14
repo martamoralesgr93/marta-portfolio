@@ -1,0 +1,108 @@
+@use '../styles/system' as *;
+
+.section {
+  @include section-padding;
+
+  background-color: $marfil;
+}
+
+.inner {
+  @include container;
+}
+
+.head {
+  max-inline-size: 32rem;
+}
+
+.title {
+  margin-block-start: space('md');
+  font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
+  font-weight: 400;
+}
+
+.lead {
+  margin-block-start: space('sm');
+  font-size: $fs-lead;
+  color: $carbon-muted;
+}
+
+.items {
+  display: grid;
+  gap: space('sm');
+  margin-block-start: space('2xl');
+
+  @include mq('sm') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include mq('lg') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Cada frase es la del usuario, entrecomillada: se reconoce antes de leerla. */
+.link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: space('md');
+  block-size: 100%;
+  padding: space('md');
+  background-color: $marfil-alt;
+  border: $border-hair solid transparent;
+  border-radius: $radius-sm;
+  transition:
+    background-color $dur-med $ease-out,
+    border-color $dur-med $ease-out,
+    transform $dur-med $ease-out;
+
+  &:hover {
+    background-color: $marfil;
+    border-color: $linea;
+    transform: translateY(-2px);
+
+    .arrow {
+      translate: 4px 0;
+    }
+  }
+}
+
+.text {
+  font-family: $font-serif;
+  font-size: 1.125rem;
+  line-height: $lh-snug;
+  letter-spacing: $ls-display;
+  color: $carbon;
+
+  &::before {
+    content: '«';
+    margin-inline-end: 0.15em;
+    color: $dorado-deep;
+  }
+
+  &::after {
+    content: '»';
+    margin-inline-start: 0.15em;
+    color: $dorado-deep;
+  }
+}
+
+.arrow {
+  flex: none;
+  margin-block-start: 0.25rem;
+  color: $dorado-deep;
+  transition: translate $dur-med $ease-out;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: space('md');
+  margin-block-start: space('xl');
+}
+
+.footerNote {
+  font-size: $fs-small;
+  color: $carbon-muted;
+}

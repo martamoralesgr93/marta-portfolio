@@ -1,0 +1,118 @@
+@use '../styles/system' as *;
+
+.section {
+  @include section-padding;
+
+  background-color: $marfil;
+}
+
+.inner {
+  @include container;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: space('sm');
+  padding-block-end: space('lg');
+}
+
+.all {
+  @include underline-grow($dorado);
+
+  display: inline-flex;
+  align-items: center;
+  gap: space('2xs');
+  font-size: $fs-eyebrow;
+  font-weight: 500;
+  letter-spacing: $ls-eyebrow;
+  text-transform: uppercase;
+  color: $carbon-muted;
+}
+
+.cards {
+  display: grid;
+  gap: space('md');
+
+  @include mq('md') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: $marfil-alt;
+  border: $border-hair solid $linea;
+  border-radius: $radius-sm;
+  transition: box-shadow $dur-med $ease-out, transform $dur-med $ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-soft;
+
+    .arrow {
+      translate: 4px 0;
+    }
+  }
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+}
+
+.tag {
+  position: absolute;
+  inset-block-end: space('xs');
+  inset-inline-start: space('xs');
+  padding: 0.3rem space('2xs');
+  background-color: $marfil;
+  border-radius: $radius-sm;
+  font-family: $font-sans;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $carbon;
+}
+
+.body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: space('sm');
+  padding: space('md');
+}
+
+.title {
+  font-family: $font-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: $lh-snug;
+  letter-spacing: $ls-display;
+  color: $carbon;
+}
+
+.arrow {
+  flex: none;
+  margin-block-start: 0.2rem;
+  color: $dorado-deep;
+  transition: translate $dur-med $ease-out;
+}
+
+.pending {
+  margin-block-start: space('md');
+  font-size: $fs-micro;
+  color: $carbon-muted;
+}

@@ -1,0 +1,107 @@
+@use 'sass:map';
+
+// ─────────────────────────────────────────────────────────────
+//  Design tokens — Sofía Morales Abogada
+//  Fuente: la carta de identidad visual de la marca.
+//  Verde botella y marfil sostienen la página; el dorado se usa con cuentagotas.
+// ─────────────────────────────────────────────────────────────
+
+// ── Color ────────────────────────────────────────────────────
+// Paleta oficial de la identidad de marca.
+$verde:           #0F2D26; // verde botella — superficies oscuras y titulares
+$verde-soft:      #16382F; // superficie elevada sobre oscuro
+$verde-line:      #27473D; // bordes sobre oscuro
+
+$marfil:          #F5F2EB; // base
+$marfil-alt:      #EDE9DF; // superficie sobre marfil
+$arena:           #DCC8B0; // apoyo cálido — también acento sobre oscuro
+$gris-calido:     #8A897F; // apoyos y superficies; no apto para texto largo
+$linea:           #DCD8CD; // separadores sobre claro
+
+$carbon:          #1F2320; // texto principal
+$carbon-muted:    #55564E; // texto secundario (6,5:1 sobre marfil)
+
+// El dorado es claro por naturaleza: sobre él el texto va en verde botella
+// (6,1:1). Como texto sobre marfil hace falta la versión profunda.
+$dorado:          #C8A063; // fondo de botón, filetes, subrayados
+$dorado-hover:    #B78E4F;
+$dorado-deep:     #856226; // acento como texto sobre marfil (5,0:1)
+$dorado-light:    #DCC8B0; // acento sobre verde botella (9,1:1) — es el arena
+
+$error:           #9E3B2E;
+$error-light:     #E8A99C;
+
+// ── Tipografía ───────────────────────────────────────────────
+$font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+$font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+$fs-display:  clamp(2.25rem, 1.6rem + 2.9vw, 3.5rem);
+$fs-h2:       clamp(1.875rem, 1.35rem + 2.2vw, 3rem);
+$fs-h3:       clamp(1.1875rem, 1.09rem + 0.45vw, 1.4375rem);
+$fs-h4:       1.0625rem;
+$fs-lead:     clamp(1.0625rem, 1.01rem + 0.3vw, 1.1875rem);
+$fs-body:     1rem;
+$fs-small:    0.875rem;
+$fs-micro:    0.8125rem;
+$fs-eyebrow:  0.75rem;
+
+$lh-tight:    1.08;
+$lh-heading:  1.18;
+$lh-snug:     1.45;
+$lh-body:     1.7;
+
+$ls-display:  -0.02em;
+$ls-body:     -0.005em;
+$ls-eyebrow:  0.18em;
+
+// ── Espacio (base 8) ─────────────────────────────────────────
+$space: (
+  '3xs': 0.25rem,
+  '2xs': 0.5rem,
+  'xs':  0.75rem,
+  'sm':  1rem,
+  'md':  1.5rem,
+  'lg':  2rem,
+  'xl':  3rem,
+  '2xl': 4rem,
+  '3xl': 6rem,
+  '4xl': 8rem,
+);
+
+@function space($key) {
+  @return map.get($space, $key);
+}
+
+// Ritmo vertical de sección (respiración generosa, brief §8.1)
+$section-y: clamp(4rem, 2.5rem + 6vw, 8rem);
+$section-y-sm: clamp(3rem, 2rem + 4vw, 5rem);
+
+// ── Layout ───────────────────────────────────────────────────
+$container:        1200px;
+$container-narrow: 760px;
+$gutter:           clamp(1.25rem, 4vw, 3rem);
+
+// ── Forma y elevación ────────────────────────────────────────
+// Brief §8: rectángulos con esquinas rectas o poco redondeadas.
+$radius-sm: 2px;
+$radius-md: 4px;
+$border-hair: 1px;
+
+$shadow-soft: 0 1px 2px rgba(32, 38, 36, 0.04), 0 12px 32px rgba(32, 38, 36, 0.06);
+$shadow-lift: 0 2px 4px rgba(32, 38, 36, 0.06), 0 24px 48px rgba(32, 38, 36, 0.1);
+
+// ── Movimiento ───────────────────────────────────────────────
+// «Lento y útil: aparecer, conectar, ordenar» (brief §8).
+$ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+$ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+$dur-fast:   180ms;
+$dur-med:    360ms;
+$dur-slow:   700ms;
+
+// ── Breakpoints ──────────────────────────────────────────────
+$breakpoints: (
+  'sm': 36rem,   // 576
+  'md': 48rem,   // 768
+  'lg': 64rem,   // 1024
+  'xl': 80rem,   // 1280
+);
