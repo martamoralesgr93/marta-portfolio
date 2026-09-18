@@ -15,7 +15,7 @@ const initialValues = {
   matter: '',
   message: '',
   consent: false,
-  company: '', // honeypot: invisible para personas, tentador para bots
+  company: '',
 };
 
 const MIN_MESSAGE = 20;
@@ -47,9 +47,11 @@ function validate(values) {
 export function ContactForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState('idle'); // idle · submitting · sent · error
+  const [status, setStatus] = useState('idle');
   const [submitError, setSubmitError] = useState('');
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
   const fieldRefs = useRef({});
+  const selectRef = useRef(null);
 
   const registerField = (name) => (node) => {
     fieldRefs.current[name] = node;
@@ -64,6 +66,16 @@ export function ContactForm() {
     [],
   );
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (selectRef.current && !selectRef.current.contains(event.target)) {
+        setIsSelectOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleChange = (event) => {
     const { name, type, value, checked } = event.target;
     setValues((current) => ({ ...current, [name]: type === 'checkbox' ? checked : value }));
@@ -75,6 +87,11 @@ export function ContactForm() {
         return next;
       });
     }
+  };
+
+  const handleSelectMatter = (matter) => {
+    setValues((current) => ({ ...current, matter }));
+    setIsSelectOpen(false);
   };
 
   const handleSubmit = async (event) => {
@@ -234,25 +251,55 @@ export function ContactForm() {
                   />
                 </div>
 
-                <div className={styles.field}>
-                  <label className={styles.label} htmlFor="matter">
+                {/* Custom Styled Dropdown Component */}
+                <div className={styles.field} ref={selectRef}>
+                  <label className={styles.label} htmlFor="matter-trigger">
                     Sobre qué <span className={styles.optional}>(opcional)</span>
                   </label>
-                  <select
-                    className={styles.select}
-                    id="matter"
-                    name="matter"
-                    value={values.matter}
-                    onChange={handleChange}
-                    ref={registerField('matter')}
-                  >
-                    <option value="">Elige una opción</option>
-                    {contactSection.matters.map((matter) => (
-                      <option key={matter} value={matter}>
-                        {matter}
-                      </option>
-                    ))}
-                  </select>
+                  <div className={styles.customSelectContainer}>
+                    <button
+                      id="matter-trigger"
+                      type="button"
+                      className={`${styles.customSelectTrigger} ${isSelectOpen ? styles.triggerActive : ''}`}
+                      onClick={() => setIsSelectOpen((prev) => !prev)}
+                      aria-expanded={isSelectOpen}
+                      aria-haspopup="listbox"
+                    >
+                      <span className={values.matter ? styles.selectedVal : styles.placeholderVal}>
+                        {values.matter || 'Elige una opción'}
+                      </span>
+                      <span className={`${styles.chevronIcon} ${isSelectOpen ? styles.chevronRotated : ''}`}>
+                        ▼
+                      </span>
+                    </button>
+
+                    {isSelectOpen && (
+                      <ul className={styles.customDropdownList} role="listbox">
+                        <li
+                          role="option"
+                          aria-selected={!values.matter}
+                          className={`${styles.customDropdownItem} ${!values.matter ? styles.itemSelected : ''}`}
+                          onClick={() => handleSelectMatter('')}
+                        >
+                          <span>Elige una opción</span>
+                        </li>
+                        {contactSection.matters.map((matter) => (
+                          <li
+                            key={matter}
+                            role="option"
+                            aria-selected={values.matter === matter}
+                            className={`${styles.customDropdownItem} ${values.matter === matter ? styles.itemSelected : ''}`}
+                            onClick={() => handleSelectMatter(matter)}
+                          >
+                            <span>{matter}</span>
+                            {values.matter === matter && (
+                              <Icon name="check" size={16} className={styles.checkIcon} />
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
 
                 <div className={[styles.field, styles.full].join(' ')}>

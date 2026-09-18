@@ -316,3 +316,114 @@
   font-size: $fs-small;
   color: $dorado-deep;
 }
+
+/* ── Custom Select Dropdown ────────────────────────────────── */
+.customSelectContainer {
+  position: relative;
+  inline-size: 100%;
+}
+
+.customSelectTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  inline-size: 100%;
+  min-block-size: 2.75rem;
+  padding: 0.65rem space('sm');
+  background-color: #ffffff;
+  color: $carbon;
+  border: $border-hair solid $linea;
+  border-radius: $radius-sm;
+  font-size: 1rem;
+  line-height: $lh-snug;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color $dur-fast $ease-out, box-shadow $dur-fast $ease-out;
+  outline: none;
+
+  &:hover {
+    border-color: rgba($dorado, 0.6);
+  }
+
+  &:focus-visible,
+  &.triggerActive {
+    border-color: $verde;
+    box-shadow: 0 0 0 3px rgba($verde, 0.14);
+  }
+}
+
+.selectedVal {
+  color: $carbon;
+  font-weight: 500;
+}
+
+.placeholderVal {
+  color: rgba($carbon-muted, 0.65);
+}
+
+.chevronIcon {
+  font-size: 0.65rem;
+  color: $carbon-muted;
+  transition: transform $dur-fast $ease-out;
+  margin-inline-start: space('xs');
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+  color: $dorado-deep;
+}
+
+.customDropdownList {
+  position: absolute;
+  inset-block-start: calc(100% + 4px);
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: 80;
+  background-color: #ffffff;
+  border: $border-hair solid rgba(200, 160, 99, 0.4);
+  border-radius: $radius-sm;
+  box-shadow: 0 10px 30px rgba(15, 45, 38, 0.16);
+  max-block-size: 240px;
+  overflow-y: auto;
+  padding-block: space('3xs');
+  animation: dropdownFade $dur-fast $ease-out;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.customDropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem space('sm');
+  font-size: 0.9375rem;
+  color: $carbon;
+  cursor: pointer;
+  transition: background-color $dur-fast $ease-out, color $dur-fast $ease-out;
+
+  &:hover {
+    background-color: rgba(245, 242, 235, 0.95);
+    color: $verde;
+  }
+
+  &.itemSelected {
+    background-color: rgba(15, 45, 38, 0.06);
+    color: $verde;
+    font-weight: 600;
+  }
+}
+
+.checkIcon {
+  color: $dorado-deep;
+  flex-shrink: 0;
+}
+
