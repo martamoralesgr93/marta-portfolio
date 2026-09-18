@@ -1,54 +1,41 @@
-# Imágenes
+# Imágenes y vídeo
 
-Cinco fotos, cinco huecos. **Ninguna se repite.**
+Toda la fotografía de la página es de la sesión propia de Sofía. Los bodegones
+que había antes se han retirado: donde hay imagen, sale ella.
 
-| Origen | Archivo | Dónde sale |
+| Sección | Archivo | Toma |
 |---|---|---|
-| Escritorio oscuro, cuaderno verde, pluma y olivo | `hero.jpg` | Fondo a sangre del hero |
-| Mesa de madera con taza, cuaderno y jarrón | `sobre-sofia.jpg` | «Sobre Sofía» |
-| Sobre con ventanilla y gafas sobre nogal | `recurso-1.jpg` | Tarjeta «Comisiones bancarias» |
-| Dos tazas con una rama de olivo entre ellas | `recurso-2.jpg` | Tarjeta «Separación de mutuo acuerdo» |
-| Libros atados con cordel sobre travertino | `recurso-3.jpg` | Tarjeta «Herencias» |
+| Hero | `hero.jpg` | En la mesa con el portátil, mirando a un lado |
+| «Sobre Sofía» | `sofia-video.mp4` | Vídeo vertical en bucle |
+| Póster del vídeo | `sofia-retrato.jpg` | De pie, brazos cruzados |
+| Tarjeta «Comisiones bancarias» | `recurso-1.jpg` | Anotando sobre el Código Civil |
+| Tarjeta «Separación de mutuo acuerdo» | `recurso-2.jpg` | Sentada, gafas en la mano |
+| Tarjeta «Herencias» | `recurso-3.jpg` | De pie con gafas |
+| Bloque de contacto | `sofia-contacto.jpg` | Leyendo delante del portátil |
+| Columna del FAQ | `sofia-faq.jpg` | De pie ante la mesa |
 
-## Qué se quitó para no repetir
+Siete tomas distintas más el vídeo. Ninguna se repite.
 
-Tres secciones que antes llevaban una segunda copia de otra foto:
+## El vídeo
 
-- **FAQ** — la columna del titular va sin imagen y algo más estrecha, para que
-  el acordeón gane ancho.
-- **«Antes de llegar a juicio»** — fondo plano en marfil alterno, sin la
-  textura de travertino.
-- **Bloque de contacto** — sin la banda de imagen sobre el titular.
-
-Las tres funcionan sin foto: eran refuerzo, no información.
-
-## Si aparecen más imágenes
-
-Tres huecos siguen sin foto a propósito, y el código está preparado para
-ellos. Prompts, con la cabecera de estilo común de la serie:
-
-> editorial photography, natural window light, warm desaturated palette of
-> ivory, sand and deep green, shallow depth of field, calm and uncluttered,
-> soft shadows, no people, no text, no logos
-
-1. **FAQ**, vertical 3:4 — `A closed notebook and a glass of water on a pale
-   stone surface, soft morning light from the left.`
-2. **Antes de llegar a juicio**, apaisada 3:2 — `Two chairs facing each other
-   across a small wooden table in a quiet room, warm afternoon light.`
-3. **Contacto**, 16:9 — `An open notebook and a fountain pen on a linen
-   tablecloth, late light and long shadows.`
+10 s, 720 × 1280, H.264, 3,3 MB. Sin sonido, en bucle, `playsInline` y con
+`preload="metadata"`, por debajo del pliegue. Con `prefers-reduced-motion` no
+se reproduce y queda el retrato fijo. No hay `ffmpeg` en el equipo, así que va
+sin comprimir; bajarlo a ~1,5 MB es el siguiente paso si pesa.
 
 ## Encuadres
 
-Los dos huecos grandes recortan con `object-fit: cover`; lo que manda es el
-`object-position`:
+Todo recorta con `object-fit: cover`; manda el `object-position`:
 
-- **Hero** (`Hero.module.scss`) — `65% 45%`. La foto trae el lado izquierdo en
-  sombra, que es donde va el titular.
-- **Sobre Sofía** (`About.module.scss`) — `62% 60%`.
+- **Hero** (`Hero.module.scss`) — `72% 42%`. Ella queda a la derecha y el
+  degradado oscuro cubre el tercio izquierdo, que es donde va el titular. La
+  foto además va al 82 % de brillo: es clara de origen y el texto necesita
+  contraste.
+- **Contacto** (`ContactForm.module.scss`) — `50% 40%`, banda 16:9.
+- **Tarjetas y FAQ** — recortes verticales centrados en ella.
 
 ## Si sustituyes alguna
 
 ```bash
-sips -Z 1600 -s format jpeg -s formatOptions 82 origen.webp --out public/images/hero.jpg
+sips -Z 1400 -s format jpeg -s formatOptions 82 origen.jpeg --out public/images/sofia-contacto.jpg
 ```

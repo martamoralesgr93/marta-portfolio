@@ -55,7 +55,6 @@ export function ContactForm() {
     fieldRefs.current[name] = node;
   };
 
-  // Llegada desde una tarjeta de «¿Qué te está pasando?»: materia ya elegida.
   useEffect(
     () =>
       onMatterSelected((matter) => {
@@ -92,7 +91,7 @@ export function ContactForm() {
     }
 
     if (values.company) {
-      setStatus('sent'); // trampa de spam: no se envía nada
+      setStatus('sent');
       return;
     }
 
@@ -114,19 +113,39 @@ export function ContactForm() {
 
   return (
     <section className={styles.section} id="contacto">
+      <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.inner}>
-        <Reveal className={styles.head}>
-          <Eyebrow onDark>{contactSection.eyebrow}</Eyebrow>
+        <Reveal className={styles.leftColumn}>
+          <div className={styles.head}>
+            <Eyebrow onDark>{contactSection.eyebrow}</Eyebrow>
 
-          <h2 className={styles.title}>
-            {contactSection.titleLead}
-            <span className={styles.titleAccent}>{contactSection.titleAccent}</span>
-          </h2>
+            <h2 className={styles.title}>
+              {contactSection.titleLead}
+              <span className={styles.titleAccent}>{contactSection.titleAccent}</span>
+            </h2>
 
-          <hr className={styles.rule} />
+            <hr className={styles.rule} />
 
-          <p className={styles.lead}>{contactSection.lead}</p>
-          <p className={styles.note}>{contactSection.note}</p>
+            <p className={styles.lead}>{contactSection.lead}</p>
+          </div>
+
+          <div className={styles.aside}>
+            <div className={styles.help}>
+              <h3 className={styles.helpTitle}>{contactSection.helpTitle}</h3>
+              <ul className={styles.helpList}>
+                {contactSection.helpItems.map((item) => (
+                  <li key={item} className={styles.helpItem}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <a className={styles.mailLink} href={`mailto:${contact.email}`}>
+              <Icon name="mail" size={18} />
+              {contact.email}
+            </a>
+          </div>
         </Reveal>
 
         <Reveal className={styles.card} delay={120}>
@@ -289,7 +308,7 @@ export function ContactForm() {
                   aria-describedby={describedBy('consent', 'consent-text')}
                 />
                 <span className={styles.consentText} id="consent-text">
-                  Acepto que Sofía Morales trate mis datos con la única finalidad de responder a
+                  Acepto que Sofía García de los Ríos trate mis datos con la única finalidad de responder a
                   esta consulta. {contactSection.privacyText}
                   {errors.consent && (
                     <span className={styles.error} id="consent-error" role="alert">
@@ -316,24 +335,6 @@ export function ContactForm() {
               )}
             </form>
           )}
-        </Reveal>
-
-        <Reveal className={styles.aside} delay={80}>
-          <div className={styles.help}>
-            <h3 className={styles.helpTitle}>{contactSection.helpTitle}</h3>
-            <ul className={styles.helpList}>
-              {contactSection.helpItems.map((item) => (
-                <li key={item} className={styles.helpItem}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <a className={styles.mailLink} href={`mailto:${contact.email}`}>
-            <Icon name="mail" size={18} />
-            {contact.email}
-          </a>
         </Reveal>
       </div>
     </section>

@@ -1,9 +1,9 @@
 /**
  * Uso secundario de la marca: el sello circular del manual —monograma dentro
- * de un anillo, con «SOFÍA MORALES» arriba y «ABOGADA» abajo—.
+ * de un anillo, con «GARCÍA DE LOS RÍOS» arriba y «ABOGADA» abajo—.
  * El texto y el anillo heredan el color del contexto.
  */
-export function Seal({ className, title = 'Sofía Morales, abogada' }) {
+export function Seal({ className, title = 'Sofía García de los Ríos, abogada' }) {
   return (
     <svg
       className={className}
@@ -23,11 +23,11 @@ export function Seal({ className, title = 'Sofía Morales, abogada' }) {
       <text
         fill="currentColor"
         fontFamily="'Playfair Display', Georgia, serif"
-        fontSize="15"
-        letterSpacing="3.4"
+        fontSize="11"
+        letterSpacing="1.6"
       >
         <textPath href="#sello-arriba" startOffset="50%" textAnchor="middle">
-          SOFÍA MORALES
+          GARCÍA DE LOS RÍOS
         </textPath>
       </text>
 
@@ -47,12 +47,11 @@ export function Seal({ className, title = 'Sofía Morales, abogada' }) {
       <circle cx="183" cy="100" r="2" fill="currentColor" />
 
       <image
-        href="/brand/isotipo-sm-marfil.png"
+        href="/images/isotipo-gr.png"
         x="66"
-        y="66"
+        y="72"
         width="68"
-        height="64"
-        preserveAspectRatio="xMidYMid meet"
+        height="56"
       />
     </svg>
   );

@@ -5,56 +5,110 @@
   align-items: center;
   gap: space('xs');
   color: inherit;
+  text-decoration: none;
 }
 
-/* El isotipo real, enmascarado para que herede el color del contexto:
-   verde botella sobre marfil, marfil sobre verde botella. */
 .mark {
+  display: inline-block;
   flex: none;
-  inline-size: 2.25rem;
-  aspect-ratio: 306 / 286;
+  inline-size: 2.7rem;
+  block-size: 2.25rem;
   background-color: currentColor;
-  -webkit-mask: url('/brand/isotipo-sm.png') no-repeat center / contain;
-  mask: url('/brand/isotipo-sm.png') no-repeat center / contain;
+  -webkit-mask: url('/images/isotipo-gr.png') center / contain no-repeat;
+  mask: url('/images/isotipo-gr.png') center / contain no-repeat;
 }
 
 .text {
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
+  align-items: flex-start;
+  gap: 0.25em;
 }
 
 .name {
   font-family: $font-serif;
-  font-size: 0.8125rem;
-  font-weight: 400;
+  font-size: 0.9375rem;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.roleWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  inline-size: 100%;
+}
+
+.line {
+  flex: 1;
+  block-size: 1px;
+  background-color: currentColor;
+  opacity: 0.5;
 }
 
 .role {
   font-family: $font-serif;
   font-size: 0.625rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: 0.34em;
   text-transform: uppercase;
   white-space: nowrap;
-  opacity: 0.75;
+  opacity: 0.95;
 }
 
+/* Modo compacto para la barra de navegación */
 .compact {
-  .mark { inline-size: 1.875rem; }
-}
-
-/* Lockup apilado del manual: isotipo arriba, nombre y descriptor debajo. */
-.stacked {
-  flex-direction: column;
-  align-items: flex-start;
   gap: space('xs');
 
-  .mark { inline-size: 2.75rem; }
-  .text { gap: 0.4em; }
+  .mark {
+    inline-size: 2.6rem;
+    block-size: 2.15rem;
+  }
+
+  .name {
+    font-size: 0.875rem;
+    letter-spacing: 0.16em;
+  }
+
+  .role {
+    font-size: 0.5625rem;
+    letter-spacing: 0.3em;
+  }
+}
+
+/* Modo apilado / centrado (idéntico al manual de marca oficial) */
+.stacked {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: space('sm');
+
+  .mark {
+    inline-size: 4.5rem;
+    block-size: 3.75rem;
+  }
+
+  .text {
+    align-items: center;
+    gap: 0.4em;
+  }
+
+  .name {
+    font-size: 1.125rem;
+    letter-spacing: 0.22em;
+  }
+
+  .roleWrap {
+    inline-size: 100%;
+    min-inline-size: 11rem;
+  }
+
+  .role {
+    font-size: 0.625rem;
+    letter-spacing: 0.38em;
+  }
 }

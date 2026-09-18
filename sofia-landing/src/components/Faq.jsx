@@ -19,12 +19,25 @@ export function Faq() {
   return (
     <section className={styles.section} id="faq">
       <div className={styles.inner}>
-        <Reveal>
-          <Eyebrow>{faq.eyebrow}</Eyebrow>
-          <h2 className={styles.title}>{faq.title}</h2>
+        <Reveal className={styles.mediaFrame}>
+          <div className={styles.media}>
+            <img
+              src="/images/sofia-faq.jpg"
+              alt="Sofía revisando unos papeles en su mesa, con las gafas en la mano."
+              width="1027"
+              height="1531"
+              loading="lazy"
+            />
+          </div>
         </Reveal>
 
-        <Reveal as="ul" className={styles.list} delay={100}>
+        <div className={styles.content}>
+          <Reveal>
+            <Eyebrow>{faq.eyebrow}</Eyebrow>
+            <h2 className={styles.title}>{faq.title}</h2>
+          </Reveal>
+
+          <Reveal as="ul" className={styles.list} delay={100}>
           {faq.items.map((item, index) => {
             const isOpen = openItems.has(index);
 
@@ -58,7 +71,8 @@ export function Faq() {
               </li>
             );
           })}
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

@@ -6,17 +6,15 @@
   inset-inline: 0;
   z-index: 50;
   color: $marfil;
-  background-color: transparent;
-  border-block-end: $border-hair solid transparent;
-  transition:
-    background-color $dur-med $ease-out,
-    border-color $dur-med $ease-out;
+  background-color: $verde;
+  border-block-end: $border-hair solid rgba($marfil, 0.12);
+  transition: background-color $dur-fast $ease-out;
 }
 
 .scrolled {
-  background-color: rgba($verde, 0.96);
-  border-block-end-color: rgba($marfil, 0.12);
+  background-color: rgba($verde, 0.98);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .inner {
@@ -29,109 +27,256 @@
   min-block-size: 4.75rem;
 
   @include mq('lg') {
-    min-block-size: 5.5rem;
+    min-block-size: 5.25rem;
   }
 }
 
-.nav {
-  display: none;
+.brandLink {
+  display: inline-flex;
   align-items: center;
-  gap: space('md');
-
-  /* Tres enlaces caben desde 1024. */
-  @include mq('lg') {
-    display: flex;
-    gap: space('xl');
-  }
-}
-
-.link {
-  @include underline-grow($dorado-light);
-
-  font-size: $fs-micro;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: rgba($marfil, 0.88);
-  transition: color $dur-fast $ease-out;
+  min-block-size: 4.75rem;
+  padding-inline-end: space('xs');
+  color: $marfil;
+  text-decoration: none;
+  transition: opacity $dur-fast $ease-out;
 
   &:hover {
-    color: $marfil;
+    opacity: 0.9;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $dorado-light;
+    outline-offset: -2px;
   }
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: space('sm');
+  gap: space('xs');
+
+  @include mq('sm') {
+    gap: space('sm');
+  }
 }
 
 .cta {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.625rem;
+  padding-inline: space('sm');
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: $dorado;
+  color: $verde;
+  border-radius: $radius-sm;
+  transition: background-color $dur-fast $ease-out;
 
   @include mq('sm') {
-    display: inline-flex;
-    min-block-size: 2.875rem;
-    padding-inline: space('sm');
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
+    padding-inline: space('md');
+  }
+
+  &:hover {
+    background-color: $dorado-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $dorado-light;
+    outline-offset: 2px;
   }
 }
 
+/* Botón Menú Hamburguesa estilizado según el manual de marca */
 .toggle {
   display: inline-flex;
+  align-items: center;
+  gap: space('xs');
+  min-block-size: 2.625rem;
+  padding-inline: space('xs') space('sm');
+  background-color: rgba($marfil, 0.08);
+  border: $border-hair solid rgba($marfil, 0.25);
+  border-radius: $radius-sm;
+  color: $marfil;
+  cursor: pointer;
+  transition: background-color $dur-fast $ease-out, border-color $dur-fast $ease-out;
+
+  @include mq('sm') {
+    padding-inline: space('sm');
+  }
+
+  &:hover {
+    background-color: rgba($marfil, 0.16);
+    border-color: $dorado-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $dorado-light;
+    outline-offset: 2px;
+  }
+}
+
+.toggleText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  inline-size: 2.75rem;
-  block-size: 2.75rem;
-  padding: 0.7rem;
-  border: $border-hair solid rgba($marfil, 0.3);
-  border-radius: $radius-sm;
-
-  @include mq('lg') {
-    display: none;
-  }
+  gap: 4px;
+  inline-size: 1.1rem;
 
   span {
     display: block;
-    block-size: 1px;
+    block-size: 1.5px;
     background-color: $marfil;
     transition: transform $dur-med $ease-out, opacity $dur-fast $ease-out;
   }
 }
 
 .toggleOpen {
-  span:nth-child(1) { transform: translateY(3px) rotate(45deg); }
-  span:nth-child(2) { opacity: 0; }
-  span:nth-child(3) { transform: translateY(-3px) rotate(-45deg); }
+  background-color: rgba($marfil, 0.16);
+  border-color: $dorado-light;
+
+  .hamburger span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+  .hamburger span:nth-child(2) { opacity: 0; }
+  .hamburger span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+}
+
+/* ── Panel Desplegable Lateral / Drawer ─────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(15, 45, 38, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn $dur-fast $ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .panel {
-  overflow: hidden;
+  inline-size: 100%;
+  max-inline-size: 26rem;
+  block-size: 100vh;
+  padding: space('lg');
   background-color: $verde;
-  border-block-start: $border-hair solid rgba($marfil, 0.12);
+  color: $marfil;
+  border-inline-start: $border-hair solid rgba($marfil, 0.16);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  animation: slideLeft $dur-med $ease-out;
+}
 
-  @include mq('lg') {
-    display: none;
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block-end: space('md');
+  border-block-end: $border-hair solid rgba($marfil, 0.12);
+}
+
+.closeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  background: transparent;
+  border: $border-hair solid rgba($marfil, 0.2);
+  border-radius: $radius-sm;
+  color: $marfil;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color $dur-fast $ease-out, color $dur-fast $ease-out;
+
+  &:hover {
+    border-color: $dorado-light;
+    color: $dorado-light;
   }
 }
 
-.panelInner {
-  @include container;
-
+.panelNav {
   display: flex;
   flex-direction: column;
-  gap: space('sm');
-  padding-block: space('md') space('lg');
+  gap: space('xs');
+  margin-block: space('lg');
 }
 
 .panelLink {
-  padding-block: space('2xs');
+  display: flex;
+  align-items: baseline;
+  gap: space('sm');
+  padding-block: space('xs');
+  color: $marfil;
+  text-decoration: none;
+  border-block-end: $border-hair solid rgba($marfil, 0.08);
+  transition: color $dur-fast $ease-out, padding-inline-start $dur-fast $ease-out;
+
+  &:hover {
+    color: $dorado-light;
+    padding-inline-start: space('3xs');
+  }
+
+  &:focus-visible {
+    outline: 2px solid $dorado-light;
+  }
+}
+
+.linkNum {
+  font-family: $font-serif;
+  font-size: 0.8125rem;
+  color: $dorado-light;
+  opacity: 0.7;
+}
+
+.linkLabel {
   font-family: $font-serif;
   font-size: 1.375rem;
-  color: rgba($marfil, 0.9);
-  border-block-end: $border-hair solid rgba($marfil, 0.1);
+  font-weight: 400;
+  letter-spacing: $ls-display;
+}
+
+.panelFooter {
+  padding-block-start: space('md');
+  border-block-start: $border-hair solid rgba($marfil, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: space('3xs');
+}
+
+.footerTagline {
+  font-size: $fs-micro;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba($marfil, 0.55);
+}
+
+.footerEmail {
+  font-size: $fs-small;
+  color: $dorado-light;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

@@ -1,10 +1,10 @@
 @use '../styles/system' as *;
 
 .footer {
-  padding-block: $section-y-sm;
+  padding-block: space('2xl') space('lg');
   background-color: $verde;
   color: $marfil;
-  border-block-start: $border-hair solid rgba($marfil, 0.14);
+  border-block-start: $border-hair solid rgba(220, 200, 176, 0.15);
 }
 
 .inner {
@@ -17,49 +17,62 @@
 
   @include mq('md') {
     grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
-    gap: space('lg');
+    gap: space('xl');
+    align-items: start;
   }
 }
 
-/* «Derecho · Claridad · Confianza», tal como aparece bajo el logotipo. */
-.pillars {
-  margin-block-start: space('sm');
-  font-size: $fs-eyebrow;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: $dorado-light;
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: space('xs');
 }
 
-.brandText {
-  margin-block-start: space('sm');
-  max-inline-size: 24rem;
-  font-size: $fs-small;
-  color: rgba($marfil, 0.68);
+
+.navCol,
+.contactCol {
+  display: flex;
+  flex-direction: column;
 }
 
 .columnTitle {
-  font-size: $fs-eyebrow;
-  font-weight: 500;
-  letter-spacing: $ls-eyebrow;
+  font-size: $fs-micro;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba($marfil, 0.55);
+  color: $dorado-light;
+  margin-block-end: space('sm');
 }
 
 .list {
-  display: grid;
-  gap: space('2xs');
-  margin-block-start: space('sm');
+  display: flex;
+  flex-direction: column;
+  gap: space('xs');
 }
 
 .link {
-  @include underline-grow($dorado-light);
-
   font-size: $fs-small;
   color: rgba($marfil, 0.82);
+  transition: color $dur-fast $ease-out, transform $dur-fast $ease-out;
+  display: inline-block;
 
   &:hover {
     color: $marfil;
+    transform: translateX(3px);
+  }
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: space('2xs');
+  font-size: $fs-small;
+  color: rgba($marfil, 0.85);
+  text-decoration: none;
+  transition: color $dur-fast $ease-out;
+
+  &:hover {
+    color: $dorado-light;
   }
 }
 
@@ -68,7 +81,12 @@
   align-items: center;
   gap: space('2xs');
   font-size: $fs-small;
-  color: rgba($marfil, 0.82);
+  color: rgba($marfil, 0.72);
+}
+
+.contactIcon {
+  color: $dorado;
+  flex-shrink: 0;
 }
 
 .notice {
@@ -76,7 +94,7 @@
   gap: space('xs');
   margin-block-start: space('2xl');
   padding: space('xs') space('sm');
-  border: $border-hair dashed rgba($dorado-light, 0.5);
+  border: $border-hair dashed rgba($dorado-light, 0.4);
   border-radius: $radius-sm;
   font-size: $fs-micro;
   color: rgba($marfil, 0.72);
@@ -92,21 +110,38 @@
 
 .bottom {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: space('md');
-  margin-block-start: space('lg');
-  padding-block-start: space('lg');
-  border-block-start: $border-hair solid rgba($marfil, 0.14);
+  margin-block-start: space('2xl');
+  padding-block-start: space('md');
+  border-block-start: $border-hair solid rgba(220, 200, 176, 0.12);
   font-size: $fs-micro;
-  color: rgba($marfil, 0.5);
-  text-align: center;
+  color: rgba($marfil, 0.55);
 }
 
-/* Sello: uso secundario de la marca, cerrando la página. */
-.seal {
-  inline-size: 6.5rem;
-  block-size: auto;
-  color: $dorado-light;
-  opacity: 0.85;
+.copyright {
+  margin: 0;
+}
+
+.scrollTop {
+  display: inline-flex;
+  align-items: center;
+  gap: space('3xs');
+  color: rgba($marfil, 0.7);
+  text-decoration: none;
+  font-size: $fs-micro;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color $dur-fast $ease-out, transform $dur-fast $ease-out;
+
+  &:hover {
+    color: $dorado-light;
+    transform: translateY(-2px);
+  }
+}
+
+.scrollTopIcon {
+  transform: rotate(-90deg);
 }

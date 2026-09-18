@@ -16,7 +16,11 @@ export function Wordmark({ compact = false, stacked = false, className = '' }) {
       <span className={styles.mark} aria-hidden="true" />
       <span className={styles.text}>
         <span className={styles.name}>{brand.name}</span>
-        <span className={styles.role}>{brand.role}</span>
+        <span className={styles.roleWrap}>
+          <span className={styles.line} aria-hidden="true" />
+          <span className={styles.role}>{brand.role}</span>
+          <span className={styles.line} aria-hidden="true" />
+        </span>
       </span>
     </span>
   );

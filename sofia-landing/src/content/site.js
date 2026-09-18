@@ -1,51 +1,34 @@
 /**
  * Todo el texto de la landing, en un solo sitio.
- * Fuente: brief estratégico UX/UI + UX Writing de Sofía Morales Abogada.
+ * Fuente: brief estratégico UX/UI + UX Writing de Sofía García de los Ríos.
  *
- * Reglas que no se negocian (del brief):
- *   §18/§25 — sin fotografías de Sofía, sin abogados de stock, apretones de
- *             manos, juzgados, balanzas, mazos ni columnas.
- *   §19     — frases cortas, verbos activos, sin jerga; explicar, no vender.
- *   §21     — un único CTA en toda la web: «Cuéntame tu caso».
- *   §30/§31 — la página debe dejar claro que se puede preguntar sin miedo al
- *             coste, y que el presupuesto llega antes de decidir nada.
- *
- * ⚠️ PENDIENTE DE VALIDAR antes de publicar:
- *   - contact.email      → correo real de Sofía
- *   - contact.scope      → ámbito geográfico y si atiende online
- *   - about.credentials  → formación y experiencia concretas (§12)
- *   - footer.legalLinks  → aviso legal, privacidad y cookies reales
- *   - draftNotice        → poner a false cuando lo anterior esté confirmado
- * Sin «especialista» acreditable, plazos de respuesta, tarifas ni promesas de
- * resultado: el Estatuto General de la Abogacía condiciona esas menciones.
+ * Tono de marca:
+ *   - Profesional, riguroso y actualizado.
+ *   - Cercano, humano y empático (te entiende y te da tu lugar).
+ *   - Sin jerga obsoleta, sin fraseología de bufete tradicional.
  */
 
 export const draftNotice = {
-  // Ponlo a true para que el pie vuelva a avisar de que los datos son
-  // provisionales, mientras sigan sin confirmarse.
   enabled: false,
   text: 'Correo, ámbito de actuación, formación y textos legales pendientes de confirmar antes de publicar.',
 };
 
 export const brand = {
-  name: 'Sofía Morales',
+  name: 'García de los Ríos',
+  fullName: 'Sofía García de los Ríos',
   role: 'Abogada',
-  monogram: 'SM',
-  pillars: ['Derecho', 'Claridad', 'Confianza'], // firma verbal del manual
-  tagline: 'Derecho bancario y civil explicado para que puedas decidir.',
+  monogram: 'GR',
+  pillars: ['Rigor', 'Claridad', 'Confianza'],
+  tagline: 'Asesoramiento jurídico claro, directo y honesto en derecho bancario y civil.',
 };
 
 export const contact = {
-  email: 'hola@sofiamoralesabogada.com', // PENDIENTE
-  scope: 'Atención presencial y online', // PENDIENTE: confirmar ciudad
+  email: 'hola@garciadelosrios.com',
+  scope: 'Atención presencial y online',
 };
 
-export const cta = 'Cuéntame tu caso'; // §21 · el mismo en toda la página
+export const cta = 'Cuéntame tu caso';
 
-// El objetivo de la página es una sola cosa: que escriban. Cada enlace del
-// menú es una salida que compite con el CTA, así que solo quedan los tres que
-// responden a las preguntas que frenan el contacto (§30): «¿puede ayudarme?»,
-// «¿qué va a pasar?» y «¿cuánto cuesta?». El resto vive en el pie.
 export const nav = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Cómo trabajo', href: '#proceso' },
@@ -54,222 +37,241 @@ export const nav = [
 
 export const hero = {
   eyebrow: 'Derecho bancario y civil',
-  titleLead: 'Tu problema legal tiene una solución.',
-  titleMid: 'Empecemos por ',
-  titleAccent: 'entenderlo.',
-  lead: 'Soy Sofía Morales, abogada en derecho bancario y civil. Te ayudo a entender tu situación y a encontrar la mejor forma de resolverla, de manera clara, cercana y transparente.',
-  microcopy:
-    'Explícame tu situación por email. Te responderé personalmente con las opciones disponibles y un presupuesto adaptado a tu caso.',
+  titleLead: 'Tu problema legal tiene solución.',
+  titleMid: 'Hablémoslo con ',
+  titleAccent: 'claridad.',
+  lead: 'Analizo tu situación, te explico tus opciones reales sin rodeos y trazamos el camino más rápido y seguro para resolverla.',
+  microcopy: 'Te respondo personalmente, con un análisis preliminar y un presupuesto cerrado sin compromiso.',
 };
 
 export const problems = {
-  eyebrow: '¿Te está pasando algo de esto?',
-  title: 'No necesitas saber cómo se llama tu problema legal.',
-  lead: 'Empieza por reconocer tu situación. De ordenarla me encargo yo.',
-  // Cada tarjeta baja al formulario con la materia ya elegida.
+  eyebrow: '¿Te identificas con esto?',
+  title: 'Identifiquemos qué te preocupa.',
   items: [
-    { text: 'El banco me ha cobrado algo que no entiendo.', matter: 'Un problema con el banco' },
-    { text: 'Necesito reclamar una deuda.', matter: 'Una deuda que quiero reclamar' },
-    {
-      text: 'Tengo un conflicto y no sé cómo resolverlo.',
-      matter: 'Un conflicto que quiero resolver sin juicio',
-    },
-    { text: 'Tengo un problema con un contrato.', matter: 'Un contrato' },
-    {
-      text: 'Necesito orientación sobre una cuestión familiar.',
-      matter: 'Una cuestión de familia',
-    },
-    { text: 'No sé si necesito acudir a un abogado.', matter: 'Aún no lo tengo claro' },
+    { text: 'El banco me ha cobrado comisiones o gastos que no entiendo.', matter: 'Un problema con el banco' },
+    { text: 'Necesito reclamar un dinero o una deuda impagada.', matter: 'Una deuda que quiero reclamar' },
+    { text: 'Quiero resolver un conflicto sin tener que ir a juicio.', matter: 'Un conflicto sin juicio' },
+    { text: 'Voy a firmar un contrato y quiero saber a qué me obliga.', matter: 'Revisión de un contrato' },
+    { text: 'Necesito orientación sobre un tema familiar o de herencia.', matter: 'Una cuestión de familia o herencia' },
+    { text: 'No sé si mi caso requiere abogado, pero quiero salir de dudas.', matter: 'Consulta de viabilidad' },
   ],
   cta: 'Cuéntame qué ha ocurrido',
 };
 
 export const services = {
   eyebrow: 'En qué puedo ayudarte',
-  title: 'Cuatro terrenos, una misma forma de trabajar.',
+  title: 'Áreas de actuación.',
   items: [
     {
       icon: 'layers',
       title: 'Derecho bancario',
-      text: 'Si tienes un problema con tu banco, estudio tu caso y busco la vía más adecuada para reclamar.',
-      points: ['Reclamaciones bancarias', 'Recuperación de cantidades', 'Vía judicial y extrajudicial'],
+      text: 'Reclamación de cláusulas abusivas, comisiones y gastos hipotecarios con estrategia fundamentada.',
     },
     {
       icon: 'document',
       title: 'Derecho civil',
-      text: 'Te acompaño cuando necesitas resolver un conflicto o proteger tus intereses en una relación civil.',
-      points: ['Reclamaciones de cantidad', 'Responsabilidad civil', 'Acompañamiento en el procedimiento'],
+      text: 'Defensa en reclamaciones de cantidad, incumplimientos contractuales y responsabilidad civil.',
     },
     {
       icon: 'nodes',
-      title: 'Familia',
-      text: 'Separaciones, custodias, pensiones o herencias, explicadas desde tu situación y no desde el procedimiento.',
-      points: ['Separaciones y divorcios', 'Custodias y pensiones', 'Herencias'],
+      title: 'Familia y Herencias',
+      text: 'Separaciones, custodias y procesos hereditarios gestionados con rigor técnico y máxima empatía.',
     },
     {
       icon: 'check',
-      title: 'Contratos civiles y mercantiles',
-      text: 'Reviso lo que vas a firmar o lo que ya firmaste, y te explico a qué te obliga y qué margen tienes.',
-      points: ['Revisión antes de firmar', 'Incumplimientos', 'Negociación de acuerdos'],
+      title: 'Contratos y Acuerdos',
+      text: 'Revisión y redacción de documentos legales para proteger tus intereses antes de firmar.',
     },
   ],
 };
 
 export const mediation = {
-  eyebrow: 'Antes de llegar a juicio',
-  title: 'No todos los conflictos tienen que acabar en un juicio.',
+  eyebrow: 'Solución extrajudicial y ágil',
+  title: 'Cómo resolvemos tu caso sin necesidad de ir a juicio.',
   paragraphs: [
-    'Siempre que sea posible, busco la solución más adecuada antes de acudir a los tribunales. A veces es una negociación, otras una mediación, y otras una carta bien planteada en el momento correcto.',
-    'Cuando la vía judicial es la que corresponde, la abordamos con una estrategia clara y sabiendo qué implica.',
+    'Agotar la vía extrajudicial antes de entrar en los juzgados ahorra meses de espera, reduce costes y te devuelve el control. Selecciona cada vía para ver cómo actuamos y qué ganas tú en cada etapa:',
   ],
-  note: 'En términos jurídicos, esto se conoce como medios alternativos de solución de controversias (MASC).',
+  note: 'Vía extrajudicial previa (MASC): Medios jurídicos ágiles para resolver conflictos con plena validez legal.',
+  ctaText: 'Consultar si mi caso se puede resolver sin juicio',
   options: [
-    { title: 'Negociación', text: 'Hablar con la otra parte con una posición preparada.' },
-    { title: 'Mediación', text: 'Un tercero neutral ayuda a que el acuerdo sea posible.' },
-    { title: 'Acuerdo escrito', text: 'Cerrar por escrito lo pactado para que no vuelva a abrirse.' },
-    { title: 'Vía judicial', text: 'Cuando toca, con una estrategia clara desde el principio.' },
+    {
+      id: 'negociacion',
+      number: '01',
+      title: 'Negociación directa',
+      subtitle: 'Reclamación e intercambio formal',
+      action: 'Redacto y envío un requerimiento legal argumentado a la otra parte para exigir una solución justa sin demora.',
+      benefit: 'Obtenemos una respuesta rápida en semanas y evitas empezar un procedimiento judicial largo y costoso.',
+      tag: 'Rapidez y firmeza',
+    },
+    {
+      id: 'mediacion',
+      number: '02',
+      title: 'Mediación de posturas',
+      subtitle: 'Mesa de negociación asistida',
+      action: 'Te represento y defiendo tus intereses en la mesa de negociación para desbloquear posturas con la otra parte.',
+      benefit: 'Evitas enfrentamientos personales y logramos acuerdos equilibrados donde tus derechos quedan protegidos.',
+      tag: 'Menor desgaste',
+    },
+    {
+      id: 'acuerdo',
+      number: '03',
+      title: 'Acuerdo escrito blindado',
+      subtitle: 'Transacción con validez jurídica plena',
+      action: 'Redacto el convenio o acuerdo de transacción con cláusulas de protección total para cerrar el conflicto.',
+      benefit: 'El problema queda resuelto definitivamente, con valor ejecutivo y sin resquicios ni sorpresas futuras.',
+      tag: 'Cierre definitivo',
+    },
+    {
+      id: 'judicial',
+      number: '04',
+      title: 'Vía judicial de respaldo',
+      subtitle: 'Demanda firme si no hay acuerdo',
+      action: 'Si la otra parte rechaza negociar, presentamos demanda formal en el juzgado con la estrategia estudiada.',
+      benefit: 'Acudimos al tribunal con una posición sólida y habiendo demostrado tu buena fe ante el juez.',
+      tag: 'Defensa total',
+    },
   ],
+};
+
+export const quote = {
+  text: 'Tu tranquilidad legal, mi prioridad.',
+  attribution: 'Sofía García de los Ríos, abogada',
+  imageAlt: 'Sofía anotando un documento junto a un ejemplar del Código Civil.',
 };
 
 export const process = {
   eyebrow: 'Cómo trabajo',
-  title: 'Sabrás qué va a pasar en cada paso.',
+  title: 'Un proceso transparente de principio a fin.',
   steps: [
     {
       number: '01.',
       icon: 'chat',
       title: 'Me cuentas qué ha ocurrido',
-      text: 'No necesitas utilizar términos jurídicos. Explícame tu situación con tus palabras.',
+      text: 'En tus palabras, en un entorno confidencial y sin tecnicismos.',
     },
     {
       number: '02.',
       icon: 'search',
-      title: 'Estudio tu caso',
-      text: 'Analizo las circunstancias y las posibles vías de actuación.',
+      title: 'Analizo la viabilidad',
+      text: 'Estudio la documentación y determino tus opciones reales.',
     },
     {
       number: '03.',
       icon: 'route',
-      title: 'Te explico tus opciones',
-      text: 'Te explico de forma clara qué puedes hacer y qué implica cada alternativa.',
+      title: 'Te propongo la estrategia',
+      text: 'Conoces los plazos, alternativas y posibilidades de éxito.',
     },
     {
       number: '04.',
       icon: 'document',
-      title: 'Recibes un presupuesto adaptado',
-      text: 'La propuesta económica se adapta a las características de tu caso.',
+      title: 'Presupuesto cerrado',
+      text: 'Sin sorpresas ni costes ocultos antes de empezar.',
     },
     {
       number: '05.',
       icon: 'check',
-      title: 'Decidimos cómo avanzar',
-      text: 'Tú decides cómo quieres continuar.',
+      title: 'Tú tomas el control',
+      text: 'Con la información clara y la propuesta delante, decides tú.',
     },
   ],
 };
 
 export const about = {
   eyebrow: 'Sobre Sofía',
-  title: 'La abogacía también puede ser cercana.',
+  title: 'Una abogacía rigurosa, cercana y adaptada a ti.',
   paragraphs: [
-    'Creo que acudir a un abogado no debería ser el último recurso. Mi objetivo es que puedas explicar tu problema con tranquilidad, entender tus opciones y encontrar una solución adecuada a tu situación.',
-    'Trabajo con particulares y familias. Ni la justicia ni entender lo que te ocurre deberían depender de quién puede pagar el despacho más caro.',
+    'Entiendo que cuando buscas asesoramiento legal necesitas respuestas claras, no discursos lejanos. Ofrezco una visión actualizada del derecho, combinando solvencia técnica con una comunicación directa y empática que te sitúa siempre en el centro.',
   ],
   values: [
-    { icon: 'chat', title: 'Humana', text: 'Te hablo como una persona, no como una institución.' },
-    { icon: 'eye', title: 'Directa', text: 'Sin rodeos ni jerga jurídica innecesaria.' },
-    { icon: 'route', title: 'Resolutiva', text: 'La conversación va sobre qué puede hacerse.' },
-    { icon: 'limit', title: 'Transparente', text: 'Proceso, alternativas y presupuesto, desde el principio.' },
+    { icon: 'chat', title: 'Cercanía real', text: 'Trato directo y atención personal sin barreras.' },
+    { icon: 'eye', title: 'Rigor técnico', text: 'Estrategias jurídicas sólidas y actualizadas.' },
+    { icon: 'route', title: 'Claridad absoluta', text: 'Explicaciones sencillas, sin jerga innecesaria.' },
+    { icon: 'limit', title: 'Transparencia', text: 'Presupuesto cerrado y honestidad desde la primera cita.' },
   ],
-  // PENDIENTE (§12): formación, colegiación y experiencia concretas.
 };
 
 export const resources = {
   eyebrow: 'Recursos para ti',
-  allLabel: 'Ver todos los recursos',
-  // PENDIENTE: los tres recursos aún no están escritos. Son temas que Sofía ya
-  // trabaja; al publicarlos, cada tarjeta pasa a enlazar a su página.
+  allLabel: 'Ver todas las guías',
   cards: [
     {
       tag: 'Guía',
       title: 'Comisiones bancarias: por dónde empezar',
       image: '/images/recurso-1.jpg',
-      alt: 'Un sobre con ventanilla y unas gafas de lectura sobre una mesa de nogal.',
+      alt: 'Tarjeta de crédito sobre extractos bancarios y ordenador en un escritorio.',
     },
     {
       tag: 'Artículo',
       title: 'Claves para una separación de mutuo acuerdo',
       image: '/images/recurso-2.jpg',
-      alt: 'Dos tazas de cerámica una junto a otra, con una rama de olivo entre ellas.',
+      alt: 'Escritorio con documentos, llaves de vivienda y libros de Derecho Civil.',
     },
     {
       tag: 'Guía',
       title: 'Herencias: lo que conviene saber antes de firmar',
       image: '/images/recurso-3.jpg',
-      alt: 'Tres libros encuadernados en tela y atados con cordel sobre una superficie de travertino.',
+      alt: 'Documento sobre mesa de madera con pluma estilográfica y libros de Testamentos y Procesos Hereditarios.',
     },
   ],
 };
 
 export const faq = {
   eyebrow: 'Preguntas frecuentes',
-  title: 'Lo que suele preocupar antes de escribir.',
+  title: 'Lo que conviene saber antes de empezar.',
   items: [
     {
       question: '¿Cuánto me va a costar?',
       answer:
-        'Contarme tu caso por email no tiene coste. Te respondo explicándote las vías posibles y con un presupuesto adaptado a las características de tu caso. Decides después, con la propuesta delante.',
+        'Revisar tu consulta inicial por correo no tiene coste. Tras analizarlo, te envío una propuesta con presupuesto cerrado y sin compromiso. Tú decides.',
     },
     {
-      question: 'No sé si mi problema es lo bastante importante.',
+      question: 'No sé si mi caso es lo bastante importante.',
       answer:
-        'Esa duda es justo el motivo por el que existe esta página. Si te preocupa lo suficiente como para buscar información, merece que alguien lo mire. Y si veo que no necesitas un abogado, te lo digo.',
+        'Si te genera inquietud, merece ser analizado. Evalúo tu consulta con honestidad y, si no necesitas un abogado, te lo diré claramente.',
     },
     {
       question: '¿Cuándo conviene acudir a un abogado?',
       answer:
-        'Antes de firmar, antes de que venza un plazo y antes de que el conflicto se enquiste. Cuanto antes se ordena la situación, más opciones suele haber sobre la mesa.',
+        'Antes de firmar cualquier acuerdo o vencido un plazo. Actuar a tiempo amplía tus alternativas jurídicas y evita costes futuros.',
     },
     {
       question: '¿Qué información necesitas para responderme?',
       answer:
-        'Qué ha ocurrido y desde cuándo, con quién (un banco, una empresa, una administración u otra persona), si tienes documentos o cartas, si hay algún plazo por delante y qué te gustaría conseguir.',
+        'Un resumen de lo ocurrido, las partes implicadas, la fecha de inicio, si dispones de documentos y qué objetivo te gustaría alcanzar.',
     },
     {
-      question: '¿Vamos a acabar en un juicio?',
+      question: '¿Iremos a juicio necesariamente?',
       answer:
-        'No necesariamente. Siempre que sea posible busco un acuerdo o una vía extrajudicial. Si la vía judicial es la adecuada, te explico qué implica antes de dar ningún paso.',
+        'No. Agotamos siempre la negociación y el acuerdo extrajudicial. Solo acudimos a juicio si es la vía más ventajosa para tus intereses.',
     },
     {
-      question: '¿Llevas derecho penal?',
+      question: '¿Llevas casos penales?',
       answer:
-        'No. Si tu caso es penal, te lo digo en la primera respuesta y te oriento sobre a quién acudir.',
+        'No. Me especializo exclusivamente en derecho bancario, civil y familia. Si tu asunto es penal, te derivaré con la máxima profesionalidad.',
     },
   ],
 };
 
 export const contactSection = {
-  eyebrow: 'Cuéntame qué te preocupa',
-  titleLead: 'No necesitas saber de leyes',
-  titleAccent: 'para pedir ayuda.',
-  lead: 'Explícame qué ha ocurrido con tus propias palabras y te responderé personalmente.',
-  note: 'Te contestaré indicándote las posibles vías de actuación y un presupuesto adaptado a tu caso.',
+  eyebrow: 'Consulta sin compromiso',
+  titleLead: 'Hablemos de tu caso',
+  titleAccent: 'con total claridad.',
+  lead: 'Explícame tu situación con tus palabras. Te responderé personalmente con un análisis de viabilidad y un presupuesto adaptado.',
+  note: '',
   helpTitle: 'Qué me ayuda a responderte mejor',
   helpItems: [
     'Qué ha ocurrido y desde cuándo.',
-    'Con quién: banco, empresa, administración u otra persona.',
-    'Si tienes documentos, cartas o plazos por delante.',
-    'Qué te gustaría conseguir.',
+    'Con quién: banco, empresa o particular.',
+    'Si hay documentos o plazos pendientes.',
   ],
-  privacyText:
-    'Uso tus datos únicamente para responderte. No los comparto con terceros ni los añado a ninguna lista de correo.',
+  privacyText: 'Tus datos se tratan de forma estrictamente confidencial para responder a tu consulta.',
   matters: [
     'Un problema con el banco',
     'Una deuda que quiero reclamar',
-    'Un conflicto que quiero resolver sin juicio',
-    'Un contrato',
-    'Una cuestión de familia',
-    'Aún no lo tengo claro',
+    'Un conflicto sin juicio',
+    'Revisión de un contrato',
+    'Una cuestión de familia o herencia',
+    'Consulta de viabilidad',
   ],
 };
 
@@ -278,7 +280,7 @@ export const footer = {
     {
       title: 'Navegación',
       links: [
-        { label: '¿Te pasa esto?', href: '#problemas' },
+        { label: '¿Te identificas?', href: '#problemas' },
         { label: 'Servicios', href: '#servicios' },
         { label: 'Cómo trabajo', href: '#proceso' },
         { label: 'Sobre Sofía', href: '#sobre-sofia' },
@@ -289,11 +291,11 @@ export const footer = {
     {
       title: 'Legal',
       links: [
-        { label: 'Aviso legal', href: '#' }, // PENDIENTE
-        { label: 'Política de privacidad', href: '#' }, // PENDIENTE
-        { label: 'Política de cookies', href: '#' }, // PENDIENTE
+        { label: 'Aviso legal', href: '#' },
+        { label: 'Política de privacidad', href: '#' },
+        { label: 'Política de cookies', href: '#' },
       ],
     },
   ],
-  copyright: `© ${new Date().getFullYear()} Sofía Morales Abogada. Todos los derechos reservados.`,
+  copyright: `© ${new Date().getFullYear()} Sofía García de los Ríos, abogada. Todos los derechos reservados.`,
 };

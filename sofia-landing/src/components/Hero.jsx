@@ -12,8 +12,6 @@ export function Hero() {
         <img src="/images/hero.jpg" alt="" width="1376" height="768" />
       </div>
 
-      <span className={styles.watermark} aria-hidden="true" />
-
       <div className={styles.inner}>
         <Reveal className={styles.content}>
           <Eyebrow onDark>{hero.eyebrow}</Eyebrow>

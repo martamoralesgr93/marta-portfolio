@@ -1,37 +1,79 @@
 @use '../styles/system' as *;
 
 .section {
-  @include section-padding;
-
+  position: relative;
+  padding-block: $section-y;
   background-color: $marfil-alt;
 }
 
 .inner {
   @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: space('xl');
+
+  @include mq('lg') {
+    gap: space('2xl');
+  }
 }
 
 .head {
-  max-inline-size: 30rem;
+  max-inline-size: 34rem;
 }
 
 .title {
-  margin-block-start: space('md');
+  margin-block-start: space('xs');
   font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
   font-weight: 400;
+  color: $verde;
+}
+
+.grid {
+  display: grid;
+  gap: space('xl');
+
+  @include mq('lg') {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: space('2xl');
+    align-items: stretch;
+  }
+}
+
+.mediaFrame {
+  block-size: 100%;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  block-size: 100%;
+  min-block-size: 24rem;
+  border-radius: $radius-md;
+  border: $border-hair solid rgba(15, 45, 38, 0.12);
+  box-shadow: $shadow-soft;
+  background-color: $marfil;
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 50% 18%;
+    transition: transform $dur-slow $ease-out;
+  }
+
+  &:hover img {
+    transform: scale(1.02);
+  }
 }
 
 .items {
   display: grid;
   gap: space('md');
-  margin-block-start: space('2xl');
 
   @include mq('sm') {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @include mq('xl') {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: space('lg');
   }
 }
 
@@ -43,6 +85,12 @@
   background-color: $marfil;
   border: $border-hair solid $linea;
   border-radius: $radius-sm;
+  transition: transform $dur-fast $ease-out, box-shadow $dur-fast $ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-soft;
+  }
 }
 
 .icon {
@@ -62,29 +110,4 @@
   font-size: $fs-small;
   line-height: $lh-body;
   color: $carbon-muted;
-}
-
-/* Segunda capa: el vocabulario jurídico, después de la explicación llana. */
-.points {
-  display: grid;
-  gap: space('3xs');
-  margin-block-start: auto;
-  padding-block-start: space('md');
-  border-block-start: $border-hair solid $linea;
-}
-
-.point {
-  display: flex;
-  gap: space('2xs');
-  font-size: $fs-micro;
-  color: $carbon-muted;
-
-  &::before {
-    content: '';
-    flex: none;
-    inline-size: 0.65rem;
-    block-size: 1px;
-    margin-block-start: 0.72em;
-    background-color: $dorado;
-  }
 }

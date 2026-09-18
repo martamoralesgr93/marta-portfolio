@@ -31,7 +31,7 @@ export function buildBody(values) {
     values.message.trim(),
     '',
     '—',
-    'Enviado desde el formulario de sofiamoralesabogada.com',
+    'Enviado desde el formulario de garciadelosrios.com',
     `Consentimiento de tratamiento de datos: sí (${new Date().toLocaleString('es-ES')})`,
   ].join('\n');
 }

@@ -1,9 +1,10 @@
 @use '../styles/system' as *;
 
 .section {
-  @include section-padding;
-
+  position: relative;
+  padding-block: $section-y;
   background-color: $marfil-alt;
+  overflow: hidden;
 }
 
 .inner {
@@ -13,15 +14,56 @@
   gap: space('xl');
 
   @include mq('lg') {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
     gap: space('3xl');
-    align-items: center;
+    align-items: start;
   }
 }
 
+.mediaFrame {
+  position: relative;
+
+  @include mq('lg') {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-md;
+  border: $border-hair solid rgba(15, 45, 38, 0.12);
+  box-shadow: $shadow-soft;
+  background-color: $marfil;
+  aspect-ratio: 4 / 5;
+
+  @include mq('lg') {
+    aspect-ratio: 3 / 4;
+  }
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    transition: transform $dur-slow $ease-out;
+  }
+
+  &:hover img {
+    transform: scale(1.02);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .title {
-  margin-block-start: space('md');
-  max-inline-size: 16ch;
+  margin-block-start: space('xs');
+  max-inline-size: 20ch;
   font-size: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
   font-weight: 400;
   color: $verde;
@@ -29,7 +71,9 @@
 
 .text {
   margin-block-start: space('md');
-  max-inline-size: 34rem;
+  max-inline-size: 36rem;
+  font-size: $fs-lead;
+  line-height: $lh-body;
   color: $carbon-muted;
 
   & + & {
@@ -50,7 +94,7 @@
   }
 }
 
-.value {
+.valueItem {
   display: flex;
   align-items: flex-start;
   gap: space('xs');
@@ -63,8 +107,10 @@
 }
 
 .valueTitle {
-  font-size: $fs-h4;
-  font-weight: 500;
+  font-family: $font-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: $ls-display;
   color: $carbon;
 }
 
@@ -72,22 +118,5 @@
   font-size: $fs-micro;
   line-height: $lh-snug;
   color: $carbon-muted;
-}
-
-/* Bodegón, no retrato: el brief descarta fotografías de Sofía (§18). */
-.media {
-  overflow: hidden;
-  border-radius: $radius-sm;
-  aspect-ratio: 4 / 3;
-
-  @include mq('lg') {
-    aspect-ratio: 4 / 3.4;
-  }
-
-  img {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    object-position: 62% 60%;
-  }
+  margin-block-start: space('3xs');
 }

@@ -79,6 +79,23 @@ const paths = {
       <path d="m3.6 6.5 8.4 6 8.4-6" />
     </>
   ),
+  star: (
+    <>
+      <path d="M12 2.5l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 16.4l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 2.5z" />
+    </>
+  ),
+  shield: (
+    <>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </>
+  ),
+  info: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 16v-4" />
+      <path d="M12 8h.01" />
+    </>
+  ),
 };
 
 export function Icon({ name, size = 24, className, ...rest }) {

@@ -13,23 +13,29 @@ export function Services() {
           <h2 className={styles.title}>{services.title}</h2>
         </Reveal>
 
-        <ul className={styles.items}>
-          {services.items.map((item, index) => (
-            <Reveal as="li" key={item.title} className={styles.card} delay={index * 80}>
-              <Icon name={item.icon} size={28} className={styles.icon} />
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.text}>{item.text}</p>
+        <div className={styles.grid}>
+          <Reveal className={styles.mediaFrame}>
+            <div className={styles.media}>
+              <img
+                src="/images/sofia-servicios.jpg"
+                alt="Sofía de pie en su despacho."
+                width="1100"
+                height="1210"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
 
-              <ul className={styles.points}>
-                {item.points.map((point) => (
-                  <li key={point} className={styles.point}>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          ))}
-        </ul>
+          <ul className={styles.items}>
+            {services.items.map((item, index) => (
+              <Reveal as="li" key={item.title} className={styles.card} delay={index * 80}>
+                <Icon name={item.icon} size={28} className={styles.icon} />
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+                <p className={styles.text}>{item.text}</p>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

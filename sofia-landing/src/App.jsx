@@ -4,6 +4,7 @@ import { Problems } from './components/Problems';
 import { Services } from './components/Services';
 import { Mediation } from './components/Mediation';
 import { Process } from './components/Process';
+import { QuoteBand } from './components/QuoteBand';
 import { About } from './components/About';
 import { Resources } from './components/Resources';
 import { Faq } from './components/Faq';
@@ -24,6 +25,7 @@ export default function App() {
         <Problems />
         <Services />
         <Mediation />
+        <QuoteBand />
         <Process />
         <About />
         <Resources />

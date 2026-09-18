@@ -8,19 +8,33 @@ export function About() {
   return (
     <section className={styles.section} id="sobre-sofia">
       <div className={styles.inner}>
-        <Reveal>
-          <Eyebrow>{about.eyebrow}</Eyebrow>
-          <h2 className={styles.title}>{about.title}</h2>
+        <Reveal className={styles.mediaFrame}>
+          <div className={styles.media}>
+            <img
+              src="/images/sofia-sobre.jpg"
+              alt="Sofía García de los Ríos de pie ante su mesa de trabajo."
+              width="1300"
+              height="1945"
+              loading="lazy"
+            />
+          </div>
+        </Reveal>
+
+        <div className={styles.content}>
+          <Reveal>
+            <Eyebrow>{about.eyebrow}</Eyebrow>
+            <h2 className={styles.title}>{about.title}</h2>
+          </Reveal>
 
           {about.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 24)} className={styles.text}>
+            <Reveal key={paragraph.slice(0, 24)} as="p" className={styles.text} delay={80}>
               {paragraph}
-            </p>
+            </Reveal>
           ))}
 
-          <ul className={styles.values}>
+          <Reveal as="ul" className={styles.values} delay={140}>
             {about.values.map((value) => (
-              <li key={value.title} className={styles.value}>
+              <li key={value.title} className={styles.valueItem}>
                 <Icon name={value.icon} size={22} className={styles.valueIcon} />
                 <div>
                   <h3 className={styles.valueTitle}>{value.title}</h3>
@@ -28,17 +42,8 @@ export function About() {
                 </div>
               </li>
             ))}
-          </ul>
-        </Reveal>
-
-        <Reveal className={styles.media} delay={120}>
-          <img
-            src="/images/sobre-sofia.jpg"
-            alt="Mesa de trabajo junto a una ventana, con un cuaderno, una taza y una rama de olivo."
-            width="1456"
-            height="1092"
-          />
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

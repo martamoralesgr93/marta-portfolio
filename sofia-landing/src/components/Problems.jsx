@@ -9,11 +9,13 @@ import styles from './Problems.module.scss';
 export function Problems() {
   return (
     <section className={styles.section} id="problemas">
+      <div className={styles.bgImageOverlay} aria-hidden="true" />
+      <div className={styles.bgGradientOverlay} aria-hidden="true" />
+
       <div className={styles.inner}>
         <Reveal className={styles.head}>
           <Eyebrow>{problems.eyebrow}</Eyebrow>
           <h2 className={styles.title}>{problems.title}</h2>
-          <p className={styles.lead}>{problems.lead}</p>
         </Reveal>
 
         <ul className={styles.items}>

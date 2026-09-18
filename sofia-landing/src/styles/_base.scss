@@ -104,5 +104,9 @@ strong { font-weight: 600; }
 
 section[id],
 main[id] {
-  scroll-margin-block-start: 6rem;
+  scroll-margin-block-start: 4.75rem;
+
+  @include mq('lg') {
+    scroll-margin-block-start: 5.25rem;
+  }
 }

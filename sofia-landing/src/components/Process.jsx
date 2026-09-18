@@ -1,5 +1,4 @@
-import { cta, process } from '../content/site';
-import { Button } from './ui/Button';
+import { process } from '../content/site';
 import { Eyebrow } from './ui/Eyebrow';
 import { Icon } from './ui/Icon';
 import { Reveal } from './ui/Reveal';
@@ -34,12 +33,6 @@ export function Process() {
             </Reveal>
           ))}
         </ol>
-
-        <Reveal className={styles.footer} delay={120}>
-          <Button as="a" href="#contacto" variant="outlineLight">
-            {cta}
-          </Button>
-        </Reveal>
       </div>
     </section>
   );

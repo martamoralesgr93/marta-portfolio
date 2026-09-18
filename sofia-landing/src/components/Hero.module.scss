@@ -18,8 +18,8 @@
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
-    object-position: 65% 45%;
-    filter: saturate(0.94) contrast(1.02) brightness(0.94);
+    object-position: 72% 42%;
+    filter: saturate(0.92) contrast(1.02) brightness(0.82);
   }
 
   /* Un solo degradado continuo sobre toda la foto: sin costura vertical. */
@@ -30,10 +30,10 @@
     background: linear-gradient(
       to right,
       $verde 0%,
-      rgba($verde, 0.92) 24%,
-      rgba($verde, 0.6) 48%,
-      rgba($verde, 0.28) 76%,
-      rgba($verde, 0.18) 100%
+      rgba($verde, 0.96) 26%,
+      rgba($verde, 0.78) 50%,
+      rgba($verde, 0.5) 78%,
+      rgba($verde, 0.38) 100%
     );
 
     @include mq-max('md') {
@@ -44,26 +44,6 @@
         rgba($verde, 0.74) 100%
       );
     }
-  }
-}
-
-/* Isotipo como filigrana, sobre la foto y detrás del texto. */
-.watermark {
-  position: absolute;
-  inset-block-start: 50%;
-  inset-inline-start: 34%;
-  z-index: -1;
-  inline-size: clamp(16rem, 30vw, 26rem);
-  aspect-ratio: 306 / 286;
-  background-color: rgba($marfil, 0.06);
-  -webkit-mask: url('/brand/isotipo-sm.png') no-repeat center / contain;
-  mask: url('/brand/isotipo-sm.png') no-repeat center / contain;
-  translate: 0 -50%;
-  pointer-events: none;
-
-  @include mq-max('md') {
-    inset-inline-start: 24%;
-    background-color: rgba($marfil, 0.045);
   }
 }
 

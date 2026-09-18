@@ -1,0 +1,72 @@
+@use '../styles/system' as *;
+
+/* Banda a sangre: la foto ocupa el ancho completo y el texto va encima.
+   Sin marco, sin caja, sin recorte de retícula. */
+.section {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  min-block-size: clamp(20rem, 42vw, 30rem);
+  padding-block: $section-y-sm;
+  background-color: $verde;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 50% 42%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($verde, 0.72) 0%,
+      rgba($verde, 0.62) 45%,
+      rgba($verde, 0.82) 100%
+    );
+  }
+}
+
+.inner {
+  @include container($container-narrow);
+
+  text-align: center;
+  color: $marfil;
+}
+
+.text {
+  @include heading(clamp(1.75rem, 1.25rem + 2.2vw, 2.75rem));
+
+  font-style: italic;
+  text-wrap: balance;
+}
+
+.rule {
+  inline-size: 3rem;
+  block-size: 1px;
+  margin: space('md') auto 0;
+  background-color: $dorado;
+  border: 0;
+}
+
+.attribution {
+  display: block;
+  margin-block-start: space('md');
+  font-family: $font-sans;
+  font-size: $fs-eyebrow;
+  font-weight: 500;
+  letter-spacing: $ls-eyebrow;
+  text-transform: uppercase;
+  color: $dorado-light;
+}

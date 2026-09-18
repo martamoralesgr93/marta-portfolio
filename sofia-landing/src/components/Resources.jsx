@@ -7,6 +7,9 @@ import styles from './Resources.module.scss';
 export function Resources() {
   return (
     <section className={styles.section} id="recursos">
+      <div className={styles.bgImageOverlay} aria-hidden="true" />
+      <div className={styles.bgGradientOverlay} aria-hidden="true" />
+
       <div className={styles.inner}>
         <Reveal className={styles.head}>
           <Eyebrow>{resources.eyebrow}</Eyebrow>
@@ -20,13 +23,15 @@ export function Resources() {
           {resources.cards.map((card, index) => (
             <Reveal as="li" key={card.title} className={styles.card} delay={index * 90}>
               <div className={styles.media}>
-                <img src={card.image} alt={card.alt} width="896" height="560" loading="lazy" />
-                <span className={styles.tag}>{card.tag}</span>
+                <img src={card.image} alt={card.alt} width="1200" height="900" loading="lazy" />
               </div>
 
               <div className={styles.body}>
-                <h3 className={styles.title}>{card.title}</h3>
-                <Icon name="arrow" size={20} className={styles.arrow} />
+                <span className={styles.tag}>{card.tag}</span>
+                <div className={styles.row}>
+                  <h3 className={styles.title}>{card.title}</h3>
+                  <Icon name="arrow" size={20} className={styles.arrow} />
+                </div>
               </div>
             </Reveal>
           ))}

@@ -1,11 +1,23 @@
 @use '../styles/system' as *;
 
 .section {
-  @include section-padding;
-
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding-block: $section-y;
   background-color: $verde;
   color: $marfil;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, rgba($verde, 0.86) 0%, rgba($verde, 0.92) 50%, rgba($verde, 0.96) 100%),
+    url('/images/sofia-contacto.jpg');
+  background-size: cover, cover;
+  background-position: center, 72% 22%;
 }
 
 .inner {
@@ -14,42 +26,27 @@
   display: grid;
   gap: space('xl');
 
-  /* En móvil el formulario va justo detrás del titular: quien llega desde
-     un CTA no tiene que atravesar el texto de apoyo para escribir. */
   @include mq('lg') {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    grid-template-areas:
-      'head card'
-      'aside card';
-    align-content: start;
-    column-gap: space('3xl');
-    row-gap: space('xl');
+    gap: space('2xl');
+    align-items: stretch;
   }
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .head {
-  @include mq('lg') {
-    grid-area: head;
-  }
+  display: flex;
+  flex-direction: column;
 }
 
-.rule {
-  inline-size: 4rem;
-  block-size: 1px;
-  margin-block: space('md') 0;
-  background-color: $dorado;
-  border: 0;
-}
-
-.aside {
-  @include mq('lg') {
-    grid-area: aside;
-  }
-}
-
-/* ── Columna izquierda ─────────────────────────────────────── */
 .title {
-  margin-block-start: space('md');
+  margin-block-start: space('xs');
+  font-size: clamp(1.625rem, 1.25rem + 1.5vw, 2.25rem);
   font-weight: 400;
   color: $marfil;
 }
@@ -59,52 +56,57 @@
   color: $dorado-light;
 }
 
-.lead {
-  margin-block-start: space('md');
-  max-inline-size: 30rem;
-  font-size: $fs-lead;
-  font-weight: 300;
-  color: rgba($marfil, 0.8);
+.rule {
+  inline-size: 3.5rem;
+  block-size: 1px;
+  margin-block: space('sm') space('xs');
+  background-color: $dorado;
+  border: 0;
 }
 
-.note {
-  margin-block-start: space('2xs');
-  max-inline-size: 30rem;
-  font-size: $fs-small;
-  color: rgba($marfil, 0.6);
+.lead {
+  margin-block-start: space('xs');
+  max-inline-size: 28rem;
+  font-size: $fs-body;
+  font-weight: 300;
+  color: rgba($marfil, 0.82);
+}
+
+.aside {
+  margin-block-start: space('lg');
 }
 
 .help {
-  padding-block-start: space('lg');
+  padding-block-start: space('sm');
   border-block-start: $border-hair solid rgba($marfil, 0.16);
 }
 
 .helpTitle {
-  font-size: $fs-eyebrow;
+  font-size: $fs-micro;
   font-weight: 500;
   letter-spacing: $ls-eyebrow;
   text-transform: uppercase;
-  color: rgba($marfil, 0.6);
+  color: rgba($marfil, 0.65);
 }
 
 .helpList {
   display: grid;
-  gap: space('2xs');
-  margin-block-start: space('sm');
+  gap: space('3xs');
+  margin-block-start: space('xs');
 }
 
 .helpItem {
   display: flex;
   gap: space('xs');
-  font-size: $fs-small;
-  color: rgba($marfil, 0.82);
+  font-size: $fs-micro;
+  color: rgba($marfil, 0.85);
 
   &::before {
     content: '';
     flex: none;
-    inline-size: 0.9rem;
+    inline-size: 0.8rem;
     block-size: 1px;
-    margin-block-start: 0.75em;
+    margin-block-start: 0.65em;
     background-color: $dorado-light;
   }
 }
@@ -115,32 +117,30 @@
   display: inline-flex;
   align-items: center;
   gap: space('2xs');
-  margin-block-start: space('lg');
+  margin-block-start: space('sm');
   font-size: $fs-small;
-  color: rgba($marfil, 0.85);
+  color: rgba($marfil, 0.9);
 }
 
 /* ── Formulario ────────────────────────────────────────────── */
 .card {
-  padding: space('lg');
-
-  @include mq('lg') {
-    grid-area: card;
-  }
-
+  padding: space('md') space('lg');
   background-color: $marfil;
   color: $carbon;
   border-radius: $radius-md;
   box-shadow: $shadow-lift;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @include mq('md') {
-    padding: space('xl');
+    padding: space('lg') space('xl');
   }
 }
 
 .grid {
   display: grid;
-  gap: space('md');
+  gap: space('sm');
 
   @include mq('sm') {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -156,11 +156,11 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: space('3xs');
+  gap: 0.2rem;
 }
 
 .label {
-  font-size: $fs-micro;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -178,17 +178,18 @@
 .textarea,
 .select {
   inline-size: 100%;
-  padding: 0.85rem space('sm');
+  min-block-size: 2.75rem;
+  padding: 0.65rem space('sm');
   background-color: #fff;
   color: $carbon;
   border: $border-hair solid $linea;
   border-radius: $radius-sm;
-  font-size: $fs-body;
+  font-size: 1rem;
   line-height: $lh-snug;
   transition: border-color $dur-fast $ease-out, box-shadow $dur-fast $ease-out;
 
   &::placeholder {
-    color: rgba($carbon-muted, 0.7);
+    color: rgba($carbon-muted, 0.65);
   }
 
   &:hover {
@@ -203,7 +204,7 @@
 }
 
 .textarea {
-  min-block-size: 9.5rem;
+  min-block-size: 5.5rem;
   resize: vertical;
 }
 
@@ -225,7 +226,7 @@
 }
 
 .hint {
-  font-size: $fs-micro;
+  font-size: 0.75rem;
   color: $carbon-muted;
 }
 
@@ -233,7 +234,7 @@
   display: flex;
   align-items: center;
   gap: space('3xs');
-  font-size: $fs-micro;
+  font-size: 0.75rem;
   color: $error;
 }
 
@@ -241,43 +242,44 @@
   display: flex;
   gap: space('xs');
   align-items: flex-start;
-  margin-block-start: space('md');
-  padding-block-start: space('md');
+  margin-block-start: space('xs');
+  padding-block-start: space('xs');
   border-block-start: $border-hair solid $linea;
 }
 
 .checkbox {
   flex: none;
-  inline-size: 1.15rem;
-  block-size: 1.15rem;
-  margin-block-start: 0.15rem;
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  margin-block-start: 0.1rem;
   border: $border-hair solid $linea;
   border-radius: $radius-sm;
   accent-color: $dorado-deep;
 }
 
 .consentText {
-  font-size: $fs-micro;
+  font-size: 0.75rem;
   line-height: $lh-snug;
   color: $carbon-muted;
 }
 
 .submit {
-  margin-block-start: space('md');
+  margin-block-start: space('xs');
+  min-block-size: 2.75rem;
 }
 
 .formNote {
-  margin-block-start: space('sm');
-  font-size: $fs-micro;
+  margin-block-start: 0.35rem;
+  font-size: 0.75rem;
   color: $carbon-muted;
 }
 
 .formError {
-  margin-block-start: space('sm');
+  margin-block-start: space('xs');
   padding: space('xs') space('sm');
   background-color: rgba($error, 0.08);
   border-inline-start: 2px solid $error;
-  font-size: $fs-micro;
+  font-size: 0.75rem;
   color: $error;
 }
 
@@ -287,7 +289,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: space('sm');
-  min-block-size: 22rem;
+  min-block-size: 18rem;
   justify-content: center;
 }
 

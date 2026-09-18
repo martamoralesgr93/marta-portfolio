@@ -29,7 +29,7 @@ confianza → transparencia → contacto.
 | `#servicios` | Las cuatro áreas (§15). Explicación llana arriba; el vocabulario jurídico, como segunda capa. |
 | `#sin-juicio` | El diferencial (§16): «No todos los conflictos tienen que acabar en un juicio». La sigla MASC aparece al final, no en el titular. |
 | `#proceso` | Los cinco pasos (§17), cerrando en «Tú decides cómo quieres continuar». |
-| `#sobre-sofia` | «La abogacía también puede ser cercana» (§18). Bodegón, nunca retrato. |
+| `#sobre-sofia` | «La abogacía también puede ser cercana». Su retrato en vídeo, en bucle y sin sonido. |
 | `#recursos` | Tres tarjetas con imagen y etiqueta, como en el mockup. **Los contenidos aún no existen**: las tarjetas no enlazan y la sección lo dice. |
 | `#faq` | Seis preguntas (§12). La primera es el precio, que es la barrera real. |
 | `#contacto` | «No necesitas saber de leyes para pedir ayuda» (§32) y el formulario. |
@@ -100,11 +100,11 @@ de ejecución.
 
 ### Decisiones que conviene no deshacer sin querer
 
-- **Sin fotografías de Sofía** (§18 y §25) y **sin repetir ninguna**: cinco
-  fotos, cinco huecos. Son espacios, objetos cotidianos y texturas; ni
-  abogados de stock, ni apretones de manos, ni juzgados, balanzas o columnas.
-  El FAQ, la banda de MASC y el bloque de contacto van sin foto a propósito
-  —`IMAGENES.md` explica el porqué y trae los prompts si algún día se añaden.
+- **Fotografía propia, nunca de stock.** El §18 del brief descartaba fotos de
+  Sofía porque no las había; con sesión propia, su retrato en vídeo abre «Sobre
+  Sofía» y su imagen acompaña al formulario y al FAQ. El resto son objetos y
+  espacios. Ni abogados de archivo, ni apretones de manos, ni juzgados,
+  balanzas o columnas. Ninguna imagen se repite: ver `IMAGENES.md`.
 - **Contraste del acento.** El ocre es claro por naturaleza: sobre él el texto
   va en **carbón** (5,4:1), nunca en blanco (2,4:1, ilegible). Como texto, el
   acento sobre marfil usa `$acento-deep` (#8A6A2F, 4,6:1) y sobre verde oscuro
