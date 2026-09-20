@@ -30,7 +30,7 @@ export const contact = {
 export const cta = 'Cuéntame tu caso';
 
 export const nav = [
-  { label: 'Servicios', href: '#servicios' },
+  { label: 'En qué te ayudo', href: '#problemas' },
   { label: 'Cómo trabajo', href: '#proceso' },
   { label: 'Precios y dudas', href: '#faq' },
 ];
@@ -182,12 +182,6 @@ export const about = {
   paragraphs: [
     'Entiendo que cuando buscas asesoramiento legal necesitas respuestas claras, no discursos lejanos. Ofrezco una visión actualizada del derecho, combinando solvencia técnica con una comunicación directa y empática que te sitúa siempre en el centro.',
   ],
-  values: [
-    { icon: 'chat', title: 'Cercanía real', text: 'Trato directo y atención personal sin barreras.' },
-    { icon: 'eye', title: 'Rigor técnico', text: 'Estrategias jurídicas sólidas y actualizadas.' },
-    { icon: 'route', title: 'Claridad absoluta', text: 'Explicaciones sencillas, sin jerga innecesaria.' },
-    { icon: 'limit', title: 'Transparencia', text: 'Presupuesto cerrado y honestidad desde la primera cita.' },
-  ],
 };
 
 export const resources = {
@@ -281,10 +275,9 @@ export const footer = {
       title: 'Navegación',
       links: [
         { label: '¿Te identificas?', href: '#problemas' },
-        { label: 'Servicios', href: '#servicios' },
+        { label: 'Sin ir a juicio', href: '#sin-juicio' },
         { label: 'Cómo trabajo', href: '#proceso' },
         { label: 'Sobre Sofía', href: '#sobre-sofia' },
-        { label: 'Recursos', href: '#recursos' },
         { label: 'Preguntas frecuentes', href: '#faq' },
       ],
     },

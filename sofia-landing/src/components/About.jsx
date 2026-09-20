@@ -1,6 +1,5 @@
 import { about } from '../content/site';
 import { Eyebrow } from './ui/Eyebrow';
-import { Icon } from './ui/Icon';
 import { Reveal } from './ui/Reveal';
 import styles from './About.module.scss';
 
@@ -31,18 +30,6 @@ export function About() {
               {paragraph}
             </Reveal>
           ))}
-
-          <Reveal as="ul" className={styles.values} delay={140}>
-            {about.values.map((value) => (
-              <li key={value.title} className={styles.valueItem}>
-                <Icon name={value.icon} size={22} className={styles.valueIcon} />
-                <div>
-                  <h3 className={styles.valueTitle}>{value.title}</h3>
-                  <p className={styles.valueText}>{value.text}</p>
-                </div>
-              </li>
-            ))}
-          </Reveal>
         </div>
       </div>
     </section>
