@@ -108,3 +108,26 @@
   color: rgba($marfil, 0.72);
 }
 
+
+// ── Cabecera de fase (fusión de Proceso + vías de resolución) ──
+.phaseHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: space('sm');
+  margin-block-start: space('xl');
+}
+
+.phaseTitle {
+  font-size: $fs-eyebrow;
+  font-weight: 500;
+  letter-spacing: $ls-eyebrow;
+  text-transform: uppercase;
+  color: $dorado-light;
+}
+
+.phaseNote {
+  font-size: $fs-micro;
+  line-height: $lh-snug;
+  color: rgba($marfil, 0.72);
+}

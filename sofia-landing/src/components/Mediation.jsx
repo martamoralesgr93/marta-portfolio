@@ -12,11 +12,11 @@ export function Mediation() {
   const activeOption = mediation.options[activeIndex] || mediation.options[0];
 
   return (
-    <section className={styles.section} id="sin-juicio">
+    <div className={styles.block}>
       <div className={styles.inner}>
         <Reveal className={styles.head}>
           <Eyebrow onDark>{mediation.eyebrow}</Eyebrow>
-          <h2 className={styles.title}>{mediation.title}</h2>
+          <h3 className={styles.title}>{mediation.title}</h3>
           {mediation.paragraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 24)} className={styles.leadText}>
               {paragraph}
@@ -50,7 +50,7 @@ export function Mediation() {
                       <Icon name={optionIcons[index] || 'check'} size={20} className={styles.tabIcon} />
                     </div>
                     <div className={styles.tabBody}>
-                      <h3 className={styles.tabTitle}>{option.title}</h3>
+                      <h4 className={styles.tabTitle}>{option.title}</h4>
                       <p className={styles.tabSubtitle}>{option.subtitle}</p>
                     </div>
                     <div className={styles.tabFooter}>
@@ -81,14 +81,14 @@ export function Mediation() {
                 <span className={styles.showcaseTag}>{activeOption.tag}</span>
               </div>
 
-              <h3 className={styles.showcaseTitle}>{activeOption.title}</h3>
+              <h4 className={styles.showcaseTitle}>{activeOption.title}</h4>
               <p className={styles.showcaseSubtitle}>{activeOption.subtitle}</p>
 
               <div className={styles.showcaseBlocks}>
                 <div className={styles.blockItem}>
                   <div className={styles.blockHeader}>
                     <Icon name="check" size={18} className={styles.actionIcon} />
-                    <h4 className={styles.blockTitle}>QUÉ HAGO YO (ABOGADA)</h4>
+                    <h5 className={styles.blockTitle}>QUÉ HAGO YO (ABOGADA)</h5>
                   </div>
                   <p className={styles.blockText}>{activeOption.action}</p>
                 </div>
@@ -96,7 +96,7 @@ export function Mediation() {
                 <div className={styles.blockItem}>
                   <div className={styles.blockHeader}>
                     <Icon name="shield" size={18} className={styles.benefitIcon} />
-                    <h4 className={styles.blockTitle}>TU BENEFICIO DIRECTO</h4>
+                    <h5 className={styles.blockTitle}>TU BENEFICIO DIRECTO</h5>
                   </div>
                   <p className={styles.blockText}>{activeOption.benefit}</p>
                 </div>
@@ -117,6 +117,6 @@ export function Mediation() {
           </Reveal>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

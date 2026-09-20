@@ -1,16 +1,15 @@
 @use '../styles/system' as *;
 
-.section {
+.block {
   position: relative;
-  padding-block: $section-y;
-  background-color: $verde;
-  color: $marfil;
-  overflow: hidden;
+  margin-block-start: $section-y-sm;
+  padding-block-start: $section-y-sm;
+  border-block-start: $border-hair solid $verde-line;
 }
 
 .inner {
-  @include container;
-
+  // Sin @include container: este bloque vive dentro del container
+  // de Proceso y anidarlos duplicaba el gutter.
   display: flex;
   flex-direction: column;
   gap: space('xl');

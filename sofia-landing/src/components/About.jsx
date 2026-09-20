@@ -21,7 +21,7 @@ export function About() {
 
         <div className={styles.content}>
           <Reveal>
-            <Eyebrow>{about.eyebrow}</Eyebrow>
+            <Eyebrow onDark>{about.eyebrow}</Eyebrow>
             <h2 className={styles.title}>{about.title}</h2>
           </Reveal>
 

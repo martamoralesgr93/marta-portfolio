@@ -2,7 +2,6 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Problems } from './components/Problems';
 import { Projects } from './components/Projects';
-import { Mediation } from './components/Mediation';
 import { Process } from './components/Process';
 import { About } from './components/About';
 import { Faq } from './components/Faq';
@@ -21,9 +20,8 @@ export default function App() {
       <main>
         <Hero />
         <Problems />
-        <Mediation />
-        <Projects />
         <Process />
+        <Projects />
         <About />
         <Faq />
         <ContactForm />

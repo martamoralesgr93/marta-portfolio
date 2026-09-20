@@ -87,8 +87,8 @@ export const services = {
 };
 
 export const mediation = {
-  eyebrow: 'Solución extrajudicial y ágil',
-  title: 'Cómo resolvemos tu caso sin necesidad de ir a juicio.',
+  eyebrow: 'Fase 2 — Cuando decides seguir',
+  title: 'Cómo se resuelve, sin pisar el juzgado siempre que se pueda.',
   paragraphs: [
     'Agotar la vía extrajudicial antes de entrar en los juzgados ahorra meses de espera, reduce costes y te devuelve el control. Selecciona cada vía para ver cómo actuamos y qué ganas tú en cada etapa:',
   ],
@@ -207,7 +207,9 @@ export const projects = {
 
 export const process = {
   eyebrow: 'Cómo trabajo',
-  title: 'Un proceso transparente de principio a fin.',
+  title: 'De tu primer correo a la solución.',
+  phaseOne: 'Fase 1 — Antes de decidir',
+  phaseOneNote: 'Hasta aquí no te compromete a nada.',
   steps: [
     {
       number: '01.',
@@ -218,26 +220,14 @@ export const process = {
     {
       number: '02.',
       icon: 'search',
-      title: 'Analizo la viabilidad',
-      text: 'Estudio la documentación y determino tus opciones reales.',
+      title: 'Analizo la viabilidad y te propongo la estrategia',
+      text: 'Estudio la documentación y te digo tus opciones reales, los plazos y las posibilidades de éxito.',
     },
     {
       number: '03.',
-      icon: 'route',
-      title: 'Te propongo la estrategia',
-      text: 'Conoces los plazos, alternativas y posibilidades de éxito.',
-    },
-    {
-      number: '04.',
       icon: 'document',
-      title: 'Presupuesto cerrado',
-      text: 'Sin sorpresas ni costes ocultos antes de empezar.',
-    },
-    {
-      number: '05.',
-      icon: 'check',
-      title: 'Tú tomas el control',
-      text: 'Con la información clara y la propuesta delante, decides tú.',
+      title: 'Presupuesto cerrado y decides tú',
+      text: 'Sin sorpresas ni costes ocultos. Con la propuesta delante, la decisión es tuya.',
     },
   ],
 };
@@ -341,7 +331,6 @@ export const footer = {
       title: 'Navegación',
       links: [
         { label: '¿Te identificas?', href: '#problemas' },
-        { label: 'Sin ir a juicio', href: '#sin-juicio' },
         { label: 'Proyectos destacados', href: '#proyectos' },
         { label: 'Cómo trabajo', href: '#proceso' },
         { label: 'Sobre Sofía', href: '#sobre-sofia' },

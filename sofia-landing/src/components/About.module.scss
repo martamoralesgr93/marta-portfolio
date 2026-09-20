@@ -3,7 +3,7 @@
 .section {
   position: relative;
   padding-block: $section-y;
-  background-color: $marfil-alt;
+  background-color: $verde;
   overflow: hidden;
 }
 
@@ -33,9 +33,9 @@
   position: relative;
   overflow: hidden;
   border-radius: $radius-md;
-  border: $border-hair solid rgba(15, 45, 38, 0.12);
+  border: $border-hair solid $verde-line;
   box-shadow: $shadow-soft;
-  background-color: $marfil;
+  background-color: $verde-soft;
   aspect-ratio: 4 / 5;
 
   @include mq('lg') {
@@ -66,7 +66,7 @@
   max-inline-size: 20ch;
   font-size: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
   font-weight: 400;
-  color: $verde;
+  color: $marfil;
 }
 
 .text {
@@ -74,7 +74,7 @@
   max-inline-size: 36rem;
   font-size: $fs-lead;
   line-height: $lh-body;
-  color: $carbon-muted;
+  color: rgba($marfil, 0.72);
 
   & + & {
     margin-block-start: space('sm');
