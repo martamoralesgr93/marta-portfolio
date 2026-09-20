@@ -1,0 +1,220 @@
+@use '../styles/system' as *;
+
+.section {
+  position: relative;
+  padding-block: $section-y;
+  background-color: $marfil-alt;
+}
+
+.inner {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: space('xl');
+
+  @include mq('lg') {
+    gap: space('2xl');
+  }
+}
+
+.head {
+  max-inline-size: 38rem;
+}
+
+.title {
+  margin-block-start: space('xs');
+  font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
+  font-weight: 400;
+  color: $verde;
+}
+
+.lead {
+  margin-block-start: space('sm');
+  font-size: $fs-lead;
+  line-height: $lh-body;
+  color: $carbon-muted;
+}
+
+// Aviso de contenido provisional. Desaparece al poner
+// `isPlaceholder: false` en site.js.
+.draft {
+  display: inline-block;
+  margin-block-start: space('md');
+  padding: space('2xs') space('sm');
+  font-size: $fs-micro;
+  line-height: $lh-snug;
+  color: $dorado-deep;
+  background-color: rgba(200, 160, 99, 0.12);
+  border: $border-hair solid rgba(133, 98, 38, 0.3);
+  border-radius: $radius-sm;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: space('xl');
+  list-style: none;
+  counter-reset: caso;
+}
+
+.item {
+  display: grid;
+  gap: space('md');
+  padding-block-start: space('xl');
+  border-block-start: $border-hair solid $linea;
+
+  &:first-child {
+    padding-block-start: 0;
+    border-block-start: 0;
+  }
+
+  @include mq('lg') {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: space('2xl');
+    align-items: start;
+  }
+}
+
+// ── El caso ──────────────────────────────────────────────────
+.case {
+  counter-increment: caso;
+}
+
+.tag {
+  display: inline-block;
+  font-size: $fs-eyebrow;
+  font-weight: 500;
+  letter-spacing: $ls-eyebrow;
+  text-transform: uppercase;
+  color: $dorado-deep;
+}
+
+.caseTitle {
+  margin-block-start: space('xs');
+  font-family: $font-serif;
+  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  font-weight: 400;
+  line-height: $lh-heading;
+  letter-spacing: $ls-display;
+  color: $verde;
+
+  &::before {
+    content: counter(caso, decimal-leading-zero) '. ';
+    color: $dorado-deep;
+  }
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: space('md');
+  margin-block-start: space('lg');
+}
+
+.fact {
+  display: grid;
+  gap: space('3xs');
+
+  @include mq('md') {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: space('md');
+    align-items: baseline;
+  }
+}
+
+.factLabel {
+  font-size: $fs-micro;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $verde;
+}
+
+.factText {
+  font-size: $fs-body;
+  line-height: $lh-body;
+  color: $carbon-muted;
+}
+
+// ── La recomendación ─────────────────────────────────────────
+// Verde botella dentro de una sección marfil: el contraste
+// también ocurre dentro del bloque, no solo entre secciones.
+.rec {
+  display: flex;
+  flex-direction: column;
+  gap: space('sm');
+  padding: space('lg');
+  background-color: $verde;
+  border-radius: $radius-md;
+  box-shadow: $shadow-soft;
+
+  @include mq('lg') {
+    padding: space('xl');
+    position: sticky;
+    inset-block-start: space('xl');
+  }
+}
+
+.recLabel {
+  font-size: $fs-eyebrow;
+  font-weight: 500;
+  letter-spacing: $ls-eyebrow;
+  text-transform: uppercase;
+  color: $arena;
+}
+
+.recQuote {
+  font-family: $font-serif;
+  font-size: $fs-h3;
+  font-style: italic;
+  font-weight: 400;
+  line-height: $lh-snug;
+  letter-spacing: $ls-display;
+  color: $marfil;
+
+  &::before {
+    content: '«';
+  }
+
+  &::after {
+    content: '»';
+  }
+}
+
+.recBy {
+  display: flex;
+  flex-direction: column;
+  gap: space('3xs');
+  padding-block-start: space('sm');
+  border-block-start: $border-hair solid $verde-line;
+}
+
+.recName {
+  font-size: $fs-small;
+  font-weight: 500;
+  color: $marfil;
+}
+
+.recRole {
+  font-size: $fs-micro;
+  line-height: $lh-snug;
+  color: $arena;
+}
+
+.recLink {
+  display: inline-flex;
+  align-items: center;
+  gap: space('3xs');
+  margin-block-start: space('2xs');
+  font-size: $fs-micro;
+  font-weight: 500;
+  color: $arena;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  transition: color $dur-fast $ease-out;
+
+  &:hover {
+    color: $marfil;
+  }
+}

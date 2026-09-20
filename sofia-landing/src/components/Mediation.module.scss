@@ -113,7 +113,9 @@
 
     .tabNumber,
     .tabIcon {
-      color: $dorado;
+      // $dorado sobre verde se queda en 4,42:1. El acento sobre verde
+      // botella es $dorado-light (arena), 9,1:1 según los tokens.
+      color: $dorado-light;
     }
 
     .tabActionText {

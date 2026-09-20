@@ -31,6 +31,7 @@ export const cta = 'Cuéntame tu caso';
 
 export const nav = [
   { label: 'En qué te ayudo', href: '#problemas' },
+  { label: 'Proyectos', href: '#proyectos' },
   { label: 'Cómo trabajo', href: '#proceso' },
   { label: 'Precios y dudas', href: '#faq' },
 ];
@@ -137,6 +138,71 @@ export const quote = {
   text: 'Tu tranquilidad legal, mi prioridad.',
   attribution: 'Sofía García de los Ríos, abogada',
   imageAlt: 'Sofía anotando un documento junto a un ejemplar del Código Civil.',
+};
+
+// ─────────────────────────────────────────────────────────────
+//  ⚠️  CONTENIDO DE EJEMPLO — SUSTITUIR ANTES DE PUBLICAR
+//
+//  Los tres asuntos y las tres recomendaciones son INVENTADOS.
+//  Están aquí para ver el bloque montado, no para enseñarlos a
+//  un cliente. Antes de que esta sección sea pública hace falta:
+//    1. Casos reales y anonimizados (sin datos que identifiquen
+//       a la otra parte ni al cliente).
+//    2. Recomendaciones autorizadas por escrito por quien las firma.
+//    3. La URL de su perfil en `linkedin` (vacío = no se pinta enlace).
+//
+//  Publicar recomendaciones inventadas es práctica desleal
+//  (Ley 3/1991 de Competencia Desleal, art. 5, tras la reforma
+//  del RDL 24/2021) y choca con la publicidad veraz que exige el
+//  Código Deontológico de la Abogacía.
+// ─────────────────────────────────────────────────────────────
+export const projects = {
+  eyebrow: 'Proyectos destacados',
+  title: 'Asuntos que ya he llevado.',
+  lead: 'Tres ejemplos de cómo se resuelve un caso cuando se prepara bien desde el principio. Los detalles van anonimizados.',
+  isPlaceholder: true,
+  recLabel: 'Lo que dicen de trabajar conmigo',
+  items: [
+    {
+      tag: 'Derecho bancario',
+      title: 'Gastos de hipoteca devueltos sin pisar el juzgado.',
+      context: 'Una familia había pagado tasación, notaría y registro al firmar en 2019, dando por hecho que era parte del trámite.',
+      work: 'Reuní la escritura y las facturas, calculé la cantidad exacta y envié al banco un requerimiento con la jurisprudencia aplicable.',
+      outcome: 'Acuerdo en siete semanas. Sin demanda, sin costas y sin que tuvieran que declarar.',
+      recommendation: {
+        text: 'Le derivé el caso sin saber si había recorrido. Volvió con la cuenta hecha y una vía clara en tres días. Mis clientes salen de su despacho entendiendo lo que han firmado.',
+        name: 'Nombre Apellido',
+        role: 'Asesor fiscal — sustituir por el perfil real',
+        linkedin: '',
+      },
+    },
+    {
+      tag: 'Derecho civil',
+      title: 'Dieciocho meses de factura impagada, cobrados en dos.',
+      context: 'Un autónomo llevaba año y medio persiguiendo a un cliente que reconocía la deuda por WhatsApp y nunca pagaba.',
+      work: 'Convertí esos mensajes en prueba, cuantifiqué intereses de demora y planteé un calendario de pago con consecuencias por escrito.',
+      outcome: 'Cobró el principal y los intereses en dos meses, sin romper la relación comercial.',
+      recommendation: {
+        text: 'Lo que más me sorprendió fue que no empezó por la demanda. Empezó por lo que era más rápido para mi cliente, aunque le diera menos trabajo a ella.',
+        name: 'Nombre Apellido',
+        role: 'Administrador de fincas — sustituir por el perfil real',
+        linkedin: '',
+      },
+    },
+    {
+      tag: 'Familia',
+      title: 'Un divorcio que entró contencioso y salió de mutuo acuerdo.',
+      context: 'Dos posturas bloqueadas por el uso de la vivienda y un régimen de visitas que ninguna de las partes quería firmar.',
+      work: 'Preparé una propuesta de convenio partiendo de lo que sí compartían, y la negocié con la otra parte antes de registrar nada.',
+      outcome: 'Convenio firmado y ratificado, con los plazos y los gastos cerrados de antemano.',
+      recommendation: {
+        text: 'Trabajar enfrente de ella es fácil precisamente porque no busca ganar la discusión, busca cerrar el asunto. Eso en familia no es lo habitual.',
+        name: 'Nombre Apellido',
+        role: 'Abogada de familia — sustituir por el perfil real',
+        linkedin: '',
+      },
+    },
+  ],
 };
 
 export const process = {
@@ -276,6 +342,7 @@ export const footer = {
       links: [
         { label: '¿Te identificas?', href: '#problemas' },
         { label: 'Sin ir a juicio', href: '#sin-juicio' },
+        { label: 'Proyectos destacados', href: '#proyectos' },
         { label: 'Cómo trabajo', href: '#proceso' },
         { label: 'Sobre Sofía', href: '#sobre-sofia' },
         { label: 'Preguntas frecuentes', href: '#faq' },

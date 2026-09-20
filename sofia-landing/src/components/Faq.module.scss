@@ -4,6 +4,9 @@
   position: relative;
   padding-block: $section-y;
   background-color: $marfil;
+  // Sobre Sofía también es clara: sin este filete las dos secciones
+  // se leen como un solo bloque continuo.
+  border-block-start: $border-hair solid $linea;
 }
 
 .inner {

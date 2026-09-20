@@ -1,6 +1,7 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Problems } from './components/Problems';
+import { Projects } from './components/Projects';
 import { Mediation } from './components/Mediation';
 import { Process } from './components/Process';
 import { About } from './components/About';
@@ -21,6 +22,7 @@ export default function App() {
         <Hero />
         <Problems />
         <Mediation />
+        <Projects />
         <Process />
         <About />
         <Faq />
