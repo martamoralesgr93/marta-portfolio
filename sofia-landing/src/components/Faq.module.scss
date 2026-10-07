@@ -2,43 +2,36 @@
 
 .section {
   position: relative;
-  padding-block: $section-y;
+  overflow: hidden;
   background-color: $marfil;
 }
 
+/* La foto es una columna de la retícula, no una tarjeta encima: sangra hasta
+   el borde izquierdo y ocupa el alto completo de la sección. El aire vertical
+   vive en la columna de texto, que es la que lo necesita. */
 .inner {
-  @include container;
-
   display: grid;
-  gap: space('xl');
 
   @include mq('lg') {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: space('3xl');
-    align-items: start;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: stretch;
   }
 }
 
 .mediaFrame {
-  position: relative;
-
   @include mq('lg') {
-    position: sticky;
-    top: 6rem;
+    block-size: 100%;
   }
 }
 
 .media {
-  position: relative;
   overflow: hidden;
-  border-radius: $radius-md;
-  border: $border-hair solid rgba(15, 45, 38, 0.12);
-  box-shadow: $shadow-soft;
-  background-color: $marfil-alt;
-  aspect-ratio: 4 / 5;
+  block-size: 100%;
+  aspect-ratio: 4 / 3;
 
   @include mq('lg') {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: auto;
+    min-block-size: 34rem;
   }
 
   img {
@@ -46,18 +39,23 @@
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
-    object-position: 50% 25%;
-    transition: transform $dur-slow $ease-out;
-  }
-
-  &:hover img {
-    transform: scale(1.02);
+    object-position: 50% 22%;
   }
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  padding-block: $section-y;
+  padding-inline: $gutter;
+
+  @include mq('lg') {
+    padding-inline-start: space('3xl');
+  }
+
+  @include mq('xl') {
+    padding-inline-end: calc((100vw - #{$container}) / 2 + #{$gutter});
+  }
 }
 
 .title {

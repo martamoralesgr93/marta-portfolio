@@ -2,44 +2,35 @@
 
 .section {
   position: relative;
-  padding-block: $section-y;
-  background-color: $verde;
   overflow: hidden;
+  background-color: $verde;
 }
 
+/* Misma regla que en el FAQ: la foto es columna de la retícula, sangra hasta
+   el borde y llega de arriba abajo. El relleno vertical lo lleva el texto. */
 .inner {
-  @include container;
-
   display: grid;
-  gap: space('xl');
 
   @include mq('lg') {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: space('3xl');
-    align-items: start;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: stretch;
   }
 }
 
 .mediaFrame {
-  position: relative;
-
   @include mq('lg') {
-    position: sticky;
-    top: 5.5rem;
+    block-size: 100%;
   }
 }
 
 .media {
-  position: relative;
   overflow: hidden;
-  border-radius: $radius-md;
-  border: $border-hair solid $verde-line;
-  box-shadow: $shadow-soft;
-  background-color: $verde-soft;
-  aspect-ratio: 4 / 5;
+  block-size: 100%;
+  aspect-ratio: 4 / 3;
 
   @include mq('lg') {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: auto;
+    min-block-size: 32rem;
   }
 
   img {
@@ -48,17 +39,23 @@
     block-size: 100%;
     object-fit: cover;
     object-position: 50% 20%;
-    transition: transform $dur-slow $ease-out;
-  }
-
-  &:hover img {
-    transform: scale(1.02);
   }
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-block: $section-y;
+  padding-inline: $gutter;
+
+  @include mq('lg') {
+    padding-inline-start: space('3xl');
+  }
+
+  @include mq('xl') {
+    padding-inline-end: calc((100vw - #{$container}) / 2 + #{$gutter});
+  }
 }
 
 .title {
@@ -86,7 +83,7 @@
   gap: space('md');
   margin-block-start: space('xl');
   padding-block-start: space('lg');
-  border-block-start: $border-hair solid $linea;
+  border-block-start: $border-hair solid rgba($marfil, 0.16);
 
   @include mq('sm') {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -103,7 +100,7 @@
 .valueIcon {
   flex: none;
   margin-block-start: 0.15rem;
-  color: $dorado-deep;
+  color: $dorado-light;
 }
 
 .valueTitle {
@@ -111,12 +108,12 @@
   font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: $ls-display;
-  color: $carbon;
+  color: $marfil;
 }
 
 .valueText {
   font-size: $fs-micro;
   line-height: $lh-snug;
-  color: $carbon-muted;
+  color: rgba($marfil, 0.68);
   margin-block-start: space('3xs');
 }
