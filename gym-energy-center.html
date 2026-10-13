@@ -52,6 +52,16 @@
     .c2-device-shot img { display: block; width: auto; max-width: 100%; height: 420px; object-fit: contain; }
     .c2-device-shot .cap { font-size: 12px; color: var(--text-dim); line-height: 1.5; align-self: stretch; }
     .insight-box code { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 4px; padding: 2px 6px; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.9em; font-style: normal; }
+
+    /* LIVE PROTOTYPE CTA */
+    .c2-live-cta { margin-top: 28px; border: 1.5px solid var(--accent-border); background: var(--accent-glow); border-radius: 16px; padding: 28px 32px; display: flex; flex-direction: column; gap: 14px; }
+    .c2-live-cta-label { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+    .c2-live-cta-url { font-size: 16px; font-weight: 700; color: var(--white); text-decoration: none; word-break: break-all; }
+    .c2-live-cta-url:hover { color: var(--accent); text-decoration: underline; }
+    .c2-live-cta-token-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .c2-live-cta-token-row > span:first-child { font-size: 13px; color: var(--text-dim); }
+    .c2-live-cta-token { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 20px; font-weight: 800; letter-spacing: 0.04em; color: var(--accent); background: rgba(0,0,0,0.3); border: 1.5px solid var(--accent); border-radius: 8px; padding: 6px 18px; }
+    @media (max-width: 720px) { .c2-live-cta { padding: 22px 20px; } .c2-live-cta-token { font-size: 17px; } }
     @media (max-width: 720px) { .c2-device-shot img { height: 320px; } .c2-device-gallery { grid-template-columns: 1fr !important; } }
 
     /* AFFINITY MAP */
@@ -1112,7 +1122,7 @@
     </div>
 
     <h3 class="fu" style="font-size: 17px; margin: 48px 0 0;"><span class="es">Prototipo codificado: ya desplegado y navegable</span><span class="en">Coded prototype: already deployed and navigable</span></h3>
-    <p class="fu" style="max-width: 720px; margin-top: 10px;"><span class="es">Más allá del sistema de componentes en Figma, esto corre de verdad: perfil con nivel y racha, calendario semanal, reserva con confirmación y muro de comunidad, en mobile y desktop. El pilar lúdico no es decoración — es la mecánica de retención: cada sesión compite contra tu propia marca, no contra otra persona, y eso es lo que mantiene al usuario conectado al entrenamiento y receptivo a una oferta cuando llega.</span><span class="en">Beyond the component system in Figma, this actually runs: a level-and-streak profile, a weekly calendar, booking with confirmation, a community wall — in mobile and desktop. The playful pillar isn't decoration — it's the retention mechanic: every session competes against your own best, not against anyone else, and that's what keeps the user connected to training and receptive when an offer shows up.</span></p>
+    <p class="fu" style="max-width: 720px; margin-top: 10px;"><span class="es">Más allá del sistema de componentes en Figma, esto corre de verdad: lo construí con <strong>vibe coding</strong> (Figma Make + Claude Code) directamente sobre el design system, sin pasar por un handoff manual. Perfil con nivel y racha, calendario semanal, reserva con confirmación y muro de comunidad, en mobile y desktop. El pilar lúdico no es decoración — es la mecánica de retención: cada sesión compite contra tu propia marca, no contra otra persona, y eso es lo que mantiene al usuario conectado al entrenamiento y receptivo a una oferta cuando llega.</span><span class="en">Beyond the component system in Figma, this actually runs: I built it with <strong>vibe coding</strong> (Figma Make + Claude Code) straight from the design system, with no manual handoff in between. A level-and-streak profile, a weekly calendar, booking with confirmation, a community wall — in mobile and desktop. The playful pillar isn't decoration — it's the retention mechanic: every session competes against your own best, not against anyone else, and that's what keeps the user connected to training and receptive when an offer shows up.</span></p>
 
     <div class="c2-device-gallery fu" style="grid-template-columns: repeat(2, 1fr);">
       <div class="c2-device-shot">
@@ -1125,8 +1135,13 @@
       </div>
     </div>
 
-    <div class="insight-box fu" style="margin-top: 28px;">
-      <p style="margin: 0;"><span class="es">¿Quieres probarlo tú misma? Entra en <a href="https://gym-energy-center-bloxl3vko-mmoralesgr93-2202s-projects.vercel.app/" target="_blank" rel="noopener" style="color: var(--accent);">el prototipo en Vercel ↗</a> y usa el token <code>pruebagym</code>.</span><span class="en">Want to try it yourself? Open <a href="https://gym-energy-center-bloxl3vko-mmoralesgr93-2202s-projects.vercel.app/" target="_blank" rel="noopener" style="color: var(--accent);">the prototype on Vercel ↗</a> and use the token <code>pruebagym</code>.</span></p>
+    <div class="c2-live-cta fu">
+      <div class="c2-live-cta-label"><span class="es">Pruébalo en vivo</span><span class="en">Try it live</span></div>
+      <a href="https://gym-energy-center-bloxl3vko-mmoralesgr93-2202s-projects.vercel.app/" target="_blank" rel="noopener" class="c2-live-cta-url">gym-energy-center-bloxl3vko-mmoralesgr93-2202s-projects.vercel.app ↗</a>
+      <div class="c2-live-cta-token-row">
+        <span><span class="es">Token de acceso</span><span class="en">Access token</span></span>
+        <span class="c2-live-cta-token">pruebagym</span>
+      </div>
     </div>
     <div class="insight-box fu" style="margin-top: 32px;">
       <p style="margin: 0;"><strong><span class="es">Lo que me llevo:</span><span class="en">What I take away:</span></strong> <span class="es">el mejor código y el mejor diseño fallan igual si no conectan las tres dimensiones. Un gimnasio no se abandona porque la reserva sea lenta: se abandona porque nadie nota que has dejado de ir.</span><span class="en">the best code and the best design fail alike if they don't connect all three dimensions. People don't quit a gym because booking is slow — they quit because nobody notices they stopped showing up.</span></p>
