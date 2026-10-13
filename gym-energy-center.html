@@ -46,6 +46,16 @@
     .insight-box { border-left: 2px solid var(--accent); padding-left: 24px; margin: 40px 0; max-width: 680px; }
     .insight-box p { font-size: 19px; color: var(--text-bright); font-weight: 300; line-height: 1.6; font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
 
+    /* EVIDENCE PAIR (mobile/desktop screenshots) */
+    .c2-evidence-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; align-items: start; }
+    .c2-evidence-item { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+    .c2-evidence-header { padding: 16px 20px 12px; display: flex; flex-direction: column; gap: 4px; border-bottom: 1px solid var(--border); }
+    .c2-evidence-label { font-size: 12px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+    .c2-evidence-sub { font-size: 10px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+    .c2-evidence-img { display: block; width: 100%; height: 420px; object-fit: cover; object-position: top; background: var(--surface, #111); }
+    .c2-evidence-caption { padding: 14px 20px; font-size: 12px; color: var(--text-dim); line-height: 1.55; border-top: 1px solid var(--border); flex: 1; }
+    @media (max-width: 720px) { .c2-evidence-pair { grid-template-columns: 1fr !important; } .c2-evidence-img { height: 320px; } }
+
     /* AFFINITY MAP */
     .affinity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 48px 0; }
     .affinity-cluster { border: 1px solid var(--border); border-radius: 14px; padding: 24px; background: transparent; }
@@ -1100,6 +1110,27 @@
       <div class="fu" style="border: 1px solid var(--border); border-radius: 14px; padding: 26px;">
         <h3 style="font-size: 17px; margin: 0 0 10px;"><span class="es">Seguridad y privacidad</span><span class="en">Security and privacy</span></h3>
         <p style="margin: 0; font-size: 13.5px; color: var(--text);"><span class="es">2FA, cifrado y cumplimiento del RGPD: lo que un MVP de bootcamp no aborda.</span><span class="en">2FA, encryption and GDPR compliance: what a bootcamp MVP doesn't tackle.</span></p>
+      </div>
+    </div>
+
+    <h3 class="fu" style="font-size: 17px; margin: 48px 0 0;"><span class="es">Sistema de diseño responsive: ya construido</span><span class="en">Responsive design system: already built</span></h3>
+    <p class="fu" style="max-width: 720px; margin-top: 10px;"><span class="es">A diferencia de lo anterior, esto no es un plan: el Nav, el TopBar y la ActivityCard tienen hoy una variante real por dispositivo en Figma, y las pantallas de Actividades y Feed ya están construidas en mobile y desktop para probarlo.</span><span class="en">Unlike the above, this isn't a plan: Nav, TopBar and ActivityCard now have a real per-device variant in Figma, and the Activities and Feed screens are already built in mobile and desktop to prove it.</span></p>
+    <div class="c2-evidence-pair fu" style="margin-top: 20px;">
+      <div class="c2-evidence-item">
+        <div class="c2-evidence-header">
+          <span class="c2-evidence-label"><span class="es">Mobile</span><span class="en">Mobile</span></span>
+          <span class="c2-evidence-sub"><span class="es">Nav inferior · tarjetas apiladas</span><span class="en">Bottom nav · stacked cards</span></span>
+        </div>
+        <img width="390" height="1555" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/gym/ds-activities-mobile.png" alt="Screen Activities — Mobile">
+        <div class="c2-evidence-caption"><span class="es">Mismo componente ActivityCard, mismo contenido real (horarios, monitores, CTA).</span><span class="en">Same ActivityCard component, same real content (times, instructors, CTA).</span></div>
+      </div>
+      <div class="c2-evidence-item">
+        <div class="c2-evidence-header">
+          <span class="c2-evidence-label"><span class="es">Desktop</span><span class="en">Desktop</span></span>
+          <span class="c2-evidence-sub"><span class="es">Nav horizontal en el TopBar · tarjetas en grid</span><span class="en">Horizontal TopBar nav · grid cards</span></span>
+        </div>
+        <img width="1440" height="1256" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/gym/ds-activities-desktop.png" alt="Screen Activities — Desktop">
+        <div class="c2-evidence-caption"><span class="es">El TopBar absorbe la navegación inferior y ActivityCard pasa de apilada a horizontal — variante de componente, no una pantalla rehecha a mano.</span><span class="en">TopBar absorbs the bottom nav and ActivityCard switches from stacked to horizontal — a component variant, not a hand-rebuilt screen.</span></div>
       </div>
     </div>
     <div class="insight-box fu" style="margin-top: 32px;">
