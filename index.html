@@ -1590,9 +1590,9 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     margin-bottom: 40px !important;
   }
   .sc-visual {
-    height: 260px !important;
-    min-height: 260px !important;
-    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 20px 16px !important;
     order: -1;
   }
   /* Imágenes limpias en mobile: sin overlays, sin sombras */
@@ -1601,12 +1601,13 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     display: none !important;
   }
   .sc-img {
+    /* Alejado: el dispositivo completo, sin recortes */
     width: 100% !important;
-    height: 260px !important;
+    height: auto !important;
     max-width: 100% !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    object-position: center top !important;
+    max-height: 300px !important;
+    object-fit: contain !important;
+    object-position: center !important;
     transform: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
