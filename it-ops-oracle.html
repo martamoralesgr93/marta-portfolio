@@ -280,6 +280,246 @@
         </figure>
       </div>
     </div>
+
+    <!-- ============ 5.1 · ESTUDIOS DE WIREFRAMES A BAJA FIDELIDAD (LO-FI) ============ -->
+    <div class="cs-lofi-section reveal">
+      <div style="margin-bottom: 28px;">
+        <span class="label" style="display:inline-block; margin-bottom:8px;">
+          <span class="es">Fase de Exploración &amp; Des-riesgo Técnico</span>
+          <span class="en">Exploration &amp; Technical De-risking</span>
+        </span>
+        <h3 class="h3" style="font-size:clamp(22px, 3vw, 28px); margin-bottom:12px; color:var(--white);">
+          <span class="es">Estudios de wireframes a baja fidelidad: <em>validar datos antes de picar código</em></span>
+          <span class="en">Low-fidelity wireframe studies: <em>validating data models before coding</em></span>
+        </h3>
+        <p class="lead" style="font-size:15px; max-width:840px;">
+          <span class="es">Como Product Designer, mi mayor responsabilidad en este proyecto fue evitar el despilfarro de semanas de ingeniería construyendo sobre suposiciones. A través de prototipos Lo-Fi en escala de grises, desglosé 50+ columnas caóticas de Excel y validé con el IT Ops Lead la arquitectura de triaje, la densidad de información y los permisos de auditoría antes de escribir una sola línea de frontend.</span>
+          <span class="en">As a Product Designer, my primary responsibility was preventing wasted engineering cycles based on unvetted assumptions. Through greyscale low-fidelity wireframes, I untangled 50+ fragmented spreadsheet columns and validated data triage, visual density, and compliance audit workflows directly with the IT Ops Lead before committing to code.</span>
+        </p>
+      </div>
+
+      <!-- Arquitectura de Datos / Mapping Rows -->
+      <article class="cs-lofi-hero-card">
+        <div class="cs-lofi-hero-media">
+          <img src="assets/it-ops-wireframes/ops-mapping-rows-architecture.webp" alt="Mapeo de arquitectura de datos y desestructuración de hojas de cálculo" width="1536" height="1024" loading="lazy">
+        </div>
+        <div class="cs-lofi-hero-body">
+          <div class="cs-lofi-header">
+            <span class="cs-lofi-num">Fundamentos · Arquitectura de Datos</span>
+            <span class="cs-lofi-tag">Mapeo Estructural</span>
+          </div>
+          <h4 class="cs-lofi-title">
+            <span class="es">Deconstrucción de hojas de cálculo: matriz de entidades y flujos</span>
+            <span class="en">Spreadsheet deconstruction: data entity &amp; workflow matrix</span>
+          </h4>
+          <p class="cs-lofi-text">
+            <span class="es">Mapeo exhaustivo de los campos que los ingenieros gestionaban a mano. Traduje decenas de columnas desincronizadas en 6 entidades modulares: salud de nodos, ciclo de vida de tickets, histórico inmutable de auditoría, automatizaciones programadas, matriz de firmas y cumplimiento de SLAs.</span>
+            <span class="en">Exhaustive mapping of legacy spreadsheet fields. I translated dozens of disjointed columns into 6 modular data models: server node health, ticket lifecycles, immutable audit logs, scheduled routines, approval matrices, and SLA compliance analytics.</span>
+          </p>
+          <div class="cs-lofi-meta-grid">
+            <div class="cs-lofi-meta-item">
+              <dt><span class="es">Problema detectado</span><span class="en">Core pain point</span></dt>
+              <dd><span class="es">52 columnas sin validación ni histórico</span><span class="en">52 unvalidated columns with zero audit trail</span></dd>
+            </div>
+            <div class="cs-lofi-meta-item">
+              <dt><span class="es">Decisión de Product Design</span><span class="en">Product Design decision</span></dt>
+              <dd><span class="es">Normalización en 6 módulos de tarea única</span><span class="en">Modular split into 6 task-driven views</span></dd>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Grid de los 6 Wireframes Lo-Fi -->
+      <div class="cs-lofi-grid">
+
+        <!-- Wireframe 01 -->
+        <article class="cs-lofi-card">
+          <div class="cs-lofi-media">
+            <img src="assets/it-ops-wireframes/ops-01-dashboard-wireframe.webp" alt="Wireframe Lo-Fi: Dashboard Operacional de Servidores" width="2560" height="1720" loading="lazy">
+          </div>
+          <div class="cs-lofi-body">
+            <div class="cs-lofi-header">
+              <span class="cs-lofi-num">Wireframe 01</span>
+              <span class="cs-lofi-tag">Visión Holística</span>
+            </div>
+            <h4 class="cs-lofi-title">
+              <span class="es">Dashboard Operacional · Triaje en tiempo real</span>
+              <span class="en">Operational Dashboard · Real-time triage</span>
+            </h4>
+            <p class="cs-lofi-text">
+              <span class="es">Diseñado para escaneo visual en menos de 5 segundos. Centraliza el estado de servidores cloud, alertas activas priorizadas y balance de carga, eliminando la necesidad de abrir 3 consolas distintas.</span>
+              <span class="en">Engineered for sub-5 second scanning. Consolidates cloud server health, prioritized alerts, and workload distribution, eradicating context switching across 3 consoles.</span>
+            </p>
+            <div class="cs-lofi-meta-grid">
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Dato clave</span><span class="en">Key metric</span></dt>
+                <dd><span class="es">Tiempo de detección: &lt; 30 segundos</span><span class="en">Incident detection: &lt; 30 seconds</span></dd>
+              </div>
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Rol de diseño</span><span class="en">Design impact</span></dt>
+                <dd><span class="es">Jerarquía por severidad de fallo</span><span class="en">Severity-first visual hierarchy</span></dd>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wireframe 02 -->
+        <article class="cs-lofi-card">
+          <div class="cs-lofi-media">
+            <img src="assets/it-ops-wireframes/ops-02-bandeja-encargos-wireframe.webp" alt="Wireframe Lo-Fi: Bandeja de Encargos y Backlog" width="2560" height="1720" loading="lazy">
+          </div>
+          <div class="cs-lofi-body">
+            <div class="cs-lofi-header">
+              <span class="cs-lofi-num">Wireframe 02</span>
+              <span class="cs-lofi-tag">Gestión de Tareas</span>
+            </div>
+            <h4 class="cs-lofi-title">
+              <span class="es">Bandeja de Encargos · Filtrado multidimensional</span>
+              <span class="en">Service Queue · Multidimensional filtering</span>
+            </h4>
+            <p class="cs-lofi-text">
+              <span class="es">Sustituyó los hilos de Slack y correos perdidos. Permite filtrar tickets por criticidad (Baja a Crítica), SLA restante, departamento y responsable asignado con ordenación por teclado.</span>
+              <span class="en">Replaced messy Slack threads and lost emails. Enables keyboard-first sorting by severity, SLA countdown, department, and assignee.</span>
+            </p>
+            <div class="cs-lofi-meta-grid">
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Dato clave</span><span class="en">Key metric</span></dt>
+                <dd><span class="es">0 peticiones extraviadas</span><span class="en">0 lost service requests</span></dd>
+              </div>
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Rol de diseño</span><span class="en">Design impact</span></dt>
+                <dd><span class="es">Filtros acumulativos accesibles</span><span class="en">Accessible compound filters</span></dd>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wireframe 03 -->
+        <article class="cs-lofi-card">
+          <div class="cs-lofi-media">
+            <img src="assets/it-ops-wireframes/ops-03-detalle-encargo-wireframe.webp" alt="Wireframe Lo-Fi: Detalle de Encargo y Trazabilidad" width="2560" height="1720" loading="lazy">
+          </div>
+          <div class="cs-lofi-body">
+            <div class="cs-lofi-header">
+              <span class="cs-lofi-num">Wireframe 03</span>
+              <span class="cs-lofi-tag">Auditoría &amp; Logs</span>
+            </div>
+            <h4 class="cs-lofi-title">
+              <span class="es">Detalle de Encargo · Trazabilidad e historial</span>
+              <span class="en">Ticket Detail · Full audit trail &amp; history</span>
+            </h4>
+            <p class="cs-lofi-text">
+              <span class="es">Registro inmutable que documenta cada cambio de configuración, quién lo ejecutó y en qué timestamp. Incluye panel lateral de acciones contextuales para resolver sin salir de la vista.</span>
+              <span class="en">Immutable log documenting every configuration change, actor, and timestamp. Features contextual action drawer for seamless in-place resolution.</span>
+            </p>
+            <div class="cs-lofi-meta-grid">
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Dato clave</span><span class="en">Key metric</span></dt>
+                <dd><span class="es">100% conformidad de auditoría</span><span class="en">100% compliance audit pass</span></dd>
+              </div>
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Rol de diseño</span><span class="en">Design impact</span></dt>
+                <dd><span class="es">Trazabilidad inmutable transparente</span><span class="en">Transparent immutable audit log</span></dd>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wireframe 04 -->
+        <article class="cs-lofi-card">
+          <div class="cs-lofi-media">
+            <img src="assets/it-ops-wireframes/ops-04-flujos-recurrentes-wireframe.webp" alt="Wireframe Lo-Fi: Automatización de Flujos Recurrentes" width="2560" height="1720" loading="lazy">
+          </div>
+          <div class="cs-lofi-body">
+            <div class="cs-lofi-header">
+              <span class="cs-lofi-num">Wireframe 04</span>
+              <span class="cs-lofi-tag">Automatización</span>
+            </div>
+            <h4 class="cs-lofi-title">
+              <span class="es">Flujos Recurrentes · Automatización de tareas</span>
+              <span class="en">Recurring Workflows · Maintenance automation</span>
+            </h4>
+            <p class="cs-lofi-text">
+              <span class="es">Configuración visual de rutinas periódicas (backups nocturnos, rotación de claves y purga de logs). Este módulo resolvió directamente las 56,5 horas al mes perdidas en tareas manuales.</span>
+              <span class="en">Visual scheduler for recurring routines (nightly backups, key rotation, log purge). Directly reclaimed the 56.5 hours/month lost to manual spreadsheet upkeep.</span>
+            </p>
+            <div class="cs-lofi-meta-grid">
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Dato clave</span><span class="en">Key metric</span></dt>
+                <dd><span class="es">-56,5 h/mes de labor manual</span><span class="en">-56.5 h/mo manual toil</span></dd>
+              </div>
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Rol de diseño</span><span class="en">Design impact</span></dt>
+                <dd><span class="es">Modelado de triggers condicionales</span><span class="en">Conditional trigger flow modeling</span></dd>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wireframe 05 -->
+        <article class="cs-lofi-card">
+          <div class="cs-lofi-media">
+            <img src="assets/it-ops-wireframes/ops-05-aprobaciones-operativas-wireframe.webp" alt="Wireframe Lo-Fi: Aprobaciones Operativas y Firmas" width="2560" height="1720" loading="lazy">
+          </div>
+          <div class="cs-lofi-body">
+            <div class="cs-lofi-header">
+              <span class="cs-lofi-num">Wireframe 05</span>
+              <span class="cs-lofi-tag">Gobernanza</span>
+            </div>
+            <h4 class="cs-lofi-title">
+              <span class="es">Aprobaciones Operativas · Control de cambios</span>
+              <span class="en">Operational Approvals · Change management</span>
+            </h4>
+            <p class="cs-lofi-text">
+              <span class="es">Matriz de validación para despliegues en servidores de producción. Permite a los leads técnicos evaluar el impacto del cambio y autorizarlo con 1 clic con previsualización de dependencias.</span>
+              <span class="en">Validation matrix for production server changes. Empowers technical leads to inspect blast radius and grant 1-click approvals with dependency previews.</span>
+            </p>
+            <div class="cs-lofi-meta-grid">
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Dato clave</span><span class="en">Key metric</span></dt>
+                <dd><span class="es">Aprobaciones en &lt; 1 hora (vs 48h)</span><span class="en">Approvals in &lt; 1 hr (vs 48 hrs)</span></dd>
+              </div>
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Rol de diseño</span><span class="en">Design impact</span></dt>
+                <dd><span class="es">Evaluación de impacto de riesgo</span><span class="en">Risk impact visualization</span></dd>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wireframe 06 -->
+        <article class="cs-lofi-card">
+          <div class="cs-lofi-media">
+            <img src="assets/it-ops-wireframes/ops-06-informes-servicio-wireframe.webp" alt="Wireframe Lo-Fi: Informes de Servicio y Métricas" width="2560" height="1720" loading="lazy">
+          </div>
+          <div class="cs-lofi-body">
+            <div class="cs-lofi-header">
+              <span class="cs-lofi-num">Wireframe 06</span>
+              <span class="cs-lofi-tag">Analítica &amp; SLAs</span>
+            </div>
+            <h4 class="cs-lofi-title">
+              <span class="es">Informes de Servicio · Rendimiento y SLAs</span>
+              <span class="en">Service Reports · Performance &amp; SLAs</span>
+            </h4>
+            <p class="cs-lofi-text">
+              <span class="es">Cuadro analítico con tiempo medio de resolución (MTTR), tasa de cumplimiento de SLAs por departamento y salud de infraestructura, aportando métricas objetivas a dirección.</span>
+              <span class="en">Analytical suite tracking MTTR (mean time to resolution), department SLA compliance rates, and infrastructure availability for executive visibility.</span>
+            </p>
+            <div class="cs-lofi-meta-grid">
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Dato clave</span><span class="en">Key metric</span></dt>
+                <dd><span class="es">99,8% cumplimiento de SLA</span><span class="en">99.8% SLA compliance</span></dd>
+              </div>
+              <div class="cs-lofi-meta-item">
+                <dt><span class="es">Rol de diseño</span><span class="en">Design impact</span></dt>
+                <dd><span class="es">Visibilidad cuantitativa para negocio</span><span class="en">Quantitative business reporting</span></dd>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -371,10 +611,10 @@
 </main>
 
 <!-- ============ SIGUIENTE CASO ============ -->
-<a href="paolo-pizzeria.html" class="next" id="cs-next">
+<a href="gym-energy-center.html" class="next" id="cs-next">
   <div class="wrap">
-    <small><span class="es">Siguiente caso · 05</span><span class="en">Next case · 05</span></small>
-    <h2><span><span class="es">Paolo Pizzeria · Ecosistema Digital Completo</span><span class="en">Paolo Pizzeria · Full Digital Ecosystem</span></span><span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4L15 9L10 14" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
+    <small><span class="es">Siguiente caso · 06</span><span class="en">Next case · 06</span></small>
+    <h2><span><span class="es">Gym Energy Center · UX Research &amp; Hábitos</span><span class="en">Gym Energy Center · UX Research &amp; Habits</span></span><span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4L15 9L10 14" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
   </div>
 </a>
 
