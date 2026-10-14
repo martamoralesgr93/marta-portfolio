@@ -190,4 +190,11 @@
       });
     });
   }
+
+  // 6. Cargar dinámicamente Chatbot y Botón Subir al Inicio si no están presentes
+  if (!document.getElementById('chat-trigger') && !document.querySelector('script[src*="chatbot.js"]')) {
+    const chatScript = document.createElement('script');
+    chatScript.src = 'chatbot.js?v=20261014_rev2';
+    document.body.appendChild(chatScript);
+  }
 })();
