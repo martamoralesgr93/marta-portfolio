@@ -508,41 +508,7 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   color: rgba(255, 255, 255, 0.74);
   line-height: 1.55;
   max-width: 780px;
-  margin-bottom: 22px;
-}
-
-/* Pills de credenciales / impacto inmediato en el primer scroll */
-.cs-hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: clamp(28px, 4vh, 42px);
-}
-.cs-hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 100px;
-  background: rgba(var(--accent-rgb), 0.08);
-  border: 1px solid rgba(var(--accent-rgb), 0.24);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--white);
-  backdrop-filter: blur(8px);
-  transition: all .2s;
-}
-.cs-hero-pill:hover {
-  background: rgba(var(--accent-rgb), 0.14);
-  border-color: var(--accent);
-  transform: translateY(-1px);
-}
-.cs-hero-pill-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
+  margin-bottom: clamp(28px, 4.5vh, 44px);
 }
 
 /* Escaparate visual destacado (Showcase Stage) */
@@ -822,6 +788,129 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
 .learn-card .label { display: block; margin-bottom: 8px; }
 .learn-card h3 { font-family: var(--font-serif); color: var(--white); font-size: 19px; font-weight: 700; margin-bottom: 8px; }
 .learn-card p { font-size: 14px; color: var(--text); }
+/* ---------- 13.2 · MAPA GLOBAL DE PROYECTOS / TRAYECTORIA ---------- */
+.cs-global-journey {
+  margin-top: 72px;
+  padding: clamp(28px, 4.5vw, 44px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.008) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.75), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  position: relative;
+}
+.cs-journey-header {
+  margin-bottom: 32px;
+  max-width: 760px;
+}
+.cs-journey-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.cs-journey-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.cs-journey-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.cs-journey-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+.cs-journey-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  position: relative;
+}
+.cs-journey-step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  transition: all .25s ease;
+  position: relative;
+}
+.cs-journey-step:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+.cs-journey-step.is-current {
+  background: rgba(var(--accent-rgb), 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.16);
+}
+.cs-journey-step-tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.cs-journey-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: rgba(var(--accent-rgb), 0.2);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+.cs-journey-step-name {
+  font-family: var(--font-serif);
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.25;
+}
+.cs-journey-step-desc {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.cs-journey-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  padding-top: 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.cs-journey-link svg {
+  transition: transform .2s;
+}
+.cs-journey-step:hover .cs-journey-link svg {
+  transform: translateX(3px);
+}
+
+/* Fallback timeline */
 .timeline { margin-top: 80px; display: grid; grid-template-columns: repeat(4, 1fr); }
 .tl-step { position: relative; padding: 28px 24px 0 0; }
 .tl-step::before { content: ""; position: absolute; top: 5px; left: 12px; right: 0; height: 1px; background: var(--border); }
@@ -957,6 +1046,7 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   .wires, .devices, .ab, .compare { grid-template-columns: 1fr; }
   .wire + .wire, .device + .device, .ab-col + .ab-col, .compare-item + .compare-item { border-left: 0; border-top: 1px solid var(--border); }
   .timeline { grid-template-columns: 1fr 1fr; row-gap: 36px; }
+  .cs-journey-timeline { grid-template-columns: 1fr 1fr; gap: 12px; }
 
   /* Ajustes para tablet y mobile */
   .panel { border-radius: var(--radius-md); }
@@ -977,9 +1067,7 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   .cs-hero { padding: 90px 0 28px; }
   .cs-client { font-size: 10.5px; padding: 4px 11px; margin-bottom: 14px; }
   .cs-title { font-size: clamp(26px, 7.5vw, 36px); line-height: 1.12; margin-bottom: 12px; }
-  .cs-sub { font-size: 14.5px; margin-bottom: 16px; }
-  .cs-hero-pills { gap: 6px; margin-bottom: 22px; }
-  .cs-hero-pill { font-size: 11.5px; padding: 5px 11px; }
+  .cs-sub { font-size: 14.5px; margin-bottom: 20px; }
   .cs-hero-img { padding: 12px; margin-bottom: 20px; border-radius: 14px; }
   .cs-hero-img img { max-height: 280px; }
   .h2 { font-size: clamp(24px, 6.8vw, 32px); line-height: 1.18; margin-bottom: 16px; }
@@ -988,6 +1076,8 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   /* Ficha y métricas */
   .cs-facts { grid-template-columns: 1fr; margin-bottom: 20px; }
   .cs-fact { padding: 12px 14px; }
+  .cs-global-journey { padding: 22px 18px; margin-top: 48px; }
+  .cs-journey-timeline { grid-template-columns: 1fr; gap: 10px; }
   .tldr { margin-top: 28px; }
   .tldr-card { padding: 24px 20px; }
   .tldr-metric { font-size: 42px; margin: 10px 0 6px; }
