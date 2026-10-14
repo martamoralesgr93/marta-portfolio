@@ -1045,3 +1045,20 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
   transition: border-color var(--transition-fast);
 }
 .cs-process-doc a:hover { border-bottom-color: var(--accent); }
+
+/* ── 11. ALINEACIÓN DE TARJETAS EN REJILLA ──
+   Las tarjetas hermanas comparten filas (subgrid): cabeceras, imágenes, textos y
+   píldoras/CTA quedan a la misma altura aunque el contenido tenga distinta longitud. */
+@supports (grid-template-rows: subgrid) {
+  .c2-evidence-pair { row-gap: 0 !important; align-items: stretch !important; }
+  .c2-evidence-pair > .c2-evidence-item { display: grid; grid-template-rows: subgrid; grid-row: span 3; margin-bottom: 24px; }
+  .c2-evidence-pair > .c2-evidence-item > img { align-self: center; }
+  .dt-grid { row-gap: 0 !important; }
+  .dt-grid > .dt-item { display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 0; margin-bottom: 16px; }
+  .dt-grid > .dt-item > .dt-pill { align-self: end; justify-self: start; }
+  .h-timeline > .ht-item { display: grid; grid-template-rows: subgrid; grid-row: span 4; }
+  .wf-row-finals > .wf-final-col { display: grid; grid-template-rows: subgrid; grid-row: span 3; }
+  .wf-row-finals > .wf-final-col > .wf-col-body { display: flex; align-items: center; justify-content: center; }
+}
+/* CTA y píldoras al pie de la tarjeta cuando la tarjeta es flex */
+.dt-item > .dt-pill, .ht-item > .ht-pill { margin-top: auto; }
