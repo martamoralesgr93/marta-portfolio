@@ -2341,16 +2341,34 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
     flex: 1;
     height: 46px;
     border-radius: 100px;
-    background: #18181b;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: var(--white);
+    background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(249,115,22,0.88));
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ffffff !important;
     font-size: 13.5px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 4px;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.45);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .cs-mobile-cta-btn::after {
+    content: " ↗";
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .cs-mobile-cta-btn:active {
+    transform: scale(0.98);
+  }
+
+  /* Ocultar el botón estático duplicado en el footer para evitar superposición */
+  .cs-pagination-actions .nav-cta {
+    display: none !important;
+  }
+  .cs-pagination-actions {
+    justify-content: center;
   }
 
   .cs-mobile-carousel-footer {
