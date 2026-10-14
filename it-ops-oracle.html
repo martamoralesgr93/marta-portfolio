@@ -20,6 +20,180 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261014_rev2">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
+<style>
+/* ============ MOBILE EXACT — IT Ops case (canvas 2026-10-14) ============ */
+.ome { display: none; }
+@media (max-width: 768px) {
+  main > .cs-hero,
+  main > section.section,
+  main > a.next,
+  main > section.cs-pagination-section { display: none !important; }
+
+  .ome {
+    display: block;
+    background: #000;
+    color: rgba(255,255,255,.72);
+    font-family: Inter, system-ui, sans-serif;
+    padding: 0 16px;
+  }
+  .ome-sec { padding-top: 48px; }
+  .ome-sec:first-child { padding-top: 28px; }
+
+  .ome-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .ome-chip { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.75); font-size: 12px; font-weight: 500; }
+  .ome-chip-accent { border-color: rgba(167,139,250,.35); color: #a78bfa; font-weight: 600; }
+
+  .ome-h1 { margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 40px; line-height: 1.05; letter-spacing: -.02em; color: #fff; }
+  .ome-h1 em { font-style: italic; color: #a78bfa; }
+  .ome-lead { margin: 0 0 24px; font-size: 16px; line-height: 1.5; color: rgba(255,255,255,.78); }
+  .ome-lead strong { color: #fff; font-weight: 600; }
+
+  .ome-video-figure { margin: 0 -16px 0; padding: 18px 0 8px; background: radial-gradient(ellipse at 50% 60%, rgba(124,58,237,.22), rgba(0,0,0,0) 70%); display: flex; flex-direction: column; gap: 12px; }
+  .ome-video { display: block; width: 100%; height: auto; max-height: 224px; object-fit: contain; }
+  .ome-video-cap { padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .ome-live-dot { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .ome-live-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ef4444; flex-shrink: 0; }
+  .ome-open-link { font-size: 12px; font-weight: 600; color: #a78bfa; text-decoration: none; padding: 12px 0; }
+
+  .ome-facts { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; overflow: hidden; }
+  .ome-fact { background: #0a0a0c; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .ome-fact-label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .ome-fact-val { font-size: 14px; font-weight: 600; color: #fff; }
+
+  .ome-sub { display: flex; align-items: baseline; justify-content: space-between; }
+  .ome-sub-num { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.4); }
+  .ome-h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 28px; line-height: 1.1; color: #fff; }
+  .ome-h2 em { font-style: italic; color: #a78bfa; }
+  .ome-h2-lg { margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 34px; line-height: 1.06; letter-spacing: -.015em; color: #fff; }
+  .ome-h2-lg em { font-style: italic; color: #a78bfa; }
+  .ome-h3 { margin: 10px 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 28px; line-height: 1.1; color: #fff; }
+  .ome-h3 em { font-style: italic; color: #a78bfa; }
+  .ome-arrow-muted { color: rgba(255,255,255,.4); }
+  .ome-accent-text { color: #a78bfa; }
+
+  .ome-timeline { margin-top: 18px; display: flex; flex-direction: column; }
+  .ome-tl-row { display: flex; gap: 16px; }
+  .ome-tl-rail { display: flex; flex-direction: column; align-items: center; width: 14px; padding-top: 22px; flex-shrink: 0; }
+  .ome-tl-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); flex-shrink: 0; }
+  .ome-tl-dot-accent { border: none; background: #a78bfa; box-shadow: 0 0 0 5px rgba(167,139,250,.18); }
+  .ome-tl-line { flex: 1; width: 2px; background: rgba(255,255,255,.12); margin-top: 4px; }
+  .ome-tl-body { flex: 1; padding: 14px 0 22px; display: flex; flex-direction: column; gap: 6px; }
+  .ome-tl-highlight { padding: 16px 18px 18px; margin: 4px 0 0; border-radius: 18px; background: rgba(167,139,250,.08); border: 1px solid rgba(167,139,250,.3); }
+  .ome-tl-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 46px; line-height: 1; color: #fff; }
+  .ome-tl-big em { font-style: normal; font-size: 20px; color: rgba(255,255,255,.55); }
+  .ome-tl-big-accent { color: #a78bfa; font-size: 54px; }
+  .ome-tl-desc { font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.72); }
+  .ome-tl-desc-light { color: rgba(255,255,255,.85); }
+  .ome-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .ome-eyebrow-accent { color: #a78bfa; font-size: 12px; letter-spacing: .14em; }
+
+  .ome-cta-outline { margin-top: 24px; height: 52px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; gap: 10px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+  .ome-vs { position: relative; margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ome-vs-card { padding: 16px 14px 18px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 14px; }
+  .ome-vs-card-win { position: relative; background: rgba(167,139,250,.1); border-color: rgba(167,139,250,.55); }
+  .ome-vs-badge { position: absolute; right: 10px; top: -11px; padding: 4px 9px; border-radius: 999px; background: #a78bfa; color: #0b0614; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .ome-vs-kicker { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .ome-vs-kicker-accent { color: #a78bfa; }
+  .ome-vs-title { display: block; margin-top: 4px; font-size: 20px; font-weight: 700; color: rgba(255,255,255,.7); }
+  .ome-vs-title-light { color: #fff; }
+  .ome-vs-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .ome-vs-list li { display: flex; gap: 8px; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.55); }
+  .ome-vs-list-light li { color: #fff; }
+  .ome-x { flex: none; color: rgba(255,255,255,.35); }
+  .ome-check { flex: none; color: #a78bfa; }
+  .ome-vs-badge-center { position: absolute; left: 50%; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: #000; border: 1px solid rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.6); }
+
+  .ome-stat80 { margin-top: 26px; display: flex; align-items: flex-end; gap: 14px; }
+  .ome-stat80-num { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 80px; line-height: .85; color: #a78bfa; }
+  .ome-stat80-text { padding-bottom: 6px; font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
+  .ome-dashes { margin-top: 16px; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; }
+  .ome-dashes span { height: 30px; border-radius: 6px; border: 1px dashed rgba(255,255,255,.22); }
+  .ome-dash-on { border: none !important; background: #a78bfa; }
+  .ome-p { margin: 16px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.72); }
+
+  .ome-friction { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .ome-friction-row { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); }
+  .ome-friction-icon { flex: none; width: 44px; height: 44px; border-radius: 12px; background: rgba(167,139,250,.12); color: #a78bfa; display: flex; align-items: center; justify-content: center; }
+  .ome-friction-text { font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
+  .ome-friction-text strong { color: #a78bfa; }
+
+  .ome-figure { margin: 16px 0 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,.1); background: #050508; }
+  .ome-figure-img { display: block; width: 100%; height: auto; }
+  .ome-mods { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .ome-mod { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); }
+  .ome-mod-n { flex: none; font-size: 11px; font-weight: 700; color: #a78bfa; }
+  .ome-mod-t { font-size: 13px; line-height: 1.3; font-weight: 600; color: #fff; }
+
+  .ome-figure-bleed { margin: 22px -16px 0; padding-top: 14px; background: radial-gradient(ellipse at 50% 55%, rgba(124,58,237,.2), rgba(0,0,0,0) 70%); }
+  .ome-figure-bleed .ome-figure-img { max-height: 224px; object-fit: contain; }
+  .ome-figure-cap { margin-top: 10px; padding: 0 16px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.7); }
+
+  .ome-wires { margin-top: 16px; display: flex; gap: 12px; overflow-x: auto; padding: 0 0 4px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .ome-wire { flex: none; width: 80vw; max-width: 322px; scroll-snap-align: start; border-radius: 20px; overflow: hidden; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
+  .ome-wire-top { position: relative; background: #fff; }
+  .ome-wire-img { display: block; width: 100%; height: 190px; object-fit: contain; }
+  .ome-wire-img-cover { object-fit: cover; }
+  .ome-wire-badge { position: absolute; left: 10px; top: 10px; padding: 4px 9px; border-radius: 999px; background: #000; color: #fff; font-size: 11px; font-weight: 700; }
+  .ome-wire-badge-accent { background: #a78bfa; color: #0b0614; }
+  .ome-wire-bottom { position: relative; border-top: 1px solid rgba(255,255,255,.1); }
+  .ome-wire-bottom-empty { height: 160px; display: flex; align-items: center; justify-content: center; padding: 0 24px; text-align: center; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.5); }
+  .ome-wire-info { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .ome-wire-title { font-size: 16px; font-weight: 600; color: #fff; }
+  .ome-wire-kpi { align-self: flex-start; padding: 5px 10px; border-radius: 8px; background: rgba(167,139,250,.12); color: #a78bfa; font-size: 13px; font-weight: 600; }
+  .ome-wires-footer { margin-top: 10px; display: flex; align-items: center; justify-content: space-between; }
+  .ome-dots { display: flex; gap: 6px; }
+  .ome-dots span { width: 6px; height: 6px; border-radius: 6px; background: rgba(255,255,255,.25); }
+  .ome-dot-active { width: 22px !important; background: #a78bfa !important; }
+  .ome-swipe-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.5); }
+
+  .ome-highlight { margin-top: 44px; border-radius: 22px; overflow: hidden; background: rgba(167,139,250,.07); border: 1px solid rgba(167,139,250,.3); }
+  .ome-highlight-img { display: block; width: 100%; height: 190px; object-fit: cover; }
+  .ome-highlight-body { padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .ome-highlight-num { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 40px; line-height: 1; color: #fff; }
+  .ome-highlight-num em { font-style: normal; font-size: 18px; color: rgba(255,255,255,.55); }
+  .ome-highlight-desc { font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.8); }
+
+  .ome-resultpanel { margin-top: 20px; padding: 22px 20px 24px; border-radius: 24px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.35), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; gap: 20px; }
+  .ome-resultpanel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 600; color: #fff; }
+  .ome-proj-badge { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); color: #a78bfa; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .ome-resultbars { display: flex; flex-direction: column; gap: 14px; }
+  .ome-resultbar-row { display: flex; flex-direction: column; gap: 7px; }
+  .ome-resultbar-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: rgba(255,255,255,.6); }
+  .ome-resultbar-label-light { color: #fff; font-weight: 600; }
+  .ome-resultbar-val { font-size: 20px; font-weight: 700; color: rgba(255,255,255,.85); }
+  .ome-resultbar-val-accent { color: #a78bfa; }
+  .ome-resultbar-track { height: 14px; border-radius: 7px; background: rgba(255,255,255,.28); }
+  .ome-resultbar-track-split { display: flex; gap: 4px; align-items: center; background: none; }
+  .ome-resultbar-fill-full { height: 14px; border-radius: 7px; }
+  .ome-resultbar-fill-accent { width: 30%; height: 14px; border-radius: 7px; background: #a78bfa; }
+  .ome-resultbar-dashed { flex: 1; height: 14px; border-radius: 7px; border: 1px dashed rgba(167,139,250,.45); }
+  .ome-resultpanel-foot { display: flex; align-items: flex-end; gap: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.1); }
+  .ome-result-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 64px; line-height: .85; letter-spacing: -.02em; color: #a78bfa; }
+  .ome-result-foot-text { padding-bottom: 4px; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .ome-result-foot-text strong { color: #fff; }
+
+  .ome-ministats { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .ome-ministat { padding: 16px 12px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; font-size: 12px; line-height: 1.35; color: rgba(255,255,255,.7); }
+  .ome-ministat-num { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 32px; line-height: 1; color: #fff; }
+  .ome-ministat-num small { font-size: 15px; }
+  .ome-finenote { display: block; margin-top: 14px; font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.5); }
+
+  .ome-learnings { margin-top: 52px; display: flex; flex-direction: column; gap: 0; }
+  .ome-learning { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .ome-learning-last { border-bottom: 1px solid rgba(255,255,255,.1); }
+  .ome-learning-n { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 24px; line-height: 1; color: #a78bfa; width: 32px; flex: none; }
+  .ome-learning-t { display: block; font-size: 17px; font-weight: 600; color: #fff; }
+  .ome-learning-d { display: block; margin-top: 4px; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.62); }
+
+  .ome-tryit { margin-top: 44px; display: flex; flex-direction: column; gap: 14px; }
+  .ome-tryit-img { display: block; width: 100%; height: auto; max-height: 224px; object-fit: contain; }
+  .ome-cta-pill { height: 52px; border-radius: 999px; border: 1px solid rgba(167,139,250,.45); display: flex; align-items: center; justify-content: center; gap: 8px; color: #a78bfa; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+  #ome-resultados { padding-bottom: 48px; }
+}
+
+  </style>
 </head>
 <body>
 
@@ -78,10 +252,10 @@
 
 <!-- ============ NAVEGACIÓN MÓVIL POR TABS ============ -->
 <nav class="cs-mobile-tabs" aria-label="Navegación de secciones móvil">
-  <a href="#overview" class="cs-mobile-tab is-active">Overview</a>
-  <a href="#problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
-  <a href="#diseno" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
-  <a href="#resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
+  <a href="#ome-overview" class="cs-mobile-tab is-active">Overview</a>
+  <a href="#ome-problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
+  <a href="#ome-diseno" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
+  <a href="#ome-resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
 </nav>
 
 
@@ -176,6 +350,258 @@
 </div>
 
 <main>
+
+<div class="ome" id="ome-root">
+
+  <!-- HERO -->
+  <section class="ome-sec" id="ome-overview" style="padding-top:28px">
+    <div class="ome-chips">
+      <span class="ome-chip ome-chip-accent"><span class="es">IT Ops · B2B interno</span><span class="en">IT Ops · internal B2B</span></span>
+      <span class="ome-chip"><span class="es">Propuesta conceptual</span><span class="en">Conceptual proposal</span></span>
+    </div>
+    <h1 class="ome-h1"><span class="es">Cuando comprar <em>no resuelve</em></span><span class="en">When buying <em>doesn't solve it</em></span></h1>
+    <p class="ome-lead"><span class="es">De <strong>56,5 h/mes</strong> en hojas de cálculo a una herramienta propia.</span><span class="en">From <strong>56.5 h/month</strong> in spreadsheets to an in-house tool.</span></p>
+
+    <figure class="ome-video-figure">
+      <video src="assets/oracle-mobile/hero.mp4" poster="assets/oracle-mobile/hero-poster.jpg" autoplay muted loop playsinline aria-label="Recorrido del prototipo navegable de IT Ops Oracle" class="ome-video"></video>
+      <figcaption class="ome-video-cap">
+        <span class="ome-live-dot"><span class="es">Prototipo navegable · recorrido 48 s</span><span class="en">Navigable prototype · 48s walkthrough</span></span>
+        <a href="https://it-ops-oracle-prototype-design.vercel.app" target="_blank" rel="noopener" class="ome-open-link">Abrir ↗</a>
+      </figcaption>
+    </figure>
+
+    <div class="ome-facts">
+      <div class="ome-fact"><span class="ome-fact-label es">Rol</span><span class="ome-fact-label en">Role</span><span class="ome-fact-val">Product Designer</span></div>
+      <div class="ome-fact"><span class="ome-fact-label es">Duración</span><span class="ome-fact-label en">Duration</span><span class="ome-fact-val es">3 meses</span><span class="ome-fact-val en">3 months</span></div>
+      <div class="ome-fact"><span class="ome-fact-label es">Equipo</span><span class="ome-fact-label en">Team</span><span class="ome-fact-val es">IT Ops Lead + 4 devs</span><span class="ome-fact-val en">IT Ops Lead + 4 devs</span></div>
+      <div class="ome-fact"><span class="ome-fact-label es">Plataforma</span><span class="ome-fact-label en">Platform</span><span class="ome-fact-val es">Desktop · SaaS</span><span class="ome-fact-val en">Desktop · SaaS</span></div>
+    </div>
+
+    <!-- 30 SECOND TIMELINE -->
+    <div class="ome-sub" style="margin-top:40px">
+      <h2 class="ome-h2"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
+      <span class="ome-sub-num">01</span>
+    </div>
+    <div class="ome-timeline">
+      <div class="ome-tl-row">
+        <div class="ome-tl-rail"><span class="ome-tl-dot"></span><span class="ome-tl-line"></span></div>
+        <div class="ome-tl-body">
+          <span class="ome-eyebrow"><span class="es">Problema</span><span class="en">Problem</span></span>
+          <span class="ome-tl-big">56,5 h<em>/mes</em></span>
+          <span class="ome-tl-desc"><span class="es">perdidas en inventarios críticos gestionados con Excel.</span><span class="en">lost on critical inventories managed in Excel.</span></span>
+        </div>
+      </div>
+      <div class="ome-tl-row">
+        <div class="ome-tl-rail"><span class="ome-tl-dot"></span><span class="ome-tl-line"></span></div>
+        <div class="ome-tl-body">
+          <span class="ome-eyebrow"><span class="es">Decisión</span><span class="en">Decision</span></span>
+          <span class="ome-tl-big">Build</span>
+          <span class="ome-tl-desc"><span class="es">Suite modular a medida en lugar de licencias COTS.</span><span class="en">Custom modular suite instead of COTS licenses.</span></span>
+        </div>
+      </div>
+      <div class="ome-tl-row">
+        <div class="ome-tl-rail"><span class="ome-tl-dot ome-tl-dot-accent"></span></div>
+        <div class="ome-tl-body ome-tl-highlight">
+          <span class="ome-eyebrow ome-eyebrow-accent"><span class="es">Impacto proyectado</span><span class="en">Projected impact</span></span>
+          <span class="ome-tl-big ome-tl-big-accent">−70%</span>
+          <span class="ome-tl-desc ome-tl-desc-light"><span class="es">horas de gestión manual.</span><span class="en">manual management hours.</span></span>
+        </div>
+      </div>
+    </div>
+    <a href="#ome-problema" class="ome-cta-outline"><span class="es">Ver el problema</span><span class="en">See the problem</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg></a>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="ome-sec" id="ome-problema">
+    <span class="ome-eyebrow ome-eyebrow-accent"><span class="es">02 · El dilema</span><span class="en">02 · The dilemma</span></span>
+    <h2 class="ome-h2-lg"><span class="es">¿Comprar software genérico <em>o construir?</em></span><span class="en">Buy generic software <em>or build?</em></span></h2>
+
+    <div class="ome-vs">
+      <div class="ome-vs-card">
+        <span class="ome-vs-kicker"><span class="es">Buy · COTS</span><span class="en">Buy · COTS</span></span>
+        <span class="ome-vs-title"><span class="es">Comprar</span><span class="en">Buy</span></span>
+        <ul class="ome-vs-list">
+          <li><span class="ome-x">✕</span><span class="es">Licencia costosa</span><span class="en">Costly license</span></li>
+          <li><span class="ome-x">✕</span><span class="es">Funciones genéricas</span><span class="en">Generic features</span></li>
+          <li><span class="ome-x">✕</span><span class="es">Adaptación lenta</span><span class="en">Slow to adapt</span></li>
+        </ul>
+      </div>
+      <div class="ome-vs-card ome-vs-card-win">
+        <span class="ome-vs-badge"><span class="es">Decisión</span><span class="en">Decision</span></span>
+        <span class="ome-vs-kicker ome-vs-kicker-accent"><span class="es">Build · a medida</span><span class="en">Build · custom</span></span>
+        <span class="ome-vs-title ome-vs-title-light"><span class="es">Construir</span><span class="en">Build</span></span>
+        <ul class="ome-vs-list ome-vs-list-light">
+          <li><span class="ome-check">✓</span><span class="es">Solo el flujo real</span><span class="en">Only the real workflow</span></li>
+          <li><span class="ome-check">✓</span><span class="es">Hecho para el equipo</span><span class="en">Built for the team</span></li>
+          <li><span class="ome-check">✓</span><span class="es">Menor coste total</span><span class="en">Lower total cost</span></li>
+        </ul>
+      </div>
+      <span class="ome-vs-badge-center" aria-hidden="true">vs</span>
+    </div>
+
+    <div class="ome-stat80">
+      <span class="ome-stat80-num">80%</span>
+      <span class="ome-stat80-text"><span class="es">de las funciones del software comercial sobraban</span><span class="en">of the commercial software's features went unused</span></span>
+    </div>
+    <div class="ome-dashes" role="img" aria-label="8 de cada 10 funciones del software comercial no se usarían">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="ome-dash-on"></span><span class="ome-dash-on"></span>
+    </div>
+    <p class="ome-p"><span class="es">Entrevistas y shadowing: el problema era un flujo concreto que ninguna herramienta resolvía de fábrica.</span><span class="en">Interviews and shadowing: the problem was one specific workflow no off-the-shelf tool solved.</span></p>
+
+    <span class="ome-eyebrow" style="margin-top:36px; display:block"><span class="es">3 patrones de fricción</span><span class="en">3 friction patterns</span></span>
+    <div class="ome-friction">
+      <div class="ome-friction-row">
+        <span class="ome-friction-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"></path></svg></span>
+        <span class="ome-friction-text"><span class="es">Copiar y pegar datos entre <strong>3 sistemas</strong></span><span class="en">Copying and pasting data across <strong>3 systems</strong></span></span>
+      </div>
+      <div class="ome-friction-row">
+        <span class="ome-friction-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+        <span class="ome-friction-text"><span class="es">Sin historial de quién tocó cada servidor</span><span class="en">No history of who touched each server</span></span>
+      </div>
+      <div class="ome-friction-row">
+        <span class="ome-friction-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span>
+        <span class="ome-friction-text"><span class="es">Falsos positivos que saturan la guardia</span><span class="en">False positives flooding on-call</span></span>
+      </div>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="ome-eyebrow"><span class="es">Discovery · arquitectura de datos</span><span class="en">Discovery · data architecture</span></span>
+      <h3 class="ome-h3"><span class="es">52 columnas <span class="ome-arrow-muted">→</span> <span class="ome-accent-text">6 módulos</span></span><span class="en">52 columns <span class="ome-arrow-muted">→</span> <span class="ome-accent-text">6 modules</span></span></h3>
+      <figure class="ome-figure">
+        <img src="assets/oracle-mobile/map.webp" alt="Mapa completo: cada patrón de fricción conectado con el módulo que lo resuelve" class="ome-figure-img">
+      </figure>
+      <div class="ome-mods">
+        <div class="ome-mod"><span class="ome-mod-n">01</span><span class="ome-mod-t es">Salud de nodos</span><span class="ome-mod-t en">Node health</span></div>
+        <div class="ome-mod"><span class="ome-mod-n">02</span><span class="ome-mod-t es">Ciclo de tickets</span><span class="ome-mod-t en">Ticket cycle</span></div>
+        <div class="ome-mod"><span class="ome-mod-n">03</span><span class="ome-mod-t es">Auditoría inmutable</span><span class="ome-mod-t en">Immutable audit log</span></div>
+        <div class="ome-mod"><span class="ome-mod-n">04</span><span class="ome-mod-t es">Automatizaciones</span><span class="ome-mod-t en">Automations</span></div>
+        <div class="ome-mod"><span class="ome-mod-n">05</span><span class="ome-mod-t es">Matriz de firmas</span><span class="ome-mod-t en">Signature matrix</span></div>
+        <div class="ome-mod"><span class="ome-mod-n">06</span><span class="ome-mod-t es">Cumplimiento SLA</span><span class="ome-mod-t en">SLA compliance</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIÓN -->
+  <section class="ome-sec" id="ome-diseno">
+    <span class="ome-eyebrow ome-eyebrow-accent"><span class="es">03 · La solución</span><span class="en">03 · The solution</span></span>
+    <h2 class="ome-h2-lg"><span class="es">Un módulo para cada <em>patrón real</em></span><span class="en">One module for every <em>real pattern</em></span></h2>
+
+    <figure class="ome-figure-bleed">
+      <img src="assets/oracle-mobile/dashboard.webp" alt="Dashboard operacional final en un portátil: KPIs, prioridad operativa y pulso del servicio" class="ome-figure-img">
+      <figcaption class="ome-figure-cap"><span class="es">Una consola sustituye a 3: triaje por severidad y sincronización cloud.</span><span class="en">One console replaces 3: severity triage and cloud sync.</span></figcaption>
+    </figure>
+
+    <div style="margin-top:44px">
+      <span class="ome-eyebrow"><span class="es">Proceso · de lo-fi a producto</span><span class="en">Process · lo-fi to product</span></span>
+      <h3 class="ome-h3"><span class="es">6 wireframes validados antes de picar código</span><span class="en">6 wireframes validated before writing code</span></h3>
+    </div>
+
+    <div class="ome-wires" id="omeWires">
+      <article class="ome-wire">
+        <div class="ome-wire-top"><img src="assets/oracle-mobile/wf01.webp" alt="Wireframe de dashboard operacional" class="ome-wire-img"><span class="ome-wire-badge">01 · Lo-fi</span></div>
+        <div class="ome-wire-bottom"><img src="assets/oracle-mobile/ui01.webp" alt="Pantalla final de dashboard operacional" class="ome-wire-img ome-wire-img-cover"><span class="ome-wire-badge ome-wire-badge-accent">Final</span></div>
+        <div class="ome-wire-info"><span class="ome-wire-title es">Dashboard operacional</span><span class="ome-wire-title en">Operational dashboard</span><span class="ome-wire-kpi es">Detección &lt; 30 s</span><span class="ome-wire-kpi en">Detection &lt; 30 s</span></div>
+      </article>
+      <article class="ome-wire">
+        <div class="ome-wire-top"><img src="assets/oracle-mobile/wf02.webp" alt="Wireframe de bandeja de encargos" class="ome-wire-img"><span class="ome-wire-badge">02 · Lo-fi</span></div>
+        <div class="ome-wire-bottom"><img src="assets/oracle-mobile/ui02.webp" alt="Pantalla final de bandeja de encargos" class="ome-wire-img ome-wire-img-cover"><span class="ome-wire-badge ome-wire-badge-accent">Final</span></div>
+        <div class="ome-wire-info"><span class="ome-wire-title es">Bandeja de encargos</span><span class="ome-wire-title en">Request tray</span><span class="ome-wire-kpi es">0 peticiones extraviadas</span><span class="ome-wire-kpi en">0 lost requests</span></div>
+      </article>
+      <article class="ome-wire">
+        <div class="ome-wire-top"><img src="assets/oracle-mobile/wf03.webp" alt="Wireframe de detalle de encargo" class="ome-wire-img"><span class="ome-wire-badge">03 · Lo-fi</span></div>
+        <div class="ome-wire-bottom ome-wire-bottom-empty"><span class="es">Módulo definido en wireframe; no incluido en el prototipo navegable.</span><span class="en">Module defined in wireframe; not included in the navigable prototype.</span></div>
+        <div class="ome-wire-info"><span class="ome-wire-title es">Detalle y trazabilidad</span><span class="ome-wire-title en">Detail &amp; traceability</span><span class="ome-wire-kpi es">Historial inmutable</span><span class="ome-wire-kpi en">Immutable history</span></div>
+      </article>
+      <article class="ome-wire">
+        <div class="ome-wire-top"><img src="assets/oracle-mobile/wf04.webp" alt="Wireframe de flujos recurrentes" class="ome-wire-img"><span class="ome-wire-badge">04 · Lo-fi</span></div>
+        <div class="ome-wire-bottom"><img src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes" class="ome-wire-img ome-wire-img-cover"><span class="ome-wire-badge ome-wire-badge-accent">Final</span></div>
+        <div class="ome-wire-info"><span class="ome-wire-title es">Flujos recurrentes</span><span class="ome-wire-title en">Recurring flows</span><span class="ome-wire-kpi es">−56,5 h/mes manuales</span><span class="ome-wire-kpi en">−56.5 h/mo manual</span></div>
+      </article>
+      <article class="ome-wire">
+        <div class="ome-wire-top"><img src="assets/oracle-mobile/wf05.webp" alt="Wireframe de aprobaciones operativas" class="ome-wire-img"><span class="ome-wire-badge">05 · Lo-fi</span></div>
+        <div class="ome-wire-bottom"><img src="assets/oracle-mobile/ui05.webp" alt="Pantalla final de aprobaciones operativas" class="ome-wire-img ome-wire-img-cover"><span class="ome-wire-badge ome-wire-badge-accent">Final</span></div>
+        <div class="ome-wire-info"><span class="ome-wire-title es">Aprobaciones</span><span class="ome-wire-title en">Approvals</span><span class="ome-wire-kpi es">&lt; 1 h (antes 48 h)</span><span class="ome-wire-kpi en">&lt; 1 h (was 48 h)</span></div>
+      </article>
+      <article class="ome-wire">
+        <div class="ome-wire-top"><img src="assets/oracle-mobile/wf06.webp" alt="Wireframe de informes de servicio" class="ome-wire-img"><span class="ome-wire-badge">06 · Lo-fi</span></div>
+        <div class="ome-wire-bottom"><img src="assets/oracle-mobile/ui06.webp" alt="Pantalla final de informes de servicio" class="ome-wire-img ome-wire-img-cover"><span class="ome-wire-badge ome-wire-badge-accent">Final</span></div>
+        <div class="ome-wire-info"><span class="ome-wire-title es">Informes de servicio</span><span class="ome-wire-title en">Service reports</span><span class="ome-wire-kpi es">MTTR y SLAs a dirección</span><span class="ome-wire-kpi en">MTTR &amp; SLAs to leadership</span></div>
+      </article>
+    </div>
+    <div class="ome-wires-footer">
+      <div class="ome-dots" aria-hidden="true"><span class="ome-dot-active"></span><span></span><span></span><span></span><span></span><span></span></div>
+      <span class="ome-swipe-label"><span class="es">Desliza · 01 / 06</span><span class="en">Swipe · 01 / 06</span></span>
+    </div>
+
+    <div class="ome-highlight">
+      <img src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes con tres automatizaciones activas" class="ome-highlight-img">
+      <div class="ome-highlight-body">
+        <span class="ome-eyebrow ome-eyebrow-accent"><span class="es">El módulo clave · Flujos recurrentes</span><span class="en">The key module · Recurring flows</span></span>
+        <span class="ome-highlight-num">−56,5 h<em>/mes</em></span>
+        <span class="ome-highlight-desc"><span class="es">Altas, cambios de campaña y auditorías, automatizados.</span><span class="en">Onboarding, campaign changes and audits, automated.</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="ome-sec" id="ome-resultados">
+    <span class="ome-eyebrow ome-eyebrow-accent"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span>
+    <h2 class="ome-h2-lg"><span class="es">Menos Excel, <em>más control</em></span><span class="en">Less Excel, <em>more control</em></span></h2>
+
+    <div class="ome-resultpanel">
+      <div class="ome-resultpanel-head">
+        <span class="es">Horas de trabajo manual al mes</span><span class="en">Manual work hours per month</span>
+        <span class="ome-proj-badge"><span class="es">Proyección</span><span class="en">Projection</span></span>
+      </div>
+      <div class="ome-resultbars">
+        <div class="ome-resultbar-row">
+          <div class="ome-resultbar-label"><span class="es">Hoy · Excel manual</span><span class="en">Today · manual Excel</span><span class="ome-resultbar-val">56,5 h</span></div>
+          <div class="ome-resultbar-track"><div class="ome-resultbar-fill ome-resultbar-fill-full"></div></div>
+        </div>
+        <div class="ome-resultbar-row">
+          <div class="ome-resultbar-label ome-resultbar-label-light"><span class="es">Con la herramienta</span><span class="en">With the tool</span><span class="ome-resultbar-val ome-resultbar-val-accent">≈ 17 h</span></div>
+          <div class="ome-resultbar-track ome-resultbar-track-split"><div class="ome-resultbar-fill-accent"></div><div class="ome-resultbar-dashed"></div></div>
+        </div>
+      </div>
+      <div class="ome-resultpanel-foot">
+        <span class="ome-result-big">−70%</span>
+        <span class="ome-result-foot-text"><span class="es"><strong>≈ 40 h/mes</strong> liberadas para el equipo de IT Ops</span><span class="en"><strong>≈ 40 h/mo</strong> freed up for the IT Ops team</span></span>
+      </div>
+    </div>
+
+    <div class="ome-ministats">
+      <div class="ome-ministat"><span class="ome-ministat-num">0</span><span class="es">discrepancias de inventario</span><span class="en">inventory discrepancies</span></div>
+      <div class="ome-ministat"><span class="ome-ministat-num">&lt;3<small>min</small></span><span class="es">resolución media de alertas</span><span class="en">average alert resolution</span></div>
+      <div class="ome-ministat"><span class="ome-ministat-num">100<small>%</small></span><span class="es">adopción voluntaria</span><span class="en">voluntary adoption</span></div>
+    </div>
+    <span class="ome-finenote"><span class="es">Objetivos definidos con el IT Ops Lead para la propuesta Build.</span><span class="en">Targets set with the IT Ops Lead for the Build proposal.</span></span>
+
+    <div class="ome-learnings">
+      <span class="ome-eyebrow"><span class="es">05 · Lo que me llevo</span><span class="en">05 · What I take away</span></span>
+      <div class="ome-learning">
+        <span class="ome-learning-n">01</span>
+        <div><span class="ome-learning-t es">Densidad antes que decoración</span><span class="ome-learning-t en">Density over decoration</span><span class="ome-learning-d es">Un ingeniero quiere datos y atajos de teclado.</span><span class="ome-learning-d en">An engineer wants data and keyboard shortcuts.</span></div>
+      </div>
+      <div class="ome-learning">
+        <span class="ome-learning-n">02</span>
+        <div><span class="ome-learning-t es">Construir ligero sale más barato</span><span class="ome-learning-t en">Building lean costs less</span><span class="ome-learning-d es">Menos coste y adaptación que personalizar un COTS.</span><span class="ome-learning-d en">Less cost and effort than customising a COTS tool.</span></div>
+      </div>
+      <div class="ome-learning ome-learning-last">
+        <span class="ome-learning-n">03</span>
+        <div><span class="ome-learning-t es">Observar supera a preguntar</span><span class="ome-learning-t en">Observing beats asking</span><span class="ome-learning-d es">El shadowing destapó hábitos que ningún cuestionario recoge.</span><span class="ome-learning-d en">Shadowing surfaced habits no questionnaire would catch.</span></div>
+      </div>
+    </div>
+
+    <div class="ome-tryit">
+      <span class="ome-eyebrow"><span class="es">Pruébalo</span><span class="en">Try it</span></span>
+      <h3 class="ome-h3"><span class="es">El prototipo, <em>navegable</em></span><span class="en">The prototype, <em>navigable</em></span></h3>
+      <img src="assets/oracle-mobile/prototype.webp" alt="Prototipo navegable: bandeja de encargos en un portátil" class="ome-tryit-img">
+      <a href="https://it-ops-oracle-prototype-design.vercel.app" target="_blank" rel="noopener" class="ome-cta-pill"><span class="es">Abrir prototipo</span><span class="en">Open prototype</span> ↗</a>
+    </div>
+  </section>
+
+</div>
+
 
 <!-- ============ 1 · HERO & FICHA ============ -->
 <section class="cs-hero" id="overview">
@@ -870,6 +1296,13 @@
     if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
   links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); s && so.observe(s); });
+
+  const omeLinks = [...document.querySelectorAll('.cs-mobile-tab')];
+  const omeObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) omeLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  omeLinks.forEach(a => { const s = document.querySelector(a.getAttribute('href')); s && omeObs.observe(s); });
+
 
   
 
