@@ -57,6 +57,7 @@
       </ul>
     </nav>
   </div>
+    <div class="cs-mobile-case-badge">CASO 02 / 06</div>
 
   <div class="cs-nav-right">
     <button class="cs-cases-trigger" id="csCasesTrigger" type="button" onclick="openCasesPanel()" aria-haspopup="dialog" aria-expanded="false">
@@ -82,6 +83,15 @@
   </div>
   <div class="cs-progress" id="cs-progress"></div>
 </header>
+
+<!-- ============ NAVEGACIÓN MÓVIL POR TABS ============ -->
+<nav class="cs-mobile-tabs" aria-label="Navegación de secciones móvil">
+  <a href="#overview" class="cs-mobile-tab is-active">Overview</a>
+  <a href="#problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
+  <a href="#diseno" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
+  <a href="#resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
+</nav>
+
 
 <!-- ============ PANEL DESTACADO DE CASOS DE PRODUCTO ============ -->
 <div class="cs-cases-panel" id="csCasesPanel" role="dialog" aria-modal="true" aria-label="Casos de Producto">
@@ -250,6 +260,53 @@
       <span class="label"><span class="es">Mi punto de partida</span><span class="en">Where I started</span></span>
       <p><span class="es">Venía de proyectos en los que diseñaba y construía yo sola (Paolo). Aquí, por primera vez, el reto era <strong>demostrar con datos estadísticos</strong> que el diseño movía negocio, siendo la única diseñadora en un equipo backend.</span><span class="en">I came from projects where I designed and built solo (Paolo). Here, for the first time, the challenge was to <strong>prove with statistics</strong> that design moved the business, as the only designer in a backend team.</span></p>
     </div>
+
+    <!-- SLOT M3 · DATO VISUALIZADO & FRICCIONES -->
+    <div class="cs-slot-m3 reveal">
+      <div class="cs-big-metric">3,36% <em>Conversión</em></div>
+      <div class="cs-metric-bar"><div class="cs-metric-bar-fill" style="width:34%"></div></div>
+      <p class="cs-metric-caption"><span class="es">Tasa de conversión inicial del embudo con alta pérdida de usuarios</span><span class="en">Baseline funnel conversion rate with heavy drop-off</span></p>
+    </div>
+
+    <!-- 3 PATRONES DE FRICCIÓN -->
+    <div class="cs-friction-list reveal">
+      <span class="label"><span class="es">Patrones de fricción detectados</span><span class="en">Detected friction patterns</span></span>
+      
+        <div class="cs-friction-card">
+          <div class="cs-friction-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="cs-friction-text"><span class="es">Motor de reservas enterrado bajo campañas y promociones</span><span class="en">Booking engine buried beneath marketing banners and promos</span></p>
+        </div>
+        <div class="cs-friction-card">
+          <div class="cs-friction-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="cs-friction-text"><span class="es">Fricción severa y rage clicks en el selector de fechas táctil móvil</span><span class="en">Severe mobile touch friction and rage clicks on date picker</span></p>
+        </div>
+        <div class="cs-friction-card">
+          <div class="cs-friction-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="cs-friction-text"><span class="es">Ventajas del canal directo invisibles frente a Booking.com</span><span class="en">Direct channel benefits invisible compared to OTAs</span></p>
+        </div>
+    </div>
+
+    <!-- DISCOVERY: HALLAZGO -> DECISIÓN -->
+    <div class="cs-discovery-box reveal">
+      <span class="cs-discovery-title"><span class="es">Discovery · Hallazgo → Decisión</span><span class="en">Discovery · Finding → Decision</span></span>
+      <div class="cs-discovery-split">
+        <div class="cs-split-col">
+          <span class="cs-split-label"><span class="es">Detectado</span><span class="en">Detected</span></span>
+          <p class="cs-split-desc"><span class="es">El 75% del tráfico llegaba con intención transaccional directa pero se perdía en el scroll.</span><span class="en">75% of paid traffic had immediate booking intent but was lost in scroll fatigue.</span></p>
+        </div>
+        <div class="cs-split-col">
+          <span class="cs-split-label"><span class="es">Decisión</span><span class="en">Decision</span></span>
+          <p class="cs-split-desc"><span class="es">Reubicar el motor en el primer scroll y anclar el CTA en la zona natural del pulgar.</span><span class="en">Elevate booking engine above the fold and anchor sticky mobile thumb-friendly CTA.</span></p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -425,6 +482,67 @@
         </figure>
       </div>
     </div>
+
+    <!-- SLOT M6 · PROCESO & PANTALLAS (CARRUSEL SCROLL-SNAP) -->
+    <div class="cs-carousel-wrapper reveal">
+      <div class="panel-head">
+        <span><span class="es">Proceso · Pantallas validadas</span><span class="en">Process · Validated screens</span></span>
+        <span class="panel-tag"><span class="es">4 Módulos</span><span class="en">4 Modules</span></span>
+      </div>
+      <div class="cs-carousel">
+        
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wireframe-recompo.webp" alt="Wireframe Desktop" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Validado</span>
+            <h4 class="cs-carousel-title">Wireframe Desktop</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-mobile%201.png" alt="Wireframe Mobile" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Fitts OK</span>
+            <h4 class="cs-carousel-title">Wireframe Mobile</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.webp" alt="Producción Mobile" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Test AEM</span>
+            <h4 class="cs-carousel-title">Producción Mobile</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.webp" alt="Producción Desktop" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Handoff</span>
+            <h4 class="cs-carousel-title">Producción Desktop</h4>
+          </div>
+        </article>
+      </div>
+      <div class="cs-carousel-footer cs-mobile-carousel-footer">
+        <div class="cs-carousel-dots">
+          <span class="cs-carousel-dot is-active"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span>
+        </div>
+        <span class="cs-carousel-counter">DESLIZA · 01 / 04</span>
+      </div>
+    </div>
+
+    <!-- SLOT M7 · FEATURE CLAVE -->
+    <div class="cs-slot-m7 reveal">
+      <span class="cs-feature-badge"><span class="es">Feature Clave · Decisión de Producto</span><span class="en">Key Feature · Product Decision</span></span>
+      <p class="cs-feature-title"><span class="es">Aplicación de la Ley de Fitts: CTA persistente en zona del pulgar</span><span class="en">Fitts's Law applied: sticky CTA in thumb reach zone</span></p>
+      <div class="cs-feature-val">+93% BÚSQUEDAS</div>
+    </div>
+
   </div>
 </section>
 
@@ -464,6 +582,69 @@
       <div class="result"><div class="result-val">#1</div><p><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></p></div>
     </div>
     <p class="disclaimer"><span class="es">Algunos datos se han redondeado por confidencialidad. El seguimiento se hizo con Adobe Analytics y Microsoft Clarity.</span><span class="en">Some figures are rounded for confidentiality. Tracking via Adobe Analytics and Microsoft Clarity.</span></p>
+
+    <!-- SLOT M8 · MÉTRICA HÉROE -->
+    <div class="cs-slot-m8 reveal">
+      <span class="cs-m8-tag"><span class="es">Impacto Principal · Medido</span><span class="en">Primary Impact · Measured</span></span>
+      <div class="cs-m8-val">6,5%</div>
+      <span class="cs-m8-sub"><span class="es">Conversión final del embudo tras el test A/B (+3,14 pp)</span><span class="en">Final funnel conversion rate after A/B test (+3.14 pp)</span></span>
+    </div>
+
+    <!-- TRIPLETE DE MÉTRICAS SECUNDARIAS -->
+    <div class="cs-metric-triplet reveal">
+      
+        <div class="cs-triplet-card">
+          <div class="cs-triplet-val">+93%</div>
+          <p class="cs-triplet-desc"><span class="es">Inicios de búsqueda</span><span class="en">Search start uplift</span></p>
+        </div>
+        <div class="cs-triplet-card">
+          <div class="cs-triplet-val">13%</div>
+          <p class="cs-triplet-desc"><span class="es">De la venta directa</span><span class="en">Of total direct sales</span></p>
+        </div>
+        <div class="cs-triplet-card">
+          <div class="cs-triplet-val">p < 0,05</div>
+          <p class="cs-triplet-desc"><span class="es">Significancia estadística</span><span class="en">Statistical significance</span></p>
+        </div>
+    </div>
+    <div class="cs-metric-footnote reveal">1 Métrica héroe + 3 métricas secundarias verificadas</div>
+
+    <!-- 05 · LO QUE ME LLEVO (LEARNINGS) -->
+    <div class="cs-learnings-compact reveal">
+      <div style="padding: 16px 0 8px;">
+        <span class="label"><span class="es">05 · Lo que me llevo</span><span class="en">05 · Key takeaways</span></span>
+      </div>
+      
+        <div class="cs-learning-row">
+          <span class="cs-learning-num">01</span>
+          <p class="cs-learning-title"><span class="es">El conflicto entre branding y conversión es de priorización, no de diseño</span><span class="en">Brand vs conversion conflicts are about prioritization, not aesthetics</span></p>
+        </div>
+        <div class="cs-learning-row">
+          <span class="cs-learning-num">02</span>
+          <p class="cs-learning-title"><span class="es">Las restricciones técnicas de AEM guiaron la solución estructural</span><span class="en">AEM technical constraints directly guided the structural solution</span></p>
+        </div>
+        <div class="cs-learning-row">
+          <span class="cs-learning-num">03</span>
+          <p class="cs-learning-title"><span class="es">Hablar en lenguaje de negocio y ROAS es lo que aprueba propuestas</span><span class="en">Speaking the language of business metrics and ROAS gets designs approved</span></p>
+        </div>
+    </div>
+
+    <!-- TARJETA SIGUIENTE CASO COMPACTA -->
+    <a href="booking-engine.html" class="cs-next-compact-card reveal">
+      <div class="cs-next-compact-left">
+        <div class="cs-next-thumb">
+          <img src="assets/exp-motor-desk.png" alt="Booking Engine" loading="lazy">
+        </div>
+        <div>
+          <div class="cs-next-compact-meta"><span class="es">Siguiente caso · 03</span><span class="en">Next case · 03</span></div>
+          <div class="cs-next-compact-title">Booking Engine</div>
+          <div class="cs-next-compact-topic"><span class="es">Rediseño del motor transaccional</span><span class="en">Transactional engine redesign</span></div>
+        </div>
+      </div>
+      <div class="cs-next-arrow-btn" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M8 3L12 7L8 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -629,5 +810,16 @@
 
 })();
 </script>
+
+<!-- ============ BARRA FIJA MÓVIL (GRID CASOS + AGENDAR LLAMADA) ============ -->
+<div class="cs-mobile-bottom-bar" id="csMobileBottomBar">
+  <button class="cs-mobile-grid-btn" type="button" onclick="openCasesPanel()" aria-label="Ver todos los casos de producto">
+    <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/><rect x="9.5" y="1.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/><rect x="1.5" y="9.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/><rect x="9.5" y="9.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/></svg>
+  </button>
+  <a href="mailto:mmoralesgr93@gmail.com" class="cs-mobile-cta-btn es">Agendar llamada</a>
+  <a href="mailto:mmoralesgr93@gmail.com" class="cs-mobile-cta-btn en">Schedule Call</a>
+</div>
+<script src="case-study-mobile.js?v=20261014"></script>
+
 </body>
 </html>

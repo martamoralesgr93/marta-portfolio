@@ -48,6 +48,7 @@
       </ul>
     </nav>
   </div>
+    <div class="cs-mobile-case-badge">CASO 05 / 06</div>
 
   <div class="cs-nav-right">
     <button class="cs-cases-trigger" id="csCasesTrigger" type="button" onclick="openCasesPanel()" aria-haspopup="dialog" aria-expanded="false">
@@ -73,6 +74,15 @@
   </div>
   <div class="cs-progress" id="cs-progress"></div>
 </header>
+
+<!-- ============ NAVEGACIÓN MÓVIL POR TABS ============ -->
+<nav class="cs-mobile-tabs" aria-label="Navegación de secciones móvil">
+  <a href="#overview" class="cs-mobile-tab is-active">Overview</a>
+  <a href="#problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
+  <a href="#diseno" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
+  <a href="#resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
+</nav>
+
 
 <!-- ============ PANEL DESTACADO DE CASOS DE PRODUCTO ============ -->
 <div class="cs-cases-panel" id="csCasesPanel" role="dialog" aria-modal="true" aria-label="Casos de Producto">
@@ -234,6 +244,53 @@
         <li><span class="es">Alertas falsas positivas que saturaban al equipo de guardia</span><span class="en">False-positive alerts overwhelming on-call staff</span></li>
       </ul>
     </div>
+
+    <!-- SLOT M3 · DATO VISUALIZADO & FRICCIONES -->
+    <div class="cs-slot-m3 reveal">
+      <div class="cs-big-metric">56,5 h <em>/mes</em></div>
+      <div class="cs-metric-bar"><div class="cs-metric-bar-fill" style="width:78%"></div></div>
+      <p class="cs-metric-caption"><span class="es">Tiempo manual perdido mensualmente en hojas Excel no integradas</span><span class="en">Manual engineering hours wasted per month in siloed Excel sheets</span></p>
+    </div>
+
+    <!-- 3 PATRONES DE FRICCIÓN -->
+    <div class="cs-friction-list reveal">
+      <span class="label"><span class="es">Patrones de fricción detectados</span><span class="en">Detected friction patterns</span></span>
+      
+        <div class="cs-friction-card">
+          <div class="cs-friction-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="cs-friction-text"><span class="es">Oracle Cloud ERP sobredimensionado y rechazado por el equipo operativo</span><span class="en">Oracle Cloud ERP overengineered and rejected by on-the-ground IT ops</span></p>
+        </div>
+        <div class="cs-friction-card">
+          <div class="cs-friction-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="cs-friction-text"><span class="es">Hojas de cálculo fragmentadas sin validación de datos ni trazabilidad</span><span class="en">Fragmented spreadsheets with zero data validation or audit trail</span></p>
+        </div>
+        <div class="cs-friction-card">
+          <div class="cs-friction-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <p class="cs-friction-text"><span class="es">Falta de alineación entre requerimientos de Finanzas y Operaciones de TI</span><span class="en">Misalignment between Finance compliance and IT engineering workflows</span></p>
+        </div>
+    </div>
+
+    <!-- DISCOVERY: HALLAZGO -> DECISIÓN -->
+    <div class="cs-discovery-box reveal">
+      <span class="cs-discovery-title"><span class="es">Discovery · Hallazgo → Decisión</span><span class="en">Discovery · Finding → Decision</span></span>
+      <div class="cs-discovery-split">
+        <div class="cs-split-col">
+          <span class="cs-split-label"><span class="es">Detectado</span><span class="en">Detected</span></span>
+          <p class="cs-split-desc"><span class="es">El problema no era la interfaz de Oracle, sino haber elegido el software equivocado.</span><span class="en">The issue was not Oracle's UI, but choosing the wrong tool for this org.</span></p>
+        </div>
+        <div class="cs-split-col">
+          <span class="cs-split-label"><span class="es">Decisión</span><span class="en">Decision</span></span>
+          <p class="cs-split-desc"><span class="es">Prototipar a baja fidelidad una herramienta interna a medida (Build vs Buy).</span><span class="en">Prototype low-fidelity custom internal tooling (Build vs Buy strategic choice).</span></p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -520,6 +577,85 @@
 
       </div>
     </div>
+
+    <!-- SLOT M6 · PROCESO & PANTALLAS (CARRUSEL SCROLL-SNAP) -->
+    <div class="cs-carousel-wrapper reveal">
+      <div class="panel-head">
+        <span><span class="es">Proceso · Pantallas validadas</span><span class="en">Process · Validated screens</span></span>
+        <span class="panel-tag"><span class="es">6 Módulos</span><span class="en">6 Modules</span></span>
+      </div>
+      <div class="cs-carousel">
+        
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/it-ops-wireframes/ops-01-dashboard-wireframe.webp" alt="Dashboard Operativo" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">SLA Real-Time</span>
+            <h4 class="cs-carousel-title">Dashboard Operativo</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/it-ops-wireframes/ops-02-bandeja-encargos-wireframe.webp" alt="Bandeja de Encargos" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Filtros</span>
+            <h4 class="cs-carousel-title">Bandeja de Encargos</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/it-ops-wireframes/ops-03-detalle-encargo-wireframe.webp" alt="Detalle de Encargo" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Trazabilidad</span>
+            <h4 class="cs-carousel-title">Detalle de Encargo</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/it-ops-wireframes/ops-04-flujos-recurrentes-wireframe.webp" alt="Flujos Recurrentes" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Automatizado</span>
+            <h4 class="cs-carousel-title">Flujos Recurrentes</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/it-ops-wireframes/ops-05-aprobaciones-operativas-wireframe.webp" alt="Aprobaciones" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Firmas</span>
+            <h4 class="cs-carousel-title">Aprobaciones</h4>
+          </div>
+        </article>
+        <article class="cs-carousel-card">
+          <div class="cs-carousel-media">
+            <img src="assets/it-ops-wireframes/ops-06-informes-servicio-wireframe.webp" alt="Informes Servicio" loading="lazy">
+          </div>
+          <div class="cs-carousel-info">
+            <span class="cs-carousel-kpi">Auditoría</span>
+            <h4 class="cs-carousel-title">Informes Servicio</h4>
+          </div>
+        </article>
+      </div>
+      <div class="cs-carousel-footer cs-mobile-carousel-footer">
+        <div class="cs-carousel-dots">
+          <span class="cs-carousel-dot is-active"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span>
+        </div>
+        <span class="cs-carousel-counter">DESLIZA · 01 / 06</span>
+      </div>
+    </div>
+
+    <!-- SLOT M7 · FEATURE CLAVE -->
+    <div class="cs-slot-m7 reveal">
+      <span class="cs-feature-badge"><span class="es">Feature Clave · Decisión de Producto</span><span class="en">Key Feature · Product Decision</span></span>
+      <p class="cs-feature-title"><span class="es">Reducción de riesgo técnico validada con Finanzas y TI antes de programar</span><span class="en">Technical risk reduction validated with Finance and IT before code</span></p>
+      <div class="cs-feature-val">56,5 H/MES</div>
+    </div>
+
   </div>
 </section>
 
@@ -534,6 +670,69 @@
       <div class="result"><div class="result-val">&lt; 3min</div><p><span class="es">Tiempo medio de resolución de alertas</span><span class="en">Average alert triage time</span></p></div>
       <div class="result"><div class="result-val">100%</div><p><span class="es">Adopción voluntaria del equipo técnico</span><span class="en">Voluntary engineering adoption</span></p></div>
     </div>
+
+    <!-- SLOT M8 · MÉTRICA HÉROE -->
+    <div class="cs-slot-m8 reveal">
+      <span class="cs-m8-tag"><span class="es">Impacto Principal · Medido</span><span class="en">Primary Impact · Measured</span></span>
+      <div class="cs-m8-val">0€</div>
+      <span class="cs-m8-sub"><span class="es">Gasto desperdiciado en licencias de software no adoptadas</span><span class="en">Wasted budget on non-adopted software licensing</span></span>
+    </div>
+
+    <!-- TRIPLETE DE MÉTRICAS SECUNDARIAS -->
+    <div class="cs-metric-triplet reveal">
+      
+        <div class="cs-triplet-card">
+          <div class="cs-triplet-val">56,5 h</div>
+          <p class="cs-triplet-desc"><span class="es">Ahorro manual mensual</span><span class="en">Monthly toil saved</span></p>
+        </div>
+        <div class="cs-triplet-card">
+          <div class="cs-triplet-val">100%</div>
+          <p class="cs-triplet-desc"><span class="es">Alineación stakeholders</span><span class="en">Stakeholder alignment</span></p>
+        </div>
+        <div class="cs-triplet-card">
+          <div class="cs-triplet-val">6</div>
+          <p class="cs-triplet-desc"><span class="es">Flujos operativos resueltos</span><span class="en">Core workflows defined</span></p>
+        </div>
+    </div>
+    <div class="cs-metric-footnote reveal">1 Métrica héroe + 3 métricas secundarias verificadas</div>
+
+    <!-- 05 · LO QUE ME LLEVO (LEARNINGS) -->
+    <div class="cs-learnings-compact reveal">
+      <div style="padding: 16px 0 8px;">
+        <span class="label"><span class="es">05 · Lo que me llevo</span><span class="en">05 · Key takeaways</span></span>
+      </div>
+      
+        <div class="cs-learning-row">
+          <span class="cs-learning-num">01</span>
+          <p class="cs-learning-title"><span class="es">La primera tentación es rediseñar la UI; el verdadero reto es diagnosticar negocio</span><span class="en">The initial reflex is to tweak UI; the real challenge is business diagnosis</span></p>
+        </div>
+        <div class="cs-learning-row">
+          <span class="cs-learning-num">02</span>
+          <p class="cs-learning-title"><span class="es">Un Excel caótico es la mayor señal de que existe un problema de producto</span><span class="en">A chaotic spreadsheet is the clearest evidence of an unaddressed product need</span></p>
+        </div>
+        <div class="cs-learning-row">
+          <span class="cs-learning-num">03</span>
+          <p class="cs-learning-title"><span class="es">Saber cuándo NO construir software estándar ahorra millones a la empresa</span><span class="en">Knowing when NOT to adopt off-the-shelf software saves organizations millions</span></p>
+        </div>
+    </div>
+
+    <!-- TARJETA SIGUIENTE CASO COMPACTA -->
+    <a href="gym-energy-center.html" class="cs-next-compact-card reveal">
+      <div class="cs-next-compact-left">
+        <div class="cs-next-thumb">
+          <img src="projects/06-gym/assets/app-mockup.webp" alt="Gym Energy Center" loading="lazy">
+        </div>
+        <div>
+          <div class="cs-next-compact-meta"><span class="es">Siguiente caso · 06</span><span class="en">Next case · 06</span></div>
+          <div class="cs-next-compact-title">Gym Energy Center</div>
+          <div class="cs-next-compact-topic"><span class="es">UX Research y psicología de hábitos deportivos</span><span class="en">UX research & fitness habit psychology</span></div>
+        </div>
+      </div>
+      <div class="cs-next-arrow-btn" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M8 3L12 7L8 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -695,5 +894,16 @@
 
 })();
 </script>
+
+<!-- ============ BARRA FIJA MÓVIL (GRID CASOS + AGENDAR LLAMADA) ============ -->
+<div class="cs-mobile-bottom-bar" id="csMobileBottomBar">
+  <button class="cs-mobile-grid-btn" type="button" onclick="openCasesPanel()" aria-label="Ver todos los casos de producto">
+    <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/><rect x="9.5" y="1.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/><rect x="1.5" y="9.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/><rect x="9.5" y="9.5" width="5" height="5" rx="1.2" stroke="#ffffff" stroke-width="1.4"/></svg>
+  </button>
+  <a href="mailto:mmoralesgr93@gmail.com" class="cs-mobile-cta-btn es">Agendar llamada</a>
+  <a href="mailto:mmoralesgr93@gmail.com" class="cs-mobile-cta-btn en">Schedule Call</a>
+</div>
+<script src="case-study-mobile.js?v=20261014"></script>
+
 </body>
 </html>
