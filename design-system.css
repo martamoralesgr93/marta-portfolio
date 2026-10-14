@@ -1101,3 +1101,14 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
   margin-left: auto; margin-right: auto; display: block;
 }
 .cs-figure > div:has(> img) { display: flex; justify-content: center; }
+
+/* ── 14. DIAGRAMAS ANCHOS EN MÓVIL (como Notion) ──
+   El diagrama no se encoge hasta ser ilegible: se mantiene a tamaño real
+   y se desplaza en horizontal, con un aviso visible solo en pantallas estrechas. */
+.cs-diagram { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; border-radius: 16px; }
+.cs-diagram:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.cs-diagram-hint { display: none; font-size: 13px; color: var(--text-dim); margin: 0 0 10px; }
+@media (max-width: 919px) {
+  .cs-diagram > svg { min-width: 920px; width: 920px !important; }
+  .cs-diagram-hint { display: block; }
+}
