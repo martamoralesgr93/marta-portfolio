@@ -1016,7 +1016,7 @@
         <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 3 · Calendario Académico (Herramienta Principal)</span>
         <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">3. Arquitectura y Diseño Visual de la Herramienta de Calendario</h3>
         <p class="p" style="font-size: 15px; color: var(--text-dim); margin-bottom: 32px;">
-          El Calendario no es una landing: es la <strong>herramienta que el estudiante abre cada día</strong>. Lo diseñé de los wireframes a la UI final, y fue la prueba de estrés del sistema de componentes.
+          El Calendario es la <strong>herramienta que el estudiante abre cada día</strong>. Lo diseñé de los wireframes a la UI final, y fue la prueba de estrés del sistema de componentes.
         </p>
       </div>
 
@@ -1298,42 +1298,6 @@
         </div>
       </div>
       
-          <!-- DIAGRAMA DE ARQUITECTURA DEL DESIGN SYSTEM -->
-    <div class="ux-flowchart fu">
-      <div class="ux-flow-header">
-        <span class="ux-flow-subtitle">Design System Architecture</span>
-        <h3 class="ux-flow-title">Estructura de Tokens y Componentes (CEF UI System)</h3>
-      </div>
-      <div class="ux-flow-grid">
-        <div class="ux-flow-step ux-flow-step--decision">
-          <span class="ux-flow-badge">Nivel 1: Tokens Globales</span>
-          <p class="ux-flow-step-title">Tokens de Fundación (Figma Variables)</p>
-          <p class="ux-flow-step-desc es">Valores atómicos globales independientes de contexto: paletas cromáticas primarias/secundarias y escala tipográfica.</p>
-          <p class="ux-flow-step-desc en">Atomic global values independent of context: primary/secondary colors and typography hierarchy scales.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--decision">
-          <span class="ux-flow-badge">Nivel 2: Tokens Semánticos</span>
-          <p class="ux-flow-step-title">Tokens de Alias (CSS Custom Properties)</p>
-          <p class="ux-flow-step-desc es">Asignación por rol: color de fondo del botón principal (--btn-primary-bg), bordes activos e intensidades de sombreado.</p>
-          <p class="ux-flow-step-desc en">Role-based semantic mapping: main button fill color (--btn-primary-bg), active border tokens, and shadow properties.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--action">
-          <span class="ux-flow-badge">Nivel 3: Componentes Átomos</span>
-          <p class="ux-flow-step-title">Componentes Estructurados</p>
-          <p class="ux-flow-step-desc es">Bloques funcionales básicos: Botón, Input Text, Checkbox y Píldora de estado, configurados con variantes e interactividad en Figma.</p>
-          <p class="ux-flow-step-desc en">Core functional assets: Button, Input, Checkbox, and Badges configured with states and variants inside Figma library.</p>
-        </div>
-        <div class="ux-flow-connector">→</div>
-        <div class="ux-flow-step ux-flow-step--success">
-          <span class="ux-flow-badge">Nivel 4: Patrones Complejos</span>
-          <p class="ux-flow-step-title">Módulos EdTech Reutilizables</p>
-          <p class="ux-flow-step-desc es">Componentes compuestos formados por átomos: Buscador de Cursos, Calendario de Clases y Formulario de Registro.</p>
-          <p class="ux-flow-step-desc en">Composite patterns composed of atoms: Course Finder search bar, Calendar Widget, and Registration Form.</p>
-        </div>
-      </div>
-    </div>
 
     </div>
       </div>
@@ -1678,8 +1642,8 @@
     <div class="fu">
       <span class="block-label" style="color:var(--accent);">Evolución 2024 → 2026</span>
       <h2 class="block-h">El mismo sistema,<br><em>recreado con IA en días</em></h2>
-      <p class="lead es" style="margin-top:24px; max-width:840px;">En 2024 construí este sistema a mano. Como el archivo es confidencial, <strong style="color:var(--white);">lo recreé desde cero con IA</strong> sobre una marca ficticia. No es una copia: es la prueba medible de cómo ha cambiado mi forma de trabajar.</p>
-      <p class="lead en" style="margin-top:24px; max-width:840px;">I built this system by hand in 2024. That file is confidential, so <strong style="color:var(--white);">I rebuilt it from scratch with AI</strong> under a fictional brand. Not a copy: measurable proof of how my way of working has changed.</p>
+      <p class="lead es" style="margin-top:24px; max-width:840px;">En 2024 construí este sistema a mano. Como el archivo es confidencial, <strong style="color:var(--white);">lo recreé desde cero con IA</strong> sobre una marca ficticia. Es la prueba medible de cómo ha cambiado mi forma de trabajar.</p>
+      <p class="lead en" style="margin-top:24px; max-width:840px;">I built this system by hand in 2024. That file is confidential, so <strong style="color:var(--white);">I rebuilt it from scratch with AI</strong> under a fictional brand. It is measurable proof of how my way of working has changed.</p>
     </div>
 
     <!-- TIMING: ANTES → AHORA -->
@@ -1773,25 +1737,6 @@
         </div>
       </div>
     </details>
-
-    <!-- EVOLUCIÓN DEL ROL -->
-    <div class="c3-grid-2 fu" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 48px; gap: 20px;">
-      <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px;">
-        <h4 style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px;"><span class="es">Construyo, no solo pinto</span><span class="en">I build, I don't just paint</span></h4>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="es">De entregar pantallas a entregar sistemas funcionando: pipeline tokens ↔ código ↔ documentación, con la IA generativa produciendo variantes en segundos.</p>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="en">From delivering screens to delivering working systems: a tokens ↔ code ↔ documentation pipeline, with generative AI producing variants in seconds.</p>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px;">
-        <h4 style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px;"><span class="es">Oriento la IA, decido yo</span><span class="en">I direct the AI, I decide</span></h4>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="es">Uso los LLMs para estructurar research, extraer patrones de entrevistas y criticar mis propias decisiones de diseño. La velocidad es de la IA; el criterio —métricas, leyes de UX, accesibilidad— es mío.</p>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="en">I use LLMs to structure research, extract patterns from interviews and critique my own design decisions. Speed belongs to the AI; judgement —metrics, UX laws, accessibility— is mine.</p>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px;">
-        <h4 style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px;"><span class="es">Conecto diseño, producto y código</span><span class="en">I connect design, product and code</span></h4>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="es">Un solo lenguaje —tokens— compartido entre Figma, código y negocio, y un bucle de mejora continua: medir → detectar fricción → rediseñar con el sistema → publicar.</p>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="en">One shared language —tokens— across Figma, code and business, plus a continuous improvement loop: measure → detect friction → redesign with the system → ship.</p>
-      </div>
-    </div>
 
     <!-- FILOSOFÍA -->
     <div class="fu figma-philosophy-block" style="margin-top: 40px; padding: 28px 32px; background: rgba(var(--accent-rgb),0.05); border: 1px solid rgba(var(--accent-rgb),0.25); border-radius: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
