@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html class="lang-es" lang="es">
+<html lang="es" data-lang="es">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ILUNION CRO · De 3,36% a 6,5% de conversión | Marta Morales · Product Designer</title>
+<meta name="description" content="Case study UX de Marta Morales: optimización del funnel de reservas de ILUNION Hotels con research de datos, tests A/B y priorización ICE. Conversión de 3,36% a 6,5%.">
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -9,1827 +13,398 @@
     })(window, document, "clarity", "script", "xisxzka5pe");
   </script>
   <script src="/auth-lock.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>ILUNION Hotels · CRO Case Study — From 3.36% to 6.5% Conversion · Marta Morales</title>
-
-  <meta name="description" content="How I diagnosed and redesigned ILUNION Hotels' offer component to double direct channel conversion — from 3.36% to 6.5%. CRO, AEM, behavioural research.">
-  <meta name="keywords" content="CRO Case Study, Product Designer Portfolio, Conversion Rate Optimization, ILUNION Hotels, AEM, Adobe Analytics, Microsoft Clarity, UX Research, Booking Funnel, Spain">
-
   <link rel="canonical" href="https://martamorales.vercel.app/ilunion-cro">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://martamorales.vercel.app/ilunion-cro">
-  <meta property="og:title" content="ILUNION Hotels · CRO Case Study — +93% Conversion Uplift · Marta Morales">
-  <meta property="og:description" content="Diagnosis and redesign of the offer component for ILUNION Hotels' direct channel. From 3.36% to 6.5% conversion — data-driven, end-to-end ownership.">
-  <meta property="og:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://martamorales.vercel.app/ilunion-cro">
-  <meta name="twitter:title" content="ILUNION Hotels · CRO Case Study — +93% Conversion · Marta Morales">
-  <meta name="twitter:description" content="Diagnosis and redesign of the offer component for ILUNION Hotels' direct channel. From 3.36% to 6.5% conversion — data-driven, end-to-end ownership.">
-  <meta name="twitter:image" content="https://martamorales.vercel.app/assets/logo-nuevo.png">
-
-  <link rel="icon" type="image/png" sizes="any" href="assets/logo.png">
-  <link rel="apple-touch-icon" href="assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="design-system.css">
-
-  <style>
-    /* ─── 01 HERO — métricas rápidas ─────────────── */
-    .hero-metrics {
-      display: flex;
-      margin-top: 12px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      max-width: 520px;
-    }
-    .hm-item {
-      flex: 1;
-      padding: 18px 24px;
-      border-right: 1px solid var(--border);
-    }
-    .hm-item:last-child { border-right: none; }
-    .hm-label {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px;
-    }
-    .hm-value {
-      font-size: 28px; font-weight: 800; letter-spacing: -0.03em;
-      color: var(--accent); line-height: 1;
-    }
-    .hm-sub { font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); margin-top: 3px; }
-
-    /* ─── SEC NUM ─────────────────────────────────── */
-    .sec-num {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--text-dim);
-      margin-bottom: 36px; display: block;
-    }
-    .sec-num span { color: var(--accent); }
-
-    /* ─── 02 OVERVIEW — 2×2 grid ─────────────────── */
-    .overview-2x2 {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
-    }
-    .ov-card { background: var(--surface); padding: 40px 44px 48px; }
-    .ov-icon {
-      width: 36px; height: 36px; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
-    }
-    .ov-icon svg { width: 18px; height: 18px; color: var(--white); }
-    .ov-title {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
-    }
-    .ov-text { font-size: max(15px, var(--fs-min-md)); color: var(--text); line-height: 1.7; }
-    .ov-text strong { color: var(--white); }
-
-    /* ─── 03 INVESTIGACIÓN ────────────────────────── */
-
-    /* Composición auditoría: evidencia + hallazgos + procedencia */
-    .audit-composition {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: transparent;
-      margin-bottom: 24px;
-    }
-    /* Cabecera: título de la evidencia + tag de método (fuente de datos) */
-    .audit-header-bar {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; flex-wrap: wrap;
-      padding: 14px 24px;
-      border-bottom: 1px solid var(--border);
-    }
-    .audit-header-title {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim);
-    }
-    .audit-header-method {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 600; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--accent);
-      padding: 4px 12px; border-radius: 100px;
-      border: 1px solid rgba(var(--accent-rgb), 0.28);
-      background: rgba(var(--accent-rgb), 0.06);
-    }
-    .audit-body-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 1fr;
-    }
-    /* Evidencia: la imagen ocupa el panel a sangre, sin bandas vacías */
-    .audit-evidence {
-      margin: 0; padding: 24px;
-      border-right: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 12px;
-    }
-    .audit-evidence img {
-      width: 100%; height: auto; display: block;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-    }
-    .audit-evidence-cap {
-      font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); line-height: 1.5; margin: 0;
-    }
-    /* Hallazgos: altura por contenido y centrados respecto a la evidencia */
-    .audit-findings {
-      display: flex; flex-direction: column; justify-content: center;
-    }
-    .audit-finding { padding: 26px 32px; }
-    .audit-finding + .audit-finding { border-top: 1px solid var(--border); }
-    .af-num {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
-    }
-    .af-stat {
-      font-size: 40px; font-weight: 800; letter-spacing: -0.03em;
-      color: var(--white); line-height: 1; margin-bottom: 6px;
-      font-family: var(--font-serif);
-    }
-    .af-desc { font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.5; }
-
-    /* Funnel + Insights */
-    .research-2col {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
-    }
-    .research-panel {
-      background: transparent; border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 32px;
-    }
-    .rp-title {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px;
-    }
-    .fn-rows { display: flex; flex-direction: column; gap: 14px; }
-    .fn-row { display: flex; align-items: center; gap: 12px; }
-    .fn-name { font-size: max(13px, var(--fs-min-sm)); color: var(--text); width: 148px; flex-shrink: 0; }
-    .fn-bar-bg {
-      flex: 1; height: 6px; background: rgba(255,255,255,0.06);
-      border-radius: 3px; overflow: hidden;
-    }
-    .fn-bar-fill { height: 100%; background: var(--accent); border-radius: 3px; }
-    .fn-pct { font-size: max(13px, var(--fs-min-sm)); font-weight: 700; color: var(--white); width: 40px; text-align: right; flex-shrink: 0; }
-    .fn-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0 8px; }
-
-    .insight-list { display: flex; flex-direction: column; gap: 16px; }
-    .insight-row { display: flex; gap: 12px; align-items: flex-start; }
-    .insight-dot {
-      width: 5px; height: 5px; border-radius: 50%;
-      background: var(--accent); flex-shrink: 0; margin-top: 8px;
-    }
-    .insight-txt { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.6; }
-    .insight-txt strong { color: var(--white); }
-
-    /* ─── 04 DIAGNÓSTICO → DECISIONES ────────────── */
-    .h-timeline {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-    }
-    .ht-item { padding-right: 32px; }
-    .ht-item:last-child { padding-right: 0; }
-    .ht-connector { display: flex; align-items: center; margin-bottom: 24px; }
-    .ht-circle {
-      width: 44px; height: 44px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .ht-circle svg { width: 18px; height: 18px; color: var(--white); }
-    .ht-line { flex: 1; height: 1px; background: var(--border); }
-    .ht-item:last-child .ht-line { display: none; }
-    .ht-step {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
-    }
-    .ht-title {
-      font-size: 18px; font-weight: 700; color: var(--white);
-      margin-bottom: 10px; font-family: var(--font-serif);
-    }
-    .ht-text { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.65; }
-    .ht-text strong { color: var(--white); }
-    .ht-pill {
-      display: inline-block; margin-top: 12px; padding: 5px 14px;
-      border: 1px solid var(--accent-border); border-radius: var(--radius-pill);
-      font-size: max(11px, var(--fs-min-xs)); color: var(--accent);
-    }
-
-    /* ─── 05 WIREFRAMES + DISEÑO FINAL ───────────── */
-
-    /* Statement header */
-    .wf-statement {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 48px; align-items: center; margin-bottom: 48px;
-    }
-    .wf-big-title {
-      font-family: var(--font-serif);
-      font-size: clamp(32px, 3.8vw, 52px);
-      font-weight: 700; line-height: 1.1; color: var(--white);
-    }
-    .wf-big-title em { font-style: italic; color: var(--accent); display: block; }
-    .wf-statement-desc {
-      font-size: max(15px, var(--fs-min-md)); color: var(--text); line-height: 1.7;
-      border-left: 2px solid var(--accent-border); padding-left: 24px;
-    }
-
-    /* Comparison — wireframe full width + 2-col finals */
-    .wf-comparison {
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden; margin-bottom: 32px;
-    }
-
-    /* Row 1: wireframe full width */
-    .wf-row-wire { width: 100%; }
-    .wf-row-wire .wf-col-header {
-      padding: 14px 28px; border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-      background: transparent;
-    }
-    .wf-row-wire .wf-col-body {
-      padding: 0;
-    }
-    .wf-row-wire .wf-col-body img {
-      width: 100%; height: auto; display: block;
-    }
-    .wf-row-wire .wf-tags {
-      display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px;
-      border-top: 1px solid var(--border);
-      background: transparent;
-    }
-
-    /* Arrow divider between rows */
-    .wf-row-arrow {
-      display: flex; align-items: center; justify-content: center;
-      gap: 12px; padding: 18px 28px;
-      border-top: 1px solid var(--border);
-      background: rgba(var(--accent-rgb), 0.04);
-    }
-    .wf-row-arrow span {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent);
-    }
-    .wf-row-arrow .wf-arrow-line {
-      flex: 1; height: 1px; background: var(--accent-border);
-    }
-
-    /* Row 2: desktop + mobile side by side */
-    .wf-row-finals {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      border-top: 1px solid var(--border);
-    }
-    .wf-final-col {
-      display: flex; flex-direction: column;
-    }
-    .wf-final-col + .wf-final-col {
-      border-left: 1px solid var(--border);
-    }
-    .wf-final-col .wf-col-header {
-      padding: 14px 28px; border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-      background: transparent;
-    }
-    .wf-final-col .wf-col-body {
-      padding: 0; flex: 1;
-    }
-    .wf-final-col .wf-col-body img {
-      width: 100%; height: auto; display: block;
-    }
-    .wf-final-col .wf-tags {
-      display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px;
-      border-top: 1px solid var(--border);
-      background: transparent;
-    }
-
-    /* Shared label pieces */
-    .wf-col-num {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent);
-    }
-    .wf-col-name {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--text-dim);
-    }
-    .wf-col-header svg { color: var(--white); }
-
-    /* Pill tags under wireframes */
-    .wf-tag {
-      display: inline-block; padding: 3px 10px;
-      background: transparent; border: 1px solid var(--border);
-      border-radius: var(--radius-pill); font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim);
-    }
-
-    /* Process steps */
-    .wf-process {
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .wf-process-label {
-      padding: 16px 28px; border-bottom: 1px solid var(--border);
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .wf-process-label span { color: var(--accent); }
-    .wf-process-label em { color: var(--text-dim); font-style: normal; }
-    .wf-steps {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 0; background: var(--border);
-    }
-    .wf-step {
-      background: var(--surface); padding: 24px 24px 28px;
-      display: flex; flex-direction: column; gap: 10px;
-      position: relative;
-    }
-    .wf-step::after {
-      content: "→"; position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
-      font-size: max(15px, var(--fs-min-md)); color: var(--text-dim); z-index: 1;
-    }
-    .wf-step:last-child::after { display: none; }
-    .wf-step-num {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent);
-    }
-    .wf-step-title {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.04em;
-      text-transform: uppercase; color: var(--white); line-height: 1.3;
-    }
-    .wf-step-desc { font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.5; }
-
-    /* Legacy (keep for backward compat) */
-    .panel-block {
-      background: transparent; border: 1px solid var(--border);
-      border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 24px;
-    }
-    .panel-header {
-      padding: 16px 24px; border-bottom: 1px solid var(--border);
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim);
-      display: flex; align-items: center; gap: 8px;
-    }
-    .panel-header svg { width: 13px; height: 13px; color: var(--text-dim); flex-shrink: 0; }
-    .panel-body {
-      padding: 28px; display: flex;
-      align-items: center; justify-content: center;
-    }
-    .panel-body img { max-width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
-
-    .design-2col {
-      display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px;
-    }
-
-    /* ─── 06 IMPLEMENTACIÓN ───────────────────────── */
-    .impl-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-    .impl-card {
-      background: transparent; border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 40px;
-    }
-    .impl-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
-    }
-    .impl-icon svg { width: 20px; height: 20px; color: var(--white); }
-    .impl-title {
-      font-size: 22px; font-weight: 700; color: var(--white);
-      font-family: var(--font-serif); margin-bottom: 14px;
-    }
-    .impl-text { font-size: max(15px, var(--fs-min-md)); color: var(--text); line-height: 1.7; margin-bottom: 20px; max-width: none; }
-    .impl-text strong { color: var(--white); }
-    .impl-badge {
-      display: inline-block; padding: 5px 14px;
-      background: transparent; border: 1px solid var(--border);
-      border-radius: var(--radius-sm); font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim);
-    }
-
-    /* ─── 07 RESULTADOS ───────────────────────────── */
-    .results-strip {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden; margin-bottom: 24px;
-    }
-    .rs-cell {
-      padding: 32px 24px; border-right: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .rs-cell:last-child { border-right: none; }
-    .rs-cell--hero { background: var(--accent-glow); border-right-color: var(--accent-border); }
-    .rs-val {
-      font-family: var(--font-serif);
-      font-size: clamp(28px, 3vw, 44px);
-      font-weight: 700; line-height: 1; color: var(--white);
-    }
-    .rs-cell--hero .rs-val { color: var(--accent); }
-    .rs-up { display: flex; align-items: center; gap: 6px; }
-    .rs-up-arrow { font-size: max(15px, var(--fs-min-md)); color: var(--accent); }
-    .rs-sub { font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); letter-spacing: 0.04em; }
-    .rs-label {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-dim); line-height: 1.4;
-    }
-    .results-disclaimer {
-      font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); line-height: 1.6;
-      border-left: 2px solid var(--border); padding-left: 16px;
-    }
-
-    /* ─── 08 LEARNINGS — 4 cards ──────────────────── */
-    .learnings-4col {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
-    }
-    .lc-card { background: var(--surface); padding: 40px 36px 44px; }
-    .lc-title { font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
-    .lc-text { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.65; }
-
-    /* ─── RESPONSIVE ──────────────────────────────── */
-    @media (max-width: 960px) {
-      .overview-2x2,
-      .research-2col,
-      .h-timeline,
-      .design-2col,
-      .impl-2col { grid-template-columns: 1fr; }
-      .audit-body-grid { grid-template-columns: 1fr; }
-      .audit-evidence { border-right: none; border-bottom: 1px solid var(--border); }
-      .ht-item { padding-right: 0; padding-bottom: 32px; }
-      .ht-line { display: none; }
-      .results-strip { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-      .rs-cell { border-right: none; border-bottom: 1px solid var(--border); }
-      .rs-cell:last-child { border-bottom: none; }
-      .learnings-4col { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-
-      /* ── 05 Wireframes + Diseño Final: nothing here ever stacked on mobile — fixed. ── */
-      .wf-statement { grid-template-columns: 1fr; gap: 20px; margin-bottom: 32px; }
-      .wf-statement-desc { border-left: none; padding-left: 0; padding-top: 16px; border-top: 1px solid var(--border); }
-      .wf-row-finals { grid-template-columns: 1fr !important; }
-      .wf-final-col + .wf-final-col { border-left: none; border-top: 1px solid var(--border); }
-      .wf-steps { grid-template-columns: 1fr 1fr !important; }
-      .wf-step::after { display: none; }
-      .wf-row-wire .wf-col-header,
-      .wf-final-col .wf-col-header,
-      .wf-process-label { padding: 12px 16px; }
-      .wf-row-wire .wf-tags,
-      .wf-final-col .wf-tags { padding: 12px 16px; }
-      .wf-process-label { flex-wrap: wrap; row-gap: 4px; }
-    }
-    @media (max-width: 560px) {
-      .wf-steps { grid-template-columns: 1fr !important; }
-    }
-    /* ─── EXPERIMENT CARD: hipótesis → decisión → resultado ─── */
-    .exp-card { display: grid; grid-template-columns: 1.3fr 1fr; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 32px; background: transparent; }
-    .exp-side { padding: 40px 44px; }
-    .exp-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-    .exp-icon svg { width: 18px; height: 18px; color: var(--white); }
-    .exp-label { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
-    .exp-hyp { font-family: var(--font-serif); font-style: italic; font-size: 18px; color: var(--text-bright); line-height: 1.6; margin-bottom: 20px; }
-    .exp-decision { font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.6; padding-top: 16px; border-top: 1px solid var(--border); }
-    .exp-decision strong { color: var(--white); }
-    .exp-result { background: var(--accent-glow); border-left: 1px solid var(--accent-border); display: flex; flex-direction: column; justify-content: center; }
-    .exp-result-val { font-family: var(--font-serif); font-size: 56px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
-    .exp-result-sub { font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); letter-spacing: 0.04em; margin-bottom: 4px; }
-    .exp-result-label { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
-    @media (max-width: 760px) {
-      .exp-card { grid-template-columns: 1fr; }
-      .exp-result { border-left: none; border-top: 1px solid var(--accent-border); padding: 28px 40px; }
-    }
-
-    @media (max-width: 560px) {
-      .hero-metrics { flex-direction: column; }
-      .hm-item { border-right: none; border-bottom: 1px solid var(--border); }
-      .hm-item:last-child { border-bottom: none; }
-      .results-strip,
-      .learnings-4col { grid-template-columns: 1fr; }
-    }
-    .cs-hero-logo {
-  display: none;
-}
-
-    /* ===================== QUICK SUMMARY CARD · spine unificado (mismo componente que Booking/CEF/Paolo/It-Ops) ===================== */
-    .quick-summary-section { padding: 60px 0 40px; border-top: 1px solid var(--border); position: relative; }
-    .quick-summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
-    .qs-col { display: flex; flex-direction: column; }
-    .qs-label { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .qs-label svg { display: inline-block !important; color: var(--white); flex-shrink: 0; width: 13px; height: 13px; }
-    .qs-val { font-size: max(13px, var(--fs-min-sm)); color: var(--text-bright); line-height: 1.6; }
-    .qs-bullets { list-style: none; padding: 0; margin: 0; }
-    .qs-bullets li { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
-    .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
-    .qs-result-box { background: var(--accent-glow); border: 1px solid var(--accent-border); border-radius: 10px; padding: 16px; margin-top: 4px; }
-    .qs-result-highlight { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: var(--white); line-height: 1.5; }
-    @media (max-width: 900px) {
-      .quick-summary-grid { grid-template-columns: 1fr; gap: 0; padding: 8px 24px; }
-      .qs-col { padding: 20px 0; border-bottom: 1px solid var(--border); }
-      .qs-col:last-child { border-bottom: none; }
-    }
-    /* ─── CASE HAMBURGER + MOBILE MENU (mismo patrón que CEF) ─── */
-    .cs-hamburger {
-      display: none; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.20); background: var(--surface-2);
-      cursor: pointer; color: var(--white); flex-shrink: 0; margin-left: 8px;
-    }
-    .cs-mobile-menu {
-      display: none; position: fixed; inset: 0; z-index: 500;
-      background: rgba(0,0,0,0.97); backdrop-filter: blur(28px);
-      flex-direction: column; align-items: center; justify-content: center;
-      opacity: 0; transition: opacity 0.28s ease;
-      touch-action: pan-y; overscroll-behavior: contain;
-    }
-    .cs-mobile-menu.open { opacity: 1; }
-    .cs-mobile-menu-close {
-      position: absolute; top: 18px; right: 20px;
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06);
-      color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
-    }
-    .cs-mobile-menu-eyebrow {
-      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-dim); margin-bottom: 18px;
-    }
-    .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
-    .cs-mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .cs-mobile-menu-links a { display: block; padding: 16px 4px; text-decoration: none; transition: color 0.2s; }
-    .cs-mmi-num { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
-    .cs-mmi-title { font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
-    .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
-    .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
-    .cs-mobile-menu-back {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
-      color: rgba(255,255,255,0.7); font-size: max(13px, var(--fs-min-sm)); font-weight: 600; text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      .cs-hamburger { display: flex; }
-      .cs-nav-dropdown { display: none; }
-    }
-    /* Process timeline (mismo componente que la línea de decisiones de CEF) */
-    .dt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 48px 0 8px; }
-    .dt-item { padding: 28px 22px; background: transparent; border: 1px solid var(--border); border-radius: 14px; transition: border-color 0.3s ease; }
-    .dt-item:hover { border-color: rgba(255,255,255,0.14); }
-    .dt-num { font-family: var(--font-serif); font-size: 28px; font-weight: 700; font-style: italic; color: rgba(255,255,255,0.22); line-height: 1; margin-bottom: 10px; }
-    .dt-step { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-    .dt-title { font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); font-family: var(--font-serif); margin-bottom: 10px; line-height: 1.3; }
-    .dt-text { font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.6; margin-bottom: 16px; }
-    .dt-pill { display: inline-block; padding: 5px 12px; border: 1px solid var(--accent-border); border-radius: var(--radius-pill); font-size: max(11px, var(--fs-min-xs)); color: var(--accent); background: rgba(var(--accent-rgb), 0.06); }
-    @media (max-width: 1100px) { .dt-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
-    @media (max-width: 640px) { .dt-grid { grid-template-columns: 1fr; gap: 14px; } }
-  </style>
+  <meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-study-template.css">
 </head>
-<body class="cs-ilunion-cro">
-<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
+<!--
+  =====================================================================
+  PLANTILLA UX CASE STUDY
+  Duplica este archivo, renómbralo (p. ej. mi-caso.html) y sustituye
+  el contenido de cada sección. Todas las secciones son opcionales
+  salvo 1, 2, 3, 12 y 13. Ejemplo relleno: ILUNION CRO.
+  Los textos marcados con .placeholder-note son de ejemplo: valídalos.
+  =====================================================================
+-->
+<body>
 
-<!-- ══════════════════════════════════════
-     NAV
-══════════════════════════════════════ -->
-<nav class="cs-nav" aria-label="Principal">
-  <a href="index.html#work" class="nav-back">
-    <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
-  </a>
-  <div class="cs-nav-right">
-    <div class="cs-nav-dropdown">
-      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-        <span class="es">Casos de Producto ▾</span>
-        <span class="en">Case Studies ▾</span>
-      </a>
-      <div class="cs-dropdown-menu">
-        <a href="cef-design-system.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 01</div>
-          <div class="cs-item-title">CEF EdTech</div>
-          <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
-          <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
-        </a>
-        <a href="ilunion-cro.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 02</div>
-          <div class="cs-item-title">ILUNION CRO</div>
-          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
-          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
-        </a>
-        <a href="booking-engine.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 03</div>
-          <div class="cs-item-title">Booking Engine</div>
-          <div class="cs-item-skill es">Design Ops & Componentes</div>
-          <div class="cs-item-skill en">Design Ops & Components</div>
-        </a>
-        <a href="paolo-pizzeria.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 04</div>
-          <div class="cs-item-title">Paolo Brand System</div>
-          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
-          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
-        </a>
-        <a href="it-ops-oracle.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 05</div>
-          <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
-          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
-          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
-        </a>
-        <a href="gym-energy-center.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 06</div>
-          <div class="cs-item-title">Gym Energy Center</div>
-          <div class="cs-item-skill es">Producto en Equipo &amp; Sistema de Dise&#241;o</div>
-          <div class="cs-item-skill en">Team Product &amp; Design System</div>
-        </a>
-      </div>
-    </div>
-    <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
-    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
-      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
-        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
-        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
-      </svg>
-    </button>
-
-  </div>
-</nav>
-
-<!-- MOBILE MENU: acceso real a los 4 casos en touch (el dropdown de arriba es hover-only) -->
-<div class="cs-mobile-menu" id="csMobileMenu">
-  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
-  </button>
-  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
-  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
-  <ul class="cs-mobile-menu-links">
-    <li><a href="cef-design-system.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
-    <li><a href="ilunion-cro.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
-    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
-    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
-    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
-    <li><a href="gym-energy-center.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">06</span> · <span class="cs-mmi-title">Gym Energy Center</span></a></li>
-  </ul>
-  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
-</div>
-
-
-<main id="main">
-
-
-<!-- ══════════════════════════════════════
-     01 · HERO
-══════════════════════════════════════ -->
-<header class="cs-hero">
-  <div class="cs-hero-logo"></div>
-  <div class="cs-hero-overlay"></div>
-  <div class="cs-hero-glow"></div>
-  <div class="cs-hero-content">
-    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
-        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
-        <li><span aria-current="page">ILUNION CRO</span></li>
-      </ol>
+<!-- ============ NAV + PROGRESO ============ -->
+<header class="cs-top">
+  <div class="wrap">
+    <a href="index.html#work" class="cs-back" id="cs-back"><span class="es">← Volver a casos</span><span class="en">← Back to cases</span></a>
+    <nav aria-label="Secciones">
+      <ul class="cs-toc">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#problema"><span class="es">Problema</span><span class="en">Problem</span></a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#diseno"><span class="es">Diseño</span><span class="en">Design</span></a></li>
+        <li><a href="#resultados"><span class="es">Resultados</span><span class="en">Results</span></a></li>
+        <li><a href="#aprendizajes"><span class="es">Progresión</span><span class="en">Growth</span></a></li>
+      </ul>
     </nav>
-    <span class="cs-eyebrow">02 — ILUNION Hotels · CRO · Product Design</span>
-    <h1 class="cs-title">
-      Experimentos AEM<br><em>de 3,36% a 6,5% de conversión</em>
-    </h1>
-    <div class="cs-tags">
-      <span class="cs-tag">Product Design</span>
-      <span class="cs-tag">CRO</span>
-      <span class="cs-tag">Customer Journey</span>
-      <span class="cs-tag">Experimentación</span>
-      <span class="cs-tag">Ecommerce hotelero</span>
-      <span class="cs-tag">Analytics</span>
-      <span class="cs-tag">AEM</span>
-    </div>
-    <div class="hero-metrics fu">
-      <div class="hm-item">
-        <div class="hm-label">Conversión Final</div>
-        <div class="hm-value">6.5%</div>
-        <div class="hm-sub">vs 3.36% inicial</div>
-      </div>
-      <div class="hm-item">
-        <div class="hm-label">Mejora relativa</div>
-        <div class="hm-value">+93%</div>
-        <div class="hm-sub">Uplift</div>
-      </div>
-      <div class="hm-item">
-        <div class="hm-label">Club ÚNICOS</div>
-        <div class="hm-value">50%</div>
-        <div class="hm-sub">De las conversiones, de socios</div>
-      </div>
-    </div>
+    <button class="cs-lang" id="cs-lang-toggle" type="button" aria-label="Cambiar idioma">EN</button>
   </div>
+  <div class="cs-progress" id="cs-progress"></div>
 </header>
 
-<!-- 1. BLOQUE CONTEXTO -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 28px; margin: 40px 0; border: 1px solid var(--border); padding: 56px var(--space-lg);">
-  <div class="cs-wrap">
-    <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">CONTEXTO</div>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; margin-bottom: 40px;">
-      <div>
-        <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 24px;">
-          El tráfico llegaba.<br>La oferta no se veía.
-        </h2>
-        <div style="display: flex; flex-direction: column; gap: 16px; font-size: max(15px, var(--fs-min-md)); color: var(--text-bright); line-height: 1.8;">
-          <p>Tras migrar a AEM, el canal directo de 32 hoteles convertía al 3,36%. El brief pedía optimizar el bloque promocional; el reto real estaba en la jerarquía de la home.</p>
-        </div>
-      </div>
+<main>
 
-      <!-- MOCKUP DERECHA -->
-      <div style="position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: rgba(0,0,0,0.5);">
-        <img src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.webp" alt="ILUNION Hotels Mockup AEM" style="width: 100%; height: auto; display: block;">
-      </div>
-    </div>
-
-    <!-- 4 CHIPS METADATOS DEBAJO -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
-        <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">ROL</div>
-        <div style="font-size: max(13px, var(--fs-min-sm)); font-weight: 700; color: var(--white);">UX/UI Designer &amp; CRO</div>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
-        <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">PERIODO</div>
-        <div style="font-size: max(13px, var(--fs-min-sm)); font-weight: 700; color: var(--white);">Sep 2025 - Q1 2026</div>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
-        <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">RESEARCH</div>
-        <div style="font-size: max(13px, var(--fs-min-sm)); font-weight: 700; color: var(--white);">Adobe Analytics + Clarity</div>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;">
-        <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">STACK</div>
-        <div style="font-size: max(13px, var(--fs-min-sm)); font-weight: 700; color: var(--white);">AEM, Adobe Analytics</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     01 · DIAGNÓSTICO
-══════════════════════════════════════ -->
-<section class="cs-block cs-block-light">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">S</div>
-        <div class="cs-rail-label">SITUATION</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <span class="sec-num fu"><span>01</span> · Diagnóstico</span>
-    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">El brief decía «promo».<br><em>Los datos decían «jerarquía».</em></h2>
-    <p class="p fu" style="margin-bottom: 36px;">10.000+ logs del funnel y 250+ sesiones de Clarity apuntaban al mismo sitio: el 85% abandonaba antes de ver una sola oferta.</p>
-    <!-- COMPOSICIÓN AUDITORÍA: evidencia a sangre + 2 hallazgos + procedencia -->
-    <div class="audit-composition fu">
-      <div class="audit-header-bar">
-        <span class="audit-header-title">Auditoría del Componente Actual</span>
-        <span class="audit-header-method">Fuente · Microsoft Clarity + Adobe Analytics</span>
-      </div>
-      <div class="audit-body-grid">
-
-        <figure class="audit-evidence">
-          <img width="1920" height="1440"
-            loading="lazy" decoding="async"
-            src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.webp"
-            alt="Auditoría del componente de ofertas ILUNION — estado inicial"
-          >
-          <figcaption class="audit-evidence-cap">Estado inicial · el bloque de ofertas queda por debajo del primer scroll.</figcaption>
-        </figure>
-
-        <div class="audit-findings">
-          <div class="audit-finding">
-            <p class="af-num">Finding 01 · Scroll map</p>
-            <p class="af-stat">15%</p>
-            <p class="af-desc">Solo el 15% superaba el bloque de ofertas en la home.</p>
-          </div>
-          <div class="audit-finding">
-            <p class="af-num">Finding 02 · Jerarquía visual</p>
-            <p class="af-stat">ÚNICOS</p>
-            <p class="af-desc">El club ocupaba el primer fold y competía con la intención de compra.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- FUNNEL + INSIGHTS -->
-    <div class="research-2col">
-
-      <div class="research-panel fu">
-        <p class="rp-title">Análisis de Fuga · Scroll Map Home</p>
-        <div class="fn-rows">
-          <div class="fn-row">
-            <span class="fn-name">Visitas Iniciales</span>
-            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:100%"></div></div>
-            <span class="fn-pct">100%</span>
-          </div>
-          <div class="fn-row">
-            <span class="fn-name">Llegan a ÚNICOS</span>
-            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:60%"></div></div>
-            <span class="fn-pct">60%</span>
-          </div>
-          <div class="fn-row">
-            <span class="fn-name">Superan bloque Ofertas</span>
-            <div class="fn-bar-bg"><div class="fn-bar-fill" style="width:15%"></div></div>
-            <span class="fn-pct">15%</span>
-          </div>
-          <hr class="fn-divider">
-          <div class="fn-row">
-            <span class="fn-name" style="color:var(--text-dim);">Abandono Crítico</span>
-            <div class="fn-bar-bg" style="background:rgba(239, 68, 68,0.08);">
-              <div class="fn-bar-fill" style="width:85%;background:rgba(239, 68, 68,0.65);"></div>
-            </div>
-            <span class="fn-pct" style="color:#ef4444;">85%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="research-panel fu">
-        <p class="rp-title">Insights Principales · Clarity + Analytics</p>
-        <div class="insight-list">
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt"><strong>85% de abandono</strong> antes de llegar a la oferta.</span>
-          </div>
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt">El componente exigía <strong>más scroll</strong> que cualquier referente del sector.</span>
-          </div>
-          <div class="insight-row">
-            <span class="insight-dot"></span>
-            <span class="insight-txt">Benchmark: los referentes ponen <strong>precio, disponibilidad y CTA</strong> en el primer fold.</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     02 · DECISIÓN
-══════════════════════════════════════ -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">T</div>
-        <div class="cs-rail-label">TASK</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <span class="sec-num fu"><span>02</span> · Decisión</span>
-    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Producto primero,<br><em>marca después.</em></h2>
-    <p class="p fu" style="margin-bottom: 36px;">Cuatro pasos del insight a la decisión, validados con un test A/B antes de salir a producción.</p>
-    <div class="h-timeline fu">
-
-      <div class="ht-item">
-        <div class="ht-connector">
-          <div class="ht-circle"></div>
-          <div class="ht-line"></div>
-        </div>
-        <p class="ht-step">Paso 1</p>
-        <p class="ht-title">Insight clave</p>
-        <p class="ht-text">
-          Quien llega desde paid media quiere ver precio y disponibilidad, no relato de marca. La narrativa bloqueaba el inicio de la búsqueda.
-        </p>
-      </div>
-
-      <div class="ht-item">
-        <div class="ht-connector">
-          <div class="ht-circle"></div>
-          <div class="ht-line"></div>
-        </div>
-        <p class="ht-step">Paso 2</p>
-        <p class="ht-title">Hipótesis</p>
-        <p class="ht-text">
-          Si el producto (oferta, precio, CTA) es lo primero visible, la búsqueda arranca antes y el embudo convierte más.
-        </p>
-      </div>
-
-      <div class="ht-item">
-        <div class="ht-connector">
-          <div class="ht-circle"></div>
-          <div class="ht-line"></div>
-        </div>
-        <p class="ht-step">Paso 3</p>
-        <p class="ht-title">12 mejoras priorizadas</p>
-        <p class="ht-text">
-          12 mejoras priorizadas por impacto en conversión y viabilidad en AEM, en 4 niveles. Aprobadas en comité.
-        </p>
-      </div>
-
-      <div class="ht-item">
-        <div class="ht-connector">
-          <div class="ht-circle"></div>
-        </div>
-        <p class="ht-step">Paso 4</p>
-        <p class="ht-title">Decisión final</p>
-        <p class="ht-text">
-          <strong>ÚNICOS no se eliminó:</strong> pasó a componente secundario. AEM no permitía CSS por dispositivo, así que la jerarquía se resolvió reordenando la estructura.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Framework Test A/B -->
-    <div style="margin-top: 24px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 16px; padding: 28px;">
-      <h4 style="font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px;">Arquitectura de Test A/B &amp; Significancia Estadística</h4>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-        <div>
-          <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">1. Formulación de Hipótesis</div>
-          <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.5;">Si el selector de fechas y el precio final suben <em>above the fold</em>, el abandono cae un 25%. Priorización ICE: 9/10.</p>
-        </div>
-        <div>
-          <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">2. Variante A (Control) vs. B (Tratamiento)</div>
-          <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.5;"><strong>A:</strong> layout AEM original, banner estático.<br><strong>B:</strong> ofertas dinámicas con filtro inmediato y selector móvil.</p>
-        </div>
-        <div>
-          <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">3. Muestra &amp; Significancia</div>
-          <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.5;">Split 50/50 durante 14 días, con confianza del 95% (p &lt; 0,05) como umbral para dar el test por válido.</p>
-          <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.5; margin-top: 8px;">El paso de 3,36% a 6,5% es el resultado del conjunto de cambios de la iniciativa (este componente y el motor de reservas del Caso 03), no de este test aislado.</p>
-        </div>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     03 · SOLUCIÓN
-══════════════════════════════════════ -->
-<section class="cs-block cs-block-indigo">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">A</div>
-        <div class="cs-rail-label">ACTION</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <span class="sec-num fu"><span>03</span> · Solución</span>
-    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Del wireframe<br><em>al componente en producción.</em></h2>
-    <p class="p fu" style="margin-bottom: 36px;">Los constraints de AEM, sin CSS por dispositivo, obligaron a resolver la jerarquía reordenando la estructura.</p>
-    <!-- COMPARACIÓN: wireframe full width → diseño final 2-col -->
-    <div class="wf-comparison fu">
-
-      <!-- FILA 1: Wireframe ancho completo -->
-      <div class="wf-row-wire">
-        <div class="wf-col-header">
-          <span class="wf-col-num">01.</span>
-          <span class="wf-col-name">Wireframe — Estructura</span>
-        </div>
-        <div class="wf-col-body">
-          <img width="1920" height="1440"
-            loading="lazy" decoding="async"
-            src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wireframe-recompo.webp"
-            alt="Wireframe re-componetización — jerarquía buscador + ofertas"
-          >
-        </div>
-        <div class="wf-tags">
-          <span class="wf-tag">Buscador prioritario</span>
-          <span class="wf-tag">Jerarquía diferenciada</span>
-          <span class="wf-tag">Componentes diferenciados Club ÚNICOS</span>
-        </div>
-      </div>
-
-      <!-- Flecha divisor -->
-      <div class="wf-row-arrow">
-        <div class="wf-arrow-line"></div>
-        <span>Diseño final →</span>
-        <div class="wf-arrow-line"></div>
-      </div>
-
-      <!-- FILA 2: Desktop + Mobile al 50% -->
-      <div class="wf-row-finals">
-
-        <div class="wf-final-col">
-          <div class="wf-col-header">
-            <svg stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--white);flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span class="wf-col-num">02.</span>
-            <span class="wf-col-name">Diseño Final — Desktop</span>
-          </div>
-          <div class="wf-col-body">
-            <img width="1920" height="1440"
-              loading="lazy" decoding="async"
-              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.webp"
-              alt="Diseño final desktop — carrusel de ofertas en primer fold con precio, descuento y CTA"
-            >
-          </div>
-          <div class="wf-tags">
-            <span class="wf-tag">Precio visible sin scroll</span>
-            <span class="wf-tag">ÚNICOS en secundario</span>
-          </div>
-        </div>
-
-        <div class="wf-final-col">
-          <div class="wf-col-header">
-            <svg stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="11" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--white);flex-shrink:0;"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
-            <span class="wf-col-num">03.</span>
-            <span class="wf-col-name">Diseño Final — Mobile</span>
-          </div>
-          <div class="wf-col-body">
-            <img width="1920" height="1440"
-              loading="lazy" decoding="async"
-              src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.webp"
-              alt="Diseño final mobile — jerarquía adaptada al contexto táctil"
-            >
-          </div>
-          <div class="wf-tags">
-            <span class="wf-tag">Contexto táctil</span>
-            <span class="wf-tag">Primer scroll transaccional</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     04 · PROCESO
-══════════════════════════════════════ -->
-<section class="cs-block cs-block">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">A</div>
-        <div class="cs-rail-label">ACTION</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <span class="sec-num fu"><span>04</span> · Proceso</span>
-    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Cinco pasos,<br><em>del brief al producto vivo.</em></h2>
-    <p class="p fu" style="margin-bottom: 36px;">Ownership end-to-end: research, propuesta a comité, revisión en staging con desarrollo e iteración tras el lanzamiento.</p>
-    <!-- PROCESS TIMELINE -->
-    
-    <div class="dt-grid fu">
-      <div class="dt-item">
-        <div class="dt-num">01</div>
-        <div class="dt-step">Sep 2025 · Research</div>
-        <div class="dt-title">Datos antes que pixel</div>
-        <div class="dt-text">10.000+ logs del funnel en Adobe Analytics y 250+ sesiones de Clarity. Solo el 15% llegaba a ver las ofertas.</div>
-        <span class="dt-pill">Baseline 3,36%</span>
-      </div>
-      <div class="dt-item">
-        <div class="dt-num">02</div>
-        <div class="dt-step">Diagnóstico</div>
-        <div class="dt-title">Jerarquía, no promo</div>
-        <div class="dt-text">El site pedía explorar a quien llegaba desde paid media con intención de reservar.</div>
-        <span class="dt-pill">Brief reformulado</span>
-      </div>
-      <div class="dt-item">
-        <div class="dt-num">03</div>
-        <div class="dt-step">Propuesta</div>
-        <div class="dt-title">12 mejoras en 4 niveles</div>
-        <div class="dt-text">Priorizadas por impacto en conversión y viabilidad en AEM, defendidas ante dirección comercial.</div>
-        <span class="dt-pill">Aprobada en comité</span>
-      </div>
-      <div class="dt-item">
-        <div class="dt-num">04</div>
-        <div class="dt-step">Q1 2026 · Producción</div>
-        <div class="dt-title">Test A/B y salida</div>
-        <div class="dt-text">Split 50/50 durante 14 días con umbral p &lt; 0,05. Revisión en staging junto a desarrollo.</div>
-        <span class="dt-pill">Iniciativa: 6,5%</span>
-      </div>
-      <div class="dt-item">
-        <div class="dt-num">05</div>
-        <div class="dt-step">Post-lanzamiento</div>
-        <div class="dt-title">Seguir mirando</div>
-        <div class="dt-text">Clarity detectó swipe sobre el selector de fechas en mobile. El componente se extendió a páginas de hotel y travel.</div>
-        <span class="dt-pill">Iteración continua</span>
-      </div>
-    </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     05 · RESULTADO
-══════════════════════════════════════ -->
-<section class="cs-block cs-block-indigo">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">R</div>
-        <div class="cs-rail-label">RESULT</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <span class="sec-num fu"><span>05</span> · Resultado</span>
-    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">3,36% → 6,5%<br><em>en Q1 2026.</em></h2>
-    <p class="p fu" style="margin-bottom: 36px;">Resultado de la iniciativa completa, junto al motor de reservas del Caso 03, medido en Adobe Analytics.</p>
-    <div class="results-strip fu">
-
-      <div class="rs-cell rs-cell--hero">
-        <div class="rs-val">6.5%</div>
-        <div class="rs-label">Conversión canal directo · Q1 2026</div>
-      </div>
-
-      <div class="rs-cell">
-        <div class="rs-up">
-          <div class="rs-val">+93%</div>
-        </div>
-        <div class="rs-sub">3,36% → 6,5%</div>
-        <div class="rs-label">Uplift de conversión</div>
-      </div>
-
-      <div class="rs-cell">
-        <div class="rs-val">50%</div>
-        <div class="rs-label">De las conversiones vienen de socios Club ÚNICOS</div>
-      </div>
-
-      <div class="rs-cell">
-        <div class="rs-val">13%</div>
-        <div class="rs-label">Peso canal directo sobre ventas totales</div>
-      </div>
-
-      <div class="rs-cell">
-        <div class="rs-val">×2</div>
-        <div class="rs-label">Extensión del componente a otras páginas</div>
-      </div>
-
-    </div>
-
-    <p class="results-disclaimer fu">
-      Las cifras representan métricas del canal directo y analítica agregada. No incluyen información financiera sensible de la empresa.
+<!-- ============ 1 · HERO ============ -->
+<section class="cs-hero" id="overview">
+  <div class="wrap">
+    <div class="cs-client reveal"><b>ILUNION Hotels</b> · <span class="es">Funnel de reservas</span><span class="en">Booking funnel</span></div>
+    <h1 class="cs-title reveal">
+      <span class="es">De 3,36% a <em>6,5%</em> de conversión, partiendo de datos y no de intuiciones</span>
+      <span class="en">From 3.36% to <em>6.5%</em> conversion, driven by data, not intuition</span>
+    </h1>
+    <p class="cs-sub reveal">
+      <span class="es">Cómo convertí 10.000+ logs y 250+ sesiones en hipótesis priorizadas, tests A/B y un canal directo que vende más.</span>
+      <span class="en">How I turned 10,000+ logs and 250+ sessions into prioritised hypotheses, A/B tests and a direct channel that sells more.</span>
     </p>
-
-    <div style="margin-top: 20px; padding: 14px 18px; border-left: 2px solid rgba(var(--accent-rgb),0.35); background: rgba(var(--accent-rgb),0.04); border-radius: 0 8px 8px 0;">
-      <p class="es fu" style="font-size: max(13px, var(--fs-min-sm)); color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Assets visuales del canal directo generados y coordinados con IA (Vertex AI · Gemini · Figma), manteniendo consistencia de marca.</p>
-      <p class="en fu" style="font-size: max(13px, var(--fs-min-sm)); color: rgba(255,255,255,0.42); margin: 0; line-height: 1.6;">Direct-channel visual assets generated and coordinated with AI (Vertex AI · Gemini · Figma), keeping brand consistency.</p>
+    <div class="cs-hero-img reveal">
+      <img src="assets/ILUNION/RE-COMPONETIZACION/re-compo-index.webp" width="1920" height="1440" alt="Rediseño del componente de ofertas de ILUNION Hotels">
     </div>
+  </div>
+</section>
+
+<!-- ============ 2 · FICHA ============ -->
+<section aria-label="Ficha del proyecto">
+  <div class="wrap">
+    <dl class="cs-facts reveal">
+      <div class="cs-fact"><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd><span class="es">Product Designer responsable</span><span class="en">Responsible Product Designer</span></dd></div>
+      <div class="cs-fact"><dt><span class="es">Equipo</span><span class="en">Team</span></dt><dd><span class="es">Yo + backend + marketing</span><span class="en">Me + backend + marketing</span></dd></div>
+      <div class="cs-fact"><dt><span class="es">Duración</span><span class="en">Timeline</span></dt><dd><span class="placeholder-note">[X meses]</span></dd></div>
+      <div class="cs-fact"><dt><span class="es">Herramientas</span><span class="en">Tools</span></dt><dd>Figma · Clarity · Adobe Analytics · Claude</dd></div>
+      <div class="cs-fact"><dt><span class="es">Plataforma</span><span class="en">Platform</span></dt><dd>Web · Desktop &amp; Mobile · AEM</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ 3 · TL;DR ============ -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow"><b>01</b>TL;DR</span>
+    <h2 class="h2 reveal"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
+    <div class="tldr">
+      <article class="tldr-card reveal">
+        <span class="tldr-label"><span class="es">Problema</span><span class="en">Problem</span></span>
+        <h3><span class="es">Tráfico con intención de compra que no llegaba a buscar</span><span class="en">High-intent traffic that never started a search</span></h3>
+        <p><span class="es">El acceso al motor competía con promociones, branding y contenido inspiracional.</span><span class="en">Engine access competed with promos, branding and inspirational content.</span></p>
+      </article>
+      <article class="tldr-card reveal">
+        <span class="tldr-label"><span class="es">Solución</span><span class="en">Solution</span></span>
+        <h3><span class="es">Jerarquía orientada a la tarea, validada con A/B</span><span class="en">Task-first hierarchy, validated through A/B</span></h3>
+        <p><span class="es">Hipótesis priorizadas con ICE y aplicación de la Ley de Fitts en los CTAs clave.</span><span class="en">ICE-prioritised hypotheses and Fitts's Law on key CTAs.</span></p>
+      </article>
+      <article class="tldr-card reveal">
+        <span class="tldr-label"><span class="es">Impacto</span><span class="en">Impact</span></span>
+        <div class="tldr-metric">6,5%<small>▲</small></div>
+        <p><span class="es">Conversión del funnel (desde 3,36%) · 13% de la venta · p &lt; 0,05</span><span class="en">Funnel conversion (from 3.36%) · 13% of sales · p &lt; 0.05</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · CONTEXTO Y PROBLEMA ============ -->
+<section class="section" id="problema">
+  <div class="wrap grid-2">
+    <div>
+      <span class="eyebrow"><b>02</b><span class="es">Contexto y problema</span><span class="en">Context &amp; problem</span></span>
+      <h2 class="h2 reveal"><span class="es">El problema <em>no era visual</em></span><span class="en">The problem <em>wasn't visual</em></span></h2>
+      <p class="lead reveal"><span class="es">La experiencia se había construido con una lógica corporativa e inspiracional, pero la mayor parte del tráfico llegaba desde Paid Media con una intención claramente transaccional: el modelo mental del negocio y el del usuario no coincidían.</span><span class="en">The experience was built on a corporate, inspirational logic, while most Paid Media traffic arrived with clear transactional intent: a mismatch between the business's mental model and the user's.</span></p>
+    </div>
+    <div class="reveal">
+      <span class="label" style="display:block;margin-bottom:20px"><span class="es">La solución tenía que</span><span class="en">The solution had to</span></span>
+      <ul class="checks">
+        <li><span class="es">Funcionar en desktop y mobile</span><span class="en">Work on desktop and mobile</span></li>
+        <li><span class="es">Convivir con las campañas activas</span><span class="en">Coexist with live campaigns</span></li>
+        <li><span class="es">Respetar la identidad visual</span><span class="en">Respect the visual identity</span></li>
+        <li><span class="es">Adaptarse a las limitaciones de Adobe Experience Manager</span><span class="en">Fit Adobe Experience Manager constraints</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="growth reveal">
+      <span class="label"><span class="es">Mi punto de partida</span><span class="en">Where I started</span></span>
+      <p><span class="es">Venía de proyectos en los que diseñaba y construía yo sola (Paolo). Aquí, por primera vez, el reto era <strong>demostrar con datos estadísticos</strong> que el diseño movía negocio, siendo la única diseñadora en un equipo backend.</span><span class="en">I came from projects where I designed and built solo (Paolo). Here, for the first time, the challenge was to <strong>prove with statistics</strong> that design moved the business, as the only designer in a backend team.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · OBJETIVOS ============ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <span class="eyebrow"><b>03</b><span class="es">Objetivos</span><span class="en">Goals</span></span>
+    <div class="goals">
+      <div class="goal panel reveal">
+        <span class="label"><span class="es">Negocio</span><span class="en">Business</span></span>
+        <ul class="checks">
+          <li><span class="es">Aumentar la conversión del canal directo</span><span class="en">Grow direct-channel conversion</span></li>
+          <li><span class="es">Reducir la dependencia de las OTAs</span><span class="en">Reduce OTA dependency</span></li>
+        </ul>
+      </div>
+      <div class="goal panel reveal">
+        <span class="label"><span class="es">Usuario</span><span class="en">User</span></span>
+        <ul class="checks">
+          <li><span class="es">Comprobar disponibilidad cuanto antes</span><span class="en">Check availability as fast as possible</span></li>
+          <li><span class="es">Menos estímulos antes de buscar</span><span class="en">Fewer distractions before searching</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     06 · APRENDIZAJES
-══════════════════════════════════════ -->
-<section class="cs-block cs-block-light">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">R</div>
-        <div class="cs-rail-label">RESULT</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <span class="sec-num fu"><span>06</span> · Aprendizajes</span>
-    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Lo que me llevo.</h2>
-    <p class="p fu" style="margin-bottom: 36px;">Cuatro ideas que aplico desde este proyecto.</p>
-    <div class="learnings-4col fu">
-
-      <div class="lc-card">
-        <p class="lc-title">Data First</p>
-        <p class="lc-text">
-          El brief decía «optimiza la promo». Los datos decían jerarquía. Primero los datos, después el pixel.
-        </p>
-      </div>
-
-      <div class="lc-card">
-        <p class="lc-title">Launch ≠ Finish</p>
-        <p class="lc-text">
-          El swipe en mobile apareció después de publicar. Observar el producto vivo es parte del diseño, no una fase opcional.
-        </p>
-      </div>
-
-      <div class="lc-card">
-        <p class="lc-title">Constraints Create Design</p>
-        <p class="lc-text">
-          Las limitaciones de AEM se convirtieron en variable creativa: obligaron a resolver el orden visual en la estructura.
-        </p>
-      </div>
-
-      <div class="lc-card">
-        <p class="lc-title">Business Language Matters</p>
-        <p class="lc-text">
-          Ante comité, tecnología y marketing, el diseño se defiende en impacto transaccional. Esa alineación es la que mueve el producto.
-        </p>
-      </div>
-
+<!-- ============ 6 · RESEARCH ============ -->
+<section class="section" id="research">
+  <div class="wrap">
+    <span class="eyebrow"><b>04</b>Research</span>
+    <h2 class="h2 reveal"><span class="es">Escuchar el <em>comportamiento</em>, no las opiniones</span><span class="en">Listening to <em>behaviour</em>, not opinions</span></h2>
+    <div class="methods reveal">
+      <span class="chip">Microsoft Clarity · 250+ <span class="es">sesiones</span><span class="en">sessions</span></span>
+      <span class="chip">Adobe Analytics · 10.000+ logs</span>
+      <span class="chip">Heatmaps &amp; scroll depth</span>
+      <span class="chip"><span class="es">Benchmark travel ecommerce</span><span class="en">Travel ecommerce benchmark</span></span>
+      <span class="chip">Buyer Personas</span>
     </div>
+    <div class="insights panel">
+      <article class="insight"><div class="insight-num">01</div><h3><span class="es">Intención directa</span><span class="en">Direct intent</span></h3><p><span class="es">La mayoría llegaba a reservar, no a explorar.</span><span class="en">Most users came to book, not to browse.</span></p></article>
+      <article class="insight"><div class="insight-num">02</div><h3><span class="es">Ruido visual</span><span class="en">Visual noise</span></h3><p><span class="es">El motor competía con promociones y módulos secundarios.</span><span class="en">The engine competed with promos and secondary modules.</span></p></article>
+      <article class="insight"><div class="insight-num">03</div><h3><span class="es">Fricción en mobile</span><span class="en">Mobile friction</span></h3><p><span class="es">Errores recurrentes en el selector de fechas táctil.</span><span class="en">Recurring errors in the touch date picker.</span></p></article>
+    </div>
+    <blockquote class="quote reveal"><span class="es">“El usuario no quería explorar primero. Quería comprobar la disponibilidad cuanto antes.”</span><span class="en">“Users didn't want to explore first. They wanted to check availability as soon as possible.”</span></blockquote>
+    <div class="ai-box reveal">
+      <span class="ai-badge"><span class="es">Copiloto IA · Research (MCP)</span><span class="en">AI co-pilot · Research (MCP)</span></span>
+      <p><span class="es">Extraje y agrupé 10.000+ logs de conversión en 2 horas con Claude para aislar las fricciones antes de diseñar. La IA aceleró el análisis, pero el criterio fue mío.</span><span class="en">I extracted and clustered 10,000+ conversion logs in 2 hours with Claude to isolate friction before designing. AI sped up the analysis; the judgement was mine.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 · PERSONA + JOURNEY ============ -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow"><b>05</b>User Persona &amp; Journey</span>
+    <h2 class="h2 reveal"><span class="es">Para quién <em>diseñaba</em></span><span class="en">Who I was <em>designing</em> for</span></h2>
+    <div class="persona panel reveal">
+      <div class="persona-side">
+        <img src="assets/avatar-ines.jpg" alt="Persona: Inés" width="132" height="132">
+        <h3>Inés, 38</h3>
+        <p><span class="es">Viajera vacacional · Reserva desde el móvil</span><span class="en">Leisure traveller · Books on mobile</span></p>
+        <p class="placeholder-note" style="margin-top:12px">[persona ilustrativa]</p>
+      </div>
+      <div class="persona-body">
+        <div><h4><span class="es">Objetivos</span><span class="en">Goals</span></h4><ul><li><span class="es">Ver el precio final rápido</span><span class="en">See the final price fast</span></li><li><span class="es">Reservar en menos de 3 minutos</span><span class="en">Book in under 3 minutes</span></li></ul></div>
+        <div><h4><span class="es">Frustraciones</span><span class="en">Frustrations</span></h4><ul><li><span class="es">No encontrar el buscador</span><span class="en">Can't find the search</span></li><li><span class="es">Selector de fechas que falla</span><span class="en">Buggy date picker</span></li></ul></div>
+        <p class="persona-quote"><span class="es">“Si tengo que buscar dónde se reserva, me voy a Booking.”</span><span class="en">“If I have to hunt for where to book, I'll go to Booking.”</span></p>
+      </div>
+    </div>
+
+    <div class="journey panel reveal">
+      <div class="panel-head"><span>Customer journey</span><span class="panel-tag"><span class="es">Tráfico de Paid Media</span><span class="en">Paid Media traffic</span></span></div>
+      <div class="journey-scroll">
+      <div class="journey-grid">
+        <div class="j-row"></div>
+        <div class="j-head"><span class="es">Llega (Paid)</span><span class="en">Lands (Paid)</span></div>
+        <div class="j-head"><span class="es">Busca el motor</span><span class="en">Looks for engine</span></div>
+        <div class="j-head"><span class="es">Elige fechas</span><span class="en">Picks dates</span></div>
+        <div class="j-head"><span class="es">Compara</span><span class="en">Compares</span></div>
+        <div class="j-head"><span class="es">Reserva</span><span class="en">Books</span></div>
+
+        <div class="j-row"><span class="es">Ánimo</span><span class="en">Mood</span></div>
+        <div class="j-emo"><i style="width:70%"></i></div><div class="j-emo"><i style="width:35%"></i></div><div class="j-emo"><i style="width:15%"></i></div><div class="j-emo"><i style="width:45%"></i></div><div class="j-emo"><i style="width:85%"></i></div>
+
+        <div class="j-row"><span class="es">Dolor</span><span class="en">Pain</span></div>
+        <div class="j-pain">—</div>
+        <div class="j-pain"><span class="es">Motor bajo el hero y las promos</span><span class="en">Engine buried under hero + promos</span></div>
+        <div class="j-pain"><span class="es">Errores táctiles</span><span class="en">Touch errors</span></div>
+        <div class="j-pain"><span class="es">Precio poco claro</span><span class="en">Unclear price</span></div>
+        <div class="j-pain">—</div>
+
+        <div class="j-row"><span class="es">Oportunidad</span><span class="en">Opportunity</span></div>
+        <div class="j-opp"><span class="es">Mensaje alineado con el anuncio</span><span class="en">Ad-matched message</span></div>
+        <div class="j-opp"><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></div>
+        <div class="j-opp"><span class="es">Swipe nativo</span><span class="en">Native swipe</span></div>
+        <div class="j-opp"><span class="es">Ventaja de socio ÚNICOS visible</span><span class="en">Visible ÚNICOS perk</span></div>
+        <div class="j-opp"><span class="es">CTA fijo (Fitts)</span><span class="en">Sticky CTA (Fitts)</span></div>
+      </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ 8 · HIPÓTESIS ============ -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow"><b>06</b><span class="es">Hipótesis y priorización</span><span class="en">Hypotheses &amp; prioritisation</span></span>
+    <h2 class="h2 reveal"><span class="es">Priorizar lo que mueve la aguja: <em>ICE</em></span><span class="en">Prioritising what moves the needle: <em>ICE</em></span></h2>
+    <p class="hypo reveal"><span class="es">“Si llevamos el motor al primer scroll y reducimos la competencia visual, aumentará el inicio de búsquedas en el tráfico de alta intención.”</span><span class="en">“If we bring the engine above the fold and reduce visual competition, search starts from high-intent traffic will increase.”</span></p>
+    <div class="panel reveal" style="overflow-x:auto">
+      <table class="ice">
+        <thead><tr><th><span class="es">Hipótesis</span><span class="en">Hypothesis</span></th><th>Impact</th><th>Confidence</th><th>Ease</th><th>ICE</th></tr></thead>
+        <tbody>
+          <tr class="win"><td><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></td><td>9</td><td>8</td><td>7</td><td><div class="ice-score"><span class="score">8,0</span><div class="bar"><span style="width:80%"></span></div></div></td></tr>
+          <tr><td><span class="es">Ventaja de socio en la oferta</span><span class="en">Member perk on offers</span></td><td>8</td><td>7</td><td>8</td><td><div class="ice-score"><span class="score">7,7</span><div class="bar"><span style="width:77%"></span></div></div></td></tr>
+          <tr><td><span class="es">Selector de fechas con swipe</span><span class="en">Swipe date picker</span></td><td>7</td><td>7</td><td>5</td><td><div class="ice-score"><span class="score">6,3</span><div class="bar"><span style="width:63%"></span></div></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="placeholder-note" style="margin-top:12px">[puntuaciones de ejemplo: sustituir por las reales]</p>
+  </div>
+</section>
 
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
+<!-- ============ 9 · WIREFRAMES / ANTES-DESPUÉS ============ -->
+<section class="section" id="diseno">
+  <div class="wrap">
+    <span class="eyebrow"><b>07</b><span class="es">Arquitectura y wireframes</span><span class="en">Architecture &amp; wireframes</span></span>
+    <h2 class="h2 reveal"><span class="es">De escaparate a <em>herramienta</em></span><span class="en">From showcase to <em>tool</em></span></h2>
+    <div class="panel reveal" style="margin-top:40px">
+      <div class="panel-head"><span>Wireframes</span><span class="panel-tag"><span class="es">Baja fidelidad</span><span class="en">Low fidelity</span></span></div>
+      <div class="wires">
+        <figure class="wire"><div class="wire-media"><img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wireframe-recompo.webp" alt="Wireframe desktop" loading="lazy"></div><figcaption>Desktop</figcaption></figure>
+        <figure class="wire"><div class="wire-media"><img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-mobile%201.png" alt="Wireframe mobile" loading="lazy"></div><figcaption>Mobile</figcaption></figure>
+      </div>
+    </div>
+    <div class="panel reveal" style="margin-top:24px">
+      <div class="panel-head">
+        <span><span class="es">Antes / después</span><span class="en">Before / after</span></span>
+        <span class="panel-tag">Desktop · Mobile</span>
+      </div>
+      <div class="compare">
+        <figure class="compare-item">
+          <div class="compare-media">
+            <img src="assets/ILUNION/CRO/MOTOR-DESTINOS/antes-recompo.webp" alt="Antes del rediseño" loading="lazy" width="1920" height="1440">
+          </div>
+          <figcaption class="compare-caption">
+            <div class="compare-badge compare-badge--before">
+              <span class="badge-dot"></span>
+              <span class="es">Antes · El problema</span>
+              <span class="en">Before · The issue</span>
+            </div>
+            <p class="compare-desc">
+              <span class="es">Motor enterrado bajo el hero y las promociones; baja interacción y fuga de reservas.</span>
+              <span class="en">Engine buried below hero and promos; low interaction and booking drop-off.</span>
+            </p>
+          </figcaption>
+        </figure>
+        <figure class="compare-item compare-item--after">
+          <div class="compare-media">
+            <img src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.webp" alt="Después del rediseño" loading="lazy" width="1920" height="1440">
+          </div>
+          <figcaption class="compare-caption">
+            <div class="compare-badge compare-badge--after">
+              <span class="badge-dot"></span>
+              <span class="es">Después · Solución implementada</span>
+              <span class="en">After · Implemented solution</span>
+            </div>
+            <p class="compare-desc">
+              <span class="es">Motor en el 1er scroll con jerarquía optimizada para desktop y navegación móvil.</span>
+              <span class="en">Engine above the fold with optimized hierarchy for desktop and mobile browsing.</span>
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 · DISEÑO FINAL ============ -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow"><b>08</b><span class="es">Diseño final y responsive</span><span class="en">Final design &amp; responsive</span></span>
+    <h2 class="h2 reveal"><span class="es">Decisiones que se pueden <em>defender</em></span><span class="en">Decisions you can <em>defend</em></span></h2>
+    <div class="panel reveal" style="margin-top:40px">
+      <div class="panel-head"><span><span class="es">Diseño final</span><span class="en">Final design</span></span><span class="panel-tag">Desktop · Mobile</span></div>
+      <div class="devices">
+        <figure class="device"><div class="device-media"><img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.webp" alt="Diseño final desktop" loading="lazy"></div><figcaption>Desktop</figcaption></figure>
+        <figure class="device"><div class="device-media"><img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.webp" alt="Diseño final mobile" loading="lazy"></div><figcaption>Mobile</figcaption></figure>
+      </div>
+    </div>
+    <div class="decisions">
+      <div class="decision reveal"><span class="label">Ley de Fitts</span><h3><span class="es">CTA fijo en mobile</span><span class="en">Sticky mobile CTA</span></h3><p><span class="es">Objetivo grande y siempre al alcance del pulgar.</span><span class="en">Large target, always within thumb reach.</span></p></div>
+      <div class="decision reveal"><span class="label">Ley de Hick</span><h3><span class="es">Menos opciones antes de buscar</span><span class="en">Fewer choices before search</span></h3><p><span class="es">Promociones desplazadas por debajo del motor.</span><span class="en">Promos moved below the engine.</span></p></div>
+      <div class="decision reveal"><span class="label">Gestalt</span><h3><span class="es">Agrupación por tarea</span><span class="en">Task grouping</span></h3><p><span class="es">Fechas, huéspedes y CTA en un único bloque.</span><span class="en">Dates, guests and CTA in a single block.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11-12 · VALIDACIÓN + RESULTADOS ============ -->
+<section class="section" id="resultados">
+  <div class="wrap">
+    <span class="eyebrow"><b>09</b><span class="es">Validación y resultados</span><span class="en">Validation &amp; results</span></span>
+    <h2 class="h2 reveal"><span class="es">Test A/B con <em>significancia estadística</em></span><span class="en">A/B test with <em>statistical significance</em></span></h2>
+    <div class="ab panel reveal" style="margin-top:40px">
+      <div class="ab-col"><h3>Control · A</h3><div class="ab-val">3,36%</div><p><span class="es">Conversión del funnel</span><span class="en">Funnel conversion</span></p></div>
+      <div class="ab-col ab-col--b"><h3><span class="es">Tratamiento · B</span><span class="en">Treatment · B</span></h3><div class="ab-val" data-count="6.5">6,5%</div><p>p &lt; 0,05</p></div>
+    </div>
+    <div class="results reveal">
+      <div class="result"><div class="result-val">×1,9</div><p><span class="es">Conversión del funnel</span><span class="en">Funnel conversion</span></p></div>
+      <div class="result"><div class="result-val">13%</div><p><span class="es">De la venta total representada</span><span class="en">Share of total sales</span></p></div>
+      <div class="result"><div class="result-val">50%</div><p><span class="es">Conversiones de socios ÚNICOS</span><span class="en">Conversions from ÚNICOS members</span></p></div>
+      <div class="result"><div class="result-val">#1</div><p><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></p></div>
+    </div>
+    <p class="disclaimer"><span class="es">Algunos datos se han redondeado por confidencialidad. El seguimiento se hizo con Adobe Analytics y Microsoft Clarity.</span><span class="en">Some figures are rounded for confidentiality. Tracking via Adobe Analytics and Microsoft Clarity.</span></p>
+  </div>
+</section>
+
+<!-- ============ 13 · APRENDIZAJES + PROGRESIÓN ============ -->
+<section class="section" id="aprendizajes">
+  <div class="wrap">
+    <span class="eyebrow"><b>10</b><span class="es">Aprendizajes y progresión</span><span class="en">Learnings &amp; growth</span></span>
+    <h2 class="h2 reveal"><span class="es">Lo que este proyecto <em>desbloqueó</em> en mí</span><span class="en">What this project <em>unlocked</em> in me</span></h2>
+    <div class="learn">
+      <div class="learn-card reveal"><span class="label">01</span><h3><span class="es">Escuchar después de lanzar</span><span class="en">Listen after launch</span></h3><p><span class="es">Clarity reveló que se usaba el buscador para explorar destinos. Eso abrió una nueva línea estratégica.</span><span class="en">Clarity showed people used search to explore destinations, which opened a new strategic line.</span></p></div>
+      <div class="learn-card reveal"><span class="label">02</span><h3><span class="es">Hablar el idioma del negocio</span><span class="en">Speak business</span></h3><p><span class="es">Presentar con significancia estadística cambió cómo se escuchaba el diseño en la empresa.</span><span class="en">Presenting with statistical significance changed how design was heard at the company.</span></p></div>
+      <div class="learn-card reveal"><span class="label">03</span><h3><span class="es">Qué haría diferente</span><span class="en">What I'd do differently</span></h3><p><span class="es">Validar antes el selector móvil con tests de usabilidad moderados.</span><span class="en">Validate the mobile picker earlier with moderated usability tests.</span></p></div>
+    </div>
+
+    <div class="timeline reveal" aria-label="Progresión profesional">
+      <div class="tl-step"><small>Bootcamp</small><h4>Research</h4><p><span class="es">Gym Energy Center, en equipo</span><span class="en">Gym Energy Center, team</span></p></div>
+      <div class="tl-step"><small>2020–22</small><h4><span class="es">Diseñar y construir</span><span class="en">Design &amp; build</span></h4><p>Paolo · end-to-end</p></div>
+      <div class="tl-step is-now"><small><span class="es">Este caso</span><span class="en">This case</span></small><h4><span class="es">Diseño que mueve métricas</span><span class="en">Design that moves metrics</span></h4><p>ILUNION CRO</p></div>
+      <div class="tl-step"><small><span class="es">Siguiente</span><span class="en">Next</span></small><h4><span class="es">Pensar en sistemas</span><span class="en">Systems thinking</span></h4><p>CEF Design System</p></div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer class="cs-footer">
-  <div class="cs-wrap">
-    <div class="cs-process-doc">
-      <p class="cs-process-doc-label es">Documentación del proceso</p>
-      <p class="cs-process-doc-label en">Process documentation</p>
-      <p class="es">Research, hipótesis, decisiones descartadas y trade-offs de este caso, documentados paso a paso.</p>
-      <p class="en">Research, hypotheses, discarded decisions and trade-offs for this case, documented step by step.</p>
-      <a href="https://wiggly-jasmine-d25.notion.site/2ded112a771e80e48fcac0735cd36ffa" target="_blank" rel="noopener">
-        <span class="es">Ver el proceso en Notion ↗</span>
-        <span class="en">Read the process on Notion ↗</span>
-      </a>
-    </div>
-    <div class="footer-label es">Siguiente caso</div>
-    <div class="footer-label en">Next case</div>
-    <h2 class="es">¿Vemos otro proyecto?</h2>
-    <h2 class="en">Want to see another project?</h2>
-    <nav class="cs-pagination" aria-label="Navegación entre casos">
-      <a href="cef-design-system.html" class="cs-pagination-arrow" aria-label="Caso anterior">←</a>
-      <div class="cs-pagination-dots">
-        <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 01">01</a>
-        <a href="ilunion-cro.html" class="cs-pagination-dot is-current" aria-current="page" aria-label="Caso 02">02</a>
-        <a href="booking-engine.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
-        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
-        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
-        <a href="gym-energy-center.html" class="cs-pagination-dot" aria-label="Caso 06">06</a>
-      </div>
-      <a href="booking-engine.html" class="cs-pagination-arrow" aria-label="Caso siguiente">→</a>
-    </nav>
-    <a href="index.html" class="cs-pagination-index es">Volver al índice</a>
-    <a href="index.html" class="cs-pagination-index en">Back to index</a>
+<!-- ============ 14 · SIGUIENTE CASO ============ -->
+<a href="cef-design-system.html" class="next" id="cs-next">
+  <div class="wrap">
+    <small><span class="es">Siguiente caso · 02</span><span class="en">Next case · 02</span></small>
+    <h2><span><span class="es">CEF Design System y accesibilidad</span><span class="en">CEF Design System &amp; accessibility</span></span><span class="arrow">→</span></h2>
   </div>
-</footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(({ target, isIntersecting }) => {
-      if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
-    });
-  }, { threshold: 0.01 });
-  document.querySelectorAll('.fu').forEach(el => io.observe(el));
-
-  const stored = localStorage.getItem('portfolio-lang');
-  if (stored === 'en') {
-    document.documentElement.classList.add('lang-en');
-    document.documentElement.lang = 'en';
-    const btn = document.getElementById('langToggle');
-    if (btn) btn.textContent = 'ES';
-  }
-
-  function toggleLang() {
-    const html = document.documentElement;
-    const btn = document.getElementById('langToggle');
-    const isEn = html.classList.toggle('lang-en');
-    html.lang = isEn ? 'en' : 'es';
-    btn.textContent = isEn ? 'ES' : 'EN';
-    localStorage.setItem('portfolio-lang', isEn ? 'en' : 'es');
-  }
-
-  function openCaseMenu() {
-    const m = document.getElementById('csMobileMenu');
-    m.style.display = 'flex';
-    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
-    document.body.style.overflow = 'hidden';
-  }
-  function closeCaseMenu() {
-    const m = document.getElementById('csMobileMenu');
-    m.classList.remove('open');
-    setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 300);
-  }
-</script>
-<script src="cs-enhancements.js" defer></script>
-
-<!-- ===================== CHATBOT MARTA ===================== -->
-<style>
-/* ── Chat bubble trigger ── */
-#chat-trigger {
-  position: fixed; bottom: 28px; right: 28px; z-index: 9000;
-  width: 56px; height: 56px; border-radius: 50%;
-  /* El logo (círculo negro + M blanca) ES el botón. Antes iba un degradado
-     morado→naranja debajo del logotipo forzado a blanco por filtro. */
-  background: #000;
-  /* El logo es un disco negro sobre una pagina negra: sin un aro claro y un
-     halo, el circulo no se distingue del fondo y solo se ve la M flotando. */
-  border: 1.5px solid rgba(255,255,255,0.38); cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden; padding: 0;
-  box-shadow:
-    0 0 0 5px rgba(0,0,0,0.85),
-    0 10px 30px rgba(0,0,0,0.75),
-    0 0 22px rgba(var(--accent-rgb),0.30);
-  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, border-color 0.25s;
-  outline: none;
-}
-#chat-trigger:hover {
-  border-color: rgba(255,255,255,0.72);
-  box-shadow:
-    0 0 0 5px rgba(0,0,0,0.85),
-    0 12px 34px rgba(0,0,0,0.8),
-    0 0 30px rgba(var(--accent-rgb),0.55);
-}
-#chat-trigger:hover {
-  transform: scale(1.08) translateY(-2px);
-}
-#chat-trigger:active { transform: scale(0.96); }
-#chat-trigger .icon-chat { opacity: 1; position: absolute; transition: opacity 0.2s; }
-#chat-trigger .icon-close { opacity: 0; position: absolute; transition: opacity 0.2s; }
-#chat-trigger.open .icon-chat { opacity: 0; }
-#chat-trigger.open .icon-close { opacity: 1; }
-
-#chat-trigger::before {
-  content: '';
-  position: absolute; inset: -6px; border-radius: 50%;
-  border: 1.5px solid rgba(var(--accent-rgb),0.45);
-  animation: chat-pulse 2.8s ease-out infinite;
-}
-#chat-trigger.open::before { animation: none; opacity: 0; }
-@keyframes chat-pulse {
-  0%   { transform: scale(1);    opacity: 0.7; }
-  70%  { transform: scale(1.35); opacity: 0;   }
-  100% { transform: scale(1.35); opacity: 0;   }
-}
-
-/* ── Chat panel ── */
-#chat-panel {
-  position: fixed; bottom: 96px; right: 28px; z-index: 8999;
-  width: 360px; max-height: 540px;
-  background: rgba(8,8,8,0.92);
-  backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 22px;
-  display: flex; flex-direction: column;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
-  transform-origin: bottom right;
-  transform: scale(0.88) translateY(12px);
-  opacity: 0; pointer-events: none;
-  transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), opacity 0.25s;
-  overflow: hidden;
-}
-#chat-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
-#chat-panel::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb),0.7), rgba(249,115,22,0.5), transparent);
-}
-
-.chat-header {
-  padding: 18px 20px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  display: flex; align-items: center; gap: 12px; flex-shrink: 0;
-}
-.chat-avatar {
-  width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
-  border: 1.5px solid rgba(var(--accent-rgb),0.4);
-  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(249,115,22,0.2));
-  display: flex; align-items: center; justify-content: center;
-}
-.chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.chat-avatar-fallback {
-  font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--accent);
-  font-family: 'Inter', sans-serif;
-}
-.chat-header-info { flex: 1; min-width: 0; }
-.chat-header-name { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
-.chat-header-status { font-size: max(11px, var(--fs-min-xs)); color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
-.chat-status-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: #34d399;
-  box-shadow: 0 0 6px rgba(52,211,153,0.6);
-  animation: blink-dot 3s ease-in-out infinite;
-}
-@keyframes blink-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-.chat-messages {
-  flex: 1; overflow-y: auto; padding: 16px 16px 8px;
-  display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth;
-}
-.chat-messages::-webkit-scrollbar { width: 3px; }
-.chat-messages::-webkit-scrollbar-track { background: transparent; }
-.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
-
-.chat-msg { display: flex; gap: 8px; align-items: flex-end; animation: msg-in 0.28s cubic-bezier(0.16,1,0.3,1) both; }
-@keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-.chat-msg.user { flex-direction: row-reverse; }
-
-.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: max(13px, var(--fs-min-sm)); line-height: 1.55; font-family: 'Inter', sans-serif; }
-.chat-msg.bot .chat-bubble {
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
-  color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
-}
-.chat-msg.user .chat-bubble {
-  background: linear-gradient(135deg, rgba(124,58,237,0.75), rgba(249,115,22,0.60));
-  border: 1px solid rgba(var(--accent-rgb),0.25); color: rgba(255,255,255,0.95); border-bottom-right-radius: 4px;
-}
-.chat-bubble a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-.chat-bubble strong { color: var(--white); font-weight: 600; }
-
-.chat-typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; }
-.chat-typing span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); animation: typing-bounce 1.2s infinite; }
-.chat-typing span:nth-child(2) { animation-delay: 0.18s; }
-.chat-typing span:nth-child(3) { animation-delay: 0.36s; }
-@keyframes typing-bounce { 0%,80%,100% { transform: translateY(0); opacity: 0.4; } 40% { transform: translateY(-6px); opacity: 1; } }
-
-.chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
-.chat-chip {
-  padding: 6px 12px; border-radius: 100px; font-size: max(11px, var(--fs-min-xs)); font-weight: 500;
-  font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
-  color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
-}
-.chat-chip:hover { background: rgba(124,58,237,0.2); border-color: rgba(var(--accent-rgb),0.6); color: #fff; transform: translateY(-1px); }
-
-.chat-input-area {
-  padding: 10px 12px 14px; border-top: 1px solid rgba(255,255,255,0.07);
-  display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0;
-}
-.chat-input {
-  flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 100px; padding: 9px 14px; color: var(--text);
-  font-size: max(13px, var(--fs-min-sm)); font-family: 'Inter', sans-serif; outline: none; resize: none;
-  min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
-}
-.chat-input::placeholder { color: rgba(255,255,255,0.25); }
-.chat-input:focus { border-color: rgba(var(--accent-rgb),0.4); }
-.chat-send {
-  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
-  background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.75));
-  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: opacity 0.2s, transform 0.15s;
-}
-.chat-send:hover { opacity: 0.85; transform: scale(1.05); }
-.chat-send svg { width: 16px; height: 16px; }
-
-@media (max-width: 480px) {
-  #chat-panel { right: 12px; left: 12px; width: auto; bottom: 84px; }
-  #chat-trigger { right: 20px; bottom: 20px; }
-}
-
-/* Undo button */
-#chat-undo {
-  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.35); cursor: pointer;
-  display: none; align-items: center; justify-content: center;
-  transition: background 0.2s, color 0.2s, transform 0.15s;
-}
-#chat-undo:hover { background: rgba(255,255,255,0.10); color: rgba(255,255,255,0.75); transform: scale(1.08); }
-#chat-undo.visible { display: flex; }
-</style>
-
-<button id="chat-trigger" aria-label="Abrir chat" onclick="chatToggle()">
-  <img loading="eager" decoding="async" class="icon-chat" src="assets/logo.png" alt="Marta" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<svg class=\'icon-chat\' style=\'width:24px;height:24px\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'white\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z\'/></svg>')">
-  <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" style="width:22px;height:22px;">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-  </svg>
-</button>
-
-<div id="chat-panel" role="dialog" aria-label="Chat con Marta">
-  <div class="chat-header">
-    <div class="chat-avatar">
-      <img loading="lazy" decoding="async" width="300" height="300" src="assets/logo-sinfondo.webp" alt="Marta" style="filter:brightness(0) invert(1);object-fit:contain;padding:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <span class="chat-avatar-fallback" style="display:none">MM</span>
-    </div>
-    <div class="chat-header-info">
-      <div class="chat-header-name">Marta Morales</div>
-      <div class="chat-header-status">
-        <span class="chat-status-dot"></span>
-        <span class="es">Disponible ahora</span>
-        <span class="en">Available now</span>
-      </div>
-    </div>
-    <button id="chat-undo" onclick="chatUndo()" aria-label="Deshacer último mensaje" title="Volver atrás">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 14L4 9l5-5"></path><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"></path>
-      </svg>
-    </button>
-  </div>
-  <div class="chat-messages" id="chatMessages"></div>
-  <div class="chat-chips" id="chatChips"></div>
-  <div class="chat-input-area">
-    <textarea class="chat-input" id="chatInput" rows="1" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta" onkeydown="chatKeydown(event)" oninput="chatAutoResize(this)"></textarea>
-    <button class="chat-send" onclick="chatSend()" aria-label="Enviar">
-      <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-      </svg>
-    </button>
-  </div>
-</div>
+</a>
 
 <script>
-(function() {
-  var KB = {
-    es: {
-      greeting: [
-        "¡Hola! Soy el asistente de Marta. Si eres recruiter o hiring manager, estás en el sitio correcto — puedo contarte todo lo que necesitas para tomar una decisión. ¿Por dónde empezamos?"
-      ],
-      about: [
-        "Marta Morales se posiciona en el mercado como el 'producto de diseño completo' bajo su principal KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Su portafolio es en sí mismo un reflejo de este producto, y los casos prácticos (EdTech, Travel, B2B) son los ejemplos de uso de cómo sus habilidades de optimización, automatización de sistemas de diseño y flujos con IA resuelven problemas reales de negocio."
-      ],
-      experience: [
-        "<strong>+4 años</strong> de trayectoria liderando el ciclo completo de producto digital. Su enfoque trasciende el diseño visual: actúa como motor estratégico de CRO, estructurando sistemas de diseño scalables y optimizando interfaces complejas mediante automatizaciones de IA para multiplicar la velocidad de desarrollo.",
-        "Marta no espera un brief estructurado: **identifica el problema, define el enfoque y mide el resultado**, utilizando los casos prácticos de su portafolio para poner a prueba sus habilidades frente a constraints reales."
-      ],
-      skills: [
-        "Sus 4 pilares fundamentales son: <strong>UX &amp; Research</strong> (diagnóstico cuantitativo/cualitativo), <strong>Design Systems</strong> (Figma avanzado, variables, handoff estructurado), <strong>AI Product Design</strong> (MCPs, vibe coding, automatización de flujos) y <strong>CRO</strong> (experimentos basados en datos, A/B Testing, incremento de conversión).",
-        "Domina el ciclo completo de producto: **discovery, research de comportamiento, arquitectura de información, prototipado, test con usuarios, handoff y análisis post-lanzamiento**."
-      ],
-      tools: [
-        "Stack diario: <strong>Figma</strong> (sistemas de diseño, variables, componentes), <strong>Adobe Analytics + Hotjar</strong> (datos de comportamiento), <strong>Notion & Jira</strong> (gestión de producto), Bootstrap y colaboración estrecha con ingeniería."
-      ],
-      cases: [
-        "Marta has <strong>5 case studies across 4 different sectors</strong>. What ties them together isn't the industry — it's the same pattern: she diagnoses the business problem before touching a single pixel.<br><br>• <strong>Booking Engine (ILUNION)</strong> — hotel booking engine redesign from scratch to production<br>• <strong>CRO AEM (ILUNION)</strong> — direct conversion 3.36% → 6.5% using real data experiments<br>• <strong>CEF Design System</strong> — EdTech design system from zero: 17 components, tokens, WCAG<br>• <strong>Paolo by Danny's Jazz</strong> — visual identity + full digital ecosystem for a chain that grew from 1 to 5 locations <em>without a redesign</em><br>• <strong>Build vs. Buy · Oracle IT</strong> — strategic friction diagnosis embedded in the team: conclusion was to build an internal tool, not patch Oracle<br><br>Want me to go deeper on any of them?"
-      ],
-      remote: [
-        "Marta está <strong>abierta al remoto total e híbrido.</strong> Basada en Madrid, con experiencia en equipos distribuidos y comunicación async."
-      ],
-      availability: [
-        "Marta está <strong>activamente buscando su próxima oportunidad</strong> y puede incorporarse con relativa rapidez. Hay otras conversaciones en curso, así que si hay fit, merece la pena hablar pronto. ¿Tienes alguna posición en mente?"
-      ],
-      salary: [
-        "Marta maneja expectativas alineas con su experiencia y el mercado actual. Es un detalle que se aclara en cinco minutos en una llamada. ¿Le damos una oportunidad a esa conversación?"
-      ],
-      interview: [
-        "¡Perfecto! Escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h. O usa el formulario de contacto al final de la página.",
-        "Genial. La mejor forma es un email a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> proponiendo día y hora. Marta es flexible y se adapta a vuestra agenda."
-      ],
-      contact: [
-        "Email directo: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Responde rápido, menos de 24h."
-      ],
-      research: [
-        "Marta tiene <strong>base sólida en UX Research:</strong> entrevistas con usuarios, card sorting, tree testing, análisis heurístico y síntesis de insights. Lo más importante: siempre conecta el research con decisiones de negocio concretas."
-      ],
-      systems: [
-        "Ha construido <strong>design systems desde cero:</strong> el sistema de CEF incluye 17 componentes, tokens de diseño, guías de accesibilidad y documentación para desarrollo. Domina Figma Variables, Auto Layout avanzado y versionado de componentes."
-      ],
-      cro: [
-        "Especializada en <strong>CRO:</strong> usó Adobe Analytics para identificar friction points, diseñó A/B tests con hipótesis fundamentadas en datos y midió el impacto post-lanzamiento. En ILUNION: <strong>conversión del 3.36% al 6.5%</strong> en el canal directo."
-      ],
-      paolo: [
-        "Paolo by Danny's Jazz es uno de los proyectos que mejor refleja el <strong>ownership real de Marta</strong>. No fue un encargo de diseño — fue un problema de negocio entero: una cadena de pizzerías artesanas sin canal digital en plena pandemia, sin web, sin delivery, sin presencia en Google.<br><br>Diseñó y construyó desde cero: identidad visual completa, web (Adobe XD → WordPress + Elementor), los 3 customer journeys del negocio (delivery, visita al local, reserva), ecosistema de delivery activo (Glovo, Uber Eats, JustEat), cartas QR, Google My Business y un ciclo mensual de analítica con Clarity + GA4 + Metricool.<br><br>Resultado: el producto escaló de 1 a 5 locales en 2 años <strong>sin necesidad de rediseño</strong>. +32% en llamadas directas desde móvil el primer mes. Cuando el proyecto terminó, el ecosistema seguía funcionando solo. Eso es diseño que funciona."
-      ],
-      oracle: [
-        "El caso Oracle (Build vs. Buy) muestra a Marta en modo <strong>diagnosticadora estratégica, no ejecutora de interfaces.</strong><br><br>We Are Actions llevaba años gestionando incidencias IT con Oracle. El responsable de sistemas llegó a dirección con un Excel con datos reales de fricción. Marta estaba <em>embebida en el equipo IT</em>, así que hizo discovery contextual desde dentro: vio la fricción ocurrir en tiempo real, no en una sesión de research artificial.<br><br>Su diagnóstico: Oracle no estaba mal diseñado — era simplemente la herramienta equivocada para <em>sus</em> flujos. La recomendación fue construir una herramienta interna en lugar de seguir parcheando una plataforma genérica.<br><br>El caso de estudio ya está publicado y disponible en este portafolio. Representa exactamente el tipo de trabajo que más le interesa: <strong>identificar el problema real antes de proponer la solución.</strong>"
-      ],
-      booking: [
-        "El <strong>Booking Engine de ILUNION</strong> fue el rediseño end-to-end del motor de reservas de una cadena hotelera — de la investigación con usuarios hasta la entrega a producción. El reto era entender por qué la conversión en canal directo era tan baja y proponer una solución argumentada. Marta lideró todo: research, arquitectura de información, prototipado, test con usuarios y handoff. Este proyecto fue la base sobre la que después se aplicaron los experimentos de CRO que llevaron la conversión del 3.36% al 6.5%."
-      ],
-      cef: [
-        "El <strong>CEF Design System</strong> demuestra la capacidad de Marta para crear infraestructura de diseño desde cero en un entorno EdTech con restricciones de accesibilidad estrictas.<br><br>Construyó un sistema con 17 componentes en Figma: tokens de diseño, variantes, estados, documentación para desarrollo y cumplimiento WCAG 2.1 AA. El objetivo no era solo coherencia visual — era que los equipos de desarrollo pudieran construir con él de forma autónoma."
-      ],
-      whyhire: [
-        "Tres cualidades clave:<br><br>1. <strong>Mentalidad de Producto:</strong> Su portafolio y ella misma operan bajo un enfoque orientado a resultados y KPIs claros.<br>2. <strong>Especialización de Vanguardia:</strong> Une el rigor clásico de la accesibilidad y el CRO con flujos avanzados de IA y vibe coding.<br>3. <strong>Autonomía Estratégica:</strong> Diagnóstica la raíz de los problemas y propone la decisión óptima antes de tocar el primer pixel."
-      ],
-      sector: [
-        "Marta tiene experiencia en <strong>turismo / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (sistemas de diseño, accesibilidad) y <strong>consultoría digital</strong>. Busca su próximo reto en empresas <strong>tech, SaaS o travel</strong> con producto propio."
-      ],
-      default: [
-        "Buena pregunta. Para eso mejor habla con Marta directamente: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
-        "Eso lo responde Marta mejor que yo en persona. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde en menos de 24h."
-      ]
-    },
-    en: {
-      greeting: [
-        "Hi! I'm Marta's assistant. If you're a recruiter or hiring manager, you're in the right place — I can tell you everything you need to make a decision. Where shall we start?"
-      ],
-      about: [
-        "Marta Morales positions herself as the 'complete design product' under her main KPI: <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Her portfolio is a product in itself, demonstrating how her skills in optimization, design systems automation, and AI workflows solve real business challenges."
-      ],
-      experience: [
-        "<strong>4+ years</strong> of experience leading the end-to-end product lifecycle. She acts as a strategic CRO engine, building scalable design systems and optimizing complex interfaces through AI integrations to accelerate development speed.",
-        "Marta doesn't wait for a brief: **she identifies the problem, defines the approach, and measures outcomes**, using her case studies as live test-beds to validate new workflow capabilities."
-      ],
-      skills: [
-        "Her 4 core pillars are: <strong>UX &amp; Research</strong> (qualitative/quantitative diagnostics), <strong>Design Systems</strong> (advanced Figma, variables, structured handoff), <strong>AI Product Design</strong> (MCPs, vibe coding, workflow automation) and <strong>CRO</strong> (data-driven experiments, A/B Testing, conversion lifts).",
-        "She masters the full process: **discovery, behavior research, information architecture, prototyping, user testing, handoff, and post-launch analysis**."
-      ],
-      tools: [
-        "Daily stack: <strong>Figma</strong> (design systems, variables, components), <strong>Adobe Analytics + Hotjar</strong> (behaviour data), <strong>Notion & Jira</strong> (product management), Bootstrap and close engineering collaboration."
-      ],
-      cases: [
-        "Case studies with real impact:<br><br>• <strong>ILUNION CRO</strong> — direct channel conversion from 3.36% to 6.5% with a data-driven redesign<br>• <strong>Booking Engine</strong> — hotel booking flow from research to production<br>• <strong>CEF Design System</strong> — 17 components with tokens, accessibility & dev docs<br>• <strong>IT Ops Oracle</strong> — B2B product for IT operations management<br><br>Want details on any of them?"
-      ],
-      remote: [
-        "Marta is <strong>open to fully remote and hybrid.</strong> Based in Madrid, experienced with distributed teams and async communication."
-      ],
-      availability: [
-        "Marta is <strong>actively looking for her next opportunity</strong> and can onboard relatively quickly. There are other conversations in progress, so if there's a fit, it's worth talking soon. Got a role in mind?",
-      ],
-      salary: [
-        "Marta's expectations are aligned with her experience and the current market. It's a detail that takes five minutes to clarify in a call. Shall we make that happen?"
-      ],
-      interview: [
-        "Great! Email her directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — she replies within 24h. Or use the contact form at the bottom of the page.",
-        "Perfect. The easiest way is an email to <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> suggesting a time. Marta is flexible and adapts to your schedule."
-      ],
-      contact: [
-        "Direct email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Replies fast, under 24h."
-      ],
-      research: [
-        "Marta has a <strong>solid UX Research foundation:</strong> user interviews, card sorting, tree testing, heuristic analysis and insight synthesis. Most importantly: she always connects research to concrete business decisions."
-      ],
-      systems: [
-        "She built <strong>design systems from scratch:</strong> CEF's system includes 17 components, design tokens, accessibility guidelines and developer documentation. Proficient in Figma Variables, advanced Auto Layout and component versioning."
-      ],
-      cro: [
-        "Specialized in <strong>CRO:</strong> used Adobe Analytics to identify friction points, designed data-backed A/B tests and measured post-launch impact. At ILUNION: <strong>conversion from 3.36% to 6.5%</strong> on the direct channel."
-      ],
-      paolo: [
-        "Paolo by Danny's Jazz is one of the projects that best shows Marta's <strong>real ownership mindset</strong>. It wasn't a design brief — it was an entire business problem: an artisan pizza chain in the middle of a pandemic with no website, no delivery, no Google presence, nothing.<br><br>She designed and built from scratch: complete visual identity, the full website (Adobe XD → WordPress + Elementor), 3 customer journeys (delivery, in-store visit, booking), active delivery ecosystem (Glovo, Uber Eats, JustEat), QR menus, Google My Business, and a monthly analytics cycle with Clarity + GA4 + Metricool.<br><br>Result: the product scaled from 1 to 5 locations in 2 years <strong>without a redesign</strong>. +32% in direct mobile calls in the first month. When the project ended, the ecosystem kept running on its own. That's what good design looks like."
-      ],
-      oracle: [
-        "The Oracle case (Build vs. Buy) shows Marta in <strong>strategic diagnostician mode — not interface executor.</strong><br><br>We Are Actions had been managing IT incidents with Oracle for years. The systems manager came to leadership with real-data showing friction costs. Marta was <em>embedded in the IT team</em>, so she did contextual discovery from the inside: she saw friction happening in real time, not in an artificial research session.<br><br>Her diagnosis: Oracle wasn't badly designed — it was simply the wrong tool for <em>their</em> workflows. The recommendation was to build an internal tool rather than keep patching a generic platform.<br><br>The case study is now fully published and available. It represents exactly the kind of work she values most: <strong>finding the real problem before proposing the solution.</strong>"
-      ],
-      booking: [
-        "The <strong>ILUNION Booking Engine</strong> was an end-to-end redesign of a hotel chain's reservation engine — from user research to production handoff. The challenge was understanding why direct channel conversion was so low and proposing a data-backed solution. Marta led the full process: research, information architecture, prototyping, user testing and handoff. This was the foundation for the CRO experiments that later lifted conversion from 3.36% to 6.5%."
-      ],
-      cef: [
-        "The <strong>CEF Design System</strong> shows Marta's ability to build design infrastructure from scratch in an EdTech environment with strict accessibility requirements.<br><br>She built a system with 80+ Figma components: design tokens, variants, states, developer documentation and WCAG 2.1 AA compliance. The goal wasn't just visual consistency — it was enabling development teams to build autonomously."
-      ],
-      whyhire: [
-        "Three key qualities:<br><br>1. <strong>Product Mindset:</strong> Both her portfolio and she operate under a results-oriented approach with clear KPIs.<br>2. <strong>Cutting-edge Specialization:</strong> Combines classic CRO and accessibility rigor with advanced AI workflows and vibe coding.<br>3. <strong>Strategic Autonomy:</strong> Diagnoses the root of business problems and proposes the optimal path before designing a single pixel."
-      ],
-      sector: [
-        "Marta has experience in <strong>travel / hospitality</strong> (booking engines, CRO), <strong>EdTech</strong> (design systems, accessibility) and <strong>digital consulting.</strong> She's looking for her next challenge at a <strong>tech, SaaS or travel</strong> company with its own product."
-      ],
-      default: [
-        "Great question. That's better answered by Marta directly: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>",
-        "Marta can answer that better than me in person. <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — replies within 24h."
-      ]
-    }
+(() => {
+  const root = document.documentElement;
+  // Idioma (persistente)
+  const btn = document.getElementById('cs-lang-toggle');
+  const setLang = l => { root.dataset.lang = l; root.lang = l; btn.textContent = l === 'es' ? 'EN' : 'ES'; localStorage.setItem('cs-lang', l); };
+  setLang(localStorage.getItem('cs-lang') || 'es');
+  btn.addEventListener('click', () => setLang(root.dataset.lang === 'es' ? 'en' : 'es'));
+
+  // Barra de progreso de lectura
+  const bar = document.getElementById('cs-progress');
+  const onScroll = () => {
+    const h = document.body.scrollHeight - innerHeight;
+    bar.style.width = (h > 0 ? scrollY / h * 100 : 0) + '%';
   };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  var CHIPS = {
-    es: [
-      {label:'¿Quién es Marta?',key:'about'},
-      {label:'Todos los casos',key:'cases'},
-      {label:'Paolo · ecosistema digital',key:'paolo'},
-      {label:'Oracle · diagnóstico IT',key:'oracle'},
-      {label:'¿Por qué contratarla?',key:'whyhire'},
-      {label:'Concertar entrevista',key:'interview'}
-    ],
-    en: [
-      {label:'Who is Marta?',key:'about'},
-      {label:'All case studies',key:'cases'},
-      {label:'Paolo · digital ecosystem',key:'paolo'},
-      {label:'Oracle · IT diagnosis',key:'oracle'},
-      {label:'Why hire her?',key:'whyhire'},
-      {label:'Schedule interview',key:'interview'}
-    ]
-  };
+  // Reveal + TOC activo
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const links = [...document.querySelectorAll('.cs-toc a')];
+  const so = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); s && so.observe(s); });
 
-  var RULES = [
-    {keys:['quién','quien','eres','about','who','marta','sobre','yourself','tell me','cuéntame','presentate'],intent:'about'},
-    {keys:['experiencia','experience','años','years','trayectoria','background','worked','llevás','llevas'],intent:'experience'},
-    {keys:['habilidad','skill','sabe','know','domina','masters','puedes','capaz','capable'],intent:'skills'},
-    {keys:['herramienta','tool','adobe','jira','notion','hotjar','bootstrap','figma','stack','usa'],intent:'tools'},
-    {keys:['caso','case','estudio','study','proyecto','project','portfolio','portafolio','trabajo','work'],intent:'cases'},
-    {keys:['paolo','pizzería','pizzeria','pizzer','danny','ecosistema digital','digital ecosystem','1 a 5','1 to 5','wordpress','elementor'],intent:'paolo'},
-    {keys:['oracle','it ops','build vs','fricción it','it friction','herramienta interna','internal tool','incidencia','incident','ticket it'],intent:'oracle'},
-    {keys:['booking','motor de reservas','reserva','hotel','hospedaje','hospitality'],intent:'booking'},
-    {keys:['cef','design system','sistema de diseño','edtech','accesibilidad','accessibility','wcag','componente','component','token'],intent:'cef'},
-    {keys:['ilunion','cro','conversion','conversión','a/b','ab test','aem','experimento','experiment'],intent:'cro'},
-    {keys:['remoto','remote','presencial','hybrid','hibrido','híbrido','madrid','ubicacion','location','donde','where'],intent:'remote'},
-    {keys:['disponib','available','cuándo','when','incorpor','start','join','empezar','inmediata'],intent:'availability'},
-    {keys:['salario','salary','sueldo','wage','pay','rango','compensacion','compensation','pretensiones','expectations'],intent:'salary'},
-    {keys:['entrevista','interview','reunión','meeting','llamada','call','hablar','talk','conocer','meet','contactar','schedule','cita','appointment'],intent:'interview'},
-    {keys:['contact','contacto','email','correo','escribir','reach','write','linkedin'],intent:'contact'},
-    {keys:['research','investig','usuario','user','test','usab','entrev'],intent:'research'},
-    {keys:['design system','sistema de diseño','componente','component','token','library','libreria','figma system'],intent:'systems'},
-    {keys:['cro','conversión','conversion','optimiz','a/b','ab test','funnel','analytics','metr'],intent:'cro'},
-    {keys:['por qué','why','contratar','hire','elegir','choose','diferencia','different','valor','value','aporta','brings'],intent:'whyhire'},
-    {keys:['sector','industria','industry','turismo','travel','edtech','saas','empresa','company','tipo','type'],intent:'sector'}
-  ];
-
-  var isOpen=false, isTyping=false, initialized=false;
-
-  function getLang(){return document.documentElement.classList.contains('lang-en')?'en':'es';}
-  function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
-  function getResponse(intent){var lang=getLang();return pick(KB[lang][intent]||KB[lang].default);}
-  function detectIntent(text){
-    var t=text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-    for(var i=0;i<RULES.length;i++){
-      var r=RULES[i];
-      for(var j=0;j<r.keys.length;j++){if(t.indexOf(r.keys[j])!==-1)return r.intent;}
-    }
-    return 'default';
-  }
-
-  function addMsg(text,role){
-    var box=document.getElementById('chatMessages');
-    var wrap=document.createElement('div');wrap.className='chat-msg '+role;
-    var bubble=document.createElement('div');bubble.className='chat-bubble';
-    bubble.innerHTML=text;wrap.appendChild(bubble);box.appendChild(wrap);
-    box.scrollTop=box.scrollHeight;
-    return wrap;
-  }
-
-  function showTyping(){
-    var box=document.getElementById('chatMessages');
-    var wrap=document.createElement('div');wrap.className='chat-msg bot';wrap.id='chatTypingMsg';
-    var bubble=document.createElement('div');bubble.className='chat-bubble chat-typing';
-    bubble.innerHTML='<span></span><span></span><span></span>';
-    wrap.appendChild(bubble);box.appendChild(wrap);box.scrollTop=box.scrollHeight;
-  }
-  function removeTyping(){var el=document.getElementById('chatTypingMsg');if(el)el.remove();}
-
-  function renderChips(items){
-    var c=document.getElementById('chatChips');c.innerHTML='';
-    items.forEach(function(chip){
-      var btn=document.createElement('button');btn.className='chat-chip';
-      btn.textContent=chip.label;
-      btn.setAttribute('data-key',chip.key);
-      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
-      c.appendChild(btn);
-    });
-  }
-
-  /* History stack: each entry = {userEl, botEl, chips} */
-  var history=[];
-
-  function resetChat(){
-    document.getElementById('chatMessages').innerHTML='';
-    document.getElementById('chatChips').innerHTML='';
-    document.getElementById('chat-undo').classList.remove('visible');
-    history=[];
-    initialized=false;
-    isTyping=false;
-    initChat();
-  }
-
-  window.chatUndo=function(){
-    if(!history.length||isTyping)return;
-    var last=history.pop();
-    if(last.userEl&&last.userEl.parentNode) last.userEl.parentNode.removeChild(last.userEl);
-    if(last.botEl&&last.botEl.parentNode)   last.botEl.parentNode.removeChild(last.botEl);
-    /* Restore chips */
-    var c=document.getElementById('chatChips');c.innerHTML='';
-    (last.prevChips||[]).forEach(function(chip){
-      var btn=document.createElement('button');btn.className='chat-chip';btn.textContent=chip.label;
-      btn.onclick=function(){sendMessage(chip.label,chip.key);c.innerHTML='';};
-      c.appendChild(btn);
-    });
-    if(!history.length) document.getElementById('chat-undo').classList.remove('visible');
-    var box=document.getElementById('chatMessages');
-    box.scrollTop=box.scrollHeight;
-  };
-
-  function sendMessage(text,intentOverride){
-    if(isTyping)return;
-    /* Snapshot current chips before clearing */
-    var prevChips=[];
-    document.getElementById('chatChips').querySelectorAll('.chat-chip').forEach(function(b){
-      prevChips.push({label:b.textContent,key:b.getAttribute('data-key')||''});
-    });
-    var userEl=addMsg(text,'user');
-    isTyping=true;
-    var intent=intentOverride||detectIntent(text);
-    showTyping();
-    setTimeout(function(){
-      removeTyping();
-      var botEl=addMsg(getResponse(intent),'bot');
-      isTyping=false;
-      history.push({userEl:userEl,botEl:botEl,prevChips:prevChips});
-      document.getElementById('chat-undo').classList.add('visible');
-      var lang=getLang();
-      var alwaysChips = lang==='en'
-        ? [{label:'Schedule interview',key:'interview'},{label:'Why hire her?',key:'whyhire'}]
-        : [{label:'Concertar entrevista',key:'interview'},{label:'¿Por qué contratarla?',key:'whyhire'}];
-      var casesChips = lang==='en'
-        ? [{label:'Schedule interview',key:'interview'},{label:'Skills',key:'skills'}]
-        : [{label:'Concertar entrevista',key:'interview'},{label:'Habilidades',key:'skills'}];
-      if(intent==='cases'){renderChips(casesChips);}
-      else if(intent!=='interview'&&intent!=='contact'){renderChips(alwaysChips);}
-    },650+Math.random()*400);
-  }
-
-  function initChat(){
-    if(initialized)return;initialized=true;
-    setTimeout(function(){addMsg(getResponse('greeting'),'bot');renderChips(CHIPS[getLang()]);},180);
-  }
-
-  window.chatToggle=function(){
-    var panel=document.getElementById('chat-panel');
-    var trigger=document.getElementById('chat-trigger');
-    isOpen=!isOpen;
-    panel.classList.toggle('open',isOpen);
-    trigger.classList.toggle('open',isOpen);
-    if(isOpen){initChat();setTimeout(function(){var i=document.getElementById('chatInput');if(i)i.focus();},320);}
-  };
-  window.chatSend=function(){
-    var input=document.getElementById('chatInput');
-    var text=input.value.trim();
-    if(!text||isTyping)return;
-    input.value='';input.style.height='';
-    document.getElementById('chatChips').innerHTML='';
-    sendMessage(text);
-  };
-  window.chatKeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();chatSend();}};
-  window.chatAutoResize=function(el){el.style.height='';el.style.height=Math.min(el.scrollHeight,90)+'px';};
-
-  /* Language switch: reset chat so greeting appears in the new language */
-  new MutationObserver(function(){
-    var input=document.getElementById('chatInput');
-    if(input)input.placeholder=getLang()==='en'?'Type your question…':'Escribe tu pregunta…';
-    if(isOpen&&initialized){resetChat();}
-  }).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
 })();
 </script>
-<!-- ===================== / CHATBOT MARTA ===================== -->
 </body>
 </html>
