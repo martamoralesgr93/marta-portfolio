@@ -2795,6 +2795,16 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .sc-card.sc-flip > .sc-metrics { padding: 22px 52px 30px 44px; }
   .sc-visual { padding: 28px 24px; }
 }
+
+/* Progression chip on case cards */
+.sc-stage { display:inline-flex; align-items:center; gap:8px; margin:6px 0 14px; padding:5px 12px 5px 10px;
+  border:1px solid rgba(var(--accent-rgb),0.28); border-radius:999px; background:rgba(var(--accent-rgb),0.08);
+  font-size:max(11px, var(--fs-min-xs, 11px)); font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+  color:rgba(var(--accent-rgb),0.95); transition:background .3s var(--mm-ease), border-color .3s var(--mm-ease); }
+.sc-stage-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 0 rgba(var(--accent-rgb),.6); animation:scStagePulse 2.4s infinite; }
+.sc-card:hover .sc-stage { background:rgba(var(--accent-rgb),0.14); border-color:rgba(var(--accent-rgb),0.5); }
+@keyframes scStagePulse { 0%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),.55)} 70%{box-shadow:0 0 0 7px rgba(var(--accent-rgb),0)} 100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0)} }
+@media (prefers-reduced-motion: reduce) { .sc-stage-dot { animation:none; } }
 </style>
 </head>
 <body>
@@ -4188,77 +4198,25 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <div class="sec-title en">Product Cases<span class="c-purple">.</span></div>
       </div>
       <div class="work-meta">
-        <span class="es">5 proyectos · ordenados por relevancia · IA &amp; Design Systems primero<br>Design system + IA · Canal directo · Ecosistema 360° · Herramienta interna</span>
-        <span class="en">5 projects · ranked by relevance · AI &amp; Design Systems first<br>Design system + AI · Direct booking · 360° ecosystem · Internal tooling</span>
+        <span class="es">6 proyectos · de mayor impacto a mis orígenes<br>De construir pantallas a mover métricas de negocio</span>
+        <span class="en">6 projects · from highest impact back to my origins<br>From building screens to moving business metrics</span>
       </div>
     </div>
 
-    <!-- BLOCK: IA & DESIGN SYSTEMS -->
     <div class="block-label">
-        <span class="block-label-text">
-        IA &amp; Design Systems
-        </span>
+      <span class="block-label-text"><span class="es">Etapa 3 · Impacto en negocio y sistemas</span><span class="en">Stage 3 · Business impact &amp; systems</span></span>
       <div class="block-label-line"></div>
     </div>
 
-    <!-- CASO 3: CEF — Plataforma académica EdTech -->
+    <!-- 01 · ILUNION CRO -->
+    <!-- CASO 2: ILUNION — Rediseño del componente de Ofertas -->
     <div class="sc-card reveal">
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">01</div>
-          <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
-        </div>
-        <h3 class="sc-title es">CEF Design System<br><em>y accesibilidad EdTech</em></h3>
-        <h3 class="sc-title en">CEF Design System<br><em>and EdTech accessibility</em></h3>
-        <p class="sc-desc es">Eliminación de años de deuda técnica sin sistema de diseño. Diseñé e implementé el primer Design System escalable desde cero: auditoría de accesibilidad WCAG 2.1 AA, arquitectura de tokens (Leyes de Gestalt) y definición de <strong>User Personas EdTech</strong> para estudiantes y docentes. Las fichas de componente y los tokens JSON se generan con Claude vía Figma MCP: 0 discrepancias entre Figma y código. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal · Design System + WCAG 100% propio</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: User Personas · Leyes de Gestalt · Tokens Figma/GitHub · Accesibilidad WCAG AA</span></p>
-        <p class="sc-desc en">Elimination of years of tech debt with no underlying design system. Designed and built the first scalable Design System from scratch: WCAG 2.1 AA accessibility audit, token architecture (Gestalt Laws), and definition of <strong>EdTech User Personas</strong> for students and faculty. Component specs and JSON tokens are generated with Claude via Figma MCP: zero drift between Figma and code. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Principal Product Designer · DS + WCAG 100% sole ownership</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: User Personas · Gestalt Laws · Figma/GitHub Tokens · WCAG AA Accessibility</span></p>
-        <div class="sc-cta-row">
-          <a href="cef-design-system.html" class="sc-cta sc-cta-primary es">Case Study</a>
-          <a href="cef-design-system.html" class="sc-cta sc-cta-primary en">Case Study</a>
-          <a href="https://wiggly-jasmine-d25.notion.site/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
-          <a href="https://wiggly-jasmine-d25.notion.site/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
-        </div>
-      </div>
-      <div class="sc-visual" aria-hidden="true">
-        <img loading="lazy" decoding="async" width="1200" height="800" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" class="sc-img" alt="CEF Calendario Académico">
-      </div>
-      <div class="sc-metrics">
-        <div class="sc-metric">
-          <div class="sc-mval locked-metric">100%</div>
-          <div class="sc-mname es">WCAG AA</div>
-          <div class="sc-mname en">WCAG AA</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval locked-metric">17</div>
-          <div class="sc-mname es">Componentes con 6 estados</div>
-          <div class="sc-mname en">Components with 6 states</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval locked-metric">57</div>
-          <div class="sc-mname es">Variables enlazadas a tokens</div>
-          <div class="sc-mname en">Variables bound to tokens</div>
-        </div>
-      </div>
-      <a href="cef-design-system.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
-    </div>
-
-    <!-- BLOCK: TURISMO & ECOMMERCE -->
-    <div class="block-divider">
-    <div class="block-label">
-      <span class="block-label-text">
-        Turismo &amp; Ecommerce
-      </span>
-      <div class="block-label-line"></div>
-    </div>
-    </div>
-
-    <!-- CASO 2: ILUNION — Rediseño del componente de Ofertas -->
-    <div class="sc-card sc-flip reveal">
-      <div class="sc-content">
-        <div class="sc-num-row">
-          <div class="sc-num">02</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels · <span class="es">Componente de Ofertas</span><span class="en">Offers component</span> ↗</a>
         </div>
+        <div class="sc-stage"><span class="sc-stage-dot"></span><span class="es">Hoy · Diseño que mueve métricas</span><span class="en">Today · Design that moves metrics</span></div>
         <h3 class="sc-title es">ILUNION CRO<br><em>de <span class="locked-metric">3,36% a 6,5%</span> de conversión</em></h3>
         <h3 class="sc-title en">ILUNION CRO<br><em>from <span class="locked-metric">3.36% to 6.5%</span> conversion</em></h3>
         <p class="sc-desc es">Optimización del funnel de reservas mediante análisis automático de 10.000+ logs de funnel y 250+ sesiones de Clarity (via Claude). Las hipótesis salieron de ese análisis de fricciones, no de la intuición. Diseñé y ejecuté <strong>Tests A/B (Control A vs. Tratamiento B)</strong> basados en hipótesis priorizadas (ICE) con verificación de significancia estadística (p &lt; 0,05), fundamentados en <strong>Buyer Personas</strong> (huéspedes vacacionales y corporativos) y aplicación de la <strong>Ley de Fitts</strong> en la visibilidad de CTAs clave. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto responsable · Ownership end-to-end de experimentación</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Tests A/B (Control vs. B) · Buyer &amp; User Personas · Ley de Fitts · Priorización ICE</span></p>
@@ -4301,6 +4259,57 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="ilunion-cro.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
+    <!-- 02 · CEF Design System -->
+    <!-- CASO 3: CEF — Plataforma académica EdTech -->
+    <div class="sc-card sc-flip reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num">02</div>
+          <a href="https://www.cef.com/" target="_blank" rel="noopener" class="sc-client-link">CEF ↗</a>
+        </div>
+        <div class="sc-stage"><span class="sc-stage-dot"></span><span class="es">Hoy · Pensar en sistemas</span><span class="en">Today · Thinking in systems</span></div>
+        <h3 class="sc-title es">CEF Design System<br><em>y accesibilidad EdTech</em></h3>
+        <h3 class="sc-title en">CEF Design System<br><em>and EdTech accessibility</em></h3>
+        <p class="sc-desc es">Eliminación de años de deuda técnica sin sistema de diseño. Diseñé e implementé el primer Design System escalable desde cero: auditoría de accesibilidad WCAG 2.1 AA, arquitectura de tokens (Leyes de Gestalt) y definición de <strong>User Personas EdTech</strong> para estudiantes y docentes. Las fichas de componente y los tokens JSON se generan con Claude vía Figma MCP: 0 discrepancias entre Figma y código. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal · Design System + WCAG 100% propio</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: User Personas · Leyes de Gestalt · Tokens Figma/GitHub · Accesibilidad WCAG AA</span></p>
+        <p class="sc-desc en">Elimination of years of tech debt with no underlying design system. Designed and built the first scalable Design System from scratch: WCAG 2.1 AA accessibility audit, token architecture (Gestalt Laws), and definition of <strong>EdTech User Personas</strong> for students and faculty. Component specs and JSON tokens are generated with Claude via Figma MCP: zero drift between Figma and code. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Principal Product Designer · DS + WCAG 100% sole ownership</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: User Personas · Gestalt Laws · Figma/GitHub Tokens · WCAG AA Accessibility</span></p>
+        <div class="sc-cta-row">
+          <a href="cef-design-system.html" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="cef-design-system.html" class="sc-cta sc-cta-primary en">Case Study</a>
+          <a href="https://wiggly-jasmine-d25.notion.site/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://wiggly-jasmine-d25.notion.site/35ed112a771e811b92e2db9e39e72443" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
+        </div>
+      </div>
+      <div class="sc-visual" aria-hidden="true">
+        <img loading="lazy" decoding="async" width="1200" height="800" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" class="sc-img" alt="CEF Calendario Académico">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">100%</div>
+          <div class="sc-mname es">WCAG AA</div>
+          <div class="sc-mname en">WCAG AA</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">17</div>
+          <div class="sc-mname es">Componentes con 6 estados</div>
+          <div class="sc-mname en">Components with 6 states</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">57</div>
+          <div class="sc-mname es">Variables enlazadas a tokens</div>
+          <div class="sc-mname en">Variables bound to tokens</div>
+        </div>
+      </div>
+      <a href="cef-design-system.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
+
+    <div class="block-divider">
+    <div class="block-label">
+      <span class="block-label-text"><span class="es">Etapa 2 · Liderazgo y estrategia de producto</span><span class="en">Stage 2 · Leadership &amp; product strategy</span></span>
+      <div class="block-label-line"></div>
+    </div>
+    </div>
+
+    <!-- 03 · ILUNION Booking Engine -->
     <!-- CASO 1: ILUNION — Rediseño del motor de reservas -->
     <div class="sc-card reveal">
       <div class="sc-content">
@@ -4308,6 +4317,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-num">03</div>
           <a href="https://www.ilunionhotels.com/" target="_blank" rel="noopener" class="sc-client-link">ILUNION Hotels · <span class="es">Motor de reservas</span><span class="en">Booking engine</span> ↗</a>
         </div>
+        <div class="sc-stage"><span class="sc-stage-dot"></span><span class="es">Liderar UX entre equipos</span><span class="en">Leading UX across teams</span></div>
         <h3 class="sc-title es">ILUNION Booking Engine<br><em>de escaparate a conversión</em></h3>
         <h3 class="sc-title en">ILUNION Booking Engine<br><em>from showcase to conversion</em></h3>
         <p class="sc-desc es">Rediseño completo del flujo del motor de reservas para alinear la arquitectura con la intención real del usuario. Iteré variantes bilingües de CTA y microcopy con análisis heurístico automático (Claude) y llevé a producción las de mayor impacto medible — validadas con la <strong>Ley de Fitts</strong> en la barra flotante de checkout móvil, para el <strong>User Persona del Viajero Frecuente</strong>. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Lead · Liderazgo de UX entre Ingeniería y Marketing</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: User Personas · Ley de Hick · Ley de Fitts · Optimización del Funnel Checkout</span></p>
@@ -4342,63 +4352,15 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="booking-engine.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
-    <!-- BLOCK: CUSTOMER JOURNEY & PRODUCTO DIGITAL -->
-    <div class="block-divider">
-      <div class="block-label">
-        <span class="block-label-text">
-        Customer Journey &amp; Producto Digital · <span style="opacity:0.45; font-weight:400;">2020–2022</span>
-        </span>
-        <div class="block-label-line"></div>
-      </div>
-    </div>
-
-    <!-- CASO 05: PAOLO BY DANNY'S JAZZ — Customer Journey & Producto Digital -->
+    <!-- 04 · Oracle IT Ops -->
+    <!-- CASO 04: WE ARE ACTIONS IT OPS — Build vs. Buy -->
     <div class="sc-card sc-flip reveal">
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">04</div>
-          <span class="sc-client-link" style="cursor:default;">Paolo by Danny's Jazz</span>
-        </div>
-        <h3 class="sc-title es">Paolo Pizzeria<br><em>ecosistema digital de delivery</em></h3>
-        <h3 class="sc-title en">Paolo Pizzeria<br><em>digital delivery ecosystem</em></h3>
-        <p class="sc-desc es">Ownership completo del producto digital de una cadena en expansión. Diseñé la experiencia <strong>Mobile-First</strong> aplicando la <strong>Ley de Miller</strong> (chunking de categorías para evitar parálisis de decisión) basándome en <strong>Buyer Personas de comensales locales y delivery</strong>. Escaló de 1 a 5 locales sin rediseño. Regeneré los 4 platos estrella y exploré 20+ conceptos de marca con IA generativa, sin sesión fotográfica. Automaticé el análisis de los 3 customer journeys del negocio (delivery, visita al local y reserva) mediante análisis de user personas, reduciendo decisiones de diseño manual. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal &amp; Frontend Developer · 2 años end-to-end</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Buyer Personas · Ley de Miller (Chunking) · Arquitectura Mobile-First · Delivery Journeys</span></p>
-        <p class="sc-desc en">Full digital product ownership for an expanding restaurant chain. Designed the <strong>Mobile-First UX</strong> applying <strong>Miller's Law</strong> (category chunking to prevent choice paralysis) based on <strong>Diner &amp; Delivery Buyer Personas</strong>. Scaled from 1 to 5 locations with no redesign. Regenerated the 4 signature dishes and explored 20+ brand concepts with generative AI, with no photo shoot. Automated the analysis of the business's 3 customer journeys (delivery, in-store visit and booking) through user-persona analysis, cutting manual design decisions. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Lead Product Designer &amp; Frontend Developer · 2 years end-to-end ownership</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Buyer Personas · Miller's Law (Chunking) · Mobile-First Architecture · Delivery Journeys</span></p>
-        <div class="sc-cta-row">
-          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es">Case Study</a>
-          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en">Case Study</a>
-          <a href="https://wiggly-jasmine-d25.notion.site/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
-          <a href="https://wiggly-jasmine-d25.notion.site/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
-        </div>
-      </div>
-      <div class="sc-visual" aria-hidden="true">
-        <img loading="lazy" decoding="async" width="2672" height="1536" src="projects/04-paolo/assets/web4.webp" class="sc-img" alt="Paolo Pizzeria">
-      </div>
-      <div class="sc-metrics">
-        <div class="sc-metric">
-          <div class="sc-mval locked-metric">×5</div>
-          <div class="sc-mname es">Locales sin rediseño</div>
-          <div class="sc-mname en">Locations without redesign</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval locked-metric">3</div>
-          <div class="sc-mname es">Journeys cubiertos en 1 producto</div>
-          <div class="sc-mname en">Journeys covered in 1 product</div>
-        </div>
-        <div class="sc-metric">
-          <div class="sc-mval locked-metric">2 años</div>
-          <div class="sc-mname es">Ownership end-to-end</div>
-          <div class="sc-mname en">End-to-end ownership</div>
-        </div>
-      </div>
-      <a href="paolo-pizzeria.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
-    </div>
-    <!-- CASO 04: WE ARE ACTIONS IT OPS — Build vs. Buy -->
-    <div class="sc-card reveal">
-      <div class="sc-content">
-        <div class="sc-num-row">
-          <div class="sc-num">05</div>
           <span class="sc-client-link" style="cursor:default;">We Are Actions</span>
         </div>
+        <div class="sc-stage"><span class="sc-stage-dot"></span><span class="es">De pantallas a decisiones</span><span class="en">From screens to decisions</span></div>
         <h3 class="sc-title es">Oracle ERP &amp; IT Ops<br><em>cuando comprar no resuelve</em></h3>
         <h3 class="sc-title en">Oracle ERP &amp; IT Ops<br><em>when buying doesn't solve it</em></h3>
         <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, realicé un <strong>Discovery Contextual</strong> e identifiqué que Oracle generaba más fricción que solución. Diseñé <strong>User Personas internas para técnicos de soporte</strong>, aislé <strong>4 patrones de fallo</strong> mediante análisis automático de <strong>Heurísticas de Nielsen</strong> (recuperación de errores, consistencia, prevención) y formulé la propuesta estratégica Build vs. Buy, que se tradujo en las especificaciones técnicas de los módulos internos. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Discovery Contextual · Propuesta Conceptual · Estrategia de Producto</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Internal User Personas · Heurísticas de Nielsen · Discovery Contextual · Decision Matrix</span></p>
@@ -4433,12 +4395,64 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="it-ops-oracle.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
+    <div class="block-divider">
+    <div class="block-label">
+      <span class="block-label-text"><span class="es">Etapa 1 · Orígenes: diseñar, construir, investigar</span><span class="en">Stage 1 · Origins: design, build, research</span></span>
+      <div class="block-label-line"></div>
+    </div>
+    </div>
+
+    <!-- 05 · Paolo Pizzeria -->
+    <!-- CASO 05: PAOLO BY DANNY'S JAZZ — Customer Journey & Producto Digital -->
+    <div class="sc-card reveal">
+      <div class="sc-content">
+        <div class="sc-num-row">
+          <div class="sc-num">05</div>
+          <span class="sc-client-link" style="cursor:default;">Paolo by Danny's Jazz</span>
+        </div>
+        <div class="sc-stage"><span class="sc-stage-dot"></span><span class="es">2020–22 · Origen: diseñar y construir</span><span class="en">2020–22 · Origin: design &amp; build</span></div>
+        <h3 class="sc-title es">Paolo Pizzeria<br><em>ecosistema digital de delivery</em></h3>
+        <h3 class="sc-title en">Paolo Pizzeria<br><em>digital delivery ecosystem</em></h3>
+        <p class="sc-desc es">Ownership completo del producto digital de una cadena en expansión. Diseñé la experiencia <strong>Mobile-First</strong> aplicando la <strong>Ley de Miller</strong> (chunking de categorías para evitar parálisis de decisión) basándome en <strong>Buyer Personas de comensales locales y delivery</strong>. Escaló de 1 a 5 locales sin rediseño. Regeneré los 4 platos estrella y exploré 20+ conceptos de marca con IA generativa, sin sesión fotográfica. Automaticé el análisis de los 3 customer journeys del negocio (delivery, visita al local y reserva) mediante análisis de user personas, reduciendo decisiones de diseño manual. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal &amp; Frontend Developer · 2 años end-to-end</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Buyer Personas · Ley de Miller (Chunking) · Arquitectura Mobile-First · Delivery Journeys</span></p>
+        <p class="sc-desc en">Full digital product ownership for an expanding restaurant chain. Designed the <strong>Mobile-First UX</strong> applying <strong>Miller's Law</strong> (category chunking to prevent choice paralysis) based on <strong>Diner &amp; Delivery Buyer Personas</strong>. Scaled from 1 to 5 locations with no redesign. Regenerated the 4 signature dishes and explored 20+ brand concepts with generative AI, with no photo shoot. Automated the analysis of the business's 3 customer journeys (delivery, in-store visit and booking) through user-persona analysis, cutting manual design decisions. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Lead Product Designer &amp; Frontend Developer · 2 years end-to-end ownership</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Buyer Personas · Miller's Law (Chunking) · Mobile-First Architecture · Delivery Journeys</span></p>
+        <div class="sc-cta-row">
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es">Case Study</a>
+          <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en">Case Study</a>
+          <a href="https://wiggly-jasmine-d25.notion.site/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion es"><span class="notion-arrow">↗</span> Proceso</a>
+          <a href="https://wiggly-jasmine-d25.notion.site/386d112a771e8113a3ded341b5be2692" target="_blank" rel="noopener" class="sc-cta-notion en"><span class="notion-arrow">↗</span> Process</a>
+        </div>
+      </div>
+      <div class="sc-visual" aria-hidden="true">
+        <img loading="lazy" decoding="async" width="2672" height="1536" src="projects/04-paolo/assets/web4.webp" class="sc-img" alt="Paolo Pizzeria">
+      </div>
+      <div class="sc-metrics">
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">×5</div>
+          <div class="sc-mname es">Locales sin rediseño</div>
+          <div class="sc-mname en">Locations without redesign</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">3</div>
+          <div class="sc-mname es">Journeys cubiertos en 1 producto</div>
+          <div class="sc-mname en">Journeys covered in 1 product</div>
+        </div>
+        <div class="sc-metric">
+          <div class="sc-mval locked-metric">2 años</div>
+          <div class="sc-mname es">Ownership end-to-end</div>
+          <div class="sc-mname en">End-to-end ownership</div>
+        </div>
+      </div>
+      <a href="paolo-pizzeria.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
+    </div>
+
+    <!-- 06 · Gym Energy Center -->
     <div class="sc-card sc-flip reveal">
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">06</div>
           <span class="sc-client-link" style="cursor:default;">Bootcamp Neoland</span>
         </div>
+        <div class="sc-stage"><span class="sc-stage-dot"></span><span class="es">Los cimientos · Research en equipo</span><span class="en">The foundations · Team research</span></div>
         <h3 class="sc-title es">Gym Energy Center<br><em>un gimnasio no es una app de reservas</em></h3>
         <h3 class="sc-title en">Gym Energy Center<br><em>a gym isn't a booking app</em></h3>
         <p class="sc-desc es">MVP construido <strong>en equipo</strong> durante el bootcamp de Neoland: ocho personas entre producto y desarrollo. Llevé la <strong>investigación</strong>, la <strong>arquitectura de producto</strong> y el <strong>sistema de diseño</strong>, articulados en un <strong>framework de 3 pilares</strong> (práctico, social y emocional) que servía para decidir qué entraba en el MVP y qué no. Entre todo el equipo: 40+ componentes, 8 modelos MongoDB y 30+ endpoints. La <strong>reconceptualización de 2026</strong> —IA, dashboard de progreso y seguridad— es trabajo individual. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Research · Arquitectura de Producto · Sistema de Diseño</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Discovery · Framework de 3 pilares · Design System · Handoff a desarrollo</span></p>
