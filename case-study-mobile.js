@@ -128,7 +128,12 @@
 
   if (bottomBar && heroSection) {
     const checkBottomBar = () => {
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      // Si el hero está oculto (p.ej. maquetación móvil propia con .ome),
+      // getBoundingClientRect() siempre da 0: usamos la posición de scroll como respaldo.
+      const isHidden = window.getComputedStyle(heroSection).display === 'none';
+      const heroBottom = isHidden
+        ? (window.scrollY > 320 ? 0 : 999)
+        : heroSection.getBoundingClientRect().bottom;
       if (heroBottom < 100) {
         bottomBar.classList.add('is-visible');
       } else {
