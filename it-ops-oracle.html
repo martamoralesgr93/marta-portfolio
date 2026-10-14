@@ -11,6 +11,7 @@
   <script src="/auth-lock.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Build vs. Buy · Diagnóstico de fricción operativa IT · Marta Morales</title>
   <meta name="description" content="Cómo un Excel del responsable de sistemas desencadenó un diagnóstico de producto: investigación de fricción operativa y propuesta de plataforma interna para reducir la carga de tickets IT.">
   <link rel="canonical" href="https://martamorales.vercel.app/it-ops-oracle">
@@ -71,6 +72,7 @@
     .ss-table tr:last-child td { border-bottom: none; }
     .ss-table td.bad { color: #f59e0b; font-weight: 600; }
     .ss-table td.critical { color: #ef4444; font-weight: 600; }
+    @media (max-width: 640px) { .ss-table th, .ss-table td { padding: 10px 8px; } }
 
     /* IA TREE */
     .ia-tree-wrap { margin: 40px 0 60px; }
@@ -491,11 +493,11 @@
     </div>
     <div class="hero-metrics fu">
       <div class="hm-item">
-        <div class="hm-label es">Logs analizados</div>
-        <div class="hm-label en">Logs analysed</div>
-        <div class="hm-value">120+</div>
-        <div class="hm-sub es">Errores y soporte, clusterizados</div>
-        <div class="hm-sub en">Errors and support, clustered</div>
+        <div class="hm-label es">Fricción medida</div>
+        <div class="hm-label en">Measured friction</div>
+        <div class="hm-value">56,5 h</div>
+        <div class="hm-sub es">Al mes, en 4 procesos (Excel de Sistemas)</div>
+        <div class="hm-sub en">Per month, across 4 processes (Systems spreadsheet)</div>
       </div>
       <div class="hm-item">
         <div class="hm-label es">Patrones → módulos</div>
@@ -619,24 +621,34 @@
               <tr>
                 <th>Proceso (Process)</th>
                 <th>Fricción (Friction)</th>
+                <th>Módulo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Renovación Certificados (Certs)</td>
                 <td class="bad">4.5 hrs/mes</td>
+                <td>M02</td>
               </tr>
               <tr>
                 <td>Alta de Usuarios (Onboarding)</td>
                 <td class="bad">12 hrs/mes</td>
+                <td>M02</td>
               </tr>
               <tr>
                 <td>Confusión de Entornos (Env)</td>
                 <td class="critical">18 hrs/mes</td>
+                <td>M03</td>
               </tr>
               <tr>
                 <td>Preguntas de Estado (Status queries)</td>
                 <td class="critical">22 hrs/mes</td>
+                <td>M04</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td class="critical"><strong>56.5 hrs/mes</strong></td>
+                <td>4/4</td>
               </tr>
             </tbody>
           </table>
@@ -661,9 +673,9 @@
         <div class="data-l en">IT team members managing all operations</div>
       </div>
       <div class="data-cell">
-        <div class="data-v">30+</div>
-        <div class="data-l es">años de Oracle en la organización — herramienta heredada, nunca cuestionada</div>
-        <div class="data-l en">years of Oracle in the organisation — inherited tool, never questioned</div>
+        <div class="data-v">15+</div>
+        <div class="data-l es">años de Oracle en la organización: herramienta heredada, nunca cuestionada</div>
+        <div class="data-l en">years of Oracle in the organisation: inherited tool, never questioned</div>
       </div>
     </div>
 
@@ -793,10 +805,25 @@
     <!-- AFFINITY MAP -->
     <div class="affinity-grid fu">
       <div class="affinity-cluster">
+        <div class="affinity-cluster-label" style="color:#8b5cf6;">
+          <div class="affinity-dot" style="background:#8b5cf6;"></div>
+          <span class="es">Patrón 1 · Arquitectura de información plana</span>
+          <span class="en">Pattern 1 · Flat information architecture</span>
+        </div>
+        <div class="affinity-cards">
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Incidencias críticas y consultas menores en la misma cola</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Priorización dependía del criterio individual de cada gestor</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Tiempo de triaje elevado en momentos de alta carga</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">Critical incidents and minor queries in the same queue</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">Prioritisation depended on each manager's individual judgement</div>
+          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">High triage time during peak load moments</div>
+        </div>
+      </div>
+      <div class="affinity-cluster">
         <div class="affinity-cluster-label" style="color:#f59e0b;">
           <div class="affinity-dot" style="background:#f59e0b;"></div>
-          <span class="es">Patrón 1 · Trabajo manual sin automatizar</span>
-          <span class="en">Pattern 1 · Manual work without automation</span>
+          <span class="es">Patrón 2 · Trabajo manual sin automatizar</span>
+          <span class="en">Pattern 2 · Manual work without automation</span>
         </div>
         <div class="affinity-cards">
           <div class="affinity-card" style="border-left-color:rgba(245,158,11,0.4);" lang="es">Renovación de certificados web: proceso manual repetido cada vez</div>
@@ -810,8 +837,8 @@
       <div class="affinity-cluster">
         <div class="affinity-cluster-label" style="color:#ef4444;">
           <div class="affinity-dot" style="background:#ef4444;"></div>
-          <span class="es">Patrón 2 · Sistema sin guardianes de error</span>
-          <span class="en">Pattern 2 · System without error guards</span>
+          <span class="es">Patrón 3 · Sistema sin guardianes de error</span>
+          <span class="en">Pattern 3 · System without error guards</span>
         </div>
         <div class="affinity-cards">
           <div class="affinity-card" style="border-left-color:rgba(239, 68, 68,0.4);" lang="es">Archivos eliminados por accidente — sin confirmación previa</div>
@@ -820,21 +847,6 @@
           <div class="affinity-card" style="border-left-color:rgba(239, 68, 68,0.4);" lang="en">Files accidentally deleted — no prior confirmation</div>
           <div class="affinity-card" style="border-left-color:rgba(239, 68, 68,0.4);" lang="en">Processes run in the wrong environment (prod vs staging)</div>
           <div class="affinity-card" style="border-left-color:rgba(239, 68, 68,0.4);" lang="en">Heavy queries launched without validating their impact</div>
-        </div>
-      </div>
-      <div class="affinity-cluster">
-        <div class="affinity-cluster-label" style="color:#8b5cf6;">
-          <div class="affinity-dot" style="background:#8b5cf6;"></div>
-          <span class="es">Patrón 3 · Arquitectura de información plana</span>
-          <span class="en">Pattern 3 · Flat information architecture</span>
-        </div>
-        <div class="affinity-cards">
-          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Incidencias críticas y consultas menores en la misma cola</div>
-          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Priorización dependía del criterio individual de cada gestor</div>
-          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="es">Tiempo de triaje elevado en momentos de alta carga</div>
-          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">Critical incidents and minor queries in the same queue</div>
-          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">Prioritisation depended on each manager's individual judgement</div>
-          <div class="affinity-card" style="border-left-color:rgba(var(--accent-rgb),0.4);" lang="en">High triage time during peak load moments</div>
         </div>
       </div>
       <div class="affinity-cluster">
@@ -939,8 +951,8 @@
         <div class="module-title en">Request centre with smart classification</div>
         <div class="module-desc es">Entrada única con tipología predefinida: incidencia crítica, acceso, tarea recurrente o consulta. La categoría fija la urgencia y el flujo.</div>
         <div class="module-desc en">Single entry point with predefined typology: critical incident / access request / recurring task / query. The category automatically determines urgency and resolution flow.</div>
-        <div class="module-solves es">Resuelve: patrón 3 (arquitectura plana) y tiempo de triaje manual</div>
-        <div class="module-solves en">Solves: pattern 3 (flat architecture) and manual triage time</div>
+        <div class="module-solves es">Resuelve: patrón 1 (arquitectura plana) y tiempo de triaje manual</div>
+        <div class="module-solves en">Solves: pattern 1 (flat architecture) and manual triage time</div>
       </div>
       <div class="module-card">
         <div class="module-num">Módulo 02</div>
@@ -948,8 +960,8 @@
         <div class="module-title en">Guided flows for repetitive tasks</div>
         <div class="module-desc es">En procesos conocidos —certificados, alta de usuario, permisos— el sistema guía paso a paso y elimina los errores por omisión.</div>
         <div class="module-desc en">For known processes —certificates, onboarding, permissions— the system guides step by step and removes errors by omission.</div>
-        <div class="module-solves es">Resuelve: patrón 1 (trabajo manual repetitivo)</div>
-        <div class="module-solves en">Solves: pattern 1 (repetitive manual work)</div>
+        <div class="module-solves es">Resuelve: patrón 2 (trabajo manual repetitivo)</div>
+        <div class="module-solves en">Solves: pattern 2 (repetitive manual work)</div>
       </div>
       <div class="module-card">
         <div class="module-num">Módulo 03</div>
@@ -957,8 +969,8 @@
         <div class="module-title en">Contextual validations and confirmations</div>
         <div class="module-desc es">Antes de una acción de alto impacto —borrar, subir a producción, lanzar una query— el sistema pide confirmación con contexto: qué haces, dónde y qué puede pasar.</div>
         <div class="module-desc en">Before a high-impact action —delete, promote to production, run a query— the system asks for confirmation with context: what, where, and what could happen.</div>
-        <div class="module-solves es">Resuelve: patrón 2 (errores sin guardianes)</div>
-        <div class="module-solves en">Solves: pattern 2 (errors without guards)</div>
+        <div class="module-solves es">Resuelve: patrón 3 (errores sin guardianes)</div>
+        <div class="module-solves en">Solves: pattern 3 (errors without guards)</div>
       </div>
       <div class="module-card">
         <div class="module-num">Módulo 04</div>
@@ -979,12 +991,33 @@
       <h3 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="en">Every module answers a real pattern, not a hunch</h3>
     </div>
     <div class="pmap-list fu">
+      <div class="pmap-row" data-accent="purple">
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Patrón 1 · detectado</span>
+            <span class="pmap-eyebrow en">Pattern 1 · detected</span>
+            <span class="pmap-label es">Arquitectura de información plana</span>
+            <span class="pmap-label en">Flat information architecture</span>
+          </div>
+        </div>
+        <div class="pmap-bridge"><div class="pmap-bridge-line"></div></div>
+        <div class="pmap-card">
+          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+          <div class="pmap-text">
+            <span class="pmap-eyebrow es">Módulo 01 · diseñado</span>
+            <span class="pmap-eyebrow en">Module 01 · designed</span>
+            <span class="pmap-label es">Centro de solicitudes con clasificación inteligente</span>
+            <span class="pmap-label en">Request centre with smart classification</span>
+          </div>
+        </div>
+      </div>
       <div class="pmap-row" data-accent="amber">
         <div class="pmap-card">
           <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div class="pmap-text">
-            <span class="pmap-eyebrow es">Patrón 1 · detectado</span>
-            <span class="pmap-eyebrow en">Pattern 1 · detected</span>
+            <span class="pmap-eyebrow es">Patrón 2 · detectado</span>
+            <span class="pmap-eyebrow en">Pattern 2 · detected</span>
             <span class="pmap-label es">Trabajo manual sin automatizar</span>
             <span class="pmap-label en">Manual work without automation</span>
           </div>
@@ -1004,8 +1037,8 @@
         <div class="pmap-card">
           <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
           <div class="pmap-text">
-            <span class="pmap-eyebrow es">Patrón 2 · detectado</span>
-            <span class="pmap-eyebrow en">Pattern 2 · detected</span>
+            <span class="pmap-eyebrow es">Patrón 3 · detectado</span>
+            <span class="pmap-eyebrow en">Pattern 3 · detected</span>
             <span class="pmap-label es">Sistema sin guardianes de error</span>
             <span class="pmap-label en">System without error guards</span>
           </div>
@@ -1018,27 +1051,6 @@
             <span class="pmap-eyebrow en">Module 03 · designed</span>
             <span class="pmap-label es">Validaciones y confirmaciones contextuales</span>
             <span class="pmap-label en">Contextual validations and confirmations</span>
-          </div>
-        </div>
-      </div>
-      <div class="pmap-row" data-accent="purple">
-        <div class="pmap-card">
-          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
-          <div class="pmap-text">
-            <span class="pmap-eyebrow es">Patrón 3 · detectado</span>
-            <span class="pmap-eyebrow en">Pattern 3 · detected</span>
-            <span class="pmap-label es">Arquitectura de información plana</span>
-            <span class="pmap-label en">Flat information architecture</span>
-          </div>
-        </div>
-        <div class="pmap-bridge"><div class="pmap-bridge-line"></div></div>
-        <div class="pmap-card">
-          <div class="pmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
-          <div class="pmap-text">
-            <span class="pmap-eyebrow es">Módulo 01 · diseñado</span>
-            <span class="pmap-eyebrow en">Module 01 · designed</span>
-            <span class="pmap-label es">Centro de solicitudes con clasificación inteligente</span>
-            <span class="pmap-label en">Request centre with smart classification</span>
           </div>
         </div>
       </div>
@@ -1350,33 +1362,6 @@
         <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Status visibility would eliminate the main reason for reactive contact — "where is my request?" — freeing up time for actual technical work.</div>
       </div>
     </div>
-            <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
-    <details class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
-      <summary class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
-        <span style="color: var(--accent);">INTEGRACIÓN DE IA EN RESEARCH Y AUDITORÍA DE DATOS (Figma/Database MCP)</span>
-        <em style="color: rgba(255,255,255,0.65);">— Optimización de flujos y especificación técnica en ERP corporativo</em>
-      </summary>
-      <div class="wf-steps" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-        <div class="wf-step">
-          <span class="wf-step-num" style="color: var(--accent);">1.</span>
-          <p class="wf-step-title" style="color: #fff;">Auditoría de Feedback (MCP)</p>
-          <p class="wf-step-desc es">Claude vía MCP Postgres sobre las bases internas de IT: 120+ logs de error y transcripciones de soporte agrupados en categorías accionables.</p>
-          <p class="wf-step-desc en">Connecting Claude via MCP Postgres to internal IT database systems to parse, clean, and cluster 120+ error logs and support transcripts into structured visual categories.</p>
-        </div>
-        <div class="wf-step">
-          <span class="wf-step-num" style="color: var(--accent);">2.</span>
-          <p class="wf-step-title" style="color: #fff;">Simulación de Journeys</p>
-          <p class="wf-step-desc es">Desarrollé prompts de razonamiento lógico en Claude para simular y validar las bifurcaciones y flujos complejos de priorización de tickets frente a los journeys definidos.</p>
-          <p class="wf-step-desc en">Leveraging logical reasoning prompts in Claude to validate complex decision paths and ticket prioritization scenarios against user journeys.</p>
-        </div>
-        <div class="wf-step">
-          <span class="wf-step-num" style="color: var(--accent);">3.</span>
-          <p class="wf-step-title" style="color: #fff;">Handoff Técnico (Figma MCP)</p>
-          <p class="wf-step-desc es">Figma MCP para inspeccionar la jerarquía de las vistas y extraer specs compatibles con la API de Oracle.</p>
-          <p class="wf-step-desc en">Used Figma MCP to programmatically inspect frame hierarchy on the redesigned ERP layouts, auto-generating developer specs compliant with Oracle APIs.</p>
-        </div>
-      </div>
-    </details>
       </div>
   </div>
 </section>

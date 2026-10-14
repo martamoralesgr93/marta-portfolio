@@ -11,6 +11,7 @@
   <script src="/auth-lock.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>CEF EdTech · Design System & WCAG AA — From Zero · Marta Morales</title>
 
   <meta name="description" content="Built CEF's first scalable design system from scratch: WCAG AA audit, component architecture and token system. Includes a full 2026 AI-assisted recreation (Claude + Figma MCP): same system, rebuilt in days instead of months.">
@@ -905,7 +906,7 @@
       <div>
         <div style="background: transparent; border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 28px; border-radius: 0 16px 16px 0; height: 100%;">
           <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:12px;">Restricciones reales del proyecto</span>
-          <p class="p" style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6; margin: 0;">Los colores de marca no llegaban al 4,5:1. Redefiní la paleta y validé el sistema en los dos módulos de más fricción: calendario y login.</p>
+          <p class="p" style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6; margin: 0;">Los colores de marca no llegaban al 4,5:1. Redefiní la paleta y validé el sistema en los cuatro módulos críticos: calendario, pasarela de pago, login y bolsa de empleo.</p>
         </div>
       </div>
     </div>
@@ -1161,6 +1162,52 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Pasarela de Pago: impacto antes / después -->
+      <div class="fu" style="margin-top:-40px; margin-bottom:80px;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:4px;">Impacto de la pasarela · de teléfono a conversión digital</span>
+        <div class="cs-ba" style="margin:16px 0 12px;">
+          <div class="cs-ba-col">
+            <span class="cs-ba-badge cs-ba-before">Antes · todo por teléfono</span>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">0%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">15-30 min</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">Sin canal</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Cobro</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">Por teléfono</span>
+          </div>
+          </div>
+          <div class="cs-ba-col">
+            <span class="cs-ba-badge cs-ba-after">Después · pasarela propia</span>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">~60%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">&lt; 5 min</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">&lt; 8%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Incidencias de seguridad</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">0</span>
+          </div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin:0;">Referencia de abandono en checkout del sector: ~15%. Integración con Redsys server-side y cumplimiento PCI DSS: ningún dato de tarjeta se guarda en el frontend.</p>
       </div>
 
       <!-- STEP 05: LOGIN Y BOLSA DE EMPLEO (ACCESO UNIFICADO DESKTOP & MOBILE) -->
