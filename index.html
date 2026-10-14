@@ -2761,6 +2761,40 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .mm-atmos-glow { display: none; }
   .mm-atmos-video { opacity: .28; filter: blur(24px); }
 }
+
+/* ===================== SHOWCASE · ZIGZAG ESCRITORIO =====================
+   Texto + imagen en dos columnas, alternando el lado en cada caso.
+   Las métricas pasan a una fila bajo el texto. */
+@media (min-width: 1101px) {
+  .sc-card {
+    grid-template-columns: 1fr 1.15fr;
+    grid-template-areas: "content visual" "metrics visual";
+    grid-template-rows: 1fr auto;
+    min-height: 440px;
+  }
+  .sc-card > .sc-content { grid-area: content; }
+  .sc-card > .sc-visual { grid-area: visual; }
+  .sc-card > .sc-metrics {
+    grid-area: metrics;
+    flex-direction: row; justify-content: flex-start; align-items: flex-start;
+    border-left: none; border-top: 1px solid var(--surface-2);
+    padding: 22px 36px 30px 52px;
+  }
+  .sc-card > .sc-metrics .sc-metric {
+    flex: 1 1 0; padding: 0 18px 0 0; margin-right: 18px;
+    border-bottom: none; border-right: 1px solid var(--surface-2);
+  }
+  .sc-card > .sc-metrics .sc-metric:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .sc-card > .sc-metrics .sc-mval { font-size: 26px; }
+  .sc-card.sc-flip {
+    grid-template-columns: 1.15fr 1fr;
+    grid-template-areas: "visual content" "visual metrics";
+  }
+  .sc-card.sc-flip > .sc-visual { border-left: none; border-right: 1px solid var(--surface-2); }
+  .sc-card.sc-flip > .sc-content { padding: 52px 52px 52px 44px; }
+  .sc-card.sc-flip > .sc-metrics { padding: 22px 52px 30px 44px; }
+  .sc-visual { padding: 28px 24px; }
+}
 </style>
 </head>
 <body>
@@ -4123,8 +4157,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <!-- BLOCK: IA & DESIGN SYSTEMS -->
     <div class="block-label">
         <span class="block-label-text">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path></svg>
-          IA &amp; Design Systems
+        IA &amp; Design Systems
         </span>
       <div class="block-label-line"></div>
     </div>
@@ -4174,7 +4207,6 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <div class="block-divider">
     <div class="block-label">
       <span class="block-label-text">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5L1.5 11.5h2.8V21h5.2v-6h5v6h5.2v-9.5h2.8L12 2.5z"></path></svg>
         Turismo &amp; Ecommerce
       </span>
       <div class="block-label-line"></div>
@@ -4182,7 +4214,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     </div>
 
     <!-- CASO 2: ILUNION — Rediseño del componente de Ofertas -->
-    <div class="sc-card reveal">
+    <div class="sc-card sc-flip reveal">
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">02</div>
@@ -4190,8 +4222,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">ILUNION CRO<br><em>de <span class="locked-metric">3,36% a 6,5%</span> de conversión</em></h3>
         <h3 class="sc-title en">ILUNION CRO<br><em>from <span class="locked-metric">3.36% to 6.5%</span> conversion</em></h3>
-        <p class="sc-desc es">Optimización del funnel de reservas mediante análisis automático de 10.000+ logs de funnel y 250+ sesiones de Clarity (via Claude). Las hipótesis salieron de ese análisis de fricciones, no de la intuición. Diseñé y ejecuté <strong>Tests A/B (Control A vs. Tratamiento B)</strong> basados en hipótesis priorizadas (ICE) con verificación de significancia estadística ($p &lt; 0.05$), fundamentados en <strong>Buyer Personas</strong> (huéspedes vacacionales y corporativos) y aplicación de la <strong>Ley de Fitts</strong> en la visibilidad de CTAs clave. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto responsable · Ownership end-to-end de experimentación</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Tests A/B (Control vs. B) · Buyer &amp; User Personas · Ley de Fitts · Priorización ICE</span></p>
-        <p class="sc-desc en">Booking funnel optimization driven by automated analysis of 10,000+ funnel logs and 250+ Clarity sessions (via Claude). Hypotheses came out of that friction analysis, not out of intuition. Designed and executed <strong>A/B Tests (Control A vs. Treatment B)</strong> driven by prioritized hypotheses (ICE framework) with statistical significance ($p &lt; 0.05$), built on <strong>Buyer Personas</strong> (leisure &amp; corporate bookers) and <strong>Fitts's Law</strong> for primary CTA ergonomics. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Responsible Product Designer · Autonomous end-to-end experiment ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: A/B Testing (Control vs. B) · Buyer &amp; User Personas · Fitts's Law · ICE Prioritization</span></p>
+        <p class="sc-desc es">Optimización del funnel de reservas mediante análisis automático de 10.000+ logs de funnel y 250+ sesiones de Clarity (via Claude). Las hipótesis salieron de ese análisis de fricciones, no de la intuición. Diseñé y ejecuté <strong>Tests A/B (Control A vs. Tratamiento B)</strong> basados en hipótesis priorizadas (ICE) con verificación de significancia estadística (p &lt; 0,05), fundamentados en <strong>Buyer Personas</strong> (huéspedes vacacionales y corporativos) y aplicación de la <strong>Ley de Fitts</strong> en la visibilidad de CTAs clave. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto responsable · Ownership end-to-end de experimentación</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Tests A/B (Control vs. B) · Buyer &amp; User Personas · Ley de Fitts · Priorización ICE</span></p>
+        <p class="sc-desc en">Booking funnel optimization driven by automated analysis of 10,000+ funnel logs and 250+ Clarity sessions (via Claude). Hypotheses came out of that friction analysis, not out of intuition. Designed and executed <strong>A/B Tests (Control A vs. Treatment B)</strong> driven by prioritized hypotheses (ICE framework) with statistical significance (p &lt; 0,05), built on <strong>Buyer Personas</strong> (leisure &amp; corporate bookers) and <strong>Fitts's Law</strong> for primary CTA ergonomics. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Responsible Product Designer · Autonomous end-to-end experiment ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: A/B Testing (Control vs. B) · Buyer &amp; User Personas · Fitts's Law · ICE Prioritization</span></p>
         <div class="step-ai-integration es" style="margin-bottom:12px;">
           <span class="ai-badge">Copiloto IA: Research &amp; Auditoría de Datos (MCP)</span>
           <p>Extraigo 10.000+ logs de conversión (Analytics + Clarity) en 2h. Automatizo el clustering de sesiones de usuario para aislar fricciones visuales antes de diseñar y feedback para identificar fricciones visuales con datos validados.</p>
@@ -4258,9 +4290,9 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <div class="sc-mname en">Engine above the fold</div>
         </div>
         <div class="sc-metric">
-          <div class="sc-mval">↓75%</div>
-          <div class="sc-mname es">Scroll sin búsqueda</div>
-          <div class="sc-mname en">Scroll without search</div>
+          <div class="sc-mval">75%</div>
+          <div class="sc-mname es">Sesiones sin búsqueda (baseline)</div>
+          <div class="sc-mname en">Sessions without search (baseline)</div>
         </div>
         <div class="sc-metric">
           <div class="sc-mval">+1</div>
@@ -4275,15 +4307,14 @@ html.lang-en .hero-positioning.en { display: block !important; }
     <div class="block-divider">
       <div class="block-label">
         <span class="block-label-text">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l10 5.5-10 5.5L2 7.5 12 2zm-7.4 9.7L12 15.8l7.4-4.1 2.6 1.4-10 5.5-10-5.5 2.6-1.4zm0 4.6L12 20.4l7.4-4.1L22 17.7 12 23.2 2 17.7l2.6-1.4z"></path></svg>
-          Customer Journey &amp; Producto Digital · <span style="opacity:0.45; font-weight:400;">2020–2022</span>
+        Customer Journey &amp; Producto Digital · <span style="opacity:0.45; font-weight:400;">2020–2022</span>
         </span>
         <div class="block-label-line"></div>
       </div>
     </div>
 
     <!-- CASO 05: PAOLO BY DANNY'S JAZZ — Customer Journey & Producto Digital -->
-    <div class="sc-card reveal">
+    <div class="sc-card sc-flip reveal">
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">04</div>
@@ -4363,7 +4394,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <a href="it-ops-oracle.html" class="sc-corner" aria-label="Ver Caso de Estudio">↗</a>
     </div>
 
-    <div class="sc-card reveal">
+    <div class="sc-card sc-flip reveal">
       <div class="sc-content">
         <div class="sc-num-row">
           <div class="sc-num">06</div>
