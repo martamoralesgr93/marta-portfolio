@@ -25,8 +25,62 @@
 <!-- ============ NAV + PROGRESO ============ -->
 <header class="cs-top">
   <div class="wrap">
-    <a href="index.html#work" class="cs-back" id="cs-back"><span class="es">← Volver a casos</span><span class="en">← Back to cases</span></a>
-    <nav aria-label="Secciones">
+    <div class="cs-nav-left">
+      <a href="index.html" class="cs-logo" aria-label="Marta Morales - Inicio">
+        <img src="assets/logo-sinfondo.webp" alt="Marta Morales Logo" width="36" height="24">
+      </a>
+      <a href="index.html#work" class="cs-back" id="cs-back">
+        <span class="es">← Volver</span><span class="en">← Back</span>
+      </a>
+    </div>
+
+    <div class="cs-nav-center">
+      <div class="cs-nav-dropdown">
+        <button class="cs-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+          <span class="es">Casos de Producto ▾</span>
+          <span class="en">Case Studies ▾</span>
+        </button>
+        <div class="cs-dropdown-menu">
+          <a href="cef-design-system.html" class="cs-dropdown-item">
+            <span class="cs-item-num">Caso 01</span>
+            <span class="cs-item-title">CEF EdTech</span>
+            <span class="cs-item-desc es">Accesibilidad WCAG AA &amp; Design System</span>
+            <span class="cs-item-desc en">WCAG AA Accessibility &amp; Design System</span>
+          </a>
+          <a href="ilunion-cro.html" class="cs-dropdown-item">
+            <span class="cs-item-num">Caso 02</span>
+            <span class="cs-item-title">ILUNION CRO</span>
+            <span class="cs-item-desc es">CRO, A/B Testing &amp; Data Insights</span>
+            <span class="cs-item-desc en">CRO, A/B Testing &amp; Data Insights</span>
+          </a>
+          <a href="booking-engine.html" class="cs-dropdown-item">
+            <span class="cs-item-num">Caso 03</span>
+            <span class="cs-item-title">Booking Engine</span>
+            <span class="cs-item-desc es">Motor de reservas &amp; Componentes</span>
+            <span class="cs-item-desc en">Booking Engine &amp; Components</span>
+          </a>
+          <a href="paolo-pizzeria.html" class="cs-dropdown-item">
+            <span class="cs-item-num">Caso 04</span>
+            <span class="cs-item-title">Paolo Brand System</span>
+            <span class="cs-item-desc es">Identidad &amp; Ecosistema Digital</span>
+            <span class="cs-item-desc en">Brand Identity &amp; Digital Ecosystem</span>
+          </a>
+          <a href="it-ops-oracle.html" class="cs-dropdown-item is-current">
+            <span class="cs-item-num">Caso 05</span>
+            <span class="cs-item-title">IT Ops &amp; Oracle</span>
+            <span class="cs-item-desc es">Diagnóstico IT &amp; Herramientas internas</span>
+            <span class="cs-item-desc en">IT Diagnosis &amp; Internal Tooling</span>
+          </a>
+          <a href="gym-energy-center.html" class="cs-dropdown-item">
+            <span class="cs-item-num">Caso 06</span>
+            <span class="cs-item-title">Gym Energy Center</span>
+            <span class="cs-item-desc es">UX Research &amp; Adherencia deportiva</span>
+            <span class="cs-item-desc en">UX Research &amp; Habit Building</span>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Secciones">
       <ul class="cs-toc">
         <li><a href="#overview">Overview</a></li>
         <li><a href="#problema"><span class="es">Problema</span><span class="en">Problem</span></a></li>
@@ -36,10 +90,45 @@
         <li><a href="#aprendizajes"><span class="es">Progresión</span><span class="en">Growth</span></a></li>
       </ul>
     </nav>
-    <button class="cs-lang" id="cs-lang-toggle" type="button" aria-label="Cambiar idioma">EN</button>
+    </div>
+
+    <div class="cs-nav-right">
+      <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta es">Agendar llamada ↗</a>
+      <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta en">Schedule Call ↗</a>
+      <button class="cs-lang" id="cs-lang-toggle" type="button" aria-label="Cambiar idioma">EN</button>
+      <button class="cs-hamburger" id="csHamburgerBtn" type="button" onclick="openCaseMenu()" aria-label="Menú de casos">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+          <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+          <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
+        </svg>
+      </button>
+    </div>
   </div>
   <div class="cs-progress" id="cs-progress"></div>
 </header>
+
+<!-- ============ MENÚ MÓVIL DE CASOS ============ -->
+<div class="cs-mobile-menu" id="csMobileMenu">
+  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path>
+    </svg>
+  </button>
+  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
+  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
+  <ul class="cs-mobile-menu-links">
+    <li><a href="cef-design-system.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span><span class="cs-mmi-title">CEF EdTech</span></a></li>
+    <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span><span class="cs-mmi-title">ILUNION CRO</span></a></li>
+    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span><span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span><span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span><span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+    <li><a href="gym-energy-center.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">06</span><span class="cs-mmi-title">Gym Energy Center</span></a></li>
+  </ul>
+  <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta cs-mobile-menu-cta es">Agendar llamada ↗</a>
+  <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta cs-mobile-menu-cta en">Schedule Call ↗</a>
+  <a href="index.html" class="cs-mobile-menu-back"><span class="es">← Volver al inicio</span><span class="en">← Back to home</span></a>
+</div>
 
 <main>
 
@@ -201,6 +290,36 @@
   </div>
 </a>
 
+<!-- ============ 15 · PAGINADO & ACCIÓN ============ -->
+<section class="cs-pagination-section">
+  <div class="wrap">
+    <div class="footer-label es">Siguiente caso</div>
+    <div class="footer-label en">Next case</div>
+    <h2 class="cs-pagination-title es">¿Vemos otro proyecto?</h2>
+    <h2 class="cs-pagination-title en">Want to see another project?</h2>
+    
+    <nav class="cs-pagination" aria-label="Navegación entre casos">
+      <a href="paolo-pizzeria.html" class="cs-pagination-arrow" aria-label="Caso anterior">←</a>
+      <div class="cs-pagination-dots">
+        <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 01">01</a>
+        <a href="ilunion-cro.html" class="cs-pagination-dot" aria-label="Caso 02">02</a>
+        <a href="booking-engine.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
+        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
+        <a href="it-ops-oracle.html" class="cs-pagination-dot is-current" aria-label="Caso 05">05</a>
+        <a href="gym-energy-center.html" class="cs-pagination-dot" aria-label="Caso 06">06</a>
+      </div>
+      <a href="gym-energy-center.html" class="cs-pagination-arrow" aria-label="Caso siguiente">→</a>
+    </nav>
+
+    <div class="cs-pagination-actions">
+      <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta es">Agendar llamada ↗</a>
+      <a href="mailto:mmoralesgr93@gmail.com" class="nav-cta en">Schedule Call ↗</a>
+      <a href="index.html#work" class="cs-pagination-index es">Volver al índice</a>
+      <a href="index.html#work" class="cs-pagination-index en">Back to index</a>
+    </div>
+  </div>
+</section>
+
 <script>
 (() => {
   const root = document.documentElement;
@@ -223,6 +342,22 @@
     if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
   links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); s && so.observe(s); });
+
+  // Menú móvil de casos
+  window.openCaseMenu = () => {
+    const m = document.getElementById('csMobileMenu');
+    if (!m) return;
+    m.style.display = 'flex';
+    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('open')));
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeCaseMenu = () => {
+    const m = document.getElementById('csMobileMenu');
+    if (!m) return;
+    m.classList.remove('open');
+    setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 260);
+  };
+
 })();
 </script>
 </body>

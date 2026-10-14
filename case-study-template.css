@@ -39,15 +39,313 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
 .wrap { width: min(var(--wrap), 100% - 48px); margin-inline: auto; }
 
 /* ---------- Nav ---------- */
-.cs-top { position: fixed; inset: 0 0 auto; z-index: 50; backdrop-filter: blur(14px); background: rgba(0,0,0,.7); border-bottom: 1px solid var(--border); }
-.cs-top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.cs-back { text-decoration: none; font-size: 13px; color: var(--text-dim); transition: color .3s; }
-.cs-back:hover { color: var(--white); }
-.cs-toc { display: flex; gap: 24px; list-style: none; }
+.cs-top {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 200;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.78);
+  border-bottom: 1px solid var(--border);
+}
+.cs-top .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 68px;
+}
+.cs-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cs-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.cs-logo:hover {
+  opacity: .8;
+}
+.cs-logo img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.cs-back:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.cs-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Dropdown de Casos */
+.cs-nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.cs-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .2s;
+}
+.cs-dropdown-trigger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+.cs-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 320px;
+  background: rgba(12, 12, 14, 0.96);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s, transform .2s, visibility .2s;
+  z-index: 300;
+  text-align: left;
+}
+.cs-nav-dropdown:hover .cs-dropdown-menu,
+.cs-nav-dropdown:focus-within .cs-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.cs-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background .2s;
+}
+.cs-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.cs-dropdown-item.is-current {
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid var(--accent-border);
+}
+.cs-dropdown-item.is-current .cs-item-title {
+  color: var(--accent);
+}
+.cs-item-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cs-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  font-family: var(--font-serif);
+}
+.cs-item-desc {
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+
+.cs-toc { display: flex; gap: 20px; list-style: none; }
 .cs-toc a { text-decoration: none; font-size: 12px; letter-spacing: .04em; color: var(--text-dim); transition: color .3s; }
 .cs-toc a:hover, .cs-toc a.is-active { color: var(--white); }
+
+.cs-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botón CTA Agendar llamada */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.88), rgba(249,115,22,0.72));
+  border: none;
+  color: #fff !important;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: inherit;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
 .cs-lang { background: transparent; border: 1px solid var(--border-mid); color: var(--text); border-radius: 100px; padding: 5px 12px; font: 600 11px var(--font-sans); letter-spacing: .12em; cursor: pointer; transition: border-color .3s, color .3s; }
 .cs-lang:hover { border-color: var(--accent-border); color: var(--white); }
+
+/* Hamburguesa móvil */
+.cs-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.cs-hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Modal menú móvil */
+.cs-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(5, 5, 6, 0.96);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .25s ease;
+  padding: 32px 24px;
+  touch-action: pan-y;
+}
+.cs-mobile-menu.open {
+  opacity: 1;
+}
+.cs-mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cs-mobile-menu-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+}
+.cs-mobile-menu-links {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 24px;
+  width: 100%;
+  max-width: 320px;
+}
+.cs-mobile-menu-links li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.cs-mobile-menu-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 8px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cs-mmi-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--accent);
+}
+.cs-mmi-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-serif);
+}
+.cs-mobile-menu-links a.active .cs-mmi-title {
+  color: var(--white);
+}
+.cs-mobile-menu-links a.active .cs-mmi-num {
+  color: var(--accent);
+}
+.cs-mobile-menu-cta {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  justify-content: center;
+  padding: 12px 20px;
+  margin-bottom: 14px;
+}
+.cs-mobile-menu-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 .cs-progress { position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: var(--accent); }
 
 /* ---------- Tipografía común ---------- */
@@ -346,13 +644,112 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
 .next .arrow { color: var(--accent); font-family: var(--font-sans); font-weight: 300; transition: transform .5s var(--ease); }
 .next:hover .arrow { transform: translateX(10px); }
 
+/* ---------- 15 · PAGINACIÓN ENTRE CASOS & CTA ---------- */
+.cs-pagination-section {
+  padding: clamp(64px, 8vw, 96px) 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.cs-pagination-section .footer-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+.cs-pagination-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.6vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+.cs-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.cs-pagination-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 18px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+.cs-pagination-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.1);
+  transform: scale(1.05);
+}
+.cs-pagination-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cs-pagination-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--text-dim);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all .2s;
+}
+.cs-pagination-dot:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border);
+}
+.cs-pagination-dot.is-current {
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.35);
+}
+.cs-pagination-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cs-pagination-index {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color .2s;
+}
+.cs-pagination-index:hover {
+  color: var(--accent);
+}
+
 /* ---------- Reveal ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.is-in { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
-  .cs-toc { display: none; }
+  .cs-toc, .cs-nav-dropdown { display: none; }
+  .cs-hamburger { display: flex; }
   .cs-facts { grid-template-columns: repeat(2, 1fr); }
   .tldr, .learn, .decisions { grid-template-columns: 1fr; }
   .insights { grid-template-columns: 1fr; }
@@ -435,9 +832,15 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   .learn { gap: 20px; }
   .learn-card { padding-top: 16px; }
 
-  /* Siguiente caso */
-  .next { padding: 56px 0; }
-  .next h2 { font-size: 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  /* Siguiente caso y paginación en móvil */
+  .next { padding: 48px 0; }
+  .next h2 { font-size: 22px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .cs-top .wrap { height: 60px; }
+  .cs-nav-right .nav-cta { display: none; }
+  .cs-pagination { gap: 6px; }
+  .cs-pagination-dot { min-width: 32px; height: 32px; font-size: 11.5px; padding: 0 4px; }
+  .cs-pagination-arrow { width: 36px; height: 36px; font-size: 15px; }
+  .cs-pagination-title { font-size: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
