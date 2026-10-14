@@ -304,7 +304,7 @@
 
     /* ─── MAPPING: Patrón → Módulo (plano, sin glow, mismos colores que affinity map) ─── */
     .pmap-list { display: flex; flex-direction: column; gap: 14px; margin: 40px 0 32px; }
-    .pmap-row { display: grid; grid-template-columns: 1fr 64px 1fr; align-items: stretch; gap: 16px; }
+    .pmap-row { display: grid; grid-template-columns: 1fr 40px 1fr; align-items: stretch; gap: 12px; }
     .pmap-card { background: transparent; border: 1px solid var(--border); border-left: 3px solid var(--row-color); border-radius: 12px; padding: 18px 22px; display: flex; align-items: center; gap: 14px; transition: background 0.25s ease; }
     .pmap-card:hover { background: rgba(255,255,255,0.045); }
     .pmap-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -314,8 +314,8 @@
     .pmap-label { font-size: 13px; color: var(--text-bright); font-weight: 600; line-height: 1.35; }
     .pmap-sub { font-size: 11px; color: var(--text-dim); line-height: 1.4; }
     .pmap-bridge { display: flex; align-items: center; justify-content: center; }
-    .pmap-bridge-line { width: 100%; height: 1px; background: var(--row-color); opacity: 0.5; position: relative; }
-    .pmap-bridge-line::after { content: "→"; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); color: var(--row-color); font-size: 15px; line-height: 1; }
+    .pmap-bridge-line { width: 28px; height: 1px; background: var(--text-dim); opacity: 0.6; position: relative; }
+    .pmap-bridge-line::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-top: 1px solid var(--text-dim); border-right: 1px solid var(--text-dim); transform: rotate(45deg); transform-origin: center; }
     .pmap-row[data-accent="amber"] { --row-color: #f59e0b; }
     .pmap-row[data-accent="red"] { --row-color: #ef4444; }
     .pmap-row[data-accent="purple"] { --row-color: var(--accent); }
@@ -1180,12 +1180,12 @@
 
     <div class="c2-device-gallery zz-pair fu" style="grid-template-columns: repeat(2, 1fr);">
       <div class="c2-device-shot">
-        <img loading="lazy" decoding="async" src="assets/gym/live-desktop-profile.png" alt="Perfil con nivel, racha y XP — Gym Energy Center">
-        <div class="cap"><span class="es">Desktop · Nivel 8, racha de 7 y XP visibles: el progreso se convierte en hábito, no en una métrica escondida.</span><span class="en">Desktop · Level 8, a 7-day streak and visible XP: progress becomes a habit, not a hidden metric.</span></div>
+        <img loading="lazy" decoding="async" src="assets/gym/live-desktop-profile.png" alt="Perfil con nivel, racha y XP, Gym Energy Center">
+        <div class="cap"><span class="es"><strong style="color:var(--white); display:block; margin-bottom:6px;">Progreso a la vista</strong>Nivel 8, racha de 7 días y XP en el perfil: el progreso se ve cada vez que entras y se convierte en hábito.</span><span class="en"><strong style="color:var(--white); display:block; margin-bottom:6px;">Progress in view</strong>Level 8, a 7-day streak and XP on the profile: progress is visible every time you log in, so it becomes a habit.</span></div>
       </div>
       <div class="c2-device-shot">
-        <img loading="lazy" decoding="async" src="assets/gym/live-mobile-activities.png" alt="Feed de actividades con oferta de bienvenida — Gym Energy Center">
-        <div class="cap"><span class="es">Mobile · La oferta de bienvenida aparece dentro del flujo, no en la puerta — engancha primero, vende después.</span><span class="en">Mobile · The welcome offer sits inside the flow, not at the door — hook first, sell second.</span></div>
+        <img loading="lazy" decoding="async" src="assets/gym/live-mobile-activities.png" alt="Feed de actividades con oferta de bienvenida, Gym Energy Center">
+        <div class="cap"><span class="es"><strong style="color:var(--white); display:block; margin-bottom:6px;">Oferta dentro del flujo</strong>La oferta de bienvenida aparece mientras exploras actividades: primero engancha, después vende.</span><span class="en"><strong style="color:var(--white); display:block; margin-bottom:6px;">Offer inside the flow</strong>The welcome offer appears while you browse activities: hook first, sell second.</span></div>
       </div>
     </div>
 

@@ -1061,48 +1061,37 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 /* CTA y píldoras al pie de la tarjeta cuando la tarjeta es flex */
 .dt-item > .dt-pill, .ht-item > .ht-pill { margin-top: auto; }
 
-/* ── 12. ZIGZAG EN ESCRITORIO ──
-   Intro a todo el ancho y, debajo, filas imagen + texto que alternan de lado.
-   En móvil y tablet se apilan (imagen arriba, texto abajo). */
+/* ── 12. EVIDENCIA EN ESCRITORIO (estilo Notion / Linear) ──
+   Las imágenes ocupan todo el ancho del contenido en una rejilla de 2 columnas.
+   Cada imagen vive en un marco de altura fija, así las tarjetas miden lo mismo,
+   el texto empieza a la misma altura y no quedan huecos vacíos al lado del texto.
+   Si el número de piezas es impar, la última ocupa el ancho completo. */
 @media (min-width: 992px) {
-  /* Pares de evidencia: cabecera + imagen + pie */
-  .c2-evidence-pair { display: flex !important; flex-direction: column; gap: 28px !important; }
-  .c2-evidence-pair > .c2-evidence-item {
-    display: grid !important; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    grid-template-rows: auto 1fr; grid-template-areas: "media head" "media text";
+  .c2-evidence-pair, .zz-pair, .wf-row-finals {
+    display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important; align-items: stretch !important;
   }
-  .c2-evidence-pair > .c2-evidence-item > .c2-evidence-header { grid-area: head; }
-  .c2-evidence-pair > .c2-evidence-item > img { grid-area: media; align-self: center; border-right: 1px solid var(--border); }
-  .c2-evidence-pair > .c2-evidence-item > .c2-evidence-caption { grid-area: text; }
-  .c2-evidence-pair > .c2-evidence-item:nth-child(even) {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-areas: "head media" "text media";
-  }
-  .c2-evidence-pair > .c2-evidence-item:nth-child(even) > img { border-right: none; border-left: 1px solid var(--border); }
+  .c2-evidence-pair > :last-child:nth-child(odd), .zz-pair > :last-child:nth-child(odd), .wf-row-finals > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .c2-evidence-pair > *, .zz-pair > *, .wf-row-finals > * { display: flex !important; flex-direction: column; margin: 0 !important; min-width: 0; }
+  .wf-row-finals > .wf-final-col + .wf-final-col { border-left: 1px solid var(--border); }
 
-  /* Diseño final desktop / mobile (CRO) */
-  .wf-row-finals { display: flex !important; flex-direction: column; }
-  .wf-row-finals > .wf-final-col {
-    display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    grid-template-rows: auto 1fr; grid-template-areas: "media head" "media text";
+  /* Marco de la imagen: misma altura en toda la fila */
+  .c2-evidence-pair > .c2-evidence-item > img,
+  .zz-pair > * > img:first-child,
+  .zz-pair > figure > div:first-child > img,
+  .wf-row-finals .wf-col-body img {
+    height: 440px !important; max-height: none !important; width: 100% !important; max-width: 100% !important;
+    object-fit: contain; object-position: center; margin: 0 !important;
   }
-  .wf-row-finals > .wf-final-col > .wf-col-header { grid-area: head; }
-  .wf-row-finals > .wf-final-col > .wf-col-body { grid-area: media; display: flex; align-items: center; justify-content: center; }
-  .wf-row-finals > .wf-final-col > .wf-tags { grid-area: text; align-content: start; }
-  .wf-row-finals > .wf-final-col + .wf-final-col { border-left: none !important; border-top: 1px solid var(--border); }
-  .wf-row-finals > .wf-final-col:nth-child(even) { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-areas: "head media" "text media"; }
+  .c2-evidence-pair > .c2-evidence-item > img { order: -1; background: rgba(255,255,255,0.02); padding: 12px; box-sizing: border-box; border-bottom: 1px solid var(--border); }
+  .wf-row-finals .wf-col-body { order: -1; display: flex; align-items: center; justify-content: center; }
+  .zz-pair > * > img:first-child { background: rgba(255,255,255,0.02); }
 
-  /* Pares genéricos: primer hijo = imagen, resto = texto */
-  .zz-pair { display: flex !important; flex-direction: column; gap: 32px !important; }
-  .zz-pair > * { display: grid !important; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 0 32px; align-items: center; margin: 0; }
-  .zz-pair > * > :first-child { grid-row: 1 / span 9; }
-  .zz-pair > *:nth-child(even) { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
-  .zz-pair > *:nth-child(even) > :first-child { grid-column: 2; }
-  .zz-pair > *:nth-child(even) > :not(:first-child) { grid-column: 1; }
-}
-@media (min-width: 992px) {
-  /* Imágenes muy verticales: sin desbordar la altura de lectura */
-  .zz-pair > * > :first-child img, .zz-pair > * > img:first-child { max-height: 560px; width: auto; max-width: 100%; margin: 0 auto; display: block; object-fit: contain; }
-  .c2-evidence-pair > .c2-evidence-item > img { max-height: 560px; object-fit: contain; }
+  /* Texto bajo la imagen: titular corto + una línea, ancho de lectura cómodo */
+  .zz-pair > * > :not(:first-child), .zz-pair figcaption {
+    font-size: 15px !important; line-height: 1.6 !important; color: var(--text-dim) !important; margin: 16px 0 0 !important; max-width: 60ch;
+  }
+  .c2-evidence-pair > .c2-evidence-item > .c2-evidence-caption { flex: 1; }
 }
 
 /* ── 13. PROPORCIÓN DE IMÁGENES EN LOS CASOS ──
