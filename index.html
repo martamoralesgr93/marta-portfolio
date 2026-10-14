@@ -127,7 +127,7 @@ img { height: auto; }
   position: absolute; top: -48px; left: 16px; z-index: 999;
   padding: 10px 18px; border-radius: 8px;
   background: var(--purple-deep); color: var(--white);
-  font-size: 14px; font-weight: 600; text-decoration: none;
+  font-size: max(14px, var(--fs-min-14)); font-weight: 600; text-decoration: none;
   transition: top 0.2s ease;
 }
 .skip-link:focus { top: 12px; }
@@ -169,15 +169,15 @@ nav {
 .nav-logo img { height: 44px; width: auto; display: block; }
 .nav-logo-text { display: flex; flex-direction: column; gap: 3px; }
 .nav-logo-name {
-  font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+  font-size: max(12px, var(--fs-min-sm)); font-weight: 600; letter-spacing: 0.04em;
   color: var(--white); line-height: 1;
 }
 .nav-logo-role {
-  font-size: 10px; font-weight: 400; letter-spacing: 0.02em;
+  font-size: max(10px, var(--fs-min-xs)); font-weight: 400; letter-spacing: 0.02em;
   color: rgba(255,255,255,0.34); line-height: 1;
 }
 .nav-links { position: absolute; left: 50%; transform: translateX(-50%); display: flex; gap: 36px; list-style: none; z-index: 10; }
-.nav-links a { position: relative; font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; padding: 8px 0; }
+.nav-links a { position: relative; font-size: max(13px, var(--fs-min-sm)); color: var(--muted); text-decoration: none; transition: color 0.2s; padding: 8px 0; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a.active { color: var(--white); }
 .nav-links a.active::after {
@@ -204,7 +204,7 @@ a.footer-link {
   gap: 8px;
   padding: 11px 22px;
   border-radius: 100px;
-  font-size: 13.5px;
+  font-size: max(13.5px, var(--fs-min-sm));
   font-weight: 600;
   letter-spacing: 0.01em;
   color: #a78bfa;
@@ -230,14 +230,14 @@ a.footer-link:focus-visible {
   a.footer-link:hover, a.footer-link:focus-visible { transform: none; }
 }
 @media (max-width: 420px) {
-  a.footer-link { padding: 10px 18px; font-size: 13px; }
+  a.footer-link { padding: 10px 18px; font-size: max(13px, var(--fs-min-sm)); }
 }
 
 .nav-cta {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 8px 18px; border-radius: 100px;
   background: linear-gradient(135deg, rgba(124,58,237,0.88), rgba(249,115,22,0.72));
-  border: none; color: var(--white); font-size: 13px; font-weight: 500;
+  border: none; color: var(--white); font-size: max(13px, var(--fs-min-sm)); font-weight: 500;
   text-decoration: none; font-family: inherit;
   transition: opacity 0.2s, transform 0.2s;
 }
@@ -262,7 +262,7 @@ a.footer-link:focus-visible {
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--white);
-  font-size: 11px;
+  font-size: max(11px, var(--fs-min-xs));
   font-weight: 600;
   letter-spacing: 0.08em;
   padding: 6px 12px;
@@ -287,7 +287,7 @@ a.footer-link:focus-visible {
   background: none;
   border: 1px solid rgba(255,255,255,0.18);
   color: rgba(255,255,255,0.42);
-  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  font-size: max(11px, var(--fs-min-xs)); font-weight: 600; letter-spacing: 0.1em;
   padding: 5px 12px; border-radius: 100px;
   cursor: pointer; font-family: inherit;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
@@ -320,7 +320,7 @@ a.footer-link:focus-visible {
 
 .eyebrow { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
 .eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
-.eyebrow-text { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(var(--accent-rgb),0.85); }
+.eyebrow-text { font-size: max(11px, var(--fs-min-xs)); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(var(--accent-rgb),0.85); }
 
 .hero-title {
   font-size: 70px; font-weight: 800; line-height: 0.965;
@@ -329,7 +329,7 @@ a.footer-link:focus-visible {
 .c-purple { color: var(--purple); }
 .c-orange { color: var(--orange); }
 
-.hero-body { font-size: 14px; color: var(--muted); line-height: 1.78; max-width: 540px; margin-bottom: 44px; }
+.hero-body { font-size: max(14px, var(--fs-min-14)); color: var(--muted); line-height: 1.78; max-width: 540px; margin-bottom: 44px; }
 .hero-positioning { display: none; }
 .hero-mobile-metric { display: none; }
 
@@ -338,14 +338,14 @@ a.footer-link:focus-visible {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 11px 22px; border-radius: 100px;
   background: linear-gradient(135deg, rgba(124,58,237,0.85), rgba(249,115,22,0.70));
-  color: var(--white); font-size: 13px; font-weight: 500; text-decoration: none;
+  color: var(--white); font-size: max(13px, var(--fs-min-sm)); font-weight: 500; text-decoration: none;
   border: none; cursor: pointer; font-family: inherit; letter-spacing: 0.01em;
   transition: opacity 0.2s, transform 0.2s;
 }
 .btn-primary:hover { opacity: 0.84; transform: translateY(-1px); }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 6px;
-  color: var(--text-faint); font-size: 13px; text-decoration: none;
+  color: var(--text-faint); font-size: max(13px, var(--fs-min-sm)); text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -359,19 +359,19 @@ a.footer-link:focus-visible {
 }
 .impact-header {
   display: flex; align-items: center; gap: 7px; margin-bottom: 22px;
-  font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: max(10px, var(--fs-min-xs)); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: rgba(255,255,255,0.45);
 }
 .m-row { padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,0.09); }
 .m-row:last-child { border-bottom: none; padding-bottom: 0; }
 .m-row:first-of-type { padding-top: 0; }
 .m-val { font-size: 32px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; color: var(--white); margin-bottom: 5px; }
-.m-label { font-size: 11px; color: var(--text-faint); }
+.m-label { font-size: max(11px, var(--fs-min-xs)); color: var(--text-faint); }
 
 /* ===================== SCROLL DIVIDER ===================== */
 
 /* ===================== SECTION HELPERS ===================== */
-.sec-num { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); }
+.sec-num { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: max(11px, var(--fs-min-xs)); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); }
 .sec-num-line { width: 28px; height: 1px; background: rgba(255,255,255,0.2); }
 .sec-title { font-size: 52px; font-weight: 800; letter-spacing: -2.5px; line-height: 1.0; color: var(--white); }
 
@@ -441,7 +441,7 @@ a.footer-link:focus-visible {
 }
 
 .sobre-tagline {
-  font-size: 9.5px; font-weight: 700; letter-spacing: 0.20em;
+  font-size: max(9.5px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.20em;
   text-transform: uppercase; color: rgba(255,255,255,0.30);
   margin-bottom: 32px; line-height: 1.75;
 }
@@ -452,7 +452,7 @@ a.footer-link:focus-visible {
 }
 .sobre-body p {
   /* Contraste aumentado: 0.38 → 0.62 para cumplir WCAG AA */
-  font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.92; max-width: 480px;
+  font-size: max(14px, var(--fs-min-14)); color: rgba(255,255,255,0.62); line-height: 1.92; max-width: 480px;
 }
 .sobre-body strong { color: var(--text); font-weight: 600; }
 .sobre-body em { color: rgba(255,255,255,0.70); }
@@ -497,7 +497,7 @@ a.footer-link:focus-visible {
   flex-direction: column;
 }
 .sobre-skills-group-title {
-  font-size: 10px;
+  font-size: max(10px, var(--fs-min-xs));
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -511,7 +511,7 @@ a.footer-link:focus-visible {
   gap: 8px;
 }
 .sobre-skill-pill {
-  font-size: 11.5px;
+  font-size: max(11.5px, var(--fs-min-xs));
   font-weight: 600;
   color: rgba(255, 255, 255, 0.82);
   padding: 6px 14px;
@@ -544,7 +544,7 @@ a.footer-link:focus-visible {
   gap: 14px;
 }
 .sobre-check-icon {
-  font-size: 13px;
+  font-size: max(13px, var(--fs-min-sm));
   color: var(--purple);
   flex-shrink: 0;
   margin-top: 2px;
@@ -556,13 +556,13 @@ a.footer-link:focus-visible {
   gap: 3px;
 }
 .sobre-check-title {
-  font-size: 13.5px;
+  font-size: max(13.5px, var(--fs-min-sm));
   font-weight: 700;
   color: #fff;
   line-height: 1.3;
 }
 .sobre-check-desc {
-  font-size: 12px;
+  font-size: max(12px, var(--fs-min-sm));
   color: rgba(255,255,255,0.52);
   line-height: 1.55;
 }
@@ -592,7 +592,7 @@ a.footer-link:focus-visible {
   transform: scale(1.1) rotate(-10deg);
 }
 .sobre-cta-label {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.22em;
+  font-size: max(9px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.22em;
   text-transform: uppercase; color: rgba(255,255,255,0.40);
   transition: color 0.22s; line-height: 1.55;
 }
@@ -628,7 +628,7 @@ a.footer-link:focus-visible {
   background: var(--purple); flex-shrink: 0;
 }
 .sobre-loc-text {
-  font-size: 9px; font-weight: 500; letter-spacing: 0.12em;
+  font-size: max(9px, var(--fs-min-xs)); font-weight: 500; letter-spacing: 0.12em;
   color: rgba(255,255,255,0.28); text-transform: uppercase; line-height: 1.8;
 }
 
@@ -650,12 +650,12 @@ a.footer-link:focus-visible {
 }
 .feature-icon svg { width: 100%; height: 100%; }
 .feature-title {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+  font-size: max(12px, var(--fs-min-sm)); font-weight: 700; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--white);
   line-height: 1.45; margin-bottom: 16px;
 }
 .feature-desc {
-  font-size: 12.5px; color: rgba(255,255,255,0.52);
+  font-size: max(12.5px, var(--fs-min-sm)); color: rgba(255,255,255,0.52);
   line-height: 1.75; flex: 1;
 }
 .feature-line {
@@ -667,10 +667,10 @@ a.footer-link:focus-visible {
 /* ===================== ABOUT STRIP ===================== */
 .about-strip { position: relative; z-index: 1; padding: 0 0 100px; }
 .about-strip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
-.about-strip-body { font-size: 14px; color: var(--muted); line-height: 1.8; margin-top: 24px; max-width: 360px; }
+.about-strip-body { font-size: max(14px, var(--fs-min-14)); color: var(--muted); line-height: 1.8; margin-top: 24px; max-width: 360px; }
 .text-link {
   display: inline-flex; align-items: center; gap: 7px; margin-top: 26px;
-  font-size: 13px; color: var(--text-faint); text-decoration: none;
+  font-size: max(13px, var(--fs-min-sm)); color: var(--text-faint); text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -684,7 +684,7 @@ a.footer-link:focus-visible {
   display: flex; align-items: flex-end; justify-content: space-between;
   padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 52px;
 }
-.work-meta { font-size: 12px; color: var(--dim); text-align: right; line-height: 1.7; }
+.work-meta { font-size: max(12px, var(--fs-min-sm)); color: var(--dim); text-align: right; line-height: 1.7; }
 
 /* Block label */
 .block-label {
@@ -693,7 +693,7 @@ a.footer-link:focus-visible {
 }
 .block-label-text {
   display: inline-flex; align-items: center; gap: 7px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: max(11px, var(--fs-min-xs)); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
   color: rgba(255,255,255,0.70);
 }
 .block-label-text svg { flex-shrink: 0; opacity: 0.8; }
@@ -702,7 +702,7 @@ a.footer-link:focus-visible {
 /* ---- Section divider ---- */
 .block-divider { margin: 32px 0 18px; }
 
-.tag { padding: 5px 12px; border-radius: 100px; font-size: 11px; font-weight: 400; border: 1px solid rgba(255,255,255,0.10); color: rgba(255,255,255,0.30); letter-spacing: 0.01em; }
+.tag { padding: 5px 12px; border-radius: 100px; font-size: max(11px, var(--fs-min-xs)); font-weight: 400; border: 1px solid rgba(255,255,255,0.10); color: rgba(255,255,255,0.30); letter-spacing: 0.01em; }
 
 /* ===================== SHOWCASE CASE STUDY CARDS ===================== */
 .sc-card {
@@ -724,7 +724,7 @@ a.footer-link:focus-visible {
   position: relative; z-index: 2;
 }
 .sc-num {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+  font-size: max(10px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.22em;
   color: rgba(255, 255, 255, 0.35); text-transform: uppercase;
   margin-bottom: 22px;
   transition: color 0.32s ease;
@@ -735,7 +735,7 @@ a.footer-link:focus-visible {
 .sc-num-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
 .sc-num-row .sc-num { margin-bottom: 0; }
 .sc-client-link {
-  font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  font-size: max(10.5px, var(--fs-min-xs)); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
   color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s ease;
 }
 a.sc-client-link:hover {
@@ -752,7 +752,7 @@ a.sc-client-link:hover {
   color: var(--white);
 }
 .sc-desc {
-  font-size: 13px; color: var(--text-strong); line-height: 1.82;
+  font-size: max(13px, var(--fs-min-sm)); color: var(--text-strong); line-height: 1.82;
   margin-bottom: 28px; max-width: 400px;
 }
 /* Two-button CTA row */
@@ -765,7 +765,7 @@ a.sc-client-link:hover {
 }
 .sc-cta-notion {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
+  font-size: max(11.5px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em;
   color: var(--white); text-decoration: none;
   text-transform: uppercase; width: fit-content;
   padding: 10px 22px;
@@ -779,11 +779,11 @@ a.sc-client-link:hover {
   background: rgba(255,255,255,0.06);
   border-color: rgba(255,255,255,0.24);
 }
-.sc-cta-notion .notion-arrow { font-size: 11px; }
+.sc-cta-notion .notion-arrow { font-size: max(11px, var(--fs-min-xs)); }
 
 .sc-cta {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
+  font-size: max(11.5px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em;
   color: var(--white); text-decoration: none;
   text-transform: uppercase; width: fit-content;
   padding: 10px 22px;
@@ -855,7 +855,7 @@ a.sc-client-link:hover {
   color: var(--white); line-height: 1; margin-bottom: 6px;
 }
 .sc-mname {
-  font-size: 9px; color: rgba(255,255,255,0.58);
+  font-size: max(9px, var(--fs-min-xs)); color: rgba(255,255,255,0.58);
   line-height: 1.55; letter-spacing: 0.01em;
 }
 
@@ -865,7 +865,7 @@ a.sc-client-link:hover {
   width: 26px; height: 26px; border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.25); font-size: 9px; text-decoration: none;
+  color: rgba(255,255,255,0.25); font-size: max(9px, var(--fs-min-xs)); text-decoration: none;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .sc-card:hover .sc-corner {
@@ -915,7 +915,7 @@ a.sc-client-link:hover {
 .process-accordion summary::-webkit-details-marker { display: none; }
 .process-summary-content { flex: 1; }
 .process-expand {
-  font-size: 10px;
+  font-size: max(10px, var(--fs-min-xs));
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -938,8 +938,8 @@ a.sc-client-link:hover {
   color: #ffffff;
 }
 .step-content { padding-top: 10px; display: flex; flex-direction: column; gap: 8px; }
-.step-name { font-size: 14.5px; font-weight: 700; color: #ffffff; margin-bottom: 2px; letter-spacing: -0.1px; }
-.step-desc { font-size: 13px; color: var(--text-bright); line-height: 1.5; }
+.step-name { font-size: max(14.5px, var(--fs-min-14)); font-weight: 700; color: #ffffff; margin-bottom: 2px; letter-spacing: -0.1px; }
+.step-desc { font-size: max(13px, var(--fs-min-sm)); color: var(--text-bright); line-height: 1.5; }
 .step-ai-integration {
   padding: 10px 14px;
   background: rgba(var(--accent-rgb), 0.035);
@@ -949,7 +949,7 @@ a.sc-client-link:hover {
 }
 .step-ai-integration p {
   margin: 0;
-  font-size: 12px;
+  font-size: max(12px, var(--fs-min-sm));
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.60);
 }
@@ -957,7 +957,7 @@ a.sc-client-link:hover {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 9px;
+  font-size: max(9px, var(--fs-min-xs));
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -978,7 +978,7 @@ a.sc-client-link:hover {
   align-items: center;
   gap: 8px;
   color: rgba(255,255,255,0.72);
-  font-size: 13px;
+  font-size: max(13px, var(--fs-min-sm));
   font-weight: 600;
 }
 .about-accordion summary::-webkit-details-marker { display: none; }
@@ -989,7 +989,7 @@ a.sc-client-link:hover {
   width: 18px; height: 18px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.16);
-  font-size: 12px;
+  font-size: max(12px, var(--fs-min-sm));
   line-height: 1;
 }
 .about-accordion[open] .about-expand {
@@ -1002,10 +1002,10 @@ a.sc-client-link:hover {
 .about-stats { display: flex; gap: 48px; margin-bottom: 48px; flex-wrap: wrap; }
 .stat-value { font-size: 52px; font-weight: 800; letter-spacing: -2.5px; line-height: 1; color: var(--white); margin-bottom: 8px; }
 .stat-value em { color: var(--purple); font-style: normal; }
-.stat-label { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.5; max-width: 220px; }
-.about-narrative { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.83; margin-bottom: 28px; max-width: 520px; }
+.stat-label { font-size: max(12px, var(--fs-min-sm)); color: rgba(255,255,255,0.3); line-height: 1.5; max-width: 220px; }
+.about-narrative { font-size: max(14px, var(--fs-min-14)); color: rgba(255,255,255,0.4); line-height: 1.83; margin-bottom: 28px; max-width: 520px; }
 .about-quote {
-  font-size: 14px; font-style: italic; color: rgba(255,255,255,0.42); line-height: 1.73;
+  font-size: max(14px, var(--fs-min-14)); font-style: italic; color: rgba(255,255,255,0.42); line-height: 1.73;
   border-left: 2px solid rgba(var(--accent-rgb),0.32); padding-left: 18px; margin-bottom: 40px; max-width: 380px;
 }
 .tools-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
@@ -1019,9 +1019,9 @@ a.sc-client-link:hover {
 .contact-glow {
   display: none !important;
 }
-.contact-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--dim); margin-bottom: 24px; }
+.contact-eyebrow { font-size: max(11px, var(--fs-min-xs)); font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--dim); margin-bottom: 24px; }
 .contact-title { font-size: 64px; font-weight: 800; letter-spacing: -3px; line-height: 0.96; color: var(--white); margin-bottom: 24px; }
-.contact-sub { font-size: 14px; color: var(--muted); line-height: 1.76; margin-bottom: 36px; max-width: 380px; margin-left: auto; margin-right: auto; }
+.contact-sub { font-size: max(14px, var(--fs-min-14)); color: var(--muted); line-height: 1.76; margin-bottom: 36px; max-width: 380px; margin-left: auto; margin-right: auto; }
 .contact-badge-container {
   display: flex;
   justify-content: center;
@@ -1066,18 +1066,18 @@ a.sc-client-link:hover {
   z-index: 1;
 }
 .lic-name {
-  font-size: 15px;
+  font-size: max(15px, var(--fs-min-md));
   font-weight: 600;
   color: var(--white);
   letter-spacing: -0.2px;
 }
 .lic-title {
-  font-size: 12px;
+  font-size: max(12px, var(--fs-min-sm));
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
 }
 .lic-location {
-  font-size: 11px;
+  font-size: max(11px, var(--fs-min-xs));
   color: rgba(255, 255, 255, 0.34);
 }
 .lic-brand {
@@ -1101,7 +1101,7 @@ a.sc-client-link:hover {
 /* ===================== TRUST STRIP ===================== */
 .trust-strip { margin-top: 72px; }
 .trust-label {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: max(11px, var(--fs-min-xs)); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--dim); margin-bottom: 26px;
 }
 .trust-logos {
@@ -1114,13 +1114,13 @@ a.sc-client-link:hover {
   color: rgba(255,255,255,0.52); text-decoration: none;
   transition: color 0.25s ease;
 }
-.trust-logo span { font-size: 12px; font-weight: 500; letter-spacing: 0.03em; color: rgba(255,255,255,0.40); transition: color 0.25s ease; }
+.trust-logo span { font-size: max(12px, var(--fs-min-sm)); font-weight: 500; letter-spacing: 0.03em; color: rgba(255,255,255,0.40); transition: color 0.25s ease; }
 a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 .trust-paolo { font-family: 'Playfair Display', Georgia, serif; font-style: italic; letter-spacing: 0.01em; }
 @media (max-width: 760px) {
   .trust-strip { margin-top: 56px; }
   .trust-logos { gap: 16px 32px; }
-  .trust-logo { font-size: 15px; }
+  .trust-logo { font-size: max(15px, var(--fs-min-md)); }
 }
 
 /* ===================== CONTACT FOOTER ===================== */
@@ -1134,11 +1134,11 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   padding-bottom: 24px;
 }
 .cf-item, .cf-link {
-  font-size: 13px;
+  font-size: max(13px, var(--fs-min-sm));
   color: rgba(255,255,255,0.45);
 }
 .cf-dot {
-  font-size: 13px;
+  font-size: max(13px, var(--fs-min-sm));
   color: rgba(255,255,255,0.15);
 }
 .cf-link {
@@ -1286,7 +1286,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.22);
   background: rgba(255,255,255,0.06);
-  color: var(--white); cursor: pointer; font-size: 14px;
+  color: var(--white); cursor: pointer; font-size: max(14px, var(--fs-min-14));
   display: flex; align-items: center; justify-content: center;
   transition: background 0.2s, border-color 0.2s;
 }
@@ -1303,12 +1303,12 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   margin-top: 36px; display: inline-flex; align-items: center; gap: 6px;
   padding: 12px 28px; border-radius: 100px;
   background: linear-gradient(135deg, rgba(124,58,237,0.85), rgba(249,115,22,0.70));
-  color: var(--white); font-size: 14px; font-weight: 500; text-decoration: none;
+  color: var(--white); font-size: max(14px, var(--fs-min-14)); font-weight: 500; text-decoration: none;
 }
 .mobile-menu-lang {
   margin-top: 20px; background: none;
   border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.42);
-  font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+  font-size: max(12px, var(--fs-min-sm)); font-weight: 600; letter-spacing: 0.1em;
   padding: 6px 16px; border-radius: 100px; cursor: pointer; font-family: inherit;
 }
 
@@ -1328,12 +1328,12 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .nav-links { display: none !important; }
   .nav-cta, .nav-linkedin-btn, .lang-toggle-btn { display: none !important; }
   .hamburger { display: flex !important; }
-  .lang-toggle { font-size: 11px; padding: 5px 12px; margin-right: 12px; }
+  .lang-toggle { font-size: max(11px, var(--fs-min-xs)); padding: 5px 12px; margin-right: 12px; }
 
   /* ── Hero ── */
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-title { font-size: clamp(44px, 6vw, 60px); letter-spacing: -2.5px; margin-bottom: 20px; }
-  .hero-body { font-size: 13.5px; max-width: 100%; margin-bottom: 36px; }
+  .hero-body { font-size: max(13.5px, var(--fs-min-sm)); max-width: 100%; margin-bottom: 36px; }
   .impact-card { margin: 32px auto 0; padding: 20px 18px; max-width: 480px; width: 100%; display: block; }
   .m-val { font-size: 26px; }
 
@@ -1342,7 +1342,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .sobre-img-panel { min-height: 560px; }
   .sobre-text-panel { padding: 52px 40px 52px 40px; }
   .sobre-heading { font-size: clamp(64px, 7vw, 96px); margin-bottom: 32px; }
-  .sobre-body p { max-width: 100%; font-size: 13px; }
+  .sobre-body p { max-width: 100%; font-size: max(13px, var(--fs-min-sm)); }
   .sobre-body { gap: 12px; margin-bottom: 36px; }
 
   /* ── Features grid ── */
@@ -1403,7 +1403,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   /* ── Contact ── */
   .contact-section { padding: 100px 0 120px; }
   .contact-title { font-size: 52px; letter-spacing: -2.5px; }
-  .contact-sub { font-size: 13px; }
+  .contact-sub { font-size: max(13px, var(--fs-min-sm)); }
 
   /* ── Stack pills ── */
   .stack-pills { flex-wrap: wrap; }
@@ -1419,8 +1419,8 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   nav { height: 60px; padding: 0 20px; }
   .nav-logo img { height: 34px; }
   .nav-logo { gap: 7px; }
-  .nav-logo-name { font-size: 10px; letter-spacing: 0.02em; }
-  .nav-logo-role { font-size: 9px; }
+  .nav-logo-name { font-size: max(10px, var(--fs-min-xs)); letter-spacing: 0.02em; }
+  .nav-logo-role { font-size: max(9px, var(--fs-min-xs)); }
   .nav-links { display: none; }
   .nav-cta, .nav-linkedin-btn, .lang-toggle-btn { display: none; }
   .mobile-menu-lang { display: none !important; }
@@ -1474,7 +1474,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     line-height: 1;
   }
   .hmm-lbl {
-    font-size: 10px;
+    font-size: max(10px, var(--fs-min-xs));
     font-weight: 600;
     color: rgba(255, 255, 255, 0.45);
     line-height: 1.4;
@@ -1485,7 +1485,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   /* Mobile impact row */
   .mobile-impact { display: block; padding: 0 0 60px; position: relative; z-index: 1; }
   .mobile-impact-label {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: max(10px, var(--fs-min-xs)); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--purple); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
   }
   .mobile-impact-label::after { content: ''; flex: 1; height: 1px; background: rgba(var(--accent-rgb),0.20); }
@@ -1515,7 +1515,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     display: block;
   }
   .mobile-metric-val { font-size: 22px; font-weight: 800; letter-spacing: -1px; color: var(--white); line-height: 1; margin-bottom: 5px; }
-  .mobile-metric-lbl { font-size: 10px; color: rgba(255,255,255,0.34); line-height: 1.4; margin-bottom: 10px; }
+  .mobile-metric-lbl { font-size: max(10px, var(--fs-min-xs)); color: rgba(255,255,255,0.34); line-height: 1.4; margin-bottom: 10px; }
   .mobile-sparkline { width: 100%; height: 28px; }
 
   /* Sobre mí — díptico mobile */
@@ -1527,7 +1527,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .sobre-portrait { object-position: center 12%; }
   .sobre-text-panel { padding: 44px 24px 52px; border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
   .sobre-heading { font-size: clamp(72px, 17vw, 96px); margin-bottom: 32px; }
-  .sobre-body p { max-width: 100%; font-size: 13px; }
+  .sobre-body p { max-width: 100%; font-size: max(13px, var(--fs-min-sm)); }
   .sobre-body { gap: 10px; margin-bottom: 32px; }
   .sobre-cta { margin-bottom: 36px; }
   /* Feature cards — 2 cols on mobile */
@@ -1550,8 +1550,8 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   /* Stats en fila en mobile */
   .about-stats { gap: 32px; flex-direction: row; flex-wrap: wrap; }
   .stat-value { font-size: 40px; }
-  .stat-label { max-width: 100%; font-size: 11px; }
-  .about-narrative { font-size: 13px; max-width: 100%; line-height: 1.75; }
+  .stat-label { max-width: 100%; font-size: max(11px, var(--fs-min-xs)); }
+  .about-narrative { font-size: max(13px, var(--fs-min-sm)); max-width: 100%; line-height: 1.75; }
   .about-quote { max-width: 100%; }
 
   /* Features: 1 col en móviles muy pequeños */
@@ -1566,7 +1566,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .project-featured { grid-template-columns: 1fr; min-height: auto; }
   .p-body { padding: 28px 24px 32px; }
   .p-title { font-size: 22px; letter-spacing: -0.5px; }
-  .p-problem { font-size: 13px; }
+  .p-problem { font-size: max(13px, var(--fs-min-sm)); }
   .p-image-panel { min-height: 260px; order: -1; }
   .metric-highlight { flex-wrap: wrap; }
   .metric-highlight-val { font-size: 28px; }
@@ -1580,7 +1580,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .card-img-wrap { height: 220px !important; min-height: 220px !important; }
   .card-content { padding: 24px 24px 28px !important; }
   .card-title { font-size: 18px; }
-  .card-desc { font-size: 13px; }
+  .card-desc { font-size: max(13px, var(--fs-min-sm)); }
 
   /* Showcase cards — mobile */
   .sc-card {
@@ -1624,7 +1624,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
     align-items: center;
     padding: 14px 20px !important;
     border-radius: 12px !important;
-    font-size: 13px !important;
+    font-size: max(13px, var(--fs-min-sm)) !important;
     letter-spacing: 0.05em !important;
     width: 100%;
     margin: 0 !important;
@@ -1659,14 +1659,14 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   .process-steps { margin-top: 32px; }
   .about-stats { gap: 24px; flex-direction: column; }
   .stat-value { font-size: 40px; }
-  .stat-label { max-width: 100%; font-size: 11px; }
-  .about-narrative { font-size: 13px; max-width: 100%; line-height: 1.75; }
+  .stat-label { max-width: 100%; font-size: max(11px, var(--fs-min-xs)); }
+  .about-narrative { font-size: max(13px, var(--fs-min-sm)); max-width: 100%; line-height: 1.75; }
   .about-quote { max-width: 100%; }
 
   /* Contact */
   .contact-section { padding: 80px 0 100px; }
   .contact-title { font-size: 40px; letter-spacing: -2px; }
-  .contact-sub { font-size: 13px; }
+  .contact-sub { font-size: max(13px, var(--fs-min-sm)); }
   .contact-actions { flex-direction: column; align-items: center; gap: 14px; }
 
   /* Footer */
@@ -1769,7 +1769,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 @media (max-width: 480px) {
   .hero-title { font-size: 42px; letter-spacing: -1.8px; }
   .mobile-metric-val { font-size: 18px; }
-  .mobile-metric-lbl { font-size: 9px; }
+  .mobile-metric-lbl { font-size: max(9px, var(--fs-min-xs)); }
   .contact-title { font-size: 34px; }
 }
 
@@ -1794,11 +1794,11 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 }
 .dash-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
 .dash-label {
-  font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase;
+  font-size: max(9px, var(--fs-min-xs)); letter-spacing: 0.09em; text-transform: uppercase;
   color: rgba(255,255,255,0.22); margin-left: 3px; flex: 1;
 }
 .dash-live {
-  font-size: 8px; color: rgba(255,255,255,0.16);
+  font-size: max(8px, var(--fs-min-xs)); color: rgba(255,255,255,0.16);
   display: flex; align-items: center; gap: 4px;
 }
 .dash-live-dot {
@@ -1818,7 +1818,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 /* Bar rows */
 .dash-bars { display: flex; flex-direction: column; gap: 9px; }
 .dash-bar-row { display: flex; align-items: center; gap: 7px; }
-.dash-bar-lbl { font-size: 9px; color: rgba(255,255,255,0.28); width: 44px; flex-shrink:0; text-align:right; }
+.dash-bar-lbl { font-size: max(9px, var(--fs-min-xs)); color: rgba(255,255,255,0.28); width: 44px; flex-shrink:0; text-align:right; }
 .dash-bar-track { flex:1; height: 7px; border-radius: 4px; background: rgba(255,255,255,0.05); overflow:hidden; }
 .dash-bar-fill {
   height: 100%; border-radius: 4px;
@@ -1830,7 +1830,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 .dash-bar-row:nth-child(3) .dash-bar-fill { transition-delay: 0.24s; }
 .dash-bar-row:nth-child(4) .dash-bar-fill { transition-delay: 0.36s; }
 .dash-bar-row:nth-child(5) .dash-bar-fill { transition-delay: 0.48s; }
-.dash-bar-val { font-size: 9px; color: rgba(255,255,255,0.35); width: 28px; flex-shrink:0; }
+.dash-bar-val { font-size: max(9px, var(--fs-min-xs)); color: rgba(255,255,255,0.35); width: 28px; flex-shrink:0; }
 
 /* Sparkline */
 .dash-spark { position: relative; margin: 14px 0 10px; }
@@ -1856,13 +1856,13 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   flex:1; background: var(--surface-2); border-radius: 7px;
   padding: 7px 9px; border: 1px solid rgba(255,255,255,0.05);
 }
-.dash-kpi-val { font-size: 15px; font-weight: 800; line-height: 1; letter-spacing: -0.5px; }
-.dash-kpi-lbl { font-size: 8px; color: rgba(255,255,255,0.25); margin-top: 3px; letter-spacing: 0.04em; line-height: 1.3; }
+.dash-kpi-val { font-size: max(15px, var(--fs-min-md)); font-weight: 800; line-height: 1; letter-spacing: -0.5px; }
+.dash-kpi-lbl { font-size: max(8px, var(--fs-min-xs)); color: rgba(255,255,255,0.25); margin-top: 3px; letter-spacing: 0.04em; line-height: 1.3; }
 
 /* Funnel bars */
 .dash-funnel { display: flex; flex-direction: column; gap: 7px; flex: 1; }
 .dash-funnel-row { display: flex; align-items: center; gap: 6px; }
-.dash-funnel-lbl { font-size: 9px; color: rgba(255,255,255,0.26); width: 46px; flex-shrink:0; }
+.dash-funnel-lbl { font-size: max(9px, var(--fs-min-xs)); color: rgba(255,255,255,0.26); width: 46px; flex-shrink:0; }
 .dash-funnel-track { flex:1; height: 18px; border-radius: 3px; background: var(--surface-2); overflow:hidden; position: relative; }
 .dash-funnel-fill {
   height: 100%; border-radius: 3px;
@@ -1875,8 +1875,8 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 .dash-funnel-row:nth-child(3) .dash-funnel-fill { transition-delay: 0.2s; }
 .dash-funnel-row:nth-child(4) .dash-funnel-fill { transition-delay: 0.3s; }
 .dash-funnel-row:nth-child(5) .dash-funnel-fill { transition-delay: 0.4s; }
-.dash-funnel-pct { font-size: 8px; color: rgba(255,255,255,0.5); font-weight: 600; }
-.dash-funnel-arrow { font-size: 8px; color: rgba(255,255,255,0.18); margin-left:2px; }
+.dash-funnel-pct { font-size: max(8px, var(--fs-min-xs)); color: rgba(255,255,255,0.5); font-weight: 600; }
+.dash-funnel-arrow { font-size: max(8px, var(--fs-min-xs)); color: rgba(255,255,255,0.18); margin-left:2px; }
 
 /* Ring / donut */
 .dash-ring-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
@@ -1893,11 +1893,11 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center;
 }
-.dash-ring-pct { font-size: 13px; font-weight: 800; line-height: 1; }
-.dash-ring-sub { font-size: 7px; color: rgba(255,255,255,0.28); letter-spacing: 0.06em; }
+.dash-ring-pct { font-size: max(13px, var(--fs-min-sm)); font-weight: 800; line-height: 1; }
+.dash-ring-sub { font-size: max(7px, var(--fs-min-xs)); color: rgba(255,255,255,0.28); letter-spacing: 0.06em; }
 .dash-ring-info { flex:1; }
-.dash-ring-title { font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-.dash-ring-desc { font-size: 9px; color: rgba(255,255,255,0.30); line-height: 1.5; }
+.dash-ring-title { font-size: max(12px, var(--fs-min-sm)); font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.dash-ring-desc { font-size: max(9px, var(--fs-min-xs)); color: rgba(255,255,255,0.30); line-height: 1.5; }
 
 /* Audit checklist */
 .dash-audit { display: flex; flex-direction: column; gap: 7px; flex: 1; }
@@ -1905,9 +1905,9 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 .dash-audit-badge {
   width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 8px; font-weight: 700;
+  font-size: max(8px, var(--fs-min-xs)); font-weight: 700;
 }
-.dash-audit-name { font-size: 9px; color: rgba(255,255,255,0.35); flex:1; }
+.dash-audit-name { font-size: max(9px, var(--fs-min-xs)); color: rgba(255,255,255,0.35); flex:1; }
 .dash-audit-track { width: 54px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.06); overflow:hidden; }
 .dash-audit-fill {
   height:100%; border-radius: 2px;
@@ -1918,7 +1918,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 .dash-audit-row:nth-child(2) .dash-audit-fill { transition-delay: 0.1s; }
 .dash-audit-row:nth-child(3) .dash-audit-fill { transition-delay: 0.2s; }
 .dash-audit-row:nth-child(4) .dash-audit-fill { transition-delay: 0.3s; }
-.dash-audit-ok { font-size: 8px; font-weight: 600; color: #34d399; }
+.dash-audit-ok { font-size: max(8px, var(--fs-min-xs)); font-weight: 600; color: #34d399; }
 
 /* Divider */
 .dash-divider { height: 1px; background: rgba(255,255,255,0.05); margin: 12px 0; }
@@ -1926,7 +1926,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 /* Tag row */
 .dash-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
 .dash-tag {
-  padding: 3px 8px; border-radius: 100px; font-size: 8px; letter-spacing: 0.05em;
+  padding: 3px 8px; border-radius: 100px; font-size: max(8px, var(--fs-min-xs)); letter-spacing: 0.05em;
   border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.28);
 }
 
@@ -1963,7 +1963,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   align-items: flex-start;
 }
 .stack-eyebrow {
-  font-size: 11px;
+  font-size: max(11px, var(--fs-min-xs));
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -2013,7 +2013,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   margin-top: 32px;
 }
 .stack-pill {
-  font-size: 14px;
+  font-size: max(14px, var(--fs-min-14));
   font-weight: 600;
   color: rgba(255,255,255,0.9);
   padding: 14px 28px;
@@ -2079,7 +2079,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   to { transform: translateX(0); }
 }
 .stack-marquee .stack-pill {
-  font-size: 12.5px;
+  font-size: max(12.5px, var(--fs-min-sm));
   padding: 10px 18px;
   white-space: nowrap;
   flex: 0 0 auto;
@@ -2146,7 +2146,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 }
 
 .qp-card-title {
-  font-size: 14px;
+  font-size: max(14px, var(--fs-min-14));
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -2232,13 +2232,13 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 }
 
 .qp-list-content strong {
-  font-size: 13.5px;
+  font-size: max(13.5px, var(--fs-min-sm));
   font-weight: 600;
   color: var(--white);
 }
 
 .qp-list-content p {
-  font-size: 12.5px;
+  font-size: max(12.5px, var(--fs-min-sm));
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.4;
   margin: 0;
@@ -2258,7 +2258,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 }
 
 .qp-pill {
-  font-size: 12.5px;
+  font-size: max(12.5px, var(--fs-min-sm));
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.04);
@@ -2291,7 +2291,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   border-left: 3px solid rgba(var(--c-theme-rgb), 0.85);
   padding: 9px 14px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: max(13px, var(--fs-min-sm));
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2324,7 +2324,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
 
 /* Nav logo name text: only Marta Morales */
 .nav-logo-name {
-  font-size: 12px;
+  font-size: max(12px, var(--fs-min-sm));
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--white);
@@ -2352,7 +2352,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   max-width: 320px !important;
   justify-content: center !important;
   padding: 14px 28px !important;
-  font-size: 15px !important;
+  font-size: max(15px, var(--fs-min-md)) !important;
   font-weight: 600 !important;
   border-radius: 100px !important;
   background: linear-gradient(135deg, var(--purple-deep), rgba(249,115,22,0.85)) !important;
@@ -2367,7 +2367,7 @@ a.trust-logo:hover, a.trust-logo:hover span { color: var(--text-strong); }
   max-width: 320px !important;
   justify-content: center !important;
   padding: 14px 28px !important;
-  font-size: 15px !important;
+  font-size: max(15px, var(--fs-min-md)) !important;
   font-weight: 600 !important;
   border-radius: 100px !important;
   background: rgba(255, 255, 255, 0.05) !important;
@@ -2441,7 +2441,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
     border-radius: 100px !important;
     padding: 12px 20px !important;
-    font-size: 13px !important;
+    font-size: max(13px, var(--fs-min-sm)) !important;
     font-weight: 500 !important;
     color: rgba(255, 255, 255, 0.85) !important;
     transition: background 0.2s, border-color 0.2s, color 0.2s !important;
@@ -2518,12 +2518,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
     flex-shrink: 0;
   }
   .feature-title {
-    font-size: 11px !important;
+    font-size: max(11px, var(--fs-min-xs)) !important;
     line-height: 1.3 !important;
     margin-bottom: 0 !important;
   }
   .feature-desc {
-    font-size: 11.5px !important;
+    font-size: max(11.5px, var(--fs-min-xs)) !important;
     line-height: 1.6 !important;
   }
   .feature-line { display: none !important; }
@@ -2604,11 +2604,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
   display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(18px,2.6vw,32px);align-items:start}
 
 .mm-slot-head{margin-bottom:12px}
-.mm-slot-head .n{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.mm-slot-head .n{font-size:max(11px, var(--fs-min-xs));letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 .mm-slot--was .n{color:var(--text-muted)}
 .mm-slot--now .n{color:var(--purple)}
-.mm-slot-head p{margin:6px 0 0;font-size:12.5px;line-height:1.55;color:var(--text-secondary)}
-.mm-slot-head code{font-size:12px;background:var(--card);border:1px solid var(--border);
+.mm-slot-head p{margin:6px 0 0;font-size:max(12.5px, var(--fs-min-sm));line-height:1.55;color:var(--text-secondary)}
+.mm-slot-head code{font-size:max(12px, var(--fs-min-sm));background:var(--card);border:1px solid var(--border);
   border-radius:4px;padding:1px 5px;color:var(--text)}
 
 /* La superficie clara: es la interfaz real de ILUNION, por eso no se oscurece */
@@ -2617,12 +2617,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .mm-slot--now .mm-spec{box-shadow:0 1px 2px rgba(0,0,0,.4),0 34px 80px -38px rgba(167,139,250,.85)}
 
 /* Lado nativo */
-.mm-native-label{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--mm-spec-ink)}
-.mm-native{width:100%;font:inherit;font-size:14px;padding:11px 12px;color:var(--mm-spec-ink);
+.mm-native-label{display:block;font-size:max(12px, var(--fs-min-sm));font-weight:700;margin-bottom:6px;color:var(--mm-spec-ink)}
+.mm-native{width:100%;font:inherit;font-size:max(14px, var(--fs-min-14));padding:11px 12px;color:var(--mm-spec-ink);
   border:1px solid var(--mm-spec-line);border-radius:7px;background:#fff;cursor:pointer}
 .mm-code{margin:14px 0 0;padding:11px;border-radius:7px;background:#FAF9FB;
   border:1px solid var(--mm-spec-line);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:11px;line-height:1.7;color:#5C5C5C;overflow-x:auto;white-space:pre}
+  font-size:max(11px, var(--fs-min-xs));line-height:1.7;color:#5C5C5C;overflow-x:auto;white-space:pre}
 .mm-code b{color:var(--mm-spec-ink);font-weight:600}
 
 /* Componente reconstruido */
@@ -2630,7 +2630,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .mm-trigger{width:100%;text-align:left;font:inherit;background:#fff;cursor:pointer;
   border:1px solid var(--mm-spec-ink);border-radius:0;padding:9px 13px 10px;
   display:flex;justify-content:space-between;align-items:flex-end;gap:12px;color:var(--mm-spec-ink)}
-.mm-trigger .lbl{display:block;font-size:13px;margin-bottom:4px}
+.mm-trigger .lbl{display:block;font-size:max(13px, var(--fs-min-sm));margin-bottom:4px}
 .mm-trigger .ph{display:block;font-size:16px;color:#5C5C5C}
 .mm-trigger svg{flex:0 0 auto;margin-bottom:4px;transition:transform .3s var(--mm-ease)}
 .mm-combo[data-open="true"] .mm-trigger svg{transform:rotate(180deg)}
@@ -2646,10 +2646,10 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .mm-col::-webkit-scrollbar-track{background:#F1F0F3}
 .mm-col::-webkit-scrollbar-thumb{background:var(--mm-costa);border-radius:99px}
 .mm-col + .mm-col{border-left:1px solid var(--mm-spec-line)}
-.mm-col h3{margin:0 0 11px;font-size:14px;font-weight:700;color:var(--mm-spec-ink)}
+.mm-col h3{margin:0 0 11px;font-size:max(14px, var(--fs-min-14));font-weight:700;color:var(--mm-spec-ink)}
 .mm-col--hotels h3{text-decoration:underline;text-underline-offset:3px}
 .mm-col ul{list-style:none;margin:0;padding:0}
-.mm-opt{width:100%;display:flex;gap:9px;align-items:flex-start;font:inherit;font-size:14px;
+.mm-opt{width:100%;display:flex;gap:9px;align-items:flex-start;font:inherit;font-size:max(14px, var(--fs-min-14));
   line-height:1.35;text-align:left;background:transparent;border:0;border-radius:6px;
   padding:6px 8px;cursor:pointer;color:var(--mm-spec-ink);transition:background .15s}
 .mm-opt:hover{background:#F3EEFB}
@@ -2658,13 +2658,13 @@ html.lang-en .hero-positioning.en { display: block !important; }
 @keyframes mmPop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 /* Capacidades */
-.mm-caps-title{margin:20px 0 9px;font-size:11px;letter-spacing:.12em;
+.mm-caps-title{margin:20px 0 9px;font-size:max(11px, var(--fs-min-xs));letter-spacing:.12em;
   text-transform:uppercase;font-weight:600;color:var(--text-muted)}
 .mm-caps{display:flex;flex-wrap:wrap;gap:7px}
-.mm-cap{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:var(--text-secondary);
+.mm-cap{display:inline-flex;align-items:center;gap:7px;font-size:max(11px, var(--fs-min-xs));color:var(--text-secondary);
   background:var(--card);border:1px solid var(--border);border-radius:99px;padding:6px 13px}
 .mm-cap::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--purple)}
-.mm-note{font-size:11px;line-height:1.6;color:var(--text-muted);margin:24px 0 0;max-width:80ch}
+.mm-note{font-size:max(11px, var(--fs-min-xs));line-height:1.6;color:var(--text-muted);margin:24px 0 0;max-width:80ch}
 
 @media (max-width:860px){
   .hero-title{max-width:none}
@@ -3246,7 +3246,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 12px;
+    font-size: max(12px, var(--fs-min-sm));
     font-weight: 700;
     font-family: monospace;
     color: var(--text-faint);
@@ -3273,7 +3273,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .stepper-node-label {
     position: absolute;
     bottom: -24px;
-    font-size: 10px;
+    font-size: max(10px, var(--fs-min-xs));
     font-weight: 700;
     color: var(--text-faint);
     white-space: nowrap;
@@ -3321,7 +3321,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   }
   .stepper-panel-step {
     font-family: monospace;
-    font-size: 11px;
+    font-size: max(11px, var(--fs-min-xs));
     font-weight: 700;
     color: var(--accent);
     letter-spacing: 0.1em;
@@ -3333,7 +3333,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     margin: 0;
   }
   .stepper-panel-desc {
-    font-size: 13.5px;
+    font-size: max(13.5px, var(--fs-min-sm));
     color: var(--text-bright);
     line-height: 1.6;
     margin: 0;
@@ -3377,17 +3377,17 @@ html.lang-en .hero-positioning.en { display: block !important; }
     }
     .mobile-stepper-num {
       font-family: monospace;
-      font-size: 10px;
+      font-size: max(10px, var(--fs-min-xs));
       font-weight: 700;
       color: var(--accent);
     }
     .mobile-stepper-title {
-      font-size: 14px;
+      font-size: max(14px, var(--fs-min-14));
       font-weight: 700;
       color: var(--white);
     }
     .mobile-stepper-desc {
-      font-size: 12.5px;
+      font-size: max(12.5px, var(--fs-min-sm));
       color: var(--text-dim);
       line-height: 1.5;
       margin-top: 10px;
@@ -3473,7 +3473,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   }
   .como-trabajo-item-title {
     font-family: "DM Sans", sans-serif;
-    font-size: 12px;
+    font-size: max(12px, var(--fs-min-sm));
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -3488,7 +3488,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     flex-shrink: 0;
   }
   .como-trabajo-item-desc {
-    font-size: 14px;
+    font-size: max(14px, var(--fs-min-14));
     color: var(--text-bright);
     line-height: 1.55;
     margin: 0;
@@ -3530,7 +3530,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     font-family: monospace;
   }
   .hero-stat-lbl {
-    font-size: 9px;
+    font-size: max(9px, var(--fs-min-xs));
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -3570,7 +3570,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
     width: 100%;
     padding: 13px 20px;
     border-radius: 12px;
-    font-size: 13.5px;
+    font-size: max(13.5px, var(--fs-min-sm));
     font-weight: 600;
     text-decoration: none;
     background: rgba(124, 58, 237, 0.1);
@@ -3625,7 +3625,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
       <!-- Columna Derecha (60%) -->
       <div class="sobre-right">
-        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
+        <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
           <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--purple);"></span>
           <span class="es">SOBRE MÍ</span><span class="en">ABOUT ME</span>
         </div>
@@ -3635,7 +3635,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
           <span class="en">Each design decision must be defensible with evidence.</span>
         </h2>
 
-        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14.5px; color: var(--text-bright); line-height: 1.75; margin-bottom: 28px;">
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: max(14.5px, var(--fs-min-14)); color: var(--text-bright); line-height: 1.75; margin-bottom: 28px;">
           <p class="es">He trabajado diseñando productos digitales en hotelería, EdTech y consultoría B2B. Mi forma de trabajar siempre parte del mismo principio: entender el problema antes de diseñar la solución.</p>
           <p class="es">En ILUNION optimizo el canal directo utilizando datos, investigación y experimentación. En CEF construí un Design System accesible desde cero. En todos los proyectos intento que las decisiones de diseño puedan justificarse con evidencia, no con opiniones.</p>
 
@@ -3644,8 +3644,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
 
         <div style="border-left: 2px solid rgba(124,58,237,0.4); padding-left: 18px; margin-bottom: 32px;">
-          <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Cómo entiendo el diseño</div>
-          <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.65; margin: 0;">No diseño para validar una idea previa. Diseño para reducir incertidumbre y ayudar a tomar mejores decisiones.</p>
+          <div style="font-size: max(9.5px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Cómo entiendo el diseño</div>
+          <p style="font-size: max(13.5px, var(--fs-min-sm)); color: var(--text-bright); line-height: 1.65; margin: 0;">No diseño para validar una idea previa. Diseño para reducir incertidumbre y ayudar a tomar mejores decisiones.</p>
         </div>
 
 
@@ -3661,37 +3661,37 @@ html.lang-en .hero-positioning.en { display: block !important; }
             <!-- Entrada 1: ILUNION -->
             <div style="position: relative;">
               <div class="timeline-node-active" style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">ILUNION Hotels</div>
-              <div style="font-size: 11.5px; color: var(--text-dim); margin-bottom: 8px;">Product Designer · CRO &nbsp;·&nbsp; Sept 2024 — Actualidad</div>
+              <div style="font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--white); margin-bottom: 2px;">ILUNION Hotels</div>
+              <div style="font-size: max(11.5px, var(--fs-min-xs)); color: var(--text-dim); margin-bottom: 8px;">Product Designer · CRO &nbsp;·&nbsp; Sept 2024 — Actualidad</div>
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li style="font-size: 12.5px; color: var(--text-bright);">Optimización del canal directo de 32 hoteles.</li>
-                <li style="font-size: 12.5px; color: var(--text-bright);">Conversión del 3,36% al 6,5%.</li>
-                <li style="font-size: 12.5px; color: var(--text-dim);">Adobe Analytics · Microsoft Clarity · AEM.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);">Optimización del canal directo de 32 hoteles.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);">Conversión del 3,36% al 6,5%.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-dim);">Adobe Analytics · Microsoft Clarity · AEM.</li>
               </ul>
             </div>
 
             <!-- Entrada 2: CEF -->
             <div style="position: relative;">
               <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">CEF</div>
-              <div style="font-size: 11.5px; color: var(--text-dim); margin-bottom: 8px;">Product Designer &nbsp;·&nbsp; Jun 2024 — Sept 2024</div>
+              <div style="font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--white); margin-bottom: 2px;">CEF</div>
+              <div style="font-size: max(11.5px, var(--fs-min-xs)); color: var(--text-dim); margin-bottom: 8px;">Product Designer &nbsp;·&nbsp; Jun 2024 — Sept 2024</div>
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li style="font-size: 12.5px; color: var(--text-bright);">Design System accesible.</li>
-                <li style="font-size: 12.5px; color: var(--text-bright);">17 componentes WCAG 2.1 AA + especificaciones técnicas auto-generadas (Figma MCP). Tokens JSON y handoff automático: 0 discrepancias entre Figma y código.</li>
-                <li style="font-size: 12.5px; color: var(--text-dim);">Tokens, documentación y handoff.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);">Design System accesible.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);">17 componentes WCAG 2.1 AA + especificaciones técnicas auto-generadas (Figma MCP). Tokens JSON y handoff automático: 0 discrepancias entre Figma y código.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-dim);">Tokens, documentación y handoff.</li>
               </ul>
             </div>
 
             <!-- Entrada 3: We Are Actions -->
             <div style="position: relative;">
               <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 2px;">We Are Actions</div>
-              <div style="font-size: 11.5px; color: var(--text-dim); margin-bottom: 8px;">UX/UI Designer &nbsp;·&nbsp; Jul 2020 — May 2024</div>
+              <div style="font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--white); margin-bottom: 2px;">We Are Actions</div>
+              <div style="font-size: max(11.5px, var(--fs-min-xs)); color: var(--text-dim); margin-bottom: 8px;">UX/UI Designer &nbsp;·&nbsp; Jul 2020 — May 2024</div>
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li style="font-size: 12.5px; color: var(--text-bright);">Consultoría digital.</li>
-                <li style="font-size: 12.5px; color: var(--text-bright);">Oracle ERP.</li>
-                <li style="font-size: 12.5px; color: var(--text-bright);">Paolo by Danny's.</li>
-                <li style="font-size: 12.5px; color: var(--text-dim);">Productos internos.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);">Consultoría digital.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);">Oracle ERP.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);">Paolo by Danny's.</li>
+                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-dim);">Productos internos.</li>
               </ul>
             </div>
 
@@ -3709,7 +3709,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
     <!-- Header Horizontal Limpio — Mismo patrón que el resto de secciones -->
     <div style="margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
-      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">
+      <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">
         <span class="es">• TESTIMONIALES &amp; FEEDBACK</span>
         <span class="en">• TESTIMONIALS &amp; FEEDBACK</span>
       </div>
@@ -3717,8 +3717,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <span class="es">Lo que dicen quienes han trabajado con Marta<span class="c-purple">.</span></span>
         <span class="en">What people say about working with Marta<span class="c-purple">.</span></span>
       </h2>
-      <p style="font-size:14px; color:var(--text-dim); margin:8px 0 0;" class="es">Recomendaciones verificadas en <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
-      <p style="font-size:14px; color:var(--text-dim); margin:8px 0 0;" class="en">Verified on <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
+      <p style="font-size:max(14px, var(--fs-min-14)); color:var(--text-dim); margin:8px 0 0;" class="es">Recomendaciones verificadas en <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
+      <p style="font-size:max(14px, var(--fs-min-14)); color:var(--text-dim); margin:8px 0 0;" class="en">Verified on <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
     </div>
 
     <!-- Grid de cards del sistema -->
@@ -3909,7 +3909,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
   pointer-events: none;
 }
 .ref-text {
-  font-size: 14.5px;
+  font-size: max(14.5px, var(--fs-min-14));
   line-height: 1.7;
   color: var(--text-secondary);
   margin: 0;
@@ -3938,12 +3938,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
   border: 1.5px solid rgba(var(--accent-rgb), 0.15);
 }
 .ref-name {
-  font-size: 13.5px;
+  font-size: max(13.5px, var(--fs-min-sm));
   font-weight: 700;
   color: var(--text-strong);
 }
 .ref-role {
-  font-size: 11px;
+  font-size: max(11px, var(--fs-min-xs));
   color: var(--text-muted);
   margin-top: 1px;
 }
@@ -4035,6 +4035,45 @@ html.lang-en .hero-positioning.en { display: block !important; }
   border: none;
   cursor: pointer;
   font-family: inherit;
+}
+</style>
+<style>
+/* ── MÓVIL (≤767px), CRITERIOS NOTION ──
+   Ningún texto por debajo de 12px, lectura a 16px, ritmo vertical de 56px,
+   zonas táctiles de 44px y tarjetas con un solo nivel de marco. */
+:root { --fs-min-xs: 0px; --fs-min-sm: 0px; --fs-min-14: 0px; --fs-min-md: 0px; }
+@media (max-width: 767px) {
+  :root { --fs-min-xs: 12px; --fs-min-sm: 14px; --fs-min-14: 15px; --fs-min-md: 16px; }
+
+  /* Hero: la rejilla no puede crecer por un bloque de código */
+  .hero-grid, .hero-grid > * { min-width: 0; }
+  .mm-bench, .mm-slot { min-width: 0; max-width: 100%; }
+  .mm-bench pre, .mm-bench code, .mm-slot pre { overflow-x: auto; max-width: 100%; }
+
+  /* Ritmo vertical entre secciones */
+  .sobre-section, .process-section, .stack-section, .work-section { padding-top: 56px !important; padding-bottom: 56px !important; }
+
+  /* Tarjetas de caso: resumen corto, la metodología vive en el caso */
+  .sc-desc > span[style*="display:block"] { display: none !important; }
+  .sc-desc { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; font-size: 15px !important; line-height: 1.6 !important; }
+  .sc-cta-row { flex-direction: row !important; gap: 10px !important; }
+  .sc-cta-row > a { flex: 1 1 0; min-height: 44px; display: inline-flex !important; align-items: center; justify-content: center; margin: 0 !important; }
+  .sc-mname { font-size: 12px !important; line-height: 1.35 !important; }
+
+  /* Cómo trabajo: el botón "Ver más" pasa debajo del texto y deja todo el ancho a la lectura */
+  .process-accordion summary { flex-wrap: wrap; align-items: flex-start; }
+  .process-summary-content { flex-basis: 100%; }
+  .process-expand { padding: 8px 14px !important; min-height: 36px; display: inline-flex; align-items: center; }
+  .step-desc { font-size: 15px !important; line-height: 1.55 !important; }
+
+  /* Recomendaciones */
+  .ref-card { padding: 20px !important; }
+  .ref-linkedin { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+  /* Pie: los botones de contacto bajan de línea en lugar de salirse */
+  .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 10px !important; padding: 0 20px; }
+  .footer-link { min-height: 44px; }
+  .sc-cta-row > a { white-space: nowrap; padding-left: 12px !important; padding-right: 12px !important; letter-spacing: 0.06em !important; }
 }
 </style>
 
@@ -4171,8 +4210,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">CEF Design System<br><em>y accesibilidad EdTech</em></h3>
         <h3 class="sc-title en">CEF Design System<br><em>and EdTech accessibility</em></h3>
-        <p class="sc-desc es">Eliminación de años de deuda técnica sin sistema de diseño. Diseñé e implementé el primer Design System escalable desde cero: auditoría de accesibilidad WCAG 2.1 AA, arquitectura de tokens (Leyes de Gestalt) y definición de <strong>User Personas EdTech</strong> para estudiantes y docentes. Las fichas de componente y los tokens JSON se generan con Claude vía Figma MCP: 0 discrepancias entre Figma y código. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal · Design System + WCAG 100% propio</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: User Personas · Leyes de Gestalt · Tokens Figma/GitHub · Accesibilidad WCAG AA</span></p>
-        <p class="sc-desc en">Elimination of years of tech debt with no underlying design system. Designed and built the first scalable Design System from scratch: WCAG 2.1 AA accessibility audit, token architecture (Gestalt Laws), and definition of <strong>EdTech User Personas</strong> for students and faculty. Component specs and JSON tokens are generated with Claude via Figma MCP: zero drift between Figma and code. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Principal Product Designer · DS + WCAG 100% sole ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: User Personas · Gestalt Laws · Figma/GitHub Tokens · WCAG AA Accessibility</span></p>
+        <p class="sc-desc es">Eliminación de años de deuda técnica sin sistema de diseño. Diseñé e implementé el primer Design System escalable desde cero: auditoría de accesibilidad WCAG 2.1 AA, arquitectura de tokens (Leyes de Gestalt) y definición de <strong>User Personas EdTech</strong> para estudiantes y docentes. Las fichas de componente y los tokens JSON se generan con Claude vía Figma MCP: 0 discrepancias entre Figma y código. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal · Design System + WCAG 100% propio</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: User Personas · Leyes de Gestalt · Tokens Figma/GitHub · Accesibilidad WCAG AA</span></p>
+        <p class="sc-desc en">Elimination of years of tech debt with no underlying design system. Designed and built the first scalable Design System from scratch: WCAG 2.1 AA accessibility audit, token architecture (Gestalt Laws), and definition of <strong>EdTech User Personas</strong> for students and faculty. Component specs and JSON tokens are generated with Claude via Figma MCP: zero drift between Figma and code. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Principal Product Designer · DS + WCAG 100% sole ownership</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: User Personas · Gestalt Laws · Figma/GitHub Tokens · WCAG AA Accessibility</span></p>
         <div class="sc-cta-row">
           <a href="cef-design-system.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="cef-design-system.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -4222,8 +4261,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">ILUNION CRO<br><em>de <span class="locked-metric">3,36% a 6,5%</span> de conversión</em></h3>
         <h3 class="sc-title en">ILUNION CRO<br><em>from <span class="locked-metric">3.36% to 6.5%</span> conversion</em></h3>
-        <p class="sc-desc es">Optimización del funnel de reservas mediante análisis automático de 10.000+ logs de funnel y 250+ sesiones de Clarity (via Claude). Las hipótesis salieron de ese análisis de fricciones, no de la intuición. Diseñé y ejecuté <strong>Tests A/B (Control A vs. Tratamiento B)</strong> basados en hipótesis priorizadas (ICE) con verificación de significancia estadística (p &lt; 0,05), fundamentados en <strong>Buyer Personas</strong> (huéspedes vacacionales y corporativos) y aplicación de la <strong>Ley de Fitts</strong> en la visibilidad de CTAs clave. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto responsable · Ownership end-to-end de experimentación</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Tests A/B (Control vs. B) · Buyer &amp; User Personas · Ley de Fitts · Priorización ICE</span></p>
-        <p class="sc-desc en">Booking funnel optimization driven by automated analysis of 10,000+ funnel logs and 250+ Clarity sessions (via Claude). Hypotheses came out of that friction analysis, not out of intuition. Designed and executed <strong>A/B Tests (Control A vs. Treatment B)</strong> driven by prioritized hypotheses (ICE framework) with statistical significance (p &lt; 0,05), built on <strong>Buyer Personas</strong> (leisure &amp; corporate bookers) and <strong>Fitts's Law</strong> for primary CTA ergonomics. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Responsible Product Designer · Autonomous end-to-end experiment ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: A/B Testing (Control vs. B) · Buyer &amp; User Personas · Fitts's Law · ICE Prioritization</span></p>
+        <p class="sc-desc es">Optimización del funnel de reservas mediante análisis automático de 10.000+ logs de funnel y 250+ sesiones de Clarity (via Claude). Las hipótesis salieron de ese análisis de fricciones, no de la intuición. Diseñé y ejecuté <strong>Tests A/B (Control A vs. Tratamiento B)</strong> basados en hipótesis priorizadas (ICE) con verificación de significancia estadística (p &lt; 0,05), fundamentados en <strong>Buyer Personas</strong> (huéspedes vacacionales y corporativos) y aplicación de la <strong>Ley de Fitts</strong> en la visibilidad de CTAs clave. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto responsable · Ownership end-to-end de experimentación</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Tests A/B (Control vs. B) · Buyer &amp; User Personas · Ley de Fitts · Priorización ICE</span></p>
+        <p class="sc-desc en">Booking funnel optimization driven by automated analysis of 10,000+ funnel logs and 250+ Clarity sessions (via Claude). Hypotheses came out of that friction analysis, not out of intuition. Designed and executed <strong>A/B Tests (Control A vs. Treatment B)</strong> driven by prioritized hypotheses (ICE framework) with statistical significance (p &lt; 0,05), built on <strong>Buyer Personas</strong> (leisure &amp; corporate bookers) and <strong>Fitts's Law</strong> for primary CTA ergonomics. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Responsible Product Designer · Autonomous end-to-end experiment ownership</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: A/B Testing (Control vs. B) · Buyer &amp; User Personas · Fitts's Law · ICE Prioritization</span></p>
         <div class="step-ai-integration es" style="margin-bottom:12px;">
           <span class="ai-badge">Copiloto IA: Research &amp; Auditoría de Datos (MCP)</span>
           <p>Extraigo 10.000+ logs de conversión (Analytics + Clarity) en 2h. Automatizo el clustering de sesiones de usuario para aislar fricciones visuales antes de diseñar y feedback para identificar fricciones visuales con datos validados.</p>
@@ -4271,8 +4310,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">ILUNION Booking Engine<br><em>de escaparate a conversión</em></h3>
         <h3 class="sc-title en">ILUNION Booking Engine<br><em>from showcase to conversion</em></h3>
-        <p class="sc-desc es">Rediseño completo del flujo del motor de reservas para alinear la arquitectura con la intención real del usuario. Iteré variantes bilingües de CTA y microcopy con análisis heurístico automático (Claude) y llevé a producción las de mayor impacto medible — validadas con la <strong>Ley de Fitts</strong> en la barra flotante de checkout móvil, para el <strong>User Persona del Viajero Frecuente</strong>. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Lead · Liderazgo de UX entre Ingeniería y Marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: User Personas · Ley de Hick · Ley de Fitts · Optimización del Funnel Checkout</span></p>
-        <p class="sc-desc en">Full booking engine flow redesign to align digital architecture with real user intent. Iterated bilingual CTA and microcopy variants through automated heuristic analysis (Claude), shipping the ones with the highest measurable impact — validated with <strong>Fitts's Law</strong> on the mobile sticky checkout bar, for the <strong>Frequent Traveler User Persona</strong>. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Lead Product Designer · UX Leadership across Engineering &amp; Marketing</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: User Personas · Hick's Law · Fitts's Law · Checkout Funnel Optimization</span></p>
+        <p class="sc-desc es">Rediseño completo del flujo del motor de reservas para alinear la arquitectura con la intención real del usuario. Iteré variantes bilingües de CTA y microcopy con análisis heurístico automático (Claude) y llevé a producción las de mayor impacto medible — validadas con la <strong>Ley de Fitts</strong> en la barra flotante de checkout móvil, para el <strong>User Persona del Viajero Frecuente</strong>. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Lead · Liderazgo de UX entre Ingeniería y Marketing</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: User Personas · Ley de Hick · Ley de Fitts · Optimización del Funnel Checkout</span></p>
+        <p class="sc-desc en">Full booking engine flow redesign to align digital architecture with real user intent. Iterated bilingual CTA and microcopy variants through automated heuristic analysis (Claude), shipping the ones with the highest measurable impact — validated with <strong>Fitts's Law</strong> on the mobile sticky checkout bar, for the <strong>Frequent Traveler User Persona</strong>. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Lead Product Designer · UX Leadership across Engineering &amp; Marketing</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: User Personas · Hick's Law · Fitts's Law · Checkout Funnel Optimization</span></p>
         <div class="sc-cta-row">
           <a href="booking-engine.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="booking-engine.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -4322,8 +4361,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">Paolo Pizzeria<br><em>ecosistema digital de delivery</em></h3>
         <h3 class="sc-title en">Paolo Pizzeria<br><em>digital delivery ecosystem</em></h3>
-        <p class="sc-desc es">Ownership completo del producto digital de una cadena en expansión. Diseñé la experiencia <strong>Mobile-First</strong> aplicando la <strong>Ley de Miller</strong> (chunking de categorías para evitar parálisis de decisión) basándome en <strong>Buyer Personas de comensales locales y delivery</strong>. Escaló de 1 a 5 locales sin rediseño. Regeneré los 4 platos estrella y exploré 20+ conceptos de marca con IA generativa, sin sesión fotográfica. Automaticé el análisis de los 3 customer journeys del negocio (delivery, visita al local y reserva) mediante análisis de user personas, reduciendo decisiones de diseño manual. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal &amp; Frontend Developer · 2 años end-to-end</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Buyer Personas · Ley de Miller (Chunking) · Arquitectura Mobile-First · Delivery Journeys</span></p>
-        <p class="sc-desc en">Full digital product ownership for an expanding restaurant chain. Designed the <strong>Mobile-First UX</strong> applying <strong>Miller's Law</strong> (category chunking to prevent choice paralysis) based on <strong>Diner &amp; Delivery Buyer Personas</strong>. Scaled from 1 to 5 locations with no redesign. Regenerated the 4 signature dishes and explored 20+ brand concepts with generative AI, with no photo shoot. Automated the analysis of the business's 3 customer journeys (delivery, in-store visit and booking) through user-persona analysis, cutting manual design decisions. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Lead Product Designer &amp; Frontend Developer · 2 years end-to-end ownership</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Buyer Personas · Miller's Law (Chunking) · Mobile-First Architecture · Delivery Journeys</span></p>
+        <p class="sc-desc es">Ownership completo del producto digital de una cadena en expansión. Diseñé la experiencia <strong>Mobile-First</strong> aplicando la <strong>Ley de Miller</strong> (chunking de categorías para evitar parálisis de decisión) basándome en <strong>Buyer Personas de comensales locales y delivery</strong>. Escaló de 1 a 5 locales sin rediseño. Regeneré los 4 platos estrella y exploré 20+ conceptos de marca con IA generativa, sin sesión fotográfica. Automaticé el análisis de los 3 customer journeys del negocio (delivery, visita al local y reserva) mediante análisis de user personas, reduciendo decisiones de diseño manual. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Diseñadora de Producto Principal &amp; Frontend Developer · 2 años end-to-end</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Buyer Personas · Ley de Miller (Chunking) · Arquitectura Mobile-First · Delivery Journeys</span></p>
+        <p class="sc-desc en">Full digital product ownership for an expanding restaurant chain. Designed the <strong>Mobile-First UX</strong> applying <strong>Miller's Law</strong> (category chunking to prevent choice paralysis) based on <strong>Diner &amp; Delivery Buyer Personas</strong>. Scaled from 1 to 5 locations with no redesign. Regenerated the 4 signature dishes and explored 20+ brand concepts with generative AI, with no photo shoot. Automated the analysis of the business's 3 customer journeys (delivery, in-store visit and booking) through user-persona analysis, cutting manual design decisions. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Lead Product Designer &amp; Frontend Developer · 2 years end-to-end ownership</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Buyer Personas · Miller's Law (Chunking) · Mobile-First Architecture · Delivery Journeys</span></p>
         <div class="sc-cta-row">
           <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="paolo-pizzeria.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -4362,8 +4401,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">Oracle ERP &amp; IT Ops<br><em>cuando comprar no resuelve</em></h3>
         <h3 class="sc-title en">Oracle ERP &amp; IT Ops<br><em>when buying doesn't solve it</em></h3>
-        <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, realicé un <strong>Discovery Contextual</strong> e identifiqué que Oracle generaba más fricción que solución. Diseñé <strong>User Personas internas para técnicos de soporte</strong>, aislé <strong>4 patrones de fallo</strong> mediante análisis automático de <strong>Heurísticas de Nielsen</strong> (recuperación de errores, consistencia, prevención) y formulé la propuesta estratégica Build vs. Buy, que se tradujo en las especificaciones técnicas de los módulos internos. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Discovery Contextual · Propuesta Conceptual · Estrategia de Producto</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Internal User Personas · Heurísticas de Nielsen · Discovery Contextual · Decision Matrix</span></p>
-        <p class="sc-desc en">Embedded in We Are Actions' IT team, conducted <strong>Contextual Discovery</strong> and identified Oracle was generating friction instead of utility. Built <strong>Internal Support User Personas</strong>, isolated <strong>4 failure patterns</strong> through automated <strong>Nielsen Heuristics</strong> analysis (error recovery, consistency, prevention) and formulated the Build vs. Buy strategy, which turned into the technical specs for the internal modules. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Contextual Discovery · Conceptual Proposal · Product Strategy</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Internal User Personas · Nielsen Heuristics · Contextual Discovery · Decision Matrix</span></p>
+        <p class="sc-desc es">Integrada en el equipo IT de We Are Actions, realicé un <strong>Discovery Contextual</strong> e identifiqué que Oracle generaba más fricción que solución. Diseñé <strong>User Personas internas para técnicos de soporte</strong>, aislé <strong>4 patrones de fallo</strong> mediante análisis automático de <strong>Heurísticas de Nielsen</strong> (recuperación de errores, consistencia, prevención) y formulé la propuesta estratégica Build vs. Buy, que se tradujo en las especificaciones técnicas de los módulos internos. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Discovery Contextual · Propuesta Conceptual · Estrategia de Producto</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Internal User Personas · Heurísticas de Nielsen · Discovery Contextual · Decision Matrix</span></p>
+        <p class="sc-desc en">Embedded in We Are Actions' IT team, conducted <strong>Contextual Discovery</strong> and identified Oracle was generating friction instead of utility. Built <strong>Internal Support User Personas</strong>, isolated <strong>4 failure patterns</strong> through automated <strong>Nielsen Heuristics</strong> analysis (error recovery, consistency, prevention) and formulated the Build vs. Buy strategy, which turned into the technical specs for the internal modules. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Contextual Discovery · Conceptual Proposal · Product Strategy</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Internal User Personas · Nielsen Heuristics · Contextual Discovery · Decision Matrix</span></p>
         <div class="sc-cta-row">
           <a href="it-ops-oracle.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="it-ops-oracle.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -4402,8 +4441,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         </div>
         <h3 class="sc-title es">Gym Energy Center<br><em>un gimnasio no es una app de reservas</em></h3>
         <h3 class="sc-title en">Gym Energy Center<br><em>a gym isn't a booking app</em></h3>
-        <p class="sc-desc es">MVP construido <strong>en equipo</strong> durante el bootcamp de Neoland: ocho personas entre producto y desarrollo. Llevé la <strong>investigación</strong>, la <strong>arquitectura de producto</strong> y el <strong>sistema de diseño</strong>, articulados en un <strong>framework de 3 pilares</strong> (práctico, social y emocional) que servía para decidir qué entraba en el MVP y qué no. Entre todo el equipo: 40+ componentes, 8 modelos MongoDB y 30+ endpoints. La <strong>reconceptualización de 2026</strong> —IA, dashboard de progreso y seguridad— es trabajo individual. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Research · Arquitectura de Producto · Sistema de Diseño</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Discovery · Framework de 3 pilares · Design System · Handoff a desarrollo</span></p>
-        <p class="sc-desc en">MVP built <strong>as a team</strong> during the Neoland bootcamp: eight people across product and development. I led <strong>research</strong>, <strong>product architecture</strong> and the <strong>design system</strong>, articulated in a <strong>3-pillar framework</strong> (practical, social and emotional) used to decide what made the MVP and what didn't. Across the whole team: 40+ components, 8 MongoDB models and 30+ endpoints. The <strong>2026 reconceptualisation</strong> —AI, progress dashboard and security— is solo work. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Research · Product Architecture · Design System</em><br><span style="font-size:11px;color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Discovery · 3-pillar framework · Design System · Dev handoff</span></p>
+        <p class="sc-desc es">MVP construido <strong>en equipo</strong> durante el bootcamp de Neoland: ocho personas entre producto y desarrollo. Llevé la <strong>investigación</strong>, la <strong>arquitectura de producto</strong> y el <strong>sistema de diseño</strong>, articulados en un <strong>framework de 3 pilares</strong> (práctico, social y emocional) que servía para decidir qué entraba en el MVP y qué no. Entre todo el equipo: 40+ componentes, 8 modelos MongoDB y 30+ endpoints. La <strong>reconceptualización de 2026</strong> —IA, dashboard de progreso y seguridad— es trabajo individual. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Rol: Research · Arquitectura de Producto · Sistema de Diseño</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Metodología &amp; UX: Discovery · Framework de 3 pilares · Design System · Handoff a desarrollo</span></p>
+        <p class="sc-desc en">MVP built <strong>as a team</strong> during the Neoland bootcamp: eight people across product and development. I led <strong>research</strong>, <strong>product architecture</strong> and the <strong>design system</strong>, articulated in a <strong>3-pillar framework</strong> (practical, social and emotional) used to decide what made the MVP and what didn't. Across the whole team: 40+ components, 8 MongoDB models and 30+ endpoints. The <strong>2026 reconceptualisation</strong> —AI, progress dashboard and security— is solo work. <em style="color:var(--text-strong);font-style:normal;font-weight:500;">Role: Research · Product Architecture · Design System</em><br><span style="font-size:max(11px, var(--fs-min-xs));color:rgba(255,255,255,0.38);font-weight:400;display:block;margin-top:8px;">Methodology &amp; UX: Discovery · 3-pillar framework · Design System · Dev handoff</span></p>
         <div class="sc-cta-row">
           <a href="gym-energy-center.html" class="sc-cta sc-cta-primary es">Case Study</a>
           <a href="gym-energy-center.html" class="sc-cta sc-cta-primary en">Case Study</a>
@@ -4444,7 +4483,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
     <!-- Header Horizontal Limpio (Aprovechamiento total de ancho) -->
     <div style="margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
-      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">
+      <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">
         <span class="es">• METODOLOGÍA &amp; EJECUCIÓN</span>
         <span class="en">• METHODOLOGY &amp; EXECUTION</span>
       </div>
@@ -4592,11 +4631,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <div style="border-radius: 18px; overflow: hidden; border: 1px solid rgba(124, 58, 237, 0.25); background: rgba(124, 58, 237, 0.04); margin-bottom: 24px;">
           <img src="assets/ux_workflow_visual.jpg" alt="Product Design Workflow Architecture" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid rgba(255,255,255,0.08);">
           <div style="padding: 18px 20px;">
-            <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px;">
+            <div style="font-size: max(10px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px;">
               <span class="es">SISTEMA &amp; ARQUITECTURA DE DECISIÓN</span>
               <span class="en">SYSTEM &amp; DECISION ARCHITECTURE</span>
             </div>
-            <p style="font-size: 13px; color: var(--text-bright); line-height: 1.55; margin: 0;">
+            <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text-bright); line-height: 1.55; margin: 0;">
               <span class="es">Cada fase integra analítica cuantitativa, tokens de diseño en Figma MCP y validación directa con desarrollo para eliminar sorpresas en entrega.</span>
               <span class="en">Each phase integrates quantitative analytics, Figma MCP design tokens, and direct engineering validation to eliminate handoff friction.</span>
             </p>
@@ -4630,7 +4669,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       WhatsApp
     </a>
   </div>
-  <div style="font-size: 12px; color: var(--text-dim); opacity: 0.7;">© 2026 Marta Morales · Product Designer</div>
+  <div style="font-size: max(12px, var(--fs-min-sm)); color: var(--text-dim); opacity: 0.7;">© 2026 Marta Morales · Product Designer</div>
 </footer>
 
 
@@ -4890,7 +4929,7 @@ function closeMenu() {
   margin-top: 18px;
   background: rgba(var(--accent-rgb),0.06); border: 1px solid rgba(var(--accent-rgb),0.20);
   border-radius: 100px; padding: 6px 14px; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 11.5px;
+  font-family: 'Inter', sans-serif; font-size: max(11.5px, var(--fs-min-xs));
   color: rgba(196,181,253,0.95); letter-spacing: 0.02em;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
@@ -4909,7 +4948,7 @@ function closeMenu() {
   border: 1px solid rgba(var(--accent-rgb),0.25);
   border-radius: 100px; padding: 10px 20px;
   cursor: pointer; font-family: 'Inter', sans-serif;
-  font-size: 13px; font-weight: 500;
+  font-size: max(13px, var(--fs-min-sm)); font-weight: 500;
   color: rgba(var(--accent-rgb),0.85); letter-spacing: 0.01em;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
@@ -5004,12 +5043,12 @@ function closeMenu() {
 }
 .chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .chat-avatar-fallback {
-  font-size: 14px; font-weight: 700; color: var(--purple);
+  font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--purple);
   font-family: 'Inter', sans-serif;
 }
 .chat-header-info { flex: 1; min-width: 0; }
-.chat-header-name { font-size: 13px; font-weight: 600; color: var(--text-strong); font-family: 'Inter', sans-serif; line-height: 1.2; }
-.chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+.chat-header-name { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: var(--text-strong); font-family: 'Inter', sans-serif; line-height: 1.2; }
+.chat-header-status { font-size: max(11px, var(--fs-min-xs)); color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
 .chat-status-dot {
   width: 6px; height: 6px; border-radius: 50%; background: #34d399;
   box-shadow: 0 0 6px rgba(52,211,153,0.6);
@@ -5029,7 +5068,7 @@ function closeMenu() {
 @keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .chat-msg.user { flex-direction: row-reverse; }
 
-.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; font-family: 'Inter', sans-serif; }
+.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: max(13px, var(--fs-min-sm)); line-height: 1.55; font-family: 'Inter', sans-serif; }
 .chat-msg.bot .chat-bubble {
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
   color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
@@ -5049,7 +5088,7 @@ function closeMenu() {
 
 .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
 .chat-chip {
-  padding: 6px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 500;
+  padding: 6px 12px; border-radius: 100px; font-size: max(11.5px, var(--fs-min-xs)); font-weight: 500;
   font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
   color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
@@ -5063,7 +5102,7 @@ function closeMenu() {
 .chat-input {
   flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
   border-radius: 100px; padding: 9px 14px; color: var(--text);
-  font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
+  font-size: max(13px, var(--fs-min-sm)); font-family: 'Inter', sans-serif; outline: none; resize: none;
   min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
 }
 .chat-input::placeholder { color: rgba(255,255,255,0.25); }
@@ -5487,7 +5526,7 @@ function closeMenu() {
   border: 1px solid rgba(var(--accent-rgb), 0.30);
   border-radius: 16px;
   padding: 11px 14px;
-  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; line-height: 1.4;
+  font-family: 'Inter', sans-serif; font-size: max(13px, var(--fs-min-sm)); font-weight: 500; line-height: 1.4;
   color: rgba(255, 255, 255, 0.92);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
   cursor: pointer;
@@ -5525,7 +5564,7 @@ function closeMenu() {
   50%      { transform: translateY(-5px) scale(1); }
 }
 @media (max-width: 480px) {
-  .chat-nudge-bubble { right: 16px; bottom: 84px; max-width: 168px; font-size: 12.5px; padding: 9px 12px; }
+  .chat-nudge-bubble { right: 16px; bottom: 84px; max-width: 168px; font-size: max(12.5px, var(--fs-min-sm)); padding: 9px 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .chat-nudge-bubble { transition: opacity 0.25s ease; }
@@ -5742,7 +5781,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   background: rgba(255, 255, 255, 0.03);
   color: rgba(255, 255, 255, 0.85);
   font-family: inherit;
-  font-size: 13px;
+  font-size: max(13px, var(--fs-min-sm));
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -5786,7 +5825,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
 }
 .lock-divider span {
   padding: 0 12px;
-  font-size: 11px;
+  font-size: max(11px, var(--fs-min-xs));
   color: var(--dim);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -5812,7 +5851,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   margin-bottom: 4px;
 }
 .lock-subtitle {
-  font-size: 13px;
+  font-size: max(13px, var(--fs-min-sm));
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -5829,7 +5868,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   width: 100%;
 }
 .form-group label {
-  font-size: 11px;
+  font-size: max(11px, var(--fs-min-xs));
   font-weight: 500;
   color: rgba(255,255,255,0.65);
 }
@@ -5840,7 +5879,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   padding: 11px 14px;
   color: #fff;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: max(13.5px, var(--fs-min-sm));
   outline: none;
   transition: border-color 0.2s, background 0.2s;
   width: 100%;
@@ -5857,7 +5896,7 @@ body.visitor-unauthorized .locked-metric:hover::after {
   background: linear-gradient(135deg, rgba(124,58,237,0.9), rgba(249,115,22,0.8));
   color: #fff;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: max(13.5px, var(--fs-min-sm));
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s;

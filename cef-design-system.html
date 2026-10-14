@@ -45,7 +45,7 @@
     
     /* Specific Dashboard Component Styles */
     .dash-widget { background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
-    .dash-title { font-size: 13px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .dash-title { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
     .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
     
     /* Score Widget */
@@ -54,7 +54,7 @@
     .score-circle.perfect { border-color: var(--accent); box-shadow: 0 0 30px var(--accent-glow); color: var(--accent); }
     .score-info { flex: 1; }
     .score-info h4 { font-size: 18px; color: var(--white); margin-bottom: 8px; }
-    .score-info p { font-size: 15px; color: var(--text-dim); line-height: 1.6; }
+    .score-info p { font-size: max(15px, var(--fs-min-md)); color: var(--text-dim); line-height: 1.6; }
 
     /* ─── OPCIÓN C: MAPPING LINES ───────────────────────────────────────── */
     /* Inspiración: Stripe · Linear — cada fila = una transformación visual  */
@@ -87,7 +87,7 @@
       margin-bottom: 6px;
       word-break: break-word;
     }
-    .pm-desc { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.5; }
+    .pm-desc { font-size: max(13px, var(--fs-min-sm)); color: rgba(255,255,255,0.38); line-height: 1.5; }
     .pm-list {
       display: flex;
       flex-direction: column;
@@ -107,7 +107,7 @@
     .pm-map-row:hover .pm-work-card { border-color: rgba(255,255,255,0.12); }
     .pm-map-row:hover .pm-method-badge { box-shadow: 0 0 28px var(--row-glow, rgba(var(--accent-rgb),0.25)); }
     .pm-num {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       font-weight: 700;
       color: rgba(255,255,255,0.12);
       letter-spacing: 0.05em;
@@ -137,7 +137,7 @@
       color: var(--white);
     }
     .pm-work-label {
-      font-size: 13px;
+      font-size: max(13px, var(--fs-min-sm));
       font-weight: 500;
       color: rgba(255,255,255,0.82);
       line-height: 1.35;
@@ -152,7 +152,7 @@
       width: 80px;
     }
     .pm-bridge-label {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--row-color, rgba(var(--accent-rgb),0.6));
@@ -181,7 +181,7 @@
       align-items: center;
       padding: 10px 18px;
       border-radius: 100px;
-      font-size: 13px;
+      font-size: max(13px, var(--fs-min-sm));
       font-weight: 600;
       white-space: nowrap;
       letter-spacing: 0.01em;
@@ -244,7 +244,7 @@
       .pm-bridge { display: none !important; }
       .pm-method-badge {
         grid-column: 2 !important;
-        font-size: 11px !important;
+        font-size: max(11px, var(--fs-min-xs)) !important;
         padding: 7px 14px !important;
         white-space: normal !important;
       }
@@ -290,7 +290,7 @@
       .pm-bridge { display: none; }
       .pm-method-badge {
         grid-column: 2;
-        font-size: 11px;
+        font-size: max(11px, var(--fs-min-xs));
         padding: 7px 14px;
         white-space: normal;
       }
@@ -317,7 +317,7 @@
       flex-direction: column;
     }
     .qs-label {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -335,7 +335,7 @@
       height: 13px;
       }
     .qs-val {
-      font-size: 13px;
+      font-size: max(13px, var(--fs-min-sm));
       color: var(--text-bright);
       line-height: 1.6;
     }
@@ -345,7 +345,7 @@
       margin: 0;
     }
     .qs-bullets li {
-      font-size: 13px;
+      font-size: max(13px, var(--fs-min-sm));
       color: var(--text);
       line-height: 1.5;
       margin-bottom: 8px;
@@ -366,7 +366,7 @@
       margin-top: 4px;
     }
     .qs-result-highlight {
-      font-size: 13px;
+      font-size: max(13px, var(--fs-min-sm));
       font-weight: 600;
       color: var(--white);
       line-height: 1.5;
@@ -387,10 +387,10 @@
     .c2-evidence-header { position: relative; overflow: hidden; padding: 20px 24px 16px; display: flex; align-items: flex-end; gap: 14px; border-bottom: 1px solid var(--border); background: transparent; }
     .c2-evidence-num { font-family: var(--font-serif); font-size: 40px; font-weight: 700; line-height: 1; color: var(--accent); flex-shrink: 0; }
     .c2-evidence-meta { display: flex; flex-direction: column; gap: 4px; }
-    .c2-evidence-label { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
-    .c2-evidence-sub { font-size: 11px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+    .c2-evidence-label { font-size: max(13px, var(--fs-min-sm)); font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+    .c2-evidence-sub { font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
     .c2-evidence-img { display: block; width: 100%; height: auto; }
-    .c2-evidence-caption { padding: 18px 24px; font-size: 13px; color: var(--text-dim); line-height: 1.6; border-top: 1px solid var(--border); flex: 1; }
+    .c2-evidence-caption { padding: 18px 24px; font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.6; border-top: 1px solid var(--border); flex: 1; }
     
     @media (max-width: 900px) {
       .c2-evidence-pair { grid-template-columns: 1fr; gap: 24px; }
@@ -414,10 +414,10 @@
     .dt-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
     .dt-icon svg { width: 18px; height: 18px; color: var(--white); }
     .dt-num { font-family: var(--font-serif); font-size: 28px; font-weight: 700; font-style: italic; color: var(--text-faint); line-height: 1; margin-bottom: 10px; }
-    .dt-step { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-    .dt-title { font-size: 15px; font-weight: 700; color: var(--white); font-family: var(--font-serif); margin-bottom: 10px; line-height: 1.3; }
-    .dt-text { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 16px; }
-    .dt-pill { display: inline-block; padding: 5px 12px; border: 1px solid var(--accent-border); border-radius: var(--radius-pill); font-size: 11px; color: var(--accent); background: rgba(var(--accent-rgb), 0.06); }
+    .dt-step { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .dt-title { font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); font-family: var(--font-serif); margin-bottom: 10px; line-height: 1.3; }
+    .dt-text { font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.6; margin-bottom: 16px; }
+    .dt-pill { display: inline-block; padding: 5px 12px; border: 1px solid var(--accent-border); border-radius: var(--radius-pill); font-size: max(11px, var(--fs-min-xs)); color: var(--accent); background: rgba(var(--accent-rgb), 0.06); }
     @media (max-width: 1100px) {
       .dt-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
     }
@@ -429,9 +429,9 @@
     .hero-metrics { display: flex; margin-top: 20px; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; max-width: 560px; }
     .hm-item { flex: 1; padding: 18px 22px; border-right: 1px solid var(--border); }
     .hm-item:last-child { border-right: none; }
-    .hm-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px; }
+    .hm-label { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px; }
     .hm-value { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); line-height: 1; }
-    .hm-sub { font-size: 11px; color: var(--text-dim); margin-top: 3px; }
+    .hm-sub { font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); margin-top: 3px; }
     @media (max-width: 640px) {
       .hero-metrics { flex-wrap: wrap; max-width: 100%; }
       .hm-item { flex: 1 1 50%; border-bottom: 1px solid var(--border); }
@@ -445,10 +445,10 @@
     .qsc-card:hover { border-color: rgba(255,255,255,0.16); transform: translateY(-2px); }
     .qsc-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
     .qsc-icon svg { width: 19px; height: 19px; color: var(--white); }
-    .qsc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-    .qsc-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+    .qsc-label { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .qsc-text { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.6; }
     .qsc-check { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
-    .qsc-check li { font-size: 13px; color: var(--text); line-height: 1.45; display: flex; align-items: flex-start; gap: 9px; }
+    .qsc-check li { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.45; display: flex; align-items: flex-start; gap: 9px; }
     .qsc-check li svg { width: 15px; height: 15px; color: var(--white); flex-shrink: 0; margin-top: 2px; }
     .qsc-result { grid-column: 1 / -1; background: var(--accent-glow); border: 1px solid var(--accent-border); }
     .qsc-result .qsc-icon { background: rgba(0,0,0,0.15); }
@@ -462,12 +462,12 @@
     .proc-card { background: transparent; border: 1px solid rgba(255,255,255,0.09); border-radius: 18px; padding: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
     .proc-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
     .proc-icon svg { width: 19px; height: 19px; color: var(--white); }
-    .proc-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .proc-eyebrow { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
     .proc-title { font-size: 18px; font-weight: 700; color: var(--white); font-family: var(--font-serif); margin-bottom: 16px; }
     .proc-row { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; border-top: 1px solid var(--border); }
     .proc-row:first-of-type { border-top: none; padding-top: 0; }
-    .proc-row-label { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
-    .proc-row-text { font-size: 13px; color: var(--text); line-height: 1.55; }
+    .proc-row-label { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+    .proc-row-text { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.55; }
     @media (max-width: 900px) {
       .proc-grid { grid-template-columns: 1fr; }
     }
@@ -497,7 +497,7 @@
       color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
     }
     .cs-mobile-menu-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--text-dim); margin-bottom: 18px;
     }
     .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
@@ -506,14 +506,14 @@
       display: block; padding: 16px 4px; text-decoration: none;
       transition: color 0.2s;
     }
-    .cs-mmi-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+    .cs-mmi-num { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
     .cs-mmi-title { font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
     .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
     .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
     .cs-mobile-menu-back {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
-      color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600; text-decoration: none;
+      color: rgba(255,255,255,0.7); font-size: max(13px, var(--fs-min-sm)); font-weight: 600; text-decoration: none;
     }
     @media (max-width: 768px) {
       .cs-hamburger { display: flex; }
@@ -552,10 +552,10 @@
 
   .ds-live { margin-top: 40px; }
   .ds-live .ds-lead {
-    font-size: 15px; color: var(--text-dim); line-height: 1.7; max-width: 720px; margin-bottom: 40px;
+    font-size: max(15px, var(--fs-min-md)); color: var(--text-dim); line-height: 1.7; max-width: 720px; margin-bottom: 40px;
   }
   .ds-live .ds-blocktitle {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--accent); margin: 48px 0 18px;
   }
 
@@ -565,17 +565,17 @@
     border: 1px solid var(--border); border-radius: 16px; padding: 22px;
     background: transparent; position: relative;
   }
-  .ds-chain-step { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
-  .ds-chain-h { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
-  .ds-chain-cap { font-size: 11px; color: var(--text-dim); line-height: 1.5; margin-top: 14px; }
-  .ds-token-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; font-size: 13px; }
+  .ds-chain-step { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .ds-chain-h { font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); margin-bottom: 14px; }
+  .ds-chain-cap { font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); line-height: 1.5; margin-top: 14px; }
+  .ds-token-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; font-size: max(13px, var(--fs-min-sm)); }
   .ds-token-dot { width: 16px; height: 16px; border-radius: 5px; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.14); }
   .ds-token-name { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; color: var(--text-bright); }
-  .ds-token-hex { margin-left: auto; font-family: ui-monospace, monospace; color: var(--text-dim); font-size: 11px; }
-  .ds-alias-row { padding: 7px 0; font-size: 13px; border-bottom: 1px dashed var(--border); }
+  .ds-token-hex { margin-left: auto; font-family: ui-monospace, monospace; color: var(--text-dim); font-size: max(11px, var(--fs-min-xs)); }
+  .ds-alias-row { padding: 7px 0; font-size: max(13px, var(--fs-min-sm)); border-bottom: 1px dashed var(--border); }
   .ds-alias-row:last-child { border-bottom: none; }
   .ds-alias-name { font-family: ui-monospace, monospace; color: var(--accent); }
-  .ds-alias-map { color: var(--text-dim); font-size: 11px; margin-top: 3px; }
+  .ds-alias-map { color: var(--text-dim); font-size: max(11px, var(--fs-min-xs)); margin-top: 3px; }
 
   /* ── Paneles claro/oscuro lado a lado ── */
   .ds-modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -584,38 +584,38 @@
     border: 1px solid var(--c-border); border-radius: 18px; padding: 22px;
   }
   .ds-panel-tag {
-    display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 7px; font-size: max(11px, var(--fs-min-xs)); font-weight: 700;
     letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-text-muted); margin-bottom: 16px;
   }
   .ds-panel-tag::before { content:''; width: 9px; height: 9px; border-radius: 50%; background: var(--c-action); }
   .ds-demo-card { background: var(--c-raised); border: 1px solid var(--c-border); border-radius: var(--ds-r); padding: 18px; }
   .ds-demo-h { font-size: 18px; font-weight: 700; color: var(--c-text); margin: 0 0 6px; }
-  .ds-demo-p { font-size: 13px; color: var(--c-text-muted); line-height: 1.55; margin: 0 0 16px; }
+  .ds-demo-p { font-size: max(13px, var(--fs-min-sm)); color: var(--c-text-muted); line-height: 1.55; margin: 0 0 16px; }
   .ds-btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     background: var(--c-action); color: var(--c-on-action); border: none; border-radius: 10px;
-    padding: 0 18px; min-height: 44px; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer;
+    padding: 0 18px; min-height: 44px; font-size: max(13px, var(--fs-min-sm)); font-weight: 600; font-family: inherit; cursor: pointer;
   }
   .ds-input {
     width: 100%; background: var(--c-surface); color: var(--c-text);
     border: 1px solid var(--c-border); border-radius: 10px; padding: 0 14px; min-height: 44px;
-    font-size: 13px; font-family: inherit; margin-top: 12px;
+    font-size: max(13px, var(--fs-min-sm)); font-family: inherit; margin-top: 12px;
   }
   .ds-input::placeholder { color: var(--c-text-muted); }
   .ds-chips { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-  .ds-chip { font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 100px; }
+  .ds-chip { font-size: max(11px, var(--fs-min-xs)); font-weight: 600; padding: 5px 11px; border-radius: 100px; }
   .ds-chip--ok { color: var(--c-success); border: 1px solid var(--c-success); }
   .ds-chip--err { color: var(--c-danger); border: 1px solid var(--c-danger); }
 
   /* ── Tabla de tokens con valores + ratio AA ── */
   .ds-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; margin-top: 16px; }
-  .ds-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+  .ds-table { width: 100%; border-collapse: collapse; font-size: max(13px, var(--fs-min-sm)); min-width: 560px; }
   .ds-table th, .ds-table td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--border); }
-  .ds-table th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); font-weight: 700; }
+  .ds-table th { font-size: max(11px, var(--fs-min-xs)); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); font-weight: 700; }
   .ds-table tr:last-child td { border-bottom: none; }
   .ds-table .mono { font-family: ui-monospace, monospace; color: var(--text-bright); }
   .ds-sw { display: inline-block; width: 13px; height: 13px; border-radius: 4px; vertical-align: -2px; margin-right: 7px; border: 1px solid rgba(255,255,255,0.16); }
-  .ds-aa { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--green, #4ade80); }
+  .ds-aa { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.06em; color: var(--green, #4ade80); }
   .ds-ratio { color: var(--text-dim); }
 
   /* ── Estados de componente ── */
@@ -624,10 +624,10 @@
     border: 1px solid var(--c-border); border-radius: 14px; padding: 18px 16px;
     background: var(--c-raised); display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-height: 118px;
   }
-  .ds-state-name { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-muted); }
+  .ds-state-name { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-text-muted); }
   .ds-wcag-list { display: flex; flex-direction: column; gap: 9px; margin-top: 16px; }
-  .ds-wcag-item { display: flex; gap: 9px; align-items: flex-start; font-size: 13px; color: var(--text-dim); line-height: 1.45; }
-  .ds-wcag-crit { color: var(--accent); font-weight: 700; font-family: ui-monospace, monospace; font-size: 11px; white-space: nowrap; }
+  .ds-wcag-item { display: flex; gap: 9px; align-items: flex-start; font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.45; }
+  .ds-wcag-crit { color: var(--accent); font-weight: 700; font-family: ui-monospace, monospace; font-size: max(11px, var(--fs-min-xs)); white-space: nowrap; }
 
   @media (max-width: 820px) {
     .ds-chain { grid-template-columns: 1fr; }
@@ -836,7 +836,7 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">01</span> · Diagnóstico</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">01</span> · Diagnóstico</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Años de deuda de diseño<br><em>y contraste por debajo de 3:1.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Campus, calendario, matrícula, login y bolsa de empleo habían crecido cada uno por su lado: sin tokens, sin nomenclatura y sin guía de accesibilidad.</p>
 <div class="proc-grid fu">
@@ -883,7 +883,7 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">02</span> · Decisión</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">02</span> · Decisión</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Sistema<br><em>antes que pantallas.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Cinco decisiones en orden. La más incómoda: semanas de auditoría sin UI que enseñar a dirección.</p>
 <div class="dt-grid fu">
@@ -940,7 +940,7 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">03</span> · Sistema</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">03</span> · Sistema</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Tokens, modos y estados,<br><em>en vivo.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Componentes reales, no capturas: un set de alias resuelve claro y oscuro, y cada valor cita su criterio WCAG.</p>
 <div class="ds-live">
@@ -1090,7 +1090,7 @@
               <input class="ds-input" type="text" value="X-1234567" style="outline:3px solid var(--c-focus); outline-offset:2px; border-color:var(--c-action)" aria-label="DNI focus"></div>
             <div class="ds-state-cell" style="min-height:96px"><span class="ds-state-name">Error</span>
               <input class="ds-input" type="text" value="1234567" style="border-color:var(--c-danger); background:var(--c-danger-surface)" aria-label="DNI error" aria-invalid="true">
-              <span style="font-size:11px; color:var(--c-danger); display:flex; gap:5px; align-items:center;"><span aria-hidden="true">⚠</span> Falta la letra del DNI</span></div>
+              <span style="font-size:max(11px, var(--fs-min-xs)); color:var(--c-danger); display:flex; gap:5px; align-items:center;"><span aria-hidden="true">⚠</span> Falta la letra del DNI</span></div>
             <div class="ds-state-cell" style="min-height:96px"><span class="ds-state-name">Disabled</span>
               <input class="ds-input" type="text" value="Verificado" disabled style="opacity:0.55; cursor:not-allowed" aria-label="DNI disabled"></div>
           </div>
@@ -1124,10 +1124,10 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">04</span> · Validación</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">04</span> · Validación</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Cuatro módulos críticos,<br><em>el sistema bajo presión.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Calendario académico, pasarela de pago, login y bolsa de empleo, montados con la misma librería.</p>
-<p class="fu" style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Calendario académico</p>
+<p class="fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Calendario académico</p>
 <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px;">
         <!-- Mobile Calendar -->
         <div class="c2-evidence-item">
@@ -1140,11 +1140,11 @@
           </div>
           <img width="1200" height="800" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" alt="Diseño final del Calendario Web, vista móvil">
           <div class="c2-evidence-caption">
-            <p style="font-size:15px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, la agenda pasa a lista y cuadrícula mensual, dimensionada para el pulgar.</p>
+            <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, la agenda pasa a lista y cuadrícula mensual, dimensionada para el pulgar.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:13px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Responsive:</strong> cuadrícula redefinida y botones flotantes para ganar espacio en vertical.</p>
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Responsive:</strong> cuadrícula redefinida y botones flotantes para ganar espacio en vertical.</p>
               </div>
             </div>
           </div>
@@ -1161,19 +1161,19 @@
           </div>
           <img width="1440" height="1024" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.webp" alt="Diseño final del Calendario Web, vista escritorio">
           <div class="c2-evidence-caption">
-            <p style="font-size:15px; color:var(--text); line-height:1.6; margin-bottom:14px;">Agenda diaria y semanal de un vistazo, con filtros avanzados a un clic.</p>
+            <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.6; margin-bottom:14px;">Agenda diaria y semanal de un vistazo, con filtros avanzados a un clic.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:13px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Consistencia:</strong> 100% de componentes del design system, contraste AA.</p>
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Consistencia:</strong> 100% de componentes del design system, contraste AA.</p>
               </div>
             </div>
-            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+            <div style="font-size: max(11px, var(--fs-min-xs)); line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
               <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Que el alumno entienda su semana de un vistazo, en cualquier dispositivo.
             </div>
           </div>
         </div>
-      </div><p class="fu" style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Pasarela de pago</p>
+      </div><p class="fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Pasarela de pago</p>
 <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
         <!-- Desktop Pasarela -->
         <div class="c2-evidence-item">
@@ -1186,11 +1186,11 @@
           </div>
           <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.webp" alt="Pasarela de Pago — Diseño Desktop">
           <div class="c2-evidence-caption">
-            <p style="font-size:15px; color:var(--text); line-height:1.6; margin-bottom:14px;">Desglose de matrícula y opciones de pago en paralelo: el usuario nunca pierde de vista lo que paga.</p>
+            <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.6; margin-bottom:14px;">Desglose de matrícula y opciones de pago en paralelo: el usuario nunca pierde de vista lo que paga.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:13px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Dos columnas:</strong> resumen financiero fijo a la derecha, formulario de pago a la izquierda.</p>
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Dos columnas:</strong> resumen financiero fijo a la derecha, formulario de pago a la izquierda.</p>
               </div>
             </div>
           </div>
@@ -1207,62 +1207,62 @@
           </div>
           <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.webp" alt="Pasarela de Pago — Diseño Móvil">
           <div class="c2-evidence-caption">
-            <p style="font-size:15px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil manda el paso activo: menos scroll hasta el pago y áreas táctiles dimensionadas.</p>
+            <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil manda el paso activo: menos scroll hasta el pago y áreas táctiles dimensionadas.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:13px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Menos ruido:</strong> desglose colapsado en acordeón para dejar la pantalla en los datos de cobro.</p>
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Menos ruido:</strong> desglose colapsado en acordeón para dejar la pantalla en los datos de cobro.</p>
               </div>
             </div>
-            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+            <div style="font-size: max(11px, var(--fs-min-xs)); line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
               <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Pagar sin dudas: importes exactos y plazos siempre visibles.
             </div>
           </div>
         </div>
       </div><div class="fu" style="margin-top:24px; margin-bottom:56px;">
-        <span style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:4px;">Impacto de la pasarela · de teléfono a conversión digital</span>
+        <span style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:4px;">Impacto de la pasarela · de teléfono a conversión digital</span>
         <div class="cs-ba" style="margin:16px 0 12px;">
           <div class="cs-ba-col">
             <span class="cs-ba-badge cs-ba-before">Antes · todo por teléfono</span>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Matriculaciones online</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--white); text-align:right;">0%</span>
           </div>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Tiempo medio de matriculación</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--white); text-align:right;">15-30 min</span>
           </div>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Abandono en checkout</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--white); text-align:right;">Sin canal</span>
           </div>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Cobro</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Cobro</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--white); text-align:right;">Por teléfono</span>
           </div>
           </div>
           <div class="cs-ba-col">
             <span class="cs-ba-badge cs-ba-after">Después · pasarela propia</span>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Matriculaciones online</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--accent); text-align:right;">~60%</span>
           </div>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Tiempo medio de matriculación</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--accent); text-align:right;">&lt; 5 min</span>
           </div>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Abandono en checkout</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--accent); text-align:right;">&lt; 8%</span>
           </div>
           <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Incidencias de seguridad</span>
+            <span style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim);">Incidencias de seguridad</span>
             <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--accent); text-align:right;">0</span>
           </div>
           </div>
         </div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin:0;">Referencia de abandono en checkout del sector: ~15%. Integración con Redsys server-side y cumplimiento PCI DSS: ningún dato de tarjeta se guarda en el frontend.</p>
-      </div><p class="fu" style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Login y bolsa de empleo</p>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin:0;">Referencia de abandono en checkout del sector: ~15%. Integración con Redsys server-side y cumplimiento PCI DSS: ningún dato de tarjeta se guarda en el frontend.</p>
+      </div><p class="fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Login y bolsa de empleo</p>
 <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
         <!-- Desktop Login/Bolsa -->
         <div class="c2-evidence-item">
@@ -1275,11 +1275,11 @@
           </div>
           <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Desktop">
           <div class="c2-evidence-caption">
-            <p style="font-size:15px; color:var(--text); line-height:1.6; margin-bottom:14px;">Tres áreas claras: acceso con credenciales, vacantes de la Bolsa de Empleo y destacados corporativos.</p>
+            <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.6; margin-bottom:14px;">Tres áreas claras: acceso con credenciales, vacantes de la Bolsa de Empleo y destacados corporativos.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:13px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Reutilización:</strong> formularios y tarjetas de oferta salen de la librería compartida.</p>
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Reutilización:</strong> formularios y tarjetas de oferta salen de la librería compartida.</p>
               </div>
             </div>
           </div>
@@ -1296,14 +1296,14 @@
           </div>
           <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Móvil">
           <div class="c2-evidence-caption">
-            <p style="font-size:15px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, las CTA primarias arriba y los bloques informativos simplificados para recortar scroll.</p>
+            <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, las CTA primarias arriba y los bloques informativos simplificados para recortar scroll.</p>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:13px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Tipografía:</strong> escala responsive que mantiene títulos e inputs legibles en AA.</p>
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Tipografía:</strong> escala responsive que mantiene títulos e inputs legibles en AA.</p>
               </div>
             </div>
-            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+            <div style="font-size: max(11px, var(--fs-min-xs)); line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
               <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Entrar sin fricción y navegar las ofertas de empleo desde cualquier dispositivo.
             </div>
           </div>
@@ -1326,25 +1326,25 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">05</span> · Resultado</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">05</span> · Resultado</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">WCAG 2.1 AA<br><em>y un frontend que ensambla.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">17 componentes con 6 estados y 57 variables: el primer design system escalable de la institución.</p>
 <div class="c3-grid-4 fu" style="margin-bottom: 48px;">
       <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent; display: flex; flex-direction: column;">
-        <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Deuda eliminada</div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Deuda de diseño eliminada:</strong> Interfaz coherente y estandarizada en todo el journey del estudiante de CEF.</p>
+        <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Deuda eliminada</div>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Deuda de diseño eliminada:</strong> Interfaz coherente y estandarizada en todo el journey del estudiante de CEF.</p>
       </div>
       <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent; display: flex; flex-direction: column;">
-        <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Accesibilidad AA</div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Accesibilidad verificada:</strong> Superación del ratio 4.5:1 de contraste en todos los componentes interactivos.</p>
+        <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Accesibilidad AA</div>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Accesibilidad verificada:</strong> Superación del ratio 4.5:1 de contraste en todos los componentes interactivos.</p>
       </div>
       <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent; display: flex; flex-direction: column;">
-        <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Time-to-market</div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Time-to-market reducido:</strong> El equipo frontend ensambla vistas usando componentes predefinidos sin maquetar de cero.</p>
+        <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Time-to-market</div>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Time-to-market reducido:</strong> El equipo frontend ensambla vistas usando componentes predefinidos sin maquetar de cero.</p>
       </div>
       <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent; display: flex; flex-direction: column;">
-        <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Base escalable</div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Base escalable:</strong> El UI Kit es la base de referencia única para la futura evolución tecnológica de CEF.</p>
+        <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Base escalable</div>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Base escalable:</strong> El UI Kit es la base de referencia única para la futura evolución tecnológica de CEF.</p>
       </div>
     </div>
       </div>
@@ -1447,7 +1447,7 @@
 
     <!-- FILOSOFÍA -->
     <div class="fu figma-philosophy-block" style="margin-top: 40px; padding: 28px 32px; background: rgba(var(--accent-rgb),0.05); border: 1px solid rgba(var(--accent-rgb),0.25); border-radius: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
-      <p style="font-size: 15px; color: var(--text-bright); line-height: 1.7; margin: 0; max-width: 720px;"><span class="es">La IA no me sustituye: me multiplica. Sin criterio produce productos genéricos. Aquí: mismo sistema, mismo rigor WCAG, una fracción del tiempo.</span><span class="en">AI doesn't replace me: it multiplies me. Without judgement it produces generic products. Here: same system, same WCAG rigour, a fraction of the time.</span></p>
+      <p style="font-size: max(15px, var(--fs-min-md)); color: var(--text-bright); line-height: 1.7; margin: 0; max-width: 720px;"><span class="es">La IA no me sustituye: me multiplica. Sin criterio produce productos genéricos. Aquí: mismo sistema, mismo rigor WCAG, una fracción del tiempo.</span><span class="en">AI doesn't replace me: it multiplies me. Without judgement it produces generic products. Here: same system, same WCAG rigour, a fraction of the time.</span></p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0;">
         <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" class="btn btn-secondary" style="text-transform: lowercase; display: inline-flex; align-items: center; gap: 8px;">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -1463,7 +1463,7 @@
 
     <!-- CALENDARIO ACADÉMICO: VIBE CODING EN CURSO -->
     <div class="fu figma-philosophy-block" style="margin-top: 20px; padding: 28px 32px; background: rgba(var(--accent-rgb),0.05); border: 1px solid rgba(var(--accent-rgb),0.25); border-radius: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
-      <p style="font-size: 15px; color: var(--text-bright); line-height: 1.7; margin: 0; max-width: 720px;"><strong style="color: var(--accent);">↻</strong>&nbsp; <span class="es">El calendario académico que construí en 2024 también está <strong style="color:var(--white);">en proceso de mejora con IA</strong>: lo estoy rehaciendo y puliendo con vibe coding, sobre lo que ya funcionaba entonces.</span><span class="en">The academic calendar I built in 2024 is also <strong style="color:var(--white);">being improved with AI</strong>: I'm redoing and refining it with vibe coding, building on what already worked back then.</span></p>
+      <p style="font-size: max(15px, var(--fs-min-md)); color: var(--text-bright); line-height: 1.7; margin: 0; max-width: 720px;"><strong style="color: var(--accent);">↻</strong>&nbsp; <span class="es">El calendario académico que construí en 2024 también está <strong style="color:var(--white);">en proceso de mejora con IA</strong>: lo estoy rehaciendo y puliendo con vibe coding, sobre lo que ya funcionaba entonces.</span><span class="en">The academic calendar I built in 2024 is also <strong style="color:var(--white);">being improved with AI</strong>: I'm redoing and refining it with vibe coding, building on what already worked back then.</span></p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0;">
         <a href="https://calendario-cef.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary" style="text-transform: lowercase; color: #000000 !important;">
           <span class="es" style="color: #000000 !important;">ver el calendario en vivo ↗</span>
@@ -1487,26 +1487,26 @@
       <!-- Aprendizaje 1 -->
       <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
         
-        <h4 style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">La adopción es el entregable</h4>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>El design system no es el entregable. La adopción sí.</strong> El objetivo era que desarrollo lo usara como referencia única, no recibir un Figma.</p>
+        <h4 style="font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">La adopción es el entregable</h4>
+        <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>El design system no es el entregable. La adopción sí.</strong> El objetivo era que desarrollo lo usara como referencia única, no recibir un Figma.</p>
       </div>
       <!-- Aprendizaje 2 -->
       <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
         
-        <h4 style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">Estructura antes que estética</h4>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>Empezar por estructura cambia el resultado.</strong> La baja fidelidad evita tapar problemas de jerarquía con recursos visuales.</p>
+        <h4 style="font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">Estructura antes que estética</h4>
+        <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>Empezar por estructura cambia el resultado.</strong> La baja fidelidad evita tapar problemas de jerarquía con recursos visuales.</p>
       </div>
       <!-- Aprendizaje 3 -->
       <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
-        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; color: var(--accent, #a855f7);">WCAG AA</span>
-        <h4 style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">La accesibilidad como palanca</h4>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>La accesibilidad es palanca, no límite.</strong> Redefinir la paleta para cumplir AA dio colores más versátiles y legibles en cualquier contexto.</p>
+        <span style="font-size: max(13px, var(--fs-min-sm)); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; color: var(--accent, #a855f7);">WCAG AA</span>
+        <h4 style="font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">La accesibilidad como palanca</h4>
+        <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>La accesibilidad es palanca, no límite.</strong> Redefinir la paleta para cumplir AA dio colores más versátiles y legibles en cualquier contexto.</p>
       </div>
       <!-- Aprendizaje 4 -->
       <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px; display: flex; flex-direction: column;">
         
-        <h4 style="font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">Diseñar para el equipo interno</h4>
-        <p style="font-size: 13px; color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>Diseñar sistemas es diseñar para el equipo.</strong> Si la librería incomoda en Figma o los tokens no son lógicos en código, el sistema muere.</p>
+        <h4 style="font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.35;">Diseñar para el equipo interno</h4>
+        <p style="font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.55; margin: 0; flex-grow: 1;"><strong>Diseñar sistemas es diseñar para el equipo.</strong> Si la librería incomoda en Figma o los tokens no son lógicos en código, el sistema muere.</p>
       </div>
     </div>
   </div>
@@ -1673,12 +1673,12 @@
 }
 .chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .chat-avatar-fallback {
-  font-size: 15px; font-weight: 700; color: var(--accent);
+  font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--accent);
   font-family: 'Inter', sans-serif;
 }
 .chat-header-info { flex: 1; min-width: 0; }
-.chat-header-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
-.chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+.chat-header-name { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
+.chat-header-status { font-size: max(11px, var(--fs-min-xs)); color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
 .chat-status-dot {
   width: 6px; height: 6px; border-radius: 50%; background: #34d399;
   box-shadow: 0 0 6px rgba(52,211,153,0.6);
@@ -1698,7 +1698,7 @@
 @keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .chat-msg.user { flex-direction: row-reverse; }
 
-.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; font-family: 'Inter', sans-serif; }
+.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: max(13px, var(--fs-min-sm)); line-height: 1.55; font-family: 'Inter', sans-serif; }
 .chat-msg.bot .chat-bubble {
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
   color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
@@ -1718,7 +1718,7 @@
 
 .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
 .chat-chip {
-  padding: 6px 12px; border-radius: 100px; font-size: 11px; font-weight: 500;
+  padding: 6px 12px; border-radius: 100px; font-size: max(11px, var(--fs-min-xs)); font-weight: 500;
   font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
   color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
@@ -1732,7 +1732,7 @@
 .chat-input {
   flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
   border-radius: 100px; padding: 9px 14px; color: var(--text);
-  font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
+  font-size: max(13px, var(--fs-min-sm)); font-family: 'Inter', sans-serif; outline: none; resize: none;
   min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
 }
 .chat-input::placeholder { color: rgba(255,255,255,0.25); }

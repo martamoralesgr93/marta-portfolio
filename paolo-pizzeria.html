@@ -34,7 +34,7 @@
     /* Specific Component Styles */
 
     .dash-widget { background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 48px 0; max-width: 820px; }
-    .dash-title { font-size: 13px; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .dash-title { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
     .dash-title::before { content: ""; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: block; box-shadow: 0 0 12px var(--accent); }
     .dash-impact-row { display: flex; align-items: baseline; gap: 16px; }
     .dash-impact-num { font-size: 84px; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Playfair Display', serif; }
@@ -42,23 +42,23 @@
 
     /* DESIGN SYSTEM DISPLAY */
     .ds-section { margin: 60px 0; }
-    .ds-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; font-weight: 600; }
+    .ds-label { font-size: max(11px, var(--fs-min-xs)); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; font-weight: 600; }
     .color-palette { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
     .color-chip { border-radius: 10px; overflow: hidden; width: 120px; }
     .color-swatch { height: 64px; }
     .color-info { padding: 10px 12px; background: transparent; border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; }
-    .color-name { font-size: 11px; font-weight: 600; color: var(--white); }
-    .color-hex { font-size: 11px; color: var(--text-dim); font-family: monospace; }
+    .color-name { font-size: max(11px, var(--fs-min-xs)); font-weight: 600; color: var(--white); }
+    .color-hex { font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); font-family: monospace; }
 
     .typo-row { border-bottom: 1px solid var(--border); padding: 20px 0; display: flex; align-items: baseline; gap: 24px; }
-    .typo-layer { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); min-width: 80px; }
+    .typo-layer { font-size: max(11px, var(--fs-min-xs)); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); min-width: 80px; }
     .typo-sample { color: var(--white); }
 
     /* TOUCHPOINT MAP */
     .touchpoint-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 40px 0; max-width: 720px; }
     .tp-card { background: transparent; border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
-    .tp-cat { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
-    .tp-items { font-size: 13px; color: var(--text); line-height: 1.9; }
+    .tp-cat { font-size: max(11px, var(--fs-min-xs)); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+    .tp-items { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.9; }
 
     .cs-ba-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
     .cs-ba-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
@@ -75,14 +75,14 @@
   padding: 32px;
 }
     .qs-col { display: flex; flex-direction: column; }
-    .qs-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .qs-label { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
     .qs-label svg { display: inline-block !important; color: var(--white); flex-shrink: 0; width: 13px; height: 13px; }
-    .qs-val { font-size: 13px; color: var(--text-bright); line-height: 1.6; }
+    .qs-val { font-size: max(13px, var(--fs-min-sm)); color: var(--text-bright); line-height: 1.6; }
     .qs-bullets { list-style: none; padding: 0; margin: 0; }
-    .qs-bullets li { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+    .qs-bullets li { font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
     .qs-bullets li::before { content: "—"; color: var(--accent); position: absolute; left: 0; }
     .qs-result-box { margin-top: 4px; padding: 0; }
-    .qs-result-highlight { font-size: 13px; font-weight: 600; color: var(--accent); line-height: 1.5; }
+    .qs-result-highlight { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: var(--accent); line-height: 1.5; }
 
     /* LEFT RAIL STAR LAYOUT — now inherited from design-system.css (shared component,
        same shared mobile behaviour as the other 4 case studies). Do not redefine .cs-star/
@@ -112,13 +112,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       font-weight: 700;
       color: #000;
       margin-bottom: 10px;
     }
     .phase-name {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
@@ -126,7 +126,7 @@
       margin-bottom: 5px;
     }
     .phase-desc {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       color: var(--text);
       line-height: 1.5;
     }
@@ -150,7 +150,7 @@
     }
     .prs-hero .prs-val { color: var(--accent); }
     .prs-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--text-dim); line-height: 1.4;
     }
     .prs-bottom {
@@ -158,7 +158,7 @@
       gap: 24px; flex-wrap: wrap; margin-bottom: 8px;
     }
     .prs-quote {
-      font-size: 13px; color: var(--text); line-height: 1.65;
+      font-size: max(13px, var(--fs-min-sm)); color: var(--text); line-height: 1.65;
       font-style: italic; border-left: 2px solid var(--accent-border);
       padding-left: 16px; flex: 1; min-width: 280px; margin: 0;
     }
@@ -166,13 +166,13 @@
     .prs-btn-primary {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 11px 22px; background: var(--accent); color: #000;
-      border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none;
+      border-radius: 8px; font-size: max(13px, var(--fs-min-sm)); font-weight: 700; text-decoration: none;
     }
     .prs-btn-ghost {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 11px 22px; background: transparent; color: var(--accent);
       border: 1px solid var(--accent-border); border-radius: 8px;
-      font-size: 13px; font-weight: 600; text-decoration: none;
+      font-size: max(13px, var(--fs-min-sm)); font-weight: 600; text-decoration: none;
     }
 
     /* ─── LEARNINGS CARDS ──────────────────────── */
@@ -187,15 +187,15 @@
     }
     .pl-card:last-child { border-right: none; }
     .pl-num {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--accent);
     }
     .pl-title {
-      font-size: 13px; font-weight: 700; color: var(--white);
+      font-size: max(13px, var(--fs-min-sm)); font-weight: 700; color: var(--white);
       line-height: 1.3; margin: 0;
     }
     .pl-text {
-      font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0;
+      font-size: max(13px, var(--fs-min-sm)); color: var(--text-dim); line-height: 1.6; margin: 0;
     }
 
     /* 2026 LAB SECTION STYLES */
@@ -241,7 +241,7 @@
       .paolo-learnings { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
       .pl-card, .prs-cell { border-right: none; border-bottom: 1px solid var(--border); }
       .pl-card:last-child, .prs-cell:last-child { border-bottom: none; }
-      .dash-impact-text { font-size: 15px; }
+      .dash-impact-text { font-size: max(15px, var(--fs-min-md)); }
       .color-palette { gap: 8px; }
       .color-chip { width: 100px; }
       .typo-row { flex-direction: column; gap: 8px; padding: 16px 0; }
@@ -268,7 +268,7 @@
       .color-chip { width: 80px; }
       .color-swatch { height: 48px; }
       .color-info { padding: 8px 10px; }
-      .color-name { font-size: 11px; }
+      .color-name { font-size: max(11px, var(--fs-min-xs)); }
       .paolo-results-strip,
       .paolo-learnings {
         grid-template-columns: 1fr;
@@ -289,7 +289,7 @@
       display: block;
     }
     .story-label {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -318,7 +318,7 @@
       margin-bottom: 36px;
     }
     .explorations-title {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -354,7 +354,7 @@
     }
     .exploration-arrow {
       color: var(--text-dim);
-      font-size: 15px;
+      font-size: max(15px, var(--fs-min-md));
       font-weight: bold;
       user-select: none;
       flex-shrink: 0;
@@ -382,7 +382,7 @@
       flex: 1;
     }
     .card-decision-title {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -390,7 +390,7 @@
       margin-bottom: 6px;
     }
     .card-decision-text {
-      font-size: 13px;
+      font-size: max(13px, var(--fs-min-sm));
       color: var(--text-bright);
       line-height: 1.6;
       margin: 0;
@@ -424,7 +424,7 @@
       flex: 1;
     }
     .card-impact-title {
-      font-size: 11px;
+      font-size: max(11px, var(--fs-min-xs));
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -432,7 +432,7 @@
       margin-bottom: 4px;
     }
     .card-impact-text {
-      font-size: 15px;
+      font-size: max(15px, var(--fs-min-md));
       font-weight: 600;
       color: var(--white);
       line-height: 1.4;
@@ -474,7 +474,7 @@
 
     /* Key rule notes */
     .key-rule-note {
-      font-size: 13px;
+      font-size: max(13px, var(--fs-min-sm));
       color: var(--text-dim);
       display: flex;
       gap: 8px;
@@ -506,20 +506,20 @@
       color: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
     }
     .cs-mobile-menu-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--text-dim); margin-bottom: 18px;
     }
     .cs-mobile-menu-links { list-style: none; text-align: center; padding: 0; margin: 0 0 28px; max-width: 340px; }
     .cs-mobile-menu-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
     .cs-mobile-menu-links a { display: block; padding: 16px 4px; text-decoration: none; transition: color 0.2s; }
-    .cs-mmi-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+    .cs-mmi-num { font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
     .cs-mmi-title { font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.82); font-family: var(--font-serif); }
     .cs-mobile-menu-links a.active .cs-mmi-title { color: var(--white); }
     .cs-mobile-menu-links a.active .cs-mmi-num { color: var(--accent); }
     .cs-mobile-menu-back {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 10px 22px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.18);
-      color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600; text-decoration: none;
+      color: rgba(255,255,255,0.7); font-size: max(13px, var(--fs-min-sm)); font-weight: 600; text-decoration: none;
     }
     @media (max-width: 768px) {
       .cs-hamburger { display: flex; }
@@ -542,14 +542,14 @@
     }
     .hm-item:last-child { border-right: none; }
     .hm-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px;
     }
     .hm-value {
       font-size: 28px; font-weight: 800; letter-spacing: -0.03em;
       color: var(--accent); line-height: 1;
     }
-    .hm-sub { font-size: 11px; color: var(--text-dim); margin-top: 3px; }
+    .hm-sub { font-size: max(11px, var(--fs-min-xs)); color: var(--text-dim); margin-top: 3px; }
 
     @media (max-width: 560px) {
       .hero-metrics { flex-direction: column; }
@@ -767,22 +767,22 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">01</span> · Situación</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">01</span> · Situación</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">2020: sin web, sin delivery<br><em>y con la pandemia encima.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Una pizzería artesana de Conde Duque que solo captaba clientes a pie de calle. Tener canal digital pasó a ser una cuestión de supervivencia.</p>
 <div style="max-width:560px;">
             <div style="display:flex; flex-direction:column; gap:0;">
               <div style="padding:24px 0; border-bottom:1px solid var(--border);">
                 <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">0</div>
-                <div style="font-size:13px; color:var(--text); line-height:1.5;">Presencia digital al inicio: sin web, sin delivery, sin Google My Business</div>
+                <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.5;">Presencia digital al inicio: sin web, sin delivery, sin Google My Business</div>
               </div>
               <div style="padding:24px 0; border-bottom:1px solid var(--border);">
                 <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">2020</div>
-                <div style="font-size:13px; color:var(--text); line-height:1.5;">El año en que digitalizar dejó de ser una opción para la restauración</div>
+                <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.5;">El año en que digitalizar dejó de ser una opción para la restauración</div>
               </div>
               <div style="padding:24px 0;">
                 <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">1→5</div>
-                <div style="font-size:13px; color:var(--text); line-height:1.5;">Locales: el mismo producto digital escaló sin rediseño</div>
+                <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.5;">Locales: el mismo producto digital escaló sin rediseño</div>
               </div>
             </div>
           </div>
@@ -803,54 +803,54 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">02</span> · Arquitectura</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">02</span> · Arquitectura</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Seis necesidades,<br><em>un solo sistema.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Un teléfono, tres CTAs y cinco secciones, decididos antes de abrir Adobe XD. Eso permitió pasar de 1 a 5 locales sin tocar el código.</p>
 <div class="fu" style="margin-bottom:16px;">
-          <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;">6 necesidades de usuario distintas · 1 ecosistema</div>
+          <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;">6 necesidades de usuario distintas · 1 ecosistema</div>
         </div>
         <div class="row g-3 fu">
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:2px solid var(--accent); height:100%;">
-              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Encontrar el restaurante</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.6;">Google Maps + GMB optimizado. Sección RESTAURANTES con mapa y dirección de cada local.</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); font-weight:700; color:#fff; margin-bottom:6px;">Encontrar el restaurante</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.6;">Google Maps + GMB optimizado. Sección RESTAURANTES con mapa y dirección de cada local.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Pedir a domicilio</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.6;">CTA principal en desktop. Glovo + Uber Eats + JustEat activos. Sección PEDIDOS con acceso directo.</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); font-weight:700; color:#fff; margin-bottom:6px;">Pedir a domicilio</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.6;">CTA principal en desktop. Glovo + Uber Eats + JustEat activos. Sección PEDIDOS con acceso directo.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Reservar mesa</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.6;">CTA "Reservar mesa" → WhatsApp directo. Sin formulario. Confirmación en minutos.</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); font-weight:700; color:#fff; margin-bottom:6px;">Reservar mesa</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.6;">CTA "Reservar mesa" → WhatsApp directo. Sin formulario. Confirmación en minutos.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Ver la carta</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.6;">Sección CARTA como eje central de la IA — la más visitada según Clarity. Acceso desde hero y nav.</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); font-weight:700; color:#fff; margin-bottom:6px;">Ver la carta</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.6;">Sección CARTA como eje central de la IA — la más visitada según Clarity. Acceso desde hero y nav.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Contactar con Paolo</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.6;">1 número centralizado para todos los locales. CTA "Llamar" como acción principal en mobile.</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); font-weight:700; color:#fff; margin-bottom:6px;">Contactar con Paolo</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.6;">1 número centralizado para todos los locales. CTA "Llamar" como acción principal en mobile.</div>
             </div>
           </div>
           <div class="col-md-4">
             <div style="padding:16px 0 0; border-top:1px solid var(--border); height:100%;">
-              <div style="font-size:13px; font-weight:700; color:#fff; margin-bottom:6px;">Descubrir la marca</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.6;">Sección HISTORIA, RRSS, QR en mesa. Danny's Jazz como diferencial cultural de barrio.</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); font-weight:700; color:#fff; margin-bottom:6px;">Descubrir la marca</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.6;">Sección HISTORIA, RRSS, QR en mesa. Danny's Jazz como diferencial cultural de barrio.</div>
             </div>
           </div>
         </div>
 <div class="row g-4 fu" style="margin-bottom: 48px; align-items: start;">
       <!-- DESKTOP HOMEPAGE -->
       <div class="col-lg-5 col-md-7">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">DESKTOP · HOMEPAGE</div>
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">DESKTOP · HOMEPAGE</div>
         <div class="device-laptop-minimal">
           <img width="1450" height="835" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-desk.webp" alt="Wireframe desktop homepage Paolo">
         </div>
@@ -859,7 +859,7 @@
       
       <!-- MOBILE HOMEPAGE -->
       <div class="col-lg-3 col-md-5">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">MOBILE · HOMEPAGE</div>
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">MOBILE · HOMEPAGE</div>
         <div class="device-phone-minimal" style="max-width: 260px; margin: 0;">
           <img width="785" height="1382" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-mobile.webp" alt="Wireframe mobile homepage Paolo">
         </div>
@@ -867,48 +867,48 @@
       
       <!-- DECISIONES CLAVE -->
       <div class="col-lg-4 col-md-12 text-start">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:24px;">DECISIONES CLAVE EN ESTE WIREFRAME</div>
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:24px;">DECISIONES CLAVE EN ESTE WIREFRAME</div>
         <div style="display:flex; flex-direction:column; gap:24px;">
           <!-- Item 1 -->
           <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
             <div>
-              <div style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">3 CTAs, no más</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.5; margin-bottom:2px;">Pedir a domicilio · Encontrar restaurante · Reservar mesa</div>
-              <div style="font-size:13px; color:var(--text-dim); line-height:1.5;">En ese orden por frecuencia de uso real. Todo lo demás, en la navegación.</div>
+              <div style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">3 CTAs, no más</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.5; margin-bottom:2px;">Pedir a domicilio · Encontrar restaurante · Reservar mesa</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5;">En ese orden por frecuencia de uso real. Todo lo demás, en la navegación.</div>
             </div>
           </div>
           <!-- Item 2 -->
           <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
             <div>
-              <div style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">1 teléfono visible siempre</div>
-              <div style="font-size:13px; color:var(--text-dim); line-height:1.5;">“Llamar” está en la cabecera en desktop y en el header en mobile. Accesible, consistente y siempre a 1 clic.</div>
+              <div style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">1 teléfono visible siempre</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5;">“Llamar” está en la cabecera en desktop y en el header en mobile. Accesible, consistente y siempre a 1 clic.</div>
             </div>
           </div>
           <!-- Item 3 -->
           <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
             <div>
-              <div style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">Misma jerarquía en ambos dispositivos</div>
-              <div style="font-size:13px; color:var(--text-dim); line-height:1.5;">Mismo orden de lectura, mismos elementos clave, adaptados al espacio disponible. Mobile-first, pero con lógica de producto.</div>
+              <div style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">Misma jerarquía en ambos dispositivos</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5;">Mismo orden de lectura, mismos elementos clave, adaptados al espacio disponible. Mobile-first, pero con lógica de producto.</div>
             </div>
           </div>
           <!-- Item 4 -->
           <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
             <div>
-              <div style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">Información clave justo debajo del claim</div>
-              <div style="font-size:13px; color:var(--text); line-height:1.5; margin-bottom:2px;">Refuerza confianza y contexto:</div>
-              <div style="font-size:13px; color:var(--text-dim); line-height:1.5;">5 restaurantes · 1 teléfono · todo Madrid.</div>
+              <div style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">Información clave justo debajo del claim</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.5; margin-bottom:2px;">Refuerza confianza y contexto:</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5;">5 restaurantes · 1 teléfono · todo Madrid.</div>
             </div>
           </div>
           <!-- Item 5 -->
           <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">5</div>
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">5</div>
             <div>
-              <div style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">Simplicidad que guía</div>
-              <div style="font-size:13px; color:var(--text-dim); line-height:1.5;">Menos opciones, más claridad. El usuario entiende en 3 segundos qué puede hacer.</div>
+              <div style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">Simplicidad que guía</div>
+              <div style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.5;">Menos opciones, más claridad. El usuario entiende en 3 segundos qué puede hacer.</div>
             </div>
           </div>
         </div>
@@ -931,7 +931,7 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">03</span> · Journeys</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">03</span> · Journeys</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Delivery, visita y reserva<br><em>en el mismo producto.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Tres caminos distintos que no podían interferir entre sí.</p>
 
@@ -1044,12 +1044,12 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">04</span> · Producto</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">04</span> · Producto</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Contexto de uso<br><em>antes que dispositivo.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">En casa se pide delivery; en la calle se quiere llamar ya. Mismo producto, distinto CTA.</p>
 <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
       <div class="col-12">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Vista General de la Interfaz Web (Escritorio)</div>
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Vista General de la Interfaz Web (Escritorio)</div>
         <div style="border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
           <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web.webp" alt="Paolo by Danny's Jazz — Interfaz web completa" style="width:100%; height:auto; display:block; border-radius:8px;">
         </div>
@@ -1062,8 +1062,8 @@
         </div>
       </div>
       <div class="col-md-7">
-        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 16px;">El contexto manda sobre la jerarquía. En desktop el usuario está en casa y pide delivery. En móvil está en la calle: quiere llamar o localizar el local, ya.</p>
-        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto, distinto CTA.</strong> En móvil la barra destaca la llamada directa junto al menú.</p>
+        <p class="p" style="font-size: max(15px, var(--fs-min-md)); line-height: 1.75; margin-bottom: 16px;">El contexto manda sobre la jerarquía. En desktop el usuario está en casa y pide delivery. En móvil está en la calle: quiere llamar o localizar el local, ya.</p>
+        <p class="p" style="font-size: max(15px, var(--fs-min-md)); line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto, distinto CTA.</strong> En móvil la barra destaca la llamada directa junto al menú.</p>
         
         <!-- Impact Card -->
         <div class="card-impact">
@@ -1095,77 +1095,77 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">05</span> · Marca</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">05</span> · Marca</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">De la pantalla<br><em>a la calle.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Normativicé una identidad heredada y la llevé a fachada, terraza, uniformes y redes: cada touchpoint empuja al canal digital.</p>
 <div class="row g-4 fu" style="margin-bottom:64px; text-align: left;">
       <div class="col-md-5">
         <div>
-          <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Paleta · 3 colores, roles claros</div>
+          <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Paleta · 3 colores, roles claros</div>
           <div style="display:flex; gap:10px; margin-bottom:16px;">
             <div style="flex:1;">
               <div style="height:52px; border-radius:8px; background:#F2A222; margin-bottom:8px;"></div>
-              <div style="font-size:11px; font-weight:600; color:#fff;">Ámbar</div>
-              <div style="font-size:11px; color:var(--text-dim);">#F2A222 · Acción, símbolo</div>
+              <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:600; color:#fff;">Ámbar</div>
+              <div style="font-size:max(11px, var(--fs-min-xs)); color:var(--text-dim);">#F2A222 · Acción, símbolo</div>
             </div>
             <div style="flex:1;">
               <div style="height:52px; border-radius:8px; background:#1A1107; margin-bottom:8px;"></div>
-              <div style="font-size:11px; font-weight:600; color:#fff;">Negro cálido</div>
-              <div style="font-size:11px; color:var(--text-dim);">#1A1107 · Base, texto</div>
+              <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:600; color:#fff;">Negro cálido</div>
+              <div style="font-size:max(11px, var(--fs-min-xs)); color:var(--text-dim);">#1A1107 · Base, texto</div>
             </div>
             <div style="flex:1;">
               <div style="height:52px; border-radius:8px; background:#FEF8ED; border:1px solid rgba(255,255,255,0.1); margin-bottom:8px;"></div>
-              <div style="font-size:11px; font-weight:600; color:#fff;">Crema</div>
-              <div style="font-size:11px; color:var(--text-dim);">#FEF8ED · Fondo, espacio</div>
+              <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:600; color:#fff;">Crema</div>
+              <div style="font-size:max(11px, var(--fs-min-xs)); color:var(--text-dim);">#FEF8ED · Fondo, espacio</div>
             </div>
           </div>
-          <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin:0;">El ámbar aparece exclusivamente para el símbolo y las acciones — lo convierte en color de firma. Ningún otro touchpoint lo usa como fondo genérico.</p>
+          <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin:0;">El ámbar aparece exclusivamente para el símbolo y las acciones — lo convierte en color de firma. Ningún otro touchpoint lo usa como fondo genérico.</p>
         </div>
       </div>
       <div class="col-md-7">
         <div>
-          <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Tipografía · Display + Funcional</div>
+          <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Tipografía · Display + Funcional</div>
           <div style="border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:14px;">
             <div style="font-family:'Playfair Display',serif; font-size:28px; font-style:italic; font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Las pizzas del barrio,<br>para compartir.</div>
-            <div style="font-size:11px; color:var(--text-dim);">Display Serif Italic · Titulares · Carácter y calor de marca</div>
+            <div style="font-size:max(11px, var(--fs-min-xs)); color:var(--text-dim);">Display Serif Italic · Titulares · Carácter y calor de marca</div>
           </div>
           <div style="border-bottom:1px solid var(--border); padding-bottom:14px; margin-bottom:14px;">
-            <div style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#fff; font-weight:600; margin-bottom:4px;">HISTORIA · CARTA · RESTAURANTES · PEDIDOS</div>
-            <div style="font-size:11px; color:var(--text-dim);">Sans-serif Uppercase · Navegación y etiquetas · Claridad funcional</div>
+            <div style="font-size:max(13px, var(--fs-min-sm)); letter-spacing:0.14em; text-transform:uppercase; color:#fff; font-weight:600; margin-bottom:4px;">HISTORIA · CARTA · RESTAURANTES · PEDIDOS</div>
+            <div style="font-size:max(11px, var(--fs-min-xs)); color:var(--text-dim);">Sans-serif Uppercase · Navegación y etiquetas · Claridad funcional</div>
           </div>
           <div>
-            <div style="font-size:15px; color:rgba(255,255,255,0.7); line-height:1.6; margin-bottom:4px;">Masa artesana de fermentación lenta, pensada para compartir.</div>
-            <div style="font-size:11px; color:var(--text-dim);">Sans-serif Regular · Cuerpo de texto · Legibilidad y accesibilidad</div>
+            <div style="font-size:max(15px, var(--fs-min-md)); color:rgba(255,255,255,0.7); line-height:1.6; margin-bottom:4px;">Masa artesana de fermentación lenta, pensada para compartir.</div>
+            <div style="font-size:max(11px, var(--fs-min-xs)); color:var(--text-dim);">Sans-serif Regular · Cuerpo de texto · Legibilidad y accesibilidad</div>
           </div>
         </div>
       </div>
     </div>
 <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
       <div class="col-12">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Plano Técnico Único · Fachada & Exteriores</div>
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Plano Técnico Único · Fachada & Exteriores</div>
         <div style="border-radius: 8px; overflow: hidden; background: transparent; margin-bottom: 24px;">
           <img width="1536" height="1024" loading="lazy" decoding="async" src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" alt="Plano de montaje de fachada y sombrillas de terraza Paolo" style="width:100%; height:auto; display:block;">
         </div>
         
         <div style="margin-top:14px;">
-          <div style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:12px;">Estrategia de Estandarización Exterior (`plano-sombrillas-montaje.png`)</div>
-          <p style="font-size:13px; color:var(--text); line-height:1.75; margin-bottom:24px;">El plano convierte la fachada en canal de adquisición, con 4 componentes replicables en cada apertura:</p>
+          <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:12px;">Estrategia de Estandarización Exterior (`plano-sombrillas-montaje.png`)</div>
+          <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.75; margin-bottom:24px;">El plano convierte la fachada en canal de adquisición, con 4 componentes replicables en cada apertura:</p>
           
           <div class="row g-4">
             <!-- Columna 1: Rótulos y Luminoso -->
             <div class="col-md-6">
               <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:20px;">
-                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
                 <div>
-                  <h4 style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">Rótulos Horizontales (Buzón de Conversión)</h4>
-                  <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin:0;">Una landing page física: el rótulo izquierdo lleva el CTA («Take away» + teléfono) y el derecho el claim y el Instagram. El peatón se convierte en seguidor.</p>
+                  <h4 style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">Rótulos Horizontales (Buzón de Conversión)</h4>
+                  <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin:0;">Una landing page física: el rótulo izquierdo lleva el CTA («Take away» + teléfono) y el derecho el claim y el Instagram. El peatón se convierte en seguidor.</p>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start;">
-                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
                 <div>
-                  <h4 style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">Luminoso Vertical (Identificación)</h4>
-                  <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin:0;">Señalética vertical con iluminación en negativo: solo brillan las letras. Visible de noche sin contaminar la calle.</p>
+                  <h4 style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">Luminoso Vertical (Identificación)</h4>
+                  <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin:0;">Señalética vertical con iluminación en negativo: solo brillan las letras. Visible de noche sin contaminar la calle.</p>
                 </div>
               </div>
             </div>
@@ -1173,17 +1173,17 @@
             <!-- Columna 2: Sombrillas y Boceto -->
             <div class="col-md-6">
               <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:20px;">
-                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
                 <div>
-                  <h4 style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">Sombrilla de Terraza (Co-branding)</h4>
-                  <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin:0;">Sombrillas de 300 cm estandarizadas con Erdinger: el proveedor financia el mobiliario, Paolo conserva el control gráfico.</p>
+                  <h4 style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">Sombrilla de Terraza (Co-branding)</h4>
+                  <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin:0;">Sombrillas de 300 cm estandarizadas con Erdinger: el proveedor financia el mobiliario, Paolo conserva el control gráfico.</p>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start;">
-                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
+                <div style="width:20px; height:20px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:max(11px, var(--fs-min-xs)); font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
                 <div>
-                  <h4 style="font-size:15px; font-weight:700; color:#fff; margin-bottom:4px;">Boceto de Fachada General</h4>
-                  <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin:0;">Puertas, toldos, sombrillas y rótulos leídos como una sola fachada en Conde Duque.</p>
+                  <h4 style="font-size:max(15px, var(--fs-min-md)); font-weight:700; color:#fff; margin-bottom:4px;">Boceto de Fachada General</h4>
+                  <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin:0;">Puertas, toldos, sombrillas y rótulos leídos como una sola fachada en Conde Duque.</p>
                 </div>
               </div>
             </div>
@@ -1194,36 +1194,36 @@
     <!-- Uniformes Corporativos (Mockup + Realidad en cocina) -->
     <div class="row g-4 fu" style="margin-bottom:40px; align-items:start;">
       <div class="col-md-6">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Uniformes · Polo bordado</div>
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Uniformes · Polo bordado</div>
         <div style="overflow:hidden; aspect-ratio:4/3; background: transparent;">
           <img width="2372" height="1425" loading="lazy" decoding="async" src="projects/04-paolo/assets/02-uniforms.webp" alt="Mockup polo burdeos Paolo — diseño frente y espalda con bordado" style="width:100%; height:100%; object-fit:contain; display:block;">
         </div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Mockup · Polo burdeos, bordado frente y espalda</p>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin-top:8px;">Mockup · Polo burdeos, bordado frente y espalda</p>
       </div>
       <div class="col-md-6">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
           <span>Uniforme en uso · Equipo</span>
-          <span style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); background:rgba(242,162,34,0.1); border:1px solid rgba(242,162,34,0.25); padding:2px 8px; border-radius:100px;">2026 · IA</span>
+          <span style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); background:rgba(242,162,34,0.1); border:1px solid rgba(242,162,34,0.25); padding:2px 8px; border-radius:100px;">2026 · IA</span>
         </div>
         <div style="overflow:hidden; aspect-ratio:4/3;">
           <img width="2619" height="1340" loading="lazy" decoding="async" src="projects/04-paolo/assets/cocinando2.webp" alt="Camarero Paolo con polo burdeos — generado con IA para humanizar el ecosistema web" style="width:100%; height:100%; object-fit:cover; display:block;">
         </div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Imagen generada con IA · El uniforme convierte a cada persona en soporte de marca</p>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin-top:8px;">Imagen generada con IA · El uniforme convierte a cada persona en soporte de marca</p>
       </div>
     </div>
 
     <!-- Adquisición Digital (RRSS / Notificación push ficticia) -->
     <div class="row g-4 fu" style="margin-bottom: 48px; align-items: center; text-align: left;">
       <div class="col-md-4">
-        <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Social · Notificación Creativa</div>
+        <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Social · Notificación Creativa</div>
         <div style="border-radius: 8px; overflow: hidden;">
           <img width="1080" height="1080" loading="lazy" decoding="async" src="projects/04-paolo/assets/04-social.webp" alt="Pieza de redes sociales Paolo — foto de pizza con notificación de mensaje como copy creativo" style="width:100%; display:block;">
         </div>
       </div>
       <div class="col-md-8 text-start">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">ADQUISICIÓN EN RRSS</span>
+        <span style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">ADQUISICIÓN EN RRSS</span>
         <h3 style="font-family:'Playfair Display', serif; font-size:22px; font-weight:700; color:#fff; margin-bottom:12px;">Notificación push creativa</h3>
-        <p style="font-size:13px; color:var(--text); line-height:1.7; margin-bottom:0;">Creativo para Instagram Stories que imita una notificación push de mensajería. Un mensaje entrante de «Paolo» con tono cercano rompe la inercia del scroll y empuja el clic directo a pedidos.</p>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text); line-height:1.7; margin-bottom:0;">Creativo para Instagram Stories que imita una notificación push de mensajería. Un mensaje entrante de «Paolo» con tono cercano rompe la inercia del scroll y empuja el clic directo a pedidos.</p>
       </div>
     </div>
 
@@ -1245,19 +1245,19 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <span class="sec-num fu" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">06</span> · Resultado</span>
+    <span class="sec-num fu" style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">06</span> · Resultado</span>
     <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">De cero presencia digital<br><em>a un ecosistema que escaló.</em></h2>
     <p class="p fu" style="margin-bottom: 36px;">Cuando terminó mi etapa, el producto funcionaba sin depender de mí. El negocio cerró después; hoy es mi caso de aprendizaje.</p>
 <div class="cs-ba fu" style="margin-bottom: 64px;">
       <div class="cs-ba-col" style="text-align: left;">
         <div class="cs-ba-badge cs-ba-before">Antes · 2020</div>
-        <p style="font-size:15px; color:var(--text); line-height:1.8; margin:16px 0 0; flex:1;">
+        <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.8; margin:16px 0 0; flex:1;">
           Sin web · Sin Google Maps · Sin delivery · Sin RRSS · Sin métricas. Toda la visibilidad dependía del barrio.
         </p>
       </div>
       <div class="cs-ba-col" style="text-align: left; border-left: 1px solid var(--border);">
         <div class="cs-ba-badge cs-ba-after" style="background: var(--accent-glow); border-color: var(--accent); color: var(--accent);">Después · 2022</div>
-        <p style="font-size:15px; color:var(--accent); line-height:1.8; margin:16px 0 0; flex:1;">
+        <p style="font-size:max(15px, var(--fs-min-md)); color:var(--accent); line-height:1.8; margin:16px 0 0; flex:1;">
           Web escalable (Adobe XD → WordPress) · Delivery activo · Google My Business · QR en mesa · Metricool + Clarity + GA4 · Ciclo mensual de optimización.
         </p>
       </div>
@@ -1343,30 +1343,30 @@
     <!-- Badge -->
     <div style="display:inline-flex; align-items:center; gap:10px; padding:6px 16px; border-radius:100px; border:1px solid rgba(242,162,34,0.35); background:rgba(242,162,34,0.07); margin-bottom:28px;">
       <span style="width:6px;height:6px;border-radius:50%;background:#F2A222;display:block;box-shadow:0 0 8px rgba(242,162,34,0.6);"></span>
-      <span style="font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#F2A222;">2026 · Evolución del Proyecto</span>
+      <span style="font-size:max(11px, var(--fs-min-xs));font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#F2A222;">2026 · Evolución del Proyecto</span>
     </div>
 
     <!-- ES HEADER -->
     <div class="es fu">
       <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">Laboratorio 2026:<br><em style="color:rgba(255,255,255,0.65);">cómo resolvería hoy con IA lo que en 2022 no se podía</em></h2>
-      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">En 2022 había tres cuellos de botella: fotografía cara, centralita colapsada de FAQs y RRSS atadas a producción física. El negocio ya cerró, así que en 2026 volví al proyecto como laboratorio: así los resolvería hoy con IA generativa.</p>
+      <p style="font-size:max(15px, var(--fs-min-md)); line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">En 2022 había tres cuellos de botella: fotografía cara, centralita colapsada de FAQs y RRSS atadas a producción física. El negocio ya cerró, así que en 2026 volví al proyecto como laboratorio: así los resolvería hoy con IA generativa.</p>
     </div>
 
     <!-- EN HEADER -->
     <div class="en fu">
       <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; line-height:1.15; color:#fff; margin-bottom:16px;">2026 Lab:<br><em style="color:rgba(255,255,255,0.65);">how I would solve today with AI what was not possible in 2022</em></h2>
-      <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">In 2022 there were three bottlenecks: costly photography, a phone line drowning in FAQs, and social content tied to physical production. The business has since closed, so in 2026 I returned to the project as a lab: this is how I would solve them today with generative AI.</p>
+      <p style="font-size:max(15px, var(--fs-min-md)); line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">In 2022 there were three bottlenecks: costly photography, a phone line drowning in FAQs, and social content tied to physical production. The business has since closed, so in 2026 I returned to the project as a lab: this is how I would solve them today with generative AI.</p>
     </div>
 
     <!-- ─── Fila 02 · FOTOGRAFÍA PRODUCTO · texto izquierda + grid fotos derecha ─── -->
     <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
       <div class="col-lg-6 col-md-12 text-start">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · MANUAL GRÁFICO · FOTOGRAFÍA DE PRODUCTO CON IA</span>
+        <span style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · MANUAL GRÁFICO · FOTOGRAFÍA DE PRODUCTO CON IA</span>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El archivo fotográfico<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">reconstruido sin sesión</em></h3>
         <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The photo archive<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">rebuilt without a shoot</em></h3>
-        <p style="font-size:15px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 no había presupuesto para fotografía consistente entre locales. En 2026, con el manual visual como referencia, regeneré los 4 platos estrella con IA sin romper el sistema.</p>
-        <p style="font-size:15px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 there was no budget for consistent photography across locations. In 2026, using the visual manual as reference, I regenerated the 4 star dishes with AI, on-system.</p>
-        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+        <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 no había presupuesto para fotografía consistente entre locales. En 2026, con el manual visual como referencia, regeneré los 4 platos estrella con IA sin romper el sistema.</p>
+        <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 there was no budget for consistent photography across locations. In 2026, using the visual manual as reference, I regenerated the 4 star dishes with AI, on-system.</p>
+        <div style="font-size: max(11px, var(--fs-min-xs)); line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Actualizar la imagen de producto de todos los locales sin nueva sesión fotográfica.</span>
           <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Update product photography across all locations without a new photo session.</span>
         </div>
@@ -1374,32 +1374,32 @@
       <div class="col-lg-6 col-md-12">
         <div class="row g-3">
           <div class="col-6">
-            <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">4 Formaggi</div>
+            <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">4 Formaggi</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
               <img width="1200" height="1200" loading="lazy" decoding="async" src="projects/04-paolo/assets/4 formaggi.webp" alt="4 Formaggi — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
           <div class="col-6">
-            <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Tartufo</div>
+            <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Tartufo</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
               <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/tartufo.webp" alt="Tartufo — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
           <div class="col-6">
-            <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Diavola</div>
+            <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Diavola</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
               <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/diavola.webp" alt="Diavola — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
           <div class="col-6">
-            <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Napoli</div>
+            <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Napoli</div>
             <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
               <img width="1200" height="959" loading="lazy" decoding="async" src="projects/04-paolo/assets/napoli.webp" alt="Napoli — fotografía de producto generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
             </div>
           </div>
         </div>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">4 platos estrella · Generados con IA · Mismo encuadre y paleta que el sistema visual original</p>
-        <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">4 star dishes · AI-generated · Same framing and palette as the original visual system</p>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">4 platos estrella · Generados con IA · Mismo encuadre y paleta que el sistema visual original</p>
+        <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">4 star dishes · AI-generated · Same framing and palette as the original visual system</p>
       </div>
     </div>
 
@@ -1414,45 +1414,45 @@
 
       <div class="fu lab-chatbot-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border:1px solid rgba(242,162,34,0.18); border-radius:12px; overflow:hidden; margin-bottom:80px;">
         <div style="padding:28px 24px; background:rgba(242,162,34,0.03);">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El problema · 2022</div>
-          <div class="es" style="font-size:15px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">La centralita colapsaba con preguntas repetitivas</div>
-          <div class="en" style="font-size:15px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">The phone line was collapsing with repetitive questions</div>
-          <div class="es" style="font-size:13px; color:var(--text-dim); line-height:1.65;">Alérgenos, horarios, disponibilidad... el equipo en sala tenía que interrumpir el servicio físico para responder por teléfono.</div>
-          <div class="en" style="font-size:13px; color:var(--text-dim); line-height:1.65;">Allergens, opening hours, availability... floor staff had to interrupt physical service to answer the phone.</div>
+          <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El problema · 2022</div>
+          <div class="es" style="font-size:max(15px, var(--fs-min-md)); color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">La centralita colapsaba con preguntas repetitivas</div>
+          <div class="en" style="font-size:max(15px, var(--fs-min-md)); color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">The phone line was collapsing with repetitive questions</div>
+          <div class="es" style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.65;">Alérgenos, horarios, disponibilidad... el equipo en sala tenía que interrumpir el servicio físico para responder por teléfono.</div>
+          <div class="en" style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.65;">Allergens, opening hours, availability... floor staff had to interrupt physical service to answer the phone.</div>
         </div>
         <div style="padding:28px 24px; border-left:1px solid rgba(242,162,34,0.12); border-right:1px solid rgba(242,162,34,0.12);">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El impacto real</div>
-          <div class="es" style="font-size:15px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Staff distraído = experiencia en mesa degradada</div>
-          <div class="en" style="font-size:15px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Distracted staff = degraded table experience</div>
-          <div class="es" style="font-size:13px; color:var(--text-dim); line-height:1.65;">Cada llamada de FAQ era tiempo robado al servicio. Y muchas preguntas se quedaban sin responder porque la línea estaba ocupada.</div>
-          <div class="en" style="font-size:13px; color:var(--text-dim); line-height:1.65;">Every FAQ call was time stolen from service. And many questions went unanswered because the line was busy.</div>
+          <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">El impacto real</div>
+          <div class="es" style="font-size:max(15px, var(--fs-min-md)); color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Staff distraído = experiencia en mesa degradada</div>
+          <div class="en" style="font-size:max(15px, var(--fs-min-md)); color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Distracted staff = degraded table experience</div>
+          <div class="es" style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.65;">Cada llamada de FAQ era tiempo robado al servicio. Y muchas preguntas se quedaban sin responder porque la línea estaba ocupada.</div>
+          <div class="en" style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.65;">Every FAQ call was time stolen from service. And many questions went unanswered because the line was busy.</div>
         </div>
         <div style="padding:28px 24px; background:rgba(242,162,34,0.04);">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">La propuesta · concepto 2026</div>
-          <div class="es" style="font-size:15px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Agente conversacional entrenado con el negocio</div>
-          <div class="en" style="font-size:15px; color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Conversational agent trained on the business</div>
-          <div class="es" style="font-size:13px; color:var(--text-dim); line-height:1.65;">El chatbot respondería alérgenos y horarios y gestionaría reservas en tiempo real. El personal en sala se quedaría en sala.</div>
-          <div class="en" style="font-size:13px; color:var(--text-dim); line-height:1.65;">The chatbot would answer allergens and hours and manage reservations in real time. Floor staff would stay on the floor.</div>
+          <div style="font-size:max(11px, var(--fs-min-xs)); font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">La propuesta · concepto 2026</div>
+          <div class="es" style="font-size:max(15px, var(--fs-min-md)); color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Agente conversacional entrenado con el negocio</div>
+          <div class="en" style="font-size:max(15px, var(--fs-min-md)); color:#fff; line-height:1.55; font-weight:600; margin-bottom:8px;">Conversational agent trained on the business</div>
+          <div class="es" style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.65;">El chatbot respondería alérgenos y horarios y gestionaría reservas en tiempo real. El personal en sala se quedaría en sala.</div>
+          <div class="en" style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.65;">The chatbot would answer allergens and hours and manage reservations in real time. Floor staff would stay on the floor.</div>
         </div>
       </div>
 
       <!-- Fila A · seccion.ia · imagen izquierda + texto derecha -->
       <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
         <div class="col-lg-6 col-md-12">
-          <div style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Sección IA · Integración en la web</div>
+          <div style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Sección IA · Integración en la web</div>
           <div style="border-radius: 8px; overflow: hidden;">
             <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/seccion.ia.webp" alt="Nueva sección IA integrada en la web de Paolo 2026" style="width:100%; height:auto; display:block;">
           </div>
-          <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Concepto de nueva sección para el sitio · 2026</p>
-          <p style="font-size:13px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">Concept for a new site section · 2026</p>
+          <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Concepto de nueva sección para el sitio · 2026</p>
+          <p style="font-size:max(13px, var(--fs-min-sm)); color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">Concept for a new site section · 2026</p>
         </div>
         <div class="col-lg-6 col-md-12 text-start">
-          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04A · PRESENTACIÓN DEL AGENTE EN WEB</span>
+          <span style="font-size:max(11px, var(--fs-min-xs)); letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04A · PRESENTACIÓN DEL AGENTE EN WEB</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">El agente presentado<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin salir de la web</em></h3>
           <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">The agent presented<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without leaving the site</em></h3>
-          <p style="font-size:15px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Una sección presenta el agente, qué resuelve y cómo activarlo. Sin salir a una app de mensajería ni llamar.</p>
-          <p style="font-size:15px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">A section introduces the agent, what it answers and how to start it. No messaging app, no phone call.</p>
-          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
+          <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Una sección presenta el agente, qué resuelve y cómo activarlo. Sin salir a una app de mensajería ni llamar.</p>
+          <p style="font-size:max(15px, var(--fs-min-md)); color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">A section introduces the agent, what it answers and how to start it. No messaging app, no phone call.</p>
+          <div style="font-size: max(11px, var(--fs-min-xs)); line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Introducir el canal del chatbot al usuario sin fricciones y sin abandonar la experiencia web.</span>
             <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Introduce the chatbot channel to the user frictionlessly without leaving the web experience.</span>
           </div>
@@ -1463,8 +1463,8 @@
 
     <!-- Cierre -->
     <div class="fu" style="padding-top:16px; border-top:1px solid rgba(255,255,255,0.05);">
-      <p class="es" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">La IA no reemplaza el diseño de 2020-2022: lo amplifica. La arquitectura, los journeys y el sistema visual siguen siendo la base.</p>
-      <p class="en" style="font-size:13px; color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">AI didn't replace the 2020–2022 design work: it amplified it. The architecture, journeys and visual system are still the foundation.</p>
+      <p class="es" style="font-size:max(13px, var(--fs-min-sm)); color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">La IA no reemplaza el diseño de 2020-2022: lo amplifica. La arquitectura, los journeys y el sistema visual siguen siendo la base.</p>
+      <p class="en" style="font-size:max(13px, var(--fs-min-sm)); color:rgba(255,255,255,0.3); line-height:1.75; max-width:640px; font-style:italic;">AI didn't replace the 2020–2022 design work: it amplified it. The architecture, journeys and visual system are still the foundation.</p>
     </div>
 
   </div>
@@ -1658,12 +1658,12 @@
 }
 .chat-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .chat-avatar-fallback {
-  font-size: 15px; font-weight: 700; color: var(--accent);
+  font-size: max(15px, var(--fs-min-md)); font-weight: 700; color: var(--accent);
   font-family: 'Inter', sans-serif;
 }
 .chat-header-info { flex: 1; min-width: 0; }
-.chat-header-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
-.chat-header-status { font-size: 11px; color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
+.chat-header-name { font-size: max(13px, var(--fs-min-sm)); font-weight: 600; color: rgba(255,255,255,0.92); font-family: 'Inter', sans-serif; line-height: 1.2; }
+.chat-header-status { font-size: max(11px, var(--fs-min-xs)); color: rgba(255,255,255,0.38); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 5px; margin-top: 3px; }
 .chat-status-dot {
   width: 6px; height: 6px; border-radius: 50%; background: #34d399;
   box-shadow: 0 0 6px rgba(52,211,153,0.6);
@@ -1683,7 +1683,7 @@
 @keyframes msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .chat-msg.user { flex-direction: row-reverse; }
 
-.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 13px; line-height: 1.55; font-family: 'Inter', sans-serif; }
+.chat-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: max(13px, var(--fs-min-sm)); line-height: 1.55; font-family: 'Inter', sans-serif; }
 .chat-msg.bot .chat-bubble {
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
   color: rgba(255,255,255,0.86); border-bottom-left-radius: 4px;
@@ -1703,7 +1703,7 @@
 
 .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 16px 10px; flex-shrink: 0; }
 .chat-chip {
-  padding: 6px 12px; border-radius: 100px; font-size: 11px; font-weight: 500;
+  padding: 6px 12px; border-radius: 100px; font-size: max(11px, var(--fs-min-xs)); font-weight: 500;
   font-family: 'Inter', sans-serif; border: 1px solid rgba(var(--accent-rgb),0.35);
   color: rgba(var(--accent-rgb),0.9); background: rgba(124,58,237,0.08); cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s; white-space: nowrap;
@@ -1717,7 +1717,7 @@
 .chat-input {
   flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
   border-radius: 100px; padding: 9px 14px; color: var(--text);
-  font-size: 13px; font-family: 'Inter', sans-serif; outline: none; resize: none;
+  font-size: max(13px, var(--fs-min-sm)); font-family: 'Inter', sans-serif; outline: none; resize: none;
   min-height: 36px; max-height: 90px; transition: border-color 0.2s; line-height: 1.4;
 }
 .chat-input::placeholder { color: rgba(255,255,255,0.25); }
