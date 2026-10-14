@@ -20,6 +20,214 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261014_rev2">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
+  <style>
+/* ============ MOBILE EXACT — Gym Energy Center case (canvas 2026-10-15) ============ */
+.gme { display: none; }
+@media (max-width: 768px) {
+  main > .cs-hero,
+  main > section.section,
+  a.next,
+  section.cs-pagination-section { display: none !important; }
+
+  .gme {
+    display: block;
+    background: #000;
+    color: rgba(255,255,255,.72);
+    font-family: Inter, system-ui, sans-serif;
+    padding: 0 16px;
+  }
+  .gme-sec { padding-top: 48px; }
+  .gme-sec:first-child { padding-top: 28px; }
+
+  .gme-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .gme-chip { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.75); font-size: 12px; font-weight: 500; }
+  .gme-chip-accent { border-color: rgba(167,139,250,.35); color: #a78bfa; font-weight: 600; }
+
+  .gme-h1 { margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 40px; line-height: 1.05; letter-spacing: -.02em; color: #fff; }
+  .gme-h1 em { font-style: italic; color: #a78bfa; }
+  .gme-lead { margin: 0 0 24px; font-size: 16px; line-height: 1.5; color: rgba(255,255,255,.78); }
+  .gme-lead strong { color: #fff; font-weight: 600; }
+
+  .gme-video-figure { margin: 0 -16px 0; padding: 18px 0 8px; background: radial-gradient(ellipse at 50% 60%, rgba(167,139,250,.16), rgba(0,0,0,0) 65%); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .gme-video { display: block; width: 214px; height: 437px; object-fit: cover; border-radius: 34px; box-shadow: 0 24px 50px rgba(0,0,0,.6); }
+  .gme-video-wide { width: 100%; height: auto; max-height: 224px; object-fit: contain; border-radius: 0; box-shadow: none; }
+  .gme-video-cap { align-self: stretch; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .gme-live-dot { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .gme-live-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ef4444; flex-shrink: 0; }
+  .gme-open-link { font-size: 12px; font-weight: 600; color: #a78bfa; text-decoration: none; padding: 12px 0; }
+  .gme-video-text { padding: 0 16px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.7); }
+
+  .gme-facts { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; overflow: hidden; }
+  .gme-fact { background: #0a0a0c; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .gme-fact-label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .gme-fact-val { font-size: 14px; font-weight: 600; color: #fff; }
+
+  .gme-sub { display: flex; align-items: baseline; justify-content: space-between; }
+  .gme-sub-num { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.4); }
+  .gme-h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 28px; line-height: 1.1; color: #fff; }
+  .gme-h2 em { font-style: italic; color: #a78bfa; }
+  .gme-h2-lg { margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 34px; line-height: 1.06; letter-spacing: -.015em; color: #fff; }
+  .gme-h2-lg em { font-style: italic; color: #a78bfa; }
+  .gme-h3 { margin: 10px 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 28px; line-height: 1.1; color: #fff; }
+  .gme-h3 em { font-style: italic; color: #a78bfa; }
+  .gme-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .gme-eyebrow-accent { color: #a78bfa; font-size: 12px; letter-spacing: .14em; }
+
+  .gme-timeline { margin-top: 18px; display: flex; flex-direction: column; }
+  .gme-tl-row { display: flex; gap: 16px; }
+  .gme-tl-rail { display: flex; flex-direction: column; align-items: center; width: 14px; padding-top: 22px; flex-shrink: 0; }
+  .gme-tl-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); flex-shrink: 0; }
+  .gme-tl-dot-accent { border: none; background: #a78bfa; box-shadow: 0 0 0 5px rgba(167,139,250,.18); }
+  .gme-tl-line { flex: 1; width: 2px; background: rgba(255,255,255,.12); margin-top: 4px; }
+  .gme-tl-body { flex: 1; padding: 14px 0 22px; display: flex; flex-direction: column; gap: 6px; }
+  .gme-tl-highlight { padding: 16px 18px 18px; margin: 4px 0 0; border-radius: 18px; background: rgba(167,139,250,.08); border: 1px solid rgba(167,139,250,.3); }
+  .gme-tl-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 46px; line-height: 1; color: #fff; }
+  .gme-tl-big em { font-style: normal; font-size: 20px; color: rgba(255,255,255,.55); }
+  .gme-tl-big-accent { color: #a78bfa; font-size: 54px; }
+  .gme-tl-desc { font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.72); }
+  .gme-tl-desc-light { color: rgba(255,255,255,.85); }
+
+  .gme-cta-outline { margin-top: 24px; height: 52px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; gap: 10px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+  .gme-dashes { margin-top: 16px; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; }
+  .gme-dashes span { height: 30px; border-radius: 6px; border: 1px dashed rgba(255,255,255,.22); }
+  .gme-dash-on { border: none !important; background: #a78bfa; }
+  .gme-stat80 { margin-top: 10px; display: flex; align-items: flex-end; gap: 14px; }
+  .gme-stat80-num { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 80px; line-height: .9; color: #a78bfa; }
+  .gme-stat80-text { padding-bottom: 6px; font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
+  .gme-p { margin: 16px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.72); }
+
+  .gme-vs { position: relative; margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .gme-vs-card { padding: 16px 14px 18px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; }
+  .gme-vs-card-win { position: relative; background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.5); }
+  .gme-vs-badge { position: absolute; right: 10px; top: -11px; padding: 4px 9px; border-radius: 999px; background: #a78bfa; color: #0b0614; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .gme-vs-kicker { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .gme-vs-kicker-accent { color: #a78bfa; }
+  .gme-vs-title { font-size: 20px; font-weight: 700; line-height: 1.15; color: rgba(255,255,255,.6); text-decoration: line-through; text-decoration-color: rgba(255,255,255,.35); }
+  .gme-vs-title-light { color: #fff; text-decoration: none; }
+  .gme-vs-desc { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.5); }
+  .gme-vs-desc-light { color: rgba(255,255,255,.8); }
+  .gme-vs-badge-center { position: absolute; left: 50%; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: #000; border: 1px solid rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.6); }
+
+  .gme-findings { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .gme-finding-row { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); }
+  .gme-finding-icon { flex: none; width: 44px; height: 44px; border-radius: 12px; background: rgba(167,139,250,.12); color: #a78bfa; display: flex; align-items: center; justify-content: center; }
+  .gme-finding-body { display: flex; flex-direction: column; gap: 3px; }
+  .gme-finding-title { font-size: 15px; font-weight: 600; color: #fff; }
+  .gme-finding-desc { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.62); }
+
+  .gme-loop { margin: 0 0 0; padding: 18px 16px 6px; border-radius: 20px; background: #0d0b14; border: 1px solid rgba(167,139,250,.28); display: flex; flex-direction: column; }
+  .gme-loop-row { display: flex; gap: 12px; }
+  .gme-loop-rail { flex: none; width: 14px; display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
+  .gme-loop-dot { width: 12px; height: 12px; border-radius: 50%; background: #a78bfa; box-shadow: 0 0 0 4px rgba(167,139,250,.18); flex-shrink: 0; }
+  .gme-loop-line { flex: 1; width: 2px; background: rgba(167,139,250,.3); }
+  .gme-loop-img { flex: none; display: block; width: 76px; height: 155px; object-fit: contain; }
+  .gme-loop-body { flex: 1; min-width: 0; padding-bottom: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .gme-loop-stage { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a78bfa; }
+  .gme-loop-title { font-size: 17px; font-weight: 600; line-height: 1.2; color: #fff; }
+  .gme-loop-chip { align-self: flex-start; padding: 3px 8px; border-radius: 6px; background: rgba(255,255,255,.06); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.75); }
+  .gme-loop-desc { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.65); }
+  .gme-loop-close { display: flex; align-items: center; gap: 12px; padding: 4px 0 12px; }
+  .gme-loop-close-icon { flex: none; width: 14px; display: flex; justify-content: center; color: #a78bfa; }
+  .gme-loop-close-text { font-size: 14px; font-weight: 600; color: #fff; }
+
+  .gme-methods { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .gme-method { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 12px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); }
+  .gme-method-n { flex: none; font-size: 11px; font-weight: 700; color: #a78bfa; }
+  .gme-method-t { font-size: 13px; line-height: 1.3; font-weight: 600; color: #fff; }
+
+  .gme-pillars { margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .gme-pillar { padding: 14px 12px 16px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; }
+  .gme-pillar-k { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a78bfa; }
+  .gme-pillar-t { font-size: 14px; line-height: 1.3; font-weight: 600; color: #fff; }
+
+  .gme-mods { margin-top: 14px; display: flex; gap: 12px; overflow-x: auto; padding: 0 0 4px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .gme-modcard { flex: none; width: 258px; scroll-snap-align: start; border-radius: 20px; overflow: hidden; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
+  .gme-modcard-media { position: relative; padding: 18px 0 0; display: flex; justify-content: center; background: radial-gradient(ellipse at 50% 40%, rgba(167,139,250,.12), rgba(0,0,0,0) 70%); }
+  .gme-modcard-img { display: block; width: 200px; height: 408px; object-fit: contain; }
+  .gme-modcard-badge { position: absolute; left: 10px; top: 10px; padding: 4px 9px; border-radius: 999px; background: #a78bfa; color: #0b0614; font-size: 11px; font-weight: 700; }
+  .gme-modcard-info { padding: 14px 16px 16px; border-top: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; gap: 6px; }
+  .gme-modcard-title { font-size: 17px; font-weight: 600; color: #fff; }
+  .gme-modcard-desc { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.65); }
+  .gme-mods-footer { margin-top: 10px; display: flex; align-items: center; justify-content: space-between; }
+  .gme-dots { display: flex; gap: 6px; }
+  .gme-dots span { width: 6px; height: 6px; border-radius: 6px; background: rgba(255,255,255,.25); }
+  .gme-dot-active { width: 22px !important; background: #a78bfa !important; }
+  .gme-swipe-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.5); }
+
+  .gme-taps { margin: 44px 0 0; padding: 20px 0 22px; border-radius: 22px; background: rgba(167,139,250,.06); border: 1px solid rgba(167,139,250,.3); display: flex; flex-direction: column; gap: 18px; }
+  .gme-taps-head { padding: 0 20px; display: flex; flex-direction: column; gap: 8px; }
+  .gme-taps-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 52px; line-height: 1; color: #fff; }
+  .gme-taps-desc { font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.8); }
+  .gme-taps-imgs { display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .gme-taps-img { display: block; width: 146px; height: 298px; object-fit: contain; }
+  .gme-taps-arrow { flex: none; width: 30px; height: 30px; border-radius: 50%; background: #a78bfa; color: #0b0614; display: flex; align-items: center; justify-content: center; }
+  .gme-taps-list { margin: 0; padding: 0 20px; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .gme-taps-item { display: flex; flex-direction: column; gap: 4px; }
+  .gme-taps-item-n { font-size: 11px; font-weight: 700; color: #a78bfa; }
+  .gme-taps-item-t { font-size: 13px; line-height: 1.3; font-weight: 600; color: #fff; }
+
+  .gme-resultpanel { margin-top: 20px; padding: 22px 20px 24px; border-radius: 24px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.35), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; gap: 20px; }
+  .gme-resultpanel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 600; color: #fff; }
+  .gme-proj-badge { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); color: #a78bfa; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .gme-resultbars { display: flex; flex-direction: column; gap: 14px; }
+  .gme-resultbar-row { display: flex; flex-direction: column; gap: 7px; }
+  .gme-resultbar-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: #fff; font-weight: 600; }
+  .gme-resultbar-val { font-size: 20px; font-weight: 700; color: #a78bfa; }
+  .gme-resultbar-val small { font-size: 13px; color: rgba(255,255,255,.55); font-weight: 500; }
+  .gme-resultbar-track { display: flex; gap: 4px; align-items: center; }
+  .gme-resultbar-fill { height: 14px; border-radius: 7px; background: #a78bfa; }
+  .gme-resultbar-dashed { flex: 1; height: 14px; border-radius: 7px; border: 1px dashed rgba(167,139,250,.45); }
+  .gme-resultpanel-foot { display: flex; align-items: flex-end; gap: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.1); }
+  .gme-result-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 72px; line-height: .85; letter-spacing: -.02em; color: #a78bfa; }
+  .gme-result-foot-text { padding-bottom: 4px; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .gme-result-foot-text strong { color: #fff; }
+
+  .gme-ministats { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .gme-ministat { padding: 16px 12px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; font-size: 12px; line-height: 1.35; color: rgba(255,255,255,.7); }
+  .gme-ministat-num { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 36px; line-height: 1; color: #fff; }
+  .gme-ministat-num small { font-size: 16px; }
+
+  .gme-hypo { margin-top: 18px; padding: 18px; border-radius: 18px; border: 1px dashed rgba(255,255,255,.2); display: flex; flex-direction: column; gap: 14px; }
+  .gme-hypo-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .gme-hypo-head-text { font-size: 13px; font-weight: 600; color: #fff; }
+  .gme-hypo-badge { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.7); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .gme-hypo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .gme-hypo-val { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 32px; line-height: 1; color: rgba(255,255,255,.85); display: block; }
+  .gme-hypo-label { font-size: 12px; line-height: 1.35; color: rgba(255,255,255,.6); }
+  .gme-hypo-note { font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.5); }
+
+  .gme-learnings { margin-top: 52px; display: flex; flex-direction: column; gap: 0; }
+  .gme-learning { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .gme-learning-last { border-bottom: 1px solid rgba(255,255,255,.1); }
+  .gme-learning-n { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 24px; line-height: 1; color: #a78bfa; width: 32px; flex: none; }
+  .gme-learning-t { display: block; font-size: 17px; font-weight: 600; color: #fff; }
+  .gme-learning-d { display: block; margin-top: 4px; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.62); }
+
+  .gme-tryit { margin-top: 44px; display: flex; flex-direction: column; gap: 14px; }
+  .gme-tryit-img { display: block; width: 100%; height: auto; max-height: 224px; object-fit: contain; }
+  .gme-cta-pill { height: 52px; border-radius: 999px; border: 1px solid rgba(167,139,250,.45); display: flex; align-items: center; justify-content: center; gap: 8px; color: #a78bfa; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+  #gme-resultados { padding-bottom: 110px; }
+}
+
+/* ============ NUEVO · bucle de hábito + hipótesis (desktop y mobile) ============ */
+.cs-habit-loop { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.cs-habit-card { display: flex; align-items: center; gap: 16px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); }
+.cs-habit-card img { flex: none; display: block; width: 72px; height: 147px; object-fit: contain; }
+.cs-habit-stage { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.cs-habit-title { display: block; margin: 4px 0 4px; font-size: 16px; font-weight: 600; color: var(--white); }
+.cs-habit-desc { font-size: 13px; line-height: 1.4; color: var(--text-dim); }
+
+.cs-hypothesis-box { margin-top: 16px; padding: 24px; border-radius: 20px; border: 1px dashed var(--border); display: flex; flex-direction: column; gap: 16px; }
+.cs-hypothesis-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cs-hypothesis-head span:first-child { font-size: 14px; font-weight: 600; color: var(--white); }
+.cs-hypothesis-badge { flex: none; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-dim); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.cs-hypothesis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.cs-hypothesis-val { display: block; font-family: var(--font-serif); font-size: 38px; font-weight: 700; color: rgba(255,255,255,.85); }
+.cs-hypothesis-label { font-size: 13px; color: var(--text-dim); }
+.cs-hypothesis-note { font-size: 12px; line-height: 1.5; color: var(--text-dim); }
+  </style>
 </head>
 <body>
 
@@ -40,8 +248,7 @@
       <ul class="cs-toc">
         <li><a href="#overview">Overview</a></li>
         <li><a href="#problema"><span class="es">Problema</span><span class="en">Problem</span></a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#diseno"><span class="es">Diseño</span><span class="en">Design</span></a></li>
+        <li><a href="#diseno"><span class="es">Solución</span><span class="en">Solution</span></a></li>
         <li><a href="#resultados"><span class="es">Resultados</span><span class="en">Results</span></a></li>
         <li><a href="#aprendizajes"><span class="es">Progresión</span><span class="en">Growth</span></a></li>
       </ul>
@@ -76,10 +283,10 @@
 
 <!-- ============ NAVEGACIÓN MÓVIL POR TABS ============ -->
 <nav class="cs-mobile-tabs" aria-label="Navegación de secciones móvil">
-  <a href="#overview" class="cs-mobile-tab is-active">Overview</a>
-  <a href="#problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
-  <a href="#diseno" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
-  <a href="#resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
+  <a href="#gme-overview" class="cs-mobile-tab is-active">Overview</a>
+  <a href="#gme-problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
+  <a href="#gme-solucion" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
+  <a href="#gme-resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
 </nav>
 
 
@@ -170,6 +377,302 @@
 
 <main>
 
+<div class="gme" id="gme-root">
+
+  <!-- HERO -->
+  <section class="gme-sec" id="gme-overview" style="padding-top:28px">
+    <div class="gme-chips">
+      <span class="gme-chip gme-chip-accent"><span class="es">Fitness · B2C</span><span class="en">Fitness · B2C</span></span>
+      <span class="gme-chip"><span class="es">UX Research · Bootcamp</span><span class="en">UX Research · Bootcamp</span></span>
+    </div>
+    <h1 class="gme-h1"><span class="es">Diseñar para <em>volver mañana</em></span><span class="en">Designing to <em>come back tomorrow</em></span></h1>
+    <p class="gme-lead"><span class="es">La fricción no estaba en reservar una clase; estaba en <strong>volver al día siguiente</strong>.</span><span class="en">The friction wasn't in booking a class; it was in <strong>coming back the next day</strong>.</span></p>
+
+    <figure class="gme-video-figure">
+      <video src="assets/gym-mobile/hero-mobile.mp4" poster="assets/gym-mobile/m-home.webp" autoplay muted loop playsinline aria-label="Recorrido del prototipo móvil de Gym Energy: inicio, comunidad, perfil y reserva de clase" class="gme-video"></video>
+      <figcaption class="gme-video-cap">
+        <span class="gme-live-dot"><span class="es">Prototipo navegable · recorrido 71 s</span><span class="en">Navigable prototype · 71s walkthrough</span></span>
+        <a href="https://gym-energy-center-app.vercel.app/" target="_blank" rel="noopener" class="gme-open-link">Abrir ↗</a>
+      </figcaption>
+    </figure>
+
+    <div class="gme-facts">
+      <div class="gme-fact"><span class="gme-fact-label es">Rol</span><span class="gme-fact-label en">Role</span><span class="gme-fact-val es">UX Researcher &amp; UI</span><span class="gme-fact-val en">UX Researcher &amp; UI</span></div>
+      <div class="gme-fact"><span class="gme-fact-label es">Duración</span><span class="gme-fact-label en">Duration</span><span class="gme-fact-val es">6 semanas</span><span class="gme-fact-val en">6 weeks</span></div>
+      <div class="gme-fact"><span class="gme-fact-label es">Equipo</span><span class="gme-fact-label en">Team</span><span class="gme-fact-val es">4 diseñadores</span><span class="gme-fact-val en">4 designers</span></div>
+      <div class="gme-fact"><span class="gme-fact-label es">Plataforma</span><span class="gme-fact-label en">Platform</span><span class="gme-fact-val es">App móvil + desktop</span><span class="gme-fact-val en">Mobile app + desktop</span></div>
+    </div>
+
+    <!-- 30 SECOND TIMELINE -->
+    <div class="gme-sub" style="margin-top:40px">
+      <h2 class="gme-h2"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
+      <span class="gme-sub-num">01</span>
+    </div>
+    <div class="gme-timeline">
+      <div class="gme-tl-row">
+        <div class="gme-tl-rail"><span class="gme-tl-dot"></span><span class="gme-tl-line"></span></div>
+        <div class="gme-tl-body">
+          <span class="gme-eyebrow"><span class="es">Problema</span><span class="en">Problem</span></span>
+          <span class="gme-tl-big">68%</span>
+          <span class="gme-tl-desc"><span class="es">de los socios nuevos abandona antes del día 45.</span><span class="en">of new members drop out before day 45.</span></span>
+        </div>
+      </div>
+      <div class="gme-tl-row">
+        <div class="gme-tl-rail"><span class="gme-tl-dot"></span><span class="gme-tl-line"></span></div>
+        <div class="gme-tl-body">
+          <span class="gme-eyebrow"><span class="es">Decisión</span><span class="en">Decision</span></span>
+          <span class="gme-tl-big">Hábito</span>
+          <span class="gme-tl-desc"><span class="es">Diseñar la app alrededor del grupo y la racha, no del calendario.</span><span class="en">Design the app around the group and the streak, not the calendar.</span></span>
+        </div>
+      </div>
+      <div class="gme-tl-row">
+        <div class="gme-tl-rail"><span class="gme-tl-dot gme-tl-dot-accent"></span></div>
+        <div class="gme-tl-body gme-tl-highlight">
+          <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">Validado en test · Maze</span><span class="en">Validated in test · Maze</span></span>
+          <span class="gme-tl-big gme-tl-big-accent">88%</span>
+          <span class="gme-tl-desc gme-tl-desc-light"><span class="es">de tareas completadas sin ayuda, con reserva en 2 taps.</span><span class="en">of tasks completed unaided, with 2-tap booking.</span></span>
+        </div>
+      </div>
+    </div>
+    <a href="#gme-problema" class="gme-cta-outline"><span class="es">Ver el problema</span><span class="en">See the problem</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg></a>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="gme-sec" id="gme-problema">
+    <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">02 · Abandono temprano</span><span class="en">02 · Early drop-off</span></span>
+    <h2 class="gme-h2-lg"><span class="es">Sin grupo ni progreso, <em>nadie vuelve</em></span><span class="en">No group, no progress, <em>nobody returns</em></span></h2>
+
+    <div class="gme-stat80">
+      <span class="gme-stat80-num">68%</span>
+      <span class="gme-stat80-text"><span class="es">de los socios nuevos se va antes del día 45</span><span class="en">of new members leave before day 45</span></span>
+    </div>
+    <div class="gme-dashes" role="img" aria-label="7 de cada 10 socios nuevos abandonan antes del día 45">
+      <span class="gme-dash-on"></span><span class="gme-dash-on"></span><span class="gme-dash-on"></span><span class="gme-dash-on"></span><span class="gme-dash-on"></span><span class="gme-dash-on"></span><span class="gme-dash-on"></span><span></span><span></span><span></span>
+    </div>
+    <p class="gme-p"><span class="es">En dos semanas se sentían perdidos: sin nadie con quien ir y sin forma de ver su progreso.</span><span class="en">Within two weeks they felt lost: no one to train with and no way to see their progress.</span></p>
+
+    <span class="gme-eyebrow" style="margin-top:36px; display:block"><span class="es">La hipótesis que se cayó</span><span class="en">The hypothesis that fell apart</span></span>
+    <div class="gme-vs">
+      <div class="gme-vs-card">
+        <span class="gme-vs-kicker"><span class="es">Creíamos</span><span class="en">We believed</span></span>
+        <span class="gme-vs-title"><span class="es">Falta de tiempo</span><span class="en">Lack of time</span></span>
+        <span class="gme-vs-desc"><span class="es">Más horarios, más clases.</span><span class="en">More timeslots, more classes.</span></span>
+      </div>
+      <div class="gme-vs-card gme-vs-card-win">
+        <span class="gme-vs-badge"><span class="es">Insight</span><span class="en">Insight</span></span>
+        <span class="gme-vs-kicker gme-vs-kicker-accent"><span class="es">Vimos</span><span class="en">We saw</span></span>
+        <span class="gme-vs-title gme-vs-title-light"><span class="es">Vergüenza con las máquinas</span><span class="en">Equipment intimidation</span></span>
+        <span class="gme-vs-desc gme-vs-desc-light"><span class="es">Pesa más en la asistencia que la agenda.</span><span class="en">Weighs more on attendance than scheduling.</span></span>
+      </div>
+      <span class="gme-vs-badge-center" aria-hidden="true">vs</span>
+    </div>
+
+    <div class="gme-sub" style="margin-top:36px">
+      <span class="gme-eyebrow"><span class="es">12 entrevistas · 3 hallazgos</span><span class="en">12 interviews · 3 findings</span></span>
+    </div>
+    <div class="gme-findings">
+      <div class="gme-finding-row">
+        <span class="gme-finding-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"></path></svg></span>
+        <div class="gme-finding-body"><span class="gme-finding-title es">Vergüenza inicial</span><span class="gme-finding-title en">Gymtimidation</span><span class="gme-finding-desc es">No saber usar el equipo frena más que no tener tiempo.</span><span class="gme-finding-desc en">Not knowing the equipment holds people back more than lack of time.</span></div>
+      </div>
+      <div class="gme-finding-row">
+        <span class="gme-finding-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span>
+        <div class="gme-finding-body"><span class="gme-finding-title es">La fuerza del grupo</span><span class="gme-finding-title en">Peer accountability</span><span class="gme-finding-desc es">Saber que un amigo va a la clase hace que vayas.</span><span class="gme-finding-desc en">Knowing a friend is attending makes you go too.</span></div>
+      </div>
+      <div class="gme-finding-row">
+        <span class="gme-finding-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-1.6.7-2.8 1.5-3.7.3 1.3 1 2.2 2 2.2 0-2.5-.5-4.5.5-7z"></path><path d="M6 21h12"></path></svg></span>
+        <div class="gme-finding-body"><span class="gme-finding-title es">Micro-victorias</span><span class="gme-finding-title en">Micro-victories</span><span class="gme-finding-desc es">Ver la racha refuerza el compromiso de volver.</span><span class="gme-finding-desc en">Seeing the streak reinforces the commitment to return.</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="gme-eyebrow"><span class="es">Síntesis · bucle de hábito</span><span class="en">Synthesis · habit loop</span></span>
+      <h3 class="gme-h3"><span class="es">Detonante <span class="gme-arrow-muted" style="color:rgba(255,255,255,.4)">→</span> acción <span class="gme-arrow-muted" style="color:rgba(255,255,255,.4)">→</span> <span style="color:#a78bfa">recompensa</span></span><span class="en">Trigger <span style="color:rgba(255,255,255,.4)">→</span> action <span style="color:rgba(255,255,255,.4)">→</span> <span style="color:#a78bfa">reward</span></span></h3>
+    </div>
+    <figure class="gme-loop" aria-label="Bucle de hábito: cada hallazgo convertido en un paso del producto">
+      <div class="gme-loop-row">
+        <div class="gme-loop-rail"><span class="gme-loop-dot"></span><span class="gme-loop-line"></span></div>
+        <img src="assets/gym-mobile/m-proximo.png" alt="Inicio con la tarjeta Tu próximo mejor entrenamiento" class="gme-loop-img">
+        <div class="gme-loop-body">
+          <span class="gme-loop-stage"><span class="es">01 · Detonante</span><span class="en">01 · Trigger</span></span>
+          <span class="gme-loop-title"><span class="es">Aviso en contexto</span><span class="en">Contextual nudge</span></span>
+          <span class="gme-loop-chip"><span class="es">Responde a · Vergüenza inicial</span><span class="en">Responds to · Gymtimidation</span></span>
+          <span class="gme-loop-desc"><span class="es">«Tu próximo mejor entrenamiento», sugerido según tus sesiones y tu racha.</span><span class="en">"Your next best workout", suggested from your sessions and streak.</span></span>
+        </div>
+      </div>
+      <div class="gme-loop-row">
+        <div class="gme-loop-rail"><span class="gme-loop-dot"></span><span class="gme-loop-line"></span></div>
+        <img src="assets/gym-mobile/m-detalle.png" alt="Detalle de clase con los asistentes junto al botón Reservar plaza" class="gme-loop-img">
+        <div class="gme-loop-body">
+          <span class="gme-loop-stage"><span class="es">02 · Acción</span><span class="en">02 · Action</span></span>
+          <span class="gme-loop-title"><span class="es">Reserva en 2 taps</span><span class="en">2-tap booking</span></span>
+          <span class="gme-loop-chip"><span class="es">Responde a · La fuerza del grupo</span><span class="en">Responds to · Peer accountability</span></span>
+          <span class="gme-loop-desc"><span class="es">«12 personas ya van a darlo todo», junto al botón de reservar.</span><span class="en">"12 people are already going all in", next to the booking button.</span></span>
+        </div>
+      </div>
+      <div class="gme-loop-row">
+        <div class="gme-loop-rail"><span class="gme-loop-dot"></span></div>
+        <img src="assets/gym-mobile/m-perfil.png" alt="Perfil con 42 sesiones, racha de 7 y nivel 8" class="gme-loop-img">
+        <div class="gme-loop-body">
+          <span class="gme-loop-stage"><span class="es">03 · Recompensa</span><span class="en">03 · Reward</span></span>
+          <span class="gme-loop-title"><span class="es">Hito visible</span><span class="en">Visible milestone</span></span>
+          <span class="gme-loop-chip"><span class="es">Responde a · Micro-victorias</span><span class="en">Responds to · Micro-victories</span></span>
+          <span class="gme-loop-desc"><span class="es">Racha de 7 días y nivel 8, lo primero que ves en tu perfil.</span><span class="en">7-day streak and level 8, the first thing you see on your profile.</span></span>
+        </div>
+      </div>
+      <div class="gme-loop-close">
+        <span class="gme-loop-close-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg></span>
+        <span class="gme-loop-close-text"><span class="es">Y vuelve al día siguiente</span><span class="en">And they come back the next day</span></span>
+      </div>
+    </figure>
+    <div class="gme-methods">
+      <div class="gme-method"><span class="gme-method-n">01</span><span class="gme-method-t es">Entrevistas en profundidad</span><span class="gme-method-t en">In-depth interviews</span></div>
+      <div class="gme-method"><span class="gme-method-n">02</span><span class="gme-method-t es">Empathy map</span><span class="gme-method-t en">Empathy map</span></div>
+      <div class="gme-method"><span class="gme-method-n">03</span><span class="gme-method-t es">Journey mapping</span><span class="gme-method-t en">Journey mapping</span></div>
+      <div class="gme-method"><span class="gme-method-n">04</span><span class="gme-method-t es">Test de usabilidad · Maze</span><span class="gme-method-t en">Usability testing · Maze</span></div>
+    </div>
+  </section>
+
+  <!-- SOLUCIÓN -->
+  <section class="gme-sec" id="gme-solucion">
+    <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">03 · La solución</span><span class="en">03 · The solution</span></span>
+    <h2 class="gme-h2-lg"><span class="es">Práctico, social <em>y lúdico</em></span><span class="en">Practical, social <em>and playful</em></span></h2>
+
+    <figure class="gme-video-figure" style="padding-top:14px">
+      <video src="assets/gym-mobile/walkthrough-desk.mp4" poster="assets/gym-mobile/d-home.webp" autoplay muted loop playsinline aria-label="Recorrido de la versión desktop: inicio, clases y reserva de Power Training" class="gme-video gme-video-wide"></video>
+      <p class="gme-video-text"><span class="es">La misma lógica en móvil y escritorio: reservar, ver quién va y seguir tu racha.</span><span class="en">The same logic on mobile and desktop: book, see who's going, track your streak.</span></p>
+    </figure>
+
+    <div class="gme-pillars">
+      <div class="gme-pillar"><span class="gme-pillar-k"><span class="es">Práctico</span><span class="en">Practical</span></span><span class="gme-pillar-t"><span class="es">Reserva en 2 taps</span><span class="en">2-tap booking</span></span></div>
+      <div class="gme-pillar"><span class="gme-pillar-k"><span class="es">Social</span><span class="en">Social</span></span><span class="gme-pillar-t"><span class="es">Muro y grupos</span><span class="en">Wall and groups</span></span></div>
+      <div class="gme-pillar"><span class="gme-pillar-k"><span class="es">Lúdico</span><span class="en">Playful</span></span><span class="gme-pillar-t"><span class="es">Retos y rachas</span><span class="en">Challenges and streaks</span></span></div>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="gme-eyebrow"><span class="es">De la investigación a la pantalla</span><span class="en">From research to screen</span></span>
+      <h3 class="gme-h3"><span class="es">Cada hallazgo, una pantalla</span><span class="en">Every finding, a screen</span></h3>
+    </div>
+    <div class="gme-mods" id="gmeMods">
+      <article class="gme-modcard">
+        <div class="gme-modcard-media"><img src="assets/gym-mobile/m-home.png" alt="Pantalla de inicio con progreso de 62,5 kg y gráfico de barras" class="gme-modcard-img"><span class="gme-modcard-badge"><span class="es">01 · Lúdico</span><span class="en">01 · Playful</span></span></div>
+        <div class="gme-modcard-info"><span class="gme-modcard-title es">Inicio</span><span class="gme-modcard-title en">Home</span><span class="gme-modcard-desc es">Tu progreso primero: «Estás más cerca de lo que crees».</span><span class="gme-modcard-desc en">Your progress first: "You're closer than you think."</span></div>
+      </article>
+      <article class="gme-modcard">
+        <div class="gme-modcard-media"><img src="assets/gym-mobile/m-muro.png" alt="Muro de comunidad con una publicación y comentarios" class="gme-modcard-img"><span class="gme-modcard-badge"><span class="es">02 · Social</span><span class="en">02 · Social</span></span></div>
+        <div class="gme-modcard-info"><span class="gme-modcard-title es">Comunidad</span><span class="gme-modcard-title en">Community</span><span class="gme-modcard-desc es">Muro de actividad para ver quién entrena y comentar.</span><span class="gme-modcard-desc en">Activity wall to see who's training and comment.</span></div>
+      </article>
+      <article class="gme-modcard">
+        <div class="gme-modcard-media"><img src="assets/gym-mobile/m-clases.png" alt="Calendario con la lista de sesiones del día y botón Reservar" class="gme-modcard-img"><span class="gme-modcard-badge"><span class="es">03 · Práctico</span><span class="en">03 · Practical</span></span></div>
+        <div class="gme-modcard-info"><span class="gme-modcard-title es">Calendario</span><span class="gme-modcard-title en">Calendar</span><span class="gme-modcard-desc es">Sesiones del día con plazas y reserva directa.</span><span class="gme-modcard-desc en">Today's sessions with spots and direct booking.</span></div>
+      </article>
+      <article class="gme-modcard">
+        <div class="gme-modcard-media"><img src="assets/gym-mobile/m-reservas.png" alt="Actividades con el aviso Strength Lab añadido a tu semana" class="gme-modcard-img"><span class="gme-modcard-badge"><span class="es">04 · Práctico</span><span class="en">04 · Practical</span></span></div>
+        <div class="gme-modcard-info"><span class="gme-modcard-title es">Actividades</span><span class="gme-modcard-title en">Activities</span><span class="gme-modcard-desc es">Clases para empezar y confirmación al instante.</span><span class="gme-modcard-desc en">Classes to start, confirmed instantly.</span></div>
+      </article>
+      <article class="gme-modcard">
+        <div class="gme-modcard-media"><img src="assets/gym-mobile/m-perfil.png" alt="Perfil de Lara Gómez con 42 sesiones, racha de 7 y nivel 8" class="gme-modcard-img"><span class="gme-modcard-badge"><span class="es">05 · Lúdico</span><span class="en">05 · Playful</span></span></div>
+        <div class="gme-modcard-info"><span class="gme-modcard-title es">Perfil y racha</span><span class="gme-modcard-title en">Profile and streak</span><span class="gme-modcard-desc es">Sesiones, racha y nivel: la micro-victoria a la vista.</span><span class="gme-modcard-desc en">Sessions, streak and level: the micro-victory in plain sight.</span></div>
+      </article>
+      <article class="gme-modcard">
+        <div class="gme-modcard-media"><img src="assets/gym-mobile/m-logros.png" alt="Pantalla de logros y mensajes del grupo" class="gme-modcard-img"><span class="gme-modcard-badge"><span class="es">06 · Social</span><span class="en">06 · Social</span></span></div>
+        <div class="gme-modcard-info"><span class="gme-modcard-title es">Logros y mensajes</span><span class="gme-modcard-title en">Achievements and messages</span><span class="gme-modcard-desc es">Logros desbloqueados y chats con tu grupo.</span><span class="gme-modcard-desc en">Unlocked achievements and chats with your group.</span></div>
+      </article>
+    </div>
+    <div class="gme-mods-footer">
+      <div class="gme-dots" aria-hidden="true"><span class="gme-dot-active"></span><span></span><span></span><span></span><span></span><span></span></div>
+      <span class="gme-swipe-label"><span class="es">Desliza · 01 / 06</span><span class="en">Swipe · 01 / 06</span></span>
+    </div>
+
+    <div class="gme-taps">
+      <div class="gme-taps-head">
+        <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">El bucle clave · Reserva</span><span class="en">The key loop · Booking</span></span>
+        <span class="gme-taps-big">2 taps</span>
+        <span class="gme-taps-desc"><span class="es">Del hueco libre a la plaza confirmada, viendo quién más va.</span><span class="en">From open slot to confirmed spot, seeing who else is going.</span></span>
+      </div>
+      <div class="gme-taps-imgs">
+        <img src="assets/gym-mobile/m-detalle.png" alt="Detalle de Personal Performance con la franja de las 21:00 seleccionada" class="gme-taps-img">
+        <span class="gme-taps-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></span>
+        <img src="assets/gym-mobile/m-reservado.png" alt="La misma pantalla con la plaza ya reservada y el botón en verde" class="gme-taps-img">
+      </div>
+      <ol class="gme-taps-list">
+        <li class="gme-taps-item"><span class="gme-taps-item-n">01</span><span class="gme-taps-item-t es">Aviso en contexto</span><span class="gme-taps-item-t en">Contextual nudge</span></li>
+        <li class="gme-taps-item"><span class="gme-taps-item-n">02</span><span class="gme-taps-item-t es">Reserva en 2 taps</span><span class="gme-taps-item-t en">2-tap booking</span></li>
+        <li class="gme-taps-item"><span class="gme-taps-item-n">03</span><span class="gme-taps-item-t es">Hito visible</span><span class="gme-taps-item-t en">Visible milestone</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="gme-sec" id="gme-resultados">
+    <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span>
+    <h2 class="gme-h2-lg"><span class="es">Validado con <em>usuarios reales</em></span><span class="en">Validated with <em>real users</em></span></h2>
+
+    <div class="gme-resultpanel">
+      <div class="gme-resultpanel-head">
+        <span class="es">Test de usabilidad no moderado · Maze</span><span class="en">Unmoderated usability test · Maze</span>
+        <span class="gme-proj-badge"><span class="es">Medido</span><span class="en">Measured</span></span>
+      </div>
+      <div class="gme-resultbars">
+        <div class="gme-resultbar-row">
+          <div class="gme-resultbar-label"><span class="es">Tareas completadas sin ayuda</span><span class="en">Tasks completed unaided</span><span class="gme-resultbar-val">88%</span></div>
+          <div class="gme-resultbar-track"><div class="gme-resultbar-fill" style="width:88%"></div><div class="gme-resultbar-dashed"></div></div>
+        </div>
+        <div class="gme-resultbar-row">
+          <div class="gme-resultbar-label"><span class="es">Satisfacción SUS</span><span class="en">SUS satisfaction</span><span class="gme-resultbar-val">4,6<small> / 5</small></span></div>
+          <div class="gme-resultbar-track"><div class="gme-resultbar-fill" style="width:92%"></div><div class="gme-resultbar-dashed"></div></div>
+        </div>
+      </div>
+      <div class="gme-resultpanel-foot">
+        <span class="gme-result-big">0</span>
+        <span class="gme-result-foot-text"><strong><span class="es">bloqueos</span><span class="en">blockers</span></strong> <span class="es">detectados en el flujo de reserva</span><span class="en">detected in the booking flow</span></span>
+      </div>
+    </div>
+
+    <div class="gme-ministats">
+      <div class="gme-ministat"><span class="gme-ministat-num">2<small><span class="es"> taps</span><span class="en"> taps</span></small></span><span class="es">para reservar una clase</span><span class="en">to book a class</span></div>
+      <div class="gme-ministat"><span class="gme-ministat-num">12</span><span class="es">entrevistas en profundidad</span><span class="en">in-depth interviews</span></div>
+      <div class="gme-ministat"><span class="gme-ministat-num">6<small><span class="es"> sem</span><span class="en"> wks</span></small></span><span class="es">de research a prototipo</span><span class="en">from research to prototype</span></div>
+    </div>
+
+    <div class="gme-hypo">
+      <div class="gme-hypo-head">
+        <span class="gme-hypo-head-text"><span class="es">Impacto esperado en el gimnasio</span><span class="en">Expected gym impact</span></span>
+        <span class="gme-hypo-badge"><span class="es">Hipótesis</span><span class="en">Hypothesis</span></span>
+      </div>
+      <div class="gme-hypo-grid">
+        <div><span class="gme-hypo-val">+34%</span><span class="gme-hypo-label es">retención a 90 días</span><span class="gme-hypo-label en">90-day retention</span></div>
+        <div><span class="gme-hypo-val">+52%</span><span class="gme-hypo-label es">asistencia a clases colectivas</span><span class="gme-hypo-label en">group class attendance</span></div>
+      </div>
+      <span class="gme-hypo-note"><span class="es">Objetivos del planteamiento; no se midieron en producción.</span><span class="en">Goals from the proposal; not measured in production.</span></span>
+    </div>
+
+    <div class="gme-learnings">
+      <span class="gme-eyebrow"><span class="es">05 · Lo que me llevo</span><span class="en">05 · What I take away</span></span>
+      <div class="gme-learning">
+        <span class="gme-learning-n">01</span>
+        <div><span class="gme-learning-t es">Investigar antes de diseñar</span><span class="gme-learning-t en">Research before designing</span><span class="gme-learning-d es">El insight de la vergüenza no salía en ningún brief.</span><span class="gme-learning-d en">The intimidation insight wasn't in any brief.</span></div>
+      </div>
+      <div class="gme-learning">
+        <span class="gme-learning-n">02</span>
+        <div><span class="gme-learning-t es">Colaboración en equipo</span><span class="gme-learning-t en">Team collaboration</span><span class="gme-learning-d es">La evidencia de usuario alinea a 4 diseñadores mejor que las opiniones.</span><span class="gme-learning-d en">User evidence aligns 4 designers better than opinions.</span></div>
+      </div>
+      <div class="gme-learning gme-learning-last">
+        <span class="gme-learning-n">03</span>
+        <div><span class="gme-learning-t es">Probar con usuarios reales</span><span class="gme-learning-t en">Testing with real users</span><span class="gme-learning-d es">Sus reacciones tumbaron nuestras primeras hipótesis.</span><span class="gme-learning-d en">Their reactions tore down our first hypotheses.</span></div>
+      </div>
+    </div>
+
+    <div class="gme-tryit">
+      <span class="gme-eyebrow"><span class="es">Pruébalo</span><span class="en">Try it</span></span>
+      <h3 class="gme-h3"><span class="es">El prototipo, <em>navegable</em></span><span class="en">The prototype, <em>navigable</em></span></h3>
+      <img src="assets/gym-mobile/d-confirmado.webp" alt="Prototipo desktop: clase Power Training reservada en un portátil" class="gme-tryit-img">
+      <a href="https://gym-energy-center-app.vercel.app/" target="_blank" rel="noopener" class="gme-cta-pill"><span class="es">Abrir prototipo</span><span class="en">Open prototype</span> ↗</a>
+    </div>
+  </section>
+
+</div>
+
 <!-- ============ 1 · HERO & FICHA ============ -->
 <section class="cs-hero" id="overview">
   <div class="wrap">
@@ -223,7 +726,7 @@
 </section>
 
 <!-- ============ 4 · RESEARCH ============ -->
-<section class="section" id="research">
+<section class="section" id="problema">
   <div class="wrap">
     <span class="eyebrow"><b>02</b>Research</span>
     <h2 class="h2 reveal"><span class="es">Escuchar a 12 socios: <em>la psicología del hábito</em></span><span class="en">Listening to 12 members: <em>the psychology of habits</em></span></h2>
@@ -285,6 +788,38 @@
       </div>
     </div>
 
+    <!-- SÍNTESIS · BUCLE DE HÁBITO -->
+    <div class="reveal" style="margin-top:40px">
+      <span class="label"><span class="es">Síntesis · bucle de hábito</span><span class="en">Synthesis · habit loop</span></span>
+      <h3 class="h2" style="font-size:28px;margin-top:8px"><span class="es">Detonante → acción → <em style="color:var(--accent);font-style:normal">recompensa</em></span><span class="en">Trigger → action → <em style="color:var(--accent);font-style:normal">reward</em></span></h3>
+      <div class="cs-habit-loop">
+        <div class="cs-habit-card">
+          <img src="assets/gym-mobile/m-proximo.png" alt="Inicio con la tarjeta Tu próximo mejor entrenamiento" loading="lazy">
+          <div>
+            <span class="cs-habit-stage"><span class="es">01 · Detonante</span><span class="en">01 · Trigger</span></span>
+            <span class="cs-habit-title"><span class="es">Aviso en contexto</span><span class="en">Contextual nudge</span></span>
+            <p class="cs-habit-desc"><span class="es">«Tu próximo mejor entrenamiento», sugerido según tus sesiones y tu racha.</span><span class="en">"Your next best workout", suggested from your sessions and streak.</span></p>
+          </div>
+        </div>
+        <div class="cs-habit-card">
+          <img src="assets/gym-mobile/m-detalle.png" alt="Detalle de clase con los asistentes junto al botón Reservar plaza" loading="lazy">
+          <div>
+            <span class="cs-habit-stage"><span class="es">02 · Acción</span><span class="en">02 · Action</span></span>
+            <span class="cs-habit-title"><span class="es">Reserva en 2 taps</span><span class="en">2-tap booking</span></span>
+            <p class="cs-habit-desc"><span class="es">«12 personas ya van a darlo todo», junto al botón de reservar.</span><span class="en">"12 people are already going all in", next to the booking button.</span></p>
+          </div>
+        </div>
+        <div class="cs-habit-card">
+          <img src="assets/gym-mobile/m-perfil.png" alt="Perfil con 42 sesiones, racha de 7 y nivel 8" loading="lazy">
+          <div>
+            <span class="cs-habit-stage"><span class="es">03 · Recompensa</span><span class="en">03 · Reward</span></span>
+            <span class="cs-habit-title"><span class="es">Hito visible</span><span class="en">Visible milestone</span></span>
+            <p class="cs-habit-desc"><span class="es">Racha de 7 días y nivel 8, lo primero que ves en tu perfil.</span><span class="en">7-day streak and level 8, the first thing you see on your profile.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -339,6 +874,44 @@
       </div>
     </div>
 
+    <div class="panel reveal" style="margin-top:24px">
+      <div class="panel-head"><span><span class="es">El bucle clave · Reserva</span><span class="en">The key loop · Booking</span></span><span class="panel-tag">2 Taps</span></div>
+      <div class="compare">
+        <figure class="compare-item">
+          <div class="compare-media">
+            <img src="assets/gym-mobile/m-detalle.png" alt="Detalle de Personal Performance con la franja de las 21:00 seleccionada" loading="lazy">
+          </div>
+          <figcaption class="compare-caption">
+            <div class="compare-badge compare-badge--before">
+              <span class="badge-dot"></span>
+              <span class="es">Antes · Hueco libre</span>
+              <span class="en">Before · Open slot</span>
+            </div>
+            <p class="compare-desc">
+              <span class="es">Franja horaria seleccionada, viendo quién más va.</span>
+              <span class="en">Timeslot selected, seeing who else is going.</span>
+            </p>
+          </figcaption>
+        </figure>
+        <figure class="compare-item compare-item--after">
+          <div class="compare-media">
+            <img src="assets/gym-mobile/m-reservado.png" alt="La misma pantalla con la plaza ya reservada y el botón en verde" loading="lazy">
+          </div>
+          <figcaption class="compare-caption">
+            <div class="compare-badge compare-badge--after">
+              <span class="badge-dot"></span>
+              <span class="es">Después · Plaza confirmada</span>
+              <span class="en">After · Spot confirmed</span>
+            </div>
+            <p class="compare-desc">
+              <span class="es">Del hueco libre a la plaza confirmada en 2 taps.</span>
+              <span class="en">From open slot to confirmed spot in 2 taps.</span>
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
     <!-- SLOT M6 · PROCESO & PANTALLAS (CARRUSEL SCROLL-SNAP) -->
     <div class="cs-carousel-wrapper reveal">
       <div class="panel-head">
@@ -349,7 +922,7 @@
         
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="projects/06-gym/assets/app-mockup.webp" alt="Reserva de Clases" loading="lazy">
+            <img src="assets/gym-mobile/m-detalle.png" alt="Reserva de Clases" loading="lazy">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">2 Taps</span>
@@ -358,16 +931,16 @@
         </article>
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="projects/06-gym/assets/journey-habits.webp" alt="Mapa de Hábitos" loading="lazy">
+            <img src="assets/gym-mobile/m-muro.png" alt="Muro de Comunidad" loading="lazy">
           </div>
           <div class="cs-carousel-info">
-            <span class="cs-carousel-kpi">Research</span>
-            <h4 class="cs-carousel-title">Mapa de Hábitos</h4>
+            <span class="cs-carousel-kpi">Social</span>
+            <h4 class="cs-carousel-title">Muro de Comunidad</h4>
           </div>
         </article>
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="projects/06-gym/assets/progress-screen.webp" alt="Racha y Progreso" loading="lazy">
+            <img src="assets/gym-mobile/m-perfil.png" alt="Racha y Progreso" loading="lazy">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">Motivación</span>
@@ -387,7 +960,8 @@
     <div class="cs-slot-m7 reveal">
       <span class="cs-feature-badge"><span class="es">Feature Clave · Decisión de Producto</span><span class="en">Key Feature · Product Decision</span></span>
       <p class="cs-feature-title"><span class="es">Bucle de hábito: recordatorio contextual + reserva en 2 toques + logro visual</span><span class="en">Habit loop: contextual nudge + 2-tap booking + visual milestone</span></p>
-      <div class="cs-feature-val">+34% RETENCIÓN</div>
+      <div class="cs-feature-val es">2 TAPS PARA RESERVAR</div>
+      <div class="cs-feature-val en">2 TAPS TO BOOK</div>
     </div>
 
   </div>
@@ -405,30 +979,31 @@
       <div class="result"><div class="result-val">0</div><p><span class="es">Bloqueos detectados en reserva</span><span class="en">Drop-offs during booking task</span></p></div>
     </div>
 
-    <!-- SLOT M8 · MÉTRICA HÉROE -->
-    <div class="cs-slot-m8 reveal">
-      <span class="cs-m8-tag"><span class="es">Impacto Principal · Medido</span><span class="en">Primary Impact · Measured</span></span>
-      <div class="cs-m8-val">+34%</div>
-      <span class="cs-m8-sub"><span class="es">Incremento en la retención de socios a 90 días</span><span class="en">Increase in member retention rate at 90-day mark</span></span>
-    </div>
-
-    <!-- TRIPLETE DE MÉTRICAS SECUNDARIAS -->
-    <div class="cs-metric-triplet reveal">
-      
-        <div class="cs-triplet-card">
-          <div class="cs-triplet-val">+52%</div>
-          <p class="cs-triplet-desc"><span class="es">Asistencia a clases colectivas</span><span class="en">Group class attendance</span></p>
-        </div>
-        <div class="cs-triplet-card">
-          <div class="cs-triplet-val">4,8★</div>
-          <p class="cs-triplet-desc"><span class="es">Valoración media en app</span><span class="en">App store user rating</span></p>
-        </div>
+    <!-- TRIPLETE DE MÉTRICAS SECUNDARIAS (medidas) -->
+    <div class="cs-metric-triplet reveal" style="grid-template-columns:repeat(2,1fr)">
         <div class="cs-triplet-card">
           <div class="cs-triplet-val">2 taps</div>
           <p class="cs-triplet-desc"><span class="es">Tiempo medio de reserva</span><span class="en">Average booking speed</span></p>
         </div>
+        <div class="cs-triplet-card">
+          <div class="cs-triplet-val">6 sem</div>
+          <p class="cs-triplet-desc"><span class="es">De research a prototipo</span><span class="en">From research to prototype</span></p>
+        </div>
     </div>
-    <div class="cs-metric-footnote reveal">1 Métrica héroe + 3 métricas secundarias verificadas</div>
+    <div class="cs-metric-footnote reveal"><span class="es">4 métricas medidas en test de usabilidad Maze</span><span class="en">4 metrics measured in Maze usability testing</span></div>
+
+    <!-- IMPACTO ESPERADO · HIPÓTESIS SIN MEDIR -->
+    <div class="cs-hypothesis-box reveal">
+      <div class="cs-hypothesis-head">
+        <span><span class="es">Impacto esperado en el gimnasio</span><span class="en">Expected gym impact</span></span>
+        <span class="cs-hypothesis-badge"><span class="es">Hipótesis</span><span class="en">Hypothesis</span></span>
+      </div>
+      <div class="cs-hypothesis-grid">
+        <div><span class="cs-hypothesis-val">+34%</span><span class="cs-hypothesis-label es">retención a 90 días</span><span class="cs-hypothesis-label en">90-day retention</span></div>
+        <div><span class="cs-hypothesis-val">+52%</span><span class="cs-hypothesis-label es">asistencia a clases colectivas</span><span class="cs-hypothesis-label en">group class attendance</span></div>
+      </div>
+      <span class="cs-hypothesis-note"><span class="es">Objetivos del planteamiento; no se midieron en producción.</span><span class="en">Goals from the proposal; not measured in production.</span></span>
+    </div>
 
     <!-- 05 · LO QUE ME LLEVO (LEARNINGS) -->
     <div class="cs-learnings-compact reveal">
@@ -448,6 +1023,16 @@
           <span class="cs-learning-num">03</span>
           <p class="cs-learning-title"><span class="es">Las dinámicas de grupo aumentan la retención mucho más que los descuentos</span><span class="en">Community-driven dynamics drive long-term retention far better than discounts</span></p>
         </div>
+    </div>
+
+    <!-- PRUÉBALO · PROTOTIPO NAVEGABLE -->
+    <div class="panel reveal" style="margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:28px 32px">
+      <div>
+        <span class="label" style="display:block;margin-bottom:8px"><span class="es">Pruébalo</span><span class="en">Try it</span></span>
+        <h3 style="margin:0;font-family:var(--font-serif);font-size:24px;color:var(--white)"><span class="es">El prototipo, <em style="color:var(--accent);font-style:italic">navegable</em></span><span class="en">The prototype, <em style="color:var(--accent);font-style:italic">navigable</em></span></h3>
+      </div>
+      <a href="https://gym-energy-center-app.vercel.app/" target="_blank" rel="noopener" class="nav-cta es" style="white-space:nowrap">Abrir prototipo ↗</a>
+      <a href="https://gym-energy-center-app.vercel.app/" target="_blank" rel="noopener" class="nav-cta en" style="white-space:nowrap">Open prototype ↗</a>
     </div>
 
     <!-- TARJETA SIGUIENTE CASO COMPACTA -->
@@ -623,7 +1208,11 @@
   }), { rootMargin: '-45% 0px -50% 0px' });
   links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); s && so.observe(s); });
 
-  
+  const gmeLinks = [...document.querySelectorAll('.cs-mobile-tab')];
+  const gmeObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) gmeLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  gmeLinks.forEach(a => { const s = document.querySelector(a.getAttribute('href')); s && gmeObs.observe(s); });
 
 
   // Panel destacado de casos
