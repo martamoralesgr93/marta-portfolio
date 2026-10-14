@@ -525,7 +525,38 @@
       .cs-hamburger { display: flex; }
       .cs-nav-dropdown { display: none; }
     }
-  </style>
+  
+    /* Hero metrics (mismo componente que ILUNION CRO; faltaba en esta página) */
+    .hero-metrics {
+      display: flex;
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-width: 520px;
+    }
+    .hm-item {
+      flex: 1;
+      padding: 18px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .hm-item:last-child { border-right: none; }
+    .hm-label {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px;
+    }
+    .hm-value {
+      font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
+      color: var(--accent); line-height: 1;
+    }
+    .hm-sub { font-size: 10px; color: var(--text-dim); margin-top: 3px; }
+
+    @media (max-width: 560px) {
+      .hero-metrics { flex-direction: column; }
+      .hm-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .hm-item:last-child { border-bottom: none; }
+    }
+</style>
 </head>
 <body class="cs-paolo-pizzeria">
 <a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
@@ -612,6 +643,7 @@
 
 
 <main id="main">
+
 
 <!-- HERO -->
 <header class="cs-hero">
@@ -730,87 +762,10 @@
   </div>
 </section>
 
-<!-- BUYER PERSONAS & UX PRINCIPLES -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 56px var(--space-lg); margin: 32px 0;">
-  <div class="cs-wrap">
-    <div class="block-label" style="color: var(--accent);">
-      <span class="block-label-text">Buyer Personas &amp; Leyes UX del Ecosistema Paolo</span>
-      <div class="block-label-line" style="background: var(--accent-border);"></div>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Buyer Persona 01 · Cliente Delivery (Quick-Service)</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Quiere pedir en menos de 90 segundos desde el móvil. <strong>Ley de Miller</strong>: carta en bloques de 7 elementos como máximo.</p>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Buyer Persona 02 · Comensal Presencial / Reserva</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Valora la atmósfera y lo artesano. <strong>Ley de Fitts</strong>: QR en mesa y reserva sin fricción, siempre a un gesto.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- MI ROL -->
-<section class="cs-block cs-block-light">
-  <div class="cs-behance-letter" style="opacity:0.35">M</div>
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">MI ROL · Responsabilidades</span>
-      <h2 class="block-h">Primer proyecto.<br><em>Ownership del producto digital de principio a fin</em></h2>
-    </div>
-    <div class="fu" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:32px; margin-top:40px;">
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
-        <ul class="bullet-list">
-          <li>Arquitectura de información y jerarquía de CTAs</li>
-          <li>UX/UI en Adobe XD, mobile-first</li>
-          <li>Frontend en WordPress + Elementor</li>
-          <li>QR, delivery y Google My Business</li>
-          <li>Análisis con Clarity y GA4, ciclo mensual</li>
-        </ul>
-      </div>
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Herramientas</p>
-        <div class="tool-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin:0 0 24px;">
-          <div class="tool-card">
-            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-            <div class="tool-name">Adobe XD</div>
-            <div class="tool-role">Diseño UI / prototipos web</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-            <div class="tool-name">WordPress · Elementor</div>
-            <div class="tool-role">Desarrollo web</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-            <div class="tool-name">Metricool</div>
-            <div class="tool-role">RRSS analytics</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-            <div class="tool-name">Microsoft Clarity</div>
-            <div class="tool-role">Comportamiento web</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-            <div class="tool-name">Google Analytics 4</div>
-            <div class="tool-role">Tráfico y conversión</div>
-          </div>
-          <div class="tool-card">
-            <div class="tool-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-            <div class="tool-name">Glovo · Uber · JustEat</div>
-            <div class="tool-role">Canales de delivery</div>
-          </div>
-        </div>
-        <p class="p" style="margin-top:0; padding-left:16px; border-left:2px solid var(--accent); font-size:13px; color:rgba(255,255,255,0.55);">Ownership completo, sin briefing ni equipo. Definí prioridades, conceptualicé la UI y maqueté la web: el soporte digital escaló de 1 a 5 locales en 2 años.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- [S] SITUATION -->
+<!-- ══════════════════════════════════════
+     01 · SITUACIÓN
+══════════════════════════════════════ -->
 <section class="cs-block cs-block-indigo">
   <div class="cs-wrap">
     <div class="cs-star fu">
@@ -820,22 +775,14 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-        <span class="block-label">SITUATION · Contexto</span>
-        <h2 class="block-h">
-          Un negocio en expansión.<br><em>Sin canal digital en el peor momento para no tenerlo</em>
-        </h2>
-
-        <div class="row g-4" style="margin-top:32px;">
-          <div class="col-md-7">
-            <p class="lead">Paolo es una pizzería artesana en Madrid. En 2020 solo captaba clientes a pie de calle: sin web, sin reservas, sin delivery.</p>
-            <p class="p">Con las restricciones de la pandemia, no tener canal online dejó de ser una desventaja competitiva para ser un problema de supervivencia.</p>
-            <p class="p">Construir el ecosistema digital desde cero: carta interactiva, reservas integradas y delivery directo.</p>
-          </div>
-          <div class="col-md-5">
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">01</span> · Situación</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">2020: sin web, sin delivery<br><em>y con la pandemia encima.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Una pizzería artesana de Conde Duque que solo captaba clientes a pie de calle. Tener canal digital pasó a ser una cuestión de supervivencia.</p>
+<div style="max-width:560px;">
             <div style="display:flex; flex-direction:column; gap:0;">
               <div style="padding:24px 0; border-bottom:1px solid var(--border);">
                 <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">0</div>
-                <div style="font-size:13px; color:var(--text); line-height:1.5;">Presencia digital al inicio — sin web, sin delivery, sin Google My Business</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">Presencia digital al inicio: sin web, sin delivery, sin Google My Business</div>
               </div>
               <div style="padding:24px 0; border-bottom:1px solid var(--border);">
                 <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">2020</div>
@@ -843,17 +790,18 @@
               </div>
               <div style="padding:24px 0;">
                 <div style="font-size:40px; font-weight:800; color:var(--accent); font-family:'Playfair Display',serif; line-height:1; margin-bottom:6px;">1→5</div>
-                <div style="font-size:13px; color:var(--text); line-height:1.5;">Locales — el mismo producto digital escaló sin rediseño</div>
+                <div style="font-size:13px; color:var(--text); line-height:1.5;">Locales: el mismo producto digital escaló sin rediseño</div>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- [T] TASK -->
+<!-- ══════════════════════════════════════
+     02 · ARQUITECTURA
+══════════════════════════════════════ -->
 <section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
   <div class="cs-wrap">
     <div class="cs-star fu">
@@ -863,34 +811,10 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-        <span class="block-label">TASK · El reto</span>
-        <h2 class="block-h">
-          Seis necesidades,<br><em>un solo sistema que escalara.</em>
-        </h2>
-
-        <div class="row g-4 fu" style="margin-top:28px; margin-bottom:40px;">
-          <div class="col-md-6">
-            <p class="lead" style="margin-bottom:16px;">"¿Cómo encuentra Paolo un cliente nuevo? ¿Cómo ve la carta? ¿Cómo pide? En 2020, la respuesta a las tres era: no puede."</p>
-            <p class="p">El reto era de producto: 6 necesidades de usuario, 11 touchpoints y un negocio que iba a pasar de 1 a 5 locales. Un solo sistema, sin rediseño.</p>
-          </div>
-          <div class="col-md-6">
-            <div style="height:100%; display:flex; flex-direction:column; justify-content:center; gap:8px;">
-              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:6px;">El ecosistema que había que construir</div>
-              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:4px 24px;">
-                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Web propia</div>
-                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">QR en local</div>
-                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Google Maps / GMB</div>
-                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">Glovo · Uber · JustEat</div>
-                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">RRSS + contenido</div>
-                <div style="font-size:13px; color:var(--text); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">WhatsApp · Teléfono</div>
-              </div>
-              <div style="margin-top:8px; font-size:11px; color:var(--text-dim);">11 touchpoints · 1 sistema coherente · escalable a 5 locales</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 JOBS TO BE DONE -->
-        <div class="fu" style="margin-bottom:16px;">
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">02</span> · Arquitectura</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Seis necesidades,<br><em>un solo sistema.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Un teléfono, tres CTAs y cinco secciones, decididos antes de abrir Adobe XD. Eso permitió pasar de 1 a 5 locales sin tocar el código.</p>
+<div class="fu" style="margin-bottom:16px;">
           <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;">6 necesidades de usuario distintas · 1 ecosistema</div>
         </div>
         <div class="row g-3 fu">
@@ -937,12 +861,81 @@
             </div>
           </div>
         </div>
+<div class="row g-4 fu" style="margin-bottom: 48px; align-items: start;">
+      <!-- DESKTOP HOMEPAGE -->
+      <div class="col-lg-5 col-md-7">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">DESKTOP · HOMEPAGE</div>
+        <div class="device-laptop-minimal">
+          <img width="1450" height="835" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-desk.webp" alt="Wireframe desktop homepage Paolo">
+        </div>
+        <div class="device-laptop-base" style="margin-bottom: 0;"></div>
+      </div>
+      
+      <!-- MOBILE HOMEPAGE -->
+      <div class="col-lg-3 col-md-5">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">MOBILE · HOMEPAGE</div>
+        <div class="device-phone-minimal" style="max-width: 260px; margin: 0;">
+          <img width="785" height="1382" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-mobile.webp" alt="Wireframe mobile homepage Paolo">
+        </div>
+      </div>
+      
+      <!-- DECISIONES CLAVE -->
+      <div class="col-lg-4 col-md-12 text-start">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:24px;">DECISIONES CLAVE EN ESTE WIREFRAME</div>
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <!-- Item 1 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">3 CTAs, no más</div>
+              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Pedir a domicilio · Encontrar restaurante · Reservar mesa</div>
+              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">En ese orden por frecuencia de uso real. Todo lo demás, en la navegación.</div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">1 teléfono visible siempre</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">“Llamar” está en la cabecera en desktop y en el header en mobile. Accesible, consistente y siempre a 1 clic.</div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Misma jerarquía en ambos dispositivos</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Mismo orden de lectura, mismos elementos clave, adaptados al espacio disponible. Mobile-first, pero con lógica de producto.</div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Información clave justo debajo del claim</div>
+              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Refuerza confianza y contexto:</div>
+              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">5 restaurantes · 1 teléfono · todo Madrid.</div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">5</div>
+            <div>
+              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Simplicidad que guía</div>
+              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Menos opciones, más claridad. El usuario entiende en 3 segundos qué puede hacer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- [A] ACTION -->
+<!-- ══════════════════════════════════════
+     03 · JOURNEYS
+══════════════════════════════════════ -->
 <section class="cs-block cs-block-light">
   <div class="cs-wrap">
     <div class="cs-star fu">
@@ -952,46 +945,10 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-        <span class="block-label">ACTION · Lo que hice, y por qué</span>
-        <h2 class="block-h">
-          Diseñar el producto, construirlo,<br><em>analizarlo. De principio a fin.</em>
-        </h2>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">03</span> · Journeys</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Delivery, visita y reserva<br><em>en el mismo producto.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Tres caminos distintos que no podían interferir entre sí.</p>
 
-        <!-- HORIZONTAL PHASE STEPS -->
-        <div class="phase-steps fu">
-          <div class="phase-step">
-            <div class="phase-num">1</div>
-            <div class="phase-name">Discovery</div>
-            <div class="phase-desc">Mapear los 3 journeys de usuario reales antes de diseñar</div>
-          </div>
-          <div class="phase-step">
-            <div class="phase-num">2</div>
-            <div class="phase-name">IA + UX</div>
-            <div class="phase-desc">5 secciones, 3 CTAs jerarquizados, 1 teléfono. Adobe XD</div>
-          </div>
-          <div class="phase-step">
-            <div class="phase-num">3</div>
-            <div class="phase-name">UI + Dev</div>
-            <div class="phase-desc">Diseño y código en una sola persona. WordPress + Elementor + QR</div>
-          </div>
-          <div class="phase-step">
-            <div class="phase-num">4</div>
-            <div class="phase-name">Ecosistema</div>
-            <div class="phase-desc">Glovo, Uber, JustEat, GMB. Todos los canales activos</div>
-          </div>
-          <div class="phase-step">
-            <div class="phase-num">5</div>
-            <div class="phase-name">Iteración</div>
-            <div class="phase-desc">Clarity + GA4 + Metricool. Ciclo mensual de propuestas basadas en datos</div>
-          </div>
-        </div>
-
-        <!-- 3 CUSTOMER JOURNEYS REALES DEL NEGOCIO -->
-        <div class="story-header fu" style="margin-top: 56px; text-align: left;">
-          <span class="story-label">DISCOVERY · 3 journeys, un mismo sistema</span>
-          <h3 class="story-title">Delivery, visita al local y reserva</h3>
-          <p class="p" style="margin-bottom: 8px; font-size: 15px;">6 necesidades de usuario, 11 touchpoints posibles. El mismo sistema tenía que resolver los tres caminos sin rediseño.</p>
-        </div>
 
         <div class="ux-flowchart fu" style="margin-top: 20px;">
           <div class="ux-flow-header">
@@ -1083,108 +1040,81 @@
           </div>
         </div>
 
-    <!-- WIREFRAMES: EL PROCESO DE DISEÑO -->
-    <!-- WIREFRAMES: EL PROCESO DE DISEÑO -->
-    <div class="story-header fu" style="margin-top: 64px; text-align: left;">
-      <span class="story-label">01 · ARQUITECTURA Y DECISIONES CLAVE</span>
-      <h3 class="story-title">Wireframe low-fi — Home</h3>
-      <p class="p" style="margin-bottom: 8px; font-size: 15px;">El wireframe low-fi de la pantalla más recurrente — el home — concentra las decisiones de producto más importantes del proyecto.</p>
-      <p class="p" style="margin-bottom: 32px; font-size: 15px; color: var(--text-dim);">3 CTAs en orden de frecuencia de uso real, 1 número de teléfono para todos los locales, y la jerarquía que funciona igual en desktop y mobile.</p>
-    </div>
 
-    <!-- Wireframes Layout Grid -->
-    <div class="row g-4 fu" style="margin-bottom: 48px; align-items: start;">
-      <!-- DESKTOP HOMEPAGE -->
-      <div class="col-lg-5 col-md-7">
-        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">DESKTOP · HOMEPAGE</div>
-        <div class="device-laptop-minimal">
-          <img width="1450" height="835" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-desk.webp" alt="Wireframe desktop homepage Paolo">
-        </div>
-        <div class="device-laptop-base" style="margin-bottom: 0;"></div>
       </div>
-      
-      <!-- MOBILE HOMEPAGE -->
-      <div class="col-lg-3 col-md-5">
-        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:14px; text-align: left;">MOBILE · HOMEPAGE</div>
-        <div class="device-phone-minimal" style="max-width: 260px; margin: 0;">
-          <img width="785" height="1382" loading="lazy" decoding="async" src="projects/04-paolo/assets/wifreframe-mobile.webp" alt="Wireframe mobile homepage Paolo">
-        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     04 · PRODUCTO
+══════════════════════════════════════ -->
+<section class="cs-block cs-block">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
       </div>
-      
-      <!-- DECISIONES CLAVE -->
-      <div class="col-lg-4 col-md-12 text-start">
-        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:24px;">DECISIONES CLAVE EN ESTE WIREFRAME</div>
-        <div style="display:flex; flex-direction:column; gap:24px;">
-          <!-- Item 1 -->
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-            <div>
-              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">3 CTAs, no más</div>
-              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Pedir a domicilio · Encontrar restaurante · Reservar mesa</div>
-              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">En ese orden por frecuencia de uso real. Todo lo demás, en la navegación.</div>
-            </div>
-          </div>
-          <!-- Item 2 -->
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
-            <div>
-              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">1 teléfono visible siempre</div>
-              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">“Llamar” está en la cabecera en desktop y en el header en mobile. Accesible, consistente y siempre a 1 clic.</div>
-            </div>
-          </div>
-          <!-- Item 3 -->
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">3</div>
-            <div>
-              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Misma jerarquía en ambos dispositivos</div>
-              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Mismo orden de lectura, mismos elementos clave, adaptados al espacio disponible. Mobile-first, pero con lógica de producto.</div>
-            </div>
-          </div>
-          <!-- Item 4 -->
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">4</div>
-            <div>
-              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Información clave justo debajo del claim</div>
-              <div style="font-size:12.5px; color:var(--text); line-height:1.5; margin-bottom:2px;">Refuerza confianza y contexto:</div>
-              <div style="font-size:12px; color:var(--text-dim); line-height:1.5;">5 restaurantes · 1 teléfono · todo Madrid.</div>
-            </div>
-          </div>
-          <!-- Item 5 -->
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <div style="width:24px; height:24px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">5</div>
-            <div>
-              <div style="font-size:14px; font-weight:700; color:#fff; margin-bottom:4px;">Simplicidad que guía</div>
-              <div style="font-size:12.5px; color:var(--text-dim); line-height:1.5;">Menos opciones, más claridad. El usuario entiende en 3 segundos qué puede hacer.</div>
-            </div>
-          </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">04</span> · Producto</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Contexto de uso<br><em>antes que dispositivo.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">En casa se pide delivery; en la calle se quiere llamar ya. Mismo producto, distinto CTA.</p>
+<div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
+      <div class="col-12">
+        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Vista General de la Interfaz Web (Escritorio)</div>
+        <div style="border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
+          <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web.webp" alt="Paolo by Danny's Jazz — Interfaz web completa" style="width:100%; height:auto; display:block; border-radius:8px;">
         </div>
       </div>
     </div>
-
-    <!-- SISTEMA DE DISEÑO COMPACTO -->
-    <div class="story-header fu" style="margin-top: 64px; text-align: left;">
-      <span class="story-label">02 · SISTEMA VISUAL</span>
-      <h3 class="story-title">La identidad visual <em>que dio cara al ecosistema</em></h3>
-      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Los wireframes definieron la arquitectura; el sistema visual, el carácter. Tres colores con rol claro y un par tipográfico display + funcional, idénticos en web, QR, RRSS y GMB.</p>
-    </div>
-
-    <!-- LOGO Y SU HISTORIA -->
-    <div class="row g-4 fu align-items-center" style="margin-bottom: 48px; text-align: left;">
-      <div class="col-md-4">
-        <div style="border-radius: 12px; overflow: hidden; background: #ffffff; padding: 24px; display: flex; align-items: center; justify-content: center; aspect-ratio: 1/1;">
-          <img width="1280" height="1280" loading="lazy" decoding="async" src="projects/04-paolo/assets/logo-fusion-dannys.jpg.webp" alt="Logo de Paolo by Danny's Jazz" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+<div class="row g-4 align-items-center fu" style="margin-bottom: 64px;">
+      <div class="col-md-5">
+        <div class="device-phone-minimal">
+          <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/img-paolo-mobile.webp" alt="Diseño móvil en producción — botón llamar destacado">
         </div>
       </div>
-      <div class="col-md-8">
-        <span style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">EL IMAGOTIPO</span>
-        <h4 style="font-family:'Playfair Display', serif; font-size:24px; font-weight:700; color:#fff; margin-bottom:12px;">Una identidad heredada</h4>
-        <p style="font-size:14px; color:var(--text); line-height:1.75; margin-bottom:14px;">El logotipo de Paolo venía de un trabajo de branding anterior. El reto no era crear la marca, sino construir el sistema visual que la llevara de la calle a un ecosistema digital 360°.</p>
-        <p style="font-size:13.5px; color:var(--text-dim); line-height:1.75; margin:0;">La normativicé: reglas de convivencia, roles cromáticos y jerarquía tipográfica para que la identidad funcionara igual en fachada, menú, uniforme, web y RRSS.</p>
+      <div class="col-md-7">
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 16px;">El contexto manda sobre la jerarquía. En desktop el usuario está en casa y pide delivery. En móvil está en la calle: quiere llamar o localizar el local, ya.</p>
+        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto, distinto CTA.</strong> En móvil la barra destaca la llamada directa junto al menú.</p>
+        
+        <!-- Impact Card -->
+        <div class="card-impact">
+          <div class="card-impact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div class="card-impact-content">
+            <div class="card-impact-title">Impacto de Conversión</div>
+            <p class="card-impact-text">Aumento en las llamadas directas desde la web móvil en un +32% en los primeros 30 días tras el lanzamiento.</p>
+          </div>
+        </div>
+
+        <div class="key-rule-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>El diseño responsive debe adaptar la jerarquía de conversión a la realidad física de uso de cada dispositivo.</span>
+        </div>
       </div>
     </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- COLORES Y TIPOGRAFÍAS -->
-    <div class="row g-4 fu" style="margin-bottom:64px; text-align: left;">
+<!-- ══════════════════════════════════════
+     05 · MARCA
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">05</span> · Marca</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">De la pantalla<br><em>a la calle.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Normativicé una identidad heredada y la llevé a fachada, terraza, uniformes y redes: cada touchpoint empuja al canal digital.</p>
+<div class="row g-4 fu" style="margin-bottom:64px; text-align: left;">
       <div class="col-md-5">
         <div>
           <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; font-weight:600;">Paleta · 3 colores, roles claros</div>
@@ -1226,29 +1156,7 @@
         </div>
       </div>
     </div>
-
-    <!-- ECOSISTEMA FÍSICO + DIGITAL -->
-    <div class="story-header fu" style="margin-top: 64px;">
-      <span class="story-label">03 · TOUCHPOINTS FÍSICOS & INTEGRACIÓN DIGITAL</span>
-      <h3 class="story-title">De la pantalla <em>a la calle</em></h3>
-      <div class="row g-4 align-items-center">
-        <div class="col-md-8">
-          <p class="p" style="margin:0 0 12px;">El imagotipo es de otro autor. Mi trabajo fue proyectarlo e integrarlo en todos los touchpoints, con una sola coherencia visual y cada uno empujando al embudo de venta.</p>
-          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;">
-            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Señalética de Fachadas</span>
-            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Branding de Sombrillas</span>
-            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Uniformes Industriales</span>
-            <span style="font-size:12px; color:var(--accent); font-weight:600;">↗ Campañas en Redes Sociales</span>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <p class="p" style="font-size:13px; padding-left:16px; border-left:2px solid var(--accent); color:rgba(255,255,255,0.5); margin:0;">El diseño físico y el digital deben hablar el mismo idioma para que la transición del cliente sea natural.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Plano Técnico de Terraza (Full Width) -->
-    <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
+<div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
       <div class="col-12">
         <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Plano Técnico Único · Fachada & Exteriores</div>
         <div style="border-radius: 8px; overflow: hidden; background: transparent; margin-bottom: 24px;">
@@ -1299,7 +1207,6 @@
         </div>
       </div>
     </div>
-
     <!-- Uniformes Corporativos (Mockup + Realidad en cocina) -->
     <div class="row g-4 fu" style="margin-bottom:40px; align-items:start;">
       <div class="col-md-6">
@@ -1336,183 +1243,28 @@
       </div>
     </div>
 
-    <!-- CORE PRODUCT CASE STUDY: 04 ARQUITECTURA DE LA WEB -->
-    <div class="story-header fu" style="margin-top: 80px; text-align: left;">
-      <span class="story-label">04 · ARQUITECTURA DE LA WEB</span>
-      <h3 class="story-title">Las 5 secciones del sitio</h3>
-      <p class="p" style="margin-bottom: 32px; font-size: 15px;">Cada sección responde a un job-to-be-done específico dentro del recorrido del usuario. Diseñadas para guiar, informar y convertir sin fricción.</p>
-    </div>
 
-    <!-- Vista general de la web (Full Width) -->
-    <div class="row g-4 fu" style="margin-bottom: 48px; text-align: left;">
-      <div class="col-12">
-        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Vista General de la Interfaz Web (Escritorio)</div>
-        <div style="border-radius: 8px; overflow: hidden; margin-bottom: 16px;">
-          <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web.webp" alt="Paolo by Danny's Jazz — Interfaz web completa" style="width:100%; height:auto; display:block; border-radius:8px;">
-        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 5 SECTIONS ALTERNATING ROWS -->
-    <div style="display: flex; flex-direction: column; gap: 80px; margin-bottom: 80px;">
-      
-      <!-- Fila 01: Historia -->
-      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
-        <!-- Visual Column -->
-        <div class="col-lg-6 col-md-12">
-          <div style="border-radius: 8px; overflow: hidden;">
-            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web1.webp" alt="Paolo · Sección HISTORIA" style="width: 100%; height: auto; display: block;">
-          </div>
-        </div>
-        <!-- Content Column -->
-        <div class="col-lg-6 col-md-12 text-start">
-          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HISTORIA</span>
-          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Narrativa de marca</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Cuenta el origen: tradición artesana y alma de barrio. Es la conexión emocional antes del producto.</p>
-          
-          
-          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Generar confianza y conexión emocional con el posicionamiento artesanal.
-          </div>
-        </div>
+<!-- ══════════════════════════════════════
+     06 · RESULTADO
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">R</div>
+        <div class="cs-rail-label">RESULT</div>
+        <div class="cs-rail-bar"></div>
       </div>
-
-      <!-- Fila 02: Carta -->
-      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
-        <!-- Visual Column (Desktop right, mobile top) -->
-        <div class="col-lg-6 order-lg-2 col-md-12">
-          <div style="border-radius: 8px; overflow: hidden;">
-            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web4.webp" alt="Paolo · Sección CARTA" style="width: 100%; height: auto; display: block;">
-          </div>
-        </div>
-        <!-- Content Column (Desktop left, mobile bottom) -->
-        <div class="col-lg-6 order-lg-1 col-md-12 text-start">
-          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">02 · CARTA</span>
-          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Explorar y elegir</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">La sección más visitada. Carta visual y navegable, sin PDF descargables ni enlaces externos.</p>
-          
-          
-          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Encontrar rápidamente la opción perfecta y comprobar ingredientes.
-          </div>
-        </div>
-      </div>
-
-      <!-- Fila 03: Pedidos -->
-      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
-        <!-- Visual Column -->
-        <div class="col-lg-6 col-md-12">
-          <div style="border-radius: 8px; overflow: hidden;">
-            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web3.webp" alt="Paolo · Sección PEDIDOS" style="width: 100%; height: auto; display: block;">
-          </div>
-        </div>
-        <!-- Content Column -->
-        <div class="col-lg-6 col-md-12 text-start">
-          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · PEDIDOS</span>
-          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Pedir sin complicaciones</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Flujo de compra simplificado para competir con las plataformas y bajar el abandono de carrito.</p>
-          
-          
-          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Realizar transacciones de forma rápida, segura y sin fricción de contraseñas.
-          </div>
-        </div>
-      </div>
-
-      <!-- Fila 04: Restaurantes -->
-      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
-        <!-- Visual Column (Desktop right, mobile top) -->
-        <div class="col-lg-6 order-lg-2 col-md-12">
-          <div style="border-radius: 8px; overflow: hidden;">
-            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web5.webp" alt="Paolo · Sección RESTAURANTES" style="width: 100%; height: auto; display: block;">
-          </div>
-        </div>
-        <!-- Content Column (Desktop left, mobile bottom) -->
-        <div class="col-lg-6 order-lg-1 col-md-12 text-start">
-          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04 · RESTAURANTES</span>
-          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Dónde encontrarnos</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">El mapa de locales interactivo y la lista lateral permiten encontrar el restaurante más cercano y tomar decisiones físicas de forma inmediata.</p>
-          
-          
-          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Localizar el establecimiento físico más cercano al instante y obtener indicaciones de ruta.
-          </div>
-        </div>
-      </div>
-
-      <!-- Fila 05: Opiniones -->
-      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem;">
-        <!-- Visual Column -->
-        <div class="col-lg-6 col-md-12">
-          <div style="border-radius: 8px; overflow: hidden;">
-            <img width="2672" height="1536" loading="lazy" decoding="async" src="projects/04-paolo/assets/web2.webp" alt="Paolo · Sección OPINIONES" style="width: 100%; height: auto; display: block;">
-          </div>
-        </div>
-        <!-- Content Column -->
-        <div class="col-lg-6 col-md-12 text-start">
-          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">05 · OPINIONES</span>
-          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;">Confianza real</h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;">Utilizamos la prueba social real para justificar nuestro precio premium frente a alternativas industriales de bajo coste.</p>
-          
-          
-          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Validar el valor gastronómico del producto con la experiencia sincera de otros usuarios.
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- PRODUCTO EN VIVO -->
-    <div class="fu" style="margin-bottom:72px; padding:28px 0; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-      <p style="font-size:13px; color:var(--text-dim); margin:0;">Este es el producto que diseñé y desarrollé entre 2020 y 2022. Las capturas muestran el trabajo original tal como lo entregué.</p>
-      <div style="display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap;">
-        <a href="https://04-paolo.vercel.app/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:var(--accent); color:#000; border-radius:8px; font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap;">Ver la web →</a>
-        <a href="https://github.com/martamoralesgr93/marta-portfolio/tree/main/projects/04-paolo" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:10px 20px; background:transparent; color:var(--accent); border:1px solid rgba(242,162,34,0.35); border-radius:8px; font-size:13px; font-weight:600; text-decoration:none; white-space:nowrap;">Código fuente →</a>
-      </div>
-    </div>
-
-    <!-- CORE PRODUCT CASE STUDY: 05 MOBILE CTA / DECISIÓN DE CONTEXTO -->
-    <div class="story-header fu" style="margin-top: 80px;">
-      <span class="story-num">05</span>
-      <span class="story-label">ADAPTACIÓN CONTEXTUAL: MOBILE</span>
-      <h3 class="story-title">“Llamar” como CTA <em>principal en mobile</em></h3>
-    </div>
-
-    <div class="row g-4 align-items-center fu" style="margin-bottom: 64px;">
-      <div class="col-md-5">
-        <div class="device-phone-minimal">
-          <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/img-paolo-mobile.webp" alt="Diseño móvil en producción — botón llamar destacado">
-        </div>
-      </div>
-      <div class="col-md-7">
-        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 16px;">El contexto manda sobre la jerarquía. En desktop el usuario está en casa y pide delivery. En móvil está en la calle: quiere llamar o localizar el local, ya.</p>
-        <p class="p" style="font-size: 15px; line-height: 1.75; margin-bottom: 24px;"><strong style="color:var(--text-bright);">Mismo producto, distinto contexto, distinto CTA.</strong> En móvil la barra destaca la llamada directa junto al menú.</p>
-        
-        <!-- Impact Card -->
-        <div class="card-impact">
-          <div class="card-impact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-          <div class="card-impact-content">
-            <div class="card-impact-title">Impacto de Conversión</div>
-            <p class="card-impact-text">Aumento en las llamadas directas desde la web móvil en un +32% en los primeros 30 días tras el lanzamiento.</p>
-          </div>
-        </div>
-
-        <div class="key-rule-note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>El diseño responsive debe adaptar la jerarquía de conversión a la realidad física de uso de cada dispositivo.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- COMPARATIVA ANTES/DESPUÉS -->
-    <div class="story-header fu" style="margin-top: 80px;">
-      <span class="story-num">07</span>
-      <span class="story-label">RESULTADO DIGITAL</span>
-      <h3 class="story-title">De cero presencia digital <em>a ecosistema activo</em></h3>
-    </div>
-
-    <div class="cs-ba fu" style="margin-bottom: 64px;">
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">06</span> · Resultado</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">De cero presencia digital<br><em>a un ecosistema que escaló.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Cuando terminó mi etapa, el producto funcionaba sin depender de mí. El negocio cerró después; hoy es mi caso de aprendizaje.</p>
+<div class="cs-ba fu" style="margin-bottom: 64px;">
       <div class="cs-ba-col" style="text-align: left;">
         <div class="cs-ba-badge cs-ba-before">Antes · 2020</div>
         <p style="font-size:14px; color:var(--text); line-height:1.8; margin:16px 0 0; flex:1;">
@@ -1526,36 +1278,10 @@
         </p>
       </div>
     </div>
-
-      </div><!-- /cs-star main -->
-    </div><!-- /cs-star -->
-  </div><!-- /cs-wrap -->
-</section>
-
-<!-- [R] RESULTADO -->
-<section class="cs-block cs-block-indigo">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">R</div>
-        <div class="cs-rail-label">RESULT</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-        <span class="block-label">RESULT · El impacto</span>
-        <h2 class="block-h">
-          Un producto que escala.<br><em>Sin rediseño.</em>
-        </h2>
-
-        <!-- Franja KPIs -->
-        <div class="paolo-results-strip fu">
+<div class="paolo-results-strip fu">
           <div class="prs-cell prs-hero">
             <div class="prs-val">1→5</div>
             <div class="prs-label">Locales · mismo ecosistema · sin rediseño</div>
-          </div>
-          <div class="prs-cell">
-            <div class="prs-val">×5</div>
-            <div class="prs-label">Escala en 2 años sin tocar la arquitectura</div>
           </div>
           <div class="prs-cell">
             <div class="prs-val">3</div>
@@ -1566,51 +1292,21 @@
             <div class="prs-label">Necesidades de usuario resueltas con un solo sistema</div>
           </div>
           <div class="prs-cell">
-            <div class="prs-val">∞</div>
-            <div class="prs-label">2 años de proyecto continuo</div>
+            <div class="prs-val">+32%</div>
+            <div class="prs-label">Llamadas desde web móvil en los primeros 30 días</div>
           </div>
         </div>
-
-        <!-- Quote + CTAs -->
-        <div class="prs-bottom fu">
+<div class="prs-bottom fu">
           <div class="prs-ctas">
             
             <a href="https://04-paolo.vercel.app/" target="_blank" rel="noopener" class="prs-btn-primary">Ver la web →</a>
             <a href="https://github.com/martamoralesgr93/marta-portfolio/tree/main/projects/04-paolo" target="_blank" rel="noopener" class="prs-btn-ghost">Código fuente →</a>
           </div>
         </div>
-        <!-- AI INTEGRATION HIGHLIGHT BLOCK -->
-        <details class="wf-process fu" style="margin-top: 32px; border-color: rgba(var(--accent-rgb), 0.22); background: rgba(var(--accent-rgb), 0.02); border-radius: 16px;">
-          <summary class="wf-process-label" style="border-bottom: 1px solid rgba(var(--accent-rgb), 0.15); padding: 16px 28px;">
-            <span style="color: var(--accent);">LABORATORIO 2026 · IA SOBRE EL SISTEMA DE MARCA</span>
-            <em style="color: rgba(255,255,255,0.65);">Trabajo posterior al proyecto, no forma parte de 2020-2022</em>
-          </summary>
-          <div class="wf-steps" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-            <div class="wf-step">
-              <span class="wf-step-num" style="color: var(--accent);">1.</span>
-              <p class="wf-step-title" style="color: #fff;">Ideación y Dirección de Arte</p>
-              <p class="wf-step-desc es">En 2026 usé prompts generativos y herramientas de IA visual para explorar 20+ conceptos de aplicaciones de marca (flyers, cartelería, pegatinas) alineados a la pizzería.</p>
-              <p class="wf-step-desc en">In 2026 I used generative visual tools to explore 20+ brand application concepts (flyers, menus, signage) matching the brand guidelines.</p>
-            </div>
-            <div class="wf-step">
-              <span class="wf-step-num" style="color: var(--accent);">2.</span>
-              <p class="wf-step-title" style="color: #fff;">Producción de Mockups</p>
-              <p class="wf-step-desc es">En 2026 generé recursos fotográficos realistas de los productos alimenticios mediante IA generativa de imágenes, reduciendo la dependencia de sesiones de fotos costosas.</p>
-              <p class="wf-step-desc en">In 2026 I created realistic food photography and visual mockups using generative AI, saving cost and time on physical photoshoots.</p>
-            </div>
-            <div class="wf-step">
-              <span class="wf-step-num" style="color: var(--accent);">3.</span>
-              <p class="wf-step-title" style="color: #fff;">Lógica Conversacional</p>
-              <p class="wf-step-desc es">Concepto 2026: flujo de respuestas automáticas para pedidos rápidos por WhatsApp, modelado con prompts conversacionales. No llegó a producción.</p>
-              <p class="wf-step-desc en">2026 concept: automated reply flow for quick WhatsApp orders, modelled with conversational prompts. It never reached production.</p>
-            </div>
-          </div>
-        </details>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- APRENDIZAJES -->
 <section class="cs-block cs-block-light">
@@ -1678,30 +1374,6 @@
       <p style="font-size:15px; line-height:1.78; color:rgba(255,255,255,0.52); max-width:720px; margin-bottom:48px;">In 2022 there were three bottlenecks: costly photography, a phone line drowning in FAQs, and social content tied to physical production. The business has since closed, so in 2026 I returned to the project as a lab: this is how I would solve them today with generative AI.</p>
     </div>
 
-    <!-- ─── Fila 01 · VIDEO · imagen izquierda + texto derecha ─── -->
-    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
-      <div class="col-lg-6 col-md-12">
-        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Hero Banner · Vídeo web generativo</div>
-        <div style="border-radius: 8px; overflow: hidden;">
-          <video autoplay loop muted playsinline style="width:100%; display:block; object-fit: cover;">
-            <source src="projects/04-paolo/assets/hero-banner.mp4" type="video/mp4">
-          </video>
-        </div>
-        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;">Generado con IA · 2026</p>
-      </div>
-      <div class="col-lg-6 col-md-12 text-start">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">01 · HERO BANNER · VÍDEO GENERATIVO</span>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Misma marca,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">nueva capa audiovisual</em></h3>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Same brand,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">new audiovisual layer</em></h3>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">En 2022 el vídeo hero pedía producción, cámara y edición. En 2026 sale con IA: misma paleta ámbar, misma atmósfera, sin rodaje.</p>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">In 2022 a hero video meant production, camera and editing. In 2026 AI delivers it: same amber palette, same atmosphere, no shoot.</p>
-        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">RESULTADO:</span><span class="es"> Hero video del repositorio público — coherente con el sistema visual sin coste de producción.</span>
-          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">RESULT:</span><span class="en"> Web repository hero video — consistent with the visual system at zero production cost.</span>
-        </div>
-      </div>
-    </div>
-
     <!-- ─── Fila 02 · FOTOGRAFÍA PRODUCTO · texto izquierda + grid fotos derecha ─── -->
     <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
       <div class="col-lg-6 col-md-12 text-start">
@@ -1744,70 +1416,6 @@
         </div>
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">4 platos estrella · Generados con IA · Mismo encuadre y paleta que el sistema visual original</p>
         <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">4 star dishes · AI-generated · Same framing and palette as the original visual system</p>
-      </div>
-    </div>
-
-    <!-- ─── Fila 03 · RRSS WEB · imagen izquierda + texto derecha ─── -->
-    <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
-      <div class="col-lg-6 col-md-12">
-        <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Story Table · Hero repositorio web</div>
-        <div style="border-radius: 8px; overflow: hidden;">
-          <img width="1024" height="434" loading="lazy" decoding="async" src="projects/04-paolo/assets/story-table.webp" alt="Mesa con pizza Paolo — hero banner repositorio web generado con IA" style="width:100%; height:auto; display:block;">
-        </div>
-        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Generado con IA · Header del repositorio público</p>
-        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">AI-generated · Public repository header</p>
-      </div>
-      <div class="col-lg-6 col-md-12 text-start">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03 · RRSS Y WEB · REPO VISUAL CON IA</span>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Cards de servicio y social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">del mismo estilo</em></h3>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Service cards and social content<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">in the same style</em></h3>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Mismo hilo visual, nuevos materiales: las piezas sirven para las cards de la web y para story, post y hero, sin nueva producción.</p>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Same visual thread, new materials: the pieces work as web service cards and as story, post and hero, with no new shoot.</p>
-        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Generar contenido visual para todos los canales sin sesión fotográfica, manteniendo coherencia de marca.</span>
-          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Generate visual content for all channels without a photo session, maintaining brand coherence.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── Fila 03b · PIEZAS SOCIALES · texto izquierda + collage derecha ─── -->
-    <div class="row g-5 align-items-start fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
-      <div class="col-lg-6 col-md-12 text-start" style="padding-top: 4px;">
-        <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">03b · RRSS · PIEZAS SOCIALES Y CARDS</span>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Tres formatos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">mismo manual visual</em></h3>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Three formats,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">same visual manual</em></h3>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">Story vertical, card cuadrada y pieza de take-away: los tres formatos que activan todos los canales, sin producción nueva.</p>
-        <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">Humanized vertical story for Instagram, square service card and take-away piece — the three formats needed to activate all restaurant communication channels without new material production.</p>
-        <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Cubrir Instagram, web de servicios y take-away con un único briefing visual generado con IA.</span>
-          <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Cover Instagram, services web and take-away with a single AI-generated visual brief.</span>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12">
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; align-items:start;">
-          <div>
-            <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Niño Story · RRSS</div>
-            <div style="border-radius:8px; overflow:hidden; aspect-ratio:3/4;">
-              <img width="1121" height="1403" loading="lazy" decoding="async" src="projects/04-paolo/assets/niño-story.webp" alt="Niño con pizza — story Instagram generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
-            </div>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <div>
-              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Motivo Social · Card</div>
-              <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-                <img width="788" height="1024" loading="lazy" decoding="async" src="projects/04-paolo/assets/motivo-social.webp" alt="Motivo social Paolo — card de servicios" style="width:100%; height:100%; object-fit:cover; display:block;">
-              </div>
-            </div>
-            <div>
-              <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:8px;">Take Away · Card</div>
-              <div style="border-radius:8px; overflow:hidden; aspect-ratio:1/1;">
-                <img width="1200" height="1797" loading="lazy" decoding="async" src="projects/04-paolo/assets/take-away.webp" alt="Take Away Paolo — card generada con IA" style="width:100%; height:100%; object-fit:cover; display:block;">
-              </div>
-            </div>
-          </div>
-        </div>
-        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="es">Story + Card social + Card servicio · Generadas con IA · 2026</p>
-        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:10px;" class="en">Story + Social card + Service card · AI-generated · 2026</p>
       </div>
     </div>
 
@@ -1867,29 +1475,6 @@
         </div>
       </div>
 
-      <!-- Fila B · reserva.chat · texto izquierda + imagen derecha -->
-      <div class="row g-5 align-items-center fu" style="--bs-gutter-x: 5.5rem; margin-bottom: 80px;">
-        <div class="col-lg-6 col-md-12 text-start">
-          <span style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:700; display:block; margin-bottom:8px;">04B · PROTOTIPO DE CONVERSACIÓN · ALÉRGENOS Y RESERVA</span>
-          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="es">Respuestas en segundos,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">sin llamar</em></h3>
-          <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:#fff; margin-bottom:16px;" class="en">Answers in seconds,<br><em style="font-weight:400; color:rgba(255,255,255,0.65);">without calling</em></h3>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="es">El cliente pregunta por alérgenos o pide mesa. El agente, entrenado con los datos del negocio, respondería en segundos sin ocupar la línea ni al equipo de sala.</p>
-          <p style="font-size:14.5px; color:var(--text); line-height:1.7; margin-bottom:20px;" class="en">The customer asks about allergens or books a table. The agent, trained on business data, would answer in seconds without tying up the line or the floor team.</p>
-          <div style="font-size: 11px; line-height: 1.5; color: var(--text-bright); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; background: rgba(0,0,0,0.25); text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="es">JOB-TO-BE-DONE:</span><span class="es"> Resolver las FAQs más repetitivas del negocio sin intervención humana y en tiempo real.</span>
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;" class="en">JOB-TO-BE-DONE:</span><span class="en"> Resolve the most repetitive business FAQs without human intervention and in real time.</span>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          <div style="font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); font-weight:600; margin-bottom:10px;">Chat · Alérgenos y reserva en tiempo real</div>
-          <div class="device-phone-minimal">
-            <img width="768" height="1546" loading="lazy" decoding="async" src="projects/04-paolo/assets/reserva.chat.webp" alt="Prototipo del chatbot de Paolo: reserva y consulta de alérgenos">
-          </div>
-          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="es">Prototipo del flujo de conversación del agente · concepto 2026</p>
-          <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin-top:8px;" class="en">Prototype of the agent's conversation flow · 2026 concept</p>
-        </div>
-      </div>
-
     </div><!-- /agente digital -->
 
     <!-- Cierre -->
@@ -1900,6 +1485,7 @@
 
   </div>
 </section>
+
 
 
 </main>

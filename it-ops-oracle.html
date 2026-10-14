@@ -350,7 +350,56 @@
       .cs-hamburger { display: flex; }
       .cs-nav-dropdown { display: none; }
     }
-  </style>
+  
+    /* Hero metrics (mismo componente que ILUNION CRO; faltaba en esta página) */
+    .hero-metrics {
+      display: flex;
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-width: 520px;
+    }
+    .hm-item {
+      flex: 1;
+      padding: 18px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .hm-item:last-child { border-right: none; }
+    .hm-label {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px;
+    }
+    .hm-value {
+      font-size: 26px; font-weight: 800; letter-spacing: -0.03em;
+      color: var(--accent); line-height: 1;
+    }
+    .hm-sub { font-size: 10px; color: var(--text-dim); margin-top: 3px; }
+
+    @media (max-width: 560px) {
+      .hero-metrics { flex-direction: column; }
+      .hm-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .hm-item:last-child { border-bottom: none; }
+    }
+
+    /* Escenarios, nota honesta y tabla de prioridades: componentes sin estilo previo, resueltos con los tokens del sistema */
+    .scenario { border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 20px; }
+    .scenario-header { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .scenario-cols { display: grid; grid-template-columns: 1fr 1fr; }
+    .scenario-col { padding: 0 20px; }
+    .scenario-col:first-child { padding-left: 0; }
+    .scenario-col + .scenario-col { border-left: 1px solid var(--border); }
+    .scenario-badge { display: inline-flex; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 12px; }
+    .badge-before { background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+    .badge-after { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-border); }
+    .scenario-text { font-size: 14px; line-height: 1.65; color: var(--text); }
+    .priority-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .priority-table th { text-align: left; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); padding: 12px 14px; border-bottom: 1px solid var(--border); }
+    .priority-table td { padding: 14px; border-bottom: 1px solid var(--border); color: var(--text-dim); vertical-align: top; line-height: 1.55; }
+    .priority-table td:first-child, .priority-table td:nth-child(2) { color: var(--white); font-weight: 600; }
+    .p-badge { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 700; border: 1px solid var(--accent-border); color: var(--accent); background: rgba(var(--accent-rgb), 0.06); white-space: nowrap; }
+    @media (max-width: 640px) { .scenario-col { padding: 16px 0 0; } }
+</style>
 </head>
 <body class="cs-it-ops-oracle">
 <a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
@@ -437,6 +486,7 @@
 
 
 <main id="main">
+
 
 <!-- HERO -->
 <header class="cs-hero">
@@ -555,28 +605,10 @@
   </div>
 </section>
 
-<!-- INTERNAL USER PERSONAS & NIELSEN HEURISTICS -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 56px var(--space-lg); margin: 32px 0;">
-  <div class="cs-wrap">
-    <div class="block-label" style="color: var(--accent);">
-      <span class="block-label-text">Internal User Personas &amp; Heurísticas de Nielsen (IT Ops)</span>
-      <div class="block-label-line" style="background: var(--accent-border);"></div>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Internal User Persona 01 · Técnico de Soporte IT</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Gestiona decenas de incidencias al día. Necesita ver el estado de los sistemas al instante —<strong>Heurística 1 de Nielsen</strong>—, no menús anidados.</p>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">Internal User Persona 02 · Responsable de Operaciones</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Requiere informes de rendimiento sin errores de formato. <strong>Aplicación de la Heurística 5 (Prevención de Errores)</strong> eliminando campos manuales ambiguos.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- [S] SITUACIÓN -->
+<!-- ══════════════════════════════════════
+     01 · SITUACIÓN
+══════════════════════════════════════ -->
 <section class="cs-block cs-block-light">
   <div class="cs-wrap">
     <div class="cs-star fu">
@@ -586,28 +618,12 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-
-    <div class="fu">
-      <span class="block-label es">Contexto</span>
-      <span class="block-label en">Context</span>
-      <h2 class="block-h es">El Excel que lo<br><em>cambió todo</em></h2>
-      <h2 class="block-h en">The spreadsheet that<br><em>changed everything</em></h2>
-    </div>
-
-    <div class="cs-grid-2 fu">
-      <div>
-        <p class="p es"><strong>We Are Actions es una consultora digital de más de 30 años.</strong> Durante años gestionó incidencias y solicitudes en Oracle: una plataforma robusta, pero pensada para procesos rígidos que no encajaban con el ritmo de la empresa.</p>
-        <p class="p en"><strong>We Are Actions is a digital consultancy with over 30 years of history.</strong> For years incidents and requests ran through Oracle: robust, but built for rigid processes that didn't match the company's pace.</p>
-
-        <p class="p es" style="margin-top: 16px;">La empresa creció. Los procesos se complejizaron. Y Oracle siguió siendo el mismo.</p>
-        <p class="p en" style="margin-top: 16px;">The company grew. Processes became more complex. And Oracle stayed the same.</p>
-
-        <p class="p es" style="margin-top: 16px;">El Senior de Sistemas llevó a dirección una hoja de cálculo: la plataforma generaba más trabajo del que resolvía. Mi trabajo fue convertir esa señal en una propuesta de producto.</p>
-        <p class="p en" style="margin-top: 16px;">The Senior Systems Manager took a spreadsheet to management: the platform created more work than it solved. My job was turning that signal into a product proposal.</p>
-      </div>
-
-      <div>
-        <div class="spreadsheet-mockup card-premium-light" style="padding: 24px; border: none !important;">
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">01</span> · Situación</span>
+    <h2 class="block-h fu es" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Un Excel con 56,5 h/mes<br><em>de fricción.</em></h2>
+    <h2 class="block-h fu en" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">A spreadsheet with 56.5 h/month<br><em>of friction.</em></h2>
+    <p class="p fu es" style="margin-bottom: 36px;">El Senior de Sistemas llevó a dirección los datos: Oracle generaba más trabajo del que resolvía, tras más de 15 años sin cuestionarlo.</p>
+    <p class="p fu en" style="margin-bottom: 36px;">The Senior Systems Manager took the data to management: Oracle created more work than it solved, after 15+ years unquestioned.</p>
+<div class="spreadsheet-mockup card-premium-light" style="padding: 24px; border: none !important;">
           <div class="ss-header">
             <span>Friction_Audit_2022.xlsx</span>
             <div class="ss-header-dots">
@@ -653,15 +669,7 @@
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-
-    <div class="insight-box fu">
-      <p class="es">El Excel funcionaba como evidencia empírica, al más alto nivel técnico, de que el canal de soporte y operaciones internas generaba fricciones crónicas.</p>
-      <p class="en">The spreadsheet served as empirical evidence, at the highest technical level, that the support and internal operations channel was generating chronic friction.</p>
-    </div>
-
-    <div class="data-band fu">
+<div class="data-band fu">
       <div class="data-cell">
         <div class="data-v">+50</div>
         <div class="data-l es">usuarios generando solicitudes en la plataforma</div>
@@ -678,98 +686,14 @@
         <div class="data-l en">years of Oracle in the organisation: inherited tool, never questioned</div>
       </div>
     </div>
-
       </div>
+    </div>
   </div>
 </section>
 
-<!-- [T] TAREA -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">T</div>
-        <div class="cs-rail-label">TASK</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-
-    <div class="fu">
-      <span class="block-label es">El reto</span>
-      <span class="block-label en">The challenge</span>
-      <h2 class="block-h es">Adaptar o construir:<br><em>una pregunta de producto</em></h2>
-      <h2 class="block-h en">Adapt or build:<br><em>a product question</em></h2>
-    </div>
-
-    <div class="cs-grid-2 fu">
-      <div>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">La trampa de la usabilidad</h4>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The usability trap</h4>
-        <p class="p es">La primera idea fue mejorar la interfaz de Oracle. Pero la fricción venía de otro sitio: la herramienta no encajaba con los flujos reales.</p>
-        <p class="p en">The first idea was to fix Oracle's interface. But the friction came from elsewhere: the tool didn't fit the team's actual workflows.</p>
-      </div>
-      <div>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">El diagnóstico real</h4>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">The real diagnosis</h4>
-        <p class="p es">El diagnóstico: <strong>Oracle estaba bien diseñado para lo que fue creado y mal elegido para esta organización.</strong> Por eso la propuesta fue desarrollo a medida en lugar de un parche.</p>
-        <p class="p en">The diagnosis: <strong>Oracle was well designed for its original purpose and the wrong choice for this organisation.</strong> Hence a custom build instead of a patch.</p>
-      </div>
-    </div>
-
-    <div class="user-groups fu">
-      <div class="user-group">
-        <div class="user-group-badge" style="color:var(--white);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span class="es">Grupo A · Gestores IT</span><span class="en">Group A · IT Managers</span>
-        </div>
-        <div class="user-group-name es">Equipo de soporte y sistemas</div>
-        <div class="user-group-name en">Support and systems team</div>
-        <div class="user-group-count es">Menos de 15 personas · perfil técnico</div>
-        <div class="user-group-count en">Fewer than 15 people · technical profile</div>
-        <ul class="user-group-needs">
-          <li class="es">Triaje eficiente de incidencias por urgencia</li>
-          <li class="en">Efficient incident triage by urgency</li>
-          <li class="es">Visibilidad del estado de cada solicitud</li>
-          <li class="en">Visibility of each request's status</li>
-          <li class="es">Flujos para tareas repetitivas sin rehacer</li>
-          <li class="en">Flows for repetitive tasks without redoing</li>
-          <li class="es">Prevención de errores en producción</li>
-          <li class="en">Error prevention in production</li>
-        </ul>
-      </div>
-      <div class="user-group">
-        <div class="user-group-badge" style="color:var(--white);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="es">Grupo B · Usuarios internos</span><span class="en">Group B · Internal users</span>
-        </div>
-        <div class="user-group-name es">Resto de la empresa</div>
-        <div class="user-group-name en">Rest of the company</div>
-        <div class="user-group-count es">Más de 50 personas · perfil no técnico</div>
-        <div class="user-group-count en">More than 50 people · non-technical profile</div>
-        <ul class="user-group-needs">
-          <li class="es">Saber cómo reportar sin cometer errores</li>
-          <li class="en">Know how to report without making mistakes</li>
-          <li class="es">Seguimiento del estado de su solicitud</li>
-          <li class="en">Track the status of their request</li>
-          <li class="es">Interfaz comprensible sin formación técnica</li>
-          <li class="en">Understandable interface without technical training</li>
-          <li class="es">Menos fricción en tareas simples y repetidas</li>
-          <li class="en">Less friction on simple, repeated tasks</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="p fu es">Oracle trataba igual a los dos grupos: una cola, un formato, una experiencia. El equipo IT pasaba buena parte del día gestionando la confusión que creaba la herramienta.</p>
-    <p class="p fu en">Oracle treated both groups the same: one queue, one format, one experience. IT spent much of the day managing the confusion the tool created.</p>
-
-    <div class="insight-box fu">
-      <p class="es">El objetivo no era rediseñar Oracle, sino responder una pregunta de producto: ¿adaptar indefinidamente una herramienta genérica, o construir la que encaja?</p>
-      <p class="en">The goal wasn't redesigning Oracle. It was a product question: keep adapting a generic tool forever, or build one that fits?</p>
-    </div>
-
-      </div>
-  </div>
-</section>
-
-<!-- [A] INVESTIGACIÓN & HALLAZGOS -->
+<!-- ══════════════════════════════════════
+     02 · RESEARCH
+══════════════════════════════════════ -->
 <section class="cs-block cs-block-indigo">
   <div class="cs-wrap">
     <div class="cs-star fu">
@@ -779,29 +703,11 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-
-    <div class="fu">
-      <span class="block-label es">Discovery</span>
-      <span class="block-label en">Discovery</span>
-      <h2 class="block-h es">Lo que el equipo<br><em>decía sin decir</em></h2>
-      <h2 class="block-h en">What the team was<br><em>saying without saying it</em></h2>
-    </div>
-
-    <div class="cs-grid-2 fu">
-      <div>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Investigación contextual</h4>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Contextual research</h4>
-        <p class="p es">Investigué desde dentro. Integrada en el equipo de IT, vi la fricción cuando ocurría, no en una entrevista. Las conversaciones con soporte y sistemas revelaron patrones que se repetían.</p>
-        <p class="p en">I researched from the inside. Embedded in IT, I saw friction as it happened, not in an interview. Support and systems conversations revealed repeating patterns.</p>
-      </div>
-      <div>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="es">Mapa de afinidad</h4>
-        <h4 style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px;" class="en">Affinity map</h4>
-        <p class="p es">Los sinteticé en un mapa de afinidad retrospectivo, a partir de la observación diaria y las quejas recogidas.</p>
-        <p class="p en">I synthesised them into a retrospective affinity map, built from daily observation and collected complaints.</p>
-      </div>
-    </div>
-
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">02</span> · Research</span>
+    <h2 class="block-h fu es" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Cuatro patrones de fallo,<br><em>ninguno aleatorio.</em></h2>
+    <h2 class="block-h fu en" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Four failure patterns,<br><em>none of them random.</em></h2>
+    <p class="p fu es" style="margin-bottom: 36px;">Integrada en el equipo IT, observé la fricción cuando ocurría y la sinteticé en un mapa de afinidad.</p>
+    <p class="p fu en" style="margin-bottom: 36px;">Embedded in the IT team, I watched friction as it happened and synthesised it into an affinity map.</p>
     <!-- AFFINITY MAP -->
     <div class="affinity-grid fu">
       <div class="affinity-cluster">
@@ -880,28 +786,30 @@
       <p style="font-size:20px; color:var(--white); font-family:'Playfair Display', serif; font-style:italic; line-height:1.55;" class="en">How might we design an internal operations system that reduces the IT team's cognitive load, prevents errors before they occur, and makes each process's status visible without additional effort?</p>
     </div>
 
-    <!-- ESTRATEGIA: BUILD VS BUY -->
-    <div class="fu" style="margin-top:80px;">
-      <span class="block-label es">Decisión estratégica · Build vs. Buy</span>
-      <span class="block-label en">Strategic decision · Build vs. Buy</span>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="es">Por qué no parchear Oracle</h3>
-      <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin-bottom:24px;" class="en">Why not patch Oracle</h3>
-    </div>
 
-    <div class="cs-grid-2 fu">
-      <div>
-        <p class="p es">La primera decisión era estratégica. Parchear Oracle significaba quedarse dentro de sus restricciones: configuración limitada, flujos genéricos, cero adaptación a la tipología real de solicitudes.</p>
-        <p class="p en">The first decision was strategic. Patching Oracle meant staying inside its constraints: limited config, generic flows, no fit to real request types.</p>
-      </div>
-      <div>
-        <div style="padding: 20px 24px; border-left: 2px solid var(--accent); background: transparent; border-radius: 0 8px 8px 0; margin-top: 6px;">
-          <p style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6; margin: 0; font-weight: 500;" class="es">La disyuntiva de producto: ¿es viable adaptar una herramienta heredada cuando la escala del negocio ya superó sus límites?</p>
-          <p style="font-size: 14.5px; color: var(--text-bright); line-height: 1.6; margin: 0; font-weight: 500;" class="en">The product dilemma: is it viable to adapt a legacy tool when the business scale has already exceeded its limits?</p>
-        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin:40px 0;" class="fu compare-grid">
+<!-- ══════════════════════════════════════
+     03 · DECISIÓN
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">T</div>
+        <div class="cs-rail-label">TASK</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">03</span> · Decisión</span>
+    <h2 class="block-h fu es" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Adaptar o construir:<br><em>Build.</em></h2>
+    <h2 class="block-h fu en" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Adapt or build:<br><em>Build.</em></h2>
+    <p class="p fu es" style="margin-bottom: 36px;">Parchear Oracle dejaba intacta la arquitectura plana. Cada mejora sobre la herramienta habría sido provisional.</p>
+    <p class="p fu en" style="margin-bottom: 36px;">Patching Oracle left the flat architecture untouched. Every fix on top of it would have been temporary.</p>
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin:40px 0;" class="fu compare-grid">
       <div style="padding:28px; border:1px solid rgba(239, 68, 68,0.2); border-radius:14px; background:rgba(239, 68, 68,0.03);">
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239, 68, 68,0.7); margin-bottom:16px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--white); display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="es">Parchear Oracle</span><span class="en">Patch Oracle</span></div>
         <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
@@ -929,60 +837,28 @@
         </ul>
       </div>
     </div>
-
-    <!-- 4 MÓDULOS -->
-    <div class="fu cs-grid-2" style="margin-top:72px; align-items: center;">
-      <div>
-        <span class="block-label es">Propuesta conceptual · 4 módulos</span>
-        <span class="block-label en">Conceptual proposal · 4 modules</span>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="es">La herramienta que el equipo merecía</h3>
-        <h3 style="font-family:'Playfair Display', serif; font-size:28px; font-weight:700; color:var(--white); margin: 8px 0 0;" class="en">The tool the team deserved</h3>
-      </div>
-      <div>
-        <p class="p es" style="margin: 0; font-size: 15px; line-height: 1.75;">Una plataforma interna con dos superficies —quien gestiona y quien solicita— y cuatro módulos, uno por patrón identificado.</p>
-        <p class="p en" style="margin: 0; font-size: 15px; line-height: 1.75;">An internal operations platform with two distinct surfaces: one for managers, one for requesters, and four modules that directly address the identified patterns.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="modules-grid fu">
-      <div class="module-card">
-        <div class="module-num">Módulo 01</div>
-        <div class="module-title es">Centro de solicitudes con clasificación inteligente</div>
-        <div class="module-title en">Request centre with smart classification</div>
-        <div class="module-desc es">Entrada única con tipología predefinida: incidencia crítica, acceso, tarea recurrente o consulta. La categoría fija la urgencia y el flujo.</div>
-        <div class="module-desc en">Single entry point with predefined typology: critical incident / access request / recurring task / query. The category automatically determines urgency and resolution flow.</div>
-        <div class="module-solves es">Resuelve: patrón 1 (arquitectura plana) y tiempo de triaje manual</div>
-        <div class="module-solves en">Solves: pattern 1 (flat architecture) and manual triage time</div>
+<!-- ══════════════════════════════════════
+     04 · SOLUCIÓN
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-indigo">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
       </div>
-      <div class="module-card">
-        <div class="module-num">Módulo 02</div>
-        <div class="module-title es">Flujos guiados para tareas repetitivas</div>
-        <div class="module-title en">Guided flows for repetitive tasks</div>
-        <div class="module-desc es">En procesos conocidos —certificados, alta de usuario, permisos— el sistema guía paso a paso y elimina los errores por omisión.</div>
-        <div class="module-desc en">For known processes —certificates, onboarding, permissions— the system guides step by step and removes errors by omission.</div>
-        <div class="module-solves es">Resuelve: patrón 2 (trabajo manual repetitivo)</div>
-        <div class="module-solves en">Solves: pattern 2 (repetitive manual work)</div>
-      </div>
-      <div class="module-card">
-        <div class="module-num">Módulo 03</div>
-        <div class="module-title es">Validaciones y confirmaciones contextuales</div>
-        <div class="module-title en">Contextual validations and confirmations</div>
-        <div class="module-desc es">Antes de una acción de alto impacto —borrar, subir a producción, lanzar una query— el sistema pide confirmación con contexto: qué haces, dónde y qué puede pasar.</div>
-        <div class="module-desc en">Before a high-impact action —delete, promote to production, run a query— the system asks for confirmation with context: what, where, and what could happen.</div>
-        <div class="module-solves es">Resuelve: patrón 3 (errores sin guardianes)</div>
-        <div class="module-solves en">Solves: pattern 3 (errors without guards)</div>
-      </div>
-      <div class="module-card">
-        <div class="module-num">Módulo 04</div>
-        <div class="module-title es">Panel de estado en tiempo real</div>
-        <div class="module-title en">Real-time status dashboard</div>
-        <div class="module-desc es">Ciclo de vida visible para ambos lados: recibida, en revisión, en curso, bloqueada, resuelta. Nadie pregunta, nadie interrumpe.</div>
-        <div class="module-desc en">Visible lifecycle on both sides: received, under review, in progress, blocked, resolved. Nobody asks, nobody interrupts.</div>
-        <div class="module-solves es">Resuelve: patrón 4 (visibilidad nula del estado)</div>
-        <div class="module-solves en">Solves: pattern 4 (zero status visibility)</div>
-      </div>
-    </div>
-
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">04</span> · Solución</span>
+    <h2 class="block-h fu es" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Un módulo<br><em>por cada patrón.</em></h2>
+    <h2 class="block-h fu en" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">One module<br><em>per pattern.</em></h2>
+    <p class="p fu es" style="margin-bottom: 36px;">Dos superficies, quien gestiona y quien solicita, con un portal común que clasifica desde el primer clic.</p>
+    <p class="p fu en" style="margin-bottom: 36px;">Two surfaces, managers and requesters, with a shared portal that classifies from the first click.</p>
     <!-- MAPPING VISUAL: Patrón detectado → Módulo diseñado -->
     <div class="fu" style="margin-top:56px;">
       <span class="block-label es">Trazabilidad · De la observación a la solución</span>
@@ -1206,6 +1082,29 @@
       </div><!-- /ia-branches-row -->
     </div><!-- /ia-tree-wrap -->
 
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     05 · PRIORIZACIÓN
+══════════════════════════════════════ -->
+<section class="cs-block cs-block">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">05</span> · Priorización</span>
+    <h2 class="block-h fu es" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Qué entra<br><em>en el MVP.</em></h2>
+    <h2 class="block-h fu en" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">What goes<br><em>into the MVP.</em></h2>
+    <p class="p fu es" style="margin-bottom: 36px;">Máximo impacto con mínima complejidad primero; la automatización completa, a fase 2.</p>
+    <p class="p fu en" style="margin-bottom: 36px;">Highest impact with lowest complexity first; full automation moves to phase 2.</p>
     <!-- PRIORIZACIÓN -->
     <div class="fu" style="margin-top:60px;">
       <span class="block-label es">Priorización del MVP</span>
@@ -1227,52 +1126,54 @@
         <tr>
           <td class="es">Clasificación tipificada de solicitudes</td>
           <td class="en">Typed request classification</td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td><span class="p-badge p1">P1</span></td>
+          <td class="es"><span class="p-badge p1">P1</span></td>
+          <td class="en"><span class="p-badge p1">P1</span></td>
           <td class="es">Impacto máximo, mínima complejidad técnica. Reduce triaje sin cambiar ningún flujo existente.</td>
           <td class="en">Maximum impact, minimal technical complexity. Reduces triage without changing any existing flow.</td>
         </tr>
         <tr>
           <td class="es">Confirmaciones ante acciones de alto riesgo</td>
           <td class="en">Confirmations on high-risk actions</td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td><span class="p-badge p1">P1</span></td>
+          <td class="es"><span class="p-badge p1">P1</span></td>
+          <td class="en"><span class="p-badge p1">P1</span></td>
           <td class="es">Los errores más costosos en tiempo de resolución son los evitables. Una capa de validación reduce los incidentes más frecuentes.</td>
           <td class="en">The most costly errors in resolution time are the preventable ones. A validation layer reduces the most frequent incidents.</td>
         </tr>
         <tr>
           <td class="es">Panel de visibilidad de estado</td>
           <td class="en">Status visibility panel</td>
-          <td><span class="p-badge p1">P1</span></td>
-          <td><span class="p-badge p1">P1</span></td>
+          <td class="es"><span class="p-badge p1">P1</span></td>
+          <td class="en"><span class="p-badge p1">P1</span></td>
           <td class="es">Elimina las consultas de estado que interrumpen al equipo IT sin añadir valor al flujo de resolución.</td>
           <td class="en">Eliminates status queries that interrupt the IT team without adding value to the resolution flow.</td>
         </tr>
         <tr>
           <td class="es">Flujos guiados para tareas recurrentes</td>
           <td class="en">Guided flows for recurring tasks</td>
-          <td><span class="p-badge p2">P2</span></td>
-          <td><span class="p-badge p2">P2</span></td>
+          <td class="es"><span class="p-badge p2">P2</span></td>
+          <td class="en"><span class="p-badge p2">P2</span></td>
           <td class="es">Alto valor, mayor esfuerzo de mapeo de procesos. Requiere documentar flujos existentes antes de automatizarlos.</td>
           <td class="en">High value, greater process mapping effort. Requires documenting existing flows before automating them.</td>
         </tr>
         <tr>
           <td class="es">Automatización completa de procesos</td>
           <td class="en">Full process automation</td>
-          <td><span class="p-badge p3">Fase 2</span></td>
-          <td><span class="p-badge p3">Phase 2</span></td>
+          <td class="es"><span class="p-badge p3">Fase 2</span></td>
+          <td class="en"><span class="p-badge p3">Phase 2</span></td>
           <td class="es">Requiere integración con sistemas externos. Fuera del alcance del MVP.</td>
           <td class="en">Requires integration with external systems. Out of scope for MVP.</td>
         </tr>
       </tbody>
     </table>
     </div><!-- end overflow wrapper -->
-
       </div>
+    </div>
   </div>
 </section>
 
-<!-- [R] RESULTADO ESPERADO -->
+<!-- ══════════════════════════════════════
+     06 · RESULTADO ESPERADO
+══════════════════════════════════════ -->
 <section class="cs-block cs-block-indigo">
   <div class="cs-wrap">
     <div class="cs-star fu">
@@ -1282,24 +1183,17 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-
-    <div class="fu cs-grid-2" style="align-items: center; margin-bottom: 40px;">
-      <div>
-        <span class="block-label es">Impacto esperado</span>
-        <span class="block-label en">Expected impact</span>
-        <h2 class="block-h es" style="margin: 8px 0 0;">Escenarios antes / después<br><em>e hipótesis de impacto</em></h2>
-        <h2 class="block-h en" style="margin: 8px 0 0;">Before / after scenarios<br><em>and impact hypotheses</em></h2>
-      </div>
-      <div>
-        <div class="honest-note" style="margin: 0;">
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">06</span> · Resultado esperado</span>
+    <h2 class="block-h fu es" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Escenarios<br><em>antes y después.</em></h2>
+    <h2 class="block-h fu en" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Before and after<br><em>scenarios.</em></h2>
+    <p class="p fu es" style="margin-bottom: 36px;">La propuesta no llegó a producción. Estos escenarios muestran qué habría cambiado para cada perfil.</p>
+    <p class="p fu en" style="margin-bottom: 36px;">The proposal never shipped. These scenarios show what would have changed for each profile.</p>
+<div class="honest-note" style="margin: 0 0 32px;">
           <div class="honest-note-label es">Nota sobre este proyecto</div>
           <div class="honest-note-label en">Note on this project</div>
           <p class="es" style="margin: 0; font-size: 13px; line-height: 1.6;">El proyecto no llegó a implementación: se presentó a dirección, pero la ejecución requería una profundidad técnica que entonces no tenía. Las hipótesis de impacto salen de los patrones identificados.</p>
           <p class="en" style="margin: 0; font-size: 13px; line-height: 1.6;">This project didn't reach implementation. The studies and proposal were presented to management, but execution required technical depth I lacked then. The impact hypotheses are based on identified patterns.</p>
         </div>
-      </div>
-    </div>
-
     <!-- ESCENARIO 1 -->
     <div class="scenario fu">
       <div class="scenario-header es">Escenario · Error de entorno (prod vs staging)</div>
@@ -1336,33 +1230,9 @@
       </div>
     </div>
 
-    <!-- HIPÓTESIS DE IMPACTO -->
-    <div class="fu" style="margin-top:60px;">
-      <span class="block-label es">Hipótesis de impacto</span>
-      <span class="block-label en">Impact hypotheses</span>
-    </div>
 
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin:32px 0;" class="fu impact-grid">
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent;">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Triaje de incidencias</div>
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Incident triage</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La clasificación tipificada eliminaría la decisión manual de prioridad. Hipótesis: reducción significativa del tiempo de gestión inicial en cada ticket.</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Typed classification would eliminate manual priority decisions. Hypothesis: significant reduction in initial management time per ticket.</div>
-      </div>
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent;">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Errores evitables</div>
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">Preventable errors</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">Los incidentes más frecuentes compartían causa raíz: ausencia de confirmación previa. Una capa de validación contextual los interceptaría antes de producirse.</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">The most frequent incidents shared a root cause: absence of prior confirmation. A contextual validation layer would intercept them before they occur.</div>
-      </div>
-      <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent;">
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="es">Interrupciones al equipo IT</div>
-        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;" class="en">IT team interruptions</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="es">La visibilidad de estado eliminaría el principal motivo de contacto reactivo — "¿en qué punto está mi solicitud?" — liberando tiempo para trabajo técnico real.</div>
-        <div style="font-size:14px; color:var(--text); line-height:1.65;" class="en">Status visibility would eliminate the main reason for reactive contact — "where is my request?" — freeing up time for actual technical work.</div>
       </div>
     </div>
-      </div>
   </div>
 </section>
 
@@ -1421,6 +1291,7 @@
 </section>
 
 <!-- FOOTER -->
+
 </main>
 
 <footer class="cs-footer">

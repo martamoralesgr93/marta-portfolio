@@ -521,792 +521,6 @@
       .cs-nav-dropdown { display: none; }
     }
   </style>
-</head>
-<body class="cs-cef-design-system">
-<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
-
-<nav class="cs-nav" aria-label="Principal">
-  <a href="index.html#work" class="nav-back">
-    <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
-  </a>
-  
-  <div class="cs-nav-right">
-    <div class="cs-nav-dropdown">
-      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-        <span class="es">Casos de Producto ▾</span>
-        <span class="en">Case Studies ▾</span>
-      </a>
-      <div class="cs-dropdown-menu">
-        <a href="cef-design-system.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 01</div>
-          <div class="cs-item-title">CEF EdTech</div>
-          <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
-          <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
-        </a>
-        <a href="ilunion-cro.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 02</div>
-          <div class="cs-item-title">ILUNION CRO</div>
-          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
-          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
-        </a>
-        <a href="booking-engine.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 03</div>
-          <div class="cs-item-title">Booking Engine</div>
-          <div class="cs-item-skill es">Design Ops & Componentes</div>
-          <div class="cs-item-skill en">Design Ops & Components</div>
-        </a>
-        <a href="paolo-pizzeria.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 04</div>
-          <div class="cs-item-title">Paolo Brand System</div>
-          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
-          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
-        </a>
-        <a href="it-ops-oracle.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 05</div>
-          <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
-          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
-          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
-        </a>
-        <a href="gym-energy-center.html" class="cs-dropdown-item">
-          <div class="cs-item-num">Caso 06</div>
-          <div class="cs-item-title">Gym Energy Center</div>
-          <div class="cs-item-skill es">Producto en Equipo &amp; Sistema de Dise&#241;o</div>
-          <div class="cs-item-skill en">Team Product &amp; Design System</div>
-        </a>
-      </div>
-    </div>
-    <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
-    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
-      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
-        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
-        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
-      </svg>
-    </button>
-  </div>
-</nav>
-
-<!-- MOBILE MENU: acceso real a los 4 casos en touch (el dropdown de arriba es hover-only) -->
-<div class="cs-mobile-menu" id="csMobileMenu">
-  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
-  </button>
-  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
-  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
-  <ul class="cs-mobile-menu-links">
-    <li><a href="cef-design-system.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
-    <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
-    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
-    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
-    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
-    <li><a href="gym-energy-center.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">06</span> · <span class="cs-mmi-title">Gym Energy Center</span></a></li>
-  </ul>
-  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
-</div>
-
-<main id="main">
-
-<header class="cs-hero">
-  <div class="cs-hero-logo"></div>
-  <div class="cs-hero-overlay"></div>
-  <div class="cs-hero-glow"></div>
-  <div class="cs-hero-content">
-    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
-        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
-        <li><span aria-current="page">CEF Design System</span></li>
-      </ol>
-    </nav>
-    <span class="cs-eyebrow">
-      01 — CEF EdTech · UX Strategy · Design System
-    </span>
-    <h1 class="cs-title">
-      Design System &amp;<br><em>Accesibilidad EdTech</em>
-    </h1>
-    <div class="cs-tags">
-      <span class="cs-tag">Product Design</span>
-      <span class="cs-tag">Design Systems</span>
-      <span class="cs-tag">Accesibilidad WCAG</span>
-      <span class="cs-tag">IA · Claude + Figma MCP</span>
-      <span class="cs-tag">Educación Digital</span>
-    </div>
-    <div class="cs-meta">
-      <div>
-        <div class="cs-meta-label">Empresa</div>
-        <div class="cs-meta-val">CEF</div>
-      </div>
-      <div>
-        <div class="cs-meta-label">Rol</div>
-        <div class="cs-meta-val">Product Designer · Design Systems</div>
-      </div>
-      <div>
-        <div class="cs-meta-label">Año</div>
-        <div class="cs-meta-val">2024 · Recreación IA 2026</div>
-      </div>
-      <div>
-        <div class="cs-meta-label">Equipo</div>
-        <div class="cs-meta-val">Diseño + Desarrollo Frontend</div>
-      </div>
-    </div>
-    <div class="hero-metrics fu">
-      <div class="hm-item">
-        <div class="hm-label">Nivel WCAG</div>
-        <div class="hm-value">AA</div>
-        <div class="hm-sub">Contraste &gt; 4.5:1</div>
-      </div>
-      <div class="hm-item">
-        <div class="hm-label">Variables</div>
-        <div class="hm-value">57</div>
-        <div class="hm-sub">Enlazadas a tokens</div>
-      </div>
-      <div class="hm-item">
-        <div class="hm-label">Componentes</div>
-        <div class="hm-value">17</div>
-        <div class="hm-sub">Con 6 estados c/u</div>
-      </div>
-      <div class="hm-item">
-        <div class="hm-label">Patrones IA</div>
-        <div class="hm-value">6</div>
-        <div class="hm-sub">Documentados</div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ==================== QUICK SUMMARY ==================== -->
-<section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
-  <div class="cs-wrap">
-    <div class="qsc-grid">
-      <!-- El Problema -->
-      <div class="qsc-card">
-        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <div class="qsc-label">El Problema</div>
-        <div class="qsc-text">Años de deuda de diseño sin estándares comunes: interfaces sobrecargadas y bloqueos graves de accesibilidad (contraste &lt; 3:1).</div>
-      </div>
-
-      <!-- Mi Rol -->
-      <div class="qsc-card">
-        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="qsc-label">Mi Rol</div>
-        <div class="qsc-text"><strong style="color:var(--white);">Única responsable</strong> del diseño del sistema, la accesibilidad y la adopción de tokens con frontend.</div>
-      </div>
-
-      <!-- Qué Hice -->
-      <div class="qsc-card">
-        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div class="qsc-label">Qué Hice</div>
-        <ul class="qsc-check">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Auditoría heurística y triage de deuda</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tokens y paleta conforme WCAG AA</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>UI Kit en Figma con variantes y estados</li>
-        </ul>
-      </div>
-
-      <!-- Resultado -->
-      <div class="qsc-card qsc-result">
-        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <div class="qsc-label">Resultado</div>
-        <div class="qsc-text" style="color:var(--white); font-weight:500;">Cumplimiento WCAG AA en todos los componentes interactivos y reducción del time-to-market mediante componentes modulares.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- USER PERSONAS & UX PRINCIPLES -->
-<section class="cs-block cs-block-charcoal" style="border-radius: 24px; border: 1.5px solid var(--accent-border); padding: 56px var(--space-lg); margin: 32px 0;">
-  <div class="cs-wrap">
-    <div class="block-label" style="color: var(--accent);">
-      <span class="block-label-text">User Personas &amp; Leyes UX Aplicadas al Design System</span>
-      <div class="block-label-line" style="background: var(--accent-border);"></div>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px;">
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">User Persona 01 · Estudiante Executive (EdTech)</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Entra al campus desde el móvil, en desplazamientos. Necesita contraste WCAG 2.1 AA y jerarquía clara: <strong>Gestalt</strong> en tarjetas de curso y calendario.</p>
-      </div>
-      <div style="background: transparent; border: 1px solid var(--border); border-radius: 16px; padding: 24px;">
-        <h4 style="font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 12px;">User Persona 02 · Equipo de Producto &amp; Frontend</h4>
-        <p style="font-size: 13.5px; color: var(--text-bright); line-height: 1.6;">Necesita un único estándar documentado. <strong>Fitts</strong> en botones, <strong>Hick</strong> en modales: menos ambigüedad, menos inconsistencia.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FIGMA SHOWCASE CARD -->
-<section class="cs-block cs-block-light" style="padding-top: 40px; padding-bottom: 40px;">
-  <div class="cs-wrap">
-    <!-- SECCIÓN DESTACADA: LIBRERÍA DE FIGMA -->
-    <div class="wf-process fu" style="border-color: rgba(255, 255, 255, 0.08); background: transparent; border-radius: 16px; text-align: left; margin: 0;">
-      <div class="wf-process-label figma-showcase-header" style="border-bottom: 1px solid var(--border); padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-        <span style="display: inline-flex; align-items: center; gap: 10px; color: var(--white);">
-          <svg width="14" height="21" viewBox="0 0 80 120" style="vertical-align: middle; flex-shrink: 0; margin-right: 4px;">
-            <path d="M20 0C9 0 0 9 0 20s9 20 20 20h20V0H20z" fill="currentColor"/>
-            <path d="M60 0H40v40h20c11 0 20-9 20-20s-9-20-20-20z" fill="currentColor"/>
-            <path d="M20 40C9 40 0 49 0 60s9 20 20 20h20V40H20z" fill="currentColor"/>
-            <path d="M60 40c11 0 20 9 20 20s-9 20-20 20H40V40h20z" fill="currentColor"/>
-            <path d="M20 80c-11 0-20 9-20 20s9 20 20 20c11 0 20-9 20-20V80H20z" fill="currentColor"/>
-          </svg>
-          <span class="es" style="font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--white); text-transform: none; letter-spacing: normal;">Design System · Recreación 2026</span>
-          <span class="en" style="font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--white); text-transform: none; letter-spacing: normal;">Design System · 2026 Recreation</span>
-          <span style="display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(var(--accent-rgb),0.1); border: 1px solid rgba(var(--accent-rgb),0.3); color: var(--accent);">
-            <span class="es">Hecho con IA</span><span class="en">Built with AI</span>
-          </span>
-        </span>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" class="btn btn-secondary" style="text-transform: lowercase; display: inline-flex; align-items: center; gap: 8px;">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            <span class="es">tokens en github ↗</span>
-            <span class="en">tokens on github ↗</span>
-          </a>
-          <a href="https://www.figma.com/design/270ul7A3agebyTd1uovcD4/Aulora-Design-System" target="_blank" class="btn btn-primary" style="text-transform: lowercase; color: #000000 !important;">
-            <span class="es" style="color: #000000 !important;">explorar en figma ↗</span>
-            <span class="en" style="color: #000000 !important;">explore in figma ↗</span>
-          </a>
-        </div>
-      </div>
-      <div style="padding: 24px 28px 0;">
-        <div class="es" style="font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; padding: 20px 24px; background: rgba(var(--accent-rgb),0.04); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0;">
-          <h4 style="color: var(--white); font-size: 15px; font-weight: 700; margin-bottom: 8px;">Transparencia (NDA) y Recreación con IA</h4>
-          <p style="margin-bottom: 10px;">El diseño original de <strong>CEF</strong> es confidencial. Lo que ves es una <strong>recreación desde cero</strong> con una marca ficticia (Aulora), de mi autoría y sin datos protegidos.</p>
-          <p style="margin: 0;"><strong style="color: var(--white);">Dirección humana:</strong> la IA acelera la producción; el criterio —WCAG 2.1 AA, consistencia, lógica de negocio— es mío.</p>
-        </div>
-        <div class="en" style="font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; padding: 20px 24px; background: rgba(var(--accent-rgb),0.04); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0;">
-          <h4 style="color: var(--white); font-size: 15px; font-weight: 700; margin-bottom: 8px;">Transparency (NDA) & AI Recreation</h4>
-          <p style="margin-bottom: 10px;">CEF's original design is confidential. What you see is a <strong>from-scratch recreation</strong> under a fictional brand (Aulora), entirely my own and free of client data.</p>
-          <p style="margin: 0;"><strong style="color: var(--white);">Human direction:</strong> AI accelerates production; the judgement —WCAG 2.1 AA, consistency, business logic— is mine.</p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
-          <span style="font-size: 11px; font-weight: 600; color: var(--text-bright); padding: 6px 12px; border: 1px solid var(--border); border-radius: 100px;">9 páginas</span>
-          <span style="font-size: 11px; font-weight: 600; color: var(--text-bright); padding: 6px 12px; border: 1px solid var(--border); border-radius: 100px;">57 variables enlazadas</span>
-          <span style="font-size: 11px; font-weight: 600; color: var(--text-bright); padding: 6px 12px; border: 1px solid var(--border); border-radius: 100px;">17 componentes</span>
-          <span style="font-size: 11px; font-weight: 600; color: var(--text-bright); padding: 6px 12px; border: 1px solid var(--border); border-radius: 100px;">6 patrones de IA</span>
-          <span style="font-size: 11px; font-weight: 600; color: var(--text-bright); padding: 6px 12px; border: 1px solid var(--border); border-radius: 100px;">Caso end-to-end con IA</span>
-          <span style="font-size: 11px; font-weight: 600; color: var(--text-bright); padding: 6px 12px; border: 1px solid var(--border); border-radius: 100px;">WCAG 2.1 AA con evidencia</span>
-        </div>
-      </div>
-      <div style="padding: 24px 28px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;">
-        <div>
-          <h4 style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 8px;" class="es"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:8px; color:#ffffff; flex-shrink:0;"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>1. Fundaciones &amp; Tokens</h4>
-          <h4 style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 8px;" class="en"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:8px; color:#ffffff; flex-shrink:0;"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>1. Foundations &amp; Tokens</h4>
-          <p style="font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="es">Cadena de alias primitivo → semántico → componente con modos claro/oscuro. Cada color, radio y borde está enlazado a una variable: nada hardcodeado.</p>
-          <p style="font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="en">Primitive → semantic → component alias chain with light/dark modes. Every color, radius and border is bound to a variable: nothing hardcoded.</p>
-        </div>
-        <div>
-          <h4 style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 8px;" class="es"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:8px; color:#ffffff; flex-shrink:0;"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>2. Componentes &amp; Evidencia WCAG</h4>
-          <h4 style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 8px;" class="en"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:8px; color:#ffffff; flex-shrink:0;"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>2. Components &amp; WCAG Evidence</h4>
-          <p style="font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="es">17 componentes con ficha de especificación (variantes, 6 estados, tamaños táctiles) y accesibilidad citando el criterio WCAG exacto — el badge AA con pruebas, no solo etiqueta.</p>
-          <p style="font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="en">17 components with spec sheets — variants, 6 states, touch sizes — each citing the exact WCAG criterion. Evidence, not a badge.</p>
-        </div>
-        <div>
-          <h4 style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 8px;" class="es" style="display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; color: #ffffff; flex-shrink: 0;"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>3. IA en producto</h4>
-          <h4 style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 8px;" class="en" style="display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; color: #ffffff; flex-shrink: 0;"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg>3. AI in Product</h4>
-          <p style="font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="es">6 patrones de IA documentados —asistente, streaming, incertidumbre, fuentes, feedback, error—, un caso end-to-end y la página «Cómo opero el sistema».</p>
-          <p style="font-size: 12px; color: var(--text-dim); line-height: 1.6; margin: 0;" class="en">6 documented AI patterns (assistant, streaming, uncertainty, sources, feedback, error), an end-to-end AI feature case and the "How I operate the system" page.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- [M] MI ROL -->
-<section class="cs-block">
-  <div class="cs-wrap">
-    <div class="fu">
-      <span class="block-label">Responsabilidades</span>
-      <h2 class="block-h">Primer design system<br><em>de la institución</em></h2>
-    </div>
-    <div class="fu" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:32px; margin-top:40px;">
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Responsabilidades directas</p>
-        <ul class="bullet-list">
-          <li>Auditoría heurística del ecosistema: triage de deuda de UX y accesibilidad</li>
-          <li>Definición de estándares de accesibilidad WCAG AA: paleta, tipografía y componentes interactivos</li>
-          <li>Arquitectura de componentes: de wireframes a UI Kit con tokens, variantes y estados</li>
-          <li>Documentación de comportamiento para el handoff y la adopción por desarrollo</li>
-          <li>Validación en módulos críticos: calendario, pago, login y bolsa de empleo</li>
-        </ul>
-      </div>
-      <div>
-        <p class="p" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; font-weight:600;">Con quién colaboré</p>
-        <ul class="bullet-list">
-          <li><strong>Frontend</strong>: implementación de componentes, validación de tokens en código y adopción del sistema</li>
-          <li><strong>Stakeholders de CEF</strong>: validación de flujos y priorización por impacto en el journey</li>
-          <li><strong>Dirección</strong>: aprobación del enfoque sistemático frente a un rediseño visual tradicional</li>
-        </ul>
-        <p class="p" style="margin-top:20px; padding:16px 20px; background: transparent; border-left:2px solid var(--accent); border-radius:0 10px 10px 0; font-size:13px; color:rgba(255,255,255,0.55);">No había design system, ni tokens, ni nomenclatura, ni guía de accesibilidad. Se definió todo desde cero.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- [S] SITUACIÓN -->
-<section class="cs-block">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">S</div>
-        <div class="cs-rail-label">SITUATION</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <div class="fu">
-      <span class="block-label">Contexto de negocio</span>
-      <h2 class="block-h">
-        Múltiples entornos digitales,<br><em>sin criterio unificado</em>
-      </h2>
-    </div>
-    <div class="c3-grid-2 fu" style="margin-top: 40px;">
-      <!-- Columna 1: Contexto -->
-      <div>
-        <p class="lead" style="margin: 0; line-height: 1.7; font-size: 17px;">Años de deuda técnica y de diseño: módulos independientes, patrones incompatibles. El desarrollo tardaba el triple y la experiencia del estudiante llegaba rota.</p>
-      </div>
-      <!-- Columna 2: Impacto/Fragmentación -->
-      <div>
-        <div style="background: rgba(239, 68, 68,0.02); border: 1px solid rgba(239, 68, 68,0.15); padding: 28px; border-radius: 16px; height: 100%;">
-          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#ef4444; display:block; margin-bottom:16px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px; margin-top:-2px; color: var(--white);"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            Fragmentación en la experiencia
-          </span>
-          <ul class="bullet-list" style="margin: 0; font-size: 13.5px; color: var(--text-dim);">
-            <li>Carga cognitiva extrema por interfaces densas y sobrepobladas.</li>
-            <li>Patrones de interacción inconsistentes entre diferentes módulos.</li>
-            <li>Bloqueos de accesibilidad graves (contraste, tipografía) inaceptables para una institución educativa.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-      </div>
-  </div>
-</section>
-
-<!-- [T] TASK -->
-<section class="cs-block cs-block-indigo">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">T</div>
-        <div class="cs-rail-label">TASK</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <div class="fu">
-      <span class="block-label">El reto</span>
-      <h2 class="block-h">
-        Rediseño, unificación y<br><em>cumplimiento WCAG</em>
-      </h2>
-    </div>
-    <div class="c3-grid-2 fu" style="margin-top: 40px;">
-      <!-- Columna 1: El Objetivo -->
-      <div>
-        <p class="p" style="font-size: 16px; line-height: 1.7; margin: 0;">El objetivo era auditar la plataforma, establecer estándares de accesibilidad innegociables (WCAG AA) y estructurar el primer Sistema de Diseño escalable para todo el entorno EdTech.</p>
-      </div>
-      <!-- Columna 2: Restricciones Reales -->
-      <div>
-        <div style="background: transparent; border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 28px; border-radius: 0 16px 16px 0; height: 100%;">
-          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:12px;">Restricciones reales del proyecto</span>
-          <p class="p" style="font-size: 13.5px; color: var(--text-dim); line-height: 1.6; margin: 0;">Los colores de marca no llegaban al 4,5:1. Redefiní la paleta y validé el sistema en los cuatro módulos críticos: calendario, pasarela de pago, login y bolsa de empleo.</p>
-        </div>
-      </div>
-    </div>
-      </div>
-  </div>
-</section>
-
-<!-- [A] ACTION -->
-<section class="cs-block cs-block-light">
-  <div class="cs-wrap">
-    <div class="cs-star fu">
-      <div class="cs-rail">
-        <div class="cs-rail-letter">A</div>
-        <div class="cs-rail-label">ACTION</div>
-        <div class="cs-rail-bar"></div>
-      </div>
-      <div>
-    <div class="fu">
-      <span class="block-label">El proceso de diseño</span>
-      <h2 class="block-h">
-        Auditoría, Wireframing<br><em>y unificación de la UI</em>
-      </h2>
-    </div>
-    <div style="padding:0">
-
-      <!-- STEP 01 & 02: AUDITORÍA & ESTÁNDARES — cards con icono, no párrafos -->
-      <div class="proc-grid fu">
-        <div class="proc-card">
-          <div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-          <span class="proc-eyebrow">Fase 1 · Auditoría &amp; Triage</span>
-          <p class="proc-title">Auditoría UX y triage de problemas</p>
-          <div class="proc-row">
-            <span class="proc-row-label">Insight</span>
-            <span class="proc-row-text">Problemas sistémicos, no estéticos: contraste &lt; 3:1, affordance rota, flujos inconsistentes.</span>
-          </div>
-          <div class="proc-row">
-            <span class="proc-row-label">Hipótesis</span>
-            <span class="proc-row-text">Si establecemos los estándares antes que la UI, los componentes serán correctos por construcción.</span>
-          </div>
-          <div class="proc-row">
-            <span class="proc-row-label">Decisión</span>
-            <span class="proc-row-text">Invertir las primeras semanas en auditar, argumentando a dirección la falta de UI visible inmediata.</span>
-          </div>
-        </div>
-        <div class="proc-card">
-          <div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-          <span class="proc-eyebrow">Fase 2 · Estándares &amp; Contraste</span>
-          <p class="proc-title">Definición de estilos y accesibilidad (WCAG)</p>
-          <p class="qsc-text" style="margin-bottom: 20px;">Innegociable en EdTech: paleta con contraste AA, tipografía legible y componentes base estandarizados.</p>
-          <div style="display: flex; align-items: center; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
-            <div class="score-circle perfect" style="width: 56px; height: 56px; font-size: 17px; border-width: 3px; flex-shrink: 0;">AA</div>
-            <span class="proc-row-text" style="margin: 0;">Paleta y tipografía recalibradas: contraste &gt; 4.5:1 en toda la plataforma.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- DISCOVERY TIMELINE: Del caos al sistema -->
-      <div class="fu" style="margin-top: 80px; border-top: 1px solid var(--border); padding-top: 60px;">
-        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Recorrido · De la deuda al sistema</span>
-        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:8px; font-family:'Playfair Display', serif;">Cinco decisiones, en orden</h3>
-      </div>
-      <div class="dt-grid fu">
-        <div class="dt-item">
-          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-          <div class="dt-num">01</div>
-          <div class="dt-step">Auditoría</div>
-          <div class="dt-title">Triage de deuda</div>
-          <div class="dt-text">Contraste &lt; 3:1, affordance rota en botones primarios, flujos inconsistentes entre módulos.</div>
-          <span class="dt-pill">Heurística completa</span>
-        </div>
-        <div class="dt-item">
-          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-          <div class="dt-num">02</div>
-          <div class="dt-step">Decisión</div>
-          <div class="dt-title">Sistema antes que pantallas</div>
-          <div class="dt-text">Invertir las primeras semanas en auditar y definir estándares, sin UI visible inmediata que mostrar a dirección.</div>
-          <span class="dt-pill">Documento de estándares</span>
-        </div>
-        <div class="dt-item">
-          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-          <div class="dt-num">03</div>
-          <div class="dt-step">Fundaciones</div>
-          <div class="dt-title">Tokens & paleta AA</div>
-          <div class="dt-text">Cadena primitivo → semántico → componente. Contraste mínimo 4.5:1 en toda la plataforma.</div>
-          <span class="dt-pill">57 variables</span>
-        </div>
-        <div class="dt-item">
-          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-          <div class="dt-num">04</div>
-          <div class="dt-step">Componentes</div>
-          <div class="dt-title">UI Kit centralizado</div>
-          <div class="dt-text">17 componentes con variantes, 6 estados y ficha de accesibilidad citando el criterio WCAG exacto.</div>
-          <span class="dt-pill">Figma + tokens</span>
-        </div>
-        <div class="dt-item">
-          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div class="dt-num">05</div>
-          <div class="dt-step">Validación</div>
-          <div class="dt-title">Aplicación en flujos críticos</div>
-          <div class="dt-text">Calendario académico, pasarela de pago, login y bolsa de empleo — el sistema puesto a prueba en producción.</div>
-          <span class="dt-pill">4 módulos</span>
-        </div>
-      </div>
-
-      <!-- STEP 03: CALENDARIO (WEB) - MAIN INTERACTIVE TOOL -->
-      <div class="story-header fu" style="margin-top: 80px; text-align: left; border-top: 1px solid var(--border); padding-top: 60px;">
-        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 3 · Calendario Académico (Herramienta Principal)</span>
-        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">3. Arquitectura y Diseño Visual de la Herramienta de Calendario</h3>
-        <p class="p" style="font-size: 15px; color: var(--text-dim); margin-bottom: 32px;">
-          El Calendario es la <strong>herramienta que el estudiante abre cada día</strong>. Lo diseñé de los wireframes a la UI final, y fue la prueba de estrés del sistema de componentes.
-        </p>
-      </div>
-
-      <!-- Calendario: Paso 3.1 Wireframe -->
-      <div class="row g-5 fu" style="align-items: center; margin-top: 40px; margin-bottom: 60px;">
-        <!-- Columna Izquierda: Texto de Wireframe -->
-        <div class="col-lg-5 col-md-12 text-start">
-          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:14px;">3.1 · Arquitectura de Componentes</span>
-          <h4 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">Estructura lógica (Wireframe)</h4>
-          <p class="p" style="font-size: 13.5px; line-height: 1.6; color: var(--text-dim);">De diseñar pantallas a diseñar sistemas. Resolví navegación, contenedores y formularios en baja fidelidad, antes de tocar color o tipografía.</p>
-          
-          <div style="display:flex; flex-direction:column; gap:12px; margin-top: 20px;">
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-              <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Layout base:</strong> Distribución clara de contenedores, formularios y paneles de navegación principal.</p>
-            </div>
-            <div style="display:flex; gap:10px; align-items:flex-start;">
-              <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">2</div>
-              <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Contenedores de eventos:</strong> Espaciado predecible para las asignaturas y fechas clave del alumno.</p>
-            </div>
-          </div>
-          
-          <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 20px; text-align: left;">
-            <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Resolver la arquitectura de información antes del color y la tipografía.
-          </div>
-        </div>
-        <!-- Columna Derecha: Imagen Wireframe -->
-        <div class="col-lg-7 col-md-12">
-          <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: transparent;">
-            <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/WIREFRAME/wireframe-calendar.webp" alt="Wireframe de Calendario Web">
-          </div>
-        </div>
-      </div>
-
-      <!-- Paso 3.2 & 3.3: Diseño Final (Desktop vs. Mobile) -->
-      <div class="story-header fu" style="margin-top: 40px; text-align: left;">
-        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">3.2 · Diseño Final Implementado</span>
-        <h4 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:12px; font-family:'Playfair Display', serif;">Diseño Final: Desktop vs. Mobile</h4>
-        <p class="p" style="font-size: 14px; color: var(--text-dim); margin-bottom: 24px;">
-          Sobre la estructura validada apliqué los tokens del UI Kit: misma interfaz, misma accesibilidad, en desktop y en móvil.
-        </p>
-      </div>
-
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px;">
-        <!-- Mobile Calendar -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num">03.2</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Calendario Web · Mobile</span>
-              <span class="c2-evidence-sub">VISTA MÓVIL</span>
-            </div>
-          </div>
-          <img width="1440" height="1024" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.webp" alt="Diseño final del Calendario Web — Mobile">
-          <div class="c2-evidence-caption">
-            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, la agenda pasa a lista y cuadrícula mensual, dimensionada para el pulgar.</p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Responsive:</strong> cuadrícula redefinida y botones flotantes para ganar espacio en vertical.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Desktop Calendar -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num" style="color: var(--accent);">03.3</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Calendario Web · Desktop</span>
-              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
-            </div>
-          </div>
-          <img width="1200" height="800" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" alt="Diseño final del Calendario Web — Escritorio">
-          <div class="c2-evidence-caption">
-            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">Agenda diaria y semanal de un vistazo, con filtros avanzados a un clic.</p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Consistencia:</strong> 100% de componentes del design system, contraste AA.</p>
-              </div>
-            </div>
-            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
-              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Que el alumno entienda su semana de un vistazo, en cualquier dispositivo.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STEP 04: PASARELA DE PAGO (DESKTOP & MOBILE CHECKOUT) -->
-      <div class="story-header fu" style="margin-top: 80px; text-align: left; border-top: 1px solid var(--border); padding-top: 60px;">
-        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 4 · Pasarela de Pago</span>
-        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">4. Pasarela de Pago: Rediseño del Checkout Responsive</h3>
-        <p class="p" style="font-size: 15px; color: var(--text-dim); margin-bottom: 32px;">
-          En el checkout de matrícula, la fricción se traduce en ingresos perdidos. Rediseñé la pasarela con el sistema de componentes, ordenando la jerarquía de los conceptos económicos en desktop y móvil.
-        </p>
-      </div>
-
-      <!-- Pasarela de Pago: Desktop vs Mobile -->
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
-        <!-- Desktop Pasarela -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num">04.1</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Diseño Desktop · Checkout de Matrícula</span>
-              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
-            </div>
-          </div>
-          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.webp" alt="Pasarela de Pago — Diseño Desktop">
-          <div class="c2-evidence-caption">
-            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">Desglose de matrícula y opciones de pago en paralelo: el usuario nunca pierde de vista lo que paga.</p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Dos columnas:</strong> resumen financiero fijo a la derecha, formulario de pago a la izquierda.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Pasarela -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num" style="color: var(--accent);">04.2</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Diseño Mobile · Fricción y Comportamiento táctil</span>
-              <span class="c2-evidence-sub">VISTA MÓVIL</span>
-            </div>
-          </div>
-          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.webp" alt="Pasarela de Pago — Diseño Móvil">
-          <div class="c2-evidence-caption">
-            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil manda el paso activo: menos scroll hasta el pago y áreas táctiles dimensionadas.</p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Menos ruido:</strong> desglose colapsado en acordeón para dejar la pantalla en los datos de cobro.</p>
-              </div>
-            </div>
-            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
-              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Pagar sin dudas: importes exactos y plazos siempre visibles.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pasarela de Pago: impacto antes / después -->
-      <div class="fu" style="margin-top:-40px; margin-bottom:80px;">
-        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:4px;">Impacto de la pasarela · de teléfono a conversión digital</span>
-        <div class="cs-ba" style="margin:16px 0 12px;">
-          <div class="cs-ba-col">
-            <span class="cs-ba-badge cs-ba-before">Antes · todo por teléfono</span>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">0%</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">15-30 min</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">Sin canal</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Cobro</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">Por teléfono</span>
-          </div>
-          </div>
-          <div class="cs-ba-col">
-            <span class="cs-ba-badge cs-ba-after">Después · pasarela propia</span>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">~60%</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">&lt; 5 min</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">&lt; 8%</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
-            <span style="font-size:13px; color:var(--text-dim);">Incidencias de seguridad</span>
-            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">0</span>
-          </div>
-          </div>
-        </div>
-        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin:0;">Referencia de abandono en checkout del sector: ~15%. Integración con Redsys server-side y cumplimiento PCI DSS: ningún dato de tarjeta se guarda en el frontend.</p>
-      </div>
-
-      <!-- STEP 05: LOGIN Y BOLSA DE EMPLEO (ACCESO UNIFICADO DESKTOP & MOBILE) -->
-      <div class="story-header fu" style="margin-top: 80px; text-align: left; border-top: 1px solid var(--border); padding-top: 60px;">
-        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 5 · Acceso Unificado &amp; Empleo</span>
-        <h3 style="font-size:24px; font-weight:700; color:var(--white); margin-bottom:16px; font-family:'Playfair Display', serif;">5. Login, Landing y Bolsa de Empleo: Portal del Alumno</h3>
-        <p class="p" style="font-size: 15px; color: var(--text-dim); margin-bottom: 32px;">
-          Acceso y Bolsa de Empleo en una sola experiencia. Estandaricé el módulo con las reglas del design system: el frontend fue mucho más rápido y las ofertas se ven igual de bien en cualquier pantalla.
-        </p>
-      </div>
-
-      <!-- Login y Empleo: Desktop vs Mobile -->
-      <div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
-        <!-- Desktop Login/Bolsa -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num">05.1</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Portal de Empleo · Escritorio</span>
-              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
-            </div>
-          </div>
-          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Desktop">
-          <div class="c2-evidence-caption">
-            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">Tres áreas claras: acceso con credenciales, vacantes de la Bolsa de Empleo y destacados corporativos.</p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Reutilización:</strong> formularios y tarjetas de oferta salen de la librería compartida.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Login/Bolsa -->
-        <div class="c2-evidence-item">
-          <div class="c2-evidence-header">
-            <div class="c2-evidence-num" style="color: var(--accent);">05.2</div>
-            <div class="c2-evidence-meta">
-              <span class="c2-evidence-label">Portal de Empleo · Pantalla Móvil</span>
-              <span class="c2-evidence-sub">VISTA MÓVIL</span>
-            </div>
-          </div>
-          <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Móvil">
-          <div class="c2-evidence-caption">
-            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, las CTA primarias arriba y los bloques informativos simplificados para recortar scroll.</p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
-                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Tipografía:</strong> escala responsive que mantiene títulos e inputs legibles en AA.</p>
-              </div>
-            </div>
-            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
-              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Entrar sin fricción y navegar las ofertas de empleo desde cualquier dispositivo.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STEP 06: HANDOFF Y DOCUMENTACIÓN TÉCNICA -->
-      <div class="row g-5 fu" style="--bs-gutter-x: 4rem; margin-top: 80px; margin-bottom: 20px; border-top: 1px solid var(--border); padding-top: 60px;">
-        <!-- Columna 1: Explicación del Handoff -->
-        <div class="col-lg-7 col-md-12 text-start">
-          <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:8px;">Fase 6 · Handoff Técnico &amp; Escalabilidad</span>
-          <h3 style="font-size:20px; font-weight:700; color:var(--white); margin-bottom:20px; font-family:'Playfair Display', serif;">6. Handoff y Escalabilidad</h3>
-          <p class="p">El handoff no fue entregar un Figma ordenado y esperar. Documenté estados, variantes y casos límite como referencia de implementación.<br><br>Eso exige saber cómo un token de spacing acaba siendo una variable CSS. Hablar ese idioma acortó los ciclos de revisión.</p>
-          <p class="p" style="margin-top: 20px; color: var(--text-dim);">Despliegue del Design System en otros módulos clave:</p>
-        </div>
-        <!-- Columna 2: Especificaciones Técnicas del Handoff -->
-        <div class="col-lg-5 col-md-12">
-          <div style="background: transparent; border: 1px solid var(--border); padding: 28px; border-radius: 16px; height: 100%;">
-            <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:16px;">Entregables del Handoff Técnico</span>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <p style="font-size:12.5px; color:var(--text-dim); margin:0;"><strong style="color:#fff;">Figma Tokens:</strong> Nomenclatura semántica mapeada con variables CSS de desarrollo. <a href="https://www.figma.com/design/270ul7A3agebyTd1uovcD4/Aulora-Design-System" target="_blank" style="color:var(--accent); text-decoration:underline; margin-left:4px; font-weight:600;">Ver archivo en Figma ↗</a> · <a href="https://github.com/martamoralesgr93/aulora-design-system" target="_blank" style="color:var(--accent); text-decoration:underline; font-weight:600;">Tokens en GitHub ↗</a></p>
-              </div>
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <p style="font-size:12.5px; color:var(--text-dim); margin:0;"><strong style="color:#fff;">Matriz de Estados:</strong> Comportamientos definidos para Default, Hover, Active, Focus, Disabled y Loading.</p>
-              </div>
-              <div style="display:flex; gap:10px; align-items:flex-start;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" style="flex-shrink:0; margin-top:3px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <p style="font-size:12.5px; color:var(--text-dim); margin:0;"><strong style="color:#fff;">Guía de Layout:</strong> Breakpoints responsive y reglas de comportamiento adaptativo por componente.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-    </div>
-      </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SISTEMA EN VIVO · tokens, claro/oscuro y estados renderizados
-══════════════════════════════════════ -->
 <style>
   /* ── Sistema en vivo: capa de tokens autónoma del tema de la página ── */
   .ds-live {
@@ -1421,15 +635,328 @@
     .ds-modes { grid-template-columns: 1fr; }
   }
 </style>
+</head>
+<body class="cs-cef-design-system">
+<a href="#main" class="skip-link"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
-<section class="cs-block">
-  <div class="cs-wrap">
-    <div class="ds-live">
-      <div class="fu">
-        <span class="block-label">Fundaciones · renderizadas</span>
-        <h2 class="block-h">El sistema,<br><em>no la captura del sistema</em></h2>
-        <p class="ds-lead">Todo lo que sigue son componentes vivos, no imágenes: los mismos tokens semánticos de CEF/Aulora. Un set de alias resuelve claro y oscuro sin tocar un componente, y cada valor cita su criterio WCAG.</p>
+<nav class="cs-nav" aria-label="Principal">
+  <a href="index.html#work" class="nav-back">
+    <span>←</span><span class="nav-label es">Volver</span><span class="nav-label en">Back</span>
+  </a>
+  
+  <div class="cs-nav-right">
+    <div class="cs-nav-dropdown">
+      <a href="index.html#work" class="cs-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <span class="es">Casos de Producto ▾</span>
+        <span class="en">Case Studies ▾</span>
+      </a>
+      <div class="cs-dropdown-menu">
+        <a href="cef-design-system.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 01</div>
+          <div class="cs-item-title">CEF EdTech</div>
+          <div class="cs-item-skill es">Accesibilidad WCAG AA & Sistemas de Diseño</div>
+          <div class="cs-item-skill en">WCAG AA Accessibility & Design Systems</div>
+        </a>
+        <a href="ilunion-cro.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 02</div>
+          <div class="cs-item-title">ILUNION CRO</div>
+          <div class="cs-item-skill es">CRO, A/B Testing & Data Insights</div>
+          <div class="cs-item-skill en">CRO, A/B Testing & Data Insights</div>
+        </a>
+        <a href="booking-engine.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 03</div>
+          <div class="cs-item-title">Booking Engine</div>
+          <div class="cs-item-skill es">Design Ops & Componentes</div>
+          <div class="cs-item-skill en">Design Ops & Components</div>
+        </a>
+        <a href="paolo-pizzeria.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 04</div>
+          <div class="cs-item-title">Paolo Brand System</div>
+          <div class="cs-item-skill es">Identidad de Marca &amp; Ecosistema Digital 360°</div>
+          <div class="cs-item-skill en">Brand Identity &amp; 360° Digital Ecosystem</div>
+        </a>
+        <a href="it-ops-oracle.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 05</div>
+          <div class="cs-item-title">IT Ops &amp; Oracle ERP</div>
+          <div class="cs-item-skill es">Investigación de Producto &amp; Herramientas Internas</div>
+          <div class="cs-item-skill en">Product Research &amp; Internal Tooling</div>
+        </a>
+        <a href="gym-energy-center.html" class="cs-dropdown-item">
+          <div class="cs-item-num">Caso 06</div>
+          <div class="cs-item-title">Gym Energy Center</div>
+          <div class="cs-item-skill es">Producto en Equipo &amp; Sistema de Dise&#241;o</div>
+          <div class="cs-item-skill en">Team Product &amp; Design System</div>
+        </a>
       </div>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()" id="langToggle">EN</button>
+    <button class="cs-hamburger" id="csHamburgerBtn" onclick="openCaseMenu()" aria-label="Menú de casos">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <rect y="0" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="5.25" width="16" height="1.5" rx="1" fill="white"></rect>
+        <rect y="10.5" width="16" height="1.5" rx="1" fill="white"></rect>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU: acceso real a los 4 casos en touch (el dropdown de arriba es hover-only) -->
+<div class="cs-mobile-menu" id="csMobileMenu">
+  <button class="cs-mobile-menu-close" onclick="closeCaseMenu()" aria-label="Cerrar menú">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg>
+  </button>
+  <span class="cs-mobile-menu-eyebrow es">Casos de Producto</span>
+  <span class="cs-mobile-menu-eyebrow en">Case Studies</span>
+  <ul class="cs-mobile-menu-links">
+    <li><a href="cef-design-system.html" class="active" onclick="closeCaseMenu()"><span class="cs-mmi-num">01</span> · <span class="cs-mmi-title">CEF EdTech</span></a></li>
+    <li><a href="ilunion-cro.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">02</span> · <span class="cs-mmi-title">ILUNION CRO</span></a></li>
+    <li><a href="booking-engine.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">03</span> · <span class="cs-mmi-title">Booking Engine</span></a></li>
+    <li><a href="paolo-pizzeria.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">04</span> · <span class="cs-mmi-title">Paolo Brand System</span></a></li>
+    <li><a href="it-ops-oracle.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">05</span> · <span class="cs-mmi-title">IT Ops &amp; Oracle</span></a></li>
+    <li><a href="gym-energy-center.html" onclick="closeCaseMenu()"><span class="cs-mmi-num">06</span> · <span class="cs-mmi-title">Gym Energy Center</span></a></li>
+  </ul>
+  <a href="index.html" class="cs-mobile-menu-back"><span>←</span><span class="es">Volver al inicio</span><span class="en">Back to home</span></a>
+</div>
+
+<main id="main">
+
+
+<header class="cs-hero">
+  <div class="cs-hero-logo"></div>
+  <div class="cs-hero-overlay"></div>
+  <div class="cs-hero-glow"></div>
+  <div class="cs-hero-content">
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a></li>
+        <li><a href="index.html#work"><span class="es">Casos de Producto</span><span class="en">Case Studies</span></a></li>
+        <li><span aria-current="page">CEF Design System</span></li>
+      </ol>
+    </nav>
+    <span class="cs-eyebrow">
+      01 — CEF EdTech · UX Strategy · Design System
+    </span>
+    <h1 class="cs-title">
+      Design System &amp;<br><em>Accesibilidad EdTech</em>
+    </h1>
+    <div class="cs-tags">
+      <span class="cs-tag">Product Design</span>
+      <span class="cs-tag">Design Systems</span>
+      <span class="cs-tag">Accesibilidad WCAG</span>
+      <span class="cs-tag">IA · Claude + Figma MCP</span>
+      <span class="cs-tag">Educación Digital</span>
+    </div>
+    <div class="cs-meta">
+      <div>
+        <div class="cs-meta-label">Empresa</div>
+        <div class="cs-meta-val">CEF</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Rol</div>
+        <div class="cs-meta-val">Product Designer · Design Systems</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Año</div>
+        <div class="cs-meta-val">2024 · Recreación IA 2026</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Equipo</div>
+        <div class="cs-meta-val">Diseño + Desarrollo Frontend</div>
+      </div>
+    </div>
+    <div class="hero-metrics fu">
+      <div class="hm-item">
+        <div class="hm-label">Nivel WCAG</div>
+        <div class="hm-value">AA</div>
+        <div class="hm-sub">Contraste &gt; 4.5:1</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Variables</div>
+        <div class="hm-value">57</div>
+        <div class="hm-sub">Enlazadas a tokens</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Componentes</div>
+        <div class="hm-value">17</div>
+        <div class="hm-sub">Con 6 estados c/u</div>
+      </div>
+      <div class="hm-item">
+        <div class="hm-label">Patrones IA</div>
+        <div class="hm-value">6</div>
+        <div class="hm-sub">Documentados</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== QUICK SUMMARY ==================== -->
+<section class="quick-summary-section cs-block-charcoal" style="border-radius: 32px; margin: 40px 0; border: 1.5px solid var(--border); padding: 40px var(--space-lg);">
+  <div class="cs-wrap">
+    <div class="qsc-grid">
+      <!-- El Problema -->
+      <div class="qsc-card">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="qsc-label">El Problema</div>
+        <div class="qsc-text">Años de deuda de diseño sin estándares comunes: interfaces sobrecargadas y bloqueos graves de accesibilidad (contraste &lt; 3:1).</div>
+      </div>
+
+      <!-- Mi Rol -->
+      <div class="qsc-card">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="qsc-label">Mi Rol</div>
+        <div class="qsc-text"><strong style="color:var(--white);">Única responsable</strong> del diseño del sistema, la accesibilidad y la adopción de tokens con frontend.</div>
+      </div>
+
+      <!-- Qué Hice -->
+      <div class="qsc-card">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="qsc-label">Qué Hice</div>
+        <ul class="qsc-check">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Auditoría heurística y triage de deuda</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tokens y paleta conforme WCAG AA</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>UI Kit en Figma con variantes y estados</li>
+        </ul>
+      </div>
+
+      <!-- Resultado -->
+      <div class="qsc-card qsc-result">
+        <div class="qsc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="qsc-label">Resultado</div>
+        <div class="qsc-text" style="color:var(--white); font-weight:500;">Cumplimiento WCAG AA en todos los componentes interactivos y reducción del time-to-market mediante componentes modulares.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     01 · DIAGNÓSTICO
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">S</div>
+        <div class="cs-rail-label">SITUATION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">01</span> · Diagnóstico</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Años de deuda de diseño<br><em>y contraste por debajo de 3:1.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Campus, calendario, matrícula, login y bolsa de empleo habían crecido cada uno por su lado: sin tokens, sin nomenclatura y sin guía de accesibilidad.</p>
+<div class="proc-grid fu">
+        <div class="proc-card">
+          <div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <span class="proc-eyebrow">Fase 1 · Auditoría &amp; Triage</span>
+          <p class="proc-title">Auditoría UX y triage de problemas</p>
+          <div class="proc-row">
+            <span class="proc-row-label">Insight</span>
+            <span class="proc-row-text">Problemas sistémicos, no estéticos: contraste &lt; 3:1, affordance rota, flujos inconsistentes.</span>
+          </div>
+          <div class="proc-row">
+            <span class="proc-row-label">Hipótesis</span>
+            <span class="proc-row-text">Si establecemos los estándares antes que la UI, los componentes serán correctos por construcción.</span>
+          </div>
+          <div class="proc-row">
+            <span class="proc-row-label">Decisión</span>
+            <span class="proc-row-text">Invertir las primeras semanas en auditar, argumentando a dirección la falta de UI visible inmediata.</span>
+          </div>
+        </div>
+        <div class="proc-card">
+          <div class="proc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <span class="proc-eyebrow">Fase 2 · Estándares &amp; Contraste</span>
+          <p class="proc-title">Definición de estilos y accesibilidad (WCAG)</p>
+          <p class="qsc-text" style="margin-bottom: 20px;">Innegociable en EdTech: paleta con contraste AA, tipografía legible y componentes base estandarizados.</p>
+          <div style="display: flex; align-items: center; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div class="score-circle perfect" style="width: 56px; height: 56px; font-size: 17px; border-width: 3px; flex-shrink: 0;">AA</div>
+            <span class="proc-row-text" style="margin: 0;">Paleta y tipografía recalibradas: contraste &gt; 4.5:1 en toda la plataforma.</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     02 · DECISIÓN
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-charcoal" style="border-radius: 40px; margin: 40px 0; border: 1.5px solid var(--border);">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">T</div>
+        <div class="cs-rail-label">TASK</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">02</span> · Decisión</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Sistema<br><em>antes que pantallas.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Cinco decisiones en orden. La más incómoda: semanas de auditoría sin UI que enseñar a dirección.</p>
+<div class="dt-grid fu">
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="dt-num">01</div>
+          <div class="dt-step">Auditoría</div>
+          <div class="dt-title">Triage de deuda</div>
+          <div class="dt-text">Contraste &lt; 3:1, affordance rota en botones primarios, flujos inconsistentes entre módulos.</div>
+          <span class="dt-pill">Heurística completa</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <div class="dt-num">02</div>
+          <div class="dt-step">Decisión</div>
+          <div class="dt-title">Sistema antes que pantallas</div>
+          <div class="dt-text">Invertir las primeras semanas en auditar y definir estándares, sin UI visible inmediata que mostrar a dirección.</div>
+          <span class="dt-pill">Documento de estándares</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <div class="dt-num">03</div>
+          <div class="dt-step">Fundaciones</div>
+          <div class="dt-title">Tokens & paleta AA</div>
+          <div class="dt-text">Cadena primitivo → semántico → componente. Contraste mínimo 4.5:1 en toda la plataforma.</div>
+          <span class="dt-pill">57 variables</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <div class="dt-num">04</div>
+          <div class="dt-step">Componentes</div>
+          <div class="dt-title">UI Kit centralizado</div>
+          <div class="dt-text">17 componentes con variantes, 6 estados y ficha de accesibilidad citando el criterio WCAG exacto.</div>
+          <span class="dt-pill">Figma + tokens</span>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="dt-num">05</div>
+          <div class="dt-step">Validación</div>
+          <div class="dt-title">Aplicación en flujos críticos</div>
+          <div class="dt-text">Calendario académico, pasarela de pago, login y bolsa de empleo: el sistema puesto a prueba en producción.</div>
+          <span class="dt-pill">4 módulos</span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     03 · SISTEMA
+══════════════════════════════════════ -->
+<section class="cs-block cs-block">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">03</span> · Sistema</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Tokens, modos y estados,<br><em>en vivo.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Componentes reales, no capturas: un set de alias resuelve claro y oscuro, y cada valor cita su criterio WCAG.</p>
+<div class="ds-live">
+      
 
       <!-- 1 · CADENA DE TOKENS -->
       <div class="fu">
@@ -1592,10 +1119,216 @@
       </div>
 
     </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- [R] RESULTADO -->
+<!-- ══════════════════════════════════════
+     04 · VALIDACIÓN
+══════════════════════════════════════ -->
+<section class="cs-block cs-block-light">
+  <div class="cs-wrap">
+    <div class="cs-star fu">
+      <div class="cs-rail">
+        <div class="cs-rail-letter">A</div>
+        <div class="cs-rail-label">ACTION</div>
+        <div class="cs-rail-bar"></div>
+      </div>
+      <div>
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">04</span> · Validación</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">Cuatro módulos críticos,<br><em>el sistema bajo presión.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">Calendario académico, pasarela de pago, login y bolsa de empleo, montados con la misma librería.</p>
+<p class="fu" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Calendario académico</p>
+<div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px;">
+        <!-- Mobile Calendar -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num">03.2</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Calendario Web · Mobile</span>
+              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+            </div>
+          </div>
+          <img width="1440" height="1024" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.webp" alt="Diseño final del Calendario Web — Mobile">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, la agenda pasa a lista y cuadrícula mensual, dimensionada para el pulgar.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Responsive:</strong> cuadrícula redefinida y botones flotantes para ganar espacio en vertical.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop Calendar -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num" style="color: var(--accent);">03.3</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Calendario Web · Desktop</span>
+              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+            </div>
+          </div>
+          <img width="1200" height="800" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" alt="Diseño final del Calendario Web — Escritorio">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">Agenda diaria y semanal de un vistazo, con filtros avanzados a un clic.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Consistencia:</strong> 100% de componentes del design system, contraste AA.</p>
+              </div>
+            </div>
+            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Que el alumno entienda su semana de un vistazo, en cualquier dispositivo.
+            </div>
+          </div>
+        </div>
+      </div><p class="fu" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Pasarela de pago</p>
+<div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
+        <!-- Desktop Pasarela -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num">04.1</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Diseño Desktop · Checkout de Matrícula</span>
+              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+            </div>
+          </div>
+          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.webp" alt="Pasarela de Pago — Diseño Desktop">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">Desglose de matrícula y opciones de pago en paralelo: el usuario nunca pierde de vista lo que paga.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Dos columnas:</strong> resumen financiero fijo a la derecha, formulario de pago a la izquierda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Pasarela -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num" style="color: var(--accent);">04.2</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Diseño Mobile · Fricción y Comportamiento táctil</span>
+              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+            </div>
+          </div>
+          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.webp" alt="Pasarela de Pago — Diseño Móvil">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil manda el paso activo: menos scroll hasta el pago y áreas táctiles dimensionadas.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Menos ruido:</strong> desglose colapsado en acordeón para dejar la pantalla en los datos de cobro.</p>
+              </div>
+            </div>
+            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Pagar sin dudas: importes exactos y plazos siempre visibles.
+            </div>
+          </div>
+        </div>
+      </div><div class="fu" style="margin-top:24px; margin-bottom:56px;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:4px;">Impacto de la pasarela · de teléfono a conversión digital</span>
+        <div class="cs-ba" style="margin:16px 0 12px;">
+          <div class="cs-ba-col">
+            <span class="cs-ba-badge cs-ba-before">Antes · todo por teléfono</span>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">0%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">15-30 min</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">Sin canal</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Cobro</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--white); text-align:right;">Por teléfono</span>
+          </div>
+          </div>
+          <div class="cs-ba-col">
+            <span class="cs-ba-badge cs-ba-after">Después · pasarela propia</span>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Matriculaciones online</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">~60%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Tiempo medio de matriculación</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">&lt; 5 min</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Abandono en checkout</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">&lt; 8%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline; border-bottom:1px solid var(--border); padding:12px 0;">
+            <span style="font-size:13px; color:var(--text-dim);">Incidencias de seguridad</span>
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--accent); text-align:right;">0</span>
+          </div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); line-height:1.6; margin:0;">Referencia de abandono en checkout del sector: ~15%. Integración con Redsys server-side y cumplimiento PCI DSS: ningún dato de tarjeta se guarda en el frontend.</p>
+      </div><p class="fu" style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:48px 0 16px;">Login y bolsa de empleo</p>
+<div class="c2-evidence-pair fu" style="margin-top: 20px; margin-bottom: 80px; align-items: start;">
+        <!-- Desktop Login/Bolsa -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num">05.1</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Portal de Empleo · Escritorio</span>
+              <span class="c2-evidence-sub">VISTA ESCRITORIO</span>
+            </div>
+          </div>
+          <img width="1920" height="1080" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-desk-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Desktop">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">Tres áreas claras: acceso con credenciales, vacantes de la Bolsa de Empleo y destacados corporativos.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Reutilización:</strong> formularios y tarjetas de oferta salen de la librería compartida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Login/Bolsa -->
+        <div class="c2-evidence-item">
+          <div class="c2-evidence-header">
+            <div class="c2-evidence-num" style="color: var(--accent);">05.2</div>
+            <div class="c2-evidence-meta">
+              <span class="c2-evidence-label">Portal de Empleo · Pantalla Móvil</span>
+              <span class="c2-evidence-sub">VISTA MÓVIL</span>
+            </div>
+          </div>
+          <img width="1920" height="1440" class="c2-evidence-img" loading="lazy" decoding="async" src="assets/CEF/LOGIN-LANDING-BOLSA%20DE%20EMPLEO/cef-mobile-entrar.webp" alt="Login y Bolsa de Empleo — Diseño Móvil">
+          <div class="c2-evidence-caption">
+            <p style="font-size:14px; color:var(--text); line-height:1.6; margin-bottom:14px;">En móvil, las CTA primarias arriba y los bloques informativos simplificados para recortar scroll.</p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div style="width:18px; height:18px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#000; flex-shrink:0; margin-top:2px;">1</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.4; margin:0;"><strong style="color:#fff;">Tipografía:</strong> escala responsive que mantiene títulos e inputs legibles en AA.</p>
+              </div>
+            </div>
+            <div style="font-size: 11px; line-height: 1.4; color: var(--text-bright); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: left;">
+              <span style="color: var(--accent); font-weight: 700; letter-spacing:0.05em;">JOB-TO-BE-DONE:</span> Entrar sin fricción y navegar las ofertas de empleo desde cualquier dispositivo.
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     05 · RESULTADO
+══════════════════════════════════════ -->
 <section class="cs-block cs-block-indigo">
   <div class="cs-wrap">
     <div class="cs-star fu">
@@ -1605,15 +1338,10 @@
         <div class="cs-rail-bar"></div>
       </div>
       <div>
-    <div class="fu">
-      <span class="block-label">Resultados</span>
-      <h2 class="block-h">
-        Claridad visual y<br><em>escalabilidad técnica</em>
-      </h2>
-    </div>
-
-    <!-- Rejilla de Impacto de Resultados (Maquetado en rejilla) -->
-    <div class="c3-grid-4 fu" style="margin-bottom: 48px;">
+    <span class="sec-num fu" style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:36px; display:block;"><span style="color:var(--accent);">05</span> · Resultado</span>
+    <h2 class="block-h fu" style="font-size: clamp(28px, 3.2vw, 42px); max-width: 24ch; margin-bottom: 14px;">WCAG 2.1 AA<br><em>y un frontend que ensambla.</em></h2>
+    <p class="p fu" style="margin-bottom: 36px;">17 componentes con 6 estados y 57 variables: el primer design system escalable de la institución.</p>
+<div class="c3-grid-4 fu" style="margin-bottom: 48px;">
       <div style="padding:28px; border:1px solid var(--border); border-radius:14px; background: transparent; display: flex; flex-direction: column;">
         <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Deuda eliminada</div>
         <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Deuda de diseño eliminada:</strong> Interfaz coherente y estandarizada en todo el journey del estudiante de CEF.</p>
@@ -1631,8 +1359,8 @@
         <p style="font-size:13px; color:var(--text-dim); line-height:1.5; margin:0; flex-grow: 1;"><strong>Base escalable:</strong> El UI Kit es la base de referencia única para la futura evolución tecnológica de CEF.</p>
       </div>
     </div>
-
       </div>
+    </div>
   </div>
 </section>
 
@@ -1804,6 +1532,7 @@
     </div>
   </div>
 </section>
+
 
 
 </main>
