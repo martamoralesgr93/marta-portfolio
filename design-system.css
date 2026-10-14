@@ -1046,7 +1046,9 @@ ul.bullet-list li::before { content: "✦"; position: absolute; left: 0; color: 
 }
 .cs-process-doc a:hover { border-bottom-color: var(--accent); }
 
-/* ── 11. ALINEACIÓN DE TARJETAS EN REJILLA ──
+/* ── 11. ALINEACIÓN DE TARJETAS EN REJILLA ── */
+.dt-item, .ht-item { display: flex; flex-direction: column; }
+/*
    Las tarjetas hermanas comparten filas (subgrid): cabeceras, imágenes, textos y
    píldoras/CTA quedan a la misma altura aunque el contenido tenga distinta longitud. */
 @supports (grid-template-rows: subgrid) {
