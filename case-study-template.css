@@ -1269,6 +1269,358 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   font-weight: 600;
 }
 
+/* ==========================================================================
+   INTEGRAL PRODUCT DESIGN (0 A 1) EXTENSIONS
+   ========================================================================== */
+
+/* 0 to 1 Phase Bar */
+.cs-phases-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 32px 0 48px;
+}
+.cs-phase-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  position: relative;
+  transition: all 0.3s var(--ease);
+}
+.cs-phase-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(var(--accent-rgb), 0.3);
+  transform: translateY(-2px);
+}
+.cs-phase-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.cs-phase-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+  display: block;
+}
+.cs-phase-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.cs-phase-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Persona Cards 0 to 1 */
+.cs-personas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+}
+.cs-persona-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  transition: all 0.3s var(--ease);
+}
+.cs-persona-card:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(var(--accent-rgb), 0.25);
+}
+.cs-persona-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+}
+.cs-persona-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(var(--accent-rgb), 0.12);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+.cs-persona-title {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  color: var(--white);
+  font-weight: 700;
+}
+.cs-persona-law {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 12.5px;
+  color: var(--accent);
+  line-height: 1.5;
+}
+.cs-persona-law strong {
+  color: var(--white);
+}
+
+/* Three Core User Flows */
+.cs-flows-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+.cs-flow-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cs-flow-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.cs-flow-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0;
+}
+.cs-flow-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 8px 0 0;
+}
+.cs-flow-steps li {
+  font-size: 12.5px;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.45;
+}
+.cs-flow-steps li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Showcase Grid for Physical Branding & Devices */
+.cs-tri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+.cs-tri-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s var(--ease);
+}
+.cs-tri-card:hover {
+  border-color: rgba(var(--accent-rgb), 0.28);
+  transform: translateY(-2px);
+}
+.cs-tri-media {
+  background: rgba(0, 0, 0, 0.3);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px;
+}
+.cs-tri-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s var(--ease);
+}
+.cs-tri-card:hover .cs-tri-media img {
+  transform: scale(1.03);
+}
+.cs-tri-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.cs-tri-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cs-tri-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.35;
+}
+.cs-tri-desc {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Gastronomic Art Direction Grid */
+.cs-dish-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.cs-dish-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cs-dish-media {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #000;
+}
+.cs-dish-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.cs-dish-card:hover .cs-dish-media img {
+  transform: scale(1.05);
+}
+.cs-dish-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cs-dish-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+.cs-dish-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* AI Evolution Banner & Cards */
+.cs-ia-spotlight {
+  background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(var(--accent-rgb), 0.12) 0%, rgba(255, 255, 255, 0.02) 60%, rgba(255, 255, 255, 0.005) 100%);
+  border: 1px solid rgba(var(--accent-rgb), 0.24);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 44px);
+  margin-top: 32px;
+}
+.cs-ia-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+.cs-ia-card {
+  background: rgba(14, 14, 18, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cs-ia-media {
+  background: #08080c;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+}
+.cs-ia-media img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+.cs-ia-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cs-ia-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cs-ia-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.35;
+}
+.cs-ia-desc {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .cs-phases-bar { grid-template-columns: 1fr; gap: 10px; }
+  .cs-personas-grid { grid-template-columns: 1fr; }
+  .cs-flows-grid { grid-template-columns: 1fr; }
+  .cs-tri-grid { grid-template-columns: 1fr; }
+  .cs-dish-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-ia-grid { grid-template-columns: 1fr; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
   .reveal { opacity: 1; transform: none; }
