@@ -20,6 +20,382 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261014_rev2">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
+  <style>
+/* ============ MOBILE EXACT — CEF EdTech case (canvas 2026-10-15) ============ */
+.cme { display: none; }
+@media (max-width: 768px) {
+  main > .cs-hero,
+  main > section.section,
+  a.next,
+  section.cs-pagination-section { display: none !important; }
+
+  .cme {
+    display: block;
+    background: #000;
+    color: rgba(255,255,255,.72);
+    font-family: Inter, system-ui, sans-serif;
+    padding: 0 16px;
+  }
+  .cme-sec { padding-top: 48px; }
+  .cme-sec:first-child { padding-top: 28px; }
+
+  .cme-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .cme-chip { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.75); font-size: 12px; font-weight: 500; }
+  .cme-chip-accent { border-color: rgba(167,139,250,.4); color: #a78bfa; font-weight: 600; }
+
+  .cme-h1 { margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 40px; line-height: 1.05; letter-spacing: -.02em; color: #fff; }
+  .cme-h1 em { font-style: italic; color: #a78bfa; }
+  .cme-lead { margin: 0 0 24px; font-size: 16px; line-height: 1.5; color: rgba(255,255,255,.78); }
+  .cme-lead strong { color: #fff; font-weight: 600; }
+
+  .cme-hero-fig { margin: 22px -16px 0; padding: 10px 0 6px; background: radial-gradient(ellipse at 50% 50%, rgba(167,139,250,.16), rgba(0,0,0,0) 65%); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .cme-hero-img { display: block; width: 390px; height: 238px; object-fit: contain; }
+  .cme-hero-cap { padding: 0 16px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.7); }
+
+  .cme-facts { margin-top: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; overflow: hidden; }
+  .cme-fact { background: #0a0a0c; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .cme-fact-full { grid-column: 1 / -1; }
+  .cme-fact-label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .cme-fact-val { font-size: 14px; font-weight: 600; color: #fff; }
+
+  .cme-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .cme-eyebrow-accent { color: #a78bfa; font-size: 12px; letter-spacing: .14em; }
+  .cme-h2 { margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 38px; line-height: 1.04; letter-spacing: -.015em; color: #fff; }
+  .cme-h2 em { font-style: italic; color: #a78bfa; }
+  .cme-h3 { margin: 10px 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: #fff; }
+  .cme-h3 em { font-style: italic; color: #a78bfa; }
+  .cme-p { margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.72); }
+
+  .cme-tldr { margin-top: 18px; display: flex; flex-direction: column; }
+  .cme-tl-row { display: flex; gap: 16px; }
+  .cme-tl-rail { display: flex; flex-direction: column; align-items: center; width: 14px; padding-top: 22px; flex-shrink: 0; }
+  .cme-tl-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); flex-shrink: 0; }
+  .cme-tl-dot-accent { border: none; background: #a78bfa; box-shadow: 0 0 0 5px rgba(167,139,250,.18); }
+  .cme-tl-line { flex: 1; width: 2px; background: rgba(255,255,255,.12); margin-top: 4px; }
+  .cme-tl-body { flex: 1; padding: 14px 0 22px; display: flex; flex-direction: column; gap: 6px; }
+  .cme-tl-highlight { padding: 16px 18px 18px; margin: 4px 0 0; border-radius: 18px; background: rgba(167,139,250,.07); border: 1px solid rgba(167,139,250,.32); }
+  .cme-tl-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 50px; line-height: 1; color: #fff; }
+  .cme-tl-big-accent { color: #a78bfa; font-size: 60px; }
+  .cme-tl-desc { font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.72); }
+  .cme-tl-desc-light { color: rgba(255,255,255,.85); }
+
+  .cme-cta { margin-top: 10px; height: 52px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; gap: 10px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+  .cme-journey { margin-top: 6px; padding: 18px 16px; border-radius: 20px; background: #0d0b14; border: 1px solid rgba(167,139,250,.28); display: flex; flex-direction: column; }
+  .cme-journey-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); padding-bottom: 10px; }
+  .cme-journey-row { display: flex; gap: 12px; }
+  .cme-journey-rail { flex: none; width: 36px; display: flex; flex-direction: column; align-items: center; }
+  .cme-journey-dot { width: 36px; height: 36px; border-radius: 50%; background: rgba(167,139,250,.14); color: #a78bfa; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+  .cme-journey-line { flex: 1; width: 2px; min-height: 14px; background: rgba(167,139,250,.25); }
+  .cme-journey-body { flex: 1; padding: 6px 0 18px; display: flex; flex-direction: column; gap: 4px; }
+  .cme-journey-title { font-size: 17px; font-weight: 600; color: #fff; }
+  .cme-journey-desc { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.65); }
+  .cme-journey-foot { padding-top: 6px; border-top: 1px dashed rgba(255,255,255,.18); font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.75); }
+
+  .cme-audit { margin-top: 18px; display: flex; align-items: flex-end; gap: 14px; }
+  .cme-audit-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 84px; line-height: .85; color: #a78bfa; }
+  .cme-audit-text { padding-bottom: 6px; font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
+  .cme-scale { margin-top: 18px; padding-top: 18px; position: relative; display: flex; flex-direction: column; gap: 10px; }
+  .cme-scale-track { position: relative; height: 14px; border-radius: 8px; background: rgba(255,255,255,.08); }
+  .cme-scale-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 33%; border-radius: 8px; background: #a78bfa; }
+  .cme-scale-divider { position: absolute; left: 58%; top: -8px; bottom: -8px; width: 2px; background: #fff; }
+  .cme-scale-labels { position: relative; height: 34px; font-size: 11px; font-weight: 600; }
+  .cme-scale-labels > span { position: absolute; }
+
+  .cme-findings { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .cme-finding { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); }
+  .cme-finding-k { flex: none; width: 44px; height: 44px; border-radius: 12px; background: rgba(167,139,250,.12); color: #a78bfa; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+  .cme-finding-body { display: flex; flex-direction: column; gap: 3px; }
+  .cme-finding-title { font-size: 15px; font-weight: 600; color: #fff; }
+  .cme-finding-desc { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.62); }
+
+  .cme-methods { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .cme-method { padding: 6px 10px; border-radius: 8px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); font-size: 12px; font-weight: 600; color: rgba(255,255,255,.8); }
+
+  .cme-reqs { margin-top: 18px; display: flex; flex-direction: column; gap: 1px; border-radius: 16px; overflow: hidden; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); }
+  .cme-req { background: #0a0a0c; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .cme-req-ico { flex: none; margin-top: 1px; color: #a78bfa; }
+  .cme-req-text { font-size: 14px; line-height: 1.4; color: #fff; }
+
+  .cme-split2 { margin-top: 18px; position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .cme-split-card { padding: 16px 14px 18px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; }
+  .cme-split-card-accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.5); }
+  .cme-split-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .cme-split-card-accent .cme-split-label { color: #a78bfa; }
+  .cme-split-title { font-size: 17px; font-weight: 700; line-height: 1.2; color: #fff; }
+  .cme-split-desc { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.55); }
+  .cme-split-card-accent .cme-split-desc { color: rgba(255,255,255,.8); }
+  .cme-split-badge-center { position: absolute; left: 50%; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: #000; border: 1px solid rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; color: #a78bfa; }
+
+  .cme-focus { margin-top: 24px; padding: 22px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: 10px; }
+  .cme-focus-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .cme-focus-quote { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 22px; line-height: 1.3; color: #fff; }
+  .cme-focus-quote em { font-style: italic; color: #a78bfa; }
+
+  .cme-tiers { margin-top: 22px; padding: 18px 16px; border-radius: 20px; background: #0d0b14; border: 1px solid rgba(167,139,250,.28); display: flex; flex-direction: column; gap: 0; }
+  .cme-tier { padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; }
+  .cme-tier-head { display: flex; align-items: baseline; justify-content: space-between; }
+  .cme-tier-k { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a78bfa; }
+  .cme-tier-q { font-size: 11px; font-weight: 600; color: rgba(255,255,255,.45); }
+  .cme-tier-title { font-size: 15px; font-weight: 600; color: #fff; }
+  .cme-tier-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cme-tier-chip { padding: 4px 8px; border-radius: 6px; background: rgba(167,139,250,.1); font-size: 12px; font-weight: 600; color: rgba(255,255,255,.85); }
+  .cme-tier-arrow { height: 22px; display: flex; justify-content: center; align-items: center; color: #a78bfa; }
+
+  .cme-specimen { margin-top: 18px; padding: 18px 16px; border-radius: 18px; background: #f4f6f5; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .cme-spec-cell { display: flex; flex-direction: column; gap: 8px; }
+  .cme-spec-btn { height: 44px; border-radius: 10px; border: 0; background: var(--cme-brand, #0b5a43); color: #fff; font: 600 14px Inter, sans-serif; }
+  .cme-spec-btn.is-hover { background: #063a2b; }
+  .cme-spec-btn.is-focus { outline: 2px solid #111; outline-offset: 2px; }
+  .cme-spec-btn.is-disabled { background: #e3e7e5; color: #5d6964; border: 1px dashed #8a9691; }
+  .cme-spec-label { font-size: 12px; font-weight: 600; color: #3b4a44; }
+  .cme-specimen-note { margin: 10px 0 0; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.6); }
+
+  .cme-tool-fig { margin: 24px 0 0; display: flex; flex-direction: column; gap: 8px; }
+  .cme-tool-img { display: block; border-radius: 12px; }
+  .cme-tool-cap { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.5); }
+  .cme-tool-cap-accent { color: #a78bfa; }
+  .cme-tool-arrow { display: flex; justify-content: center; color: #a78bfa; padding: 14px 0; }
+  .cme-tool-img-full { width: 100%; height: auto; }
+
+  .cme-features { margin-top: 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .cme-feature { padding: 14px 12px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px; }
+  .cme-feature-t { font-size: 14px; font-weight: 600; color: #fff; }
+  .cme-feature-d { font-size: 12px; line-height: 1.4; color: rgba(255,255,255,.62); }
+
+  .cme-search-card { margin-top: 14px; padding: 14px; border-radius: 16px; background: #fff; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .cme-search-img { display: block; width: 100%; max-width: 330px; height: auto; object-fit: contain; }
+  .cme-search-cap { font-size: 12px; font-weight: 600; color: #3b4a44; }
+
+  .cme-persona { margin-top: 14px; padding: 22px; border-radius: 22px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px; }
+  .cme-persona-top { display: flex; align-items: center; gap: 14px; }
+  .cme-persona-avatar { flex: none; width: 56px; height: 56px; border-radius: 50%; background: rgba(167,139,250,.16); border: 2px solid rgba(167,139,250,.5); color: #a78bfa; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 18px; }
+  .cme-persona-name { display: block; font-size: 18px; font-weight: 700; color: #fff; }
+  .cme-persona-role { display: block; margin-top: 2px; font-size: 13px; color: rgba(255,255,255,.65); }
+  .cme-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+  .cme-persona-cols > div { display: flex; flex-direction: column; gap: 6px; }
+  .cme-persona-cols .cme-eyebrow { font-size: 10px; }
+  .cme-persona-item { font-size: 13px; line-height: 1.4; color: #fff; }
+  .cme-persona-cols.is-pain .cme-persona-item { color: rgba(255,255,255,.72); }
+  .cme-quote { margin: 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.1); font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 17px; line-height: 1.35; color: #fff; }
+  .cme-tag { font-size: 11px; color: rgba(255,255,255,.5); }
+  .cme-test-note { margin-top: 14px; padding: 16px; border-radius: 14px; border: 1px dashed rgba(255,255,255,.2); font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.7); }
+  .cme-test-note strong { color: #fff; }
+
+  .cme-audit2 { margin-top: 18px; padding: 22px 20px 24px; border-radius: 24px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.35), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; gap: 18px; }
+  .cme-audit2-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600; color: #fff; }
+  .cme-pill { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); color: #a78bfa; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .cme-audit2-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 84px; line-height: .82; letter-spacing: -.02em; color: #a78bfa; }
+  .cme-audit2-txt { padding-bottom: 4px; font-size: 15px; line-height: 1.35; color: rgba(255,255,255,.85); }
+  .cme-flows { margin: 0; padding: 16px 0 0; list-style: none; border-top: 1px solid rgba(255,255,255,.1); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .cme-flow { display: flex; flex-direction: column; gap: 6px; }
+  .cme-flow-t { font-size: 14px; font-weight: 600; color: #fff; }
+
+  .cme-ministats { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .cme-ministat { padding: 18px 16px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; }
+  .cme-ministat-num { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 44px; line-height: 1; color: #fff; }
+  .cme-ministat-txt { font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.7); }
+
+  .cme-tryit-img { margin-top: 24px; display: block; width: 358px; height: auto; max-height: 220px; object-fit: contain; }
+
+  #cme-resultados { padding-bottom: 60px; }
+}
+
+/* ==========================================================================
+   CEF EDTECH · VERSIÓN DESKTOP (>= 769px)
+   Artboard "Desktop 1440" aprobado (HANDOFF-cef.md). Prefijo .cde-. Mobile: .cme (sin tocar).
+   ========================================================================== */
+.cde { display: none; }
+@media (min-width: 769px) {
+  .cde { display: block; }
+
+  .cde {
+    --cde-accent: var(--accent, #a78bfa);
+    --cde-brand: #0b5a43;
+    --cde-line: rgba(255,255,255,.1);
+    width: min(1440px, 94%);
+    margin: 0 auto;
+    padding: 0 32px;
+    color: rgba(255,255,255,.72);
+    font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  }
+  .cde * { box-sizing: border-box; }
+  .cde em { font-style: italic; color: var(--cde-accent); }
+  .cde strong { color: #fff; font-weight: 600; }
+  .cde img { display: block; max-width: 100%; }
+
+  .cde-section { padding-top: 120px; scroll-margin-top: 88px; }
+  .cde-section--sm { padding-top: 96px; }
+  .cde-hero { padding-top: 140px; }
+  .cde-stack { display: flex; flex-direction: column; gap: 56px; }
+  .cde-block { display: flex; flex-direction: column; gap: 20px; }
+
+  .cde-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 56px; align-items: center; }
+  .cde-split--start { align-items: start; }
+  .cde-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .cde-hero .cde-col { gap: 22px; }
+
+  .cde-h1 { margin: 0; font-family: var(--font-serif); font-weight: 800; font-size: clamp(52px, 5vw, 68px); line-height: 1; letter-spacing: -.02em; color: #fff; }
+  .cde-h2 { margin: 0; font-family: var(--font-serif); font-weight: 800; font-size: clamp(40px, 4vw, 52px); line-height: 1.04; letter-spacing: -.015em; color: #fff; }
+  .cde-h3 { margin: 0; font-family: var(--font-serif); font-weight: 800; font-size: 34px; line-height: 1.1; color: #fff; }
+  .cde-lead { margin: 0; max-width: 540px; font-size: 19px; line-height: 1.5; color: rgba(255,255,255,.78); }
+  .cde-p { margin: 0; max-width: 500px; font-size: 17px; line-height: 1.55; color: rgba(255,255,255,.72); }
+  .cde-eyebrow { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--cde-accent); }
+  .cde-eyebrow--muted { color: rgba(255,255,255,.55); }
+  .cde-headrow { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-bottom: 18px; border-bottom: 1px solid var(--cde-line); }
+  .cde-index { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.4); }
+
+  .cde-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .cde-chip { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .cde-chip--accent { border-color: rgba(167,139,250,.35); color: var(--cde-accent); font-weight: 600; }
+  .cde-facts { margin: 8px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 1px; background: var(--cde-line); border: 1px solid var(--cde-line); border-radius: 16px; overflow: hidden; }
+  .cde-facts > div { background: #0a0a0c; padding: 14px 16px; }
+  .cde-facts dt { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .cde-facts dd { margin: 4px 0 0; font-size: 14px; font-weight: 600; color: #fff; }
+  .cde-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .cde-btn { height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: border-color .2s; }
+  .cde-btn:hover { border-color: rgba(255,255,255,.4); }
+
+  .cde-hero-fig { margin: 0; display: flex; flex-direction: column; gap: 12px; background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.3), rgba(124,58,237,0) 68%); }
+  .cde-hero-img { display: block; width: 100%; height: auto; }
+  .cde-hero-cap { font-size: 13px; color: rgba(255,255,255,.6); }
+
+  .cde-tldr { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 20px; }
+  .cde-tldr li { padding: 24px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid var(--cde-line); display: flex; flex-direction: column; gap: 10px; }
+  .cde-tldr li.is-accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.32); }
+  .cde-tldr li.is-accent .cde-eyebrow--muted, .cde-tldr li.is-accent .cde-num { color: var(--cde-accent); }
+  .cde-tldr p { margin: 0; font-size: 16px; line-height: 1.45; }
+  .cde-num { font-family: var(--font-serif); font-weight: 800; font-size: 64px; line-height: 1; color: #fff; }
+
+  .cde-journey { margin: 0; padding: 28px; border-radius: 28px; background: #0d0b14; border: 1px solid rgba(167,139,250,.28); display: flex; flex-direction: column; }
+  .cde-journey-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); padding-bottom: 16px; }
+  .cde-journey-row { display: flex; gap: 16px; }
+  .cde-journey-rail { flex: none; width: 40px; display: flex; flex-direction: column; align-items: center; }
+  .cde-journey-dot { width: 40px; height: 40px; border-radius: 50%; background: rgba(167,139,250,.14); color: var(--cde-accent); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+  .cde-journey-line { flex: 1; width: 2px; min-height: 16px; background: rgba(167,139,250,.25); }
+  .cde-journey-body { flex: 1; padding: 8px 0 22px; display: flex; flex-direction: column; gap: 4px; }
+  .cde-journey-title { font-size: 19px; font-weight: 600; color: #fff; }
+  .cde-journey-desc { font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.65); }
+  .cde-journey-foot { padding-top: 14px; border-top: 1px dashed rgba(255,255,255,.18); font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.75); }
+
+  .cde-audit { display: flex; align-items: flex-end; gap: 18px; }
+  .cde-audit-big { font-family: var(--font-serif); font-weight: 800; font-size: 120px; line-height: .82; color: var(--cde-accent); }
+  .cde-audit-text { padding-bottom: 8px; font-size: 17px; line-height: 1.35; font-weight: 500; color: #fff; }
+  .cde-scale { margin: 0; padding: 32px; border-radius: 24px; background: rgba(255,255,255,.03); border: 1px solid var(--cde-line); display: flex; flex-direction: column; gap: 12px; }
+  .cde-scale-track { position: relative; height: 18px; border-radius: 10px; background: rgba(255,255,255,.08); }
+  .cde-scale-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 33%; border-radius: 10px; background: var(--cde-accent); }
+  .cde-scale-divider { position: absolute; left: 58%; top: -10px; bottom: -10px; width: 2px; background: #fff; }
+  .cde-scale-labels { position: relative; height: 40px; font-size: 13px; font-weight: 600; }
+  .cde-scale-labels > span { position: absolute; }
+
+  .cde-methods { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px; }
+  .cde-method { padding: 7px 12px; border-radius: 8px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); }
+
+  .cde-cards3 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 16px; }
+  .cde-cards3 li { padding: 22px; border-radius: 18px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); display: flex; flex-direction: column; gap: 14px; }
+  .cde-cards3-k { width: 44px; height: 44px; border-radius: 12px; background: rgba(167,139,250,.12); color: var(--cde-accent); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+  .cde-cards3 h4 { margin: 0; font-size: 18px; font-weight: 600; color: #fff; }
+  .cde-cards3 p { margin: 0; font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.65); }
+
+  .cde-reqs { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 1px; border-radius: 16px; overflow: hidden; background: var(--cde-line); border: 1px solid var(--cde-line); }
+  .cde-reqs li { background: #0a0a0c; padding: 16px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .cde-reqs li span { font-size: 15px; line-height: 1.4; color: #fff; }
+
+  .cde-split2 { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .cde-split-card { padding: 22px 20px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid var(--cde-line); display: flex; flex-direction: column; gap: 10px; }
+  .cde-split-card-accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.5); }
+  .cde-split-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .cde-split-card-accent .cde-split-label { color: var(--cde-accent); }
+  .cde-split-title { font-size: 22px; font-weight: 700; line-height: 1.2; color: #fff; }
+  .cde-split-desc { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.55); }
+  .cde-split-card-accent .cde-split-desc { color: rgba(255,255,255,.8); }
+  .cde-split-badge-center { position: absolute; left: 50%; top: 50%; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; background: #000; border: 1px solid rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; color: var(--cde-accent); }
+
+  .cde-focus { margin-top: 12px; padding: 22px 24px; border-radius: 20px; border: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: 8px; }
+  .cde-focus-label { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .cde-focus-quote { margin: 0; font-family: var(--font-serif); font-size: 24px; line-height: 1.3; color: #fff; }
+
+  .cde-persona { padding: 28px; border-radius: 24px; background: #0d0d10; border: 1px solid var(--cde-line); display: flex; flex-direction: column; gap: 18px; }
+  .cde-persona-top { display: flex; align-items: center; gap: 16px; }
+  .cde-persona-avatar { flex: none; width: 64px; height: 64px; border-radius: 50%; background: rgba(167,139,250,.16); border: 2px solid rgba(167,139,250,.5); color: var(--cde-accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-weight: 800; font-size: 20px; }
+  .cde-persona-name { display: block; font-size: 20px; font-weight: 700; color: #fff; }
+  .cde-persona-role { display: block; margin-top: 3px; font-size: 14px; color: rgba(255,255,255,.65); }
+  .cde-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+  .cde-persona-cols > div { display: flex; flex-direction: column; gap: 8px; }
+  .cde-persona-item { font-size: 14px; line-height: 1.4; color: #fff; }
+  .cde-persona-cols.is-pain .cde-persona-item { color: rgba(255,255,255,.72); }
+  .cde-quote { margin: 0; padding-top: 16px; border-top: 1px solid var(--cde-line); font-family: var(--font-serif); font-style: italic; font-weight: 700; font-size: 19px; line-height: 1.35; color: #fff; }
+  .cde-tag { font-size: 11px; color: rgba(255,255,255,.5); }
+  .cde-test-note { margin-top: auto; padding: 18px 20px; border-radius: 16px; border: 1px dashed rgba(255,255,255,.2); font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72); }
+
+  .cde-tiers { margin: 0; padding: 24px; border-radius: 24px; background: #0d0b14; border: 1px solid rgba(167,139,250,.28); display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; }
+  .cde-tier { padding: 16px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; }
+  .cde-tier-k { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cde-accent); }
+  .cde-tier-title { font-size: 15px; font-weight: 600; line-height: 1.3; color: #fff; }
+  .cde-tier-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cde-tier-chip { padding: 4px 8px; border-radius: 6px; background: rgba(167,139,250,.1); font-size: 12px; font-weight: 600; color: rgba(255,255,255,.85); }
+  .cde-tier-q { margin-top: auto; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.45); }
+
+  .cde-specimen { padding: 28px; border-radius: 22px; background: #f4f6f5; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .cde-spec-cell { display: flex; flex-direction: column; gap: 8px; }
+  .cde-spec-btn { height: 48px; border-radius: 10px; border: 0; background: var(--cde-brand); color: #fff; font: 600 15px Inter, sans-serif; }
+  .cde-spec-btn.is-hover { background: #063a2b; }
+  .cde-spec-btn.is-focus { outline: 2px solid #111; outline-offset: 2px; }
+  .cde-spec-btn.is-disabled { background: #e3e7e5; color: #5d6964; border: 1px dashed #8a9691; }
+  .cde-spec-label { font-size: 13px; font-weight: 600; color: #3b4a44; }
+
+  .cde-tool-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 24px; align-items: center; }
+  .cde-tool-fig { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .cde-tool-cap { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); }
+  .cde-tool-cap-accent { color: var(--cde-accent); }
+
+  .cde-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; }
+  .cde-feature { padding: 18px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px; }
+  .cde-feature-t { font-size: 16px; font-weight: 600; color: #fff; }
+  .cde-feature-d { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.62); }
+
+  .cde-search-card { padding: 20px; border-radius: 18px; background: #fff; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .cde-search-img { display: block; width: 100%; max-width: 420px; height: auto; object-fit: contain; }
+  .cde-search-cap { font-size: 13px; font-weight: 600; color: #3b4a44; }
+
+  .cde-flowgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 16px; }
+  .cde-flowcard { border-radius: 20px; overflow: hidden; background: #0d0d10; border: 1px solid var(--cde-line); display: flex; flex-direction: column; }
+  .cde-flowcard-media { position: relative; height: 380px; padding: 20px 16px 0; box-sizing: border-box; display: flex; justify-content: center; align-items: flex-end; }
+  .cde-flowcard-media img { width: 100%; height: 360px; object-fit: contain; object-position: bottom; }
+  .cde-flowcard-badge { position: absolute; left: 12px; top: 12px; padding: 4px 9px; border-radius: 999px; background: var(--cde-accent); color: #0b0614; font-size: 11px; font-weight: 700; }
+  .cde-flowcard-info { padding: 16px 18px 18px; border-top: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; gap: 6px; }
+  .cde-flowcard-info h4 { margin: 0; font-size: 18px; font-weight: 600; color: #fff; }
+  .cde-flowcard-info p { margin: 0; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.65); }
+
+  .cde-audit2 { padding: 32px; border-radius: 26px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.35), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; gap: 24px; }
+  .cde-audit2-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600; color: #fff; }
+  .cde-pill { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); color: var(--cde-accent); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .cde-audit2-big { font-family: var(--font-serif); font-weight: 800; font-size: 110px; line-height: .82; letter-spacing: -.02em; color: var(--cde-accent); }
+  .cde-audit2-txt { padding-bottom: 6px; font-size: 17px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .cde-flows { margin: 0; padding: 20px 0 0; list-style: none; border-top: 1px solid rgba(255,255,255,.1); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .cde-flow { display: flex; align-items: center; gap: 8px; }
+  .cde-flow span { font-size: 15px; font-weight: 600; color: #fff; }
+
+  .cde-results2 { display: flex; flex-direction: column; gap: 20px; }
+  .cde-ministats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .cde-ministat { padding: 20px 18px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid var(--cde-line); display: flex; flex-direction: column; gap: 8px; }
+  .cde-ministat-num { font-family: var(--font-serif); font-weight: 800; font-size: 48px; line-height: 1; color: #fff; }
+  .cde-ministat-txt { font-size: 14px; line-height: 1.35; color: rgba(255,255,255,.7); }
+
+  .cde-learn3 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 0 32px; }
+  .cde-learn3 li { display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.12); }
+  .cde-learn3 b { width: 38px; flex: none; font-family: var(--font-serif); font-style: italic; font-weight: 700; font-size: 28px; line-height: 1; color: var(--cde-accent); }
+  .cde-learn3 h4 { margin: 0; font-size: 18px; font-weight: 600; color: #fff; }
+  .cde-learn3 p { margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.62); }
+
+  .cde-closeimgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 48px; align-items: center; }
+  .cde-closeimgs img { width: 100%; height: auto; max-width: 600px; }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .cde-facts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+  </style>
 </head>
 <body>
 
@@ -38,11 +414,10 @@
   <div class="cs-nav-center">
     <nav aria-label="Secciones">
       <ul class="cs-toc">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#problema"><span class="es">Problema</span><span class="en">Problem</span></a></li>
-        <li><a href="#investigacion"><span class="es">Auditoría</span><span class="en">Audit</span></a></li>
-        <li><a href="#diseno"><span class="es">Sistema</span><span class="en">System</span></a></li>
-        <li><a href="#resultados"><span class="es">Resultados</span><span class="en">Results</span></a></li>
+        <li><a href="#cde-overview">Overview</a></li>
+        <li><a href="#cde-problema"><span class="es">Problema</span><span class="en">Problem</span></a></li>
+        <li><a href="#cde-sistema"><span class="es">Sistema</span><span class="en">System</span></a></li>
+        <li><a href="#cde-resultados"><span class="es">Resultados</span><span class="en">Results</span></a></li>
         <li><a href="#aprendizajes"><span class="es">Progresión</span><span class="en">Growth</span></a></li>
       </ul>
     </nav>
@@ -76,10 +451,10 @@
 
 <!-- ============ NAVEGACIÓN MÓVIL POR TABS ============ -->
 <nav class="cs-mobile-tabs" aria-label="Navegación de secciones móvil">
-  <a href="#overview" class="cs-mobile-tab is-active">Overview</a>
-  <a href="#problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
-  <a href="#diseno" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
-  <a href="#resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
+  <a href="#cme-overview" class="cs-mobile-tab is-active">Overview</a>
+  <a href="#cme-problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
+  <a href="#cme-sistema" class="cs-mobile-tab"><span class="es">Sistema</span><span class="en">System</span></a>
+  <a href="#cme-resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
 </nav>
 
 
@@ -161,382 +536,525 @@
 
 <main>
 
-<!-- ============ 1 · HERO & FICHA ============ -->
-<section class="cs-hero" id="overview">
-  <div class="wrap">
-    <div class="cs-client reveal"><b>CEF EdTech</b> · <span class="es">Design System &amp; Accesibilidad</span><span class="en">Design System &amp; Accessibility</span></div>
-    <h1 class="cs-title reveal">
-      <span class="es">Construir un sistema de diseño desde cero: <em>deuda visual, tokens y WCAG AA</em></span>
-      <span class="en">Building a design system from zero: <em>visual debt, tokens &amp; WCAG AA</em></span>
-    </h1>
-    <p class="cs-sub reveal">
-      <span class="es">Cómo convertí años de inconsistencia y contrastes por debajo de 3:1 en una arquitectura unificada de tokens, componentes modulares y hand-off ágil para desarrollo.</span>
-      <span class="en">How I turned years of visual debt and sub-3:1 contrast into a unified token architecture, modular components, and seamless developer hand-off.</span>
-    </p>
+<!-- ============ .cme (móvil, <=768px) — HANDOFF-cef.md ============ -->
+<div class="cme" id="cme-root">
 
-    <div class="cs-hero-img reveal">
-      <img src="assets/CEF/cef-design-system-hero.png" width="2560" height="1560" alt="CEF EdTech Design System - Dashboard y Portal de Alumnos">
+  <!-- Mobile 01 · Hero + TL;DR -->
+  <section class="cme-sec" id="cme-overview">
+    <div class="cme-chips">
+      <span class="cme-chip cme-chip-accent"><span class="es">EdTech · Design System</span><span class="en">EdTech · Design System</span></span>
+      <span class="cme-chip"><span class="es">Login · Calendario · Pago</span><span class="en">Login · Calendar · Payments</span></span>
     </div>
+    <h1 class="cme-h1"><span class="es">Un solo sistema, <em>del login al pago</em></span><span class="en">One system, <em>from login to payment</em></span></h1>
+    <p class="cme-lead"><span class="es">CEF quería organizar en digital sus <strong>clases, cursos y asignaturas</strong>. Diseñé el sistema de diseño que sostiene esa herramienta nueva y todo lo que la rodea.</span><span class="en">CEF wanted to organize its <strong>classes, courses and subjects</strong> digitally. I designed the design system that powers that new tool and everything around it.</span></p>
 
-    <dl class="cs-facts reveal">
-      <div class="cs-fact"><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd><span class="es">Solo Product Designer</span><span class="en">Solo Product Designer</span></dd></div>
-      <div class="cs-fact"><dt><span class="es">Equipo</span><span class="en">Team</span></dt><dd><span class="es">Yo + Frontend + Producto</span><span class="en">Me + Frontend + Product</span></dd></div>
-      <div class="cs-fact"><dt><span class="es">Duración</span><span class="en">Timeline</span></dt><dd><span class="es">4 meses</span><span class="en">4 months</span></dd></div>
-      <div class="cs-fact"><dt><span class="es">Herramientas</span><span class="en">Tools</span></dt><dd>Figma · Tokens Studio · Stark · Claude MCP</dd></div>
-      <div class="cs-fact"><dt><span class="es">Plataforma</span><span class="en">Platform</span></dt><dd>Web Desktop &amp; Mobile · EdTech</dd></div>
+    <figure class="cme-hero-fig">
+      <img class="cme-hero-img" src="assets/cef-mobile/cal-desk.webp" alt="Herramienta de organización académica de CEF en un portátil: vista semanal con clases, centro y curso">
+      <figcaption class="cme-hero-cap"><span class="es">La herramienta nueva: vista semanal de clases con centro, curso y número de sesión.</span><span class="en">The new tool: weekly class view with center, course and session number.</span></figcaption>
+    </figure>
+
+    <dl class="cme-facts">
+      <div class="cme-fact"><dt class="cme-fact-label"><span class="es">Rol</span><span class="en">Role</span></dt><dd class="cme-fact-val"><span class="es">Solo Product Designer</span><span class="en">Solo Product Designer</span></dd></div>
+      <div class="cme-fact"><dt class="cme-fact-label"><span class="es">Duración</span><span class="en">Timeline</span></dt><dd class="cme-fact-val"><span class="es">4 meses</span><span class="en">4 months</span></dd></div>
+      <div class="cme-fact"><dt class="cme-fact-label"><span class="es">Equipo</span><span class="en">Team</span></dt><dd class="cme-fact-val"><span class="es">Yo + Frontend + Producto</span><span class="en">Me + Frontend + Product</span></dd></div>
+      <div class="cme-fact"><dt class="cme-fact-label"><span class="es">Plataforma</span><span class="en">Platform</span></dt><dd class="cme-fact-val"><span class="es">Web desktop + mobile</span><span class="en">Web desktop + mobile</span></dd></div>
+      <div class="cme-fact cme-fact-full"><dt class="cme-fact-label"><span class="es">Herramientas</span><span class="en">Tools</span></dt><dd class="cme-fact-val">Figma · Tokens Studio · Stark</dd></div>
     </dl>
-  </div>
-</section>
 
-<!-- ============ 3 · TL;DR ============ -->
-<section class="section">
-  <div class="wrap">
-    <span class="eyebrow"><b>01</b>TL;DR</span>
-    <h2 class="h2 reveal"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
-    <div class="tldr">
-      <article class="tldr-card reveal">
-        <span class="tldr-label"><span class="es">Problema</span><span class="en">Problem</span></span>
-        <h3><span class="es">Deuda visual acumulada y nula accesibilidad</span><span class="en">Accumulated visual debt &amp; zero accessibility</span></h3>
-        <p><span class="es">Cada módulo se diseñaba y desarrollaba de forma aislada: contrastes ilegibles (&lt; 3:1) y componentes duplicados en código.</span><span class="en">Each module was built in silos: illegible contrast (&lt; 3:1) and duplicated frontend code.</span></p>
-      </article>
-      <article class="tldr-card reveal">
-        <span class="tldr-label"><span class="es">Solución</span><span class="en">Solution</span></span>
-        <h3><span class="es">Sistema de diseño atómico con tokens semánticos</span><span class="en">Atomic design system with semantic tokens</span></h3>
-        <p><span class="es">Estandarización de 40+ componentes, sistema tipográfico modular y cumplimiento estricto de WCAG 2.1 nivel AA.</span><span class="en">Standardization of 40+ components, modular typography, and strict WCAG 2.1 AA compliance.</span></p>
-      </article>
-      <article class="tldr-card reveal">
-        <span class="tldr-label"><span class="es">Impacto</span><span class="en">Impact</span></span>
-        <div class="tldr-metric">100%<small>AA</small></div>
-        <p><span class="es">Conformidad WCAG AA alcanzada en flujos críticos · Reducción radical del tiempo de hand-off a desarrollo.</span><span class="en">WCAG AA compliance achieved on key flows · Drastic reduction in design-to-code hand-off time.</span></p>
-      </article>
+    <div class="cme-sub" style="margin-top:48px;display:flex;align-items:baseline;justify-content:space-between">
+      <h2 class="cme-h2" style="margin:0;font-size:30px"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
+      <span class="cme-eyebrow">01</span>
     </div>
-  </div>
-</section>
-
-<!-- ============ 4 · CONTEXTO Y PROBLEMA ============ -->
-<section class="section" id="problema">
-  <div class="wrap grid-2">
-    <div>
-      <span class="eyebrow"><b>02</b><span class="es">Contexto y problema</span><span class="en">Context &amp; problem</span></span>
-      <h2 class="h2 reveal"><span class="es">Resolver la interfaz <em>pantalla a pantalla no escala</em></span><span class="en">Solving interfaces <em>screen by screen doesn't scale</em></span></h2>
-      <p class="lead reveal"><span class="es">El Centro de Estudios Financieros contaba con múltiples plataformas digitales (Campus virtual, Bolsa de empleo, Pasarela de matriculación y Calendario académico) construidas a lo largo de los años por diferentes proveedores. El resultado era una experiencia fragmentada, con ratios de contraste inaccesibles y componentes que se reinventaban con cada nuevo requerimiento.</span><span class="en">CEF had multiple digital platforms built over the years by different teams. The result was a fragmented student experience, inaccessible contrast ratios, and components constantly reinvented for every new feature.</span></p>
-    </div>
-    <div class="reveal">
-      <span class="label" style="display:block;margin-bottom:20px"><span class="es">Requisitos imprescindibles</span><span class="en">Hard requirements</span></span>
-      <ul class="checks">
-        <li><span class="es">Superar la auditoría legal de accesibilidad (WCAG 2.1 AA)</span><span class="en">Pass legal accessibility audit (WCAG 2.1 AA)</span></li>
-        <li><span class="es">Arquitectura de tokens sincronizada entre Figma y Frontend</span><span class="en">Token architecture synced between Figma and code</span></li>
-        <li><span class="es">Funcionar sin fisuras en Desktop y navegación Mobile</span><span class="en">Flawless responsive behavior across desktop &amp; mobile</span></li>
-        <li><span class="es">Documentación clara de estados (hover, focus, disabled, active)</span><span class="en">Exhaustive documentation of states (hover, focus, disabled)</span></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="growth reveal">
-      <span class="label"><span class="es">Mi enfoque de sistemas</span><span class="en">My systems mindset</span></span>
-      <p><span class="es">Un sistema de diseño no es un catálogo estético de botones; es un <strong>contrato operativo</strong> entre diseño, accesibilidad y desarrollo que permite a la organización escalar producto con consistencia sin depender de decisiones subjetivas.</span><span class="en">A design system is not an aesthetic catalog; it is an <strong>operational contract</strong> between design, accessibility, and engineering that allows teams to scale consistently.</span></p>
-    </div>
-
-    <!-- SLOT M3 · DATO VISUALIZADO & FRICCIONES -->
-    <div class="cs-slot-m3 reveal">
-      <div class="cs-big-metric">14 <em>Plataformas</em></div>
-      <div class="cs-metric-bar"><div class="cs-metric-bar-fill" style="width:85%"></div></div>
-      <p class="cs-metric-caption"><span class="es">14 plataformas educativas desincronizadas y sin tokens compartidos</span><span class="en">14 fragmented educational platforms without shared design tokens</span></p>
-    </div>
-
-    <!-- 3 PATRONES DE FRICCIÓN -->
-    <div class="cs-friction-list reveal">
-      <span class="label"><span class="es">Patrones de fricción detectados</span><span class="en">Detected friction patterns</span></span>
-      
-        <div class="cs-friction-card">
-          <div class="cs-friction-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <p class="cs-friction-text"><span class="es">Inconsistencia visual severa entre campus virtual y portales</span><span class="en">Severe visual fragmentation between LMS and web portals</span></p>
+    <div class="cme-tldr">
+      <div class="cme-tl-row">
+        <div class="cme-tl-rail"><span class="cme-tl-dot"></span><span class="cme-tl-line"></span></div>
+        <div class="cme-tl-body">
+          <span class="cme-eyebrow"><span class="es">Problema</span><span class="en">Problem</span></span>
+          <span class="cme-tl-big">&lt; 3:1</span>
+          <span class="cme-tl-desc"><span class="es">de contraste en textos y botones críticos, en 4 plataformas sin nada en común.</span><span class="en">contrast on text and critical buttons, across 4 platforms with nothing in common.</span></span>
         </div>
-        <div class="cs-friction-card">
-          <div class="cs-friction-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <p class="cs-friction-text"><span class="es">Duplicidad de esfuerzo en desarrollo (45% más tiempo)</span><span class="en">Duplicated frontend effort (45% longer turnaround time)</span></p>
+      </div>
+      <div class="cme-tl-row">
+        <div class="cme-tl-rail"><span class="cme-tl-dot"></span><span class="cme-tl-line"></span></div>
+        <div class="cme-tl-body">
+          <span class="cme-eyebrow"><span class="es">Decisión</span><span class="en">Decision</span></span>
+          <span class="cme-tl-big">Tokens</span>
+          <span class="cme-tl-desc"><span class="es">Diseñar las reglas antes que las pantallas, para que login, calendario y pago hablen igual.</span><span class="en">Design the rules before the screens, so login, calendar and payment speak the same language.</span></span>
         </div>
-        <div class="cs-friction-card">
-          <div class="cs-friction-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="#a78bfa" stroke-width="1.4"/><path d="M7.5 4.5V8M7.5 10.5H7.51" stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <p class="cs-friction-text"><span class="es">Incumplimiento de accesibilidad WCAG AA en formularios clave</span><span class="en">Failed WCAG AA accessibility compliance on core forms</span></p>
-        </div>
-    </div>
-
-    <!-- DISCOVERY: HALLAZGO -> DECISIÓN -->
-    <div class="cs-discovery-box reveal">
-      <span class="cs-discovery-title"><span class="es">Discovery · Hallazgo → Decisión</span><span class="en">Discovery · Finding → Decision</span></span>
-      <div class="cs-discovery-split">
-        <div class="cs-split-col">
-          <span class="cs-split-label"><span class="es">Detectado</span><span class="en">Detected</span></span>
-          <p class="cs-split-desc"><span class="es">Cada squad reinventaba componentes básicos sin jerarquía ni tokens semánticos.</span><span class="en">Every squad was reinventing basic UI elements without semantic tokens.</span></p>
-        </div>
-        <div class="cs-split-col">
-          <span class="cs-split-label"><span class="es">Decisión</span><span class="en">Decision</span></span>
-          <p class="cs-split-desc"><span class="es">Diseñar un sistema de diseño desde cero con 80+ componentes y gobernanza en Figma y código.</span><span class="en">Build an end-to-end design system with 80+ components and token governance.</span></p>
+      </div>
+      <div class="cme-tl-row">
+        <div class="cme-tl-rail"><span class="cme-tl-dot cme-tl-dot-accent"></span></div>
+        <div class="cme-tl-body cme-tl-highlight">
+          <span class="cme-eyebrow cme-eyebrow-accent"><span class="es">Resultado · auditado</span><span class="en">Result · audited</span></span>
+          <span class="cme-tl-big cme-tl-big-accent">AA</span>
+          <span class="cme-tl-desc cme-tl-desc-light"><span class="es">WCAG 2.1 en los tres flujos críticos: acceso, organización académica y pago.</span><span class="en">WCAG 2.1 across the three critical flows: access, academic organization and payment.</span></span>
         </div>
       </div>
     </div>
+    <a class="cme-cta" href="#cme-problema"><span class="es">Ver el problema</span><span class="en">See the problem</span> <span aria-hidden="true">↓</span></a>
+  </section>
 
-  </div>
-</section>
+  <!-- Mobile 02 · Problema -->
+  <section class="cme-sec" id="cme-problema">
+    <span class="cme-eyebrow-accent"><span class="es">02 · Contexto</span><span class="en">02 · Context</span></span>
+    <h2 class="cme-h2"><span class="es">Un recorrido, <em>cuatro interfaces</em></span><span class="en">One journey, <em>four interfaces</em></span></h2>
+    <p class="cme-p"><span class="es">Campus virtual, bolsa de empleo, pasarela de matriculación y calendario académico se construyeron en años distintos y con proveedores distintos. El alumno, que además es cliente, cruzaba varias de ellas para hacer una sola cosa.</span><span class="en">Virtual campus, job board, enrollment gateway and academic calendar were built in different years by different vendors. The student, who is also a customer, crossed several of them to do one single thing.</span></p>
 
-<!-- ============ 5 · OBJETIVOS ============ -->
-<section class="section section--tight">
-  <div class="wrap">
-    <span class="eyebrow"><b>03</b><span class="es">Objetivos</span><span class="en">Goals</span></span>
-    <div class="goals">
-      <div class="goal panel reveal">
-        <span class="label"><span class="es">Negocio y Desarrollo</span><span class="en">Business &amp; Dev</span></span>
-        <ul class="checks">
-          <li><span class="es">Acelerar el ciclo de entrega de nuevas funcionalidades</span><span class="en">Accelerate delivery time for new features</span></li>
-          <li><span class="es">Cumplir la normativa legal de accesibilidad para educación</span><span class="en">Comply with legal accessibility mandates in education</span></li>
-        </ul>
+    <div class="cme-journey">
+      <span class="cme-journey-label"><span class="es">El recorrido del alumno-cliente</span><span class="en">The student-customer journey</span></span>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">01</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Entrar</span><span class="en">Log in</span></span><span class="cme-journey-desc"><span class="es">Login con 4 perfiles: alumnos CEF, alumnos UDIMA, empresas y empleados.</span><span class="en">Login with 4 profiles: CEF students, UDIMA students, companies and staff.</span></span></div>
       </div>
-      <div class="goal panel reveal">
-        <span class="label"><span class="es">Estudiante y Usabilidad</span><span class="en">Students &amp; Usability</span></span>
-        <ul class="checks">
-          <li><span class="es">Lectura sin fatiga y jerarquía clara en trámites críticos</span><span class="en">Effortless reading &amp; hierarchy on critical flows</span></li>
-          <li><span class="es">Navegación cómoda con teclado y lectores de pantalla</span><span class="en">Comfortable keyboard and screen reader navigation</span></li>
-        </ul>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">02</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Organizar</span><span class="en">Organize</span></span><span class="cme-journey-desc"><span class="es">Ver clases, cursos y asignaturas en un calendario, por día, semana o año.</span><span class="en">View classes, courses and subjects in a calendar, by day, week or year.</span></span></div>
       </div>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">03</span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Pagar</span><span class="en">Pay</span></span><span class="cme-journey-desc"><span class="es">Pasarela de matriculación con los datos de la tarjeta.</span><span class="en">Enrollment gateway with card details.</span></span></div>
+      </div>
+      <div class="cme-journey-foot"><span class="es">Tres pasos con estilos, botones y contrastes distintos. Si el recorrido fallaba, CEF perdía una matrícula.</span><span class="en">Three steps with different styles, buttons and contrast. If the journey failed, CEF lost an enrollment.</span></div>
     </div>
-  </div>
-</section>
 
-<!-- ============ 6 · RESEARCH / AUDITORÍA ============ -->
-<section class="section" id="investigacion">
-  <div class="wrap">
-    <span class="eyebrow"><b>04</b><span class="es">Auditoría e investigación</span><span class="en">Audit &amp; Research</span></span>
-    <h2 class="h2 reveal"><span class="es">Diagnóstico con datos: <em>auditoría de accesibilidad</em></span><span class="en">Data-driven diagnosis: <em>accessibility audit</em></span></h2>
-    <div class="methods reveal">
-      <span class="chip">WCAG 2.1 AA Audit</span>
-      <span class="chip">Stark Contrast Checker</span>
-      <span class="chip">Screen Reader Testing (NVDA &amp; VoiceOver)</span>
-      <span class="chip">UI Component Inventory</span>
-      <span class="chip">Figma Tokens Architecture</span>
+    <span class="cme-eyebrow" style="display:block;margin-top:44px"><span class="es">Auditoría WCAG 2.1 AA</span><span class="en">WCAG 2.1 AA audit</span></span>
+    <div class="cme-audit">
+      <span class="cme-audit-big">&lt;3:1</span>
+      <span class="cme-audit-text"><span class="es">en textos secundarios y botones críticos</span><span class="en">on secondary text and critical buttons</span></span>
     </div>
-    <div class="insights panel">
-      <article class="insight"><div class="insight-num">01</div><h3><span class="es">Contraste insuficiente</span><span class="en">Sub-3:1 contrast</span></h3><p><span class="es">Textos secundarios y botones críticos fallaban el contraste mínimo de 4.5:1 exigido por WCAG AA.</span><span class="en">Secondary copy and primary buttons failed minimum 4.5:1 contrast ratios.</span></p></article>
-      <article class="insight"><div class="insight-num">02</div><h3><span class="es">Componentes duplicados</span><span class="en">Component duplication</span></h3><p><span class="es">Existían más de 8 variaciones distintas de botones y campos de formulario en producción.</span><span class="en">Over 8 inconsistent variants of buttons and inputs were active in production.</span></p></article>
-      <article class="insight"><div class="insight-num">03</div><h3><span class="es">Navegación por teclado rota</span><span class="en">Broken keyboard navigation</span></h3><p><span class="es">Los estados de foco (:focus-visible) estaban suprimidos, impidiendo la navegación accesible.</span><span class="en">Focus rings (:focus-visible) were removed, breaking accessible keyboard flows.</span></p></article>
-    </div>
-    <blockquote class="quote reveal"><span class="es">“Diseñar para la accesibilidad no limita la creatividad; impone un rigor que beneficia a todos los usuarios, no solo a quienes usan tecnologías asistivas.”</span><span class="en">“Designing for accessibility doesn't limit creativity; it demands rigor that benefits every user.”</span></blockquote>
-    <div class="ai-box reveal">
-      <span class="ai-badge"><span class="es">Copiloto IA · Aceleración con Claude &amp; Figma MCP</span><span class="en">AI co-pilot · Acceleration with Claude &amp; Figma MCP</span></span>
-      <p><span class="es">Utilicé Claude con Figma MCP para mapear automáticamente la paleta completa de tokens y generar la matriz de contrastes WCAG en minutos. La automatización aceleró la auditoría mecánica para centrarme en la toma de decisiones.</span><span class="en">I used Claude with Figma MCP to map color tokens and generate the WCAG contrast matrix in minutes, speeding up routine audits so I could focus on high-impact decisions.</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 7 · ARQUITECTURA DEL SISTEMA ============ -->
-<section class="section" id="diseno">
-  <div class="wrap">
-    <span class="eyebrow"><b>05</b><span class="es">Arquitectura del sistema</span><span class="en">System Architecture</span></span>
-    <h2 class="h2 reveal"><span class="es">De la tokenización a la <em>experiencia final</em></span><span class="en">From tokenization to <em>the final interface</em></span></h2>
-
-    <div class="panel reveal" style="margin-top:40px">
-      <div class="panel-head"><span><span class="es">Antes / después</span><span class="en">Before / after</span></span><span class="panel-tag"><span class="es">Calendario Académico</span><span class="en">Academic Calendar</span></span></div>
-      <div class="compare">
-        <figure class="compare-item">
-          <div class="compare-media">
-            <img src="assets/CEF/CALENDARIO%20(WEB)/calendariooo.webp" alt="Calendario académico antes del rediseño" loading="lazy" width="1920" height="1440">
-          </div>
-          <figcaption class="compare-caption">
-            <div class="compare-badge compare-badge--before">
-              <span class="badge-dot"></span>
-              <span class="es">Antes · El problema</span>
-              <span class="en">Before · The issue</span>
-            </div>
-            <p class="compare-desc">
-              <span class="es">Sin sistema de rejilla, tipografía ilegible en pantallas pequeñas y contraste insuficiente en eventos.</span>
-              <span class="en">Lack of layout grid, cramped mobile typography, and failing contrast on calendar events.</span>
-            </p>
-          </figcaption>
-        </figure>
-        <figure class="compare-item compare-item--after">
-          <div class="compare-media">
-            <img src="assets/CEF/CALENDARIO%20(WEB)/calendario.webp" alt="Calendario académico con el nuevo sistema de diseño" loading="lazy" width="1920" height="1440">
-          </div>
-          <figcaption class="compare-caption">
-            <div class="compare-badge compare-badge--after">
-              <span class="badge-dot"></span>
-              <span class="es">Después · Solución con sistema</span>
-              <span class="en">After · System solution</span>
-            </div>
-            <p class="compare-desc">
-              <span class="es">Estructura unificada, navegación táctil adaptada al pulgar y contraste certificado WCAG AA.</span>
-              <span class="en">Unified hierarchy, thumb-friendly touch targets, and certified WCAG AA contrast.</span>
-            </p>
-          </figcaption>
-        </figure>
+    <div class="cme-scale" role="img" aria-label="Escala de contraste: el producto estaba por debajo de 3 a 1 y el mínimo AA para texto es 4,5 a 1">
+      <div class="cme-scale-track"><div class="cme-scale-fill"></div><div class="cme-scale-divider"></div></div>
+      <div class="cme-scale-labels">
+        <span style="left:0;color:rgba(255,255,255,.5)">1:1</span>
+        <span style="left:24%;color:#a78bfa"><span class="es">Antes</span><span class="en">Before</span> · &lt;3:1</span>
+        <span style="left:52%;top:16px;color:#fff">AA · 4,5:1</span>
+        <span style="right:0;color:rgba(255,255,255,.5)">7:1</span>
       </div>
     </div>
 
-    <!-- SLOT M6 · PROCESO & PANTALLAS (CARRUSEL SCROLL-SNAP) -->
+    <span class="cme-eyebrow" style="display:block;margin-top:30px">3 hallazgos</span>
+    <div class="cme-findings">
+      <div class="cme-finding"><span class="cme-finding-k">01</span><div class="cme-finding-body"><span class="cme-finding-title"><span class="es">Contraste insuficiente</span><span class="en">Insufficient contrast</span></span><span class="cme-finding-desc"><span class="es">Textos secundarios y botones críticos por debajo de 4,5:1.</span><span class="en">Secondary text and critical buttons below 4.5:1.</span></span></div></div>
+      <div class="cme-finding"><span class="cme-finding-k">8+</span><div class="cme-finding-body"><span class="cme-finding-title"><span class="es">Componentes duplicados</span><span class="en">Duplicated components</span></span><span class="cme-finding-desc"><span class="es">Más de 8 variantes de botón y campo en producción.</span><span class="en">More than 8 button and field variants in production.</span></span></div></div>
+      <div class="cme-finding"><span class="cme-finding-k">03</span><div class="cme-finding-body"><span class="cme-finding-title"><span class="es">Teclado roto</span><span class="en">Broken keyboard</span></span><span class="cme-finding-desc"><span class="es">El foco (:focus-visible) estaba suprimido.</span><span class="en">Focus (:focus-visible) was suppressed.</span></span></div></div>
+    </div>
+    <div class="cme-methods">
+      <span class="cme-method"><span class="es">Auditoría WCAG 2.1 AA</span><span class="en">WCAG 2.1 AA audit</span></span>
+      <span class="cme-method">Stark</span>
+      <span class="cme-method"><span class="es">NVDA y VoiceOver</span><span class="en">NVDA &amp; VoiceOver</span></span>
+      <span class="cme-method"><span class="es">Inventario de componentes</span><span class="en">Component inventory</span></span>
+    </div>
+
+    <span class="cme-eyebrow-accent" style="display:block;margin-top:36px"><span class="es">Para quién diseñaba</span><span class="en">Who I designed for</span></span>
+    <h3 class="cme-h3"><span class="es">Cuatro perfiles, <em>un solo acceso</em></span><span class="en">Four profiles, <em>one access point</em></span></h3>
+    <p class="cme-p"><span class="es">El sistema tenía que servir igual a quien entra a estudiar y a quien entra a pagar: alumnos CEF, alumnos UDIMA, empresas y empleados, cada uno con permisos distintos sobre el mismo calendario.</span><span class="en">The system had to serve both the student and the payer equally: CEF students, UDIMA students, companies and staff, each with different permissions on the same calendar.</span></p>
+    <div class="cme-persona">
+      <div class="cme-persona-top">
+        <span class="cme-persona-avatar" aria-hidden="true">EA</span>
+        <div>
+          <span class="cme-persona-name">Elena, 24</span>
+          <span class="cme-persona-role"><span class="es">Alumna CEF · gestiona sus clases desde el móvil</span><span class="en">CEF student · manages her classes from her phone</span></span>
+        </div>
+      </div>
+      <div class="cme-persona-cols">
+        <div>
+          <span class="cme-eyebrow cme-eyebrow-accent"><span class="es">Objetivos</span><span class="en">Goals</span></span>
+          <span class="cme-persona-item"><span class="es">Ver sus clases sin confundir centro y curso</span><span class="en">See her classes without mixing up center and course</span></span>
+          <span class="cme-persona-item"><span class="es">Encontrar su aula y grupo en un toque</span><span class="en">Find her classroom and group in one tap</span></span>
+        </div>
+        <div class="is-pain">
+          <span class="cme-eyebrow"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span>
+          <span class="cme-persona-item"><span class="es">Cada plataforma se veía y se usaba distinto</span><span class="en">Every platform looked and worked differently</span></span>
+          <span class="cme-persona-item"><span class="es">El contraste bajo le costaba leer con el sol</span><span class="en">Low contrast was hard to read in sunlight</span></span>
+        </div>
+      </div>
+      <p class="cme-quote"><span class="es">«Si cada app es distinta, aprendo cuatro veces lo mismo.»</span><span class="en">“If every app is different, I learn the same thing four times.”</span></p>
+      <span class="cme-tag"><span class="es">Persona ilustrativa</span><span class="en">Illustrative persona</span></span>
+    </div>
+    <div class="cme-test-note">
+      <span class="es"><strong>Cómo lo validé:</strong> no solo con la auditoría de contraste. Probé los cuatro perfiles con lectores de pantalla (NVDA, VoiceOver) y navegación completa por teclado, sin ratón.</span>
+      <span class="en"><strong>How I validated it:</strong> not just with the contrast audit. I tested all four profiles with screen readers (NVDA, VoiceOver) and full keyboard-only navigation.</span>
+    </div>
+
+    <span class="cme-eyebrow" style="display:block;margin-top:30px"><span class="es">Requisitos imprescindibles</span><span class="en">Hard requirements</span></span>
+    <div class="cme-reqs">
+      <div class="cme-req"><svg class="cme-req-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="cme-req-text"><span class="es">Superar la auditoría legal de accesibilidad WCAG 2.1 AA</span><span class="en">Pass the legal WCAG 2.1 AA accessibility audit</span></span></div>
+      <div class="cme-req"><svg class="cme-req-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="cme-req-text"><span class="es">Tokens sincronizados entre Figma y frontend</span><span class="en">Tokens synced between Figma and frontend</span></span></div>
+      <div class="cme-req"><svg class="cme-req-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="cme-req-text"><span class="es">Funcionar igual en desktop y en mobile</span><span class="en">Work the same on desktop and mobile</span></span></div>
+      <div class="cme-req"><svg class="cme-req-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="cme-req-text"><span class="es">Estados documentados: hover, focus, disabled y active</span><span class="en">Documented states: hover, focus, disabled and active</span></span></div>
+    </div>
+
+    <div class="cme-split2">
+      <div class="cme-split-card"><span class="cme-split-label"><span class="es">Hallazgo</span><span class="en">Finding</span></span><span class="cme-split-title"><span class="es">Cada squad reinventaba lo básico</span><span class="en">Every squad reinvented the basics</span></span><span class="cme-split-desc"><span class="es">Sin jerarquía ni tokens semánticos.</span><span class="en">No hierarchy, no semantic tokens.</span></span></div>
+      <div class="cme-split-card cme-split-card-accent"><span class="cme-split-label"><span class="es">Decisión</span><span class="en">Decision</span></span><span class="cme-split-title"><span class="es">Un sistema desde cero</span><span class="en">A system from scratch</span></span><span class="cme-split-desc"><span class="es">Con gobernanza en Figma y en código.</span><span class="en">With governance in Figma and in code.</span></span></div>
+      <span class="cme-split-badge-center" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+    </div>
+
+    <div class="cme-focus">
+      <span class="cme-focus-label"><span class="es">Mi enfoque</span><span class="en">My approach</span></span>
+      <p class="cme-focus-quote"><span class="es">Un sistema de diseño es un <em>contrato operativo</em> entre diseño, accesibilidad y desarrollo.</span><span class="en">A design system is an <em>operating contract</em> between design, accessibility and engineering.</span></p>
+    </div>
+  </section>
+
+  <!-- Mobile 03 · Sistema + herramienta -->
+  <section class="cme-sec" id="cme-sistema">
+    <span class="cme-eyebrow-accent"><span class="es">03 · El sistema</span><span class="en">03 · The system</span></span>
+    <h2 class="cme-h2"><span class="es">Reglas antes <em>que pantallas</em></span><span class="en">Rules before <em>screens</em></span></h2>
+    <p class="cme-p"><span class="es">Tres capas de tokens. Cambiar un valor arriba actualiza el login, el calendario y el pago a la vez.</span><span class="en">Three layers of tokens. Changing one value upstream updates login, calendar and payment at once.</span></p>
+
+    <div class="cme-tiers" aria-label="Arquitectura de tokens en tres capas: primitivos, semánticos y de componente">
+      <div class="cme-tier">
+        <div class="cme-tier-head"><span class="cme-tier-k"><span class="es">01 · Primitivos</span><span class="en">01 · Primitives</span></span><span class="cme-tier-q"><span class="es">el valor</span><span class="en">the value</span></span></div>
+        <span class="cme-tier-title"><span class="es">Paleta CEF y escala tipográfica</span><span class="en">CEF palette and type scale</span></span>
+        <div class="cme-tier-chips"><span class="cme-tier-chip"><span class="es">Verdes</span><span class="en">Greens</span></span><span class="cme-tier-chip"><span class="es">Neutros</span><span class="en">Neutrals</span></span><span class="cme-tier-chip"><span class="es">Escala de tipo</span><span class="en">Type scale</span></span></div>
+      </div>
+      <div class="cme-tier-arrow" aria-hidden="true"><svg width="16" height="22" viewBox="0 0 16 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v18M3 15l5 5 5-5"/></svg></div>
+      <div class="cme-tier">
+        <div class="cme-tier-head"><span class="cme-tier-k"><span class="es">02 · Semánticos</span><span class="en">02 · Semantic</span></span><span class="cme-tier-q"><span class="es">la intención</span><span class="en">the intent</span></span></div>
+        <span class="cme-tier-title"><span class="es">Qué significa cada color</span><span class="en">What each color means</span></span>
+        <div class="cme-tier-chips"><span class="cme-tier-chip"><span class="es">Acción</span><span class="en">Action</span></span><span class="cme-tier-chip"><span class="es">Superficie</span><span class="en">Surface</span></span><span class="cme-tier-chip"><span class="es">Error</span><span class="en">Error</span></span><span class="cme-tier-chip"><span class="es">Foco</span><span class="en">Focus</span></span></div>
+      </div>
+      <div class="cme-tier-arrow" aria-hidden="true"><svg width="16" height="22" viewBox="0 0 16 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v18M3 15l5 5 5-5"/></svg></div>
+      <div class="cme-tier">
+        <div class="cme-tier-head"><span class="cme-tier-k"><span class="es">03 · Componente</span><span class="en">03 · Component</span></span><span class="cme-tier-q"><span class="es">el uso</span><span class="en">the usage</span></span></div>
+        <span class="cme-tier-title"><span class="es">Dónde se aplica</span><span class="en">Where it applies</span></span>
+        <div class="cme-tier-chips"><span class="cme-tier-chip"><span class="es">Botón</span><span class="en">Button</span></span><span class="cme-tier-chip"><span class="es">Campo</span><span class="en">Field</span></span><span class="cme-tier-chip"><span class="es">Evento de calendario</span><span class="en">Calendar event</span></span></div>
+      </div>
+    </div>
+
+    <span class="cme-eyebrow" style="display:block;margin-top:36px"><span class="es">Accesibilidad en el token</span><span class="en">Accessibility in the token</span></span>
+    <h3 class="cme-h3"><span class="es">Cada estado, documentado</span><span class="en">Every state, documented</span></h3>
+    <div class="cme-specimen">
+      <div class="cme-spec-cell"><button type="button" class="cme-spec-btn">Matricularme</button><span class="cme-spec-label">Default</span></div>
+      <div class="cme-spec-cell"><button type="button" class="cme-spec-btn is-hover">Matricularme</button><span class="cme-spec-label">Hover</span></div>
+      <div class="cme-spec-cell"><button type="button" class="cme-spec-btn is-focus">Matricularme</button><span class="cme-spec-label"><span class="es">Focus · anillo 2px + offset</span><span class="en">Focus · 2px ring + offset</span></span></div>
+      <div class="cme-spec-cell"><button type="button" class="cme-spec-btn is-disabled" disabled>Matricularme</button><span class="cme-spec-label">Disabled</span></div>
+    </div>
+    <p class="cme-specimen-note"><span class="es">El foco visible vuelve a existir: anillo de 2px con separación, para quien navega con teclado.</span><span class="en">Visible focus exists again: a 2px ring with offset, for keyboard navigation.</span></p>
+
+    <span class="cme-eyebrow-accent" style="display:block;margin-top:44px"><span class="es">La herramienta nueva</span><span class="en">The new tool</span></span>
+    <h3 class="cme-h3"><span class="es">Del wireframe a la organización académica</span><span class="en">From wireframe to academic organization</span></h3>
+    <figure class="cme-tool-fig">
+      <img class="cme-tool-img cme-tool-img-full" src="assets/cef-mobile/cal-wire.webp" alt="Wireframe del calendario académico en desktop y mobile: vistas Hoy, Semana y Año, búsqueda y programaciones" style="height:199px;object-fit:cover">
+      <figcaption class="cme-tool-cap"><span class="es">01 · Wireframe desktop y mobile</span><span class="en">01 · Desktop and mobile wireframe</span></figcaption>
+    </figure>
+    <div class="cme-tool-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+    <figure class="cme-tool-fig">
+      <img class="cme-tool-img" src="assets/cef-mobile/cal-desk.webp" alt="Calendario final con el sistema aplicado: clases de Gestión Financiera y Derecho Financiero con centro y curso" style="width:100%;height:auto">
+      <figcaption class="cme-tool-cap cme-tool-cap-accent"><span class="es">02 · UI con el sistema aplicado</span><span class="en">02 · UI with the system applied</span></figcaption>
+    </figure>
+    <div class="cme-features">
+      <div class="cme-feature"><span class="cme-feature-t"><span class="es">Hoy, semana, año</span><span class="en">Today, week, year</span></span><span class="cme-feature-d"><span class="es">Tres vistas para la misma programación.</span><span class="en">Three views for the same schedule.</span></span></div>
+      <div class="cme-feature"><span class="cme-feature-t"><span class="es">Filtros y vistas</span><span class="en">Filters and views</span></span><span class="cme-feature-d"><span class="es">Por centro, curso o asignatura.</span><span class="en">By center, course or subject.</span></span></div>
+      <div class="cme-feature"><span class="cme-feature-t"><span class="es">Evento legible</span><span class="en">Readable event</span></span><span class="cme-feature-d"><span class="es">Asignatura, sesión (3/5), centro y curso.</span><span class="en">Subject, session (3/5), center and course.</span></span></div>
+      <div class="cme-feature"><span class="cme-feature-t">Mobile</span><span class="cme-feature-d"><span class="es">Aula, grupo y perfil a un toque.</span><span class="en">Classroom, group and profile in one tap.</span></span></div>
+    </div>
+    <div class="cme-search-card">
+      <img class="cme-search-img" src="assets/cef-mobile/search.webp" alt="Búsqueda predictiva: al escribir Der aparecen Derecho Laboral, Mercantil, Financiero y Tributario, Romano y Virtual">
+      <span class="cme-search-cap"><span class="es">Búsqueda predictiva de asignaturas</span><span class="en">Predictive subject search</span></span>
+    </div>
+
+    <span class="cme-eyebrow" style="display:block;margin-top:44px"><span class="es">El recorrido completo</span><span class="en">The complete journey</span></span>
+    <h3 class="cme-h3"><span class="es">Entrar, organizar, pagar</span><span class="en">Log in, organize, pay</span></h3>
     <div class="cs-carousel-wrapper reveal">
-      <div class="panel-head">
-        <span><span class="es">Proceso · Pantallas validadas</span><span class="en">Process · Validated screens</span></span>
-        <span class="panel-tag"><span class="es">4 Módulos</span><span class="en">4 Modules</span></span>
-      </div>
       <div class="cs-carousel">
-        
         <article class="cs-carousel-card">
-          <div class="cs-carousel-media">
-            <img src="projects/01-cef/assets/tokens-architecture.webp" alt="Arquitectura de Tokens" loading="lazy">
-          </div>
-          <div class="cs-carousel-info">
-            <span class="cs-carousel-kpi">WCAG AA</span>
-            <h4 class="cs-carousel-title">Arquitectura de Tokens</h4>
-          </div>
+          <div class="cs-carousel-media" style="background:#000"><img src="assets/cef-mobile/login-mob.webp" alt="Login móvil: selector de perfil y formulario de usuario y contraseña" loading="lazy"></div>
+          <div class="cs-carousel-info"><span class="cs-carousel-kpi"><span class="es">01 · Entrar</span><span class="en">01 · Log in</span></span><h4 class="cs-carousel-title"><span class="es">Login por perfil</span><span class="en">Login by profile</span></h4></div>
         </article>
         <article class="cs-carousel-card">
-          <div class="cs-carousel-media">
-            <img src="projects/01-cef/assets/button-states.webp" alt="Sistema de Botones" loading="lazy">
-          </div>
-          <div class="cs-carousel-info">
-            <span class="cs-carousel-kpi">12 Variantes</span>
-            <h4 class="cs-carousel-title">Sistema de Botones</h4>
-          </div>
+          <div class="cs-carousel-media" style="background:#fff"><img src="assets/cef-mobile/cal-mob.webp" alt="Calendario mensual en móvil con clases por colores y menú de aula, grupo y perfil" loading="lazy"></div>
+          <div class="cs-carousel-info"><span class="cs-carousel-kpi"><span class="es">02 · Organizar</span><span class="en">02 · Organize</span></span><h4 class="cs-carousel-title"><span class="es">Calendario académico</span><span class="en">Academic calendar</span></h4></div>
         </article>
         <article class="cs-carousel-card">
-          <div class="cs-carousel-media">
-            <img src="projects/01-cef/assets/mobile-screens.webp" alt="Navegación Móvil" loading="lazy">
-          </div>
-          <div class="cs-carousel-info">
-            <span class="cs-carousel-kpi">Touch-First</span>
-            <h4 class="cs-carousel-title">Navegación Móvil</h4>
-          </div>
-        </article>
-        <article class="cs-carousel-card">
-          <div class="cs-carousel-media">
-            <img src="assets/exp-cef-desk.png" alt="Ecosistema Completo" loading="lazy">
-          </div>
-          <div class="cs-carousel-info">
-            <span class="cs-carousel-kpi">Handoff OK</span>
-            <h4 class="cs-carousel-title">Ecosistema Completo</h4>
-          </div>
+          <div class="cs-carousel-media" style="background:#000"><img src="assets/cef-mobile/pay-mob.webp" alt="Pasarela de pago móvil con transacción y datos de la tarjeta" loading="lazy"></div>
+          <div class="cs-carousel-info"><span class="cs-carousel-kpi"><span class="es">03 · Pagar</span><span class="en">03 · Pay</span></span><h4 class="cs-carousel-title"><span class="es">Pasarela de pago</span><span class="en">Payment gateway</span></h4></div>
         </article>
       </div>
       <div class="cs-carousel-footer cs-mobile-carousel-footer">
-        <div class="cs-carousel-dots">
-          <span class="cs-carousel-dot is-active"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span>
-        </div>
-        <span class="cs-carousel-counter">DESLIZA · 01 / 04</span>
+        <div class="cs-carousel-dots"><span class="cs-carousel-dot is-active"></span><span class="cs-carousel-dot"></span><span class="cs-carousel-dot"></span></div>
+        <span class="cs-carousel-counter">DESLIZA · 01 / 03</span>
       </div>
     </div>
+  </section>
 
-    <!-- SLOT M7 · FEATURE CLAVE -->
-    <div class="cs-slot-m7 reveal">
-      <span class="cs-feature-badge"><span class="es">Feature Clave · Decisión de Producto</span><span class="en">Key Feature · Product Decision</span></span>
-      <p class="cs-feature-title"><span class="es">Arquitectura de Design Tokens semánticos sincronizados</span><span class="en">Synchronized semantic design token architecture</span></p>
-      <div class="cs-feature-val">80+ COMPONENTES</div>
+  <!-- Mobile 04 · Resultados + cierre -->
+  <section class="cme-sec" id="cme-resultados">
+    <span class="cme-eyebrow-accent"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span>
+    <h2 class="cme-h2"><span class="es">Accesible <em>por construcción</em></span><span class="en">Accessible <em>by design</em></span></h2>
+
+    <div class="cme-audit2">
+      <div class="cme-audit2-head"><span><span class="es">Auditoría WCAG 2.1 AA</span><span class="en">WCAG 2.1 AA audit</span></span><span class="cme-pill"><span class="es">Medido</span><span class="en">Measured</span></span></div>
+      <div class="cme-audit"><span class="cme-audit2-big">100%</span><span class="cme-audit2-txt"><span class="es">de los flujos críticos pasan AA</span><span class="en">of critical flows pass AA</span></span></div>
+      <ul class="cme-flows">
+        <li class="cme-flow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="cme-flow-t">Login</span></li>
+        <li class="cme-flow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="cme-flow-t"><span class="es">Calendario</span><span class="en">Calendar</span></span></li>
+        <li class="cme-flow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span class="cme-flow-t"><span class="es">Pago</span><span class="en">Payment</span></span></li>
+      </ul>
     </div>
 
-  </div>
-</section>
-
-<!-- ============ 8 · MÓDULOS CRÍTICOS ============ -->
-<section class="section">
-  <div class="wrap">
-    <span class="eyebrow"><b>06</b><span class="es">Módulos críticos en producción</span><span class="en">Critical Production Modules</span></span>
-    <h2 class="h2 reveal"><span class="es">Pasarela de pago y <em>bolsa de empleo</em></span><span class="en">Checkout flow &amp; <em>job portal</em></span></h2>
-    <div class="panel reveal" style="margin-top:40px">
-      <div class="panel-head"><span><span class="es">Pasarela de pago</span><span class="en">Checkout flow</span></span><span class="panel-tag">Desktop · Mobile</span></div>
-      <div class="devices">
-        <figure class="device"><div class="device-media"><img src="assets/CEF/PASARELA-PAGO/pasarelapago-desk-cef.webp" alt="Pasarela de pago Desktop" loading="lazy"></div><figcaption>Desktop · WCAG 2.1 AA</figcaption></figure>
-        <figure class="device"><div class="device-media"><img src="assets/CEF/PASARELA-PAGO/pasarelapago-mobile-cef.webp" alt="Pasarela de pago Mobile" loading="lazy"></div><figcaption>Mobile · Checkout optimizado</figcaption></figure>
-      </div>
-    </div>
-    <div class="decisions">
-      <div class="decision reveal"><span class="label"><span class="es">Tokens Semánticos</span><span class="en">Semantic Tokens</span></span><h3><span class="es">Color y Modo</span><span class="en">Color &amp; Mode</span></h3><p><span class="es">Variables semánticas desacopladas de valores fijos para permitir escalabilidad futura.</span><span class="en">Semantic variables decoupled from hardcoded values for future scalability.</span></p></div>
-      <div class="decision reveal"><span class="label"><span class="es">Accesibilidad</span><span class="en">Accessibility</span></span><h3><span class="es">Foco y Contraste</span><span class="en">Focus &amp; Contrast</span></h3><p><span class="es">Indicadores de foco con anillo visible de 2px con offset para usuarios de teclado.</span><span class="en">Visible 2px offset focus rings ensuring effortless keyboard navigation.</span></p></div>
-      <div class="decision reveal"><span class="label"><span class="es">Hand-off Ágil</span><span class="en">Agile Hand-off</span></span><h3><span class="es">Componentes Vivos</span><span class="en">Live Components</span></h3><p><span class="es">Especificación exhaustiva de estados y props sincronizadas con la arquitectura frontend.</span><span class="en">Exhaustive props and state specifications matching frontend code structure.</span></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 9 · RESULTADOS ============ -->
-<section class="section" id="resultados">
-  <div class="wrap">
-    <span class="eyebrow"><b>07</b><span class="es">Impacto y resultados</span><span class="en">Impact &amp; Results</span></span>
-    <h2 class="h2 reveal"><span class="es">Impacto cuantitativo y <em>escalabilidad</em></span><span class="en">Quantitative impact &amp; <em>scalability</em></span></h2>
-    <div class="results reveal" style="margin-top:40px">
-      <div class="result"><div class="result-val">100%</div><p><span class="es">Conformidad WCAG AA en flujos clave</span><span class="en">WCAG AA compliance on core flows</span></p></div>
-      <div class="result"><div class="result-val">40+</div><p><span class="es">Componentes atómicos estandarizados</span><span class="en">Standardized atomic components</span></p></div>
-      <div class="result"><div class="result-val">-60%</div><p><span class="es">Tiempo de hand-off a desarrollo</span><span class="en">Design-to-code hand-off time</span></p></div>
-      <div class="result"><div class="result-val">4</div><p><span class="es">Plataformas unificadas bajo un único sistema</span><span class="en">Platforms unified under one system</span></p></div>
+    <div class="cme-ministats">
+      <div class="cme-ministat"><span class="cme-ministat-num">4</span><span class="cme-ministat-txt"><span class="es">plataformas bajo un único sistema</span><span class="en">platforms under one system</span></span></div>
+      <div class="cme-ministat"><span class="cme-ministat-num">1</span><span class="cme-ministat-txt"><span class="es">fuente de tokens para Figma y código</span><span class="en">source of tokens for Figma and code</span></span></div>
     </div>
 
-    <!-- SLOT M8 · MÉTRICA HÉROE -->
-    <div class="cs-slot-m8 reveal">
-      <span class="cs-m8-tag"><span class="es">Impacto Principal · Medido</span><span class="en">Primary Impact · Measured</span></span>
-      <div class="cs-m8-val">100%</div>
-      <span class="cs-m8-sub"><span class="es">Adopción del sistema por el squad de desarrollo</span><span class="en">Design system adoption across developer squads</span></span>
-    </div>
-
-    <!-- TRIPLETE DE MÉTRICAS SECUNDARIAS -->
-    <div class="cs-metric-triplet reveal">
-      
-        <div class="cs-triplet-card">
-          <div class="cs-triplet-val">-45%</div>
-          <p class="cs-triplet-desc"><span class="es">Tiempo de entrega</span><span class="en">Delivery time</span></p>
-        </div>
-        <div class="cs-triplet-card">
-          <div class="cs-triplet-val">100%</div>
-          <p class="cs-triplet-desc"><span class="es">Cumplimiento WCAG</span><span class="en">WCAG AA pass</span></p>
-        </div>
-        <div class="cs-triplet-card">
-          <div class="cs-triplet-val">14</div>
-          <p class="cs-triplet-desc"><span class="es">Plataformas unificadas</span><span class="en">Platforms aligned</span></p>
-        </div>
-    </div>
-    <div class="cs-metric-footnote reveal">1 Métrica héroe + 3 métricas secundarias verificadas</div>
-
-    <!-- 05 · LO QUE ME LLEVO (LEARNINGS) -->
-    <div class="cs-learnings-compact reveal">
-      <div style="padding: 16px 0 8px;">
+    <div class="cs-learnings-compact reveal" style="margin-top:32px">
+      <div style="padding: 0 0 8px;">
         <span class="label"><span class="es">05 · Lo que me llevo</span><span class="en">05 · Key takeaways</span></span>
       </div>
-      
-        <div class="cs-learning-row">
-          <span class="cs-learning-num">01</span>
-          <p class="cs-learning-title"><span class="es">Un Design System es un producto vivo, no un entregable estático</span><span class="en">A Design System is a living product, not a static deliverable</span></p>
-        </div>
-        <div class="cs-learning-row">
-          <span class="cs-learning-num">02</span>
-          <p class="cs-learning-title"><span class="es">La accesibilidad no es un añadido: es un parámetro estructural</span><span class="en">Accessibility is not an afterthought: it is a core constraint</span></p>
-        </div>
-        <div class="cs-learning-row">
-          <span class="cs-learning-num">03</span>
-          <p class="cs-learning-title"><span class="es">Diseñar sistemas es diseñar para desarrolladores y otros diseñadores</span><span class="en">Designing systems means designing for engineers and other designers</span></p>
-        </div>
+      <div class="cs-learning-row"><span class="cs-learning-num">01</span><p class="cs-learning-title"><span class="es">Un sistema es un producto vivo</span><span class="en">A system is a living product</span></p></div>
+      <div class="cs-learning-row"><span class="cs-learning-num">02</span><p class="cs-learning-title"><span class="es">La accesibilidad es estructural</span><span class="en">Accessibility is structural</span></p></div>
+      <div class="cs-learning-row"><span class="cs-learning-num">03</span><p class="cs-learning-title"><span class="es">Se diseña también para desarrollo</span><span class="en">You also design for engineering</span></p></div>
     </div>
 
-    <!-- TARJETA SIGUIENTE CASO COMPACTA -->
-    <a href="ilunion-cro.html" class="cs-next-compact-card reveal">
-      <div class="cs-next-compact-left">
-        <div class="cs-next-thumb">
-          <img src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.webp" alt="ILUNION Hotels CRO" loading="lazy">
-        </div>
-        <div>
-          <div class="cs-next-compact-meta"><span class="es">Siguiente caso · 02</span><span class="en">Next case · 02</span></div>
-          <div class="cs-next-compact-title">ILUNION Hotels CRO</div>
-          <div class="cs-next-compact-topic"><span class="es">Optimización y testing A/B en Adobe AEM</span><span class="en">CRO & A/B testing on Adobe AEM</span></div>
-        </div>
-      </div>
-      <div class="cs-next-arrow-btn" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M8 3L12 7L8 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
+    <img class="cme-tryit-img" src="assets/cef-mobile/pay-desk.webp" alt="Pasarela de pago en desktop con el sistema aplicado">
+  </section>
 
-  </div>
-</section>
+</div>
+
+<!-- ============ .cde (desktop, >=769px) — HANDOFF-cef.md ============ -->
+<div class="cde" id="cde-root">
+
+  <!-- 01 · HERO -->
+  <section class="cde-section cde-hero cde-split" id="cde-overview" aria-labelledby="cde-h1">
+    <div class="cde-col">
+      <div class="cde-chips">
+        <span class="cde-eyebrow" style="display:inline"><span class="es">Caso 01 / 05</span><span class="en">Case 01 / 05</span></span>
+        <span class="cde-chip cde-chip--accent"><span class="es">EdTech · Design System</span><span class="en">EdTech · Design System</span></span>
+        <span class="cde-chip"><span class="es">Login · Calendario · Pago</span><span class="en">Login · Calendar · Payments</span></span>
+      </div>
+      <h1 class="cde-h1" id="cde-h1"><span class="es">Un solo sistema, <em>del login al pago</em></span><span class="en">One system, <em>from login to payment</em></span></h1>
+      <p class="cde-lead"><span class="es">CEF quería organizar en digital sus <strong>clases, cursos y asignaturas</strong>. Diseñé el sistema de diseño que sostiene esa herramienta nueva y todo lo que la rodea.</span><span class="en">CEF wanted to organize its <strong>classes, courses and subjects</strong> digitally. I designed the design system that powers that new tool and everything around it.</span></p>
+      <dl class="cde-facts">
+        <div><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd><span class="es">Solo Product Designer</span><span class="en">Solo Product Designer</span></dd></div>
+        <div><dt><span class="es">Duración</span><span class="en">Timeline</span></dt><dd><span class="es">4 meses</span><span class="en">4 months</span></dd></div>
+        <div><dt><span class="es">Equipo</span><span class="en">Team</span></dt><dd><span class="es">Yo + Frontend + Producto</span><span class="en">Me + Frontend + Product</span></dd></div>
+        <div><dt><span class="es">Herramientas</span><span class="en">Tools</span></dt><dd>Figma · Tokens Studio · Stark</dd></div>
+      </dl>
+      <div class="cde-actions"><a class="cde-btn" href="#cde-problema"><span class="es">Ver el problema</span><span class="en">See the problem</span> <span aria-hidden="true">↓</span></a></div>
+    </div>
+    <figure class="cde-hero-fig">
+      <img class="cde-hero-img" src="assets/cef-mobile/cal-desk.webp" alt="Herramienta de organización académica de CEF en un portátil: vista semanal con clases, centro y curso">
+      <figcaption class="cde-hero-cap"><span class="es">La herramienta nueva: vista semanal de clases con centro, curso y número de sesión.</span><span class="en">The new tool: weekly class view with center, course and session number.</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="cde-section cde-section--sm">
+    <div class="cde-headrow">
+      <h2 class="cde-h3"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
+      <span class="cde-index" aria-hidden="true">01</span>
+    </div>
+    <ol class="cde-tldr" style="margin-top:28px">
+      <li><span class="cde-eyebrow--muted"><span class="es">01 · Problema</span><span class="en">01 · Problem</span></span><span class="cde-num">&lt; 3:1</span><p><span class="es">de contraste en textos y botones críticos, en 4 plataformas sin nada en común.</span><span class="en">contrast on text and critical buttons, across 4 platforms with nothing in common.</span></p></li>
+      <li><span class="cde-eyebrow--muted"><span class="es">02 · Decisión</span><span class="en">02 · Decision</span></span><span class="cde-num">Tokens</span><p><span class="es">Diseñar las reglas antes que las pantallas, para que login, calendario y pago hablen igual.</span><span class="en">Design the rules before the screens, so login, calendar and payment speak the same language.</span></p></li>
+      <li class="is-accent"><span class="cde-eyebrow--muted"><span class="es">03 · Resultado · auditado</span><span class="en">03 · Result · audited</span></span><span class="cde-num">AA</span><p><span class="es">WCAG 2.1 en los tres flujos críticos: acceso, organización académica y pago.</span><span class="en">WCAG 2.1 across the three critical flows: access, academic organization and payment.</span></p></li>
+    </ol>
+  </section>
+
+  <!-- 02 · PROBLEMA -->
+  <section class="cde-section cde-stack" id="cde-problema" aria-labelledby="cde-h2-problema">
+    <div class="cde-split cde-split--start">
+      <div class="cde-col">
+        <span class="cde-eyebrow"><span class="es">02 · Contexto</span><span class="en">02 · Context</span></span>
+        <h2 class="cde-h2" id="cde-h2-problema"><span class="es">Un recorrido, <em>cuatro interfaces</em></span><span class="en">One journey, <em>four interfaces</em></span></h2>
+        <p class="cde-p"><span class="es">Campus virtual, bolsa de empleo, pasarela de matriculación y calendario académico se construyeron en años distintos y con proveedores distintos. El alumno, que además es cliente, cruzaba varias de ellas para hacer una sola cosa.</span><span class="en">Virtual campus, job board, enrollment gateway and academic calendar were built in different years by different vendors. The student, who is also a customer, crossed several of them to do one single thing.</span></p>
+        <div class="cde-focus">
+          <span class="cde-focus-label"><span class="es">Mi enfoque</span><span class="en">My approach</span></span>
+          <p class="cde-focus-quote"><span class="es">Un sistema de diseño es un <em>contrato operativo</em> entre diseño, accesibilidad y desarrollo.</span><span class="en">A design system is an <em>operating contract</em> between design, accessibility and engineering.</span></p>
+        </div>
+      </div>
+      <div class="cde-journey">
+        <span class="cde-journey-label"><span class="es">El recorrido del alumno-cliente</span><span class="en">The student-customer journey</span></span>
+        <div class="cde-journey-row">
+          <div class="cde-journey-rail"><span class="cde-journey-dot">01</span><span class="cde-journey-line"></span></div>
+          <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Entrar</span><span class="en">Log in</span></span><span class="cde-journey-desc"><span class="es">Login con 4 perfiles: alumnos CEF, alumnos UDIMA, empresas y empleados.</span><span class="en">Login with 4 profiles: CEF students, UDIMA students, companies and staff.</span></span></div>
+        </div>
+        <div class="cde-journey-row">
+          <div class="cde-journey-rail"><span class="cde-journey-dot">02</span><span class="cde-journey-line"></span></div>
+          <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Organizar</span><span class="en">Organize</span></span><span class="cde-journey-desc"><span class="es">Ver clases, cursos y asignaturas en un calendario, por día, semana o año.</span><span class="en">View classes, courses and subjects in a calendar, by day, week or year.</span></span></div>
+        </div>
+        <div class="cde-journey-row">
+          <div class="cde-journey-rail"><span class="cde-journey-dot">03</span></div>
+          <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Pagar</span><span class="en">Pay</span></span><span class="cde-journey-desc"><span class="es">Pasarela de matriculación con los datos de la tarjeta.</span><span class="en">Enrollment gateway with card details.</span></span></div>
+        </div>
+        <div class="cde-journey-foot"><span class="es">Tres pasos con estilos, botones y contrastes distintos. Si el recorrido fallaba, CEF perdía una matrícula.</span><span class="en">Three steps with different styles, buttons and contrast. If the journey failed, CEF lost an enrollment.</span></div>
+      </div>
+    </div>
+
+    <div class="cde-split">
+      <div class="cde-col">
+        <span class="cde-eyebrow--muted"><span class="es">Auditoría WCAG 2.1 AA</span><span class="en">WCAG 2.1 AA audit</span></span>
+        <div class="cde-audit"><span class="cde-audit-big">&lt;3:1</span><span class="cde-audit-text"><span class="es">en textos secundarios y botones críticos</span><span class="en">on secondary text and critical buttons</span></span></div>
+        <div class="cde-methods">
+          <span class="cde-method"><span class="es">Auditoría WCAG 2.1 AA</span><span class="en">WCAG 2.1 AA audit</span></span>
+          <span class="cde-method">Stark</span>
+          <span class="cde-method"><span class="es">NVDA y VoiceOver</span><span class="en">NVDA &amp; VoiceOver</span></span>
+          <span class="cde-method"><span class="es">Inventario de componentes</span><span class="en">Component inventory</span></span>
+        </div>
+      </div>
+      <figure class="cde-scale" role="img" aria-label="Escala de contraste: el producto estaba por debajo de 3 a 1 y el mínimo AA para texto es 4,5 a 1">
+        <div class="cde-scale-track"><div class="cde-scale-fill"></div><div class="cde-scale-divider"></div></div>
+        <div class="cde-scale-labels">
+          <span style="left:0;color:rgba(255,255,255,.5)">1:1</span>
+          <span style="left:26%;color:#a78bfa"><span class="es">Antes</span><span class="en">Before</span> · &lt;3:1</span>
+          <span style="left:54%;top:20px;color:#fff"><span class="es">Mínimo AA · 4,5:1</span><span class="en">Minimum AA · 4.5:1</span></span>
+          <span style="right:0;color:rgba(255,255,255,.5)">7:1</span>
+        </div>
+      </figure>
+    </div>
+
+    <div class="cde-cards3">
+      <div><span class="cde-cards3-k">01</span><h4><span class="es">Contraste insuficiente</span><span class="en">Insufficient contrast</span></h4><p><span class="es">Textos secundarios y botones críticos por debajo de 4,5:1.</span><span class="en">Secondary text and critical buttons below 4.5:1.</span></p></div>
+      <div><span class="cde-cards3-k">8+</span><h4><span class="es">Componentes duplicados</span><span class="en">Duplicated components</span></h4><p><span class="es">Más de 8 variantes de botón y campo en producción.</span><span class="en">More than 8 button and field variants in production.</span></p></div>
+      <div><span class="cde-cards3-k">03</span><h4><span class="es">Teclado roto</span><span class="en">Broken keyboard</span></h4><p><span class="es">El foco (:focus-visible) estaba suprimido.</span><span class="en">Focus (:focus-visible) was suppressed.</span></p></div>
+    </div>
+
+    <div class="cde-split">
+      <div class="cde-col">
+        <span class="cde-eyebrow"><span class="es">Para quién diseñaba</span><span class="en">Who I designed for</span></span>
+        <h3 class="cde-h3"><span class="es">Cuatro perfiles, <em>un solo acceso</em></span><span class="en">Four profiles, <em>one access point</em></span></h3>
+        <p class="cde-p"><span class="es">El sistema tenía que servir igual a quien entra a estudiar y a quien entra a pagar: alumnos CEF, alumnos UDIMA, empresas y empleados, cada uno con permisos distintos sobre el mismo calendario.</span><span class="en">The system had to serve both the student and the payer equally: CEF students, UDIMA students, companies and staff, each with different permissions on the same calendar.</span></p>
+        <div class="cde-test-note">
+          <span class="es"><strong>Cómo lo validé:</strong> no solo con la auditoría de contraste. Probé los cuatro perfiles con lectores de pantalla (NVDA, VoiceOver) y navegación completa por teclado, sin ratón.</span>
+          <span class="en"><strong>How I validated it:</strong> not just with the contrast audit. I tested all four profiles with screen readers (NVDA, VoiceOver) and full keyboard-only navigation.</span>
+        </div>
+      </div>
+      <div class="cde-persona">
+        <div class="cde-persona-top">
+          <span class="cde-persona-avatar" aria-hidden="true">EA</span>
+          <div>
+            <span class="cde-persona-name">Elena, 24</span>
+            <span class="cde-persona-role"><span class="es">Alumna CEF · gestiona sus clases desde el móvil</span><span class="en">CEF student · manages her classes from her phone</span></span>
+          </div>
+        </div>
+        <div class="cde-persona-cols">
+          <div>
+            <span class="cde-eyebrow"><span class="es">Objetivos</span><span class="en">Goals</span></span>
+            <span class="cde-persona-item"><span class="es">Ver sus clases sin confundir centro y curso</span><span class="en">See her classes without mixing up center and course</span></span>
+            <span class="cde-persona-item"><span class="es">Encontrar su aula y grupo en un toque</span><span class="en">Find her classroom and group in one tap</span></span>
+          </div>
+          <div class="is-pain">
+            <span class="cde-eyebrow--muted"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span>
+            <span class="cde-persona-item"><span class="es">Cada plataforma se veía y se usaba distinto</span><span class="en">Every platform looked and worked differently</span></span>
+            <span class="cde-persona-item"><span class="es">El contraste bajo le costaba leer con el sol</span><span class="en">Low contrast was hard to read in sunlight</span></span>
+          </div>
+        </div>
+        <p class="cde-quote"><span class="es">«Si cada app es distinta, aprendo cuatro veces lo mismo.»</span><span class="en">“If every app is different, I learn the same thing four times.”</span></p>
+        <span class="cde-tag"><span class="es">Persona ilustrativa</span><span class="en">Illustrative persona</span></span>
+      </div>
+    </div>
+
+    <div class="cde-split">
+      <div class="cde-col">
+        <span class="cde-eyebrow"><span class="es">Requisitos imprescindibles</span><span class="en">Hard requirements</span></span>
+        <ul class="cde-reqs">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M20 6L9 17l-5-5"/></svg><span><span class="es">Superar la auditoría legal de accesibilidad WCAG 2.1 AA</span><span class="en">Pass the legal WCAG 2.1 AA accessibility audit</span></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M20 6L9 17l-5-5"/></svg><span><span class="es">Tokens sincronizados entre Figma y frontend</span><span class="en">Tokens synced between Figma and frontend</span></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M20 6L9 17l-5-5"/></svg><span><span class="es">Funcionar igual en desktop y en mobile</span><span class="en">Work the same on desktop and mobile</span></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M20 6L9 17l-5-5"/></svg><span><span class="es">Estados documentados: hover, focus, disabled y active</span><span class="en">Documented states: hover, focus, disabled and active</span></span></li>
+        </ul>
+      </div>
+      <div class="cde-split2">
+        <div class="cde-split-card"><span class="cde-split-label"><span class="es">Hallazgo</span><span class="en">Finding</span></span><span class="cde-split-title"><span class="es">Cada squad reinventaba lo básico</span><span class="en">Every squad reinvented the basics</span></span><span class="cde-split-desc"><span class="es">Sin jerarquía ni tokens semánticos.</span><span class="en">No hierarchy, no semantic tokens.</span></span></div>
+        <div class="cde-split-card cde-split-card-accent"><span class="cde-split-label"><span class="es">Decisión</span><span class="en">Decision</span></span><span class="cde-split-title"><span class="es">Un sistema desde cero</span><span class="en">A system from scratch</span></span><span class="cde-split-desc"><span class="es">Con gobernanza en Figma y en código.</span><span class="en">With governance in Figma and in code.</span></span></div>
+        <span class="cde-split-badge-center" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · SISTEMA -->
+  <section class="cde-section cde-stack" id="cde-sistema" aria-labelledby="cde-h2-sistema">
+    <div class="cde-split">
+      <div class="cde-col">
+        <span class="cde-eyebrow"><span class="es">03 · El sistema</span><span class="en">03 · The system</span></span>
+        <h2 class="cde-h2" id="cde-h2-sistema"><span class="es">Reglas antes <em>que pantallas</em></span><span class="en">Rules before <em>screens</em></span></h2>
+        <p class="cde-p"><span class="es">Tres capas de tokens. Cambiar un valor arriba actualiza el login, el calendario y el pago a la vez.</span><span class="en">Three layers of tokens. Changing one value upstream updates login, calendar and payment at once.</span></p>
+      </div>
+      <div class="cde-tiers" aria-label="Arquitectura de tokens en tres capas: primitivos, semánticos y de componente">
+        <div class="cde-tier"><span class="cde-tier-k"><span class="es">01 · Primitivos</span><span class="en">01 · Primitives</span></span><span class="cde-tier-title"><span class="es">Paleta CEF y escala tipográfica</span><span class="en">CEF palette and type scale</span></span><div class="cde-tier-chips"><span class="cde-tier-chip"><span class="es">Verdes</span><span class="en">Greens</span></span><span class="cde-tier-chip"><span class="es">Neutros</span><span class="en">Neutrals</span></span><span class="cde-tier-chip"><span class="es">Escala de tipo</span><span class="en">Type scale</span></span></div><span class="cde-tier-q"><span class="es">El valor</span><span class="en">The value</span></span></div>
+        <div class="cde-tier"><span class="cde-tier-k"><span class="es">02 · Semánticos</span><span class="en">02 · Semantic</span></span><span class="cde-tier-title"><span class="es">Qué significa cada color</span><span class="en">What each color means</span></span><div class="cde-tier-chips"><span class="cde-tier-chip"><span class="es">Acción</span><span class="en">Action</span></span><span class="cde-tier-chip"><span class="es">Superficie</span><span class="en">Surface</span></span><span class="cde-tier-chip"><span class="es">Error</span><span class="en">Error</span></span><span class="cde-tier-chip"><span class="es">Foco</span><span class="en">Focus</span></span></div><span class="cde-tier-q"><span class="es">La intención</span><span class="en">The intent</span></span></div>
+        <div class="cde-tier"><span class="cde-tier-k"><span class="es">03 · Componente</span><span class="en">03 · Component</span></span><span class="cde-tier-title"><span class="es">Dónde se aplica</span><span class="en">Where it applies</span></span><div class="cde-tier-chips"><span class="cde-tier-chip"><span class="es">Botón</span><span class="en">Button</span></span><span class="cde-tier-chip"><span class="es">Campo</span><span class="en">Field</span></span><span class="cde-tier-chip"><span class="es">Evento</span><span class="en">Event</span></span></div><span class="cde-tier-q"><span class="es">El uso</span><span class="en">The usage</span></span></div>
+      </div>
+    </div>
+
+    <div class="cde-split">
+      <div class="cde-specimen">
+        <div class="cde-spec-cell"><button type="button" class="cde-spec-btn">Matricularme</button><span class="cde-spec-label">Default</span></div>
+        <div class="cde-spec-cell"><button type="button" class="cde-spec-btn is-hover">Matricularme</button><span class="cde-spec-label">Hover</span></div>
+        <div class="cde-spec-cell"><button type="button" class="cde-spec-btn is-focus">Matricularme</button><span class="cde-spec-label"><span class="es">Focus · anillo 2px + offset</span><span class="en">Focus · 2px ring + offset</span></span></div>
+        <div class="cde-spec-cell"><button type="button" class="cde-spec-btn is-disabled" disabled>Matricularme</button><span class="cde-spec-label">Disabled</span></div>
+      </div>
+      <div class="cde-col">
+        <span class="cde-eyebrow"><span class="es">Accesibilidad en el token</span><span class="en">Accessibility in the token</span></span>
+        <h3 class="cde-h3"><span class="es">Cada estado, documentado</span><span class="en">Every state, documented</span></h3>
+        <p class="cde-p"><span class="es">Hover, focus, disabled y active especificados con sus props, en la misma estructura que usa frontend. El foco visible vuelve a existir: anillo de 2px con separación, para quien navega con teclado.</span><span class="en">Hover, focus, disabled and active specified with their props, in the same structure frontend uses. Visible focus exists again: a 2px ring with offset, for keyboard navigation.</span></p>
+      </div>
+    </div>
+
+    <div class="cde-block">
+      <div class="cde-headrow"><h3 class="cde-h3" style="font-size:40px"><span class="es">Del wireframe a la <em>organización académica</em></span><span class="en">From wireframe to <em>academic organization</em></span></h3><span class="cde-eyebrow"><span class="es">La herramienta nueva</span><span class="en">The new tool</span></span></div>
+      <div class="cde-tool-figs">
+        <figure class="cde-tool-fig"><img src="assets/cef-mobile/cal-wire.webp" alt="Wireframe del calendario académico en desktop y mobile: vistas Hoy, Semana y Año, búsqueda y programaciones" style="border-radius:14px"><figcaption class="cde-tool-cap"><span class="es">01 · Wireframe desktop y mobile</span><span class="en">01 · Desktop and mobile wireframe</span></figcaption></figure>
+        <figure class="cde-tool-fig"><img src="assets/cef-mobile/cal-desk.webp" alt="Calendario final con el sistema aplicado: clases de Gestión Financiera y Derecho Financiero con centro y curso"><figcaption class="cde-tool-cap cde-tool-cap-accent"><span class="es">02 · UI con el sistema aplicado</span><span class="en">02 · UI with the system applied</span></figcaption></figure>
+      </div>
+      <div class="cde-features">
+        <div class="cde-feature"><span class="cde-feature-t"><span class="es">Hoy, semana, año</span><span class="en">Today, week, year</span></span><span class="cde-feature-d"><span class="es">Tres vistas para la misma programación.</span><span class="en">Three views for the same schedule.</span></span></div>
+        <div class="cde-feature"><span class="cde-feature-t"><span class="es">Filtros y búsqueda</span><span class="en">Filters and search</span></span><span class="cde-feature-d"><span class="es">Búsqueda predictiva por centro, curso o asignatura.</span><span class="en">Predictive search by center, course or subject.</span></span></div>
+        <div class="cde-feature"><span class="cde-feature-t"><span class="es">Evento legible</span><span class="en">Readable event</span></span><span class="cde-feature-d"><span class="es">Asignatura, sesión (3/5), centro y curso.</span><span class="en">Subject, session (3/5), center and course.</span></span></div>
+        <div class="cde-feature"><span class="cde-feature-t">Mobile</span><span class="cde-feature-d"><span class="es">Aula, grupo y perfil a un toque.</span><span class="en">Classroom, group and profile in one tap.</span></span></div>
+      </div>
+    </div>
+
+    <div class="cde-block">
+      <div class="cde-headrow"><h3 class="cde-h3">Entrar, organizar, pagar</h3><span class="cde-eyebrow--muted"><span class="es">El recorrido completo · un sistema</span><span class="en">The complete journey · one system</span></span></div>
+      <div class="cde-flowgrid">
+        <article class="cde-flowcard"><div class="cde-flowcard-media" style="background:#000"><img src="assets/cef-mobile/login-mob.webp" alt="Login móvil: selector de perfil y formulario de usuario y contraseña"><span class="cde-flowcard-badge"><span class="es">01 · Entrar</span><span class="en">01 · Log in</span></span></div><div class="cde-flowcard-info"><h4><span class="es">Login por perfil</span><span class="en">Login by profile</span></h4><p><span class="es">Alumnos CEF, alumnos UDIMA, empresas y empleados.</span><span class="en">CEF students, UDIMA students, companies and staff.</span></p></div></article>
+        <article class="cde-flowcard"><div class="cde-flowcard-media" style="background:#fff"><img src="assets/cef-mobile/cal-mob.webp" alt="Calendario mensual en móvil con clases por colores y menú de aula, grupo y perfil"><span class="cde-flowcard-badge"><span class="es">02 · Organizar</span><span class="en">02 · Organize</span></span></div><div class="cde-flowcard-info"><h4><span class="es">Calendario académico</span><span class="en">Academic calendar</span></h4><p><span class="es">Clases del mes, perfil y accesos a aula y grupo.</span><span class="en">Classes for the month, profile and access to classroom and group.</span></p></div></article>
+        <article class="cde-flowcard"><div class="cde-flowcard-media" style="background:#000"><img src="assets/cef-mobile/pay-mob.webp" alt="Pasarela de pago móvil con transacción y datos de la tarjeta"><span class="cde-flowcard-badge"><span class="es">03 · Pagar</span><span class="en">03 · Pay</span></span></div><div class="cde-flowcard-info"><h4><span class="es">Pasarela de pago</span><span class="en">Payment gateway</span></h4><p><span class="es">Concepto, importe y tarjeta en un solo bloque.</span><span class="en">Concept, amount and card in one block.</span></p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · RESULTADOS -->
+  <section class="cde-section cde-stack" id="cde-resultados" aria-labelledby="cde-h2-resultados">
+    <div class="cde-col">
+      <span class="cde-eyebrow"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span>
+      <h2 class="cde-h2" id="cde-h2-resultados"><span class="es">Accesible <em>por construcción</em></span><span class="en">Accessible <em>by design</em></span></h2>
+    </div>
+
+    <div class="cde-results2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%, 440px), 1fr));gap:20px;align-items:stretch">
+      <div class="cde-audit2">
+        <div class="cde-audit2-head"><span><span class="es">Auditoría WCAG 2.1 AA</span><span class="en">WCAG 2.1 AA audit</span></span><span class="cde-pill"><span class="es">Medido</span><span class="en">Measured</span></span></div>
+        <div class="cde-audit"><span class="cde-audit2-big">100%</span><span class="cde-audit2-txt"><span class="es">de los flujos críticos pasan AA</span><span class="en">of critical flows pass AA</span></span></div>
+        <ul class="cde-flows">
+          <li class="cde-flow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Login</span></li>
+          <li class="cde-flow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><span class="es">Calendario</span><span class="en">Calendar</span></span></li>
+          <li class="cde-flow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><span class="es">Pago</span><span class="en">Payment</span></span></li>
+        </ul>
+      </div>
+      <div class="cde-ministats" style="align-content:start">
+        <div class="cde-ministat"><span class="cde-ministat-num">4</span><span class="cde-ministat-txt"><span class="es">plataformas bajo un único sistema</span><span class="en">platforms under one system</span></span></div>
+        <div class="cde-ministat"><span class="cde-ministat-num">1</span><span class="cde-ministat-txt"><span class="es">fuente de tokens para Figma y código</span><span class="en">source of tokens for Figma and code</span></span></div>
+      </div>
+    </div>
+
+    <div class="cde-block" style="padding-top:40px">
+      <span class="cde-eyebrow--muted"><span class="es">05 · Lo que me llevo</span><span class="en">05 · Key takeaways</span></span>
+      <ol class="cde-learn3">
+        <li><b>01</b><div><h4><span class="es">Un sistema es un producto vivo</span><span class="en">A system is a living product</span></h4><p><span class="es">Diseñar reglas y tokens antes que pantallas ahorra cientos de horas de fricción futura.</span><span class="en">Designing rules and tokens before individual screens saves hundreds of hours down the road.</span></p></div></li>
+        <li><b>02</b><div><h4><span class="es">La accesibilidad es estructural</span><span class="en">Accessibility is structural</span></h4><p><span class="es">Integrar contraste y navegación asistiva desde el token evita parches costosos a posteriori.</span><span class="en">Building contrast and assistive navigation into tokens avoids costly patches later.</span></p></div></li>
+        <li><b>03</b><div><h4><span class="es">Se diseña también para desarrollo</span><span class="en">You also design for engineering</span></h4><p><span class="es">Un buen sistema habla la sintaxis de los desarrolladores; nombrar bien los tokens es el 50% del éxito.</span><span class="en">A great system speaks developer syntax; consistent token naming is 50% of the battle.</span></p></div></li>
+      </ol>
+    </div>
+
+    <div class="cde-closeimgs" style="margin-top:24px">
+      <img src="assets/cef-mobile/pay-desk.webp" alt="Pasarela de pago en desktop con el sistema aplicado">
+      <img src="assets/cef-mobile/login-desk.webp" alt="Selector de perfil y login en desktop con el sistema aplicado">
+    </div>
+  </section>
+
+</div>
 
 <!-- ============ 10 · APRENDIZAJES + PROGRESIÓN ============ -->
 <section class="section" id="aprendizajes">
