@@ -147,7 +147,12 @@
   // 5. Scroll-spy para las 4 tabs móviles (OVERVIEW | PROBLEMA | SOLUCIÓN | RESULTADOS)
   const mobileTabs = document.querySelectorAll('.cs-mobile-tab');
   if (mobileTabs.length > 0) {
-    const sectionTargets = [
+    // Secciones a partir de los href de las tabs, solo las visibles
+    // (los casos con maquetación móvil propia ocultan las secciones originales).
+    const fromTabs = [...mobileTabs]
+      .map((tab) => document.getElementById((tab.getAttribute('href') || '').replace('#', '')))
+      .filter((el) => el && el.offsetParent !== null);
+    const sectionTargets = fromTabs.length ? fromTabs : [
       document.getElementById('overview'),
       document.getElementById('problema'),
       document.getElementById('diseno') || document.getElementById('solucion'),

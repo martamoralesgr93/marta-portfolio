@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ILUNION CRO · De 3,36% a 6,5% de conversión | Marta Morales · Product Designer</title>
-<meta name="description" content="Case study UX de Marta Morales: optimización del funnel de reservas de ILUNION Hotels con research de datos, tests A/B y priorización ICE. Conversión de 3,36% a 6,5%.">
+<title>ILUNION · CRO del canal directo: de 3,36% a 6,5% | Marta Morales · Product Designer</title>
+<meta name="description" content="Case study de Marta Morales para ILUNION Hotels: un experimento en el motor de reservas y la re-componetización de la home, con foco en socios ÚNICOS. Conversión de 3,36% a 6,5% validada con test A/B.">
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -20,6 +20,447 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261014_rev2">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
+<style>
+/* ==========================================================================
+   ILUNION · CRO DEL CANAL DIRECTO (caso 02) · canvas aprobado 2026-10-15
+   Mobile (<=768px): bloque .ime   ·   Desktop (>=769px): bloque .ide
+   Un solo caso con 2 iniciativas: experimento del motor + re-componetización.
+   ========================================================================== */
+.ime, .ide { display: none; }
+.ime *, .ide * { box-sizing: border-box; }
+.ime em, .ide em { font-style: italic; color: #a78bfa; }
+.ime strong, .ide strong { color: #fff; font-weight: 600; }
+.ime img, .ime video, .ide img, .ide video { display: block; max-width: 100%; }
+.ime .is-loyal, .ide .is-loyal { color: #f97316; }
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  main > .cs-hero,
+  main > section.section,
+  a.next,
+  section.cs-pagination-section { display: none !important; }
+
+  .ime { display: block; background: #000; color: rgba(255,255,255,.72); font-family: Inter, system-ui, sans-serif; padding: 0 16px 110px; }
+  .ime-sec { padding-top: 48px; scroll-margin-top: 100px; }
+  .ime-sec:first-child { padding-top: 28px; }
+  .ime-sub { padding-top: 44px; display: flex; flex-direction: column; gap: 14px; }
+  .ime-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .ime-chip { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.75); font-size: 12px; font-weight: 500; }
+  .ime-chip--accent { border-color: rgba(167,139,250,.35); color: #a78bfa; font-weight: 600; }
+  .ime-h1 { margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 44px; line-height: 1.03; letter-spacing: -.02em; color: #fff; }
+  .ime-h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 36px; line-height: 1.04; letter-spacing: -.015em; color: #fff; }
+  .ime-h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 28px; line-height: 1.1; color: #fff; }
+  .ime-lead { margin: 0; font-size: 16px; line-height: 1.5; color: rgba(255,255,255,.78); }
+  .ime-p { margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.72); }
+  .ime-note { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.55); }
+  .ime-eyebrow { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .ime-eyebrow--accent { color: #a78bfa; }
+  .ime-eyebrow--loyal { color: #f97316; }
+  .ime-head { display: flex; flex-direction: column; gap: 10px; }
+
+  .ime-hero-fig { margin: 26px -16px 0; padding: 18px 0 8px; display: flex; flex-direction: column; gap: 12px; background: radial-gradient(ellipse at 50% 60%, rgba(124,58,237,.22), rgba(0,0,0,0) 70%); }
+  .ime-hero-fig video { margin: 0 auto; width: 207px; height: 420px; object-fit: contain; }
+  .ime-cap { padding: 0 16px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .ime-dot { width: 7px; height: 7px; border-radius: 50%; background: #f97316; flex: none; }
+
+  .ime-facts { margin: 14px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; overflow: hidden; }
+  .ime-facts > div { background: #0a0a0c; padding: 14px 16px; }
+  .ime-facts dt { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .ime-facts dd { margin: 4px 0 0; font-size: 14px; font-weight: 600; color: #fff; }
+
+  .ime-tl { margin: 18px 0 0; padding: 0; list-style: none; }
+  .ime-tl li { display: flex; gap: 16px; }
+  .ime-tl-rail { width: 14px; padding-top: 22px; display: flex; flex-direction: column; align-items: center; flex: none; }
+  .ime-tl-rail i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); flex: none; }
+  .ime-tl-rail b { flex: 1; width: 2px; background: rgba(255,255,255,.12); }
+  .ime-tl-body { flex: 1; padding: 14px 0 22px; display: flex; flex-direction: column; gap: 6px; }
+  .ime-tl-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 46px; line-height: 1; color: #fff; }
+  .ime-tl li.is-accent .ime-tl-rail i { border: 0; background: #a78bfa; box-shadow: 0 0 0 5px rgba(167,139,250,.18); }
+  .ime-tl li.is-accent .ime-tl-body { margin-top: 4px; padding: 16px 18px 18px; border-radius: 18px; background: rgba(167,139,250,.08); border: 1px solid rgba(167,139,250,.3); }
+  .ime-tl li.is-accent .ime-tl-big { color: #a78bfa; font-size: 56px; }
+  .ime-tl li.is-accent .ime-eyebrow { color: #a78bfa; }
+  .ime-tl-desc { font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.75); }
+
+  .ime-btn { margin-top: 24px; height: 52px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; gap: 10px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+  .ime-paper { margin: 18px 0 0; padding: 18px 0 14px; border-radius: 18px; background: #f4f4f2; display: flex; flex-direction: column; gap: 12px; }
+  .ime-paper-row { display: flex; justify-content: center; align-items: flex-end; gap: 10px; }
+  .ime-paper figcaption { padding: 0 16px; font-size: 12px; line-height: 1.45; color: #3a3a3a; text-align: center; }
+
+  .ime-stat { display: flex; align-items: flex-end; gap: 14px; }
+  .ime-stat-val { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 92px; line-height: .85; color: #a78bfa; }
+  .ime-stat-txt { padding-bottom: 6px; font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
+  .ime-squares { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
+  .ime-squares span { height: 44px; border-radius: 10px; border: 1px dashed rgba(255,255,255,.25); }
+  .ime-squares span.is-on { border: 0; background: #a78bfa; }
+
+  .ime-stats3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+  .ime-stats3 > div { padding: 14px 10px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px; font-size: 12px; line-height: 1.35; color: rgba(255,255,255,.7); }
+  .ime-stats3 > div.is-accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.3); }
+  .ime-stats3 b { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 28px; line-height: 1; color: #fff; }
+  .ime-stats3 .is-accent b { color: #a78bfa; }
+
+  .ime-steps { margin: 0; padding: 18px 16px 2px; list-style: none; border-radius: 18px; background: #0a0a0c; border: 1px solid rgba(255,255,255,.1); }
+  .ime-steps li { display: flex; gap: 14px; }
+  .ime-steps-rail { width: 28px; flex: none; display: flex; flex-direction: column; align-items: center; }
+  .ime-steps-rail i { flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(167,139,250,.5); color: #a78bfa; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; font-style: normal; }
+  .ime-steps-rail b { flex: 1; width: 1px; min-height: 14px; background: rgba(167,139,250,.3); }
+  .ime-steps li:last-child .ime-steps-rail b { display: none; }
+  .ime-steps-body { flex: 1; padding: 4px 0 16px; display: flex; flex-direction: column; gap: 3px; }
+  .ime-steps-body strong { font-size: 15px; }
+  .ime-steps-body > span { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.6); }
+
+  .ime-pair { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .ime-card { padding: 14px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.4; color: #fff; }
+  .ime-card .ime-eyebrow { font-size: 11px; letter-spacing: .12em; }
+  .ime-card--accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.35); }
+  .ime-card--accent .ime-eyebrow { color: #a78bfa; }
+  .ime-card--loyal { background: rgba(249,115,22,.08); border-color: rgba(249,115,22,.4); }
+  .ime-card--loyal .ime-eyebrow { color: #f97316; }
+
+  .ime-persona { border-radius: 22px; overflow: hidden; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
+  .ime-persona-top { padding: 20px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .ime-persona-top img { flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(167,139,250,.45); }
+  .ime-persona-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: #fff; display: block; }
+  .ime-persona-role { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.75); display: block; margin-top: 4px; }
+  .ime-tag { display: inline-block; margin-top: 8px; padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6); }
+  .ime-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.08); }
+  .ime-persona-cols > div { background: #0d0d10; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .ime-persona-cols ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .ime-persona-cols li { display: flex; gap: 8px; font-size: 14px; line-height: 1.4; color: #fff; }
+  .ime-persona-cols li::before { content: '✓'; color: #a78bfa; flex: none; }
+  .ime-persona-cols .is-pain li { color: rgba(255,255,255,.85); }
+  .ime-persona-cols .is-pain li::before { content: '✕'; color: rgba(255,255,255,.4); }
+  .ime-quote { margin: 0; padding: 18px 20px 20px; border-top: 1px solid rgba(255,255,255,.08); font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.35; color: #fff; }
+
+  .ime-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: rgba(255,255,255,.65); }
+  .ime-legend > span { display: flex; align-items: center; gap: 6px; }
+  .ime-legend i { width: 10px; height: 10px; border-radius: 3px; }
+  .ime-journey { margin: 0; padding: 0; list-style: none; }
+  .ime-journey li { display: flex; gap: 14px; }
+  .ime-journey-rail { width: 30px; flex: none; display: flex; flex-direction: column; align-items: center; }
+  .ime-journey-rail i { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; font-style: normal; }
+  .ime-journey li.has-pain .ime-journey-rail i { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.45); }
+  .ime-journey-rail b { flex: 1; width: 2px; min-height: 16px; background: rgba(255,255,255,.12); }
+  .ime-journey li:last-child .ime-journey-rail b { display: none; }
+  .ime-journey-body { flex: 1; padding: 4px 0 20px; display: flex; flex-direction: column; gap: 8px; }
+  .ime-journey-body > strong { font-size: 16px; }
+  .ime-pain { display: flex; gap: 8px; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.75); }
+  .ime-pain::before { content: ''; flex: none; width: 4px; border-radius: 2px; background: rgba(255,255,255,.3); }
+  .ime-opp { align-self: flex-start; padding: 6px 10px; border-radius: 8px; background: rgba(167,139,250,.12); border: 1px solid rgba(167,139,250,.4); font-size: 13px; font-weight: 600; color: #fff; }
+  .ime-opp.is-loyal { background: rgba(249,115,22,.14); border-color: rgba(249,115,22,.5); color: #fff; }
+
+  .ime-frics { display: flex; flex-direction: column; gap: 12px; }
+  .ime-fric { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
+  .ime-fric strong { color: #a78bfa; }
+  .ime-ico { flex: none; width: 44px; height: 44px; border-radius: 12px; background: rgba(167,139,250,.12); color: #a78bfa; display: flex; align-items: center; justify-content: center; }
+  .ime-fric.is-loyal { background: rgba(249,115,22,.06); border-color: rgba(249,115,22,.3); }
+  .ime-fric.is-loyal strong, .ime-fric.is-loyal .ime-ico { color: #f97316; }
+  .ime-fric.is-loyal .ime-ico { background: rgba(249,115,22,.14); }
+
+  .ime-before { margin: 0; display: flex; gap: 16px; align-items: center; }
+  .ime-before img { flex: none; width: 150px; height: 269px; object-fit: contain; }
+  .ime-figtxt { display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.45; color: #fff; }
+  .ime-figtxt .ime-eyebrow { font-size: 11px; }
+  .ime-after { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .ime-after img { width: 100%; height: auto; }
+  .ime-bridge { display: flex; gap: 14px; padding: 16px; border-radius: 16px; border: 1px dashed rgba(167,139,250,.45); }
+  .ime-bridge-ico { flex: none; width: 32px; height: 32px; border-radius: 50%; background: rgba(167,139,250,.14); color: #a78bfa; display: flex; align-items: center; justify-content: center; }
+
+  .ime-order { display: grid; grid-template-columns: minmax(0,1fr) 28px minmax(0,1fr); gap: 6px; align-items: start; }
+  .ime-order ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .ime-order-arrow { padding-top: 110px; display: flex; justify-content: center; color: rgba(255,255,255,.4); }
+  .ime-blk { height: 46px; padding: 0 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.03); display: flex; align-items: center; gap: 8px; font-size: 12px; line-height: 1.25; font-weight: 600; color: rgba(255,255,255,.6); }
+  .ime-blk small { flex: none; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.45); }
+  .ime-blk.is-task { background: rgba(167,139,250,.12); border-color: rgba(167,139,250,.5); color: #fff; }
+  .ime-blk.is-club { background: rgba(249,115,22,.12); border-color: rgba(249,115,22,.5); color: #fff; }
+  .ime-laws { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ime-laws > span { padding: 5px 10px; border-radius: 8px; background: rgba(255,255,255,.06); font-size: 12px; color: rgba(255,255,255,.8); }
+  .ime-wide-fig { margin: 0 -16px; padding-top: 10px; display: flex; flex-direction: column; gap: 10px; background: radial-gradient(ellipse at 50% 55%, rgba(124,58,237,.2), rgba(0,0,0,0) 70%); }
+  .ime-wide-fig video { width: 100%; height: auto; }
+  .ime-wide-fig figcaption { padding: 0 16px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.72); }
+
+  .ime-rank { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ime-rank li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.1); font-size: 15px; font-weight: 600; color: #fff; }
+  .ime-rank b { width: 22px; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 22px; color: rgba(255,255,255,.6); }
+  .ime-rank li.is-task { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.3); }
+  .ime-rank li.is-task b { color: #a78bfa; }
+  .ime-rank li.is-club { background: rgba(249,115,22,.06); border-color: rgba(249,115,22,.3); }
+  .ime-rank li.is-club b { color: #f97316; }
+
+  .ime-seg { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); }
+  .ime-seg button { flex: 1; height: 44px; border-radius: 999px; border: 0; background: transparent; color: rgba(255,255,255,.7); font: 700 14px Inter, sans-serif; cursor: pointer; }
+  .ime-seg button[aria-pressed="true"] { background: #a78bfa; color: #0b0614; }
+  .ime-bp { display: none; }
+  .ime-bp.is-on { display: block; }
+  .ime-bp-pair { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .ime-bp figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .ime-bp figcaption { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+  .ime-bp figcaption.is-final { color: #a78bfa; }
+  .ime-frame { border-radius: 18px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .ime-frame--paper { background: #f2f2f0; }
+  .ime-frame--dark { background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
+  .ime-bp-stack { display: flex; flex-direction: column; gap: 12px; }
+  .ime-order-box { padding: 16px; border-radius: 18px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); display: flex; flex-direction: column; gap: 12px; }
+  .ime-order-box ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .ime-order-box li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; color: #fff; }
+  .ime-order-box li i { flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; font-style: normal; }
+  .ime-order-box li.is-task i { background: #a78bfa; color: #0b0614; }
+  .ime-order-box li.is-club i { background: #f97316; color: #140a02; }
+
+  .ime-fitts { border-radius: 22px; overflow: hidden; background: rgba(167,139,250,.07); border: 1px solid rgba(167,139,250,.3); }
+  .ime-fitts-media { position: relative; background: #000; }
+  .ime-fitts-media video { width: 100%; height: 400px; object-fit: cover; }
+  .ime-fitts-ring { position: absolute; left: 6%; right: 6%; top: 65.5%; height: 19%; border-radius: 14px; border: 2px dashed #a78bfa; }
+  .ime-fitts-tag { position: absolute; right: 6%; top: 57%; padding: 5px 10px; border-radius: 999px; background: #a78bfa; color: #0b0614; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+  .ime-fitts-ab { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.1); border-top: 1px solid rgba(255,255,255,.1); }
+  .ime-fitts-ab > div { background: #0a0a0c; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.4; color: #fff; }
+  .ime-fitts-ab .ime-eyebrow { font-size: 11px; }
+  .ime-fitts-foot { padding: 18px 20px 20px; display: flex; align-items: flex-end; gap: 14px; }
+  .ime-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 50px; line-height: .9; color: #fff; }
+
+  .ime-ab { padding: 22px 20px 24px; border-radius: 24px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.35), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; gap: 20px; }
+  .ime-ab-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 600; color: #fff; }
+  .ime-pill { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); color: #a78bfa; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .ime-bars { display: flex; flex-direction: column; gap: 14px; }
+  .ime-bar-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: rgba(255,255,255,.65); margin-bottom: 7px; }
+  .ime-bar-label b { font-size: 20px; font-weight: 700; color: rgba(255,255,255,.85); }
+  .ime-bar { height: 14px; border-radius: 7px; background: rgba(255,255,255,.28); }
+  .ime-bars .is-b .ime-bar-label { color: #fff; font-weight: 600; }
+  .ime-bars .is-b .ime-bar-label b { color: #a78bfa; }
+  .ime-bars .is-b .ime-bar { background: #a78bfa; }
+  .ime-ab-foot { display: flex; align-items: flex-end; gap: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.1); }
+  .ime-ab-foot .ime-big { font-size: 72px; color: #a78bfa; letter-spacing: -.02em; }
+  .ime-ab-foot > span:last-child { padding-bottom: 4px; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .ime-stats2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .ime-stats2 > div { padding: 16px 14px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; font-size: 12px; line-height: 1.35; color: rgba(255,255,255,.7); }
+  .ime-stats2 b { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 36px; line-height: 1; color: #fff; }
+
+  .ime-loyal { margin-top: 40px; padding: 22px 20px 24px; border-radius: 24px; background: radial-gradient(ellipse at 10% 0%, rgba(249,115,22,.22), rgba(249,115,22,0) 60%), #120c08; border: 1px solid rgba(249,115,22,.4); display: flex; flex-direction: column; gap: 18px; }
+  .ime-loyal em { color: #f97316; }
+  .ime-donut { display: flex; align-items: center; gap: 18px; }
+  .ime-donut svg { flex: none; }
+  .ime-donut-val { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 56px; line-height: .9; color: #f97316; display: block; }
+  .ime-donut p { margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .ime-loyal figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .ime-loyal figure img { width: 240px; height: auto; border-radius: 14px; }
+  .ime-loyal figcaption { font-size: 12px; line-height: 1.45; color: rgba(255,255,255,.6); text-align: center; }
+
+  .ime-learn { margin: 0; padding: 0; list-style: none; }
+  .ime-learn li { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .ime-learn li:last-child { border-bottom: 1px solid rgba(255,255,255,.1); }
+  .ime-learn b { width: 34px; flex: none; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 26px; line-height: 1; color: #a78bfa; }
+  .ime-learn strong { display: block; font-size: 17px; }
+  .ime-learn li div > span { display: block; margin-top: 4px; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.62); }
+
+  .ime-next { margin-top: 36px; display: flex; align-items: center; gap: 16px; padding: 20px; border-radius: 22px; background: #0d0d10; border: 1px solid rgba(255,255,255,.12); text-decoration: none; }
+  .ime-next-txt { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .ime-next-txt strong { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 26px; line-height: 1.1; }
+  .ime-next-txt > span:last-child { font-size: 14px; color: rgba(255,255,255,.62); }
+  .ime-next-arrow { flex: none; width: 52px; height: 52px; border-radius: 50%; background: #fff; color: #000; display: flex; align-items: center; justify-content: center; }
+}
+
+/* ---------------- DESKTOP ---------------- */
+@media (min-width: 769px) {
+  main > .cs-hero,
+  main > section.section:not(#aprendizajes) { display: none !important; }
+
+  .ide { display: block; width: min(1440px, 94%); margin: 0 auto; padding: 0 32px; color: rgba(255,255,255,.72); font-family: var(--font-sans, 'Inter', system-ui, sans-serif); }
+  .ide-section { padding-top: 120px; scroll-margin-top: 88px; display: flex; flex-direction: column; gap: 48px; }
+  .ide-hero { padding-top: 140px; }
+  #ide-research { scroll-margin-top: 88px; }
+  .ide-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 56px; align-items: center; }
+  .ide-split--start { align-items: start; }
+  .ide-col { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+  .ide-h1 { margin: 0; font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: clamp(52px, 5vw, 68px); line-height: 1; letter-spacing: -.02em; color: #fff; }
+  .ide-h2 { margin: 0; font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: clamp(40px, 4vw, 52px); line-height: 1.04; letter-spacing: -.015em; color: #fff; }
+  .ide-h3 { margin: 0; font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 34px; line-height: 1.1; color: #fff; }
+  .ide-lead { margin: 0; max-width: 540px; font-size: 19px; line-height: 1.5; color: rgba(255,255,255,.78); }
+  .ide-p { margin: 0; max-width: 520px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.7); }
+  .ide-note { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.5); }
+  .ide-eyebrow { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .ide-eyebrow--accent { color: #a78bfa; }
+  .ide-eyebrow--loyal { color: #f97316; }
+  .ide-headrow { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .ide-index { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.4); }
+  .ide-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .ide-chip { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .ide-chip--accent { border-color: rgba(167,139,250,.35); color: #a78bfa; font-weight: 600; }
+  .ide-facts { margin: 8px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; overflow: hidden; }
+  .ide-facts > div { background: #0a0a0c; padding: 14px 16px; }
+  .ide-facts dt { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .ide-facts dd { margin: 4px 0 0; font-size: 14px; font-weight: 600; color: #fff; }
+  .ide-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .ide-btn { height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: border-color .2s; }
+  .ide-btn:hover { border-color: rgba(255,255,255,.4); }
+
+  .ide-hero-media { margin: 0; position: relative; height: 540px; }
+  .ide-glow { position: absolute; inset: 40px 0 60px; border-radius: 50%; background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.38), rgba(124,58,237,0) 70%); }
+  .ide-hero-back { position: absolute; right: 0; top: 50px; width: 100%; max-width: 600px; height: auto; mix-blend-mode: lighten; }
+  .ide-hero-front { position: absolute; left: 0; bottom: 30px; width: 190px; height: 386px; object-fit: contain; filter: drop-shadow(0 30px 50px rgba(0,0,0,.7)); }
+  .ide-live { position: absolute; right: 0; bottom: 6px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .ide-live i { width: 7px; height: 7px; border-radius: 50%; background: #f97316; }
+
+  .ide-tldr { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 16px; }
+  .ide-tldr li { padding: 24px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; }
+  .ide-tldr p { margin: 0; font-size: 15px; line-height: 1.45; }
+  .ide-tldr li.is-accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.32); }
+  .ide-tldr li.is-accent .ide-eyebrow, .ide-tldr li.is-accent .ide-num { color: #a78bfa; }
+  .ide-num { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 52px; line-height: 1; color: #fff; }
+
+  .ide-stat { display: flex; align-items: flex-end; gap: 18px; }
+  .ide-stat-val { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 120px; line-height: .82; color: #a78bfa; }
+  .ide-stat-txt { padding-bottom: 8px; font-size: 17px; line-height: 1.35; font-weight: 500; color: #fff; }
+  .ide-squares { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+  .ide-squares span { height: 48px; border-radius: 10px; border: 1px dashed rgba(255,255,255,.25); }
+  .ide-squares span.is-on { border: 0; background: #a78bfa; }
+  .ide-paper { margin: 0; padding: 28px 24px 20px; border-radius: 22px; background: #f4f4f2; display: flex; flex-direction: column; gap: 14px; }
+  .ide-paper-row { display: flex; justify-content: center; align-items: flex-end; gap: 16px; }
+  .ide-paper figcaption { font-size: 13px; line-height: 1.45; color: #3a3a3a; text-align: center; }
+
+  .ide-stats3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+  .ide-stats3 > div { padding: 20px 18px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.7); }
+  .ide-stats3 > div.is-accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.3); }
+  .ide-stats3 b { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 42px; line-height: 1; color: #fff; }
+  .ide-stats3 .is-accent b { color: #a78bfa; }
+  .ide-steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; counter-reset: s; }
+  .ide-steps li { position: relative; padding: 20px 18px; border-radius: 18px; background: #0a0a0c; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px; }
+  .ide-steps i { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(167,139,250,.5); color: #a78bfa; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; font-style: normal; margin-bottom: 6px; }
+  .ide-steps strong { font-size: 16px; }
+  .ide-steps li > span { font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.62); }
+
+  .ide-pair { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+  .ide-card { padding: 22px; border-radius: 18px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.45; color: #fff; }
+  .ide-card--accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.35); }
+  .ide-card--accent .ide-eyebrow { color: #a78bfa; }
+  .ide-card--loyal { background: rgba(249,115,22,.08); border-color: rgba(249,115,22,.4); }
+  .ide-card--loyal .ide-eyebrow { color: #f97316; }
+
+  .ide-persona { border-radius: 24px; overflow: hidden; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
+  .ide-persona-top { padding: 24px; display: flex; align-items: center; gap: 18px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .ide-persona-top img { flex: none; width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(167,139,250,.45); }
+  .ide-persona-name { display: block; font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 30px; line-height: 1.1; color: #fff; }
+  .ide-persona-role { display: block; margin-top: 4px; font-size: 15px; color: rgba(255,255,255,.75); }
+  .ide-tag { display: inline-block; margin-top: 8px; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6); }
+  .ide-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.08); }
+  .ide-persona-cols > div { background: #0d0d10; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+  .ide-persona-cols ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .ide-persona-cols li { display: flex; gap: 8px; font-size: 15px; line-height: 1.4; color: #fff; }
+  .ide-persona-cols li::before { content: '✓'; color: #a78bfa; flex: none; }
+  .ide-persona-cols .is-pain li::before { content: '✕'; color: rgba(255,255,255,.4); }
+  .ide-quote { margin: 0; padding: 20px 24px 24px; border-top: 1px solid rgba(255,255,255,.08); font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-style: italic; font-size: 22px; line-height: 1.35; color: #fff; }
+  .ide-journey { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; }
+  .ide-journey li { position: relative; padding: 18px 16px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; }
+  .ide-journey i { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; font-style: normal; }
+  .ide-journey li.has-pain i { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.45); }
+  .ide-journey strong { font-size: 16px; }
+  .ide-pain { min-height: 40px; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.7); }
+  .ide-opp { margin-top: auto; padding: 8px 10px; border-radius: 10px; background: rgba(167,139,250,.12); border: 1px solid rgba(167,139,250,.4); font-size: 13px; font-weight: 600; line-height: 1.35; color: #fff; }
+  .ide-opp.is-loyal { background: rgba(249,115,22,.14); border-color: rgba(249,115,22,.5); color: #fff; }
+  .ide-legend { display: flex; gap: 18px; font-size: 13px; color: rgba(255,255,255,.65); }
+  .ide-legend > span { display: flex; align-items: center; gap: 6px; }
+  .ide-legend i { width: 10px; height: 10px; border-radius: 3px; }
+
+  .ide-frics { display: flex; flex-direction: column; gap: 12px; }
+  .ide-fric { display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); font-size: 16px; line-height: 1.35; color: #fff; font-weight: 500; }
+  .ide-fric strong { color: #a78bfa; }
+  .ide-ico { flex: none; width: 44px; height: 44px; border-radius: 12px; background: rgba(167,139,250,.12); color: #a78bfa; display: flex; align-items: center; justify-content: center; }
+  .ide-fric.is-loyal { background: rgba(249,115,22,.06); border-color: rgba(249,115,22,.3); }
+  .ide-fric.is-loyal strong, .ide-fric.is-loyal .ide-ico { color: #f97316; }
+  .ide-fric.is-loyal .ide-ico { background: rgba(249,115,22,.14); }
+  .ide-ba { display: grid; grid-template-columns: 200px minmax(0,1fr); gap: 24px; align-items: center; }
+  .ide-ba figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .ide-ba figcaption { font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.8); }
+  .ide-ba img { width: 100%; height: auto; }
+  .ide-bridge { display: flex; gap: 14px; align-items: center; padding: 18px 20px; border-radius: 18px; border: 1px dashed rgba(167,139,250,.45); font-size: 16px; color: #fff; }
+  .ide-bridge-ico { flex: none; width: 36px; height: 36px; border-radius: 50%; background: rgba(167,139,250,.14); color: #a78bfa; display: flex; align-items: center; justify-content: center; }
+
+  .ide-order { display: grid; grid-template-columns: minmax(0,1fr) 36px minmax(0,1fr); gap: 10px; align-items: start; }
+  .ide-order ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ide-order-arrow { padding-top: 140px; display: flex; justify-content: center; color: rgba(255,255,255,.4); }
+  .ide-blk { height: 52px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.03); display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.6); }
+  .ide-blk small { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.45); }
+  .ide-blk.is-task { background: rgba(167,139,250,.12); border-color: rgba(167,139,250,.5); color: #fff; }
+  .ide-blk.is-club { background: rgba(249,115,22,.12); border-color: rgba(249,115,22,.5); color: #fff; }
+  .ide-laws { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ide-laws > span { padding: 6px 12px; border-radius: 8px; background: rgba(255,255,255,.06); font-size: 13px; color: rgba(255,255,255,.8); }
+  .ide-video-fig { margin: 0; display: flex; flex-direction: column; gap: 12px; padding-top: 10px; background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.24), rgba(0,0,0,0) 66%); }
+  .ide-video-fig video { width: 100%; height: auto; }
+  .ide-video-fig figcaption { font-size: 14px; color: rgba(255,255,255,.65); }
+  .ide-rank { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+  .ide-rank li { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.1); font-size: 16px; font-weight: 600; color: #fff; }
+  .ide-rank b { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-style: italic; font-weight: 700; font-size: 26px; color: rgba(255,255,255,.6); }
+  .ide-rank li.is-task { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.3); }
+  .ide-rank li.is-task b { color: #a78bfa; }
+  .ide-rank li.is-club { background: rgba(249,115,22,.06); border-color: rgba(249,115,22,.3); }
+  .ide-rank li.is-club b { color: #f97316; }
+
+  .ide-proc { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.4fr); gap: 20px; align-items: stretch; }
+  .ide-proc-card { border-radius: 22px; overflow: hidden; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; }
+  .ide-proc-media { display: grid; gap: 1px; background: rgba(255,255,255,.1); flex: 1; }
+  .ide-proc-media--2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ide-proc-media--2r { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); }
+  .ide-proc-media figure { margin: 0; position: relative; display: flex; align-items: center; justify-content: center; padding: 18px; min-height: 380px; }
+  .ide-proc-media .is-paper { background: #f2f2f0; }
+  .ide-proc-media .is-dark { background: #0d0d10; }
+  .ide-proc-media img { max-height: 400px; width: auto; height: auto; }
+  .ide-proc-badge { position: absolute; left: 10px; top: 10px; padding: 4px 9px; border-radius: 999px; background: #000; color: #fff; font-size: 11px; font-weight: 700; }
+  .ide-proc-badge.is-final { background: #a78bfa; color: #0b0614; }
+  .ide-proc-info { padding: 16px 18px 18px; border-top: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; gap: 10px; }
+  .ide-proc-info strong { font-size: 17px; }
+  .ide-proc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ide-proc-chips span { padding: 5px 9px; border-radius: 8px; background: rgba(255,255,255,.06); font-size: 12px; color: rgba(255,255,255,.85); }
+  .ide-proc-chips .is-task { background: rgba(167,139,250,.14); color: #fff; }
+  .ide-proc-chips .is-club { background: rgba(249,115,22,.14); color: #fff; }
+
+  .ide-fitts { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 0; border-radius: 26px; overflow: hidden; background: rgba(167,139,250,.07); border: 1px solid rgba(167,139,250,.3); }
+  .ide-fitts-media { position: relative; background: #000; min-height: 440px; }
+  .ide-fitts-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .ide-fitts-body { padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+  .ide-fitts-ab { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .ide-fitts-ab > div { padding: 14px 16px; border-radius: 14px; background: #0a0a0c; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.4; color: #fff; }
+  .ide-big { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 72px; line-height: .85; color: #fff; }
+  .ide-big-row { display: flex; align-items: flex-end; gap: 14px; }
+  .ide-big-row > span:last-child { padding-bottom: 6px; font-size: 16px; color: rgba(255,255,255,.8); }
+
+  .ide-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px,1fr)); gap: 20px; align-items: stretch; }
+  .ide-ab { justify-content: center; padding: 32px; border-radius: 26px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.35), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; gap: 22px; }
+  .ide-ab-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600; color: #fff; }
+  .ide-pill { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); color: #a78bfa; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .ide-bar-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: rgba(255,255,255,.65); margin-bottom: 8px; }
+  .ide-bar-label b { font-size: 24px; font-weight: 700; color: rgba(255,255,255,.85); }
+  .ide-bar { height: 16px; border-radius: 8px; background: rgba(255,255,255,.28); }
+  .ide-bars { display: flex; flex-direction: column; gap: 16px; }
+  .ide-bars .is-b .ide-bar-label { color: #fff; font-weight: 600; }
+  .ide-bars .is-b .ide-bar-label b { color: #a78bfa; }
+  .ide-bars .is-b .ide-bar { background: #a78bfa; }
+  .ide-ab-foot { display: flex; align-items: flex-end; gap: 16px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); }
+  .ide-ab-foot .ide-big { color: #a78bfa; }
+  .ide-ab-foot > span:last-child { padding-bottom: 6px; font-size: 16px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .ide-stats2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .ide-stats2 > div { padding: 20px 18px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: rgba(255,255,255,.7); }
+  .ide-stats2 b { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 42px; line-height: 1; color: #fff; }
+  .ide-loyal { padding: 32px; border-radius: 26px; background: radial-gradient(ellipse at 10% 0%, rgba(249,115,22,.22), rgba(249,115,22,0) 60%), #120c08; border: 1px solid rgba(249,115,22,.4); display: grid; grid-template-columns: minmax(0,1fr) 220px; gap: 24px; align-items: center; }
+  .ide-loyal em { color: #f97316; }
+  .ide-loyal-txt { display: flex; flex-direction: column; gap: 16px; }
+  .ide-donut { display: flex; align-items: center; gap: 18px; }
+  .ide-donut-val { display: block; font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 64px; line-height: .9; color: #f97316; }
+  .ide-donut p { margin: 6px 0 0; font-size: 15px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .ide-loyal figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .ide-loyal figure img { width: 100%; height: auto; border-radius: 14px; }
+  .ide-loyal figcaption { font-size: 12px; color: rgba(255,255,255,.6); text-align: center; }
+  .ide-results-side { display: flex; flex-direction: column; gap: 20px; }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .ide-hero-media { height: auto; aspect-ratio: 600/460; }
+  .ide-facts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ide-steps, .ide-rank { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ide-journey { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ide-proc, .ide-fitts, .ide-loyal { grid-template-columns: 1fr; }
+  .ide-fitts-media { min-height: 380px; }
+}
+
+</style>
 </head>
 <!--
   =====================================================================
@@ -49,16 +490,16 @@
   <div class="cs-nav-center">
     <nav aria-label="Secciones">
       <ul class="cs-toc">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#problema"><span class="es">Problema</span><span class="en">Problem</span></a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#diseno"><span class="es">Diseño</span><span class="en">Design</span></a></li>
-        <li><a href="#resultados"><span class="es">Resultados</span><span class="en">Results</span></a></li>
+        <li><a href="#ide-overview">Overview</a></li>
+        <li><a href="#ide-problema"><span class="es">Problema</span><span class="en">Problem</span></a></li>
+        <li><a href="#ide-research">Research</a></li>
+        <li><a href="#ide-solucion"><span class="es">Solución</span><span class="en">Solution</span></a></li>
+        <li><a href="#ide-resultados"><span class="es">Resultados</span><span class="en">Results</span></a></li>
         <li><a href="#aprendizajes"><span class="es">Progresión</span><span class="en">Growth</span></a></li>
       </ul>
     </nav>
   </div>
-    <div class="cs-mobile-case-badge">CASO 02 / 06</div>
+    <div class="cs-mobile-case-badge">CASO 02 / 05</div>
 
   <div class="cs-nav-right">
     <button class="cs-cases-trigger" id="csCasesTrigger" type="button" onclick="openCasesPanel()" aria-haspopup="dialog" aria-expanded="false">
@@ -87,10 +528,10 @@
 
 <!-- ============ NAVEGACIÓN MÓVIL POR TABS ============ -->
 <nav class="cs-mobile-tabs" aria-label="Navegación de secciones móvil">
-  <a href="#overview" class="cs-mobile-tab is-active">Overview</a>
-  <a href="#problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
-  <a href="#diseno" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
-  <a href="#resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
+  <a href="#ime-overview" class="cs-mobile-tab is-active">Overview</a>
+  <a href="#ime-problema" class="cs-mobile-tab"><span class="es">Problema</span><span class="en">Problem</span></a>
+  <a href="#ime-solucion" class="cs-mobile-tab"><span class="es">Solución</span><span class="en">Solution</span></a>
+  <a href="#ime-resultados" class="cs-mobile-tab"><span class="es">Resultados</span><span class="en">Results</span></a>
 </nav>
 
 
@@ -127,23 +568,13 @@
           <span class="cs-panel-card-badge es">Estás viendo este caso</span><span class="cs-panel-card-badge en">Current case</span>
         </div>
         <h3 class="cs-panel-card-title">ILUNION CRO</h3>
-        <p class="cs-panel-card-desc es">Optimización de conversión del 3,36% al 6,5% con 10k logs analizados y test A/B en Adobe AEM.</p>
-        <p class="cs-panel-card-desc en">Conversion uplift from 3.36% to 6.5% with 10k logs analysed and A/B test in Adobe AEM.</p>
-        <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a href="booking-engine.html" class="cs-panel-card">
-        <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 03</span>
-          
-        </div>
-        <h3 class="cs-panel-card-title">Booking Engine</h3>
-        <p class="cs-panel-card-desc es">Rediseño integral del motor de reservas hotelero: de la arquitectura de información al handoff.</p>
-        <p class="cs-panel-card-desc en">End-to-end hotel booking engine redesign: from information architecture to production handoff.</p>
+        <p class="cs-panel-card-desc es">CRO del canal directo: experimento en el motor y re-componetización de la home. Conversión del 3,36% al 6,5%.</p>
+        <p class="cs-panel-card-desc en">Direct-channel CRO: a booking engine experiment and a homepage recomposition. Conversion from 3.36% to 6.5%.</p>
         <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
       <a href="paolo-pizzeria.html" class="cs-panel-card">
         <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 04</span>
+          <span class="cs-panel-card-num">Caso 03</span>
           
         </div>
         <h3 class="cs-panel-card-title">Paolo Brand System</h3>
@@ -153,7 +584,7 @@
       </a>
       <a href="it-ops-oracle.html" class="cs-panel-card">
         <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 05</span>
+          <span class="cs-panel-card-num">Caso 04</span>
           
         </div>
         <h3 class="cs-panel-card-title">IT Ops &amp; Oracle ERP</h3>
@@ -163,7 +594,7 @@
       </a>
       <a href="gym-energy-center.html" class="cs-panel-card">
         <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 06</span>
+          <span class="cs-panel-card-num">Caso 05</span>
           
         </div>
         <h3 class="cs-panel-card-title">Gym Energy Center</h3>
@@ -185,6 +616,285 @@
 </div>
 
 <main>
+
+<div class="ime" id="ime-root">
+
+  <section class="ime-sec" id="ime-overview">
+    <div class="ime-chips"><span class="ime-chip ime-chip--accent"><span class="es">Hotelería · Canal directo</span><span class="en">Hospitality · Direct channel</span></span><span class="ime-chip"><span class="es">CRO · 2 iniciativas</span><span class="en">CRO · 2 initiatives</span></span></div>
+    <h1 class="ime-h1"><span class="es">Las mismas piezas, <em>otro orden</em></span><span class="en">Same pieces, <em>new order</em></span></h1>
+    <p class="ime-lead"><span class="es">De <strong>3,36%</strong> a <strong>6,5%</strong> de conversión reordenando los componentes de la home según lo que hacían los socios <strong class="is-loyal">ÚNICOS</strong>.</span><span class="en">From <strong>3.36%</strong> to <strong>6.5%</strong> conversion by reordering the homepage components around what <strong class="is-loyal">ÚNICOS</strong> members did.</span></p>
+    <figure class="ime-hero-fig"><video src="assets/ilunion-mobile/ofertas-movil.mp4" poster="assets/ilunion-mobile/ofertas-movil-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Recorrido en móvil por la página de ofertas recompuesta: oferta con CTA, carrusel, bloque ÚNICOS y botón Reserva fijo"></video><figcaption class="ime-cap"><span class="ime-dot"></span><span class="es">En producción · CTA «Reserva» fijo y bloque ÚNICOS en el recorrido</span><span class="en">Live · sticky “Book” CTA and ÚNICOS block in the flow</span></figcaption></figure>
+    <dl class="ime-facts">
+      <div><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd><span class="es">Product Designer responsable</span><span class="en">Lead Product Designer</span></dd></div>
+      <div><dt><span class="es">Alcance</span><span class="en">Scope</span></dt><dd><span class="es">2 iniciativas · motor y home</span><span class="en">2 initiatives · engine and home</span></dd></div>
+      <div><dt><span class="es">Equipo</span><span class="en">Team</span></dt><dd><span class="es">Yo + backend + marketing</span><span class="en">Me + backend + marketing</span></dd></div>
+      <div><dt><span class="es">Plataforma</span><span class="en">Platform</span></dt><dd>Web · AEM</dd></div>
+    </dl>
+    <div class="ime-sub" style="padding-top:48px"><h2 class="ime-h3" style="font-weight:700"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2></div>
+    <ol class="ime-tl"><li><div class="ime-tl-rail"><i></i><b></b></div><div class="ime-tl-body"><span class="ime-eyebrow"><span class="es">Problema</span><span class="en">Problem</span></span><span class="ime-tl-big"><span class="es">3,36%</span><span class="en">3.36%</span></span><span class="ime-tl-desc"><span class="es">de conversión con el motor enterrado bajo promociones.</span><span class="en">conversion, with the booking engine buried under promotions.</span></span></div></li><li><div class="ime-tl-rail"><i></i><b></b></div><div class="ime-tl-body"><span class="ime-eyebrow"><span class="es">Iniciativa 1 · Experimento</span><span class="en">Initiative 1 · Experiment</span></span><span class="ime-tl-big"><span class="es">Motor</span><span class="en">Engine</span></span><span class="ime-tl-desc"><span class="es">Un selector de destino que derivó tráfico. Funcionó y se retiró.</span><span class="en">A destination selector that redirected traffic. It worked, then was retired.</span></span></div></li><li><div class="ime-tl-rail"><i></i><b></b></div><div class="ime-tl-body"><span class="ime-eyebrow"><span class="es">Iniciativa 2 · En producción</span><span class="en">Initiative 2 · Live</span></span><span class="ime-tl-big"><span class="es">Recomponer</span><span class="en">Recompose</span></span><span class="ime-tl-desc"><span class="es">Motor y ventaja de socio antes que el escaparate.</span><span class="en">Booking engine and member perk ahead of the showcase.</span></span></div></li><li class="is-accent"><div class="ime-tl-rail"><i></i><b></b></div><div class="ime-tl-body"><span class="ime-eyebrow"><span class="es">Impacto medido · test A/B</span><span class="en">Measured impact · A/B test</span></span><span class="ime-tl-big"><span class="es">6,5%</span><span class="en">6.5%</span></span><span class="ime-tl-desc"><span class="es">×1,9 la conversión · p &lt; 0,05 · <strong class="is-loyal">50% de socios ÚNICOS</strong></span><span class="en">×1.9 conversion · p &lt; 0.05 · <strong class="is-loyal">50% from ÚNICOS members</strong></span></span></div></li></ol>
+    <a href="#ime-problema" class="ime-btn"><span class="es">Ver el problema</span><span class="en">See the problem</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+  </section>
+
+  <section class="ime-sec" id="ime-problema">
+    <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">02 · El problema</span><span class="en">02 · The problem</span></span><h2 class="ime-h2"><span class="es">Venían a reservar <em>y no buscaban</em></span><span class="en">They came to book <em>and never searched</em></span></h2></div>
+    <figure class="ime-paper"><div class="ime-paper-row"><img src="assets/ilunion-mobile/antes-unicos-landing.webp" alt="Antes: landing de ÚNICOS separada, con el mensaje Hazte miembro y un botón" width="104" height="200" loading="lazy"><img src="assets/ilunion-mobile/antes-ofertas.webp" alt="Antes: oferta Early Summer en texto largo, con la ventaja ÚNICOS en el cuarto párrafo, y tarjetas de ofertas" width="207" height="200" loading="lazy"></div><figcaption><span class="es">Antes · ofertas en texto largo y ÚNICOS en una landing aparte</span><span class="en">Before · offers as long copy and ÚNICOS on a separate landing page</span></figcaption></figure>
+    <div class="ime-sub" style="padding-top:28px">
+      <div class="ime-stat"><span class="ime-stat-val">75%</span><span class="ime-stat-txt"><span class="es">del tráfico de pago llegaba con intención de reservar</span><span class="en">of paid traffic arrived ready to book</span></span></div>
+      <div class="ime-squares" role="img" aria-label="3 de cada 4 visitas de pago querían reservar"><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span></span></div>
+      <p class="ime-p"><span class="es">La home se había montado como escaparate de marca. El usuario quería comprobar disponibilidad cuanto antes.</span><span class="en">The homepage had been built as a brand showcase. Users wanted to check availability as fast as possible.</span></p>
+    </div>
+    <div class="ime-sub">
+      <div class="ime-head"><span class="ime-eyebrow"><span class="es">Research · aprender de los datos</span><span class="en">Research · learning from data</span></span><h3 class="ime-h3"><span class="es">Comportamiento, <em>no opiniones</em></span><span class="en">Behaviour, <em>not opinions</em></span></h3></div>
+      <div class="ime-stats3"><div><b>10k+</b><span class="es">logs de Adobe Analytics</span><span class="en">Adobe Analytics logs</span></div><div><b>250+</b><span class="es">sesiones en Clarity</span><span class="en">Clarity sessions</span></div><div class="is-accent"><b>2 h</b><span class="es">para agrupar los logs con Claude</span><span class="en">to cluster the logs with Claude</span></div></div>
+      <ol class="ime-steps" aria-label="Flujo de análisis de datos"><li><div class="ime-steps-rail"><i>01</i><b></b></div><div class="ime-steps-body"><strong><span class="es">Recoger</span><span class="en">Collect</span></strong><span><span class="es">Logs de conversión y grabaciones de sesión del funnel.</span><span class="en">Funnel conversion logs and session recordings.</span></span></div></li><li><div class="ime-steps-rail"><i>02</i><b></b></div><div class="ime-steps-body"><strong><span class="es">Agrupar</span><span class="en">Cluster</span></strong><span><span class="es">Clústeres por punto de abandono y tipo de usuario.</span><span class="en">Clusters by drop-off point and user type.</span></span></div></li><li><div class="ime-steps-rail"><i>03</i><b></b></div><div class="ime-steps-body"><strong><span class="es">Leer patrones</span><span class="en">Read patterns</span></strong><span><span class="es">Heatmaps y scroll depth para ver dónde se perdía el tráfico.</span><span class="en">Heatmaps and scroll depth to see where traffic was lost.</span></span></div></li><li><div class="ime-steps-rail"><i>04</i><b></b></div><div class="ime-steps-body"><strong><span class="es">Priorizar</span><span class="en">Prioritise</span></strong><span><span class="es">Cada patrón, una hipótesis puntuada con ICE.</span><span class="en">Each pattern became an ICE-scored hypothesis.</span></span></div></li></ol>
+      <p class="ime-note"><span class="es">La IA aceleró el análisis. La lectura de los patrones y las decisiones fueron mías.</span><span class="en">AI sped up the analysis. Reading the patterns and making the calls was my job.</span></p>
+    </div>
+    <div class="ime-sub">
+      <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--loyal"><span class="es">Discovery · el segmento que convierte</span><span class="en">Discovery · the segment that converts</span></span><h3 class="ime-h3"><span class="es">El socio ya sabía <em class="is-loyal">a qué venía</em></span><span class="en">Members already knew <em class="is-loyal">what they wanted</em></span></h3></div>
+      <div class="ime-pair"><div class="ime-card"><span class="ime-eyebrow"><span class="es">Detectado</span><span class="en">Found</span></span><span class="es">La ventaja ÚNICOS vivía en el 4.º párrafo de cada oferta o en una landing aparte.</span><span class="en">The ÚNICOS perk lived in paragraph 4 of each offer or on a separate landing page.</span></div><div class="ime-card ime-card--loyal"><span class="ime-eyebrow"><span class="es">Decisión</span><span class="en">Decision</span></span><span class="es">Un componente ÚNICOS propio dentro del recorrido, con el 10% a la vista.</span><span class="en">A dedicated ÚNICOS component inside the flow, with the 10% in plain sight.</span></div></div>
+    </div>
+    <div class="ime-sub" id="ime-persona">
+      <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">User persona &amp; journey</span><span class="en">User persona &amp; journey</span></span><h3 class="ime-h2" style="font-size:34px"><span class="es">Para quién <em>diseñaba</em></span><span class="en">Who I was <em>designing</em> for</span></h3></div>
+      <div class="ime-persona">
+        <div class="ime-persona-top"><img src="assets/avatar-ines.jpg" alt="Ilustración de Inés, la persona" width="72" height="72" loading="lazy"><div><span class="ime-persona-name"><span class="es">Inés, 38</span><span class="en">Inés, 38</span></span><span class="ime-persona-role"><span class="es">Viajera vacacional · reserva desde el móvil</span><span class="en">Leisure traveller · books on mobile</span></span><span class="ime-tag"><span class="es">Persona ilustrativa</span><span class="en">Illustrative persona</span></span></div></div>
+        <div class="ime-persona-cols"><div><span class="ime-eyebrow ime-eyebrow--accent" style="font-size:11px"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Ver el precio final rápido</span><span class="en">See the final price fast</span></li><li><span class="es">Reservar en menos de 3 minutos</span><span class="en">Book in under 3 minutes</span></li></ul></div><div class="is-pain"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">No encontrar el buscador</span><span class="en">Not finding the search</span></li><li><span class="es">Selector de fechas que falla</span><span class="en">A buggy date picker</span></li></ul></div></div>
+        <p class="ime-quote"><span class="es">“Si tengo que buscar dónde se reserva, me voy a Booking.”</span><span class="en">“If I have to hunt for where to book, I’ll go to Booking.”</span></p>
+      </div>
+      <div class="ime-head" style="margin-top:28px"><span class="ime-eyebrow"><span class="es">Customer journey · tráfico de Paid Media</span><span class="en">Customer journey · Paid Media traffic</span></span><h3 class="ime-h3"><span class="es">Cada dolor, <em>una oportunidad</em></span><span class="en">Every pain, <em>an opportunity</em></span></h3></div>
+      <div class="ime-legend"><span><i style="background:rgba(255,255,255,.3)"></i><span class="es">Dolor</span><span class="en">Pain</span></span><span><i style="background:#a78bfa"></i><span class="es">Oportunidad</span><span class="en">Opportunity</span></span><span><i style="background:#f97316"></i>Loyalty</span></div>
+      <ol class="ime-journey"><li class=""><div class="ime-journey-rail"><i>1</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Llega desde Paid</span><span class="en">Lands from Paid</span></strong><span class="ime-opp"><span class="es">Mensaje alineado con el anuncio</span><span class="en">Ad-matched message</span></span></div></li><li class="has-pain"><div class="ime-journey-rail"><i>2</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Busca el motor</span><span class="en">Looks for the engine</span></strong><span class="ime-pain"><span class="es">Motor bajo el hero y las promos</span><span class="en">Engine under the hero and promos</span></span><span class="ime-opp"><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></span></div></li><li class="has-pain"><div class="ime-journey-rail"><i>3</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Elige fechas</span><span class="en">Picks dates</span></strong><span class="ime-pain"><span class="es">Errores táctiles en el selector</span><span class="en">Touch errors in the picker</span></span><span class="ime-opp"><span class="es">Swipe nativo</span><span class="en">Native swipe</span></span></div></li><li class="has-pain"><div class="ime-journey-rail"><i>4</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Compara</span><span class="en">Compares</span></strong><span class="ime-pain"><span class="es">Precio poco claro</span><span class="en">Unclear price</span></span><span class="ime-opp is-loyal"><span class="es">Ventaja de socio ÚNICOS visible</span><span class="en">Visible ÚNICOS member perk</span></span></div></li><li class=""><div class="ime-journey-rail"><i>5</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Reserva</span><span class="en">Books</span></strong><span class="ime-opp"><span class="es">CTA fijo (Ley de Fitts)</span><span class="en">Sticky CTA (Fitts's Law)</span></span></div></li></ol>
+    </div>
+  </section>
+
+  <section class="ime-sec" id="ime-solucion">
+    <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">Iniciativa 1 · Experimento en el motor</span><span class="en">Initiative 1 · Booking engine experiment</span></span><h2 class="ime-h2"><span class="es">Llevar el tráfico <em>al hotel correcto</em></span><span class="en">Sending traffic <em>to the right hotel</em></span></h2><p class="ime-p"><span class="es">Antes de tocar la home, probé a rediseñar el motor de reservas para derivar tráfico entre los hoteles de la cadena.</span><span class="en">Before touching the homepage, I tested a redesigned booking engine to steer traffic across the chain’s hotels.</span></p></div>
+    <div class="ime-sub" style="padding-top:32px"><span class="ime-eyebrow"><span class="es">3 patrones de fricción en el motor</span><span class="en">3 friction patterns in the engine</span></span><div class="ime-frics"><div class="ime-fric"><span class="ime-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="6" rx="1.5"/><rect x="3" y="11" width="18" height="4" rx="1.5"/><rect x="3" y="17" width="18" height="4" rx="1.5"/></svg></span><span><span class="es">Motor <strong>enterrado</strong> bajo hero y promociones</span><span class="en">Engine <strong>buried</strong> under hero and promos</span></span></div><div class="ime-fric"><span class="ime-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><span><span class="es"><strong>Rage clicks</strong> en el selector de fechas móvil</span><span class="en"><strong>Rage clicks</strong> on the mobile date picker</span></span></div><div class="ime-fric is-loyal"><span class="ime-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.4 4.2 1 6-5.3-2.8-5.3 2.8 1-6L3.3 9.4l6-.9z"/></svg></span><span><span class="es">Ventaja de socio <strong>ÚNICOS invisible</strong> frente a Booking</span><span class="en"><strong>ÚNICOS member perk invisible</strong> next to Booking</span></span></div></div></div>
+    <div class="ime-sub">
+      <div class="ime-head"><span class="ime-eyebrow"><span class="es">El experimento · selector de destino</span><span class="en">The experiment · destination selector</span></span><h3 class="ime-h3"><span class="es">De una lista eterna <em>a dos columnas</em></span><span class="en">From an endless list <em>to two columns</em></span></h3></div>
+      <figure class="ime-before"><img src="assets/ilunion-mobile/antes-selector-destino.webp" alt="Antes: selector de destino nativo en iPhone, una lista larga de hoteles agrupados por ciudad que ocupa toda la pantalla" width="150" height="269" loading="lazy"><figcaption class="ime-figtxt"><span class="ime-eyebrow"><span class="es">Antes</span><span class="en">Before</span></span><span class="es">Todos los hoteles en la lista nativa del sistema. En móvil tapaba la pantalla antes de poder elegir fechas.</span><span class="en">Every hotel in the native system list. On mobile it covered the screen before dates could be picked.</span></figcaption></figure>
+      <figure class="ime-after"><img src="assets/ilunion-mobile/motor-despues.webp" alt="Después: el motor abre un panel con dos columnas, Destinos y Nuestros hoteles, en desktop y en móvil" width="1200" height="719" loading="lazy"><figcaption class="ime-figtxt"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">Después</span><span class="en">After</span></span><span class="es">Panel propio con Destinos y Nuestros hoteles. Elegir ciudad u hotel dejaba de ser buscar en una lista.</span><span class="en">A custom panel with Destinations and Our hotels. Picking a city or hotel no longer meant scanning a list.</span></figcaption></figure>
+    </div>
+    <div class="ime-sub">
+      <div class="ime-head"><span class="ime-eyebrow"><span class="es">Resultado del experimento</span><span class="en">Experiment outcome</span></span><h3 class="ime-h3"><span class="es">Funcionó, <em>y se retiró</em></span><span class="en">It worked, <em>then it was retired</em></span></h3></div>
+      <div class="ime-pair"><div class="ime-card ime-card--accent"><span class="ime-eyebrow"><span class="es">Funcionó</span><span class="en">It worked</span></span><span class="es">Derivó tráfico hacia los hoteles que había que impulsar.</span><span class="en">It steered traffic towards the hotels that needed a push.</span></div><div class="ime-card"><span class="ime-eyebrow"><span class="es">Por qué se retiró</span><span class="en">Why it was retired</span></span><span class="es">El tráfico se reparte por hotel según el trimestre. Una pieza fija no seguía ese ritmo.</span><span class="en">Traffic is allocated per hotel each quarter. A fixed piece could not keep up.</span></div></div>
+      <div class="ime-bridge"><span class="ime-bridge-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><div class="ime-figtxt"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Lo que pasó a la iniciativa 2</span><span class="en">What carried into initiative 2</span></span><span class="es">Diseñar piezas que aguanten campañas que cambian cada trimestre, en vez de una solución fija.</span><span class="en">Design pieces that survive campaigns changing every quarter, instead of a fixed solution.</span></div></div>
+    </div>
+
+    <div class="ime-sub" style="padding-top:64px">
+      <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">Iniciativa 2 · Re-componetización</span><span class="en">Initiative 2 · Recomposition</span></span><h2 class="ime-h2"><span class="es">Recomponer, <em>no rediseñar</em></span><span class="en">Recompose, <em>don’t redesign</em></span></h2><p class="ime-p"><span class="es">Mismos componentes de AEM y misma identidad. Cambia el orden: primero reservar, después inspirar.</span><span class="en">Same AEM components, same identity. The order changes: book first, get inspired after.</span></p></div>
+      <div class="ime-order" aria-label="Orden de componentes antes y después"><div><span class="ime-eyebrow" style="font-size:11px;padding-bottom:10px"><span class="es">Antes</span><span class="en">Before</span></span><ol><li class="ime-blk "><small>1</small><span class="es">Hero inspiracional</span><span class="en">Inspirational hero</span></li><li class="ime-blk "><small>2</small><span class="es">Texto de campaña</span><span class="en">Campaign copy</span></li><li class="ime-blk is-club"><small>3</small><span class="es">ÚNICOS en el 4.º párrafo</span><span class="en">ÚNICOS in paragraph 4</span></li><li class="ime-blk "><small>4</small><span class="es">Tarjetas de ofertas</span><span class="en">Offer cards</span></li><li class="ime-blk is-task"><small>5</small><span class="es">Motor de reservas</span><span class="en">Booking engine</span></li></ol></div><div class="ime-order-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><div><span class="ime-eyebrow ime-eyebrow--accent" style="font-size:11px;padding-bottom:10px"><span class="es">Después</span><span class="en">After</span></span><ol><li class="ime-blk is-task"><small>1</small><span class="es">Hero + motor</span><span class="en">Hero + engine</span></li><li class="ime-blk "><small>2</small><span class="es">Ofertas con «Reserva ya»</span><span class="en">Offers with “Book now”</span></li><li class="ime-blk is-club"><small>3</small><span class="es">ÚNICOS · 10% dto</span><span class="en">ÚNICOS · 10% off</span></li><li class="ime-blk "><small>4</small><span class="es">Hoteles filtrados</span><span class="en">Filtered hotels</span></li><li class="ime-blk is-task"><small>5</small><span class="es">CTA «Reserva» fijo</span><span class="en">Sticky “Book” CTA</span></li></ol></div></div>
+      <div class="ime-laws"><span><strong>Hick</strong> · <span class="es">menos opciones antes de buscar</span><span class="en">fewer choices before searching</span></span><span><strong>Gestalt</strong> · <span class="es">fechas, huéspedes y CTA juntos</span><span class="en">dates, guests and CTA together</span></span></div>
+    </div>
+    <div class="ime-sub" style="padding-top:28px"><figure class="ime-wide-fig"><video src="assets/ilunion-mobile/ofertas-desk.mp4" poster="assets/ilunion-mobile/ofertas-desk-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Recorrido en desktop: hero con motor de reservas integrado, ofertas, bloque ÚNICOS y página de larga estancia"></video><figcaption><span class="es">Desktop: el motor vive dentro del hero y el componente ÚNICOS acompaña a cada oferta.</span><span class="en">Desktop: the engine lives inside the hero and the ÚNICOS block sits next to each offer.</span></figcaption></figure></div>
+    <div class="ime-sub">
+      <div class="ime-head"><span class="ime-eyebrow"><span class="es">Priorización · ICE</span><span class="en">Prioritisation · ICE</span></span><h3 class="ime-h3"><span class="es">Qué mover primero</span><span class="en">What to move first</span></h3></div>
+      <ol class="ime-rank"><li class="is-task"><b>1</b><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></li><li class="is-club"><b>2</b><span class="es">Componente ÚNICOS con el 10%</span><span class="en">ÚNICOS block with the 10%</span></li><li class=""><b>3</b><span class="es">Selector de fechas con swipe</span><span class="en">Swipe date picker</span></li></ol>
+    </div>
+    <div class="ime-sub">
+      <div class="ime-head"><span class="ime-eyebrow"><span class="es">Proceso · de wireframe a producción</span><span class="en">Process · from wireframe to production</span></span><h3 class="ime-h3"><span class="es">Dos breakpoints, <em>el mismo orden</em></span><span class="en">Two breakpoints, <em>the same order</em></span></h3><p class="ime-p" style="font-size:14px"><span class="es">El wireframe fijó la secuencia de componentes en AEM. Producción respetó ese orden.</span><span class="en">The wireframe set the component sequence in AEM. Production kept that order.</span></p></div>
+      <div class="ime-seg" role="group" aria-label="Elegir breakpoint"><button type="button" data-bp="mobile" aria-pressed="true">Mobile</button><button type="button" data-bp="desktop" aria-pressed="false">Desktop</button></div>
+      <div class="ime-bp is-on" data-bp-panel="mobile">
+        <div class="ime-bp-pair">
+          <figure><div class="ime-frame ime-frame--paper" style="height:360px"><img src="assets/ilunion-mobile/wf-mobile.webp" alt="Wireframe móvil: carrusel de oferta con botón Reserva, bloque ÚNICOS con Lo quiero y buscador fijo abajo" style="width:157px;height:336px;object-fit:contain" loading="lazy"></div><figcaption>Wireframe</figcaption></figure>
+          <figure><div class="ime-frame ime-frame--dark" style="height:360px"><img src="assets/ilunion-mobile/final-mobile.webp" alt="Móvil en producción: oferta Te mereces más con Reserva ya y debajo el bloque ÚNICOS" style="width:168px;height:330px;object-fit:contain" loading="lazy"></div><figcaption class="is-final"><span class="es">Producción</span><span class="en">Production</span></figcaption></figure>
+        </div>
+        <div class="ime-order-box" style="margin-top:16px"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Orden de componentes · mobile</span><span class="en">Component order · mobile</span></span><ol><li class=""><i>1</i><span class="es">Oferta con botón «Reserva»</span><span class="en">Offer with “Book” button</span></li><li class="is-club"><i>2</i><span class="es">Bloque ÚNICOS · 10% dto</span><span class="en">ÚNICOS block · 10% off</span></li><li class="is-task"><i>3</i><span class="es">Buscador fijo abajo</span><span class="en">Search pinned to the bottom</span></li></ol></div>
+      </div>
+      <div class="ime-bp" data-bp-panel="desktop">
+        <div class="ime-bp-stack">
+          <figure><div class="ime-frame ime-frame--paper" style="height:250px"><img src="assets/ilunion-mobile/wf-desk.webp" alt="Wireframe desktop: hero con motor de reservas integrado, debajo oferta y bloque ÚNICOS lado a lado" style="width:200px;height:232px;object-fit:contain" loading="lazy"></div><figcaption>Wireframe</figcaption></figure>
+          <figure><img src="assets/ilunion-mobile/final-desk.webp" alt="Desktop en producción: motor de reservas arriba, oferta Mejor con tiempo y bloque ÚNICOS lado a lado" style="width:100%;height:auto;border-radius:18px;border:1px solid rgba(255,255,255,.1)" loading="lazy"><figcaption class="is-final"><span class="es">Producción</span><span class="en">Production</span></figcaption></figure>
+        </div>
+        <div class="ime-order-box" style="margin-top:16px"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Orden de componentes · desktop</span><span class="en">Component order · desktop</span></span><ol><li class="is-task"><i>1</i><span class="es">Hero con motor de reservas</span><span class="en">Hero with booking engine</span></li><li class=""><i>2</i><span class="es">Oferta en carrusel</span><span class="en">Offer carousel</span></li><li class="is-club"><i>3</i><span class="es">Bloque ÚNICOS al lado</span><span class="en">ÚNICOS block alongside</span></li></ol></div>
+      </div>
+    </div>
+    <div class="ime-sub">
+      <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">La pieza clave · Ley de Fitts</span><span class="en">The key piece · Fitts’s Law</span></span><h3 class="ime-h3"><span class="es">Reservar sin volver <em>arriba</em></span><span class="en">Book without scrolling <em>back up</em></span></h3><p class="ime-p"><span class="es">El botón «Reservar» se queda fijo abajo, donde llega el pulgar. Desde cualquier oferta u hotel, un toque abre el motor.</span><span class="en">The “Book” button stays pinned at the bottom, within thumb reach. From any offer or hotel, one tap opens the engine.</span></p></div>
+      <div class="ime-fitts">
+        <div class="ime-fitts-media"><video src="assets/ilunion-mobile/cta-fijo.mp4" poster="assets/ilunion-mobile/cta-fijo-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Scroll en móvil por el listado de hoteles: el contenido se desplaza y el botón Reservar se mantiene fijo abajo"></video><span class="ime-fitts-ring" aria-hidden="true"></span><span class="ime-fitts-tag"><span class="es">Fijo · zona del pulgar</span><span class="en">Pinned · thumb zone</span></span></div>
+        <div class="ime-fitts-ab"><div><span class="ime-eyebrow"><span class="es">Antes</span><span class="en">Before</span></span><span class="es">Scroll hasta arriba para encontrar el motor</span><span class="en">Scroll back to the top to find the engine</span></div><div><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">Después</span><span class="en">After</span></span><span class="es">Un toque desde cualquier pantalla</span><span class="en">One tap from any screen</span></div></div>
+        <div class="ime-fitts-foot"><span class="ime-big">+93%</span><span><span class="es">búsquedas iniciadas en el motor</span><span class="en">searches started in the engine</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ime-sec" id="ime-resultados">
+    <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span><h2 class="ime-h2"><span class="es">Casi el <em>doble</em> de conversión</span><span class="en">Nearly <em>double</em> the conversion</span></h2></div>
+    <div class="ime-sub" style="padding-top:20px">
+      <div class="ime-ab">
+        <div class="ime-ab-head"><span><span class="es">Conversión del funnel · test A/B</span><span class="en">Funnel conversion · A/B test</span></span><span class="ime-pill"><span class="es">Medido</span><span class="en">Measured</span></span></div>
+        <div class="ime-bars" role="img" aria-label="Control A: 3,36% de conversión. Tratamiento B: 6,5%.">
+          <div><div class="ime-bar-label"><span><span class="es">A · Home original</span><span class="en">A · Original home</span></span><b><span class="es">3,36%</span><span class="en">3.36%</span></b></div><div class="ime-bar" style="width:52%"></div></div>
+          <div class="is-b"><div class="ime-bar-label"><span><span class="es">B · Home recompuesta</span><span class="en">B · Recomposed home</span></span><b><span class="es">6,5%</span><span class="en">6.5%</span></b></div><div class="ime-bar"></div></div>
+        </div>
+        <div class="ime-ab-foot"><span class="ime-big"><span class="es">×1,9</span><span class="en">×1.9</span></span><span><span class="es"><strong>+3,14 pp</strong> con significancia estadística (p &lt; 0,05)</span><span class="en"><strong>+3.14 pp</strong> with statistical significance (p &lt; 0.05)</span></span></div>
+      </div>
+      <div class="ime-stats2"><div><b>+93%</b><span class="es">inicios de búsqueda</span><span class="en">search starts</span></div><div><b>13%</b><span class="es">de la venta directa total</span><span class="en">of total direct sales</span></div></div>
+    </div>
+    <div class="ime-loyal">
+      <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--loyal" style="font-size:11px"><span class="es">Foco loyalty · socios ÚNICOS</span><span class="en">Loyalty focus · ÚNICOS members</span></span><h3 class="ime-h3"><span class="es">La mitad de la venta, <em>de socios</em></span><span class="en">Half the sales, <em>from members</em></span></h3></div>
+      <div class="ime-donut"><svg width="112" height="112" viewBox="0 0 100 100" role="img" aria-label="50% de las conversiones vienen de socios ÚNICOS"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="14"/><circle cx="50" cy="50" r="40" fill="none" stroke="#f97316" stroke-width="14" stroke-dasharray="125.66 251.33" transform="rotate(-90 50 50)"/></svg><div><span class="ime-donut-val">50%</span><p><span class="es">de las conversiones tras el cambio fueron de socios ÚNICOS.</span><span class="en">of conversions after the change came from ÚNICOS members.</span></p></div></div>
+      <figure><img src="assets/ilunion-mobile/unicos-modulo.webp" alt="Componente ÚNICOS en móvil: ¿Quieres conseguir el mejor precio? Regístrate en ÚNICOS, 10% de descuento en todos los hoteles, botón Lo quiero" width="240" height="311" loading="lazy"><figcaption><span class="es">El componente ÚNICOS, dentro del recorrido de ofertas</span><span class="en">The ÚNICOS block, inside the offers flow</span></figcaption></figure>
+      <p class="ime-p" style="font-size:14px"><span class="es">Con el 10% a la vista en mitad del recorrido, la ventaja ÚNICOS pasó a ser la razón para reservar en directo y no en Booking.</span><span class="en">With the 10% visible mid-flow, the ÚNICOS perk became the reason to book direct instead of on Booking.</span></p>
+    </div>
+    <p class="ime-note" style="margin-top:12px"><span class="es">Algunos datos redondeados por confidencialidad. Medición con Adobe Analytics y Microsoft Clarity.</span><span class="en">Some figures rounded for confidentiality. Measured with Adobe Analytics and Microsoft Clarity.</span></p>
+    <div class="ime-sub" style="padding-top:48px"><span class="ime-eyebrow"><span class="es">05 · Lo que me llevo</span><span class="en">05 · What I take away</span></span><ol class="ime-learn"><li><b>01</b><div><strong><span class="es">Marca y conversión: prioridad, no estética</span><span class="en">Brand vs conversion: priority, not aesthetics</span></strong><span class="es">Nadie perdió su componente. Cambió su posición.</span><span class="en">No one lost their component. Its position changed.</span></div></li><li><b>02</b><div><strong><span class="es">Segmentar antes de diseñar</span><span class="en">Segment before designing</span></strong><span class="es">Separar socios del resto mostró a quién servía cada componente.</span><span class="en">Splitting members from the rest showed who each component served.</span></div></li><li><b>03</b><div><strong><span class="es">Diseñar para campañas que rotan</span><span class="en">Design for rotating campaigns</span></strong><span class="es">El experimento del motor enseñó que una pieza fija no aguanta la estrategia trimestral.</span><span class="en">The engine experiment showed a fixed piece cannot keep up with a quarterly strategy.</span></div></li></ol></div>
+    <a href="paolo-pizzeria.html" class="ime-next"><span class="ime-next-txt"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Siguiente caso · 03</span><span class="en">Next case · 03</span></span><strong>Paolo Brand System</strong><span><span class="es">Ecosistema de producto de 0 a 1</span><span class="en">A 0-to-1 product ecosystem</span></span></span><span class="ime-next-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+  </section>
+</div>
+
+<div class="ide" id="ide-root">
+
+  <section class="ide-section ide-hero" id="ide-overview" aria-labelledby="ide-h1">
+    <div class="ide-split">
+      <div class="ide-col">
+        <div class="ide-chips"><span class="ide-eyebrow ide-eyebrow--accent" style="display:inline"><span class="es">Caso 02 / 05</span><span class="en">Case 02 / 05</span></span><span class="ide-chip ide-chip--accent"><span class="es">Hotelería · Canal directo</span><span class="en">Hospitality · Direct channel</span></span><span class="ide-chip"><span class="es">CRO · 2 iniciativas</span><span class="en">CRO · 2 initiatives</span></span></div>
+        <h1 class="ide-h1" id="ide-h1"><span class="es">Las mismas piezas, <em>otro orden</em></span><span class="en">Same pieces, <em>new order</em></span></h1>
+        <p class="ide-lead"><span class="es">De <strong>3,36%</strong> a <strong>6,5%</strong> de conversión reordenando los componentes de la home según lo que hacían los socios <strong class="is-loyal">ÚNICOS</strong>.</span><span class="en">From <strong>3.36%</strong> to <strong>6.5%</strong> conversion by reordering the homepage components around what <strong class="is-loyal">ÚNICOS</strong> members did.</span></p>
+        <dl class="ide-facts">
+          <div><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd><span class="es">Product Designer responsable</span><span class="en">Lead Product Designer</span></dd></div>
+          <div><dt><span class="es">Alcance</span><span class="en">Scope</span></dt><dd><span class="es">2 iniciativas</span><span class="en">2 initiatives</span></dd></div>
+          <div><dt><span class="es">Equipo</span><span class="en">Team</span></dt><dd><span class="es">Yo + backend + marketing</span><span class="en">Me + backend + marketing</span></dd></div>
+          <div><dt><span class="es">Plataforma</span><span class="en">Platform</span></dt><dd>Web · AEM</dd></div>
+        </dl>
+        <div class="ide-actions"><a class="ide-btn" href="#ide-problema"><span class="es">Ver el problema</span><span class="en">See the problem</span> <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <figure class="ide-hero-media">
+        <span class="ide-glow" aria-hidden="true"></span>
+        <img class="ide-hero-back" src="assets/ilunion-mobile/final-desk.webp" alt="Home recompuesta en desktop: motor de reservas arriba, oferta y bloque ÚNICOS lado a lado" width="720" height="448">
+        <video class="ide-hero-front" src="assets/ilunion-mobile/ofertas-movil.mp4" poster="assets/ilunion-mobile/ofertas-movil-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Recorrido en móvil por la página de ofertas recompuesta"></video>
+        <figcaption class="ide-live"><i aria-hidden="true"></i><span class="es">En producción · móvil y desktop</span><span class="en">Live · mobile and desktop</span></figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="ide-section" style="padding-top:96px">
+    <div class="ide-headrow"><h2 class="ide-h3"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2><span class="ide-index" aria-hidden="true">01</span></div>
+    <ol class="ide-tldr"><li><span class="ide-eyebrow"><span class="es">Problema</span><span class="en">Problem</span></span><span class="ide-num"><span class="es">3,36%</span><span class="en">3.36%</span></span><p><span class="es">de conversión con el motor enterrado bajo promociones.</span><span class="en">conversion, with the booking engine buried under promotions.</span></p></li><li><span class="ide-eyebrow"><span class="es">Iniciativa 1 · Experimento</span><span class="en">Initiative 1 · Experiment</span></span><span class="ide-num"><span class="es">Motor</span><span class="en">Engine</span></span><p><span class="es">Un selector de destino que derivó tráfico. Funcionó y se retiró.</span><span class="en">A destination selector that redirected traffic. It worked, then was retired.</span></p></li><li><span class="ide-eyebrow"><span class="es">Iniciativa 2 · En producción</span><span class="en">Initiative 2 · Live</span></span><span class="ide-num"><span class="es">Recomponer</span><span class="en">Recompose</span></span><p><span class="es">Motor y ventaja de socio antes que el escaparate.</span><span class="en">Booking engine and member perk ahead of the showcase.</span></p></li><li class="is-accent"><span class="ide-eyebrow"><span class="es">Impacto medido · test A/B</span><span class="en">Measured impact · A/B test</span></span><span class="ide-num"><span class="es">6,5%</span><span class="en">6.5%</span></span><p><span class="es">×1,9 la conversión · p &lt; 0,05 · <strong class="is-loyal">50% de socios ÚNICOS</strong></span><span class="en">×1.9 conversion · p &lt; 0.05 · <strong class="is-loyal">50% from ÚNICOS members</strong></span></p></li></ol>
+  </section>
+
+  <section class="ide-section" id="ide-problema" aria-labelledby="ide-h2-problema">
+    <div class="ide-split ide-split--start">
+      <div class="ide-col">
+        <span class="ide-eyebrow ide-eyebrow--accent"><span class="es">02 · El problema</span><span class="en">02 · The problem</span></span>
+        <h2 class="ide-h2" id="ide-h2-problema"><span class="es">Venían a reservar <em>y no buscaban</em></span><span class="en">They came to book <em>and never searched</em></span></h2>
+        <p class="ide-p"><span class="es">La home se había montado como escaparate de marca. El usuario quería comprobar disponibilidad cuanto antes.</span><span class="en">The homepage had been built as a brand showcase. Users wanted to check availability as fast as possible.</span></p>
+        <div class="ide-stat" style="margin-top:12px"><span class="ide-stat-val">75%</span><span class="ide-stat-txt"><span class="es">del tráfico de pago llegaba con intención de reservar</span><span class="en">of paid traffic arrived ready to book</span></span></div>
+        <div class="ide-squares" role="img" aria-label="3 de cada 4 visitas de pago querían reservar"><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span></span></div>
+      </div>
+      <figure class="ide-paper"><div class="ide-paper-row"><img src="assets/ilunion-mobile/antes-unicos-landing.webp" alt="Antes: landing de ÚNICOS separada, con el mensaje Hazte miembro y un botón" width="136" height="261" loading="lazy"><img src="assets/ilunion-mobile/antes-ofertas.webp" alt="Antes: oferta Early Summer en texto largo, con la ventaja ÚNICOS en el cuarto párrafo, y tarjetas de ofertas" width="284" height="275" loading="lazy"></div><figcaption><span class="es">Antes · ofertas en texto largo y ÚNICOS en una landing aparte</span><span class="en">Before · offers as long copy and ÚNICOS on a separate landing page</span></figcaption></figure>
+    </div>
+    <div class="ide-split ide-split--start" id="ide-research">
+      <div class="ide-col"><span class="ide-eyebrow"><span class="es">Research · aprender de los datos</span><span class="en">Research · learning from data</span></span><h3 class="ide-h3"><span class="es">Comportamiento, <em>no opiniones</em></span><span class="en">Behaviour, <em>not opinions</em></span></h3><p class="ide-note"><span class="es">La IA aceleró el análisis. La lectura de los patrones y las decisiones fueron mías.</span><span class="en">AI sped up the analysis. Reading the patterns and making the calls was my job.</span></p></div>
+      <div class="ide-stats3"><div><b>10k+</b><span class="es">logs de Adobe Analytics</span><span class="en">Adobe Analytics logs</span></div><div><b>250+</b><span class="es">sesiones en Clarity</span><span class="en">Clarity sessions</span></div><div class="is-accent"><b>2 h</b><span class="es">para agrupar los logs con Claude</span><span class="en">to cluster the logs with Claude</span></div></div>
+    </div>
+    <ol class="ide-steps" aria-label="Flujo de análisis de datos"><li><i>01</i><strong><span class="es">Recoger</span><span class="en">Collect</span></strong><span><span class="es">Logs de conversión y grabaciones de sesión del funnel.</span><span class="en">Funnel conversion logs and session recordings.</span></span></li><li><i>02</i><strong><span class="es">Agrupar</span><span class="en">Cluster</span></strong><span><span class="es">Clústeres por punto de abandono y tipo de usuario.</span><span class="en">Clusters by drop-off point and user type.</span></span></li><li><i>03</i><strong><span class="es">Leer patrones</span><span class="en">Read patterns</span></strong><span><span class="es">Heatmaps y scroll depth para ver dónde se perdía el tráfico.</span><span class="en">Heatmaps and scroll depth to see where traffic was lost.</span></span></li><li><i>04</i><strong><span class="es">Priorizar</span><span class="en">Prioritise</span></strong><span><span class="es">Cada patrón, una hipótesis puntuada con ICE.</span><span class="en">Each pattern became an ICE-scored hypothesis.</span></span></li></ol>
+    <div class="ide-split">
+      <div class="ide-col"><span class="ide-eyebrow ide-eyebrow--loyal"><span class="es">Discovery · el segmento que convierte</span><span class="en">Discovery · the segment that converts</span></span><h3 class="ide-h3"><span class="es">El socio ya sabía <em class="is-loyal">a qué venía</em></span><span class="en">Members already knew <em class="is-loyal">what they wanted</em></span></h3></div>
+      <div class="ide-pair"><div class="ide-card"><span class="ide-eyebrow"><span class="es">Detectado</span><span class="en">Found</span></span><span class="es">La ventaja ÚNICOS vivía en el 4.º párrafo de cada oferta o en una landing aparte.</span><span class="en">The ÚNICOS perk lived in paragraph 4 of each offer or on a separate landing page.</span></div><div class="ide-card ide-card--loyal"><span class="ide-eyebrow"><span class="es">Decisión</span><span class="en">Decision</span></span><span class="es">Un componente ÚNICOS propio dentro del recorrido, con el 10% a la vista.</span><span class="en">A dedicated ÚNICOS component inside the flow, with the 10% in plain sight.</span></div></div>
+    </div>
+  </section>
+  <section class="ide-section" id="ide-persona">
+    <div class="ide-split ide-split--start">
+      <div class="ide-col"><span class="ide-eyebrow ide-eyebrow--accent">User persona &amp; journey</span><h2 class="ide-h2"><span class="es">Para quién <em>diseñaba</em></span><span class="en">Who I was <em>designing</em> for</span></h2><p class="ide-p"><span class="es">Tráfico de Paid Media que llega con intención de reservar y sin tiempo para explorar.</span><span class="en">Paid Media traffic that arrives ready to book, with no time to browse.</span></p></div>
+      <div class="ide-persona">
+        <div class="ide-persona-top"><img src="assets/avatar-ines.jpg" alt="Ilustración de Inés, la persona" width="88" height="88" loading="lazy"><div><span class="ide-persona-name"><span class="es">Inés, 38</span><span class="en">Inés, 38</span></span><span class="ide-persona-role"><span class="es">Viajera vacacional · reserva desde el móvil</span><span class="en">Leisure traveller · books on mobile</span></span><span class="ide-tag"><span class="es">Persona ilustrativa</span><span class="en">Illustrative persona</span></span></div></div>
+        <div class="ide-persona-cols"><div><span class="ide-eyebrow ide-eyebrow--accent" style="font-size:11px"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Ver el precio final rápido</span><span class="en">See the final price fast</span></li><li><span class="es">Reservar en menos de 3 minutos</span><span class="en">Book in under 3 minutes</span></li></ul></div><div class="is-pain"><span class="ide-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">No encontrar el buscador</span><span class="en">Not finding the search</span></li><li><span class="es">Selector de fechas que falla</span><span class="en">A buggy date picker</span></li></ul></div></div>
+        <p class="ide-quote"><span class="es">“Si tengo que buscar dónde se reserva, me voy a Booking.”</span><span class="en">“If I have to hunt for where to book, I’ll go to Booking.”</span></p>
+      </div>
+    </div>
+    <div class="ide-headrow"><h3 class="ide-h3"><span class="es">Cada dolor, <em>una oportunidad</em></span><span class="en">Every pain, <em>an opportunity</em></span></h3><div class="ide-legend"><span><i style="background:rgba(255,255,255,.3)"></i><span class="es">Dolor</span><span class="en">Pain</span></span><span><i style="background:#a78bfa"></i><span class="es">Oportunidad</span><span class="en">Opportunity</span></span><span><i style="background:#f97316"></i>Loyalty</span></div></div>
+    <ol class="ide-journey"><li class=""><i>1</i><strong><span class="es">Llega desde Paid</span><span class="en">Lands from Paid</span></strong><span class="ide-pain"></span><span class="ide-opp"><span class="es">Mensaje alineado con el anuncio</span><span class="en">Ad-matched message</span></span></li><li class="has-pain"><i>2</i><strong><span class="es">Busca el motor</span><span class="en">Looks for the engine</span></strong><span class="ide-pain"><span class="es">Motor bajo el hero y las promos</span><span class="en">Engine under the hero and promos</span></span><span class="ide-opp"><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></span></li><li class="has-pain"><i>3</i><strong><span class="es">Elige fechas</span><span class="en">Picks dates</span></strong><span class="ide-pain"><span class="es">Errores táctiles en el selector</span><span class="en">Touch errors in the picker</span></span><span class="ide-opp"><span class="es">Swipe nativo</span><span class="en">Native swipe</span></span></li><li class="has-pain"><i>4</i><strong><span class="es">Compara</span><span class="en">Compares</span></strong><span class="ide-pain"><span class="es">Precio poco claro</span><span class="en">Unclear price</span></span><span class="ide-opp is-loyal"><span class="es">Ventaja de socio ÚNICOS visible</span><span class="en">Visible ÚNICOS member perk</span></span></li><li class=""><i>5</i><strong><span class="es">Reserva</span><span class="en">Books</span></strong><span class="ide-pain"></span><span class="ide-opp"><span class="es">CTA fijo (Ley de Fitts)</span><span class="en">Sticky CTA (Fitts's Law)</span></span></li></ol>
+  </section>
+
+  <section class="ide-section" id="ide-solucion">
+    <div class="ide-split ide-split--start">
+      <div class="ide-col">
+        <span class="ide-eyebrow ide-eyebrow--accent"><span class="es">Iniciativa 1 · Experimento en el motor</span><span class="en">Initiative 1 · Booking engine experiment</span></span>
+        <h2 class="ide-h2"><span class="es">Llevar el tráfico <em>al hotel correcto</em></span><span class="en">Sending traffic <em>to the right hotel</em></span></h2>
+        <p class="ide-p"><span class="es">Antes de tocar la home, probé a rediseñar el motor de reservas para derivar tráfico entre los hoteles de la cadena.</span><span class="en">Before touching the homepage, I tested a redesigned booking engine to steer traffic across the chain’s hotels.</span></p>
+        <span class="ide-eyebrow" style="margin-top:12px"><span class="es">3 patrones de fricción en el motor</span><span class="en">3 friction patterns in the engine</span></span>
+        <div class="ide-frics"><div class="ide-fric"><span class="ide-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="6" rx="1.5"/><rect x="3" y="11" width="18" height="4" rx="1.5"/><rect x="3" y="17" width="18" height="4" rx="1.5"/></svg></span><span><span class="es">Motor <strong>enterrado</strong> bajo hero y promociones</span><span class="en">Engine <strong>buried</strong> under hero and promos</span></span></div><div class="ide-fric"><span class="ide-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><span><span class="es"><strong>Rage clicks</strong> en el selector de fechas móvil</span><span class="en"><strong>Rage clicks</strong> on the mobile date picker</span></span></div><div class="ide-fric is-loyal"><span class="ide-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.4 4.2 1 6-5.3-2.8-5.3 2.8 1-6L3.3 9.4l6-.9z"/></svg></span><span><span class="es">Ventaja de socio <strong>ÚNICOS invisible</strong> frente a Booking</span><span class="en"><strong>ÚNICOS member perk invisible</strong> next to Booking</span></span></div></div>
+      </div>
+      <div class="ide-col">
+        <span class="ide-eyebrow"><span class="es">El experimento · selector de destino</span><span class="en">The experiment · destination selector</span></span>
+        <h3 class="ide-h3"><span class="es">De una lista eterna <em>a dos columnas</em></span><span class="en">From an endless list <em>to two columns</em></span></h3>
+        <div class="ide-ba">
+          <figure><img src="assets/ilunion-mobile/antes-selector-destino.webp" alt="Antes: selector de destino nativo en iPhone, una lista larga de hoteles agrupados por ciudad que ocupa toda la pantalla" width="373" height="669" loading="lazy"><figcaption><span class="ide-eyebrow"><span class="es">Antes</span><span class="en">Before</span></span><span class="es">Lista nativa del sistema.</span><span class="en">Native system list.</span></figcaption></figure>
+          <figure><img src="assets/ilunion-mobile/motor-despues.webp" alt="Después: el motor abre un panel con dos columnas, Destinos y Nuestros hoteles, en desktop y en móvil" width="1200" height="719" loading="lazy"><figcaption><span class="ide-eyebrow ide-eyebrow--accent"><span class="es">Después</span><span class="en">After</span></span><span class="es">Panel propio con Destinos y Nuestros hoteles.</span><span class="en">A custom panel with Destinations and Our hotels.</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="ide-split">
+      <div class="ide-col"><span class="ide-eyebrow"><span class="es">Resultado del experimento</span><span class="en">Experiment outcome</span></span><h3 class="ide-h3"><span class="es">Funcionó, <em>y se retiró</em></span><span class="en">It worked, <em>then it was retired</em></span></h3></div>
+      <div class="ide-col">
+        <div class="ide-pair"><div class="ide-card ide-card--accent"><span class="ide-eyebrow"><span class="es">Funcionó</span><span class="en">It worked</span></span><span class="es">Derivó tráfico hacia los hoteles que había que impulsar.</span><span class="en">It steered traffic towards the hotels that needed a push.</span></div><div class="ide-card"><span class="ide-eyebrow"><span class="es">Por qué se retiró</span><span class="en">Why it was retired</span></span><span class="es">El tráfico se reparte por hotel según el trimestre. Una pieza fija no seguía ese ritmo.</span><span class="en">Traffic is allocated per hotel each quarter. A fixed piece could not keep up.</span></div></div>
+        <div class="ide-bridge"><span class="ide-bridge-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span><span><span class="es">A la iniciativa 2 pasó una regla: diseñar piezas que aguanten campañas que cambian cada trimestre.</span><span class="en">One rule carried into initiative 2: design pieces that survive campaigns changing every quarter.</span></span></div>
+      </div>
+    </div>
+
+    <div class="ide-split" style="margin-top:56px">
+      <div class="ide-col">
+        <span class="ide-eyebrow ide-eyebrow--accent"><span class="es">Iniciativa 2 · Re-componetización</span><span class="en">Initiative 2 · Recomposition</span></span>
+        <h2 class="ide-h2"><span class="es">Recomponer, <em>no rediseñar</em></span><span class="en">Recompose, <em>don’t redesign</em></span></h2>
+        <p class="ide-p"><span class="es">Mismos componentes de AEM y misma identidad. Cambia el orden: primero reservar, después inspirar.</span><span class="en">Same AEM components, same identity. The order changes: book first, get inspired after.</span></p>
+        <div class="ide-order" aria-label="Orden de componentes antes y después"><div><span class="ide-eyebrow" style="font-size:11px;padding-bottom:10px"><span class="es">Antes</span><span class="en">Before</span></span><ol><li class="ide-blk "><small>1</small><span class="es">Hero inspiracional</span><span class="en">Inspirational hero</span></li><li class="ide-blk "><small>2</small><span class="es">Texto de campaña</span><span class="en">Campaign copy</span></li><li class="ide-blk is-club"><small>3</small><span class="es">ÚNICOS en el 4.º párrafo</span><span class="en">ÚNICOS in paragraph 4</span></li><li class="ide-blk "><small>4</small><span class="es">Tarjetas de ofertas</span><span class="en">Offer cards</span></li><li class="ide-blk is-task"><small>5</small><span class="es">Motor de reservas</span><span class="en">Booking engine</span></li></ol></div><div class="ide-order-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div><div><span class="ide-eyebrow ide-eyebrow--accent" style="font-size:11px;padding-bottom:10px"><span class="es">Después</span><span class="en">After</span></span><ol><li class="ide-blk is-task"><small>1</small><span class="es">Hero + motor</span><span class="en">Hero + engine</span></li><li class="ide-blk "><small>2</small><span class="es">Ofertas con «Reserva ya»</span><span class="en">Offers with “Book now”</span></li><li class="ide-blk is-club"><small>3</small><span class="es">ÚNICOS · 10% dto</span><span class="en">ÚNICOS · 10% off</span></li><li class="ide-blk "><small>4</small><span class="es">Hoteles filtrados</span><span class="en">Filtered hotels</span></li><li class="ide-blk is-task"><small>5</small><span class="es">CTA «Reserva» fijo</span><span class="en">Sticky “Book” CTA</span></li></ol></div></div>
+        <div class="ide-laws"><span><strong>Hick</strong> · <span class="es">menos opciones antes de buscar</span><span class="en">fewer choices before searching</span></span><span><strong>Gestalt</strong> · <span class="es">fechas, huéspedes y CTA juntos</span><span class="en">dates, guests and CTA together</span></span></div>
+      </div>
+      <figure class="ide-video-fig"><video src="assets/ilunion-mobile/ofertas-desk.mp4" poster="assets/ilunion-mobile/ofertas-desk-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Recorrido en desktop: hero con motor de reservas integrado, ofertas, bloque ÚNICOS y página de larga estancia"></video><figcaption><span class="es">El motor vive dentro del hero y el componente ÚNICOS acompaña a cada oferta.</span><span class="en">The engine lives inside the hero and the ÚNICOS block sits next to each offer.</span></figcaption></figure>
+    </div>
+    <div class="ide-col"><span class="ide-eyebrow"><span class="es">Priorización · ICE</span><span class="en">Prioritisation · ICE</span></span><ol class="ide-rank"><li class="is-task"><b>1</b><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></li><li class="is-club"><b>2</b><span class="es">Componente ÚNICOS con el 10%</span><span class="en">ÚNICOS block with the 10%</span></li><li class=""><b>3</b><span class="es">Selector de fechas con swipe</span><span class="en">Swipe date picker</span></li></ol></div>
+    <div class="ide-col">
+      <div class="ide-headrow" style="border-bottom:0;padding-bottom:0"><h3 class="ide-h3"><span class="es">Dos breakpoints, <em>el mismo orden</em></span><span class="en">Two breakpoints, <em>the same order</em></span></h3><span class="ide-eyebrow"><span class="es">Proceso · de wireframe a producción</span><span class="en">Process · from wireframe to production</span></span></div>
+      <div class="ide-proc">
+        <article class="ide-proc-card">
+          <div class="ide-proc-media ide-proc-media--2"><figure class="is-paper"><span class="ide-proc-badge">Wireframe</span><img src="assets/ilunion-mobile/wf-mobile.webp" alt="Wireframe móvil: carrusel de oferta, bloque ÚNICOS y buscador fijo abajo" width="539" height="1149" style="max-height:360px" loading="lazy"></figure><figure class="is-dark"><span class="ide-proc-badge is-final"><span class="es">Producción</span><span class="en">Production</span></span><img src="assets/ilunion-mobile/final-mobile.webp" alt="Móvil en producción: oferta con Reserva ya y bloque ÚNICOS" width="360" height="708" style="max-height:360px" loading="lazy"></figure></div>
+          <div class="ide-proc-info"><strong>Mobile</strong><div class="ide-proc-chips"><span class="">1 · <span class="es">Oferta con botón «Reserva»</span><span class="en">Offer with “Book” button</span></span><span class="is-club">2 · <span class="es">Bloque ÚNICOS · 10% dto</span><span class="en">ÚNICOS block · 10% off</span></span><span class="is-task">3 · <span class="es">Buscador fijo abajo</span><span class="en">Search pinned to the bottom</span></span></div></div>
+        </article>
+        <article class="ide-proc-card">
+          <div class="ide-proc-media ide-proc-media--2r"><figure class="is-paper"><span class="ide-proc-badge">Wireframe</span><img src="assets/ilunion-mobile/wf-desk.webp" alt="Wireframe desktop: hero con motor, oferta y bloque ÚNICOS lado a lado" width="720" height="835" style="max-height:340px" loading="lazy"></figure><figure class="is-dark"><span class="ide-proc-badge is-final"><span class="es">Producción</span><span class="en">Production</span></span><img src="assets/ilunion-mobile/final-desk.webp" alt="Desktop en producción: motor arriba, oferta y bloque ÚNICOS lado a lado" width="720" height="448" loading="lazy"></figure></div>
+          <div class="ide-proc-info"><strong>Desktop</strong><div class="ide-proc-chips"><span class="is-task">1 · <span class="es">Hero con motor de reservas</span><span class="en">Hero with booking engine</span></span><span class="">2 · <span class="es">Oferta en carrusel</span><span class="en">Offer carousel</span></span><span class="is-club">3 · <span class="es">Bloque ÚNICOS al lado</span><span class="en">ÚNICOS block alongside</span></span></div></div>
+        </article>
+      </div>
+    </div>
+    <div class="ide-fitts">
+      <div class="ide-fitts-media"><video src="assets/ilunion-mobile/cta-fijo.mp4" poster="assets/ilunion-mobile/cta-fijo-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Scroll en móvil por el listado de hoteles: el contenido se desplaza y el botón Reservar se mantiene fijo abajo"></video></div>
+      <div class="ide-fitts-body">
+        <span class="ide-eyebrow ide-eyebrow--accent"><span class="es">La pieza clave · Ley de Fitts</span><span class="en">The key piece · Fitts’s Law</span></span>
+        <h3 class="ide-h3"><span class="es">Reservar sin volver <em>arriba</em></span><span class="en">Book without scrolling <em>back up</em></span></h3>
+        <p class="ide-p"><span class="es">El botón «Reservar» se queda fijo abajo, donde llega el pulgar. Desde cualquier oferta u hotel, un toque abre el motor.</span><span class="en">The “Book” button stays pinned at the bottom, within thumb reach. From any offer or hotel, one tap opens the engine.</span></p>
+        <div class="ide-fitts-ab"><div><span class="ide-eyebrow"><span class="es">Antes</span><span class="en">Before</span></span><span class="es">Scroll hasta arriba para encontrar el motor</span><span class="en">Scroll back to the top to find the engine</span></div><div><span class="ide-eyebrow ide-eyebrow--accent"><span class="es">Después</span><span class="en">After</span></span><span class="es">Un toque desde cualquier pantalla</span><span class="en">One tap from any screen</span></div></div>
+        <div class="ide-big-row"><span class="ide-big">+93%</span><span><span class="es">búsquedas iniciadas en el motor</span><span class="en">searches started in the engine</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ide-section" id="ide-resultados">
+    <div class="ide-col"><span class="ide-eyebrow ide-eyebrow--accent"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span><h2 class="ide-h2"><span class="es">Casi el <em>doble</em> de conversión</span><span class="en">Nearly <em>double</em> the conversion</span></h2></div>
+    <div class="ide-results">
+      <div class="ide-ab">
+        <div class="ide-ab-head"><span><span class="es">Conversión del funnel · test A/B</span><span class="en">Funnel conversion · A/B test</span></span><span class="ide-pill"><span class="es">Medido</span><span class="en">Measured</span></span></div>
+        <div class="ide-bars" role="img" aria-label="Control A: 3,36% de conversión. Tratamiento B: 6,5%.">
+          <div><div class="ide-bar-label"><span><span class="es">A · Home original</span><span class="en">A · Original home</span></span><b><span class="es">3,36%</span><span class="en">3.36%</span></b></div><div class="ide-bar" style="width:52%"></div></div>
+          <div class="is-b"><div class="ide-bar-label"><span><span class="es">B · Home recompuesta</span><span class="en">B · Recomposed home</span></span><b><span class="es">6,5%</span><span class="en">6.5%</span></b></div><div class="ide-bar"></div></div>
+        </div>
+        <div class="ide-ab-foot"><span class="ide-big"><span class="es">×1,9</span><span class="en">×1.9</span></span><span><span class="es"><strong>+3,14 pp</strong> con significancia estadística (p &lt; 0,05)</span><span class="en"><strong>+3.14 pp</strong> with statistical significance (p &lt; 0.05)</span></span></div>
+      </div>
+      <div class="ide-results-side">
+        <div class="ide-stats2"><div><b>+93%</b><span class="es">inicios de búsqueda</span><span class="en">search starts</span></div><div><b>13%</b><span class="es">de la venta directa total</span><span class="en">of total direct sales</span></div></div>
+        <div class="ide-loyal">
+          <div class="ide-loyal-txt">
+            <span class="ide-eyebrow ide-eyebrow--loyal"><span class="es">Foco loyalty · socios ÚNICOS</span><span class="en">Loyalty focus · ÚNICOS members</span></span>
+            <h3 class="ide-h3" style="font-size:30px"><span class="es">La mitad de la venta, <em>de socios</em></span><span class="en">Half the sales, <em>from members</em></span></h3>
+            <div class="ide-donut"><svg width="104" height="104" viewBox="0 0 100 100" role="img" aria-label="50% de las conversiones vienen de socios ÚNICOS"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="14"/><circle cx="50" cy="50" r="40" fill="none" stroke="#f97316" stroke-width="14" stroke-dasharray="125.66 251.33" transform="rotate(-90 50 50)"/></svg><div><span class="ide-donut-val">50%</span><p><span class="es">de las conversiones tras el cambio fueron de socios ÚNICOS.</span><span class="en">of conversions after the change came from ÚNICOS members.</span></p></div></div>
+          </div>
+          <figure><img src="assets/ilunion-mobile/unicos-modulo.webp" alt="Componente ÚNICOS en móvil: ¿Quieres conseguir el mejor precio? 10% de descuento, botón Lo quiero" width="440" height="570" loading="lazy"><figcaption><span class="es">El componente ÚNICOS en el recorrido</span><span class="en">The ÚNICOS block in the flow</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <p class="ide-note"><span class="es">Algunos datos redondeados por confidencialidad. Medición con Adobe Analytics y Microsoft Clarity.</span><span class="en">Some figures rounded for confidentiality. Measured with Adobe Analytics and Microsoft Clarity.</span></p>
+  </section>
+</div>
+
 
 <!-- ============ 1 · HERO & FICHA ============ -->
 <section class="cs-hero" id="overview">
@@ -723,10 +1433,10 @@
 </main>
 
 <!-- ============ 14 · SIGUIENTE CASO ============ -->
-<a href="booking-engine.html" class="next" id="cs-next">
+<a href="paolo-pizzeria.html" class="next" id="cs-next">
   <div class="wrap">
     <small><span class="es">Siguiente caso · 03</span><span class="en">Next case · 03</span></small>
-    <h2><span><span class="es">Booking Engine · Rediseño Integral de Reservas</span><span class="en">Booking Engine · Hotel Redesign</span></span><span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4L15 9L10 14" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
+    <h2><span><span class="es">Paolo Brand System</span><span class="en">Paolo Brand System</span></span><span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4L15 9L10 14" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
   </div>
 </a>
 
@@ -743,12 +1453,11 @@
       <div class="cs-pagination-dots">
         <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 01">01</a>
         <a href="ilunion-cro.html" class="cs-pagination-dot is-current" aria-label="Caso 02">02</a>
-        <a href="booking-engine.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
-        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
-        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
-        <a href="gym-energy-center.html" class="cs-pagination-dot" aria-label="Caso 06">06</a>
+        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
+        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
+        <a href="gym-energy-center.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
       </div>
-      <a href="booking-engine.html" class="cs-pagination-arrow" aria-label="Caso siguiente"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M1 1L6 6L1 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="paolo-pizzeria.html" class="cs-pagination-arrow" aria-label="Caso siguiente"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M1 1L6 6L1 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </nav>
 
     <div class="cs-pagination-actions">
@@ -789,6 +1498,16 @@
 
   
 
+
+
+  // ILUNION · selector Mobile / Desktop (proceso, mobile)
+  document.querySelectorAll('.ime-seg').forEach(seg => {
+    const wrap = seg.parentElement;
+    seg.querySelectorAll('button[data-bp]').forEach(b => b.addEventListener('click', () => {
+      seg.querySelectorAll('button[data-bp]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      wrap.querySelectorAll('[data-bp-panel]').forEach(p => p.classList.toggle('is-on', p.dataset.bpPanel === b.dataset.bp));
+    }));
+  });
 
   // Panel destacado de casos
   window.openCasesPanel = () => {
