@@ -204,6 +204,13 @@
   .gme-learning-t { display: block; font-size: 17px; font-weight: 600; color: #fff; }
   .gme-learning-d { display: block; margin-top: 4px; font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.62); }
 
+  .gme-compare-videos { margin-top: 16px; display: flex; flex-direction: column; gap: 16px; }
+  .gme-compare-video-card { display: flex; flex-direction: column; gap: 8px; }
+  .gme-compare-video-card video { width: 100%; height: 200px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,.1); background: #000; }
+  .gme-compare-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .gme-compare-label.is-before { color: rgba(255,255,255,.5); }
+  .gme-compare-label.is-after { color: #a78bfa; }
+
   .gme-tryit { margin-top: 44px; display: flex; flex-direction: column; gap: 14px; }
   .gme-tryit-img { display: block; width: 100%; height: auto; max-height: 224px; object-fit: contain; }
   .gme-cta-pill { height: 52px; border-radius: 999px; border: 1px solid rgba(167,139,250,.45); display: flex; align-items: center; justify-content: center; gap: 8px; color: #a78bfa; font-size: 15px; font-weight: 600; text-decoration: none; }
@@ -345,6 +352,13 @@
   .gde-pillars3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
   .gde-pillars3 > div { padding: 16px 14px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid var(--gde-line); display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.3; font-weight: 600; color: #fff; }
   .gde-pillars3 .gde-eyebrow { font-size: 10px; font-weight: 700; }
+
+  .gde-compare-videos { margin-top: 8px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+  .gde-compare-video-card { display: flex; flex-direction: column; gap: 10px; }
+  .gde-compare-video-card video { width: 100%; height: 240px; object-fit: cover; border-radius: 16px; border: 1px solid var(--gde-line); background: #000; }
+  .gde-compare-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .gde-compare-label.is-before { color: rgba(255,255,255,.5); }
+  .gde-compare-label.is-after { color: var(--gde-accent); }
 
   .gde-video-figure { margin: 0; padding-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.24), rgba(0,0,0,0) 66%); }
   .gde-video-figure video { width: 100%; max-width: 900px; height: auto; }
@@ -725,10 +739,17 @@
     <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">03 · La solución</span><span class="en">03 · The solution</span></span>
     <h2 class="gme-h2-lg"><span class="es">Práctico, social <em>y lúdico</em></span><span class="en">Practical, social <em>and playful</em></span></h2>
 
-    <figure class="gme-video-figure" style="padding-top:14px">
-      <video src="assets/gym-mobile/walkthrough-desk.mp4" poster="assets/gym-mobile/d-home.webp" autoplay muted loop playsinline aria-label="Recorrido de la versión desktop: inicio, clases y reserva de Power Training" class="gme-video gme-video-wide"></video>
-      <p class="gme-video-text"><span class="es">La misma lógica en móvil y escritorio: reservar, ver quién va y seguir tu racha.</span><span class="en">The same logic on mobile and desktop: book, see who's going, track your streak.</span></p>
-    </figure>
+    <div class="gme-compare-videos">
+      <div class="gme-compare-video-card">
+        <span class="gme-compare-label is-before"><span class="es">2024 · Web original del bootcamp</span><span class="en">2024 · Original bootcamp site</span></span>
+        <video src="assets/gym-mobile/app-2024-before.mp4" autoplay muted loop playsinline aria-label="Web original del proyecto de bootcamp en 2024"></video>
+      </div>
+      <div class="gme-compare-video-card">
+        <span class="gme-compare-label is-after"><span class="es">2026 · Mi rediseño</span><span class="en">2026 · My redesign</span></span>
+        <video src="assets/gym-mobile/walkthrough-desk.mp4" poster="assets/gym-mobile/d-home.webp" autoplay muted loop playsinline aria-label="Rediseño de 2026 del prototipo desktop"></video>
+      </div>
+    </div>
+    <p class="gme-video-text"><span class="es">La misma lógica en móvil y escritorio: reservar, ver quién va y seguir tu racha.</span><span class="en">The same logic on mobile and desktop: book, see who's going, track your streak.</span></p>
 
     <div class="gme-pillars">
       <div class="gme-pillar"><span class="gme-pillar-k"><span class="es">Práctico</span><span class="en">Practical</span></span><span class="gme-pillar-t"><span class="es">Reserva en 2 taps</span><span class="en">2-tap booking</span></span></div>
@@ -1006,10 +1027,17 @@
       </div>
     </div>
 
-    <figure class="gde-video-figure">
-      <video muted loop playsinline autoplay preload="auto" poster="assets/gym-mobile/d-home.webp" src="assets/gym-mobile/walkthrough-desk.mp4" aria-label="Recorrido de la versión desktop: inicio, clases y reserva de Power Training"></video>
-      <figcaption><span class="es">La misma lógica en móvil y escritorio: reservar, ver quién va y seguir tu racha.</span><span class="en">The same logic on mobile and desktop: book, see who's going, track your streak.</span></figcaption>
-    </figure>
+    <div class="gde-compare-videos">
+      <div class="gde-compare-video-card">
+        <span class="gde-compare-label is-before"><span class="es">2024 · Web original del bootcamp</span><span class="en">2024 · Original bootcamp site</span></span>
+        <video muted loop playsinline autoplay preload="auto" src="assets/gym-mobile/app-2024-before.mp4" aria-label="Web original del proyecto de bootcamp en 2024"></video>
+      </div>
+      <div class="gde-compare-video-card">
+        <span class="gde-compare-label is-after"><span class="es">2026 · Mi rediseño</span><span class="en">2026 · My redesign</span></span>
+        <video muted loop playsinline autoplay preload="auto" poster="assets/gym-mobile/d-home.webp" src="assets/gym-mobile/walkthrough-desk.mp4" aria-label="Rediseño de 2026 del prototipo desktop"></video>
+      </div>
+    </div>
+    <p class="gde-p" style="max-width:none;text-align:center;margin:0 auto"><span class="es">La misma lógica en móvil y escritorio: reservar, ver quién va y seguir tu racha.</span><span class="en">The same logic on mobile and desktop: book, see who's going, track your streak.</span></p>
 
     <div class="gde-block">
       <div class="gde-headrow">
