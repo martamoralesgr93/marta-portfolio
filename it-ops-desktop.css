@@ -21,7 +21,7 @@
     --itd-line: rgba(255, 255, 255, .1);
     --itd-card: rgba(255, 255, 255, .035);
     --itd-dim: rgba(255, 255, 255, .5);
-    max-width: 1200px;
+    width: min(1440px, 94%);
     margin: 0 auto;
     padding: 0 32px;
     color: rgba(255, 255, 255, .72);
