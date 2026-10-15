@@ -227,6 +227,193 @@
 .cs-hypothesis-val { display: block; font-family: var(--font-serif); font-size: 38px; font-weight: 700; color: rgba(255,255,255,.85); }
 .cs-hypothesis-label { font-size: 13px; color: var(--text-dim); }
 .cs-hypothesis-note { font-size: 12px; line-height: 1.5; color: var(--text-dim); }
+
+/* ==========================================================================
+   GYM ENERGY CENTER · VERSIÓN DESKTOP (>= 769px)
+   Artboard "Desktop 1440" aprobado. Prefijo .gde-. Mobile: .gme (sin tocar).
+   ========================================================================== */
+.gde { display: none; }
+@media (min-width: 769px) {
+  .cs-hero,
+  #gde-oldtldr,
+  #problema,
+  #diseno,
+  #resultados { display: none !important; }
+
+  .gde { display: block; }
+
+  .gde {
+    --gde-accent: var(--accent, #a78bfa);
+    --gde-line: rgba(255,255,255,.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    color: rgba(255,255,255,.72);
+    font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  }
+  .gde * { box-sizing: border-box; }
+  .gde em { font-style: italic; color: var(--gde-accent); }
+  .gde strong { color: #fff; font-weight: 600; }
+  .gde img, .gde video { display: block; max-width: 100%; }
+
+  .gde-section { padding-top: 120px; scroll-margin-top: 88px; }
+  .gde-section--sm { padding-top: 96px; }
+  .gde-hero { padding-top: 140px; }
+  .gde-stack { display: flex; flex-direction: column; gap: 56px; }
+  .gde-stack--md { gap: 40px; }
+  .gde-block { display: flex; flex-direction: column; gap: 20px; }
+
+  .gde-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 56px; align-items: center; }
+  .gde-split--end { align-items: end; }
+  .gde-split--center { gap: 48px; }
+  .gde-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .gde-hero .gde-col { gap: 22px; }
+
+  .gde-h1 { margin: 0; font-family: var(--font-serif); font-weight: 800; font-size: clamp(52px, 5vw, 68px); line-height: 1; letter-spacing: -.02em; color: #fff; }
+  .gde-h2 { margin: 0; font-family: var(--font-serif); font-weight: 800; font-size: clamp(40px, 4vw, 52px); line-height: 1.04; letter-spacing: -.015em; color: #fff; }
+  .gde-h3 { margin: 0; font-family: var(--font-serif); font-weight: 800; font-size: 34px; line-height: 1.1; color: #fff; }
+  .gde-lead { margin: 0; max-width: 520px; font-size: 19px; line-height: 1.5; color: rgba(255,255,255,.78); }
+  .gde-p { margin: 0; max-width: 460px; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.7); }
+  .gde-eyebrow { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gde-accent); }
+  .gde-eyebrow--muted { color: rgba(255,255,255,.5); }
+  .gde-headrow { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-bottom: 18px; border-bottom: 1px solid var(--gde-line); }
+  .gde-index { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.4); }
+
+  .gde-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .gde-chip { padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .gde-chip--accent { border-color: rgba(167,139,250,.35); color: var(--gde-accent); font-weight: 600; }
+  .gde-facts { margin: 8px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--gde-line); border: 1px solid var(--gde-line); border-radius: 16px; overflow: hidden; }
+  .gde-facts > div { background: #0a0a0c; padding: 14px 16px; }
+  .gde-facts dt { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+  .gde-facts dd { margin: 4px 0 0; font-size: 14px; font-weight: 600; color: #fff; }
+  .gde-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .gde-btn { height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: border-color .2s, background .2s; }
+  .gde-btn:hover { border-color: rgba(255,255,255,.4); }
+  .gde-btn--accent { border-color: rgba(167,139,250,.45); color: var(--gde-accent); }
+  .gde-btn--accent:hover { background: rgba(167,139,250,.1); border-color: var(--gde-accent); }
+  .gde-btn--lg { align-self: flex-start; height: 52px; padding: 0 26px; }
+
+  .gde-hero-media { margin: 0; position: relative; height: 540px; }
+  .gde-glow { position: absolute; inset: 40px 0 60px; border-radius: 50%; background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.38), rgba(124,58,237,0) 70%); }
+  .gde-hero-back { position: absolute; right: 0; top: 60px; width: 100%; max-width: 560px; height: auto; mix-blend-mode: lighten; }
+  .gde-hero-front { position: absolute; left: 0; bottom: 40px; width: 176px; height: 359px; object-fit: cover; border-radius: 28px; box-shadow: 0 30px 60px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.1); }
+  .gde-live { position: absolute; right: 0; bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.75); }
+  .gde-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #ef4444; }
+
+  .gde-tldr { margin: 28px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 20px; }
+  .gde-tldr li { padding: 24px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid var(--gde-line); display: flex; flex-direction: column; gap: 10px; }
+  .gde-tldr li.is-accent { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.32); }
+  .gde-tldr li.is-accent .gde-eyebrow--muted, .gde-tldr li.is-accent .gde-num { color: var(--gde-accent); }
+  .gde-tldr p { margin: 0; font-size: 16px; line-height: 1.45; }
+  .gde-num { font-family: var(--font-serif); font-weight: 800; font-size: 64px; line-height: 1; color: #fff; }
+  .gde-num small { font-size: 26px; color: rgba(255,255,255,.55); }
+
+  .gde-stat { display: flex; align-items: flex-end; gap: 18px; }
+  .gde-stat-val { font-family: var(--font-serif); font-weight: 800; font-size: 120px; line-height: .82; color: var(--gde-accent); }
+  .gde-stat-txt { padding-bottom: 8px; font-size: 17px; line-height: 1.35; font-weight: 500; color: #fff; }
+  .gde-squares { display: grid; grid-template-columns: repeat(10, minmax(0,1fr)); gap: 8px; }
+  .gde-squares span { height: 40px; border-radius: 8px; border: 1px dashed rgba(255,255,255,.22); }
+  .gde-squares span.is-on { border: 0; background: var(--gde-accent); }
+
+  .gde-versus { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+  .gde-vs { position: relative; padding: 22px 20px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid var(--gde-line); display: flex; flex-direction: column; gap: 4px; }
+  .gde-vs--win { background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.5); }
+  .gde-vs--win .gde-eyebrow--muted { color: var(--gde-accent); }
+  .gde-vs-title { font-size: 24px; font-weight: 700; color: rgba(255,255,255,.6); text-decoration: line-through; text-decoration-color: rgba(255,255,255,.35); }
+  .gde-vs--win .gde-vs-title { color: #fff; text-decoration: none; }
+  .gde-vs-desc { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.5); }
+  .gde-vs--win .gde-vs-desc { color: rgba(255,255,255,.8); }
+  .gde-vs-badge { position: absolute; right: 12px; top: -11px; padding: 4px 9px; border-radius: 999px; background: var(--gde-accent); color: #0b0614; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .gde-vs-pill { position: absolute; left: 50%; top: 50%; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; background: #000; border: 1px solid rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.6); }
+
+  .gde-cards3 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 16px; }
+  .gde-cards3 li { padding: 22px; border-radius: 18px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); display: flex; flex-direction: column; gap: 14px; }
+  .gde-cards3 h4 { margin: 0; font-size: 18px; font-weight: 600; color: #fff; }
+  .gde-cards3 p { margin: 0; font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.65); }
+  .gde-ico { width: 44px; height: 44px; border-radius: 12px; background: rgba(167,139,250,.12); color: var(--gde-accent); display: flex; align-items: center; justify-content: center; }
+
+  .gde-loop3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 20px; margin-top: 24px; }
+  .gde-loop-card { display: flex; gap: 18px; align-items: center; padding: 18px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); }
+  .gde-loop-card img { flex: none; width: 90px; height: 183px; object-fit: contain; }
+  .gde-loop-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .gde-loop-body h4 { margin: 0; font-size: 18px; font-weight: 600; color: #fff; }
+  .gde-loop-chip { align-self: flex-start; padding: 3px 8px; border-radius: 6px; background: rgba(255,255,255,.06); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.75); }
+  .gde-loop-body p { margin: 0; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.65); }
+  .gde-loop-close { margin-top: 8px; display: flex; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px dashed rgba(167,139,250,.35); }
+  .gde-loop-close-icon { flex: none; width: 36px; height: 36px; border-radius: 50%; background: rgba(167,139,250,.14); color: var(--gde-accent); display: flex; align-items: center; justify-content: center; }
+
+  .gde-pillars3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+  .gde-pillars3 > div { padding: 16px 14px; border-radius: 16px; background: rgba(255,255,255,.04); border: 1px solid var(--gde-line); display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.3; font-weight: 600; color: #fff; }
+  .gde-pillars3 .gde-eyebrow { font-size: 10px; font-weight: 700; }
+
+  .gde-video-figure { margin: 0; padding-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.24), rgba(0,0,0,0) 66%); }
+  .gde-video-figure video { width: 100%; max-width: 900px; height: auto; }
+  .gde-video-figure figcaption { font-size: 14px; color: rgba(255,255,255,.65); }
+
+  .gde-mods6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap: 14px; }
+  .gde-mod { border-radius: 18px; overflow: hidden; background: #0d0d10; border: 1px solid var(--gde-line); display: flex; flex-direction: column; }
+  .gde-mod-media { position: relative; padding: 16px 0 0; display: flex; justify-content: center; background: radial-gradient(ellipse at 50% 40%, rgba(167,139,250,.14), rgba(0,0,0,0) 70%); }
+  .gde-mod-media img { width: 150px; height: 306px; object-fit: contain; }
+  .gde-mod-badge { position: absolute; left: 10px; top: 10px; padding: 4px 9px; border-radius: 999px; background: var(--gde-accent); color: #0b0614; font-size: 11px; font-weight: 700; }
+  .gde-mod-info { padding: 12px 14px 16px; border-top: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; gap: 6px; }
+  .gde-mod-info h4 { margin: 0; font-size: 15px; font-weight: 600; color: #fff; }
+  .gde-mod-info p { margin: 0; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.62); }
+
+  .gde-taps2 { padding: 40px; border-radius: 28px; background: radial-gradient(ellipse at 80% 20%, rgba(124,58,237,.25), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.3); display: grid; grid-template-columns: repeat(auto-fit, minmax(360px,1fr)); gap: 40px; align-items: center; }
+  .gde-taps-big { font-family: var(--font-serif); font-weight: 800; font-size: 88px; line-height: .9; color: #fff; }
+  .gde-taps3 { margin: 8px 0 0; padding: 18px 0 0; border-top: 1px solid var(--gde-line); list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+  .gde-taps3 li { display: flex; flex-direction: column; gap: 4px; font-size: 15px; font-weight: 600; color: #fff; }
+  .gde-taps3 b { font-size: 12px; font-weight: 700; color: var(--gde-accent); }
+  .gde-taps-imgs { display: flex; align-items: center; justify-content: center; gap: 14px; }
+  .gde-taps-imgs img { width: 200px; height: 408px; object-fit: contain; }
+  .gde-taps-arrow { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--gde-accent); color: #0b0614; display: flex; align-items: center; justify-content: center; }
+
+  .gde-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px,1fr)); gap: 20px; align-items: stretch; }
+  .gde-maze { padding: 32px; border-radius: 26px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.35), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; gap: 22px; }
+  .gde-maze-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600; color: #fff; }
+  .gde-pill { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); color: var(--gde-accent); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .gde-pill--muted { border-color: rgba(255,255,255,.2); color: rgba(255,255,255,.7); }
+  .gde-bar-row { display: flex; flex-direction: column; gap: 8px; }
+  .gde-bar-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: #fff; font-weight: 600; }
+  .gde-bar-val { font-size: 24px; font-weight: 700; color: var(--gde-accent); }
+  .gde-bar-track { height: 16px; border-radius: 8px; }
+  .gde-bar-fill { height: 16px; border-radius: 8px; background: var(--gde-accent); }
+  .gde-bar-rest { flex: 1; height: 16px; border-radius: 8px; border: 1px dashed rgba(167,139,250,.45); }
+  .gde-bar-track-split { display: flex; gap: 4px; }
+  .gde-maze-foot { display: flex; align-items: flex-end; gap: 16px; padding-top: 20px; border-top: 1px solid var(--gde-line); }
+  .gde-maze-big { font-family: var(--font-serif); font-weight: 800; font-size: 72px; line-height: .85; color: var(--gde-accent); }
+  .gde-maze-foot-txt { padding-bottom: 6px; font-size: 16px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .gde-results-side { display: flex; flex-direction: column; gap: 20px; }
+  .gde-facts3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+  .gde-facts3 > div { padding: 20px 16px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid var(--gde-line); display: flex; flex-direction: column; gap: 8px; }
+  .gde-fact-num { font-family: var(--font-serif); font-weight: 800; font-size: 42px; line-height: 1; color: #fff; }
+  .gde-fact-num small { font-size: 18px; }
+  .gde-facts3 p { margin: 0; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.7); }
+  .gde-hypo { flex: 1; padding: 24px; border-radius: 20px; border: 1px dashed rgba(255,255,255,.2); display: flex; flex-direction: column; gap: 16px; }
+  .gde-hypo-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 600; color: #fff; }
+  .gde-hypo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+  .gde-hypo-grid > div { display: flex; flex-direction: column; gap: 4px; }
+  .gde-hypo-val { font-family: var(--font-serif); font-weight: 800; font-size: 40px; line-height: 1; color: rgba(255,255,255,.85); }
+  .gde-hypo-grid p { margin: 0; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.6); }
+  .gde-note { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.5); }
+
+  .gde-learn3 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 0 32px; }
+  .gde-learn3 li { display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.12); }
+  .gde-learn3 b { width: 38px; flex: none; font-family: var(--font-serif); font-style: italic; font-weight: 700; font-size: 28px; line-height: 1; color: var(--gde-accent); }
+  .gde-learn3 h4 { margin: 0; font-size: 18px; font-weight: 600; color: #fff; }
+  .gde-learn3 p { margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.62); }
+
+  .gde-try { padding-top: 40px; }
+  .gde-try > img { width: 100%; max-width: 600px; height: auto; }
+
+  .gde-cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .gde-hero-media { height: auto; aspect-ratio: 560/440; }
+  .gde-facts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
   </style>
 </head>
 <body>
@@ -673,6 +860,245 @@
 
 </div>
 
+<div class="gde" id="gde-root">
+
+  <!-- 01 · HERO -->
+  <section class="gde-section gde-hero gde-split" id="gde-overview" aria-labelledby="gde-h1">
+    <div class="gde-col">
+      <div class="gde-chips">
+        <span class="gde-eyebrow" style="display:inline"><span class="es">Caso 06 / 06</span><span class="en">Case 06 / 06</span></span>
+        <span class="gde-chip gde-chip--accent"><span class="es">Fitness · B2C</span><span class="en">Fitness · B2C</span></span>
+        <span class="gde-chip"><span class="es">UX Research · Bootcamp</span><span class="en">UX Research · Bootcamp</span></span>
+      </div>
+      <h1 class="gde-h1" id="gde-h1"><span class="es">Diseñar para <em>volver mañana</em></span><span class="en">Designing to <em>come back tomorrow</em></span></h1>
+      <p class="gde-lead"><span class="es">La fricción no estaba en reservar una clase; estaba en <strong>volver al día siguiente</strong>.</span><span class="en">The friction wasn't in booking a class; it was in <strong>coming back the next day</strong>.</span></p>
+      <dl class="gde-facts">
+        <div><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd><span class="es">UX Researcher &amp; UI</span><span class="en">UX Researcher &amp; UI</span></dd></div>
+        <div><dt><span class="es">Duración</span><span class="en">Timeline</span></dt><dd><span class="es">6 semanas</span><span class="en">6 weeks</span></dd></div>
+        <div><dt><span class="es">Equipo</span><span class="en">Team</span></dt><dd><span class="es">4 diseñadores</span><span class="en">4 designers</span></dd></div>
+        <div><dt><span class="es">Plataforma</span><span class="en">Platform</span></dt><dd><span class="es">Móvil + desktop</span><span class="en">Mobile + desktop</span></dd></div>
+      </dl>
+      <div class="gde-actions">
+        <a class="gde-btn gde-btn--accent" href="https://gym-energy-center-app.vercel.app/" target="_blank" rel="noopener"><span class="es">Abrir prototipo ↗</span><span class="en">Open prototype ↗</span></a>
+        <a class="gde-btn" href="#gde-problema"><span class="es">Ver el problema</span><span class="en">See the problem</span> <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <figure class="gde-hero-media">
+      <span class="gde-glow" aria-hidden="true"></span>
+      <video class="gde-hero-back" muted loop playsinline autoplay preload="auto" poster="assets/gym-mobile/d-home.webp" src="assets/gym-mobile/walkthrough-desk.mp4" aria-label="Recorrido de la versión desktop del prototipo"></video>
+      <video class="gde-hero-front" muted loop playsinline autoplay preload="auto" poster="assets/gym-mobile/m-home.png" src="assets/gym-mobile/hero-mobile.mp4" aria-label="Recorrido del prototipo móvil: inicio, comunidad, perfil y reserva"></video>
+      <figcaption class="gde-live"><span class="gde-live-dot" aria-hidden="true"></span><span class="es">Prototipo navegable · móvil y desktop</span><span class="en">Navigable prototype · mobile and desktop</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="gde-section gde-section--sm" id="gde-oldtldr-new">
+    <div class="gde-headrow">
+      <h2 class="gde-h3"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
+      <span class="gde-index" aria-hidden="true">01</span>
+    </div>
+    <ol class="gde-tldr">
+      <li><span class="gde-eyebrow--muted"><span class="es">01 · Problema</span><span class="en">01 · Problem</span></span><span class="gde-num">68%</span><p><span class="es">de los socios nuevos abandona antes del día 45.</span><span class="en">of new members drop out before day 45.</span></p></li>
+      <li><span class="gde-eyebrow--muted"><span class="es">02 · Decisión</span><span class="en">02 · Decision</span></span><span class="gde-num">Hábito</span><p><span class="es">Diseñar la app alrededor del grupo y la racha, no del calendario.</span><span class="en">Design the app around the group and the streak, not the calendar.</span></p></li>
+      <li class="is-accent"><span class="gde-eyebrow--muted"><span class="es">03 · Validado en test · Maze</span><span class="en">03 · Validated in test · Maze</span></span><span class="gde-num">88%</span><p><span class="es">de tareas completadas sin ayuda, con reserva en 2 taps.</span><span class="en">of tasks completed unaided, with 2-tap booking.</span></p></li>
+    </ol>
+  </section>
+
+  <!-- 02 · PROBLEMA -->
+  <section class="gde-section gde-stack" id="gde-problema" aria-labelledby="gde-h2-problema">
+    <div class="gde-split gde-split--end">
+      <div class="gde-col">
+        <span class="gde-eyebrow"><span class="es">02 · Abandono temprano</span><span class="en">02 · Early drop-off</span></span>
+        <h2 class="gde-h2" id="gde-h2-problema"><span class="es">Sin grupo ni progreso, <em>nadie vuelve</em></span><span class="en">No group, no progress, <em>nobody returns</em></span></h2>
+        <p class="gde-p"><span class="es">En dos semanas se sentían perdidos: sin nadie con quien ir y sin forma de ver su progreso.</span><span class="en">Within two weeks they felt lost: no one to train with and no way to see their progress.</span></p>
+      </div>
+      <div class="gde-col">
+        <div class="gde-stat"><span class="gde-stat-val">68%</span><span class="gde-stat-txt"><span class="es">de los socios nuevos se va antes del día 45</span><span class="en">of new members leave before day 45</span></span></div>
+        <div class="gde-squares" role="img" aria-label="7 de cada 10 socios nuevos abandonan antes del día 45"><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    <div class="gde-split">
+      <div class="gde-col">
+        <span class="gde-eyebrow--muted"><span class="es">La hipótesis que se cayó</span><span class="en">The hypothesis that fell apart</span></span>
+        <h3 class="gde-h3" style="font-size:34px"><span class="es">El problema no era la agenda</span><span class="en">The problem wasn't scheduling</span></h3>
+        <p class="gde-p"><span class="es">Entramos pensando en más horarios y más clases. Las entrevistas apuntaron a otro sitio.</span><span class="en">We went in thinking more timeslots, more classes. The interviews pointed elsewhere.</span></p>
+      </div>
+      <div class="gde-versus">
+        <div class="gde-vs">
+          <span class="gde-eyebrow--muted"><span class="es">Creíamos</span><span class="en">We believed</span></span>
+          <span class="gde-vs-title"><span class="es">Falta de tiempo</span><span class="en">Lack of time</span></span>
+          <span class="gde-vs-desc"><span class="es">Más horarios, más clases.</span><span class="en">More timeslots, more classes.</span></span>
+        </div>
+        <div class="gde-vs gde-vs--win">
+          <span class="gde-vs-badge"><span class="es">Insight</span><span class="en">Insight</span></span>
+          <span class="gde-eyebrow--muted"><span class="es">Vimos</span><span class="en">We saw</span></span>
+          <span class="gde-vs-title"><span class="es">Vergüenza con las máquinas</span><span class="en">Equipment intimidation</span></span>
+          <span class="gde-vs-desc"><span class="es">Pesa más en la asistencia que la agenda.</span><span class="en">Weighs more on attendance than scheduling.</span></span>
+        </div>
+        <span class="gde-vs-pill" aria-hidden="true">vs</span>
+      </div>
+    </div>
+
+    <div class="gde-block">
+      <div class="gde-headrow" style="border-bottom:0;padding-bottom:0">
+        <span class="gde-eyebrow--muted" style="font-size:12px"><span class="es">12 entrevistas · 3 hallazgos</span><span class="en">12 interviews · 3 findings</span></span>
+      </div>
+      <ul class="gde-cards3">
+        <li><span class="gde-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg></span><h4><span class="es">Vergüenza inicial</span><span class="en">Gymtimidation</span></h4><p><span class="es">No saber usar el equipo frena más que no tener tiempo.</span><span class="en">Not knowing the equipment holds people back more than lack of time.</span></p></li>
+        <li><span class="gde-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></span><h4><span class="es">La fuerza del grupo</span><span class="en">Peer accountability</span></h4><p><span class="es">Saber que un amigo va a la clase hace que vayas.</span><span class="en">Knowing a friend is attending makes you go too.</span></p></li>
+        <li><span class="gde-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-1.6.7-2.8 1.5-3.7.3 1.3 1 2.2 2 2.2 0-2.5-.5-4.5.5-7z"/><path d="M6 21h12"/></svg></span><h4><span class="es">Micro-victorias</span><span class="en">Micro-victories</span></h4><p><span class="es">Ver la racha refuerza el compromiso de volver.</span><span class="en">Seeing the streak reinforces the commitment to return.</span></p></li>
+      </ul>
+    </div>
+
+    <div class="gde-block">
+      <div class="gde-headrow" style="border-bottom:0;padding-bottom:0">
+        <span class="gde-eyebrow--muted" style="font-size:12px"><span class="es">Síntesis · bucle de hábito</span><span class="en">Synthesis · habit loop</span></span>
+      </div>
+      <h3 class="gde-h3"><span class="es">Detonante <span style="color:rgba(255,255,255,.4)">→</span> acción <span style="color:rgba(255,255,255,.4)">→</span> <em>recompensa</em></span><span class="en">Trigger <span style="color:rgba(255,255,255,.4)">→</span> action <span style="color:rgba(255,255,255,.4)">→</span> <em>reward</em></span></h3>
+      <div class="gde-loop3">
+        <div class="gde-loop-card">
+          <img src="assets/gym-mobile/m-proximo.png" alt="Inicio con la tarjeta Tu próximo mejor entrenamiento">
+          <div class="gde-loop-body">
+            <span class="gde-eyebrow" style="font-size:11px"><span class="es">01 · Detonante</span><span class="en">01 · Trigger</span></span>
+            <h4><span class="es">Aviso en contexto</span><span class="en">Contextual nudge</span></h4>
+            <span class="gde-loop-chip"><span class="es">Responde a · Vergüenza inicial</span><span class="en">Responds to · Gymtimidation</span></span>
+            <p><span class="es">«Tu próximo mejor entrenamiento», sugerido según tus sesiones y tu racha.</span><span class="en">"Your next best workout", suggested from your sessions and streak.</span></p>
+          </div>
+        </div>
+        <div class="gde-loop-card">
+          <img src="assets/gym-mobile/m-detalle.png" alt="Detalle de clase con los asistentes junto al botón Reservar plaza">
+          <div class="gde-loop-body">
+            <span class="gde-eyebrow" style="font-size:11px"><span class="es">02 · Acción</span><span class="en">02 · Action</span></span>
+            <h4><span class="es">Reserva en 2 taps</span><span class="en">2-tap booking</span></h4>
+            <span class="gde-loop-chip"><span class="es">Responde a · La fuerza del grupo</span><span class="en">Responds to · Peer accountability</span></span>
+            <p><span class="es">«12 personas ya van a darlo todo», junto al botón de reservar.</span><span class="en">"12 people are already going all in", next to the booking button.</span></p>
+          </div>
+        </div>
+        <div class="gde-loop-card">
+          <img src="assets/gym-mobile/m-perfil.png" alt="Perfil con 42 sesiones, racha de 7 y nivel 8">
+          <div class="gde-loop-body">
+            <span class="gde-eyebrow" style="font-size:11px"><span class="es">03 · Recompensa</span><span class="en">03 · Reward</span></span>
+            <h4><span class="es">Hito visible</span><span class="en">Visible milestone</span></h4>
+            <span class="gde-loop-chip"><span class="es">Responde a · Micro-victorias</span><span class="en">Responds to · Micro-victories</span></span>
+            <p><span class="es">Racha de 7 días y nivel 8, lo primero que ves en tu perfil.</span><span class="en">7-day streak and level 8, the first thing you see on your profile.</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="gde-loop-close">
+        <span class="gde-loop-close-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span>
+        <span style="font-weight:600;color:#fff"><span class="es">Y vuelve al día siguiente</span><span class="en">And they come back the next day</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · SOLUCIÓN -->
+  <section class="gde-section gde-stack" id="gde-solucion" aria-labelledby="gde-h2-solucion">
+    <div class="gde-split gde-split--end">
+      <div class="gde-col">
+        <span class="gde-eyebrow"><span class="es">03 · La solución</span><span class="en">03 · The solution</span></span>
+        <h2 class="gde-h2" id="gde-h2-solucion"><span class="es">Práctico, social <em>y lúdico</em></span><span class="en">Practical, social <em>and playful</em></span></h2>
+      </div>
+      <div class="gde-pillars3">
+        <div><span class="gde-eyebrow"><span class="es">Práctico</span><span class="en">Practical</span></span><span><span class="es">Reserva en 2 taps</span><span class="en">2-tap booking</span></span></div>
+        <div><span class="gde-eyebrow"><span class="es">Social</span><span class="en">Social</span></span><span><span class="es">Muro y grupos</span><span class="en">Wall and groups</span></span></div>
+        <div><span class="gde-eyebrow"><span class="es">Lúdico</span><span class="en">Playful</span></span><span><span class="es">Retos y rachas</span><span class="en">Challenges and streaks</span></span></div>
+      </div>
+    </div>
+
+    <figure class="gde-video-figure">
+      <video muted loop playsinline autoplay preload="auto" poster="assets/gym-mobile/d-home.webp" src="assets/gym-mobile/walkthrough-desk.mp4" aria-label="Recorrido de la versión desktop: inicio, clases y reserva de Power Training"></video>
+      <figcaption><span class="es">La misma lógica en móvil y escritorio: reservar, ver quién va y seguir tu racha.</span><span class="en">The same logic on mobile and desktop: book, see who's going, track your streak.</span></figcaption>
+    </figure>
+
+    <div class="gde-block">
+      <div class="gde-headrow">
+        <h3 class="gde-h3" style="font-size:28px"><span class="es">Cada hallazgo, una pantalla</span><span class="en">Every finding, a screen</span></h3>
+        <span class="gde-eyebrow--muted"><span class="es">De la investigación a la pantalla</span><span class="en">From research to screen</span></span>
+      </div>
+      <div class="gde-mods6">
+        <article class="gde-mod"><div class="gde-mod-media"><img src="assets/gym-mobile/m-home.png" alt="Pantalla de inicio con progreso de 62,5 kg y gráfico de barras"><span class="gde-mod-badge"><span class="es">01 · Lúdico</span><span class="en">01 · Playful</span></span></div><div class="gde-mod-info"><h4><span class="es">Inicio</span><span class="en">Home</span></h4><p><span class="es">Tu progreso primero.</span><span class="en">Your progress first.</span></p></div></article>
+        <article class="gde-mod"><div class="gde-mod-media"><img src="assets/gym-mobile/m-muro.png" alt="Muro de comunidad con una publicación y comentarios"><span class="gde-mod-badge"><span class="es">02 · Social</span><span class="en">02 · Social</span></span></div><div class="gde-mod-info"><h4><span class="es">Comunidad</span><span class="en">Community</span></h4><p><span class="es">Ver quién entrena y comentar.</span><span class="en">See who's training and comment.</span></p></div></article>
+        <article class="gde-mod"><div class="gde-mod-media"><img src="assets/gym-mobile/m-clases.png" alt="Calendario con la lista de sesiones del día y botón Reservar"><span class="gde-mod-badge"><span class="es">03 · Práctico</span><span class="en">03 · Practical</span></span></div><div class="gde-mod-info"><h4><span class="es">Calendario</span><span class="en">Calendar</span></h4><p><span class="es">Sesiones del día y reserva directa.</span><span class="en">Today's sessions and direct booking.</span></p></div></article>
+        <article class="gde-mod"><div class="gde-mod-media"><img src="assets/gym-mobile/m-reservas.png" alt="Actividades con el aviso Strength Lab añadido a tu semana"><span class="gde-mod-badge"><span class="es">04 · Práctico</span><span class="en">04 · Practical</span></span></div><div class="gde-mod-info"><h4><span class="es">Actividades</span><span class="en">Activities</span></h4><p><span class="es">Confirmación al instante.</span><span class="en">Instant confirmation.</span></p></div></article>
+        <article class="gde-mod"><div class="gde-mod-media"><img src="assets/gym-mobile/m-perfil.png" alt="Perfil de Lara Gómez con 42 sesiones, racha de 7 y nivel 8"><span class="gde-mod-badge"><span class="es">05 · Lúdico</span><span class="en">05 · Playful</span></span></div><div class="gde-mod-info"><h4><span class="es">Perfil y racha</span><span class="en">Profile and streak</span></h4><p><span class="es">La micro-victoria a la vista.</span><span class="en">The micro-victory in plain sight.</span></p></div></article>
+        <article class="gde-mod"><div class="gde-mod-media"><img src="assets/gym-mobile/m-logros.png" alt="Pantalla de logros y mensajes del grupo"><span class="gde-mod-badge"><span class="es">06 · Social</span><span class="en">06 · Social</span></span></div><div class="gde-mod-info"><h4><span class="es">Logros y mensajes</span><span class="en">Achievements and messages</span></h4><p><span class="es">Logros y chats con tu grupo.</span><span class="en">Achievements and chats with your group.</span></p></div></article>
+      </div>
+    </div>
+
+    <div class="gde-taps2">
+      <div class="gde-col">
+        <span class="gde-eyebrow"><span class="es">El bucle clave · Reserva</span><span class="en">The key loop · Booking</span></span>
+        <span class="gde-taps-big">2 taps</span>
+        <span class="gde-p" style="max-width:420px;font-size:17px;color:rgba(255,255,255,.8)"><span class="es">Del hueco libre a la plaza confirmada, viendo quién más va.</span><span class="en">From open slot to confirmed spot, seeing who else is going.</span></span>
+        <ol class="gde-taps3">
+          <li><b>01</b><span class="es">Aviso en contexto</span><span class="en">Contextual nudge</span></li>
+          <li><b>02</b><span class="es">Reserva en 2 taps</span><span class="en">2-tap booking</span></li>
+          <li><b>03</b><span class="es">Hito visible</span><span class="en">Visible milestone</span></li>
+        </ol>
+      </div>
+      <div class="gde-taps-imgs">
+        <img src="assets/gym-mobile/m-detalle.png" alt="Detalle de Personal Performance con la franja de las 21:00 seleccionada">
+        <span class="gde-taps-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        <img src="assets/gym-mobile/m-reservado.png" alt="La misma pantalla con la plaza ya reservada y el botón en verde">
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · RESULTADOS -->
+  <section class="gde-section gde-stack gde-stack--md" id="gde-resultados" aria-labelledby="gde-h2-resultados">
+    <div class="gde-col">
+      <span class="gde-eyebrow"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span>
+      <h2 class="gde-h2" id="gde-h2-resultados"><span class="es">Validado con <em>usuarios reales</em></span><span class="en">Validated with <em>real users</em></span></h2>
+    </div>
+
+    <div class="gde-results">
+      <div class="gde-maze">
+        <div class="gde-maze-head"><span><span class="es">Test de usabilidad no moderado · Maze</span><span class="en">Unmoderated usability test · Maze</span></span><span class="gde-pill"><span class="es">Medido</span><span class="en">Measured</span></span></div>
+        <div class="gde-bar-row"><div class="gde-bar-label"><span><span class="es">Tareas completadas sin ayuda</span><span class="en">Tasks completed unaided</span></span><span class="gde-bar-val">88%</span></div><div class="gde-bar-track gde-bar-track-split"><div class="gde-bar-fill" style="width:88%"></div><div class="gde-bar-rest"></div></div></div>
+        <div class="gde-bar-row"><div class="gde-bar-label"><span><span class="es">Satisfacción SUS</span><span class="en">SUS satisfaction</span></span><span class="gde-bar-val">4,6 / 5</span></div><div class="gde-bar-track gde-bar-track-split"><div class="gde-bar-fill" style="width:92%"></div><div class="gde-bar-rest"></div></div></div>
+        <div class="gde-maze-foot"><span class="gde-maze-big">0</span><span class="gde-maze-foot-txt"><strong><span class="es">bloqueos</span><span class="en">blockers</span></strong> <span class="es">detectados en el flujo de reserva</span><span class="en">detected in the booking flow</span></span></div>
+      </div>
+      <div class="gde-results-side">
+        <div class="gde-facts3">
+          <div><span class="gde-fact-num">2<small><span class="es"> taps</span><span class="en"> taps</span></small></span><p><span class="es">para reservar una clase</span><span class="en">to book a class</span></p></div>
+          <div><span class="gde-fact-num">12</span><p><span class="es">entrevistas en profundidad</span><span class="en">in-depth interviews</span></p></div>
+          <div><span class="gde-fact-num">6<small><span class="es"> sem</span><span class="en"> wks</span></small></span><p><span class="es">de research a prototipo</span><span class="en">from research to prototype</span></p></div>
+        </div>
+        <div class="gde-hypo">
+          <div class="gde-hypo-head"><span><span class="es">Impacto esperado en el gimnasio</span><span class="en">Expected gym impact</span></span><span class="gde-pill gde-pill--muted"><span class="es">Hipótesis</span><span class="en">Hypothesis</span></span></div>
+          <div class="gde-hypo-grid">
+            <div><span class="gde-hypo-val">+34%</span><p><span class="es">retención a 90 días</span><span class="en">90-day retention</span></p></div>
+            <div><span class="gde-hypo-val">+52%</span><p><span class="es">asistencia a clases colectivas</span><span class="en">group class attendance</span></p></div>
+          </div>
+          <p class="gde-note"><span class="es">Objetivos del planteamiento; no se midieron en producción.</span><span class="en">Goals from the proposal; not measured in production.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gde-block">
+      <span class="gde-eyebrow--muted"><span class="es">05 · Lo que me llevo</span><span class="en">05 · Key takeaways</span></span>
+      <ol class="gde-learn3">
+        <li><b>01</b><div><h4><span class="es">Investigar antes de diseñar</span><span class="en">Research before designing</span></h4><p><span class="es">El insight de la vergüenza no salía en ningún brief.</span><span class="en">The intimidation insight wasn't in any brief.</span></p></div></li>
+        <li><b>02</b><div><h4><span class="es">Colaboración en equipo</span><span class="en">Team collaboration</span></h4><p><span class="es">La evidencia de usuario alinea a 4 diseñadores mejor que las opiniones.</span><span class="en">User evidence aligns 4 designers better than opinions.</span></p></div></li>
+        <li><b>03</b><div><h4><span class="es">Probar con usuarios reales</span><span class="en">Testing with real users</span></h4><p><span class="es">Sus reacciones tumbaron nuestras primeras hipótesis.</span><span class="en">Their reactions tore down our first hypotheses.</span></p></div></li>
+      </ol>
+    </div>
+
+    <div class="gde-split gde-split--center gde-try">
+      <img src="assets/gym-mobile/d-confirmado.webp" alt="Prototipo desktop: clase Power Training reservada en un portátil">
+      <div class="gde-col">
+        <span class="gde-eyebrow--muted"><span class="es">Pruébalo</span><span class="en">Try it</span></span>
+        <h3 class="gde-h3" style="font-size:40px"><span class="es">El prototipo, <em>navegable</em></span><span class="en">The prototype, <em>navigable</em></span></h3>
+        <p class="gde-p"><span class="es">Reserva una clase, mira el muro y sigue tu racha, en móvil o en escritorio.</span><span class="en">Book a class, check the wall and track your streak, on mobile or desktop.</span></p>
+        <a class="gde-btn gde-btn--accent gde-btn--lg" href="https://gym-energy-center-app.vercel.app/" target="_blank" rel="noopener"><span class="es">Abrir prototipo ↗</span><span class="en">Open prototype ↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
 <!-- ============ 1 · HERO & FICHA ============ -->
 <section class="cs-hero" id="overview">
   <div class="wrap">
@@ -686,9 +1112,7 @@
       <span class="en">The real barrier wasn't class booking; it was returning the next day. How we turned an administrative tool into a community-driven experience that builds habits.</span>
     </p>
 
-    <div class="cs-hero-img reveal">
-      <img src="assets/gym/live-desktop-lock.png" width="2896" height="1664" alt="Plataforma Gym Energy Center - Mockup final de producto">
-    </div>
+    <div class="cs-hero-img reveal"></div>
 
     <dl class="cs-facts reveal">
       <div class="cs-fact"><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd><span class="es">UX Researcher &amp; UI</span><span class="en">UX Researcher &amp; UI</span></dd></div>
@@ -701,7 +1125,7 @@
 </section>
 
 <!-- ============ 3 · TL;DR ============ -->
-<section class="section">
+<section class="section" id="gde-oldtldr">
   <div class="wrap">
     <span class="eyebrow"><b>01</b>TL;DR</span>
     <h2 class="h2 reveal"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
@@ -836,43 +1260,6 @@
       </div>
     </div>
 
-    <div class="panel reveal" style="margin-top:24px">
-      <div class="panel-head"><span><span class="es">Diseño final</span><span class="en">Final design</span></span><span class="panel-tag">Desktop · Mobile</span></div>
-      <div class="compare">
-        <figure class="compare-item">
-          <div class="compare-media">
-            <img src="assets/gym/live-mobile-activities.png" alt="App móvil actividades" loading="lazy" width="1920" height="1080">
-          </div>
-          <figcaption class="compare-caption">
-            <div class="compare-badge compare-badge--before">
-              <span class="badge-dot"></span>
-              <span class="es">Mobile · Actividades</span>
-              <span class="en">Mobile · Activities</span>
-            </div>
-            <p class="compare-desc">
-              <span class="es">Reserva rápida con un solo toque y vista de compañeros que asisten.</span>
-              <span class="en">One-tap booking with visible attending classmates for social proof.</span>
-            </p>
-          </figcaption>
-        </figure>
-        <figure class="compare-item compare-item--after">
-          <div class="compare-media">
-            <img src="assets/gym/live-desktop-profile.png" alt="Plataforma de progreso y perfil" loading="lazy" width="1920" height="1080">
-          </div>
-          <figcaption class="compare-caption">
-            <div class="compare-badge compare-badge--after">
-              <span class="badge-dot"></span>
-              <span class="es">Desktop · Progreso</span>
-              <span class="en">Desktop · Progress</span>
-            </div>
-            <p class="compare-desc">
-              <span class="es">Seguimiento de metas, estadísticas de salud y comunidad deportiva.</span>
-              <span class="en">Goal tracking, health milestones and community challenges.</span>
-            </p>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
 
     <div class="panel reveal" style="margin-top:24px">
       <div class="panel-head"><span><span class="es">El bucle clave · Reserva</span><span class="en">The key loop · Booking</span></span><span class="panel-tag">2 Taps</span></div>
@@ -1035,22 +1422,6 @@
       <a href="https://gym-energy-center-app.vercel.app/" target="_blank" rel="noopener" class="nav-cta en" style="white-space:nowrap">Open prototype ↗</a>
     </div>
 
-    <!-- TARJETA SIGUIENTE CASO COMPACTA -->
-    <a href="cef-design-system.html" class="cs-next-compact-card reveal">
-      <div class="cs-next-compact-left">
-        <div class="cs-next-thumb">
-          <img src="assets/exp-cef-desk.png" alt="CEF EdTech" loading="lazy">
-        </div>
-        <div>
-          <div class="cs-next-compact-meta"><span class="es">Siguiente caso · 01</span><span class="en">Next case · 01</span></div>
-          <div class="cs-next-compact-title">CEF EdTech</div>
-          <div class="cs-next-compact-topic"><span class="es">Sistema de diseño desde cero</span><span class="en">Design system from scratch</span></div>
-        </div>
-      </div>
-      <div class="cs-next-arrow-btn" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7H12M8 3L12 7L8 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </a>
 
   </div>
 </section>
