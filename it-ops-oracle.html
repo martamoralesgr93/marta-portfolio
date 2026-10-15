@@ -19,9 +19,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261014_rev2">
+  <link rel="stylesheet" href="it-ops-desktop.css?v=20261015">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
   <style>
-/* ============ MOBILE EXACT — IT Ops case (canvas 2026-10-14) ============ */
+/* ============ MOBILE EXACT - IT Ops case (canvas 2026-10-14) ============ */
 .ome { display: none; }
 @media (max-width: 768px) {
   main > .cs-hero,
@@ -592,6 +593,252 @@
 
 </div>
 
+<!-- ============ VERSIÓN DESKTOP (≥769px) · it-ops-desktop.css ============ -->
+<div class="itd" id="itd">
+
+  <!-- 01 · HERO -->
+  <section class="itd-section itd-hero itd-split" id="d-overview" aria-labelledby="itd-h1">
+    <div class="itd-col">
+      <div class="itd-chips">
+        <span class="itd-kicker"><span class="es">Caso 04 / 05</span><span class="en">Case 04 / 05</span></span>
+        <span class="itd-chip itd-chip--accent"><span class="es">IT Ops · B2B interno</span><span class="en">IT Ops · Internal B2B</span></span>
+        <span class="itd-chip"><span class="es">Propuesta conceptual</span><span class="en">Conceptual proposal</span></span>
+      </div>
+      <h1 class="itd-h1" id="itd-h1"><span class="es">Cuando comprar <em>no resuelve</em></span><span class="en">When buying <em>doesn't solve it</em></span></h1>
+      <p class="itd-lead"><span class="es">De <strong>56,5 h/mes</strong> en hojas de cálculo a una herramienta propia.</span><span class="en">From <strong>56.5 h/month</strong> in spreadsheets to a custom tool.</span></p>
+      <dl class="itd-facts">
+        <div><dt><span class="es">Rol</span><span class="en">Role</span></dt><dd>Product Designer</dd></div>
+        <div><dt><span class="es">Duración</span><span class="en">Timeline</span></dt><dd><span class="es">3 meses</span><span class="en">3 months</span></dd></div>
+        <div><dt><span class="es">Equipo</span><span class="en">Team</span></dt><dd>IT Ops Lead + 4 devs</dd></div>
+        <div><dt><span class="es">Plataforma</span><span class="en">Platform</span></dt><dd>Desktop · SaaS</dd></div>
+      </dl>
+      <div class="itd-actions">
+        <a class="itd-btn itd-btn--accent" href="https://it-ops-oracle-prototype-design.vercel.app" target="_blank" rel="noopener"><span class="es">Abrir prototipo ↗</span><span class="en">Open prototype ↗</span></a>
+        <a class="itd-btn" href="#d-problema"><span class="es">Ver el problema</span><span class="en">See the problem</span> <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <figure class="itd-hero-media">
+      <span class="itd-glow" aria-hidden="true"></span>
+      <video class="itd-hero-video" muted loop playsinline preload="none" poster="assets/oracle-mobile/hero-poster.jpg" width="1080" height="620" data-src="assets/oracle-mobile/hero.mp4" aria-label="Recorrido del prototipo navegable de IT Ops Oracle"></video>
+      <img class="itd-hero-float" src="assets/oracle-mobile/ui05.webp" alt="Pantalla final de aprobaciones operativas" width="1052" height="617" loading="lazy">
+      <figcaption class="itd-live"><span class="itd-live-dot" aria-hidden="true"></span><span class="es">Prototipo navegable · recorrido 48 s</span><span class="en">Clickable prototype · 48 s walkthrough</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="itd-section itd-section--sm">
+    <div class="itd-headrow">
+      <h2 class="itd-h2"><span class="es">El caso en <em>30 segundos</em></span><span class="en">The case in <em>30 seconds</em></span></h2>
+      <span class="itd-index" aria-hidden="true">01</span>
+    </div>
+    <ol class="itd-tldr">
+      <li><span class="itd-label"><span class="es">01 · Problema</span><span class="en">01 · Problem</span></span><span class="itd-num">56,5 h<small>/<span class="es">mes</span><span class="en">mo</span></small></span><p><span class="es">perdidas en inventarios críticos gestionados con Excel.</span><span class="en">lost managing critical inventory in Excel.</span></p></li>
+      <li><span class="itd-label"><span class="es">02 · Decisión</span><span class="en">02 · Decision</span></span><span class="itd-num">Build</span><p><span class="es">Suite modular a medida en lugar de licencias COTS.</span><span class="en">A modular custom suite instead of COTS licences.</span></p></li>
+      <li class="is-accent"><span class="itd-label"><span class="es">03 · Impacto proyectado</span><span class="en">03 · Projected impact</span></span><span class="itd-num">−70%</span><p><span class="es">horas de gestión manual.</span><span class="en">manual admin hours.</span></p></li>
+    </ol>
+  </section>
+
+  <!-- 02 · PROBLEMA -->
+  <section class="itd-section itd-stack" id="d-problema" aria-labelledby="itd-h2-problema">
+    <div class="itd-split itd-split--end">
+      <div class="itd-col">
+        <span class="itd-eyebrow"><span class="es">02 · El dilema</span><span class="en">02 · The dilemma</span></span>
+        <h2 class="itd-h2 itd-h2--xl" id="itd-h2-problema"><span class="es">¿Comprar software genérico <em>o construir?</em></span><span class="en">Buy off-the-shelf <em>or build?</em></span></h2>
+        <p class="itd-p"><span class="es">Entrevistas y shadowing: el problema era un flujo concreto que ninguna herramienta resolvía de fábrica.</span><span class="en">Interviews and shadowing: the problem was one specific workflow no tool solved out of the box.</span></p>
+      </div>
+      <div class="itd-col">
+        <div class="itd-stat"><span class="itd-stat-val">80%</span><span class="itd-stat-txt"><span class="es">de las funciones del software comercial sobraban</span><span class="en">of the commercial software's features were unnecessary</span></span></div>
+        <div class="itd-squares" role="img" aria-label="8 de cada 10 funciones no se usarían / 8 in 10 features would go unused"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="is-on"></span><span class="is-on"></span></div>
+      </div>
+    </div>
+
+    <div class="itd-split">
+      <div class="itd-col">
+        <span class="itd-eyebrow itd-eyebrow--muted">Build vs Buy</span>
+        <h3 class="itd-h3"><span class="es">Pagar por lo que no se usa no era una opción</span><span class="en">Paying for unused features wasn't an option</span></h3>
+        <p class="itd-p"><span class="es">La compra de un COTS estaba sobre la mesa. El discovery inclinó la decisión hacia construir solo lo que el equipo necesitaba.</span><span class="en">Buying a COTS tool was on the table. Discovery tipped the decision towards building only what the team needed.</span></p>
+      </div>
+      <div class="itd-versus">
+        <div class="itd-vs">
+          <span class="itd-label">Buy · COTS</span>
+          <span class="itd-vs-title"><span class="es">Comprar</span><span class="en">Buy</span></span>
+          <ul class="itd-vs-list itd-vs-list--no">
+            <li><span class="es">Licencia costosa</span><span class="en">Costly licence</span></li>
+            <li><span class="es">Funciones genéricas</span><span class="en">Generic features</span></li>
+            <li><span class="es">Adaptación lenta</span><span class="en">Slow adoption</span></li>
+          </ul>
+        </div>
+        <div class="itd-vs itd-vs--win">
+          <span class="itd-vs-badge"><span class="es">Decisión</span><span class="en">Decision</span></span>
+          <span class="itd-label"><span class="es">Build · a medida</span><span class="en">Build · custom</span></span>
+          <span class="itd-vs-title"><span class="es">Construir</span><span class="en">Build</span></span>
+          <ul class="itd-vs-list itd-vs-list--yes">
+            <li><span class="es">Solo el flujo real</span><span class="en">Only the real workflow</span></li>
+            <li><span class="es">Hecho para el equipo</span><span class="en">Made for the team</span></li>
+            <li><span class="es">Menor coste total</span><span class="en">Lower total cost</span></li>
+          </ul>
+        </div>
+        <span class="itd-vs-pill" aria-hidden="true">vs</span>
+      </div>
+    </div>
+
+    <div class="itd-block">
+      <div class="itd-countrow"><span class="itd-count">3</span><span class="itd-eyebrow itd-eyebrow--muted"><span class="es">patrones de fricción · shadowing</span><span class="en">friction patterns · shadowing</span></span></div>
+      <ul class="itd-cards3">
+        <li><span class="itd-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></span><h4><span class="es">Copiar y pegar</span><span class="en">Copy-paste</span></h4><p><span class="es">Los mismos datos, a mano, entre 3 sistemas.</span><span class="en">The same data, by hand, across 3 systems.</span></p></li>
+        <li><span class="itd-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4><span class="es">Sin historial</span><span class="en">No history</span></h4><p><span class="es">Nadie sabía quién había tocado cada servidor.</span><span class="en">Nobody knew who had changed each server.</span></p></li>
+        <li><span class="itd-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><h4><span class="es">Falsos positivos</span><span class="en">False positives</span></h4><p><span class="es">Alertas que saturaban al equipo de guardia.</span><span class="en">Alerts flooding the on-call team.</span></p></li>
+      </ul>
+    </div>
+
+    <div class="itd-split itd-split--center">
+      <div class="itd-col">
+        <span class="itd-eyebrow itd-eyebrow--muted"><span class="es">Discovery · arquitectura de datos</span><span class="en">Discovery · data architecture</span></span>
+        <h3 class="itd-h3"><span class="es">52 columnas <span class="itd-arrow">→</span> <em>6 módulos</em></span><span class="en">52 columns <span class="itd-arrow">→</span> <em>6 modules</em></span></h3>
+        <p class="itd-p"><span class="es">Cada columna del Excel se asignó a una entidad. Cada entidad, a un módulo de tarea única.</span><span class="en">Each Excel column was mapped to an entity. Each entity, to a single-task module.</span></p>
+        <ol class="itd-modules">
+          <li><b>01</b><span class="es">Salud de nodos</span><span class="en">Node health</span></li>
+          <li><b>02</b><span class="es">Ciclo de tickets</span><span class="en">Ticket lifecycle</span></li>
+          <li><b>03</b><span class="es">Auditoría inmutable</span><span class="en">Immutable audit</span></li>
+          <li><b>04</b><span class="es">Automatizaciones</span><span class="en">Automations</span></li>
+          <li><b>05</b><span class="es">Matriz de firmas</span><span class="en">Sign-off matrix</span></li>
+          <li><b>06</b><span class="es">Cumplimiento SLA</span><span class="en">SLA compliance</span></li>
+        </ol>
+      </div>
+      <figure class="itd-frame">
+        <img src="assets/oracle-mobile/map.webp" alt="Mapa: cada patrón de fricción conectado con el módulo que lo resuelve" loading="lazy" width="1400" height="933">
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 · SOLUCIÓN -->
+  <section class="itd-section itd-stack" id="d-solucion" aria-labelledby="itd-h2-solucion">
+    <div class="itd-split itd-split--end">
+      <div class="itd-col">
+        <span class="itd-eyebrow"><span class="es">03 · La solución</span><span class="en">03 · The solution</span></span>
+        <h2 class="itd-h2 itd-h2--xl" id="itd-h2-solucion"><span class="es">Un módulo para cada <em>patrón real</em></span><span class="en">One module for each <em>real pattern</em></span></h2>
+      </div>
+      <div class="itd-pills3">
+        <div><span class="itd-label itd-label--accent"><span class="es">Antes</span><span class="en">Before</span></span><span><span class="es">3 consolas y Excel</span><span class="en">3 consoles and Excel</span></span></div>
+        <div><span class="itd-label itd-label--accent"><span class="es">Después</span><span class="en">After</span></span><span><span class="es">1 consola unificada</span><span class="en">1 unified console</span></span></div>
+        <div><span class="itd-label itd-label--accent"><span class="es">Triaje</span><span class="en">Triage</span></span><span><span class="es">Por severidad y SLA</span><span class="en">By severity and SLA</span></span></div>
+      </div>
+    </div>
+
+    <figure class="itd-showcase">
+      <img src="assets/oracle-mobile/dashboard.webp" alt="Dashboard operacional final: KPIs, prioridad operativa y pulso del servicio" loading="lazy" width="1400" height="804">
+      <figcaption><span class="es">Dashboard operacional · una consola sustituye a 3, con sincronización cloud.</span><span class="en">Operations dashboard · one console replaces 3, with cloud sync.</span></figcaption>
+    </figure>
+
+    <div class="itd-block">
+      <div class="itd-headrow itd-headrow--plain">
+        <h3 class="itd-h3"><span class="es">Cada wireframe, una pantalla</span><span class="en">Every wireframe, a screen</span></h3>
+        <span class="itd-eyebrow itd-eyebrow--muted"><span class="es">6 wireframes validados antes de picar código</span><span class="en">6 wireframes validated before writing code</span></span>
+      </div>
+      <div class="itd-wires">
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf01.webp" alt="Wireframe del dashboard operacional" loading="lazy" width="1400" height="940"><span class="itd-tag">01 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui01.webp" alt="Pantalla final del dashboard operacional" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">01 · Detección &lt; 30 s</span><span class="en">01 · Detection &lt; 30 s</span></span><h4><span class="es">Dashboard operacional</span><span class="en">Operations dashboard</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf02.webp" alt="Wireframe de la bandeja de encargos" loading="lazy" width="1400" height="940"><span class="itd-tag">02 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui02.webp" alt="Pantalla final de la bandeja de encargos" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">02 · 0 peticiones extraviadas</span><span class="en">02 · 0 lost requests</span></span><h4><span class="es">Bandeja de encargos</span><span class="en">Request inbox</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf03.webp" alt="Wireframe del detalle de encargo" loading="lazy" width="1400" height="940"><span class="itd-tag">03 · Lo-fi</span></div><div class="itd-wire-final itd-wire-final--empty"><span class="es">Módulo definido en wireframe; no incluido en el prototipo navegable.</span><span class="en">Defined in wireframe; not included in the clickable prototype.</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">03 · Historial inmutable</span><span class="en">03 · Immutable history</span></span><h4><span class="es">Detalle y trazabilidad</span><span class="en">Detail &amp; traceability</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf04.webp" alt="Wireframe de flujos recurrentes" loading="lazy" width="1400" height="940"><span class="itd-tag">04 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">04 · −56,5 h/mes</span><span class="en">04 · −56.5 h/mo</span></span><h4><span class="es">Flujos recurrentes</span><span class="en">Recurring workflows</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf05.webp" alt="Wireframe de aprobaciones operativas" loading="lazy" width="1400" height="940"><span class="itd-tag">05 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui05.webp" alt="Pantalla final de aprobaciones operativas" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">05 · &lt; 1 h (antes 48 h)</span><span class="en">05 · &lt; 1 h (was 48 h)</span></span><h4><span class="es">Aprobaciones</span><span class="en">Approvals</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf06.webp" alt="Wireframe de informes de servicio" loading="lazy" width="1400" height="940"><span class="itd-tag">06 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui06.webp" alt="Pantalla final de informes de servicio" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">06 · MTTR y SLAs</span><span class="en">06 · MTTR &amp; SLAs</span></span><h4><span class="es">Informes de servicio</span><span class="en">Service reports</span></h4></div></article>
+      </div>
+    </div>
+
+    <div class="itd-feature">
+      <div class="itd-col">
+        <span class="itd-label itd-label--accent"><span class="es">El módulo clave · Flujos recurrentes</span><span class="en">Key module · Recurring workflows</span></span>
+        <span class="itd-feature-num">−56,5 h<small>/<span class="es">mes</span><span class="en">mo</span></small></span>
+        <p class="itd-p itd-p--light"><span class="es">Las tareas que se repetían cada mes pasan a ejecutarse solas.</span><span class="en">Tasks that repeated every month now run on their own.</span></p>
+        <ol class="itd-steps3">
+          <li><b>01</b><span class="es">Alta de agentes</span><span class="en">Agent onboarding</span></li>
+          <li><b>02</b><span class="es">Cambio de horario de campaña</span><span class="en">Campaign schedule change</span></li>
+          <li><b>03</b><span class="es">Auditoría de llamada crítica</span><span class="en">Critical call audit</span></li>
+        </ol>
+      </div>
+      <img class="itd-feature-img" src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes con tres automatizaciones activas" loading="lazy" width="1052" height="617">
+    </div>
+  </section>
+
+  <!-- 04 · RESULTADOS -->
+  <section class="itd-section itd-stack itd-stack--md" id="d-resultados" aria-labelledby="itd-h2-resultados">
+    <div class="itd-col">
+      <span class="itd-eyebrow"><span class="es">04 · Resultados</span><span class="en">04 · Results</span></span>
+      <h2 class="itd-h2 itd-h2--xl" id="itd-h2-resultados"><span class="es">Menos Excel, <em>más control</em></span><span class="en">Less Excel, <em>more control</em></span></h2>
+    </div>
+
+    <div class="itd-results">
+      <div class="itd-hours">
+        <div class="itd-hours-head"><span class="itd-hours-title"><span class="es">Horas de trabajo manual al mes</span><span class="en">Manual work hours per month</span></span><span class="itd-pill"><span class="es">Proyección</span><span class="en">Projection</span></span></div>
+        <div class="itd-bar-row"><div class="itd-bar-label"><span><span class="es">Hoy · Excel manual</span><span class="en">Today · manual Excel</span></span><b>56,5 h</b></div><div class="itd-bar itd-bar--before"></div></div>
+        <div class="itd-bar-row"><div class="itd-bar-label itd-bar-label--after"><span><span class="es">Con la herramienta</span><span class="en">With the tool</span></span><b>≈ 17 h</b></div><div class="itd-bar-track"><div class="itd-bar itd-bar--after"></div><div class="itd-bar-rest"></div></div></div>
+        <div class="itd-hours-foot"><span class="itd-hours-val">−70%</span><span class="itd-hours-txt"><span class="es"><strong>≈ 40 h/mes</strong> liberadas para el equipo de IT Ops</span><span class="en"><strong>≈ 40 h/month</strong> freed up for the IT Ops team</span></span></div>
+      </div>
+      <div class="itd-results-side">
+        <div class="itd-facts3">
+          <div><span class="itd-fact-num">6</span><p><span class="es">wireframes validados con el IT Ops Lead</span><span class="en">wireframes validated with the IT Ops Lead</span></p></div>
+          <div><span class="itd-fact-num">52<small> → 6</small></span><p><span class="es">columnas convertidas en módulos</span><span class="en">columns turned into modules</span></p></div>
+          <div><span class="itd-fact-num">3<small> <span class="es">meses</span><span class="en">months</span></small></span><p><span class="es">de discovery a prototipo</span><span class="en">from discovery to prototype</span></p></div>
+        </div>
+        <div class="itd-goals">
+          <div class="itd-hours-head"><span class="itd-goals-title"><span class="es">Objetivos de la propuesta Build</span><span class="en">Build proposal targets</span></span><span class="itd-pill itd-pill--muted"><span class="es">Proyección</span><span class="en">Projection</span></span></div>
+          <div class="itd-goals-grid">
+            <div><span class="itd-goal-num">0</span><p><span class="es">discrepancias de inventario</span><span class="en">inventory discrepancies</span></p></div>
+            <div><span class="itd-goal-num"><small>&lt;</small>3<small>min</small></span><p><span class="es">resolución media de alertas</span><span class="en">average alert resolution</span></p></div>
+            <div><span class="itd-goal-num">100<small>%</small></span><p><span class="es">adopción voluntaria</span><span class="en">voluntary adoption</span></p></div>
+          </div>
+          <p class="itd-note"><span class="es">Definidos con el IT Ops Lead; no se midieron en producción.</span><span class="en">Set with the IT Ops Lead; not measured in production.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="itd-block itd-block--sm">
+      <span class="itd-eyebrow itd-eyebrow--muted"><span class="es">05 · Lo que me llevo</span><span class="en">05 · Key takeaways</span></span>
+      <ol class="itd-learn">
+        <li><b>01</b><div><h4><span class="es">Densidad antes que decoración</span><span class="en">Density over decoration</span></h4><p><span class="es">Un ingeniero quiere datos y atajos de teclado.</span><span class="en">Engineers want data and keyboard shortcuts.</span></p></div></li>
+        <li><b>02</b><div><h4><span class="es">Construir ligero sale más barato</span><span class="en">Building lean costs less</span></h4><p><span class="es">Menos coste y adaptación que personalizar un COTS.</span><span class="en">Lower cost and ramp-up than customising a COTS.</span></p></div></li>
+        <li><b>03</b><div><h4><span class="es">Observar supera a preguntar</span><span class="en">Watching beats asking</span></h4><p><span class="es">El shadowing destapó hábitos que ningún cuestionario recoge.</span><span class="en">Shadowing surfaced habits no survey would capture.</span></p></div></li>
+      </ol>
+    </div>
+
+    <div class="itd-split itd-split--center itd-try">
+      <img src="assets/oracle-mobile/prototype.webp" alt="Prototipo navegable: bandeja de encargos en un portátil" loading="lazy" width="1400" height="804">
+      <div class="itd-col">
+        <span class="itd-eyebrow itd-eyebrow--muted"><span class="es">Pruébalo</span><span class="en">Try it</span></span>
+        <h3 class="itd-h3 itd-h3--lg"><span class="es">El prototipo, <em>navegable</em></span><span class="en">The prototype, <em>clickable</em></span></h3>
+        <p class="itd-p"><span class="es">Recorre la bandeja de encargos, las aprobaciones y los flujos recurrentes.</span><span class="en">Explore the request inbox, approvals and recurring workflows.</span></p>
+        <a class="itd-btn itd-btn--accent itd-btn--lg" href="https://it-ops-oracle-prototype-design.vercel.app" target="_blank" rel="noopener"><span class="es">Abrir prototipo ↗</span><span class="en">Open prototype ↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE · siguiente caso + paginado (sin nada fijo) -->
+  <section class="itd-close" aria-label="Siguiente caso y paginado">
+    <a class="itd-next" href="gym-energy-center.html">
+      <span class="itd-next-body">
+        <span class="itd-label"><span class="es">Siguiente caso · 05</span><span class="en">Next case · 05</span></span>
+        <span class="itd-next-title">Gym Energy Center</span>
+        <span class="itd-next-sub"><span class="es">UX Research y hábitos</span><span class="en">UX research &amp; habits</span></span>
+      </span>
+      <span class="itd-next-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+    </a>
+    <div class="itd-pager">
+      <span class="itd-label"><span class="es">¿Vemos otro proyecto?</span><span class="en">Want to see another project?</span></span>
+      <nav class="itd-pager-nav" aria-label="Navegación entre casos">
+        <a class="itd-pager-arrow" href="paolo-pizzeria.html" aria-label="Caso anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+        <a class="itd-pager-dot" href="cef-design-system.html" aria-label="Caso 01">01</a>
+        <a class="itd-pager-dot" href="ilunion-cro.html" aria-label="Caso 02">02</a>
+        <a class="itd-pager-dot" href="paolo-pizzeria.html" aria-label="Caso 03">03</a>
+        <a class="itd-pager-dot is-current" href="it-ops-oracle.html" aria-label="Caso 04, actual" aria-current="page">04</a>
+        <a class="itd-pager-dot" href="gym-energy-center.html" aria-label="Caso 05">05</a>
+        <a class="itd-pager-arrow" href="gym-energy-center.html" aria-label="Caso siguiente"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+      </nav>
+      <a class="itd-pager-index" href="index.html#work"><span class="es">Volver al índice</span><span class="en">Back to index</span></a>
+    </div>
+  </section>
+</div>
+<!-- ============ /VERSIÓN DESKTOP ============ -->
+
 
 <!-- ============ 1 · HERO & FICHA ============ -->
 <section class="cs-hero" id="overview">
@@ -1137,7 +1384,7 @@
     <a href="gym-energy-center.html" class="cs-next-compact-card reveal">
       <div class="cs-next-compact-left">
         <div class="cs-next-thumb">
-          <img src="projects/06-gym/assets/app-mockup.webp" alt="Gym Energy Center" loading="lazy">
+          <img src="assets/gym-mobile/m-home.png" alt="Gym Energy Center" loading="lazy">
         </div>
         <div>
           <div class="cs-next-compact-meta"><span class="es">Siguiente caso · 05</span><span class="en">Next case · 05</span></div>
@@ -1325,6 +1572,7 @@
   <a href="mailto:mmoralesgr93@gmail.com" class="cs-mobile-cta-btn es">Agendar llamada</a>
   <a href="mailto:mmoralesgr93@gmail.com" class="cs-mobile-cta-btn en">Schedule Call</a>
 </div>
+<script src="it-ops-desktop.js?v=20261015"></script>
 <script src="case-study-mobile.js?v=20261015_rev3"></script>
 <script src="chatbot.js?v=20261014_rev2"></script>
 
