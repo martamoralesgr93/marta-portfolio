@@ -2436,17 +2436,25 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
 /* ============ TRAYECTORIA / MAPA DE PROYECTOS (ESTILO CASO 01 UNIFICADO) ============ */
 .cs-ide-tl-section {
   display: block !important;
-  width: min(1440px, 94%);
-  margin: 0 auto;
-  padding: clamp(60px, 7vw, 100px) clamp(16px, 2.5vw, 32px) clamp(40px, 5vw, 60px);
+  opacity: 1 !important;
+  transform: none !important;
+  width: min(1200px, 100% - 48px) !important;
+  margin: 0 auto !important;
+  padding: clamp(60px, 7vw, 96px) 0 clamp(40px, 5vw, 60px) !important;
   box-sizing: border-box;
   clear: both;
 }
 .next {
   display: block !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 .cs-pagination-section {
   display: block !important;
+  opacity: 1 !important;
+  transform: none !important;
+  width: 100% !important;
+  clear: both;
 }
 .ide-split {
   display: flex;
@@ -2556,7 +2564,7 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   color: #a78bfa;
 }
 .ide-tl-name {
-  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
   font-size: 17px;
   font-weight: 700;
   color: #fff;

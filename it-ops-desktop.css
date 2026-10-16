@@ -12,8 +12,6 @@
   /* --- Intercambio de capas: en desktop se muestra .itd y se oculta el resto de <main> --- */
   .itd { display: block; }
   main > *:not(.itd),
-  #cs-next,
-  .cs-pagination-section,
   .cs-mobile-bottom-bar { display: none !important; }
 
   .itd {
