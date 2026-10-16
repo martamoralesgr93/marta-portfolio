@@ -314,7 +314,10 @@
   .ide-tldr30 li.is-accent .ide-eyebrow, .ide-tldr30 li.is-accent .ide-num { color: #a78bfa; }
   .ide-tldr30 p { margin: 0; font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.7); }
   .ide-tldr30 li.is-accent p { color: rgba(255,255,255,.85); }
-  .ide-num { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: 56px; line-height: 1; color: rgba(255,255,255,.85); }
+  .ide-num { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 800; font-size: clamp(34px, 3vw, 48px); line-height: 1.05; color: rgba(255,255,255,.85); }
+  .ide-num--word,
+  .ide-tldr30 li:nth-child(2) .ide-num,
+  .ide-tldr30 li:nth-child(3) .ide-num { font-size: clamp(22px, 2.1vw, 30px); letter-spacing: -0.01em; }
   .ide-tldr30 li.is-accent .ide-num { color: #a78bfa; }
 
   .ide-stat { padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px; }
@@ -400,8 +403,8 @@
   .ide-fric3-row.is-loyal { background: rgba(249,115,22,.07); border-color: rgba(249,115,22,.35); }
   .ide-fric3-row.is-loyal .ide-fric3-n { color: #f97316; }
 
-  .ide-exp-grid { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 2.6fr); gap: 16px; align-items: stretch; }
-  .ide-exp-fig { margin: 0; padding: 22px; border-radius: 24px; display: flex; flex-direction: column; gap: 16px; }
+  .ide-exp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+  .ide-exp-fig { margin: 0; padding: 26px; border-radius: 24px; display: flex; flex-direction: column; gap: 18px; justify-content: space-between; }
   .ide-exp-fig.is-before { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); }
   .ide-exp-fig.is-after { background: radial-gradient(ellipse at 50% 55%, rgba(124,58,237,.2), rgba(124,58,237,0) 65%), rgba(255,255,255,.02); border: 1px solid rgba(167,139,250,.35); }
   .ide-exp-fig img { display: block; width: 100%; height: auto; background: transparent; }
@@ -448,23 +451,31 @@
   .ide-rank li.is-task { background: rgba(167,139,250,.1); border-color: rgba(167,139,250,.38); }
   .ide-rank li.is-task b { color: #a78bfa; }
 
-  .ide-proc2 { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.55fr); gap: 16px; align-items: stretch; }
-  .ide-proc-card { padding: 22px; border-radius: 24px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 18px; }
+  /* Breakpoint switcher · Proceso wireframe a producción */
+  .ide-bp-switcher { display: inline-flex; align-items: center; gap: 6px; padding: 6px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; margin-bottom: 20px; }
+  .ide-bp-btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.7); background: transparent; border: 1px solid transparent; cursor: pointer; transition: all .2s ease; }
+  .ide-bp-btn:hover { color: #fff; background: rgba(255,255,255,.06); }
+  .ide-bp-btn[aria-pressed="true"], .ide-bp-btn.is-active { color: #0b0614; background: #a78bfa; border-color: #a78bfa; box-shadow: 0 2px 14px rgba(167,139,250,.35); font-weight: 700; }
+  .ide-bp-panel { display: none; width: 100%; animation: ideBpFadeIn .25s ease; }
+  .ide-bp-panel.is-active { display: block; }
+  @keyframes ideBpFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .ide-proc-card { width: 100%; box-sizing: border-box; padding: 28px; border-radius: 24px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 22px; }
   .ide-proc-card-head { display: flex; align-items: center; justify-content: space-between; }
-  .ide-proc-card-head span:first-child { font-size: 16px; font-weight: 600; color: #fff; }
+  .ide-proc-card-head span:first-child { font-size: 17px; font-weight: 600; color: #fff; }
   .ide-proc-card-head span:last-child { font-size: 12px; color: rgba(255,255,255,.55); }
-  .ide-proc-imgs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; align-items: start; }
-  .ide-proc-imgs.is-desktop { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
-  .ide-proc-img-wrap { position: relative; }
+  .ide-proc-imgs { display: grid; gap: 20px; align-items: start; }
+  .ide-proc-imgs--mobile { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; margin: 0 auto; width: 100%; }
+  .ide-proc-imgs--desktop { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .ide-proc-img-wrap { position: relative; border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.08); }
   .ide-proc-img-wrap img { display: block; width: 100%; height: auto; border-radius: 12px; background: transparent; }
   .ide-proc-img-wrap.is-final img { box-shadow: none; }
-  .ide-proc-tag { position: absolute; left: 8px; top: 8px; padding: 3px 8px; border-radius: 999px; background: rgba(0,0,0,.7); color: #fff; font-size: 10px; font-weight: 700; border: 1px solid rgba(255,255,255,.2); }
+  .ide-proc-tag { position: absolute; left: 10px; top: 10px; padding: 4px 10px; border-radius: 999px; background: rgba(0,0,0,.75); color: #fff; font-size: 11px; font-weight: 700; border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(4px); }
   .ide-proc-tag.is-final { background: #a78bfa; color: #0b0614; border: none; }
-  .ide-proc-list { margin: auto 0 0; padding: 14px 0 0; list-style: none; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(255,255,255,.1); }
-  .ide-proc-list.is-desktop { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
-  .ide-proc-list li { display: flex; gap: 10px; font-size: 14px; color: rgba(255,255,255,.8); }
-  .ide-proc-list b { font-weight: 700; color: #a78bfa; }
-  .ide-proc-list b.is-loyal { color: #f97316; }
+  .ide-proc-list { margin: 0; padding: 18px 0 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; border-top: 1px solid rgba(255,255,255,.1); }
+  .ide-proc-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,.8); }
+  .ide-proc-list b { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #a78bfa; flex-shrink: 0; }
+  .ide-proc-list b.is-loyal { background: rgba(249,115,22,.15); color: #f97316; }
 
   .ide-fitts { padding: 32px; border-radius: 28px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); display: grid; grid-template-columns: minmax(260px, 360px) minmax(0, 1fr); gap: 48px; align-items: center; }
   .ide-fitts-media .ide-phone-frame { width: 100%; background: transparent; border: 1px solid rgba(255,255,255,.16); }
@@ -537,9 +548,8 @@
 }
 @media (min-width: 769px) and (max-width: 1100px) {
   .ide-hero-media { height: auto; aspect-ratio: 600/460; }
-  .ide-facts { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .ide-exp-grid, .ide-order, .ide-ice-row, .ide-proc2, .ide-fitts, .ide-results, .ide-piece, .ide-persona-grid { grid-template-columns: 1fr; }
-  .ide-proc-imgs.is-desktop { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ide-exp-grid, .ide-order, .ide-ice-row, .ide-fitts, .ide-results, .ide-piece, .ide-persona-grid { grid-template-columns: 1fr; }
+  .ide-proc-imgs--mobile, .ide-proc-imgs--desktop { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .ide-order-arrow { padding-top: 0; }
   .ide-tl { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
@@ -854,7 +864,7 @@
     <ol class="ide-tldr30">
       <li><span class="ide-eyebrow"><span class="es">Problema</span><span class="en">Problem</span></span><span class="ide-num"><span class="es">3,36%</span><span class="en">3.36%</span></span><p><span class="es">de conversión con el motor enterrado bajo promociones.</span><span class="en">conversion, with the booking engine buried under promotions.</span></p></li>
       <li><span class="ide-eyebrow"><span class="es">Iniciativa 1 · Experimento</span><span class="en">Initiative 1 · Experiment</span></span><span class="ide-num"><span class="es">Motor</span><span class="en">Engine</span></span><p><span class="es">Un selector de destino que derivó tráfico. Funcionó y se retiró.</span><span class="en">A destination selector that redirected traffic. It worked, then was retired.</span></p></li>
-      <li><span class="ide-eyebrow"><span class="es">Iniciativa 2 · En producción</span><span class="en">Initiative 2 · Live</span></span><span class="ide-num"><span class="es">Recomponer</span><span class="en">Recompose</span></span><p><span class="es">Motor y ventaja de socio antes que el escaparate.</span><span class="en">Booking engine and member perk ahead of the showcase.</span></p></li>
+      <li><span class="ide-eyebrow"><span class="es">Iniciativa 2 · En producción</span><span class="en">Initiative 2 · Live</span></span><span class="ide-num ide-num--word"><span class="es">Recomponer</span><span class="en">Recompose</span></span><p><span class="es">Motor y ventaja de socio antes que el escaparate.</span><span class="en">Booking engine and member perk ahead of the showcase.</span></p></li>
       <li class="is-accent"><span class="ide-eyebrow"><span class="es">Impacto medido · test A/B</span><span class="en">Measured impact · A/B test</span></span><span class="ide-num"><span class="es">6,5%</span><span class="en">6.5%</span></span><p><span class="es">×1,9 la conversión · p &lt; 0,05 · <strong class="is-loyal">50% de socios ÚNICOS</strong></span><span class="en">×1.9 conversion · p &lt; 0.05 · <strong class="is-loyal">50% from ÚNICOS members</strong></span></p></li>
     </ol>
   </section>
@@ -1057,13 +1067,41 @@
     </div>
 
     <div class="ide-col">
-      <div class="ide-headrow"><h3 class="ide-h3"><span class="es">Dos breakpoints, <em>el mismo orden</em></span><span class="en">Two breakpoints, <em>the same order</em></span></h3><span class="ide-eyebrow"><span class="es">Proceso · de wireframe a producción</span><span class="en">Process · from wireframe to production</span></span></div>
-      <div class="ide-proc2">
+      <div class="ide-headrow">
+        <div>
+          <h3 class="ide-h3"><span class="es">Dos breakpoints, <em>el mismo orden</em></span><span class="en">Two breakpoints, <em>the same order</em></span></h3>
+          <p class="ide-p" style="font-size:14px; margin-top:4px;"><span class="es">El wireframe fijó la secuencia de componentes en AEM. Producción respetó ese orden en ambos dispositivos.</span><span class="en">The wireframe set the component sequence in AEM. Production respected that order across both devices.</span></p>
+        </div>
+        <span class="ide-eyebrow"><span class="es">Proceso · de wireframe a producción</span><span class="en">Process · from wireframe to production</span></span>
+      </div>
+
+      <div class="ide-bp-switcher" role="group" aria-label="Elegir breakpoint para ver el proceso">
+        <button type="button" class="ide-bp-btn is-active" data-ide-bp="mobile" aria-pressed="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          <span>Mobile (Wireframe → Producción)</span>
+        </button>
+        <button type="button" class="ide-bp-btn" data-ide-bp="desktop" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span>Desktop (Wireframe → Producción)</span>
+        </button>
+      </div>
+
+      <!-- PANEL MOBILE (FULL WIDTH) -->
+      <div class="ide-bp-panel is-active" data-ide-panel="mobile">
         <article class="ide-proc-card">
-          <div class="ide-proc-card-head"><span>Mobile</span><span><span class="es">Wireframe → Producción</span><span class="en">Wireframe → Production</span></span></div>
-          <div class="ide-proc-imgs">
-            <div class="ide-proc-img-wrap"><img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-mobile%201.png" alt="Wireframe móvil: carrusel de oferta con botón Reserva, bloque ÚNICOS con Lo quiero y buscador fijo abajo" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag">Lo-fi</span></div>
-            <div class="ide-proc-img-wrap is-final"><img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.png" alt="Móvil en producción: oferta Te mereces más con Reserva ya y debajo el bloque ÚNICOS" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span></div>
+          <div class="ide-proc-card-head">
+            <span><span class="es">Mobile · Wireframe de baja fidelidad frente a Producción final</span><span class="en">Mobile · Lo-fi Wireframe vs Final Production</span></span>
+            <span class="ide-tag"><span class="es">Breakpoint Móvil</span><span class="en">Mobile Breakpoint</span></span>
+          </div>
+          <div class="ide-proc-imgs ide-proc-imgs--mobile">
+            <div class="ide-proc-img-wrap">
+              <img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-mobile%201.png" alt="Wireframe móvil: carrusel de oferta con botón Reserva, bloque ÚNICOS con Lo quiero y buscador fijo abajo" width="1920" height="1440" loading="lazy">
+              <span class="ide-proc-tag">Lo-fi</span>
+            </div>
+            <div class="ide-proc-img-wrap is-final">
+              <img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.png" alt="Móvil en producción: oferta Te mereces más con Reserva ya y debajo el bloque ÚNICOS" width="1920" height="1440" loading="lazy">
+              <span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span>
+            </div>
           </div>
           <ol class="ide-proc-list">
             <li><b>1</b><span class="es">Oferta con botón «Reserva»</span><span class="en">Offer with “Book” button</span></li>
@@ -1071,13 +1109,26 @@
             <li><b>3</b><span class="es">Buscador fijo abajo</span><span class="en">Search pinned to the bottom</span></li>
           </ol>
         </article>
+      </div>
+
+      <!-- PANEL DESKTOP (FULL WIDTH) -->
+      <div class="ide-bp-panel" data-ide-panel="desktop">
         <article class="ide-proc-card">
-          <div class="ide-proc-card-head"><span>Desktop</span><span><span class="es">Wireframe → Producción</span><span class="en">Wireframe → Production</span></span></div>
-          <div class="ide-proc-imgs is-desktop">
-            <div class="ide-proc-img-wrap"><img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-desk%201.png" alt="Wireframe desktop: hero con motor de reservas integrado, debajo oferta y bloque ÚNICOS lado a lado" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag">Lo-fi</span></div>
-            <div class="ide-proc-img-wrap is-final"><img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.png" alt="Desktop en producción: motor de reservas arriba, oferta Mejor con tiempo y bloque ÚNICOS lado a lado" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span></div>
+          <div class="ide-proc-card-head">
+            <span><span class="es">Desktop · Wireframe de baja fidelidad frente a Producción final</span><span class="en">Desktop · Lo-fi Wireframe vs Final Production</span></span>
+            <span class="ide-tag"><span class="es">Breakpoint Desktop</span><span class="en">Desktop Breakpoint</span></span>
           </div>
-          <ol class="ide-proc-list is-desktop">
+          <div class="ide-proc-imgs ide-proc-imgs--desktop">
+            <div class="ide-proc-img-wrap">
+              <img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-desk%201.png" alt="Wireframe desktop: hero con motor de reservas integrado, debajo oferta y bloque ÚNICOS lado a lado" width="1920" height="1440" loading="lazy">
+              <span class="ide-proc-tag">Lo-fi</span>
+            </div>
+            <div class="ide-proc-img-wrap is-final">
+              <img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.png" alt="Desktop en producción: motor de reservas arriba, oferta Mejor con tiempo y bloque ÚNICOS lado a lado" width="1920" height="1440" loading="lazy">
+              <span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span>
+            </div>
+          </div>
+          <ol class="ide-proc-list">
             <li><b>1</b><span class="es">Hero con motor de reservas</span><span class="en">Hero with booking engine</span></li>
             <li><b>2</b><span class="es">Oferta en carrusel</span><span class="en">Offer carousel</span></li>
             <li><b class="is-loyal">3</b><span class="es">Bloque ÚNICOS al lado</span><span class="en">ÚNICOS block alongside</span></li>
@@ -1647,110 +1698,64 @@
       <div class="learn-card reveal"><span class="label">03</span><h3><span class="es">Qué haría diferente</span><span class="en">What I'd do differently</span></h3><p><span class="es">Validar antes el selector móvil con tests de usabilidad moderados.</span><span class="en">Validate the mobile picker earlier with moderated usability tests.</span></p></div>
     </div>
 
-    <!-- ============ MAPA GLOBAL DE PROYECTOS ============ -->
-    <div class="cs-global-journey reveal" aria-label="Trayectoria global a través de mis proyectos">
-      <div class="cs-journey-header">
-        <span class="cs-journey-eyebrow">
-          <span class="es">Trayectoria global · Mapa de proyectos</span>
-          <span class="en">Global Journey · Portfolio Roadmap</span>
-        </span>
-        <h3 class="cs-journey-title">
-          <span class="es">Mi evolución profesional a través de <em>todos mis proyectos</em></span>
-          <span class="en">My product craft evolution across <em>all my projects</em></span>
-        </h3>
-        <p class="cs-journey-desc">
-          <span class="es">Cada caso de mi portfolio representa un salto de madurez: de la investigación cualitativa inicial al diseño que mueve métricas de negocio y la creación de sistemas a escala.</span>
-          <span class="en">Each case in my portfolio marks a leap in maturity: from early user research to business metrics and scalable design systems.</span>
-        </p>
-      </div>
-
-      <div class="cs-journey-timeline">
-        <!-- 01 PAOLO -->
-        <a href="paolo-pizzeria.html" class="cs-journey-step">
-          <div class="cs-journey-step-top">
-            <span class="cs-journey-num">01</span>
-            <span class="cs-journey-badge es">Producto 0→1</span>
-            <span class="cs-journey-badge en">Product 0→1</span>
-          </div>
-          <h4 class="cs-journey-name">Paolo Pizzeria</h4>
-          <div class="cs-journey-meta es">2020–22 · Rev. 2026</div>
-          <div class="cs-journey-meta en">2020–22 · Rev. 2026</div>
-          <div class="cs-journey-role es">Diseño integral &amp; Producto 0 a 1</div>
-          <div class="cs-journey-role en">End-to-End &amp; 0-to-1 Product</div>
-          <p class="cs-journey-text es">Ecosistema omnicanal: delivery web, carta digital interactiva, packaging y escalado a 5 locales.</p>
-          <p class="cs-journey-text en">Omnichannel ecosystem: direct delivery web, interactive menu, physical packaging, and scaling across 5 branches.</p>
-          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-
-        <!-- 02 ORACLE -->
-        <a href="it-ops-oracle.html" class="cs-journey-step">
-          <div class="cs-journey-step-top">
-            <span class="cs-journey-num">02</span>
-            <span class="cs-journey-badge es">Discovery B2B</span>
-            <span class="cs-journey-badge en">B2B Discovery</span>
-          </div>
-          <h4 class="cs-journey-name">IT Ops &amp; Oracle ERP</h4>
-          <div class="cs-journey-meta es">2022–24 · Rev. 2026</div>
-          <div class="cs-journey-meta en">2022–24 · Rev. 2026</div>
-          <div class="cs-journey-role es">Discovery contextual &amp; Diagnóstico B2B</div>
-          <div class="cs-journey-role en">Contextual Discovery &amp; B2B Diagnosis</div>
-          <p class="cs-journey-text es">Shadowing con técnicos, service blueprinting, análisis Build vs. Buy y reducción de 45 a 8 min por ticket.</p>
-          <p class="cs-journey-text en">Technician shadowing, service blueprinting, Build vs. Buy analysis, cutting ticket resolution from 45m to 8m.</p>
-          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-
-        <!-- 03 GYM -->
-        <a href="gym-energy-center.html" class="cs-journey-step">
-          <div class="cs-journey-step-top">
-            <span class="cs-journey-num">03</span>
-            <span class="cs-journey-badge es">UX Research</span>
-            <span class="cs-journey-badge en">UX Research</span>
-          </div>
-          <h4 class="cs-journey-name">Gym Energy Center</h4>
-          <div class="cs-journey-meta es">Bootcamp · 2024 · Rev. 2026</div>
-          <div class="cs-journey-meta en">Bootcamp · 2024 · Rev. 2026</div>
-          <div class="cs-journey-role es">UX Research cualitativo &amp; Hábitos</div>
-          <div class="cs-journey-role en">Qualitative UX Research &amp; Habits</div>
-          <p class="cs-journey-text es">16 entrevistas contextuales, mapeo de modelos conductuales (Hooked), prototipado y validación de hábitos.</p>
-          <p class="cs-journey-text en">16 contextual interviews, behavioural habit models (Hooked), rapid prototyping, and habit loop validation.</p>
-          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-
-        <!-- 04 CEF -->
-        <a href="cef-design-system.html" class="cs-journey-step">
-          <div class="cs-journey-step-top">
-            <span class="cs-journey-num">04</span>
-            <span class="cs-journey-badge es">Design System</span>
-            <span class="cs-journey-badge en">Design System</span>
-          </div>
-          <h4 class="cs-journey-name">CEF EdTech</h4>
-          <div class="cs-journey-meta es">Jun–Sep 2024 · Rev. 2026</div>
-          <div class="cs-journey-meta en">Jun–Sep 2024 · Rev. 2026</div>
-          <div class="cs-journey-role es">Design Systems &amp; WCAG AA</div>
-          <div class="cs-journey-role en">Design Systems &amp; WCAG AA</div>
-          <p class="cs-journey-text es">80+ componentes multidispositivo, tokens multimarca y gobernanza transversal diseño-frontend.</p>
-          <p class="cs-journey-text en">80+ multi-device components, multi-brand design tokens, and cross-team design-dev governance.</p>
-          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-
-        <!-- 05 ILUNION (CURRENT) -->
-        <div class="cs-journey-step is-current">
-          <div class="cs-journey-step-top">
-            <span class="cs-journey-num">05</span>
-            <span class="cs-journey-badge is-active es">Estás aquí</span>
-            <span class="cs-journey-badge is-active en">Current</span>
-          </div>
-          <h4 class="cs-journey-name">ILUNION Hotels CRO</h4>
-          <div class="cs-journey-meta es">Sep 2024–Act. · Producción</div>
-          <div class="cs-journey-meta en">Sep 2024–Pres. · In Prod</div>
-          <div class="cs-journey-role es">CRO &amp; Experimentación A/B</div>
-          <div class="cs-journey-role en">CRO &amp; A/B Experimentation</div>
-          <p class="cs-journey-text es">10.000+ logs analizados, tests A/B en Adobe AEM y subida del 3,36% al 6,5% con significancia estadística.</p>
-          <p class="cs-journey-text en">10k+ logs analyzed, A/B testing in Adobe AEM, lifting conversion from 3.36% to 6.5% with statistical significance.</p>
-          <span class="cs-journey-link is-active"><span class="es">Caso actual</span><span class="en">Current case</span></span>
+    <!-- ============ TRAYECTORIA / MAPA DE PROYECTOS ============ -->
+    <section class="cs-ide-tl-section reveal">
+      <div class="ide-split ide-split--end">
+        <div class="ide-col" style="gap:10px">
+          <span class="ide-eyebrow"><span class="es">Trayectoria · mapa de proyectos</span><span class="en">Journey · project map</span></span>
+          <h3 class="ide-h3" style="font-size:34px"><span class="es">Mi evolución a través de los proyectos</span><span class="en">My growth across the projects</span></h3>
         </div>
+        <p class="ide-tl-desc"><span class="es">De la investigación cualitativa inicial al diseño que mueve métricas de negocio y a los sistemas a escala.</span><span class="en">From early qualitative research to design that moves business metrics and to systems at scale.</span></p>
       </div>
-    </div>
+      <ol class="ide-tl">
+        <li class="ide-tl-line" aria-hidden="true"></li>
+        <li class="ide-tl-item">
+          <span class="ide-tl-dot"></span>
+          <a class="ide-tl-card" href="paolo-pizzeria.html">
+            <span class="ide-tl-kicker">2020–22 · Rev. 2026</span>
+            <span class="ide-tl-name">Paolo Pizzeria</span>
+            <span class="ide-tl-sub"><span class="es">Diseño integral de producto 0 a 1</span><span class="en">End-to-end 0-to-1 product design</span></span>
+            <span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span>
+          </a>
+        </li>
+        <li class="ide-tl-item">
+          <span class="ide-tl-dot"></span>
+          <a class="ide-tl-card" href="it-ops-oracle.html">
+            <span class="ide-tl-kicker">2022–24 · Rev. 2026</span>
+            <span class="ide-tl-name">IT Ops &amp; Oracle ERP</span>
+            <span class="ide-tl-sub"><span class="es">Discovery contextual y diagnóstico B2B</span><span class="en">Contextual discovery &amp; B2B diagnosis</span></span>
+            <span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span>
+          </a>
+        </li>
+        <li class="ide-tl-item">
+          <span class="ide-tl-dot"></span>
+          <a class="ide-tl-card" href="gym-energy-center.html">
+            <span class="ide-tl-kicker">2024 · Rev. 2026</span>
+            <span class="ide-tl-name">Gym Energy Center</span>
+            <span class="ide-tl-sub"><span class="es">UX Research cualitativo y hábitos</span><span class="en">Qualitative UX research &amp; habits</span></span>
+            <span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span>
+          </a>
+        </li>
+        <li class="ide-tl-item">
+          <span class="ide-tl-dot"></span>
+          <a class="ide-tl-card" href="cef-design-system.html">
+            <span class="ide-tl-kicker">Jun–Sep 2024 · Rev. 2026</span>
+            <span class="ide-tl-name">CEF EdTech</span>
+            <span class="ide-tl-sub"><span class="es">Design System y accesibilidad WCAG AA</span><span class="en">Design System &amp; WCAG AA accessibility</span></span>
+            <span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span>
+          </a>
+        </li>
+        <li class="ide-tl-item">
+          <span class="ide-tl-dot is-current"></span>
+          <div class="ide-tl-card is-current">
+            <span class="ide-tl-kicker"><span class="es">Sep 2024–Act. · Estás aquí</span><span class="en">Sep 2024–Pres. · You are here</span></span>
+            <span class="ide-tl-name">ILUNION Hotels CRO</span>
+            <span class="ide-tl-sub"><span class="es">Diseño que mueve negocio y testing A/B</span><span class="en">Design that drives business &amp; A/B testing</span></span>
+            <span class="ide-tl-link"><span class="es">Caso actual</span><span class="en">Current case</span></span>
+          </div>
+        </li>
+      </ol>
+    </section>
   </div>
 </section>
 
@@ -1759,7 +1764,8 @@
 <!-- ============ 14 · SIGUIENTE CASO ============ -->
 <a href="cef-design-system.html" class="next" id="cs-next">
   <div class="wrap">
-    <small><span class="es">Siguiente caso · 02</span><span class="en">Next case · 02</span></small>
+    <span class="label es">Siguiente caso · 02 / 05</span>
+    <span class="label en">Next case · 02 / 05</span>
     <h2><span><span class="es">CEF EdTech · Design System</span><span class="en">CEF EdTech · Design System</span></span><span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4L15 9L10 14" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
   </div>
 </a>
@@ -1831,6 +1837,24 @@
       seg.querySelectorAll('button[data-bp]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
       wrap.querySelectorAll('[data-bp-panel]').forEach(p => p.classList.toggle('is-on', p.dataset.bpPanel === b.dataset.bp));
     }));
+  });
+
+  // ILUNION · selector Mobile / Desktop (proceso, desktop)
+  document.querySelectorAll('.ide-bp-switcher').forEach(switcher => {
+    const parentCol = switcher.closest('.ide-col') || switcher.parentElement;
+    switcher.querySelectorAll('button[data-ide-bp]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.ideBp;
+        switcher.querySelectorAll('button[data-ide-bp]').forEach(b => {
+          const isActive = (b === btn);
+          b.setAttribute('aria-pressed', String(isActive));
+          b.classList.toggle('is-active', isActive);
+        });
+        parentCol.querySelectorAll('[data-ide-panel]').forEach(panel => {
+          panel.classList.toggle('is-active', panel.dataset.idePanel === target);
+        });
+      });
+    });
   });
 
   // Panel destacado de casos
