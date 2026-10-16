@@ -45,17 +45,25 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 
 ## Experiencia
 
-### ¿En qué empresas ha trabajado?
-Actualmente ILUNION Hotels (Negocio Digital). Antes, frontend y marketing digital, y un design system para CEF. `[CONFIRMAR — Marta]` nombres y fechas. → `experience.es.md`.
+### ¿En qué empresas ha trabajado y cuál es su cronología?
+- **Sep 2024 – Actualidad:** Product Designer & CRO en **ILUNION Hotels** (Caso 01).
+- **Jun 2024 – Sep 2024:** Product Designer en **CEF · Centro de Estudios Financieros** (Caso 02, evolucionado en 2026 con Figma MCP).
+- **2024:** Especialización intensiva en **Neoland** (Bootcamp Product Design & Frontend, donde nace el MVP en equipo de **Gym Energy Center**, Caso 04, reconceptualizado en 2026 con IA).
+- **Jul 2020 – May 2024:** UX/UI Designer en **We Are Actions** (4 años en consultoría digital; aquí nacen **Oracle ERP & IT Ops** en `2022–2024`, Caso 03, y **Paolo by Danny's Jazz** en `2020–2022`, Caso 05, ambos evolucionados en 2026). → `experience.es.md`.
 
 ### ¿Con qué productos?
-El canal de venta directa de ILUNION (reserva hotelera); un design system completo (CEF); una herramienta B2B interna de IT (Oracle, formación). → `experience.es.md`, `projects/*`.
+Los 5 casos seleccionados en orden `01 → 05`:
+1. **01 · ILUNION Hotels CRO** (`Sep 2024–Actualidad`): canal de venta directa y motor de reservas de 32 hoteles (conversión 3,36% → 6,5%).
+2. **02 · CEF Design System** (`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
+3. **03 · IT Ops & Oracle ERP** (`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas`): diagnóstico Build vs. Buy en 4 módulos.
+4. **04 · Gym Energy Center** (`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA`): framework de 3 pilares en equipo de 8 personas.
+5. **05 · Paolo Pizzeria** (`Origen: 2020–2022 Producto 0→1 · Evolución 2026: IA & Reservas`): ecosistema digital que escaló de 1 a 5 locales sin rediseño.
 
 ### ¿Con qué usuarios?
-Viajeros de ocio 35–65 (ILUNION), usuarios técnicos B2B (Oracle), con accesibilidad WCAG 2.1 AA como constante. → `experience.es.md`.
+Viajeros de ocio y corporativos (ILUNION), estudiantes y docentes EdTech (CEF), técnicos de soporte IT B2B (Oracle), usuarios de fitness (Gym Energy Center) y comensales de delivery/restauración (Paolo), con accesibilidad WCAG 2.1 AA como constante. → `experience.es.md`.
 
 ### ¿Con qué equipos?
-Equipo de Negocio Digital mayoritariamente backend; transversal con marketing, analítica, desarrollo, CRO y agencias. → `collaboration.es.md`.
+Equipo de Negocio Digital mayoritariamente backend en ILUNION y 7 desarrolladores backend en We Are Actions; transversal con marketing, analítica, desarrollo, CRO y agencias. → `collaboration.es.md`.
 
 ## Producto
 

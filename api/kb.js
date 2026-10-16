@@ -15,11 +15,10 @@ Content:
 
 ## Formación
 
-- **Bootcamp de UX/UI & Product Design — Neoland.** El punto de inflexión que consolidó su giro hacia el diseño de producto (el proyecto \`proj-paolo\` se desarrolló en este contexto).
-- **Formación universitaria en Comunicación Audiovisual**, con posterior especialización en diseño digital y producto. Aporta la base narrativa y de comunicación visual de su perfil.
-- Trayectoria profesional previa en **marketing digital** y **frontend**, base de su perfil actual. → detalle en \`career.es.md\`.
-
-> Año del bootcamp y denominación exacta del título universitario: en validación (metadato \`pending_validation\`). El hecho formativo está confirmado.
+- **Bootcamp Digital Product Design & Frontend Development — Neoland (2024).** Especialización intensiva de puente hacia sistemas de diseño y producto corporativo tras 4 años en consultoría digital. Aquí lideró el research, la arquitectura de producto (framework de 3 pilares) y el Design System en un equipo de 8 personas para el MVP **Gym Energy Center** (Caso 04, reconceptualizado en 2026 con IA).
+- **Máster Universitario en Formación del Profesorado — Universidad CEU San Pablo (2022–2023).** Compatibilizado con su etapa profesional en We Are Actions.
+- **Grado en Bellas Artes (Especialidad en Diseño Gráfico, Web e Interfaces) — Universitat Politècnica de València, UPV (2016–2020).** Base visual, tipográfica y de diseño de interfaces.
+- Trayectoria profesional continua desde **julio de 2020** en consultoría digital (**We Are Actions**, 2020–2024), EdTech (**CEF**, Jun–Sep 2024) y hospitality (**ILUNION Hotels**, Sep 2024–Actualidad). → detalle en \`career.es.md\` y \`experience.es.md\`.
 
 ## Certificaciones
 \`[PENDIENTE — Marta]\` Certificaciones relevantes si las hay (UX, analítica/Adobe Analytics, accesibilidad, IA, Scrum…). Dado tu uso avanzado de Adobe Analytics y CRO, una certificación en analítica sería una credencial natural — si la tienes, va aquí.
@@ -170,56 +169,23 @@ Answers: - "¿De dónde viene Marta profesionalmente?"
   - "¿Cómo influye su trayectoria en su forma de diseñar?"
 Tags: [career, evolution, journey, marketing, frontend, product-design, growth, t-shaped, business, technical, audiovisual, neoland]
 Content:
-# Evolución profesional
+# Evolución profesional (2016–2026)
 
-> Responde a *"¿de dónde viene Marta y por qué diseña como diseña?"*. Mi evolución no es una acumulación de trabajos: es la razón por la que hoy uno negocio, técnica y diseño en un mismo perfil. Los años exactos de cada transición están en validación (metadato \`pending_validation\`); el arco es completo.
+> Responde a *"¿de dónde viene Marta y por qué diseña como diseña?"*. Mi evolución une base visual y técnica, 4 años de producto 0→1 en consultoría, especialización intensiva en sistemas/frontend y liderazgo actual en Design Systems accesibles y CRO.
 
-## El arco
+## El arco cronológico real
 
-**Comunicación Audiovisual → Marketing Digital → Frontend → Diseño de Negocio Digital → Product Design.**
-
-Cada etapa no sustituyó a la anterior: se sumó. Por eso hoy no diseño desde una sola perspectiva, sino desde todas a la vez.
-
-## 0. Comunicación Audiovisual — aprendí a contar historias
-
-Mi origen académico. La comunicación audiovisual me dio sensibilidad por la narrativa, la composición y cómo se percibe un mensaje — una base que hoy se nota en mi storytelling de producto y en cómo estructuro la información para que se entienda rápido.
-
-**Capacidad que incorporé:** narrativa, comunicación visual y sensibilidad por la percepción.
-**Cómo influye hoy:** convierto trabajo complejo en historias claras; es la raíz de cómo comunico decisiones y diseño experiencias comprensibles.
-
-## 1. Marketing Digital — aprendí a pensar en negocio
-
-Mi entrada al mundo digital. Aquí entendí cómo se capta y se convierte a un usuario: embudos, analítica, conversión, el porqué económico de cada decisión.
-
-**Capacidad que incorporé:** pensamiento de negocio y orientación a métricas.
-**Cómo influye hoy:** cuando diseño, ya estoy pensando en qué mueve la conversión y qué retorno tiene. No necesito que nadie me traduzca el negocio. Es la raíz de mi enfoque CRO (\`business-thinking.es.md\`).
-
-## 2. Frontend — aprendí a pensar en viabilidad
-
-Del negocio pasé a construir. Trabajar en frontend me dio la comprensión de qué hay detrás de una interfaz y cuánto cuesta hacerla realidad.
-
-**Capacidad que incorporé:** criterio técnico y capacidad de ejecución en código.
-**Cómo influye hoy:** diseño lo que se puede construir, hablo de tú a tú con desarrollo y puedo prototipar en código. Por eso encajo de forma natural como única diseñadora en un equipo backend (\`collaboration.es.md\`).
-
-## 3. Diseño de Negocio Digital — aprendí el oficio (y me reskillé en producto)
-
-El puente hacia el diseño, que consolidé con el **bootcamp de UX/UI & Product Design en Neoland**. Aquí desarrollé el ojo y el método: interfaz, composición, arquitectura de información, consistencia — y el giro deliberado desde el negocio y la técnica hacia el diseño de producto.
-
-**Capacidad que incorporé:** oficio de diseño, método UX/UI y pensamiento visual y estructural.
-**Cómo influye hoy:** es la base sobre la que construyo design systems y decisiones de interaction e información.
-
-## 4. Product Design — uní todo lo anterior
-
-La etapa donde negocio, técnica y oficio convergen en una sola forma de trabajar: entender un problema de negocio, decidir con datos, diseñar la solución, colaborar con desarrollo y medir el impacto.
-
-**Capacidad que incorporé:** pensamiento de producto end-to-end y autonomía para responder por el resultado.
-**Cómo influye hoy:** es quién soy ahora. El caso \`proj-ilunion-booking\` es la expresión de esta síntesis.
+1. **2016–2020 · Grado en Bellas Artes (Diseño Gráfico, Web e Interfaces) — UPV:** base visual, composición, sistemas tipográficos y diseño web.
+2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (escalando de 1 a 5 locales sin rediseño) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
+3. **2024 · Bootcamp Digital Product Design & Frontend Development en Neoland:** punto de inflexión y especialización intensiva en metodologías de research, frameworks de producto y arquitectura full-stack antes de dar el salto a producto corporativo. Aquí nace el MVP en equipo (8 personas) de **Gym Energy Center (Caso 04)**.
+4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System accesible (17 componentes con 6 estados, 57 variables enlazadas a tokens, 100% WCAG 2.1 AA).
+5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (conversión del 3,36% al 6,5%, 13% de la venta total y 50% de reservas del club ÚNICOS).
+6. **Evolución 2026 (Modelo de doble fecha "Origen → Evolución 2026"):** en 2026 he retomado mis proyectos fundacionales (\`2020–2024\`) para evolucionarlos con mi stack actual: especificaciones y tokens auto-generados con **Figma MCP** en CEF, auditoría heurística y prototipo interactivo en vivo en Oracle IT Ops, reconceptualización individual con entrenador IA y seguridad por token en Gym Energy Center, y dirección de arte generativa con IA + nuevo flujo de reservas en Paolo Pizzeria.
 
 ## Qué revela esta evolución
 
-- Soy un perfil **con forma de T**: profundidad en diseño de producto sobre una base ancha de negocio y técnica.
-- Mi ventaja no es haber hecho muchas cosas, sino que **cada etapa refuerza a las demás**: el marketing me hace mejor en CRO, el frontend me hace mejor colaborando con desarrollo, el oficio me hace mejor construyendo sistemas.
-- Es una evolución **deliberada**, no accidental: cada paso me acercó a diseñar producto con impacto real.
+- Soy un perfil **con forma de T**: profundidad en diseño de producto, sistemas y CRO sobre una base real de 4 años construyendo con equipos técnicos.
+- La distinción **Origen → Evolución 2026** demuestra honestidad sobre cuándo nació cada proyecto y cómo aplico hoy IA, Figma MCP y código sobre problemas reales.
 
 ## Qué busco ahora
 
@@ -503,17 +469,25 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 
 ## Experiencia
 
-### ¿En qué empresas ha trabajado?
-Actualmente ILUNION Hotels (Negocio Digital). Antes, frontend y marketing digital, y un design system para CEF. \`[CONFIRMAR — Marta]\` nombres y fechas. → \`experience.es.md\`.
+### ¿En qué empresas ha trabajado y cuál es su cronología?
+- **Sep 2024 – Actualidad:** Product Designer & CRO en **ILUNION Hotels** (Caso 01).
+- **Jun 2024 – Sep 2024:** Product Designer en **CEF · Centro de Estudios Financieros** (Caso 02, evolucionado en 2026 con Figma MCP).
+- **2024:** Especialización intensiva en **Neoland** (Bootcamp Product Design & Frontend, donde nace el MVP en equipo de **Gym Energy Center**, Caso 04, reconceptualizado en 2026 con IA).
+- **Jul 2020 – May 2024:** UX/UI Designer en **We Are Actions** (4 años en consultoría digital; aquí nacen **Oracle ERP & IT Ops** en \`2022–2024\`, Caso 03, y **Paolo by Danny's Jazz** en \`2020–2022\`, Caso 05, ambos evolucionados en 2026). → \`experience.es.md\`.
 
 ### ¿Con qué productos?
-El canal de venta directa de ILUNION (reserva hotelera); un design system completo (CEF); una herramienta B2B interna de IT (Oracle, formación). → \`experience.es.md\`, \`projects/*\`.
+Los 5 casos seleccionados en orden \`01 → 05\`:
+1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (conversión 3,36% → 6,5%).
+2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
+3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): diagnóstico Build vs. Buy en 4 módulos.
+4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): framework de 3 pilares en equipo de 8 personas.
+5. **05 · Paolo Pizzeria** (\`Origen: 2020–2022 Producto 0→1 · Evolución 2026: IA & Reservas\`): ecosistema digital que escaló de 1 a 5 locales sin rediseño.
 
 ### ¿Con qué usuarios?
-Viajeros de ocio 35–65 (ILUNION), usuarios técnicos B2B (Oracle), con accesibilidad WCAG 2.1 AA como constante. → \`experience.es.md\`.
+Viajeros de ocio y corporativos (ILUNION), estudiantes y docentes EdTech (CEF), técnicos de soporte IT B2B (Oracle), usuarios de fitness (Gym Energy Center) y comensales de delivery/restauración (Paolo), con accesibilidad WCAG 2.1 AA como constante. → \`experience.es.md\`.
 
 ### ¿Con qué equipos?
-Equipo de Negocio Digital mayoritariamente backend; transversal con marketing, analítica, desarrollo, CRO y agencias. → \`collaboration.es.md\`.
+Equipo de Negocio Digital mayoritariamente backend en ILUNION y 7 desarrolladores backend en We Are Actions; transversal con marketing, analítica, desarrollo, CRO y agencias. → \`collaboration.es.md\`.
 
 ## Producto
 
@@ -841,60 +815,24 @@ Title: CEF Design System — sistema de diseño completo desde cero
 Summary: Diseño de un design system completo desde cero para el Centro de Estudios Financieros: tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación, accesibilidad y escalabilidad. Demuestra pensamiento de sistemas.
 Tags: [design-system, design-tokens, components, documentation, scalability, consistency, accessibility, systems-thinking, cef]
 Content:
-# CEF Design System
+# Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP)
 
-> Estructura estándar de proyecto (20 secciones). Conceptos recurrentes referenciados a su fuente única.
+> **Cronología:** Creado desde cero entre **junio y septiembre de 2024** para el Centro de Estudios Financieros (CEF), y **evolucionado en 2026** conectando Figma MCP con Claude para autogenerar especificaciones técnicas y tokens JSON con 0 discrepancias entre diseño y código.
 
-## Contexto
-Centro de Estudios Financieros (CEF). Necesidad de una base de diseño coherente y escalable para su producto digital.
-
-## Problema
-Sin un sistema, cada pantalla se resuelve de cero: inconsistencia visual, lentitud y dificultad para escalar.
-
-## Objetivos
-Dar consistencia visual, acelerar el diseño y el desarrollo, y establecer una base escalable y accesible.
-
-## Usuarios
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Stakeholders
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+## Contexto y Problema
+Plataforma EdTech del Centro de Estudios Financieros (CEF) con años de deuda visual y técnica sin un sistema de diseño subyacente.
 
 ## Mi rol
-Diseñadora responsable del design system **de principio a fin**: definición, construcción y documentación.
+**Product Designer responsable del Design System y accesibilidad WCAG 2.1 AA al 100% de principio a fin.**
 
-## Restricciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+## Soluciones y Evolución 2026
+- **Jun–Sep 2024 (Origen):** auditoría de accesibilidad WCAG 2.1 AA, definición de **EdTech User Personas** (estudiantes y docentes), arquitectura de tokens aplicando **Leyes de Gestalt** y construcción de **17 componentes con 6 estados** y **57 variables enlazadas a tokens**.
+- **2026 (Evolución con Figma MCP):** automatización del handoff generando fichas de especificación técnica y tokens JSON directamente desde Figma vía MCP con Claude (0 discrepancias entre Figma y código).
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-Figma como fuente del sistema. → \`toolkit.es.md\`.
-
-## Hipótesis
-Un sistema de componentes y tokens reduce el tiempo de diseño y elimina la inconsistencia.
-
-## Decisiones
-Definir una arquitectura de tokens y componentes reutilizables, con reglas de uso que hagan el sistema mantenible.
-
-## Soluciones
-Design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación y criterios de escalabilidad y consistencia.
-
-## Sistema de diseño
-Este proyecto **es** el sistema: es la expresión más pura de mi pensamiento de sistemas. → principio en \`design-principles.es.md\` (#4).
-
-## Accesibilidad
-Accesibilidad incorporada al sistema desde el diseño de componentes. → \`design-principles.es.md\` (#3).
-
-## IA utilizada
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Resultados
-Consistencia visual y una base que acelera el trabajo de diseño y desarrollo.
-
-## Métricas
-Impacto en \`metrics.es.md\`: design system completo desde cero (\`m-cef-ds-fromscratch-01\`), estandarización de componentes y tokens (\`m-cef-standardization-02\`), reducción del esfuerzo de diseño y mejora de consistencia (\`m-cef-design-effort-03\`) y documentación para escalabilidad y mantenimiento (\`m-cef-scalability-04\`). Las cifras concretas (nº de componentes, % de ahorro) quedan pendientes de validación; el impacto cu
+## Métricas clave
+- **100%** cumplimiento WCAG 2.1 AA.
+- **17** componentes con 6 estados interactivos.
+- **57** variables enlazadas a tokens semánticos.
 ========================================
 
 DOCUMENT ID: proj-cro
@@ -1054,63 +992,27 @@ Title: Oracle IT Operations — rediseño de herramienta interna B2B
 Summary: Rediseño de una herramienta interna de operaciones IT durante la formación de Marta. Reto: simplificar procesos complejos para usuarios técnicos mediante mejor arquitectura de información. Demuestra capacidad en B2B complejo.
 Tags: [b2b, enterprise, it-operations, information-architecture, complexity, internal-tool, usability, oracle]
 Content:
-# Oracle IT Operations
+# Caso 03 · Oracle ERP & IT Ops (Origen: 2022–2024 · Evolución 2026)
 
-> Estructura estándar de proyecto (20 secciones). Proyecto de formación: su rol narrativo es demostrar capacidad en B2B complejo, no impacto de negocio.
+> **Cronología:** Discovery contextual y estrategia de producto realizada entre **2022 y 2024 en We Are Actions** (integrada en el equipo IT), y **evolucionada en 2026** con auditoría sistemática de Heurísticas de Nielsen y prototipo interactivo en código.
 
 ## Contexto
-Proyecto realizado durante mi formación. Herramienta interna para operaciones IT.
+Durante mi etapa en **We Are Actions (2022–2024)**, integrada dentro del equipo de soporte e ingeniería IT, realicé un **Discovery Contextual** sobre el uso real de Oracle para la gestión de incidencias y encargos (como el flujo real de SUZUKI).
 
 ## Problema
-Procesos complejos, difíciles de usar por usuarios técnicos, con una arquitectura de información poco clara.
-
-## Objetivos
-Simplificar los procesos y hacer la experiencia más eficiente mediante una mejor arquitectura de información.
-
-## Usuarios
-Usuarios técnicos (perfiles de operaciones IT).
-
-## Stakeholders
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+Oracle generaba más fricción que solución: tiempos elevados de registro, pérdida de trazabilidad y abandono del flujo oficial por parte de los técnicos de soporte.
 
 ## Mi rol
-Diseñadora responsable del rediseño de la herramienta.
+**Discovery Contextual · Propuesta Conceptual · Estrategia de Producto (Build vs. Buy).**
 
-## Restricciones
-Producto B2B complejo; usuarios expertos con flujos establecidos.
+## Decisiones y Evolución 2026
+- **2022–2024 (Origen en We Are Actions):** diseño de **Internal Support User Personas**, aislamiento de **4 patrones de fallo** y formulación de la decisión estratégica **Build vs. Buy** para construir una herramienta interna modular (4 módulos: registro rápido, vista unificada, detalle con trazabilidad y base de conocimiento).
+- **2026 (Evolución con IA y código):** sistematización del diagnóstico mediante **Heurísticas de Nielsen** y construcción del **prototipo funcional interactivo** en código.
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Hipótesis
-Una arquitectura de información más clara reduce la complejidad percibida y mejora la eficiencia.
-
-## Decisiones
-Reestructurar la información y simplificar los flujos principales.
-
-## Soluciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Sistema de diseño
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Accesibilidad
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## IA utilizada
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Resultados
-Demuestra que puedo trabajar en **productos B2B complejos**, no solo en interfaces de consumo.
-
-## Métricas
-Sin cifras de negocio (proyecto de formación), pero con impacto cualitativo documentado en \`metrics.es.md\`: simplificación de flujos complejos (\`m-oracle-simplification-01\`), mejora de la arquitectura de información (\`m-oracle-ia-02\`) y reducción de la complejidad percibida (\`m-oracle-complexity-03\`).
-
-## Aprendizajes
-Diseñar para usuarios expertos y pro
+## Resultados y Métricas
+- **4 patrones de fallo** aislados en producción.
+- Decisión estratégica **Build vs. Buy** validada con dirección.
+- **4 módulos** especificados y prototipados.
 ========================================
 
 DOCUMENT ID: proj-paolo
@@ -1119,69 +1021,30 @@ Title: Paolo Pizzeria — proyecto de bootcamp (evolución)
 Summary: Proyecto académico del bootcamp de Marta. Se mantiene deliberadamente para mostrar su evolución profesional desde los primeros proyectos hasta productos reales usados por miles de usuarios. No pretende demostrar seniority.
 Tags: [bootcamp, academic, foundations, evolution, early-work, ux-ui]
 Content:
-# Paolo Pizzeria
+# Caso 05 · Paolo by Danny's Jazz (Origen: 2020–2022 · Evolución 2026)
 
-> Estructura estándar de proyecto (20 secciones). **Rol narrativo:** mostrar evolución, no seniority. Es el punto de partida contra el que se lee todo lo demás.
+> **Cronología:** Producto 0→1 desarrollado entre **2020 y 2022 en We Are Actions** (ownership end-to-end durante 2 años) y **evolucionado en 2026** con dirección de arte generativa con IA y nuevo flujo interactivo de reservas.
 
 ## Contexto
-Proyecto académico desarrollado durante mi bootcamp de diseño.
+Cadena de pizzerías artesanas en expansión que nació en plena pandemia sin canal digital propio. Desarrollado dentro de We Are Actions (2020–2022) y revisitado en 2026 con el nuevo stack de IA de Marta.
 
 ## Problema
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+Construir desde cero la identidad visual, la arquitectura Mobile-First y el ecosistema digital completo para sostener la expansión física sin depender de rediseños constantes.
 
 ## Objetivos
-Aprender y aplicar los fundamentos del diseño UX/UI en un caso acotado.
-
-## Usuarios
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Stakeholders
-Contexto académico (mentores/bootcamp).
+Cubrir los **3 customer journeys** del negocio (delivery, visita al local y reserva) en un único producto digital escalable.
 
 ## Mi rol
-Diseñadora del proyecto de principio a fin (ejercicio individual/grupal \`[CONFIRMAR]\`).
+**Lead Product Designer & Frontend Developer** (ownership end-to-end durante 2 años).
 
-## Restricciones
-Proyecto formativo, con alcance y tiempo acotados.
+## Soluciones y Evolución 2026
+- **2020–2022 (Origen 0→1):** arquitectura Mobile-First aplicando la **Ley de Miller** (chunking de categorías para evitar parálisis de decisión), cartas QR, integración con plataformas de delivery (Glovo, Uber Eats, JustEat) y ciclo mensual de analítica (Clarity + GA4).
+- **2026 (Evolución con IA):** regeneración de los 4 platos estrella y exploración de 20+ conceptos de marca con IA generativa sin sesión fotográfica, además de un nuevo flujo interactivo de reservas.
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Hipótesis
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Decisiones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Soluciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Sistema de diseño
-Fundamentos de UI (no un sistema completo).
-
-## Accesibilidad
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## IA utilizada
-No aplica (proyecto previo a mi uso de IA).
-
-## Resultados
-Cierra el arco de evolución: permite comparar mis fundamentos con productos reales usados por miles de usuarios hoy.
-
-## Métricas
-No aplica (proyecto académico).
-
-## Aprendizajes
-Los fundamentos importan: aquí aprendí las bases sobre las que construí todo lo demás.
-
-## Qué haría diferente
-Con la perspectiva de hoy, enfocaría el mismo problema desde negocio, datos e impacto — precisamente la diferencia entre entonces y ahora. → \`career.es.md\`.
-
-## Preguntas relacionadas
-- ¿Cómo ha evolucionado Marta? → \`career.es.md\` + este doc.
+## Resultados y Métricas
+- Escaló de **1 a 5 locales sin necesidad de rediseño** (\`×5 locales\`).
+- **3 customer journeys** cubiertos en 1 producto.
+- **2 años** de ownership end-to-end (+32% en llamadas directas desde móvil el primer mes).
 ========================================
 
 DOCUMENT ID: reflections
@@ -1571,11 +1434,10 @@ Content:
 
 ## Formación
 
-- **Bootcamp de UX/UI & Product Design — Neoland.** El punto de inflexión que consolidó su giro hacia el diseño de producto (el proyecto \`proj-paolo\` se desarrolló en este contexto).
-- **Formación universitaria en Comunicación Audiovisual**, con posterior especialización en diseño digital y producto. Aporta la base narrativa y de comunicación visual de su perfil.
-- Trayectoria profesional previa en **marketing digital** y **frontend**, base de su perfil actual. → detalle en \`career.es.md\`.
-
-> Año del bootcamp y denominación exacta del título universitario: en validación (metadato \`pending_validation\`). El hecho formativo está confirmado.
+- **Bootcamp Digital Product Design & Frontend Development — Neoland (2024).** Especialización intensiva de puente hacia sistemas de diseño y producto corporativo tras 4 años en consultoría digital. Aquí lideró el research, la arquitectura de producto (framework de 3 pilares) y el Design System en un equipo de 8 personas para el MVP **Gym Energy Center** (Caso 04, reconceptualizado en 2026 con IA).
+- **Máster Universitario en Formación del Profesorado — Universidad CEU San Pablo (2022–2023).** Compatibilizado con su etapa profesional en We Are Actions.
+- **Grado en Bellas Artes (Especialidad en Diseño Gráfico, Web e Interfaces) — Universitat Politècnica de València, UPV (2016–2020).** Base visual, tipográfica y de diseño de interfaces.
+- Trayectoria profesional continua desde **julio de 2020** en consultoría digital (**We Are Actions**, 2020–2024), EdTech (**CEF**, Jun–Sep 2024) y hospitality (**ILUNION Hotels**, Sep 2024–Actualidad). → detalle en \`career.es.md\` y \`experience.es.md\`.
 
 ## Certificaciones
 \`[PENDIENTE — Marta]\` Certificaciones relevantes si las hay (UX, analítica/Adobe Analytics, accesibilidad, IA, Scrum…). Dado tu uso avanzado de Adobe Analytics y CRO, una certificación en analítica sería una credencial natural — si la tienes, va aquí.
@@ -1726,56 +1588,23 @@ Answers: - "¿De dónde viene Marta profesionalmente?"
   - "¿Cómo influye su trayectoria en su forma de diseñar?"
 Tags: [career, evolution, journey, marketing, frontend, product-design, growth, t-shaped, business, technical, audiovisual, neoland]
 Content:
-# Evolución profesional
+# Evolución profesional (2016–2026)
 
-> Responde a *"¿de dónde viene Marta y por qué diseña como diseña?"*. Mi evolución no es una acumulación de trabajos: es la razón por la que hoy uno negocio, técnica y diseño en un mismo perfil. Los años exactos de cada transición están en validación (metadato \`pending_validation\`); el arco es completo.
+> Responde a *"¿de dónde viene Marta y por qué diseña como diseña?"*. Mi evolución une base visual y técnica, 4 años de producto 0→1 en consultoría, especialización intensiva en sistemas/frontend y liderazgo actual en Design Systems accesibles y CRO.
 
-## El arco
+## El arco cronológico real
 
-**Comunicación Audiovisual → Marketing Digital → Frontend → Diseño de Negocio Digital → Product Design.**
-
-Cada etapa no sustituyó a la anterior: se sumó. Por eso hoy no diseño desde una sola perspectiva, sino desde todas a la vez.
-
-## 0. Comunicación Audiovisual — aprendí a contar historias
-
-Mi origen académico. La comunicación audiovisual me dio sensibilidad por la narrativa, la composición y cómo se percibe un mensaje — una base que hoy se nota en mi storytelling de producto y en cómo estructuro la información para que se entienda rápido.
-
-**Capacidad que incorporé:** narrativa, comunicación visual y sensibilidad por la percepción.
-**Cómo influye hoy:** convierto trabajo complejo en historias claras; es la raíz de cómo comunico decisiones y diseño experiencias comprensibles.
-
-## 1. Marketing Digital — aprendí a pensar en negocio
-
-Mi entrada al mundo digital. Aquí entendí cómo se capta y se convierte a un usuario: embudos, analítica, conversión, el porqué económico de cada decisión.
-
-**Capacidad que incorporé:** pensamiento de negocio y orientación a métricas.
-**Cómo influye hoy:** cuando diseño, ya estoy pensando en qué mueve la conversión y qué retorno tiene. No necesito que nadie me traduzca el negocio. Es la raíz de mi enfoque CRO (\`business-thinking.es.md\`).
-
-## 2. Frontend — aprendí a pensar en viabilidad
-
-Del negocio pasé a construir. Trabajar en frontend me dio la comprensión de qué hay detrás de una interfaz y cuánto cuesta hacerla realidad.
-
-**Capacidad que incorporé:** criterio técnico y capacidad de ejecución en código.
-**Cómo influye hoy:** diseño lo que se puede construir, hablo de tú a tú con desarrollo y puedo prototipar en código. Por eso encajo de forma natural como única diseñadora en un equipo backend (\`collaboration.es.md\`).
-
-## 3. Diseño de Negocio Digital — aprendí el oficio (y me reskillé en producto)
-
-El puente hacia el diseño, que consolidé con el **bootcamp de UX/UI & Product Design en Neoland**. Aquí desarrollé el ojo y el método: interfaz, composición, arquitectura de información, consistencia — y el giro deliberado desde el negocio y la técnica hacia el diseño de producto.
-
-**Capacidad que incorporé:** oficio de diseño, método UX/UI y pensamiento visual y estructural.
-**Cómo influye hoy:** es la base sobre la que construyo design systems y decisiones de interaction e información.
-
-## 4. Product Design — uní todo lo anterior
-
-La etapa donde negocio, técnica y oficio convergen en una sola forma de trabajar: entender un problema de negocio, decidir con datos, diseñar la solución, colaborar con desarrollo y medir el impacto.
-
-**Capacidad que incorporé:** pensamiento de producto end-to-end y autonomía para responder por el resultado.
-**Cómo influye hoy:** es quién soy ahora. El caso \`proj-ilunion-booking\` es la expresión de esta síntesis.
+1. **2016–2020 · Grado en Bellas Artes (Diseño Gráfico, Web e Interfaces) — UPV:** base visual, composición, sistemas tipográficos y diseño web.
+2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (escalando de 1 a 5 locales sin rediseño) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
+3. **2024 · Bootcamp Digital Product Design & Frontend Development en Neoland:** punto de inflexión y especialización intensiva en metodologías de research, frameworks de producto y arquitectura full-stack antes de dar el salto a producto corporativo. Aquí nace el MVP en equipo (8 personas) de **Gym Energy Center (Caso 04)**.
+4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System accesible (17 componentes con 6 estados, 57 variables enlazadas a tokens, 100% WCAG 2.1 AA).
+5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (conversión del 3,36% al 6,5%, 13% de la venta total y 50% de reservas del club ÚNICOS).
+6. **Evolución 2026 (Modelo de doble fecha "Origen → Evolución 2026"):** en 2026 he retomado mis proyectos fundacionales (\`2020–2024\`) para evolucionarlos con mi stack actual: especificaciones y tokens auto-generados con **Figma MCP** en CEF, auditoría heurística y prototipo interactivo en vivo en Oracle IT Ops, reconceptualización individual con entrenador IA y seguridad por token en Gym Energy Center, y dirección de arte generativa con IA + nuevo flujo de reservas en Paolo Pizzeria.
 
 ## Qué revela esta evolución
 
-- Soy un perfil **con forma de T**: profundidad en diseño de producto sobre una base ancha de negocio y técnica.
-- Mi ventaja no es haber hecho muchas cosas, sino que **cada etapa refuerza a las demás**: el marketing me hace mejor en CRO, el frontend me hace mejor colaborando con desarrollo, el oficio me hace mejor construyendo sistemas.
-- Es una evolución **deliberada**, no accidental: cada paso me acercó a diseñar producto con impacto real.
+- Soy un perfil **con forma de T**: profundidad en diseño de producto, sistemas y CRO sobre una base real de 4 años construyendo con equipos técnicos.
+- La distinción **Origen → Evolución 2026** demuestra honestidad sobre cuándo nació cada proyecto y cómo aplico hoy IA, Figma MCP y código sobre problemas reales.
 
 ## Qué busco ahora
 
@@ -2059,17 +1888,25 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 
 ## Experiencia
 
-### ¿En qué empresas ha trabajado?
-Actualmente ILUNION Hotels (Negocio Digital). Antes, frontend y marketing digital, y un design system para CEF. \`[CONFIRMAR — Marta]\` nombres y fechas. → \`experience.es.md\`.
+### ¿En qué empresas ha trabajado y cuál es su cronología?
+- **Sep 2024 – Actualidad:** Product Designer & CRO en **ILUNION Hotels** (Caso 01).
+- **Jun 2024 – Sep 2024:** Product Designer en **CEF · Centro de Estudios Financieros** (Caso 02, evolucionado en 2026 con Figma MCP).
+- **2024:** Especialización intensiva en **Neoland** (Bootcamp Product Design & Frontend, donde nace el MVP en equipo de **Gym Energy Center**, Caso 04, reconceptualizado en 2026 con IA).
+- **Jul 2020 – May 2024:** UX/UI Designer en **We Are Actions** (4 años en consultoría digital; aquí nacen **Oracle ERP & IT Ops** en \`2022–2024\`, Caso 03, y **Paolo by Danny's Jazz** en \`2020–2022\`, Caso 05, ambos evolucionados en 2026). → \`experience.es.md\`.
 
 ### ¿Con qué productos?
-El canal de venta directa de ILUNION (reserva hotelera); un design system completo (CEF); una herramienta B2B interna de IT (Oracle, formación). → \`experience.es.md\`, \`projects/*\`.
+Los 5 casos seleccionados en orden \`01 → 05\`:
+1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (conversión 3,36% → 6,5%).
+2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
+3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): diagnóstico Build vs. Buy en 4 módulos.
+4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): framework de 3 pilares en equipo de 8 personas.
+5. **05 · Paolo Pizzeria** (\`Origen: 2020–2022 Producto 0→1 · Evolución 2026: IA & Reservas\`): ecosistema digital que escaló de 1 a 5 locales sin rediseño.
 
 ### ¿Con qué usuarios?
-Viajeros de ocio 35–65 (ILUNION), usuarios técnicos B2B (Oracle), con accesibilidad WCAG 2.1 AA como constante. → \`experience.es.md\`.
+Viajeros de ocio y corporativos (ILUNION), estudiantes y docentes EdTech (CEF), técnicos de soporte IT B2B (Oracle), usuarios de fitness (Gym Energy Center) y comensales de delivery/restauración (Paolo), con accesibilidad WCAG 2.1 AA como constante. → \`experience.es.md\`.
 
 ### ¿Con qué equipos?
-Equipo de Negocio Digital mayoritariamente backend; transversal con marketing, analítica, desarrollo, CRO y agencias. → \`collaboration.es.md\`.
+Equipo de Negocio Digital mayoritariamente backend en ILUNION y 7 desarrolladores backend en We Are Actions; transversal con marketing, analítica, desarrollo, CRO y agencias. → \`collaboration.es.md\`.
 
 ## Producto
 
@@ -2397,60 +2234,24 @@ Title: CEF Design System — sistema de diseño completo desde cero
 Summary: Diseño de un design system completo desde cero para el Centro de Estudios Financieros: tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación, accesibilidad y escalabilidad. Demuestra pensamiento de sistemas.
 Tags: [design-system, design-tokens, components, documentation, scalability, consistency, accessibility, systems-thinking, cef]
 Content:
-# CEF Design System
+# Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP)
 
-> Estructura estándar de proyecto (20 secciones). Conceptos recurrentes referenciados a su fuente única.
+> **Cronología:** Creado desde cero entre **junio y septiembre de 2024** para el Centro de Estudios Financieros (CEF), y **evolucionado en 2026** conectando Figma MCP con Claude para autogenerar especificaciones técnicas y tokens JSON con 0 discrepancias entre diseño y código.
 
-## Contexto
-Centro de Estudios Financieros (CEF). Necesidad de una base de diseño coherente y escalable para su producto digital.
-
-## Problema
-Sin un sistema, cada pantalla se resuelve de cero: inconsistencia visual, lentitud y dificultad para escalar.
-
-## Objetivos
-Dar consistencia visual, acelerar el diseño y el desarrollo, y establecer una base escalable y accesible.
-
-## Usuarios
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Stakeholders
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+## Contexto y Problema
+Plataforma EdTech del Centro de Estudios Financieros (CEF) con años de deuda visual y técnica sin un sistema de diseño subyacente.
 
 ## Mi rol
-Diseñadora responsable del design system **de principio a fin**: definición, construcción y documentación.
+**Product Designer responsable del Design System y accesibilidad WCAG 2.1 AA al 100% de principio a fin.**
 
-## Restricciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+## Soluciones y Evolución 2026
+- **Jun–Sep 2024 (Origen):** auditoría de accesibilidad WCAG 2.1 AA, definición de **EdTech User Personas** (estudiantes y docentes), arquitectura de tokens aplicando **Leyes de Gestalt** y construcción de **17 componentes con 6 estados** y **57 variables enlazadas a tokens**.
+- **2026 (Evolución con Figma MCP):** automatización del handoff generando fichas de especificación técnica y tokens JSON directamente desde Figma vía MCP con Claude (0 discrepancias entre Figma y código).
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-Figma como fuente del sistema. → \`toolkit.es.md\`.
-
-## Hipótesis
-Un sistema de componentes y tokens reduce el tiempo de diseño y elimina la inconsistencia.
-
-## Decisiones
-Definir una arquitectura de tokens y componentes reutilizables, con reglas de uso que hagan el sistema mantenible.
-
-## Soluciones
-Design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación y criterios de escalabilidad y consistencia.
-
-## Sistema de diseño
-Este proyecto **es** el sistema: es la expresión más pura de mi pensamiento de sistemas. → principio en \`design-principles.es.md\` (#4).
-
-## Accesibilidad
-Accesibilidad incorporada al sistema desde el diseño de componentes. → \`design-principles.es.md\` (#3).
-
-## IA utilizada
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Resultados
-Consistencia visual y una base que acelera el trabajo de diseño y desarrollo.
-
-## Métricas
-Impacto en \`metrics.es.md\`: design system completo desde cero (\`m-cef-ds-fromscratch-01\`), estandarización de componentes y tokens (\`m-cef-standardization-02\`), reducción del esfuerzo de diseño y mejora de consistencia (\`m-cef-design-effort-03\`) y documentación para escalabilidad y mantenimiento (\`m-cef-scalability-04\`). Las cifras concretas (nº de componentes, % de ahorro) quedan pendientes de validación; el impacto cu
+## Métricas clave
+- **100%** cumplimiento WCAG 2.1 AA.
+- **17** componentes con 6 estados interactivos.
+- **57** variables enlazadas a tokens semánticos.
 ========================================
 
 DOCUMENT ID: proj-cro
@@ -2610,63 +2411,27 @@ Title: Oracle IT Operations — rediseño de herramienta interna B2B
 Summary: Rediseño de una herramienta interna de operaciones IT durante la formación de Marta. Reto: simplificar procesos complejos para usuarios técnicos mediante mejor arquitectura de información. Demuestra capacidad en B2B complejo.
 Tags: [b2b, enterprise, it-operations, information-architecture, complexity, internal-tool, usability, oracle]
 Content:
-# Oracle IT Operations
+# Caso 03 · Oracle ERP & IT Ops (Origen: 2022–2024 · Evolución 2026)
 
-> Estructura estándar de proyecto (20 secciones). Proyecto de formación: su rol narrativo es demostrar capacidad en B2B complejo, no impacto de negocio.
+> **Cronología:** Discovery contextual y estrategia de producto realizada entre **2022 y 2024 en We Are Actions** (integrada en el equipo IT), y **evolucionada en 2026** con auditoría sistemática de Heurísticas de Nielsen y prototipo interactivo en código.
 
 ## Contexto
-Proyecto realizado durante mi formación. Herramienta interna para operaciones IT.
+Durante mi etapa en **We Are Actions (2022–2024)**, integrada dentro del equipo de soporte e ingeniería IT, realicé un **Discovery Contextual** sobre el uso real de Oracle para la gestión de incidencias y encargos (como el flujo real de SUZUKI).
 
 ## Problema
-Procesos complejos, difíciles de usar por usuarios técnicos, con una arquitectura de información poco clara.
-
-## Objetivos
-Simplificar los procesos y hacer la experiencia más eficiente mediante una mejor arquitectura de información.
-
-## Usuarios
-Usuarios técnicos (perfiles de operaciones IT).
-
-## Stakeholders
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+Oracle generaba más fricción que solución: tiempos elevados de registro, pérdida de trazabilidad y abandono del flujo oficial por parte de los técnicos de soporte.
 
 ## Mi rol
-Diseñadora responsable del rediseño de la herramienta.
+**Discovery Contextual · Propuesta Conceptual · Estrategia de Producto (Build vs. Buy).**
 
-## Restricciones
-Producto B2B complejo; usuarios expertos con flujos establecidos.
+## Decisiones y Evolución 2026
+- **2022–2024 (Origen en We Are Actions):** diseño de **Internal Support User Personas**, aislamiento de **4 patrones de fallo** y formulación de la decisión estratégica **Build vs. Buy** para construir una herramienta interna modular (4 módulos: registro rápido, vista unificada, detalle con trazabilidad y base de conocimiento).
+- **2026 (Evolución con IA y código):** sistematización del diagnóstico mediante **Heurísticas de Nielsen** y construcción del **prototipo funcional interactivo** en código.
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Hipótesis
-Una arquitectura de información más clara reduce la complejidad percibida y mejora la eficiencia.
-
-## Decisiones
-Reestructurar la información y simplificar los flujos principales.
-
-## Soluciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Sistema de diseño
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Accesibilidad
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## IA utilizada
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Resultados
-Demuestra que puedo trabajar en **productos B2B complejos**, no solo en interfaces de consumo.
-
-## Métricas
-Sin cifras de negocio (proyecto de formación), pero con impacto cualitativo documentado en \`metrics.es.md\`: simplificación de flujos complejos (\`m-oracle-simplification-01\`), mejora de la arquitectura de información (\`m-oracle-ia-02\`) y reducción de la complejidad percibida (\`m-oracle-complexity-03\`).
-
-## Aprendizajes
-Diseñar para usuarios expertos y pro
+## Resultados y Métricas
+- **4 patrones de fallo** aislados en producción.
+- Decisión estratégica **Build vs. Buy** validada con dirección.
+- **4 módulos** especificados y prototipados.
 ========================================
 
 DOCUMENT ID: proj-paolo
@@ -2675,69 +2440,30 @@ Title: Paolo Pizzeria — proyecto de bootcamp (evolución)
 Summary: Proyecto académico del bootcamp de Marta. Se mantiene deliberadamente para mostrar su evolución profesional desde los primeros proyectos hasta productos reales usados por miles de usuarios. No pretende demostrar seniority.
 Tags: [bootcamp, academic, foundations, evolution, early-work, ux-ui]
 Content:
-# Paolo Pizzeria
+# Caso 05 · Paolo by Danny's Jazz (Origen: 2020–2022 · Evolución 2026)
 
-> Estructura estándar de proyecto (20 secciones). **Rol narrativo:** mostrar evolución, no seniority. Es el punto de partida contra el que se lee todo lo demás.
+> **Cronología:** Producto 0→1 desarrollado entre **2020 y 2022 en We Are Actions** (ownership end-to-end durante 2 años) y **evolucionado en 2026** con dirección de arte generativa con IA y nuevo flujo interactivo de reservas.
 
 ## Contexto
-Proyecto académico desarrollado durante mi bootcamp de diseño.
+Cadena de pizzerías artesanas en expansión que nació en plena pandemia sin canal digital propio. Desarrollado dentro de We Are Actions (2020–2022) y revisitado en 2026 con el nuevo stack de IA de Marta.
 
 ## Problema
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+Construir desde cero la identidad visual, la arquitectura Mobile-First y el ecosistema digital completo para sostener la expansión física sin depender de rediseños constantes.
 
 ## Objetivos
-Aprender y aplicar los fundamentos del diseño UX/UI en un caso acotado.
-
-## Usuarios
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Stakeholders
-Contexto académico (mentores/bootcamp).
+Cubrir los **3 customer journeys** del negocio (delivery, visita al local y reserva) en un único producto digital escalable.
 
 ## Mi rol
-Diseñadora del proyecto de principio a fin (ejercicio individual/grupal \`[CONFIRMAR]\`).
+**Lead Product Designer & Frontend Developer** (ownership end-to-end durante 2 años).
 
-## Restricciones
-Proyecto formativo, con alcance y tiempo acotados.
+## Soluciones y Evolución 2026
+- **2020–2022 (Origen 0→1):** arquitectura Mobile-First aplicando la **Ley de Miller** (chunking de categorías para evitar parálisis de decisión), cartas QR, integración con plataformas de delivery (Glovo, Uber Eats, JustEat) y ciclo mensual de analítica (Clarity + GA4).
+- **2026 (Evolución con IA):** regeneración de los 4 platos estrella y exploración de 20+ conceptos de marca con IA generativa sin sesión fotográfica, además de un nuevo flujo interactivo de reservas.
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Hipótesis
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Decisiones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Soluciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Sistema de diseño
-Fundamentos de UI (no un sistema completo).
-
-## Accesibilidad
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## IA utilizada
-No aplica (proyecto previo a mi uso de IA).
-
-## Resultados
-Cierra el arco de evolución: permite comparar mis fundamentos con productos reales usados por miles de usuarios hoy.
-
-## Métricas
-No aplica (proyecto académico).
-
-## Aprendizajes
-Los fundamentos importan: aquí aprendí las bases sobre las que construí todo lo demás.
-
-## Qué haría diferente
-Con la perspectiva de hoy, enfocaría el mismo problema desde negocio, datos e impacto — precisamente la diferencia entre entonces y ahora. → \`career.es.md\`.
-
-## Preguntas relacionadas
-- ¿Cómo ha evolucionado Marta? → \`career.es.md\` + este doc.
+## Resultados y Métricas
+- Escaló de **1 a 5 locales sin necesidad de rediseño** (\`×5 locales\`).
+- **3 customer journeys** cubiertos en 1 producto.
+- **2 años** de ownership end-to-end (+32% en llamadas directas desde móvil el primer mes).
 ========================================
 
 DOCUMENT ID: reflections

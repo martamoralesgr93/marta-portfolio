@@ -27,11 +27,10 @@ last_updated: 2026-07-14
 
 ## Formación
 
-- **Bootcamp de UX/UI & Product Design — Neoland.** El punto de inflexión que consolidó su giro hacia el diseño de producto (el proyecto `proj-paolo` se desarrolló en este contexto).
-- **Formación universitaria en Comunicación Audiovisual**, con posterior especialización en diseño digital y producto. Aporta la base narrativa y de comunicación visual de su perfil.
-- Trayectoria profesional previa en **marketing digital** y **frontend**, base de su perfil actual. → detalle en `career.es.md`.
-
-> Año del bootcamp y denominación exacta del título universitario: en validación (metadato `pending_validation`). El hecho formativo está confirmado.
+- **Bootcamp Digital Product Design & Frontend Development — Neoland (2024).** Especialización intensiva de puente hacia sistemas de diseño y producto corporativo tras 4 años en consultoría digital. Aquí lideró el research, la arquitectura de producto (framework de 3 pilares) y el Design System en un equipo de 8 personas para el MVP **Gym Energy Center** (Caso 04, reconceptualizado en 2026 con IA).
+- **Máster Universitario en Formación del Profesorado — Universidad CEU San Pablo (2022–2023).** Compatibilizado con su etapa profesional en We Are Actions.
+- **Grado en Bellas Artes (Especialidad en Diseño Gráfico, Web e Interfaces) — Universitat Politècnica de València, UPV (2016–2020).** Base visual, tipográfica y de diseño de interfaces.
+- Trayectoria profesional continua desde **julio de 2020** en consultoría digital (**We Are Actions**, 2020–2024), EdTech (**CEF**, Jun–Sep 2024) y hospitality (**ILUNION Hotels**, Sep 2024–Actualidad). → detalle en `career.es.md` y `experience.es.md`.
 
 ## Certificaciones
 `[PENDIENTE — Marta]` Certificaciones relevantes si las hay (UX, analítica/Adobe Analytics, accesibilidad, IA, Scrum…). Dado tu uso avanzado de Adobe Analytics y CRO, una certificación en analítica sería una credencial natural — si la tienes, va aquí.

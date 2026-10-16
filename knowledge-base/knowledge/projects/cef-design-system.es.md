@@ -15,57 +15,21 @@ visibility: public
 last_updated: 2026-07-14
 ---
 
-# CEF Design System
+# Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP)
 
-> Estructura estándar de proyecto (20 secciones). Conceptos recurrentes referenciados a su fuente única.
+> **Cronología:** Creado desde cero entre **junio y septiembre de 2024** para el Centro de Estudios Financieros (CEF), y **evolucionado en 2026** conectando Figma MCP con Claude para autogenerar especificaciones técnicas y tokens JSON con 0 discrepancias entre diseño y código.
 
-## Contexto
-Centro de Estudios Financieros (CEF). Necesidad de una base de diseño coherente y escalable para su producto digital.
-
-## Problema
-Sin un sistema, cada pantalla se resuelve de cero: inconsistencia visual, lentitud y dificultad para escalar.
-
-## Objetivos
-Dar consistencia visual, acelerar el diseño y el desarrollo, y establecer una base escalable y accesible.
-
-## Usuarios
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Stakeholders
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+## Contexto y Problema
+Plataforma EdTech del Centro de Estudios Financieros (CEF) con años de deuda visual y técnica sin un sistema de diseño subyacente.
 
 ## Mi rol
-Diseñadora responsable del design system **de principio a fin**: definición, construcción y documentación.
+**Product Designer responsable del Design System y accesibilidad WCAG 2.1 AA al 100% de principio a fin.**
 
-## Restricciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+## Soluciones y Evolución 2026
+- **Jun–Sep 2024 (Origen):** auditoría de accesibilidad WCAG 2.1 AA, definición de **EdTech User Personas** (estudiantes y docentes), arquitectura de tokens aplicando **Leyes de Gestalt** y construcción de **17 componentes con 6 estados** y **57 variables enlazadas a tokens**.
+- **2026 (Evolución con Figma MCP):** automatización del handoff generando fichas de especificación técnica y tokens JSON directamente desde Figma vía MCP con Claude (0 discrepancias entre Figma y código).
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-Figma como fuente del sistema. → `toolkit.es.md`.
-
-## Hipótesis
-Un sistema de componentes y tokens reduce el tiempo de diseño y elimina la inconsistencia.
-
-## Decisiones
-Definir una arquitectura de tokens y componentes reutilizables, con reglas de uso que hagan el sistema mantenible.
-
-## Soluciones
-Design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación y criterios de escalabilidad y consistencia.
-
-## Sistema de diseño
-Este proyecto **es** el sistema: es la expresión más pura de mi pensamiento de sistemas. → principio en `design-principles.es.md` (#4).
-
-## Accesibilidad
-Accesibilidad incorporada al sistema desde el diseño de componentes. → `design-principles.es.md` (#3).
-
-## IA utilizada
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Resultados
-Consistencia visual y una base que acelera el trabajo de diseño y desarrollo.
-
-## Métricas
-Impacto en `metrics.es.md`: design system completo desde cero (`m-cef-ds-fromscratch-01`), estandarización de componentes y tokens (`m-cef-standardization-02`), reducción del esfuerzo de diseño y mejora de consistencia (`m-cef-design-effort-03`) y documentación para escalabilidad y mantenimiento (`m-cef-scalability-04`). Las cifras concretas (nº de componentes, % de ahorro) quedan pendientes de validación; el impacto cu
+## Métricas clave
+- **100%** cumplimiento WCAG 2.1 AA.
+- **17** componentes con 6 estados interactivos.
+- **57** variables enlazadas a tokens semánticos.

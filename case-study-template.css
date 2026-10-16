@@ -849,9 +849,10 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
 }
 .cs-journey-timeline {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
   position: relative;
+  align-items: stretch;
 }
 .cs-journey-step {
   display: flex;
@@ -864,6 +865,8 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   text-decoration: none;
   transition: all .25s ease;
   position: relative;
+  height: 100%;
+  box-sizing: border-box;
 }
 .cs-journey-step:hover {
   background: rgba(255, 255, 255, 0.05);
@@ -875,15 +878,17 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   border-color: var(--accent);
   box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.16);
 }
-.cs-journey-step-tag {
+.cs-journey-step-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-size: 10.5px;
+  gap: 6px;
+}
+.cs-journey-num {
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+  letter-spacing: .08em;
   color: var(--text-dim);
 }
 .cs-journey-badge {
@@ -893,31 +898,58 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   text-transform: uppercase;
   padding: 2px 7px;
   border-radius: 100px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.cs-journey-badge.is-active,
+.cs-journey-step.is-current .cs-journey-badge {
   background: rgba(var(--accent-rgb), 0.2);
   color: var(--accent);
-  border: 1px solid var(--accent-border);
+  border-color: var(--accent-border);
 }
-.cs-journey-step-name {
+.cs-journey-name {
   font-family: var(--font-serif);
   font-size: 16.5px;
   font-weight: 700;
   color: var(--white);
   line-height: 1.25;
+  margin: 0;
 }
-.cs-journey-step-desc {
-  font-size: 12.5px;
+.cs-journey-meta {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-top: -2px;
+}
+.cs-journey-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.35;
+}
+.cs-journey-text {
+  font-size: 12px;
   color: var(--text-dim);
   line-height: 1.5;
+  margin: 0;
 }
 .cs-journey-link {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 12px;
   font-size: 11.5px;
   font-weight: 600;
   color: var(--accent);
+  text-decoration: none;
+}
+.cs-journey-link.is-active {
+  color: var(--white);
+  opacity: 0.85;
 }
 .cs-journey-link svg {
   transition: transform .2s;

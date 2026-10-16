@@ -60,34 +60,33 @@ Diseñar producto es entender un problema de negocio, decidir con datos, colabor
 
 ---
 
-## CEF — Centro de Estudios Financieros · Design System
+## CEF — Centro de Estudios Financieros · Design System (Jun 2024 – Sep 2024 · Evolución 2026: Figma MCP)
 
 ### Contexto y producto
-Diseñé un **design system completo desde cero** para el Centro de Estudios Financieros: design tokens, componentes reutilizables, sistema tipográfico, reglas de uso, documentación, accesibilidad y criterios de escalabilidad y consistencia.
+Entre junio y septiembre de 2024 diseñé el **primer Design System accesible desde cero** para el Centro de Estudios Financieros (Caso 02): **17 componentes con 6 estados**, **57 variables enlazadas a tokens** y cumplimiento **100% WCAG 2.1 AA**. En **2026** evolucioné el sistema conectando **Figma MCP** con Claude para autogenerar fichas técnicas y tokens JSON con 0 discrepancias entre Figma y código.
 
 ### Decisiones e impacto
-Demuestra mi capacidad para **pensar en sistemas y no solo en pantallas**: una base que da coherencia visual y acelera el trabajo de diseño y desarrollo. Impacto en `metrics.es.md` (`m-cef-*`). Caso: `proj-cef-design-system`.
+Demuestra mi capacidad para **pensar en sistemas y no solo en pantallas**: una base que da coherencia visual y acelera el trabajo de diseño y desarrollo. Caso: `proj-cef-design-system`.
 
 ---
 
-## Etapa previa — Frontend Development
+## Neoland — Bootcamp Digital Product Design & Frontend Development (2024 · Evolución 2026: IA)
 
-Trabajé en **desarrollo frontend**, lo que me dio la comprensión técnica que hoy uso a diario: sé qué cuesta construir lo que diseño, hablo de tú a tú con desarrollo y puedo ejecutar prototipos en código (con apoyo de Copilot y Vercel). Es la raíz de que encaje de forma natural como única diseñadora en un equipo backend.
-
-## Origen — Marketing Digital
-
-Mi punto de partida profesional. En **marketing digital** aprendí el pensamiento de negocio: captación, conversión, embudos y analítica. Por eso pienso en métricas desde el principio y mi especialidad práctica es el CRO. (Ver `business-thinking.es.md`.)
+Especialización intensiva como puente entre mi etapa en consultoría y mi entrada en CEF e ILUNION. Lideré el research, la arquitectura de producto (**framework de 3 pilares**: práctico, social y emocional) y el Design System en un equipo de 8 personas para el MVP **Gym Energy Center (Caso 04)** (40+ componentes del equipo, 8 modelos MongoDB, 30+ endpoints). En **2026** realicé una reconceptualización individual añadiendo entrenador IA, dashboard de progreso y seguridad por token.
 
 ---
 
-## Formación
+## We Are Actions — UX/UI Designer (Jul 2020 – May 2024 · Evolución 2026: Prototipos & IA)
 
-- **Bootcamp de UX/UI & Product Design — Neoland.** El punto de inflexión que consolidó mi giro hacia el diseño de producto (el proyecto `proj-paolo` se desarrolló en este contexto).
-- **Formación universitaria en Comunicación Audiovisual**, con posterior especialización en diseño digital y producto.
-- Detalle y denominaciones exactas en `achievements.es.md`.
+Durante 4 años trabajé en consultoría digital construyendo producto end-to-end junto a un equipo de 7 desarrolladores backend. De esta etapa nacen dos casos fundamentales del portfolio, ambos revisitados en 2026 con mi stack actual:
+- **Caso 03 · Oracle ERP & IT Ops (Origen: 2022–2024 · Evolución 2026):** discovery contextual embebida en el equipo IT, identificación de 4 patrones de fallo y estrategia Build vs. Buy en 4 módulos. En 2026 añadí auditoría heurística de Nielsen y prototipo interactivo en código (`proj-oracle`).
+- **Caso 05 · Paolo by Danny's Jazz (Origen: 2020–2022 · Evolución 2026):** mi primer producto 0→1 con ownership completo durante 2 años. Cubrió 3 customer journeys (delivery, visita al local y reserva) y escaló de 1 a 5 locales sin rediseño. En 2026 lo evolucioné con dirección de arte generativa con IA y nuevo flujo de reservas (`proj-paolo`).
 
-## Proyectos de formación
-- **Oracle IT Operations** — rediseño de una herramienta interna de operaciones IT: simplificar procesos complejos para usuarios técnicos mediante mejor arquitectura de información. Evidencia de capacidad en **B2B complejo**. Caso: `proj-oracle`.
-- **Paolo Pizzeria** — proyecto del bootcamp. Se mantiene para mostrar evolución, no seniority. Caso: `proj-paolo`.
+---
 
-> La narrativa completa de esta evolución —qué aportó cada etapa y cómo influye hoy— está en `career.es.md`.
+## Formación universitaria
+
+- **Grado en Bellas Artes (Diseño Gráfico, Web e Interfaces) — UPV (2016–2020).**
+- **Máster en Formación del Profesorado — Universidad CEU San Pablo (2022–2023).**
+- Detalle completo en `achievements.es.md` y `career.es.md`.
+

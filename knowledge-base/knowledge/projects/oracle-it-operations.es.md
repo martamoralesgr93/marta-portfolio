@@ -15,60 +15,24 @@ visibility: public
 last_updated: 2026-07-14
 ---
 
-# Oracle IT Operations
+# Caso 03 · Oracle ERP & IT Ops (Origen: 2022–2024 · Evolución 2026)
 
-> Estructura estándar de proyecto (20 secciones). Proyecto de formación: su rol narrativo es demostrar capacidad en B2B complejo, no impacto de negocio.
+> **Cronología:** Discovery contextual y estrategia de producto realizada entre **2022 y 2024 en We Are Actions** (integrada en el equipo IT), y **evolucionada en 2026** con auditoría sistemática de Heurísticas de Nielsen y prototipo interactivo en código.
 
 ## Contexto
-Proyecto realizado durante mi formación. Herramienta interna para operaciones IT.
+Durante mi etapa en **We Are Actions (2022–2024)**, integrada dentro del equipo de soporte e ingeniería IT, realicé un **Discovery Contextual** sobre el uso real de Oracle para la gestión de incidencias y encargos (como el flujo real de SUZUKI).
 
 ## Problema
-Procesos complejos, difíciles de usar por usuarios técnicos, con una arquitectura de información poco clara.
-
-## Objetivos
-Simplificar los procesos y hacer la experiencia más eficiente mediante una mejor arquitectura de información.
-
-## Usuarios
-Usuarios técnicos (perfiles de operaciones IT).
-
-## Stakeholders
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
+Oracle generaba más fricción que solución: tiempos elevados de registro, pérdida de trazabilidad y abandono del flujo oficial por parte de los técnicos de soporte.
 
 ## Mi rol
-Diseñadora responsable del rediseño de la herramienta.
+**Discovery Contextual · Propuesta Conceptual · Estrategia de Producto (Build vs. Buy).**
 
-## Restricciones
-Producto B2B complejo; usuarios expertos con flujos establecidos.
+## Decisiones y Evolución 2026
+- **2022–2024 (Origen en We Are Actions):** diseño de **Internal Support User Personas**, aislamiento de **4 patrones de fallo** y formulación de la decisión estratégica **Build vs. Buy** para construir una herramienta interna modular (4 módulos: registro rápido, vista unificada, detalle con trazabilidad y base de conocimiento).
+- **2026 (Evolución con IA y código):** sistematización del diagnóstico mediante **Heurísticas de Nielsen** y construcción del **prototipo funcional interactivo** en código.
 
-## Investigación
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Datos utilizados
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Hipótesis
-Una arquitectura de información más clara reduce la complejidad percibida y mejora la eficiencia.
-
-## Decisiones
-Reestructurar la información y simplificar los flujos principales.
-
-## Soluciones
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Sistema de diseño
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Accesibilidad
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## IA utilizada
-*No detallado — caso complementario; el foco de detalle está en los proyectos de ILUNION.*
-
-## Resultados
-Demuestra que puedo trabajar en **productos B2B complejos**, no solo en interfaces de consumo.
-
-## Métricas
-Sin cifras de negocio (proyecto de formación), pero con impacto cualitativo documentado en `metrics.es.md`: simplificación de flujos complejos (`m-oracle-simplification-01`), mejora de la arquitectura de información (`m-oracle-ia-02`) y reducción de la complejidad percibida (`m-oracle-complexity-03`).
-
-## Aprendizajes
-Diseñar para usuarios expertos y pro
+## Resultados y Métricas
+- **4 patrones de fallo** aislados en producción.
+- Decisión estratégica **Build vs. Buy** validada con dirección.
+- **4 módulos** especificados y prototipados.

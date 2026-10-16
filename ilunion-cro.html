@@ -301,7 +301,7 @@
   .ide-hero-media { margin: 0; position: relative; height: 560px; }
   .ide-glow { position: absolute; left: -40px; right: -40px; top: 40px; bottom: 40px; border-radius: 50%; background: radial-gradient(ellipse at 55% 50%, rgba(124,58,237,.34), rgba(124,58,237,0) 68%); }
   .ide-hero-back { position: absolute; right: -24px; top: 70px; width: 104%; max-width: 640px; height: auto; aspect-ratio: 2672 / 1534; }
-  .ide-phone-frame { padding: 7px; border-radius: 30px; background: #121214; border: 1px solid rgba(255,255,255,.16); box-shadow: 0 30px 60px rgba(0,0,0,.6); }
+  .ide-phone-frame { padding: 0; border-radius: 24px; background: transparent; border: 1px solid rgba(255,255,255,.16); box-shadow: none; overflow: hidden; }
   .ide-phone-frame video { display: block; width: 100%; height: auto; border-radius: 23px; object-fit: cover; }
   .ide-hero-media .ide-phone-frame { position: absolute; left: 0; bottom: 34px; width: 176px; }
   .ide-hero-media .ide-phone-frame video { aspect-ratio: 440 / 894; }
@@ -328,9 +328,12 @@
   .ide-tag-before, .ide-tag-after { align-self: flex-start; padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
   .ide-tag-before { background: rgba(255,255,255,.1); color: #fff; }
   .ide-tag-after { background: #a78bfa; color: #0b0614; }
-  .ide-antes { margin: 0; padding: 28px; border-radius: 28px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 20px; }
+  .ide-antes { margin: 0; padding: 24px; border-radius: 24px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px; }
   .ide-antes-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .ide-antes-head > span:last-child { font-size: 12px; color: rgba(255,255,255,.55); }
+  .ide-antes-single { display: flex; flex-direction: column; gap: 12px; }
+  .ide-antes-single img { display: block; width: 100%; height: auto; border-radius: 12px; background: transparent; }
+  .ide-antes-single span { font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.7); }
   .ide-antes-grid { display: grid; grid-template-columns: 1.9fr 1fr; gap: 16px; align-items: end; }
   .ide-antes-item { display: flex; flex-direction: column; gap: 10px; }
   .ide-antes-item img { display: block; width: 100%; height: auto; border-radius: 12px; background: transparent; }
@@ -399,10 +402,10 @@
 
   .ide-exp-grid { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 2.6fr); gap: 16px; align-items: stretch; }
   .ide-exp-fig { margin: 0; padding: 22px; border-radius: 24px; display: flex; flex-direction: column; gap: 16px; }
-  .ide-exp-fig.is-before { background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
-  .ide-exp-fig.is-after { background: radial-gradient(ellipse at 50% 55%, rgba(124,58,237,.28), rgba(124,58,237,0) 65%), #0d0b14; border: 1px solid rgba(167,139,250,.35); }
-  .ide-exp-fig img { display: block; width: 100%; height: auto; }
-  .ide-exp-fig.is-before img { max-width: 220px; margin: 0 auto; opacity: .85; }
+  .ide-exp-fig.is-before { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); }
+  .ide-exp-fig.is-after { background: radial-gradient(ellipse at 50% 55%, rgba(124,58,237,.2), rgba(124,58,237,0) 65%), rgba(255,255,255,.02); border: 1px solid rgba(167,139,250,.35); }
+  .ide-exp-fig img { display: block; width: 100%; height: auto; background: transparent; }
+  .ide-exp-fig.is-before img { max-width: 100%; margin: 0 auto; opacity: 1; }
   .ide-exp-fig figcaption { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.7); }
   .ide-exp-fig.is-after figcaption { color: rgba(255,255,255,.8); }
 
@@ -413,7 +416,7 @@
   .ide-exp-outcome.is-ok .ide-exp-outcome-label { color: #4ade80; }
   .ide-exp-outcome p { margin: 0; font-size: 15px; line-height: 1.45; color: rgba(255,255,255,.8); }
   .ide-exp-outcome.is-ok p { color: rgba(255,255,255,.85); }
-  .ide-bridge2 { padding: 32px; border-radius: 24px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.3), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .ide-bridge2 { padding: 32px; border-radius: 24px; background: radial-gradient(ellipse at 85% 0%, rgba(124,58,237,.3), rgba(124,58,237,0) 60%), rgba(255,255,255,.02); border: 1px solid rgba(167,139,250,.35); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
   .ide-bridge2-quote { font-family: var(--font-serif, 'Playfair Display', Georgia, serif); font-weight: 700; font-style: italic; font-size: 28px; line-height: 1.25; color: #fff; }
 
   .ide-order { display: grid; grid-template-columns: minmax(0,1fr) 40px minmax(0,1fr); gap: 8px; }
@@ -430,11 +433,11 @@
   .ide-order-foot { grid-column: 1 / -1; margin-top: 14px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.1); display: flex; gap: 8px; flex-wrap: wrap; }
   .ide-laws > span { padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); font-size: 12px; color: rgba(255,255,255,.8); }
 
-  .ide-browser { margin: 0; padding: 22px; border-radius: 24px; background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,.22), rgba(124,58,237,0) 65%), #0d0b14; border: 1px solid rgba(167,139,250,.28); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
-  .ide-browser-frame { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); background: #111; }
-  .ide-browser-bar { height: 26px; padding: 0 12px; display: flex; align-items: center; gap: 6px; background: #1a1a1d; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .ide-browser { margin: 0; padding: 0; border-radius: 20px; background: transparent; border: none; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .ide-browser-frame { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); background: transparent; }
+  .ide-browser-bar { height: 26px; padding: 0 12px; display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.08); }
   .ide-browser-bar span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.25); }
-  .ide-browser-frame video { display: block; width: 100%; height: auto; }
+  .ide-browser-frame video { display: block; width: 100%; height: auto; background: transparent; }
   .ide-browser figcaption { font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.75); }
 
   .ide-ice-row { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 40px; align-items: center; padding: 28px 0; border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); }
@@ -446,26 +449,26 @@
   .ide-rank li.is-task b { color: #a78bfa; }
 
   .ide-proc2 { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.55fr); gap: 16px; align-items: stretch; }
-  .ide-proc-card { padding: 22px; border-radius: 24px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 18px; }
+  .ide-proc-card { padding: 22px; border-radius: 24px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 18px; }
   .ide-proc-card-head { display: flex; align-items: center; justify-content: space-between; }
   .ide-proc-card-head span:first-child { font-size: 16px; font-weight: 600; color: #fff; }
   .ide-proc-card-head span:last-child { font-size: 12px; color: rgba(255,255,255,.55); }
   .ide-proc-imgs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; align-items: start; }
-  .ide-proc-imgs.is-desktop { grid-template-columns: minmax(0,.86fr) minmax(0,1.14fr); }
+  .ide-proc-imgs.is-desktop { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
   .ide-proc-img-wrap { position: relative; }
   .ide-proc-img-wrap img { display: block; width: 100%; height: auto; border-radius: 12px; background: transparent; }
-  .ide-proc-img-wrap.is-final img { box-shadow: 0 0 0 1px rgba(255,255,255,.12); }
-  .ide-proc-tag { position: absolute; left: 8px; top: 8px; padding: 3px 8px; border-radius: 999px; background: #000; color: #fff; font-size: 10px; font-weight: 700; }
-  .ide-proc-tag.is-final { background: #a78bfa; color: #0b0614; }
+  .ide-proc-img-wrap.is-final img { box-shadow: none; }
+  .ide-proc-tag { position: absolute; left: 8px; top: 8px; padding: 3px 8px; border-radius: 999px; background: rgba(0,0,0,.7); color: #fff; font-size: 10px; font-weight: 700; border: 1px solid rgba(255,255,255,.2); }
+  .ide-proc-tag.is-final { background: #a78bfa; color: #0b0614; border: none; }
   .ide-proc-list { margin: auto 0 0; padding: 14px 0 0; list-style: none; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(255,255,255,.1); }
   .ide-proc-list.is-desktop { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
   .ide-proc-list li { display: flex; gap: 10px; font-size: 14px; color: rgba(255,255,255,.8); }
   .ide-proc-list b { font-weight: 700; color: #a78bfa; }
   .ide-proc-list b.is-loyal { color: #f97316; }
 
-  .ide-fitts { padding: 40px; border-radius: 28px; background: radial-gradient(ellipse at 15% 30%, rgba(124,58,237,.26), rgba(124,58,237,0) 60%), #0d0b14; border: 1px solid rgba(167,139,250,.3); display: grid; grid-template-columns: minmax(260px, 360px) minmax(0, 1fr); gap: 48px; align-items: center; }
-  .ide-fitts-media .ide-phone-frame { width: 100%; }
-  .ide-fitts-media .ide-phone-frame video { aspect-ratio: 440 / 494; }
+  .ide-fitts { padding: 32px; border-radius: 28px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); display: grid; grid-template-columns: minmax(260px, 360px) minmax(0, 1fr); gap: 48px; align-items: center; }
+  .ide-fitts-media .ide-phone-frame { width: 100%; background: transparent; border: 1px solid rgba(255,255,255,.16); }
+  .ide-fitts-media .ide-phone-frame video { aspect-ratio: 440 / 494; background: transparent; }
   .ide-fitts-body { display: flex; flex-direction: column; gap: 18px; }
   .ide-fitts-ab { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
   .ide-fitts-ab > div { padding: 16px; border-radius: 16px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.75); }
@@ -517,19 +520,20 @@
 
   .ide-tl-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   .ide-tl-desc { margin: 0; max-width: 480px; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.65); }
-  .ide-tl { margin: 0; padding: 0; list-style: none; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+  .ide-tl { margin: 0; padding: 0; list-style: none; position: relative; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px; align-items: stretch; }
   .ide-tl-line { position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: rgba(255,255,255,.16); }
-  .ide-tl-item { position: relative; display: flex; flex-direction: column; gap: 14px; }
+  .ide-tl-item { position: relative; display: flex; flex-direction: column; gap: 14px; height: 100%; align-self: stretch; }
   .ide-tl-dot { width: 15px; height: 15px; border-radius: 50%; background: #000; border: 2px solid rgba(255,255,255,.4); }
   .ide-tl-dot.is-current { background: #a78bfa; border: 0; box-shadow: 0 0 0 5px rgba(167,139,250,.22); }
-  .ide-tl-card { padding: 20px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px; text-decoration: none; }
+  .ide-tl-card { flex: 1; height: 100%; box-sizing: border-box; padding: 20px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px; text-decoration: none; }
   .ide-tl-card.is-current { background: rgba(167,139,250,.1); border-color: rgba(167,139,250,.45); }
   .ide-tl-kicker { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); }
   .ide-tl-card.is-current .ide-tl-kicker { color: #a78bfa; }
-  .ide-tl-name { font-size: 18px; font-weight: 700; color: #fff; }
+  .ide-tl-name { font-size: 17px; font-weight: 700; color: #fff; }
   .ide-tl-sub { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.65); }
   .ide-tl-card.is-current .ide-tl-sub { color: rgba(255,255,255,.75); }
-  .ide-tl-link { margin-top: 6px; font-size: 13px; font-weight: 600; color: #a78bfa; text-decoration: none; }
+  .ide-tl-link { margin-top: auto; padding-top: 10px; font-size: 13px; font-weight: 600; color: #a78bfa; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .ide-tl-card.is-current .ide-tl-link { color: #a78bfa; opacity: .9; }
 }
 @media (min-width: 769px) and (max-width: 1100px) {
   .ide-hero-media { height: auto; aspect-ratio: 600/460; }
@@ -579,7 +583,7 @@
       </ul>
     </nav>
   </div>
-    <div class="cs-mobile-case-badge">CASO 02 / 05</div>
+    <div class="cs-mobile-case-badge">CASO 01 / 05</div>
 
   <div class="cs-nav-right">
     <button class="cs-cases-trigger" id="csCasesTrigger" type="button" onclick="openCasesPanel()" aria-haspopup="dialog" aria-expanded="false">
@@ -632,54 +636,50 @@
     </div>
 
     <div class="cs-panel-grid">
-      <a href="cef-design-system.html" class="cs-panel-card">
-        <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 01</span>
-          
-        </div>
-        <h3 class="cs-panel-card-title">CEF EdTech</h3>
-        <p class="cs-panel-card-desc es">Sistema de diseño desde cero: 80+ componentes, arquitectura de tokens y accesibilidad WCAG AA.</p>
-        <p class="cs-panel-card-desc en">Design system from scratch: 80+ components, token architecture and WCAG AA accessibility.</p>
-        <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
       <a href="ilunion-cro.html" class="cs-panel-card is-current">
         <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 02</span>
+          <span class="cs-panel-card-num">Caso 01</span>
           <span class="cs-panel-card-badge es">Estás viendo este caso</span><span class="cs-panel-card-badge en">Current case</span>
         </div>
-        <h3 class="cs-panel-card-title">ILUNION CRO</h3>
-        <p class="cs-panel-card-desc es">CRO del canal directo: experimento en el motor y re-componetización de la home. Conversión del 3,36% al 6,5%.</p>
-        <p class="cs-panel-card-desc en">Direct-channel CRO: a booking engine experiment and a homepage recomposition. Conversion from 3.36% to 6.5%.</p>
+        <h3 class="cs-panel-card-title">ILUNION Hotels CRO</h3>
+        <p class="cs-panel-card-desc es">Sep 2024 – Actualidad · En producción. De 3,36% a 6,5% de conversión con A/B testing y analítica avanzada.</p>
+        <p class="cs-panel-card-desc en">Sep 2024 – Present · In production. From 3.36% to 6.5% conversion through A/B testing & analytics.</p>
         <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-      <a href="paolo-pizzeria.html" class="cs-panel-card">
+      <a href="cef-design-system.html" class="cs-panel-card">
         <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 03</span>
-          
+          <span class="cs-panel-card-num">Caso 02</span>
         </div>
-        <h3 class="cs-panel-card-title">Paolo Brand System</h3>
-        <p class="cs-panel-card-desc es">Ecosistema digital 360° e identidad visual para delivery y mesas: incremento del 28% en pedidos.</p>
-        <p class="cs-panel-card-desc en">360° digital ecosystem and brand identity for dine-in & delivery: +28% direct orders uplift.</p>
+        <h3 class="cs-panel-card-title">CEF EdTech · Design System</h3>
+        <p class="cs-panel-card-desc es">Origen: Jun–Sep 2024 · Rev. 2026. 17 componentes con 6 estados y 57 variables tokenizadas WCAG 2.1 AA.</p>
+        <p class="cs-panel-card-desc en">Origin: Jun–Sep 2024 · Rev. 2026. 17 components with 6 states and 57 tokenized variables WCAG 2.1 AA.</p>
         <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
       <a href="it-ops-oracle.html" class="cs-panel-card">
         <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 04</span>
-          
+          <span class="cs-panel-card-num">Caso 03</span>
         </div>
         <h3 class="cs-panel-card-title">IT Ops &amp; Oracle ERP</h3>
-        <p class="cs-panel-card-desc es">Diagnóstico estratégico Build vs. Buy: contextual discovery y propuesta de herramienta interna.</p>
-        <p class="cs-panel-card-desc en">Build vs. Buy strategic diagnosis: embedded contextual discovery and internal tooling proposal.</p>
+        <p class="cs-panel-card-desc es">Origen: 2022–2024 (We Are Actions) · Rev. 2026. Diagnóstico Build vs. Buy ahorrando 56,5 h/mes de fricción B2B.</p>
+        <p class="cs-panel-card-desc en">Origin: 2022–2024 (We Are Actions) · Rev. 2026. Enterprise Build vs. Buy diagnosis saving 56.5 h/month B2B friction.</p>
         <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
       <a href="gym-energy-center.html" class="cs-panel-card">
         <div class="cs-panel-card-head">
-          <span class="cs-panel-card-num">Caso 05</span>
-          
+          <span class="cs-panel-card-num">Caso 04</span>
         </div>
         <h3 class="cs-panel-card-title">Gym Energy Center</h3>
-        <p class="cs-panel-card-desc es">UX Research y diseño de hábitos deportivos: transformando una app de reservas en adherencia.</p>
-        <p class="cs-panel-card-desc en">UX Research & habit-forming design: turning a booking app into long-term fitness adherence.</p>
+        <p class="cs-panel-card-desc es">Origen: 2024 (MVP Bootcamp) · Rev. 2026. UX Research cualitativo y rediseño de adherencia con reserva en 2 taps.</p>
+        <p class="cs-panel-card-desc en">Origin: 2024 (Bootcamp MVP) · Rev. 2026. Qualitative UX research & retention redesign with 2-tap booking.</p>
+        <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="paolo-pizzeria.html" class="cs-panel-card">
+        <div class="cs-panel-card-head">
+          <span class="cs-panel-card-num">Caso 05</span>
+        </div>
+        <h3 class="cs-panel-card-title">Paolo Pizzeria</h3>
+        <p class="cs-panel-card-desc es">Origen: 2020–2022 (We Are Actions) · Rev. 2026. Producto integral de 0 a 1 escalando a 5 locales sin rediseño.</p>
+        <p class="cs-panel-card-desc en">Origin: 2020–2022 (We Are Actions) · Rev. 2026. End-to-end 0-to-1 product scaling to 5 venues without redesign.</p>
         <span class="cs-panel-card-arrow" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 5.5H9.5M6 2L9.5 5.5L6 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
     </div>
@@ -717,7 +717,7 @@
 
   <section class="ime-sec" id="ime-problema">
     <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">02 · El problema</span><span class="en">02 · The problem</span></span><h2 class="ime-h2"><span class="es">Venían a reservar <em>y no buscaban</em></span><span class="en">They came to book <em>and never searched</em></span></h2></div>
-    <figure class="ime-paper"><div class="ime-paper-row"><img src="assets/ilunion-mobile/antes-unicos-landing.webp" alt="Antes: landing de ÚNICOS separada, con el mensaje Hazte miembro y un botón" width="104" height="200" loading="lazy"><img src="assets/ilunion-mobile/antes-ofertas.webp" alt="Antes: oferta Early Summer en texto largo, con la ventaja ÚNICOS en el cuarto párrafo, y tarjetas de ofertas" width="207" height="200" loading="lazy"></div><figcaption><span class="es">Antes · ofertas en texto largo y ÚNICOS en una landing aparte</span><span class="en">Before · offers as long copy and ÚNICOS on a separate landing page</span></figcaption></figure>
+    <figure class="ime-paper"><img src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.webp" alt="Auditoría inicial: ofertas en texto largo y ÚNICOS en una landing aparte" style="width:100%;height:auto;border-radius:14px;background:transparent;" loading="lazy"><figcaption><span class="es">Antes · ofertas en texto largo y ÚNICOS en una landing aparte</span><span class="en">Before · offers as long copy and ÚNICOS on a separate landing page</span></figcaption></figure>
     <div class="ime-sub" style="padding-top:28px">
       <div class="ime-stat"><span class="ime-stat-val">75%</span><span class="ime-stat-txt"><span class="es">del tráfico de pago llegaba con intención de reservar</span><span class="en">of paid traffic arrived ready to book</span></span></div>
       <div class="ime-squares" role="img" aria-label="3 de cada 4 visitas de pago querían reservar"><span class="is-on"></span><span class="is-on"></span><span class="is-on"></span><span></span></div>
@@ -819,7 +819,7 @@
     </div>
     <p class="ime-note" style="margin-top:12px"><span class="es">Algunos datos redondeados por confidencialidad. Medición con Adobe Analytics y Microsoft Clarity.</span><span class="en">Some figures rounded for confidentiality. Measured with Adobe Analytics and Microsoft Clarity.</span></p>
     <div class="ime-sub" style="padding-top:48px"><span class="ime-eyebrow"><span class="es">05 · Lo que me llevo</span><span class="en">05 · What I take away</span></span><ol class="ime-learn"><li><b>01</b><div><strong><span class="es">Marca y conversión: prioridad, no estética</span><span class="en">Brand vs conversion: priority, not aesthetics</span></strong><span class="es">Nadie perdió su componente. Cambió su posición.</span><span class="en">No one lost their component. Its position changed.</span></div></li><li><b>02</b><div><strong><span class="es">Segmentar antes de diseñar</span><span class="en">Segment before designing</span></strong><span class="es">Separar socios del resto mostró a quién servía cada componente.</span><span class="en">Splitting members from the rest showed who each component served.</span></div></li><li><b>03</b><div><strong><span class="es">Diseñar para campañas que rotan</span><span class="en">Design for rotating campaigns</span></strong><span class="es">El experimento del motor enseñó que una pieza fija no aguanta la estrategia trimestral.</span><span class="en">The engine experiment showed a fixed piece cannot keep up with a quarterly strategy.</span></div></li></ol></div>
-    <a href="paolo-pizzeria.html" class="ime-next"><span class="ime-next-txt"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Siguiente caso · 03</span><span class="en">Next case · 03</span></span><strong>Paolo Brand System</strong><span><span class="es">Ecosistema de producto de 0 a 1</span><span class="en">A 0-to-1 product ecosystem</span></span></span><span class="ime-next-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+    <a href="cef-design-system.html" class="ime-next"><span class="ime-next-txt"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Siguiente caso · 02</span><span class="en">Next case · 02</span></span><strong>CEF EdTech · Design System</strong><span><span class="es">17 componentes WCAG 2.1 AA y tokens Figma MCP</span><span class="en">17 WCAG 2.1 AA components & Figma MCP tokens</span></span></span><span class="ime-next-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
   </section>
 </div>
 
@@ -827,7 +827,7 @@
 
   <section class="ide-section ide-hero ide-split" id="ide-overview" aria-labelledby="ide-h1">
     <div class="ide-col">
-      <div class="ide-chips"><span class="ide-eyebrow" style="display:inline"><span class="es">Caso 02 / 05</span><span class="en">Case 02 / 05</span></span><span class="ide-chip ide-chip--accent"><span class="es">Hotelería · Canal directo</span><span class="en">Hospitality · Direct channel</span></span><span class="ide-chip"><span class="es">CRO · 2 iniciativas</span><span class="en">CRO · 2 initiatives</span></span></div>
+      <div class="ide-chips"><span class="ide-eyebrow" style="display:inline"><span class="es">Caso 01 / 05</span><span class="en">Case 01 / 05</span></span><span class="ide-chip ide-chip--accent"><span class="es">Hotelería · Canal directo</span><span class="en">Hospitality · Direct channel</span></span><span class="ide-chip"><span class="es">CRO · 2 iniciativas</span><span class="en">CRO · 2 initiatives</span></span></div>
       <h1 class="ide-h1" id="ide-h1"><span class="es">Las mismas piezas, <em>otro orden</em></span><span class="en">Same pieces, <em>new order</em></span></h1>
       <p class="ide-lead"><span class="es">De <strong>3,36%</strong> a <strong>6,5%</strong> de conversión reordenando los componentes de la home según lo que hacían los socios <strong class="is-loyal">ÚNICOS</strong>.</span><span class="en">From <strong>3.36%</strong> to <strong>6.5%</strong> conversion by reordering the homepage components around what <strong class="is-loyal">ÚNICOS</strong> members did.</span></p>
       <dl class="ide-facts">
@@ -871,10 +871,10 @@
         </div>
       </div>
       <figure class="ide-antes">
-        <div class="ide-antes-head"><span class="ide-tag-before"><span class="es">Antes</span><span class="en">Before</span></span><span><span class="es">Capturas de producción</span><span class="en">Production screenshots</span></span></div>
-        <div class="ide-antes-grid">
-          <div class="ide-antes-item"><img src="assets/ilunion-mobile/antes-ofertas.webp" alt="Antes: oferta Early Summer en texto largo, con la ventaja ÚNICOS en el cuarto párrafo, y tarjetas de ofertas" width="284" height="275" loading="lazy"><span><strong><span class="es">Ofertas en texto largo.</span><span class="en">Offers as long copy.</span></strong> <span class="es">La ventaja de socio, en el 4.º párrafo.</span><span class="en">The member perk, in paragraph 4.</span></span></div>
-          <div class="ide-antes-item"><img src="assets/ilunion-mobile/antes-unicos-landing.webp" alt="Antes: landing de ÚNICOS separada, con el mensaje Hazte miembro y un botón" width="136" height="261" loading="lazy"><span><strong class="is-loyal">ÚNICOS</strong> <span class="es">en una landing aparte.</span><span class="en">on a separate landing page.</span></span></div>
+        <div class="ide-antes-head"><span class="ide-tag-before"><span class="es">Antes · Auditoría</span><span class="en">Before · Audit</span></span><span><span class="es">Capturas de producción</span><span class="en">Production screenshots</span></span></div>
+        <div class="ide-antes-single">
+          <img src="assets/ILUNION/RE-COMPONETIZACION/RECOMPO-AUDITORIA.webp" alt="Auditoría inicial: ofertas en texto largo, ventaja de socio en 4.º párrafo y ÚNICOS en landing aparte" width="1200" height="800" loading="lazy">
+          <span><strong><span class="es">Ofertas en texto largo y ventaja de socio aislada:</span><span class="en">Long copy offers and isolated member perk:</span></strong> <span class="es">La ventaja ÚNICOS vivía en el 4.º párrafo o en una landing aparte sin tracción en el funnel.</span><span class="en">The ÚNICOS perk lived in paragraph 4 or on a separate landing page without funnel traction.</span></span>
         </div>
       </figure>
     </div>
@@ -980,12 +980,12 @@
       <div class="ide-exp-grid">
         <figure class="ide-exp-fig is-before">
           <span class="ide-tag-before"><span class="es">Antes</span><span class="en">Before</span></span>
-          <img src="assets/ilunion-mobile/antes-selector-destino.webp" alt="Antes: selector de destino nativo en iPhone, una lista larga de hoteles agrupados por ciudad que ocupa toda la pantalla" width="373" height="669" loading="lazy">
-          <figcaption><span class="es">Lista nativa del sistema.</span><span class="en">Native system list.</span></figcaption>
+          <img src="assets/ILUNION/CRO/MOTOR-DESTINOS/antes-recompo.png" alt="Antes: selector de destino nativo del sistema en mobile y desktop" width="1920" height="1440" loading="lazy">
+          <figcaption><span class="es">Lista nativa del sistema sin contexto visual.</span><span class="en">Native system dropdown without visual context.</span></figcaption>
         </figure>
         <figure class="ide-exp-fig is-after">
           <span class="ide-tag-after"><span class="es">Después</span><span class="en">After</span></span>
-          <img src="assets/ilunion-mobile/motor-despues.webp" alt="Después: el motor abre un panel con dos columnas, Destinos y Nuestros hoteles, en desktop y en móvil" width="1200" height="719" loading="lazy">
+          <img src="assets/ILUNION/CRO/MOTOR-DESTINOS/despues-recompo.png" alt="Después: selector rediseñado con dos columnas en desktop y panel optimizado" width="1920" height="1440" loading="lazy">
           <figcaption><span class="es">Panel propio con <strong>Destinos</strong> y <strong>Nuestros hoteles</strong>.</span><span class="en">A custom panel with <strong>Destinations</strong> and <strong>Our hotels</strong>.</span></figcaption>
         </figure>
       </div>
@@ -1062,8 +1062,8 @@
         <article class="ide-proc-card">
           <div class="ide-proc-card-head"><span>Mobile</span><span><span class="es">Wireframe → Producción</span><span class="en">Wireframe → Production</span></span></div>
           <div class="ide-proc-imgs">
-            <div class="ide-proc-img-wrap"><img src="assets/ilunion-mobile/wf-mobile.webp" alt="Wireframe móvil: carrusel de oferta con botón Reserva, bloque ÚNICOS con Lo quiero y buscador fijo abajo" width="539" height="1149" loading="lazy"><span class="ide-proc-tag">Lo-fi</span></div>
-            <div class="ide-proc-img-wrap is-final"><img src="assets/ilunion-mobile/final-mobile.webp" alt="Móvil en producción: oferta Te mereces más con Reserva ya y debajo el bloque ÚNICOS" width="360" height="708" loading="lazy"><span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span></div>
+            <div class="ide-proc-img-wrap"><img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-mobile%201.png" alt="Wireframe móvil: carrusel de oferta con botón Reserva, bloque ÚNICOS con Lo quiero y buscador fijo abajo" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag">Lo-fi</span></div>
+            <div class="ide-proc-img-wrap is-final"><img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-MOBILE.png" alt="Móvil en producción: oferta Te mereces más con Reserva ya y debajo el bloque ÚNICOS" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span></div>
           </div>
           <ol class="ide-proc-list">
             <li><b>1</b><span class="es">Oferta con botón «Reserva»</span><span class="en">Offer with “Book” button</span></li>
@@ -1074,8 +1074,8 @@
         <article class="ide-proc-card">
           <div class="ide-proc-card-head"><span>Desktop</span><span><span class="es">Wireframe → Producción</span><span class="en">Wireframe → Production</span></span></div>
           <div class="ide-proc-imgs is-desktop">
-            <div class="ide-proc-img-wrap"><img src="assets/ilunion-mobile/wf-desk.webp" alt="Wireframe desktop: hero con motor de reservas integrado, debajo oferta y bloque ÚNICOS lado a lado" width="720" height="835" loading="lazy"><span class="ide-proc-tag">Lo-fi</span></div>
-            <div class="ide-proc-img-wrap is-final"><img src="assets/ilunion-mobile/final-desk.webp" alt="Desktop en producción: motor de reservas arriba, oferta Mejor con tiempo y bloque ÚNICOS lado a lado" width="720" height="448" loading="lazy"><span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span></div>
+            <div class="ide-proc-img-wrap"><img src="assets/ILUNION/RE-COMPONETIZACION/WIREFRAMES/wire-home-desk%201.png" alt="Wireframe desktop: hero con motor de reservas integrado, debajo oferta y bloque ÚNICOS lado a lado" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag">Lo-fi</span></div>
+            <div class="ide-proc-img-wrap is-final"><img src="assets/ILUNION/RE-COMPONETIZACION/DESPUES-RECOMPO-DESK.png" alt="Desktop en producción: motor de reservas arriba, oferta Mejor con tiempo y bloque ÚNICOS lado a lado" width="1920" height="1440" loading="lazy"><span class="ide-proc-tag is-final"><span class="es">Final</span><span class="en">Final</span></span></div>
           </div>
           <ol class="ide-proc-list is-desktop">
             <li><b>1</b><span class="es">Hero con motor de reservas</span><span class="en">Hero with booking engine</span></li>
@@ -1150,19 +1150,23 @@
       <li class="ide-tl-line" aria-hidden="true"></li>
       <li class="ide-tl-item">
         <span class="ide-tl-dot"></span>
-        <a class="ide-tl-card" href="gym-energy-center.html"><span class="ide-tl-kicker"><span class="es">Bootcamp</span><span class="en">Bootcamp</span></span><span class="ide-tl-name">Gym Energy Center</span><span class="ide-tl-sub"><span class="es">UX Research cualitativo y hábitos</span><span class="en">Qualitative UX research &amp; habits</span></span><span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span></a>
+        <a class="ide-tl-card" href="paolo-pizzeria.html"><span class="ide-tl-kicker">2020–22 · Rev. 2026</span><span class="ide-tl-name">Paolo Pizzeria</span><span class="ide-tl-sub"><span class="es">Diseño integral de producto 0 a 1</span><span class="en">End-to-end 0-to-1 product design</span></span><span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span></a>
       </li>
       <li class="ide-tl-item">
         <span class="ide-tl-dot"></span>
-        <a class="ide-tl-card" href="paolo-pizzeria.html"><span class="ide-tl-kicker">2020–22</span><span class="ide-tl-name">Paolo Pizzeria</span><span class="ide-tl-sub"><span class="es">Diseño integral y desarrollo web</span><span class="en">End-to-end design &amp; web build</span></span><span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span></a>
+        <a class="ide-tl-card" href="it-ops-oracle.html"><span class="ide-tl-kicker">2022–24 · Rev. 2026</span><span class="ide-tl-name">IT Ops &amp; Oracle ERP</span><span class="ide-tl-sub"><span class="es">Discovery contextual y diagnóstico B2B</span><span class="en">Contextual discovery &amp; B2B diagnosis</span></span><span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span></a>
+      </li>
+      <li class="ide-tl-item">
+        <span class="ide-tl-dot"></span>
+        <a class="ide-tl-card" href="gym-energy-center.html"><span class="ide-tl-kicker">2024 · Rev. 2026</span><span class="ide-tl-name">Gym Energy Center</span><span class="ide-tl-sub"><span class="es">UX Research cualitativo y hábitos</span><span class="en">Qualitative UX research &amp; habits</span></span><span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span></a>
+      </li>
+      <li class="ide-tl-item">
+        <span class="ide-tl-dot"></span>
+        <a class="ide-tl-card" href="cef-design-system.html"><span class="ide-tl-kicker">Jun–Sep 2024 · Rev. 2026</span><span class="ide-tl-name">CEF EdTech</span><span class="ide-tl-sub"><span class="es">Design System y accesibilidad WCAG AA</span><span class="en">Design System &amp; WCAG AA accessibility</span></span><span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span></a>
       </li>
       <li class="ide-tl-item">
         <span class="ide-tl-dot is-current"></span>
-        <div class="ide-tl-card is-current"><span class="ide-tl-kicker"><span class="es">2023–24 · Estás aquí</span><span class="en">2023–24 · You are here</span></span><span class="ide-tl-name">ILUNION Hotels CRO</span><span class="ide-tl-sub"><span class="es">Diseño que mueve métricas y A/B testing</span><span class="en">Design that moves metrics &amp; A/B testing</span></span></div>
-      </li>
-      <li class="ide-tl-item">
-        <span class="ide-tl-dot"></span>
-        <a class="ide-tl-card" href="cef-design-system.html"><span class="ide-tl-kicker">2024–25</span><span class="ide-tl-name">CEF EdTech</span><span class="ide-tl-sub"><span class="es">Pensamiento sistémico y WCAG AA</span><span class="en">Systems thinking &amp; WCAG AA</span></span><span class="ide-tl-link"><span class="es">Ver caso →</span><span class="en">View case →</span></span></a>
+        <div class="ide-tl-card is-current"><span class="ide-tl-kicker"><span class="es">Sep 2024–Act. · Estás aquí</span><span class="en">Sep 2024–Pres. · You are here</span></span><span class="ide-tl-name">ILUNION Hotels CRO</span><span class="ide-tl-sub"><span class="es">Diseño que mueve negocio y testing A/B</span><span class="en">Design that drives business &amp; A/B testing</span></span><span class="ide-tl-link"><span class="es">Caso actual</span><span class="en">Current case</span></span></div>
       </li>
     </ol>
   </section>
@@ -1661,43 +1665,90 @@
       </div>
 
       <div class="cs-journey-timeline">
-        <a href="gym-energy-center.html" class="cs-journey-step">
-          <div class="cs-journey-step-tag">
-            <span>Bootcamp</span>
-          </div>
-          <div class="cs-journey-step-name">Gym Energy Center</div>
-          <p class="cs-journey-step-desc"><span class="es">UX Research cualitativo &amp; hábitos</span><span class="en">Qualitative UX Research &amp; habits</span></p>
-          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5H9M5.5 1.5L9 5L5.5 8.5" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-
+        <!-- 01 PAOLO -->
         <a href="paolo-pizzeria.html" class="cs-journey-step">
-          <div class="cs-journey-step-tag">
-            <span>2020–22</span>
+          <div class="cs-journey-step-top">
+            <span class="cs-journey-num">01</span>
+            <span class="cs-journey-badge es">Producto 0→1</span>
+            <span class="cs-journey-badge en">Product 0→1</span>
           </div>
-          <div class="cs-journey-step-name">Paolo Pizzeria</div>
-          <p class="cs-journey-step-desc"><span class="es">Diseño integral &amp; desarrollo web</span><span class="en">End-to-end design &amp; code</span></p>
-          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5H9M5.5 1.5L9 5L5.5 8.5" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h4 class="cs-journey-name">Paolo Pizzeria</h4>
+          <div class="cs-journey-meta es">2020–22 · Rev. 2026</div>
+          <div class="cs-journey-meta en">2020–22 · Rev. 2026</div>
+          <div class="cs-journey-role es">Diseño integral &amp; Producto 0 a 1</div>
+          <div class="cs-journey-role en">End-to-End &amp; 0-to-1 Product</div>
+          <p class="cs-journey-text es">Ecosistema omnicanal: delivery web, carta digital interactiva, packaging y escalado a 5 locales.</p>
+          <p class="cs-journey-text en">Omnichannel ecosystem: direct delivery web, interactive menu, physical packaging, and scaling across 5 branches.</p>
+          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
 
-        <div class="cs-journey-step is-current">
-          <div class="cs-journey-step-tag">
-            <span>2023–24</span>
-            <span class="cs-journey-badge es">Estás aquí</span>
-            <span class="cs-journey-badge en">Current</span>
+        <!-- 02 ORACLE -->
+        <a href="it-ops-oracle.html" class="cs-journey-step">
+          <div class="cs-journey-step-top">
+            <span class="cs-journey-num">02</span>
+            <span class="cs-journey-badge es">Discovery B2B</span>
+            <span class="cs-journey-badge en">B2B Discovery</span>
           </div>
-          <div class="cs-journey-step-name">ILUNION Hotels CRO</div>
-          <p class="cs-journey-step-desc"><span class="es">Diseño que mueve métricas &amp; A/B testing</span><span class="en">Data-driven CRO &amp; A/B testing</span></p>
-          <span class="cs-journey-link" style="color:var(--white); opacity:0.8;"><span class="es">Proyecto actual</span><span class="en">Current project</span></span>
-        </div>
+          <h4 class="cs-journey-name">IT Ops &amp; Oracle ERP</h4>
+          <div class="cs-journey-meta es">2022–24 · Rev. 2026</div>
+          <div class="cs-journey-meta en">2022–24 · Rev. 2026</div>
+          <div class="cs-journey-role es">Discovery contextual &amp; Diagnóstico B2B</div>
+          <div class="cs-journey-role en">Contextual Discovery &amp; B2B Diagnosis</div>
+          <p class="cs-journey-text es">Shadowing con técnicos, service blueprinting, análisis Build vs. Buy y reducción de 45 a 8 min por ticket.</p>
+          <p class="cs-journey-text en">Technician shadowing, service blueprinting, Build vs. Buy analysis, cutting ticket resolution from 45m to 8m.</p>
+          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
 
+        <!-- 03 GYM -->
+        <a href="gym-energy-center.html" class="cs-journey-step">
+          <div class="cs-journey-step-top">
+            <span class="cs-journey-num">03</span>
+            <span class="cs-journey-badge es">UX Research</span>
+            <span class="cs-journey-badge en">UX Research</span>
+          </div>
+          <h4 class="cs-journey-name">Gym Energy Center</h4>
+          <div class="cs-journey-meta es">Bootcamp · 2024 · Rev. 2026</div>
+          <div class="cs-journey-meta en">Bootcamp · 2024 · Rev. 2026</div>
+          <div class="cs-journey-role es">UX Research cualitativo &amp; Hábitos</div>
+          <div class="cs-journey-role en">Qualitative UX Research &amp; Habits</div>
+          <p class="cs-journey-text es">16 entrevistas contextuales, mapeo de modelos conductuales (Hooked), prototipado y validación de hábitos.</p>
+          <p class="cs-journey-text en">16 contextual interviews, behavioural habit models (Hooked), rapid prototyping, and habit loop validation.</p>
+          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <!-- 04 CEF -->
         <a href="cef-design-system.html" class="cs-journey-step">
-          <div class="cs-journey-step-tag">
-            <span>2024–25</span>
+          <div class="cs-journey-step-top">
+            <span class="cs-journey-num">04</span>
+            <span class="cs-journey-badge es">Design System</span>
+            <span class="cs-journey-badge en">Design System</span>
           </div>
-          <div class="cs-journey-step-name">CEF EdTech</div>
-          <p class="cs-journey-step-desc"><span class="es">Pensamiento sistémico &amp; WCAG AA</span><span class="en">Design systems &amp; WCAG AA</span></p>
-          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5H9M5.5 1.5L9 5L5.5 8.5" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h4 class="cs-journey-name">CEF EdTech</h4>
+          <div class="cs-journey-meta es">Jun–Sep 2024 · Rev. 2026</div>
+          <div class="cs-journey-meta en">Jun–Sep 2024 · Rev. 2026</div>
+          <div class="cs-journey-role es">Design Systems &amp; WCAG AA</div>
+          <div class="cs-journey-role en">Design Systems &amp; WCAG AA</div>
+          <p class="cs-journey-text es">80+ componentes multidispositivo, tokens multimarca y gobernanza transversal diseño-frontend.</p>
+          <p class="cs-journey-text en">80+ multi-device components, multi-brand design tokens, and cross-team design-dev governance.</p>
+          <span class="cs-journey-link"><span class="es">Ver caso</span><span class="en">View case</span> <svg width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
+
+        <!-- 05 ILUNION (CURRENT) -->
+        <div class="cs-journey-step is-current">
+          <div class="cs-journey-step-top">
+            <span class="cs-journey-num">05</span>
+            <span class="cs-journey-badge is-active es">Estás aquí</span>
+            <span class="cs-journey-badge is-active en">Current</span>
+          </div>
+          <h4 class="cs-journey-name">ILUNION Hotels CRO</h4>
+          <div class="cs-journey-meta es">Sep 2024–Act. · Producción</div>
+          <div class="cs-journey-meta en">Sep 2024–Pres. · In Prod</div>
+          <div class="cs-journey-role es">CRO &amp; Experimentación A/B</div>
+          <div class="cs-journey-role en">CRO &amp; A/B Experimentation</div>
+          <p class="cs-journey-text es">10.000+ logs analizados, tests A/B en Adobe AEM y subida del 3,36% al 6,5% con significancia estadística.</p>
+          <p class="cs-journey-text en">10k+ logs analyzed, A/B testing in Adobe AEM, lifting conversion from 3.36% to 6.5% with statistical significance.</p>
+          <span class="cs-journey-link is-active"><span class="es">Caso actual</span><span class="en">Current case</span></span>
+        </div>
       </div>
     </div>
   </div>
@@ -1706,10 +1757,10 @@
 </main>
 
 <!-- ============ 14 · SIGUIENTE CASO ============ -->
-<a href="paolo-pizzeria.html" class="next" id="cs-next">
+<a href="cef-design-system.html" class="next" id="cs-next">
   <div class="wrap">
-    <small><span class="es">Siguiente caso · 03</span><span class="en">Next case · 03</span></small>
-    <h2><span><span class="es">Paolo Brand System</span><span class="en">Paolo Brand System</span></span><span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4L15 9L10 14" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
+    <small><span class="es">Siguiente caso · 02</span><span class="en">Next case · 02</span></small>
+    <h2><span><span class="es">CEF EdTech · Design System</span><span class="en">CEF EdTech · Design System</span></span><span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9H15M10 4L15 9L10 14" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
   </div>
 </a>
 
@@ -1722,15 +1773,15 @@
     <h2 class="cs-pagination-title en">Want to see another project?</h2>
     
     <nav class="cs-pagination" aria-label="Navegación entre casos">
-      <a href="cef-design-system.html" class="cs-pagination-arrow" aria-label="Caso anterior"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6L6 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="paolo-pizzeria.html" class="cs-pagination-arrow" aria-label="Caso anterior"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6L6 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="cs-pagination-dots">
-        <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 01">01</a>
-        <a href="ilunion-cro.html" class="cs-pagination-dot is-current" aria-label="Caso 02">02</a>
-        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
-        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
-        <a href="gym-energy-center.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
+        <a href="ilunion-cro.html" class="cs-pagination-dot is-current" aria-label="Caso 01">01</a>
+        <a href="cef-design-system.html" class="cs-pagination-dot" aria-label="Caso 02">02</a>
+        <a href="it-ops-oracle.html" class="cs-pagination-dot" aria-label="Caso 03">03</a>
+        <a href="gym-energy-center.html" class="cs-pagination-dot" aria-label="Caso 04">04</a>
+        <a href="paolo-pizzeria.html" class="cs-pagination-dot" aria-label="Caso 05">05</a>
       </div>
-      <a href="paolo-pizzeria.html" class="cs-pagination-arrow" aria-label="Caso siguiente"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M1 1L6 6L1 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="cef-design-system.html" class="cs-pagination-arrow" aria-label="Caso siguiente"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M1 1L6 6L1 11" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </nav>
 
     <div class="cs-pagination-actions">
