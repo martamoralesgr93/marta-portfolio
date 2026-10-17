@@ -2248,7 +2248,6 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
     background: rgba(0, 0, 0, 0.92);
     border-bottom: 1px solid var(--border);
   }
-  .cs-top .cs-logo,
   .cs-top .cs-cases-trigger,
   .cs-top .nav-linkedin-btn,
   .cs-top .cs-hamburger,
@@ -2259,15 +2258,15 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   .cs-nav-left {
     gap: 0;
   }
-  .cs-back {
+  /* Logo de marca (como en el index) en lugar de la flecha de volver */
+  .cs-top .cs-logo {
     display: inline-flex !important;
-    align-items: center;
-    gap: 4px;
-    color: var(--white);
-    font-size: 13.5px;
-    font-weight: 500;
   }
-  .cs-back span {
+  .cs-top .cs-logo img {
+    height: 32px;
+    width: auto;
+  }
+  .cs-top .cs-back {
     display: none !important;
   }
   .cs-mobile-case-badge {
@@ -2413,6 +2412,11 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   /* Padding inferior adicional para evitar que la barra fija tape el contenido */
   main {
     padding-bottom: 80px;
+  }
+  /* La paginación final está fuera de <main>: reservamos el alto de la barra fija
+     (≈82px + safe area) para que "Volver al índice" no quede tapado */
+  .cs-pagination-section {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom)) !important;
   }
 
   /* Adaptación de grids a una columna */
