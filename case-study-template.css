@@ -2271,6 +2271,13 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   }
   .cs-mobile-case-badge {
     display: block !important;
+    /* Centrado real respecto al header (no depende del ancho del logo ni de "EN") */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
     font-size: 11.5px;
     font-weight: 700;
     letter-spacing: 0.12em;
