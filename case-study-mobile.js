@@ -126,11 +126,12 @@
   const bottomBar = document.getElementById('csMobileBottomBar');
   const heroSection = document.querySelector('.cs-hero') || document.getElementById('overview');
 
-  if (bottomBar && heroSection) {
+  if (bottomBar) {
     const checkBottomBar = () => {
-      // Si el hero está oculto (p.ej. maquetación móvil propia con .ome),
-      // getBoundingClientRect() siempre da 0: usamos la posición de scroll como respaldo.
-      const isHidden = window.getComputedStyle(heroSection).display === 'none';
+      // Si no hay hero (casos con maquetación propia ime-/cme-) o está oculto
+      // (p.ej. maquetación móvil propia con .ome), getBoundingClientRect() no sirve:
+      // usamos la posición de scroll como respaldo.
+      const isHidden = !heroSection || window.getComputedStyle(heroSection).display === 'none';
       const heroBottom = isHidden
         ? (window.scrollY > 320 ? 0 : 999)
         : heroSection.getBoundingClientRect().bottom;
