@@ -2466,13 +2466,18 @@ html:not(.lang-en) .hero-positioning.es { display: block !important; }
 html.lang-en .hero-positioning.en { display: block !important; }
 .hero-positioning {
   display: block !important;
-  font-size: clamp(15px, 2.5vw, 17px) !important;
+  font-size: clamp(15px, 2vw, 17px) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  line-height: 1.65 !important;
+  max-width: 780px !important;
+  margin-bottom: 28px !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: -0.1px !important;
+}
+.hero-positioning strong {
   color: var(--white) !important;
-  line-height: 1.5 !important;
-  margin-bottom: 24px !important;
-  font-weight: 500 !important;
-  font-style: italic !important;
-  letter-spacing: -0.2px !important;
+  font-weight: 600 !important;
 }
 
 /* Primary CTA in Hero (Descargar CV) using magenta */
@@ -2881,6 +2886,76 @@ html.lang-en .hero-positioning.en { display: block !important; }
 .sc-card:hover .sc-stage { background:rgba(var(--accent-rgb),0.14); border-color:rgba(var(--accent-rgb),0.5); }
 @keyframes scStagePulse { 0%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),.55)} 70%{box-shadow:0 0 0 7px rgba(var(--accent-rgb),0)} 100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0)} }
 @media (prefers-reduced-motion: reduce) { .sc-stage-dot { animation:none; } }
+
+/* ── Franja transversal en Hero (4 pilares end-to-end) ── */
+.mm-transversal-wrap {
+  margin-top: clamp(32px, 4.5vh, 44px);
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.mm-transversal-kicker {
+  font-size: max(10.5px, var(--fs-min-xs));
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mm-transversal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.mm-transversal-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 18px;
+  min-width: 0;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.mm-transversal-card:hover {
+  border-color: rgba(167, 139, 250, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+}
+.mm-transversal-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--purple);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.mm-transversal-title {
+  font-size: max(14px, var(--fs-min-14));
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+.mm-transversal-desc {
+  font-size: max(12.5px, var(--fs-min-xs));
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin: 0;
+}
+@media (max-width: 960px) {
+  .mm-transversal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .mm-transversal-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .mm-transversal-card {
+    padding: 14px 16px;
+  }
+}
 </style>
 </head>
 <body>
@@ -2963,31 +3038,59 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <div>
         <div class="eyebrow mm-rise mm-d1">
           <div class="eyebrow-dot"></div>
-          <span class="eyebrow-text es">Disponible · Open to opportunities · 2026</span>
-          <span class="eyebrow-text en">Available · Open to opportunities · 2026</span>
+          <span class="eyebrow-text es">Marta Morales · Product Designer End-to-End · UX/UI, Design Systems, CRO &amp; Código</span>
+          <span class="eyebrow-text en">Marta Morales · End-to-End Product Designer · UX/UI, Design Systems, CRO &amp; Code</span>
         </div>
 
         <h1 class="hero-title">
-          <span class="es"><span class="mm-reveal"><span>Diseño de producto orientado a <span class="c-purple">conversión</span> bajo restricciones reales<span class="c-orange">.</span></span></span></span>
-          <span class="en"><span class="mm-reveal"><span>Product design focused on <span class="c-purple">conversion</span> under real constraints<span class="c-orange">.</span></span></span></span>
+          <span class="es"><span class="mm-reveal"><span>Diseño de producto <span class="c-purple">transversal</span>: de los datos al sistema y el código<span class="c-orange">.</span></span></span></span>
+          <span class="en"><span class="mm-reveal"><span><span class="c-purple">Cross-functional</span> product design: from data to systems and code<span class="c-orange">.</span></span></span></span>
         </h1>
         
-        <p class="hero-positioning es mm-rise mm-d2" style="display:block; font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 16px;"><em>Cero opciones de relleno: una sola propuesta argumentada en datos.</em></p>
-        <p class="hero-positioning en mm-rise mm-d2" style="display:block; font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 16px;"><em>Zero filler options: a single proposal backed by data.</em></p>
-        
-
+        <p class="hero-positioning es mm-rise mm-d2">Más de 5 años resolviendo producto digital de punta a punta en <strong>e-commerce hotelero (ILUNION Hotels)</strong>, <strong>EdTech (CEF)</strong>, <strong>software B2B/ERP (Oracle)</strong> y <strong>apps 0→1</strong>. Conecto investigación, negocio, sistemas de diseño y desarrollo para entregar soluciones que mueven métricas reales en producción.</p>
+        <p class="hero-positioning en mm-rise mm-d2">5+ years solving end-to-end digital product across <strong>hospitality e-commerce (ILUNION Hotels)</strong>, <strong>EdTech (CEF)</strong>, <strong>B2B/ERP software (Oracle)</strong> and <strong>0→1 apps</strong>. I bridge research, business, design systems and engineering to ship solutions that move real metrics in production.</p>
 
         <div class="hero-actions mm-rise mm-d2">
           <a href="assets/cv-marta-ats-es.pdf" download="CV_Marta_Morales_ES_2026.pdf" class="btn-primary cta-download es">Descargar CV  ↗</a>
           <a href="assets/cv-marta-ats-en.pdf" download="CV_Marta_Morales_EN_2026.pdf" class="btn-primary cta-download en">Download CV  ↗</a>
-          <a href="#work" class="btn-ghost"><span class="es">Ver mi trabajo</span><span class="en">View my work</span> ≀↓</a>
+          <a href="#work" class="btn-ghost"><span class="es">Ver los 5 casos de producto</span><span class="en">View the 5 product cases</span> ≀↓</a>
+        </div>
+
+        <!-- ── QUÉ HAGO DE FORMA TRANSVERSAL (RESUMEN EN 4 PILARES) ── -->
+        <div class="mm-transversal-wrap mm-rise mm-d2">
+          <p class="mm-transversal-kicker">
+            <span class="es">• Qué hago de forma transversal en un equipo de producto</span>
+            <span class="en">• How I work cross-functionally in a product team</span>
+          </p>
+          <div class="mm-transversal-grid">
+            <div class="mm-transversal-card">
+              <div class="mm-transversal-num">01 · DISCOVERY &amp; DATOS</div>
+              <h2 class="mm-transversal-title"><span class="es">Research &amp; Analítica</span><span class="en">Research &amp; Analytics</span></h2>
+              <p class="mm-transversal-desc"><span class="es">Investigación contextual, Adobe Analytics, Microsoft Clarity, auditorías heurísticas y test A/B.</span><span class="en">Contextual discovery, Adobe Analytics, Microsoft Clarity, heuristic audits and A/B testing.</span></p>
+            </div>
+            <div class="mm-transversal-card">
+              <div class="mm-transversal-num">02 · ARQUITECTURA &amp; UI</div>
+              <h2 class="mm-transversal-title"><span class="es">UX/UI &amp; Design Systems</span><span class="en">UX/UI &amp; Design Systems</span></h2>
+              <p class="mm-transversal-desc"><span class="es">Flujos complejos B2B/B2C, sistemas de diseño desde cero con tokens en Figma y 100% WCAG 2.1 AA.</span><span class="en">Complex B2B/B2C flows, token-based Figma design systems built from scratch and 100% WCAG 2.1 AA.</span></p>
+            </div>
+            <div class="mm-transversal-card">
+              <div class="mm-transversal-num">03 · NEGOCIO &amp; IMPACTO</div>
+              <h2 class="mm-transversal-title"><span class="es">Estrategia &amp; CRO</span><span class="en">Strategy &amp; CRO</span></h2>
+              <p class="mm-transversal-desc"><span class="es">Optimización de conversión en motores de reserva (3,36% → 6,5%) y decisiones estratégicas Build vs. Buy.</span><span class="en">Booking engine conversion optimisation (3.36% → 6.5%) and strategic Build vs. Buy decisions.</span></p>
+            </div>
+            <div class="mm-transversal-card">
+              <div class="mm-transversal-num">04 · IMPLEMENTACIÓN</div>
+              <h2 class="mm-transversal-title"><span class="es">Código, Handoff &amp; IA</span><span class="en">Code, Handoff &amp; AI</span></h2>
+              <p class="mm-transversal-desc"><span class="es">Prototipos interactivos en HTML/CSS/JS y React, sincronización vía Figma MCP y validación directa con dev.</span><span class="en">Interactive prototypes in HTML/CSS/JS and React, Figma MCP token sync and direct QA with engineering.</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- ── BANCO DE PRUEBAS ── -->
-    <p class="mm-note es mm-rise mm-d3">Selector de destino del motor de reservas de ILUNION Hotels. El bloque 01 reproduce la agrupación real del <code>&lt;select&gt;</code> anterior; el 02 es una reconstrucción funcional del componente en producción. Métricas de conversión del canal, en el case study.</p>
-    <p class="mm-note en mm-rise mm-d3">Destination selector of the ILUNION Hotels booking engine. Block 01 reproduces the actual grouping of the previous <code>&lt;select&gt;</code>; block 02 is a functional reconstruction of the component in production. Channel conversion metrics are in the case study.</p>
+    <p class="mm-note es mm-rise mm-d3"><strong style="color:var(--white);">Ejemplo rápido en vivo (Caso 01 · ILUNION Hotels):</strong> selector de destino del motor de reservas. El bloque 01 reproduce el <code>&lt;select&gt;</code> nativo anterior; el 02 es la reconstrucción funcional del componente en producción.</p>
+    <p class="mm-note en mm-rise mm-d3"><strong style="color:var(--white);">Quick live example (Case 01 · ILUNION Hotels):</strong> booking engine destination selector. Block 01 reproduces the previous native <code>&lt;select&gt;</code>; block 02 is the functional reconstruction of the component in production.</p>
 
     <div class="mm-bench mm-rise mm-d3">
 
