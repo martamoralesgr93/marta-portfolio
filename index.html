@@ -2873,11 +2873,11 @@ html.lang-en .hero-positioning.en { display: block !important; }
 }
 
 /* Progression chip on case cards */
-.sc-stage { display:inline-flex; align-items:center; gap:8px; margin:6px 0 14px; padding:5px 12px 5px 10px;
+.sc-stage { display:inline-flex; align-items:center; gap:8px; margin:6px 0 14px; padding:5px 12px 5px 10px; max-width:100%;
   border:1px solid rgba(var(--accent-rgb),0.28); border-radius:999px; background:rgba(var(--accent-rgb),0.08);
   font-size:max(11px, var(--fs-min-xs, 11px)); font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
   color:rgba(var(--accent-rgb),0.95); transition:background .3s var(--mm-ease), border-color .3s var(--mm-ease); }
-.sc-stage-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 0 rgba(var(--accent-rgb),.6); animation:scStagePulse 2.4s infinite; }
+.sc-stage-dot { width:6px; height:6px; flex-shrink:0; border-radius:50%; background:var(--accent); box-shadow:0 0 0 0 rgba(var(--accent-rgb),.6); animation:scStagePulse 2.4s infinite; }
 .sc-card:hover .sc-stage { background:rgba(var(--accent-rgb),0.14); border-color:rgba(var(--accent-rgb),0.5); }
 @keyframes scStagePulse { 0%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),.55)} 70%{box-shadow:0 0 0 7px rgba(var(--accent-rgb),0)} 100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0)} }
 @media (prefers-reduced-motion: reduce) { .sc-stage-dot { animation:none; } }
@@ -3859,10 +3859,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .sobre-section, .process-section, .stack-section, .work-section { padding-top: 56px !important; padding-bottom: 56px !important; }
 
   /* Tarjetas de caso: resumen corto, la metodología vive en el caso */
+  .sc-stage { border-radius: 12px; line-height: 1.4; font-size: 11px !important; }
   .sc-desc > span[style*="display:block"] { display: none !important; }
   .sc-desc { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; font-size: 15px !important; line-height: 1.6 !important; }
   .sc-cta-row { flex-direction: row !important; gap: 10px !important; }
   .sc-cta-row > a { flex: 1 1 0; min-height: 44px; display: inline-flex !important; align-items: center; justify-content: center; margin: 0 !important; }
+  .sc-metric { padding: 8px 6px !important; }
   .sc-mname { font-size: 12px !important; line-height: 1.35 !important; }
 
   /* Cómo trabajo: el botón "Ver más" pasa debajo del texto y deja todo el ancho a la lectura */
@@ -3879,6 +3881,12 @@ html.lang-en .hero-positioning.en { display: block !important; }
   .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 10px !important; padding: 0 20px; }
   .footer-link { min-height: 44px; }
   .sc-cta-row > a { white-space: nowrap; padding-left: 12px !important; padding-right: 12px !important; letter-spacing: 0.06em !important; }
+}
+@media (max-width: 520px) {
+  .mm-panel { grid-template-columns: 1fr; }
+  .mm-col + .mm-col { border-left: 0; border-top: 1px solid var(--mm-spec-line); }
+  .mm-combo[data-open="true"] .mm-panel { max-height: 380px; }
+  .mm-col { max-height: 185px; }
 }
 </style>
 

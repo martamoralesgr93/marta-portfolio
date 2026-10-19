@@ -2151,12 +2151,16 @@ window.addEventListener('DOMContentLoaded', () => {
 <script>
   if (window.self === window.top) {
     window.addEventListener('DOMContentLoaded', function() {
+      var st = document.createElement('style');
+      st.textContent = '.mm-paolo-ret{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:2147483647;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;max-width:calc(100vw - 24px);padding:7px 11px;border-radius:999px;background:rgba(10,10,12,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.16);box-shadow:0 12px 32px rgba(0,0,0,0.55);font-family:Inter,system-ui,sans-serif;font-size:12px;}' +
+        '@media(max-width:640px){.mm-paolo-ret{bottom:10px;padding:6px 10px;gap:5px;}.mm-paolo-ret .mm-hide-sm{display:none!important;}.chat-trigger{bottom:72px!important;}.btn-back-to-top{bottom:140px!important;}}';
+      document.head.appendChild(st);
       var bar = document.createElement('div');
-      bar.style.cssText = 'position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:2147483647;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(10,10,12,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.16);box-shadow:0 12px 32px rgba(0,0,0,0.55);font-family:Inter,system-ui,sans-serif;font-size:12px;';
-      bar.innerHTML = '<a href="../../paolo-pizzeria.html" style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;text-decoration:none;font-weight:600;white-space:nowrap;">← Volver al caso</a>' +
-        '<a href="../../index.html#work" style="display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border-radius:999px;color:rgba(255,255,255,0.75);text-decoration:none;font-weight:500;white-space:nowrap;">Ir a la web</a>' +
-        '<a href="https://wa.me/34659879887?text=Hola%20Marta%2C%20acabo%20de%20ver%20el%20prototipo%20de%20Paolo%E2%80%99s%20Pizzeria%20en%20tu%20portafolio" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border-radius:999px;background:rgba(34,197,94,0.16);border:1px solid rgba(34,197,94,0.38);color:#86efac;text-decoration:none;font-weight:600;white-space:nowrap;">WhatsApp</a>' +
-        '<a href="tel:+34659879887" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:#fff;color:#0a0a0c;text-decoration:none;font-weight:700;white-space:nowrap;">📞 Llamar · 659 879 887</a>';
+      bar.className = 'mm-paolo-ret';
+      bar.innerHTML = '<a href="../../paolo-pizzeria.html" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;text-decoration:none;font-weight:600;white-space:nowrap;">← Volver al caso</a>' +
+        '<a href="../../index.html#work" class="mm-hide-sm" style="display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:999px;color:rgba(255,255,255,0.75);text-decoration:none;font-weight:500;white-space:nowrap;">Ir a la web</a>' +
+        '<a href="https://wa.me/34659879887?text=Hola%20Marta%2C%20acabo%20de%20ver%20el%20prototipo%20de%20Paolo%E2%80%99s%20Pizzeria%20en%20tu%20portafolio" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;padding:6px 11px;border-radius:999px;background:rgba(34,197,94,0.16);border:1px solid rgba(34,197,94,0.38);color:#86efac;text-decoration:none;font-weight:600;white-space:nowrap;">WhatsApp</a>' +
+        '<a href="tel:+34659879887" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;background:#fff;color:#0a0a0c;text-decoration:none;font-weight:700;white-space:nowrap;">📞 Llamar<span class="mm-hide-sm"> · 659 879 887</span></a>';
       document.body.appendChild(bar);
     });
   }

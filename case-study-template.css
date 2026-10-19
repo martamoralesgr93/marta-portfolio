@@ -2997,18 +2997,24 @@ html[data-lang="es"] .en, html[data-lang="en"] .es { display: none !important; }
   .cs-proto-topbar {
     height: 52px;
     min-height: 52px;
-    padding: 0 12px;
+    padding: 0 10px;
+    gap: 8px;
   }
-  .cs-proto-center {
-    display: none;
+  .cs-proto-center,
+  .cs-proto-wa-btn {
+    display: none !important;
+  }
+  .cs-proto-left {
+    gap: 6px;
+    min-width: 0;
   }
   .cs-proto-back-btn {
-    padding: 7px 12px;
-    font-size: 12.5px;
+    padding: 6px 10px;
+    font-size: 12px;
   }
   .cs-proto-call-btn {
-    padding: 7px 13px;
-    font-size: 12.5px;
+    padding: 6px 11px;
+    font-size: 11.5px;
   }
   .cs-proto-bottombar {
     display: flex;
