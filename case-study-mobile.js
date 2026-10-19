@@ -208,4 +208,229 @@
     chatScript.src = 'chatbot.js?v=20261014_rev2';
     document.body.appendChild(chatScript);
   }
+
+  // 7. Visor de Prototipo Interactivo con Retorno a la Web y CTA de Llamada
+  const PROTO_CONFIG = {
+    cef: {
+      url: 'https://calendario-cef.vercel.app/',
+      titleEs: 'Prototipo en vivo · CEF Design System',
+      titleEn: 'Live Prototype · CEF Design System',
+      caseUrl: 'cef-design-system.html'
+    },
+    oracle: {
+      url: 'https://it-ops-oracle-prototype-design.vercel.app/',
+      titleEs: 'Prototipo en vivo · IT Ops & Oracle ERP',
+      titleEn: 'Live Prototype · IT Ops & Oracle ERP',
+      caseUrl: 'it-ops-oracle.html'
+    },
+    gym: {
+      url: 'https://gym-energy-center-app.vercel.app/',
+      titleEs: 'Prototipo en vivo · Gym Energy Center',
+      titleEn: 'Live Prototype · Gym Energy Center',
+      caseUrl: 'gym-energy-center.html'
+    },
+    paolo: {
+      url: 'projects/04-paolo/index.html',
+      titleEs: 'Prototipo en vivo · Paolo Pizzeria',
+      titleEn: 'Live Prototype · Paolo Pizzeria',
+      caseUrl: 'paolo-pizzeria.html'
+    },
+    sofia: {
+      url: 'sofia-morales.html',
+      titleEs: 'Prototipo en vivo · Sofía Morales Abogada',
+      titleEn: 'Live Prototype · Sofía Morales Legal',
+      caseUrl: 'index.html#work'
+    }
+  };
+
+  function resolveProtoFromHref(href, el) {
+    if (el && el.dataset && el.dataset.protoCase && PROTO_CONFIG[el.dataset.protoCase]) {
+      return PROTO_CONFIG[el.dataset.protoCase];
+    }
+    const h = (href || '').toLowerCase();
+    if (h.includes('calendario-cef.vercel.app') || h.includes('case=cef')) return PROTO_CONFIG.cef;
+    if (h.includes('it-ops-oracle-prototype-design.vercel.app') || h.includes('case=oracle')) return PROTO_CONFIG.oracle;
+    if (h.includes('gym-energy-center-app.vercel.app') || h.includes('case=gym')) return PROTO_CONFIG.gym;
+    if (h.includes('projects/04-paolo') || h.includes('case=paolo')) return PROTO_CONFIG.paolo;
+    if (h.includes('sofia-morales.html') || h.includes('case=sofia')) return PROTO_CONFIG.sofia;
+    if (el && el.dataset && el.dataset.protoUrl) {
+      return {
+        url: el.dataset.protoUrl,
+        titleEs: el.dataset.protoTitleEs || 'Prototipo interactivo',
+        titleEn: el.dataset.protoTitleEn || 'Interactive prototype',
+        caseUrl: window.location.pathname.split('/').pop() || 'index.html#work'
+      };
+    }
+    return null;
+  }
+
+  let protoViewer = document.getElementById('csProtoViewer');
+  if (!protoViewer) {
+    protoViewer = document.createElement('div');
+    protoViewer.id = 'csProtoViewer';
+    protoViewer.className = 'cs-proto-viewer';
+    protoViewer.setAttribute('role', 'dialog');
+    protoViewer.setAttribute('aria-modal', 'true');
+    protoViewer.setAttribute('aria-label', 'Visor de prototipo interactivo');
+    protoViewer.innerHTML = `
+      <header class="cs-proto-topbar">
+        <div class="cs-proto-left">
+          <a href="index.html" class="cs-proto-logo" aria-label="Marta Morales - Ir al inicio">
+            <img src="assets/logo-sinfondo.webp" alt="Marta Morales" width="32" height="22">
+          </a>
+          <button type="button" class="cs-proto-back-btn" id="csProtoBackBtn">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="es">Volver al caso</span>
+            <span class="en">Back to case</span>
+          </button>
+          <a href="index.html#work" class="cs-proto-home-link">
+            <span class="es">Ir a la web</span>
+            <span class="en">Back to web</span>
+          </a>
+        </div>
+
+        <div class="cs-proto-center">
+          <div class="cs-proto-badge">
+            <span class="cs-proto-badge-dot" aria-hidden="true"></span>
+            <span id="csProtoTitleEs" class="es">Prototipo interactivo</span>
+            <span id="csProtoTitleEn" class="en">Interactive prototype</span>
+          </div>
+          <div class="cs-proto-device-switch" role="group" aria-label="Cambiar vista de dispositivo">
+            <button type="button" class="cs-proto-device-btn is-active" data-device="desktop">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>Desktop</span>
+            </button>
+            <button type="button" class="cs-proto-device-btn" data-device="mobile">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              <span>Móvil</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="cs-proto-right">
+          <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="cs-proto-wa-btn" aria-label="Escribir por WhatsApp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 14.01c-.2.57-1.17 1.09-1.64 1.16-.42.06-.95.09-1.53-.1-.36-.11-.81-.26-1.39-.51-2.44-1.05-4.03-3.49-4.15-3.66-.12-.16-.99-1.31-.99-2.51s.62-1.78.85-2.03c.22-.25.49-.31.65-.31h.48c.15.01.36-.05.56.43.21.5.71 1.73.77 1.85.06.13.1.27.02.44-.08.16-.12.26-.25.41-.12.14-.26.32-.37.43-.13.13-.26.26-.11.51.14.25.64 1.06 1.38 1.72.94.84 1.74 1.11 1.99 1.23.25.13.4.1.54-.06.15-.17.63-.72.79-.97.17-.25.33-.21.56-.12.22.08 1.44.67 1.69.8.25.12.41.18.47.28.06.11.06.59-.14 1.16z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="mailto:mmoralesgr93@gmail.com" class="cs-proto-mail-btn">
+            <span class="es">Agendar llamada</span>
+            <span class="en">Schedule Call</span>
+          </a>
+          <a href="tel:+34659879887" class="cs-proto-call-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="es">Llamar · 659 879 887</span>
+            <span class="en">Call · +34 659 879 887</span>
+          </a>
+        </div>
+      </header>
+
+      <div class="cs-proto-stage" id="csProtoStage">
+        <div class="cs-proto-frame-wrap">
+          <iframe class="cs-proto-iframe" id="csProtoIframe" src="about:blank" title="Prototipo interactivo" allow="clipboard-write; fullscreen"></iframe>
+        </div>
+      </div>
+
+      <footer class="cs-proto-bottombar">
+        <button type="button" class="cs-proto-bottom-back" id="csProtoBottomBackBtn">
+          <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6L6 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="es">Volver a la web</span>
+          <span class="en">Back to web</span>
+        </button>
+        <a href="tel:+34659879887" class="cs-proto-bottom-call">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="es">Llamar a Marta</span>
+          <span class="en">Call Marta</span>
+        </a>
+        <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="cs-proto-bottom-wa" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 14.01c-.2.57-1.17 1.09-1.64 1.16-.42.06-.95.09-1.53-.1-.36-.11-.81-.26-1.39-.51-2.44-1.05-4.03-3.49-4.15-3.66-.12-.16-.99-1.31-.99-2.51s.62-1.78.85-2.03c.22-.25.49-.31.65-.31h.48c.15.01.36-.05.56.43.21.5.71 1.73.77 1.85.06.13.1.27.02.44-.08.16-.12.26-.25.41-.12.14-.26.32-.37.43-.13.13-.26.26-.11.51.14.25.64 1.06 1.38 1.72.94.84 1.74 1.11 1.99 1.23.25.13.4.1.54-.06.15-.17.63-.72.79-.97.17-.25.33-.21.56-.12.22.08 1.44.67 1.69.8.25.12.41.18.47.28.06.11.06.59-.14 1.16z"/></svg>
+        </a>
+      </footer>
+    `;
+    document.body.appendChild(protoViewer);
+
+    const iframe = document.getElementById('csProtoIframe');
+    const stage = document.getElementById('csProtoStage');
+    const titleEs = document.getElementById('csProtoTitleEs');
+    const titleEn = document.getElementById('csProtoTitleEn');
+    const backBtn = document.getElementById('csProtoBackBtn');
+    const bottomBackBtn = document.getElementById('csProtoBottomBackBtn');
+    const deviceBtns = protoViewer.querySelectorAll('.cs-proto-device-btn');
+
+    window.openProtoViewer = (protoData, pushHistory = true) => {
+      if (!protoData || !protoData.url) return;
+      titleEs.textContent = protoData.titleEs || 'Prototipo interactivo';
+      titleEn.textContent = protoData.titleEn || 'Interactive prototype';
+      if (iframe.src !== protoData.url) {
+        iframe.src = protoData.url;
+      }
+      protoViewer.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (pushHistory && window.location.hash !== '#prototipo') {
+        try {
+          history.pushState({ csProtoOpen: true }, '', '#prototipo');
+        } catch (err) {}
+      }
+    };
+
+    window.closeProtoViewer = (fromPopState = false) => {
+      if (!protoViewer.classList.contains('is-open')) return;
+      protoViewer.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (!fromPopState && window.location.hash === '#prototipo') {
+        try {
+          history.back();
+        } catch (err) {}
+      }
+    };
+
+    backBtn.addEventListener('click', () => window.closeProtoViewer(false));
+    bottomBackBtn.addEventListener('click', () => window.closeProtoViewer(false));
+
+    deviceBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        deviceBtns.forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        stage.classList.toggle('is-mobile-preview', btn.dataset.device === 'mobile');
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      if (protoViewer.classList.contains('is-open') && window.location.hash !== '#prototipo') {
+        window.closeProtoViewer(true);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && protoViewer.classList.contains('is-open')) {
+        window.closeProtoViewer(false);
+      }
+    });
+  }
+
+  // Interceptar clics en todos los enlaces a prototipos dentro de los case studies
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    // Respetar cmd/ctrl click o botón central para abrir prototipo.html en pestaña nueva con su propia barra
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    const protoData = resolveProtoFromHref(link.getAttribute('href'), link);
+    if (protoData) {
+      e.preventDefault();
+      window.openProtoViewer(protoData, true);
+    }
+  });
+
+  // Si se entra directamente con #prototipo en el hash de un case study, abrir el prototipo correspondiente
+  if (window.location.hash === '#prototipo') {
+    const path = window.location.pathname.toLowerCase();
+    let autoProto = null;
+    if (path.includes('cef-design-system')) autoProto = PROTO_CONFIG.cef;
+    else if (path.includes('it-ops-oracle')) autoProto = PROTO_CONFIG.oracle;
+    else if (path.includes('gym-energy-center')) autoProto = PROTO_CONFIG.gym;
+    else if (path.includes('paolo-pizzeria')) autoProto = PROTO_CONFIG.paolo;
+    if (autoProto) {
+      window.openProtoViewer(autoProto, false);
+    }
+  }
 })();
+

@@ -6,56 +6,7 @@
 <meta name="theme-color" content="#1A1918" />
 <title>Paolo's Pizzería · Pizza artesana en Madrid · 5 restaurantes</title>
 <meta name="description" content="Paolo's Pizzería. Cinco restaurantes familiares en Madrid. Masa artesana, mozzarella de calidad, recetas de la casa." />
-<script>
-  (function() {
-    function generateToken(dateString) {
-      const secret = "paolo-secret-key-2026";
-      const str = secret + dateString;
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash;
-      }
-      return Math.abs(hash).toString(36);
-    }
-    const params = new URLSearchParams(window.location.search);
-    const token = params.get('token');
-    const dates = [];
-    for (let i = -1; i <= 1; i++) {
-      const d = new Date();
-      d.setDate(d.getDate() + i);
-      dates.push(d.toISOString().slice(0, 10));
-    }
-    const validTokens = dates.map(generateToken);
-    if (token && validTokens.includes(token)) {
-      document.documentElement.classList.add('authorized');
-    }
-  })();
-</script>
-<style>
-  html:not(.authorized) body {
-    display: none !important;
-  }
-</style>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    if (!document.documentElement.classList.contains('authorized')) {
-      document.body.style.display = 'block';
-      document.body.innerHTML = `
-        <div style="background-color: #1A1918; color: #F5EDD8; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; box-sizing: border-box; width: 100vw; position: fixed; inset: 0; z-index: 999999;">
-          <div style="max-width: 450px; padding: 40px 30px; border: 1px solid rgba(245, 237, 216, 0.15); border-radius: 12px; background-color: #0D0C0B; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);">
-            <div style="font-size: 48px; color: #F2A222; margin-bottom: 20px;">🔒</div>
-            <h1 style="font-size: 24px; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Proyecto Privado</h1>
-            <p style="font-size: 15px; line-height: 1.6; color: #A1968D; margin: 0 0 25px 0;">Este proyecto forma parte de un portafolio profesional y solo es accesible a través de los enlaces autorizados del portafolio original.</p>
-            <a href="https://martamorales.vercel.app" style="display: inline-block; padding: 12px 24px; background-color: #F2A222; color: #0D0C0B; text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 6px; transition: background-color 0.2s;">Volver al Portafolio</a>
-          </div>
-        </div>
-      `;
-      document.documentElement.classList.add('authorized');
-    }
-  });
-</script>
+<!-- Portfolio en abierto: acceso directo habilitado -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
@@ -2197,6 +2148,19 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <script async src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  if (window.self === window.top) {
+    window.addEventListener('DOMContentLoaded', function() {
+      var bar = document.createElement('div');
+      bar.style.cssText = 'position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:2147483647;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(10,10,12,0.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.16);box-shadow:0 12px 32px rgba(0,0,0,0.55);font-family:Inter,system-ui,sans-serif;font-size:12px;';
+      bar.innerHTML = '<a href="../../paolo-pizzeria.html" style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,0.1);color:#fff;text-decoration:none;font-weight:600;white-space:nowrap;">← Volver al caso</a>' +
+        '<a href="../../index.html#work" style="display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border-radius:999px;color:rgba(255,255,255,0.75);text-decoration:none;font-weight:500;white-space:nowrap;">Ir a la web</a>' +
+        '<a href="https://wa.me/34659879887?text=Hola%20Marta%2C%20acabo%20de%20ver%20el%20prototipo%20de%20Paolo%E2%80%99s%20Pizzeria%20en%20tu%20portafolio" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border-radius:999px;background:rgba(34,197,94,0.16);border:1px solid rgba(34,197,94,0.38);color:#86efac;text-decoration:none;font-weight:600;white-space:nowrap;">WhatsApp</a>' +
+        '<a href="tel:+34659879887" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:#fff;color:#0a0a0c;text-decoration:none;font-weight:700;white-space:nowrap;">📞 Llamar · 659 879 887</a>';
+      document.body.appendChild(bar);
+    });
+  }
+</script>
 
 </body>
 </html>
