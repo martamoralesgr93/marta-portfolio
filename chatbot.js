@@ -119,13 +119,13 @@
       ],
       experience: [
         "Su trayectoria sigue una evolución clara desde 2020:<br><br>" +
-        "• <strong>Sep 2024 – Actualidad · ILUNION Hotels:</strong> Product Designer &amp; CRO. Optimización del canal directo de 32 hoteles (conversión del 3,36% al 6,5%).<br>" +
+        "• <strong>Sep 2024 – Actualidad · ILUNION Hotels:</strong> Product Designer &amp; CRO. Optimización del canal directo de 32 hoteles (cifras confidenciales).<br>" +
         "• <strong>Jun – Sep 2024 · CEF (Evolución 2026):</strong> Product Designer. Primer Design System accesible desde cero (17 componentes WCAG 2.1 AA, 57 variables y handoff con Figma MCP).<br>" +
         "• <strong>2024 · Neoland (Evolución 2026):</strong> Bootcamp intensivo de Product Design &amp; Frontend como puente hacia sistemas y producto corporativo (MVP <em>Gym Energy Center</em>).<br>" +
         "• <strong>Jul 2020 – May 2024 · We Are Actions (Evolución 2026):</strong> 4 años como UX/UI Designer construyendo producto end-to-end junto a 7 desarrolladores backend (<em>Paolo Pizzeria</em> 2020–22 y <em>Oracle ERP &amp; IT Ops</em> 2022–24)."
       ],
       skills: [
-        "Sus 4 pilares fundamentales son: <strong>UX &amp; Research</strong> (diagnóstico cuantitativo/cualitativo, tests de usabilidad), <strong>Design Systems</strong> (Figma Variables, 17 componentes WCAG 2.1 AA, tokens JSON), <strong>AI Product Design</strong> (Figma MCP, Claude, prototipos funcionales en código) y <strong>CRO</strong> (experimentos A/B con significancia estadística, incremento de conversión del 3,36% al 6,5%).",
+        "Sus 4 pilares fundamentales son: <strong>UX &amp; Research</strong> (diagnóstico cuantitativo/cualitativo, tests de usabilidad), <strong>Design Systems</strong> (Figma Variables, 17 componentes WCAG 2.1 AA, tokens JSON), <strong>AI Product Design</strong> (Figma MCP, Claude, prototipos funcionales en código) y <strong>CRO</strong> (experimentación e iniciativas de optimización de la conversión; cifras confidenciales).",
         "Domina el ciclo completo de producto: <strong>discovery contextual, arquitectura de información, sistemas de diseño, prototipado interactivo, validación con usuarios y handoff a producción</strong>."
       ],
       tools: [
@@ -134,7 +134,7 @@
       cases: [
         "Marta presenta <strong>5 casos de producto</strong> ordenados desde su etapa actual hasta sus proyectos fundacionales (revisitados en 2026 con su nuevo stack):<br><br>" +
         "<strong>Etapa actual (2024–Actualidad):</strong><br>" +
-        "• <strong>01 · ILUNION CRO</strong> (Sep 2024–Actualidad) — conversión del canal directo del 3,36% al 6,5% en 32 hoteles.<br>" +
+        "• <strong>01 · ILUNION CRO</strong> (Sep 2024–Actualidad) — optimización de la conversión del canal directo en 32 hoteles (cifras confidenciales).<br>" +
         "• <strong>02 · CEF Design System</strong> (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP) — 17 componentes WCAG 2.1 AA y 57 variables enlazadas a tokens.<br><br>" +
         "<strong>Proyectos fundacionales (Evolucionados en 2026):</strong><br>" +
         "• <strong>03 · Oracle ERP &amp; IT Ops</strong> (Origen: 2022–24 en We Are Actions · Evolución 2026: Prototipo &amp; Heurísticas) — diagnóstico Build vs. Buy.<br>" +
@@ -171,7 +171,7 @@
       ],
       cro: [
         "En <strong>Caso 01 · ILUNION Hotels CRO (Sep 2024–Actualidad)</strong>, Marta lidera la optimización del canal directo de 32 hoteles:<br><br>" +
-        "Mediante análisis de 10.000+ logs de funnel en Adobe Analytics y 250+ sesiones en Clarity, rediseñó componentes clave de reserva y ejecutó tests A/B con significancia estadística. <strong>Resultado: conversión directa de 3,36% a 6,5%</strong> (13% de la venta total y 50% de reservas del club ÚNICOS)."
+        "Mediante el análisis del funnel en Adobe Analytics y de sesiones en Clarity, rediseñó componentes clave de reserva dentro de una iniciativa completa (motor + recomposición de la home, ene–may 2026). <strong>Las cifras de resultado son confidenciales:</strong> Marta las explica en entrevista."
       ],
       booking: [
         "El rediseño del <strong>selector de destino y motor de reservas de ILUNION Hotels (Caso 01 · Sep 2024–Actualidad)</strong> sustituyó un <code>&lt;select&gt;</code> nativo limitante por un componente de sistema con doble taxonomía en paralelo (destinos y hoteles), iconografía y semántica costa/urbano."
@@ -182,7 +182,7 @@
       whyhire: [
         "Tres razones decisivas para sumar a Marta a tu equipo:<br><br>" +
         "1. <strong>Evolución real demostrada (2020–2026):</strong> Combina 4 años de producto 0→1 y base técnica con experiencia actual en CRO y Design Systems corporativos.<br>" +
-        "2. <strong>Impacto medible en negocio:</strong> Conversión del 3,36% al 6,5% en ILUNION Hotels y 100% WCAG 2.1 AA en CEF.<br>" +
+        "2. <strong>Impacto medible en negocio:</strong> Optimización de la conversión en ILUNION Hotels (cifras confidenciales) y WCAG 2.1 AA en los flujos evaluados de CEF.<br>" +
         "3. <strong>Stack de vanguardia (IA + Código):</strong> Integra Figma MCP, auditoría de datos asistida por IA y prototipado funcional en vivo."
       ],
       default: [
@@ -198,13 +198,13 @@
       ],
       experience: [
         "Her career follows a clear progression since 2020:<br><br>" +
-        "• <strong>Sep 2024 – Present · ILUNION Hotels:</strong> Product Designer &amp; CRO. Direct channel optimisation across 32 hotels (conversion lifted from 3.36% to 6.5%).<br>" +
+        "• <strong>Sep 2024 – Present · ILUNION Hotels:</strong> Product Designer &amp; CRO. Direct channel optimisation across 32 hotels (figures confidential).<br>" +
         "• <strong>Jun – Sep 2024 · CEF (2026 Evolution):</strong> Product Designer. First accessible Design System from scratch (17 WCAG 2.1 AA components, 57 token variables &amp; Figma MCP handoff).<br>" +
         "• <strong>2024 · Neoland (2026 Evolution):</strong> Intensive Product Design &amp; Frontend Bootcamp bridging into enterprise systems (<em>Gym Energy Center</em> MVP).<br>" +
         "• <strong>Jul 2020 – May 2024 · We Are Actions (2026 Evolution):</strong> 4 years as UX/UI Designer building end-to-end products alongside 7 backend developers (<em>Paolo Pizzeria</em> 2020–22 &amp; <em>Oracle ERP &amp; IT Ops</em> 2022–24)."
       ],
       skills: [
-        "Core pillars: <strong>UX &amp; Research</strong> (qualitative/quantitative diagnostics, usability testing), <strong>Design Systems</strong> (Figma Variables, 17 WCAG 2.1 AA components, JSON tokens), <strong>AI Product Design</strong> (Figma MCP, Claude, live code prototypes), and <strong>CRO</strong> (statistically significant A/B testing, lifting conversion from 3.36% to 6.5%).",
+        "Core pillars: <strong>UX &amp; Research</strong> (qualitative/quantitative diagnostics, usability testing), <strong>Design Systems</strong> (Figma Variables, 17 WCAG 2.1 AA components, JSON tokens), <strong>AI Product Design</strong> (Figma MCP, Claude, live code prototypes), and <strong>CRO</strong> (experimentation and conversion optimisation initiatives; figures confidential).",
         "Full lifecycle mastery: <strong>contextual discovery, information architecture, design systems, interactive prototyping, user validation, and production handoff</strong>."
       ],
       tools: [
@@ -213,7 +213,7 @@
       cases: [
         "Marta presents <strong>5 product case studies</strong> ordered from her current stage back to her foundational projects (revisited in 2026 with her current stack):<br><br>" +
         "<strong>Current Stage (2024–Present):</strong><br>" +
-        "• <strong>01 · ILUNION CRO</strong> (Sep 2024–Present) — direct channel conversion lifted from 3.36% to 6.5% across 32 hotels.<br>" +
+        "• <strong>01 · ILUNION CRO</strong> (Sep 2024–Present) — direct-channel conversion optimisation across 32 hotels (figures confidential).<br>" +
         "• <strong>02 · CEF Design System</strong> (Origin: Jun–Sep 2024 · 2026 Evolution: Figma MCP) — 17 WCAG 2.1 AA components and 57 token-bound variables.<br><br>" +
         "<strong>Foundational Projects (Evolved in 2026):</strong><br>" +
         "• <strong>03 · Oracle ERP &amp; IT Ops</strong> (Origin: 2022–24 at We Are Actions · 2026 Evolution: Live Prototype &amp; Heuristics) — Build vs. Buy strategic diagnosis.<br>" +
@@ -249,7 +249,7 @@
         "In <strong>2026</strong> she carried out a solo reconceptualisation adding an AI coach, progress dashboard and token-gated security."
       ],
       cro: [
-        "In <strong>Case 01 · ILUNION Hotels CRO (Sep 2024–Present)</strong>, Marta leads direct channel optimization across 32 hotels, auditing 10,000+ funnel logs and 250+ Clarity sessions and running A/B tests that lifted direct booking conversion from <strong>3.36% to 6.5%</strong> (13% of total sales, 50% of ÚNICOS club bookings)."
+        "In <strong>Case 01 · ILUNION Hotels CRO (Sep 2024–Present)</strong>, Marta leads direct channel optimization across 32 hotels, analysing funnels in Adobe Analytics and Clarity sessions within a full initiative (engine + homepage recomposition, Jan–May 2026). Result figures are confidential; she discusses them in interviews."
       ],
       booking: [
         "The <strong>ILUNION Hotels destination selector &amp; booking engine redesign (Case 01 · Sep 2024–Present)</strong> replaced a limiting native <code>&lt;select&gt;</code> with a dual-taxonomy system component (parallel destinations and hotels), entity iconography and beach/urban semantics."
@@ -260,7 +260,7 @@
       whyhire: [
         "Three distinct strengths Marta brings:<br><br>" +
         "1. <strong>Proven Trajectory (2020–2026):</strong> Combines 4 years of 0→1 product and technical foundations with current enterprise CRO and Design Systems impact.<br>" +
-        "2. <strong>Measurable Business Outcomes:</strong> 3.36% → 6.5% conversion at ILUNION Hotels and 100% WCAG 2.1 AA at CEF.<br>" +
+        "2. <strong>Measurable Business Outcomes:</strong> conversion optimisation at ILUNION Hotels (figures confidential) and WCAG 2.1 AA on CEF's evaluated flows.<br>" +
         "3. <strong>Cutting-Edge Stack (AI + Code):</strong> Integrates Figma MCP, AI-assisted data audits and live functional code prototypes."
       ],
       default: [

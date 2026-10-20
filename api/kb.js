@@ -179,7 +179,7 @@ Content:
 2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (escalando de 1 a 5 locales sin rediseño) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
 3. **2024 · Bootcamp Digital Product Design & Frontend Development en Neoland:** punto de inflexión y especialización intensiva en metodologías de research, frameworks de producto y arquitectura full-stack antes de dar el salto a producto corporativo. Aquí nace el MVP en equipo (8 personas) de **Gym Energy Center (Caso 04)**.
 4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System accesible (17 componentes con 6 estados, 57 variables enlazadas a tokens, 100% WCAG 2.1 AA).
-5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (conversión del 3,36% al 6,5%, 13% de la venta total y 50% de reservas del club ÚNICOS).
+5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (cifras confidenciales: Marta las explica en entrevista).
 6. **Evolución 2026 (Modelo de doble fecha "Origen → Evolución 2026"):** en 2026 he retomado mis proyectos fundacionales (\`2020–2024\`) para evolucionarlos con mi stack actual: especificaciones y tokens auto-generados con **Figma MCP** en CEF, auditoría heurística y prototipo interactivo en vivo en Oracle IT Ops, reconceptualización individual con entrenador IA y seguridad por token en Gym Energy Center, y dirección de arte generativa con IA + nuevo flujo de reservas en Paolo Pizzeria.
 
 ## Qué revela esta evolución
@@ -394,7 +394,7 @@ Adobe Analytics, Microsoft Clarity, Hotjar, Figma, AEM, Roiback (motor de reserv
 Transversal con Digital Business, Marketing, Desarrollo, Analítica Digital, CRO y agencias externas. (Ver \`collaboration.es.md\`.)
 
 ### Impacto
-**Conversión del canal directo de ~3,36% a ~6,5%** (casi el doble), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
+**Mejora de la conversión del canal directo** (cifras confidenciales: no se publican ni las comparte el asistente; Marta las explica en entrevista), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
 
 ### Aprendizajes
 Diseñar producto es entender un problema de negocio, decidir con datos, colaborar con perfiles muy distintos y generar impacto medible — y trabajar sin una estructura de diseño desarrolla una autonomía y un criterio que no se aprenden de otra forma. (Reflexión transversal en \`reflections.es.md\`.)
@@ -477,7 +477,7 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 
 ### ¿Con qué productos?
 Los 5 casos seleccionados en orden \`01 → 05\`:
-1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (conversión 3,36% → 6,5%).
+1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (cifras de conversión confidenciales).
 2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
 3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): diagnóstico Build vs. Buy en 4 módulos.
 4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): framework de 3 pilares en equipo de 8 personas.
@@ -648,9 +648,8 @@ Content:
 #### \`m-ilunion-directchannel-conversion-01\` — Conversión del canal directo
 - **Tipo:** cuantitativa.
 - **Qué mide:** tasa de conversión del canal de venta directa (reservas / visitas).
-- **Antes:** ~3,36%
-- **Después:** ~6,5%
-- **Variación:** casi el doble (**+3,14 p.p.**, ≈ **+93%** en términos relativos).
+- **Valor:** confidencial. No se publica ni lo comparte el asistente; Marta lo explica en entrevista.
+- **Alcance:** resultado de la iniciativa completa (motor de reservas + recomposición de la home, enero–mayo 2026), no de un test A/B aislado; sin significancia estadística documentada.
 - **Atribución:** resultado del trabajo continuo de optimización del canal; contribución de diseño/CRO dentro de un esfuerzo de equipo (no atribución individual exclusiva).
 - **Periodo:** \`[pendiente de validación]\`.
 - **Fuente:** Adobe Analytics · documentada en portfolio.
@@ -895,7 +894,7 @@ Síntesis de datos, generación de alternativas y documentación como acelerador
 Mejora sostenida de la conversión del canal directo y reducción de fricción a lo largo de las iteraciones.
 
 ## Métricas
-Impacto cualitativo consolidado en \`metrics.es.md\`: optimización continua basada en datos (\`m-cro-data-optimization-01\`), definición y priorización de hipótesis (\`m-cro-hypotheses-02\`), reducción de fricción (\`m-cro-friction-03\`), mejora de la calidad de experiencia (\`m-cro-ux-quality-04\`) y colaboración para medir impacto (\`m-cro-collaboration-05\`). El resultado cuantitativo agregado se refleja en la conversión del canal directo (\`m-ilunion-directchannel-conversion-01\`: ~3,36% → ~6,5%).
+Impacto cualitativo consolidado en \`metrics.es.md\`: optimización continua basada en datos (\`m-cro-data-optimization-01\`), definición y priorización de hipótesis (\`m-cro-hypotheses-02\`), reducción de fricción (\`m-cro-friction-03\`), mejora de la calidad de experiencia (\`m-cro-ux-quality-04\`) y colaboración para medir impacto (\`m-cro-collaboration-05\`). El resultado cuantitativo agregado se refleja en la conversión del canal directo (\`m-ilunion-directchannel-conversion-01\`: cifra confidencial).
 
 ## Aprendizajes
 Optimizar un producto vivo exige método e iteración más que grandes rediseños: pequeñas decisiones bien medidas, acumuladas, mueven la métrica.
@@ -967,7 +966,7 @@ Integré IA para acelerar síntesis de investigación, UX writing, documentació
 
 ## Resultados
 Mejora de la conversión del canal directo, reducción de fricción en la reserva, mayor consistencia visual, accesibilidad AA y reducción del tiempo de diseño de nuevas funcionalidades gracias al design system. Además, mejor alineación entre negocio, diseño y desarrollo mediante un lenguaje común.
-**Contribuí a llevar la conversión del canal directo de ~3,36% a ~6,5%** (casi el doble; +3,14 p.p., ≈ +93% relativo), como parte del trabajo continuo de CRO sobre el canal. A eso se suman la reducción de fricción en la reserva, la accesibilidad AA, la mayor consistencia y un design system reutilizable que acelera nuevas implementaciones. Cifras, atribución y detalle en \`metrics.es.md\` (\`m-ilunion-*\`).
+**Contribuí a mejorar la conversión del canal directo** (cifras confidenciales), como parte del trabajo continuo de CRO sobre el canal. A eso se suman la reducción de fricción en la reserva, la accesibilidad AA, la mayor consistencia y un design system reutilizable que acelera nuevas implementaciones. Cifras, atribución y detalle en \`metrics.es.md\` (\`m-ilunion-*\`).
 
 ## Métricas
 Valores exactos en \`metrics.es.md\`, citados por id (no se reescriben aquí):
@@ -1598,7 +1597,7 @@ Content:
 2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (escalando de 1 a 5 locales sin rediseño) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
 3. **2024 · Bootcamp Digital Product Design & Frontend Development en Neoland:** punto de inflexión y especialización intensiva en metodologías de research, frameworks de producto y arquitectura full-stack antes de dar el salto a producto corporativo. Aquí nace el MVP en equipo (8 personas) de **Gym Energy Center (Caso 04)**.
 4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System accesible (17 componentes con 6 estados, 57 variables enlazadas a tokens, 100% WCAG 2.1 AA).
-5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (conversión del 3,36% al 6,5%, 13% de la venta total y 50% de reservas del club ÚNICOS).
+5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (cifras confidenciales: Marta las explica en entrevista).
 6. **Evolución 2026 (Modelo de doble fecha "Origen → Evolución 2026"):** en 2026 he retomado mis proyectos fundacionales (\`2020–2024\`) para evolucionarlos con mi stack actual: especificaciones y tokens auto-generados con **Figma MCP** en CEF, auditoría heurística y prototipo interactivo en vivo en Oracle IT Ops, reconceptualización individual con entrenador IA y seguridad por token en Gym Energy Center, y dirección de arte generativa con IA + nuevo flujo de reservas en Paolo Pizzeria.
 
 ## Qué revela esta evolución
@@ -1813,7 +1812,7 @@ Adobe Analytics, Microsoft Clarity, Hotjar, Figma, AEM, Roiback (motor de reserv
 Transversal con Digital Business, Marketing, Desarrollo, Analítica Digital, CRO y agencias externas. (Ver \`collaboration.es.md\`.)
 
 ### Impacto
-**Conversión del canal directo de ~3,36% a ~6,5%** (casi el doble), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
+**Mejora de la conversión del canal directo** (cifras confidenciales: no se publican ni las comparte el asistente; Marta las explica en entrevista), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en \`metrics.es.md\` (\`m-ilunion-*\`). Casos: \`proj-ilunion-booking\`, \`proj-cro\`.
 
 ### Aprendizajes
 Diseñar producto es entender un problema de negocio, decidir con datos, colaborar con perfiles muy distintos y generar impacto medible — y trabajar sin una estructura de diseño desarrolla una autonomía y un criterio que no se aprenden de otra forma. (Reflexión transversal en \`reflections.es.md\`.)
@@ -1896,7 +1895,7 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 
 ### ¿Con qué productos?
 Los 5 casos seleccionados en orden \`01 → 05\`:
-1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (conversión 3,36% → 6,5%).
+1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (cifras de conversión confidenciales).
 2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
 3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): diagnóstico Build vs. Buy en 4 módulos.
 4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): framework de 3 pilares en equipo de 8 personas.
@@ -2067,9 +2066,8 @@ Content:
 #### \`m-ilunion-directchannel-conversion-01\` — Conversión del canal directo
 - **Tipo:** cuantitativa.
 - **Qué mide:** tasa de conversión del canal de venta directa (reservas / visitas).
-- **Antes:** ~3,36%
-- **Después:** ~6,5%
-- **Variación:** casi el doble (**+3,14 p.p.**, ≈ **+93%** en términos relativos).
+- **Valor:** confidencial. No se publica ni lo comparte el asistente; Marta lo explica en entrevista.
+- **Alcance:** resultado de la iniciativa completa (motor de reservas + recomposición de la home, enero–mayo 2026), no de un test A/B aislado; sin significancia estadística documentada.
 - **Atribución:** resultado del trabajo continuo de optimización del canal; contribución de diseño/CRO dentro de un esfuerzo de equipo (no atribución individual exclusiva).
 - **Periodo:** \`[pendiente de validación]\`.
 - **Fuente:** Adobe Analytics · documentada en portfolio.
@@ -2314,7 +2312,7 @@ Síntesis de datos, generación de alternativas y documentación como acelerador
 Mejora sostenida de la conversión del canal directo y reducción de fricción a lo largo de las iteraciones.
 
 ## Métricas
-Impacto cualitativo consolidado en \`metrics.es.md\`: optimización continua basada en datos (\`m-cro-data-optimization-01\`), definición y priorización de hipótesis (\`m-cro-hypotheses-02\`), reducción de fricción (\`m-cro-friction-03\`), mejora de la calidad de experiencia (\`m-cro-ux-quality-04\`) y colaboración para medir impacto (\`m-cro-collaboration-05\`). El resultado cuantitativo agregado se refleja en la conversión del canal directo (\`m-ilunion-directchannel-conversion-01\`: ~3,36% → ~6,5%).
+Impacto cualitativo consolidado en \`metrics.es.md\`: optimización continua basada en datos (\`m-cro-data-optimization-01\`), definición y priorización de hipótesis (\`m-cro-hypotheses-02\`), reducción de fricción (\`m-cro-friction-03\`), mejora de la calidad de experiencia (\`m-cro-ux-quality-04\`) y colaboración para medir impacto (\`m-cro-collaboration-05\`). El resultado cuantitativo agregado se refleja en la conversión del canal directo (\`m-ilunion-directchannel-conversion-01\`: cifra confidencial).
 
 ## Aprendizajes
 Optimizar un producto vivo exige método e iteración más que grandes rediseños: pequeñas decisiones bien medidas, acumuladas, mueven la métrica.
@@ -2386,7 +2384,7 @@ Integré IA para acelerar síntesis de investigación, UX writing, documentació
 
 ## Resultados
 Mejora de la conversión del canal directo, reducción de fricción en la reserva, mayor consistencia visual, accesibilidad AA y reducción del tiempo de diseño de nuevas funcionalidades gracias al design system. Además, mejor alineación entre negocio, diseño y desarrollo mediante un lenguaje común.
-**Contribuí a llevar la conversión del canal directo de ~3,36% a ~6,5%** (casi el doble; +3,14 p.p., ≈ +93% relativo), como parte del trabajo continuo de CRO sobre el canal. A eso se suman la reducción de fricción en la reserva, la accesibilidad AA, la mayor consistencia y un design system reutilizable que acelera nuevas implementaciones. Cifras, atribución y detalle en \`metrics.es.md\` (\`m-ilunion-*\`).
+**Contribuí a mejorar la conversión del canal directo** (cifras confidenciales), como parte del trabajo continuo de CRO sobre el canal. A eso se suman la reducción de fricción en la reserva, la accesibilidad AA, la mayor consistencia y un design system reutilizable que acelera nuevas implementaciones. Cifras, atribución y detalle en \`metrics.es.md\` (\`m-ilunion-*\`).
 
 ## Métricas
 Valores exactos en \`metrics.es.md\`, citados por id (no se reescriben aquí):

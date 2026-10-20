@@ -53,7 +53,7 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 
 ### ¿Con qué productos?
 Los 5 casos seleccionados en orden `01 → 05`:
-1. **01 · ILUNION Hotels CRO** (`Sep 2024–Actualidad`): canal de venta directa y motor de reservas de 32 hoteles (conversión 3,36% → 6,5%).
+1. **01 · ILUNION Hotels CRO** (`Sep 2024–Actualidad`): canal de venta directa y motor de reservas de 32 hoteles (cifras de conversión confidenciales).
 2. **02 · CEF Design System** (`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
 3. **03 · IT Ops & Oracle ERP** (`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas`): diagnóstico Build vs. Buy en 4 módulos.
 4. **04 · Gym Energy Center** (`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA`): framework de 3 pilares en equipo de 8 personas.

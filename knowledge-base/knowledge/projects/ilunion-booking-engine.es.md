@@ -67,7 +67,7 @@ Integré IA para acelerar síntesis de investigación, UX writing, documentació
 
 ## Resultados
 Mejora de la conversión del canal directo, reducción de fricción en la reserva, mayor consistencia visual, accesibilidad AA y reducción del tiempo de diseño de nuevas funcionalidades gracias al design system. Además, mejor alineación entre negocio, diseño y desarrollo mediante un lenguaje común.
-**Contribuí a llevar la conversión del canal directo de ~3,36% a ~6,5%** (casi el doble; +3,14 p.p., ≈ +93% relativo), como parte del trabajo continuo de CRO sobre el canal. A eso se suman la reducción de fricción en la reserva, la accesibilidad AA, la mayor consistencia y un design system reutilizable que acelera nuevas implementaciones. Cifras, atribución y detalle en `metrics.es.md` (`m-ilunion-*`).
+**Contribuí a mejorar la conversión del canal directo** (cifras confidenciales), como parte del trabajo continuo de CRO sobre el canal. A eso se suman la reducción de fricción en la reserva, la accesibilidad AA, la mayor consistencia y un design system reutilizable que acelera nuevas implementaciones. Cifras, atribución y detalle en `metrics.es.md` (`m-ilunion-*`).
 
 ## Métricas
 Valores exactos en `metrics.es.md`, citados por id (no se reescriben aquí):

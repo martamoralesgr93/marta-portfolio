@@ -117,7 +117,7 @@
 
       const PROTOS = {
         cef: {
-          url: 'https://calendario-cef.vercel.app/',
+          url: null, // prototipo con marca real de CEF (NDA): retirado
           titleEs: 'Prototipo en vivo · CEF Design System',
           titleEn: 'Live Prototype · CEF Design System',
           caseUrl: 'cef-design-system.html'
@@ -149,8 +149,9 @@
       };
 
       const params = new URLSearchParams(window.location.search);
-      const caseKey = (params.get('case') || 'cef').toLowerCase();
-      const proto = PROTOS[caseKey] || PROTOS.cef;
+      const caseKey = (params.get('case') || 'oracle').toLowerCase();
+      const proto = PROTOS[caseKey] || PROTOS.oracle;
+      if (!proto.url) { window.location.replace(proto.caseUrl); return; }
 
       document.getElementById('protoTitleEs').textContent = proto.titleEs;
       document.getElementById('protoTitleEn').textContent = proto.titleEn;

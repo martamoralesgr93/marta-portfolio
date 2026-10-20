@@ -69,7 +69,7 @@ Síntesis de datos, generación de alternativas y documentación como acelerador
 Mejora sostenida de la conversión del canal directo y reducción de fricción a lo largo de las iteraciones.
 
 ## Métricas
-Impacto cualitativo consolidado en `metrics.es.md`: optimización continua basada en datos (`m-cro-data-optimization-01`), definición y priorización de hipótesis (`m-cro-hypotheses-02`), reducción de fricción (`m-cro-friction-03`), mejora de la calidad de experiencia (`m-cro-ux-quality-04`) y colaboración para medir impacto (`m-cro-collaboration-05`). El resultado cuantitativo agregado se refleja en la conversión del canal directo (`m-ilunion-directchannel-conversion-01`: ~3,36% → ~6,5%).
+Impacto cualitativo consolidado en `metrics.es.md`: optimización continua basada en datos (`m-cro-data-optimization-01`), definición y priorización de hipótesis (`m-cro-hypotheses-02`), reducción de fricción (`m-cro-friction-03`), mejora de la calidad de experiencia (`m-cro-ux-quality-04`) y colaboración para medir impacto (`m-cro-collaboration-05`). El resultado cuantitativo agregado se refleja en la conversión del canal directo (`m-ilunion-directchannel-conversion-01`: cifra confidencial).
 
 ## Aprendizajes
 Optimizar un producto vivo exige método e iteración más que grandes rediseños: pequeñas decisiones bien medidas, acumuladas, mueven la métrica.

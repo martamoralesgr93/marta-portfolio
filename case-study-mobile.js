@@ -205,14 +205,14 @@
   // 6. Cargar dinámicamente Chatbot y Botón Subir al Inicio si no están presentes
   if (!document.getElementById('chat-trigger') && !document.querySelector('script[src*="chatbot.js"]')) {
     const chatScript = document.createElement('script');
-    chatScript.src = 'chatbot.js?v=20261014_rev2';
+    chatScript.src = 'chatbot.js?v=20261020_conf';
     document.body.appendChild(chatScript);
   }
 
   // 7. Visor de Prototipo Interactivo con Retorno a la Web y CTA de Llamada
   const PROTO_CONFIG = {
     cef: {
-      url: 'https://calendario-cef.vercel.app/',
+      url: null, // prototipo con marca real de CEF (NDA): retirado
       titleEs: 'Prototipo en vivo · CEF Design System',
       titleEn: 'Live Prototype · CEF Design System',
       caseUrl: 'cef-design-system.html'
@@ -414,7 +414,7 @@
     // Respetar cmd/ctrl click o botón central para abrir prototipo.html en pestaña nueva con su propia barra
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
     const protoData = resolveProtoFromHref(link.getAttribute('href'), link);
-    if (protoData) {
+    if (protoData && protoData.url) {
       e.preventDefault();
       window.openProtoViewer(protoData, true);
     }

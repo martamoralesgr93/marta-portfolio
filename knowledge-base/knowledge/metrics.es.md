@@ -37,9 +37,8 @@ last_updated: 2026-07-14
 #### `m-ilunion-directchannel-conversion-01` — Conversión del canal directo
 - **Tipo:** cuantitativa.
 - **Qué mide:** tasa de conversión del canal de venta directa (reservas / visitas).
-- **Antes:** ~3,36%
-- **Después:** ~6,5%
-- **Variación:** casi el doble (**+3,14 p.p.**, ≈ **+93%** en términos relativos).
+- **Valor:** confidencial. No se publica ni lo comparte el asistente; Marta lo explica en entrevista.
+- **Alcance:** resultado de la iniciativa completa (motor de reservas + recomposición de la home, enero–mayo 2026), no de un test A/B aislado; sin significancia estadística documentada.
 - **Atribución:** resultado del trabajo continuo de optimización del canal; contribución de diseño/CRO dentro de un esfuerzo de equipo (no atribución individual exclusiva).
 - **Periodo:** `[pendiente de validación]`.
 - **Fuente:** Adobe Analytics · documentada en portfolio.

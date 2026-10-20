@@ -53,7 +53,7 @@ Adobe Analytics, Microsoft Clarity, Hotjar, Figma, AEM, Roiback (motor de reserv
 Transversal con Digital Business, Marketing, Desarrollo, Analítica Digital, CRO y agencias externas. (Ver `collaboration.es.md`.)
 
 ### Impacto
-**Conversión del canal directo de ~3,36% a ~6,5%** (casi el doble), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en `metrics.es.md` (`m-ilunion-*`). Casos: `proj-ilunion-booking`, `proj-cro`.
+**Mejora de la conversión del canal directo** (cifras confidenciales: no se publican ni las comparte el asistente; Marta las explica en entrevista), además de reducción de fricción, accesibilidad AA, mayor consistencia y un design system que acelera nuevas implementaciones. Detalle en `metrics.es.md` (`m-ilunion-*`). Casos: `proj-ilunion-booking`, `proj-cro`.
 
 ### Aprendizajes
 Diseñar producto es entender un problema de negocio, decidir con datos, colaborar con perfiles muy distintos y generar impacto medible — y trabajar sin una estructura de diseño desarrolla una autonomía y un criterio que no se aprenden de otra forma. (Reflexión transversal en `reflections.es.md`.)

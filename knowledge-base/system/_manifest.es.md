@@ -23,7 +23,7 @@
 | `workflows` | workflows.es.md | **process** | head-of-design, pm, ux, design-manager | redactado | design-principles, decision-frameworks, ai, collaboration |
 | `collaboration` | collaboration.es.md | collaboration | design-manager, pm, dev, ceo | redactado | workflows, toolkit, business-thinking |
 | `ai` | ai.es.md | ai | head-of-design, ceo, founder, dev | redactado | toolkit, workflows, prompts, decision-frameworks |
-| `metrics` | metrics.es.md | metrics | ceo, cro, pm, recruiter | **ready** (cuant. + cual.; conversión 3,36%→6,5%) | projects/*, experience |
+| `metrics` | metrics.es.md | metrics | ceo, cro, pm, recruiter | **ready** (cuant. + cual.; cifras ILUNION confidenciales) | projects/*, experience |
 | `faq` | faq.es.md | faq | todas | **redactado + answers** | profile, experience, career, skills, workflows, decision-frameworks, business-thinking, ai, collaboration |
 | `glossary` | glossary.es.md | glossary | sistema (transversal) | redactado | faq, skills, toolkit |
 | `reflections` | reflections.es.md | **reflections** | head-of-design, ceo, founder, design-manager | **ready** (sintetizado; opcional anclar un episodio) | career, projects/*, decision-frameworks, collaboration |
