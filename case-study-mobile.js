@@ -2,7 +2,7 @@
  * case-study-mobile.js
  * Control interactivo para la maquetación móvil según especificación de wireframes:
  * - Sub-nav tabs sticky con scroll-spy (OVERVIEW, PROBLEMA, SOLUCIÓN, RESULTADOS)
- * - Barra fija inferior móvil (rejilla de casos + agendar llamada) tras scroll del hero
+ * - Barra fija inferior móvil (rejilla de casos + escríbeme) tras scroll del hero
  * - Toggle interactivo Antes / Después (Slot M5)
  * - Carrusel con scroll-snap y contador dinámico DESLIZA 01/0N (Slot M6)
  * - Lightbox modal táctil para artefactos de research (Slot M4)
@@ -205,11 +205,11 @@
   // 6. Cargar dinámicamente Chatbot y Botón Subir al Inicio si no están presentes
   if (!document.getElementById('chat-trigger') && !document.querySelector('script[src*="chatbot.js"]')) {
     const chatScript = document.createElement('script');
-    chatScript.src = 'chatbot.js?v=20261020_conf';
+    chatScript.src = 'chatbot.js?v=20261021_mail';
     document.body.appendChild(chatScript);
   }
 
-  // 7. Visor de Prototipo Interactivo con Retorno a la Web y CTA de Llamada
+  // 7. Visor de Prototipo Interactivo con Retorno a la Web y CTA de email
   const PROTO_CONFIG = {
     cef: {
       url: null, // prototipo con marca real de CEF (NDA): retirado
@@ -313,13 +313,8 @@
             <span>WhatsApp</span>
           </a>
           <a href="mailto:mmoralesgr93@gmail.com" class="cs-proto-mail-btn">
-            <span class="es">Agendar llamada</span>
-            <span class="en">Schedule Call</span>
-          </a>
-          <a href="tel:+34659879887" class="cs-proto-call-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span class="es">Llamar · 659 879 887</span>
-            <span class="en">Call · +34 659 879 887</span>
+            <span class="es">Escríbeme</span>
+            <span class="en">Email me</span>
           </a>
         </div>
       </header>
@@ -336,10 +331,10 @@
           <span class="es">Volver a la web</span>
           <span class="en">Back to web</span>
         </button>
-        <a href="tel:+34659879887" class="cs-proto-bottom-call">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="es">Llamar a Marta</span>
-          <span class="en">Call Marta</span>
+        <a href="mailto:mmoralesgr93@gmail.com" class="cs-proto-bottom-call" data-contact>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span class="es">Escribir a Marta</span>
+          <span class="en">Email Marta</span>
         </a>
         <a href="https://wa.me/34659879887" target="_blank" rel="noopener" class="cs-proto-bottom-wa" aria-label="WhatsApp">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 14.01c-.2.57-1.17 1.09-1.64 1.16-.42.06-.95.09-1.53-.1-.36-.11-.81-.26-1.39-.51-2.44-1.05-4.03-3.49-4.15-3.66-.12-.16-.99-1.31-.99-2.51s.62-1.78.85-2.03c.22-.25.49-.31.65-.31h.48c.15.01.36-.05.56.43.21.5.71 1.73.77 1.85.06.13.1.27.02.44-.08.16-.12.26-.25.41-.12.14-.26.32-.37.43-.13.13-.26.26-.11.51.14.25.64 1.06 1.38 1.72.94.84 1.74 1.11 1.99 1.23.25.13.4.1.54-.06.15-.17.63-.72.79-.97.17-.25.33-.21.56-.12.22.08 1.44.67 1.69.8.25.12.41.18.47.28.06.11.06.59-.14 1.16z"/></svg>

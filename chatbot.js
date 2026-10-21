@@ -149,7 +149,7 @@
         "Marta está <strong>abierta a nuevas oportunidades</strong> en equipos de producto y con disponibilidad ágil de incorporación. Si ves fit en tu equipo, merece la pena hablar pronto."
       ],
       salary: [
-        "Las expectativas de Marta están alineadas con su trayectoria (desde 2020) y el mercado actual. Se comenta de forma transparente en los primeros 5 minutos de llamada. ¿Hablamos?"
+        "Las expectativas de Marta están alineadas con su trayectoria (desde 2020) y el mercado actual. Se comenta con transparencia por email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>."
       ],
       interview: [
         "¡Excelente decisión! Escríbele directamente a <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — responde habitualmente en menos de 24 horas. También puedes conectar en <a href='https://linkedin.com/in/marta-morales-designer' target='_blank' rel='noopener'>LinkedIn</a>."
@@ -174,7 +174,7 @@
         "Mediante el análisis del funnel en Adobe Analytics y de sesiones en Clarity, rediseñó componentes clave de reserva dentro de una iniciativa completa (motor + recomposición de la home, ene–may 2026). <strong>Las cifras de resultado son confidenciales:</strong> Marta las explica en entrevista."
       ],
       booking: [
-        "El rediseño del <strong>selector de destino y motor de reservas de ILUNION Hotels (Caso 01 · Sep 2024–Actualidad)</strong> sustituyó un <code>&lt;select&gt;</code> nativo limitante por un componente de sistema con doble taxonomía en paralelo (destinos y hoteles), iconografía y semántica costa/urbano."
+        "El rediseño del <strong>selector de destino y motor de reservas de ILUNION Hotels (Caso 01 · Sep 2024–Actualidad)</strong> se probó en un experimento: un componente con doble taxonomía en paralelo (destinos y hoteles), iconografía y semántica costa/urbano en lugar del <code>&lt;select&gt;</code> nativo. Funcionó, pero se retiró y no está en producción; lo aprendido pasó a la recomposición de la home, que sí está en producción."
       ],
       cef: [
         "<strong>Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026):</strong> creó desde cero el sistema de diseño de una plataforma EdTech: auditó <strong>47 componentes</strong> y construyó <strong>17 con 6 estados</strong>, con criterios <strong>WCAG 2.1 AA</strong> en los flujos evaluados (acceso, organización académica y pago). En 2026 lo recreó con <strong>57 variables enlazadas a tokens</strong> y conectó Figma MCP con Claude para generar especificaciones y tokens JSON."
@@ -225,10 +225,10 @@
         "Marta is <strong>open to 100% remote or hybrid positions</strong>. Based in Madrid, she brings extensive experience in distributed teams, asynchronous collaboration, and meticulous handoff."
       ],
       availability: [
-        "Marta is <strong>open to new opportunities</strong> in product teams with prompt availability. If there is a match with your roadmap, let's schedule an intro."
+        "Marta is <strong>open to new opportunities</strong> in product teams with prompt availability. If there is a match with your roadmap, email her at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>."
       ],
       salary: [
-        "Marta's compensation expectations reflect her experience (since 2020) and current market benchmarks, easily aligned in a brief introductory call."
+        "Marta's compensation expectations reflect her experience (since 2020) and current market benchmarks; happy to discuss by email at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a>."
       ],
       interview: [
         "Great! Reach out directly at <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> — she replies within 24 hours. You can also connect on <a href='https://linkedin.com/in/marta-morales-designer' target='_blank' rel='noopener'>LinkedIn</a>."
@@ -252,7 +252,7 @@
         "In <strong>Case 01 · ILUNION Hotels CRO (Sep 2024–Present)</strong>, Marta leads direct channel optimization across 32 hotels, analysing funnels in Adobe Analytics and Clarity sessions within a full initiative (engine + homepage recomposition, Jan–May 2026). Result figures are confidential; she discusses them in interviews."
       ],
       booking: [
-        "The <strong>ILUNION Hotels destination selector &amp; booking engine redesign (Case 01 · Sep 2024–Present)</strong> replaced a limiting native <code>&lt;select&gt;</code> with a dual-taxonomy system component (parallel destinations and hotels), entity iconography and beach/urban semantics."
+        "The <strong>ILUNION Hotels destination selector &amp; booking engine redesign (Case 01 · Sep 2024–Present)</strong> was tested in an experiment: a dual-taxonomy component (parallel destinations and hotels) with entity iconography and beach/urban semantics instead of the native <code>&lt;select&gt;</code>. It worked, but it was retired and is not in production; the learnings fed into the homepage recomposition, which is live."
       ],
       cef: [
         "<strong>Case 02 · CEF Design System (Origin: Jun–Sep 2024 · 2026 Evolution):</strong> built an EdTech design system from scratch: she audited <strong>47 components</strong> and built <strong>17 with 6 states</strong>, with <strong>WCAG 2.1 AA</strong> criteria applied to the audited flows (access, academic organisation and payment). In 2026 she recreated it with <strong>57 token-bound variables</strong> and connected Figma MCP with Claude to generate specs and JSON tokens."
@@ -413,8 +413,8 @@
 
       var lang = getLang();
       var nextChips = lang === 'en'
-        ? [{ label: 'Schedule interview', key: 'interview' }, { label: 'Why hire her?', key: 'whyhire' }]
-        : [{ label: 'Concertar entrevista', key: 'interview' }, { label: '¿Por qué contratarla?', key: 'whyhire' }];
+        ? [{ label: 'Contact by email', key: 'interview' }, { label: 'Why hire her?', key: 'whyhire' }]
+        : [{ label: 'Contactar por email', key: 'interview' }, { label: '¿Por qué contratarla?', key: 'whyhire' }];
 
       if (intent !== 'interview' && intent !== 'contact') {
         renderChips(nextChips);
