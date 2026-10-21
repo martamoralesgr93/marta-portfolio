@@ -115,12 +115,12 @@
         "¡Hola! Soy el asistente de Marta. Si eres recruiter o hiring manager, estás en el sitio correcto — puedo contarte todo lo que necesitas sobre su trayectoria (2020–2026) y sus 5 casos de producto. ¿Por dónde empezamos?"
       ],
       about: [
-        "Marta Morales es <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. Lleva desde 2020 diseñando y construyendo productos digitales: 4 años en consultoría B2B/B2C (<strong>We Are Actions</strong>, 2020–2024), especialización intensiva en Product Design &amp; Frontend en <strong>Neoland</strong> (2024), creación del primer Design System accesible en <strong>CEF</strong> (Jun–Sep 2024) y Product Designer &amp; CRO en <strong>ILUNION Hotels</strong> (Sep 2024–Actualidad). En 2026 además ha evolucionado sus proyectos fundacionales aplicando IA, Figma MCP y prototipos en vivo."
+        "Marta Morales es <strong>Product Designer especializada en Design Systems, CRO y producto digital orientado a negocio</strong>. Lleva desde 2020 diseñando y construyendo productos digitales: 4 años en consultoría B2B/B2C (<strong>We Are Actions</strong>, 2020–2024), especialización intensiva en Product Design &amp; Frontend en <strong>Neoland</strong> (2024), creación del primer Design System accesible en <strong>CEF</strong> (Jun–Sep 2024) y Digital Business Designer (Product Design y CRO del canal directo) en <strong>ILUNION Hotels</strong> (Sep 2024–Actualidad). En 2026 además ha evolucionado sus proyectos fundacionales aplicando IA, Figma MCP y prototipos en vivo."
       ],
       experience: [
         "Su trayectoria sigue una evolución clara desde 2020:<br><br>" +
-        "• <strong>Sep 2024 – Actualidad · ILUNION Hotels:</strong> Product Designer &amp; CRO. Optimización del canal directo de 32 hoteles (cifras confidenciales).<br>" +
-        "• <strong>Jun – Sep 2024 · CEF (Evolución 2026):</strong> Product Designer. Primer Design System accesible desde cero (17 componentes WCAG 2.1 AA, 57 variables y handoff con Figma MCP).<br>" +
+        "• <strong>Sep 2024 – Actualidad · ILUNION Hotels:</strong> Digital Business Designer (Product Design y CRO). Optimización del canal directo de 32 hoteles (cifras confidenciales).<br>" +
+        "• <strong>Jun – Sep 2024 · CEF (Evolución 2026):</strong> Product Designer. Primer Design System accesible desde cero: 47 componentes auditados y 17 construidos, con criterios WCAG 2.1 AA en los flujos evaluados. En 2026 lo recreó con 57 variables y Figma MCP.<br>" +
         "• <strong>2024 · Neoland (Evolución 2026):</strong> Bootcamp intensivo de Product Design &amp; Frontend como puente hacia sistemas y producto corporativo (MVP <em>Gym Energy Center</em>).<br>" +
         "• <strong>Jul 2020 – May 2024 · We Are Actions (Evolución 2026):</strong> 4 años como UX/UI Designer construyendo producto end-to-end junto a 7 desarrolladores backend (<em>Paolo Pizzeria</em> 2020–22 y <em>Oracle ERP &amp; IT Ops</em> 2022–24)."
       ],
@@ -135,11 +135,11 @@
         "Marta presenta <strong>5 casos de producto</strong> ordenados desde su etapa actual hasta sus proyectos fundacionales (revisitados en 2026 con su nuevo stack):<br><br>" +
         "<strong>Etapa actual (2024–Actualidad):</strong><br>" +
         "• <strong>01 · ILUNION CRO</strong> (Sep 2024–Actualidad) — optimización de la conversión del canal directo en 32 hoteles (cifras confidenciales).<br>" +
-        "• <strong>02 · CEF Design System</strong> (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP) — 17 componentes WCAG 2.1 AA y 57 variables enlazadas a tokens.<br><br>" +
+        "• <strong>02 · CEF Design System</strong> (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP) — 47 componentes auditados y 17 construidos (2024); recreación 2026 con 57 variables enlazadas a tokens.<br><br>" +
         "<strong>Proyectos fundacionales (Evolucionados en 2026):</strong><br>" +
-        "• <strong>03 · Oracle ERP &amp; IT Ops</strong> (Origen: 2022–24 en We Are Actions · Evolución 2026: Prototipo &amp; Heurísticas) — diagnóstico Build vs. Buy.<br>" +
-        "• <strong>04 · Gym Energy Center</strong> (Origen: 2024 Bootcamp Neoland · Evolución 2026: Rediseño + IA) — framework de 3 pilares en equipo de 8 personas.<br>" +
-        "• <strong>05 · Paolo Pizzeria</strong> (Origen: 2020–22 Producto 0→1 · Evolución 2026: IA &amp; Reservas) — escaló de 1 a 5 locales sin rediseño.<br><br>" +
+        "• <strong>03 · Oracle ERP &amp; IT Ops</strong> (Origen: 2022–24 en We Are Actions · Evolución 2026: Prototipo &amp; Heurísticas) — propuesta Build vs. Buy, no implementada.<br>" +
+        "• <strong>04 · Gym Energy Center</strong> (Origen: 2024 Bootcamp Neoland · Evolución 2026: Rediseño + IA) — 12 entrevistas y framework de 3 pilares en un equipo de 8.<br>" +
+        "• <strong>05 · Paolo Pizzeria</strong> (Origen: 2020–22 Producto 0→1 · Evolución 2026: IA &amp; Reservas) — marca, carta QR y web de pedidos propia (+28 % pedidos directos online).<br><br>" +
         "¿Quieres profundizar en alguno de ellos?"
       ],
       remote: [
@@ -158,15 +158,15 @@
         "Contacto directo: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Responde en menos de 24h."
       ],
       paolo: [
-        "<strong>Caso 05 · Paolo by Danny's Jazz (Origen: 2020–2022 · Evolución 2026):</strong> su primer gran producto 0→1 en We Are Actions. Durante 2 años lideró end-to-end el ecosistema digital (identidad, web Mobile-First aplicando la Ley de Miller, los 3 customer journeys —delivery, local y reserva—, cartas QR y analítica mensual). El producto escaló de <strong>1 a 5 locales sin necesidad de rediseño</strong>.<br><br>" +
+        "<strong>Caso 05 · Paolo by Danny's Jazz (Origen: 2020–2022 · Evolución 2026):</strong> su primer gran producto 0→1: hizo el research y el prototipo en We Are Actions y, como freelance, diseñó y desarrolló el ecosistema digital (identidad, web Mobile-First aplicando la Ley de Miller, los 3 customer journeys —delivery, local y reserva—, cartas QR y analítica mensual). Resultados: <strong>+28 % en pedidos directos online</strong> (canal digital) y <strong>+40 % de rapidez de comanda</strong> en sala (operación). El negocio pasó de 1 a 5 locales con la misma marca y la misma web, sin rediseño; ese crecimiento no se atribuye solo al producto.<br><br>" +
         "En <strong>2026</strong> evolucionó el caso con dirección de arte generativa (regenerando los 4 platos estrella y 20+ conceptos de marca con IA sin sesión fotográfica) y un nuevo flujo interactivo de reservas."
       ],
       oracle: [
-        "<strong>Caso 03 · Oracle ERP &amp; IT Ops (Origen: 2022–2024 · Evolución 2026):</strong> desarrollado durante su etapa en We Are Actions. Embebida en el equipo de IT, analizó la fricción en tiempo real, aisló <strong>4 patrones de fallo</strong> y formuló la decisión estratégica <strong>Build vs. Buy</strong> para construir una herramienta interna en 4 módulos.<br><br>" +
+        "<strong>Caso 03 · Oracle ERP &amp; IT Ops (Origen: 2022–2024 · Evolución 2026):</strong> desarrollado durante su etapa en We Are Actions. Embebida en el equipo de IT, analizó la fricción en tiempo real, aisló <strong>4 patrones de fallo</strong> y formuló la decisión <strong>Build vs. Buy</strong>: una propuesta de herramienta interna en 4 módulos, no implementada. El Senior de Sistemas midió 56,5 h/mes de trabajo manual; la reducción del 70 % es una estimación.<br><br>" +
         "En <strong>2026</strong> retomó el diagnóstico para sistematizar la auditoría de Heurísticas de Nielsen y construir el prototipo interactivo en vivo."
       ],
       gym: [
-        "<strong>Caso 04 · Gym Energy Center (Origen: 2024 Bootcamp Neoland · Evolución 2026):</strong> MVP full-stack construido en un equipo de 8 personas durante su especialización intensiva en Neoland en 2024. Marta lideró el research, la arquitectura de producto —articulada en un <strong>framework de 3 pilares</strong> (práctico, social y emocional)— y el sistema de diseño (40+ componentes del equipo).<br><br>" +
+        "<strong>Caso 04 · Gym Energy Center (Origen: 2024 Bootcamp Neoland · Evolución 2026):</strong> MVP full-stack construido en un equipo de 8 personas durante su especialización intensiva en Neoland en 2024. Marta trabajó en el research (12 entrevistas con socios), la arquitectura de producto —articulada en un <strong>framework de 3 pilares</strong> (práctico, social y emocional)— y el sistema de diseño del equipo.<br><br>" +
         "En <strong>2026</strong> realizó una reconceptualización individual añadiendo entrenador IA, dashboard de progreso y acceso seguro por token."
       ],
       cro: [
@@ -177,11 +177,11 @@
         "El rediseño del <strong>selector de destino y motor de reservas de ILUNION Hotels (Caso 01 · Sep 2024–Actualidad)</strong> sustituyó un <code>&lt;select&gt;</code> nativo limitante por un componente de sistema con doble taxonomía en paralelo (destinos y hoteles), iconografía y semántica costa/urbano."
       ],
       cef: [
-        "<strong>Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026):</strong> creó desde cero la infraestructura de diseño accesible para una plataforma EdTech: <strong>17 componentes con 6 estados</strong>, <strong>57 variables enlazadas a tokens</strong> y cumplimiento <strong>100% WCAG 2.1 AA</strong>. En 2026 evolucionó el handoff conectando Figma MCP con Claude para autogenerar especificaciones y tokens JSON con 0 discrepancias diseño-código."
+        "<strong>Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026):</strong> creó desde cero el sistema de diseño de una plataforma EdTech: auditó <strong>47 componentes</strong> y construyó <strong>17 con 6 estados</strong>, con criterios <strong>WCAG 2.1 AA</strong> en los flujos evaluados (acceso, organización académica y pago). En 2026 lo recreó con <strong>57 variables enlazadas a tokens</strong> y conectó Figma MCP con Claude para generar especificaciones y tokens JSON."
       ],
       whyhire: [
         "Tres razones decisivas para sumar a Marta a tu equipo:<br><br>" +
-        "1. <strong>Evolución real demostrada (2020–2026):</strong> Combina 4 años de producto 0→1 y base técnica con experiencia actual en CRO y Design Systems corporativos.<br>" +
+        "1. <strong>Trayectoria coherente (2020–2026):</strong> Combina 4 años de producto 0→1 y base técnica con experiencia actual en CRO y Design Systems corporativos.<br>" +
         "2. <strong>Impacto medible en negocio:</strong> Optimización de la conversión en ILUNION Hotels (cifras confidenciales) y WCAG 2.1 AA en los flujos evaluados de CEF.<br>" +
         "3. <strong>Stack de vanguardia (IA + Código):</strong> Integra Figma MCP, auditoría de datos asistida por IA y prototipado funcional en vivo."
       ],
@@ -194,12 +194,12 @@
         "Hi! I'm Marta's assistant. If you are a recruiter or hiring manager, you are in the right spot — I can walk you through her trajectory (2020–2026) and her 5 product case studies. Where should we begin?"
       ],
       about: [
-        "Marta Morales is a <strong>Product Designer | UX · Design Systems · AI Product Design · CRO</strong>. She has been designing and building digital products since 2020: 4 years in B2B/B2C consulting (<strong>We Are Actions</strong>, 2020–2024), an intensive Product Design &amp; Frontend specialisation at <strong>Neoland</strong> (2024), building the first accessible Design System at <strong>CEF</strong> (Jun–Sep 2024), and Product Designer &amp; CRO at <strong>ILUNION Hotels</strong> (Sep 2024–Present). In 2026 she also revisited her foundational projects to evolve them with AI, Figma MCP and live code prototypes."
+        "Marta Morales is a <strong>Product Designer specialising in Design Systems, CRO and business-driven digital product</strong>. She has been designing and building digital products since 2020: 4 years in B2B/B2C consulting (<strong>We Are Actions</strong>, 2020–2024), an intensive Product Design &amp; Frontend specialisation at <strong>Neoland</strong> (2024), building the first accessible Design System at <strong>CEF</strong> (Jun–Sep 2024), and Digital Business Designer (product design and CRO for the direct channel) at <strong>ILUNION Hotels</strong> (Sep 2024–Present). In 2026 she also revisited her foundational projects to evolve them with AI, Figma MCP and live code prototypes."
       ],
       experience: [
         "Her career follows a clear progression since 2020:<br><br>" +
-        "• <strong>Sep 2024 – Present · ILUNION Hotels:</strong> Product Designer &amp; CRO. Direct channel optimisation across 32 hotels (figures confidential).<br>" +
-        "• <strong>Jun – Sep 2024 · CEF (2026 Evolution):</strong> Product Designer. First accessible Design System from scratch (17 WCAG 2.1 AA components, 57 token variables &amp; Figma MCP handoff).<br>" +
+        "• <strong>Sep 2024 – Present · ILUNION Hotels:</strong> Digital Business Designer (product design and CRO). Direct channel optimisation across 32 hotels (figures confidential).<br>" +
+        "• <strong>Jun – Sep 2024 · CEF (2026 Evolution):</strong> Product Designer. First accessible Design System from scratch: 47 components audited and 17 built, with WCAG 2.1 AA criteria applied to the audited flows. In 2026 she recreated it with 57 variables and Figma MCP.<br>" +
         "• <strong>2024 · Neoland (2026 Evolution):</strong> Intensive Product Design &amp; Frontend Bootcamp bridging into enterprise systems (<em>Gym Energy Center</em> MVP).<br>" +
         "• <strong>Jul 2020 – May 2024 · We Are Actions (2026 Evolution):</strong> 4 years as UX/UI Designer building end-to-end products alongside 7 backend developers (<em>Paolo Pizzeria</em> 2020–22 &amp; <em>Oracle ERP &amp; IT Ops</em> 2022–24)."
       ],
@@ -214,11 +214,11 @@
         "Marta presents <strong>5 product case studies</strong> ordered from her current stage back to her foundational projects (revisited in 2026 with her current stack):<br><br>" +
         "<strong>Current Stage (2024–Present):</strong><br>" +
         "• <strong>01 · ILUNION CRO</strong> (Sep 2024–Present) — direct-channel conversion optimisation across 32 hotels (figures confidential).<br>" +
-        "• <strong>02 · CEF Design System</strong> (Origin: Jun–Sep 2024 · 2026 Evolution: Figma MCP) — 17 WCAG 2.1 AA components and 57 token-bound variables.<br><br>" +
+        "• <strong>02 · CEF Design System</strong> (Origin: Jun–Sep 2024 · 2026 Evolution: Figma MCP) — 47 components audited and 17 built (2024); 2026 recreation with 57 token-bound variables.<br><br>" +
         "<strong>Foundational Projects (Evolved in 2026):</strong><br>" +
-        "• <strong>03 · Oracle ERP &amp; IT Ops</strong> (Origin: 2022–24 at We Are Actions · 2026 Evolution: Live Prototype &amp; Heuristics) — Build vs. Buy strategic diagnosis.<br>" +
-        "• <strong>04 · Gym Energy Center</strong> (Origin: 2024 Neoland Bootcamp · 2026 Evolution: Solo Redesign + AI) — 3-pillar product framework in an 8-person team.<br>" +
-        "• <strong>05 · Paolo Pizzeria</strong> (Origin: 2020–22 0→1 Product · 2026 Evolution: AI Art Direction &amp; Booking) — scaled from 1 to 5 locations without a redesign.<br><br>" +
+        "• <strong>03 · Oracle ERP &amp; IT Ops</strong> (Origin: 2022–24 at We Are Actions · 2026 Evolution: Live Prototype &amp; Heuristics) — Build vs. Buy proposal, not implemented.<br>" +
+        "• <strong>04 · Gym Energy Center</strong> (Origin: 2024 Neoland Bootcamp · 2026 Evolution: Solo Redesign + AI) — 12 interviews and a 3-pillar framework in a team of 8.<br>" +
+        "• <strong>05 · Paolo Pizzeria</strong> (Origin: 2020–22 0→1 Product · 2026 Evolution: AI Art Direction &amp; Booking) — brand, QR menu and in-house ordering site (+28% direct online orders).<br><br>" +
         "Would you like deeper insights on any of these?"
       ],
       remote: [
@@ -237,15 +237,15 @@
         "Direct email: <a href='mailto:mmoralesgr93@gmail.com'>mmoralesgr93@gmail.com</a> · Replies within 24 hours."
       ],
       paolo: [
-        "<strong>Case 05 · Paolo by Danny's Jazz (Origin: 2020–2022 · 2026 Evolution):</strong> her foundational 0→1 product at We Are Actions. Over 2 years she owned the full digital ecosystem (visual identity, Mobile-First web applying Miller's Law, all 3 customer journeys —delivery, in-store and booking—, QR menus and monthly analytics). It scaled from <strong>1 to 5 locations without a redesign</strong>.<br><br>" +
+        "<strong>Case 05 · Paolo by Danny's Jazz (Origin: 2020–2022 · 2026 Evolution):</strong> her foundational 0→1 product: she did the research and prototyping at We Are Actions and, as a freelancer, designed and built the digital ecosystem (visual identity, Mobile-First web applying Miller's Law, all 3 customer journeys —delivery, in-store and booking—, QR menus and monthly analytics). Results: <strong>+28% direct online orders</strong> (digital channel) and <strong>+40% faster table ordering</strong> (operations). The business grew from 1 to 5 locations on the same brand and website, with no redesign; that growth is not attributed to the product alone.<br><br>" +
         "In <strong>2026</strong> she revisited the case with generative AI art direction (regenerating the 4 signature dishes and 20+ brand concepts without a photo shoot) and a new interactive booking flow."
       ],
       oracle: [
-        "<strong>Case 03 · Oracle ERP &amp; IT Ops (Origin: 2022–2024 · 2026 Evolution):</strong> conducted during her tenure at We Are Actions. Embedded in the IT team, she isolated <strong>4 failure patterns</strong> and formulated the <strong>Build vs. Buy</strong> strategy for a 4-module internal tool.<br><br>" +
+        "<strong>Case 03 · Oracle ERP &amp; IT Ops (Origin: 2022–2024 · 2026 Evolution):</strong> conducted during her tenure at We Are Actions. Embedded in the IT team, she isolated <strong>4 failure patterns</strong> and framed the <strong>Build vs. Buy</strong> decision: a proposal for a 4-module internal tool that was not implemented. The Senior Systems Engineer measured 56.5 h/month of manual work; the 70% reduction is an estimate.<br><br>" +
         "In <strong>2026</strong> she evolved the case by systematising the Nielsen Heuristics audit and building the live interactive prototype."
       ],
       gym: [
-        "<strong>Case 04 · Gym Energy Center (Origin: 2024 Neoland Bootcamp · 2026 Evolution):</strong> full-stack MVP built in an 8-person team during her intensive specialisation at Neoland in 2024. Marta led UX research, product architecture —articulated around a <strong>3-pillar framework</strong> (practical, social and emotional)— and the design system (40+ team components).<br><br>" +
+        "<strong>Case 04 · Gym Energy Center (Origin: 2024 Neoland Bootcamp · 2026 Evolution):</strong> full-stack MVP built in an 8-person team during her intensive specialisation at Neoland in 2024. Marta worked on the UX research (12 member interviews), the product architecture —built around a <strong>3-pillar framework</strong> (practical, social and emotional)— and the team design system.<br><br>" +
         "In <strong>2026</strong> she carried out a solo reconceptualisation adding an AI coach, progress dashboard and token-gated security."
       ],
       cro: [
@@ -255,11 +255,11 @@
         "The <strong>ILUNION Hotels destination selector &amp; booking engine redesign (Case 01 · Sep 2024–Present)</strong> replaced a limiting native <code>&lt;select&gt;</code> with a dual-taxonomy system component (parallel destinations and hotels), entity iconography and beach/urban semantics."
       ],
       cef: [
-        "<strong>Case 02 · CEF Design System (Origin: Jun–Sep 2024 · 2026 Evolution):</strong> delivered scalable design infrastructure from scratch: <strong>17 WCAG 2.1 AA components with 6 states</strong> and <strong>57 token-bound variables</strong>. In 2026 she evolved the handoff by connecting Figma MCP with Claude to auto-generate technical specs and JSON tokens with zero design-to-code drift."
+        "<strong>Case 02 · CEF Design System (Origin: Jun–Sep 2024 · 2026 Evolution):</strong> built an EdTech design system from scratch: she audited <strong>47 components</strong> and built <strong>17 with 6 states</strong>, with <strong>WCAG 2.1 AA</strong> criteria applied to the audited flows (access, academic organisation and payment). In 2026 she recreated it with <strong>57 token-bound variables</strong> and connected Figma MCP with Claude to generate specs and JSON tokens."
       ],
       whyhire: [
         "Three distinct strengths Marta brings:<br><br>" +
-        "1. <strong>Proven Trajectory (2020–2026):</strong> Combines 4 years of 0→1 product and technical foundations with current enterprise CRO and Design Systems impact.<br>" +
+        "1. <strong>Consistent track record (2020–2026):</strong> Combines 4 years of 0→1 product and technical foundations with current enterprise CRO and Design Systems impact.<br>" +
         "2. <strong>Measurable Business Outcomes:</strong> conversion optimisation at ILUNION Hotels (figures confidential) and WCAG 2.1 AA on CEF's evaluated flows.<br>" +
         "3. <strong>Cutting-Edge Stack (AI + Code):</strong> Integrates Figma MCP, AI-assisted data audits and live functional code prototypes."
       ],

@@ -176,10 +176,10 @@ Content:
 ## El arco cronológico real
 
 1. **2016–2020 · Grado en Bellas Artes (Diseño Gráfico, Web e Interfaces) — UPV:** base visual, composición, sistemas tipográficos y diseño web.
-2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (escalando de 1 a 5 locales sin rediseño) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
+2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (research y prototipo en We Are Actions; diseño y desarrollo después como freelance) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
 3. **2024 · Bootcamp Digital Product Design & Frontend Development en Neoland:** punto de inflexión y especialización intensiva en metodologías de research, frameworks de producto y arquitectura full-stack antes de dar el salto a producto corporativo. Aquí nace el MVP en equipo (8 personas) de **Gym Energy Center (Caso 04)**.
-4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System accesible (17 componentes con 6 estados, 57 variables enlazadas a tokens, 100% WCAG 2.1 AA).
-5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (cifras confidenciales: Marta las explica en entrevista).
+4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System: 47 componentes auditados y 17 construidos con 6 estados, con criterios WCAG 2.1 AA en los flujos evaluados. Las 57 variables enlazadas a tokens son de la recreación de 2026.
+5. **Sep 2024 – Actualidad · Digital Business Designer en ILUNION Hotels (Caso 01), con función de Product Design y CRO del canal directo:** optimización continua del canal de venta directa de 32 hoteles (cifras confidenciales: Marta las explica en entrevista).
 6. **Evolución 2026 (Modelo de doble fecha "Origen → Evolución 2026"):** en 2026 he retomado mis proyectos fundacionales (\`2020–2024\`) para evolucionarlos con mi stack actual: especificaciones y tokens auto-generados con **Figma MCP** en CEF, auditoría heurística y prototipo interactivo en vivo en Oracle IT Ops, reconceptualización individual con entrenador IA y seguridad por token en Gym Energy Center, y dirección de arte generativa con IA + nuevo flujo de reservas en Paolo Pizzeria.
 
 ## Qué revela esta evolución
@@ -470,7 +470,7 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 ## Experiencia
 
 ### ¿En qué empresas ha trabajado y cuál es su cronología?
-- **Sep 2024 – Actualidad:** Product Designer & CRO en **ILUNION Hotels** (Caso 01).
+- **Sep 2024 – Actualidad:** Digital Business Designer (Product Design y CRO del canal directo) en **ILUNION Hotels** (Caso 01).
 - **Jun 2024 – Sep 2024:** Product Designer en **CEF · Centro de Estudios Financieros** (Caso 02, evolucionado en 2026 con Figma MCP).
 - **2024:** Especialización intensiva en **Neoland** (Bootcamp Product Design & Frontend, donde nace el MVP en equipo de **Gym Energy Center**, Caso 04, reconceptualizado en 2026 con IA).
 - **Jul 2020 – May 2024:** UX/UI Designer en **We Are Actions** (4 años en consultoría digital; aquí nacen **Oracle ERP & IT Ops** en \`2022–2024\`, Caso 03, y **Paolo by Danny's Jazz** en \`2020–2022\`, Caso 05, ambos evolucionados en 2026). → \`experience.es.md\`.
@@ -478,10 +478,10 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 ### ¿Con qué productos?
 Los 5 casos seleccionados en orden \`01 → 05\`:
 1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (cifras de conversión confidenciales).
-2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
-3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): diagnóstico Build vs. Buy en 4 módulos.
-4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): framework de 3 pilares en equipo de 8 personas.
-5. **05 · Paolo Pizzeria** (\`Origen: 2020–2022 Producto 0→1 · Evolución 2026: IA & Reservas\`): ecosistema digital que escaló de 1 a 5 locales sin rediseño.
+2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 47 componentes auditados y 17 construidos (2024); 57 variables enlazadas a tokens en la recreación de 2026.
+3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): propuesta Build vs. Buy en 4 módulos, no implementada.
+4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): 12 entrevistas y framework de 3 pilares en un equipo de 8.
+5. **05 · Paolo Pizzeria** (\`Origen: 2020–2022 Producto 0→1 · Evolución 2026: IA & Reservas\`): marca, carta QR y web de pedidos propia (+28 % pedidos directos online, +40 % rapidez de comanda en sala).
 
 ### ¿Con qué usuarios?
 Viajeros de ocio y corporativos (ILUNION), estudiantes y docentes EdTech (CEF), técnicos de soporte IT B2B (Oracle), usuarios de fitness (Gym Energy Center) y comensales de delivery/restauración (Paolo), con accesibilidad WCAG 2.1 AA como constante. → \`experience.es.md\`.
@@ -816,22 +816,22 @@ Tags: [design-system, design-tokens, components, documentation, scalability, con
 Content:
 # Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP)
 
-> **Cronología:** Creado desde cero entre **junio y septiembre de 2024** para el Centro de Estudios Financieros (CEF), y **evolucionado en 2026** conectando Figma MCP con Claude para autogenerar especificaciones técnicas y tokens JSON con 0 discrepancias entre diseño y código.
+> **Cronología:** Creado desde cero entre **junio y septiembre de 2024** para el Centro de Estudios Financieros (CEF), y **evolucionado en 2026** recreándolo como Aulora con 57 variables y conectando Figma MCP con Claude para generar especificaciones técnicas y tokens JSON.
 
 ## Contexto y Problema
 Plataforma EdTech del Centro de Estudios Financieros (CEF) con años de deuda visual y técnica sin un sistema de diseño subyacente.
 
 ## Mi rol
-**Product Designer responsable del Design System y accesibilidad WCAG 2.1 AA al 100% de principio a fin.**
+**Product Designer responsable del Design System y de aplicar criterios WCAG 2.1 AA en los flujos evaluados (acceso, organización académica y pago).**
 
 ## Soluciones y Evolución 2026
-- **Jun–Sep 2024 (Origen):** auditoría de accesibilidad WCAG 2.1 AA, definición de **EdTech User Personas** (estudiantes y docentes), arquitectura de tokens aplicando **Leyes de Gestalt** y construcción de **17 componentes con 6 estados** y **57 variables enlazadas a tokens**.
-- **2026 (Evolución con Figma MCP):** automatización del handoff generando fichas de especificación técnica y tokens JSON directamente desde Figma vía MCP con Claude (0 discrepancias entre Figma y código).
+- **Jun–Sep 2024 (Origen):** auditoría de accesibilidad WCAG 2.1 AA, definición de **EdTech User Personas** (estudiantes y docentes), arquitectura de tokens aplicando **Leyes de Gestalt**, auditoría de **47 componentes** existentes y construcción de **17 componentes con 6 estados**.
+- **2026 (Evolución con Figma MCP):** automatización del handoff generando fichas de especificación técnica y tokens JSON directamente desde Figma vía MCP con Claude, sobre la recreación de 57 variables.
 
 ## Métricas clave
-- **100%** cumplimiento WCAG 2.1 AA.
-- **17** componentes con 6 estados interactivos.
-- **57** variables enlazadas a tokens semánticos.
+- Criterios **WCAG 2.1 AA** aplicados en los 3 flujos evaluados (auditoría, no certificación).
+- **47** componentes auditados y **17** construidos con 6 estados (2024).
+- **57** variables enlazadas a tokens semánticos (recreación 2026).
 ========================================
 
 DOCUMENT ID: proj-cro
@@ -1009,20 +1009,21 @@ Oracle generaba más fricción que solución: tiempos elevados de registro, pér
 - **2026 (Evolución con IA y código):** sistematización del diagnóstico mediante **Heurísticas de Nielsen** y construcción del **prototipo funcional interactivo** en código.
 
 ## Resultados y Métricas
-- **4 patrones de fallo** aislados en producción.
-- Decisión estratégica **Build vs. Buy** validada con dirección.
+- Propuesta conceptual, **no implementada**: no hay resultados de producción.
+- **4 patrones de fallo** aislados en el uso real de Oracle.
+- **56,5 h/mes** de trabajo manual, medidas por el Senior de Sistemas; reducción potencial estimada del **70 %**.
 - **4 módulos** especificados y prototipados.
 ========================================
 
 DOCUMENT ID: proj-paolo
 Type: project
-Title: Paolo Pizzeria — proyecto de bootcamp (evolución)
-Summary: Proyecto académico del bootcamp de Marta. Se mantiene deliberadamente para mostrar su evolución profesional desde los primeros proyectos hasta productos reales usados por miles de usuarios. No pretende demostrar seniority.
-Tags: [bootcamp, academic, foundations, evolution, early-work, ux-ui]
+Title: Paolo Pizzeria — producto 0→1 real (2020–2022)
+Summary: Producto real 0→1 para una pizzería de Madrid: marca, carta QR y web de pedidos propia. Research y prototipo en We Are Actions; diseño y desarrollo después como freelance.
+Tags: [0-to-1, brand, ordering, qr-menu, foundations, ux-ui]
 Content:
 # Caso 05 · Paolo by Danny's Jazz (Origen: 2020–2022 · Evolución 2026)
 
-> **Cronología:** Producto 0→1 desarrollado entre **2020 y 2022 en We Are Actions** (ownership end-to-end durante 2 años) y **evolucionado en 2026** con dirección de arte generativa con IA y nuevo flujo interactivo de reservas.
+> **Cronología:** Producto 0→1 de **2020 a 2022**: research y prototipo en We Are Actions; diseño y desarrollo después como freelance y **evolucionado en 2026** con dirección de arte generativa con IA y nuevo flujo interactivo de reservas.
 
 ## Contexto
 Cadena de pizzerías artesanas en expansión que nació en plena pandemia sin canal digital propio. Desarrollado dentro de We Are Actions (2020–2022) y revisitado en 2026 con el nuevo stack de IA de Marta.
@@ -1034,16 +1035,17 @@ Construir desde cero la identidad visual, la arquitectura Mobile-First y el ecos
 Cubrir los **3 customer journeys** del negocio (delivery, visita al local y reserva) en un único producto digital escalable.
 
 ## Mi rol
-**Lead Product Designer & Frontend Developer** (ownership end-to-end durante 2 años).
+Research y prototipado en We Are Actions; identidad visual, experiencia en sala, carta QR y web de pedidos como freelance.
 
 ## Soluciones y Evolución 2026
 - **2020–2022 (Origen 0→1):** arquitectura Mobile-First aplicando la **Ley de Miller** (chunking de categorías para evitar parálisis de decisión), cartas QR, integración con plataformas de delivery (Glovo, Uber Eats, JustEat) y ciclo mensual de analítica (Clarity + GA4).
 - **2026 (Evolución con IA):** regeneración de los 4 platos estrella y exploración de 20+ conceptos de marca con IA generativa sin sesión fotográfica, además de un nuevo flujo interactivo de reservas.
 
 ## Resultados y Métricas
-- Escaló de **1 a 5 locales sin necesidad de rediseño** (\`×5 locales\`).
+- Canal digital: **+28 %** en pedidos directos online.
+- Operación en sala: **+40 %** de rapidez de comanda.
+- Negocio: pasó de 1 a 5 locales con la misma marca y la misma web, sin rediseño. Ese crecimiento no se atribuye solo al producto.
 - **3 customer journeys** cubiertos en 1 producto.
-- **2 años** de ownership end-to-end (+32% en llamadas directas desde móvil el primer mes).
 ========================================
 
 DOCUMENT ID: reflections
@@ -1594,10 +1596,10 @@ Content:
 ## El arco cronológico real
 
 1. **2016–2020 · Grado en Bellas Artes (Diseño Gráfico, Web e Interfaces) — UPV:** base visual, composición, sistemas tipográficos y diseño web.
-2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (escalando de 1 a 5 locales sin rediseño) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
+2. **Jul 2020 – May 2024 · UX/UI Designer en We Are Actions (4 años):** consultoría digital trabajando mano a mano con 7 desarrolladores backend. Aquí construí **Paolo by Danny's Jazz (\`2020–2022\`, Caso 05)** de 0 a 1 (research y prototipo en We Are Actions; diseño y desarrollo después como freelance) y realicé el discovery contextual embebido en IT de **Oracle ERP & IT Ops (\`2022–2024\`, Caso 03)**. Compatibilizado con el **Máster en Formación del Profesorado (CEU San Pablo, \`2022–2023\`)**.
 3. **2024 · Bootcamp Digital Product Design & Frontend Development en Neoland:** punto de inflexión y especialización intensiva en metodologías de research, frameworks de producto y arquitectura full-stack antes de dar el salto a producto corporativo. Aquí nace el MVP en equipo (8 personas) de **Gym Energy Center (Caso 04)**.
-4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System accesible (17 componentes con 6 estados, 57 variables enlazadas a tokens, 100% WCAG 2.1 AA).
-5. **Sep 2024 – Actualidad · Product Designer & CRO en ILUNION Hotels (Caso 01):** optimización continua del canal de venta directa de 32 hoteles (cifras confidenciales: Marta las explica en entrevista).
+4. **Jun 2024 – Sep 2024 · Product Designer en CEF (Caso 02):** creación desde cero del primer Design System: 47 componentes auditados y 17 construidos con 6 estados, con criterios WCAG 2.1 AA en los flujos evaluados. Las 57 variables enlazadas a tokens son de la recreación de 2026.
+5. **Sep 2024 – Actualidad · Digital Business Designer en ILUNION Hotels (Caso 01), con función de Product Design y CRO del canal directo:** optimización continua del canal de venta directa de 32 hoteles (cifras confidenciales: Marta las explica en entrevista).
 6. **Evolución 2026 (Modelo de doble fecha "Origen → Evolución 2026"):** en 2026 he retomado mis proyectos fundacionales (\`2020–2024\`) para evolucionarlos con mi stack actual: especificaciones y tokens auto-generados con **Figma MCP** en CEF, auditoría heurística y prototipo interactivo en vivo en Oracle IT Ops, reconceptualización individual con entrenador IA y seguridad por token en Gym Energy Center, y dirección de arte generativa con IA + nuevo flujo de reservas en Paolo Pizzeria.
 
 ## Qué revela esta evolución
@@ -1888,7 +1890,7 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 ## Experiencia
 
 ### ¿En qué empresas ha trabajado y cuál es su cronología?
-- **Sep 2024 – Actualidad:** Product Designer & CRO en **ILUNION Hotels** (Caso 01).
+- **Sep 2024 – Actualidad:** Digital Business Designer (Product Design y CRO del canal directo) en **ILUNION Hotels** (Caso 01).
 - **Jun 2024 – Sep 2024:** Product Designer en **CEF · Centro de Estudios Financieros** (Caso 02, evolucionado en 2026 con Figma MCP).
 - **2024:** Especialización intensiva en **Neoland** (Bootcamp Product Design & Frontend, donde nace el MVP en equipo de **Gym Energy Center**, Caso 04, reconceptualizado en 2026 con IA).
 - **Jul 2020 – May 2024:** UX/UI Designer en **We Are Actions** (4 años en consultoría digital; aquí nacen **Oracle ERP & IT Ops** en \`2022–2024\`, Caso 03, y **Paolo by Danny's Jazz** en \`2020–2022\`, Caso 05, ambos evolucionados en 2026). → \`experience.es.md\`.
@@ -1896,10 +1898,10 @@ Une negocio (marketing), técnica (frontend) y oficio de producto en un mismo pe
 ### ¿Con qué productos?
 Los 5 casos seleccionados en orden \`01 → 05\`:
 1. **01 · ILUNION Hotels CRO** (\`Sep 2024–Actualidad\`): canal de venta directa y motor de reservas de 32 hoteles (cifras de conversión confidenciales).
-2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 17 componentes WCAG 2.1 AA, 57 variables enlazadas a tokens.
-3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): diagnóstico Build vs. Buy en 4 módulos.
-4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): framework de 3 pilares en equipo de 8 personas.
-5. **05 · Paolo Pizzeria** (\`Origen: 2020–2022 Producto 0→1 · Evolución 2026: IA & Reservas\`): ecosistema digital que escaló de 1 a 5 locales sin rediseño.
+2. **02 · CEF Design System** (\`Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP\`): 47 componentes auditados y 17 construidos (2024); 57 variables enlazadas a tokens en la recreación de 2026.
+3. **03 · IT Ops & Oracle ERP** (\`Origen: 2022–2024 en We Are Actions · Evolución 2026: Prototipo & Heurísticas\`): propuesta Build vs. Buy en 4 módulos, no implementada.
+4. **04 · Gym Energy Center** (\`Origen: 2024 MVP Bootcamp Neoland · Evolución 2026: Rediseño + IA\`): 12 entrevistas y framework de 3 pilares en un equipo de 8.
+5. **05 · Paolo Pizzeria** (\`Origen: 2020–2022 Producto 0→1 · Evolución 2026: IA & Reservas\`): marca, carta QR y web de pedidos propia (+28 % pedidos directos online, +40 % rapidez de comanda en sala).
 
 ### ¿Con qué usuarios?
 Viajeros de ocio y corporativos (ILUNION), estudiantes y docentes EdTech (CEF), técnicos de soporte IT B2B (Oracle), usuarios de fitness (Gym Energy Center) y comensales de delivery/restauración (Paolo), con accesibilidad WCAG 2.1 AA como constante. → \`experience.es.md\`.
@@ -2234,22 +2236,22 @@ Tags: [design-system, design-tokens, components, documentation, scalability, con
 Content:
 # Caso 02 · CEF Design System (Origen: Jun–Sep 2024 · Evolución 2026: Figma MCP)
 
-> **Cronología:** Creado desde cero entre **junio y septiembre de 2024** para el Centro de Estudios Financieros (CEF), y **evolucionado en 2026** conectando Figma MCP con Claude para autogenerar especificaciones técnicas y tokens JSON con 0 discrepancias entre diseño y código.
+> **Cronología:** Creado desde cero entre **junio y septiembre de 2024** para el Centro de Estudios Financieros (CEF), y **evolucionado en 2026** recreándolo como Aulora con 57 variables y conectando Figma MCP con Claude para generar especificaciones técnicas y tokens JSON.
 
 ## Contexto y Problema
 Plataforma EdTech del Centro de Estudios Financieros (CEF) con años de deuda visual y técnica sin un sistema de diseño subyacente.
 
 ## Mi rol
-**Product Designer responsable del Design System y accesibilidad WCAG 2.1 AA al 100% de principio a fin.**
+**Product Designer responsable del Design System y de aplicar criterios WCAG 2.1 AA en los flujos evaluados (acceso, organización académica y pago).**
 
 ## Soluciones y Evolución 2026
-- **Jun–Sep 2024 (Origen):** auditoría de accesibilidad WCAG 2.1 AA, definición de **EdTech User Personas** (estudiantes y docentes), arquitectura de tokens aplicando **Leyes de Gestalt** y construcción de **17 componentes con 6 estados** y **57 variables enlazadas a tokens**.
-- **2026 (Evolución con Figma MCP):** automatización del handoff generando fichas de especificación técnica y tokens JSON directamente desde Figma vía MCP con Claude (0 discrepancias entre Figma y código).
+- **Jun–Sep 2024 (Origen):** auditoría de accesibilidad WCAG 2.1 AA, definición de **EdTech User Personas** (estudiantes y docentes), arquitectura de tokens aplicando **Leyes de Gestalt**, auditoría de **47 componentes** existentes y construcción de **17 componentes con 6 estados**.
+- **2026 (Evolución con Figma MCP):** automatización del handoff generando fichas de especificación técnica y tokens JSON directamente desde Figma vía MCP con Claude, sobre la recreación de 57 variables.
 
 ## Métricas clave
-- **100%** cumplimiento WCAG 2.1 AA.
-- **17** componentes con 6 estados interactivos.
-- **57** variables enlazadas a tokens semánticos.
+- Criterios **WCAG 2.1 AA** aplicados en los 3 flujos evaluados (auditoría, no certificación).
+- **47** componentes auditados y **17** construidos con 6 estados (2024).
+- **57** variables enlazadas a tokens semánticos (recreación 2026).
 ========================================
 
 DOCUMENT ID: proj-cro
@@ -2427,20 +2429,21 @@ Oracle generaba más fricción que solución: tiempos elevados de registro, pér
 - **2026 (Evolución con IA y código):** sistematización del diagnóstico mediante **Heurísticas de Nielsen** y construcción del **prototipo funcional interactivo** en código.
 
 ## Resultados y Métricas
-- **4 patrones de fallo** aislados en producción.
-- Decisión estratégica **Build vs. Buy** validada con dirección.
+- Propuesta conceptual, **no implementada**: no hay resultados de producción.
+- **4 patrones de fallo** aislados en el uso real de Oracle.
+- **56,5 h/mes** de trabajo manual, medidas por el Senior de Sistemas; reducción potencial estimada del **70 %**.
 - **4 módulos** especificados y prototipados.
 ========================================
 
 DOCUMENT ID: proj-paolo
 Type: project
-Title: Paolo Pizzeria — proyecto de bootcamp (evolución)
-Summary: Proyecto académico del bootcamp de Marta. Se mantiene deliberadamente para mostrar su evolución profesional desde los primeros proyectos hasta productos reales usados por miles de usuarios. No pretende demostrar seniority.
-Tags: [bootcamp, academic, foundations, evolution, early-work, ux-ui]
+Title: Paolo Pizzeria — producto 0→1 real (2020–2022)
+Summary: Producto real 0→1 para una pizzería de Madrid: marca, carta QR y web de pedidos propia. Research y prototipo en We Are Actions; diseño y desarrollo después como freelance.
+Tags: [0-to-1, brand, ordering, qr-menu, foundations, ux-ui]
 Content:
 # Caso 05 · Paolo by Danny's Jazz (Origen: 2020–2022 · Evolución 2026)
 
-> **Cronología:** Producto 0→1 desarrollado entre **2020 y 2022 en We Are Actions** (ownership end-to-end durante 2 años) y **evolucionado en 2026** con dirección de arte generativa con IA y nuevo flujo interactivo de reservas.
+> **Cronología:** Producto 0→1 de **2020 a 2022**: research y prototipo en We Are Actions; diseño y desarrollo después como freelance y **evolucionado en 2026** con dirección de arte generativa con IA y nuevo flujo interactivo de reservas.
 
 ## Contexto
 Cadena de pizzerías artesanas en expansión que nació en plena pandemia sin canal digital propio. Desarrollado dentro de We Are Actions (2020–2022) y revisitado en 2026 con el nuevo stack de IA de Marta.
@@ -2452,16 +2455,17 @@ Construir desde cero la identidad visual, la arquitectura Mobile-First y el ecos
 Cubrir los **3 customer journeys** del negocio (delivery, visita al local y reserva) en un único producto digital escalable.
 
 ## Mi rol
-**Lead Product Designer & Frontend Developer** (ownership end-to-end durante 2 años).
+Research y prototipado en We Are Actions; identidad visual, experiencia en sala, carta QR y web de pedidos como freelance.
 
 ## Soluciones y Evolución 2026
 - **2020–2022 (Origen 0→1):** arquitectura Mobile-First aplicando la **Ley de Miller** (chunking de categorías para evitar parálisis de decisión), cartas QR, integración con plataformas de delivery (Glovo, Uber Eats, JustEat) y ciclo mensual de analítica (Clarity + GA4).
 - **2026 (Evolución con IA):** regeneración de los 4 platos estrella y exploración de 20+ conceptos de marca con IA generativa sin sesión fotográfica, además de un nuevo flujo interactivo de reservas.
 
 ## Resultados y Métricas
-- Escaló de **1 a 5 locales sin necesidad de rediseño** (\`×5 locales\`).
+- Canal digital: **+28 %** en pedidos directos online.
+- Operación en sala: **+40 %** de rapidez de comanda.
+- Negocio: pasó de 1 a 5 locales con la misma marca y la misma web, sin rediseño. Ese crecimiento no se atribuye solo al producto.
 - **3 customer journeys** cubiertos en 1 producto.
-- **2 años** de ownership end-to-end (+32% en llamadas directas desde móvil el primer mes).
 ========================================
 
 DOCUMENT ID: reflections
