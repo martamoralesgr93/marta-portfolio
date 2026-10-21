@@ -3021,236 +3021,57 @@ html.lang-en .hero-positioning.en { display: block !important; }
 
 <!-- ==================== HERO ==================== -->
 <main id="main">
-<section class="hero">
-  <!-- Capa de atmósfera: el vídeo vuelve como fuente de luz, no como imagen -->
+<section class="hero mm-hero">
+  <!-- Fondo estático: brillo radial morado + grano -->
   <div class="mm-atmos" aria-hidden="true">
-    <div class="mm-atmos-video">
-      <video autoplay muted loop playsinline preload="auto">
-        <source src="assets/logo-background-video.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="mm-atmos-glow" id="mmGlow"></div>
+    <div class="mm-hero-glow"></div>
     <div class="mm-atmos-grain"></div>
   </div>
 
   <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow mm-rise mm-d1">
-          <div class="eyebrow-dot"></div>
-          <span class="eyebrow-text es">Marta Morales · Product Designer End-to-End · UX/UI, Design Systems, CRO &amp; Código</span>
-          <span class="eyebrow-text en">Marta Morales · End-to-End Product Designer · UX/UI, Design Systems, CRO &amp; Code</span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="es"><span class="mm-reveal"><span>Diseño de producto <span class="c-purple">transversal</span>: de los datos al sistema y el código<span class="c-orange">.</span></span></span></span>
-          <span class="en"><span class="mm-reveal"><span><span class="c-purple">Cross-functional</span> product design: from data to systems and code<span class="c-orange">.</span></span></span></span>
-        </h1>
-        
-        <p class="hero-positioning es mm-rise mm-d2">Más de 5 años resolviendo producto digital de punta a punta en <strong>e-commerce hotelero (ILUNION Hotels)</strong>, <strong>EdTech (CEF)</strong>, <strong>software B2B/ERP (Oracle)</strong> y <strong>apps 0→1</strong>. Conecto investigación, negocio, sistemas de diseño y desarrollo para entregar soluciones que mueven métricas reales en producción.</p>
-        <p class="hero-positioning en mm-rise mm-d2">5+ years solving end-to-end digital product across <strong>hospitality e-commerce (ILUNION Hotels)</strong>, <strong>EdTech (CEF)</strong>, <strong>B2B/ERP software (Oracle)</strong> and <strong>0→1 apps</strong>. I bridge research, business, design systems and engineering to ship solutions that move real metrics in production.</p>
-
-        <div class="hero-actions mm-rise mm-d2">
-          <a href="assets/cv-marta-ats-es.pdf" download="CV_Marta_Morales_ES_2026.pdf" class="btn-primary cta-download es">Descargar CV  ↗</a>
-          <a href="assets/cv-marta-ats-en.pdf" download="CV_Marta_Morales_EN_2026.pdf" class="btn-primary cta-download en">Download CV  ↗</a>
-          <a href="#work" class="btn-ghost"><span class="es">Ver los 5 casos de producto</span><span class="en">View the 5 product cases</span> ≀↓</a>
-        </div>
-
-        <!-- ── QUÉ HAGO DE FORMA TRANSVERSAL (RESUMEN EN 4 PILARES) ── -->
-        <div class="mm-transversal-wrap mm-rise mm-d2">
-          <p class="mm-transversal-kicker">
-            <span class="es">• Qué hago de forma transversal en un equipo de producto</span>
-            <span class="en">• How I work cross-functionally in a product team</span>
-          </p>
-          <div class="mm-transversal-grid">
-            <div class="mm-transversal-card">
-              <div class="mm-transversal-num">01 · DISCOVERY &amp; DATOS</div>
-              <h2 class="mm-transversal-title"><span class="es">Research &amp; Analítica</span><span class="en">Research &amp; Analytics</span></h2>
-              <p class="mm-transversal-desc"><span class="es">Investigación contextual, Adobe Analytics, Microsoft Clarity, auditorías heurísticas y test A/B.</span><span class="en">Contextual discovery, Adobe Analytics, Microsoft Clarity, heuristic audits and A/B testing.</span></p>
-            </div>
-            <div class="mm-transversal-card">
-              <div class="mm-transversal-num">02 · ARQUITECTURA &amp; UI</div>
-              <h2 class="mm-transversal-title"><span class="es">UX/UI &amp; Design Systems</span><span class="en">UX/UI &amp; Design Systems</span></h2>
-              <p class="mm-transversal-desc"><span class="es">Flujos complejos B2B/B2C, sistemas de diseño desde cero con tokens en Figma y 100% WCAG 2.1 AA.</span><span class="en">Complex B2B/B2C flows, token-based Figma design systems built from scratch and 100% WCAG 2.1 AA.</span></p>
-            </div>
-            <div class="mm-transversal-card">
-              <div class="mm-transversal-num">03 · NEGOCIO &amp; IMPACTO</div>
-              <h2 class="mm-transversal-title"><span class="es">Estrategia &amp; CRO</span><span class="en">Strategy &amp; CRO</span></h2>
-              <p class="mm-transversal-desc"><span class="es">Optimización de conversión en motores de reserva y decisiones estratégicas Build vs. Buy.</span><span class="en">Booking engine conversion optimisation and strategic Build vs. Buy decisions.</span></p>
-            </div>
-            <div class="mm-transversal-card">
-              <div class="mm-transversal-num">04 · IMPLEMENTACIÓN</div>
-              <h2 class="mm-transversal-title"><span class="es">Código, Handoff &amp; IA</span><span class="en">Code, Handoff &amp; AI</span></h2>
-              <p class="mm-transversal-desc"><span class="es">Prototipos interactivos en HTML/CSS/JS y React, sincronización vía Figma MCP y validación directa con dev.</span><span class="en">Interactive prototypes in HTML/CSS/JS and React, Figma MCP token sync and direct QA with engineering.</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="eyebrow mm-rise mm-d1">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-text es">Marta Morales · Product Designer End-to-End · UX/UI, Design Systems, CRO &amp; Código</span>
+      <span class="eyebrow-text en">Marta Morales · End-to-End Product Designer · UX/UI, Design Systems, CRO &amp; Code</span>
     </div>
 
-    <!-- ── BANCO DE PRUEBAS ── -->
-    <p class="mm-note es mm-rise mm-d3"><strong style="color:var(--white);">Ejemplo rápido en vivo (Caso 01 · ILUNION Hotels):</strong> selector de destino del motor de reservas. El bloque 01 reproduce el <code>&lt;select&gt;</code> nativo anterior; el 02 es la reconstrucción funcional del componente en producción.</p>
-    <p class="mm-note en mm-rise mm-d3"><strong style="color:var(--white);">Quick live example (Case 01 · ILUNION Hotels):</strong> booking engine destination selector. Block 01 reproduces the previous native <code>&lt;select&gt;</code>; block 02 is the functional reconstruction of the component in production.</p>
+    <h1 class="hero-title">
+      <span class="es"><span class="mm-reveal"><span>Diseño de producto <span class="c-purple">transversal</span>: de los datos al sistema y el código<span class="c-orange">.</span></span></span></span>
+      <span class="en"><span class="mm-reveal"><span><span class="c-purple">Cross-functional</span> product design: from data to systems and code<span class="c-orange">.</span></span></span></span>
+    </h1>
 
-    <div class="mm-bench mm-rise mm-d3">
+    <p class="mm-hero-sub mm-rise mm-d2">
+      <span class="es">Más de 5 años diseñando producto digital end-to-end en e-commerce hotelero, EdTech, software B2B/ERP y apps 0→1.</span>
+      <span class="en">5+ years designing end-to-end digital products across hospitality e-commerce, EdTech, B2B/ERP software and 0→1 apps.</span>
+    </p>
 
-      <!-- LADO ANTES -->
-      <div class="mm-slot mm-slot--was">
-        <div class="mm-slot-head">
-          <span class="n es">01 · Antes — elemento nativo</span>
-          <span class="n en">01 · Before — native element</span>
-          <p class="es">Ábrelo. Esto no es una captura: es el mismo <code>&lt;select&gt;</code> que había en el motor de reservas.</p>
-          <p class="en">Open it. This is not a screenshot: it is the same <code>&lt;select&gt;</code> that was in the booking engine.</p>
-        </div>
-        <div class="mm-spec">
-          <label class="mm-native-label es" for="mmNat">Destino</label>
-          <label class="mm-native-label en" for="mmNatEn">Destination</label>
-          <select id="mmNat" class="mm-native es">
-            <option>Seleccionar un hotel o destino</option>
-            <optgroup label="Madrid">
-              <option>Hotel ILUNION Alcalá Norte</option>
-              <option>Hotel ILUNION Atrium</option>
-              <option>Hotel ILUNION Pío XII</option>
-              <option>Hotel ILUNION Suites Madrid</option>
-            </optgroup>
-            <optgroup label="Valencia">
-              <option>Hotel ILUNION Aqua 3</option>
-              <option>Hotel ILUNION Aqua 4</option>
-              <option>Hotel ILUNION Valencia 3</option>
-              <option>Hotel ILUNION Valencia 4</option>
-            </optgroup>
-            <optgroup label="Málaga">
-              <option>Hotel ILUNION Hacienda de Mijas</option>
-              <option>Hotel ILUNION Málaga</option>
-              <option>Hotel ILUNION Fuengirola</option>
-              <option>Aparthotel ILUNION Miramar</option>
-            </optgroup>
-            <optgroup label="Barcelona">
-              <option>Hotel ILUNION Barcelona</option>
-              <option>Hotel ILUNION Les Corts – Spa</option>
-              <option>Hotel ILUNION Almirante</option>
-              <option>Hotel ILUNION Auditori</option>
-              <option>Hotel ILUNION Bel Art</option>
-            </optgroup>
-          </select>
-          <select id="mmNatEn" class="mm-native en">
-            <option>Select a hotel or destination</option>
-            <optgroup label="Madrid">
-              <option>Hotel ILUNION Alcalá Norte</option>
-              <option>Hotel ILUNION Atrium</option>
-              <option>Hotel ILUNION Pío XII</option>
-              <option>Hotel ILUNION Suites Madrid</option>
-            </optgroup>
-            <optgroup label="Valencia">
-              <option>Hotel ILUNION Aqua 3</option>
-              <option>Hotel ILUNION Aqua 4</option>
-              <option>Hotel ILUNION Valencia 3</option>
-              <option>Hotel ILUNION Valencia 4</option>
-            </optgroup>
-            <optgroup label="Málaga">
-              <option>Hotel ILUNION Hacienda de Mijas</option>
-              <option>Hotel ILUNION Málaga</option>
-              <option>Hotel ILUNION Fuengirola</option>
-              <option>Aparthotel ILUNION Miramar</option>
-            </optgroup>
-            <optgroup label="Barcelona">
-              <option>Hotel ILUNION Barcelona</option>
-              <option>Hotel ILUNION Les Corts – Spa</option>
-              <option>Hotel ILUNION Almirante</option>
-              <option>Hotel ILUNION Auditori</option>
-              <option>Hotel ILUNION Bel Art</option>
-            </optgroup>
-          </select>
-          <pre class="mm-code">&lt;select&gt;
-  &lt;<b>optgroup</b> label="Madrid"&gt;
-    &lt;option&gt;Hotel ILUNION Atrium&lt;/option&gt;
-    …</pre>
-        </div>
-      </div>
-
-      <!-- LADO DESPUÉS -->
-      <div class="mm-slot mm-slot--now">
-        <div class="mm-slot-head">
-          <span class="n es">02 · Después — componente de sistema</span>
-          <span class="n en">02 · After — system component</span>
-          <p class="es">Reconstrucción funcional del selector en producción. Mismo contenido, misma jerarquía.</p>
-          <p class="en">Functional reconstruction of the selector in production. Same content, same hierarchy.</p>
-        </div>
-        <div class="mm-spec">
-          <div class="mm-combo" id="mmCombo" data-open="false">
-            <button class="mm-trigger" id="mmTrigger" aria-expanded="false" aria-controls="mmPanel">
-              <span>
-                <span class="lbl es">¿Dónde quieres ir?</span>
-                <span class="lbl en">Where do you want to go?</span>
-                <span class="ph es">Buscar hotel o destino</span>
-                <span class="ph en">Search hotel or destination</span>
-              </span>
-              <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
-                <path d="M1 1l6 6 6-6" stroke="#1A1A1A" stroke-width="1.8"/>
-              </svg>
-            </button>
-            <div class="mm-panel" id="mmPanel" role="region" aria-label="Destinos y hoteles">
-              <div class="mm-col">
-                <h3>
-                  <span class="es">DESTINOS</span>
-                  <span class="en">DESTINATIONS</span>
-                </h3>
-                <ul id="mmDest"></ul>
-              </div>
-              <div class="mm-col mm-col--hotels">
-                <h3>
-                  <span class="es">NUESTROS HOTELES</span>
-                  <span class="en">OUR HOTELS</span>
-                </h3>
-                <ul id="mmHot"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="mm-caps-title es">Lo que el elemento nativo no permitía</p>
-        <p class="mm-caps-title en">What the native element did not allow</p>
-        <div class="mm-caps">
-          <span class="mm-cap">
-            <span class="es">Dos taxonomías en paralelo</span>
-            <span class="en">Two parallel taxonomies</span>
-          </span>
-          <span class="mm-cap">
-            <span class="es">Iconografía por tipo de entidad</span>
-            <span class="en">Iconography by entity type</span>
-          </span>
-          <span class="mm-cap">
-            <span class="es">Color: costa / urbano</span>
-            <span class="en">Color: beach / urban</span>
-          </span>
-          <span class="mm-cap">
-            <span class="es">Nombres largos sin truncar</span>
-            <span class="en">Long names without truncation</span>
-          </span>
-          <span class="mm-cap">
-            <span class="es">Panel contenido en móvil</span>
-            <span class="en">Contained panel on mobile</span>
-          </span>
-        </div>
-      </div>
-
+    <div class="mm-hero-actions mm-rise mm-d2">
+      <a href="#work" class="nav-cta mm-hero-cta"><span class="es">Ver los 5 casos de producto ↓</span><span class="en">View the 5 product cases ↓</span></a>
+      <a href="assets/cv-marta-ats-es.pdf" download="CV_Marta_Morales_ES_2026.pdf" class="sc-cta-notion mm-hero-cv es">Descargar CV ↗</a>
+      <a href="assets/cv-marta-ats-en.pdf" download="CV_Marta_Morales_EN_2026.pdf" class="sc-cta-notion mm-hero-cv en">Download CV ↗</a>
     </div>
-  </div>
-</section>
 
-<!-- ==================== MOBILE IMPACT ROW ==================== -->
-<section class="mobile-impact">
-  <div class="wrap">
-    <div class="mobile-impact-label"><span class="es">Resumen de impacto</span><span class="en">Impact Overview</span></div>
-    <div class="mobile-impact-cards">
-      <div class="mobile-metric-card">
-        <div class="mobile-metric-val"><span class="es">Confidencial</span><span class="en">Confidential</span></div>
-        <div class="mobile-metric-lbl"><span class="es">Conversión canal directo</span><span class="en">Direct channel conversion</span></div>
-        <svg class="mobile-sparkline" viewBox="0 0 80 28" fill="none">
-          <polyline points="0,20 13,16 26,22 40,10 53,14 66,8 80,12" stroke="rgba(var(--accent-rgb),0.55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-          <circle cx="80" cy="12" r="2.5" fill="var(--accent)"></circle>
-        </svg>
+    <!-- En 30 segundos -->
+    <div class="mm-30 mm-rise mm-d3">
+      <p class="mm-30-kicker"><span class="es">En 30 segundos</span><span class="en">In 30 seconds</span></p>
+      <div class="mm-30-grid">
+        <article class="sc-card mm-30-card">
+          <p class="mm-30-eyebrow"><span class="es">Conversión · ILUNION</span><span class="en">Conversion · ILUNION</span></p>
+          <p class="mm-30-val"><span class="es">Motor <em>+ home</em></span><span class="en">Engine <em>+ home</em></span></p>
+          <p class="mm-30-line"><span class="es">Iniciativa completa, ene–may 2026 · cifras en entrevista</span><span class="en">Full initiative, Jan–May 2026 · figures in interview</span></p>
+        </article>
+        <article class="sc-card mm-30-card">
+          <p class="mm-30-eyebrow"><span class="es">Accesibilidad · CEF</span><span class="en">Accessibility · CEF</span></p>
+          <p class="mm-30-val">AA <em>WCAG 2.1</em></p>
+          <p class="mm-30-line"><span class="es">Primer design system de la plataforma, en los flujos evaluados</span><span class="en">The platform's first design system, on the evaluated flows</span></p>
+        </article>
+        <article class="sc-card mm-30-card">
+          <p class="mm-30-eyebrow"><span class="es">Cómo trabajo</span><span class="en">How I work</span></p>
+          <p class="mm-30-val"><span class="es">1 <em>propuesta</em></span><span class="en">1 <em>proposal</em></span></p>
+          <p class="mm-30-line"><span class="es">Argumentada con datos</span><span class="en">Backed by data</span></p>
+        </article>
       </div>
+    </div>
   </div>
 </section>
 
@@ -6628,4 +6449,56 @@ body.visitor-unauthorized .locked-metric:hover::after {
   });
 })();
 </script>
+<style id="mm-home">
+/* ===== Home · lectura en 3 minutos (prefijo mm-) ===== */
+/* --- 1 · Hero --- */
+.mm-hero { min-height: calc(100vh - 68px); }
+.mm-hero .wrap { padding-top: 64px; padding-bottom: 56px; width: 100%; }
+.mm-hero-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 55% at 60% 40%, rgba(167,139,250,.18), transparent 70%);
+}
+.mm-hero .hero-title { max-width: 1040px; }
+.mm-hero-sub {
+  font-size: 18px; line-height: 1.6; color: rgba(255,255,255,.72);
+  max-width: 640px; margin: 0 0 32px;
+}
+.mm-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-bottom: 52px; }
+.mm-hero-actions .nav-cta.mm-hero-cta { display: inline-flex !important; min-height: 44px; padding: 12px 26px; font-size: 14px; box-sizing: border-box; }
+.mm-hero-actions .mm-hero-cv { min-height: 44px; box-sizing: border-box; }
+.mm-30-kicker {
+  font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.45); margin: 0 0 14px;
+}
+.mm-30-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.sc-card.mm-30-card {
+  display: block !important; grid-template-columns: none !important; min-height: 0 !important;
+  margin: 0; padding: 24px 26px;
+}
+.mm-30-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); margin: 0 0 12px;
+}
+.mm-30-val {
+  font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 700;
+  line-height: 1.05; letter-spacing: -.5px; color: var(--white); margin: 0 0 10px;
+}
+.mm-30-val em { font-style: italic; color: var(--purple); }
+.mm-30-line { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.62); margin: 0; }
+
+@media (max-width: 768px) {
+  .mm-hero { min-height: 0; }
+  .mm-hero .wrap { padding-top: 36px; padding-bottom: 44px; }
+  .mm-hero-sub { font-size: 16px; margin-bottom: 24px; }
+  .mm-hero-actions { flex-direction: column; align-items: stretch; margin-bottom: 36px; }
+  .mm-hero-actions a { width: 100%; justify-content: center; }
+  .mm-30-grid {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px;
+    margin: 0 -20px; padding: 0 20px 10px; scrollbar-width: none;
+  }
+  .mm-30-grid::-webkit-scrollbar { display: none; }
+  .sc-card.mm-30-card { flex: 0 0 80%; scroll-snap-align: start; padding: 20px 22px; }
+  .mm-30-val { font-size: 34px; }
+}
+</style>
 </main></div></body></html>
