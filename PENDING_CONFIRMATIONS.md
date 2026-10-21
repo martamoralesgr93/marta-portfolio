@@ -23,7 +23,7 @@ Preguntas factuales que no he podido resolver con el repositorio. Mientras no se
 
 ## Oracle ERP & IT Ops
 
-**4. 4 o 6 módulos, y los wireframes validados**
+**4. 4 o 6 módulos, y los wireframes validados** — he quitado «validados con el IT Ops Lead»; ahora dice «6 módulos en el prototipo de 2026».
 - Cifras en conflicto: 4 patrones y 4 módulos (chatbot y base de conocimiento) frente a 6 wireframes y pantallas en la página del caso. La página también dice «6 wireframes validados con el IT Ops Lead» y «52 → 6 columnas convertidas en módulos».
 - Según me confirmaste, los 6 son del prototipo de 2026.
 - Necesito confirmar: si los 6 wireframes se validaron con el IT Ops Lead en 2022-24 o si son del prototipo de 2026. No lo he cambiado.
@@ -44,7 +44,7 @@ Preguntas factuales que no he podido resolver con el repositorio. Mientras no se
 
 ## Gym Energy Center
 
-**8. «68 % de los socios nuevos abandona antes del día 45»**
+**8. «68 % de los socios nuevos abandona antes del día 45»** — ahora aparece marcado como «dato de contexto, no medido por el equipo».
 - Es el dato del problema en el resumen y en la sección de research. No hay fuente documentada.
 - Necesito confirmar: si es un dato del gimnasio, de un estudio externo (cuál) o una suposición del bootcamp.
 
@@ -67,7 +67,10 @@ Preguntas factuales que no he podido resolver con el repositorio. Mientras no se
 
 ## Fuera del alcance de esta corrección
 
-**13. CV en PDF enlazados desde la portada**
+**13. CV en PDF enlazados desde la portada** — RESUELTO el 21/10 (segunda pasada). Queda una pregunta:
+- ¿Te sirve la formulación del inglés («Lectura y escritura profesional; conversación en desarrollo»)? Los CV no enlazados (`cv-marta-general-*`, `cv-marta-fever-*`, `cv-marta-auxadi-*`) siguen con «hasta WCAG 2.1 AA completo» y no los he tocado.
+
+_Texto original de la pregunta:_
 - Archivos: `assets/cv-marta-ats-es.pdf` y `assets/cv-marta-ats-en.pdf`. Sus fuentes HTML (`cv-marta-ats-*.html`) dicen «Plataforma 100 % conforme WCAG 2.1 AA — 47 componentes auditados y corregidos».
 - Es la misma afirmación que he retirado de la web.
 - Necesito confirmar: si regenero los CV con la formulación nueva.

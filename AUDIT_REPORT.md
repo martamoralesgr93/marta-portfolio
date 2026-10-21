@@ -119,3 +119,25 @@ Las correcciones de las secciones 1 a 5 están hechas en ES y EN a la vez (cada 
 | Cifras conflictivas | Búsqueda en los 10 archivos publicados: 0 apariciones de «80+ componentes», «45→8 min», «16 entrevistas», «88 %» (como métrica), SUS, Maze, «100 % WCAG», «+34 %/+52 %», «−56,5 h», «escaló de 1 a 5». «3,36» solo aparece dentro del trazado SVG del icono de LinkedIn |
 
 No verificado: el comportamiento en Safari y en dispositivos reales, la navegación completa con teclado y el despliegue en Vercel (no se ha hecho push).
+
+## Segunda pasada · credibilidad (21/10/2026)
+
+Objetivo: quitar afirmaciones absolutas o sin respaldo que restan credibilidad, sin añadir datos nuevos.
+
+| Archivo | Original | Cambio |
+|---|---|---|
+| `cef-design-system.html` | «ahorra cientos de horas de fricción futura» / «saves hundreds of hours» | «evita rehacer el mismo componente en cada flujo» |
+| `cef-design-system.html` | «nombrar bien los tokens es el 50% del éxito» | «nombrar bien los tokens ahorra muchas conversaciones» |
+| `index.html` (Cómo trabajo) | «Cada fase integra… tokens de diseño en Figma MCP… para eliminar sorpresas» | «Cada fase combina… tokens de diseño compartidos… para reducir sorpresas» (Figma MCP solo se usa desde 2026) |
+| `it-ops-oracle.html` | «6 wireframes validados con el IT Ops Lead», «validados antes de picar código», «flujos recurrentes validados con el IT Ops Lead» | «6 módulos en el prototipo de 2026», «6 wireframes antes de escribir código», «flujos recurrentes del prototipo» (los 6 son del prototipo de 2026) |
+| `it-ops-oracle.html` (bloque antiguo) | «Reducción de riesgo técnico validada con Finanzas y TI» | «Prototipar antes de programar para reducir el riesgo técnico» |
+| `gym-energy-center.html` | «68 % de los socios nuevos se va antes del día 45» | + «dato de contexto, no medido por el equipo» |
+| `gym-energy-center.html` | «Lo que sí está validado», «Pantallas validadas», «Cómo transformamos…», meta «motor de adherencia» | «Lo que sí está respaldado», «Pantallas finales», «Cómo replanteamos…», «producto pensado para crear hábito» |
+| `cv-marta-ats-es/en.html` + PDF en `assets/` | «UX/UI Designer & CRO — ILUNION» | «Digital Business Designer — ILUNION» + «Función de Product Design y CRO» (título oficial) |
+| CV | «Cumplimiento WCAG 2.1 AA en todos los touchpoints» | «Aplicación de criterios WCAG 2.1 AA en los componentes que diseño» |
+| CV | «Plataforma 100% conforme WCAG 2.1 AA — 47 componentes auditados y corregidos» | «Auditoría de 47 componentes y construcción de 17 estandarizados, con criterios WCAG 2.1 AA en los flujos de acceso, organización académica y pago» |
+| CV | «Navegación 100% accesible por teclado implementada en producción» | «Foco visible y navegación por teclado especificados en los estados de cada componente» |
+| CV (EN) | «Full autonomy leading the highest-revenue digital channel» | Eliminado |
+| CV | «Inglés — Profesional (B2-C1)» | «Lectura y escritura profesional; conversación en desarrollo» |
+
+Verificación: el balance de etiquetas HTML es igual al de `HEAD` en los 6 archivos. Los PDF se han regenerado con Edge en modo headless desde el HTML: siguen teniendo 2 páginas, «Formación» empieza en la página 2 y el diff de texto contra el PDF anterior solo muestra estos cambios.
