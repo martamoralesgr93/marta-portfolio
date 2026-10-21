@@ -4075,121 +4075,49 @@ html.lang-en .hero-positioning.en { display: block !important; }
   </div>
 </section>
 
-<section class="sobre-section" id="sobre" style="padding: 88px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<section class="sobre-section mm-sobre" id="sobre" style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="wrap">
-    
-    <!-- Grid de 2 columnas (desktop >=1024px) -->
-    <div class="sobre-grid">
-      
-      <!-- Columna Izquierda (40%) -->
-      <div class="sobre-left">
-        <!-- Ficha de Perfil Integrada -->
-        <div class="sobre-profile-card">
-          <!-- Foto de Marta -->
-          <div class="sobre-portrait-wrapper">
-            <img src="assets/marta-retrato.webp" alt="Marta Morales" class="sobre-portrait-img">
-          </div>
-          
-          <!-- Botón de Descarga de CV -->
-          <a href="assets/cv-marta-ats-es.pdf" download="CV_Marta_Morales_ES_2026.pdf" class="es cv-sidebar-btn">
-            <span>Formación y detalle completo en el CV</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </a>
-          <a href="assets/cv-marta-ats-en.pdf" download="CV_Marta_Morales_EN_2026.pdf" class="en cv-sidebar-btn">
-            <span>Education &amp; full details in CV</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </a>
-
-
-        </div>
+    <div class="mm-sobre-grid">
+      <div class="mm-sobre-photo">
+        <img src="assets/marta-retrato.webp" alt="Marta Morales" loading="lazy" decoding="async">
       </div>
-
-      <!-- Columna Derecha (60%) -->
-      <div class="sobre-right">
-        <div style="font-size: max(11px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
-          <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--purple);"></span>
-          <span class="es">SOBRE MÍ</span><span class="en">ABOUT ME</span>
+      <div class="mm-sobre-body">
+        <div class="eyebrow">
+          <div class="eyebrow-dot"></div>
+          <span class="eyebrow-text"><span class="es">Sobre mí</span><span class="en">About me</span></span>
         </div>
-        
-        <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.2vw, 40px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 24px;">
-          <span class="es">Diseño productos digitales donde cada decisión puede explicarse con datos.</span>
-          <span class="en">Each design decision must be defensible with evidence.</span>
-        </h2>
-
-        <div style="display: flex; flex-direction: column; gap: 16px; font-size: max(14.5px, var(--fs-min-14)); color: var(--text-bright); line-height: 1.75; margin-bottom: 28px;">
-          <p class="es">Llevo desde 2020 diseñando y construyendo productos digitales en consultoría B2B/B2C, EdTech y hotelería. Mi forma de trabajar siempre parte del mismo principio: entender el problema de negocio y las restricciones técnicas antes de diseñar la interfaz.</p>
-          <p class="es">En <strong>ILUNION Hotels</strong> optimizo el canal directo mediante analítica, investigación y experimentación CRO. En <strong>CEF</strong> construí su primer Design System accesible desde cero, y hoy combino sistemas de diseño en Figma con prototipado en código (HTML, CSS, JS/React) y flujos asistidos por IA para reducir la distancia entre diseño y desarrollo.</p>
-
-          <p class="en">Since 2020 I've been designing and building digital products across B2B/B2C consulting, EdTech and hospitality. My process always starts from the same principle: understand the business problem and technical constraints before designing the interface.</p>
-          <p class="en">At <strong>ILUNION Hotels</strong> I optimise the direct channel through analytics, research and CRO experimentation. At <strong>CEF</strong> I built their first accessible Design System from scratch, and today I combine Figma design systems with code prototyping (HTML, CSS, JS/React) and AI-assisted workflows to bridge the gap between design and engineering.</p>
-        </div>
-
-        <div style="border-left: 2px solid rgba(124,58,237,0.4); padding-left: 18px; margin-bottom: 32px;">
-          <div style="font-size: max(9.5px, var(--fs-min-xs)); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;"><span class="es">Cómo entiendo el diseño</span><span class="en">How I approach design</span></div>
-          <p style="font-size: max(13.5px, var(--fs-min-sm)); color: var(--text-bright); line-height: 1.65; margin: 0;"><span class="es">No diseño para validar una idea previa. Diseño para reducir incertidumbre y ayudar a tomar mejores decisiones.</span><span class="en">I don't design to validate a preconceived idea. I design to reduce uncertainty and drive better decisions.</span></p>
-        </div>
-
-
-
-        <!-- 2. EXPERIENCIA TIMELINE -->
-        <div style="border-top: 1px solid var(--border); padding-top: 28px; margin-bottom: 0;">
-          <h3 style="font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--white); border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 24px;">
-            <span class="es">Experiencia y trayectoria</span><span class="en">Experience &amp; trajectory</span>
-          </h3>
-
-          <div style="position: relative; padding-left: 24px; border-left: 2px solid rgba(124,58,237,0.35); display: flex; flex-direction: column; gap: 24px;">
-            
-            <!-- Entrada 1: ILUNION -->
-            <div style="position: relative;">
-              <div class="timeline-node-active" style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--white); margin-bottom: 2px;">ILUNION Hotels</div>
-              <div style="font-size: max(11.5px, var(--fs-min-xs)); color: var(--text-dim); margin-bottom: 8px;"><span class="es">Product Designer · CRO &nbsp;·&nbsp; Sep 2024 — Actualidad</span><span class="en">Product Designer · CRO &nbsp;·&nbsp; Sep 2024 — Present</span></div>
-              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es">Optimización del canal directo de 32 hoteles y motor de reservas (Caso 01).</span><span class="en">Direct channel &amp; booking engine optimisation across 32 hotels (Case 01).</span></li>
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es">Optimización de la conversión del canal directo (iniciativa completa; cifras confidenciales).</span><span class="en">Direct-channel conversion optimisation (full initiative; figures confidential).</span></li>
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-dim);">Adobe Analytics · Microsoft Clarity · AEM · A/B Testing.</li>
-              </ul>
-            </div>
-
-            <!-- Entrada 2: CEF -->
-            <div style="position: relative;">
-              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--white); margin-bottom: 2px;">CEF · Centro de Estudios Financieros</div>
-              <div style="font-size: max(11.5px, var(--fs-min-xs)); color: var(--text-dim); margin-bottom: 8px;"><span class="es">Product Designer &nbsp;·&nbsp; Jun 2024 — Sep 2024 &nbsp;·&nbsp; <strong style="color:var(--purple);font-weight:600;">Design Systems &amp; Tokens</strong></span><span class="en">Product Designer &nbsp;·&nbsp; Jun 2024 — Sep 2024 &nbsp;·&nbsp; <strong style="color:var(--purple);font-weight:600;">Design Systems &amp; Tokens</strong></span></div>
-              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es">Primer Design System accesible desde cero para plataforma EdTech (Caso 02).</span><span class="en">First accessible Design System built from scratch for EdTech platform (Case 02).</span></li>
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es">17 componentes WCAG 2.1 AA con 6 estados y 57 variables enlazadas a tokens.</span><span class="en">17 WCAG 2.1 AA components with 6 states and 57 token-bound variables.</span></li>
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-dim);"><span class="es">Documentación técnica y tokens JSON sincronizados con desarrollo vía Figma MCP.</span><span class="en">Technical documentation and JSON tokens synced with engineering via Figma MCP.</span></li>
-              </ul>
-            </div>
-
-            <!-- Entrada 3: Bootcamp Neoland -->
-            <div style="position: relative;">
-              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--orange);"></div>
-              <div style="font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--white); margin-bottom: 2px;">Neoland · Product Design &amp; Frontend Bootcamp</div>
-              <div style="font-size: max(11.5px, var(--fs-min-xs)); color: var(--text-dim); margin-bottom: 8px;"><span class="es">Especialización intensiva (Producto, Sistemas &amp; Frontend) &nbsp;·&nbsp; 2024</span><span class="en">Intensive Specialisation (Product, Systems &amp; Frontend) &nbsp;·&nbsp; 2024</span></div>
-              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es">Liderazgo de UX Research, arquitectura de producto y Design System en equipo multidisciplinar (UX/UI + Full Stack) para <strong>Gym Energy Center</strong> (Caso 04).</span><span class="en">Led UX Research, product architecture and Design System in a cross-functional team (UX/UI + Full Stack) for <strong>Gym Energy Center</strong> (Case 04).</span></li>
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-dim);"><span class="es">Integración con API REST, control de acceso por JWT y diseño de módulos de seguimiento y entrenamiento.</span><span class="en">REST API integration, JWT access control and design of progress tracking and coaching modules.</span></li>
-              </ul>
-            </div>
-
-            <!-- Entrada 4: We Are Actions -->
-            <div style="position: relative;">
-              <div style="position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple);"></div>
-              <div style="font-size: max(14px, var(--fs-min-14)); font-weight: 700; color: var(--white); margin-bottom: 2px;">We Are Actions</div>
-              <div style="font-size: max(11.5px, var(--fs-min-xs)); color: var(--text-dim); margin-bottom: 8px;"><span class="es">UX/UI Designer &nbsp;·&nbsp; Jul 2020 — May 2024 &nbsp;·&nbsp; <strong style="color:var(--purple);font-weight:600;">Consultoría B2B &amp; B2C</strong></span><span class="en">UX/UI Designer &nbsp;·&nbsp; Jul 2020 — May 2024 &nbsp;·&nbsp; <strong style="color:var(--purple);font-weight:600;">B2B &amp; B2C Consulting</strong></span></div>
-              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es">4 años diseñando producto end-to-end en consultoría digital junto a un equipo de 7 desarrolladores backend.</span><span class="en">4 years designing end-to-end digital products in consulting alongside a 7-developer backend team.</span></li>
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es"><strong>Oracle ERP &amp; IT Ops (Caso 03):</strong> investigación contextual en equipo IT, decisión Build vs. Buy y rediseño de flujos críticos de operaciones.</span><span class="en"><strong>Oracle ERP &amp; IT Ops (Case 03):</strong> embedded IT contextual discovery, Build vs. Buy strategy and redesign of critical operations flows.</span></li>
-                <li style="font-size: max(12.5px, var(--fs-min-sm)); color: var(--text-bright);"><span class="es"><strong>Paolo Pizzeria (Caso 05):</strong> producto digital 0→1 con flujo de reservas y carta interactiva que escaló de 1 a 5 locales.</span><span class="en"><strong>Paolo Pizzeria (Case 05):</strong> 0→1 digital product with booking flow and interactive menu that scaled from 1 to 5 locations.</span></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
+        <h2 class="mm-sobre-title"><span class="es">Diseño productos digitales donde cada decisión puede explicarse con datos.</span><span class="en">Each design decision must be defensible with evidence.</span></h2>
+        <p class="mm-sobre-p"><span class="es">Desde 2020 diseño y construyo producto digital en consultoría, EdTech y hotelería. Parto siempre del problema de negocio y de las restricciones técnicas antes de diseñar la interfaz.</span><span class="en">Since 2020 I've designed and built digital products in consulting, EdTech and hospitality. I always start from the business problem and the technical constraints before designing the interface.</span></p>
+        <ul class="mm-tray">
+          <li class="mm-tray-item">
+            <span class="mm-tray-dot" aria-hidden="true"></span>
+            <span class="mm-tray-co">ILUNION Hotels</span>
+            <span class="mm-tray-role"><span class="es">Digital Business Designer · Sep 2024 – actualidad</span><span class="en">Digital Business Designer · Sep 2024 – present</span></span>
+            <a href="ilunion-cro.html" class="mm-tray-link"><span class="es">Caso 01</span><span class="en">Case 01</span> →</a>
+          </li>
+          <li class="mm-tray-item">
+            <span class="mm-tray-dot" aria-hidden="true"></span>
+            <span class="mm-tray-co">CEF</span>
+            <span class="mm-tray-role"><span class="es">UX/UI Designer · Jun – Sep 2024</span><span class="en">UX/UI Designer · Jun – Sep 2024</span></span>
+            <a href="cef-design-system.html" class="mm-tray-link"><span class="es">Caso 02</span><span class="en">Case 02</span> →</a>
+          </li>
+          <li class="mm-tray-item">
+            <span class="mm-tray-dot" aria-hidden="true"></span>
+            <span class="mm-tray-co">Neoland</span>
+            <span class="mm-tray-role"><span class="es">Bootcamp Product Design &amp; Frontend · Feb – Jun 2024</span><span class="en">Product Design &amp; Frontend Bootcamp · Feb – Jun 2024</span></span>
+            <a href="gym-energy-center.html" class="mm-tray-link"><span class="es">Caso 04</span><span class="en">Case 04</span> →</a>
+          </li>
+          <li class="mm-tray-item">
+            <span class="mm-tray-dot" aria-hidden="true"></span>
+            <span class="mm-tray-co">We Are Actions</span>
+            <span class="mm-tray-role"><span class="es">UX/UI Designer · Jul 2020 – May 2024</span><span class="en">UX/UI Designer · Jul 2020 – May 2024</span></span>
+            <a href="it-ops-oracle.html" class="mm-tray-link"><span class="es">Casos 03 y 05</span><span class="en">Cases 03 and 05</span> →</a>
+          </li>
+        </ul>
+        <a href="assets/cv-marta-ats-es.pdf" download="CV_Marta_Morales_ES_2026.pdf" class="sc-cta-notion mm-sobre-cv es">Formación y detalle completo en el CV ↓</a>
+        <a href="assets/cv-marta-ats-en.pdf" download="CV_Marta_Morales_EN_2026.pdf" class="sc-cta-notion mm-sobre-cv en">Education &amp; full details in the CV ↓</a>
       </div>
-
+    </div>
   </div>
 </section>
 
@@ -4208,8 +4136,8 @@ html.lang-en .hero-positioning.en { display: block !important; }
         <span class="es">Lo que dicen quienes han trabajado con Marta<span class="c-purple">.</span></span>
         <span class="en">What people say about working with Marta<span class="c-purple">.</span></span>
       </h2>
-      <p style="font-size:max(14px, var(--fs-min-14)); color:var(--text-dim); margin:8px 0 0;" class="es">Recomendaciones verificadas en <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
-      <p style="font-size:max(14px, var(--fs-min-14)); color:var(--text-dim); margin:8px 0 0;" class="en">Verified on <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
+      <p style="font-size:max(14px, var(--fs-min-14)); color:var(--text-dim); margin:8px 0 0;" class="es">Recomendaciones en <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
+      <p style="font-size:max(14px, var(--fs-min-14)); color:var(--text-dim); margin:8px 0 0;" class="en">Recommendations on <a href="https://linkedin.com/in/marta-morales-designer" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; font-weight:500;">LinkedIn ↗</a></p>
     </div>
 
     <!-- Grid de cards del sistema -->
@@ -4218,7 +4146,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <!-- Card 1: Pedro Lérida Nieto -->
       <div class="ref-card reveal">
         <div class="ref-quote">"</div>
-        <p class="ref-text">"Marta es una persona con una actitud altamente exigente consigo misma, siempre esforzándose por dar lo mejor en cada proyecto. <strong style="color:var(--white);font-weight:600;">Su dedicación y compromiso se reflejan en la calidad de su trabajo</strong>, donde no solo aplica su amplio conocimiento, sino que se esfuerza por aprender y mejorar continuamente. En equipo destaca por ser una <strong style="color:var(--white);font-weight:600;">comunicadora efectiva</strong>."</p>
+        <p class="ref-text">"<strong style="color:var(--white);font-weight:600;">Su dedicación y compromiso se reflejan en la calidad de su trabajo</strong>."</p>
         <div class="ref-stars">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -4241,7 +4169,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <!-- Card 2: Amaya Salamero -->
       <div class="ref-card reveal">
         <div class="ref-quote">"</div>
-        <p class="ref-text">"Recomiendo a Marta por el <strong style="color:var(--white);font-weight:600;">impecable trabajo que desempeña</strong>, dando siempre ese toque de frescura y creatividad que la caracteriza. Marta es esa <strong style="color:var(--white);font-weight:600;">profesional y gran compañera de equipo</strong> que todos queremos tener cerca."</p>
+        <p class="ref-text">"Recomiendo a Marta por el <strong style="color:var(--white);font-weight:600;">impecable trabajo que desempeña</strong>."</p>
         <div class="ref-stars">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -4264,7 +4192,7 @@ html.lang-en .hero-positioning.en { display: block !important; }
       <!-- Card 3: Fernando Calero Merello (Moved to Top 3 visible on desktop) -->
       <div class="ref-card reveal">
         <div class="ref-quote">"</div>
-        <p class="ref-text">"<strong style="color:var(--white);font-weight:600;">Persona metódica, organizada y aplicada.</strong> Combina experiencia en diseño con visión de procesos y <strong style="color:var(--white);font-weight:600;">campos administrativos de negocio</strong>. Es muy agradable trabajar con ella y aporta muchísimo al equipo en el día a día."</p>
+        <p class="ref-text">"<strong style="color:var(--white);font-weight:600;">Persona metódica, organizada y aplicada.</strong> Tiene experiencia en diseño gráfico y en campos administrativos de negocio."</p>
         <div class="ref-stars">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -6405,6 +6333,33 @@ body.visitor-unauthorized .locked-metric:hover::after {
   .mm-stack .stack-pills, .mm-stack .stack-marquee { display: none; }
   .mm-stack-pills { display: flex !important; gap: 6px; }
   .mm-stack-pills .stack-pill { padding: 6px 12px !important; font-size: 12.5px !important; }
+}
+/* --- 5 · Sobre mí y recomendaciones --- */
+.mm-sobre { padding: 80px 0; }
+.mm-sobre-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 56px; align-items: center; }
+.mm-sobre-photo { border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid rgba(255,255,255,.08); background: #0b0a10; }
+.mm-sobre-photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1); }
+.mm-sobre-body .eyebrow { margin-bottom: 16px; }
+.mm-sobre-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 3vw, 38px); font-weight: 700; line-height: 1.15; color: var(--white); margin: 0 0 16px; }
+.mm-sobre-p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.72); margin: 0 0 28px; max-width: 620px; }
+.mm-tray { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--border); }
+.mm-tray-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.mm-tray-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); align-self: center; flex-shrink: 0; }
+.mm-tray-co { font-weight: 700; color: var(--white); font-size: 15px; }
+.mm-tray-role { font-size: 13px; color: rgba(255,255,255,.58); flex: 1; }
+.mm-tray-link { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--purple); text-decoration: none; padding: 12px 0; margin: -12px 0; }
+.mm-tray-link:hover { color: var(--white); }
+.mm-sobre-cv { min-height: 44px; box-sizing: border-box; }
+#referencias { padding: 72px 0 !important; }
+#referencias .ref-text { font-size: 15px; line-height: 1.6; }
+@media (max-width: 768px) {
+  .mm-sobre { padding: 64px 0; }
+  .mm-sobre-grid { grid-template-columns: 1fr; gap: 24px; }
+  .mm-sobre-photo { aspect-ratio: 1 / 1; }
+  .mm-tray-role { flex-basis: 100%; order: 3; padding-left: 19px; }
+  .mm-tray-link { order: 2; margin-left: auto; }
+  .mm-sobre-cv { width: 100%; justify-content: center; }
+  #referencias { padding: 56px 0 !important; }
 }
 </style>
 </main></div></body></html>
