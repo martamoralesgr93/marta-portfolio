@@ -20,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261019_v10">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
+  <link rel="stylesheet" href="persona-tabs.css?v=20261026">
   <style>
 /* ============ MOBILE EXACT — CEF EdTech case (canvas 2026-10-15) ============ */
 .cme { display: none; }
@@ -327,6 +328,8 @@
   .cde-quote { margin: 0; padding-top: 16px; border-top: 1px solid var(--cde-line); font-family: var(--font-serif); font-style: italic; font-weight: 700; font-size: 19px; line-height: 1.35; color: #fff; }
   .cde-tag { font-size: 11px; color: rgba(255,255,255,.5); }
   img.cde-persona-avatar { object-fit: cover; }
+  .cde-persona-pair { display: grid; grid-template-columns: minmax(320px, 420px) minmax(0, 1fr); gap: 20px; align-items: start; }
+  @media (max-width: 1100px) { .cde-persona-pair { grid-template-columns: 1fr; } }
   .cde-flow-wcag { align-self: flex-start; margin-top: 6px; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); background: rgba(167,139,250,.1); font-size: 12px; font-weight: 600; color: #fff; }
   .cde-test-note { margin-top: auto; padding: 18px 20px; border-radius: 16px; border: 1px dashed rgba(255,255,255,.2); font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.72); }
 
@@ -650,7 +653,9 @@
     <span class="cme-eyebrow-accent" style="display:block;margin-top:36px"><span class="es">Para quién diseñaba</span><span class="en">Who I designed for</span></span>
     <h3 class="cme-h3"><span class="es">Cuatro perfiles, <em>un solo acceso</em></span><span class="en">Four profiles, <em>one access point</em></span></h3>
     <p class="cme-p"><span class="es">El sistema tenía que servir igual a quien entra a estudiar y a quien entra a pagar: alumnos CEF, alumnos UDIMA, empresas y empleados, cada uno con permisos distintos sobre el mismo calendario.</span><span class="en">The system had to serve both the student and the payer equally: CEF students, UDIMA students, companies and staff, each with different permissions on the same calendar.</span></p>
-    <div class="cme-persona">
+    <div data-ptabs style="margin-top:14px">
+      <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="cme-tab-elena" aria-controls="cme-p-elena"><img src="assets/avatar-elena.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Elena, 24</b><small><span class="es">Alumna CEF</span><span class="en">CEF student</span></small></span></button><button type="button" class="ptab " role="tab" id="cme-tab-sara" aria-controls="cme-p-sara"><img src="assets/avatar-sara.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Sara, 33</b><small><span class="es">Alumna UDIMA</span><span class="en">UDIMA student</span></small></span></button><button type="button" class="ptab " role="tab" id="cme-tab-luis" aria-controls="cme-p-luis"><img src="assets/avatar-luis.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Luis, 51</b><small><span class="es">Profesor</span><span class="en">Teacher</span></small></span></button></div>
+      <div role="tabpanel" id="cme-p-elena" aria-labelledby="cme-tab-elena" tabindex="0">    <div class="cme-persona">
       <div class="cme-persona-top">
         <img class="cme-persona-avatar" src="assets/avatar-elena.jpg" alt="Ilustración generada con IA de Elena, la persona" width="56" height="56" loading="lazy">
         <div>
@@ -673,12 +678,7 @@
       <p class="cme-quote"><span class="es">«Si cada app es distinta, aprendo cuatro veces lo mismo.»</span><span class="en">“If every app is different, I learn the same thing four times.”</span></p>
       <span class="cme-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span>
     </div>
-    <div class="cme-test-note">
-      <span class="es"><strong>Cómo lo validé:</strong> no solo con la auditoría de contraste. Probé los cuatro perfiles con lectores de pantalla (NVDA, VoiceOver) y navegación completa por teclado, sin ratón.</span>
-      <span class="en"><strong>How I validated it:</strong> not just with the contrast audit. I tested all four profiles with screen readers (NVDA, VoiceOver) and full keyboard-only navigation.</span>
-    </div>
-
-    <div class="cme-journey" style="margin-top:14px">
+    <div class="cme-journey">
       <span class="cme-journey-label"><span class="es">User flow · Elena consulta su clase de hoy</span><span class="en">User flow · Elena checks today’s class</span></span>
       <div class="cme-journey-row">
         <div class="cme-journey-rail"><span class="cme-journey-dot">01</span><span class="cme-journey-line"></span></div>
@@ -697,6 +697,75 @@
         <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Encuentra aula y grupo</span><span class="en">Finds room and group</span></span><span class="cme-journey-desc"><span class="es">Antes: varios menús distintos. Ahora: aula, grupo y perfil en un solo menú, también por teclado.</span><span class="en">Before: several different menus. Now: room, group and profile in one menu, keyboard included.</span></span><span class="cme-flow-wcag"><span class="es">WCAG 2.1.1 · Teclado</span><span class="en">WCAG 2.1.1 · Keyboard</span></span></div>
       </div>
       <div class="cme-journey-foot"><span class="es">Cada paso usa componentes del sistema, no pantallas sueltas. Lo probé con NVDA, VoiceOver y solo teclado.</span><span class="en">Every step uses system components, not one-off screens. I tested it with NVDA, VoiceOver and keyboard only.</span></div>
+    </div></div>
+      <div role="tabpanel" id="cme-p-sara" aria-labelledby="cme-tab-sara" tabindex="0"><div class="cme-persona">
+      <div class="cme-persona-top">
+        <img class="cme-persona-avatar" src="assets/avatar-sara.jpg" alt="Ilustración generada con IA de Sara, la persona" width="56" height="56" loading="lazy">
+        <div><span class="cme-persona-name">Sara, 33</span><span class="cme-persona-role"><span class="es">Alumna UDIMA · estudia online y trabaja</span><span class="en">UDIMA student · studies online and works</span></span></div>
+      </div>
+      <div class="cme-persona-cols">
+        <div><span class="cme-eyebrow cme-eyebrow-accent"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="cme-persona-item"><span class="es">Cuadrar clases y entregas con su trabajo</span><span class="en">Fit classes and deadlines around work</span></span><span class="cme-persona-item"><span class="es">Matricularse sin salir del campus</span><span class="en">Enrol without leaving the campus</span></span></div>
+        <div class="is-pain"><span class="cme-eyebrow"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="cme-persona-item"><span class="es">Un acceso distinto para cada plataforma</span><span class="en">A different login for every platform</span></span><span class="cme-persona-item"><span class="es">Una pasarela que parecía otra web</span><span class="en">A payment gateway that looked like another site</span></span></div>
+      </div>
+      <p class="cme-quote"><span class="es">«Si la pasarela parece otra web, no meto la tarjeta.»</span><span class="en">“If the gateway looks like another site, I won’t enter my card.”</span></p>
+      <span class="cme-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span>
+    </div>
+    <div class="cme-journey">
+      <span class="cme-journey-label"><span class="es">User flow · Sara se matricula</span><span class="en">User flow · Sara enrols</span></span>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">01</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Entra con su perfil UDIMA</span><span class="en">Logs in as UDIMA</span></span><span class="cme-journey-desc"><span class="es">Un login para los 4 perfiles, cada uno con sus permisos.</span><span class="en">One login for all 4 profiles, each with its permissions.</span></span><span class="cme-flow-wcag"><span class="es">Nielsen #4 · Consistencia</span><span class="en">Nielsen #4 · Consistency</span></span></div>
+      </div>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">02</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Planifica su semana</span><span class="en">Plans her week</span></span><span class="cme-journey-desc"><span class="es">Clases y asignaturas en un calendario por día, semana o año.</span><span class="en">Classes and subjects in one calendar by day, week or year.</span></span><span class="cme-flow-wcag"><span class="es">Nielsen #6 · Reconocer, no recordar</span><span class="en">Nielsen #6 · Recognition over recall</span></span></div>
+      </div>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">03</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Busca una asignatura</span><span class="en">Searches a subject</span></span><span class="cme-journey-desc"><span class="es">Búsqueda dentro del calendario, sin cambiar de herramienta.</span><span class="en">Search inside the calendar, no tool switching.</span></span><span class="cme-flow-wcag"><span class="es">WCAG 2.4.5 · Varias vías</span><span class="en">WCAG 2.4.5 · Multiple ways</span></span></div>
+      </div>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">04</span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Paga la matrícula</span><span class="en">Pays her enrolment</span></span><span class="cme-journey-desc"><span class="es">La pasarela usa los mismos campos y botones que el resto del sistema.</span><span class="en">The gateway uses the same fields and buttons as the rest of the system.</span></span><span class="cme-flow-wcag"><span class="es">Nielsen #4 · Consistencia</span><span class="en">Nielsen #4 · Consistency</span></span></div>
+      </div>
+      <div class="cme-journey-foot"><span class="es">Un paso que parece de otra web rompe la confianza justo donde CEF cobra.</span><span class="en">A step that looks like another site breaks trust right where CEF gets paid.</span></div>
+    </div></div>
+      <div role="tabpanel" id="cme-p-luis" aria-labelledby="cme-tab-luis" tabindex="0"><div class="cme-persona">
+      <div class="cme-persona-top">
+        <img class="cme-persona-avatar" src="assets/avatar-luis.jpg" alt="Ilustración generada con IA de Luis, la persona" width="56" height="56" loading="lazy">
+        <div><span class="cme-persona-name">Luis, 51</span><span class="cme-persona-role"><span class="es">Profesor · prepara y consulta sus sesiones</span><span class="en">Teacher · plans and checks his sessions</span></span></div>
+      </div>
+      <div class="cme-persona-cols">
+        <div><span class="cme-eyebrow cme-eyebrow-accent"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="cme-persona-item"><span class="es">Ver sus sesiones con aula y grupo</span><span class="en">See his sessions with room and group</span></span><span class="cme-persona-item"><span class="es">Tener la programación a mano</span><span class="en">Keep the syllabus at hand</span></span></div>
+        <div class="is-pain"><span class="cme-eyebrow"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="cme-persona-item"><span class="es">Cada herramienta con un formato distinto</span><span class="en">Every tool with a different format</span></span><span class="cme-persona-item"><span class="es">Varios menús para llegar al grupo</span><span class="en">Several menus to reach the group</span></span></div>
+      </div>
+      <p class="cme-quote"><span class="es">«Antes de entrar al aula necesito saber dónde y con quién.»</span><span class="en">“Before I walk in, I need to know where and with whom.”</span></p>
+      <span class="cme-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span>
+    </div>
+    <div class="cme-journey">
+      <span class="cme-journey-label"><span class="es">User flow · Luis prepara su clase</span><span class="en">User flow · Luis prepares his class</span></span>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">01</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Entra como empleado</span><span class="en">Logs in as staff</span></span><span class="cme-journey-desc"><span class="es">Mismo login; ve solo lo que su perfil permite.</span><span class="en">Same login; sees only what his profile allows.</span></span><span class="cme-flow-wcag"><span class="es">Permisos por perfil</span><span class="en">Role-based permissions</span></span></div>
+      </div>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">02</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Abre la vista Semana</span><span class="en">Opens the Week view</span></span><span class="cme-journey-desc"><span class="es">Cada sesión agrupa centro, curso y número de sesión.</span><span class="en">Each session groups centre, course and session number.</span></span><span class="cme-flow-wcag"><span class="es">Gestalt · Región común</span><span class="en">Gestalt · Common region</span></span></div>
+      </div>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">03</span><span class="cme-journey-line"></span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Consulta la programación</span><span class="en">Checks the syllabus</span></span><span class="cme-journey-desc"><span class="es">Búsqueda y programaciones dentro del mismo calendario.</span><span class="en">Search and syllabi inside the same calendar.</span></span><span class="cme-flow-wcag"><span class="es">Nielsen #6 · Reconocer, no recordar</span><span class="en">Nielsen #6 · Recognition over recall</span></span></div>
+      </div>
+      <div class="cme-journey-row">
+        <div class="cme-journey-rail"><span class="cme-journey-dot">04</span></div>
+        <div class="cme-journey-body"><span class="cme-journey-title"><span class="es">Va al aula</span><span class="en">Heads to class</span></span><span class="cme-journey-desc"><span class="es">Aula y grupo en un solo menú, también por teclado.</span><span class="en">Room and group in one menu, keyboard included.</span></span><span class="cme-flow-wcag"><span class="es">WCAG 2.1.1 · Teclado</span><span class="en">WCAG 2.1.1 · Keyboard</span></span></div>
+      </div>
+      <div class="cme-journey-foot"><span class="es">Mismo sistema que el alumno, otra tarea: los permisos cambian el contenido, no los componentes.</span><span class="en">Same system as the student, a different task: permissions change the content, not the components.</span></div>
+    </div></div>
+    </div>
+    <div class="cme-test-note">
+      <span class="es"><strong>Cómo lo validé:</strong> no solo con la auditoría de contraste. Probé los cuatro perfiles con lectores de pantalla (NVDA, VoiceOver) y navegación completa por teclado, sin ratón.</span>
+      <span class="en"><strong>How I validated it:</strong> not just with the contrast audit. I tested all four profiles with screen readers (NVDA, VoiceOver) and full keyboard-only navigation.</span>
     </div>
 
     <span class="cme-eyebrow" style="display:block;margin-top:30px"><span class="es">Requisitos imprescindibles</span><span class="en">Hard requirements</span></span>
@@ -964,7 +1033,11 @@
           <span class="en"><strong>How I validated it:</strong> not just with the contrast audit. I tested all four profiles with screen readers (NVDA, VoiceOver) and full keyboard-only navigation.</span>
         </div>
       </div>
-      <div class="cde-persona">
+    </div>
+
+    <div data-ptabs>
+      <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="cde-tab-elena" aria-controls="cde-p-elena"><img src="assets/avatar-elena.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Elena, 24</b><small><span class="es">Alumna CEF</span><span class="en">CEF student</span></small></span></button><button type="button" class="ptab " role="tab" id="cde-tab-sara" aria-controls="cde-p-sara"><img src="assets/avatar-sara.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Sara, 33</b><small><span class="es">Alumna UDIMA</span><span class="en">UDIMA student</span></small></span></button><button type="button" class="ptab " role="tab" id="cde-tab-luis" aria-controls="cde-p-luis"><img src="assets/avatar-luis.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Luis, 51</b><small><span class="es">Profesor</span><span class="en">Teacher</span></small></span></button></div>
+      <div role="tabpanel" id="cde-p-elena" aria-labelledby="cde-tab-elena" tabindex="0"><div class="cde-persona-pair"><div class="cde-persona">
         <div class="cde-persona-top">
           <img class="cde-persona-avatar" src="assets/avatar-elena.jpg" alt="Ilustración generada con IA de Elena, la persona" width="64" height="64" loading="lazy">
           <div>
@@ -987,9 +1060,7 @@
         <p class="cde-quote"><span class="es">«Si cada app es distinta, aprendo cuatro veces lo mismo.»</span><span class="en">“If every app is different, I learn the same thing four times.”</span></p>
         <span class="cde-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span>
       </div>
-    </div>
-
-    <div class="cde-journey">
+      <div class="cde-journey">
       <span class="cde-journey-label"><span class="es">User flow · Elena consulta su clase de hoy</span><span class="en">User flow · Elena checks today’s class</span></span>
       <div class="cde-journey-row">
         <div class="cde-journey-rail"><span class="cde-journey-dot">01</span><span class="cde-journey-line"></span></div>
@@ -1008,6 +1079,71 @@
         <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Encuentra aula y grupo</span><span class="en">Finds room and group</span></span><span class="cde-journey-desc"><span class="es">Antes: varios menús distintos. Ahora: aula, grupo y perfil en un solo menú, también por teclado.</span><span class="en">Before: several different menus. Now: room, group and profile in one menu, keyboard included.</span></span><span class="cde-flow-wcag"><span class="es">WCAG 2.1.1 · Teclado</span><span class="en">WCAG 2.1.1 · Keyboard</span></span></div>
       </div>
       <div class="cde-journey-foot"><span class="es">Cada paso usa componentes del sistema, no pantallas sueltas. Lo probé con NVDA, VoiceOver y solo teclado.</span><span class="en">Every step uses system components, not one-off screens. I tested it with NVDA, VoiceOver and keyboard only.</span></div>
+    </div></div></div>
+      <div role="tabpanel" id="cde-p-sara" aria-labelledby="cde-tab-sara" tabindex="0"><div class="cde-persona-pair"><div class="cde-persona">
+        <div class="cde-persona-top">
+          <img class="cde-persona-avatar" src="assets/avatar-sara.jpg" alt="Ilustración generada con IA de Sara, la persona" width="64" height="64" loading="lazy">
+          <div><span class="cde-persona-name">Sara, 33</span><span class="cde-persona-role"><span class="es">Alumna UDIMA · estudia online y trabaja</span><span class="en">UDIMA student · studies online and works</span></span></div>
+        </div>
+        <div class="cde-persona-cols">
+          <div><span class="cde-eyebrow"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="cde-persona-item"><span class="es">Cuadrar clases y entregas con su trabajo</span><span class="en">Fit classes and deadlines around work</span></span><span class="cde-persona-item"><span class="es">Matricularse sin salir del campus</span><span class="en">Enrol without leaving the campus</span></span></div>
+          <div class="is-pain"><span class="cde-eyebrow--muted"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="cde-persona-item"><span class="es">Un acceso distinto para cada plataforma</span><span class="en">A different login for every platform</span></span><span class="cde-persona-item"><span class="es">Una pasarela que parecía otra web</span><span class="en">A payment gateway that looked like another site</span></span></div>
+        </div>
+        <p class="cde-quote"><span class="es">«Si la pasarela parece otra web, no meto la tarjeta.»</span><span class="en">“If the gateway looks like another site, I won’t enter my card.”</span></p>
+        <span class="cde-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span>
+      </div>
+      <div class="cde-journey">
+      <span class="cde-journey-label"><span class="es">User flow · Sara se matricula</span><span class="en">User flow · Sara enrols</span></span>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">01</span><span class="cde-journey-line"></span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Entra con su perfil UDIMA</span><span class="en">Logs in as UDIMA</span></span><span class="cde-journey-desc"><span class="es">Un login para los 4 perfiles, cada uno con sus permisos.</span><span class="en">One login for all 4 profiles, each with its permissions.</span></span><span class="cde-flow-wcag"><span class="es">Nielsen #4 · Consistencia</span><span class="en">Nielsen #4 · Consistency</span></span></div>
+      </div>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">02</span><span class="cde-journey-line"></span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Planifica su semana</span><span class="en">Plans her week</span></span><span class="cde-journey-desc"><span class="es">Clases y asignaturas en un calendario por día, semana o año.</span><span class="en">Classes and subjects in one calendar by day, week or year.</span></span><span class="cde-flow-wcag"><span class="es">Nielsen #6 · Reconocer, no recordar</span><span class="en">Nielsen #6 · Recognition over recall</span></span></div>
+      </div>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">03</span><span class="cde-journey-line"></span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Busca una asignatura</span><span class="en">Searches a subject</span></span><span class="cde-journey-desc"><span class="es">Búsqueda dentro del calendario, sin cambiar de herramienta.</span><span class="en">Search inside the calendar, no tool switching.</span></span><span class="cde-flow-wcag"><span class="es">WCAG 2.4.5 · Varias vías</span><span class="en">WCAG 2.4.5 · Multiple ways</span></span></div>
+      </div>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">04</span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Paga la matrícula</span><span class="en">Pays her enrolment</span></span><span class="cde-journey-desc"><span class="es">La pasarela usa los mismos campos y botones que el resto del sistema.</span><span class="en">The gateway uses the same fields and buttons as the rest of the system.</span></span><span class="cde-flow-wcag"><span class="es">Nielsen #4 · Consistencia</span><span class="en">Nielsen #4 · Consistency</span></span></div>
+      </div>
+      <div class="cde-journey-foot"><span class="es">Un paso que parece de otra web rompe la confianza justo donde CEF cobra.</span><span class="en">A step that looks like another site breaks trust right where CEF gets paid.</span></div>
+    </div></div></div>
+      <div role="tabpanel" id="cde-p-luis" aria-labelledby="cde-tab-luis" tabindex="0"><div class="cde-persona-pair"><div class="cde-persona">
+        <div class="cde-persona-top">
+          <img class="cde-persona-avatar" src="assets/avatar-luis.jpg" alt="Ilustración generada con IA de Luis, la persona" width="64" height="64" loading="lazy">
+          <div><span class="cde-persona-name">Luis, 51</span><span class="cde-persona-role"><span class="es">Profesor · prepara y consulta sus sesiones</span><span class="en">Teacher · plans and checks his sessions</span></span></div>
+        </div>
+        <div class="cde-persona-cols">
+          <div><span class="cde-eyebrow"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="cde-persona-item"><span class="es">Ver sus sesiones con aula y grupo</span><span class="en">See his sessions with room and group</span></span><span class="cde-persona-item"><span class="es">Tener la programación a mano</span><span class="en">Keep the syllabus at hand</span></span></div>
+          <div class="is-pain"><span class="cde-eyebrow--muted"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="cde-persona-item"><span class="es">Cada herramienta con un formato distinto</span><span class="en">Every tool with a different format</span></span><span class="cde-persona-item"><span class="es">Varios menús para llegar al grupo</span><span class="en">Several menus to reach the group</span></span></div>
+        </div>
+        <p class="cde-quote"><span class="es">«Antes de entrar al aula necesito saber dónde y con quién.»</span><span class="en">“Before I walk in, I need to know where and with whom.”</span></p>
+        <span class="cde-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span>
+      </div>
+      <div class="cde-journey">
+      <span class="cde-journey-label"><span class="es">User flow · Luis prepara su clase</span><span class="en">User flow · Luis prepares his class</span></span>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">01</span><span class="cde-journey-line"></span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Entra como empleado</span><span class="en">Logs in as staff</span></span><span class="cde-journey-desc"><span class="es">Mismo login; ve solo lo que su perfil permite.</span><span class="en">Same login; sees only what his profile allows.</span></span><span class="cde-flow-wcag"><span class="es">Permisos por perfil</span><span class="en">Role-based permissions</span></span></div>
+      </div>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">02</span><span class="cde-journey-line"></span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Abre la vista Semana</span><span class="en">Opens the Week view</span></span><span class="cde-journey-desc"><span class="es">Cada sesión agrupa centro, curso y número de sesión.</span><span class="en">Each session groups centre, course and session number.</span></span><span class="cde-flow-wcag"><span class="es">Gestalt · Región común</span><span class="en">Gestalt · Common region</span></span></div>
+      </div>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">03</span><span class="cde-journey-line"></span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Consulta la programación</span><span class="en">Checks the syllabus</span></span><span class="cde-journey-desc"><span class="es">Búsqueda y programaciones dentro del mismo calendario.</span><span class="en">Search and syllabi inside the same calendar.</span></span><span class="cde-flow-wcag"><span class="es">Nielsen #6 · Reconocer, no recordar</span><span class="en">Nielsen #6 · Recognition over recall</span></span></div>
+      </div>
+      <div class="cde-journey-row">
+        <div class="cde-journey-rail"><span class="cde-journey-dot">04</span></div>
+        <div class="cde-journey-body"><span class="cde-journey-title"><span class="es">Va al aula</span><span class="en">Heads to class</span></span><span class="cde-journey-desc"><span class="es">Aula y grupo en un solo menú, también por teclado.</span><span class="en">Room and group in one menu, keyboard included.</span></span><span class="cde-flow-wcag"><span class="es">WCAG 2.1.1 · Teclado</span><span class="en">WCAG 2.1.1 · Keyboard</span></span></div>
+      </div>
+      <div class="cde-journey-foot"><span class="es">Mismo sistema que el alumno, otra tarea: los permisos cambian el contenido, no los componentes.</span><span class="en">Same system as the student, a different task: permissions change the content, not the components.</span></div>
+    </div></div></div>
     </div>
 
     <div class="cde-split">
@@ -1313,5 +1449,6 @@
 <script src="chatbot.js?v=20261021_mail"></script>
 
 <script src="contact.js?v=20261021"></script>
+<script src="persona-tabs.js?v=20261026" defer></script>
 </body>
 </html>

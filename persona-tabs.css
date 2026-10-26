@@ -1,0 +1,17 @@
+/* Selector de personas en los case studies.
+   Marcado: [data-ptabs] > .ptabs-list[role=tablist] > .ptab[role=tab] + [role=tabpanel]...
+   Sin JS no se muestran las pestañas y todas las personas quedan apiladas. */
+[data-ptabs] { display: flex; flex-direction: column; gap: 16px; }
+[data-ptabs]:not(.is-ready) .ptabs-list { display: none; }
+[data-ptabs] [role="tabpanel"] { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+[data-ptabs] [role="tabpanel"][hidden] { display: none; }
+
+.ptabs-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.ptab { flex: 0 1 auto; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 14px 6px 6px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.03); color: rgba(255,255,255,.7); font: inherit; font-size: 13px; line-height: 1.2; text-align: left; cursor: pointer; transition: border-color .2s, background .2s; }
+.ptab img { flex: none; width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.ptab b { display: block; font-weight: 600; color: #fff; }
+.ptab small { display: block; font-size: 11px; color: rgba(255,255,255,.55); }
+.ptab:hover { border-color: rgba(255,255,255,.3); }
+.ptab[aria-selected="true"] { background: rgba(167,139,250,.14); border-color: rgba(167,139,250,.6); }
+.ptab.is-loyal[aria-selected="true"] { background: rgba(249,115,22,.14); border-color: rgba(249,115,22,.6); }
+.ptab:focus-visible { outline: 2px solid #a78bfa; outline-offset: 2px; }

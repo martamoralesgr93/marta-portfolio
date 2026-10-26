@@ -20,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261019_v10">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
+  <link rel="stylesheet" href="persona-tabs.css?v=20261026">
 </head>
 <body>
 
@@ -312,7 +313,9 @@
       <article class="insight"><div class="insight-num">03</div><h3><span class="es">Poco valor percibido</span><span class="en">Unclear value proposition</span></h3><p><span class="es">No se entendía por qué reservar directo en lugar de en una OTA.</span><span class="en">The advantage of direct booking vs OTAs was invisible.</span></p></article>
     </div>
 
-    <div class="persona panel reveal" style="margin-top:48px">
+    <div data-ptabs style="margin-top:48px">
+      <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="bk-tab-ines" aria-controls="bk-p-ines"><img src="assets/avatar-ines.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Inés, 38</b><small><span class="es">No socia · llega por Ads</span><span class="en">Non-member · from Ads</span></small></span></button><button type="button" class="ptab is-loyal" role="tab" id="bk-tab-alberto" aria-controls="bk-p-alberto"><img src="assets/avatar-alberto.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Alberto, 46</b><small><span class="es">Socio ÚNICOS</span><span class="en">ÚNICOS member</span></small></span></button></div>
+      <div role="tabpanel" id="bk-p-ines" aria-labelledby="bk-tab-ines" tabindex="0">    <div class="persona panel reveal">
       <div class="persona-side">
         <img src="assets/avatar-ines.jpg" alt="Ilustración generada con IA de Inés, la persona" width="132" height="132" loading="lazy">
         <h3>Inés, 38</h3>
@@ -338,6 +341,36 @@
         <div class="j-opp"><span class="es">Motor en el primer fold, sin tapar el hero</span><span class="en">Engine in the first fold, without covering the hero</span></div><div class="j-opp"><span class="es">Motor siempre visible en el primer scroll</span><span class="en">Engine always visible on first scroll</span></div><div class="j-opp"><span class="es">Fechas y huéspedes en un bloque, con selector táctil nativo</span><span class="en">Dates and guests in one block, with a native touch picker</span></div><div class="j-opp"><span class="es">Acceso a ÚNICOS sin salir del flujo</span><span class="en">ÚNICOS access without leaving the flow</span></div><div class="j-opp"><span class="es">CTA al alcance del pulgar</span><span class="en">CTA within thumb reach</span></div>
       </div>
       </div>
+    </div>
+</div>
+      <div role="tabpanel" id="bk-p-alberto" aria-labelledby="bk-tab-alberto" tabindex="0"><div class="persona panel">
+      <div class="persona-side">
+        <img src="assets/avatar-alberto.jpg" alt="Ilustración generada con IA de Alberto, la persona" width="132" height="132" loading="lazy">
+        <h3>Alberto, 46</h3>
+        <p><span class="es">Socio ÚNICOS · reserva directo y repite</span><span class="en">ÚNICOS member · books direct and comes back</span></p>
+        <p class="placeholder-note" style="margin-top:12px"><span class="es">Persona ilustrativa · la misma de ILUNION CRO · Ilustración generada con IA</span><span class="en">Illustrative persona · same as ILUNION CRO · AI-generated illustration</span></p>
+      </div>
+      <div class="persona-body">
+        <div><h4><span class="es">Objetivos</span><span class="en">Goals</span></h4><ul><li><span class="es">Ver su precio de socio sin buscarlo</span><span class="en">See his member price without hunting</span></li><li><span class="es">Reservar directo con confianza</span><span class="en">Book direct with confidence</span></li></ul></div>
+        <div><h4><span class="es">Frustraciones</span><span class="en">Frustrations</span></h4><ul><li><span class="es">La ventaja de socio, fuera del motor</span><span class="en">The member perk, outside the engine</span></li><li><span class="es">Comparar con Booking para fiarse</span><span class="en">Checking Booking before trusting the price</span></li></ul></div>
+        <p class="persona-quote"><span class="es">“Si soy socio, que se note antes de pagar.”</span><span class="en">“If I’m a member, show it before I pay.”</span></p>
+      </div>
+    </div>
+
+    <div class="journey panel">
+      <div class="panel-head"><span>User flow</span><span class="panel-tag"><span class="es">Motor de reservas · socio ÚNICOS</span><span class="en">Booking engine · ÚNICOS member</span></span></div>
+      <div class="journey-scroll">
+      <div class="journey-grid">
+        <div class="j-row"></div>
+        <div class="j-head"><span style="color:var(--accent);font-size:11px;margin-right:4px">1</span> <span class="es">Entra desde la home</span><span class="en">Lands on the homepage</span></div><div class="j-head"><span style="color:var(--accent);font-size:11px;margin-right:4px">2</span> <span class="es">Elige fechas</span><span class="en">Picks dates</span></div><div class="j-head"><span style="color:var(--accent);font-size:11px;margin-right:4px">3</span> <span class="es">Se identifica como socio</span><span class="en">Signs in as member</span></div><div class="j-head"><span style="color:var(--accent);font-size:11px;margin-right:4px">4</span> <span class="es">Compara con una OTA</span><span class="en">Compares with an OTA</span></div><div class="j-head"><span style="color:var(--accent);font-size:11px;margin-right:4px">5</span> <span class="es">Reserva</span><span class="en">Books</span></div>
+        <div class="j-row"><span class="es">Antes</span><span class="en">Before</span></div>
+        <div class="j-pain"><span class="es">Buscador bajo banners y carruseles</span><span class="en">Search under banners and carousels</span></div><div class="j-pain"><span class="es">Selector táctil que falla</span><span class="en">Touch picker that fails</span></div><div class="j-pain"><span class="es">Ventajas del club invisibles en el checkout</span><span class="en">Club perks invisible at checkout</span></div><div class="j-pain"><span class="es">No ve por qué reservar directo</span><span class="en">Can’t see why to book direct</span></div><div class="j-pain">—</div>
+        <div class="j-row"><span class="es">Decisión</span><span class="en">Decision</span></div>
+        <div class="j-opp"><span class="es">Motor en el primer fold</span><span class="en">Engine in the first fold</span></div><div class="j-opp"><span class="es">Fechas y huéspedes en un bloque (Gestalt, región común)</span><span class="en">Dates and guests in one block (Gestalt, common region)</span></div><div class="j-opp"><span class="es">Acceso a ÚNICOS sin salir del flujo</span><span class="en">ÚNICOS access without leaving the flow</span></div><div class="j-opp"><span class="es">Ventaja de socio junto al precio (proximidad)</span><span class="en">Member perk next to the price (proximity)</span></div><div class="j-opp"><span class="es">CTA al alcance del pulgar (Fitts)</span><span class="en">CTA within thumb reach (Fitts)</span></div>
+      </div>
+      </div>
+    </div>
+</div>
     </div>
   </div>
 </section>
@@ -695,5 +728,6 @@
 <script src="chatbot.js?v=20261021_mail"></script>
 
 <script src="contact.js?v=20261021"></script>
+<script src="persona-tabs.js?v=20261026" defer></script>
 </body>
 </html>
