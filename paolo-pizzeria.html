@@ -105,6 +105,12 @@
   .pme-persona-top { display: flex; flex-direction: column; gap: 2px; }
   .pme-persona-big { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 32px; line-height: 1; color: #fff; }
   .pme-persona-sub { font-size: 12px; color: rgba(255,255,255,.6); }
+  .pme-persona-id { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .pme-persona-id img { flex: none; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(167,139,250,.45); }
+  .pme-persona-name { display: block; font-size: 14px; font-weight: 700; color: #fff; }
+  .pme-persona-role { display: block; margin-top: 2px; font-size: 11px; line-height: 1.35; color: rgba(255,255,255,.6); }
+  .pme-persona-flow { align-self: flex-start; padding: 4px 8px; border-radius: 8px; border: 1px solid rgba(167,139,250,.4); background: rgba(167,139,250,.1); font-size: 11px; font-weight: 600; line-height: 1.3; color: #fff; }
+  .pme-persona-note { font-size: 11px; line-height: 1.45; color: rgba(255,255,255,.5); }
   .pme-miller { display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 3px; }
   .pme-miller span { height: 16px; border-radius: 3px; background: #a78bfa; }
   .pme-fitts { height: 16px; display: flex; align-items: center; gap: 6px; }
@@ -324,6 +330,12 @@
   .pde-persona-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .pde-persona-card { padding: 22px 20px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid var(--pde-line); display: flex; flex-direction: column; gap: 14px; }
   .pde-persona-big { font-family: var(--font-serif); font-weight: 800; font-size: 40px; line-height: 1; color: #fff; }
+  .pde-persona-id { display: flex; align-items: center; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--pde-line); }
+  .pde-persona-id img { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(167,139,250,.5); }
+  .pde-persona-name { display: block; font-size: 18px; font-weight: 700; color: #fff; }
+  .pde-persona-role { display: block; margin-top: 3px; font-size: 13px; color: rgba(255,255,255,.65); }
+  .pde-persona-flow { align-self: flex-start; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(167,139,250,.4); background: rgba(167,139,250,.1); font-size: 12px; font-weight: 600; color: #fff; }
+  .pde-persona-note { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.5); }
   .pde-miller { display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 4px; }
   .pde-miller span { height: 20px; border-radius: 4px; background: var(--pde-accent); }
   .pde-fitts { height: 20px; display: flex; align-items: center; gap: 8px; }
@@ -687,6 +699,7 @@
       <h3 class="pme-h3" style="margin: 0;"><span class="es">Dos contextos, <em>dos leyes</em></span><span class="en">Two contexts, <em>two laws</em></span></h3>
       <div class="pme-personas2" style="margin-top: 0;">
         <div class="pme-persona-card">
+          <div class="pme-persona-id"><img src="assets/avatar-marcos.jpg" alt="Ilustración generada con IA de Marcos, uno de los perfiles" width="44" height="44" loading="lazy"><div><span class="pme-persona-name">Marcos, 34</span><span class="pme-persona-role"><span class="es">Pide a domicilio al salir del trabajo</span><span class="en">Orders delivery after work</span></span></div></div><span class="pme-persona-flow"><span class="es">Su flujo · 01 Pedido directo</span><span class="en">His flow · 01 Direct order</span></span>
           <div class="pme-persona-top">
             <span class="pme-eyebrow">Delivery</span>
             <span class="pme-persona-big">&lt;90 s</span>
@@ -701,6 +714,7 @@
           </div>
         </div>
         <div class="pme-persona-card">
+          <div class="pme-persona-id"><img src="assets/avatar-carmen.jpg" alt="Ilustración generada con IA de Carmen, uno de los perfiles" width="44" height="44" loading="lazy"><div><span class="pme-persona-name">Carmen, 52</span><span class="pme-persona-role"><span class="es">Cena en sala y pregunta por alérgenos</span><span class="en">Dines in and asks about allergens</span></span></div></div><span class="pme-persona-flow"><span class="es">Su flujo · 02 Carta QR en mesa</span><span class="en">Her flow · 02 Table QR menu</span></span>
           <div class="pme-persona-top">
             <span class="pme-eyebrow"><span class="es">En sala</span><span class="en">Dine-in</span></span>
             <span class="pme-persona-big"><span class="es">Sin app</span><span class="en">No app</span></span>
@@ -713,6 +727,7 @@
           </div>
         </div>
       </div>
+      <span class="pme-persona-note"><span class="es">Perfiles reales del research. Nombres y retratos ilustrativos · Ilustración generada con IA.</span><span class="en">Real profiles from research. Illustrative names and portraits · AI-generated illustration.</span></span>
     </div>
 
     <div style="padding-top: 44px; display: flex; flex-direction: column; gap: 12px;">
@@ -1094,6 +1109,7 @@
         </div>
         <div class="pde-persona-grid">
           <div class="pde-persona-card">
+            <div class="pde-persona-id"><img src="assets/avatar-marcos.jpg" alt="Ilustración generada con IA de Marcos, uno de los perfiles" width="56" height="56" loading="lazy"><div><span class="pde-persona-name">Marcos, 34</span><span class="pde-persona-role"><span class="es">Pide a domicilio al salir del trabajo</span><span class="en">Orders delivery after work</span></span></div></div><span class="pde-persona-flow"><span class="es">Su flujo · 01 Pedido directo</span><span class="en">His flow · 01 Direct order</span></span>
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <span class="pde-eyebrow" style="font-size: 11px;">Delivery</span>
               <span class="pde-persona-big">&lt;90 s</span>
@@ -1108,6 +1124,7 @@
             </div>
           </div>
           <div class="pde-persona-card">
+            <div class="pde-persona-id"><img src="assets/avatar-carmen.jpg" alt="Ilustración generada con IA de Carmen, uno de los perfiles" width="56" height="56" loading="lazy"><div><span class="pde-persona-name">Carmen, 52</span><span class="pde-persona-role"><span class="es">Cena en sala y pregunta por alérgenos</span><span class="en">Dines in and asks about allergens</span></span></div></div><span class="pde-persona-flow"><span class="es">Su flujo · 02 Carta QR en mesa</span><span class="en">Her flow · 02 Table QR menu</span></span>
             <div style="display: flex; flex-direction: column; gap: 4px;">
               <span class="pde-eyebrow" style="font-size: 11px;"><span class="es">En sala</span><span class="en">Dine-in</span></span>
               <span class="pde-persona-big"><span class="es">Sin app</span><span class="en">No app</span></span>
@@ -1120,6 +1137,7 @@
             </div>
           </div>
         </div>
+        <p class="pde-persona-note"><span class="es">Perfiles reales del research. Nombres y retratos ilustrativos · Ilustración generada con IA.</span><span class="en">Real profiles from research. Illustrative names and portraits · AI-generated illustration.</span></p>
       </div>
     </div>
 

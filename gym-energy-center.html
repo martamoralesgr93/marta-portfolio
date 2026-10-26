@@ -95,6 +95,35 @@
   .gme-stat80-text { padding-bottom: 6px; font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
   .gme-p { margin: 16px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.72); }
 
+  /* Persona + ciclo de vida (patrón de ilunion-cro .ime-persona / .ime-lc) */
+  .gme-persona { margin-top: 16px; border-radius: 22px; overflow: hidden; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
+  .gme-persona-top { padding: 20px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .gme-persona-top img { flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(167,139,250,.45); }
+  .gme-persona-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: #fff; display: block; }
+  .gme-persona-role { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.75); display: block; margin-top: 4px; }
+  .gme-tag { display: inline-block; margin-top: 8px; padding: 4px 9px; border-radius: 8px; line-height: 1.4; border: 1px solid rgba(255,255,255,.18); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6); }
+  .gme-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.08); }
+  .gme-persona-cols > div { background: #0d0d10; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .gme-persona-cols ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .gme-persona-cols li { display: flex; gap: 8px; font-size: 14px; line-height: 1.4; color: #fff; }
+  .gme-persona-cols li::before { content: '✓'; color: #a78bfa; flex: none; }
+  .gme-persona-cols .is-pain li { color: rgba(255,255,255,.85); }
+  .gme-persona-cols .is-pain li::before { content: '✕'; color: rgba(255,255,255,.4); }
+  .gme-quote { margin: 0; padding: 18px 20px 20px; border-top: 1px solid rgba(255,255,255,.08); font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.35; color: #fff; }
+  .gme-lc { margin: 16px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .gme-lc li { position: relative; padding: 16px 16px 16px 18px; border-radius: 16px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; }
+  .gme-lc li::before { content: ''; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px; border-radius: 0 3px 3px 0; background: rgba(167,139,250,.5); }
+  .gme-lc li.is-risk::before { background: rgba(255,255,255,.45); }
+  .gme-lc li.is-north { border-color: rgba(167,139,250,.6); background: rgba(167,139,250,.08); }
+  .gme-lc li.is-north::before { background: #a78bfa; }
+  .gme-lc-stage { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a78bfa; }
+  .gme-lc li > strong { font-size: 17px; line-height: 1.25; color: #fff; }
+  .gme-lc-pain { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.6); }
+  .gme-lc-lever { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .gme-lc-kpi { align-self: flex-start; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); font-size: 12px; font-weight: 600; color: #fff; }
+  .gme-lc li.is-north .gme-lc-kpi { background: #a78bfa; border-color: #a78bfa; color: #0b0614; }
+  .gme-lc-note { margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.5); }
+
   .gme-vs { position: relative; margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .gme-vs-card { padding: 16px 14px 18px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; }
   .gme-vs-card-win { position: relative; background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.5); }
@@ -409,6 +438,31 @@
   .gde-hypo-grid p { margin: 0; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.6); }
   .gde-note { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.5); }
 
+  /* Persona + ciclo de vida (patrón de ilunion-cro .ide-persona / .ide-lc) */
+  .gde-persona-grid { display: grid; grid-template-columns: minmax(300px, 360px) minmax(0, 1fr); gap: 20px; align-items: stretch; }
+  .gde-persona { padding: 26px; border-radius: 22px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 20px; }
+  .gde-persona-top { display: flex; align-items: center; gap: 14px; }
+  .gde-persona-top img { flex: none; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(167,139,250,.5); }
+  .gde-persona-name { display: block; font-size: 20px; font-weight: 700; color: #fff; }
+  .gde-persona-role { display: block; margin-top: 3px; font-size: 13px; color: rgba(255,255,255,.65); }
+  .gde-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+  .gde-persona-cols > div { display: flex; flex-direction: column; gap: 8px; }
+  .gde-persona-cols .gde-eyebrow { font-size: 10px; }
+  .gde-persona-item { font-size: 14px; line-height: 1.4; color: #fff; }
+  .gde-persona-cols .is-pain .gde-persona-item { color: rgba(255,255,255,.75); }
+  .gde-quote { margin: auto 0 0; padding: 18px 0 0; border-top: 1px solid rgba(255,255,255,.1); font-family: var(--font-serif); font-style: italic; font-weight: 700; font-size: 20px; line-height: 1.3; color: #fff; }
+  .gde-tag { font-size: 11px; color: rgba(255,255,255,.5); }
+  .gde-lc { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .gde-lc li { padding: 18px; border-radius: 16px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; }
+  .gde-lc li.is-risk { border-style: dashed; border-color: rgba(255,255,255,.28); }
+  .gde-lc li.is-north { border-color: rgba(167,139,250,.6); background: rgba(167,139,250,.08); }
+  .gde-lc-stage { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gde-accent); }
+  .gde-lc li > strong { font-size: 17px; line-height: 1.25; color: #fff; }
+  .gde-lc-pain { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,.6); }
+  .gde-lc-lever { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.85); }
+  .gde-lc-kpi { margin-top: auto; align-self: flex-start; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); font-size: 12px; font-weight: 600; color: #fff; }
+  .gde-lc li.is-north .gde-lc-kpi { background: var(--gde-accent); border-color: var(--gde-accent); color: #0b0614; }
+
   .gde-learn3 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 0 32px; }
   .gde-learn3 li { display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.12); }
   .gde-learn3 b { width: 38px; flex: none; font-family: var(--font-serif); font-style: italic; font-weight: 700; font-size: 28px; line-height: 1; color: var(--gde-accent); }
@@ -422,6 +476,7 @@
 }
 
 @media (min-width: 769px) and (max-width: 1023px) {
+  .gde-persona-grid { grid-template-columns: 1fr; }
   .gde-hero-media { height: auto; aspect-ratio: 560/440; }
   .gde-facts { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
@@ -674,6 +729,24 @@
         <div class="gme-finding-body"><span class="gme-finding-title es">Micro-victorias</span><span class="gme-finding-title en">Micro-victories</span><span class="gme-finding-desc es">Ver la racha refuerza el compromiso de volver.</span><span class="gme-finding-desc en">Seeing the streak reinforces the commitment to return.</span></div>
       </div>
     </div>
+
+
+    <div style="margin-top:44px">
+      <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">User persona &amp; customer journey</span><span class="en">User persona &amp; customer journey</span></span>
+      <h3 class="gme-h3"><span class="es">Para quién <em>diseñábamos</em></span><span class="en">Who we were <em>designing</em> for</span></h3>
+    </div>
+    <div class="gme-persona">
+      <div class="gme-persona-top"><img src="assets/avatar-dani.jpg" alt="Ilustración generada con IA de Dani, la persona" width="72" height="72" loading="lazy"><div><span class="gme-persona-name">Dani, 31</span><span class="gme-persona-role"><span class="es">Socio nuevo · primer mes en el centro</span><span class="en">New member · first month at the gym</span></span><span class="gme-tag"><span class="es">Persona ilustrativa · basada en 12 entrevistas · Ilustración generada con IA</span><span class="en">Illustrative persona · based on 12 interviews · AI-generated illustration</span></span></div></div>
+      <div class="gme-persona-cols"><div><span class="gme-eyebrow gme-eyebrow-accent" style="font-size:11px"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Coger el hábito sin sentirse perdido</span><span class="en">Build the habit without feeling lost</span></li><li><span class="es">Entrenar con gente que le tire</span><span class="en">Train with people who push him</span></li></ul></div><div class="is-pain"><span class="gme-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">No saber usar las máquinas</span><span class="en">Not knowing how to use the machines</span></li><li><span class="es">Ir solo y no ver progreso</span><span class="en">Going alone and seeing no progress</span></li></ul></div></div>
+      <p class="gme-quote"><span class="es">“Si sé que alguien me espera en la clase, voy.”</span><span class="en">“If I know someone’s expecting me in class, I go.”</span></p>
+    </div>
+    <div style="margin-top:36px">
+      <span class="gme-eyebrow gme-eyebrow-accent"><span class="es">Ciclo de vida · el KPI principal</span><span class="en">Lifecycle · the main KPI</span></span>
+      <h3 class="gme-h3"><span class="es">La conversión que importa <em>no es el alta</em></span><span class="en">The conversion that matters <em>isn’t the sign-up</em></span></h3>
+      <p class="gme-p" style="margin-top:0"><span class="es">Una cuota mensual solo es negocio si el socio sigue en el mes 2. Por eso medimos el journey por etapas del ciclo de vida, y la que manda es pasar del día 45.</span><span class="en">A monthly fee only pays off if the member is still around in month 2. So we measured the journey by lifecycle stage, and the one that counts is getting past day 45.</span></p>
+    </div>
+    <ol class="gme-lc" aria-label="Ciclo de vida del socio"><li class=""><span class="gme-lc-stage"><span class="es">Día 0 · Alta</span><span class="en">Day 0 · Sign-up</span></span><strong><span class="es">Se apunta con ganas</span><span class="en">Signs up motivated</span></strong><span class="gme-lc-pain"><span class="es">No sabe por dónde empezar ni cómo se usan las máquinas.</span><span class="en">Doesn’t know where to start or how the machines work.</span></span><span class="gme-lc-lever"><span class="es">Palanca: «Tu próximo mejor entrenamiento» en la home.</span><span class="en">Lever: “Your next best workout” on the home screen.</span></span><span class="gme-lc-kpi"><span class="es">KPI · Primera clase reservada</span><span class="en">KPI · First class booked</span></span></li><li class=""><span class="gme-lc-stage"><span class="es">Semanas 1–2 · Activación</span><span class="en">Weeks 1–2 · Activation</span></span><strong><span class="es">Prueba clases</span><span class="en">Tries classes</span></strong><span class="gme-lc-pain"><span class="es">Va solo y nadie le espera.</span><span class="en">Goes alone, nobody’s expecting him.</span></span><span class="gme-lc-lever"><span class="es">Palanca: reserva en 2 taps viendo quién va.</span><span class="en">Lever: 2-tap booking that shows who’s going.</span></span><span class="gme-lc-kpi"><span class="es">KPI · Clases reservadas por semana</span><span class="en">KPI · Classes booked per week</span></span></li><li class="is-risk"><span class="gme-lc-stage"><span class="es">Días 15–45 · Zona de riesgo</span><span class="en">Days 15–45 · Risk zone</span></span><strong><span class="es">Pierde el ritmo</span><span class="en">Loses momentum</span></strong><span class="gme-lc-pain"><span class="es">No ve su progreso y se olvida de volver.</span><span class="en">Can’t see his progress and forgets to come back.</span></span><span class="gme-lc-lever"><span class="es">Palanca: racha y nivel, lo primero en su perfil.</span><span class="en">Lever: streak and level, first thing on his profile.</span></span><span class="gme-lc-kpi"><span class="es">KPI · Racha activa</span><span class="en">KPI · Active streak</span></span></li><li class="is-north"><span class="gme-lc-stage"><span class="es">Día 45+ · Socio habitual</span><span class="en">Day 45+ · Regular member</span></span><strong><span class="es">Vuelve por hábito</span><span class="en">Comes back out of habit</span></strong><span class="gme-lc-lever"><span class="es">El bucle detonante → acción → recompensa ya funciona solo.</span><span class="en">The trigger → action → reward loop now runs on its own.</span></span><span class="gme-lc-kpi"><span class="es">KPI principal · Retención tras el día 45</span><span class="en">Main KPI · Retention past day 45</span></span></li></ol>
+    <p class="gme-lc-note"><span class="es">El 68% de abandono antes del día 45 es un dato de contexto, no medido por el equipo. Es un prototipo: estos son los KPIs que propusimos seguir, no resultados medidos.</span><span class="en">The 68% drop-off before day 45 is context data, not measured by the team. This is a prototype: these are the KPIs we proposed to track, not measured results.</span></p>
 
     <div style="margin-top:44px">
       <span class="gme-eyebrow"><span class="es">Síntesis · bucle de hábito</span><span class="en">Synthesis · habit loop</span></span>
@@ -938,6 +1011,27 @@
         <li><span class="gde-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></span><h4><span class="es">La fuerza del grupo</span><span class="en">Peer accountability</span></h4><p><span class="es">Saber que un amigo va a la clase hace que vayas.</span><span class="en">Knowing a friend is attending makes you go too.</span></p></li>
         <li><span class="gde-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-1.6.7-2.8 1.5-3.7.3 1.3 1 2.2 2 2.2 0-2.5-.5-4.5.5-7z"/><path d="M6 21h12"/></svg></span><h4><span class="es">Micro-victorias</span><span class="en">Micro-victories</span></h4><p><span class="es">Ver la racha refuerza el compromiso de volver.</span><span class="en">Seeing the streak reinforces the commitment to return.</span></p></li>
       </ul>
+    </div>
+
+    <div class="gde-block">
+      <div class="gde-headrow" style="border-bottom:0;padding-bottom:0">
+        <span class="gde-eyebrow--muted" style="font-size:12px"><span class="es">User persona &amp; customer journey</span><span class="en">User persona &amp; customer journey</span></span>
+      </div>
+      <h3 class="gde-h3"><span class="es">La conversión que importa <em>no es el alta</em></span><span class="en">The conversion that matters <em>isn’t the sign-up</em></span></h3>
+      <p class="gde-p" style="max-width:640px"><span class="es">Una cuota mensual solo es negocio si el socio sigue en el mes 2. Por eso medimos el journey por etapas del ciclo de vida, y la que manda es pasar del día 45.</span><span class="en">A monthly fee only pays off if the member is still around in month 2. So we measured the journey by lifecycle stage, and the one that counts is getting past day 45.</span></p>
+      <div class="gde-persona-grid">
+        <article class="gde-persona">
+          <div class="gde-persona-top"><img src="assets/avatar-dani.jpg" alt="Ilustración generada con IA de Dani, la persona" width="64" height="64" loading="lazy"><div><span class="gde-persona-name">Dani, 31</span><span class="gde-persona-role"><span class="es">Socio nuevo · primer mes en el centro</span><span class="en">New member · first month at the gym</span></span></div></div>
+          <div class="gde-persona-cols">
+            <div><span class="gde-eyebrow"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="gde-persona-item"><span class="es">Coger el hábito sin sentirse perdido</span><span class="en">Build the habit without feeling lost</span></span><span class="gde-persona-item"><span class="es">Entrenar con gente que le tire</span><span class="en">Train with people who push him</span></span></div>
+            <div class="is-pain"><span class="gde-eyebrow gde-eyebrow--muted"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="gde-persona-item"><span class="es">No saber usar las máquinas</span><span class="en">Not knowing how to use the machines</span></span><span class="gde-persona-item"><span class="es">Ir solo y no ver progreso</span><span class="en">Going alone and seeing no progress</span></span></div>
+          </div>
+          <blockquote class="gde-quote"><span class="es">“Si sé que alguien me espera en la clase, voy.”</span><span class="en">“If I know someone’s expecting me in class, I go.”</span></blockquote>
+          <span class="gde-tag"><span class="es">Persona ilustrativa · basada en 12 entrevistas · Ilustración generada con IA</span><span class="en">Illustrative persona · based on 12 interviews · AI-generated illustration</span></span>
+        </article>
+        <ol class="gde-lc" aria-label="Ciclo de vida del socio"><li class=""><span class="gde-lc-stage"><span class="es">Día 0 · Alta</span><span class="en">Day 0 · Sign-up</span></span><strong><span class="es">Se apunta con ganas</span><span class="en">Signs up motivated</span></strong><span class="gde-lc-pain"><span class="es">No sabe por dónde empezar ni cómo se usan las máquinas.</span><span class="en">Doesn’t know where to start or how the machines work.</span></span><span class="gde-lc-lever"><span class="es">Palanca: «Tu próximo mejor entrenamiento» en la home.</span><span class="en">Lever: “Your next best workout” on the home screen.</span></span><span class="gde-lc-kpi"><span class="es">KPI · Primera clase reservada</span><span class="en">KPI · First class booked</span></span></li><li class=""><span class="gde-lc-stage"><span class="es">Semanas 1–2 · Activación</span><span class="en">Weeks 1–2 · Activation</span></span><strong><span class="es">Prueba clases</span><span class="en">Tries classes</span></strong><span class="gde-lc-pain"><span class="es">Va solo y nadie le espera.</span><span class="en">Goes alone, nobody’s expecting him.</span></span><span class="gde-lc-lever"><span class="es">Palanca: reserva en 2 taps viendo quién va.</span><span class="en">Lever: 2-tap booking that shows who’s going.</span></span><span class="gde-lc-kpi"><span class="es">KPI · Clases reservadas por semana</span><span class="en">KPI · Classes booked per week</span></span></li><li class="is-risk"><span class="gde-lc-stage"><span class="es">Días 15–45 · Zona de riesgo</span><span class="en">Days 15–45 · Risk zone</span></span><strong><span class="es">Pierde el ritmo</span><span class="en">Loses momentum</span></strong><span class="gde-lc-pain"><span class="es">No ve su progreso y se olvida de volver.</span><span class="en">Can’t see his progress and forgets to come back.</span></span><span class="gde-lc-lever"><span class="es">Palanca: racha y nivel, lo primero en su perfil.</span><span class="en">Lever: streak and level, first thing on his profile.</span></span><span class="gde-lc-kpi"><span class="es">KPI · Racha activa</span><span class="en">KPI · Active streak</span></span></li><li class="is-north"><span class="gde-lc-stage"><span class="es">Día 45+ · Socio habitual</span><span class="en">Day 45+ · Regular member</span></span><strong><span class="es">Vuelve por hábito</span><span class="en">Comes back out of habit</span></strong><span class="gde-lc-lever"><span class="es">El bucle detonante → acción → recompensa ya funciona solo.</span><span class="en">The trigger → action → reward loop now runs on its own.</span></span><span class="gde-lc-kpi"><span class="es">KPI principal · Retención tras el día 45</span><span class="en">Main KPI · Retention past day 45</span></span></li></ol>
+      </div>
+      <p class="gde-note"><span class="es">El 68% de abandono antes del día 45 es un dato de contexto, no medido por el equipo. Es un prototipo: estos son los KPIs que propusimos seguir, no resultados medidos.</span><span class="en">The 68% drop-off before day 45 is context data, not measured by the team. This is a prototype: these are the KPIs we proposed to track, not measured results.</span></p>
     </div>
 
     <div class="gde-block">

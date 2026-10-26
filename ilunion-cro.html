@@ -85,8 +85,8 @@
   .ime-paper-row { display: flex; justify-content: center; align-items: flex-end; gap: 10px; }
   .ime-paper figcaption { padding: 0 16px; font-size: 12px; line-height: 1.45; color: #3a3a3a; text-align: center; }
 
-  .ime-stat { display: flex; align-items: flex-end; gap: 14px; }
-  .ime-stat-val { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 92px; line-height: .85; color: #a78bfa; }
+  .ime-stat { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 14px; }
+  .ime-stat-val { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(56px, 17vw, 92px); line-height: .85; color: #a78bfa; }
   .ime-stat-txt { padding-bottom: 6px; font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
   .ime-squares { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
   .ime-squares span { height: 44px; border-radius: 10px; border: 1px dashed rgba(255,255,255,.25); }
@@ -121,7 +121,7 @@
   .ime-persona-top img { flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(167,139,250,.45); }
   .ime-persona-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: #fff; display: block; }
   .ime-persona-role { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.75); display: block; margin-top: 4px; }
-  .ime-tag { display: inline-block; margin-top: 8px; padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6); }
+  .ime-tag { display: inline-block; margin-top: 8px; padding: 4px 9px; border-radius: 8px; line-height: 1.4; border: 1px solid rgba(255,255,255,.18); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6); }
   .ime-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.08); }
   .ime-persona-cols > div { background: #0d0d10; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
   .ime-persona-cols ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -147,6 +147,17 @@
   .ime-pain::before { content: ''; flex: none; width: 4px; border-radius: 2px; background: rgba(255,255,255,.3); }
   .ime-opp { align-self: flex-start; padding: 6px 10px; border-radius: 8px; background: rgba(167,139,250,.12); border: 1px solid rgba(167,139,250,.4); font-size: 13px; font-weight: 600; color: #fff; }
   .ime-opp.is-loyal { background: rgba(249,115,22,.14); border-color: rgba(249,115,22,.5); color: #fff; }
+  .ime-lc { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .ime-lc li { position: relative; padding: 16px 16px 16px 18px; border-radius: 16px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 8px; }
+  .ime-lc li::before { content: ''; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px; border-radius: 0 3px 3px 0; background: #a78bfa; }
+  .ime-lc li.is-loyal::before { background: #f97316; }
+  .ime-lc li.is-north { border-color: rgba(249,115,22,.55); background: rgba(249,115,22,.08); }
+  .ime-lc-stage { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a78bfa; }
+  .ime-lc li.is-loyal .ime-lc-stage { color: #f97316; }
+  .ime-lc li > strong { font-size: 17px; line-height: 1.25; color: #fff; }
+  .ime-lc-lever { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.75); }
+  .ime-lc-kpi { align-self: flex-start; padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); font-size: 12px; font-weight: 600; color: #fff; }
+  .ime-lc li.is-north .ime-lc-kpi { background: #f97316; border-color: #f97316; color: #140700; }
 
   .ime-frics { display: flex; flex-direction: column; gap: 12px; }
   .ime-fric { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); font-size: 15px; line-height: 1.35; color: #fff; font-weight: 500; }
@@ -394,6 +405,18 @@
   .ide-jtable-opp { padding: 12px; border-radius: 12px; background: rgba(167,139,250,.14); border: 1px solid rgba(167,139,250,.4); font-size: 13px; line-height: 1.35; font-weight: 600; color: #fff; }
   .ide-jtable-opp.is-loyal { background: rgba(249,115,22,.14); border-color: rgba(249,115,22,.5); }
 
+  .ide-lc { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .ide-lc li { position: relative; padding: 22px 20px; border-radius: 18px; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 10px; }
+  .ide-lc li + li::before { content: ''; position: absolute; left: -14px; top: 34px; width: 14px; height: 2px; background: rgba(255,255,255,.2); }
+  .ide-lc li.is-north { border-color: rgba(249,115,22,.6); background: rgba(249,115,22,.08); }
+  .ide-lc-stage { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #a78bfa; }
+  .ide-lc li.is-loyal .ide-lc-stage { color: #f97316; }
+  .ide-lc li > strong { font-size: 18px; line-height: 1.25; color: #fff; }
+  .ide-lc-lever { font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.72); }
+  .ide-lc-kpi { margin-top: auto; align-self: flex-start; padding: 6px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); font-size: 12px; font-weight: 600; color: #fff; }
+  .ide-lc li.is-north .ide-lc-kpi { background: #f97316; border-color: #f97316; color: #140700; }
+  .ide-lc-note { margin: 0; font-size: 13px; color: rgba(255,255,255,.5); }
+
   .ide-fric3 { display: flex; flex-direction: column; gap: 10px; }
   .ide-fric3-row { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); }
   .ide-fric3-n { font-size: 12px; font-weight: 700; color: #a78bfa; }
@@ -547,6 +570,8 @@
 @media (min-width: 769px) and (max-width: 1100px) {
   .ide-hero-media { height: auto; aspect-ratio: 600/460; }
   .ide-exp-grid, .ide-order, .ide-ice-row, .ide-fitts, .ide-results, .ide-piece, .ide-persona-grid { grid-template-columns: 1fr; }
+  .ide-lc { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ide-lc li + li::before { display: none; }
   .ide-proc-imgs--mobile, .ide-proc-imgs--desktop { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .ide-order-arrow { padding-top: 0; }
   .ide-tl { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -743,13 +768,16 @@
     <div class="ime-sub" id="ime-persona">
       <div class="ime-head"><span class="ime-eyebrow ime-eyebrow--accent"><span class="es">User persona &amp; journey</span><span class="en">User persona &amp; journey</span></span><h3 class="ime-h2" style="font-size:34px"><span class="es">Para quién <em>diseñaba</em></span><span class="en">Who I was <em>designing</em> for</span></h3></div>
       <div class="ime-persona">
-        <div class="ime-persona-top"><img src="assets/avatar-ines.jpg" alt="Ilustración de Inés, la persona" width="72" height="72" loading="lazy"><div><span class="ime-persona-name"><span class="es">Inés, 38</span><span class="en">Inés, 38</span></span><span class="ime-persona-role"><span class="es">Viajera vacacional · reserva desde el móvil</span><span class="en">Leisure traveller · books on mobile</span></span><span class="ime-tag"><span class="es">Persona ilustrativa</span><span class="en">Illustrative persona</span></span></div></div>
+        <div class="ime-persona-top"><img src="assets/avatar-ines.jpg" alt="Ilustración generada con IA de Inés, la persona" width="72" height="72" loading="lazy"><div><span class="ime-persona-name"><span class="es">Inés, 38</span><span class="en">Inés, 38</span></span><span class="ime-persona-role"><span class="es">Viajera vacacional · reserva desde el móvil</span><span class="en">Leisure traveller · books on mobile</span></span><span class="ime-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span></div></div>
         <div class="ime-persona-cols"><div><span class="ime-eyebrow ime-eyebrow--accent" style="font-size:11px"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Ver el precio final rápido</span><span class="en">See the final price fast</span></li><li><span class="es">Reservar en menos de 3 minutos</span><span class="en">Book in under 3 minutes</span></li></ul></div><div class="is-pain"><span class="ime-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">No encontrar el buscador</span><span class="en">Not finding the search</span></li><li><span class="es">Selector de fechas que falla</span><span class="en">A buggy date picker</span></li></ul></div></div>
         <p class="ime-quote"><span class="es">“Si tengo que buscar dónde se reserva, me voy a Booking.”</span><span class="en">“If I have to hunt for where to book, I’ll go to Booking.”</span></p>
       </div>
       <div class="ime-head" style="margin-top:28px"><span class="ime-eyebrow"><span class="es">Customer journey · tráfico de Paid Media</span><span class="en">Customer journey · Paid Media traffic</span></span><h3 class="ime-h3"><span class="es">Cada dolor, <em>una oportunidad</em></span><span class="en">Every pain, <em>an opportunity</em></span></h3></div>
       <div class="ime-legend"><span><i style="background:rgba(255,255,255,.3)"></i><span class="es">Dolor</span><span class="en">Pain</span></span><span><i style="background:#a78bfa"></i><span class="es">Oportunidad</span><span class="en">Opportunity</span></span><span><i style="background:#f97316"></i>Loyalty</span></div>
       <ol class="ime-journey"><li class=""><div class="ime-journey-rail"><i>1</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Llega desde Paid</span><span class="en">Lands from Paid</span></strong><span class="ime-opp"><span class="es">Mensaje alineado con el anuncio</span><span class="en">Ad-matched message</span></span></div></li><li class="has-pain"><div class="ime-journey-rail"><i>2</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Busca el motor</span><span class="en">Looks for the engine</span></strong><span class="ime-pain"><span class="es">Motor bajo el hero y las promos</span><span class="en">Engine under the hero and promos</span></span><span class="ime-opp"><span class="es">Motor en el primer scroll</span><span class="en">Engine above the fold</span></span></div></li><li class="has-pain"><div class="ime-journey-rail"><i>3</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Elige fechas</span><span class="en">Picks dates</span></strong><span class="ime-pain"><span class="es">Errores táctiles en el selector</span><span class="en">Touch errors in the picker</span></span><span class="ime-opp"><span class="es">Swipe nativo</span><span class="en">Native swipe</span></span></div></li><li class="has-pain"><div class="ime-journey-rail"><i>4</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Compara</span><span class="en">Compares</span></strong><span class="ime-pain"><span class="es">Precio poco claro</span><span class="en">Unclear price</span></span><span class="ime-opp is-loyal"><span class="es">Ventaja de socio ÚNICOS visible</span><span class="en">Visible ÚNICOS member perk</span></span></div></li><li class=""><div class="ime-journey-rail"><i>5</i><b></b></div><div class="ime-journey-body"><strong><span class="es">Reserva</span><span class="en">Books</span></strong><span class="ime-opp"><span class="es">CTA fijo (Ley de Fitts)</span><span class="en">Sticky CTA (Fitts's Law)</span></span></div></li></ol>
+      <div class="ime-head" style="margin-top:36px"><span class="ime-eyebrow ime-eyebrow--loyal"><span class="es">Ciclo de vida · el KPI principal</span><span class="en">Lifecycle · the main KPI</span></span><h3 class="ime-h3"><span class="es">La primera reserva se paga. <em class="is-loyal">La segunda, directa.</em></span><span class="en">The first booking is paid for. <em class="is-loyal">The second goes direct.</em></span></h3><p class="ime-p" style="font-size:15px"><span class="es">El journey no termina en «Reservar». El canal directo gana cuando Inés vuelve como socia ÚNICOS sin pasar por Ads ni por una OTA.</span><span class="en">The journey doesn’t end at “Book”. The direct channel wins when Inés comes back as an ÚNICOS member, skipping Ads and OTAs.</span></p></div>
+      <ol class="ime-lc" aria-label="Ciclo de vida de Inés"><li class=""><span class="ime-lc-stage"><span class="es">01 · Adquisición</span><span class="en">01 · Acquisition</span></span><strong><span class="es">Llega desde Paid Media</span><span class="en">Lands from Paid Media</span></strong><span class="ime-lc-lever"><span class="es">Palanca: motor en el primer scroll.</span><span class="en">Lever: engine above the fold.</span></span><span class="ime-lc-kpi"><span class="es">KPI · Búsquedas iniciadas</span><span class="en">KPI · Searches started</span></span></li><li class=""><span class="ime-lc-stage"><span class="es">02 · Conversión</span><span class="en">02 · Conversion</span></span><strong><span class="es">Primera reserva directa</span><span class="en">First direct booking</span></strong><span class="ime-lc-lever"><span class="es">Palanca: CTA «Reserva» fijo.</span><span class="en">Lever: sticky “Book” CTA.</span></span><span class="ime-lc-kpi"><span class="es">KPI · Conversión del funnel</span><span class="en">KPI · Funnel conversion</span></span></li><li class="is-loyal"><span class="ime-lc-stage"><span class="es">03 · Loyalty</span><span class="en">03 · Loyalty</span></span><strong><span class="es">Se hace socia ÚNICOS</span><span class="en">Joins ÚNICOS</span></strong><span class="ime-lc-lever"><span class="es">Palanca: el 10% de socio junto a cada oferta.</span><span class="en">Lever: the member 10% next to every offer.</span></span><span class="ime-lc-kpi"><span class="es">KPI · Altas ÚNICOS</span><span class="en">KPI · ÚNICOS sign-ups</span></span></li><li class="is-loyal is-north"><span class="ime-lc-stage"><span class="es">04 · Repetición</span><span class="en">04 · Repeat</span></span><strong><span class="es">Vuelve y reserva directo</span><span class="en">Comes back and books direct</span></strong><span class="ime-lc-lever"><span class="es">Sin pagar otro clic en Ads ni comisión a una OTA.</span><span class="en">No second ad click, no OTA commission.</span></span><span class="ime-lc-kpi"><span class="es">KPI principal · Repetición directa</span><span class="en">Main KPI · Repeat direct bookings</span></span></li></ol>
+      <p class="ime-note"><span class="es">Los resultados de la iniciativa son confidenciales y los explico en entrevista. Aquí muestro qué mide cada etapa, no sus cifras.</span><span class="en">The initiative’s results are confidential and I walk through them in interviews. This shows what each stage measures, not the figures.</span></p>
     </div>
   </section>
 
@@ -915,7 +943,7 @@
       <div class="ide-persona-grid">
         <article class="ide-persona">
           <div class="ide-persona-top">
-            <img src="assets/avatar-ines.jpg" alt="Ilustración de Inés, la persona" width="64" height="64" loading="lazy">
+            <img src="assets/avatar-ines.jpg" alt="Ilustración generada con IA de Inés, la persona" width="64" height="64" loading="lazy">
             <div><span class="ide-persona-name">Inés, 38</span><span class="ide-persona-role"><span class="es">Viajera vacacional · reserva desde el móvil</span><span class="en">Leisure traveller · books on mobile</span></span></div>
           </div>
           <div class="ide-persona-cols">
@@ -923,7 +951,7 @@
             <div class="is-pain"><span class="ide-eyebrow" style="font-size:10px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="ide-item"><span class="es">No encontrar el buscador</span><span class="en">Not finding the search</span></span><span class="ide-item"><span class="es">Selector de fechas que falla</span><span class="en">A buggy date picker</span></span></div>
           </div>
           <blockquote class="ide-quote"><span class="es">“Si tengo que buscar dónde se reserva, me voy a Booking.”</span><span class="en">“If I have to hunt for where to book, I’ll go to Booking.”</span></blockquote>
-          <span class="ide-tag"><span class="es">Persona ilustrativa</span><span class="en">Illustrative persona</span></span>
+          <span class="ide-tag"><span class="es">Persona ilustrativa · Ilustración generada con IA</span><span class="en">Illustrative persona · AI-generated illustration</span></span>
         </article>
         <div class="ide-jbox">
           <div class="ide-jbox-head">
@@ -956,6 +984,12 @@
           </div>
         </div>
       </div>
+      <div class="ide-persona-headrow" style="margin-top:40px">
+        <div class="ide-col" style="gap:10px"><span class="ide-eyebrow ide-eyebrow--loyal"><span class="es">Ciclo de vida · el KPI principal</span><span class="en">Lifecycle · the main KPI</span></span><h3 class="ide-h3"><span class="es">La primera reserva se paga. <em class="is-loyal">La segunda, directa.</em></span><span class="en">The first booking is paid for. <em class="is-loyal">The second goes direct.</em></span></h3></div>
+        <p class="ide-persona-desc"><span class="es">El journey no termina en «Reservar». El canal directo gana cuando Inés vuelve como socia ÚNICOS sin pasar por Ads ni por una OTA.</span><span class="en">The journey doesn’t end at “Book”. The direct channel wins when Inés comes back as an ÚNICOS member, skipping Ads and OTAs.</span></p>
+      </div>
+      <ol class="ide-lc" aria-label="Ciclo de vida de Inés"><li class=""><span class="ide-lc-stage"><span class="es">01 · Adquisición</span><span class="en">01 · Acquisition</span></span><strong><span class="es">Llega desde Paid Media</span><span class="en">Lands from Paid Media</span></strong><span class="ide-lc-lever"><span class="es">Palanca: motor en el primer scroll.</span><span class="en">Lever: engine above the fold.</span></span><span class="ide-lc-kpi"><span class="es">KPI · Búsquedas iniciadas</span><span class="en">KPI · Searches started</span></span></li><li class=""><span class="ide-lc-stage"><span class="es">02 · Conversión</span><span class="en">02 · Conversion</span></span><strong><span class="es">Primera reserva directa</span><span class="en">First direct booking</span></strong><span class="ide-lc-lever"><span class="es">Palanca: CTA «Reserva» fijo.</span><span class="en">Lever: sticky “Book” CTA.</span></span><span class="ide-lc-kpi"><span class="es">KPI · Conversión del funnel</span><span class="en">KPI · Funnel conversion</span></span></li><li class="is-loyal"><span class="ide-lc-stage"><span class="es">03 · Loyalty</span><span class="en">03 · Loyalty</span></span><strong><span class="es">Se hace socia ÚNICOS</span><span class="en">Joins ÚNICOS</span></strong><span class="ide-lc-lever"><span class="es">Palanca: el 10% de socio junto a cada oferta.</span><span class="en">Lever: the member 10% next to every offer.</span></span><span class="ide-lc-kpi"><span class="es">KPI · Altas ÚNICOS</span><span class="en">KPI · ÚNICOS sign-ups</span></span></li><li class="is-loyal is-north"><span class="ide-lc-stage"><span class="es">04 · Repetición</span><span class="en">04 · Repeat</span></span><strong><span class="es">Vuelve y reserva directo</span><span class="en">Comes back and books direct</span></strong><span class="ide-lc-lever"><span class="es">Sin pagar otro clic en Ads ni comisión a una OTA.</span><span class="en">No second ad click, no OTA commission.</span></span><span class="ide-lc-kpi"><span class="es">KPI principal · Repetición directa</span><span class="en">Main KPI · Repeat direct bookings</span></span></li></ol>
+      <p class="ide-lc-note"><span class="es">Los resultados de la iniciativa son confidenciales y los explico en entrevista. Aquí muestro qué mide cada etapa, no sus cifras.</span><span class="en">The initiative’s results are confidential and I walk through them in interviews. This shows what each stage measures, not the figures.</span></p>
     </div>
   </section>
 

@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study-template.css?v=20261019_v10">
-  <link rel="stylesheet" href="it-ops-desktop.css?v=20261016_rev2">
+  <link rel="stylesheet" href="it-ops-desktop.css?v=20261026_persona2">
   <link rel="stylesheet" href="chatbot.css?v=20261014_rev2">
   <style>
 /* ============ MOBILE EXACT - IT Ops case (canvas 2026-10-14) ============ */
@@ -110,6 +110,34 @@
   .ome-dashes span { height: 30px; border-radius: 6px; border: 1px dashed rgba(255,255,255,.22); }
   .ome-dash-on { border: none !important; background: #a78bfa; }
   .ome-p { margin: 16px 0 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,.72); }
+
+  /* Persona + user flow (patrón de ilunion-cro .ime-persona / .ime-journey) */
+  .ome-persona { margin-top: 16px; border-radius: 22px; overflow: hidden; background: #0d0d10; border: 1px solid rgba(255,255,255,.1); }
+  .ome-persona-top { padding: 20px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .ome-persona-top img { flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(167,139,250,.45); }
+  .ome-persona-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 26px; line-height: 1.1; color: #fff; display: block; }
+  .ome-persona-role { font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.75); display: block; margin-top: 4px; }
+  .ome-tag { display: inline-block; margin-top: 8px; padding: 4px 9px; border-radius: 8px; line-height: 1.4; border: 1px solid rgba(255,255,255,.18); font-size: 11px; font-weight: 600; color: rgba(255,255,255,.6); }
+  .ome-persona-cols { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: rgba(255,255,255,.08); }
+  .ome-persona-cols > div { background: #0d0d10; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .ome-persona-cols ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .ome-persona-cols li { display: flex; gap: 8px; font-size: 14px; line-height: 1.4; color: #fff; }
+  .ome-persona-cols li::before { content: '✓'; color: #a78bfa; flex: none; }
+  .ome-persona-cols .is-pain li { color: rgba(255,255,255,.85); }
+  .ome-persona-cols .is-pain li::before { content: '✕'; color: rgba(255,255,255,.4); }
+  .ome-quote { margin: 0; padding: 18px 20px 20px; border-top: 1px solid rgba(255,255,255,.08); font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.35; color: #fff; }
+  .ome-flow { margin: 16px 0 0; padding: 0; list-style: none; }
+  .ome-flow li { display: flex; gap: 14px; }
+  .ome-flow-rail { width: 30px; flex: none; display: flex; flex-direction: column; align-items: center; }
+  .ome-flow-rail i { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(167,139,250,.6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; font-style: normal; }
+  .ome-flow-rail b { flex: 1; width: 2px; min-height: 16px; background: rgba(255,255,255,.12); }
+  .ome-flow li:last-child .ome-flow-rail b { display: none; }
+  .ome-flow-body { flex: 1; padding: 4px 0 20px; display: flex; flex-direction: column; gap: 8px; }
+  .ome-flow-body > strong { font-size: 16px; color: #fff; }
+  .ome-flow-pain { display: flex; gap: 8px; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.65); }
+  .ome-flow-pain::before { content: ''; flex: none; width: 4px; border-radius: 2px; background: rgba(255,255,255,.3); }
+  .ome-flow-mod { align-self: flex-start; padding: 6px 10px; border-radius: 8px; background: rgba(167,139,250,.12); border: 1px solid rgba(167,139,250,.4); font-size: 13px; font-weight: 600; color: #fff; }
+  .ome-flow-note { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.5); }
 
   .ome-friction { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
   .ome-friction-row { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.09); }
@@ -449,6 +477,24 @@
       </div>
     </div>
 
+
+    <div style="margin-top:44px">
+      <span class="ome-eyebrow ome-eyebrow-accent"><span class="es">User persona &amp; user flow</span><span class="en">User persona &amp; user flow</span></span>
+      <h3 class="ome-h3"><span class="es">Para quién <em>diseñaba</em></span><span class="en">Who I was <em>designing</em> for</span></h3>
+    </div>
+    <div class="ome-persona">
+      <div class="ome-persona-top"><img src="assets/avatar-raquel.jpg" alt="Ilustración generada con IA de Raquel, la persona" width="72" height="72" loading="lazy"><div><span class="ome-persona-name">Raquel, 44</span><span class="ome-persona-role"><span class="es">Técnica de sistemas · turnos de guardia</span><span class="en">Systems engineer · on-call rotation</span></span><span class="ome-tag"><span class="es">Persona ilustrativa · basada en entrevistas y shadowing · Ilustración generada con IA</span><span class="en">Illustrative persona · based on interviews and shadowing · AI-generated illustration</span></span></div></div>
+      <div class="ome-persona-cols"><div><span class="ome-eyebrow ome-eyebrow-accent" style="font-size:11px"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Saber qué nodo falla sin abrir tres herramientas</span><span class="en">Know which node is failing without opening three tools</span></li><li><span class="es">Dejar rastro de cada cambio para la auditoría</span><span class="en">Leave a trail of every change for the audit</span></li></ul></div><div class="is-pain"><span class="ome-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">Copiar los mismos datos en 3 sistemas</span><span class="en">Copying the same data into 3 systems</span></li><li><span class="es">Alertas falsas en plena guardia</span><span class="en">False alerts in the middle of on-call</span></li></ul></div></div>
+      <p class="ome-quote"><span class="es">“Paso más tiempo copiando datos que arreglando servidores.”</span><span class="en">“I spend more time copying data than fixing servers.”</span></p>
+    </div>
+    <div style="margin-top:36px">
+      <span class="ome-eyebrow ome-eyebrow-accent"><span class="es">User flow · incidencia</span><span class="en">User flow · incident</span></span>
+      <h3 class="ome-h3"><span class="es">De la alerta al cierre, <em>sin cambiar de herramienta</em></span><span class="en">From alert to close, <em>without switching tools</em></span></h3>
+      <p class="ome-p" style="margin-top:0"><span class="es">Seguí a Raquel en su turno. El trabajo no era difícil: estaba repartido en tres sistemas y en hilos de Slack. El flow junta cada paso en un módulo.</span><span class="en">I shadowed Raquel on shift. The work wasn’t hard: it was scattered across three systems and Slack threads. The flow brings each step into one module.</span></p>
+    </div>
+    <ol class="ome-flow" aria-label="User flow de una incidencia"><li><div class="ome-flow-rail"><i>1</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Detecta</span><span class="en">Detects</span></strong><span class="ome-flow-pain"><span class="es">Antes: falsos positivos mezclados con incidencias reales</span><span class="en">Before: false positives mixed in with real incidents</span></span><span class="ome-flow-mod"><span class="es">Dashboard operacional · objetivo &lt; 30 s</span><span class="en">Operational dashboard · target &lt; 30 s</span></span></div></li><li><div class="ome-flow-rail"><i>2</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Registra</span><span class="en">Logs it</span></strong><span class="ome-flow-pain"><span class="es">Antes: petición en Slack o correo, datos copiados a mano</span><span class="en">Before: request in Slack or email, data copied by hand</span></span><span class="ome-flow-mod"><span class="es">Bandeja de encargos · objetivo: 0 perdidas</span><span class="en">Request tray · target: 0 lost</span></span></div></li><li><div class="ome-flow-rail"><i>3</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Pide firma</span><span class="en">Gets sign-off</span></strong><span class="ome-flow-pain"><span class="es">Antes: hasta 48 h esperando una aprobación</span><span class="en">Before: up to 48 h waiting for approval</span></span><span class="ome-flow-mod"><span class="es">Aprobaciones · objetivo &lt; 1 h</span><span class="en">Approvals · target &lt; 1 h</span></span></div></li><li><div class="ome-flow-rail"><i>4</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Ejecuta</span><span class="en">Applies it</span></strong><span class="ome-flow-pain"><span class="es">Antes: sin historial de quién tocó cada servidor</span><span class="en">Before: no history of who touched each server</span></span><span class="ome-flow-mod"><span class="es">Auditoría inmutable</span><span class="en">Immutable audit log</span></span></div></li><li><div class="ome-flow-rail"><i>5</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Cierra</span><span class="en">Closes</span></strong><span class="ome-flow-pain"><span class="es">Antes: sin ver cuánto SLA le queda</span><span class="en">Before: no view of the SLA left</span></span><span class="ome-flow-mod"><span class="es">Cumplimiento SLA</span><span class="en">SLA compliance</span></span></div></li></ol>
+    <p class="ome-flow-note"><span class="es">Objetivos definidos con el IT Ops Lead para la propuesta Build; no se midieron en producción.</span><span class="en">Targets set with the IT Ops Lead for the Build proposal; not measured in production.</span></p>
+
     <div style="margin-top:44px">
       <span class="ome-eyebrow"><span class="es">Discovery · arquitectura de datos</span><span class="en">Discovery · data architecture</span></span>
       <h3 class="ome-h3"><span class="es">52 columnas <span class="ome-arrow-muted">→</span> <span class="ome-accent-text">6 módulos</span></span><span class="en">52 columns <span class="ome-arrow-muted">→</span> <span class="ome-accent-text">6 modules</span></span></h3>
@@ -683,6 +729,32 @@
         <li><span class="itd-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4><span class="es">Sin historial</span><span class="en">No history</span></h4><p><span class="es">Nadie sabía quién había tocado cada servidor.</span><span class="en">Nobody knew who had changed each server.</span></p></li>
         <li><span class="itd-ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span><h4><span class="es">Falsos positivos</span><span class="en">False positives</span></h4><p><span class="es">Alertas que saturaban al equipo de guardia.</span><span class="en">Alerts flooding the on-call team.</span></p></li>
       </ul>
+    </div>
+
+    <div class="itd-block">
+      <span class="itd-eyebrow"><span class="es">User persona &amp; user flow</span><span class="en">User persona &amp; user flow</span></span>
+      <h3 class="itd-h3"><span class="es">De la alerta al cierre, <em>sin cambiar de herramienta</em></span><span class="en">From alert to close, <em>without switching tools</em></span></h3>
+      <p class="itd-p" style="max-width:640px"><span class="es">Seguí a Raquel en su turno. El trabajo no era difícil: estaba repartido en tres sistemas y en hilos de Slack. El flow junta cada paso en un módulo.</span><span class="en">I shadowed Raquel on shift. The work wasn’t hard: it was scattered across three systems and Slack threads. The flow brings each step into one module.</span></p>
+      <div class="itd-persona-grid">
+        <article class="itd-persona">
+          <div class="itd-persona-top"><img src="assets/avatar-raquel.jpg" alt="Ilustración generada con IA de Raquel, la persona" width="64" height="64" loading="lazy"><div><span class="itd-persona-name">Raquel, 44</span><span class="itd-persona-role"><span class="es">Técnica de sistemas · turnos de guardia</span><span class="en">Systems engineer · on-call rotation</span></span></div></div>
+          <div class="itd-persona-cols">
+            <div><span class="itd-label itd-label--accent"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="itd-persona-item"><span class="es">Saber qué nodo falla sin abrir tres herramientas</span><span class="en">Know which node is failing without opening three tools</span></span><span class="itd-persona-item"><span class="es">Dejar rastro de cada cambio para la auditoría</span><span class="en">Leave a trail of every change for the audit</span></span></div>
+            <div class="is-pain"><span class="itd-label"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="itd-persona-item"><span class="es">Copiar los mismos datos en 3 sistemas</span><span class="en">Copying the same data into 3 systems</span></span><span class="itd-persona-item"><span class="es">Alertas falsas en plena guardia</span><span class="en">False alerts in the middle of on-call</span></span></div>
+          </div>
+          <blockquote class="itd-quote"><span class="es">“Paso más tiempo copiando datos que arreglando servidores.”</span><span class="en">“I spend more time copying data than fixing servers.”</span></blockquote>
+          <span class="itd-tag"><span class="es">Persona ilustrativa · basada en entrevistas y shadowing · Ilustración generada con IA</span><span class="en">Illustrative persona · based on interviews and shadowing · AI-generated illustration</span></span>
+        </article>
+        <div class="itd-jbox">
+          <div class="itd-jbox-head"><span><span class="es">De la alerta al cierre</span><span class="en">From alert to close</span></span><div class="itd-legend"><span><i class="is-pain"></i><span class="es">Antes</span><span class="en">Before</span></span><span><i class="is-opp"></i><span class="es">Módulo</span><span class="en">Module</span></span></div></div>
+          <div class="itd-jtable-wrap"><div class="itd-jtable">
+            <span></span><span class="itd-jtable-col"><b>1</b><span class="es">Detecta</span><span class="en">Detects</span></span><span class="itd-jtable-col"><b>2</b><span class="es">Registra</span><span class="en">Logs it</span></span><span class="itd-jtable-col"><b>3</b><span class="es">Pide firma</span><span class="en">Gets sign-off</span></span><span class="itd-jtable-col"><b>4</b><span class="es">Ejecuta</span><span class="en">Applies it</span></span><span class="itd-jtable-col"><b>5</b><span class="es">Cierra</span><span class="en">Closes</span></span>
+            <span class="itd-jtable-rowlabel"><span class="es">Antes</span><span class="en">Before</span></span><span class="itd-jtable-pain"><span class="es">Falsos positivos mezclados con incidencias reales</span><span class="en">False positives mixed in with real incidents</span></span><span class="itd-jtable-pain"><span class="es">Petición en Slack o correo, datos copiados a mano</span><span class="en">Request in Slack or email, data copied by hand</span></span><span class="itd-jtable-pain"><span class="es">Hasta 48 h esperando una aprobación</span><span class="en">Up to 48 h waiting for approval</span></span><span class="itd-jtable-pain"><span class="es">Sin historial de quién tocó cada servidor</span><span class="en">No history of who touched each server</span></span><span class="itd-jtable-pain"><span class="es">Sin ver cuánto SLA le queda</span><span class="en">No view of the SLA left</span></span>
+            <span class="itd-jtable-rowlabel is-accent"><span class="es">Módulo</span><span class="en">Module</span></span><span class="itd-jtable-opp"><span class="es">Dashboard operacional · objetivo &lt; 30 s</span><span class="en">Operational dashboard · target &lt; 30 s</span></span><span class="itd-jtable-opp"><span class="es">Bandeja de encargos · objetivo: 0 perdidas</span><span class="en">Request tray · target: 0 lost</span></span><span class="itd-jtable-opp"><span class="es">Aprobaciones · objetivo &lt; 1 h</span><span class="en">Approvals · target &lt; 1 h</span></span><span class="itd-jtable-opp"><span class="es">Auditoría inmutable</span><span class="en">Immutable audit log</span></span><span class="itd-jtable-opp"><span class="es">Cumplimiento SLA</span><span class="en">SLA compliance</span></span>
+          </div></div>
+        </div>
+      </div>
+      <p class="itd-note"><span class="es">Objetivos definidos con el IT Ops Lead para la propuesta Build; no se midieron en producción.</span><span class="en">Targets set with the IT Ops Lead for the Build proposal; not measured in production.</span></p>
     </div>
 
     <div class="itd-split itd-split--center">
