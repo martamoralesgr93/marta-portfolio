@@ -362,3 +362,692 @@
 .cmx-link:focus-visible { outline: 2px solid #a78bfa; outline-offset: 2px; }
 .cmx-link--notion { border-color: color-mix(in srgb, var(--cmx-accent, #a78bfa) 55%, transparent); color: var(--cmx-accent, #a78bfa); }
 @media (max-width: 768px) { .cmx-link { flex: 1 1 100%; justify-content: center; } }
+
+/* ==========================================================================
+   UPGRADE 8.5 · RAZONAMIENTO UX (01-04), DECISIONES, FLUJO DE ESTADOS Y UI 100%
+   ========================================================================== */
+
+.uxr-wrap {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  min-width: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+.uxr-section {
+  border-radius: 22px;
+  background: #0c0c11;
+  border: 1px solid rgba(255,255,255,.11);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+.uxr-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.uxr-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 760px;
+}
+
+.uxr-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--cmx-accent, #a78bfa);
+}
+
+.uxr-title {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(24px, 2.8vw, 34px);
+  line-height: 1.12;
+  color: #fff;
+}
+
+.uxr-title em {
+  font-style: italic;
+  color: var(--cmx-accent, #a78bfa);
+}
+
+.uxr-sub {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(255,255,255,.72);
+}
+
+.uxr-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: rgba(167,139,250,.12);
+  border: 1px solid rgba(167,139,250,.4);
+  color: #e9d5ff;
+  white-space: nowrap;
+}
+
+.uxr-status-pill::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cmx-accent, #a78bfa);
+  box-shadow: 0 0 8px var(--cmx-accent, #a78bfa);
+}
+
+.uxr-status-pill.is-concept {
+  background: rgba(251,191,36,.12);
+  border-color: rgba(251,191,36,.45);
+  color: #fde68a;
+}
+
+.uxr-status-pill.is-concept::before {
+  background: #fbbf24;
+  box-shadow: 0 0 8px #fbbf24;
+}
+
+/* Barra de Contribución, Fuentes reales y Limitaciones */
+.uxr-contrib-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.uxr-contrib-card {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.uxr-contrib-card dt {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cmx-accent, #a78bfa);
+}
+
+.uxr-contrib-card dd {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.48;
+  color: rgba(255,255,255,.86);
+}
+
+.uxr-contrib-card dd strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Secuencia 01 -> 04 de Razonamiento UX */
+.uxr-seq {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.uxr-seq-item {
+  padding: 18px;
+  border-radius: 16px;
+  background: #111118;
+  border: 1px solid rgba(255,255,255,.09);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.uxr-seq-item.is-highlight {
+  background: color-mix(in srgb, var(--cmx-accent, #a78bfa) 8%, #111118);
+  border-color: color-mix(in srgb, var(--cmx-accent, #a78bfa) 42%, transparent);
+}
+
+.uxr-seq-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.uxr-seq-num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cmx-accent, #a78bfa);
+}
+
+.uxr-seq-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 600;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.75);
+}
+
+.uxr-seq-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.uxr-seq-body {
+  margin: 0;
+  font-size: 13.8px;
+  line-height: 1.52;
+  color: rgba(255,255,255,.78);
+}
+
+.uxr-seq-body strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.uxr-seq-quote {
+  margin-top: 4px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.035);
+  border-left: 3px solid var(--cmx-accent, #a78bfa);
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.88);
+}
+
+/* 03 · Decisiones de diseño justificadas (Alternativa descartada vs Solución elegida) */
+.uxr-decisions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.uxr-dec-card {
+  border-radius: 18px;
+  background: #111118;
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.uxr-dec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.uxr-dec-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cmx-accent, #a78bfa);
+}
+
+.uxr-dec-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.28;
+  color: #fff;
+}
+
+.uxr-dec-vs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.uxr-dec-opt {
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.uxr-dec-opt.is-discarded {
+  background: rgba(239,68,68,.05);
+  border: 1px dashed rgba(239,68,68,.32);
+}
+
+.uxr-dec-opt.is-chosen {
+  background: rgba(34,197,94,.07);
+  border: 1px solid rgba(34,197,94,.38);
+}
+
+.uxr-dec-opt-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.uxr-dec-opt.is-discarded .uxr-dec-opt-label { color: #fca5a5; }
+.uxr-dec-opt.is-chosen .uxr-dec-opt-label { color: #86efac; }
+
+.uxr-dec-opt-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.uxr-dec-opt-desc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.48;
+  color: rgba(255,255,255,.78);
+}
+
+.uxr-dec-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.uxr-dec-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.82);
+}
+
+.uxr-dec-meta b {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+
+/* B. Diseño de Interacción · Flujo real de 3-5 pasos con estados y transiciones */
+.uxr-flow-strip {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.uxr-state-card {
+  padding: 16px;
+  border-radius: 16px;
+  background: #111118;
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uxr-state-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.uxr-state-step {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cmx-accent, #a78bfa);
+}
+
+.uxr-state-badge {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  color: #fff;
+}
+
+.uxr-state-badge.is-error {
+  background: rgba(249,115,22,.14);
+  border-color: rgba(249,115,22,.45);
+  color: #fdba74;
+}
+
+.uxr-state-badge.is-ok {
+  background: rgba(34,197,94,.14);
+  border-color: rgba(34,197,94,.45);
+  color: #86efac;
+}
+
+.uxr-state-title {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.uxr-state-trigger,
+.uxr-state-response {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.76);
+}
+
+.uxr-state-response {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.03);
+  border-left: 2px solid var(--cmx-accent, #a78bfa);
+  color: rgba(255,255,255,.9);
+}
+
+/* A, C, D · Pantallas protagonistas al 100% con anotaciones de jerarquía y detalle */
+.uxr-screens-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.uxr-screen-card {
+  border-radius: 20px;
+  background: #111118;
+  border: 1px solid rgba(255,255,255,.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.uxr-screen-head {
+  padding: 18px 20px;
+  background: rgba(255,255,255,.025);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+
+.uxr-screen-head-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.uxr-screen-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cmx-accent, #a78bfa);
+}
+
+.uxr-screen-title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.uxr-screen-goal {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.14);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.88);
+}
+
+.uxr-screen-media {
+  padding: 20px;
+  background: #07070a;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: center;
+  justify-items: center;
+}
+
+.uxr-screen-media.is-pair {
+  grid-template-columns: 1fr;
+}
+
+.uxr-screen-media img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: 0 18px 40px rgba(0,0,0,.55);
+}
+
+.uxr-screen-annotations {
+  margin: 0;
+  padding: 18px 20px 20px;
+  list-style: none;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  background: #101017;
+}
+
+.uxr-screen-annotations li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.48;
+  color: rgba(255,255,255,.82);
+}
+
+.uxr-pin {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--cmx-accent, #a78bfa);
+  color: #09090d;
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.uxr-screen-annotations strong {
+  color: #fff;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Especificación de Design System (CEF): Variantes, Estados, Do/Don't y Auditoría */
+.uxr-ds-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.uxr-ds-card {
+  padding: 18px;
+  border-radius: 16px;
+  background: #111118;
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.uxr-ds-card h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.uxr-ds-spec-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.uxr-input-demo {
+  flex: 1 1 200px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #09090d;
+  border: 1px solid rgba(255,255,255,.22);
+  color: #fff;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.uxr-input-demo.is-focus {
+  border-color: #22c55e;
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+.uxr-input-demo.is-error {
+  border-color: #ef4444;
+  background: rgba(239,68,68,.06);
+}
+
+.uxr-input-demo small {
+  font-size: 11px;
+  color: rgba(255,255,255,.55);
+}
+
+.uxr-input-demo.is-error small {
+  color: #fca5a5;
+  font-weight: 600;
+}
+
+.uxr-dodont {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.uxr-do, .uxr-dont {
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.48;
+  color: rgba(255,255,255,.85);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.uxr-do {
+  background: rgba(34,197,94,.06);
+  border: 1px solid rgba(34,197,94,.35);
+}
+
+.uxr-dont {
+  background: rgba(239,68,68,.06);
+  border: 1px solid rgba(239,68,68,.35);
+}
+
+.uxr-do b { color: #86efac; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.uxr-dont b { color: #fca5a5; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+
+/* ==========================================================================
+   CORRECCIÓN GLOBAL DE TAMAÑOS DE CAPTURAS (NADA DIMINUTO NI OCULTO EN DESKTOP)
+   ========================================================================== */
+@media (min-width: 769px) {
+  .uxr-section { padding: 32px 30px; gap: 26px; }
+  .uxr-contrib-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .uxr-seq { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .uxr-decisions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .uxr-dec-vs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .uxr-dec-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .uxr-flow-strip { grid-template-columns: repeat(var(--steps, 4), minmax(0, 1fr)); gap: 16px; }
+  .uxr-screen-media.is-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .uxr-screen-media.is-pair-asym { grid-template-columns: 1.35fr 0.85fr; gap: 22px; }
+  .uxr-screen-annotations { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .uxr-ds-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .uxr-dodont { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+
+  /* 1. ILUNION: Mostrar comparativas Antes/Después y Mobile/Desktop siempre visibles y en grande */
+  .ide .ide-bp-switcher { display: none !important; }
+  .ide .ide-bp-panel { display: block !important; margin-top: 18px; }
+  .ide .ide-proc-imgs--mobile { max-width: 100% !important; gap: 28px !important; }
+  .ide .ide-proc-img-wrap img { max-height: 680px; width: 100%; object-fit: contain; }
+  .ide .ide-piece { grid-template-columns: 380px 1fr !important; gap: 48px !important; }
+
+  /* 2. CEF: Ampliar pantallas de cierre y tarjetas del flujo para que se examinen sin ampliar */
+  .cde .cde-tool-figs { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .cde .cde-flowcard-media img { max-height: 460px !important; width: auto !important; }
+  .cde .cde-closeimgs { grid-template-columns: 1fr !important; gap: 28px !important; }
+
+  /* 3. ORACLE: Pasar de 3 columnas diminutas (413px) a 2 columnas grandes (~625px) */
+  .itd .itd-wires { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px !important; }
+  .itd .itd-wire-lofi img,
+  .itd .itd-wire-final img { aspect-ratio: 16 / 10 !important; object-fit: contain !important; background: #09090d; }
+
+  /* 4. GYM: Pasar de 6 columnas minúsculas (150px) a 3 columnas grandes (~410px) y ampliar bucle de hábito */
+  .gde .gde-mods6 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 22px !important; }
+  .gde .gde-loop-card { grid-template-columns: 145px 1fr !important; gap: 18px !important; }
+  .gde .gde-taps-imgs img { max-height: 520px !important; }
+
+  /* 5. PAOLO: Ampliar pantallas clave y wireframes */
+  .pde .pde-screengrid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px !important; }
+  .pde .pde-screengrid > figure:first-child { grid-column: 1 / -1; }
+  .pde .pde-proc-box { min-height: 440px !important; }
+}
+
