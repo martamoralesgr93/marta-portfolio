@@ -132,3 +132,16 @@
 @media (min-width: 769px) and (max-width: 1100px) {
   .cmx-exps { grid-template-columns: 1fr; }
 }
+
+/* Proceso agrupado · brainstorming, bocetos, site map y user flow en pestañas (persona-tabs.js) */
+.cmx-tabs .ptabs-list { gap: 6px; }
+.cmx-tab { padding: 6px 16px; }
+.cmx-tabs [role="tabpanel"] > .cmx-block { margin-top: 4px; }
+
+/* Enlaces del caso · Notion y Figma, en el bloque «Proceso completo» */
+.cmx-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.cmx-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; transition: border-color .2s, background .2s; }
+.cmx-link:hover { border-color: var(--cmx-accent, #a78bfa); background: rgba(167,139,250,.08); }
+.cmx-link:focus-visible { outline: 2px solid #a78bfa; outline-offset: 2px; }
+.cmx-link--notion { border-color: color-mix(in srgb, var(--cmx-accent, #a78bfa) 55%, transparent); color: var(--cmx-accent, #a78bfa); }
+@media (max-width: 768px) { .cmx-link { flex: 1 1 100%; justify-content: center; } }
