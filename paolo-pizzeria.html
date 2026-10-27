@@ -173,7 +173,7 @@
   .pme-proc-box { position: relative; height: 320px; border-radius: 18px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .pme-proc-box.is-paper { background: #f4f4f4; }
   .pme-proc-box.is-final { background: radial-gradient(ellipse at 50% 55%, rgba(124,58,237,.22), rgba(0,0,0,0) 70%), #0d0d10; border: 1px solid rgba(255,255,255,.1); }
-  .pme-proc-box img { display: block; max-width: 88%; max-height: 92%; width: auto; height: auto; object-fit: contain; }
+  .pme-proc-box img { display: block; width: 88%; height: 92%; max-width: 88%; max-height: 92%; object-fit: contain; }
   .pme-proc-tag { position: absolute; left: 10px; top: 10px; padding: 4px 9px; border-radius: 999px; background: #000; color: #fff; font-size: 11px; font-weight: 700; }
   .pme-proc-tag.is-final { background: #a78bfa; color: #0b0614; }
   .pme-proc-fig figcaption { font-size: 12px; line-height: 1.4; color: rgba(255,255,255,.65); }
@@ -830,14 +830,14 @@
     <div style="padding-top: 48px; display: flex; flex-direction: column; gap: 16px;">
       <div style="display: flex; flex-direction: column; gap: 8px;"><span class="pme-eyebrow pme-eyebrow-accent" style="color: rgba(255,255,255,.55);"><span class="es">User personas &amp; journeys</span><span class="en">User personas &amp; journeys</span></span><h3 class="pme-h3" style="margin: 0;"><span class="es">Dos contextos, <em>dos recorridos</em></span><span class="en">Two contexts, <em>two journeys</em></span></h3><p class="pme-p" style="margin: 0;"><span class="es">Delivery y sala piden cosas distintas a la misma web: cada perfil tiene su journey y la ley de UX que lo resuelve.</span><span class="en">Delivery and dine-in ask different things of the same website: each profile gets its journey and the UX law that solves it.</span></p></div>
       <div data-ptabs>
-      <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="pme-tab-marcos" aria-controls="pme-p-marcos"><img src="assets/avatar-marcos.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Marcos, 34</b><small><span class="es">Delivery · en casa</span><span class="en">Delivery · at home</span></small></span></button><button type="button" class="ptab " role="tab" id="pme-tab-carmen" aria-controls="pme-p-carmen"><img src="assets/avatar-carmen.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Carmen, 52</b><small><span class="es">En sala · carta QR</span><span class="en">Dine-in · QR menu</span></small></span></button></div>
+      <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="pme-tab-marcos" aria-controls="pme-p-marcos"><img src="assets/avatar-marcos.jpg" alt="" width="32" height="32"><span><b>Marcos, 34</b><small><span class="es">Delivery · en casa</span><span class="en">Delivery · at home</span></small></span></button><button type="button" class="ptab " role="tab" id="pme-tab-carmen" aria-controls="pme-p-carmen"><img src="assets/avatar-carmen.jpg" alt="" width="32" height="32"><span><b>Carmen, 52</b><small><span class="es">En sala · carta QR</span><span class="en">Dine-in · QR menu</span></small></span></button></div>
       <div role="tabpanel" id="pme-p-marcos" aria-labelledby="pme-tab-marcos" tabindex="0"><article class="pme-pc">
-          <div class="pme-pc-top"><img src="assets/avatar-marcos.jpg" alt="Ilustración generada con IA de Marcos, la persona" width="72" height="72" loading="lazy"><div><span class="pme-pc-name">Marcos, 34</span><span class="pme-pc-role"><span class="es">Pide a domicilio al salir del trabajo</span><span class="en">Orders delivery after work</span></span><span class="pme-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
+          <div class="pme-pc-top"><img src="assets/avatar-marcos.jpg" alt="Ilustración generada con IA de Marcos, la persona" width="72" height="72"><div><span class="pme-pc-name">Marcos, 34</span><span class="pme-pc-role"><span class="es">Pide a domicilio al salir del trabajo</span><span class="en">Orders delivery after work</span></span><span class="pme-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
           <div class="pme-pc-cols"><div><span class="pme-eyebrow" style="font-size:11px;color:#a78bfa"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Pedir en menos de 90 s desde el sofá</span><span class="en">Order in under 90 s from the couch</span></li><li><span class="es">Saber qué lleva y cuánto cuesta antes de pedir</span><span class="en">Know what’s in it and what it costs before ordering</span></li></ul></div><div class="is-pain"><span class="pme-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">Teléfono comunicando en hora punta</span><span class="en">Busy phone line at peak hours</span></li><li><span class="es">Cartas largas sin agrupar</span><span class="en">Long, ungrouped menus</span></li></ul></div></div>
           <p class="pme-pc-quote"><span class="es">«Si comunica, pido en otro sitio.»</span><span class="en">“If the line’s busy, I order somewhere else.”</span></p>
         </article>
       <ol class="pme-jr" aria-label="Journey · pedido a domicilio"><li class=""><span class="pme-jr-n">01</span><strong><span class="es">Busca la pizzería</span><span class="en">Looks for the pizzeria</span></strong><span class="pme-jr-pain"><span class="es">Antes: solo aparecía en Glovo y Uber Eats</span><span class="en">Before: only listed on Glovo and Uber Eats</span></span><span class="pme-jr-dec"><span class="es">Web propia enlazada desde Google e Instagram</span><span class="en">Own website linked from Google and Instagram</span></span><span class="pme-jr-law"><span class="es">Canal propio</span><span class="en">Own channel</span></span></li><li class=""><span class="pme-jr-n">02</span><strong><span class="es">Elige pizza</span><span class="en">Picks a pizza</span></strong><span class="pme-jr-pain"><span class="es">Antes: carta larga, sin agrupar</span><span class="en">Before: long, ungrouped menu</span></span><span class="pme-jr-dec"><span class="es">Categorías de máx. 7 opciones</span><span class="en">Categories of max 7 options</span></span><span class="pme-jr-law"><span class="es">Ley de Miller · Ley de Hick</span><span class="en">Miller’s Law · Hick’s Law</span></span></li><li class=""><span class="pme-jr-n">03</span><strong><span class="es">Comprueba qué lleva</span><span class="en">Checks what’s in it</span></strong><span class="pme-jr-pain"><span class="es">Antes: precio y alérgenos al final</span><span class="en">Before: price and allergens at the end</span></span><span class="pme-jr-dec"><span class="es">Precio y alérgenos en cada tarjeta</span><span class="en">Price and allergens on every card</span></span><span class="pme-jr-law"><span class="es">Nielsen #6 · Reconocer, no recordar</span><span class="en">Nielsen #6 · Recognition over recall</span></span></li><li class="is-result"><span class="pme-jr-n">04</span><strong><span class="es">Pide</span><span class="en">Orders</span></strong><span class="pme-jr-pain"><span class="es">Antes: teléfono colapsado en hora punta</span><span class="en">Before: jammed phone at peak hours</span></span><span class="pme-jr-dec"><span class="es">Comanda directa a cocina por WhatsApp</span><span class="en">Ticket straight to the kitchen via WhatsApp</span></span><span class="pme-jr-law"><span class="es">Objetivo · &lt;90 s</span><span class="en">Target · &lt;90 s</span></span></li></ol></div><div role="tabpanel" id="pme-p-carmen" aria-labelledby="pme-tab-carmen" tabindex="0"><article class="pme-pc">
-          <div class="pme-pc-top"><img src="assets/avatar-carmen.jpg" alt="Ilustración generada con IA de Carmen, la persona" width="72" height="72" loading="lazy"><div><span class="pme-pc-name">Carmen, 52</span><span class="pme-pc-role"><span class="es">Cena en sala y pregunta por alérgenos</span><span class="en">Dines in and asks about allergens</span></span><span class="pme-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
+          <div class="pme-pc-top"><img src="assets/avatar-carmen.jpg" alt="Ilustración generada con IA de Carmen, la persona" width="72" height="72"><div><span class="pme-pc-name">Carmen, 52</span><span class="pme-pc-role"><span class="es">Cena en sala y pregunta por alérgenos</span><span class="en">Dines in and asks about allergens</span></span><span class="pme-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
           <div class="pme-pc-cols"><div><span class="pme-eyebrow" style="font-size:11px;color:#a78bfa"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Saber qué lleva cada pizza sin preguntar</span><span class="en">Know what’s in each pizza without asking</span></li><li><span class="es">Pedir sin instalar nada</span><span class="en">Order without installing anything</span></li></ul></div><div class="is-pain"><span class="pme-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">Carta en papel y poca luz</span><span class="en">Paper menu and dim light</span></li><li><span class="es">Alérgenos poco visibles</span><span class="en">Allergens hard to find</span></li></ul></div></div>
           <p class="pme-pc-quote"><span class="es">«No me voy a bajar una app para cenar.»</span><span class="en">“I’m not downloading an app to have dinner.”</span></p>
         </article>
@@ -909,7 +909,7 @@
     </div>
 
     <div class="pme-identity" aria-label="Identidad">
-      <img class="pme-identity-logo" src="projects/04-paolo/assets/logo-paolo-blanco.png" width="846" height="188" loading="lazy" alt="Logotipo Paolo by Danny's Jaz en blanco">
+      <img class="pme-identity-logo" src="projects/04-paolo/assets/logo-paolo-blanco.png" width="846" height="188" alt="Logotipo Paolo by Danny's Jaz en blanco">
       <div class="pme-swatches">
         <div style="display: flex; flex-direction: column; gap: 6px;"><span class="pme-swatch pme-swatch-carbon"></span><span class="pme-swatch-label"><span class="es">Carbón</span><span class="en">Charcoal</span></span></div>
         <div style="display: flex; flex-direction: column; gap: 6px;"><span class="pme-swatch pme-swatch-harina"></span><span class="pme-swatch-label"><span class="es">Harina</span><span class="en">Flour</span></span></div>
@@ -923,11 +923,11 @@
       <span class="pme-eyebrow pme-eyebrow-accent" style="color: rgba(255,255,255,.55);"><span class="es">3 piezas físicas</span><span class="en">3 physical touchpoints</span></span>
       <div class="pme-pieces" style="margin-top: 0;">
         <figure class="pme-piece-fig is-square">
-          <img src="projects/04-paolo/assets/take-away.webp" width="1200" height="1797" loading="lazy" alt="Caja de pizza kraft para take-away con pizza dentro">
+          <img src="projects/04-paolo/assets/take-away.webp" width="1200" height="1797" alt="Caja de pizza kraft para take-away con pizza dentro">
           <figcaption class="pme-piece-cap"><span class="pme-tag">Packaging</span><span class="pme-title"><span class="es">Caja térmica kraft</span><span class="en">Kraft thermal box</span></span></figcaption>
         </figure>
         <figure class="pme-piece-fig is-uniforms">
-          <img src="projects/04-paolo/assets/02-uniforms.webp" width="2372" height="1425" loading="lazy" alt="Polos granates del personal de sala con el claim Las pizzas del barrio">
+          <img src="projects/04-paolo/assets/02-uniforms.webp" width="2372" height="1425" alt="Polos granates del personal de sala con el claim Las pizzas del barrio">
           <figcaption class="pme-piece-pill"><span class="pme-tag"><span class="es">Sala</span><span class="en">Floor</span></span><span class="es">Uniformes</span><span class="en">Uniforms</span></figcaption>
         </figure>
       </div>
@@ -939,7 +939,7 @@
         <h3 class="pme-h3" style="margin: 0;"><span class="es">Fachada, rótulos y terraza</span><span class="en">Facade, signage &amp; terrace</span></h3>
       </div>
       <figure class="pme-plano-fig" style="margin: 0;">
-        <img src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" width="1536" height="1024" loading="lazy" alt="Plano de montaje exterior: luminosos horizontales, luminoso vertical, sombrilla de terraza y medidas">
+        <img src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" width="1536" height="1024" alt="Plano de montaje exterior: luminosos horizontales, luminoso vertical, sombrilla de terraza y medidas">
       </figure>
       <p style="margin: 0; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.7);"><span class="es">Luminosos, sombrillas y vinilos con medidas de montaje para captar al transeúnte.</span><span class="en">Illuminated signs, umbrellas and vinyl decals with installation specs to capture foot traffic.</span></p>
       <a href="#pme-producto" class="pme-cta"><span class="es">Ver el producto digital</span><span class="en">See the digital product</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg></a>
@@ -957,14 +957,14 @@
     <div class="pme-proc2">
       <figure class="pme-proc-fig">
         <div class="pme-proc-box is-paper">
-          <img src="projects/04-paolo/assets/wifreframe-mobile.webp" width="785" height="1382" loading="lazy" alt="Wireframe mobile: logo, claim, cifras y tres botones grandes">
+          <img src="projects/04-paolo/assets/wifreframe-mobile.webp" width="785" height="1382" alt="Wireframe mobile: logo, claim, cifras y tres botones grandes">
           <span class="pme-proc-tag">Lo-fi</span>
         </div>
         <figcaption><span class="es">Una mano, CTA en zona del pulgar</span><span class="en">One hand, CTA in the thumb zone</span></figcaption>
       </figure>
       <figure class="pme-proc-fig">
         <div class="pme-proc-box is-final">
-          <img src="projects/04-paolo/assets/img-paolo-mobile.webp" width="768" height="1546" loading="lazy" alt="Pantalla final mobile de Paolo con pedido a domicilio, localizador y reserva">
+          <img src="projects/04-paolo/assets/img-paolo-mobile.webp" width="768" height="1546" alt="Pantalla final mobile de Paolo con pedido a domicilio, localizador y reserva">
           <span class="pme-proc-tag is-final">Final</span>
         </div>
         <figcaption><span class="es">3 acciones: pedir, encontrar, reservar</span><span class="en">3 actions: order, find, book</span></figcaption>
@@ -984,7 +984,7 @@
       <div class="cs-carousel-wrapper" style="margin-top: 0;">
         <div class="cs-carousel">
           <article class="cs-carousel-card">
-            <div class="cs-carousel-media"><img src="projects/04-paolo/assets/web1.webp" width="2672" height="1536" loading="lazy" alt="Portada web: Las pizzas del barrio, para compartir"></div>
+            <div class="cs-carousel-media"><img src="projects/04-paolo/assets/web1.webp" width="2672" height="1536" alt="Portada web: Las pizzas del barrio, para compartir"></div>
             <div class="cs-carousel-info">
               <span class="cs-carousel-kpi">01 · Hero</span>
               <h4 class="cs-carousel-title"><span class="es">Masa de 48 h como diferencial</span><span class="en">48h dough as the differentiator</span></h4>
@@ -992,7 +992,7 @@
             </div>
           </article>
           <article class="cs-carousel-card">
-            <div class="cs-carousel-media"><img src="projects/04-paolo/assets/web4.webp" width="2672" height="1536" loading="lazy" alt="Carta interactiva: Cada pizza cuenta algo, con filtros por categoría"></div>
+            <div class="cs-carousel-media"><img src="projects/04-paolo/assets/web4.webp" width="2672" height="1536" alt="Carta interactiva: Cada pizza cuenta algo, con filtros por categoría"></div>
             <div class="cs-carousel-info">
               <span class="cs-carousel-kpi"><span class="es">02 · Carta</span><span class="en">02 · Menu</span></span>
               <h4 class="cs-carousel-title"><span class="es">Carta por categorías y filtros</span><span class="en">Menu by categories and filters</span></h4>
@@ -1000,7 +1000,7 @@
             </div>
           </article>
           <article class="cs-carousel-card">
-            <div class="cs-carousel-media"><img src="projects/04-paolo/assets/web2.webp" width="2672" height="1536" loading="lazy" alt="Sección Llévanos a casa para pedir a domicilio"></div>
+            <div class="cs-carousel-media"><img src="projects/04-paolo/assets/web2.webp" width="2672" height="1536" alt="Sección Llévanos a casa para pedir a domicilio"></div>
             <div class="cs-carousel-info">
               <span class="cs-carousel-kpi"><span class="es">03 · Pedido</span><span class="en">03 · Order</span></span>
               <h4 class="cs-carousel-title"><span class="es">Pedido directo a casa</span><span class="en">Direct home delivery</span></h4>
@@ -1020,7 +1020,7 @@
     </div>
 
     <div class="pme-locator">
-      <div class="pme-locator-img-wrap"><img src="projects/04-paolo/assets/web5.webp" width="2672" height="1536" loading="lazy" alt="Localizador de los 5 restaurantes con mapa y lista de locales"></div>
+      <div class="pme-locator-img-wrap"><img src="projects/04-paolo/assets/web5.webp" width="2672" height="1536" alt="Localizador de los 5 restaurantes con mapa y lista de locales"></div>
       <div class="pme-locator-body">
         <span class="pme-eyebrow" style="color: #a78bfa;"><span class="es">Decisión con datos · Clarity</span><span class="en">Data-driven decision · Clarity</span></span>
         <span class="pme-locator-title"><span class="es">El selector de local, primero en móvil</span><span class="en">The location selector, first on mobile</span></span>
@@ -1034,9 +1034,9 @@
         <h3 class="pme-h3" style="margin: 0;"><span class="es">Fotografía que vende la masa de 48 h</span><span class="en">Photography that sells the 48h dough</span></h3>
       </div>
       <div class="pme-art" style="margin-top: 0;">
-        <figure class="pme-art-fig"><img src="projects/04-paolo/assets/diavola.webp" width="1200" height="959" loading="lazy" alt="Pizza Diavola con salame picante"><figcaption>Diavola</figcaption></figure>
-        <figure class="pme-art-fig"><img src="projects/04-paolo/assets/tartufo.webp" width="1200" height="959" loading="lazy" alt="Pizza Tartufo con trufa negra y setas"><figcaption>Tartufo</figcaption></figure>
-        <figure class="pme-art-fig"><img src="projects/04-paolo/assets/napoli.webp" width="1200" height="959" loading="lazy" alt="Pizza Napoli con anchoas y alcaparras"><figcaption>Napoli</figcaption></figure>
+        <figure class="pme-art-fig"><img src="projects/04-paolo/assets/diavola.webp" width="1200" height="959" alt="Pizza Diavola con salame picante"><figcaption>Diavola</figcaption></figure>
+        <figure class="pme-art-fig"><img src="projects/04-paolo/assets/tartufo.webp" width="1200" height="959" alt="Pizza Tartufo con trufa negra y setas"><figcaption>Tartufo</figcaption></figure>
+        <figure class="pme-art-fig"><img src="projects/04-paolo/assets/napoli.webp" width="1200" height="959" alt="Pizza Napoli con anchoas y alcaparras"><figcaption>Napoli</figcaption></figure>
       </div>
     </div>
 
@@ -1046,8 +1046,8 @@
         <h3 class="pme-h3" style="margin: 0;"><span class="es">La centralita de las 20:30, <em>fuera de sala</em></span><span class="en">The 8:30 PM phone rush, <em>off the floor</em></span></h3>
       </div>
       <div class="pme-assistant" style="margin-top: 0;">
-        <img src="projects/04-paolo/assets/reserva.chat.webp" width="768" height="1546" loading="lazy" alt="Asistente en móvil: elección de local para reservar">
-        <img src="projects/04-paolo/assets/agenta.ia.mobile.webp" width="768" height="1546" loading="lazy" alt="Web móvil de Paolo con acceso al asistente">
+        <img src="projects/04-paolo/assets/reserva.chat.webp" width="768" height="1546" alt="Asistente en móvil: elección de local para reservar">
+        <img src="projects/04-paolo/assets/agenta.ia.mobile.webp" width="768" height="1546" alt="Web móvil de Paolo con acceso al asistente">
       </div>
       <div class="pme-assistant-list" style="margin-top: 0;">
         <div class="pme-assistant-item"><b>01</b><span><span class="es">Local, comensales y turno sin salir del navegador</span><span class="en">Location, party size and seating time in-browser</span></span></div>
@@ -1087,7 +1087,7 @@
     </div>
 
     <figure class="pme-band-fig">
-      <img src="projects/04-paolo/assets/composicion-platos.webp" width="1200" height="509" loading="lazy" alt="Mesa con varias pizzas artesanas de Paolo">
+      <img src="projects/04-paolo/assets/composicion-platos.webp" width="1200" height="509" alt="Mesa con varias pizzas artesanas de Paolo">
       <div class="pme-band-grad" aria-hidden="true"></div>
     </figure>
 
@@ -1102,7 +1102,7 @@
 
     <div class="cs-prototype-card" style="margin:28px 0">
       <div class="cs-prototype-media">
-        <img src="projects/04-paolo/assets/web1.webp" alt="Prototipo navegable de la web de Paolo Pizzeria" loading="lazy">
+        <img src="projects/04-paolo/assets/web1.webp" alt="Prototipo navegable de la web de Paolo Pizzeria">
       </div>
       <div class="cs-prototype-body">
         <div class="cs-prototype-badge">
@@ -1241,14 +1241,14 @@
     <div style="display: flex; flex-direction: column; gap: 22px;">
       <div style="display: flex; flex-direction: column; gap: 12px;"><span class="pde-eyebrow pde-eyebrow--accent"><span class="es">User personas &amp; journeys</span><span class="en">User personas &amp; journeys</span></span><h3 class="pde-h3"><span class="es">Dos contextos, <em>dos recorridos</em></span><span class="en">Two contexts, <em>two journeys</em></span></h3><p class="pde-p" style="max-width: 680px; margin: 0;"><span class="es">Delivery y sala piden cosas distintas a la misma web: cada perfil tiene su journey y la ley de UX que lo resuelve.</span><span class="en">Delivery and dine-in ask different things of the same website: each profile gets its journey and the UX law that solves it.</span></p></div>
       <div data-ptabs>
-        <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="pde-tab-marcos" aria-controls="pde-p-marcos"><img src="assets/avatar-marcos.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Marcos, 34</b><small><span class="es">Delivery · en casa</span><span class="en">Delivery · at home</span></small></span></button><button type="button" class="ptab " role="tab" id="pde-tab-carmen" aria-controls="pde-p-carmen"><img src="assets/avatar-carmen.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Carmen, 52</b><small><span class="es">En sala · carta QR</span><span class="en">Dine-in · QR menu</span></small></span></button></div>
+        <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="pde-tab-marcos" aria-controls="pde-p-marcos"><img src="assets/avatar-marcos.jpg" alt="" width="32" height="32"><span><b>Marcos, 34</b><small><span class="es">Delivery · en casa</span><span class="en">Delivery · at home</span></small></span></button><button type="button" class="ptab " role="tab" id="pde-tab-carmen" aria-controls="pde-p-carmen"><img src="assets/avatar-carmen.jpg" alt="" width="32" height="32"><span><b>Carmen, 52</b><small><span class="es">En sala · carta QR</span><span class="en">Dine-in · QR menu</span></small></span></button></div>
         <div role="tabpanel" id="pde-p-marcos" aria-labelledby="pde-tab-marcos" tabindex="0"><div class="pde-pc-grid"><article class="pde-pc">
-          <div class="pde-pc-top"><img src="assets/avatar-marcos.jpg" alt="Ilustración generada con IA de Marcos, la persona" width="64" height="64" loading="lazy"><div><span class="pde-pc-name">Marcos, 34</span><span class="pde-pc-role"><span class="es">Pide a domicilio al salir del trabajo</span><span class="en">Orders delivery after work</span></span><span class="pde-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
+          <div class="pde-pc-top"><img src="assets/avatar-marcos.jpg" alt="Ilustración generada con IA de Marcos, la persona" width="64" height="64"><div><span class="pde-pc-name">Marcos, 34</span><span class="pde-pc-role"><span class="es">Pide a domicilio al salir del trabajo</span><span class="en">Orders delivery after work</span></span><span class="pde-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
           <div class="pde-pc-cols"><div><span class="pde-eyebrow" style="font-size:11px;color:#a78bfa"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Pedir en menos de 90 s desde el sofá</span><span class="en">Order in under 90 s from the couch</span></li><li><span class="es">Saber qué lleva y cuánto cuesta antes de pedir</span><span class="en">Know what’s in it and what it costs before ordering</span></li></ul></div><div class="is-pain"><span class="pde-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">Teléfono comunicando en hora punta</span><span class="en">Busy phone line at peak hours</span></li><li><span class="es">Cartas largas sin agrupar</span><span class="en">Long, ungrouped menus</span></li></ul></div></div>
           <p class="pde-pc-quote"><span class="es">«Si comunica, pido en otro sitio.»</span><span class="en">“If the line’s busy, I order somewhere else.”</span></p>
         </article>
         <ol class="pde-jr" aria-label="Journey · pedido a domicilio"><li class=""><span class="pde-jr-n">01</span><strong><span class="es">Busca la pizzería</span><span class="en">Looks for the pizzeria</span></strong><span class="pde-jr-pain"><span class="es">Antes: solo aparecía en Glovo y Uber Eats</span><span class="en">Before: only listed on Glovo and Uber Eats</span></span><span class="pde-jr-dec"><span class="es">Web propia enlazada desde Google e Instagram</span><span class="en">Own website linked from Google and Instagram</span></span><span class="pde-jr-law"><span class="es">Canal propio</span><span class="en">Own channel</span></span></li><li class=""><span class="pde-jr-n">02</span><strong><span class="es">Elige pizza</span><span class="en">Picks a pizza</span></strong><span class="pde-jr-pain"><span class="es">Antes: carta larga, sin agrupar</span><span class="en">Before: long, ungrouped menu</span></span><span class="pde-jr-dec"><span class="es">Categorías de máx. 7 opciones</span><span class="en">Categories of max 7 options</span></span><span class="pde-jr-law"><span class="es">Ley de Miller · Ley de Hick</span><span class="en">Miller’s Law · Hick’s Law</span></span></li><li class=""><span class="pde-jr-n">03</span><strong><span class="es">Comprueba qué lleva</span><span class="en">Checks what’s in it</span></strong><span class="pde-jr-pain"><span class="es">Antes: precio y alérgenos al final</span><span class="en">Before: price and allergens at the end</span></span><span class="pde-jr-dec"><span class="es">Precio y alérgenos en cada tarjeta</span><span class="en">Price and allergens on every card</span></span><span class="pde-jr-law"><span class="es">Nielsen #6 · Reconocer, no recordar</span><span class="en">Nielsen #6 · Recognition over recall</span></span></li><li class="is-result"><span class="pde-jr-n">04</span><strong><span class="es">Pide</span><span class="en">Orders</span></strong><span class="pde-jr-pain"><span class="es">Antes: teléfono colapsado en hora punta</span><span class="en">Before: jammed phone at peak hours</span></span><span class="pde-jr-dec"><span class="es">Comanda directa a cocina por WhatsApp</span><span class="en">Ticket straight to the kitchen via WhatsApp</span></span><span class="pde-jr-law"><span class="es">Objetivo · &lt;90 s</span><span class="en">Target · &lt;90 s</span></span></li></ol></div></div><div role="tabpanel" id="pde-p-carmen" aria-labelledby="pde-tab-carmen" tabindex="0"><div class="pde-pc-grid"><article class="pde-pc">
-          <div class="pde-pc-top"><img src="assets/avatar-carmen.jpg" alt="Ilustración generada con IA de Carmen, la persona" width="64" height="64" loading="lazy"><div><span class="pde-pc-name">Carmen, 52</span><span class="pde-pc-role"><span class="es">Cena en sala y pregunta por alérgenos</span><span class="en">Dines in and asks about allergens</span></span><span class="pde-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
+          <div class="pde-pc-top"><img src="assets/avatar-carmen.jpg" alt="Ilustración generada con IA de Carmen, la persona" width="64" height="64"><div><span class="pde-pc-name">Carmen, 52</span><span class="pde-pc-role"><span class="es">Cena en sala y pregunta por alérgenos</span><span class="en">Dines in and asks about allergens</span></span><span class="pde-pc-tag"><span class="es">Persona ilustrativa · perfil real del research · Ilustración generada con IA</span><span class="en">Illustrative persona · real research profile · AI-generated illustration</span></span></div></div>
           <div class="pde-pc-cols"><div><span class="pde-eyebrow" style="font-size:11px;color:#a78bfa"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Saber qué lleva cada pizza sin preguntar</span><span class="en">Know what’s in each pizza without asking</span></li><li><span class="es">Pedir sin instalar nada</span><span class="en">Order without installing anything</span></li></ul></div><div class="is-pain"><span class="pde-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">Carta en papel y poca luz</span><span class="en">Paper menu and dim light</span></li><li><span class="es">Alérgenos poco visibles</span><span class="en">Allergens hard to find</span></li></ul></div></div>
           <p class="pde-pc-quote"><span class="es">«No me voy a bajar una app para cenar.»</span><span class="en">“I’m not downloading an app to have dinner.”</span></p>
         </article>
@@ -1308,7 +1308,7 @@
         <p class="pde-p"><span class="es">Caja, rótulo y uniforme cuentan la misma propuesta artesana que la web.</span><span class="en">Box, signage and uniform tell the same craft story as the website.</span></p>
       </div>
       <div class="pde-identity">
-        <img class="pde-identity-logo" src="projects/04-paolo/assets/logo-paolo-blanco.png" width="846" height="188" loading="lazy" alt="Logotipo Paolo by Danny's Jaz en blanco">
+        <img class="pde-identity-logo" src="projects/04-paolo/assets/logo-paolo-blanco.png" width="846" height="188" alt="Logotipo Paolo by Danny's Jaz en blanco">
         <div class="pde-swatches">
           <div style="display: flex; flex-direction: column; gap: 6px;"><span class="pde-swatch pde-swatch-carbon"></span><span class="pde-swatch-label"><span class="es">Carbón</span><span class="en">Charcoal</span></span></div>
           <div style="display: flex; flex-direction: column; gap: 6px;"><span class="pde-swatch pde-swatch-harina"></span><span class="pde-swatch-label"><span class="es">Harina</span><span class="en">Flour</span></span></div>
@@ -1321,7 +1321,7 @@
 
     <div class="pde-pieces">
       <figure class="pde-piece-fig is-tall">
-        <img src="projects/04-paolo/assets/take-away.webp" width="1200" height="1797" loading="lazy" alt="Caja de pizza kraft para take-away con pizza dentro">
+        <img src="projects/04-paolo/assets/take-away.webp" width="1200" height="1797" alt="Caja de pizza kraft para take-away con pizza dentro">
         <figcaption class="pde-piece-cap">
           <span class="pde-tag">Packaging</span>
           <span class="pde-title"><span class="es">Caja térmica kraft</span><span class="en">Kraft thermal box</span></span>
@@ -1329,11 +1329,11 @@
         </figcaption>
       </figure>
       <figure class="pde-piece-fig" style="background: #ececec;">
-        <img src="projects/04-paolo/assets/02-uniforms.webp" width="2372" height="1425" loading="lazy" alt="Polos granates del personal de sala con el claim Las pizzas del barrio" style="aspect-ratio: 2372 / 1425; object-fit: contain;">
+        <img src="projects/04-paolo/assets/02-uniforms.webp" width="2372" height="1425" alt="Polos granates del personal de sala con el claim Las pizzas del barrio" style="aspect-ratio: 2372 / 1425; object-fit: contain;">
         <figcaption class="pde-piece-pill"><span class="pde-tag"><span class="es">Sala</span><span class="en">Floor</span></span><span class="es">Uniformes</span><span class="en">Uniforms</span></figcaption>
       </figure>
       <figure class="pde-plano-fig">
-        <img src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" width="1536" height="1024" loading="lazy" alt="Plano de montaje exterior: luminosos horizontales, luminoso vertical, sombrilla de terraza y medidas" style="aspect-ratio: 1536 / 1024;">
+        <img src="projects/04-paolo/assets/plano-sombrillas-montaje.webp" width="1536" height="1024" alt="Plano de montaje exterior: luminosos horizontales, luminoso vertical, sombrilla de terraza y medidas" style="aspect-ratio: 1536 / 1024;">
         <figcaption class="pde-piece-pill is-dark"><span class="pde-tag"><span class="es">Espacio</span><span class="en">Space</span></span><span class="es">Fachada, rótulos y terraza</span><span class="en">Facade, signage &amp; terrace</span></figcaption>
       </figure>
     </div>
@@ -1356,16 +1356,16 @@
     <div class="pde-proc2">
       <figure class="pde-proc-card">
         <div class="pde-proc-box is-paper">
-          <img src="projects/04-paolo/assets/wifreframe-desk.webp" width="1450" height="835" loading="lazy" alt="Wireframe desktop: navegación horizontal, logo, claim y botones de pedido, localizador y reserva" style="width: 100%; height: auto; aspect-ratio: 1450 / 835; object-fit: contain;">
-          <img src="projects/04-paolo/assets/wifreframe-mobile.webp" width="785" height="1382" loading="lazy" alt="Wireframe mobile: logo, claim, cifras y tres botones grandes" style="width: 100%; height: auto; aspect-ratio: 785 / 1382; object-fit: contain;">
+          <img src="projects/04-paolo/assets/wifreframe-desk.webp" width="1450" height="835" alt="Wireframe desktop: navegación horizontal, logo, claim y botones de pedido, localizador y reserva" style="width: 100%; height: auto; aspect-ratio: 1450 / 835; object-fit: contain;">
+          <img src="projects/04-paolo/assets/wifreframe-mobile.webp" width="785" height="1382" alt="Wireframe mobile: logo, claim, cifras y tres botones grandes" style="width: 100%; height: auto; aspect-ratio: 785 / 1382; object-fit: contain;">
           <span class="pde-proc-tag">Lo-fi</span>
         </div>
         <figcaption><span class="pde-tag">Wireframes · mobile-first</span><span class="pde-title"><span class="es">Una mano, CTA en zona del pulgar</span><span class="en">One hand, CTA in the thumb zone</span></span></figcaption>
       </figure>
       <figure class="pde-proc-card is-final">
         <div class="pde-proc-box">
-          <img src="projects/04-paolo/assets/web1.webp" width="2672" height="1536" loading="lazy" alt="Portada web final en portátil: Las pizzas del barrio, para compartir" style="width: 100%; height: auto; aspect-ratio: 2672 / 1536; object-fit: contain;">
-          <img src="projects/04-paolo/assets/img-paolo-mobile.webp" width="768" height="1546" loading="lazy" alt="Pantalla final mobile con pedido a domicilio, localizador y reserva" style="width: 100%; height: auto; aspect-ratio: 768 / 1546; object-fit: contain;">
+          <img src="projects/04-paolo/assets/web1.webp" width="2672" height="1536" alt="Portada web final en portátil: Las pizzas del barrio, para compartir" style="width: 100%; height: auto; aspect-ratio: 2672 / 1536; object-fit: contain;">
+          <img src="projects/04-paolo/assets/img-paolo-mobile.webp" width="768" height="1546" alt="Pantalla final mobile con pedido a domicilio, localizador y reserva" style="width: 100%; height: auto; aspect-ratio: 768 / 1546; object-fit: contain;">
           <span class="pde-proc-tag is-final">Final</span>
         </div>
         <figcaption><span class="pde-tag"><span class="es">En producción</span><span class="en">In production</span></span><span class="pde-title"><span class="es">3 acciones: pedir, encontrar, reservar</span><span class="en">3 actions: order, find, book</span></span></figcaption>
@@ -1384,7 +1384,7 @@
       </div>
       <div class="pde-screengrid">
         <figure class="pde-screen-card">
-          <div class="pde-screen-img-wrap"><img src="projects/04-paolo/assets/web1.webp" width="2672" height="1536" loading="lazy" alt="Portada web: Las pizzas del barrio, para compartir"></div>
+          <div class="pde-screen-img-wrap"><img src="projects/04-paolo/assets/web1.webp" width="2672" height="1536" alt="Portada web: Las pizzas del barrio, para compartir"></div>
           <figcaption>
             <span class="pde-tag">01 · Hero</span>
             <span class="pde-title"><span class="es">Masa de 48 h como diferencial</span><span class="en">48h dough as the differentiator</span></span>
@@ -1392,7 +1392,7 @@
           </figcaption>
         </figure>
         <figure class="pde-screen-card">
-          <div class="pde-screen-img-wrap"><img src="projects/04-paolo/assets/web4.webp" width="2672" height="1536" loading="lazy" alt="Carta interactiva: Cada pizza cuenta algo, con filtros por categoría"></div>
+          <div class="pde-screen-img-wrap"><img src="projects/04-paolo/assets/web4.webp" width="2672" height="1536" alt="Carta interactiva: Cada pizza cuenta algo, con filtros por categoría"></div>
           <figcaption>
             <span class="pde-tag"><span class="es">02 · Carta</span><span class="en">02 · Menu</span></span>
             <span class="pde-title"><span class="es">Carta por categorías y filtros</span><span class="en">Menu by categories and filters</span></span>
@@ -1400,7 +1400,7 @@
           </figcaption>
         </figure>
         <figure class="pde-screen-card">
-          <div class="pde-screen-img-wrap"><img src="projects/04-paolo/assets/web2.webp" width="2672" height="1536" loading="lazy" alt="Sección Llévanos a casa para pedir a domicilio"></div>
+          <div class="pde-screen-img-wrap"><img src="projects/04-paolo/assets/web2.webp" width="2672" height="1536" alt="Sección Llévanos a casa para pedir a domicilio"></div>
           <figcaption>
             <span class="pde-tag"><span class="es">03 · Pedido</span><span class="en">03 · Order</span></span>
             <span class="pde-title"><span class="es">Pedido directo a casa</span><span class="en">Direct home delivery</span></span>
@@ -1422,7 +1422,7 @@
         </ol>
       </div>
       <div class="pde-locator-img">
-        <img src="projects/04-paolo/assets/web5.webp" width="2672" height="1536" loading="lazy" alt="Localizador de los 5 restaurantes con mapa y lista de locales">
+        <img src="projects/04-paolo/assets/web5.webp" width="2672" height="1536" alt="Localizador de los 5 restaurantes con mapa y lista de locales">
       </div>
     </div>
 
@@ -1431,9 +1431,9 @@
         <span class="pde-eyebrow"><span class="es">Evolución · dirección de arte</span><span class="en">Evolution · art direction</span></span>
         <h3 class="pde-h3"><span class="es">Fotografía que vende la masa de 48 h</span><span class="en">Photography that sells the 48h dough</span></h3>
         <div class="pde-art-grid">
-          <figure class="pde-art-fig"><img src="projects/04-paolo/assets/diavola.webp" width="1200" height="959" loading="lazy" alt="Pizza Diavola con salame picante"><figcaption><span class="name">Diavola</span><span class="desc"><span class="es">Salame picante y fior di latte</span><span class="en">Spicy salami and fior di latte</span></span></figcaption></figure>
-          <figure class="pde-art-fig"><img src="projects/04-paolo/assets/tartufo.webp" width="1200" height="959" loading="lazy" alt="Pizza Tartufo con trufa negra y setas"><figcaption><span class="name">Tartufo</span><span class="desc"><span class="es">Trufa negra, setas y parmesano</span><span class="en">Black truffle, mushrooms and parmesan</span></span></figcaption></figure>
-          <figure class="pde-art-fig"><img src="projects/04-paolo/assets/napoli.webp" width="1200" height="959" loading="lazy" alt="Pizza Napoli con anchoas y alcaparras"><figcaption><span class="name">Napoli</span><span class="desc"><span class="es">Anchoas, alcaparras y orégano</span><span class="en">Anchovies, capers and oregano</span></span></figcaption></figure>
+          <figure class="pde-art-fig"><img src="projects/04-paolo/assets/diavola.webp" width="1200" height="959" alt="Pizza Diavola con salame picante"><figcaption><span class="name">Diavola</span><span class="desc"><span class="es">Salame picante y fior di latte</span><span class="en">Spicy salami and fior di latte</span></span></figcaption></figure>
+          <figure class="pde-art-fig"><img src="projects/04-paolo/assets/tartufo.webp" width="1200" height="959" alt="Pizza Tartufo con trufa negra y setas"><figcaption><span class="name">Tartufo</span><span class="desc"><span class="es">Trufa negra, setas y parmesano</span><span class="en">Black truffle, mushrooms and parmesan</span></span></figcaption></figure>
+          <figure class="pde-art-fig"><img src="projects/04-paolo/assets/napoli.webp" width="1200" height="959" alt="Pizza Napoli con anchoas y alcaparras"><figcaption><span class="name">Napoli</span><span class="desc"><span class="es">Anchoas, alcaparras y orégano</span><span class="en">Anchovies, capers and oregano</span></span></figcaption></figure>
         </div>
       </div>
 
@@ -1441,8 +1441,8 @@
         <span class="pde-eyebrow"><span class="es">Evolución · asistente de reservas</span><span class="en">Evolution · booking assistant</span></span>
         <h3 class="pde-h3"><span class="es">La centralita de las 20:30, <em>fuera de sala</em></span><span class="en">The 8:30 PM phone rush, <em>off the floor</em></span></h3>
         <div class="pde-assistant-grid">
-          <img src="projects/04-paolo/assets/reserva.chat.webp" width="768" height="1546" loading="lazy" alt="Asistente en móvil: elección de local para reservar">
-          <img src="projects/04-paolo/assets/agenta.ia.mobile.webp" width="768" height="1546" loading="lazy" alt="Web móvil de Paolo con acceso al asistente">
+          <img src="projects/04-paolo/assets/reserva.chat.webp" width="768" height="1546" alt="Asistente en móvil: elección de local para reservar">
+          <img src="projects/04-paolo/assets/agenta.ia.mobile.webp" width="768" height="1546" alt="Web móvil de Paolo con acceso al asistente">
           <ol class="pde-assistant-list">
             <li><b>01</b><span class="t"><span class="es">Local, comensales y turno sin salir del navegador</span><span class="en">Location, party size and seating time in-browser</span></span></li>
             <li><b>02</b><span class="t"><span class="es">Alérgenos y celiaquía resueltos al momento</span><span class="en">Allergens and celiac questions answered on the spot</span></span></li>
@@ -1486,7 +1486,7 @@
           <div class="pde-ministat"><span class="pde-ministat-num">+28%</span><span class="pde-ministat-txt"><span class="es">pedidos directos online · canal digital</span><span class="en">direct online orders · digital channel</span></span></div>
           <div class="pde-ministat"><span class="pde-ministat-num">+40%</span><span class="pde-ministat-txt"><span class="es">rapidez de comanda en sala · operación</span><span class="en">faster table ordering · operations</span></span></div>
         </div>
-        <img class="pde-band-img" src="projects/04-paolo/assets/composicion-platos.webp" width="1200" height="509" loading="lazy" alt="Mesa con varias pizzas artesanas de Paolo">
+        <img class="pde-band-img" src="projects/04-paolo/assets/composicion-platos.webp" width="1200" height="509" alt="Mesa con varias pizzas artesanas de Paolo">
       </div>
     </div>
 
@@ -1502,7 +1502,7 @@
     <!-- PRUÉBALO · PROTOTIPO PAOLO NAVEGABLE -->
     <div class="cs-prototype-card reveal">
       <div class="cs-prototype-media">
-        <img src="projects/04-paolo/assets/web1.webp" alt="Prototipo navegable de la web de Paolo Pizzeria" loading="lazy" width="1400" height="804">
+        <img src="projects/04-paolo/assets/web1.webp" alt="Prototipo navegable de la web de Paolo Pizzeria" width="1400" height="804">
       </div>
       <div class="cs-prototype-body">
         <div class="cs-prototype-badge">

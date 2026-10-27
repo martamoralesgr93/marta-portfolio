@@ -487,9 +487,9 @@
       <p class="ome-p" style="margin-top:0"><span class="es">Raquel resuelve la incidencia; Andrés la firma y responde de ella. Un flow para cada uno sobre los mismos módulos.</span><span class="en">Raquel resolves the incident; Andrés signs it off and answers for it. One flow each, on the same modules.</span></p>
     </div>
     <div data-ptabs style="margin-top:16px">
-      <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="ome-tab-raquel" aria-controls="ome-p-raquel"><img src="assets/avatar-raquel.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Raquel, 44</b><small><span class="es">Técnica de guardia</span><span class="en">On-call engineer</span></small></span></button><button type="button" class="ptab " role="tab" id="ome-tab-andres" aria-controls="ome-p-andres"><img src="assets/avatar-andres.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Andrés, 49</b><small><span class="es">IT Ops Lead · aprueba</span><span class="en">IT Ops Lead · approves</span></small></span></button></div>
+      <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="ome-tab-raquel" aria-controls="ome-p-raquel"><img src="assets/avatar-raquel.jpg" alt="" width="32" height="32"><span><b>Raquel, 44</b><small><span class="es">Técnica de guardia</span><span class="en">On-call engineer</span></small></span></button><button type="button" class="ptab " role="tab" id="ome-tab-andres" aria-controls="ome-p-andres"><img src="assets/avatar-andres.jpg" alt="" width="32" height="32"><span><b>Andrés, 49</b><small><span class="es">IT Ops Lead · aprueba</span><span class="en">IT Ops Lead · approves</span></small></span></button></div>
       <div role="tabpanel" id="ome-p-raquel" aria-labelledby="ome-tab-raquel" tabindex="0"><div class="ome-persona" style="margin-top:0">
-      <div class="ome-persona-top"><img src="assets/avatar-raquel.jpg" alt="Ilustración generada con IA de Raquel, la persona" width="72" height="72" loading="lazy"><div><span class="ome-persona-name">Raquel, 44</span><span class="ome-persona-role"><span class="es">Técnica de sistemas · turnos de guardia</span><span class="en">Systems engineer · on-call rotation</span></span><span class="ome-tag"><span class="es">Persona ilustrativa · basada en entrevistas y shadowing · Ilustración generada con IA</span><span class="en">Illustrative persona · based on interviews and shadowing · AI-generated illustration</span></span></div></div>
+      <div class="ome-persona-top"><img src="assets/avatar-raquel.jpg" alt="Ilustración generada con IA de Raquel, la persona" width="72" height="72"><div><span class="ome-persona-name">Raquel, 44</span><span class="ome-persona-role"><span class="es">Técnica de sistemas · turnos de guardia</span><span class="en">Systems engineer · on-call rotation</span></span><span class="ome-tag"><span class="es">Persona ilustrativa · basada en entrevistas y shadowing · Ilustración generada con IA</span><span class="en">Illustrative persona · based on interviews and shadowing · AI-generated illustration</span></span></div></div>
       <div class="ome-persona-cols"><div><span class="ome-eyebrow ome-eyebrow-accent" style="font-size:11px"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Saber qué nodo falla sin abrir tres herramientas</span><span class="en">Know which node is failing without opening three tools</span></li><li><span class="es">Dejar rastro de cada cambio para la auditoría</span><span class="en">Leave a trail of every change for the audit</span></li></ul></div><div class="is-pain"><span class="ome-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">Copiar los mismos datos en 3 sistemas</span><span class="en">Copying the same data into 3 systems</span></li><li><span class="es">Alertas falsas en plena guardia</span><span class="en">False alerts in the middle of on-call</span></li></ul></div></div>
       <p class="ome-quote"><span class="es">“Paso más tiempo copiando datos que arreglando servidores.”</span><span class="en">“I spend more time copying data than fixing servers.”</span></p>
     </div>
@@ -501,7 +501,7 @@
     <ol class="ome-flow" aria-label="User flow de una incidencia"><li><div class="ome-flow-rail"><i>1</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Detecta</span><span class="en">Detects</span></strong><span class="ome-flow-pain"><span class="es">Antes: falsos positivos mezclados con incidencias reales</span><span class="en">Before: false positives mixed in with real incidents</span></span><span class="ome-flow-mod"><span class="es">Dashboard operacional · objetivo &lt; 30 s</span><span class="en">Operational dashboard · target &lt; 30 s</span></span></div></li><li><div class="ome-flow-rail"><i>2</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Registra</span><span class="en">Logs it</span></strong><span class="ome-flow-pain"><span class="es">Antes: petición en Slack o correo, datos copiados a mano</span><span class="en">Before: request in Slack or email, data copied by hand</span></span><span class="ome-flow-mod"><span class="es">Bandeja de encargos · objetivo: 0 perdidas</span><span class="en">Request tray · target: 0 lost</span></span></div></li><li><div class="ome-flow-rail"><i>3</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Pide firma</span><span class="en">Gets sign-off</span></strong><span class="ome-flow-pain"><span class="es">Antes: hasta 48 h esperando una aprobación</span><span class="en">Before: up to 48 h waiting for approval</span></span><span class="ome-flow-mod"><span class="es">Aprobaciones · objetivo &lt; 1 h</span><span class="en">Approvals · target &lt; 1 h</span></span></div></li><li><div class="ome-flow-rail"><i>4</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Ejecuta</span><span class="en">Applies it</span></strong><span class="ome-flow-pain"><span class="es">Antes: sin historial de quién tocó cada servidor</span><span class="en">Before: no history of who touched each server</span></span><span class="ome-flow-mod"><span class="es">Auditoría inmutable</span><span class="en">Immutable audit log</span></span></div></li><li><div class="ome-flow-rail"><i>5</i><b></b></div><div class="ome-flow-body"><strong><span class="es">Cierra</span><span class="en">Closes</span></strong><span class="ome-flow-pain"><span class="es">Antes: sin ver cuánto SLA le queda</span><span class="en">Before: no view of the SLA left</span></span><span class="ome-flow-mod"><span class="es">Cumplimiento SLA</span><span class="en">SLA compliance</span></span></div></li></ol>
     <p class="ome-flow-note"><span class="es">Objetivos definidos con el IT Ops Lead para la propuesta Build; no se midieron en producción.</span><span class="en">Targets set with the IT Ops Lead for the Build proposal; not measured in production.</span></p></div>
       <div role="tabpanel" id="ome-p-andres" aria-labelledby="ome-tab-andres" tabindex="0"><div class="ome-persona" style="margin-top:0">
-      <div class="ome-persona-top"><img src="assets/avatar-andres.jpg" alt="Ilustración generada con IA de Andrés, la persona" width="72" height="72" loading="lazy"><div><span class="ome-persona-name">Andrés, 49</span><span class="ome-persona-role"><span class="es">IT Ops Lead · aprueba cambios y responde de la auditoría</span><span class="en">IT Ops Lead · approves changes and answers for the audit</span></span><span class="ome-tag"><span class="es">Persona ilustrativa · basada en entrevistas y shadowing · Ilustración generada con IA</span><span class="en">Illustrative persona · based on interviews and shadowing · AI-generated illustration</span></span></div></div>
+      <div class="ome-persona-top"><img src="assets/avatar-andres.jpg" alt="Ilustración generada con IA de Andrés, la persona" width="72" height="72"><div><span class="ome-persona-name">Andrés, 49</span><span class="ome-persona-role"><span class="es">IT Ops Lead · aprueba cambios y responde de la auditoría</span><span class="en">IT Ops Lead · approves changes and answers for the audit</span></span><span class="ome-tag"><span class="es">Persona ilustrativa · basada en entrevistas y shadowing · Ilustración generada con IA</span><span class="en">Illustrative persona · based on interviews and shadowing · AI-generated illustration</span></span></div></div>
       <div class="ome-persona-cols"><div><span class="ome-eyebrow ome-eyebrow-accent" style="font-size:11px"><span class="es">Objetivos</span><span class="en">Goals</span></span><ul><li><span class="es">Firmar con el contexto completo</span><span class="en">Sign off with full context</span></li><li><span class="es">Llegar a la auditoría sin reconstruir nada</span><span class="en">Reach the audit without rebuilding anything</span></li></ul></div><div class="is-pain"><span class="ome-eyebrow" style="font-size:11px"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><ul><li><span class="es">Aprobaciones atascadas en el correo</span><span class="en">Approvals stuck in email</span></li><li><span class="es">Sin historial de quién tocó cada servidor</span><span class="en">No history of who touched each server</span></li></ul></div></div>
       <p class="ome-quote"><span class="es">“No puedo firmar lo que no puedo ver.”</span><span class="en">“I can’t sign off on what I can’t see.”</span></p>
     </div>
@@ -678,8 +678,8 @@
     </div>
     <figure class="itd-hero-media">
       <span class="itd-glow" aria-hidden="true"></span>
-      <video class="itd-hero-video" muted loop playsinline preload="none" poster="assets/oracle-mobile/hero-poster.jpg" width="1080" height="620" data-src="assets/oracle-mobile/hero.mp4" aria-label="Recorrido del prototipo navegable de IT Ops Oracle"></video>
-      <img class="itd-hero-float" src="assets/oracle-mobile/ui05.webp" alt="Pantalla final de aprobaciones operativas" width="1052" height="617" loading="lazy">
+      <video class="itd-hero-video" src="assets/oracle-mobile/hero.mp4" autoplay muted loop playsinline preload="metadata" poster="assets/oracle-mobile/hero-poster.jpg" width="1080" height="620" data-src="assets/oracle-mobile/hero.mp4" aria-label="Recorrido del prototipo navegable de IT Ops Oracle"></video>
+      <img class="itd-hero-float" src="assets/oracle-mobile/ui05.webp" alt="Pantalla final de aprobaciones operativas" width="1052" height="617">
       <figcaption class="itd-live"><span class="itd-live-dot" aria-hidden="true"></span><span class="es">Prototipo navegable · recorrido 48 s</span><span class="en">Clickable prototype · 48 s walkthrough</span></figcaption>
     </figure>
   </section>
@@ -756,10 +756,10 @@
       <h3 class="itd-h3"><span class="es">Dos roles, <em>un mismo flujo de trabajo</em></span><span class="en">Two roles, <em>one workflow</em></span></h3>
       <p class="itd-p" style="max-width:640px"><span class="es">Raquel resuelve la incidencia; Andrés la firma y responde de ella. Un flow para cada uno sobre los mismos módulos.</span><span class="en">Raquel resolves the incident; Andrés signs it off and answers for it. One flow each, on the same modules.</span></p>
       <div data-ptabs>
-        <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="itd-tab-raquel" aria-controls="itd-p-raquel"><img src="assets/avatar-raquel.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Raquel, 44</b><small><span class="es">Técnica de guardia</span><span class="en">On-call engineer</span></small></span></button><button type="button" class="ptab " role="tab" id="itd-tab-andres" aria-controls="itd-p-andres"><img src="assets/avatar-andres.jpg" alt="" width="32" height="32" loading="lazy"><span><b>Andrés, 49</b><small><span class="es">IT Ops Lead · aprueba</span><span class="en">IT Ops Lead · approves</span></small></span></button></div>
+        <div class="ptabs-list" role="tablist" aria-label="Personas del caso"><button type="button" class="ptab " role="tab" id="itd-tab-raquel" aria-controls="itd-p-raquel"><img src="assets/avatar-raquel.jpg" alt="" width="32" height="32"><span><b>Raquel, 44</b><small><span class="es">Técnica de guardia</span><span class="en">On-call engineer</span></small></span></button><button type="button" class="ptab " role="tab" id="itd-tab-andres" aria-controls="itd-p-andres"><img src="assets/avatar-andres.jpg" alt="" width="32" height="32"><span><b>Andrés, 49</b><small><span class="es">IT Ops Lead · aprueba</span><span class="en">IT Ops Lead · approves</span></small></span></button></div>
         <div role="tabpanel" id="itd-p-raquel" aria-labelledby="itd-tab-raquel" tabindex="0"><div class="itd-persona-grid">
         <article class="itd-persona">
-          <div class="itd-persona-top"><img src="assets/avatar-raquel.jpg" alt="Ilustración generada con IA de Raquel, la persona" width="64" height="64" loading="lazy"><div><span class="itd-persona-name">Raquel, 44</span><span class="itd-persona-role"><span class="es">Técnica de sistemas · turnos de guardia</span><span class="en">Systems engineer · on-call rotation</span></span></div></div>
+          <div class="itd-persona-top"><img src="assets/avatar-raquel.jpg" alt="Ilustración generada con IA de Raquel, la persona" width="64" height="64"><div><span class="itd-persona-name">Raquel, 44</span><span class="itd-persona-role"><span class="es">Técnica de sistemas · turnos de guardia</span><span class="en">Systems engineer · on-call rotation</span></span></div></div>
           <div class="itd-persona-cols">
             <div><span class="itd-label itd-label--accent"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="itd-persona-item"><span class="es">Saber qué nodo falla sin abrir tres herramientas</span><span class="en">Know which node is failing without opening three tools</span></span><span class="itd-persona-item"><span class="es">Dejar rastro de cada cambio para la auditoría</span><span class="en">Leave a trail of every change for the audit</span></span></div>
             <div class="is-pain"><span class="itd-label"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="itd-persona-item"><span class="es">Copiar los mismos datos en 3 sistemas</span><span class="en">Copying the same data into 3 systems</span></span><span class="itd-persona-item"><span class="es">Alertas falsas en plena guardia</span><span class="en">False alerts in the middle of on-call</span></span></div>
@@ -778,7 +778,7 @@
       </div></div>
         <div role="tabpanel" id="itd-p-andres" aria-labelledby="itd-tab-andres" tabindex="0"><div class="itd-persona-grid">
         <article class="itd-persona">
-          <div class="itd-persona-top"><img src="assets/avatar-andres.jpg" alt="Ilustración generada con IA de Andrés, la persona" width="64" height="64" loading="lazy"><div><span class="itd-persona-name">Andrés, 49</span><span class="itd-persona-role"><span class="es">IT Ops Lead · aprueba cambios y responde de la auditoría</span><span class="en">IT Ops Lead · approves changes and answers for the audit</span></span></div></div>
+          <div class="itd-persona-top"><img src="assets/avatar-andres.jpg" alt="Ilustración generada con IA de Andrés, la persona" width="64" height="64"><div><span class="itd-persona-name">Andrés, 49</span><span class="itd-persona-role"><span class="es">IT Ops Lead · aprueba cambios y responde de la auditoría</span><span class="en">IT Ops Lead · approves changes and answers for the audit</span></span></div></div>
           <div class="itd-persona-cols">
             <div><span class="itd-label itd-label--accent"><span class="es">Objetivos</span><span class="en">Goals</span></span><span class="itd-persona-item"><span class="es">Firmar con el contexto completo</span><span class="en">Sign off with full context</span></span><span class="itd-persona-item"><span class="es">Llegar a la auditoría sin reconstruir nada</span><span class="en">Reach the audit without rebuilding anything</span></span></div>
             <div class="is-pain"><span class="itd-label"><span class="es">Frustraciones</span><span class="en">Frustrations</span></span><span class="itd-persona-item"><span class="es">Aprobaciones atascadas en el correo</span><span class="en">Approvals stuck in email</span></span><span class="itd-persona-item"><span class="es">Sin historial de quién tocó cada servidor</span><span class="en">No history of who touched each server</span></span></div>
@@ -814,7 +814,7 @@
         </ol>
       </div>
       <figure class="itd-frame">
-        <img src="assets/oracle-mobile/map.webp" alt="Mapa: cada patrón de fricción conectado con el módulo que lo resuelve" loading="lazy" width="1400" height="933">
+        <img src="assets/oracle-mobile/map.webp" alt="Mapa: cada patrón de fricción conectado con el módulo que lo resuelve" width="1400" height="933">
       </figure>
     </div>
   <div class="cmx-flow-group" id="itd-proceso"><div class="cmx-block"><div class="cmx-head"><span class="cmx-eyebrow"><span class="es">Ideación · brainstorming</span><span class="en">Ideation · brainstorming</span></span><h3 class="cmx-h3"><span class="es">Comprar o construir, <em>por fricción</em></span><span class="en">Buy or build, <em>by friction</em></span></h3><p class="cmx-lead"><span class="es">Ideas agrupadas por los 3 patrones del shadowing; la licencia COTS se descartó.</span><span class="en">Ideas grouped by the 3 shadowing patterns; the COTS licence was dropped.</span></p></div><figure class="cmx-board"><div class="cmx-bs" style="--cols:4"><div class="cmx-bs-col" style="--pit:#fde68a"><span class="cmx-bs-head"><span class="es">Datos en 3 sistemas</span><span class="en">Data in 3 systems</span></span><ul class="cmx-bs-notes"><li><span><span class="es">Bandeja de encargos</span><span class="en">Request tray</span></span></li><li><span><span class="es">Ciclo de tickets sincronizado</span><span class="en">Synced ticket cycle</span></span></li></ul></div><div class="cmx-bs-col" style="--pit:#fbcfe8"><span class="cmx-bs-head"><span class="es">Sin historial</span><span class="en">No history</span></span><ul class="cmx-bs-notes"><li><span><span class="es">Auditoría inmutable</span><span class="en">Immutable audit</span></span></li><li><span><span class="es">Matriz de firmas</span><span class="en">Signature matrix</span></span></li></ul></div><div class="cmx-bs-col" style="--pit:#bbf7d0"><span class="cmx-bs-head"><span class="es">Falsos positivos</span><span class="en">False positives</span></span><ul class="cmx-bs-notes"><li><span><span class="es">Triaje por severidad</span><span class="en">Severity triage</span></span></li><li><span><span class="es">Salud de nodos</span><span class="en">Node health</span></span></li></ul></div><div class="cmx-bs-col" style="--pit:#ddd6fe"><span class="cmx-bs-head"><span class="es">Comprar o construir</span><span class="en">Buy or build</span></span><ul class="cmx-bs-notes"><li class="is-out"><span><span class="es">Licencia COTS</span><span class="en">COTS licence</span></span><small><span class="es">Descartada</span><span class="en">Dropped</span></small></li><li><span><span class="es">Suite modular a medida</span><span class="en">Custom modular suite</span></span></li><li><span><span class="es">Flujos recurrentes automatizados</span><span class="en">Automated recurring flows</span></span></li></ul></div></div><figcaption class="cmx-note"><span class="es">Mapa de afinidad · se descartó comprar un COTS porque el 80% de sus funciones sobraban.</span><span class="en">Affinity map · buying a COTS tool was dropped because 80% of its features were unnecessary.</span></figcaption></figure></div><div class="cmx-block"><div class="cmx-head"><span class="cmx-eyebrow"><span class="es">Mapa conceptual · site map</span><span class="en">Concept map · site map</span></span><h3 class="cmx-h3"><span class="es">Una consola <em>en lugar de tres</em></span><span class="en">One console <em>instead of three</em></span></h3><p class="cmx-lead"><span class="es">52 columnas de Excel ordenadas en 6 módulos operativos.</span><span class="en">52 Excel columns sorted into 6 operational modules.</span></p></div><div class="cmx-sm" role="group" aria-label="Site map"><div class="cmx-sm-entry"><span><span class="es">Entradas</span><span class="en">Entry points</span></span><span class="cmx-sm-chip"><span class="es">Alerta de nodo</span><span class="en">Node alert</span></span><span class="cmx-sm-chip"><span class="es">Petición de Slack o correo</span><span class="en">Slack or email request</span></span></div><div class="cmx-sm-root"><b><span class="es">Consola IT Ops</span><span class="en">IT Ops console</span></b><span><span class="es">Triaje por severidad y sincronización cloud</span><span class="en">Severity triage and cloud sync</span></span></div><ul class="cmx-sm-cols" style="--n:6"><li><span class="cmx-sm-stage"><span class="es">Detectar</span><span class="en">Detect</span></span><b><span class="es">Dashboard operacional</span><span class="en">Operational dashboard</span></b><span class="cmx-sm-sub"><span><span class="es">Salud de nodos</span><span class="en">Node health</span></span></span></li><li><span class="cmx-sm-stage"><span class="es">Registrar</span><span class="en">Log</span></span><b><span class="es">Bandeja de encargos</span><span class="en">Request tray</span></b><span class="cmx-sm-sub"><span><span class="es">Ciclo de tickets</span><span class="en">Ticket cycle</span></span></span></li><li><span class="cmx-sm-stage"><span class="es">Rastrear</span><span class="en">Trace</span></span><b><span class="es">Detalle y trazabilidad</span><span class="en">Detail & traceability</span></b><span class="cmx-sm-sub"><span><span class="es">Historial inmutable</span><span class="en">Immutable history</span></span></span></li><li><span class="cmx-sm-stage"><span class="es">Automatizar</span><span class="en">Automate</span></span><b><span class="es">Flujos recurrentes</span><span class="en">Recurring flows</span></b><span class="cmx-sm-sub"><span><span class="es">Altas</span><span class="en">Onboarding</span></span><span><span class="es">Campañas</span><span class="en">Campaigns</span></span><span><span class="es">Auditorías</span><span class="en">Audits</span></span></span></li><li><span class="cmx-sm-stage"><span class="es">Aprobar</span><span class="en">Approve</span></span><b><span class="es">Aprobaciones</span><span class="en">Approvals</span></b><span class="cmx-sm-sub"><span><span class="es">Matriz de firmas</span><span class="en">Signature matrix</span></span></span></li><li><span class="cmx-sm-stage"><span class="es">Reportar</span><span class="en">Report</span></span><b><span class="es">Informes de servicio</span><span class="en">Service reports</span></b><span class="cmx-sm-sub"><span><span class="es">MTTR</span><span class="en">MTTR</span></span><span><span class="es">SLAs</span><span class="en">SLAs</span></span></span></li></ul></div></div></div>
@@ -835,7 +835,7 @@
     </div>
 
     <figure class="itd-showcase">
-      <img src="assets/oracle-mobile/dashboard.webp" alt="Dashboard operacional final: KPIs, prioridad operativa y pulso del servicio" loading="lazy" width="1400" height="804">
+      <img src="assets/oracle-mobile/dashboard.webp" alt="Dashboard operacional final: KPIs, prioridad operativa y pulso del servicio" width="1400" height="804">
       <figcaption><span class="es">Dashboard operacional · una consola sustituye a 3, con sincronización cloud.</span><span class="en">Operations dashboard · one console replaces 3, with cloud sync.</span></figcaption>
     </figure>
 
@@ -845,12 +845,12 @@
         <span class="itd-eyebrow itd-eyebrow--muted"><span class="es">6 wireframes antes de escribir código</span><span class="en">6 wireframes before writing any code</span></span>
       </div>
       <div class="itd-wires">
-        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf01.webp" alt="Wireframe del dashboard operacional" loading="lazy" width="1400" height="940"><span class="itd-tag">01 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui01.webp" alt="Pantalla final del dashboard operacional" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">01 · Objetivo: detección &lt; 30 s</span><span class="en">01 · Target: detection &lt; 30 s</span></span><h4><span class="es">Dashboard operacional</span><span class="en">Operations dashboard</span></h4></div></article>
-        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf02.webp" alt="Wireframe de la bandeja de encargos" loading="lazy" width="1400" height="940"><span class="itd-tag">02 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui02.webp" alt="Pantalla final de la bandeja de encargos" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">02 · Objetivo: 0 peticiones extraviadas</span><span class="en">02 · Target: 0 lost requests</span></span><h4><span class="es">Bandeja de encargos</span><span class="en">Request inbox</span></h4></div></article>
-        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf03.webp" alt="Wireframe del detalle de encargo" loading="lazy" width="1400" height="940"><span class="itd-tag">03 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui03.webp" alt="Pantalla final de definición y trazabilidad de encargo" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">03 · Historial inmutable</span><span class="en">03 · Immutable history</span></span><h4><span class="es">Detalle y trazabilidad</span><span class="en">Detail &amp; traceability</span></h4></div></article>
-        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf04.webp" alt="Wireframe de flujos recurrentes" loading="lazy" width="1400" height="940"><span class="itd-tag">04 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">04 · Automatiza tareas manuales</span><span class="en">04 · Automates manual tasks</span></span><h4><span class="es">Flujos recurrentes</span><span class="en">Recurring workflows</span></h4></div></article>
-        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf05.webp" alt="Wireframe de aprobaciones operativas" loading="lazy" width="1400" height="940"><span class="itd-tag">05 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui05.webp" alt="Pantalla final de aprobaciones operativas" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">05 · Objetivo: &lt; 1 h (antes 48 h)</span><span class="en">05 · Target: &lt; 1 h (was 48 h)</span></span><h4><span class="es">Aprobaciones</span><span class="en">Approvals</span></h4></div></article>
-        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf06.webp" alt="Wireframe de informes de servicio" loading="lazy" width="1400" height="940"><span class="itd-tag">06 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui06.webp" alt="Pantalla final de informes de servicio" loading="lazy" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">06 · MTTR y SLAs</span><span class="en">06 · MTTR &amp; SLAs</span></span><h4><span class="es">Informes de servicio</span><span class="en">Service reports</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf01.webp" alt="Wireframe del dashboard operacional" width="1400" height="940"><span class="itd-tag">01 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui01.webp" alt="Pantalla final del dashboard operacional" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">01 · Objetivo: detección &lt; 30 s</span><span class="en">01 · Target: detection &lt; 30 s</span></span><h4><span class="es">Dashboard operacional</span><span class="en">Operations dashboard</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf02.webp" alt="Wireframe de la bandeja de encargos" width="1400" height="940"><span class="itd-tag">02 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui02.webp" alt="Pantalla final de la bandeja de encargos" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">02 · Objetivo: 0 peticiones extraviadas</span><span class="en">02 · Target: 0 lost requests</span></span><h4><span class="es">Bandeja de encargos</span><span class="en">Request inbox</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf03.webp" alt="Wireframe del detalle de encargo" width="1400" height="940"><span class="itd-tag">03 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui03.webp" alt="Pantalla final de definición y trazabilidad de encargo" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">03 · Historial inmutable</span><span class="en">03 · Immutable history</span></span><h4><span class="es">Detalle y trazabilidad</span><span class="en">Detail &amp; traceability</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf04.webp" alt="Wireframe de flujos recurrentes" width="1400" height="940"><span class="itd-tag">04 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">04 · Automatiza tareas manuales</span><span class="en">04 · Automates manual tasks</span></span><h4><span class="es">Flujos recurrentes</span><span class="en">Recurring workflows</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf05.webp" alt="Wireframe de aprobaciones operativas" width="1400" height="940"><span class="itd-tag">05 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui05.webp" alt="Pantalla final de aprobaciones operativas" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">05 · Objetivo: &lt; 1 h (antes 48 h)</span><span class="en">05 · Target: &lt; 1 h (was 48 h)</span></span><h4><span class="es">Aprobaciones</span><span class="en">Approvals</span></h4></div></article>
+        <article class="itd-wire"><div class="itd-wire-lofi"><img src="assets/oracle-mobile/wf06.webp" alt="Wireframe de informes de servicio" width="1400" height="940"><span class="itd-tag">06 · Lo-fi</span></div><div class="itd-wire-final"><img src="assets/oracle-mobile/ui06.webp" alt="Pantalla final de informes de servicio" width="1052" height="617"><span class="itd-tag itd-tag--accent">Final</span></div><div class="itd-wire-info"><span class="itd-label itd-label--accent"><span class="es">06 · MTTR y SLAs</span><span class="en">06 · MTTR &amp; SLAs</span></span><h4><span class="es">Informes de servicio</span><span class="en">Service reports</span></h4></div></article>
       </div>
     </div>
 
@@ -865,7 +865,7 @@
           <li><b>03</b><span class="es">Auditoría de llamada crítica</span><span class="en">Critical call audit</span></li>
         </ol>
       </div>
-      <img class="itd-feature-img" src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes con tres automatizaciones activas" loading="lazy" width="1052" height="617">
+      <img class="itd-feature-img" src="assets/oracle-mobile/ui04.webp" alt="Pantalla final de flujos recurrentes con tres automatizaciones activas" width="1052" height="617">
     </div>
   </section>
 
@@ -913,7 +913,7 @@
     <!-- PRUÉBALO · PROTOTIPO ORACLE NAVEGABLE -->
     <div class="cs-prototype-card reveal">
       <div class="cs-prototype-media">
-        <img src="assets/oracle-mobile/prototype.webp" alt="Prototipo navegable: bandeja de encargos en un portátil" loading="lazy" width="1400" height="804">
+        <img src="assets/oracle-mobile/prototype.webp" alt="Prototipo navegable: bandeja de encargos en un portátil" width="1400" height="804">
       </div>
       <div class="cs-prototype-body">
         <div class="cs-prototype-badge">
@@ -1072,7 +1072,7 @@
       <div class="compare">
         <figure class="compare-item">
           <div class="compare-media">
-            <img src="assets/oracle_it_ops_research.png" alt="Auditoría de fricción y mapeo de procesos previos" loading="lazy" width="1920" height="1080">
+            <img src="assets/oracle_it_ops_research.png" alt="Auditoría de fricción y mapeo de procesos previos" width="1920" height="1080">
           </div>
           <figcaption class="compare-caption">
             <div class="compare-badge compare-badge--before">
@@ -1088,7 +1088,7 @@
         </figure>
         <figure class="compare-item compare-item--after">
           <div class="compare-media">
-            <img src="assets/oracle_dashboard_live.png" alt="Dashboard centralizado en producción" loading="lazy" width="1920" height="1080">
+            <img src="assets/oracle_dashboard_live.png" alt="Dashboard centralizado en producción" width="1920" height="1080">
           </div>
           <figcaption class="compare-caption">
             <div class="compare-badge compare-badge--after">
@@ -1125,7 +1125,7 @@
       <!-- Arquitectura de Datos / Mapping Rows -->
       <article class="cs-lofi-hero-card">
         <div class="cs-lofi-hero-media">
-          <img src="assets/it-ops-wireframes/ops-mapping-rows-architecture.webp" alt="Mapeo de arquitectura de datos y desestructuración de hojas de cálculo" width="1536" height="1024" loading="lazy">
+          <img src="assets/it-ops-wireframes/ops-mapping-rows-architecture.webp" alt="Mapeo de arquitectura de datos y desestructuración de hojas de cálculo" width="1536" height="1024">
         </div>
         <div class="cs-lofi-hero-body">
           <div class="cs-lofi-header">
@@ -1159,7 +1159,7 @@
         <!-- Wireframe 01 -->
         <article class="cs-lofi-card">
           <div class="cs-lofi-media">
-            <img src="assets/it-ops-wireframes/ops-01-dashboard-wireframe.webp" alt="Wireframe Lo-Fi: Dashboard Operacional de Servidores" width="2560" height="1720" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-01-dashboard-wireframe.webp" alt="Wireframe Lo-Fi: Dashboard Operacional de Servidores" width="2560" height="1720">
           </div>
           <div class="cs-lofi-body">
             <div class="cs-lofi-header">
@@ -1190,7 +1190,7 @@
         <!-- Wireframe 02 -->
         <article class="cs-lofi-card">
           <div class="cs-lofi-media">
-            <img src="assets/it-ops-wireframes/ops-02-bandeja-encargos-wireframe.webp" alt="Wireframe Lo-Fi: Bandeja de Encargos y Backlog" width="2560" height="1720" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-02-bandeja-encargos-wireframe.webp" alt="Wireframe Lo-Fi: Bandeja de Encargos y Backlog" width="2560" height="1720">
           </div>
           <div class="cs-lofi-body">
             <div class="cs-lofi-header">
@@ -1221,7 +1221,7 @@
         <!-- Wireframe 03 -->
         <article class="cs-lofi-card">
           <div class="cs-lofi-media">
-            <img src="assets/it-ops-wireframes/ops-03-detalle-encargo-wireframe.webp" alt="Wireframe Lo-Fi: Detalle de Encargo y Trazabilidad" width="2560" height="1720" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-03-detalle-encargo-wireframe.webp" alt="Wireframe Lo-Fi: Detalle de Encargo y Trazabilidad" width="2560" height="1720">
           </div>
           <div class="cs-lofi-body">
             <div class="cs-lofi-header">
@@ -1252,7 +1252,7 @@
         <!-- Wireframe 04 -->
         <article class="cs-lofi-card">
           <div class="cs-lofi-media">
-            <img src="assets/it-ops-wireframes/ops-04-flujos-recurrentes-wireframe.webp" alt="Wireframe Lo-Fi: Automatización de Flujos Recurrentes" width="2560" height="1720" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-04-flujos-recurrentes-wireframe.webp" alt="Wireframe Lo-Fi: Automatización de Flujos Recurrentes" width="2560" height="1720">
           </div>
           <div class="cs-lofi-body">
             <div class="cs-lofi-header">
@@ -1283,7 +1283,7 @@
         <!-- Wireframe 05 -->
         <article class="cs-lofi-card">
           <div class="cs-lofi-media">
-            <img src="assets/it-ops-wireframes/ops-05-aprobaciones-operativas-wireframe.webp" alt="Wireframe Lo-Fi: Aprobaciones Operativas y Firmas" width="2560" height="1720" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-05-aprobaciones-operativas-wireframe.webp" alt="Wireframe Lo-Fi: Aprobaciones Operativas y Firmas" width="2560" height="1720">
           </div>
           <div class="cs-lofi-body">
             <div class="cs-lofi-header">
@@ -1314,7 +1314,7 @@
         <!-- Wireframe 06 -->
         <article class="cs-lofi-card">
           <div class="cs-lofi-media">
-            <img src="assets/it-ops-wireframes/ops-06-informes-servicio-wireframe.webp" alt="Wireframe Lo-Fi: Informes de Servicio y Métricas" width="2560" height="1720" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-06-informes-servicio-wireframe.webp" alt="Wireframe Lo-Fi: Informes de Servicio y Métricas" width="2560" height="1720">
           </div>
           <div class="cs-lofi-body">
             <div class="cs-lofi-header">
@@ -1355,7 +1355,7 @@
         
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="assets/it-ops-wireframes/ops-01-dashboard-wireframe.webp" alt="Dashboard Operativo" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-01-dashboard-wireframe.webp" alt="Dashboard Operativo">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">SLA Real-Time</span>
@@ -1364,7 +1364,7 @@
         </article>
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="assets/it-ops-wireframes/ops-02-bandeja-encargos-wireframe.webp" alt="Bandeja de Encargos" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-02-bandeja-encargos-wireframe.webp" alt="Bandeja de Encargos">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">Filtros</span>
@@ -1373,7 +1373,7 @@
         </article>
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="assets/it-ops-wireframes/ops-03-detalle-encargo-wireframe.webp" alt="Detalle de Encargo" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-03-detalle-encargo-wireframe.webp" alt="Detalle de Encargo">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">Trazabilidad</span>
@@ -1382,7 +1382,7 @@
         </article>
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="assets/it-ops-wireframes/ops-04-flujos-recurrentes-wireframe.webp" alt="Flujos Recurrentes" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-04-flujos-recurrentes-wireframe.webp" alt="Flujos Recurrentes">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">Automatizado</span>
@@ -1391,7 +1391,7 @@
         </article>
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="assets/it-ops-wireframes/ops-05-aprobaciones-operativas-wireframe.webp" alt="Aprobaciones" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-05-aprobaciones-operativas-wireframe.webp" alt="Aprobaciones">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">Firmas</span>
@@ -1400,7 +1400,7 @@
         </article>
         <article class="cs-carousel-card">
           <div class="cs-carousel-media">
-            <img src="assets/it-ops-wireframes/ops-06-informes-servicio-wireframe.webp" alt="Informes Servicio" loading="lazy">
+            <img src="assets/it-ops-wireframes/ops-06-informes-servicio-wireframe.webp" alt="Informes Servicio">
           </div>
           <div class="cs-carousel-info">
             <span class="cs-carousel-kpi">Auditoría</span>
@@ -1487,7 +1487,7 @@
     <a href="gym-energy-center.html" class="cs-next-compact-card reveal">
       <div class="cs-next-compact-left">
         <div class="cs-next-thumb">
-          <img src="assets/gym-mobile/m-home.png" alt="Gym Energy Center" loading="lazy">
+          <img src="assets/gym-mobile/m-home.png" alt="Gym Energy Center">
         </div>
         <div>
           <div class="cs-next-compact-meta"><span class="es">Siguiente caso · 05</span><span class="en">Next case · 05</span></div>
